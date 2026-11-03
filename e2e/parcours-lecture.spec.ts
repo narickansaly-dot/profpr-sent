@@ -8,7 +8,6 @@ test('un élève s’inscrit, choisit sa filière et lit un chapitre', async ({ 
 
   await page.getByRole('link', { name: 'Créer un compte' }).click();
   await expect(page).toHaveURL(/\/inscription$/);
-  await page.waitForLoadState('networkidle'); // laisse la page s’hydrater avant de saisir
   await page.getByLabel('Adresse e-mail').fill(email);
   await page.getByLabel('Mot de passe').fill('motdepasse-test');
   await page.getByRole('button', { name: 'Créer mon compte' }).click();

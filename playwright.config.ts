@@ -7,5 +7,11 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
     { name: 'ordinateur', use: { ...devices['Desktop Chrome'] } },
   ],
-  webServer: { command: 'npm run dev', url: 'http://localhost:3000', reuseExistingServer: true },
+  // Build de production : pas de compilation à la volée ni de Fast Refresh, qui rechargent la page pendant la saisie.
+  webServer: {
+    command: 'npm run build && npm run start',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 180_000,
+  },
 });

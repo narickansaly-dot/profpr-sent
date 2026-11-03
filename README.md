@@ -10,7 +10,7 @@ Cours détaillés, quiz et évaluations pour les lycéens, de la seconde à la t
 Prérequis : Node.js 24 et Docker (Docker Desktop ou OrbStack) lancé.
 
 1. `npm install`
-2. `npm run db:start`, puis copier `.env.example` en `.env.local` et y mettre les clés affichées par `npx supabase status`.
+2. `npm run db:start`, puis copier `.env.example` en `.env.local` et y mettre les clés affichées par `npx supabase status` : la clé anon (ou publishable) va dans `NEXT_PUBLIC_SUPABASE_ANON_KEY`, la clé service_role (ou secret) dans `SUPABASE_SERVICE_ROLE_KEY`.
 3. `npm run db:reset` (crée la base et importe le cours BPH 1re ST2S).
 4. `npm run dev`, puis ouvrir http://localhost:3000.
 
@@ -18,7 +18,7 @@ Prérequis : Node.js 24 et Docker (Docker Desktop ou OrbStack) lancé.
 
 - `npm test` : règles de l'application (Vitest)
 - `npm run test:db` : règles d'accès de la base (pgTAP)
-- `npm run e2e` : parcours complets (Playwright)
+- `npm run e2e` : parcours complets (Playwright). Prérequis : base locale démarrée et réinitialisée avec le cours (`npm run db:reset`), `.env.local` rempli, et, la première fois, `npx playwright install chromium`. Les tests construisent et lancent l'application en production (`npm run build && npm run start`) ; si un serveur tourne déjà sur le port 3000, il est réutilisé.
 
 ## Contenu
 
