@@ -28,4 +28,20 @@ describe('etatEvaluation', () => {
     const essais = ['a', 'b', 'c'].map((id) => ({ id, statut: 'terminee' as const, fin: '2026-11-01T00:00:00Z' }));
     expect(etatEvaluation({ nbChapitres: 7, nbValides: 7, essais, maintenant })).toEqual({ etat: 'epuisee' });
   });
+  it('en cours prime même si l’évaluation est verrouillée', () => {
+    expect(etatEvaluation({ nbChapitres: 7, nbValides: 2, essais: [{ id: 'x', statut: 'en_cours', fin: null }], maintenant }))
+      .toEqual({ etat: 'en_cours', tentativeId: 'x' });
+  });
+  it('attente mesurée depuis la dernière fin avec deux essais', () => {
+    const essais = [
+      { id: 'a', statut: 'terminee' as const, fin: '2026-11-10T08:00:00Z' },
+      { id: 'b', statut: 'terminee' as const, fin: '2026-11-08T00:00:00Z' },
+    ];
+    expect(etatEvaluation({ nbChapitres: 7, nbValides: 7, essais, maintenant }))
+      .toEqual({ etat: 'attente', disponibleLe: new Date('2026-11-11T08:00:00Z'), essaisRestants: 1 });
+  });
+  it('exactement 24 heures après : disponible', () => {
+    expect(etatEvaluation({ nbChapitres: 7, nbValides: 7, essais: [{ id: 'a', statut: 'terminee', fin: '2026-11-09T12:00:00Z' }], maintenant }))
+      .toEqual({ etat: 'disponible', essaisRestants: 2 });
+  });
 });

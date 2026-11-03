@@ -54,13 +54,16 @@ export async function enregistrerReponse(tentativeId: string, questionId: string
     p_tentative: tentativeId, p_question: questionId, p_reponse: valeur.data,
   });
   if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
-  return { statut: data as 'ok' | 'temps_ecoule' | 'terminee' };
+  const statut = z.enum(['ok', 'temps_ecoule', 'terminee']).safeParse(data);
+  if (!statut.success) return { erreur: messageErreurQuiz(undefined) };
+  return { statut: statut.data };
 }
 
 export async function terminerTentative(tentativeId: string) {
   if (!z.string().uuid().safeParse(tentativeId).success) redirect('/');
   const supabase = await creerClientServeur();
-  await supabase.rpc('terminer_tentative', { p_tentative: tentativeId });
+  const { error } = await supabase.rpc('terminer_tentative', { p_tentative: tentativeId });
+  if (error) redirect(`/tentative/${tentativeId}?erreur=fin`);
   redirect(`/tentative/${tentativeId}/resultat`);
 }
 

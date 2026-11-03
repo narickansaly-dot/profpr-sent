@@ -38,23 +38,26 @@ export async function lireCorrection(id: string) {
 
 export async function infosQuizChapitre(chapitreId: string) {
   const supabase = await creerClientServeur();
-  const [{ count }, { data: progression }] = await Promise.all([
+  const [{ count, error: e1 }, { data: progression, error: e2 }] = await Promise.all([
     // Les élèves ne peuvent lire que id, chapitre_id, notion_id, type, statut, difficulte sur question.
     supabase.from('question').select('id', { count: 'exact', head: true }).eq('chapitre_id', chapitreId).eq('statut', 'valide'),
     supabase.from('progression_chapitre').select('meilleure_note, valide, lu').eq('chapitre_id', chapitreId).maybeSingle(),
   ]);
+  if (e1 || e2) throw new Error('Impossible de charger ce quiz.');
   return { disponibles: count ?? 0, progression };
 }
 
 export async function progressionDuCours(coursId: string, chapitreIds: string[]) {
   const supabase = await creerClientServeur();
+  // Au mieux : une erreur ici ne doit pas bloquer l'affichage.
   await supabase.rpc('cloturer_mes_tentatives_expirees');
-  const [{ data: chapitres }, { data: cours }, { data: essais }] = await Promise.all([
+  const [{ data: chapitres, error: e1 }, { data: cours, error: e2 }, { data: essais, error: e3 }] = await Promise.all([
     supabase.from('progression_chapitre').select('chapitre_id, meilleure_note, valide').in('chapitre_id', chapitreIds),
     supabase.from('progression_cours').select('meilleure_note, valide, essais').eq('cours_id', coursId).maybeSingle(),
     supabase.from('tentative').select('id, statut, fin, note').eq('cours_id', coursId).eq('type', 'evaluation_cours')
       .order('debut', { ascending: false }),
   ]);
+  if (e1 || e2 || e3) throw new Error('Impossible de charger ta progression.');
   const parChapitre = new Map((chapitres ?? []).map((p) => [p.chapitre_id, p]));
   const nbValides = chapitreIds.filter((id) => parChapitre.get(id)?.valide).length;
   return {
@@ -71,16 +74,20 @@ export async function lireTableauDeBord() {
   const profil = await lireProfil();
   if (!profil) return null;
   const supabase = await creerClientServeur();
+  // Au mieux : une erreur ici ne doit pas bloquer l'affichage.
   await supabase.rpc('cloturer_mes_tentatives_expirees');
   const [valides, examens, derniers, faibles, serie] = await Promise.all([
     supabase.from('progression_chapitre').select('chapitre!inner(cours_id)').eq('valide', true),
     supabase.from('progression_cours').select('meilleure_note, valide, essais, dernier_essai, cours(slug, titre, couleur)')
-      .order('dernier_essai', { ascending: false }),
+      .order('dernier_essai', { ascending: false, nullsFirst: false }),
     supabase.from('tentative').select('id, type, note, reussie, fin, cours(slug, titre, couleur), chapitre(titre)')
       .neq('statut', 'en_cours').order('fin', { ascending: false }).limit(5),
     supabase.rpc('points_faibles', { p_limite: 5 }),
     supabase.rpc('serie_jours'),
   ]);
+  if (valides.error || examens.error || derniers.error || faibles.error || serie.error) {
+    throw new Error('Impossible de charger ton tableau de bord.');
+  }
   const validesParCours = new Map<string, number>();
   for (const v of valides.data ?? []) {
     const coursId = v.chapitre.cours_id;

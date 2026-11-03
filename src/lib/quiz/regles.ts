@@ -19,6 +19,10 @@ type Entree = {
   maintenant: Date;
 };
 
+/**
+ * Précondition : l'appelant a déjà clos les tentatives expirées
+ * (rpc cloturer_mes_tentatives_expirees), sinon une tentative périmée reste « en_cours ».
+ */
 export function etatEvaluation({ nbChapitres, nbValides, essais, maintenant }: Entree): EtatEvaluation {
   const enCours = essais.find((e) => e.statut === 'en_cours');
   if (enCours) return { etat: 'en_cours', tentativeId: enCours.id };
