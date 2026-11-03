@@ -101,3 +101,20 @@
 .liste-essais { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .liste-essais a { display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--trait); border-radius: 12px; background: var(--surface); }
 .vide { margin: 16px 0; color: var(--attenue); }
+
+/* Tableau de bord de l'élève */
+.tableau-de-bord { --danger-texte: color-mix(in srgb, var(--danger) 88%, #000); display: grid; gap: 8px; }
+@media (prefers-color-scheme: dark) { .tableau-de-bord { --danger-texte: var(--danger); } }
+.tdb-entete { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.serie { margin: 0; padding: 4px 14px; border-radius: 999px; font-weight: 700; color: var(--encre);
+  background: color-mix(in srgb, var(--accent) 22%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--trait)); }
+.vide { color: var(--attenue); }
+.tableau-de-bord section > h2 { margin-bottom: 12px; }
+.liste-tdb { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; }
+.ligne-tdb { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px; padding: 14px 18px; }
+.ligne-tdb > span { grid-column: 1 / -1; color: var(--attenue); font-size: 15px; }
+.ligne-tdb a { font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; }
+.ligne-faible .formulaire { grid-column: 1 / -1; }
+.note-reussie { color: var(--succes); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
+.note-ratee { color: var(--danger-texte); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
+.ligne-faible .bouton { justify-self: start; }
