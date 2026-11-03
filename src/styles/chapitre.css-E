@@ -1,0 +1,58 @@
+/* Styles du contenu de chapitre (schémas SVG, définitions, tableaux, outils).
+   Repris de la feuille de style du site BPH d'origine, adaptés aux jetons de l'app.
+   Mapping : --ch -> --couleur-cours, --alt -> --accent, --ink -> --encre, --muted -> --attenue,
+   --line -> --trait, --paper -> --papier, --body -> --police-corps, --mono -> --police-mono.
+   Le texte coloré est mélangé vers --encre pour garder un contraste >= 4.5:1 en clair comme en sombre. */
+
+/* ---------- Définitions et mises en garde ---------- */
+.contenu-chapitre .def {
+  background: color-mix(in srgb, var(--couleur-cours) 9%, var(--surface)); border: 1px solid color-mix(in srgb, var(--couleur-cours) 30%, var(--trait));
+  border-radius: 12px; padding: 12px 16px; margin: 16px 0;
+}
+.contenu-chapitre .def b.t { font-family: var(--police-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--couleur-cours) 70%, var(--encre)); display: block; margin-bottom: 2px; font-weight: 500; }
+.contenu-chapitre .def p { margin: 0; }
+.contenu-chapitre .warn { border-left: 4px solid var(--accent); padding: 4px 0 4px 14px; margin: 16px 0; color: var(--encre); }
+.contenu-chapitre .warn b.t { font-family: var(--police-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--accent) 45%, var(--encre)); display: block; font-weight: 500; }
+
+/* ---------- Tableaux ---------- */
+.contenu-chapitre .tbl { overflow-x: auto; margin: 16px 0; border: 1px solid var(--trait); border-radius: 12px; background: var(--surface); }
+.contenu-chapitre .tbl table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 520px; }
+.contenu-chapitre .tbl th { text-align: left; font-family: var(--police-mono); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--attenue); font-weight: 500; background: var(--papier); }
+.contenu-chapitre .tbl th, .contenu-chapitre .tbl td { padding: 9px 14px; border-bottom: 1px solid var(--trait); vertical-align: top; }
+.contenu-chapitre .tbl tr:last-child td { border-bottom: 0; }
+.contenu-chapitre .tbl td:first-child { font-weight: 700; }
+.contenu-chapitre .tbl.plain td:first-child { font-weight: 400; }
+.contenu-chapitre .tbl .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* ---------- Figures et schémas SVG ---------- */
+.contenu-chapitre .fig { margin: 22px 0; background: var(--surface); border: 1px solid var(--trait); border-radius: 14px; padding: 16px 16px 12px; box-shadow: 0 2px 0 var(--trait); }
+.contenu-chapitre .fig .scroll { overflow-x: auto; }
+.contenu-chapitre .fig svg { display: block; width: 100%; height: auto; min-width: 540px; }
+.contenu-chapitre .fig.small svg { min-width: 0; max-width: 460px; margin: 0 auto; }
+.contenu-chapitre .fig figcaption { font-size: 14px; color: var(--attenue); margin-top: 8px; }
+.contenu-chapitre .fig figcaption b { font-family: var(--police-mono); font-weight: 500; font-size: 12.5px; color: color-mix(in srgb, var(--couleur-cours) 70%, var(--encre)); margin-right: 6px; }
+.contenu-chapitre .fig svg text { font-family: var(--police-corps); }
+.contenu-chapitre .fig svg .tx { fill: var(--encre); font-size: 13px; }
+.contenu-chapitre .fig svg .tb { fill: var(--encre); font-size: 13.5px; font-weight: 700; }
+.contenu-chapitre .fig svg .tm { fill: var(--attenue); font-size: 11.5px; }
+.contenu-chapitre .fig svg .tc { fill: color-mix(in srgb, var(--couleur-cours) 70%, var(--encre)); font-size: 13px; font-weight: 700; }
+.contenu-chapitre .fig svg .ta { fill: color-mix(in srgb, var(--accent) 45%, var(--encre)); font-size: 13px; font-weight: 700; }
+.contenu-chapitre .fig svg .mono { font-family: var(--police-mono); }
+.contenu-chapitre .fig svg .ln { fill: none; stroke: var(--encre); stroke-width: 1.5; }
+.contenu-chapitre .fig svg .lm { fill: none; stroke: var(--attenue); stroke-width: 1; }
+.contenu-chapitre .fig svg .ld { fill: none; stroke: var(--attenue); stroke-width: 1; stroke-dasharray: 4 4; }
+.contenu-chapitre .fig svg .lc { fill: none; stroke: var(--couleur-cours); stroke-width: 2.25; }
+.contenu-chapitre .fig svg .la { fill: none; stroke: var(--accent); stroke-width: 2.25; }
+.contenu-chapitre .fig svg .fc { fill: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); stroke: var(--couleur-cours); stroke-width: 1.5; }
+.contenu-chapitre .fig svg .fa { fill: color-mix(in srgb, var(--accent) 15%, var(--surface)); stroke: var(--accent); stroke-width: 1.5; }
+.contenu-chapitre .fig svg .fs { fill: var(--couleur-cours); }
+.contenu-chapitre .fig svg .fsa { fill: var(--accent); }
+.contenu-chapitre .fig svg .fp { fill: var(--surface); stroke: var(--encre); stroke-width: 1.5; }
+.contenu-chapitre .fig svg .fg { fill: var(--papier); stroke: var(--attenue); stroke-width: 1; }
+.contenu-chapitre .fig svg .grid { stroke: var(--trait); stroke-width: 1; }
+
+/* ---------- Outil interactif ---------- */
+.contenu-chapitre .tool { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; background: var(--surface); border: 1px solid var(--trait); border-radius: 14px; padding: 16px; margin: 16px 0; }
+.contenu-chapitre .tool label { display: grid; gap: 4px; font-size: 14px; color: var(--attenue); }
+.contenu-chapitre .tool input { font: inherit; font-size: 16px; width: 120px; min-height: 44px; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--trait); background: var(--papier); color: var(--encre); }
+.contenu-chapitre .tool output { font-family: var(--police-mono); font-size: 15px; min-width: 200px; padding-bottom: 8px; }

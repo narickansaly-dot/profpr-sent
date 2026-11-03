@@ -7,8 +7,10 @@ export function EnTete({ prenom }: { prenom: string | null }) {
       <Link href="/" className="logo">App lycée</Link>
       <nav aria-label="Navigation principale"><Link href="/">Mes cours</Link></nav>
       <form action={deconnecter}>
-        <button type="submit" className="bouton bouton-secondaire" aria-label="Se déconnecter">
-          {prenom ?? 'Mon compte'} · Quitter
+        <button type="submit" className="bouton bouton-secondaire bouton-compte">
+          <span className="nom-compte">{prenom ?? 'Mon compte'}</span>
+          <span aria-hidden="true">·</span>
+          <span>Se déconnecter</span>
         </button>
       </form>
     </header>
