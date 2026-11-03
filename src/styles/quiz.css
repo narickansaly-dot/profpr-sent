@@ -117,3 +117,9 @@
 .note-reussie { color: var(--succes); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
 .note-ratee { color: var(--danger-texte); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
 .ligne-faible .bouton { justify-self: start; }
+
+/* Réponse donnée mais pas encore enregistrée */
+.pastilles-questions button.en-attente { border-style: dashed; border-color: var(--danger-texte); }
+.pastilles-questions button.en-attente::after { content: "…"; position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 12px; line-height: 1; background: var(--surface); color: var(--danger-texte); border: 1px solid var(--danger-texte); }
+.compte-a-rebours .precision { font-size: 13px; font-weight: 700; margin-left: 6px; }
