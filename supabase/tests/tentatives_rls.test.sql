@@ -1,5 +1,5 @@
 begin;
-select plan(9);
+select plan(14);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000a1', 'a@test.local'),
@@ -19,14 +19,28 @@ insert into public.tentative_question (tentative_id, ordre, question_id, permuta
   ('60000000-0000-0000-0000-0000000000a1', 1, '40000000-0000-0000-0000-0000000000a1', '{1,0}'),
   ('60000000-0000-0000-0000-0000000000a2', 1, '40000000-0000-0000-0000-0000000000a1', '{0,1}');
 insert into public.progression_chapitre (eleve_id, chapitre_id, meilleure_note, valide) values
-  ('00000000-0000-0000-0000-0000000000a2', '30000000-0000-0000-0000-0000000000a1', 80, true);
+  ('00000000-0000-0000-0000-0000000000a2', '30000000-0000-0000-0000-0000000000a1', 80, true),
+  ('00000000-0000-0000-0000-0000000000a1', '30000000-0000-0000-0000-0000000000a1', 40, false);
+-- Évaluation de cours en cours pour l'élève a2 (ne compte pas dans les tests de l'élève a1).
+insert into public.tentative (id, eleve_id, type, cours_id, nb_questions) values
+  ('60000000-0000-0000-0000-0000000000a3', '00000000-0000-0000-0000-0000000000a2', 'evaluation_cours', '20000000-0000-0000-0000-0000000000a1', 1);
+
+-- Contraintes et suppressions : exécutées en postgres, avant de changer de rôle.
+select throws_ok($$ insert into public.tentative (eleve_id, type, cours_id, chapitre_id, nb_questions)
+  values ('00000000-0000-0000-0000-0000000000a1', 'evaluation_cours', '20000000-0000-0000-0000-0000000000a1', '30000000-0000-0000-0000-0000000000a1', 1) $$,
+  '23514', null, 'une évaluation de cours ne peut pas avoir de chapitre');
+select throws_ok($$ insert into public.tentative (eleve_id, type, cours_id, nb_questions)
+  values ('00000000-0000-0000-0000-0000000000a2', 'evaluation_cours', '20000000-0000-0000-0000-0000000000a1', 1) $$,
+  '23505', null, 'une seule évaluation en cours par élève et par cours');
+select throws_ok($$ delete from public.question where id = '40000000-0000-0000-0000-0000000000a1' $$,
+  '23503', null, 'une question utilisée dans une tentative ne peut pas être supprimée');
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000a1","role":"authenticated"}', true);
 
 select is((select count(*)::int from public.tentative), 1, 'élève : ne voit que ses tentatives');
 select is((select count(*)::int from public.tentative_question), 1, 'élève : ne voit que les questions de ses tentatives');
-select is((select count(*)::int from public.progression_chapitre), 0, 'élève : ne voit pas la progression des autres');
+select is((select eleve_id::text from public.progression_chapitre), '00000000-0000-0000-0000-0000000000a1', 'élève : ne voit qu''une ligne de progression, la sienne');
 select throws_ok($$ insert into public.tentative (eleve_id, type, cours_id, chapitre_id, nb_questions)
   values ('00000000-0000-0000-0000-0000000000a1', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000a1', '30000000-0000-0000-0000-0000000000a1', 1) $$,
   '42501', null, 'élève : ne crée pas de tentative à la main');
@@ -41,6 +55,8 @@ set local role anon;
 select set_config('request.jwt.claims', '{}', true);
 select throws_ok($$ select count(*) from public.tentative $$, '42501', null, 'anonyme : aucun accès aux tentatives');
 select throws_ok($$ select count(*) from public.historique_question $$, '42501', null, 'anonyme : aucun accès à l''historique');
+select is((select count(*)::int from unnest(array['tentative','tentative_question','progression_chapitre','progression_cours','historique_question']) t, unnest(array['SELECT','INSERT','UPDATE','DELETE','TRUNCATE','REFERENCES','TRIGGER','MAINTAIN']) p where has_table_privilege('anon', 'public.'||t, p)), 0, 'anonyme : aucun droit sur les tables de résultats');
+select is((select count(*)::int from unnest(array['tentative','tentative_question','progression_chapitre','progression_cours','historique_question']) t, unnest(array['INSERT','UPDATE','DELETE','TRUNCATE','REFERENCES','TRIGGER','MAINTAIN']) p where has_table_privilege('authenticated', 'public.'||t, p)), 0, 'connecté : aucun droit d''écriture sur les tables de résultats');
 
 select * from finish();
 rollback;
