@@ -145,12 +145,12 @@ create policy "lecture" on public.chapitre for select to authenticated
 
 create policy "lecture" on public.notion for select to authenticated
   using (public.role_actuel() = 'admin_contenu'
-         or public.peut_lire_cours((select cours_id from public.chapitre c where c.id = chapitre_id)));
+         or public.peut_lire_cours((select cours_id from public.chapitre c where c.id = chapitre_id and c.publie)));
 
 create policy "lecture" on public.question for select to authenticated
   using (public.role_actuel() = 'admin_contenu'
          or (statut = 'valide'
-             and public.peut_lire_cours((select cours_id from public.chapitre c where c.id = chapitre_id))));
+             and public.peut_lire_cours((select cours_id from public.chapitre c where c.id = chapitre_id and c.publie))));
 
 create policy "lecture admin" on public.question_corrige for select to authenticated
   using (public.role_actuel() = 'admin_contenu');
@@ -176,3 +176,15 @@ create policy "modifier son profil" on public.profil for update to authenticated
 revoke all on public.profil from anon;
 revoke insert, update, delete on public.profil from authenticated;
 grant update (nom, filiere_id, niveau_code, moins_de_15_ans, onboarding_termine) on public.profil to authenticated;
+
+-- Droits par défaut de Supabase : on retire ce que RLS ne protège pas (TRUNCATE ignore RLS)
+-- et toute écriture anonyme. Les écritures de l'admin du contenu passent par les politiques ci-dessus.
+revoke truncate, references, trigger on all tables in schema public from anon, authenticated;
+revoke all on public.question_corrige from anon;
+revoke insert, update, delete on public.niveau, public.filiere, public.cours, public.chapitre,
+  public.notion, public.question, public.question_corrige from anon;
+alter default privileges in schema public revoke truncate, references, trigger on tables from anon, authenticated;
+
+-- Fonctions d'accès : réservées aux utilisateurs connectés (les politiques RLS en dépendent).
+revoke execute on function public.role_actuel(), public.en_essai(), public.peut_lire_cours(uuid) from public, anon;
+grant execute on function public.role_actuel(), public.en_essai(), public.peut_lire_cours(uuid) to authenticated;
