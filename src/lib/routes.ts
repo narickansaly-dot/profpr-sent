@@ -1,4 +1,4 @@
-export const ROUTES_PUBLIQUES = ['/connexion', '/inscription', '/auth/callback'];
+export const ROUTES_PUBLIQUES = ['/connexion', '/inscription', '/auth/callback', '/auth/confirm'];
 const ROUTES_INVITE = ['/connexion', '/inscription'];
 
 function correspond(chemin: string, route: string) {

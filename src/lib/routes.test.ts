@@ -10,6 +10,7 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/connexion', false)).toBeNull();
     expect(redirectionPour('/inscription', false)).toBeNull();
     expect(redirectionPour('/auth/callback', false)).toBeNull();
+    expect(redirectionPour('/auth/confirm', false)).toBeNull();
   });
   it('renvoie un élève connecté vers l’accueil depuis connexion et inscription', () => {
     expect(redirectionPour('/connexion', true)).toBe('/');
