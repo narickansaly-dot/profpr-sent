@@ -1,5 +1,5 @@
 begin;
-select plan(44);
+select plan(49);
 
 insert into public.filiere (id, voie, code, nom) values
   ('10000000-0000-0000-0000-0000000000b1', 'technologique', 'CRR', 'Filière correction');
@@ -39,6 +39,12 @@ select ok(prive.corriger('40000000-0000-0000-0000-0000000000b7', '["5,4"]'), 'nu
 select ok(prive.corriger('40000000-0000-0000-0000-0000000000b7', '["5.40"]'), 'numérique sans marge : zéro final');
 select ok(not prive.corriger('40000000-0000-0000-0000-0000000000b7', '["5.5"]'), 'numérique sans marge : valeur différente');
 select ok(prive.corriger('40000000-0000-0000-0000-0000000000b8', '["76"]'), 'numérique : deuxième valeur acceptée');
+
+select isnt(prive.normaliser('Na+'), prive.normaliser('Na'), 'normaliser : Na+ distinct de Na');
+select isnt(prive.normaliser('Ca2+'), prive.normaliser('Ca2'), 'normaliser : Ca2+ distinct de Ca2');
+select isnt(prive.normaliser('Cl-'), prive.normaliser('Cl'), 'normaliser : Cl- distinct de Cl');
+select isnt(prive.normaliser('70%'), prive.normaliser('70'), 'normaliser : 70% distinct de 70');
+select is(prive.normaliser('a-b-c'), 'a b c', 'normaliser : traits d''union enchaînés');
 
 -- QCM à une réponse
 select ok(prive.corriger('40000000-0000-0000-0000-0000000000b1', '[1]'), 'qcm_unique : bonne réponse');

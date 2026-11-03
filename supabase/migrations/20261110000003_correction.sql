@@ -7,15 +7,18 @@ revoke all on schema prive from public, anon, authenticated;
 
 create function prive.normaliser(p text) returns text
 language sql stable set search_path = '' as $$
-  -- unaccent transforme « » en << >> et ’ en ' : tout ce qui n'est pas alphanumérique est donc retiré aux deux bords après unaccent.
-  -- Le « - » initial est conservé (nombres négatifs) ; les traits d'union internes deviennent des espaces.
+  -- Les guillemets français sont retirés avant unaccent (qui les changerait en << >>).
+  -- Seule la ponctuation de phrase est retirée aux bords : + - % ° = < > restent significatifs (Na+, Cl-, 70 %).
+  -- Un trait d'union entre deux caractères de mot devient un espace (chaînes comprises) ; un « - » final est conservé.
   select regexp_replace(
            regexp_replace(
              regexp_replace(
-               regexp_replace(lower(extensions.unaccent(trim(coalesce(p, '')))), '(\w)[-–—](\w)', '\1 \2', 'g'),
+               regexp_replace(
+                 lower(extensions.unaccent(translate(trim(coalesce(p, '')), '«»‹›', ''))),
+                 '(\w)[-–—](?=\w)', '\1 ', 'g'),
                '\s+', ' ', 'g'),
-             '[^[:alnum:]]+$', ''),
-           '^[^[:alnum:]-]+', '')
+             '[\s.!?;:,»"''’”)\]…]+$', ''),
+           '^[\s«"''‘“(\[¿¡]+', '')
 $$;
 
 create function prive.en_nombre(p text) returns numeric
