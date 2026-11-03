@@ -12,7 +12,7 @@ export function CarteEvaluation({ coursSlug, etat, meilleureNote }: { coursSlug:
       <p>{EVALUATION.nbQuestions} questions sur tout le cours, {EVALUATION.dureeMinutes} minutes, {EVALUATION.essais} essais.</p>
       {meilleureNote != null && <p>Ta meilleure note : <strong>{formaterNote(meilleureNote)}</strong></p>}
       {etat.etat === 'verrouillee' && (
-        <p>🔒 Valide encore {etat.chapitresRestants} chapitre{etat.chapitresRestants > 1 ? 's' : ''} pour la débloquer.</p>
+        <p><span aria-hidden="true">🔒</span> Valide encore {etat.chapitresRestants} chapitre{etat.chapitresRestants > 1 ? 's' : ''} pour la débloquer.</p>
       )}
       {etat.etat === 'en_cours' && <Link className="bouton bouton-principal" href={`/tentative/${etat.tentativeId}`}>Reprendre l’évaluation</Link>}
       {etat.etat === 'disponible' && (
@@ -20,7 +20,7 @@ export function CarteEvaluation({ coursSlug, etat, meilleureNote }: { coursSlug:
           Passer l’évaluation ({etat.essaisRestants} essai{etat.essaisRestants > 1 ? 's' : ''} restant{etat.essaisRestants > 1 ? 's' : ''})
         </Link>
       )}
-      {etat.etat === 'attente' && <p>⏳ Prochain essai possible {dateHeure.format(etat.disponibleLe)}.</p>}
+      {etat.etat === 'attente' && <p><span aria-hidden="true">⏳</span> Prochain essai possible {dateHeure.format(etat.disponibleLe)}.</p>}
       {etat.etat === 'epuisee' && <p>Tu as utilisé tes {EVALUATION.essais} essais.</p>}
     </section>
   );

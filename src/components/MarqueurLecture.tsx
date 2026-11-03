@@ -11,7 +11,7 @@ export function MarqueurLecture({ chapitreId }: { chapitreId: string }) {
     if (!element) return;
     const observateur = new IntersectionObserver(([entree]) => {
       if (entree.isIntersecting) {
-        void marquerChapitreLu(chapitreId);
+        void marquerChapitreLu(chapitreId).catch(() => {});
         observateur.disconnect();
       }
     });
