@@ -83,6 +83,32 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"historique_question": {
+                  Row: {
+                    "derniere_reponse": string | null,"eleve_id": string,"question_id": string,"ratee": number,"vue": number
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "derniere_reponse"?: string | null,"eleve_id": string,"question_id": string,"ratee"?: number,"vue"?: number
+                  }
+                  Update: {
+                    "derniere_reponse"?: string | null,"eleve_id"?: string,"question_id"?: string,"ratee"?: number,"vue"?: number
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "historique_question_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "historique_question_question_id_fkey"
+      columns: ["question_id"]
+isOneToOne: false
+      referencedRelation: "question"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"niveau": {
                   Row: {
                     "code": string,"nom": string,"ordre": number
@@ -143,6 +169,58 @@ isOneToOne: false
       referencedColumns: ["code"]
     }
                   ]
+                },"progression_chapitre": {
+                  Row: {
+                    "chapitre_id": string,"eleve_id": string,"lu": boolean,"meilleure_note": number | null,"valide": boolean,"valide_le": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "chapitre_id": string,"eleve_id": string,"lu"?: boolean,"meilleure_note"?: number | null,"valide"?: boolean,"valide_le"?: string | null
+                  }
+                  Update: {
+                    "chapitre_id"?: string,"eleve_id"?: string,"lu"?: boolean,"meilleure_note"?: number | null,"valide"?: boolean,"valide_le"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "progression_chapitre_chapitre_id_fkey"
+      columns: ["chapitre_id"]
+isOneToOne: false
+      referencedRelation: "chapitre"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "progression_chapitre_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"progression_cours": {
+                  Row: {
+                    "cours_id": string,"dernier_essai": string | null,"eleve_id": string,"essais": number,"meilleure_note": number | null,"valide": boolean,"valide_le": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cours_id": string,"dernier_essai"?: string | null,"eleve_id": string,"essais"?: number,"meilleure_note"?: number | null,"valide"?: boolean,"valide_le"?: string | null
+                  }
+                  Update: {
+                    "cours_id"?: string,"dernier_essai"?: string | null,"eleve_id"?: string,"essais"?: number,"meilleure_note"?: number | null,"valide"?: boolean,"valide_le"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "progression_cours_cours_id_fkey"
+      columns: ["cours_id"]
+isOneToOne: false
+      referencedRelation: "cours"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "progression_cours_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"question": {
                   Row: {
                     "chapitre_id": string,"cree_le": string,"difficulte": number,"enonce": string,"id": string,"modifie_le": string,"notion_id": string | null,"propositions": NonNullable<Json>,"source": string | null,"statut": Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"]
@@ -189,6 +267,64 @@ isOneToOne: true
       referencedColumns: ["id"]
     }
                   ]
+                },"tentative": {
+                  Row: {
+                    "chapitre_id": string | null,"cours_id": string,"date_limite": string | null,"debut": string,"eleve_id": string,"fin": string | null,"id": string,"nb_questions": number,"note": number | null,"reussie": boolean | null,"statut": Database["public"]['Enums']["statut_tentative_t"],"type": Database["public"]['Enums']["type_tentative_t"]
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "chapitre_id"?: string | null,"cours_id": string,"date_limite"?: string | null,"debut"?: string,"eleve_id": string,"fin"?: string | null,"id"?: string,"nb_questions": number,"note"?: number | null,"reussie"?: boolean | null,"statut"?: Database["public"]['Enums']["statut_tentative_t"],"type": Database["public"]['Enums']["type_tentative_t"]
+                  }
+                  Update: {
+                    "chapitre_id"?: string | null,"cours_id"?: string,"date_limite"?: string | null,"debut"?: string,"eleve_id"?: string,"fin"?: string | null,"id"?: string,"nb_questions"?: number,"note"?: number | null,"reussie"?: boolean | null,"statut"?: Database["public"]['Enums']["statut_tentative_t"],"type"?: Database["public"]['Enums']["type_tentative_t"]
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "tentative_chapitre_id_fkey"
+      columns: ["chapitre_id"]
+isOneToOne: false
+      referencedRelation: "chapitre"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "tentative_cours_id_fkey"
+      columns: ["cours_id"]
+isOneToOne: false
+      referencedRelation: "cours"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "tentative_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"tentative_question": {
+                  Row: {
+                    "correcte": boolean | null,"ordre": number,"permutation": (number)[],"question_id": string,"repondu_le": string | null,"reponse": Json | null,"tentative_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "correcte"?: boolean | null,"ordre": number,"permutation"?: (number)[],"question_id": string,"repondu_le"?: string | null,"reponse"?: Json | null,"tentative_id": string
+                  }
+                  Update: {
+                    "correcte"?: boolean | null,"ordre"?: number,"permutation"?: (number)[],"question_id"?: string,"repondu_le"?: string | null,"reponse"?: Json | null,"tentative_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "tentative_question_question_id_fkey"
+      columns: ["question_id"]
+isOneToOne: false
+      referencedRelation: "question"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "tentative_question_tentative_id_fkey"
+      columns: ["tentative_id"]
+isOneToOne: false
+      referencedRelation: "tentative"
+      referencedColumns: ["id"]
+    }
+                  ]
                 }
           }
           Views: {
@@ -206,7 +342,7 @@ isOneToOne: true
                            }
           }
           Enums: {
-            "role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_question_t": "brouillon"|"a_relire"|"valide","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","voie_t": "generale"|"technologique"|"professionnelle"
+            "role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_question_t": "brouillon"|"a_relire"|"valide","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -326,7 +462,7 @@ export const Constants = {
           }
         },"public": {
           Enums: {
-            "role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_question_t": ["brouillon", "a_relire", "valide"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"voie_t": ["generale", "technologique", "professionnelle"]
+            "role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_question_t": ["brouillon", "a_relire", "valide"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
           }
         }
 } as const
