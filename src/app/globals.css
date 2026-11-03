@@ -61,13 +61,12 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 .logo { display: inline-flex; align-items: center; min-height: 44px; font: 700 22px var(--police-titres); color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); text-decoration: none; }
 .banniere { margin: 16px auto; max-width: 860px; padding: 12px 16px; border-radius: var(--rayon); background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
 .banniere-fin { background: color-mix(in srgb, var(--danger) 12%, var(--surface)); }
-@media (max-width: 520px) { .en-tete nav { display: none; } .en-tete { padding-inline: 12px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
-
-@keyframes apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
-
 .bouton-compte { max-width: 100%; min-width: 0; padding: 0 14px; }
 .en-tete form { min-width: 0; }
 .nom-compte { min-width: 0; max-width: 8ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (min-width: 521px) { .nom-compte { max-width: 16ch; } }
 .bouton-compte span:last-child { white-space: nowrap; }
+@media (max-width: 520px) { .en-tete nav { display: none; } .en-tete { padding-inline: 12px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
+
+@keyframes apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
