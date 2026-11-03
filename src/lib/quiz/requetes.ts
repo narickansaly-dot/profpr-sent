@@ -25,6 +25,12 @@ export const lireTentative = cache(async (id: string) => {
   return { ...t, questions: questions as unknown as QuestionAffichee[] };
 });
 
+export type LigneCorrection = {
+  ordre: number; type: TypeQuestion; enonce: string; propositions: string[];
+  reponse: ReponseAffichee | null; bonnes_reponses: ReponseAffichee | null;
+  reponses_acceptees: string[]; explication: string; correcte: boolean;
+};
+
 export async function lireCorrection(id: string) {
   if (!estUuid(id)) return null;
   const supabase = await creerClientServeur();
@@ -33,7 +39,8 @@ export async function lireCorrection(id: string) {
   const { data: t } = await supabase.from('tentative')
     .select('id, type, statut, nb_questions, note, reussie, fin, cours(slug, titre, couleur), chapitre(id, slug, titre)')
     .eq('id', id).single();
-  return t ? { ...t, lignes } : null;
+  // La RPC renvoie du Json brut : on le type ici, en un seul endroit.
+  return t ? { ...t, lignes: lignes as unknown as LigneCorrection[] } : null;
 }
 
 export async function infosQuizChapitre(chapitreId: string) {
