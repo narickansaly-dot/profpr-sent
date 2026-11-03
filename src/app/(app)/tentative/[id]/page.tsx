@@ -1,5 +1,5 @@
 import { notFound, redirect } from 'next/navigation';
-import { lireTentative } from '@/lib/quiz/requetes';
+import { lireStatutTentative, lireTentative } from '@/lib/quiz/requetes';
 import { LecteurTentative } from '@/components/LecteurTentative';
 
 /** Horloge du serveur, lue au rendu de la requête. */
@@ -11,7 +11,12 @@ export default async function PageTentative({ params, searchParams }: { params: 
   const { id } = await params;
   const { erreur } = await searchParams;
   const t = await lireTentative(id);
-  if (!t) notFound();
+  if (!t) {
+    // lireTentative renvoie null sur toute erreur, y compris « tentative terminée » (quiz fini ou temps écoulé).
+    const statut = await lireStatutTentative(id);
+    if (statut && statut.statut !== 'en_cours') redirect(`/tentative/${id}/resultat`);
+    notFound();
+  }
   if (t.statut !== 'en_cours') redirect(`/tentative/${id}/resultat`);
   const titre = t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre}` : `Quiz · ${t.chapitre?.titre}`;
   return (

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
-import { lireCorrection, lireTentative } from '@/lib/quiz/requetes';
+import { lireCorrection, lireStatutTentative } from '@/lib/quiz/requetes';
 import { LONGUEURS_QUIZ, SEUIL_REUSSITE } from '@/lib/quiz/regles';
 import { messageErreurQuiz } from '@/lib/quiz/erreurs';
 import { formaterNote } from '@/lib/quiz/reponse';
@@ -13,16 +13,23 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const correction = await lireCorrection(id);
   if (!correction) {
-    const t = await lireTentative(id);
-    if (t?.statut === 'en_cours') redirect(`/tentative/${id}`);
+    // Repli : on lit le statut directement, lireTentative refuse les tentatives terminées.
+    const t = await lireStatutTentative(id);
     if (!t) notFound();
-    // Correction refusée : une évaluation du cours est ouverte.
+    if (t.statut === 'en_cours') redirect(`/tentative/${id}`);
+    const lienCours = t.cours ? `/cours/${t.cours.slug}` : '/';
     return (
       <div style={{ '--couleur-cours': t.cours?.couleur } as React.CSSProperties}>
         <section className="carte">
-          <h1>Correction indisponible</h1>
-          <p>{messageErreurQuiz('evaluation_en_cours')}</p>
-          <Link className="bouton bouton-secondaire" href={t.cours ? `/cours/${t.cours.slug}` : '/'}>Retour au cours</Link>
+          {t.evaluationOuverte ? (
+            <>
+              <h1>Correction indisponible</h1>
+              <p>{messageErreurQuiz('evaluation_en_cours')}</p>
+            </>
+          ) : (
+            <p>La correction n’a pas pu se charger. Recharge la page dans un instant.</p>
+          )}
+          <Link className="bouton bouton-secondaire" href={lienCours}>Retour au cours</Link>
         </section>
       </div>
     );

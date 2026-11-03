@@ -9,6 +9,7 @@ const MESSAGES: Record<string, string> = {
   tentative_introuvable: 'Ce quiz est introuvable.',
   question_hors_tentative: 'Cette question ne fait pas partie de ton quiz.',
   reponse_invalide: 'Ta réponse n’a pas pu être lue. Réessaie.',
+  tentative_terminee: 'Ce quiz est terminé.',
   tentative_en_cours: 'Termine d’abord ce quiz pour voir la correction.',
   evaluation_en_cours: 'Termine d’abord ton évaluation en cours : les quiz de ce cours sont fermés pendant l’évaluation.',
 };

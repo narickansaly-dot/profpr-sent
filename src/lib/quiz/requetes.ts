@@ -25,6 +25,25 @@ export const lireTentative = cache(async (id: string) => {
   return { ...t, questions: questions as unknown as QuestionAffichee[] };
 });
 
+/**
+ * Statut d'une tentative lu directement dans la table (RLS : ses propres lignes seulement).
+ * Sert de repli quand `lireTentative` ou `lireCorrection` échouent, sans passer par une RPC qui refuse les tentatives terminées.
+ */
+export async function lireStatutTentative(id: string) {
+  if (!estUuid(id)) return null;
+  const supabase = await creerClientServeur();
+  const { data: t } = await supabase.from('tentative')
+    .select('statut, cours_id, cours(slug, titre, couleur)').eq('id', id).maybeSingle();
+  if (!t) return null;
+  let evaluationOuverte = false;
+  if (t.statut !== 'en_cours') {
+    const { data: ouverte } = await supabase.from('tentative').select('id')
+      .eq('type', 'evaluation_cours').eq('statut', 'en_cours').eq('cours_id', t.cours_id).limit(1);
+    evaluationOuverte = (ouverte?.length ?? 0) > 0;
+  }
+  return { statut: t.statut, cours: t.cours, evaluationOuverte };
+}
+
 export type LigneCorrection = {
   ordre: number; type: TypeQuestion; enonce: string; propositions: string[];
   reponse: ReponseAffichee | null; bonnes_reponses: ReponseAffichee | null;
