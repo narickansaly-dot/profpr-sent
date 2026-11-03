@@ -6,9 +6,10 @@ type Props = {
   questionId: string; type: TypeQuestion; propositions: string[];
   reponse: ReponseAffichee | null;
   onChange: (reponse: ReponseAffichee | null, enregistrerTout: boolean) => void;
+  onBlur?: () => void;
 };
 
-export function ChampReponse({ questionId, type, propositions, reponse, onChange }: Props) {
+export function ChampReponse({ questionId, type, propositions, reponse, onChange, onBlur }: Props) {
   switch (type) {
     case 'qcm_unique':
       return (
@@ -50,7 +51,7 @@ export function ChampReponse({ questionId, type, propositions, reponse, onChange
         <label className="reponse-courte">
           Ta réponse
           <input type="text" maxLength={200} autoComplete="off" autoCapitalize="off" spellCheck={false}
-            value={(reponse as string[] | null)?.[0] ?? ''}
+            value={(reponse as string[] | null)?.[0] ?? ''} onBlur={onBlur}
             onChange={(e) => onChange(e.target.value === '' ? null : [e.target.value], false)} />
         </label>
       );

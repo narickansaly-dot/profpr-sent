@@ -10,7 +10,7 @@ export function CompteARebours({ dateLimite, serveurMaintenant, onFin }: Props) 
   const [restant, setRestant] = useState<number | null>(null);
   const finAppelee = useRef(false);
   const rappel = useRef(onFin);
-  rappel.current = onFin;
+  useEffect(() => { rappel.current = onFin; });
 
   useEffect(() => {
     const ecart = serveurMaintenant - Date.now();

@@ -38,9 +38,11 @@
 .lecteur-barre { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-weight: 700; }
 .lecteur-position { margin-right: auto; }
 .compte-a-rebours { font-variant-numeric: tabular-nums; padding: 4px 12px; border-radius: 999px; background: var(--papier); border: 2px solid var(--trait); }
-.compte-a-rebours.bientot { border-color: var(--danger); color: var(--danger); }
+.lecteur, .liste-correction { --danger-texte: color-mix(in srgb, var(--danger) 88%, #000); }
+@media (prefers-color-scheme: dark) { .lecteur, .liste-correction { --danger-texte: var(--danger); } }
+.compte-a-rebours.bientot { border-color: var(--danger-texte); color: var(--danger-texte); background: var(--surface); }
 .sauvegarde { font-size: 14px; font-weight: 400; color: var(--attenue); }
-.sauvegarde-erreur { color: var(--danger); font-weight: 700; }
+.sauvegarde-erreur { color: var(--danger-texte); font-weight: 700; }
 .question { border: 1px solid var(--trait); margin: 0; display: grid; gap: 16px; }
 .question-enonce { font: 700 clamp(19px, 3.6vw, 23px)/1.35 var(--police-titres); padding: 0; float: left; width: 100%; }
 .choix { display: grid; gap: 10px; clear: both; }
@@ -68,7 +70,7 @@
 .correction.faux { border-left-color: var(--danger); }
 .correction-verdict { margin: 0; font-weight: 700; }
 .correction.juste .correction-verdict { color: var(--succes); }
-.correction.faux .correction-verdict { color: var(--danger); }
+.correction.faux .correction-verdict { color: var(--danger-texte); }
 .correction-explication { color: var(--attenue); }
 @keyframes rebond { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
 
@@ -83,3 +85,12 @@
   .resultat.reussi .resultat-note { animation: none; }
   .option, .pastilles-questions button { transition: none; }
 }
+
+.question:focus { outline: none; }
+.question:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.question:disabled .option { opacity: .6; cursor: progress; }
+.bouton[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.pastilles-questions button { position: relative; }
+.pastilles-questions button.repondue { border-width: 3px; }
+.pastilles-questions button.repondue::after { content: "✓"; position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 12px; line-height: 1; background: var(--succes); color: var(--surface); }
