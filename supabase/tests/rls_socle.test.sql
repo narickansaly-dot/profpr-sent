@@ -34,12 +34,12 @@ insert into public.question_corrige (question_id, bonnes_reponses) values
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000001","role":"authenticated"}', true);
 
-select is((select count(*)::int from public.chapitre), 1, 'élève en essai : voit seulement les chapitres publiés des cours publiés');
-select is((select count(*)::int from public.question), 1, 'élève : voit seulement les questions validées des chapitres publiés');
+select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 1, 'élève en essai : voit seulement les chapitres publiés des cours publiés');
+select is((select count(*)::int from public.question where chapitre_id in ('30000000-0000-0000-0000-000000000001','30000000-0000-0000-0000-000000000002','30000000-0000-0000-0000-000000000003')), 1, 'élève : voit seulement les questions validées des chapitres publiés');
 select is((select count(*)::int from public.question where id = '40000000-0000-0000-0000-000000000003'), 0, 'élève : ne voit pas une question validée d''un chapitre brouillon');
-select is((select count(*)::int from public.notion), 1, 'élève en essai : voit les notions des chapitres publiés');
-select is((select count(*)::int from public.question_corrige), 0, 'élève : ne lit aucun corrigé');
-select is((select count(*)::int from public.profil), 1, 'élève : ne voit que son propre profil');
+select is((select count(*)::int from public.notion where chapitre_id in ('30000000-0000-0000-0000-000000000001','30000000-0000-0000-0000-000000000002','30000000-0000-0000-0000-000000000003')), 1, 'élève en essai : voit les notions des chapitres publiés');
+select is((select count(*)::int from public.question_corrige where question_id in ('40000000-0000-0000-0000-000000000001','40000000-0000-0000-0000-000000000002','40000000-0000-0000-0000-000000000003')), 0, 'élève : ne lit aucun corrigé');
+select is((select count(*)::int from public.profil where id in ('00000000-0000-0000-0000-000000000001','00000000-0000-0000-0000-000000000002','00000000-0000-0000-0000-000000000003','00000000-0000-0000-0000-000000000004')), 1, 'élève : ne voit que son propre profil');
 select is((select count(*)::int from public.cours where id = '20000000-0000-0000-0000-000000000002'), 0, 'élève : ne voit pas un cours non publié');
 select is(public.peut_lire_cours('20000000-0000-0000-0000-000000000002'), false, 'élève en essai : peut_lire_cours faux sur un cours non publié');
 select lives_ok($$ update public.profil set nom = 'Léa' where id = '00000000-0000-0000-0000-000000000001' $$, 'élève : peut modifier son nom');
@@ -57,21 +57,21 @@ select throws_ok($$ truncate public.question_corrige $$, '42501', null, 'élève
 -- Élève dont l'essai est terminé (pas encore d'abonnement ni de cours gratuit : étape 5)
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000003","role":"authenticated"}', true);
 select is((select nom from public.profil where id = '00000000-0000-0000-0000-000000000003'), null, 'le profil de l''autre élève est intact');
-select is((select count(*)::int from public.chapitre), 0, 'élève hors essai : aucun chapitre');
-select is((select count(*)::int from public.question), 0, 'élève hors essai : aucune question');
-select is((select count(*)::int from public.notion), 0, 'élève hors essai : aucune notion');
-select is((select count(*)::int from public.cours), 1, 'élève hors essai : voit quand même le catalogue');
+select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 0, 'élève hors essai : aucun chapitre');
+select is((select count(*)::int from public.question where chapitre_id in ('30000000-0000-0000-0000-000000000001','30000000-0000-0000-0000-000000000002','30000000-0000-0000-0000-000000000003')), 0, 'élève hors essai : aucune question');
+select is((select count(*)::int from public.notion where chapitre_id in ('30000000-0000-0000-0000-000000000001','30000000-0000-0000-0000-000000000002','30000000-0000-0000-0000-000000000003')), 0, 'élève hors essai : aucune notion');
+select is((select count(*)::int from public.cours where id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 1, 'élève hors essai : voit quand même le catalogue');
 
 -- Enseignant
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000004","role":"authenticated"}', true);
-select is((select count(*)::int from public.chapitre), 1, 'enseignant : lit les chapitres publiés des cours publiés');
-select is((select count(*)::int from public.question), 1, 'enseignant : ne voit pas les questions brouillon');
-select is((select count(*)::int from public.question_corrige), 0, 'enseignant : ne lit aucun corrigé');
+select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 1, 'enseignant : lit les chapitres publiés des cours publiés');
+select is((select count(*)::int from public.question where chapitre_id in ('30000000-0000-0000-0000-000000000001','30000000-0000-0000-0000-000000000002','30000000-0000-0000-0000-000000000003')), 1, 'enseignant : ne voit pas les questions brouillon');
+select is((select count(*)::int from public.question_corrige where question_id in ('40000000-0000-0000-0000-000000000001','40000000-0000-0000-0000-000000000002','40000000-0000-0000-0000-000000000003')), 0, 'enseignant : ne lit aucun corrigé');
 
 -- Admin du contenu
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000002","role":"authenticated"}', true);
-select is((select count(*)::int from public.chapitre), 3, 'admin : voit aussi les brouillons et les cours non publiés');
-select is((select count(*)::int from public.question_corrige), 2, 'admin : lit les corrigés');
+select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 3, 'admin : voit aussi les brouillons et les cours non publiés');
+select is((select count(*)::int from public.question_corrige where question_id in ('40000000-0000-0000-0000-000000000001','40000000-0000-0000-0000-000000000002','40000000-0000-0000-0000-000000000003')), 2, 'admin : lit les corrigés');
 select lives_ok($$ insert into public.notion (chapitre_id, nom) values ('30000000-0000-0000-0000-000000000001', 'Notion admin') $$, 'admin : peut écrire le contenu');
 
 -- Visiteur anonyme
