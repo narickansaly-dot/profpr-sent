@@ -58,9 +58,17 @@ select throws_ok($$ select * from public.correction_tentative((select id from qz
   'correction d''un ancien quiz fermée pendant l''évaluation');
 
 -- Répondre juste à 30 questions, puis dépasser le temps : clôture « expiree », corrigée avec les réponses données.
+-- La permutation n'est plus lisible par l'élève : l'indice affiché de la bonne réponse est calculé en postgres.
+reset role;
+create temporary table aff as
+  select tq.tentative_id, tq.question_id, tq.ordre, array_position(tq.permutation, 0::smallint) - 1 as a0
+    from public.tentative_question tq where tq.tentative_id = (select id from e);
+grant all on aff to authenticated;
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000d1","role":"authenticated"}', true);
 do $$ begin
-  perform public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(array_position(tq.permutation, 0::smallint) - 1))
-    from public.tentative_question tq where tq.tentative_id = (select id from e) and tq.ordre <= 30;
+  perform public.repondre(a.tentative_id, a.question_id, jsonb_build_array(a.a0))
+    from aff a where a.tentative_id = (select id from e) and a.ordre <= 30;
 end $$;
 reset role;
 update public.tentative set date_limite = now() - interval '1 minute' where id = (select id from e);

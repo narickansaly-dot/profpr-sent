@@ -30,6 +30,8 @@ create temporary table t2 (id uuid);
 create temporary table t3 (id uuid);
 create temporary table t4 (id uuid);
 grant all on t1, t2, t3, t4 to authenticated;
+create temporary table aff (tentative_id uuid, question_id uuid, ordre smallint, a0 int, a1 int);
+grant all on aff to authenticated;
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}', true);
@@ -46,15 +48,22 @@ select is((select count(*)::int from public.questions_tentative((select id from 
 select ok((select bool_and(jsonb_array_length(propositions) = 2 and reponse is null) from public.questions_tentative((select id from t1))), 'propositions affichées, aucune réponse');
 select is((select count(*)::int from public.question_corrige), 0, 'toujours aucun corrigé lisible directement');
 
--- Répondre juste à 12 questions sur 16 (75 %) ; la bonne réponse affichée se déduit de la permutation.
+-- La permutation n'est plus lisible par l'élève : on calcule l'indice affiché des réponses 0 et 1 en postgres.
+reset role;
+insert into aff select tq.tentative_id, tq.question_id, tq.ordre, array_position(tq.permutation, 0::smallint) - 1, array_position(tq.permutation, 1::smallint) - 1
+  from public.tentative_question tq where tq.tentative_id = (select id from t1);
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}', true);
+
+-- Répondre juste à 12 questions sur 16 (75 %) ; la bonne réponse affichée vient de aff (calculée depuis la permutation).
 -- Les appels en masse passent par des blocs do : un select imprimerait des lignes « ok » qui perturbent la sortie TAP.
-select is(public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(array_position(tq.permutation, 0::smallint) - 1)), 'ok', 'repondre renvoie ok')
-  from public.tentative_question tq where tq.tentative_id = (select id from t1) and tq.ordre = 1;
+select is(public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(tq.a0)), 'ok', 'repondre renvoie ok')
+  from aff tq where tq.tentative_id = (select id from t1) and tq.ordre = 1;
 do $$ begin
-  perform public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(array_position(tq.permutation, 0::smallint) - 1))
-    from public.tentative_question tq where tq.tentative_id = (select id from t1) and tq.ordre between 2 and 12;
-  perform public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(array_position(tq.permutation, 1::smallint) - 1))
-    from public.tentative_question tq where tq.tentative_id = (select id from t1) and tq.ordre between 13 and 16;
+  perform public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(tq.a0))
+    from aff tq where tq.tentative_id = (select id from t1) and tq.ordre between 2 and 12;
+  perform public.repondre(tq.tentative_id, tq.question_id, jsonb_build_array(tq.a1))
+    from aff tq where tq.tentative_id = (select id from t1) and tq.ordre between 13 and 16;
 end $$;
 select throws_ok(format($$ select public.repondre(%L, %L, '[5]') $$, (select id from t1),
   (select question_id from public.tentative_question where tentative_id = (select id from t1) and ordre = 1)),
@@ -73,6 +82,12 @@ select is((select count(*)::int from public.correction_tentative((select id from
 
 -- Le quiz suivant reprend en priorité les 4 questions ratées (plus aucune n'est jamais vue).
 insert into t2 select public.demarrer_quiz('30000000-0000-0000-0000-0000000000c1', 15);
+-- La permutation n'est plus lisible par l'élève : on calcule l'indice affiché des réponses 0 et 1 en postgres.
+reset role;
+insert into aff select tq.tentative_id, tq.question_id, tq.ordre, array_position(tq.permutation, 0::smallint) - 1, array_position(tq.permutation, 1::smallint) - 1
+  from public.tentative_question tq where tq.tentative_id = (select id from t2);
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}', true);
 select is((select count(*)::int from public.tentative_question tq join public.historique_question h on h.question_id = tq.question_id
   where tq.tentative_id = (select id from t2) and h.ratee > 0), 4, 'les questions ratées sont reprises en priorité');
 
@@ -82,8 +97,8 @@ select is(public.demarrer_quiz('30000000-0000-0000-0000-0000000000c1', 20), (sel
 -- t2 : on rate encore les 4 déjà ratées, on réussit le reste -> 11/15 (73,33 %), sous la meilleure note.
 do $$ begin
   perform public.repondre(tq.tentative_id, tq.question_id,
-    jsonb_build_array(array_position(tq.permutation, (case when coalesce(h.ratee, 0) > 0 then 1 else 0 end)::smallint) - 1))
-  from public.tentative_question tq
+    jsonb_build_array(case when coalesce(h.ratee, 0) > 0 then tq.a1 else tq.a0 end))
+  from aff tq
   left join public.historique_question h on h.question_id = tq.question_id
   where tq.tentative_id = (select id from t2);
   perform public.terminer_tentative((select id from t2));
@@ -105,6 +120,12 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 
 -- Priorité : les 3 jamais vues et les 4 ratées passent avant les autres.
 insert into t3 select public.demarrer_quiz('30000000-0000-0000-0000-0000000000c1', 15);
+-- La permutation n'est plus lisible par l'élève : on calcule l'indice affiché des réponses 0 et 1 en postgres.
+reset role;
+insert into aff select tq.tentative_id, tq.question_id, tq.ordre, array_position(tq.permutation, 0::smallint) - 1, array_position(tq.permutation, 1::smallint) - 1
+  from public.tentative_question tq where tq.tentative_id = (select id from t3);
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000c1","role":"authenticated"}', true);
 select is((select count(*)::int from public.tentative_question where tentative_id = (select id from t3)
   and question_id in ('40000000-0000-0000-0000-0000000000d1', '40000000-0000-0000-0000-0000000000d2', '40000000-0000-0000-0000-0000000000d3')), 3, 'les 3 questions jamais vues sont tirées');
 select is((select count(*)::int from public.tentative_question tq join public.historique_question h on h.question_id = tq.question_id
@@ -113,8 +134,8 @@ select is((select count(*)::int from public.tentative_question tq join public.hi
 -- t3 : mêmes 4 ratées de nouveau fausses, le reste juste, puis clôture.
 do $$ begin
   perform public.repondre(tq.tentative_id, tq.question_id,
-    jsonb_build_array(array_position(tq.permutation, (case when coalesce(h.ratee, 0) > 0 then 1 else 0 end)::smallint) - 1))
-  from public.tentative_question tq
+    jsonb_build_array(case when coalesce(h.ratee, 0) > 0 then tq.a1 else tq.a0 end))
+  from aff tq
   left join public.historique_question h on h.question_id = tq.question_id
   where tq.tentative_id = (select id from t3);
   perform public.terminer_tentative((select id from t3));
