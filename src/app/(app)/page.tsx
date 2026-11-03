@@ -9,14 +9,14 @@ export const metadata = { title: 'Tableau de bord' };
 const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', timeZone: 'Europe/Paris' });
 
 export default async function Accueil() {
-  let erreurTdb = false;
-  const [cours, tdb] = await Promise.all([
+  const [cours, { tdb, erreur: erreurTdb }] = await Promise.all([
     listerCoursDuProfil(),
-    lireTableauDeBord().catch(() => {
-      erreurTdb = true;
-      return null;
-    }),
+    lireTableauDeBord().then(
+      (tdb) => ({ tdb, erreur: false }),
+      () => ({ tdb: null, erreur: true }),
+    ),
   ]);
+  const examens = (tdb?.examens ?? []).filter((e) => e.cours);
   return (
     <div className="tableau-de-bord">
       <header className="tdb-entete">
@@ -41,11 +41,11 @@ export default async function Accueil() {
 
       <section aria-labelledby="titre-examens">
         <h2 id="titre-examens">Mes notes d’examen</h2>
-        {!tdb || tdb.examens.length === 0 ? (
-          <p className="vide">Pas encore d’évaluation passée. Valide les chapitres d’un cours pour débloquer la sienne.</p>
+        {examens.length === 0 ? (
+          erreurTdb ? null : <p className="vide">Pas encore d’évaluation passée. Valide les chapitres d’un cours pour débloquer la sienne.</p>
         ) : (
           <ul className="liste-tdb">
-            {tdb.examens.map((e) => (
+            {examens.map((e) => (
               <li key={e.cours?.slug} className="carte ligne-tdb">
                 <Link href={`/cours/${e.cours?.slug}/evaluation`}>{e.cours?.titre}</Link>
                 <strong className={e.valide ? 'note-reussie' : 'note-ratee'}>{formaterNote(Number(e.meilleure_note ?? 0))}</strong>
@@ -59,13 +59,13 @@ export default async function Accueil() {
       <section aria-labelledby="titre-quiz">
         <h2 id="titre-quiz">Mes derniers quiz</h2>
         {!tdb || tdb.derniers.length === 0 ? (
-          <p className="vide">Lance ton premier quiz depuis un chapitre !</p>
+          erreurTdb ? null : <p className="vide">Lance ton premier quiz depuis un chapitre !</p>
         ) : (
           <ul className="liste-tdb">
             {tdb.derniers.map((t) => (
               <li key={t.id} className="carte ligne-tdb">
                 <Link href={`/tentative/${t.id}/resultat`}>
-                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre}` : t.chapitre?.titre ?? t.cours?.titre}
+                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre ?? 'cours'}` : t.chapitre?.titre ?? t.cours?.titre ?? 'Quiz'}
                 </Link>
                 <strong className={t.reussie ? 'note-reussie' : 'note-ratee'}>{formaterNote(Number(t.note ?? 0))}</strong>
                 <span>{t.fin ? jour.format(new Date(t.fin)) : ''}</span>
@@ -82,7 +82,7 @@ export default async function Accueil() {
             {tdb.pointsFaibles.map((p) => (
               <li key={`${p.chapitre_id}-${p.libelle}`} className="carte ligne-tdb ligne-faible">
                 <Link href={`/cours/${p.cours_slug}/${p.chapitre_slug}`}>{p.libelle}</Link>
-                <span>{p.taux_erreur} % d’erreurs sur {p.reponses} réponses</span>
+                <span>{p.taux_erreur} % d’erreurs sur {p.reponses} réponse{p.reponses > 1 ? 's' : ''}</span>
                 <FormulaireQuiz chapitreId={p.chapitre_id} longueurs={[15]} revision libelle="Réviser" />
               </li>
             ))}
