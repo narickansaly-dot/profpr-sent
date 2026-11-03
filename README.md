@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# App lycée (nom provisoire)
 
-## Getting Started
+Cours détaillés, quiz et évaluations pour les lycéens, de la seconde à la terminale.
 
-First, run the development server:
+- Spec : `docs/superpowers/specs/2026-11-03-app-lycee-design.md`
+- Feuille de route : `docs/superpowers/plans/2026-11-03-feuille-de-route.md`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Démarrer en local
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Prérequis : Node.js 24 et Docker (Docker Desktop ou OrbStack) lancé.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. `npm install`
+2. `npm run db:start`, puis copier `.env.example` en `.env.local` et y mettre les clés affichées par `npx supabase status`.
+3. `npm run db:reset` (crée la base et importe le cours BPH 1re ST2S).
+4. `npm run dev`, puis ouvrir http://localhost:3000.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tests
 
-## Learn More
+- `npm test` : règles de l'application (Vitest)
+- `npm run test:db` : règles d'accès de la base (pgTAP)
+- `npm run e2e` : parcours complets (Playwright)
 
-To learn more about Next.js, take a look at the following resources:
+## Contenu
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le contenu entre en base uniquement par des fichiers JSON validés (`src/lib/contenu/format-import.ts`) :
+`npm run import:contenu -- contenu/1re-st2s/bph.json --publier`.
