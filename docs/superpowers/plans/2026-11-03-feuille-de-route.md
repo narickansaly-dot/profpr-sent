@@ -6,7 +6,7 @@ La spec couvre sept étapes qui livrent chacune une version utilisable. Chaque �
 
 | Étape | Plan | Statut |
 |---|---|---|
-| 1. Socle : comptes, contenu, import BPH, lecture | `2026-11-03-etape-1-socle.md` | Prêt |
+| 1. Socle : comptes, contenu, import BPH, lecture | `2026-11-03-etape-1-socle.md` (bilan : `2026-11-03-etape-1-bilan.md`) | Terminé (branche etape-1-socle) |
 | 2. Quiz, évaluations, tableau de bord élève | à rédiger après l'étape 1 | — |
 | 3. Espace enseignant et gestion du contenu | à rédiger après l'étape 2 | — |
 | 4. Calendrier, planning de révision, PWA, notifications | à rédiger après l'étape 3 | — |
