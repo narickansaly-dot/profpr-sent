@@ -5,7 +5,14 @@ import { formaterNote } from '@/lib/quiz/reponse';
 import { FormulaireQuiz } from './FormulaireQuiz';
 
 export async function BlocQuiz({ chapitreId }: { chapitreId: string }) {
-  const { disponibles, progression, tentativeEnCours } = await infosQuizChapitre(chapitreId);
+  let infos: Awaited<ReturnType<typeof infosQuizChapitre>>;
+  try {
+    infos = await infosQuizChapitre(chapitreId);
+  } catch {
+    // La lecture du cours ne doit pas dépendre du quiz.
+    return <p className="vide">Le quiz n’a pas pu se charger. Recharge la page dans un instant.</p>;
+  }
+  const { disponibles, progression, tentativeEnCours } = infos;
   // Un quiz de 30 sur un chapitre de 20 questions donnerait 20 : on ne propose que les longueurs atteignables.
   const longueurs = LONGUEURS_QUIZ.filter((n) => n <= disponibles);
   return (

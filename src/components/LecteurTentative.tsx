@@ -19,12 +19,15 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
   );
   const [enVolNb, setEnVolNb] = useState(0);
   const [erreurSauvegarde, setErreurSauvegarde] = useState(false);
+  const [erreurFin, setErreurFin] = useState(false);
   const [enFin, demarrerFin] = useTransition();
   // Enregistrements en vol : la fin du quiz les attend pour ne perdre aucune réponse.
   const enVol = useRef(new Set<Promise<void>>());
   // Une file par question : le dernier envoi part toujours en dernier et l'emporte.
   const chaines = useRef(new Map<string, Promise<void>>());
   const enregistre = useRef(new Map<string, string>(questions.map((q) => [q.question_id, JSON.stringify(q.reponse ?? null)])));
+  // Copie en état de `enregistre` : les pastilles ne passent à « répondue » que lorsque la valeur est sauvegardée.
+  const [enregistreEtat, setEnregistreEtat] = useState<Record<string, string>>(() => Object.fromEntries(enregistre.current));
   const reponsesRef = useRef(reponses);
   useEffect(() => { reponsesRef.current = reponses; });
   const finEnCours = useRef(false);
@@ -47,11 +50,17 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
     fieldset.current?.scrollIntoView({ block: 'start', behavior: 'auto' });
   }, [index]);
 
-  // Meilleur effort : texte pas encore enregistré quand l'onglet se ferme.
+  // Meilleur effort : réponses pas encore enregistrées quand l'onglet se ferme ou que le réseau revient.
   useEffect(() => {
-    const quitter = () => { void enregistrerTextesModifies(); };
+    const quitter = () => { void renvoyerNonEnregistrees(); };
+    // Retour de la connexion : on renvoie tout ce qui n'a pas pu partir.
+    const revenu = () => { void renvoyerNonEnregistrees(); };
     window.addEventListener('pagehide', quitter);
-    return () => window.removeEventListener('pagehide', quitter);
+    window.addEventListener('online', revenu);
+    return () => {
+      window.removeEventListener('pagehide', quitter);
+      window.removeEventListener('online', revenu);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- ne lit que des refs et des fonctions stables à l'usage
   }, []);
 
@@ -65,9 +74,12 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
         r = { erreur: 'reseau' };
       }
       if ('statut' in r) {
-        enregistre.current.set(questionId, JSON.stringify(reponse ?? null));
+        const valeur = JSON.stringify(reponse ?? null);
+        enregistre.current.set(questionId, valeur);
+        if (monte.current) setEnregistreEtat((e) => ({ ...e, [questionId]: valeur }));
         if (r.statut !== 'ok') { if (monte.current) router.replace(`/tentative/${tentativeId}/resultat`); }
-        else if (monte.current) setErreurSauvegarde(false);
+        // L'alerte reste affichée tant qu'une autre réponse n'est pas enregistrée.
+        else if (monte.current && toutEnregistre()) setErreurSauvegarde(false);
         return;
       }
       if (essai < 2) await new Promise((ok) => setTimeout(ok, 800 * (essai + 1)));
@@ -93,17 +105,23 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
     if (enregistrerTout) void sauver(question.question_id, reponse);
   }
 
-  /** N'envoie un texte que s'il a changé depuis le dernier enregistrement réussi. */
-  function enregistrerTextesModifies(seulement?: string): Promise<void> {
+  const differe = (questionId: string) =>
+    JSON.stringify(reponsesRef.current[questionId] ?? null) !== enregistre.current.get(questionId);
+  const toutEnregistre = () => questions.every((q) => !differe(q.question_id));
+
+  /**
+   * Renvoie toute réponse (de n'importe quel type) qui diffère du dernier enregistrement réussi.
+   * Une question dont l'envoi est déjà en vol est laissée : sa file porte déjà la dernière valeur.
+   */
+  function renvoyerNonEnregistrees(seulement?: string): Promise<void> {
     const envois = questions
-      .filter((q) => q.type === 'reponse_courte' && (seulement === undefined || q.question_id === seulement))
-      .filter((q) => JSON.stringify(reponsesRef.current[q.question_id] ?? null) !== enregistre.current.get(q.question_id))
+      .filter((q) => (seulement === undefined || q.question_id === seulement) && differe(q.question_id) && !chaines.current.has(q.question_id))
       .map((q) => sauver(q.question_id, reponsesRef.current[q.question_id] ?? null));
-    return Promise.all(envois).then(() => undefined);
+    return Promise.allSettled(envois).then(() => undefined);
   }
 
   function aller(cible: number) {
-    void enregistrerTextesModifies(question.question_id);
+    void renvoyerNonEnregistrees(question.question_id);
     setIndex(cible);
   }
 
@@ -113,11 +131,17 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
     if (demanderConfirmation && manquantes > 0
       && !window.confirm(`Il te reste ${manquantes} question${manquantes > 1 ? 's' : ''} sans réponse. Terminer quand même ?`)) return;
     finEnCours.current = true;
+    setErreurFin(false);
     demarrerFin(async () => {
       try {
-        await enregistrerTextesModifies();
+        await renvoyerNonEnregistrees();
         await Promise.allSettled([...enVol.current]);
+        // Fin manuelle : on laisse l'élève décider s'il perd des réponses. Fin du temps : on termine, le serveur tranche.
+        if (demanderConfirmation && !toutEnregistre()
+          && !window.confirm('Certaines réponses ne sont pas encore enregistrées. Terminer quand même ?')) return;
         await terminerTentative(tentativeId);
+      } catch {
+        if (monte.current) setErreurFin(true);
       } finally {
         // Si la fin échoue (retour sur ?erreur=fin), on doit pouvoir réessayer.
         finEnCours.current = false;
@@ -131,6 +155,7 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
   const derniere = index === questions.length - 1;
   return (
     <div className="lecteur">
+      {erreurFin && <p role="alert" className="message-erreur">La correction n’a pas pu se lancer. Réessaie de terminer le quiz.</p>}
       <div className="lecteur-barre">
         <span className="lecteur-position">Question {index + 1} / {questions.length}</span>
         {dateLimite && <CompteARebours dateLimite={dateLimite} serveurMaintenant={serveurMaintenant} onFin={() => terminer(false)} />}
@@ -144,7 +169,7 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
         <legend className="question-enonce">{question.enonce}</legend>
         <ChampReponse questionId={question.question_id} type={question.type} propositions={question.propositions}
           reponse={reponses[question.question_id] ?? null} onChange={changer}
-          onBlur={() => { void enregistrerTextesModifies(question.question_id); }} />
+          onBlur={() => { void renvoyerNonEnregistrees(question.question_id); }} />
       </fieldset>
 
       <div className="lecteur-navigation">
@@ -157,11 +182,15 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
       <nav aria-label="Aller à une question">
         <ol className="pastilles-questions">
           {questions.map((q, i) => {
-            const repondue = estRepondue(reponses[q.question_id]);
+            const locale = estRepondue(reponses[q.question_id]);
+            // « Répondue » seulement une fois la valeur enregistrée ; sinon « en attente ».
+            const sauvee = enregistreEtat[q.question_id] === JSON.stringify(reponses[q.question_id] ?? null);
+            const repondue = locale && sauvee;
+            const enAttente = locale && !sauvee;
             return (
               <li key={q.question_id}>
-                <button type="button" className={repondue ? 'repondue' : undefined} aria-current={i === index ? 'step' : undefined}
-                  aria-label={`Question ${i + 1}${repondue ? ', répondue' : ''}`} onClick={() => aller(i)}>{i + 1}</button>
+                <button type="button" className={repondue ? 'repondue' : enAttente ? 'en-attente' : undefined} aria-current={i === index ? 'step' : undefined}
+                  aria-label={`Question ${i + 1}${repondue ? ', répondue' : enAttente ? ', en attente d’enregistrement' : ''}`} onClick={() => aller(i)}>{i + 1}</button>
               </li>
             );
           })}
