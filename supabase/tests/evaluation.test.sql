@@ -1,5 +1,5 @@
 begin;
-select plan(26);
+select plan(28);
 
 insert into auth.users (id, email) values ('00000000-0000-0000-0000-0000000000d1', 'eval@test.local');
 insert into public.filiere (id, voie, code, nom) values
@@ -123,6 +123,12 @@ select is((select statut::text from public.tentative where id = (select id from 
 select ok((select fin = date_limite from public.tentative where id = (select id from e2)), 'fin = date limite, pas l''heure de clôture');
 set local role authenticated;
 select lives_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-0000000000d1') $$, 'nouvel essai non bloqué par le délai d''attente');
+select throws_ok($$ select * from public.correction_tentative((select id from e2)) $$, 'P0001', 'evaluation_en_cours',
+  'correction d''une ancienne évaluation fermée pendant la nouvelle');
+select public.terminer_tentative(id) from public.tentative
+  where eleve_id = '00000000-0000-0000-0000-0000000000d2' and statut = 'en_cours';
+select ok((select count(*) from public.correction_tentative((select id from e2))) = 40,
+  'ancienne évaluation de nouveau lisible une fois la nouvelle close');
 
 -- Cours publié sans question validée.
 reset role;

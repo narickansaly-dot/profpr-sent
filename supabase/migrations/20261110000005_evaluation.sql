@@ -44,7 +44,7 @@ begin
       dernier_essai = v_fin;
   else
     insert into public.progression_chapitre as p (eleve_id, chapitre_id, meilleure_note, valide, valide_le)
-      values (t.eleve_id, t.chapitre_id, v_note, v_note >= 75, case when v_note >= 75 then now() end)
+      values (t.eleve_id, t.chapitre_id, v_note, v_note >= 75, case when v_note >= 75 then v_fin end)
     on conflict (eleve_id, chapitre_id) do update set
       meilleure_note = greatest(p.meilleure_note, excluded.meilleure_note),
       valide = p.valide or excluded.valide,
@@ -128,11 +128,10 @@ language plpgsql security definer set search_path = '' as $$
 #variable_conflict use_column
 declare
   v_statut public.statut_tentative_t;
-  v_type public.type_tentative_t;
   v_cours uuid;
   r record;
 begin
-  select t.statut, t.type, t.cours_id into v_statut, v_type, v_cours from public.tentative t where t.id = p_tentative and t.eleve_id = auth.uid();
+  select t.statut, t.cours_id into v_statut, v_cours from public.tentative t where t.id = p_tentative and t.eleve_id = auth.uid();
   if not found then
     raise exception 'tentative_introuvable';
   end if;
@@ -142,15 +141,15 @@ begin
   if v_statut = 'en_cours' then
     raise exception 'tentative_en_cours';
   end if;
-  -- Pendant une évaluation ouverte du même cours, aucune autre correction n'est lisible.
-  if v_type <> 'evaluation_cours' then
-    for r in select id from public.tentative
-              where eleve_id = auth.uid() and cours_id = v_cours and type = 'evaluation_cours' and statut = 'en_cours' loop
-      if not prive.cloturer_si_expiree(r.id) then
-        raise exception 'evaluation_en_cours';
-      end if;
-    end loop;
-  end if;
+  -- Pendant une évaluation ouverte du même cours, aucune autre correction n'est lisible
+  -- (quiz ou ancienne évaluation : tous tirent dans le même fonds de questions).
+  for r in select id from public.tentative
+            where eleve_id = auth.uid() and cours_id = v_cours and type = 'evaluation_cours'
+              and statut = 'en_cours' and id <> p_tentative loop
+    if not prive.cloturer_si_expiree(r.id) then
+      raise exception 'evaluation_en_cours';
+    end if;
+  end loop;
   return query
     select tq.ordre, tq.question_id, q.type, q.enonce,
            prive.propositions_affichees(q.propositions, tq.permutation),
