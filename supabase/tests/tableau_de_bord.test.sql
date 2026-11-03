@@ -42,12 +42,13 @@ insert into public.historique_question (eleve_id, question_id, vue, ratee) value
   ('00000000-0000-0000-0000-0000000000e1', '40000000-0000-0000-0000-0000000000e6', 4, 0);
 insert into public.tentative (eleve_id, type, cours_id, chapitre_id, nb_questions, statut, fin, note, reussie) values
   ('00000000-0000-0000-0000-0000000000e2', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e3', 15, 'terminee', now(), 0, false),
+  ('00000000-0000-0000-0000-0000000000e2', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e3', 15, 'terminee', now() - interval '3 days', 0, false),
   -- e3 : finies hier et avant-hier, rien aujourd'hui
   ('00000000-0000-0000-0000-0000000000e3', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e1', 15, 'terminee', now() - interval '1 day', 60, false),
   ('00000000-0000-0000-0000-0000000000e3', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e1', 15, 'terminee', now() - interval '2 days', 60, false),
-  -- e4 : dernière tentative finie il y a 3 jours, plus une tentative en cours aujourd'hui (fin null)
+  -- e4 : dernière tentative finie il y a 3 jours, plus une tentative en cours avec fin = now() (donnée incohérente, simulée)
   ('00000000-0000-0000-0000-0000000000e4', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e1', 15, 'terminee', now() - interval '3 days', 60, false),
-  ('00000000-0000-0000-0000-0000000000e4', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e1', 15, 'en_cours', null, null, null);
+  ('00000000-0000-0000-0000-0000000000e4', 'quiz_chapitre', '20000000-0000-0000-0000-0000000000e1', '30000000-0000-0000-0000-0000000000e1', 15, 'en_cours', now(), null, null);
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}', true);
@@ -69,7 +70,7 @@ select is(public.serie_jours(), 2, 'série de 2 jours : hier et avant-hier sans 
 -- c) et d) e4 : dernière tentative finie il y a 3 jours ; sa tentative en cours d'aujourd'hui ne compte pas
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000e4","role":"authenticated"}', true);
 select is(public.serie_jours(), 0, 'dernière tentative finie il y a 3 jours : série nulle');
-select is(public.serie_jours(), 0, 'tentative en cours aujourd''hui (fin null) : ne compte pas');
+select is(public.serie_jours(), 0, 'tentative en cours avec fin = now() : ignorée par le filtre statut, série reste 0');
 
 -- e) un contenu sans erreur (4 réponses, 0 erreur) est absent de points_faibles
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000e1","role":"authenticated"}', true);

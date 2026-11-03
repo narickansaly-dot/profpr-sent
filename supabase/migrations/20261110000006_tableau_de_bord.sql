@@ -16,7 +16,7 @@ language sql stable set search_path = '' as $$
    where h.eleve_id = (select auth.uid())
    group by c.id, co.slug, c.slug, c.titre, n.id, n.nom
   having sum(h.vue) >= 3 and sum(h.ratee) > 0
-   order by sum(h.ratee)::numeric / sum(h.vue) desc, sum(h.vue) desc, coalesce(n.nom, c.titre), c.id
+   order by sum(h.ratee)::numeric / sum(h.vue) desc, sum(h.vue) desc, coalesce(n.nom, c.titre), c.id, n.id
    limit greatest(coalesce(p_limite, 5), 0)
 $$;
 
