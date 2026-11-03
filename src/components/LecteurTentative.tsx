@@ -26,11 +26,11 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
   const chaines = useRef(new Map<string, Promise<void>>());
   const enregistre = useRef(new Map<string, string>(questions.map((q) => [q.question_id, JSON.stringify(q.reponse ?? null)])));
   const reponsesRef = useRef(reponses);
-  reponsesRef.current = reponses;
+  useEffect(() => { reponsesRef.current = reponses; });
   const finEnCours = useRef(false);
   const monte = useRef(true);
   const fieldset = useRef<HTMLFieldSetElement>(null);
-  const premierRendu = useRef(true);
+  const indexPrecedent = useRef(index);
   const question = questions[index];
   const nbRepondues = questions.filter((q) => estRepondue(reponses[q.question_id])).length;
 
@@ -41,7 +41,8 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
 
   // Après un changement de question, le focus suit (lecteurs d'écran et clavier).
   useEffect(() => {
-    if (premierRendu.current) { premierRendu.current = false; return; }
+    if (indexPrecedent.current === index) return;
+    indexPrecedent.current = index;
     fieldset.current?.focus({ preventScroll: true });
     fieldset.current?.scrollIntoView({ block: 'start', behavior: 'auto' });
   }, [index]);
@@ -51,7 +52,8 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
     const quitter = () => { void enregistrerTextesModifies(); };
     window.addEventListener('pagehide', quitter);
     return () => window.removeEventListener('pagehide', quitter);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- ne lit que des refs et des fonctions stables à l'usage
+  }, []);
 
   /** Ne rejette jamais : une exception est traitée comme une erreur, avec les mêmes reprises. */
   async function envoyer(questionId: string, reponse: ReponseAffichee | null) {
@@ -112,9 +114,14 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
       && !window.confirm(`Il te reste ${manquantes} question${manquantes > 1 ? 's' : ''} sans réponse. Terminer quand même ?`)) return;
     finEnCours.current = true;
     demarrerFin(async () => {
-      await enregistrerTextesModifies();
-      await Promise.allSettled([...enVol.current]);
-      await terminerTentative(tentativeId);
+      try {
+        await enregistrerTextesModifies();
+        await Promise.allSettled([...enVol.current]);
+        await terminerTentative(tentativeId);
+      } finally {
+        // Si la fin échoue (retour sur ?erreur=fin), on doit pouvoir réessayer.
+        finEnCours.current = false;
+      }
     });
   }
 
@@ -127,7 +134,9 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
       <div className="lecteur-barre">
         <span className="lecteur-position">Question {index + 1} / {questions.length}</span>
         {dateLimite && <CompteARebours dateLimite={dateLimite} serveurMaintenant={serveurMaintenant} onFin={() => terminer(false)} />}
-        <span className={`sauvegarde${erreurSauvegarde ? ' sauvegarde-erreur' : ''}`} role={erreurSauvegarde ? 'alert' : undefined}>{sauvegardeLibelle}</span>
+        {erreurSauvegarde
+          ? <p role="alert" className="sauvegarde sauvegarde-erreur">{sauvegardeLibelle}</p>
+          : <span className="sauvegarde">{sauvegardeLibelle}</span>}
       </div>
       <BarreProgression valeur={nbRepondues} max={questions.length} libelle="Questions répondues" />
 
