@@ -354,6 +354,11 @@ isOneToOne: false
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
+"points_faibles":
+{ Args: { "p_limite"?: number }; Returns: {
+              "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
 "questions_tentative":
 { Args: { "p_tentative": string }; Returns: {
               "enonce": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"type": Database["public"]['Enums']["type_question_t"]
@@ -364,6 +369,9 @@ isOneToOne: false
                            },
 "role_actuel":
 { Args: Record<PropertyKey, never>; Returns: Database["public"]['Enums']["role_t"]
+                           },
+"serie_jours":
+{ Args: Record<PropertyKey, never>; Returns: number
                            },
 "terminer_tentative":
 { Args: { "p_tentative": string }; Returns: undefined
