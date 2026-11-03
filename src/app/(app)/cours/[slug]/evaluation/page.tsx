@@ -28,7 +28,7 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
       <h1>Évaluation : {cours.titre}</h1>
       <div className="carte">
         <h2>Comment ça marche</h2>
-        <ul>
+        <ul className="regles">
           <li>{EVALUATION.nbQuestions} questions tirées dans tous les chapitres.</li>
           <li>{EVALUATION.dureeMinutes} minutes. Le chrono continue même si tu fermes la page : tes réponses sont enregistrées au fur et à mesure.</li>
           <li>Il faut {SEUIL_REUSSITE} % pour réussir. Tu as {EVALUATION.essais} essais, avec {EVALUATION.delaiHeures} heures entre deux essais. On garde ta meilleure note.</li>
@@ -44,7 +44,7 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
             {essaisTermines.map((e) => (
               <li key={e.id}>
                 <Link href={`/tentative/${e.id}/resultat`}>
-                  {e.fin ? dateCourte.format(new Date(e.fin)) : ''} : {formaterNote(Number(e.note ?? 0))}
+                  {e.fin ? dateCourte.format(new Date(e.fin)) : '—'} — note : {e.note != null ? formaterNote(Number(e.note)) : '—'}
                 </Link>
               </li>
             ))}

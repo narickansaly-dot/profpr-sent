@@ -94,3 +94,10 @@
 .pastilles-questions button.repondue { border-width: 3px; }
 .pastilles-questions button.repondue::after { content: "✓"; position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%;
   display: grid; place-items: center; font-size: 12px; line-height: 1; background: var(--succes); color: var(--surface); }
+
+/* Page d'évaluation */
+.regles { display: grid; gap: 10px; padding-left: 22px; margin: 0 0 16px; list-style: disc; }
+.regles li::marker { color: var(--couleur-cours); }
+.liste-essais { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.liste-essais a { display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--trait); border-radius: 12px; background: var(--surface); }
+.vide { margin: 16px 0; color: var(--attenue); }
