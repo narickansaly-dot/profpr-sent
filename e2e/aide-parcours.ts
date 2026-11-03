@@ -25,19 +25,24 @@ export async function inscrireEleve(page: Page, email: string) {
 
 /** Clique la proposition `indice` et attend que l'enregistrement (action serveur) soit revenu. */
 export async function cocherEtAttendreSauvegarde(page: Page, indice: number) {
-  const sauvegarde = page.waitForResponse((r) => r.request().method() === 'POST' && 'next-action' in r.request().headers());
+  const sauvegarde = page.waitForResponse((r) => r.request().method() === 'POST' && 'next-action' in r.request().headers() && r.ok());
   await page.locator('.choix .option').nth(indice).click();
   await sauvegarde;
   await expect(page.locator('.sauvegarde')).toHaveText('Réponses enregistrées');
+  await expect(page.locator('.lecteur .sauvegarde-erreur')).toHaveCount(0);
+  await expect(page.locator('.lecteur [role=alert]')).toHaveCount(0);
+}
+
+/** Répond juste à la question `i` (0-based) du lecteur, vérifie la pastille, puis passe à la suivante (ou termine). */
+export async function repondreJusteQuestion(page: Page, i: number, total: number, bonnes: number[]) {
+  await expect(page.getByText(`Question ${i + 1} / ${total}`, { exact: true })).toBeVisible();
+  for (const indice of bonnes) await cocherEtAttendreSauvegarde(page, indice);
+  await expect(page.getByRole('button', { name: `Question ${i + 1}, répondue` })).toBeVisible();
+  const suivant = i < total - 1 ? 'Suivante →' : 'Terminer';
+  await page.getByRole('button', { name: suivant, exact: true }).click();
 }
 
 /** Répond juste à toutes les questions du lecteur puis termine. */
 export async function repondreJuste(page: Page, bonnes: number[][]) {
-  for (let i = 0; i < bonnes.length; i++) {
-    await expect(page.getByText(`Question ${i + 1} / ${bonnes.length}`, { exact: true })).toBeVisible();
-    for (const indice of bonnes[i]) await cocherEtAttendreSauvegarde(page, indice);
-    await expect(page.getByRole('button', { name: `Question ${i + 1}, répondue` })).toBeVisible();
-    const suivant = i < bonnes.length - 1 ? 'Suivante →' : 'Terminer';
-    await page.getByRole('button', { name: suivant, exact: true }).click();
-  }
+  for (let i = 0; i < bonnes.length; i++) await repondreJusteQuestion(page, i, bonnes.length, bonnes[i]);
 }

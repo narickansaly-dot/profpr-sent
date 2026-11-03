@@ -2,6 +2,10 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from '../src/lib/supabase/types';
 
 process.loadEnvFile('.env.local');
+const hote = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://invalide').hostname;
+if (!['localhost', '127.0.0.1'].includes(hote)) {
+  throw new Error('Refusé : NEXT_PUBLIC_SUPABASE_URL doit pointer vers la base locale (la clé service_role est utilisée).');
+}
 export const db = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
   auth: { persistSession: false },
 });
