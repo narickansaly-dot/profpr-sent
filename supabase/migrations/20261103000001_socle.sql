@@ -179,12 +179,17 @@ grant update (nom, filiere_id, niveau_code, moins_de_15_ans, onboarding_termine)
 
 -- Droits par défaut de Supabase : on retire ce que RLS ne protège pas (TRUNCATE ignore RLS)
 -- et toute écriture anonyme. Les écritures de l'admin du contenu passent par les politiques ci-dessus.
-revoke truncate, references, trigger on all tables in schema public from anon, authenticated;
+revoke truncate, references, trigger, maintain on all tables in schema public from anon, authenticated;
 revoke all on public.question_corrige from anon;
 revoke insert, update, delete on public.niveau, public.filiere, public.cours, public.chapitre,
   public.notion, public.question, public.question_corrige from anon;
-alter default privileges in schema public revoke truncate, references, trigger on tables from anon, authenticated;
+alter default privileges in schema public revoke truncate, references, trigger, maintain on tables from anon, authenticated;
+alter default privileges in schema public revoke execute on functions from public, anon;
+revoke select on public.cours, public.chapitre, public.notion, public.question from anon;
 
 -- Fonctions d'accès : réservées aux utilisateurs connectés (les politiques RLS en dépendent).
 revoke execute on function public.role_actuel(), public.en_essai(), public.peut_lire_cours(uuid) from public, anon;
 grant execute on function public.role_actuel(), public.en_essai(), public.peut_lire_cours(uuid) to authenticated;
+
+-- Fonction de déclencheur : jamais appelée directement (les déclencheurs s'exécutent quand même).
+revoke execute on function public.creer_profil() from public, anon, authenticated;
