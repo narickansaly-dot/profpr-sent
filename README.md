@@ -20,6 +20,12 @@ Prérequis : Node.js 24 et Docker (Docker Desktop ou OrbStack) lancé.
 - `npm run test:db` : règles d'accès de la base (pgTAP)
 - `npm run e2e` : parcours complets (Playwright). Prérequis : base locale démarrée et réinitialisée avec le cours (`npm run db:reset`), `.env.local` rempli, et, la première fois, `npx playwright install chromium`. Les tests construisent et lancent l'application en production (`npm run build && npm run start`). Arrête `npm run dev` avant `npm run e2e` : les tests lancent leur propre build de production sur le port 3000. Les comptes `@test.local` créés par les tests sont supprimés à la fin.
 
+## Quiz et évaluations
+
+La correction se fait dans la base, jamais dans le navigateur : les corrigés vivent dans le schéma `prive`, et l'application n'appelle que des fonctions `public.*` en RPC (démarrer, enregistrer une réponse, terminer, lire la correction).
+Les règles (seuil de réussite, nombre de questions, durée, essais) sont listées dans `src/lib/quiz/regles.ts` pour l'affichage et appliquées par la base.
+Les tests de la base sont des fichiers pgTAP dans `supabase/tests/` (`npm run test:db`).
+
 ## Confirmation de l'inscription par e-mail
 
 Sur le projet Supabase hébergé, le modèle d'e-mail « Confirm signup » (Authentication > Email Templates) doit pointer vers :
