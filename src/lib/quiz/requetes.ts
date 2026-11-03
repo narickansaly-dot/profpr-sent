@@ -1,0 +1,97 @@
+import { cache } from 'react';
+import { z } from 'zod';
+import { creerClientServeur } from '@/lib/supabase/server';
+import { lireProfil } from '@/lib/supabase/utilisateur';
+import { etatEvaluation, type StatutTentative } from './regles';
+import type { ReponseAffichee, TypeQuestion } from './reponse';
+
+const estUuid = (id: string) => z.string().uuid().safeParse(id).success;
+
+export type QuestionAffichee = {
+  ordre: number; question_id: string; type: TypeQuestion; enonce: string;
+  propositions: string[]; reponse: ReponseAffichee | null;
+};
+
+export const lireTentative = cache(async (id: string) => {
+  if (!estUuid(id)) return null;
+  const supabase = await creerClientServeur();
+  // Appelée en premier : elle clôt la tentative si son temps est écoulé.
+  const { data: questions, error } = await supabase.rpc('questions_tentative', { p_tentative: id });
+  if (error || !questions) return null;
+  const { data: t } = await supabase.from('tentative')
+    .select('id, type, statut, nb_questions, date_limite, note, reussie, fin, cours(slug, titre, couleur), chapitre(id, slug, titre)')
+    .eq('id', id).single();
+  if (!t) return null;
+  return { ...t, questions: questions as unknown as QuestionAffichee[] };
+});
+
+export async function lireCorrection(id: string) {
+  if (!estUuid(id)) return null;
+  const supabase = await creerClientServeur();
+  const { data: lignes, error } = await supabase.rpc('correction_tentative', { p_tentative: id });
+  if (error || !lignes) return null;
+  const { data: t } = await supabase.from('tentative')
+    .select('id, type, statut, nb_questions, note, reussie, fin, cours(slug, titre, couleur), chapitre(id, slug, titre)')
+    .eq('id', id).single();
+  return t ? { ...t, lignes } : null;
+}
+
+export async function infosQuizChapitre(chapitreId: string) {
+  const supabase = await creerClientServeur();
+  const [{ count }, { data: progression }] = await Promise.all([
+    // Les élèves ne peuvent lire que id, chapitre_id, notion_id, type, statut, difficulte sur question.
+    supabase.from('question').select('id', { count: 'exact', head: true }).eq('chapitre_id', chapitreId).eq('statut', 'valide'),
+    supabase.from('progression_chapitre').select('meilleure_note, valide, lu').eq('chapitre_id', chapitreId).maybeSingle(),
+  ]);
+  return { disponibles: count ?? 0, progression };
+}
+
+export async function progressionDuCours(coursId: string, chapitreIds: string[]) {
+  const supabase = await creerClientServeur();
+  await supabase.rpc('cloturer_mes_tentatives_expirees');
+  const [{ data: chapitres }, { data: cours }, { data: essais }] = await Promise.all([
+    supabase.from('progression_chapitre').select('chapitre_id, meilleure_note, valide').in('chapitre_id', chapitreIds),
+    supabase.from('progression_cours').select('meilleure_note, valide, essais').eq('cours_id', coursId).maybeSingle(),
+    supabase.from('tentative').select('id, statut, fin, note').eq('cours_id', coursId).eq('type', 'evaluation_cours')
+      .order('debut', { ascending: false }),
+  ]);
+  const parChapitre = new Map((chapitres ?? []).map((p) => [p.chapitre_id, p]));
+  const nbValides = chapitreIds.filter((id) => parChapitre.get(id)?.valide).length;
+  return {
+    parChapitre, nbValides, cours, essais: essais ?? [],
+    evaluation: etatEvaluation({
+      nbChapitres: chapitreIds.length, nbValides,
+      essais: (essais ?? []).map((e) => ({ id: e.id, statut: e.statut as StatutTentative, fin: e.fin })),
+      maintenant: new Date(),
+    }),
+  };
+}
+
+export async function lireTableauDeBord() {
+  const profil = await lireProfil();
+  if (!profil) return null;
+  const supabase = await creerClientServeur();
+  await supabase.rpc('cloturer_mes_tentatives_expirees');
+  const [valides, examens, derniers, faibles, serie] = await Promise.all([
+    supabase.from('progression_chapitre').select('chapitre!inner(cours_id)').eq('valide', true),
+    supabase.from('progression_cours').select('meilleure_note, valide, essais, dernier_essai, cours(slug, titre, couleur)')
+      .order('dernier_essai', { ascending: false }),
+    supabase.from('tentative').select('id, type, note, reussie, fin, cours(slug, titre, couleur), chapitre(titre)')
+      .neq('statut', 'en_cours').order('fin', { ascending: false }).limit(5),
+    supabase.rpc('points_faibles', { p_limite: 5 }),
+    supabase.rpc('serie_jours'),
+  ]);
+  const validesParCours = new Map<string, number>();
+  for (const v of valides.data ?? []) {
+    const coursId = v.chapitre.cours_id;
+    validesParCours.set(coursId, (validesParCours.get(coursId) ?? 0) + 1);
+  }
+  return {
+    prenom: profil.nom,
+    validesParCours,
+    examens: examens.data ?? [],
+    derniers: derniers.data ?? [],
+    pointsFaibles: faibles.data ?? [],
+    serie: serie.data ?? 0,
+  };
+}
