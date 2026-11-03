@@ -331,10 +331,16 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "correction_tentative":
+            "cloturer_mes_tentatives_expirees":
+{ Args: Record<PropertyKey, never>; Returns: number
+                           },
+"correction_tentative":
 { Args: { "p_tentative": string }; Returns: {
               "bonnes_reponses": Json,"correcte": boolean,"enonce": string,"explication": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"reponses_acceptees": (string)[],"type": Database["public"]['Enums']["type_question_t"]
             }[]
+                           },
+"demarrer_evaluation":
+{ Args: { "p_cours": string }; Returns: string
                            },
 "demarrer_quiz":
 { Args: { "p_chapitre": string,"p_nb": number,"p_revision"?: boolean }; Returns: string
