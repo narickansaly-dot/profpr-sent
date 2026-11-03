@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "../styles/chapitre.css";
+
+/* Jetons : clair par défaut, sombre selon les préférences du système.
+   --couleur-cours est redéfini par chaque page de cours (une couleur par matière) ;
+   sa valeur doit rester à >= 4.5:1 contre le blanc (texte des boutons). */
+:root {
+  --encre: #1c1b29; --attenue: #5b5d72; --trait: #e3e1ee; --surface: #ffffff; --papier: #f7f5ff;
+  --accent: #f59e0b; --succes: #15803d; --danger: #dc2626; --couleur-cours: #4f46e5;
+  --rayon: 14px;
+  --police-titres: var(--police-fredoka), "Nunito", system-ui, sans-serif;
+  --police-corps: var(--police-nunito), system-ui, sans-serif;
+  --police-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --ombre-carte: 0 2px 0 var(--trait), 0 8px 20px -12px color-mix(in srgb, var(--couleur-cours) 35%, transparent);
+  --duree: 180ms;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --encre: #eeedf7; --attenue: #a8a9be; --trait: #2f2e44; --surface: #1b1a2b; --papier: #131222;
+    --succes: #4ade80; --danger: #f87171;
+    color-scheme: dark;
+  }
+}
+
+body { background: var(--papier); color: var(--encre); font-family: var(--police-corps); font-size: 17px; line-height: 1.6; margin: 0; }
+h1, h2, h3 { font-family: var(--police-titres); line-height: 1.2; text-wrap: balance; }
+a { color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); }
+:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; border-radius: 6px; }
+
+.conteneur { max-width: 860px; margin: 0 auto; padding: 0 16px 48px; animation: apparition .35s ease-out both; }
+.carte { background: var(--surface); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 20px; box-shadow: var(--ombre-carte); }
+a.carte { display: block; color: inherit; text-decoration: none; transition: transform var(--duree) ease-out, border-color var(--duree); }
+a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours); }
+
+.bouton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px;
+  border-radius: 999px; border: 2px solid transparent; font: 700 16px var(--police-titres); cursor: pointer;
+  touch-action: manipulation; transition: transform var(--duree) ease-out, filter var(--duree); }
+.bouton:hover:not(:disabled) { filter: brightness(1.06); }
+.bouton:active:not(:disabled) { transform: scale(.97); }
+.bouton:disabled { opacity: .6; cursor: progress; }
+.bouton-principal { background: var(--couleur-cours); color: #fff; box-shadow: 0 4px 0 color-mix(in srgb, var(--couleur-cours) 70%, #000); }
+.bouton-secondaire { background: var(--surface); color: var(--encre); border-color: var(--trait); }
+
+.formulaire { display: grid; gap: 16px; }
+.formulaire label { display: grid; gap: 6px; font-weight: 700; }
+.formulaire input:not([type=radio]):not([type=checkbox]), .formulaire select {
+  min-height: 48px; padding: 0 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; }
+.formulaire input:focus-visible, .formulaire select:focus-visible { border-color: var(--couleur-cours); }
+.formulaire fieldset { border: 2px solid var(--trait); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 16px; }
+.formulaire .case, .formulaire fieldset label { display: flex; align-items: center; gap: 8px; font-weight: 400; min-height: 44px; }
+.message-erreur { color: var(--danger); font-weight: 700; margin: 0; }
+.message-info { color: var(--succes); font-weight: 700; margin: 0; }
+
+.page-auth { max-width: 420px; margin: 0 auto; padding: 48px 16px; display: grid; gap: 16px; animation: apparition .35s ease-out both; }
+
+.en-tete { display: flex; align-items: center; gap: 16px; padding: 12px 16px; background: var(--surface); border-bottom: 1px solid var(--trait); position: sticky; top: 0; z-index: 10; }
+.en-tete nav { flex: 1; }
+.en-tete nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--encre); transition: background var(--duree); }
+.en-tete nav a:hover { background: color-mix(in srgb, var(--couleur-cours) 12%, var(--surface)); }
+.logo { display: inline-flex; align-items: center; min-height: 44px; font: 700 22px var(--police-titres); color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); text-decoration: none; }
+.banniere { margin: 16px auto; max-width: 860px; padding: 12px 16px; border-radius: var(--rayon); background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
+.banniere-fin { background: color-mix(in srgb, var(--danger) 12%, var(--surface)); }
+.bouton-compte { max-width: 100%; min-width: 0; padding: 0 14px; }
+.en-tete form { min-width: 0; }
+.nom-compte { min-width: 0; max-width: 8ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (min-width: 521px) { .nom-compte { max-width: 16ch; } }
+.bouton-compte span:last-child { white-space: nowrap; }
+@media (max-width: 520px) { .en-tete nav { display: none; } .en-tete { padding-inline: 12px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
+
+@keyframes apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+
+/* ---------- Catalogue et lecture des cours ---------- */
+.grille-cours { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.carte-cours { display: grid; gap: 8px; text-decoration: none; color: var(--encre); border-top: 6px solid var(--couleur-cours); transition: transform .15s ease; }
+.carte-cours:hover { transform: translateY(-3px); }
+.conteneur .carte-cours h2 { margin: 0; font-size: 20px; }
+.pastille { justify-self: start; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  background: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); color: var(--couleur-cours); }
+.liste-chapitres { list-style: none; padding: 0; display: grid; gap: 12px; }
+.liste-chapitres a { display: flex; gap: 14px; align-items: center; text-decoration: none; color: var(--encre); }
+.numero-chapitre { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--couleur-cours); color: #fff; font: 700 18px var(--police-titres); }
+.navigation-chapitres { display: flex; justify-content: space-between; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+.a-retenir { border-left: 6px solid var(--accent); }
+.conteneur h1 { font-size: clamp(26px, 5vw, 36px); margin: 16px 0 12px; }
+.conteneur h2 { font-size: clamp(21px, 3.5vw, 26px); margin: 28px 0 10px; }
+.contenu-chapitre section { margin-bottom: 8px; }
+.carte h2, .carte-cours h2 { margin-top: 0; }
+.carte-cours p { margin: 0; }
