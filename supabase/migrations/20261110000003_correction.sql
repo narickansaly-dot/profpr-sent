@@ -7,14 +7,23 @@ revoke all on schema prive from public, anon, authenticated;
 
 create function prive.normaliser(p text) returns text
 language sql stable set search_path = '' as $$
+  -- unaccent transforme « » en << >> et ’ en ' : tout ce qui n'est pas alphanumérique est donc retiré aux deux bords après unaccent.
+  -- Le « - » initial est conservé (nombres négatifs) ; les traits d'union internes deviennent des espaces.
   select regexp_replace(
-           regexp_replace(lower(extensions.unaccent(trim(coalesce(p, '')))), '\s+', ' ', 'g'),
-           '[\s.!?;:,]+$', '')
+           regexp_replace(
+             regexp_replace(
+               regexp_replace(lower(extensions.unaccent(trim(coalesce(p, '')))), '(\w)[-–—](\w)', '\1 \2', 'g'),
+               '\s+', ' ', 'g'),
+             '[^[:alnum:]]+$', ''),
+           '^[^[:alnum:]-]+', '')
 $$;
 
 create function prive.en_nombre(p text) returns numeric
 language plpgsql immutable set search_path = '' as $$
 begin
+  if p is null or trim(p) !~ '^[+-]?\d+([.,]\d+)?$' then
+    return null;
+  end if;
   return replace(trim(p), ',', '.')::numeric;
 exception when others then
   return null;
@@ -26,6 +35,8 @@ declare
   q record;
   donne numeric;
   attendu numeric;
+  acc text;
+  tolerance numeric;
 begin
   if p_reponse is null or jsonb_typeof(p_reponse) <> 'array' or jsonb_array_length(p_reponse) = 0 then
     return false;
@@ -51,15 +62,23 @@ begin
                  where prive.normaliser(a) = prive.normaliser(p_reponse ->> 0)) then
         return true;
       end if;
-      if q.marge is null then
-        return false;
-      end if;
       donne := prive.en_nombre(p_reponse ->> 0);
-      attendu := prive.en_nombre(q.reponses_acceptees[1]);
-      if donne is null or attendu is null then
+      if donne is null then
         return false;
       end if;
-      return abs(donne - attendu) <= case when q.marge_relative then q.marge * abs(attendu) else q.marge end;
+      foreach acc in array q.reponses_acceptees loop
+        attendu := prive.en_nombre(acc);
+        if attendu is not null then
+          tolerance := coalesce(q.marge, 0);
+          if q.marge_relative then
+            tolerance := tolerance * abs(attendu);
+          end if;
+          if abs(donne - attendu) <= tolerance then
+            return true;
+          end if;
+        end if;
+      end loop;
+      return false;
   end case;
 end $$;
 
@@ -89,7 +108,8 @@ begin
         raise exception 'reponse_invalide';
       end if;
       for v in select * from jsonb_array_elements(p_reponse) loop
-        if jsonb_typeof(v) <> 'number' or v::text !~ '^\d+$' then
+        if jsonb_typeof(v) <> 'number' or v::text !~ '^\d+$'
+           or char_length(v::text) > 4 then
           raise exception 'reponse_invalide';
         end if;
         idx := v::text::int;
@@ -133,3 +153,5 @@ language sql immutable set search_path = '' as $$
 $$;
 
 revoke execute on all functions in schema prive from public, anon, authenticated;
+
+alter default privileges in schema prive revoke execute on functions from public;
