@@ -22,6 +22,10 @@ export const schemaQuestionImport = z.discriminatedUnion('type', [
     marge: z.number().nonnegative().optional(), marge_relative: z.boolean().default(false) }),
 ]).refine((q) => !('bonnes_reponses' in q) || indicesValides(q), {
   message: 'Une bonne réponse ne correspond à aucune proposition.',
+}).refine((q) => !('bonnes_reponses' in q) || new Set(q.bonnes_reponses).size === q.bonnes_reponses.length, {
+  message: 'Une bonne réponse apparaît deux fois.',
+}).refine((q) => q.type !== 'reponse_courte' || !q.marge_relative || q.marge !== undefined, {
+  message: 'Une marge relative demande une valeur de marge.',
 });
 
 export const schemaChapitreImport = z.object({
