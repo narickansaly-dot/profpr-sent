@@ -12,7 +12,8 @@
     "e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "db:start": "supabase start",
-    "db:reset": "supabase db reset"
+    "import:contenu": "tsx --env-file=.env.local scripts/importer-contenu.ts",
+    "db:reset": "supabase db reset && npm run import:contenu -- contenu/1re-st2s/bph.json --publier"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
