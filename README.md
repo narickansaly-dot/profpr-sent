@@ -18,7 +18,7 @@ Prérequis : Node.js 24 et Docker (Docker Desktop ou OrbStack) lancé.
 
 - `npm test` : règles de l'application (Vitest)
 - `npm run test:db` : règles d'accès de la base (pgTAP)
-- `npm run e2e` : parcours complets (Playwright). Prérequis : base locale démarrée et réinitialisée avec le cours (`npm run db:reset`), `.env.local` rempli, et, la première fois, `npx playwright install chromium`. Les tests construisent et lancent l'application en production (`npm run build && npm run start`) ; si un serveur tourne déjà sur le port 3000, il est réutilisé.
+- `npm run e2e` : parcours complets (Playwright). Prérequis : base locale démarrée et réinitialisée avec le cours (`npm run db:reset`), `.env.local` rempli, et, la première fois, `npx playwright install chromium`. Les tests construisent et lancent l'application en production (`npm run build && npm run start`) . Arrête `npm run dev` avant `npm run e2e` : les tests lancent leur propre build de production sur le port 3000. Les comptes `@test.local` créés par les tests sont supprimés à la fin.
 
 ## Confirmation de l'inscription par e-mail
 

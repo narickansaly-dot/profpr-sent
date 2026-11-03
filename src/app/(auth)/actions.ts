@@ -6,7 +6,9 @@ import { creerClientServeur } from '@/lib/supabase/server';
 import { schemaIdentifiants } from '@/lib/auth/identifiants';
 import { traduireErreurAuth } from '@/lib/auth/erreurs';
 
-export type EtatFormulaire = { erreur?: string; info?: string };
+export type EtatFormulaire = { erreur?: string; info?: string; email?: string };
+
+const lireEmail = (form: FormData) => String(form.get('email') ?? '');
 
 function lireIdentifiants(form: FormData) {
   return schemaIdentifiants.safeParse({ email: form.get('email'), motDePasse: form.get('motDePasse') });
@@ -18,7 +20,7 @@ async function lireOrigine() {
 
 export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form) };
   const supabase = await creerClientServeur();
   const origine = await lireOrigine();
   const { data, error } = await supabase.auth.signUp({
@@ -26,17 +28,17 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
     password: r.data.motDePasse,
     options: { emailRedirectTo: `${origine}/auth/confirm` },
   });
-  if (error) return { erreur: traduireErreurAuth(error.message) };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
   if (!data.session) return { info: 'Compte créé ! Clique sur le lien reçu par e-mail pour l’activer.' };
   redirect('/bienvenue');
 }
 
 export async function connecter(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form) };
   const supabase = await creerClientServeur();
   const { error } = await supabase.auth.signInWithPassword({ email: r.data.email, password: r.data.motDePasse });
-  if (error) return { erreur: traduireErreurAuth(error.message) };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
   redirect('/');
 }
 

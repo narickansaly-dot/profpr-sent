@@ -15,7 +15,7 @@ export function FormulaireIdentifiants({ action, libelle, autocompleteMotDePasse
     <form action={envoyer} className="formulaire">
       <label>
         Adresse e-mail
-        <input name="email" type="email" autoComplete="email" required />
+        <input key={etat.email} name="email" type="email" autoComplete="email" defaultValue={etat.email} required />
       </label>
       <label>
         Mot de passe
