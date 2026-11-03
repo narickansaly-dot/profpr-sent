@@ -1,5 +1,14 @@
 -- Quiz de chapitre : tirage, réponses enregistrées au fil de l'eau, correction à la clôture.
 
+-- Une seule tentative ouverte par élève et par chapitre (empêche de lire une correction puis d'en rouvrir une).
+create unique index tentative_un_quiz_en_cours on public.tentative (eleve_id, chapitre_id)
+  where chapitre_id is not null and statut = 'en_cours';
+
+-- L'élève ne lit pas l'énoncé ni les propositions dans l'ordre d'origine (la bonne réponse y serait déductible) :
+-- il passe par les fonctions. Les admins lisent via le service role ou de futures fonctions.
+revoke select on public.question from authenticated;
+grant select (id, chapitre_id, notion_id, type, statut, difficulte) on public.question to authenticated;
+
 create function prive.cloturer(p_tentative uuid, p_statut public.statut_tentative_t) returns void
 language plpgsql security definer set search_path = '' as $$
 declare
@@ -15,7 +24,7 @@ begin
      set correcte = prive.corriger(tq.question_id, tq.reponse)
    where tq.tentative_id = p_tentative;
 
-  select round(100.0 * count(*) filter (where correcte) / count(*), 2) into v_note
+  select coalesce(round(100.0 * count(*) filter (where correcte) / nullif(count(*), 0), 2), 0) into v_note
     from public.tentative_question where tentative_id = p_tentative;
 
   update public.tentative
@@ -76,6 +85,14 @@ begin
   if v_cours is null or not public.peut_lire_cours(v_cours) then
     raise exception 'acces_refuse';
   end if;
+  -- Tentative déjà ouverte sur ce chapitre : on la renvoie (après avoir clos celle qui a expiré).
+  select t.id into v_id from public.tentative t
+   where t.eleve_id = auth.uid() and t.chapitre_id = p_chapitre and t.statut = 'en_cours';
+  if v_id is not null then
+    if not prive.cloturer_si_expiree(v_id) then
+      return v_id;
+    end if;
+  end if;
   select count(*) into v_dispo from public.question q where q.chapitre_id = p_chapitre and q.statut = 'valide';
   if v_dispo < 15 then
     raise exception 'quiz_indisponible';
@@ -132,7 +149,7 @@ declare
   v_type public.type_question_t;
   v_permutation smallint[];
 begin
-  select statut into v_statut from public.tentative where id = p_tentative and eleve_id = auth.uid();
+  select statut into v_statut from public.tentative where id = p_tentative and eleve_id = auth.uid() for update;
   if not found then
     raise exception 'tentative_introuvable';
   end if;
@@ -193,10 +210,10 @@ begin
            prive.propositions_affichees(q.propositions, tq.permutation),
            prive.vers_affiche(q.type, tq.permutation, tq.reponse),
            prive.vers_affiche(q.type, tq.permutation, c.bonnes_reponses),
-           c.reponses_acceptees, c.explication, coalesce(tq.correcte, false)
+           c.reponses_acceptees, coalesce(c.explication, ''), coalesce(tq.correcte, false)
       from public.tentative_question tq
       join public.question q on q.id = tq.question_id
-      join public.question_corrige c on c.question_id = tq.question_id
+      left join public.question_corrige c on c.question_id = tq.question_id
      where tq.tentative_id = p_tentative
      order by tq.ordre;
 end $$;
