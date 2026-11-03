@@ -8,8 +8,9 @@ export default async function PageConnexion({ searchParams }: { searchParams: Pr
   const { erreur } = await searchParams;
   return (
     <main className="page-auth">
-      <h1>Content de te revoir !</h1>
+      <h1>Te revoilà !</h1>
       {erreur === 'google' && <p role="alert" className="message-erreur">La connexion avec Google a échoué. Réessaie.</p>}
+      {erreur === 'confirmation' && <p role="alert" className="message-erreur">Le lien de confirmation n’est plus valide. Réessaie de t’inscrire ou de te connecter.</p>}
       <FormulaireIdentifiants action={connecter} libelle="Se connecter" autocompleteMotDePasse="current-password" />
       <form action={connecterAvecGoogle}>
         <button type="submit" className="bouton bouton-secondaire">Continuer avec Google</button>

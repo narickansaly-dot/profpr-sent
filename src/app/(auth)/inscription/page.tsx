@@ -13,7 +13,7 @@ export default function PageInscription() {
       <form action={connecterAvecGoogle}>
         <button type="submit" className="bouton bouton-secondaire">Continuer avec Google</button>
       </form>
-      <p>Déjà inscrit ? <Link href="/connexion">Se connecter</Link></p>
+      <p>Tu as déjà un compte ? <Link href="/connexion">Se connecter</Link></p>
     </main>
   );
 }
