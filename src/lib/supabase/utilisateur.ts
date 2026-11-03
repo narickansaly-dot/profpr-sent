@@ -8,6 +8,7 @@ export const lireUtilisateur = cache(async () => {
   return user;
 });
 
+/** Profil mis en cache pour la durée d'une requête : après une modification du profil dans une server action, ne pas relire avec cette fonction. */
 export const lireProfil = cache(async () => {
   const user = await lireUtilisateur();
   if (!user) return null;

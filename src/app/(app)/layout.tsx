@@ -1,13 +1,13 @@
 import { redirect } from 'next/navigation';
-import { lireProfil } from '@/lib/supabase/utilisateur';
+import { lireProfil, lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { joursEssaiRestants } from '@/lib/acces/essai';
 import { EnTete } from '@/components/EnTete';
 import { BanniereEssai } from '@/components/BanniereEssai';
 
 export default async function LayoutApp({ children }: { children: React.ReactNode }) {
+  if (!(await lireUtilisateur())) redirect('/connexion');
   const profil = await lireProfil();
-  if (!profil) redirect('/connexion');
-  if (!profil.onboarding_termine) redirect('/bienvenue');
+  if (!profil?.onboarding_termine) redirect('/bienvenue');
   const eleve = profil.role === 'eleve';
   return (
     <>
