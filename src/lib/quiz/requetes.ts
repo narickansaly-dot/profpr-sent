@@ -38,13 +38,14 @@ export async function lireCorrection(id: string) {
 
 export async function infosQuizChapitre(chapitreId: string) {
   const supabase = await creerClientServeur();
-  const [{ count, error: e1 }, { data: progression, error: e2 }] = await Promise.all([
+  const [{ count, error: e1 }, { data: progression, error: e2 }, { data: enCours, error: e3 }] = await Promise.all([
     // Les élèves ne peuvent lire que id, chapitre_id, notion_id, type, statut, difficulte sur question.
     supabase.from('question').select('id', { count: 'exact', head: true }).eq('chapitre_id', chapitreId).eq('statut', 'valide'),
     supabase.from('progression_chapitre').select('meilleure_note, valide, lu').eq('chapitre_id', chapitreId).maybeSingle(),
+    supabase.from('tentative').select('id').eq('chapitre_id', chapitreId).eq('statut', 'en_cours').maybeSingle(),
   ]);
-  if (e1 || e2) throw new Error('Impossible de charger ce quiz.');
-  return { disponibles: count ?? 0, progression };
+  if (e1 || e2 || e3) throw new Error('Impossible de charger ce quiz.');
+  return { disponibles: count ?? 0, progression, tentativeEnCours: enCours?.id ?? null };
 }
 
 export async function progressionDuCours(coursId: string, chapitreIds: string[]) {
