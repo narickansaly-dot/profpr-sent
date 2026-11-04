@@ -18,6 +18,8 @@ const MESSAGES: Record<string, string> = {
   cours_invalide: 'Choisis au moins un cours publié.',
   nom_invalide: 'Le nom de la classe doit faire entre 2 et 60 caractères.',
   classe_introuvable: 'Cette classe est introuvable.',
+  code_invalide: 'Ce code ne correspond à aucune classe. Vérifie-le auprès de ton enseignant.',
+  trop_d_essais: 'Trop de codes incorrects. Réessaie dans une heure.',
   demande_introuvable: 'Cette demande a déjà été traitée.',
 };
 

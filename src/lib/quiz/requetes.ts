@@ -87,15 +87,18 @@ export async function progressionDuCours(coursId: string, chapitreIds: string[])
   ]);
   if (e1 || e2 || e3 || e4) throw new Error('Impossible de charger ta progression.');
   const maintenant = new Date();
+  // mes_echeances renvoie une ligne par classe liée ; ouverture et limite sont null quand la classe n'a pas
+  // d'échéance. Les types générés les donnent à tort comme non nulles : on corrige ici, en un seul endroit.
+  const echeancesClasses = (echeances ?? []) as { classe_nom: string; cours_id: string; ouverture: string | null; limite: string | null }[];
   const parChapitre = new Map((chapitres ?? []).map((p) => [p.chapitre_id, p]));
   const nbValides = chapitreIds.filter((id) => parChapitre.get(id)?.valide).length;
   return {
-    parChapitre, nbValides, cours, essais: essais ?? [], echeances: echeances ?? [],
+    parChapitre, nbValides, cours, essais: essais ?? [], echeances: echeancesClasses,
     evaluation: etatEvaluation({
       nbChapitres: chapitreIds.length, nbValides,
       essais: (essais ?? []).map((e) => ({ id: e.id, statut: e.statut as StatutTentative, fin: e.fin })),
       maintenant,
-      fenetre: fenetreEvaluation(echeances ?? [], maintenant),
+      fenetre: fenetreEvaluation(echeancesClasses, maintenant),
     }),
   };
 }

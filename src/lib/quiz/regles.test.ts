@@ -67,6 +67,46 @@ describe('fenetreEvaluation', () => {
       { ouverture: '2026-11-16T08:00:00Z', limite: null },
     ], m)).toEqual({ etat: 'ok' });
   });
+  it('une classe sans date seule : ok, sans limite', () => {
+    expect(fenetreEvaluation([{ ouverture: null, limite: null }], m)).toEqual({ etat: 'ok' });
+  });
+  it('une classe sans date à côté d’une fenêtre close : ok', () => {
+    expect(fenetreEvaluation([
+      { ouverture: null, limite: null },
+      { ouverture: null, limite: '2026-11-10T18:00:00Z' },
+    ], m)).toEqual({ etat: 'ok' });
+  });
+  it('une classe sans date à côté d’une fenêtre ouverte avec limite : ok, sans limite', () => {
+    expect(fenetreEvaluation([
+      { ouverture: null, limite: null },
+      { ouverture: null, limite: '2026-11-20T18:00:00Z' },
+    ], m)).toEqual({ etat: 'ok' });
+  });
+  it('plusieurs fenêtres ouvertes avec limite : la plus tardive', () => {
+    expect(fenetreEvaluation([
+      { ouverture: null, limite: '2026-11-19T18:00:00Z' },
+      { ouverture: null, limite: '2026-11-21T18:00:00Z' },
+    ], m)).toEqual({ etat: 'ok', limite: new Date('2026-11-21T18:00:00Z') });
+  });
+  it('à l’instant exact de l’ouverture : ok', () => {
+    expect(fenetreEvaluation([{ ouverture: '2026-11-17T12:00:00Z', limite: null }], m)).toEqual({ etat: 'ok' });
+  });
+  it('à l’instant exact de la limite : ok', () => {
+    expect(fenetreEvaluation([{ ouverture: null, limite: '2026-11-17T12:00:00Z' }], m))
+      .toEqual({ etat: 'ok', limite: new Date('2026-11-17T12:00:00Z') });
+  });
+  it('plusieurs ouvertures futures : la plus proche', () => {
+    expect(fenetreEvaluation([
+      { ouverture: '2026-11-25T08:00:00Z', limite: null },
+      { ouverture: '2026-11-18T08:00:00Z', limite: null },
+    ], m)).toEqual({ etat: 'pas_ouverte', ouverture: new Date('2026-11-18T08:00:00Z') });
+  });
+  it('plusieurs limites passées : la plus tardive', () => {
+    expect(fenetreEvaluation([
+      { ouverture: null, limite: '2026-11-05T18:00:00Z' },
+      { ouverture: null, limite: '2026-11-12T18:00:00Z' },
+    ], m)).toEqual({ etat: 'close', limite: new Date('2026-11-12T18:00:00Z') });
+  });
 });
 
 describe('etatEvaluation et fenêtre', () => {

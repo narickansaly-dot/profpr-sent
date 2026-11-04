@@ -36,9 +36,9 @@ export function fenetreEvaluation(
   const ouvertes = fenetres.filter((f) =>
     (f.ouverture == null || f.ouverture.getTime() <= t) && (f.limite == null || t <= f.limite.getTime()));
   if (ouvertes.length > 0) {
-    const limites = ouvertes.flatMap((f) => (f.limite ? [f.limite.getTime()] : []));
-    if (limites.length === 0) return { etat: 'ok' };
-    return { etat: 'ok', limite: new Date(Math.max(...limites)) };
+    // Une fenêtre ouverte sans limite (y compris une classe sans aucune date) rend l'évaluation libre.
+    if (ouvertes.some((f) => f.limite == null)) return { etat: 'ok' };
+    return { etat: 'ok', limite: new Date(Math.max(...ouvertes.map((f) => f.limite!.getTime()))) };
   }
   const futures = fenetres.flatMap((f) => (f.ouverture && f.ouverture.getTime() > t ? [f.ouverture.getTime()] : []));
   if (futures.length > 0) return { etat: 'pas_ouverte', ouverture: new Date(Math.min(...futures)) };
