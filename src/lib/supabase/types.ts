@@ -43,6 +43,64 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"classe": {
+                  Row: {
+                    "code": string,"cree_le": string,"enseignant_id": string,"filiere_id": string | null,"id": string,"niveau_code": string | null,"nom": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "code": string,"cree_le"?: string,"enseignant_id": string,"filiere_id"?: string | null,"id"?: string,"niveau_code"?: string | null,"nom": string
+                  }
+                  Update: {
+                    "code"?: string,"cree_le"?: string,"enseignant_id"?: string,"filiere_id"?: string | null,"id"?: string,"niveau_code"?: string | null,"nom"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "classe_enseignant_id_fkey"
+      columns: ["enseignant_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "classe_filiere_id_fkey"
+      columns: ["filiere_id"]
+isOneToOne: false
+      referencedRelation: "filiere"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "classe_niveau_code_fkey"
+      columns: ["niveau_code"]
+isOneToOne: false
+      referencedRelation: "niveau"
+      referencedColumns: ["code"]
+    }
+                  ]
+                },"classe_cours": {
+                  Row: {
+                    "classe_id": string,"cours_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "classe_id": string,"cours_id": string
+                  }
+                  Update: {
+                    "classe_id"?: string,"cours_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "classe_cours_classe_id_fkey"
+      columns: ["classe_id"]
+isOneToOne: false
+      referencedRelation: "classe"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "classe_cours_cours_id_fkey"
+      columns: ["cours_id"]
+isOneToOne: false
+      referencedRelation: "cours"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"cours": {
                   Row: {
                     "couleur": string,"filiere_id": string | null,"id": string,"matiere": string,"niveau_code": string | null,"ordre": number,"publie": boolean,"slug": string,"titre": string
@@ -106,6 +164,32 @@ isOneToOne: false
       columns: ["question_id"]
 isOneToOne: false
       referencedRelation: "question"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"inscription_classe": {
+                  Row: {
+                    "classe_id": string,"eleve_id": string,"rejoint_le": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "classe_id": string,"eleve_id": string,"rejoint_le"?: string
+                  }
+                  Update: {
+                    "classe_id"?: string,"eleve_id"?: string,"rejoint_le"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "inscription_classe_classe_id_fkey"
+      columns: ["classe_id"]
+isOneToOne: false
+      referencedRelation: "classe"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "inscription_classe_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
       referencedColumns: ["id"]
     }
                   ]
@@ -331,13 +415,29 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "cloturer_mes_tentatives_expirees":
+            "classes_eleve":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "enseignant_nom": string,"id": string,"nom": string,"rejoint_le": string
+            }[]
+                           },
+"classes_enseignant":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "code": string,"cours_ids": (string)[],"cree_le": string,"filiere_id": string,"id": string,"nb_eleves": number,"niveau_code": string,"nom": string
+            }[]
+                           },
+"cloturer_mes_tentatives_expirees":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
 "correction_tentative":
 { Args: { "p_tentative": string }; Returns: {
               "bonnes_reponses": Json,"correcte": boolean,"enonce": string,"explication": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"reponses_acceptees": (string)[],"type": Database["public"]['Enums']["type_question_t"]
             }[]
+                           },
+"creer_classe":
+{ Args: { "p_cours": (string)[],"p_filiere": string,"p_niveau": string,"p_nom": string }; Returns: string
+                           },
+"definir_cours_classe":
+{ Args: { "p_classe": string,"p_cours": (string)[] }; Returns: undefined
                            },
 "demandes_enseignant":
 { Args: Record<PropertyKey, never>; Returns: {
@@ -369,8 +469,22 @@ isOneToOne: false
               "enonce": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"type": Database["public"]['Enums']["type_question_t"]
             }[]
                            },
+"quitter_classe":
+{ Args: { "p_classe": string }; Returns: undefined
+                           },
+"regenerer_code_classe":
+{ Args: { "p_classe": string }; Returns: string
+                           },
+"rejoindre_classe":
+{ Args: { "p_code": string }; Returns: {
+              "classe_nom": string,"statut": string
+            }[]
+                           },
 "repondre":
 { Args: { "p_question": string,"p_reponse": Json,"p_tentative": string }; Returns: string
+                           },
+"retirer_eleve":
+{ Args: { "p_classe": string,"p_eleve": string }; Returns: undefined
                            },
 "role_actuel":
 { Args: Record<PropertyKey, never>; Returns: Database["public"]['Enums']["role_t"]
