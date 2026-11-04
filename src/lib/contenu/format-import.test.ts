@@ -18,6 +18,21 @@ describe('schemaQuestionImport', () => {
       source: 'x:1', type: 'qcm_multiple', enonce: 'Q ?', propositions: ['a', 'b'], bonnes_reponses: [2],
     }).success).toBe(false);
   });
+  it('refuse une bonne réponse en double dans un QCM à plusieurs réponses', () => {
+    expect(schemaQuestionImport.safeParse({
+      source: 'x:4', type: 'qcm_multiple', enonce: 'Q ?', propositions: ['a', 'b', 'c'], bonnes_reponses: [0, 0],
+    }).success).toBe(false);
+  });
+  it('refuse une marge relative sans marge', () => {
+    expect(schemaQuestionImport.safeParse({
+      source: 'x:5', type: 'reponse_courte', enonce: 'Q', reponses_acceptees: ['70'], marge_relative: true,
+    }).success).toBe(false);
+  });
+  it('accepte une marge relative avec une marge', () => {
+    expect(schemaQuestionImport.safeParse({
+      source: 'x:6', type: 'reponse_courte', enonce: 'Q', reponses_acceptees: ['70'], marge: 0.1, marge_relative: true,
+    }).success).toBe(true);
+  });
   it('accepte vrai/faux et réponse courte', () => {
     expect(schemaQuestionImport.safeParse({ source: 'x:2', type: 'vrai_faux', enonce: 'Q', bonne_reponse: true }).success).toBe(true);
     expect(schemaQuestionImport.safeParse({

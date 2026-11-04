@@ -26,4 +26,12 @@ describe('lireFormulaireOnboarding', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'Léa', filiereId, niveau: '3e' }));
     expect(r.error?.issues[0].message).toBe('Choisis ton niveau.');
   });
+  it('refuse un prénom d’une seule lettre', () => {
+    const r = lireFormulaireOnboarding(formulaire({ nom: 'L', filiereId, niveau: '1re' }));
+    expect(r.error?.issues[0].message).toBe('Indique ton prénom.');
+  });
+  it('refuse un prénom de plus de 60 caractères', () => {
+    const r = lireFormulaireOnboarding(formulaire({ nom: 'L'.repeat(61), filiereId, niveau: '1re' }));
+    expect(r.error?.issues[0].message).toBe('Ton prénom est trop long.');
+  });
 });

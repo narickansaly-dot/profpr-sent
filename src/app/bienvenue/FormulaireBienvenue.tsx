@@ -1,19 +1,20 @@
 'use client';
 
 import { useActionState } from 'react';
-import { terminerOnboarding } from './actions';
+import { terminerOnboarding, type EtatBienvenue } from './actions';
 
 const VOIES = { generale: 'Voie générale', technologique: 'Voie technologique', professionnelle: 'Voie professionnelle' } as const;
 type Filiere = { id: string; voie: keyof typeof VOIES; nom: string };
 
 export function FormulaireBienvenue({ filieres }: { filieres: Filiere[] }) {
-  const [etat, envoyer, enCours] = useActionState(terminerOnboarding, {});
+  const [etat, envoyer, enCours] = useActionState<EtatBienvenue, FormData>(terminerOnboarding, {});
+  const v = etat.valeurs;
   return (
-    <form action={envoyer} className="formulaire">
-      <label>Ton prénom<input name="nom" autoComplete="given-name" required /></label>
+    <form key={etat.essai ?? 0} action={envoyer} className="formulaire">
+      <label>Ton prénom<input name="nom" autoComplete="given-name" defaultValue={v?.nom} required /></label>
       <label>
         Ta filière
-        <select name="filiereId" required defaultValue="">
+        <select name="filiereId" required defaultValue={v?.filiereId ?? ''}>
           <option value="" disabled>Choisis…</option>
           {(Object.keys(VOIES) as (keyof typeof VOIES)[]).map((voie) => {
             const liste = filieres.filter((f) => f.voie === voie);
@@ -27,11 +28,11 @@ export function FormulaireBienvenue({ filieres }: { filieres: Filiere[] }) {
       </label>
       <fieldset>
         <legend>Ton niveau</legend>
-        <label><input type="radio" name="niveau" value="2de" required /> Seconde</label>
-        <label><input type="radio" name="niveau" value="1re" /> Première</label>
-        <label><input type="radio" name="niveau" value="Tle" /> Terminale</label>
+        <label><input type="radio" name="niveau" value="2de" defaultChecked={v?.niveau === '2de'} required /> Seconde</label>
+        <label><input type="radio" name="niveau" value="1re" defaultChecked={v?.niveau === '1re'} /> Première</label>
+        <label><input type="radio" name="niveau" value="Tle" defaultChecked={v?.niveau === 'Tle'} /> Terminale</label>
       </fieldset>
-      <label className="case"><input type="checkbox" name="moinsDe15Ans" /> J’ai moins de 15 ans</label>
+      <label className="case"><input type="checkbox" name="moinsDe15Ans" defaultChecked={v?.moinsDe15Ans} /> J’ai moins de 15 ans</label>
       {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
       <button type="submit" className="bouton bouton-principal" disabled={enCours}>C’est parti !</button>
     </form>

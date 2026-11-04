@@ -1,0 +1,125 @@
+/* Progression et quiz : mêmes jetons que le reste du site, accent = couleur du cours. */
+.progression-cours { display: grid; gap: 8px; margin: 8px 0 20px; }
+.progression-cours p { margin: 0; font-weight: 700; color: var(--attenue); }
+.barre-progression { height: 14px; border-radius: 999px; overflow: hidden;
+  background: color-mix(in srgb, var(--couleur-cours) 22%, var(--surface)); border: 1px solid var(--trait);
+  box-shadow: inset 0 1px 2px color-mix(in srgb, var(--encre) 14%, transparent); }
+.barre-progression span { display: block; height: 100%; border-radius: inherit; min-width: 0;
+  background: linear-gradient(90deg, var(--couleur-cours), color-mix(in srgb, var(--couleur-cours) 70%, #fff));
+  transition: width .5s cubic-bezier(.2, .8, .2, 1); }
+
+.badge-valide { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-weight: 700; font-size: 14px; margin: 0;
+  background: color-mix(in srgb, var(--succes) 16%, var(--surface)); color: color-mix(in srgb, var(--succes) 80%, #000);
+  border: 1px solid color-mix(in srgb, var(--succes) 35%, transparent); }
+.badge-valide::before { content: "✓"; }
+.badge-note { display: inline-flex; padding: 2px 10px; border-radius: 999px; font-size: 14px; font-weight: 700;
+  background: var(--papier); border: 1px solid var(--trait); color: var(--attenue); }
+.liste-chapitres .badge-valide, .liste-chapitres .badge-note { margin-top: 6px; }
+
+.carte.bloc-quiz, .carte.carte-evaluation { margin-top: 32px; display: grid; gap: 12px; border-top: 6px solid var(--couleur-cours); }
+.bloc-quiz > *, .carte-evaluation > * { margin: 0; }
+.bloc-quiz .badge-valide { justify-self: start; }
+.bloc-quiz .bouton, .carte-evaluation .bouton { justify-self: start; text-align: center; }
+
+.formulaire .choix-longueur, .choix-longueur { display: flex; gap: 12px; flex-wrap: wrap; border: 0; padding: 0; margin: 0; }
+.choix-longueur legend { font-weight: 700; margin-bottom: 8px; padding: 0; }
+.formulaire .choix-longueur label, .choix-longueur label { position: relative; min-width: 64px; min-height: 48px; display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--trait); border-radius: 12px; padding: 0 16px; cursor: pointer; font-weight: 700; font-size: 18px;
+  background: var(--surface); transition: border-color var(--duree), background var(--duree), transform var(--duree); }
+.choix-longueur label:hover { border-color: color-mix(in srgb, var(--couleur-cours) 60%, var(--trait)); }
+.choix-longueur label:has(input:checked) { border-color: var(--couleur-cours); background: color-mix(in srgb, var(--couleur-cours) 10%, var(--surface)); }
+.choix-longueur label:has(input:focus-visible) { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.choix-longueur input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .badge-valide { color: var(--succes); } }
+
+/* Lecteur de quiz et correction */
+.titre-tentative { font-size: clamp(20px, 4vw, 26px); }
+.lecteur { display: grid; gap: 16px; }
+.lecteur-barre { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; font-weight: 700; }
+.lecteur-position { margin-right: auto; }
+.compte-a-rebours { font-variant-numeric: tabular-nums; padding: 4px 12px; border-radius: 999px; background: var(--papier); border: 2px solid var(--trait); }
+.lecteur, .liste-correction { --danger-texte: color-mix(in srgb, var(--danger) 88%, #000); }
+@media (prefers-color-scheme: dark) { .lecteur, .liste-correction { --danger-texte: var(--danger); } }
+.compte-a-rebours.bientot { border-color: var(--danger-texte); color: var(--danger-texte); background: var(--surface); }
+.sauvegarde { margin: 0; font-size: 14px; font-weight: 400; color: var(--attenue); }
+.sauvegarde-erreur { color: var(--danger-texte); font-weight: 700; }
+.question { border: 1px solid var(--trait); margin: 0; display: grid; gap: 16px; }
+.question-enonce { font: 700 clamp(19px, 3.6vw, 23px)/1.35 var(--police-titres); padding: 0; float: left; width: 100%; }
+.choix { display: grid; gap: 10px; clear: both; }
+.choix-vrai-faux { grid-template-columns: 1fr 1fr; }
+.option { touch-action: manipulation; display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 10px 16px; border: 2px solid var(--trait); border-radius: 14px; cursor: pointer; transition: border-color var(--duree), background var(--duree); }
+.option:has(input:checked) { border-color: var(--couleur-cours); background: color-mix(in srgb, var(--couleur-cours) 10%, var(--surface)); }
+.option input { width: 22px; height: 22px; accent-color: var(--couleur-cours); flex: none; }
+.reponse-courte { display: grid; gap: 8px; font-weight: 700; clear: both; }
+.reponse-courte input { min-height: 52px; padding: 0 14px; border: 2px solid var(--trait); border-radius: 12px; font: inherit; background: var(--surface); color: var(--encre); }
+.aide { margin: 0; color: var(--attenue); font-size: 15px; }
+.lecteur-navigation { display: flex; justify-content: space-between; gap: 12px; }
+.lecteur-navigation .bouton { flex: 1; min-height: 52px; }
+.lecteur > .bouton { min-height: 48px; justify-self: center; }
+.pastilles-questions { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pastilles-questions button { width: 48px; height: 48px; border-radius: 50%; touch-action: manipulation; transition: background var(--duree), border-color var(--duree); border: 2px solid var(--trait); background: var(--surface); color: var(--encre); font-weight: 700; cursor: pointer; }
+.pastilles-questions button.repondue { background: color-mix(in srgb, var(--couleur-cours) 18%, var(--surface)); border-color: var(--couleur-cours); }
+.pastilles-questions button[aria-current] { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.resultat { display: grid; gap: 8px; text-align: center; justify-items: center; border-top: 6px solid var(--couleur-cours); }
+.resultat-note { font: 700 clamp(44px, 10vw, 64px)/1 var(--police-titres); margin: 0; }
+.resultat.reussi .resultat-note { color: var(--succes); animation: rebond .6s ease-out; }
+.resultat-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.liste-correction { list-style: none; padding: 0; display: grid; gap: 12px; }
+.correction { border-left: 6px solid var(--trait); }
+.correction.juste { border-left-color: var(--succes); }
+.correction.faux { border-left-color: var(--danger); }
+.correction-verdict { margin: 0; font-weight: 700; }
+.correction.juste .correction-verdict { color: var(--succes); }
+.correction.faux .correction-verdict { color: var(--danger-texte); }
+.correction-explication { color: var(--attenue); }
+@keyframes rebond { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+
+.option:hover { border-color: color-mix(in srgb, var(--couleur-cours) 60%, var(--trait)); }
+.option:has(input:focus-visible), .pastilles-questions button:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.reponse-courte input:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.choix-vrai-faux .option { justify-content: center; font-weight: 700; font-size: 18px; }
+.correction p { margin: 4px 0; }
+.titre-tentative { margin-bottom: 12px; }
+@media (min-width: 720px) { .lecteur-navigation .bouton { flex: 0 1 auto; min-width: 180px; } }
+@media (prefers-reduced-motion: reduce) {
+  .resultat.reussi .resultat-note { animation: none; }
+  .option, .pastilles-questions button { transition: none; }
+}
+
+.question:focus { outline: none; }
+.question:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
+.question:disabled .option { opacity: .6; cursor: progress; }
+.bouton[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.pastilles-questions button { position: relative; }
+.pastilles-questions button.repondue { border-width: 3px; }
+.pastilles-questions button.repondue::after { content: "✓"; position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 12px; line-height: 1; background: var(--succes); color: var(--surface); }
+
+/* Page d'évaluation */
+.regles { display: grid; gap: 10px; padding-left: 22px; margin: 0 0 16px; list-style: disc; }
+.regles li::marker { color: var(--couleur-cours); }
+.liste-essais { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.liste-essais a { display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--trait); border-radius: 12px; background: var(--surface); }
+.vide { margin: 16px 0; color: var(--attenue); }
+
+/* Tableau de bord de l'élève */
+.tableau-de-bord { --danger-texte: color-mix(in srgb, var(--danger) 88%, #000); display: grid; gap: 8px; }
+@media (prefers-color-scheme: dark) { .tableau-de-bord { --danger-texte: var(--danger); } }
+.tdb-entete { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.serie { margin: 0; padding: 4px 14px; border-radius: 999px; font-weight: 700; color: var(--encre);
+  background: color-mix(in srgb, var(--accent) 22%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--trait)); }
+.tableau-de-bord section > h2 { margin-bottom: 12px; }
+.liste-tdb { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; }
+.ligne-tdb { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px; padding: 14px 18px; }
+.ligne-tdb > span { grid-column: 1 / -1; color: var(--attenue); font-size: 15px; }
+.ligne-tdb a { font-weight: 700; display: inline-flex; align-items: center; min-height: 44px; }
+.ligne-faible .formulaire { grid-column: 1 / -1; }
+.note-reussie { color: var(--succes); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
+.note-ratee { color: var(--danger-texte); font: 700 20px var(--police-titres); font-variant-numeric: tabular-nums; }
+.ligne-faible .bouton { justify-self: start; }
+
+/* Réponse donnée mais pas encore enregistrée */
+.pastilles-questions button.en-attente { border-style: dashed; border-color: var(--danger-texte); }
+.pastilles-questions button.en-attente::after { content: "…"; position: absolute; top: -6px; right: -6px; width: 18px; height: 18px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 12px; line-height: 1; background: var(--surface); color: var(--danger-texte); border: 1px solid var(--danger-texte); }
+.compte-a-rebours .precision { font-size: 13px; font-weight: 700; margin-left: 6px; }

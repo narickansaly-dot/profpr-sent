@@ -1,7 +1,8 @@
 import { expect, test } from '@playwright/test';
+import { emailDeTest, terminerBienvenue } from './aide-parcours';
 
 test('un élève s’inscrit, choisit sa filière et lit un chapitre', async ({ page }) => {
-  const email = `eleve-${Date.now()}-${Math.random().toString(36).slice(2, 7)}@test.local`;
+  const email = emailDeTest('eleve');
 
   await page.goto('/');
   await expect(page).toHaveURL(/\/connexion$/);
@@ -12,13 +13,8 @@ test('un élève s’inscrit, choisit sa filière et lit un chapitre', async ({ 
   await page.getByLabel('Mot de passe').fill('motdepasse-test');
   await page.getByRole('button', { name: 'Créer mon compte' }).click();
 
-  await expect(page).toHaveURL(/\/bienvenue$/);
-  await page.getByLabel('Ton prénom').fill('Léa');
-  await page.getByLabel('Ta filière').selectOption({ label: 'ST2S — Sciences et technologies de la santé et du social' });
-  await page.getByLabel('Première').check();
-  await page.getByRole('button', { name: 'C’est parti !' }).click();
+  await terminerBienvenue(page);
 
-  await expect(page.getByRole('heading', { name: 'Mes cours' })).toBeVisible();
   await expect(page.getByText(/Essai gratuit : encore 7 jours/)).toBeVisible();
   await page.getByRole('link', { name: /Biologie et physiopathologie humaines/ }).click();
 

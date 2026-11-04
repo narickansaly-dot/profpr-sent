@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { lireChapitre } from '@/lib/contenu/requetes';
 import { ContenuChapitre } from '@/components/ContenuChapitre';
+import { MarqueurLecture } from '@/components/MarqueurLecture';
+import { BlocQuiz } from '@/components/BlocQuiz';
 
 type Params = { params: Promise<{ slug: string; chapitre: string }> };
 
@@ -29,6 +31,8 @@ export default async function PageChapitre({ params }: Params) {
         </div>
       )}
       <ContenuChapitre sections={ch.sections} aRetenir={ch.a_retenir} />
+      <MarqueurLecture chapitreId={ch.id} />
+      <BlocQuiz chapitreId={ch.id} />
       <nav className="navigation-chapitres" aria-label="Chapitres">
         {precedent ? <Link className="bouton bouton-secondaire" href={`/cours/${cours.slug}/${precedent.slug}`}>← {precedent.titre_court ?? precedent.titre}</Link> : <span />}
         {suivant && <Link className="bouton bouton-principal" href={`/cours/${cours.slug}/${suivant.slug}`}>{suivant.titre_court ?? suivant.titre} →</Link>}
