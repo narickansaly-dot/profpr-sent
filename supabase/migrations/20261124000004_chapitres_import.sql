@@ -159,14 +159,16 @@ declare
   q jsonb;
   r record;
   v_sources text[];
+  v_chapitres uuid[] := '{}';
   v_slugs text[];
   v_bilan jsonb := '{"cree":0,"modifiee":0,"versionnee":0,"inchangee":0,"archivee":0,"supprimee":0}';
 begin
-  if not ((select auth.role()) = 'service_role' or public.role_actuel() = 'admin_contenu') then
-    raise exception 'acces_refuse';
+  -- Un rôle nul (compte sans profil) est refusé : exiger_admin compare avec « is distinct from ».
+  if (select auth.role()) is distinct from 'service_role' then
+    perform prive.exiger_admin();
   end if;
-  if jsonb_typeof(p_cours) <> 'object' or jsonb_typeof(p_cours->'chapitres') <> 'array'
-     or jsonb_array_length(p_cours->'chapitres') = 0
+  if jsonb_typeof(p_cours) is distinct from 'object'
+     or coalesce(jsonb_typeof(p_cours->'chapitres'), '') <> 'array'
      or coalesce(p_cours->>'slug', '') !~ '^[a-z0-9-]{1,80}$'
      or coalesce(p_cours->>'niveau', '') not in ('2de', '1re', 'Tle')
      or char_length(btrim(coalesce(p_cours->>'titre', ''))) not between 1 and 200
@@ -178,6 +180,23 @@ begin
   if v_filiere is null then
     raise exception 'filiere_inconnue';
   end if;
+  -- Structure du fichier, vérifiée avant toute écriture : chapitres et questions présents, objets, sans doublon.
+  if jsonb_array_length(p_cours->'chapitres') = 0
+     or exists (select 1 from jsonb_array_elements(p_cours->'chapitres') x
+                 where jsonb_typeof(x) <> 'object' or coalesce(jsonb_typeof(x->'questions'), '') <> 'array') then
+    raise exception 'import_invalide';
+  end if;
+  if exists (select 1 from jsonb_array_elements(p_cours->'chapitres') x, jsonb_array_elements(x->'questions') y
+              where jsonb_typeof(y) <> 'object' or nullif(btrim(y->>'source'), '') is null) then
+    raise exception 'import_invalide';
+  end if;
+  if (select count(distinct x->>'slug') from jsonb_array_elements(p_cours->'chapitres') x) <> jsonb_array_length(p_cours->'chapitres')
+     or (select count(distinct x->>'numero') from jsonb_array_elements(p_cours->'chapitres') x) <> jsonb_array_length(p_cours->'chapitres')
+     or (select count(distinct btrim(y->>'source')) from jsonb_array_elements(p_cours->'chapitres') x,
+                jsonb_array_elements(x->'questions') y)
+        <> (select count(*) from jsonb_array_elements(p_cours->'chapitres') x, jsonb_array_elements(x->'questions') y) then
+    raise exception 'import_invalide';
+  end if;
   insert into public.cours as c (slug, filiere_id, niveau_code, matiere, titre, couleur, publie)
     values (p_cours->>'slug', v_filiere, p_cours->>'niveau', btrim(p_cours->>'matiere'), btrim(p_cours->>'titre'),
             lower(coalesce(p_cours->>'couleur', '#2563eb')), coalesce(p_publier, false))
@@ -187,31 +206,31 @@ begin
 
   for ch in select * from jsonb_array_elements(p_cours->'chapitres') loop
     v_chapitre := prive.ecrire_chapitre(v_cours, null, ch, coalesce(p_publier, false));
-    if jsonb_typeof(ch->'questions') <> 'array' then
-      raise exception 'import_invalide';
-    end if;
+    v_chapitres := v_chapitres || v_chapitre;
     for q in select * from jsonb_array_elements(ch->'questions') loop
-      if nullif(btrim(q->>'source'), '') is null then
-        raise exception 'import_invalide';
-      end if;
       select * into r from prive.ecrire_question(v_chapitre, null, q);
       v_bilan := jsonb_set(v_bilan, array[r.resultat], to_jsonb((v_bilan->>r.resultat)::int + 1));
     end loop;
-    -- Questions venues d'un import précédent et retirées du fichier : archivées si déjà tirées, sinon supprimées.
-    -- Les questions créées dans l'éditeur (source nulle) ne sont jamais touchées.
-    select coalesce(array_agg(btrim(x->>'source')), '{}') into v_sources from jsonb_array_elements(ch->'questions') x;
-    for r in select q2.id, exists (select 1 from public.tentative_question tq where tq.question_id = q2.id) as utilisee
-               from public.question q2
-              where q2.chapitre_id = v_chapitre and q2.source is not null and q2.statut <> 'archivee'
-                and not (q2.source = any (v_sources)) loop
-      if r.utilisee then
-        update public.question q3 set statut = 'archivee', source = null where q3.id = r.id;
-        v_bilan := jsonb_set(v_bilan, '{archivee}', to_jsonb((v_bilan->>'archivee')::int + 1));
-      else
-        delete from public.question q3 where q3.id = r.id;
-        v_bilan := jsonb_set(v_bilan, '{supprimee}', to_jsonb((v_bilan->>'supprimee')::int + 1));
-      end if;
-    end loop;
+  end loop;
+
+  -- Questions venues d'un import précédent et retirées du fichier : archivées si déjà tirées, sinon supprimées.
+  -- Le nettoyage vient après tous les chapitres et porte sur toutes les sources du fichier : une source déplacée
+  -- vers un autre chapitre est donc refusée (question_autre_chapitre) quel que soit l'ordre des chapitres.
+  -- Les questions créées dans l'éditeur (source nulle) ne sont jamais touchées.
+  select coalesce(array_agg(btrim(y->>'source')), '{}') into v_sources
+    from jsonb_array_elements(p_cours->'chapitres') x, jsonb_array_elements(x->'questions') y;
+  for r in select q2.id, (exists (select 1 from public.tentative_question tq where tq.question_id = q2.id)
+                          or exists (select 1 from public.historique_question hq where hq.question_id = q2.id)) as utilisee
+             from public.question q2
+            where q2.chapitre_id = any (v_chapitres) and q2.source is not null and q2.statut <> 'archivee'
+              and not (q2.source = any (v_sources)) loop
+    if r.utilisee then
+      update public.question q3 set statut = 'archivee', source = null where q3.id = r.id;
+      v_bilan := jsonb_set(v_bilan, '{archivee}', to_jsonb((v_bilan->>'archivee')::int + 1));
+    else
+      delete from public.question q3 where q3.id = r.id;
+      v_bilan := jsonb_set(v_bilan, '{supprimee}', to_jsonb((v_bilan->>'supprimee')::int + 1));
+    end if;
   end loop;
 
   select coalesce(array_agg(x->>'slug'), '{}') into v_slugs from jsonb_array_elements(p_cours->'chapitres') x;
@@ -232,7 +251,7 @@ language sql stable security definer set search_path = '' as $$
          count(q.id) filter (where q.statut = 'a_relire')::int,
          count(q.id) filter (where q.statut = 'brouillon')::int,
          (select count(*)::int from public.signalement s join public.question q2 on q2.id = s.question_id
-           where q2.chapitre_id = ch.id and s.statut = 'ouvert')
+           where q2.chapitre_id = ch.id and q2.statut <> 'archivee' and s.statut = 'ouvert')
     from public.cours c
     left join public.chapitre ch on ch.cours_id = c.id
     left join public.question q on q.chapitre_id = ch.id

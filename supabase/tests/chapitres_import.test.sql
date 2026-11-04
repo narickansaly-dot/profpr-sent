@@ -1,10 +1,13 @@
 begin;
-select plan(84);
+select plan(96);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000e1', 'admin-i@test.local'),
   ('00000000-0000-0000-0000-0000000000e2', 'eleve-i@test.local');
 update public.profil set role = 'admin_contenu' where id = '00000000-0000-0000-0000-0000000000e1';
+-- Compte dont le profil a disparu (suppression) mais dont le jeton reste valide.
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-0000000000e3', 'sans-profil@test.local');
+delete from public.profil where id = '00000000-0000-0000-0000-0000000000e3';
 insert into public.cours (id, slug, matiere, titre, publie) values
   ('00000000-0000-0000-0000-00000000e001', 'test-i', 'Test', 'Cours test', true),
   ('00000000-0000-0000-0000-00000000e002', 'test-i2', 'Test', 'Autre cours', true);
@@ -67,6 +70,10 @@ select throws_ok($$ select public.importer_cours(current_setting('t.p1')::jsonb)
 select is((select count(*)::int from public.suivi_contenu()), 0, 'élève : suivi vide');
 select throws_ok($$ select prive.ecrire_chapitre('00000000-0000-0000-0000-00000000e001', null, '{}', false) $$,
   '42501', null, 'élève : prive.ecrire_chapitre inaccessible');
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000e3","role":"authenticated"}', true);
+select throws_ok($$ select public.importer_cours(current_setting('t.p1')::jsonb) $$,
+  'P0001', 'acces_refuse', 'sans profil : importer_cours refusé');
+select is((select count(*)::int from public.suivi_contenu()), 0, 'sans profil : suivi vide');
 set local role anon;
 select throws_ok($$ select public.importer_cours(current_setting('t.p1')::jsonb) $$, '42501', null, 'anonyme : importer_cours inaccessible');
 select throws_ok($$ select * from public.suivi_contenu() $$, '42501', null, 'anonyme : suivi inaccessible');
@@ -211,6 +218,37 @@ select throws_ok($$ select public.importer_cours('{"slug":"ok","filiere":"ZZZ","
   'P0001', 'filiere_inconnue', 'import : filière inconnue');
 select throws_ok($$ select public.importer_cours('{"slug":"ok","filiere":"ST2S","niveau":"1re","matiere":"M","titre":"T","chapitres":[{"slug":"c","numero":1,"titre":"T","sections":[],"questions":[{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true]}]}]}') $$,
   'P0001', 'import_invalide', 'import : question sans source');
+
+-- Fichiers mal formés : refusés avant toute écriture, rien n'est supprimé.
+select set_config('t.nb_q', public.t_val($q$ select count(*) from public.question $q$), true);
+select throws_ok($$ select public.importer_cours('{"slug":"imp-cours","filiere":"ST2S","niveau":"1re","matiere":"Imp","titre":"Cours importé"}') $$,
+  'P0001', 'import_invalide', 'import : clé chapitres absente');
+select throws_ok($$ select public.importer_cours('{"slug":"imp-cours","filiere":"ST2S","niveau":"1re","matiere":"Imp","titre":"Cours importé","chapitres":[{"slug":"imp-ch1","numero":1,"titre":"Chapitre 1","sections":[]}]}') $$,
+  'P0001', 'import_invalide', 'import : clé questions absente');
+select throws_ok($$ select public.importer_cours('{"slug":"imp-cours","filiere":"ST2S","niveau":"1re","matiere":"Imp","titre":"Cours importé","chapitres":[{"slug":"imp-ch1","numero":1,"titre":"Chapitre 1","sections":[],"questions":null}]}') $$,
+  'P0001', 'import_invalide', 'import : questions nul');
+select is(public.t_val($q$ select count(*) from public.question $q$), current_setting('t.nb_q'), 'fichiers incomplets : aucune question supprimée');
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || '{"questions":[]}'::jsonb, current_setting('t.ch1')::jsonb || '{"questions":[]}'::jsonb))) $$,
+  'P0001', 'import_invalide', 'import : slug de chapitre en double');
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb)),
+  current_setting('t.ch2')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb))))) $$,
+  'P0001', 'import_invalide', 'import : source de question en double');
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || '{"questions":[]}'::jsonb,
+  (current_setting('t.ch2')::jsonb || '{"questions":[]}'::jsonb) || '{"numero":1}'::jsonb))) $$,
+  'P0001', 'import_invalide', 'import : numéro de chapitre en double');
+-- Déplacer une source vers un autre chapitre est refusé, quel que soit l'ordre des chapitres.
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || '{"questions":[]}'::jsonb,
+  current_setting('t.ch2')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb))))) $$,
+  'P0001', 'question_autre_chapitre', 'déplacement de source : chapitre source avant');
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch2')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb)),
+  current_setting('t.ch1')::jsonb || '{"questions":[]}'::jsonb))) $$,
+  'P0001', 'question_autre_chapitre', 'déplacement de source : chapitre source après');
+select is(public.t_val($q$ select count(*) from public.question where source = 'imp-1' $q$), '1', 'déplacements refusés : imp-1 intacte');
 
 -- Publication à l'import.
 select lives_ok($$ select public.importer_cours(current_setting('t.p4')::jsonb, true) $$, 'import avec p_publier');
