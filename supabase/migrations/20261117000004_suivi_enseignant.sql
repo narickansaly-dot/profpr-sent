@@ -1,5 +1,6 @@
 -- Suivi d'une classe par son enseignant : progression, notes, questions les plus ratées.
 -- Fonctions security definer : l'enseignant ne lit jamais directement les tables de résultats.
+-- Une question n'est restituée qu'avec au moins 5 réponses de 3 élèves distincts (pas de réponse individuelle exposée).
 
 create function public.suivi_classe(p_classe uuid)
 returns table (eleve_id uuid, nom text, cours_id uuid, cours_titre text, chapitres_valides int, chapitres_total int,
@@ -70,7 +71,7 @@ begin
       left join public.question_corrige qc on qc.question_id = q.id
      where t.cours_id = p_cours and t.statut <> 'en_cours' and tq.correcte is not null
      group by q.id, c.titre, q.enonce, q.propositions, qc.bonnes_reponses, qc.reponses_acceptees
-    having count(*) >= 5 and count(*) filter (where not tq.correcte) > 0
+    having count(*) >= 5 and count(distinct t.eleve_id) >= 3 and count(*) filter (where not tq.correcte) > 0
      order by count(*) filter (where not tq.correcte)::numeric / count(*) desc, count(*) desc, q.id
      limit greatest(coalesce(p_limite, 10), 0);
 end $$;

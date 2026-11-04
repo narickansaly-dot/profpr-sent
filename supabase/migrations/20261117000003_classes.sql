@@ -50,6 +50,7 @@ revoke insert, update, delete, truncate, references, trigger, maintain
 create function prive.est_enseignant_de(p_classe uuid) returns boolean
 language sql stable set search_path = '' as $$
   select exists (select 1 from public.classe where id = p_classe and enseignant_id = auth.uid())
+         and public.role_actuel() = 'enseignant'
 $$;
 
 create function prive.nouveau_code_classe() returns text
