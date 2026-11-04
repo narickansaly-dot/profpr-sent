@@ -2,7 +2,13 @@
 
 alter table public.profil
   add column demande_enseignant boolean not null default false,
-  add column etablissement text check (etablissement is null or char_length(etablissement) between 2 and 120);
+  add column etablissement text check (
+    etablissement is null
+    or (char_length(etablissement) between 2 and 120
+        and btrim(etablissement) = etablissement
+        and etablissement !~ '[[:cntrl:]]')
+  ),
+  add constraint profil_demande_etablissement_ck check (not demande_enseignant or etablissement is not null);
 
 grant update (demande_enseignant, etablissement) on public.profil to authenticated;
 

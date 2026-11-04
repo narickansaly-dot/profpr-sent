@@ -1,11 +1,18 @@
 begin;
-select plan(8);
+select plan(20);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000f1', 'prof@test.local'),
   ('00000000-0000-0000-0000-0000000000f2', 'admin@test.local'),
   ('00000000-0000-0000-0000-0000000000f3', 'eleve@test.local');
 update public.profil set role = 'admin_contenu' where id = '00000000-0000-0000-0000-0000000000f2';
+insert into auth.users (id, email) values
+  ('00000000-0000-0000-0000-0000000000f4', 'refus@test.local'),
+  ('00000000-0000-0000-0000-0000000000f5', 'parent@test.local'),
+  ('00000000-0000-0000-0000-0000000000f6', 'ens@test.local');
+update public.profil set etablissement = 'Lycée Refus', demande_enseignant = true where id = '00000000-0000-0000-0000-0000000000f4';
+update public.profil set role = 'parent', etablissement = 'Lycée P', demande_enseignant = true where id = '00000000-0000-0000-0000-0000000000f5';
+update public.profil set role = 'enseignant', etablissement = 'Lycée E', demande_enseignant = true where id = '00000000-0000-0000-0000-0000000000f6';
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000f1","role":"authenticated"}', true);
@@ -25,6 +32,40 @@ select is((select role::text || '/' || demande_enseignant::text from public.prof
 set local role authenticated;
 select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f3', true) $$,
   'P0001', 'demande_introuvable', 'impossible de promouvoir quelqu''un sans demande');
+
+-- refus
+select lives_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f4', false) $$, 'l''admin refuse');
+reset role;
+select is((select role::text || '/' || demande_enseignant::text from public.profil where id = '00000000-0000-0000-0000-0000000000f4'),
+  'eleve/false', 'refus : reste élève, demande close');
+set local role authenticated;
+
+-- demandes sur des profils qui ne sont pas des élèves
+select is((select count(*)::int from public.demandes_enseignant() where id in ('00000000-0000-0000-0000-0000000000f5', '00000000-0000-0000-0000-0000000000f6')),
+  0, 'parent et enseignant avec demande absents de la liste');
+select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f5', true) $$,
+  'P0001', 'demande_introuvable', 'un parent ne peut pas être promu');
+select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f6', true) $$,
+  'P0001', 'demande_introuvable', 'un enseignant ne peut pas être retraité');
+
+-- un enseignant n'est pas admin
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000f1","role":"authenticated"}', true);
+select is((select count(*)::int from public.demandes_enseignant()), 0, 'un enseignant ne voit aucune demande');
+select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f4', true) $$,
+  'P0001', 'acces_refuse', 'un enseignant ne peut pas traiter une demande');
+
+-- anon
+select is(has_function_privilege('anon', 'public.demandes_enseignant()', 'EXECUTE'), false, 'anon ne peut pas lister les demandes');
+select is(has_function_privilege('anon', 'public.traiter_demande_enseignant(uuid, boolean)', 'EXECUTE'), false, 'anon ne peut pas traiter les demandes');
+
+-- élève : colonnes protégées et contraintes
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000f3","role":"authenticated"}', true);
+select throws_ok($$ update public.profil set email = 'autre@test.local' where id = '00000000-0000-0000-0000-0000000000f3' $$,
+  '42501', null, 'un élève ne peut pas modifier son email');
+select throws_ok($$ update public.profil set etablissement = '  Lycée' where id = '00000000-0000-0000-0000-0000000000f3' $$,
+  '23514', null, 'établissement avec espaces en bordure refusé');
+select throws_ok($$ update public.profil set demande_enseignant = true where id = '00000000-0000-0000-0000-0000000000f3' $$,
+  '23514', null, 'demande sans établissement refusée');
 
 select * from finish();
 rollback;
