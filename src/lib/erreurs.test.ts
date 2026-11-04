@@ -42,4 +42,29 @@ describe('messageErreur, espace classes', () => {
       expect(messageErreur(code)).not.toMatch(/Une erreur est survenue/);
     }
   });
+  it('traduit les codes de la gestion du contenu', () => {
+    const attendus: Record<string, string> = {
+      question_invalide: 'Cette question est incomplète ou mal formée.',
+      question_introuvable: 'Cette question n’existe plus.',
+      question_archivee: 'Cette question a été remplacée par une nouvelle version.',
+      question_autre_chapitre: 'Cette source est déjà utilisée dans un autre chapitre.',
+      source_deja_prise: 'Cette source est déjà utilisée par une autre question.',
+      question_utilisee: 'Cette question a déjà servi dans des quiz : elle ne peut pas être supprimée. Repasse-la en brouillon.',
+      transition_invalide: 'Ce changement de statut n’est pas possible : une question passe par « à relire » avant d’être validée.',
+      chapitre_invalide: 'Ce chapitre est incomplet ou mal formé (vérifie le slug et les identifiants de section).',
+      chapitre_introuvable: 'Ce chapitre n’existe plus.',
+      cours_introuvable: 'Ce cours n’existe plus.',
+      slug_deja_pris: 'Cet identifiant d’URL est déjà utilisé.',
+      filiere_inconnue: 'Filière inconnue.',
+      import_invalide: 'Le fichier d’import est incomplet ou mal formé.',
+      commentaire_invalide: 'Ton commentaire doit faire entre 5 et 1000 caractères.',
+      deja_signalee: 'Tu as déjà signalé cette question.',
+      trop_de_signalements: 'Tu as atteint la limite de 20 signalements par jour.',
+      signalement_introuvable: 'Ce signalement a déjà été traité.',
+    };
+    for (const [code, texte] of Object.entries(attendus)) expect(messageErreur(code)).toBe(texte);
+  });
+  it('garde decision_invalide de l’étape 3a', () => {
+    expect(messageErreur('decision_invalide')).toBe('Choisis de valider ou de refuser la demande.');
+  });
 });
