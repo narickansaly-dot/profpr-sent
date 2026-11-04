@@ -504,7 +504,7 @@ isOneToOne: false
                            },
 "questions_ratees_classe":
 { Args: { "p_classe": string,"p_cours": string,"p_limite"?: number }; Returns: {
-              "bonnes_reponses": Json,"chapitre_titre": string,"enonce": string,"propositions": Json,"question_id": string,"reponses": number,"reponses_acceptees": (string)[],"taux_erreur": number
+              "bonnes_reponses": Json,"chapitre_titre": string,"enonce": string,"propositions": Json,"question_id": string,"reponses": number,"reponses_acceptees": (string)[],"taux_erreur": number,"type": Database["public"]['Enums']["type_question_t"]
             }[]
                            },
 "questions_tentative":

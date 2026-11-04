@@ -1,5 +1,5 @@
 begin;
-select plan(17);
+select plan(29);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-000000000c01', 'prof@test.local'),
@@ -26,7 +26,7 @@ insert into public.inscription_classe (classe_id, eleve_id) values ('60000000-00
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c02","role":"authenticated"}', true);
 select throws_ok($$ select public.definir_echeance('60000000-0000-0000-0000-000000000c01', '20000000-0000-0000-0000-000000000c01', null, now() + interval '1 day') $$,
-  'P0001', 'acces_refuse', 'seul le propriétaire fixe une échéance');
+  'P0001', 'classe_introuvable', 'seul le propriétaire fixe une échéance');
 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c01","role":"authenticated"}', true);
 select throws_ok($$ select public.definir_echeance('60000000-0000-0000-0000-000000000c01', '20000000-0000-0000-0000-000000000c01', now() + interval '2 days', now() + interval '1 day') $$,
@@ -104,13 +104,90 @@ select throws_ok($$ select public.definir_echeance('60000000-0000-0000-0000-0000
 select public.definir_echeance('60000000-0000-0000-0000-000000000c02', '20000000-0000-0000-0000-000000000c01', null, null);
 select is((select count(*)::int from public.echeances_classe('60000000-0000-0000-0000-000000000c02')), 0, 'dates nulles : échéance supprimée');
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c02","role":"authenticated"}', true);
-select throws_ok($$ select * from public.echeances_classe('60000000-0000-0000-0000-000000000c01') $$, 'P0001', 'acces_refuse',
+select throws_ok($$ select * from public.echeances_classe('60000000-0000-0000-0000-000000000c01') $$, 'P0001', 'classe_introuvable',
   'echeances_classe réservée au propriétaire');
 
 -- Une classe liée sans échéance apparaît avec des dates nulles.
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c03","role":"authenticated"}', true);
 select is((select count(*)::int from public.mes_echeances('20000000-0000-0000-0000-000000000c01') where ouverture is null and limite is null),
   1, 'classe liée sans dates : ligne aux dates nulles');
+
+-- Départs volontaires : quitter la classe ne fait pas sortir de sa fenêtre d'évaluation pendant 30 jours.
+reset role;
+insert into auth.users (id, email) values
+  ('00000000-0000-0000-0000-000000000c05', 'depart-avant@test.local'),
+  ('00000000-0000-0000-0000-000000000c06', 'depart-apres@test.local'),
+  ('00000000-0000-0000-0000-000000000c07', 'depart-ancien@test.local'),
+  ('00000000-0000-0000-0000-000000000c08', 'retire@test.local');
+insert into public.progression_chapitre (eleve_id, chapitre_id, meilleure_note, valide)
+  select e, '30000000-0000-0000-0000-000000000c01', 90, true
+    from unnest(array['00000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c06',
+                      '00000000-0000-0000-0000-000000000c07', '00000000-0000-0000-0000-000000000c08']::uuid[]) e;
+insert into public.classe (id, enseignant_id, nom, code) values
+  ('60000000-0000-0000-0000-000000000c04', '00000000-0000-0000-0000-000000000c01', 'Classe pas ouverte', 'EFGHJK'),
+  ('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c01', 'Classe close', 'FGHJKM');
+insert into public.classe_cours values
+  ('60000000-0000-0000-0000-000000000c04', '20000000-0000-0000-0000-000000000c01'),
+  ('60000000-0000-0000-0000-000000000c05', '20000000-0000-0000-0000-000000000c01');
+insert into public.echeance_evaluation (classe_id, cours_id, ouverture, limite) values
+  ('60000000-0000-0000-0000-000000000c04', '20000000-0000-0000-0000-000000000c01', now() + interval '1 day', null),
+  ('60000000-0000-0000-0000-000000000c05', '20000000-0000-0000-0000-000000000c01', null, now() - interval '1 minute');
+insert into public.inscription_classe (classe_id, eleve_id) values
+  ('60000000-0000-0000-0000-000000000c04', '00000000-0000-0000-0000-000000000c05'),
+  ('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c06'),
+  ('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c07'),
+  ('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c08');
+set local role authenticated;
+
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c05","role":"authenticated"}', true);
+select public.quitter_classe('60000000-0000-0000-0000-000000000c04');
+select throws_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-000000000c01') $$, 'P0001', 'evaluation_pas_ouverte',
+  'quitter la classe avant l''ouverture ne permet pas de commencer');
+select is((select count(*)::int from public.mes_echeances('20000000-0000-0000-0000-000000000c01') where ouverture > now()), 1,
+  'l''échéance de la classe quittée reste affichée à l''élève (même règle que le serveur)');
+reset role;
+select is((select count(*)::int from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-000000000c05'), 1, 'le départ volontaire est noté');
+set local role authenticated;
+select is((select statut from public.rejoindre_classe('EFGHJK')), 'ok', 'l''élève revient dans la classe');
+reset role;
+select is((select count(*)::int from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-000000000c05'), 0, 'le retour efface le départ');
+set local role authenticated;
+select throws_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-000000000c01') $$, 'P0001', 'evaluation_pas_ouverte',
+  'de retour dans la classe : toujours pas ouverte');
+
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c06","role":"authenticated"}', true);
+select public.quitter_classe('60000000-0000-0000-0000-000000000c05');
+select throws_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-000000000c01') $$, 'P0001', 'evaluation_close',
+  'quitter la classe après la limite ne rouvre pas l''évaluation');
+
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c07","role":"authenticated"}', true);
+select public.quitter_classe('60000000-0000-0000-0000-000000000c05');
+reset role;
+update prive.depart_classe set quitte_le = now() - interval '31 days' where eleve_id = '00000000-0000-0000-0000-000000000c07';
+set local role authenticated;
+select lives_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-000000000c01') $$,
+  'un départ de plus de 30 jours ne compte plus');
+
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c01","role":"authenticated"}', true);
+select public.retirer_eleve('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c08');
+reset role;
+select is((select count(*)::int from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-000000000c08'), 0,
+  'un retrait par l''enseignant n''est pas un départ volontaire');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c08","role":"authenticated"}', true);
+select lives_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-000000000c01') $$,
+  'un élève retiré par l''enseignant n''est plus soumis à l''échéance');
+
+-- Quitter de nouveau rafraîchit la date du départ.
+reset role;
+insert into public.inscription_classe (classe_id, eleve_id) values ('60000000-0000-0000-0000-000000000c05', '00000000-0000-0000-0000-000000000c07');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c07","role":"authenticated"}', true);
+select public.quitter_classe('60000000-0000-0000-0000-000000000c05');
+reset role;
+select ok((select quitte_le > now() - interval '1 minute' from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-000000000c07'),
+  'un second départ remet la date à jour');
+select ok(not has_table_privilege('authenticated', 'prive.depart_classe', 'select'), 'les départs ne sont pas lisibles par les comptes');
 
 select * from finish();
 rollback;

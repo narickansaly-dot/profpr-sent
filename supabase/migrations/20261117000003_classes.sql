@@ -31,6 +31,19 @@ create table prive.essai_code (
 );
 create index essai_code_eleve on prive.essai_code (eleve_id, essai_le);
 
+-- Départs volontaires (quitter_classe), pas les retraits par l'enseignant (retirer_eleve).
+-- Règle : pendant 30 jours après son départ, l'élève reste soumis aux échéances de la classe quittée
+-- (prive.fenetre_evaluation la compte comme une inscription). Sinon, quitter puis rejoindre la classe
+-- suffirait à commencer l'évaluation avant l'ouverture ou après la limite. Au-delà de 30 jours, un vrai
+-- changement de classe ne bloque plus. Revenir dans la classe efface la ligne (l'inscription reprend le relais).
+create table prive.depart_classe (
+  classe_id uuid not null references public.classe on delete cascade,
+  eleve_id uuid not null references public.profil on delete cascade,
+  quitte_le timestamptz not null default now(),
+  primary key (classe_id, eleve_id)
+);
+create index depart_classe_eleve on prive.depart_classe (eleve_id);
+
 alter table public.classe enable row level security;
 alter table public.classe_cours enable row level security;
 alter table public.inscription_classe enable row level security;
@@ -53,6 +66,9 @@ language sql stable set search_path = '' as $$
          and public.role_actuel() = 'enseignant'
 $$;
 
+-- Codes : 31^6 ≈ 8,9·10⁸ combinaisons (≈ 29,7 bits). Le modulo 31 sur un octet avantage à peine les 8 premiers
+-- symboles (9/256 au lieu de 8/256) : négligeable. Limite connue : le frein de rejoindre_classe est par compte
+-- (10 codes faux par heure) ; N comptes donnent N × 10 essais par heure. Un frein global par IP viendra à l'étape 5.
 create function prive.nouveau_code_classe() returns text
 language plpgsql volatile set search_path = '' as $$
 declare
@@ -99,8 +115,9 @@ end $$;
 create function public.definir_cours_classe(p_classe uuid, p_cours uuid[]) returns void
 language plpgsql security definer set search_path = '' as $$
 begin
+  -- Classe d'un autre enseignant ou inexistante : même erreur, pour ne pas confirmer son existence.
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
   perform prive.verifier_cours_publies(p_cours);
   delete from public.classe_cours where classe_id = p_classe and cours_id <> all (p_cours);
@@ -114,8 +131,9 @@ language plpgsql security definer set search_path = '' as $$
 declare
   v text;
 begin
+  -- Classe d'un autre enseignant ou inexistante : même erreur, pour ne pas confirmer son existence.
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
   v := prive.nouveau_code_classe();
   update public.classe set code = v where id = p_classe;
@@ -129,8 +147,11 @@ declare
   v_code text := upper(regexp_replace(coalesce(p_code, ''), '\s', '', 'g'));
   v_classe public.classe;
 begin
-  if public.role_actuel() is distinct from 'eleve' then
-    raise exception 'acces_refuse';
+  -- Une personne en attente de validation enseignant ne rejoint pas de classe : validée, ses résultats d'élève
+  -- n'apparaîtraient dans aucune classe de toute façon (traiter_demande_enseignant supprime ses inscriptions).
+  if public.role_actuel() is distinct from 'eleve'
+     or (select demande_enseignant from public.profil where id = auth.uid()) then
+    raise exception 'classe_reservee_eleves';
   end if;
   -- Sérialise les appels d'un même élève : sans cela, des appels simultanés contourneraient le frein.
   perform pg_advisory_xact_lock(hashtextextended('rejoindre_classe:' || auth.uid()::text, 0));
@@ -146,6 +167,7 @@ begin
     return query select 'code_invalide'::text, null::text;
     return;
   end if;
+  delete from prive.depart_classe where classe_id = v_classe.id and eleve_id = auth.uid();
   insert into public.inscription_classe (classe_id, eleve_id) values (v_classe.id, auth.uid())
   on conflict do nothing;
   if not found then
@@ -162,14 +184,19 @@ begin
   if not found then
     raise exception 'classe_introuvable';
   end if;
+  -- Départ volontaire : noté (ou daté de nouveau) pour prive.fenetre_evaluation.
+  insert into prive.depart_classe (classe_id, eleve_id) values (p_classe, auth.uid())
+  on conflict (classe_id, eleve_id) do update set quitte_le = now();
 end $$;
 
 create function public.retirer_eleve(p_classe uuid, p_eleve uuid) returns void
 language plpgsql security definer set search_path = '' as $$
 begin
+  -- Classe d'un autre enseignant ou inexistante : même erreur, pour ne pas confirmer son existence.
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
+  -- Pas de départ noté : un élève retiré par l'enseignant n'est plus soumis aux échéances de la classe.
   delete from public.inscription_classe where classe_id = p_classe and eleve_id = p_eleve;
 end $$;
 

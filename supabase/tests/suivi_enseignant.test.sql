@@ -1,5 +1,5 @@
 begin;
-select plan(22);
+select plan(23);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-000000000b01', 'prof@test.local'),
@@ -69,6 +69,8 @@ select throws_ok($$ select * from public.notes_classe('60000000-0000-0000-0000-0
 select is((select taux_erreur from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01')), 83,
   'taux d''erreur calculé sur les seuls élèves de la classe (5/6)');
 select is((select enonce from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01')), 'Question piège', 'énoncé visible pour l''enseignant');
+select is((select type::text from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01')),
+  'qcm_unique', 'le type de la question est renvoyé');
 select is((select reponses from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01')), 6,
   'les réponses de l''élève hors classe ne sont pas comptées');
 select is((select count(*)::int from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01')), 1,
@@ -94,14 +96,14 @@ select throws_ok($$ select * from public.questions_ratees_classe('60000000-0000-
   'P0001', 'cours_invalide', 'questions ratées : un cours hors classe est refusé');
 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000b02","role":"authenticated"}', true);
-select throws_ok($$ select * from public.suivi_classe('60000000-0000-0000-0000-000000000b01') $$, 'P0001', 'acces_refuse', 'un autre enseignant est refusé');
+select throws_ok($$ select * from public.suivi_classe('60000000-0000-0000-0000-000000000b01') $$, 'P0001', 'classe_introuvable', 'un autre enseignant est refusé');
 select throws_ok($$ select * from public.notes_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01') $$,
-  'P0001', 'acces_refuse', 'notes : un autre enseignant est refusé');
+  'P0001', 'classe_introuvable', 'notes : un autre enseignant est refusé');
 select throws_ok($$ select * from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01') $$,
-  'P0001', 'acces_refuse', 'questions ratées : un autre enseignant est refusé');
+  'P0001', 'classe_introuvable', 'questions ratées : un autre enseignant est refusé');
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000b03","role":"authenticated"}', true);
 select throws_ok($$ select * from public.questions_ratees_classe('60000000-0000-0000-0000-000000000b01', '20000000-0000-0000-0000-000000000b01') $$,
-  'P0001', 'acces_refuse', 'un élève est refusé');
+  'P0001', 'classe_introuvable', 'un élève est refusé');
 select is((select count(*)::int from public.tentative where eleve_id <> '00000000-0000-0000-0000-000000000b03'), 0,
   'les règles des tentatives restent inchangées : l''élève ne voit que les siennes');
 
@@ -114,7 +116,7 @@ update public.profil set role = 'eleve' where id = '00000000-0000-0000-0000-0000
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000b01","role":"authenticated"}', true);
 select throws_ok($$ select * from public.suivi_classe('60000000-0000-0000-0000-000000000b01') $$,
-  'P0001', 'acces_refuse', 'le propriétaire dont le rôle n''est plus enseignant est refusé');
+  'P0001', 'classe_introuvable', 'le propriétaire dont le rôle n''est plus enseignant est refusé');
 
 select * from finish();
 rollback;

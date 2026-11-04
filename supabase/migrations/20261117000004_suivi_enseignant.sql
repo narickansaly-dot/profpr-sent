@@ -1,6 +1,9 @@
 -- Suivi d'une classe par son enseignant : progression, notes, questions les plus ratées.
 -- Fonctions security definer : l'enseignant ne lit jamais directement les tables de résultats.
 -- Une question n'est restituée qu'avec au moins 5 réponses de 3 élèves distincts (pas de réponse individuelle exposée).
+-- Limite connue : ce seuil réduit le bruit mais ne garantit pas l'anonymat. Un enseignant qui inscrit lui-même des
+-- comptes élèves répondant juste, ou qui compare la liste avant et après le retrait d'un élève, peut isoler les
+-- erreurs d'un élève réel. Impact faible : il voit déjà les notes par chapitre de chaque élève.
 
 create function public.suivi_classe(p_classe uuid)
 returns table (eleve_id uuid, nom text, cours_id uuid, cours_titre text, chapitres_valides int, chapitres_total int,
@@ -9,7 +12,7 @@ language plpgsql stable security definer set search_path = '' as $$
 #variable_conflict use_column
 begin
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
   return query
     select p.id, p.nom, co.id, co.titre,
@@ -33,7 +36,7 @@ language plpgsql stable security definer set search_path = '' as $$
 #variable_conflict use_column
 begin
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
   if not exists (select 1 from public.classe_cours where classe_id = p_classe and cours_id = p_cours) then
     raise exception 'cours_invalide';
@@ -49,19 +52,19 @@ begin
 end $$;
 
 create function public.questions_ratees_classe(p_classe uuid, p_cours uuid, p_limite int default 10)
-returns table (question_id uuid, chapitre_titre text, enonce text, propositions jsonb, bonnes_reponses jsonb,
+returns table (question_id uuid, chapitre_titre text, type public.type_question_t, enonce text, propositions jsonb, bonnes_reponses jsonb,
                reponses_acceptees text[], reponses int, taux_erreur int)
 language plpgsql stable security definer set search_path = '' as $$
 #variable_conflict use_column
 begin
   if not prive.est_enseignant_de(p_classe) then
-    raise exception 'acces_refuse';
+    raise exception 'classe_introuvable';
   end if;
   if not exists (select 1 from public.classe_cours where classe_id = p_classe and cours_id = p_cours) then
     raise exception 'cours_invalide';
   end if;
   return query
-    select q.id, c.titre, q.enonce, q.propositions, qc.bonnes_reponses, qc.reponses_acceptees,
+    select q.id, c.titre, q.type, q.enonce, q.propositions, qc.bonnes_reponses, qc.reponses_acceptees,
            count(*)::int, round(100.0 * count(*) filter (where not tq.correcte) / count(*))::int
       from public.tentative_question tq
       join public.tentative t on t.id = tq.tentative_id
@@ -70,7 +73,7 @@ begin
       join public.chapitre c on c.id = q.chapitre_id
       left join public.question_corrige qc on qc.question_id = q.id
      where t.cours_id = p_cours and t.statut <> 'en_cours' and tq.correcte is not null
-     group by q.id, c.titre, q.enonce, q.propositions, qc.bonnes_reponses, qc.reponses_acceptees
+     group by q.id, c.titre, q.type, q.enonce, q.propositions, qc.bonnes_reponses, qc.reponses_acceptees
     having count(*) >= 5 and count(distinct t.eleve_id) >= 3 and count(*) filter (where not tq.correcte) > 0
      order by count(*) filter (where not tq.correcte)::numeric / count(*) desc, count(*) desc, q.id
      limit greatest(coalesce(p_limite, 10), 0);
