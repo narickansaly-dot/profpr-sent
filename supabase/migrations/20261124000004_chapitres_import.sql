@@ -110,7 +110,7 @@ begin
      or char_length(btrim(coalesce(p_donnees->>'matiere', ''))) not between 1 and 120
      or lower(coalesce(p_donnees->>'couleur', '#2563eb')) !~ '^#[0-9a-f]{6}$'
      or coalesce(p_donnees->>'ordre', '0') !~ '^\d{1,4}$' then
-    raise exception 'cours_invalide';
+    raise exception 'cours_mal_forme';
   end if;
   select f.id into v_filiere from public.filiere f where f.code = p_donnees->>'filiere';
   if v_filiere is null then

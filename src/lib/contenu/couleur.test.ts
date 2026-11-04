@@ -16,6 +16,13 @@ describe('contraste', () => {
   });
 });
 
+describe('contraste (valeurs intermédiaires)', () => {
+  it('suit la linéarisation sRGB', () => {
+    expect(contraste('#777777', '#ffffff')).toBeCloseTo(4.48, 1);
+    expect(contraste('#2563eb', '#ffffff')).toBeCloseTo(5.17, 1);
+  });
+});
+
 describe('couleurCoursAcceptable', () => {
   it('accepte le bleu par défaut et la couleur de BPH', () => {
     expect(contraste('#2563eb', '#ffffff')).toBeGreaterThanOrEqual(3);
@@ -24,5 +31,12 @@ describe('couleurCoursAcceptable', () => {
   });
   it('refuse le jaune, trop clair sur fond blanc', () => {
     expect(couleurCoursAcceptable('#ffff00')).toBe(false);
+  });
+  it('respecte la limite de 3:1', () => {
+    expect(couleurCoursAcceptable('#949494')).toBe(true); // ≈ 3,03
+    expect(couleurCoursAcceptable('#989898')).toBe(false); // ≈ 2,87
+  });
+  it('refuse un format invalide sans lever d’exception', () => {
+    expect(couleurCoursAcceptable('#zz')).toBe(false);
   });
 });

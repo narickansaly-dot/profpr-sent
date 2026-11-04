@@ -92,4 +92,38 @@ describe('renforcement du format', () => {
     const r = schemaCoursImport.safeParse(brut);
     expect(r.error?.issues ?? []).toEqual([]);
   });
+  it('refuse deux chapitres avec le même numéro', () => {
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap(), chap({ slug: 'ch2' })] })).error?.issues[0].message)
+      .toBe('Deux chapitres ont le même numéro.');
+  });
+  it('signale les sections et sources en double par un message précis', () => {
+    const s = { id: 'a', titre: 'S', html: '' };
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [s, s] })] })).error?.issues[0].message)
+      .toBe('Deux sections ont le même identifiant.');
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ questions: [qv('x:1'), qv('x:1')] })] })).error?.issues[0].message)
+      .toBe('Deux questions ont la même source.');
+  });
+  it('met #2563eb par défaut quand la couleur est omise', () => {
+    expect(schemaCoursImport.parse(cours()).couleur).toBe('#2563eb');
+  });
+  it('donne une erreur de format, sans erreur de contraste, pour une couleur mal formée', () => {
+    const messages = schemaCoursImport.safeParse(cours({ couleur: '#zz' })).error?.issues.map((i) => i.message) ?? [];
+    expect(messages).toHaveLength(1);
+    expect(messages[0]).not.toContain('trop claire');
+  });
+  it('refuse un énoncé ou une proposition faits d’espaces (la base les refuserait)', () => {
+    expect(schemaQuestionImport.safeParse({ ...qv('x:1'), enonce: '   ' }).success).toBe(false);
+    expect(schemaQuestionImport.safeParse({ source: 'x:1', type: 'qcm_unique', enonce: 'Q', propositions: ['a', '  '], bonnes_reponses: [0] }).success).toBe(false);
+  });
+  it('rogne les espaces autour de l’énoncé', () => {
+    expect(schemaQuestionImport.parse({ ...qv('x:1'), enonce: '  Q ?  ' }).enonce).toBe('Q ?');
+  });
+  it('reprend les limites de la base', () => {
+    expect(schemaCoursImport.safeParse(cours({ slug: 'a'.repeat(81) })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ resume: 'a'.repeat(1001) })] })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ a_retenir: 'a'.repeat(50001) })] })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({
+      sections: Array.from({ length: 41 }, (_, i) => ({ id: `s${i}`, titre: 'S', html: '' })) })] })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [{ id: 'a', titre: 'S', html: 'a'.repeat(200001) }] })] })).success).toBe(false);
+  });
 });

@@ -33,6 +33,8 @@ const MESSAGES: Record<string, string> = {
   chapitre_invalide: 'Ce chapitre est incomplet ou mal formé (vérifie le slug et les identifiants de section).',
   chapitre_introuvable: 'Ce chapitre n’existe plus.',
   cours_introuvable: 'Ce cours n’existe plus.',
+  cours_mal_forme: 'Ce cours est incomplet ou mal formé.',
+  reponse_trop_longue: 'La réponse ne doit pas dépasser 1000 caractères.',
   slug_deja_pris: 'Cet identifiant d’URL est déjà utilisé.',
   filiere_inconnue: 'Filière inconnue.',
   import_invalide: 'Le fichier d’import est incomplet ou mal formé.',

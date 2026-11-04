@@ -16,5 +16,6 @@ export function contraste(a: string, b: string): number {
 
 /** La couleur du cours sert de bordure ou d'accent : 3:1 minimum contre le blanc (WCAG 1.4.11). */
 export function couleurCoursAcceptable(hex: string): boolean {
+  if (!/^#[0-9a-f]{6}$/i.test(hex)) return false;
   return contraste(hex, '#ffffff') >= 3;
 }

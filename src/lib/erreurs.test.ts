@@ -67,4 +67,10 @@ describe('messageErreur, espace classes', () => {
   it('garde decision_invalide de l’étape 3a', () => {
     expect(messageErreur('decision_invalide')).toBe('Choisis de valider ou de refuser la demande.');
   });
+  it('traduit les codes renommés de l’admin sans toucher aux anciens', () => {
+    expect(messageErreur('cours_mal_forme')).toBe('Ce cours est incomplet ou mal formé.');
+    expect(messageErreur('reponse_trop_longue')).toBe('La réponse ne doit pas dépasser 1000 caractères.');
+    expect(messageErreur('cours_invalide')).toBe('Choisis au moins un cours publié.');
+    expect(messageErreur('reponse_invalide')).toBe('Ta réponse n’a pas pu être lue. Réessaie.');
+  });
 });

@@ -80,7 +80,7 @@ begin
     raise exception 'decision_invalide';
   end if;
   if char_length(coalesce(p_reponse, '')) > 1000 then
-    raise exception 'reponse_invalide';
+    raise exception 'reponse_trop_longue';
   end if;
   update public.signalement s
      set statut = p_decision, reponse = nullif(btrim(p_reponse), ''), traite_le = now(), traite_par = auth.uid()

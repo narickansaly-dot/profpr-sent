@@ -2,15 +2,15 @@ import { z } from 'zod';
 import { couleurCoursAcceptable } from './couleur';
 
 const commun = {
-  source: z.string().min(1),
-  enonce: z.string().min(1).max(2000),
-  notion: z.string().optional(),
+  source: z.string().trim().min(1).max(120),
+  enonce: z.string().trim().min(1).max(2000),
+  notion: z.string().max(120).optional(),
   difficulte: z.number().int().min(1).max(3).default(2),
-  explication: z.string().default(''),
+  explication: z.string().max(4000).default(''),
   statut: z.enum(['brouillon', 'a_relire', 'valide']).default('a_relire'),
 };
 
-const proposition = z.string().min(1).max(500);
+const proposition = z.string().trim().min(1).max(500);
 
 const indicesValides = (q: { propositions: string[]; bonnes_reponses: number[] }) =>
   q.bonnes_reponses.every((i) => i < q.propositions.length);
@@ -22,7 +22,7 @@ export const variantesQuestionImport = [
   z.object({ ...commun, type: z.literal('qcm_multiple'), propositions: z.array(proposition).min(2).max(10),
     bonnes_reponses: z.array(z.number().int().min(0)).min(1) }),
   z.object({ ...commun, type: z.literal('vrai_faux'), bonne_reponse: z.boolean() }),
-  z.object({ ...commun, type: z.literal('reponse_courte'), reponses_acceptees: z.array(z.string().min(1)).min(1),
+  z.object({ ...commun, type: z.literal('reponse_courte'), reponses_acceptees: z.array(z.string().trim().min(1)).min(1),
     marge: z.number().nonnegative().optional(), marge_relative: z.boolean().default(false) }),
 ] as const;
 
@@ -35,29 +35,29 @@ export const schemaQuestionImport = z.discriminatedUnion('type', variantesQuesti
 });
 
 export const schemaChapitreImport = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/),
-  numero: z.number().int().min(1),
-  titre: z.string().min(1),
-  titre_court: z.string().optional(),
-  duree: z.string().optional(),
-  resume: z.string().optional(),
-  chapeau: z.string().optional(),
-  objectifs: z.array(z.string()).default([]),
-  sections: z.array(z.object({ id: z.string().regex(/^[a-z0-9-]+$/), titre: z.string().min(1), html: z.string() })),
-  a_retenir: z.string().optional(),
+  slug: z.string().regex(/^[a-z0-9-]+$/).max(80),
+  numero: z.number().int().min(1).max(99),
+  titre: z.string().trim().min(1).max(200),
+  titre_court: z.string().max(80).optional(),
+  duree: z.string().max(40).optional(),
+  resume: z.string().max(1000).optional(),
+  chapeau: z.string().max(4000).optional(),
+  objectifs: z.array(z.string().max(300)).default([]),
+  sections: z.array(z.object({ id: z.string().regex(/^[a-z0-9-]+$/).max(80), titre: z.string().trim().min(1).max(200), html: z.string().max(200000) })).max(40),
+  a_retenir: z.string().max(50000).optional(),
   questions: z.array(schemaQuestionImport),
 }).refine((ch) => new Set(ch.sections.map((s) => s.id)).size === ch.sections.length, {
   message: 'Deux sections ont le même identifiant.',
 });
 
 export const schemaCoursImport = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/),
+  slug: z.string().regex(/^[a-z0-9-]+$/).max(80),
   filiere: z.string().min(1),
   niveau: z.enum(['2de', '1re', 'Tle']),
-  matiere: z.string().min(1),
-  titre: z.string().min(1),
+  matiere: z.string().trim().min(1).max(120),
+  titre: z.string().trim().min(1).max(200),
   couleur: z.string().regex(/^#[0-9a-f]{6}$/i).transform((c) => c.toLowerCase())
-    .refine(couleurCoursAcceptable, 'Couleur trop claire : contraste insuffisant avec le fond blanc.').default('#2563eb'),
+    .refine((c) => !/^#[0-9a-f]{6}$/.test(c) || couleurCoursAcceptable(c), 'Couleur trop claire : contraste insuffisant avec le fond blanc.').default('#2563eb'),
   chapitres: z.array(schemaChapitreImport).min(1),
 }).refine((c) => new Set(c.chapitres.map((ch) => ch.slug)).size === c.chapitres.length, {
   message: 'Deux chapitres ont le même slug.',

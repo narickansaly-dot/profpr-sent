@@ -138,11 +138,11 @@ select lives_ok($$ select public.enregistrer_cours(current_setting('t.ced')::uui
   '{"slug":"cours-ed","filiere":"STMG","niveau":"1re","matiere":"Maths","titre":"Modifié"}') $$, 'admin : cours modifié');
 select is((select titre || ':' || couleur from public.cours where slug = 'cours-ed'), 'Modifié:#2563eb', 'modification enregistrée');
 select throws_ok($$ select public.enregistrer_cours(null,
-  '{"slug":"c1","filiere":"ST2S","niveau":"1re","matiere":"M","titre":"T","couleur":"#ABC"}') $$, 'P0001', 'cours_invalide', 'couleur courte');
+  '{"slug":"c1","filiere":"ST2S","niveau":"1re","matiere":"M","titre":"T","couleur":"#ABC"}') $$, 'P0001', 'cours_mal_forme', 'couleur courte');
 select throws_ok($$ select public.enregistrer_cours(null,
-  '{"slug":"c1","filiere":"ST2S","niveau":"1re","matiere":"M","titre":"T","couleur":"rouge"}') $$, 'P0001', 'cours_invalide', 'couleur nommée');
+  '{"slug":"c1","filiere":"ST2S","niveau":"1re","matiere":"M","titre":"T","couleur":"rouge"}') $$, 'P0001', 'cours_mal_forme', 'couleur nommée');
 select throws_ok($$ select public.enregistrer_cours(null,
-  '{"slug":"c1","filiere":"ST2S","niveau":"CM2","matiere":"M","titre":"T"}') $$, 'P0001', 'cours_invalide', 'niveau inconnu');
+  '{"slug":"c1","filiere":"ST2S","niveau":"CM2","matiere":"M","titre":"T"}') $$, 'P0001', 'cours_mal_forme', 'niveau inconnu');
 select throws_ok($$ select public.enregistrer_cours(null,
   '{"slug":"c1","filiere":"ZZZ","niveau":"1re","matiere":"M","titre":"T"}') $$, 'P0001', 'filiere_inconnue', 'filière inconnue');
 select throws_ok($$ select public.enregistrer_cours(null,

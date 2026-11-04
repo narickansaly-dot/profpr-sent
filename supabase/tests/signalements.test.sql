@@ -151,7 +151,7 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 select throws_ok($$ select public.traiter_signalement(gen_random_uuid(), 'autre') $$,
   'P0001', 'decision_invalide', 'décision inconnue');
 select throws_ok($$ select public.traiter_signalement(gen_random_uuid(), 'traite', repeat('x', 1001)) $$,
-  'P0001', 'reponse_invalide', 'réponse trop longue');
+  'P0001', 'reponse_trop_longue', 'réponse trop longue');
 select throws_ok($$ select public.traiter_signalement((select id from public.signalements_admin('traite')
   where question_id = '00000000-0000-0000-0000-00000000e001'), 'rejete') $$,
   'P0001', 'signalement_introuvable', 'signalement déjà traité');
