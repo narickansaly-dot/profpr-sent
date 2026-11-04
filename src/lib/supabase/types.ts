@@ -522,8 +522,17 @@ isOneToOne: false
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"enregistrer_chapitre":
+{ Args: { "p_chapitre": string,"p_cours": string,"p_donnees": Json }; Returns: string
+                           },
+"enregistrer_cours":
+{ Args: { "p_cours": string,"p_donnees": Json }; Returns: string
+                           },
 "enregistrer_question":
 { Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
+                           },
+"importer_cours":
+{ Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
                            },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
@@ -548,6 +557,12 @@ isOneToOne: false
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
             }[]
+                           },
+"publier_chapitre":
+{ Args: { "p_chapitre": string,"p_publie": boolean }; Returns: undefined
+                           },
+"publier_cours":
+{ Args: { "p_cours": string,"p_publie": boolean }; Returns: undefined
                            },
 "questions_chapitre_admin":
 { Args: { "p_chapitre": string }; Returns: {
@@ -590,6 +605,11 @@ isOneToOne: false
 "suivi_classe":
 { Args: { "p_classe": string }; Returns: {
               "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_titre": string,"derniere_activite": string,"eleve_id": string,"essais_evaluation": number,"evaluation_validee": boolean,"nom": string,"note_evaluation": number
+            }[]
+                           },
+"suivi_contenu":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "a_relire": number,"brouillons": number,"chapitre_id": string,"chapitre_publie": boolean,"chapitre_titre": string,"cours_id": string,"cours_publie": boolean,"cours_slug": string,"cours_titre": string,"numero": number,"signalements": number,"valides": number
             }[]
                            },
 "supprimer_question":
