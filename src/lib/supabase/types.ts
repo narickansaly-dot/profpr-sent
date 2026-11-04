@@ -473,7 +473,10 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "classes_eleve":
+            "changer_statut_question":
+{ Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
+                           },
+"classes_eleve":
 { Args: Record<PropertyKey, never>; Returns: {
               "enseignant_nom": string,"id": string,"nom": string,"rejoint_le": string
             }[]
@@ -519,6 +522,9 @@ isOneToOne: false
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"enregistrer_question":
+{ Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
+                           },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
                            },
@@ -532,12 +538,20 @@ isOneToOne: false
               "chapitre_id": string,"chapitre_numero": number,"chapitre_titre": string,"eleve_id": string,"meilleure_note": number,"nom": string,"valide": boolean
             }[]
                            },
+"notions_chapitre":
+{ Args: { "p_chapitre": string }; Returns: string[]
+                           },
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
+"questions_chapitre_admin":
+{ Args: { "p_chapitre": string }; Returns: {
+              "bonnes_reponses": Json,"difficulte": number,"enonce": string,"explication": string,"id": string,"marge": number,"marge_relative": boolean,"modifie_le": string,"notion": string,"propositions": Json,"reponses_acceptees": (string)[],"signalements_ouverts": number,"source": string,"statut": Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"],"utilisee": boolean,"version_de": string
             }[]
                            },
 "questions_ratees_classe":
@@ -577,6 +591,9 @@ isOneToOne: false
 { Args: { "p_classe": string }; Returns: {
               "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_titre": string,"derniere_activite": string,"eleve_id": string,"essais_evaluation": number,"evaluation_validee": boolean,"nom": string,"note_evaluation": number
             }[]
+                           },
+"supprimer_question":
+{ Args: { "p_question": string }; Returns: undefined
                            },
 "terminer_tentative":
 { Args: { "p_tentative": string }; Returns: undefined
