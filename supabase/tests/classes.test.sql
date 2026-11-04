@@ -1,5 +1,5 @@
 begin;
-select plan(36);
+select plan(38);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-000000000a01', 'prof-a@test.local'),
@@ -57,12 +57,20 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 select is((select statut from public.rejoindre_classe((select code from c))), 'ok', 'un second élève rejoint la même classe');
 select is((select count(*)::int from public.inscription_classe), 1, 'le second élève ne voit que sa propre inscription');
 select is((select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-000000000a05'), 1, 'et c''est la sienne');
+-- la ligne de a05 existe encore : a03 ne doit pas la voir
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000a03","role":"authenticated"}', true);
+select is((select count(*)::int from public.inscription_classe), 1, 'le premier élève ne voit que sa propre inscription tant que le second est inscrit');
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000a05","role":"authenticated"}', true);
 select lives_ok(format($$ select public.quitter_classe(%L) $$, (select id from c)), 'l''élève quitte la classe');
 select is((select count(*)::int from public.inscription_classe), 0, 'son inscription a disparu');
 select throws_ok(format($$ select public.quitter_classe(%L) $$, (select id from c)), 'P0001', 'classe_introuvable', 'quitter deux fois : classe introuvable');
 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000a03","role":"authenticated"}', true);
 select is((select count(*)::int from public.inscription_classe), 1, 'le premier élève garde sa seule inscription');
+
+-- des élèves sont inscrits à la classe de A : l'enseignant B ne doit toujours rien voir
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000a02","role":"authenticated"}', true);
+select is((select count(*)::int from public.inscription_classe), 0, 'un autre enseignant ne voit aucune inscription d''une classe peuplée');
 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000a04","role":"authenticated"}', true);
 do $$ begin for i in 1..10 loop perform public.rejoindre_classe('ZZZZZZ'); end loop; end $$;

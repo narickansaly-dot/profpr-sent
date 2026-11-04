@@ -1,5 +1,5 @@
 begin;
-select plan(20);
+select plan(21);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000f1', 'prof@test.local'),
@@ -48,10 +48,17 @@ select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000
 select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f6', true) $$,
   'P0001', 'demande_introuvable', 'un enseignant ne peut pas être retraité');
 
--- un enseignant n'est pas admin
+-- un enseignant n'est pas admin : une demande ouverte d'élève existe, pour que les refus soient dus au rôle
+reset role;
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-0000000000f7', 'ouverte@test.local');
+update public.profil set etablissement = 'Lycée Ouvert', demande_enseignant = true where id = '00000000-0000-0000-0000-0000000000f7';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000f2","role":"authenticated"}', true);
+select cmp_ok((select count(*)::int from public.demandes_enseignant() where id = '00000000-0000-0000-0000-0000000000f7'), '>=', 1,
+  'l''admin voit la demande ouverte de l''élève (le test enseignant n''est pas vide)');
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000f1","role":"authenticated"}', true);
 select is((select count(*)::int from public.demandes_enseignant()), 0, 'un enseignant ne voit aucune demande');
-select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f4', true) $$,
+select throws_ok($$ select public.traiter_demande_enseignant('00000000-0000-0000-0000-0000000000f7', true) $$,
   'P0001', 'acces_refuse', 'un enseignant ne peut pas traiter une demande');
 
 -- anon
