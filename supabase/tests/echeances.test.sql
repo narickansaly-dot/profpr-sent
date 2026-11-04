@@ -1,5 +1,5 @@
 begin;
-select plan(16);
+select plan(17);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-000000000c01', 'prof@test.local'),
@@ -106,6 +106,11 @@ select is((select count(*)::int from public.echeances_classe('60000000-0000-0000
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c02","role":"authenticated"}', true);
 select throws_ok($$ select * from public.echeances_classe('60000000-0000-0000-0000-000000000c01') $$, 'P0001', 'acces_refuse',
   'echeances_classe réservée au propriétaire');
+
+-- Une classe liée sans échéance apparaît avec des dates nulles.
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c03","role":"authenticated"}', true);
+select is((select count(*)::int from public.mes_echeances('20000000-0000-0000-0000-000000000c01') where ouverture is null and limite is null),
+  1, 'classe liée sans dates : ligne aux dates nulles');
 
 select * from finish();
 rollback;

@@ -53,11 +53,13 @@ end $$;
 create function public.mes_echeances(p_cours uuid default null)
 returns table (cours_id uuid, classe_nom text, ouverture timestamptz, limite timestamptz)
 language sql stable security definer set search_path = '' as $$
-  select e.cours_id, c.nom, e.ouverture, e.limite
+  -- Une ligne par classe de l'élève liée au cours ; sans échéance, les deux dates sont nulles (fenêtre ouverte).
+  select cc.cours_id, c.nom, e.ouverture, e.limite
     from public.inscription_classe i
     join public.classe c on c.id = i.classe_id
-    join public.echeance_evaluation e on e.classe_id = i.classe_id
-   where i.eleve_id = auth.uid() and (p_cours is null or e.cours_id = p_cours)
+    join public.classe_cours cc on cc.classe_id = i.classe_id
+    left join public.echeance_evaluation e on e.classe_id = cc.classe_id and e.cours_id = cc.cours_id
+   where i.eleve_id = auth.uid() and (p_cours is null or cc.cours_id = p_cours)
    order by e.limite nulls last, e.ouverture nulls first
 $$;
 
