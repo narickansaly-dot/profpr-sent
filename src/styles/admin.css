@@ -1,0 +1,57 @@
+/* ---------- Espace admin : suivi du contenu et éditeur de cours ---------- */
+.page-admin { display: grid; gap: 24px; padding-top: 16px; }
+.conteneur .page-admin :is(h1, h2, h3) { margin: 0; }
+.page-admin > *, .page-admin .carte { min-width: 0; }
+.page-admin .vide { color: var(--attenue); margin: 0; }
+.conteneur:has(.page-admin) { max-width: 1120px; }
+
+.bloc-cours { --couleur-bloc: var(--couleur-cours); display: grid; gap: 16px; align-content: start; border-top: 6px solid var(--couleur-bloc); }
+.entete-bloc { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; justify-content: space-between; }
+.titre-bloc { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-width: 0; }
+.titre-bloc h2 { font-size: 24px; overflow-wrap: anywhere; }
+.pastille-couleur { width: 20px; height: 20px; border-radius: 50%; background: var(--couleur-bloc); border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--encre); flex: none; }
+.actions-bloc { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
+.pied-bloc { margin: 0; }
+
+/* Statut : toujours un mot et un signe, jamais la couleur seule. */
+.statut { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: 14px; font-weight: 700; border: 1px solid var(--trait); }
+.statut::before { font-weight: 700; }
+.statut-publie { background: color-mix(in srgb, var(--succes) 16%, var(--surface)); color: color-mix(in srgb, var(--succes) 80%, var(--encre)); border-color: color-mix(in srgb, var(--succes) 35%, transparent); }
+.statut-publie::before { content: "✓"; }
+.statut-brouillon { background: var(--surface); color: var(--attenue); border-style: dashed; }
+.statut-brouillon::before { content: "○"; }
+@media (prefers-color-scheme: dark) { .statut-publie { color: var(--succes); } }
+
+.formulaire-publier { display: grid; gap: 4px; }
+.formulaire-publier .message-erreur { font-size: 14px; max-width: 220px; white-space: normal; }
+.page-admin .bouton-compact { min-height: 44px; padding: 0 16px; }
+
+.tableau-contenu th[scope=row] { font-weight: 700; white-space: normal; min-width: 180px; max-width: 280px; }
+.tableau-contenu .barre-progression { --couleur-cours: var(--couleur-bloc); min-width: 140px; }
+.tableau-contenu td:nth-child(2) { min-width: 170px; }
+.insuffisante { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 14px; font-weight: 700; color: color-mix(in srgb, var(--danger) 85%, #000); }
+@media (prefers-color-scheme: dark) { .insuffisante { color: var(--danger); } }
+.cellule-publie, .liens-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.liens-actions a, .lien-signalements { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; padding-inline: 2px; }
+
+/* Formulaire de cours */
+.formulaire-cours { max-width: 640px; }
+.formulaire-cours label { min-width: 0; }
+.formulaire-cours .message-erreur { font-size: 15px; font-weight: 700; }
+.formulaire-cours [aria-invalid=true] { border-color: var(--danger); }
+.champ-couleur { display: grid; gap: 6px; }
+.champ-couleur > label { font-weight: 700; }
+.ligne-couleur { display: flex; gap: 12px; align-items: center; }
+.formulaire .selecteur-couleur { width: 64px; min-width: 64px; padding: 4px; cursor: pointer; }
+.formulaire .saisie-couleur { width: 9ch; min-width: 9ch; font-family: var(--police-mono); text-transform: lowercase; }
+.apercu-cours { display: grid; gap: 8px; }
+.apercu-carte { max-width: 320px; }
+.apercu-carte .pastille { color: var(--encre); background: color-mix(in srgb, var(--couleur-cours) 18%, var(--surface)); }
+.apercu-carte h3 { margin: 0; }
+.actions-formulaire { display: flex; flex-wrap: wrap; gap: 12px; }
+.actions-formulaire a.bouton { text-decoration: none; }
+a.bouton { text-decoration: none; }
+a.bouton.bouton-principal { color: #fff; }
+a.bouton.bouton-secondaire { color: var(--encre); }
+.formulaire-cours select, .formulaire-cours input:not([type=color]) { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
+.formulaire .saisie-couleur { width: 9ch; min-width: 9ch; }

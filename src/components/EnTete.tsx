@@ -9,7 +9,10 @@ const LIENS: Record<Role, { href: string; libelle: string }[]> = {
   eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/classes', libelle: 'Mes classes' }],
   parent: [{ href: '/', libelle: 'Mes cours' }],
   enseignant: [{ href: '/enseignant', libelle: 'Mes classes' }, { href: '/cours', libelle: 'Cours' }],
-  admin_contenu: [{ href: '/cours', libelle: 'Cours' }, { href: '/admin/enseignants', libelle: 'Demandes' }],
+  admin_contenu: [
+    { href: '/admin', libelle: 'Contenu' }, { href: '/admin/import', libelle: 'Import' },
+    { href: '/admin/signalements', libelle: 'Signalements' }, { href: '/admin/enseignants', libelle: 'Demandes' },
+  ],
 };
 
 export function EnTete({ prenom, role }: { prenom: string | null; role: Role }) {
