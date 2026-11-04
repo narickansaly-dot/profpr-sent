@@ -19,3 +19,9 @@ export function notesEnCsv({ chapitres, eleves }: Entree): string {
   const lignes = eleves.map((e) => [champ(e.nom), ...chapitres.map((c) => note(e.notes[c.id])), note(e.evaluation)].join(';'));
   return '﻿' + [entete, ...lignes].map((l) => l + '\r\n').join('');
 }
+
+/** Fragment de nom de fichier : minuscules, sans accents, seuls [a-z0-9-] sont gardés. */
+export function slugFichier(nom: string): string {
+  return nom.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'export';
+}

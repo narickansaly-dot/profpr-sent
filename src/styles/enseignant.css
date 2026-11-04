@@ -110,3 +110,25 @@
 .page-enseignant section[aria-labelledby] > h2 + * { margin-top: 0; }
 .page-enseignant section:not(.carte) { display: grid; gap: 12px; }
 .quitter-classe { display: grid; gap: 6px; justify-items: start; }
+
+/* ---------- Enseignant : notes d'un cours ---------- */
+.entete-section { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.entete-section a.bouton { display: inline-flex; align-items: center; min-height: 44px; }
+/* Validé : ✓ + texte vert foncé sur fond teinté ; à revoir : texte d'encre sur fond neutre. La couleur n'est jamais seule. */
+.tableau-notes .note-cellule { text-align: right; font-weight: 700; }
+.tableau-notes .note-validee { background: color-mix(in srgb, var(--succes) 14%, var(--surface)); color: color-mix(in srgb, var(--succes) 78%, #000); }
+.tableau-notes .note-a-revoir { background: color-mix(in srgb, var(--danger) 8%, var(--surface)); color: var(--encre); box-shadow: inset 3px 0 0 var(--danger); }
+@media (prefers-color-scheme: dark) { .tableau-notes .note-validee { color: var(--succes); } }
+.tableau-notes tfoot th, .tableau-notes tfoot td { border-top: 2px solid var(--trait); font-weight: 700; background: color-mix(in srgb, var(--couleur-cours) 8%, var(--surface)); }
+.tableau-notes tfoot .col-eleve { background: color-mix(in srgb, var(--couleur-cours) 8%, var(--surface)); }
+.legende-chapitres { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; font-size: 14px; }
+
+.liste-ratees { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: rang; }
+.question-ratee { display: grid; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
+.question-ratee .enonce-ratee { margin: 0; font-weight: 700; font-size: 18px; }
+.taux-erreur { display: grid; gap: 6px; }
+.taux-texte { margin: 0; }
+.barre-erreur { height: 12px; border-radius: 999px; overflow: hidden; background: color-mix(in srgb, var(--danger) 14%, var(--surface)); border: 1px solid var(--trait); }
+.barre-erreur span { display: block; height: 100%; background: var(--danger); border-radius: inherit; }
+.question-ratee summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
+.bonne-reponse { margin: 4px 0 0; padding: 10px 14px; border-left: 4px solid var(--succes); background: color-mix(in srgb, var(--succes) 10%, var(--surface)); border-radius: 0 8px 8px 0; }

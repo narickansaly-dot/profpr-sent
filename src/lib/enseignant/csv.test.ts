@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { notesEnCsv } from './csv';
+import { notesEnCsv, slugFichier } from './csv';
 
 describe('notesEnCsv', () => {
   const entree = {
@@ -19,5 +19,13 @@ describe('notesEnCsv', () => {
   it('neutralise les formules dans les noms', () => {
     const csv = notesEnCsv({ chapitres: [], eleves: [{ id: 'x', nom: '=HYPERLINK("x")', notes: {}, evaluation: null }] });
     expect(csv.split('\r\n')[1]).toBe('"\'=HYPERLINK(""x"")";');
+  });
+});
+
+describe('slugFichier', () => {
+  it('retire accents, majuscules et caractères spéciaux', () => {
+    expect(slugFichier('Classe 1re ST2S B')).toBe('classe-1re-st2s-b');
+    expect(slugFichier('Biologie et physiopathologie humaines — 1re')).toBe('biologie-et-physiopathologie-humaines-1re');
+    expect(slugFichier('///')).toBe('export');
   });
 });
