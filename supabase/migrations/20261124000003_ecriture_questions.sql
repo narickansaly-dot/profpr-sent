@@ -10,7 +10,7 @@ end $$;
 
 -- Vérifie la forme d'une question avant écriture (la même que src/lib/contenu/format-import.ts).
 create function prive.valider_question(p jsonb) returns void
-language plpgsql immutable set search_path = '' as $$
+language plpgsql stable set search_path = '' as $$
 declare
   v_type text := p->>'type';
   v_props jsonb := coalesce(p->'propositions', '[]'::jsonb);
@@ -29,10 +29,16 @@ begin
      or jsonb_typeof(v_props) <> 'array' or jsonb_typeof(v_bonnes) <> 'array' or jsonb_typeof(v_acceptees) <> 'array'
      or coalesce(p->>'marge', '0') !~ '^\d+(\.\d+)?$'
      or coalesce(p->>'marge_relative', 'false') not in ('true', 'false')
+     or exists (select 1 from unnest(array['enonce', 'explication', 'notion', 'source']) k
+                 where coalesce(jsonb_typeof(p->k), 'null') not in ('string', 'null'))
   then
     raise exception 'question_invalide';
   end if;
   v_n := jsonb_array_length(v_props);
+  -- La marge ne sert qu'aux réponses courtes : ailleurs, elle provoquerait des versions inutiles.
+  if v_type <> 'reponse_courte' and (p->>'marge' is not null or coalesce(p->>'marge_relative', 'false') <> 'false') then
+    raise exception 'question_invalide';
+  end if;
   if v_type in ('qcm_unique', 'qcm_multiple') then
     if v_n not between 2 and 10
        or exists (select 1 from jsonb_array_elements(v_props) e
@@ -40,6 +46,7 @@ begin
        or exists (select 1 from jsonb_array_elements(v_bonnes) e
                    where case when jsonb_typeof(e) = 'number' and (e #>> '{}') ~ '^\d{1,9}$'
                               then (e #>> '{}')::int >= v_n else true end)
+       or (select count(distinct btrim(e #>> '{}')) from jsonb_array_elements(v_props) e) <> v_n
        or (select count(distinct e) from jsonb_array_elements(v_bonnes) e) <> jsonb_array_length(v_bonnes)
        or (v_type = 'qcm_unique' and jsonb_array_length(v_bonnes) <> 1)
        or (v_type = 'qcm_multiple' and jsonb_array_length(v_bonnes) < 1)
@@ -55,7 +62,8 @@ begin
   else
     if v_n <> 0 or jsonb_array_length(v_bonnes) <> 0 or jsonb_array_length(v_acceptees) not between 1 and 20
        or exists (select 1 from jsonb_array_elements(v_acceptees) e
-                   where jsonb_typeof(e) <> 'string' or char_length(btrim(e #>> '{}')) not between 1 and 200)
+                   where jsonb_typeof(e) <> 'string' or char_length(btrim(e #>> '{}')) not between 1 and 200
+                      or prive.normaliser(e #>> '{}') = '')
        or (coalesce((p->>'marge_relative')::boolean, false) and p->>'marge' is null)
     then
       raise exception 'question_invalide';
@@ -67,9 +75,17 @@ exception
     raise exception 'question_invalide';
 end $$;
 
--- Écrit une question. Crée, modifie en place, ou versionne si la structure d'une question déjà tirée change :
--- l'ancienne passe à « archivee » (les corrections passées restent exactes) et la nouvelle porte version_de.
-create function prive.ecrire_question(p_chapitre uuid, p_question uuid, p jsonb, out id_question uuid, out resultat text)
+-- Écrit une question. Crée, modifie en place, ou versionne si la structure (tout ce que lisent la correction et
+-- l'affichage permuté) change sur une question déjà tirée OU valide : l'ancienne passe à « archivee » (les corrections
+-- passées restent exactes) et la nouvelle porte version_de. Une question valide versionne même jamais tirée : un tirage
+-- concurrent ne voit pas encore sa ligne de tentative_question et calculerait une permutation sur l'ancienne structure.
+-- Énoncé, explication, notion et difficulté se modifient en place, même sur une question tirée : les corrections
+-- passées affichent alors le nouveau texte, et les statistiques par notion suivent la nouvelle notion (voulu).
+-- Statut : appelée par l'import (p_editeur = false), le statut fourni s'applique (brouillon par défaut).
+-- Appelée par l'éditeur (p_editeur = true), il est ignoré : création en brouillon, modification en place au statut
+-- actuel, nouvelle version en a_relire si l'ancienne était valide, sinon au statut de l'ancienne.
+create function prive.ecrire_question(p_chapitre uuid, p_question uuid, p jsonb, p_editeur boolean default false,
+                                      out id_question uuid, out resultat text)
 language plpgsql security definer set search_path = '' as $$
 declare
   v_ancienne public.question;
@@ -87,6 +103,7 @@ declare
   v_source text := nullif(btrim(p->>'source'), '');
   v_notion uuid;
   v_structure boolean;
+  v_contrainte text;
 begin
   perform prive.valider_question(p);
   -- Les casts viennent après la validation (un initialiseur de declare s'évaluerait avant elle).
@@ -116,6 +133,9 @@ begin
   end if;
 
   if v_ancienne.id is null then
+    if p_editeur then
+      v_statut := 'brouillon';
+    end if;
     insert into public.question as q (chapitre_id, notion_id, type, enonce, propositions, difficulte, statut, source)
       values (p_chapitre, v_notion, v_type, v_enonce, v_props, v_difficulte, v_statut, v_source)
       returning q.id into id_question;
@@ -139,7 +159,11 @@ begin
     or v_corrige.marge is distinct from v_marge
     or v_corrige.marge_relative is distinct from v_relative;
 
-  if v_structure and exists (select 1 from public.tentative_question tq where tq.question_id = v_ancienne.id) then
+  if v_structure and (v_ancienne.statut = 'valide'
+                      or exists (select 1 from public.tentative_question tq where tq.question_id = v_ancienne.id)) then
+    if p_editeur then
+      v_statut := case when v_ancienne.statut = 'valide' then 'a_relire' else v_ancienne.statut end;
+    end if;
     update public.question q set statut = 'archivee', source = null where q.id = v_ancienne.id;
     insert into public.question as q (chapitre_id, notion_id, type, enonce, propositions, difficulte, statut, source, version_de)
       values (p_chapitre, v_notion, v_type, v_enonce, v_props, v_difficulte, v_statut,
@@ -153,6 +177,9 @@ begin
   end if;
 
   id_question := v_ancienne.id;
+  if p_editeur then
+    v_statut := v_ancienne.statut;
+  end if;
   if not v_structure
      and v_ancienne.enonce = v_enonce and v_ancienne.notion_id is not distinct from v_notion
      and v_ancienne.difficulte = v_difficulte and v_ancienne.statut = v_statut
@@ -170,6 +197,13 @@ begin
          marge_relative = v_relative, explication = v_explication
    where c.question_id = v_ancienne.id;
   resultat := 'modifiee';
+exception
+  when unique_violation then
+    get stacked diagnostics v_contrainte = constraint_name;
+    if v_contrainte = 'question_source_key' then
+      raise exception 'source_deja_prise';
+    end if;
+    raise;
 end $$;
 
 create function public.enregistrer_question(p_chapitre uuid, p_question uuid, p_donnees jsonb) returns uuid
@@ -178,7 +212,7 @@ declare
   v_id uuid;
 begin
   perform prive.exiger_admin();
-  select e.id_question into v_id from prive.ecrire_question(p_chapitre, p_question, p_donnees) e;
+  select e.id_question into v_id from prive.ecrire_question(p_chapitre, p_question, p_donnees, true) e;
   return v_id;
 end $$;
 
@@ -193,7 +227,7 @@ begin
   if not found then
     raise exception 'question_introuvable';
   end if;
-  if v_actuel = 'archivee' or p_statut = 'archivee'
+  if p_statut is null or v_actuel = 'archivee' or p_statut = 'archivee'
      or (p_statut = 'valide' and v_actuel <> 'a_relire')
      or (p_statut = 'a_relire' and v_actuel not in ('brouillon', 'valide'))
      or (p_statut = 'brouillon' and v_actuel not in ('a_relire', 'valide')) then
@@ -209,13 +243,20 @@ end $$;
 -- Une question déjà tirée ne se supprime pas : ses corrections en dépendent (archiver en la modifiant, ou la repasser en brouillon).
 create function public.supprimer_question(p_question uuid) returns void
 language plpgsql security definer set search_path = '' as $$
+declare
+  v_id uuid;
 begin
   perform prive.exiger_admin();
   if exists (select 1 from public.tentative_question tq where tq.question_id = p_question) then
     raise exception 'question_utilisee';
   end if;
-  delete from public.question q where q.id = p_question;
-  if not found then
+  -- Une référence restante (tirage concurrent, historique, version plus récente) bloque la suppression.
+  begin
+    delete from public.question q where q.id = p_question returning q.id into v_id;
+  exception when foreign_key_violation then
+    raise exception 'question_utilisee';
+  end;
+  if v_id is null then
     raise exception 'question_introuvable';
   end if;
 end $$;
@@ -248,7 +289,7 @@ language sql stable security definer set search_path = '' as $$
 $$;
 
 revoke execute on function prive.exiger_admin(), prive.valider_question(jsonb),
-  prive.ecrire_question(uuid, uuid, jsonb) from public, anon, authenticated;
+  prive.ecrire_question(uuid, uuid, jsonb, boolean) from public, anon, authenticated;
 revoke execute on function public.enregistrer_question(uuid, uuid, jsonb), public.changer_statut_question(uuid, public.statut_question_t),
   public.supprimer_question(uuid), public.questions_chapitre_admin(uuid), public.notions_chapitre(uuid) from public, anon;
 grant execute on function public.enregistrer_question(uuid, uuid, jsonb), public.changer_statut_question(uuid, public.statut_question_t),

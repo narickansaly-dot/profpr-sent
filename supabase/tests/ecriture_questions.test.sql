@@ -1,5 +1,5 @@
 begin;
-select plan(60);
+select plan(93);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000b1', 'admin-q@test.local'),
@@ -38,12 +38,14 @@ select lives_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-0
 select lives_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
   '{"type":"qcm_multiple","enonce":"Q2","propositions":["a","b","c"],"bonnes_reponses":[0,2]}') $$, 'qcm_multiple créé');
 select lives_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
-  '{"type":"vrai_faux","enonce":"Q3","bonnes_reponses":[false]}') $$, 'vrai_faux créé');
+  '{"type":"vrai_faux","enonce":"Q3","bonnes_reponses":[false],"statut":"valide"}') $$, 'vrai_faux créé');
 select lives_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
   '{"type":"reponse_courte","enonce":"Q4","reponses_acceptees":["Na+"],"marge":null}') $$, 'reponse_courte créée');
 select is((select count(*)::int from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101')), 4, 'admin : 4 questions lues');
 select is((select statut::text from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where source = 't-q1'),
-  'a_relire', 'statut fourni respecté');
+  'brouillon', 'éditeur : statut a_relire fourni ignoré, création en brouillon');
+select is((select statut::text from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q3'),
+  'brouillon', 'éditeur : statut valide fourni ignoré, création en brouillon');
 select is((select statut::text from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'),
   'brouillon', 'statut par défaut : brouillon');
 select ok((select 'n1' = any (array(select public.notions_chapitre('00000000-0000-0000-0000-00000000c101')))), 'notion créée');
@@ -73,7 +75,7 @@ select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
   '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true],"statut":"publie"}') $$, 'P0001', 'question_invalide', 'statut inconnu');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
-  '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true],"marge_relative":"oui"}') $$, 'P0001', 'question_invalide', 'marge_relative non booléenne');
+  '{"type":"reponse_courte","enonce":"x","reponses_acceptees":["5"],"marge":1,"marge_relative":"oui"}') $$, 'P0001', 'question_invalide', 'marge_relative non booléenne');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
   '{"type":"qcm_unique","enonce":"x","propositions":["a","b"],"bonnes_reponses":[99999999999999999999]}') $$, 'P0001', 'question_invalide', 'indice démesuré');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
@@ -84,13 +86,32 @@ select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-
   'P0001', 'question_invalide', 'charge qui n''est pas un objet');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null, null) $$,
   'P0001', 'question_invalide', 'charge nulle');
+-- Champs texte, champs inutilisés, doublons, réponses vides après normalisation.
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"vrai_faux","enonce":{"a":1},"bonnes_reponses":[true]}') $$, 'P0001', 'question_invalide', 'énoncé qui n''est pas un texte');
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true],"source":{"k":1}}') $$, 'P0001', 'question_invalide', 'source qui n''est pas un texte');
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"qcm_unique","enonce":"x","propositions":["a","b"],"bonnes_reponses":[0],"marge":1}') $$, 'P0001', 'question_invalide', 'marge sur un QCM');
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true],"marge_relative":true}') $$, 'P0001', 'question_invalide', 'marge relative sur un vrai/faux');
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"qcm_unique","enonce":"x","propositions":["a"," a "],"bonnes_reponses":[0]}') $$, 'P0001', 'question_invalide', 'propositions en double');
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"reponse_courte","enonce":"x","reponses_acceptees":["..."]}') $$, 'P0001', 'question_invalide', 'réponse acceptée vide une fois normalisée');
 select throws_ok($$ select public.enregistrer_question(gen_random_uuid(), null,
   '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true]}') $$, 'P0001', 'chapitre_introuvable', 'chapitre inconnu');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', gen_random_uuid(),
   '{"type":"vrai_faux","enonce":"x","bonnes_reponses":[true]}') $$, 'P0001', 'question_introuvable', 'question inconnue');
 
--- Modification en place (pas encore utilisée) puis « inchangée ».
+-- Import (prive.ecrire_question appelée directement) : le statut fourni s'applique.
 reset role;
+-- (La ligne écrite n'est pas visible de l'instruction qui appelle la fonction : on lit dans une instruction suivante.)
+select set_config('test.imp', (select id_question::text from prive.ecrire_question('00000000-0000-0000-0000-00000000c102', null,
+  '{"source":"t-imp","type":"vrai_faux","enonce":"Imp","bonnes_reponses":[true],"statut":"valide"}')), true);
+select is((select statut::text from public.question where id = current_setting('test.imp')::uuid), 'valide',
+  'import : statut fourni respecté');
+-- Modification en place (pas encore utilisée) puis « inchangée ».
 select is((select resultat from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
   '{"source":"t-q1","type":"qcm_unique","enonce":"Q1 bis","propositions":["a","b","c"],"bonnes_reponses":[1],"statut":"a_relire","notion":"n1"}')),
   'modifiee', 'modification en place par source');
@@ -100,39 +121,75 @@ select is((select resultat from prive.ecrire_question('00000000-0000-0000-0000-0
 select throws_ok($$ select prive.ecrire_question('00000000-0000-0000-0000-00000000c102', null,
   '{"source":"t-q1","type":"vrai_faux","enonce":"x","bonnes_reponses":[true]}') $$, 'P0001', 'question_autre_chapitre',
   'une source ne change pas de chapitre');
+select set_config('test.q2', (select id::text from public.question
+  where enonce = 'Q2' and chapitre_id = '00000000-0000-0000-0000-00000000c101'), true);
+select set_config('test.q3', (select id::text from public.question
+  where enonce = 'Q3' and chapitre_id = '00000000-0000-0000-0000-00000000c101'), true);
 set local role authenticated;
 
 -- Statuts.
-select throws_ok($$ select public.changer_statut_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'), 'valide') $$,
+select throws_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'valide') $$,
   'P0001', 'transition_invalide', 'brouillon → valide refusé');
-select lives_ok($$ select public.changer_statut_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'), 'a_relire') $$,
-  'brouillon → a_relire');
-select lives_ok($$ select public.changer_statut_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'), 'valide') $$,
-  'a_relire → valide');
+select lives_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'a_relire') $$, 'brouillon → a_relire');
+select lives_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'valide') $$, 'a_relire → valide');
 select is((select statut::text from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'),
   'valide', 'Q2 est valide');
-select lives_ok($$ select public.changer_statut_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'), 'a_relire') $$,
-  'valide → a_relire');
-select throws_ok($$ select public.changer_statut_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q2'), 'archivee') $$,
+select lives_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'a_relire') $$, 'valide → a_relire');
+select throws_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'archivee') $$,
   'P0001', 'transition_invalide', 'archivee non choisissable');
+select throws_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, null) $$,
+  'P0001', 'transition_invalide', 'statut nul refusé');
 select throws_ok($$ select public.changer_statut_question(gen_random_uuid(), 'a_relire') $$,
   'P0001', 'question_introuvable', 'statut : question inconnue');
 
--- Versionnage : t-q1 a été tirée dans une tentative de l'élève et porte un signalement ouvert.
+-- Éditeur, question non tirée et non validée : modification structurelle en place, statut conservé.
+reset role;
+select is((select resultat || ':' || (id_question = current_setting('test.q2')::uuid)::text
+             from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', current_setting('test.q2')::uuid,
+  '{"type":"qcm_multiple","enonce":"Q2","propositions":["a","b","c"],"bonnes_reponses":[1],"statut":"brouillon"}', true)),
+  'modifiee:true', 'question non tirée : modification structurelle en place');
+select is((select bonnes_reponses from public.question_corrige where question_id = current_setting('test.q2')::uuid),
+  '[1]'::jsonb, 'corrigé mis à jour en place');
+select is((select statut::text from public.question where id = current_setting('test.q2')::uuid),
+  'a_relire', 'éditeur : la modification en place garde le statut');
+set local role authenticated;
+
+-- Question valide jamais tirée : une modification structurelle versionne quand même (course avec un tirage),
+-- et la nouvelle version repasse à « a_relire ».
+select lives_ok($$ select public.changer_statut_question(current_setting('test.q2')::uuid, 'valide') $$, 'Q2 revalidée');
+select lives_ok($$ select set_config('test.q2v', public.enregistrer_question('00000000-0000-0000-0000-00000000c101',
+  current_setting('test.q2')::uuid,
+  '{"type":"qcm_multiple","enonce":"Q2","propositions":["a","b","c","d"],"bonnes_reponses":[1,3],"statut":"valide"}')::text, true) $$,
+  'éditeur : modification structurelle d''une question valide');
+reset role;
+select isnt(current_setting('test.q2v')::uuid, current_setting('test.q2')::uuid, 'question valide non tirée : versionnée');
+select is((select statut::text from public.question where id = current_setting('test.q2')::uuid), 'archivee',
+  'ancienne version valide archivée');
+select is((select statut::text || ':' || (version_de = current_setting('test.q2')::uuid)::text
+             from public.question where id = current_setting('test.q2v')::uuid),
+  'a_relire:true', 'nouvelle version d''une question valide : a_relire');
+set local role authenticated;
+select throws_ok($$ select public.supprimer_question(current_setting('test.q2')::uuid) $$,
+  'P0001', 'question_utilisee', 'version archivée remplacée : suppression refusée');
+
+-- Collision de source.
+select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', current_setting('test.q3')::uuid,
+  '{"source":"t-q1","type":"vrai_faux","enonce":"Q3","bonnes_reponses":[false]}') $$,
+  'P0001', 'source_deja_prise', 'source déjà portée par une autre question');
+
+-- Versionnage : t-q1 a été tirée dans une tentative terminée de l'élève et porte deux signalements.
 reset role;
 select set_config('test.ancien', (select id::text from public.question where source = 't-q1'), true);
-insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions) values
+insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions, statut, fin, note, reussie) values
   ('00000000-0000-0000-0000-00000000d001', '00000000-0000-0000-0000-0000000000b2', 'quiz_chapitre',
-   '00000000-0000-0000-0000-00000000c001', '00000000-0000-0000-0000-00000000c101', 1);
+   '00000000-0000-0000-0000-00000000c001', '00000000-0000-0000-0000-00000000c101', 6, 'terminee', now(), 100, true);
+-- Permutation {2,0,1} : affichage c, a, b ; la réponse 1 (« b ») est affichée en position 2.
 insert into public.tentative_question (tentative_id, ordre, question_id, permutation, reponse, correcte, repondu_le) values
-  ('00000000-0000-0000-0000-00000000d001', 1, current_setting('test.ancien')::uuid, '{0,1,2}', '[1]', true, now());
+  ('00000000-0000-0000-0000-00000000d001', 1, current_setting('test.ancien')::uuid, '{2,0,1}', '[1]', true, now());
 insert into public.signalement (question_id, auteur_id, commentaire) values
   (current_setting('test.ancien')::uuid, '00000000-0000-0000-0000-0000000000b3', 'La réponse b est discutable.');
+insert into public.signalement (question_id, auteur_id, commentaire, statut, traite_le) values
+  (current_setting('test.ancien')::uuid, '00000000-0000-0000-0000-0000000000b3', 'Ancienne remarque déjà traitée.', 'traite', now());
 
 select is((select resultat || ':' || (id_question = current_setting('test.ancien')::uuid)::text
              from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
@@ -152,21 +209,76 @@ select is((select bonnes_reponses from public.question_corrige where question_id
   '[1]'::jsonb, 'corrigé de l''ancienne version inchangé');
 select is((select propositions from public.question where id = current_setting('test.ancien')::uuid),
   '["a", "b", "c"]'::jsonb, 'propositions de l''ancienne version inchangées');
-select is((select question_id from public.signalement where auteur_id = '00000000-0000-0000-0000-0000000000b3'),
+select is((select question_id from public.signalement where auteur_id = '00000000-0000-0000-0000-0000000000b3' and statut = 'ouvert'),
   current_setting('test.nouveau')::uuid, 'le signalement ouvert suit la nouvelle version');
+select is((select question_id from public.signalement where auteur_id = '00000000-0000-0000-0000-0000000000b3' and statut = 'traite'),
+  current_setting('test.ancien')::uuid, 'le signalement traité reste sur l''ancienne version');
+
+-- Bout en bout : la note et la correction passées restent exactes.
+select ok(prive.corriger(current_setting('test.ancien')::uuid, '[1]'), 'ancienne version : la réponse donnée reste correcte');
+select ok(not prive.corriger(current_setting('test.ancien')::uuid, '[2]'), 'ancienne version : une autre réponse reste fausse');
+select is((select tq.correcte::text || ':' || t.note::text from public.tentative_question tq
+             join public.tentative t on t.id = tq.tentative_id
+            where tq.tentative_id = '00000000-0000-0000-0000-00000000d001' and tq.ordre = 1),
+  'true:100.00', 'correction et note enregistrées inchangées');
 set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated"}', true);
+select is((select propositions from public.correction_tentative('00000000-0000-0000-0000-00000000d001') where ordre = 1),
+  '["c", "a", "b"]'::jsonb, 'correction de l''élève : anciennes propositions dans l''ordre affiché');
+select is((select bonnes_reponses::text || ':' || reponse::text || ':' || correcte::text
+             from public.correction_tentative('00000000-0000-0000-0000-00000000d001') where ordre = 1),
+  '[2]:[2]:true', 'correction de l''élève : corrigé et réponse inchangés');
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated"}', true);
 select is((select count(*)::int from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101')
             where id = current_setting('test.ancien')::uuid), 0, 'lecture admin : ancienne version masquée');
-select is((select count(*)::int from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101')), 4,
-  'lecture admin : toujours 4 questions');
+select is((select count(*)::int from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where source = 't-q1'), 1,
+  'lecture admin : une seule version de t-q1');
 select throws_ok($$ select public.enregistrer_question('00000000-0000-0000-0000-00000000c101', current_setting('test.ancien')::uuid,
   '{"type":"qcm_unique","enonce":"Q1","propositions":["a","b","c"],"bonnes_reponses":[1]}') $$,
   'P0001', 'question_archivee', 'une version archivée ne se réécrit pas');
 
+-- Chaque champ lu par la correction versionne une question tirée.
+reset role;
+select prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null, x::jsonb) from unnest(array[
+  '{"source":"t-bonnes","type":"qcm_unique","enonce":"Bonnes","propositions":["a","b","c"],"bonnes_reponses":[1]}',
+  '{"source":"t-type","type":"qcm_unique","enonce":"Type","propositions":["a","b","c"],"bonnes_reponses":[1]}',
+  '{"source":"t-acc","type":"reponse_courte","enonce":"Acc","reponses_acceptees":["5"],"statut":"a_relire"}',
+  '{"source":"t-marge","type":"reponse_courte","enonce":"Marge","reponses_acceptees":["5"],"marge":0.5}']) x;
+select set_config('test.qid', (select e.id_question::text from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"type":"qcm_unique","enonce":"Par id","propositions":["a","b"],"bonnes_reponses":[0]}') e), true);
+insert into public.tentative_question (tentative_id, ordre, question_id, permutation, reponse, correcte)
+  select '00000000-0000-0000-0000-00000000d001', 1 + row_number() over (order by q.enonce), q.id, '{}', null, false
+    from public.question q
+   where q.source in ('t-bonnes', 't-type', 't-acc', 't-marge') or q.id = current_setting('test.qid')::uuid;
+
+select is((select resultat from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"source":"t-bonnes","type":"qcm_unique","enonce":"Bonnes","propositions":["a","b","c"],"bonnes_reponses":[2]}')),
+  'versionnee', 'question tirée : bonnes_reponses modifiées → versionnée');
+select is((select resultat from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"source":"t-type","type":"qcm_multiple","enonce":"Type","propositions":["a","b","c"],"bonnes_reponses":[1]}')),
+  'versionnee', 'question tirée : type modifié → versionnée');
+select is((select resultat from (select e.resultat, set_config('test.acc', e.id_question::text, true)
+             from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"source":"t-acc","type":"reponse_courte","enonce":"Acc","reponses_acceptees":["5","cinq"],"statut":"valide"}', true) e) x),
+  'versionnee', 'question tirée : reponses_acceptees modifiées → versionnée');
+select is((select statut::text from public.question where id = current_setting('test.acc')::uuid), 'a_relire',
+  'éditeur : la nouvelle version d''une question non valide hérite de son statut');
+select is((select resultat from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', null,
+  '{"source":"t-marge","type":"reponse_courte","enonce":"Marge","reponses_acceptees":["5"],"marge":1}')),
+  'versionnee', 'question tirée : marge modifiée → versionnée');
+select is((select resultat from (select e.resultat, set_config('test.qidv', e.id_question::text, true)
+             from prive.ecrire_question('00000000-0000-0000-0000-00000000c101', current_setting('test.qid')::uuid,
+  '{"type":"qcm_unique","enonce":"Par id","propositions":["a","b"],"bonnes_reponses":[1]}') e) x),
+  'versionnee', 'par id, sans source : versionnée');
+select is((select coalesce(source, '-') || ':' || (version_de = current_setting('test.qid')::uuid)::text
+             from public.question where id = current_setting('test.qidv')::uuid),
+  '-:true', 'par id : nouvelle version sans source, version_de posée');
+select is((select bonnes_reponses from public.question_corrige where question_id = current_setting('test.qid')::uuid),
+  '[0]'::jsonb, 'par id : corrigé de l''ancienne version inchangé');
+set local role authenticated;
+
 -- Suppression.
-select lives_ok($$ select public.supprimer_question(
-  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q3')) $$,
-  'question jamais tirée : supprimée');
+select lives_ok($$ select public.supprimer_question(current_setting('test.q3')::uuid) $$, 'question jamais tirée : supprimée');
 select is((select count(*)::int from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q3'), 0,
   'Q3 a disparu');
 select throws_ok($$ select public.supprimer_question(current_setting('test.ancien')::uuid) $$,
