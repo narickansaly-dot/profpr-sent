@@ -456,12 +456,22 @@ isOneToOne: false
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
                            },
+"notes_classe":
+{ Args: { "p_classe": string,"p_cours": string }; Returns: {
+              "chapitre_id": string,"chapitre_numero": number,"chapitre_titre": string,"eleve_id": string,"meilleure_note": number,"nom": string,"valide": boolean
+            }[]
+                           },
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
+"questions_ratees_classe":
+{ Args: { "p_classe": string,"p_cours": string,"p_limite"?: number }; Returns: {
+              "bonnes_reponses": Json,"chapitre_titre": string,"enonce": string,"propositions": Json,"question_id": string,"reponses": number,"reponses_acceptees": (string)[],"taux_erreur": number
             }[]
                            },
 "questions_tentative":
@@ -491,6 +501,11 @@ isOneToOne: false
                            },
 "serie_jours":
 { Args: Record<PropertyKey, never>; Returns: number
+                           },
+"suivi_classe":
+{ Args: { "p_classe": string }; Returns: {
+              "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_titre": string,"derniere_activite": string,"eleve_id": string,"essais_evaluation": number,"evaluation_validee": boolean,"nom": string,"note_evaluation": number
+            }[]
                            },
 "terminer_tentative":
 { Args: { "p_tentative": string }; Returns: undefined
