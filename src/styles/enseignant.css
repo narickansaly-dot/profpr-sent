@@ -40,3 +40,72 @@
 .page-classes .vide { color: var(--attenue); }
 .liste-echeances { margin-bottom: 16px; }
 .titre-echeances { font-size: 17px; margin: 16px 0 8px; }
+
+/* ---------- Enseignant : classes ---------- */
+.page-enseignant { display: grid; gap: 24px; }
+.conteneur .page-enseignant :is(h1, h2, h3) { margin: 0; }
+.page-enseignant .vide, .page-enseignant .attenue { color: var(--attenue); margin: 0; }
+.fil { margin: 0; }
+.fil a { display: inline-flex; align-items: center; min-height: 44px; }
+.etiquette { margin: 0; font-size: 14px; font-weight: 700; color: var(--attenue); text-transform: uppercase; letter-spacing: .06em; }
+.aide-champ { margin: 0; font-size: 15px; color: var(--attenue); }
+
+.liste-cartes-classes { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.carte-classe { display: grid; gap: 10px; align-content: start; border-top: 6px solid var(--couleur-cours); }
+.entete-classe { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; justify-content: space-between; }
+.entete-classe h2 { font-size: 22px; overflow-wrap: anywhere; }
+.nb-eleves { margin: 0; color: var(--attenue); font-weight: 700; }
+.code-carte { margin: 0; display: flex; align-items: center; gap: 10px; }
+.code-valeur { font: 700 24px var(--police-mono); letter-spacing: .2em; font-variant-numeric: tabular-nums; }
+.cours-carte { margin: 0; color: var(--attenue); font-size: 15px; }
+.carte-classe .bouton { justify-self: start; }
+
+.ligne-champs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.formulaire-classe .titre-choix { margin: 0 0 8px; font-weight: 700; }
+.groupe-cours { margin: 0 0 12px; min-width: 0; padding: 8px 14px 12px; }
+.groupe-cours legend { padding: 0 6px; font-weight: 700; color: var(--attenue); }
+.groupe-cours .case { flex: 1 1 100%; }
+.groupe-cours input[type=checkbox] { width: 22px; height: 22px; flex: none; accent-color: var(--couleur-cours); }
+
+.code-classe { display: grid; gap: 12px; }
+.code-grand { margin: 0; font: 700 clamp(36px, 11vw, 52px)/1.1 var(--police-mono); letter-spacing: .28em; font-variant-numeric: tabular-nums;
+  padding: 12px 16px; border-radius: 12px; background: color-mix(in srgb, var(--couleur-cours) 10%, var(--surface)); border: 2px dashed var(--couleur-cours);
+  justify-self: start; max-width: 100%; overflow-wrap: anywhere; }
+.actions-code { display: flex; flex-wrap: wrap; gap: 12px; }
+.statut-copie { min-height: 1.6em; overflow-wrap: anywhere; font-weight: 400; }
+
+.defilement { overflow-x: auto; border: 1px solid var(--trait); border-radius: var(--rayon); background: var(--surface); max-width: 100%; }
+.tableau-suivi { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tableau-suivi caption { text-align: left; padding: 12px 14px; font-weight: 700; color: var(--attenue); caption-side: top; }
+.tableau-suivi th, .tableau-suivi td { padding: 10px 14px; border-top: 1px solid var(--trait); text-align: left; vertical-align: middle; white-space: nowrap; }
+.tableau-suivi thead th { background: color-mix(in srgb, var(--couleur-cours) 8%, var(--surface)); font-size: 14px; }
+.tableau-suivi .groupe-cours-tete { text-align: center; border-left: 1px solid var(--trait); color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); }
+.tableau-suivi .col-eleve { position: sticky; left: 0; z-index: 1; background: var(--surface); box-shadow: 1px 0 0 var(--trait); min-width: 120px; }
+.tableau-suivi thead .col-eleve { background: color-mix(in srgb, var(--couleur-cours) 8%, var(--surface)); }
+.tableau-suivi .num { text-align: right; }
+.tableau-suivi .cellule-vide { text-align: center; color: var(--attenue); }
+.tableau-suivi .fraction { display: block; margin-bottom: 4px; font-weight: 700; }
+.tableau-suivi .barre-progression { min-width: 90px; }
+.tableau-suivi .bouton-compact { min-height: 44px; padding: 0 16px; }
+.defilement:focus-visible { outline-offset: 0; }
+.liens-notes { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 4px; }
+.liens-notes a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
+
+.liste-echeances-ens { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 16px; }
+.formulaire-echeance h3 { font-size: 19px; }
+.formulaire-echeance input[type=datetime-local] { min-width: 0; width: 100%; }
+.formulaire-echeance .bouton { justify-self: start; }
+.echeance-actuelle { margin: 12px 0 0; font-size: 15px; }
+/* Les enfants d'une grille ne rétrécissent pas sous leur contenu : sans cela, un select ou un tableau élargit toute la page. */
+.page-enseignant > *, .page-enseignant .carte, .formulaire-classe, .formulaire-classe label { min-width: 0; }
+.page-enseignant select, .page-enseignant input { max-width: 100%; }
+.page-enseignant select { text-overflow: ellipsis; }
+/* Contient les textes .sr-only (position absolue) du tableau : sinon ils élargissent la page. */
+.defilement { position: relative; }
+.ligne-champs { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.ligne-champs label { min-width: 0; }
+.page-enseignant select { width: 100%; min-width: 0; }
+.page-enseignant { padding-top: 16px; }
+.page-enseignant section.carte { display: grid; gap: 14px; align-content: start; }
+.page-enseignant section[aria-labelledby] > h2 + * { margin-top: 0; }
+.page-enseignant section:not(.carte) { display: grid; gap: 12px; }
