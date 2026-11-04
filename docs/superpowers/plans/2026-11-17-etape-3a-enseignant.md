@@ -226,14 +226,15 @@ describe('appelerAvecRelance', () => {
 
 `src/lib/routes.ts` :
 - ajouter `cheminSuiteSur` : le chemin doit commencer par un seul `/`, ne pas commencer par `//` ni par `/\`, et ne pas mener à une route d'invité (`ROUTES_INVITE`). Sinon, renvoyer `null` ;
-- faire renvoyer à `redirectionPour` l'objet décrit. `suite` vaut le chemin demandé (avec sa query) uniquement s'il est différent de `/` et passe `cheminSuiteSur`.
+- faire renvoyer à `redirectionPour(chemin, connecte)`, qui ne reçoit que le `pathname`, l'objet décrit : `{ pathname: '/connexion', suite: chemin }` quand `chemin` n'est pas `/`, sinon `{ pathname: '/connexion' }`.
 
-`src/proxy.ts` : `url.pathname = cible.pathname; url.search = cible.suite ? '?suite=' + encodeURIComponent(cible.suite) : ''`.
+`src/proxy.ts` : `const suite = cible.suite ? cheminSuiteSur(request.nextUrl.pathname + request.nextUrl.search) : null`. La query est conservée pour qu'un lien d'invitation `/classes?code=…` survive à la connexion. Ensuite : `url.pathname = cible.pathname; url.search = suite ? '?suite=' + encodeURIComponent(suite) : ''`.
 
-Connexion :
+La `suite` traverse tout le parcours, jusqu'à l'onboarding :
 - `FormulaireIdentifiants` reçoit une prop `suite?: string` et l'envoie dans un `<input type="hidden" name="suite">` ;
-- la page de connexion lit `searchParams.suite`, la valide avec `cheminSuiteSur` et la passe au formulaire ;
-- dans `connecter`, après une connexion réussie, faire `redirect(cheminSuiteSur(form.get('suite')) ?? '/')`.
+- les pages de connexion et d'inscription lisent `searchParams.suite`, la valident avec `cheminSuiteSur` et la passent au formulaire. Les liens « Créer un compte » et « Se connecter » gardent `?suite=` ;
+- dans `connecter`, après une connexion réussie, faire `redirect(cheminSuiteSur(form.get('suite')) ?? '/')` ;
+- `inscrire` redirige vers `/bienvenue?suite=…` quand une suite existe. La Task 8 la mène jusqu'à la redirection finale.
 
 `src/lib/supabase/rpc.ts` :
 
@@ -1353,6 +1354,7 @@ git commit -m "Ajoute la fenêtre d'évaluation, le CSV des notes et les lecture
 Dans `terminerOnboarding` :
 - si `r.data.profil === 'enseignant'`, mettre à jour `nom`, `etablissement`, `demande_enseignant: true`, `onboarding_termine: true` ;
 - sinon, garder le chemin élève actuel.
+- la page `/bienvenue` lit `searchParams.suite` (validée par `cheminSuiteSur`) et la place dans un champ caché. Pour un élève, `terminerOnboarding` finit par `redirect(cheminSuiteSur(form.get('suite')) ?? '/')` : un élève invité revient ainsi sur `/classes?code=…`. Pour un enseignant, il finit par `redirect('/')`, qui affiche la page d'attente.
 
 - [ ] **Step 2 : page d'attente.** `src/components/AttenteValidation.tsx` :
 
