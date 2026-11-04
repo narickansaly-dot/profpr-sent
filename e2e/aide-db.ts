@@ -38,3 +38,15 @@ export async function validerTousLesChapitres(email: string, coursSlug: string) 
   const { error } = await db.from('progression_chapitre').upsert(lignes);
   if (error) throw error;
 }
+
+export async function idProfil(email: string): Promise<string> {
+  const { data, error } = await db.from('profil').select('id').eq('email', email).single();
+  if (error || !data) throw error ?? new Error(`profil introuvable : ${email}`);
+  return data.id;
+}
+
+/** Passe le profil à admin_contenu (réservé aux tests : clé service_role, base locale uniquement). */
+export async function rendreAdmin(email: string) {
+  const { error } = await db.from('profil').update({ role: 'admin_contenu' }).eq('email', email);
+  if (error) throw error;
+}

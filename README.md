@@ -39,6 +39,19 @@ update public.profil set role = 'admin_contenu' where email = 'ton.adresse@exemp
 
 Cet administrateur valide ensuite les comptes enseignants (ou les refuse) sur `/admin/enseignants`.
 
+### Parcours enseignant
+
+1. **Demande** : à l'inscription, la personne choisit « J'enseigne » et indique son établissement. Elle voit une page d'attente.
+2. **Validation** : l'administrateur du contenu accepte ou refuse la demande sur `/admin/enseignants`. Une fois validé, le compte arrive sur `/enseignant`.
+3. **Classes** : l'enseignant crée une classe (nom, filière et niveau facultatifs) et choisit ses cours. Il peut ensuite changer les cours et fixer, pour chaque cours, une ouverture et une date limite de l'évaluation (heure de Paris).
+4. **Code** : chaque classe a un code d'invitation de 6 caractères et un lien `/classes?code=…`, à donner aux élèves. Un « Nouveau code » rend l'ancien inutilisable. L'élève saisit le code (majuscules ou minuscules) sur `/classes` ; trop de codes faux bloque les essais pendant une heure.
+5. **Suivi** : la page de la classe affiche, pour chaque élève, les chapitres validés, la note d'évaluation, le nombre d'essais et la dernière activité. L'enseignant peut retirer un élève.
+6. **Export** : la page « Notes et questions ratées » donne les meilleures notes par chapitre, les questions les plus ratées, et un export CSV (séparateur `;`, virgule décimale, ouvrable dans Excel).
+
+**Ce qu'un enseignant voit** : la progression (chapitres validés) et les notes des élèves de ses classes, pour les cours de la classe, y compris leurs résultats antérieurs sur ces cours.
+
+**Ce qu'il ne voit pas** : les réponses détaillées des élèves, leur calendrier de révision, ni leur abonnement. Il ne voit que ses propres classes.
+
 ## Confirmation de l'inscription par e-mail
 
 Sur le projet Supabase hébergé, le modèle d'e-mail « Confirm signup » (Authentication > Email Templates) doit pointer vers :
