@@ -3,6 +3,7 @@ import { exigerAdmin } from '@/lib/admin/garde';
 import { lireSuiviContenu, type LigneSuiviContenu } from '@/lib/admin/requetes';
 import { couleurCoursAcceptable } from '@/lib/contenu/couleur';
 import { BarreProgression } from '@/components/BarreProgression';
+import { MessageStatut } from '@/components/admin/MessageStatut';
 import { BoutonPublier } from '@/components/admin/BoutonPublier';
 import { creerClientServeur } from '@/lib/supabase/server';
 
@@ -34,7 +35,7 @@ export default async function PageAdmin({ searchParams }: { searchParams: Promis
     <div className="page-admin">
       <h1>Suivi du contenu</h1>
       {/* Région toujours présente : son texte change sans qu'elle soit démontée, il est donc annoncé. */}
-      <p role="status" className="message-info">{confirmation ?? ''}</p>
+      <MessageStatut texte={confirmation ?? ''} />
       {blocs.length === 0 ? (
         <p className="vide">Aucun cours pour l’instant. Importe un fichier ou crée un cours.</p>
       ) : blocs.map((b) => {
@@ -63,7 +64,7 @@ export default async function PageAdmin({ searchParams }: { searchParams: Promis
                 <table className="tableau-suivi tableau-contenu">
                   <thead>
                     <tr>
-                      <th scope="col" className="col-eleve">Chapitre</th>
+                      <th scope="col" className="col-eleve col-ligne">Chapitre</th>
                       <th scope="col">Validées</th>
                       <th scope="col" className="num">À relire</th>
                       <th scope="col" className="num">Brouillons</th>
@@ -78,7 +79,7 @@ export default async function PageAdmin({ searchParams }: { searchParams: Promis
                       const titre = `Ch. ${c.numero} — ${c.chapitre_titre}`;
                       return (
                         <tr key={c.chapitre_id}>
-                          <th scope="row" className="col-eleve">{titre}</th>
+                          <th scope="row" className="col-eleve col-ligne">{titre}</th>
                           <td>
                             <span className="fraction">{valides} / {OBJECTIF}</span>
                             <BarreProgression valeur={Math.min(valides, OBJECTIF)} max={OBJECTIF} libelle={`Questions validées, ${titre}`} />

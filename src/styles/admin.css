@@ -26,9 +26,15 @@
 .formulaire-publier .message-erreur { font-size: 14px; max-width: 220px; white-space: normal; }
 .page-admin .bouton-compact { min-height: 44px; padding: 0 16px; }
 
-.tableau-contenu th[scope=row] { font-weight: 700; white-space: normal; min-width: 180px; max-width: 280px; }
+.tableau-contenu th[scope=row] { font-weight: 700; white-space: normal; min-width: 140px; max-width: 280px; }
+@media (max-width: 600px) {
+  .tableau-contenu .col-ligne, .tableau-contenu th[scope=row] { position: static; box-shadow: none; min-width: 100px; max-width: 120px; }
+  .tableau-contenu td:nth-child(2) { min-width: 170px; }
+  .tableau-contenu .barre-progression { min-width: 120px; }
+}
 .tableau-contenu .barre-progression { --couleur-cours: var(--couleur-bloc); min-width: 140px; }
-.tableau-contenu td:nth-child(2) { min-width: 170px; }
+.tableau-contenu td:nth-child(2) { min-width: 190px; }
+.insuffisante { white-space: normal; }
 .insuffisante { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 14px; font-weight: 700; color: color-mix(in srgb, var(--danger) 85%, #000); }
 @media (prefers-color-scheme: dark) { .insuffisante { color: var(--danger); } }
 .cellule-publie, .liens-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
@@ -36,25 +42,17 @@
 
 /* Formulaire de cours */
 .formulaire-cours { max-width: 640px; }
-.formulaire-cours label { min-width: 0; }
 .formulaire-cours .message-erreur { font-size: 15px; font-weight: 700; }
 .formulaire-cours [aria-invalid=true] { border-color: var(--danger); }
-.champ-couleur { display: grid; gap: 6px; }
-.champ-couleur > label { font-weight: 700; }
 .ligne-couleur { display: flex; gap: 12px; align-items: center; }
 .formulaire .selecteur-couleur { width: 64px; min-width: 64px; padding: 4px; cursor: pointer; }
-.formulaire .saisie-couleur { width: 9ch; min-width: 9ch; font-family: var(--police-mono); text-transform: lowercase; }
+.formulaire-cours .saisie-couleur { width: 9ch; min-width: 9ch; font-family: var(--police-mono); text-transform: lowercase; }
 .apercu-cours { display: grid; gap: 8px; }
 .apercu-carte { max-width: 320px; }
 .apercu-carte .pastille { color: var(--encre); background: color-mix(in srgb, var(--couleur-cours) 18%, var(--surface)); }
 .apercu-carte h3 { margin: 0; }
 .actions-formulaire { display: flex; flex-wrap: wrap; gap: 12px; }
-.actions-formulaire a.bouton { text-decoration: none; }
-a.bouton { text-decoration: none; }
-a.bouton.bouton-principal { color: #fff; }
-a.bouton.bouton-secondaire { color: var(--encre); }
-.formulaire-cours select, .formulaire-cours input:not([type=color]) { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
-.formulaire .saisie-couleur { width: 9ch; min-width: 9ch; }
+.formulaire-cours select, .formulaire-cours input:not([type=color]):not(.saisie-couleur) { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
 
 /* Éditeur de chapitre */
 .editeur-chapitre { gap: 20px; }
@@ -78,4 +76,7 @@ a.bouton.bouton-secondaire { color: var(--encre); }
 .panneau-apercu h2 { margin: 0; }
 .apercu-chapitre { min-width: 0; }
 .message-avertissement { margin: 0; font-weight: 700; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
-.page-admin .vide { color: var(--attenue); }
+
+.formulaire-cours .message-erreur { margin: 0; }
+.formulaire-cours .champ { display: grid; gap: 6px; min-width: 0; }
+.formulaire-cours .champ > label { font-weight: 700; }

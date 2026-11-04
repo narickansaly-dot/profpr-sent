@@ -19,28 +19,28 @@ export type EtatCours = { erreur?: string; erreurs?: Partial<Record<ChampCours, 
 const uuid = z.string().uuid();
 const MSG_COULEUR = 'Choisis une couleur assez foncée pour rester lisible sur fond blanc (contraste 3:1 minimum).';
 
-export async function publierCours(_: EtatPublication, form: FormData): Promise<EtatPublication> {
+const schemaPublication = z.object({ id: uuid, publie: z.enum(['true', 'false']) });
+
+async function publier(rpc: 'publier_cours' | 'publier_chapitre', form: FormData): Promise<EtatPublication> {
   await exigerAdmin();
-  const r = z.object({ id: uuid, publie: z.enum(['true', 'false']) })
-    .safeParse({ id: form.get('id'), publie: form.get('publie') });
+  const r = schemaPublication.safeParse({ id: form.get('id'), publie: form.get('publie') });
   if (!r.success) return { erreur: messageErreur(undefined) };
   const supabase = await creerClientServeur();
-  const { error } = await supabase.rpc('publier_cours', { p_cours: r.data.id, p_publie: r.data.publie === 'true' });
+  const publie = r.data.publie === 'true';
+  const { error } = rpc === 'publier_cours'
+    ? await supabase.rpc('publier_cours', { p_cours: r.data.id, p_publie: publie })
+    : await supabase.rpc('publier_chapitre', { p_chapitre: r.data.id, p_publie: publie });
   if (error) return { erreur: messageErreur(error.message) };
   revalidatePath('/admin');
   return {};
 }
 
+export async function publierCours(_: EtatPublication, form: FormData): Promise<EtatPublication> {
+  return publier('publier_cours', form);
+}
+
 export async function publierChapitre(_: EtatPublication, form: FormData): Promise<EtatPublication> {
-  await exigerAdmin();
-  const r = z.object({ id: uuid, publie: z.enum(['true', 'false']) })
-    .safeParse({ id: form.get('id'), publie: form.get('publie') });
-  if (!r.success) return { erreur: messageErreur(undefined) };
-  const supabase = await creerClientServeur();
-  const { error } = await supabase.rpc('publier_chapitre', { p_chapitre: r.data.id, p_publie: r.data.publie === 'true' });
-  if (error) return { erreur: messageErreur(error.message) };
-  revalidatePath('/admin');
-  return {};
+  return publier('publier_chapitre', form);
 }
 
 const schemaCours = z.object({

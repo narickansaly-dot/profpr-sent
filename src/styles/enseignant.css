@@ -3,11 +3,10 @@
 .champs-eleve { display: grid; gap: 16px; }
 .formulaire fieldset:disabled { opacity: .6; }
 
-/* Navigation d'en-tête : sous 520 px elle passe sur sa propre ligne, défilante, sans rien masquer. */
+/* Navigation d'en-tête : sous 520 px elle passe sur sa propre ligne et ses liens retournent à la ligne, aucun n'est masqué. */
 @media (max-width: 520px) {
   .en-tete { flex-wrap: wrap; row-gap: 4px; }
-  header.en-tete > nav { order: 3; flex: 0 0 100%; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-inline: -4px; padding-inline: 4px; }
-  header.en-tete > nav::-webkit-scrollbar { display: none; }
+  header.en-tete > nav { order: 3; flex: 0 0 100%; display: flex; flex-wrap: wrap; gap: 0 4px; }
   header.en-tete > nav a { flex: none; white-space: nowrap; }
 }
 

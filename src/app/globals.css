@@ -44,6 +44,9 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 .bouton:disabled { opacity: .6; cursor: progress; }
 .bouton-principal { background: var(--couleur-cours); color: #fff; box-shadow: 0 4px 0 color-mix(in srgb, var(--couleur-cours) 70%, #000); }
 .bouton-secondaire { background: var(--surface); color: var(--encre); border-color: var(--trait); }
+a.bouton { text-decoration: none; }
+a.bouton.bouton-principal { color: #fff; }
+a.bouton.bouton-secondaire { color: var(--encre); }
 
 .formulaire { display: grid; gap: 16px; }
 .formulaire label { display: grid; gap: 6px; font-weight: 700; }
