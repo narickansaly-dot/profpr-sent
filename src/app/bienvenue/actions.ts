@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { lireUtilisateur } from '@/lib/supabase/utilisateur';
+import { cheminSuiteSur } from '@/lib/routes';
 import { lireFormulaireOnboarding } from '@/lib/profil/onboarding';
 
 export type ValeursBienvenue = { nom: string; filiereId: string; niveau: string; moinsDe15Ans: boolean };
@@ -31,5 +32,5 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   if (error || !data || data.length === 0) {
     return { erreur: 'Impossible d’enregistrer ton profil. Réessaie.', valeurs, essai };
   }
-  redirect('/');
+  redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }

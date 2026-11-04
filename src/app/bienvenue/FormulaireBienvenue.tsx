@@ -6,11 +6,12 @@ import { terminerOnboarding, type EtatBienvenue } from './actions';
 const VOIES = { generale: 'Voie générale', technologique: 'Voie technologique', professionnelle: 'Voie professionnelle' } as const;
 type Filiere = { id: string; voie: keyof typeof VOIES; nom: string };
 
-export function FormulaireBienvenue({ filieres }: { filieres: Filiere[] }) {
+export function FormulaireBienvenue({ filieres, suite }: { filieres: Filiere[]; suite?: string }) {
   const [etat, envoyer, enCours] = useActionState<EtatBienvenue, FormData>(terminerOnboarding, {});
   const v = etat.valeurs;
   return (
     <form key={etat.essai ?? 0} action={envoyer} className="formulaire">
+      {suite && <input type="hidden" name="suite" value={suite} />}
       <label>Ton prénom<input name="nom" autoComplete="given-name" defaultValue={v?.nom} required /></label>
       <label>
         Ta filière

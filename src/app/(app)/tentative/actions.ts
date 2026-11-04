@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { LONGUEURS_QUIZ } from '@/lib/quiz/regles';
+import { appelerAvecRelance } from '@/lib/supabase/rpc';
 import { messageErreurQuiz } from '@/lib/quiz/erreurs';
 import type { ReponseAffichee } from '@/lib/quiz/reponse';
 
@@ -21,9 +22,9 @@ export async function lancerQuiz(_: EtatLancement, form: FormData): Promise<Etat
   });
   if (!r.success) return { erreur: 'Choisis un quiz de 15, 20 ou 30 questions.' };
   const supabase = await creerClientServeur();
-  const { data, error } = await supabase.rpc('demarrer_quiz', {
+  const { data, error } = await appelerAvecRelance(() => supabase.rpc('demarrer_quiz', {
     p_chapitre: r.data.chapitreId, p_nb: r.data.nb, p_revision: r.data.revision,
-  });
+  }));
   if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
   redirect(`/tentative/${data}`);
 }
@@ -32,7 +33,7 @@ export async function lancerEvaluation(_: EtatLancement, form: FormData): Promis
   const coursId = z.string().uuid().safeParse(form.get('coursId'));
   if (!coursId.success) return { erreur: messageErreurQuiz(undefined) };
   const supabase = await creerClientServeur();
-  const { data, error } = await supabase.rpc('demarrer_evaluation', { p_cours: coursId.data });
+  const { data, error } = await appelerAvecRelance(() => supabase.rpc('demarrer_evaluation', { p_cours: coursId.data }));
   if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
   redirect(`/tentative/${data}`);
 }
