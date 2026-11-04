@@ -61,7 +61,7 @@ language sql stable security definer set search_path = '' as $$
    order by e.limite nulls last, e.ouverture nulls first
 $$;
 
--- Ouverte si au moins une classe de l'élève liée au cours a une fenêtre ouverte, ou si aucune n'impose de dates.
+-- Ouverte si au moins une classe de l'élève liée au cours a une fenêtre ouverte ou sans échéance, ou si l'élève n'a aucune classe liée.
 create function prive.fenetre_evaluation(p_eleve uuid, p_cours uuid) returns text
 language sql stable set search_path = '' as $$
   with fenetres as (
@@ -72,6 +72,13 @@ language sql stable set search_path = '' as $$
   )
   select case
     when not exists (select 1 from fenetres) then 'ok'
+    -- Une classe liée au cours sans échéance n'impose rien : la fenêtre est ouverte.
+    when exists (
+      select 1 from public.inscription_classe i
+        join public.classe_cours cc on cc.classe_id = i.classe_id and cc.cours_id = p_cours
+       where i.eleve_id = p_eleve
+         and not exists (select 1 from public.echeance_evaluation e where e.classe_id = i.classe_id and e.cours_id = p_cours)
+    ) then 'ok'
     when exists (select 1 from fenetres where (ouverture is null or ouverture <= now()) and (limite is null or now() <= limite)) then 'ok'
     when exists (select 1 from fenetres where ouverture > now()) then 'pas_ouverte'
     else 'close'
