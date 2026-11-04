@@ -25,3 +25,11 @@ describe('messageErreur', () => {
     expect(messageErreur(undefined)).toBe('Une erreur est survenue. Réessaie dans un instant.');
   });
 });
+
+describe('messageErreur, espace classes', () => {
+  it('traduit chaque code que les RPC de classe peuvent lever', () => {
+    for (const code of ['acces_refuse', 'classe_introuvable', 'code_invalide', 'trop_d_essais']) {
+      expect(messageErreur(code)).not.toMatch(/Une erreur est survenue/);
+    }
+  });
+});

@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { creerClientServeur } from '@/lib/supabase/server';
+import { normaliserCode } from '@/lib/classes/code';
 import { BoutonQuitter, FormulaireRejoindre } from '@/components/FormulaireRejoindre';
 
 export const metadata = { title: 'Mes classes' };
@@ -10,7 +11,7 @@ export default async function PageClasses({ searchParams }: { searchParams: Prom
   const profil = await lireProfil();
   if (profil?.role !== 'eleve') redirect('/');
   const { code } = await searchParams;
-  const codeInitial = (Array.isArray(code) ? code[0] : code)?.slice(0, 12) ?? '';
+  const codeInitial = normaliserCode((Array.isArray(code) ? code[0] : code) ?? '');
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.rpc('classes_eleve');
   if (error) throw new Error('Impossible de charger tes classes.');
@@ -32,7 +33,7 @@ export default async function PageClasses({ searchParams }: { searchParams: Prom
               <li key={c.id} className="carte ligne-classe">
                 <div className="infos-classe">
                   <h3>{c.nom}</h3>
-                  <p>Enseignant : {c.enseignant_nom}</p>
+                  <p>Classe de {c.enseignant_nom}</p>
                   <p>Depuis le {dateArrivee.format(new Date(c.rejoint_le))}</p>
                 </div>
                 <BoutonQuitter classeId={c.id} nom={c.nom} />

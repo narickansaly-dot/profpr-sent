@@ -11,7 +11,7 @@ export function CarteEvaluation({ coursSlug, etat, meilleureNote }: { coursSlug:
     <section className="carte carte-evaluation" aria-labelledby="titre-evaluation">
       <h2 id="titre-evaluation">Évaluation du cours</h2>
       <p>{EVALUATION.nbQuestions} questions sur tout le cours, {EVALUATION.dureeMinutes} minutes, {EVALUATION.essais} essais.</p>
-      {meilleureNote != null && <p>Ta meilleure note : <strong>{formaterNote(meilleureNote)}</strong></p>}
+      {meilleureNote != null && <p>Ta meilleure note : <strong>{formaterNote(meilleureNote)}</strong></p>}
       {etat.etat === 'verrouillee' && (
         <p><span aria-hidden="true">🔒</span> Valide encore {etat.chapitresRestants} chapitre{etat.chapitresRestants > 1 ? 's' : ''} pour la débloquer.</p>
       )}
@@ -26,7 +26,7 @@ export function CarteEvaluation({ coursSlug, etat, meilleureNote }: { coursSlug:
       )}
       {etat.etat === 'attente' && <p><span aria-hidden="true">⏳</span> Prochain essai possible {dateHeure.format(etat.disponibleLe)}.</p>}
       {etat.etat === 'pas_ouverte' && <p><span aria-hidden="true">🔒</span> Ouverture le {formaterEcheance(etat.ouverture)}</p>}
-      {etat.etat === 'close' && <p>La date limite était le {formaterEcheance(etat.limite)}.</p>}
+      {etat.etat === 'close' && <p>La date limite est passée : c’était le {formaterEcheance(etat.limite)}.</p>}
       {etat.etat === 'epuisee' && <p>Tu as utilisé tes {EVALUATION.essais} essais.</p>}
     </section>
   );
