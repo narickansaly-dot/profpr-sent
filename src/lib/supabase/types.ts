@@ -145,14 +145,14 @@ isOneToOne: false
                   ]
                 },"profil": {
                   Row: {
-                    "email": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"]
+                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"]
                   }
                   ComputedFields: never
                   Insert: {
-                    "email"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
                   }
                   Update: {
-                    "email"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
                   }
                   Relationships: [
                     {
@@ -339,6 +339,11 @@ isOneToOne: false
               "bonnes_reponses": Json,"correcte": boolean,"enonce": string,"explication": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"reponses_acceptees": (string)[],"type": Database["public"]['Enums']["type_question_t"]
             }[]
                            },
+"demandes_enseignant":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "email": string,"etablissement": string,"id": string,"inscrit_le": string,"nom": string
+            }[]
+                           },
 "demarrer_evaluation":
 { Args: { "p_cours": string }; Returns: string
                            },
@@ -375,6 +380,9 @@ isOneToOne: false
                            },
 "terminer_tentative":
 { Args: { "p_tentative": string }; Returns: undefined
+                           },
+"traiter_demande_enseignant":
+{ Args: { "p_accepter": boolean,"p_profil": string }; Returns: undefined
                            }
           }
           Enums: {
