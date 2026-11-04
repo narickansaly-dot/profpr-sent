@@ -2,7 +2,7 @@ import { cache } from 'react';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { lireProfil } from '@/lib/supabase/utilisateur';
-import { etatEvaluation, type StatutTentative } from './regles';
+import { etatEvaluation, fenetreEvaluation, type StatutTentative } from './regles';
 import type { ReponseAffichee, TypeQuestion } from './reponse';
 
 const estUuid = (id: string) => z.string().uuid().safeParse(id).success;
@@ -78,21 +78,24 @@ export async function progressionDuCours(coursId: string, chapitreIds: string[])
   const supabase = await creerClientServeur();
   // Au mieux : une erreur ici ne doit pas bloquer l'affichage.
   await supabase.rpc('cloturer_mes_tentatives_expirees');
-  const [{ data: chapitres, error: e1 }, { data: cours, error: e2 }, { data: essais, error: e3 }] = await Promise.all([
+  const [{ data: chapitres, error: e1 }, { data: cours, error: e2 }, { data: essais, error: e3 }, { data: echeances, error: e4 }] = await Promise.all([
     supabase.from('progression_chapitre').select('chapitre_id, meilleure_note, valide').in('chapitre_id', chapitreIds),
     supabase.from('progression_cours').select('meilleure_note, valide, essais').eq('cours_id', coursId).maybeSingle(),
     supabase.from('tentative').select('id, statut, fin, note').eq('cours_id', coursId).eq('type', 'evaluation_cours')
       .order('debut', { ascending: false }),
+    supabase.rpc('mes_echeances', { p_cours: coursId }),
   ]);
-  if (e1 || e2 || e3) throw new Error('Impossible de charger ta progression.');
+  if (e1 || e2 || e3 || e4) throw new Error('Impossible de charger ta progression.');
+  const maintenant = new Date();
   const parChapitre = new Map((chapitres ?? []).map((p) => [p.chapitre_id, p]));
   const nbValides = chapitreIds.filter((id) => parChapitre.get(id)?.valide).length;
   return {
-    parChapitre, nbValides, cours, essais: essais ?? [],
+    parChapitre, nbValides, cours, essais: essais ?? [], echeances: echeances ?? [],
     evaluation: etatEvaluation({
       nbChapitres: chapitreIds.length, nbValides,
       essais: (essais ?? []).map((e) => ({ id: e.id, statut: e.statut as StatutTentative, fin: e.fin })),
-      maintenant: new Date(),
+      maintenant,
+      fenetre: fenetreEvaluation(echeances ?? [], maintenant),
     }),
   };
 }

@@ -12,9 +12,16 @@ const MESSAGES: Record<string, string> = {
   tentative_terminee: 'Ce quiz est terminé.',
   tentative_en_cours: 'Termine d’abord ce quiz pour voir la correction.',
   evaluation_en_cours: 'Termine d’abord ton évaluation en cours : les quiz de ce cours sont fermés pendant l’évaluation.',
+  evaluation_pas_ouverte: 'L’évaluation n’est pas encore ouverte pour ta classe.',
+  evaluation_close: 'La date limite de l’évaluation est passée.',
+  dates_invalides: 'La date d’ouverture doit être avant la date limite.',
+  cours_invalide: 'Choisis au moins un cours publié.',
+  nom_invalide: 'Le nom de la classe doit faire entre 2 et 60 caractères.',
+  classe_introuvable: 'Cette classe est introuvable.',
+  demande_introuvable: 'Cette demande a déjà été traitée.',
 };
 
-export function messageErreurQuiz(message: string | undefined): string {
+export function messageErreur(message: string | undefined): string {
   const code = Object.keys(MESSAGES).find((c) => message?.includes(c));
   return code ? MESSAGES[code] : 'Une erreur est survenue. Réessaie dans un instant.';
 }

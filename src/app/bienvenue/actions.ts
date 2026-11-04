@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { cheminSuiteSur } from '@/lib/routes';
+import { messageErreur } from '@/lib/erreurs';
 import { lireFormulaireOnboarding } from '@/lib/profil/onboarding';
 
 export type ValeursBienvenue = { nom: string; filiereId: string; niveau: string; moinsDe15Ans: boolean };
@@ -19,14 +20,17 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   const essai = (etat.essai ?? 0) + 1;
   const r = lireFormulaireOnboarding(form);
   if (!r.success) return { erreur: r.error.issues[0].message, valeurs, essai };
+  // Task 8 : branche enseignant (aucune interface n'envoie encore ce profil).
+  if (r.data.profil !== 'eleve') return { erreur: messageErreur(undefined), valeurs, essai };
+  const eleve = r.data;
   const user = await lireUtilisateur();
   if (!user) redirect('/connexion');
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.from('profil').update({
-    nom: r.data.nom,
-    filiere_id: r.data.filiereId,
-    niveau_code: r.data.niveau,
-    moins_de_15_ans: r.data.moinsDe15Ans,
+    nom: eleve.nom,
+    filiere_id: eleve.filiereId,
+    niveau_code: eleve.niveau,
+    moins_de_15_ans: eleve.moinsDe15Ans,
     onboarding_termine: true,
   }).eq('id', user.id).select('id');
   if (error || !data || data.length === 0) {

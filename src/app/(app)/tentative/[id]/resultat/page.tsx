@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { lireCorrection, lireStatutTentative } from '@/lib/quiz/requetes';
 import { LONGUEURS_QUIZ, SEUIL_REUSSITE } from '@/lib/quiz/regles';
-import { messageErreurQuiz } from '@/lib/quiz/erreurs';
+import { messageErreur } from '@/lib/erreurs';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { ListeCorrection } from '@/components/ListeCorrection';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
@@ -24,7 +24,7 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
           {t.evaluationOuverte ? (
             <>
               <h1>Correction indisponible</h1>
-              <p>{messageErreurQuiz('evaluation_en_cours')}</p>
+              <p>{messageErreur('evaluation_en_cours')}</p>
             </>
           ) : (
             <p>La correction n’a pas pu se charger. Recharge la page dans un instant.</p>

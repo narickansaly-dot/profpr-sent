@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { LONGUEURS_QUIZ } from '@/lib/quiz/regles';
 import { appelerAvecRelance } from '@/lib/supabase/rpc';
-import { messageErreurQuiz } from '@/lib/quiz/erreurs';
+import { messageErreur } from '@/lib/erreurs';
 import type { ReponseAffichee } from '@/lib/quiz/reponse';
 
 export type EtatLancement = { erreur?: string };
@@ -25,16 +25,16 @@ export async function lancerQuiz(_: EtatLancement, form: FormData): Promise<Etat
   const { data, error } = await appelerAvecRelance(() => supabase.rpc('demarrer_quiz', {
     p_chapitre: r.data.chapitreId, p_nb: r.data.nb, p_revision: r.data.revision,
   }));
-  if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
+  if (error || !data) return { erreur: messageErreur(error?.message) };
   redirect(`/tentative/${data}`);
 }
 
 export async function lancerEvaluation(_: EtatLancement, form: FormData): Promise<EtatLancement> {
   const coursId = z.string().uuid().safeParse(form.get('coursId'));
-  if (!coursId.success) return { erreur: messageErreurQuiz(undefined) };
+  if (!coursId.success) return { erreur: messageErreur(undefined) };
   const supabase = await creerClientServeur();
   const { data, error } = await appelerAvecRelance(() => supabase.rpc('demarrer_evaluation', { p_cours: coursId.data }));
-  if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
+  if (error || !data) return { erreur: messageErreur(error?.message) };
   redirect(`/tentative/${data}`);
 }
 
@@ -49,14 +49,14 @@ export type ResultatReponse = { statut: 'ok' | 'temps_ecoule' | 'terminee' } | {
 export async function enregistrerReponse(tentativeId: string, questionId: string, reponse: ReponseAffichee | null): Promise<ResultatReponse> {
   const ids = z.tuple([z.string().uuid(), z.string().uuid()]).safeParse([tentativeId, questionId]);
   const valeur = schemaReponse.safeParse(reponse);
-  if (!ids.success || !valeur.success) return { erreur: messageErreurQuiz('reponse_invalide') };
+  if (!ids.success || !valeur.success) return { erreur: messageErreur('reponse_invalide') };
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.rpc('repondre', {
     p_tentative: tentativeId, p_question: questionId, p_reponse: valeur.data,
   });
-  if (error || !data) return { erreur: messageErreurQuiz(error?.message) };
+  if (error || !data) return { erreur: messageErreur(error?.message) };
   const statut = z.enum(['ok', 'temps_ecoule', 'terminee']).safeParse(data);
-  if (!statut.success) return { erreur: messageErreurQuiz(undefined) };
+  if (!statut.success) return { erreur: messageErreur(undefined) };
   return { statut: statut.data };
 }
 

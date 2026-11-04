@@ -21,6 +21,8 @@ export function CarteEvaluation({ coursSlug, etat, meilleureNote }: { coursSlug:
         </Link>
       )}
       {etat.etat === 'attente' && <p><span aria-hidden="true">⏳</span> Prochain essai possible {dateHeure.format(etat.disponibleLe)}.</p>}
+      {etat.etat === 'pas_ouverte' && <p><span aria-hidden="true">⏳</span> L’évaluation ouvre {dateHeure.format(etat.ouverture)}.</p>}
+      {etat.etat === 'close' && <p>La date limite est passée ({dateHeure.format(etat.limite)}).</p>}
       {etat.etat === 'epuisee' && <p>Tu as utilisé tes {EVALUATION.essais} essais.</p>}
     </section>
   );
