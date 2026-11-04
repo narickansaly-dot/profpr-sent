@@ -6,7 +6,7 @@ create table public.classe (
   nom text not null check (char_length(trim(nom)) between 2 and 60),
   filiere_id uuid references public.filiere,
   niveau_code text references public.niveau,
-  code char(6) not null unique,
+  code text not null unique check (code ~ '^[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{6}$'),
   cree_le timestamptz not null default now()
 );
 create index classe_enseignant on public.classe (enseignant_id);
@@ -131,6 +131,9 @@ begin
   if public.role_actuel() is distinct from 'eleve' then
     raise exception 'acces_refuse';
   end if;
+  -- Sérialise les appels d'un même élève : sans cela, des appels simultanés contourneraient le frein.
+  perform pg_advisory_xact_lock(hashtextextended('rejoindre_classe:' || auth.uid()::text, 0));
+  delete from prive.essai_code where eleve_id = auth.uid() and essai_le < now() - interval '1 hour';
   if (select count(*) from prive.essai_code
        where eleve_id = auth.uid() and essai_le > now() - interval '1 hour') >= 10 then
     return query select 'trop_d_essais'::text, null::text;
@@ -172,7 +175,7 @@ end $$;
 create function public.classes_enseignant()
 returns table (id uuid, nom text, code text, filiere_id uuid, niveau_code text, nb_eleves int, cours_ids uuid[], cree_le timestamptz)
 language sql stable security definer set search_path = '' as $$
-  select c.id, c.nom, c.code::text, c.filiere_id, c.niveau_code,
+  select c.id, c.nom, c.code, c.filiere_id, c.niveau_code,
          (select count(*)::int from public.inscription_classe i where i.classe_id = c.id),
          coalesce((select array_agg(cc.cours_id order by cc.cours_id) from public.classe_cours cc where cc.classe_id = c.id), '{}'),
          c.cree_le
