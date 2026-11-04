@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { createClient } from '@supabase/supabase-js';
-import { schemaCoursImport } from '../src/lib/contenu/format-import';
+import { analyserImport } from '../src/lib/contenu/lire-import';
 import { versDonneesCours } from '../src/lib/contenu/donnees-question';
 import { messageErreur } from '../src/lib/erreurs';
 import type { Database } from '../src/lib/supabase/types';
@@ -44,12 +44,12 @@ const db = createClient<Database>(url, cle, { auth: { persistSession: false } })
 
 // Pas d'await au niveau supérieur : le projet est en CommonJS.
 async function main() {
-  const lu = schemaCoursImport.safeParse(JSON.parse(readFileSync(fichier!, 'utf8')));
-  if (!lu.success) {
-    for (const e of lu.error.issues) console.error(`  ${e.path.join('.') || '(racine)'} : ${e.message}`);
+  const lu = analyserImport(readFileSync(fichier!, 'utf8'));
+  if ('erreurs' in lu) {
+    for (const e of lu.erreurs) console.error(`  ${e}`);
     echouer(`Fichier invalide : ${fichier}`);
   }
-  const cours = lu.data;
+  const cours = lu.cours;
   const { data, error } = await db.rpc('importer_cours', { p_cours: versDonneesCours(cours), p_publier: publier });
   if (error) echouer(`Import refusé : ${messageErreur(error.message)} (${error.message})`);
   if (!data || typeof data !== 'object') echouer('Import refusé : la base n’a renvoyé aucun bilan.');

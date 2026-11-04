@@ -134,3 +134,46 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .boutons-statut form { margin: 0; }
 .filtres-questions .case-bonne { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; font-weight: 400; cursor: pointer; }
 .filtres-questions .case-bonne input { width: 22px; height: 22px; flex: none; accent-color: var(--couleur-cours); }
+
+/* Import JSON */
+.formulaire-import { max-width: 720px; display: grid; gap: 16px; }
+.formulaire-import h2, .resultat-import h2 { margin: 0; font-size: 22px; }
+.formulaire-import .champ { display: grid; gap: 6px; min-width: 0; }
+.formulaire-import .champ > label { font-weight: 700; }
+.formulaire-import input[type=file] { width: 100%; max-width: 100%; padding: 10px; border: 2px dashed var(--trait); border-radius: 12px; background: var(--papier); font: inherit; }
+.formulaire .case-import, .case-import { display: flex; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; cursor: pointer; }
+.case-import input { width: 24px; height: 24px; flex: none; accent-color: var(--encre); }
+.resultat-import { display: grid; gap: 14px; max-width: 720px; border-left: 6px solid var(--trait); }
+.resultat-import > * { margin: 0; min-width: 0; }
+.resultat-import :focus-visible { outline-offset: 4px; }
+.resultat-erreurs { border-left-color: var(--danger); }
+.resultat-ok { border-left-color: var(--succes); }
+.liste-erreurs-import { list-style: disc; margin: 0; padding-left: 22px; display: grid; gap: 6px; overflow-wrap: anywhere; }
+.liste-resume { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+.liste-resume li { padding: 4px 12px; border: 1px solid var(--trait); border-radius: 999px; background: var(--papier); font-weight: 700; }
+.bilan-import { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 0; }
+.bilan-import > div { padding: 12px; border: 2px solid var(--trait); border-radius: 12px; background: var(--papier); }
+.bilan-import dt { font-size: 14px; color: var(--attenue); font-weight: 700; }
+.bilan-import dd { margin: 0; font: 700 30px var(--police-titres); }
+.rappel-format { max-width: 720px; display: grid; gap: 10px; }
+.rappel-format h2 { margin: 0; font-size: 20px; }
+.rappel-format ul { list-style: disc; margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.rappel-format p { margin: 0; }
+.rappel-format code, .formulaire-decision code { font-family: var(--police-mono); font-size: .92em; }
+
+/* Signalements */
+.filtres-signalements ul { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.liste-signalements { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.carte-signalement { display: grid; gap: 12px; border-left: 6px solid var(--danger); }
+.carte-signalement > * { margin: 0; min-width: 0; }
+.entete-signalement { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.chemin-signalement { margin: 0; color: var(--attenue); font-weight: 700; overflow-wrap: anywhere; }
+.etats-signalement { display: flex; flex-wrap: wrap; gap: 8px; }
+.enonce-signalement { font-size: 20px; line-height: 1.35; overflow-wrap: anywhere; }
+.commentaire-signalement { margin: 0; padding: 10px 14px; border-left: 4px solid var(--accent); background: var(--papier); border-radius: 0 12px 12px 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+.meta-signalement { color: var(--attenue); font-size: 15px; overflow-wrap: anywhere; }
+.formulaire-decision { display: grid; gap: 12px; padding-top: 12px; border-top: 1px dashed var(--trait); }
+.formulaire-decision .champ { display: grid; gap: 6px; min-width: 0; }
+.formulaire-decision .champ > label { font-weight: 700; }
+.formulaire-decision textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
+.formulaire-decision .message-erreur { margin: 0; font-weight: 700; }

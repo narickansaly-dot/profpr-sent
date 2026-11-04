@@ -59,10 +59,10 @@ export async function lireNotionsChapitre(chapitreId: string): Promise<string[]>
   return data ?? [];
 }
 
-/** `statut` : « ouvert », « traite », « rejete » ou `null` pour tout voir. */
+/** `statut` : « ouvert », « traite », « rejete » ou `null` pour tout voir (la valeur par défaut de la fonction SQL est « ouvert » : il faut envoyer null explicitement). */
 export async function lireSignalementsAdmin(statut: string | null = 'ouvert'): Promise<SignalementAdmin[]> {
   const supabase = await creerClientServeur();
-  const { data, error } = await supabase.rpc('signalements_admin', statut === null ? {} : { p_statut: statut });
+  const { data, error } = await supabase.rpc('signalements_admin', { p_statut: statut as string });
   if (error) throw new Error('Impossible de charger les signalements.');
   return (data ?? []) as SignalementAdmin[];
 }

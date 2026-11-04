@@ -51,12 +51,12 @@ export const schemaChapitreImport = z.object({
 });
 
 export const schemaCoursImport = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/).max(80),
+  slug: z.string().regex(/^[a-z0-9-]+$/, 'Lettres minuscules, chiffres et tirets uniquement.').max(80),
   filiere: z.string().min(1),
   niveau: z.enum(['2de', '1re', 'Tle']),
   matiere: z.string().trim().min(1).max(120),
   titre: z.string().trim().min(1).max(200),
-  couleur: z.string().regex(/^#[0-9a-f]{6}$/i).transform((c) => c.toLowerCase())
+  couleur: z.string().regex(/^#[0-9a-f]{6}$/i, 'Couleur attendue au format #rrggbb, par exemple #0f766e.').transform((c) => c.toLowerCase())
     .refine((c) => !/^#[0-9a-f]{6}$/.test(c) || couleurCoursAcceptable(c), 'Couleur trop claire : contraste insuffisant avec le fond blanc.').default('#2563eb'),
   chapitres: z.array(schemaChapitreImport).min(1),
 }).refine((c) => new Set(c.chapitres.map((ch) => ch.slug)).size === c.chapitres.length, {
