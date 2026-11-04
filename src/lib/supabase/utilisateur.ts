@@ -14,7 +14,7 @@ export const lireProfil = cache(async () => {
   if (!user) return null;
   const supabase = await creerClientServeur();
   const { data } = await supabase.from('profil')
-    .select('id, nom, role, filiere_id, niveau_code, onboarding_termine, inscrit_le')
+    .select('id, nom, role, filiere_id, niveau_code, onboarding_termine, inscrit_le, demande_enseignant')
     .eq('id', user.id).single();
   return data;
 });

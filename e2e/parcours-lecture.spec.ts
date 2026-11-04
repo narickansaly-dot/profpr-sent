@@ -26,5 +26,5 @@ test('un élève s’inscrit, choisit sa filière et lit un chapitre', async ({ 
 
 test('un visiteur non connecté ne peut pas lire un chapitre', async ({ page }) => {
   await page.goto('/cours/bph-1re-st2s/ch1');
-  await expect(page).toHaveURL(/\/connexion$/);
+  await expect(page).toHaveURL(/\/connexion\?suite=%2Fcours%2Fbph-1re-st2s%2Fch1$/);
 });

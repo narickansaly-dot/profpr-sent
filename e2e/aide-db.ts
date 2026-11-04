@@ -31,10 +31,22 @@ export async function bonnesReponsesAffichees(tentativeId: string): Promise<numb
 }
 
 export async function validerTousLesChapitres(email: string, coursSlug: string) {
-  const { data: profil } = await db.from('profil').select('id').eq('email', email).single();
+  const eleveId = await idProfil(email);
   const { data: cours } = await db.from('cours').select('chapitre(id)').eq('slug', coursSlug).single();
-  if (!profil || !cours) throw new Error('profil ou cours introuvable');
-  const lignes = cours.chapitre.map((c) => ({ eleve_id: profil.id, chapitre_id: c.id, meilleure_note: 100, valide: true }));
+  if (!cours) throw new Error('cours introuvable');
+  const lignes = cours.chapitre.map((c) => ({ eleve_id: eleveId, chapitre_id: c.id, meilleure_note: 100, valide: true }));
   const { error } = await db.from('progression_chapitre').upsert(lignes);
+  if (error) throw error;
+}
+
+export async function idProfil(email: string): Promise<string> {
+  const { data, error } = await db.from('profil').select('id').eq('email', email).single();
+  if (error || !data) throw error ?? new Error(`profil introuvable : ${email}`);
+  return data.id;
+}
+
+/** Passe le profil à admin_contenu (réservé aux tests : clé service_role, base locale uniquement). */
+export async function rendreAdmin(email: string) {
+  const { error } = await db.from('profil').update({ role: 'admin_contenu' }).eq('email', email);
   if (error) throw error;
 }

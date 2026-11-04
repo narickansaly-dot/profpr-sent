@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { schemaIdentifiants } from '@/lib/auth/identifiants';
 import { traduireErreurAuth } from '@/lib/auth/erreurs';
+import { cheminSuiteSur } from '@/lib/routes';
 
 export type EtatFormulaire = { erreur?: string; info?: string; email?: string };
 
@@ -30,7 +31,8 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
   });
   if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
   if (!data.session) return { info: 'Compte créé ! Clique sur le lien reçu par e-mail pour l’activer.' };
-  redirect('/bienvenue');
+  const suite = cheminSuiteSur(form.get('suite'));
+  redirect(suite ? `/bienvenue?suite=${encodeURIComponent(suite)}` : '/bienvenue');
 }
 
 export async function connecter(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
@@ -39,7 +41,7 @@ export async function connecter(_: EtatFormulaire, form: FormData): Promise<Etat
   const supabase = await creerClientServeur();
   const { error } = await supabase.auth.signInWithPassword({ email: r.data.email, password: r.data.motDePasse });
   if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
-  redirect('/');
+  redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }
 
 export async function connecterAvecGoogle() {

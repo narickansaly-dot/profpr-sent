@@ -7,12 +7,14 @@ type Props = {
   action: (etat: EtatFormulaire, form: FormData) => Promise<EtatFormulaire>;
   libelle: string;
   autocompleteMotDePasse: 'current-password' | 'new-password';
+  suite?: string;
 };
 
-export function FormulaireIdentifiants({ action, libelle, autocompleteMotDePasse }: Props) {
+export function FormulaireIdentifiants({ action, libelle, autocompleteMotDePasse, suite }: Props) {
   const [etat, envoyer, enCours] = useActionState(action, {});
   return (
     <form action={envoyer} className="formulaire">
+      {suite && <input type="hidden" name="suite" value={suite} />}
       <label>
         Adresse e-mail
         <input key={etat.email} name="email" type="email" autoComplete="email" defaultValue={etat.email} required />

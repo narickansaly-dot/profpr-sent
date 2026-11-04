@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { redirectionPour } from './routes';
+import { cheminSuiteSur, redirectionPour } from './routes';
 
 describe('redirectionPour', () => {
   it('envoie un visiteur non connecté vers la connexion', () => {
-    expect(redirectionPour('/', false)).toBe('/connexion');
-    expect(redirectionPour('/cours/bph-1re-st2s', false)).toBe('/connexion');
+    expect(redirectionPour('/', false)).toEqual({ pathname: '/connexion' });
+    expect(redirectionPour('/cours/bph-1re-st2s', false)).toEqual({
+      pathname: '/connexion',
+      suite: '/cours/bph-1re-st2s',
+    });
   });
   it('laisse un visiteur non connecté sur les pages publiques', () => {
     expect(redirectionPour('/connexion', false)).toBeNull();
@@ -13,14 +16,48 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/auth/confirm', false)).toBeNull();
   });
   it('renvoie un élève connecté vers l’accueil depuis connexion et inscription', () => {
-    expect(redirectionPour('/connexion', true)).toBe('/');
-    expect(redirectionPour('/inscription', true)).toBe('/');
+    expect(redirectionPour('/connexion', true)).toEqual({ pathname: '/' });
+    expect(redirectionPour('/inscription', true)).toEqual({ pathname: '/' });
   });
   it('laisse passer un élève connecté ailleurs', () => {
     expect(redirectionPour('/cours/bph-1re-st2s', true)).toBeNull();
     expect(redirectionPour('/bienvenue', true)).toBeNull();
   });
   it('ne confond pas un préfixe avec une page publique', () => {
-    expect(redirectionPour('/connexionx', false)).toBe('/connexion');
+    expect(redirectionPour('/connexionx', false)).toEqual({ pathname: '/connexion', suite: '/connexionx' });
+  });
+});
+
+describe('cheminSuiteSur', () => {
+  it('accepte un chemin relatif de l’application', () => {
+    expect(cheminSuiteSur('/cours/bph-1re-st2s/ch1')).toBe('/cours/bph-1re-st2s/ch1');
+    expect(cheminSuiteSur('/classes?code=ABC')).toBe('/classes?code=ABC');
+  });
+  it('refuse les adresses externes et les chemins dangereux', () => {
+    expect(cheminSuiteSur('https://exemple.com')).toBeNull();
+    expect(cheminSuiteSur('//exemple.com')).toBeNull();
+    expect(cheminSuiteSur('/\\exemple.com')).toBeNull();
+    expect(cheminSuiteSur('javascript:alert(1)')).toBeNull();
+    expect(cheminSuiteSur('/connexion')).toBeNull();
+    expect(cheminSuiteSur(null)).toBeNull();
+  });
+  it('refuse ce qui n’est pas une chaîne, un backslash, un schéma ou une page d’invité', () => {
+    expect(cheminSuiteSur(undefined)).toBeNull();
+    expect(cheminSuiteSur(42)).toBeNull();
+    expect(cheminSuiteSur('')).toBeNull();
+    expect(cheminSuiteSur('cours/ch1')).toBeNull();
+    expect(cheminSuiteSur('/cours\\ch1')).toBeNull();
+    expect(cheminSuiteSur('/a:b')).toBe('/a:b');
+    expect(cheminSuiteSur('/connexion?suite=/x')).toBeNull();
+    expect(cheminSuiteSur('/inscription/')).toBeNull();
+    expect(cheminSuiteSur('/inscription#x')).toBeNull();
+    expect(cheminSuiteSur('/connexionx')).toBe('/connexionx');
+    expect(cheminSuiteSur('/\t/exemple.com')).toBeNull();
+    expect(cheminSuiteSur('/\n/exemple.com')).toBeNull();
+  });
+  // `/%2F%2Fexemple.com` reste un chemin de CE site (le navigateur ne décode pas %2F en
+  // séparateur d’hôte) : l’accepter est sans danger, on documente ce comportement.
+  it('accepte un double slash encodé, qui reste sur la même origine', () => {
+    expect(cheminSuiteSur('/%2F%2Fexemple.com')).toBe('/%2F%2Fexemple.com');
   });
 });

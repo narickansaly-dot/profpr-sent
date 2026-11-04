@@ -11,12 +11,35 @@ describe('lireFormulaireOnboarding', () => {
   const filiereId = '7c9e6679-7425-40de-944b-e07fc1f90ae7';
 
   it('lit un formulaire complet', () => {
-    const r = lireFormulaireOnboarding(formulaire({ nom: ' Léa ', filiereId, niveau: '1re', moinsDe15Ans: 'on' }));
-    expect(r.success && r.data).toEqual({ nom: 'Léa', filiereId, niveau: '1re', moinsDe15Ans: true });
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'eleve', nom: ' Léa ', filiereId, niveau: '1re', moinsDe15Ans: 'on' }));
+    expect(r.success && r.data).toEqual({ profil: 'eleve', nom: 'Léa', filiereId, niveau: '1re', moinsDe15Ans: true });
+  });
+  it('refuse un prénom avec caractère de contrôle ou bidi, comme la base', () => {
+    for (const nom of ['Lé\u202Ea', 'Lé\na', 'Lé\u2066a']) {
+      const r = lireFormulaireOnboarding(formulaire({ nom, filiereId, niveau: '1re' }));
+      expect(r.error?.issues[0].message).toBe('Ton prénom contient des caractères non autorisés.');
+    }
+  });
+  it('limite le prénom à 60 caractères, comme la base', () => {
+    expect(lireFormulaireOnboarding(formulaire({ nom: 'a'.repeat(60), filiereId, niveau: '1re' })).success).toBe(true);
+    const r = lireFormulaireOnboarding(formulaire({ nom: 'a'.repeat(61), filiereId, niveau: '1re' }));
+    expect(r.error?.issues[0].message).toBe('Ton prénom est trop long.');
+  });
+  it('lit un formulaire sans profil comme un profil élève', () => {
+    const r = lireFormulaireOnboarding(formulaire({ nom: 'Léa', filiereId, niveau: '1re' }));
+    expect(r.success && r.data.profil).toBe('eleve');
+  });
+  it('lit un profil enseignant sans filière ni niveau', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'enseignant', nom: 'Camille', etablissement: 'Lycée Pasteur' }));
+    expect(r.success && r.data).toEqual({ profil: 'enseignant', nom: 'Camille', etablissement: 'Lycée Pasteur' });
+  });
+  it('exige l’établissement d’un profil enseignant', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'enseignant', nom: 'Camille', etablissement: '' }));
+    expect(r.error?.issues[0].message).toBe('Indique ton établissement.');
   });
   it('considère une case non cochée comme « non »', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'Léa', filiereId, niveau: 'Tle' }));
-    expect(r.success && r.data.moinsDe15Ans).toBe(false);
+    expect(r.success && r.data.profil === 'eleve' && r.data.moinsDe15Ans).toBe(false);
   });
   it('exige une filière', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'Léa', filiereId: '', niveau: '1re' }));
