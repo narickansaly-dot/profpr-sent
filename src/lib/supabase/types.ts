@@ -542,6 +542,11 @@ isOneToOne: false
               "classe_nom": string,"cours_id": string,"limite": string,"ouverture": string
             }[]
                            },
+"mes_signalements":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"traite_le": string
+            }[]
+                           },
 "notes_classe":
 { Args: { "p_classe": string,"p_cours": string }; Returns: {
               "chapitre_id": string,"chapitre_numero": number,"chapitre_titre": string,"eleve_id": string,"meilleure_note": number,"nom": string,"valide": boolean
@@ -602,6 +607,14 @@ isOneToOne: false
 "serie_jours":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
+"signalements_admin":
+{ Args: { "p_statut"?: string }; Returns: {
+              "auteur_email": string,"auteur_nom": string,"chapitre_id": string,"chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"statut_question": Database["public"]['Enums']["statut_question_t"],"traite_le": string
+            }[]
+                           },
+"signaler_question":
+{ Args: { "p_commentaire": string,"p_question": string }; Returns: string
+                           },
 "suivi_classe":
 { Args: { "p_classe": string }; Returns: {
               "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_titre": string,"derniere_activite": string,"eleve_id": string,"essais_evaluation": number,"evaluation_validee": boolean,"nom": string,"note_evaluation": number
@@ -620,6 +633,9 @@ isOneToOne: false
                            },
 "traiter_demande_enseignant":
 { Args: { "p_accepter": boolean,"p_profil": string }; Returns: undefined
+                           },
+"traiter_signalement":
+{ Args: { "p_decision": string,"p_reponse"?: string,"p_signalement": string }; Returns: undefined
                            }
           }
           Enums: {
