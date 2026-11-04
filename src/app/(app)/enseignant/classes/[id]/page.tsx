@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { exigerEnseignant } from '@/lib/enseignant/garde';
-import { lireCatalogue, lireClasseEnseignant, lireSuiviClasse } from '@/lib/enseignant/requetes';
+import { lireCatalogue, lireClasseEnseignant, lireEcheances, lireSuivi } from '@/lib/enseignant/requetes';
+import { grouperParFiliere } from '@/lib/enseignant/catalogue';
 import { isoVersHeureParis } from '@/lib/enseignant/dates';
 import { formaterEcheance } from '@/lib/quiz/temps';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { BarreProgression } from '@/components/BarreProgression';
 import { CodeClasse } from '@/components/CodeClasse';
-import { BoutonRetirerEleve, FormulaireCours, type GroupeCours } from '@/components/FormulaireClasse';
+import { BoutonRetirerEleve, FormulaireCours } from '@/components/FormulaireClasse';
 import { FormulaireEcheance } from '@/components/FormulaireEcheance';
 
 export const metadata = { title: 'Ma classe' };
@@ -18,7 +19,7 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
   const { id } = await params;
   const classe = await lireClasseEnseignant(id);
   if (!classe) notFound();
-  const [{ suivi, echeances }, catalogue] = await Promise.all([lireSuiviClasse(classe.id), lireCatalogue()]);
+  const [suivi, echeances, catalogue] = await Promise.all([lireSuivi(classe.id), lireEcheances(classe.id), lireCatalogue()]);
 
   const titres = new Map(catalogue.map((c) => [c.id, c.titre]));
   for (const l of suivi) titres.set(l.cours_id, l.cours_titre);
@@ -32,15 +33,7 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
   }
   const listeEleves = [...eleves.entries()].sort((a, b) => a[1].nom.localeCompare(b[1].nom, 'fr'));
 
-  const parFiliere = new Map<string, { ordre: number; groupe: GroupeCours }>();
-  for (const c of catalogue) {
-    const f = c.filiere;
-    const cle = f?.code ?? '';
-    const entree = parFiliere.get(cle) ?? { ordre: f?.ordre ?? 999, groupe: { nom: f?.nom ?? 'Autres cours', cours: [] } };
-    entree.groupe.cours.push({ id: c.id, titre: c.titre });
-    parFiliere.set(cle, entree);
-  }
-  const groupes = [...parFiliere.values()].sort((a, b) => a.ordre - b.ordre).map((e) => e.groupe);
+  const groupes = grouperParFiliere(catalogue);
   const echeanceDe = new Map(echeances.map((e) => [e.cours_id, e]));
 
   return (
@@ -61,10 +54,14 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
           <div className="defilement" tabIndex={0} role="region" aria-label="Suivi des élèves, défile horizontalement">
             <table className="tableau-suivi">
               <caption>Suivi des {listeEleves.length} {listeEleves.length > 1 ? 'élèves' : 'élève'} de la classe {classe.nom}</caption>
+              {/* Un groupe de 4 colonnes par cours : l'en-tête de cours (scope="colgroup") couvre Chapitres, Note, Essais, Activité. */}
+              <colgroup />
+              {coursClasse.map((c) => <colgroup key={c} span={4} />)}
+              <colgroup />
               <thead>
                 <tr>
                   <th scope="col" rowSpan={2} className="col-eleve">Élève</th>
-                  {coursClasse.map((c) => <th key={c} scope="col" colSpan={4} className="groupe-cours-tete">{titres.get(c)}</th>)}
+                  {coursClasse.map((c) => <th key={c} scope="colgroup" colSpan={4} className="groupe-cours-tete">{titres.get(c)}</th>)}
                   <th scope="col" rowSpan={2}><span className="sr-only">Actions</span></th>
                 </tr>
                 <tr>
@@ -82,15 +79,15 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
                     <th scope="row" className="col-eleve">{e.nom}</th>
                     {coursClasse.flatMap((c) => {
                       const l = e.lignes.get(c);
-                      if (!l) return [<td key={`${c}-vide`} colSpan={4} className="cellule-vide">—</td>];
+                      if (!l) return [<td key={`${c}-vide`} colSpan={4} className="cellule-vide"><span aria-hidden="true">—</span><span className="sr-only">Pas de données</span></td>];
                       return [
                         <td key={`${c}-ch`}>
                           <span className="fraction">{l.chapitres_valides} / {l.chapitres_total}</span>
                           <BarreProgression valeur={l.chapitres_valides} max={l.chapitres_total} libelle={`Chapitres validés par ${e.nom} : ${titres.get(c)}`} />
                         </td>,
-                        <td key={`${c}-no`} className="num">{l.note_evaluation == null ? '—' : formaterNote(l.note_evaluation)}</td>,
+                        <td key={`${c}-no`} className="num">{l.note_evaluation == null ? <><span aria-hidden="true">—</span><span className="sr-only">Pas de note</span></> : formaterNote(l.note_evaluation)}</td>,
                         <td key={`${c}-es`} className="num">{l.essais_evaluation}</td>,
-                        <td key={`${c}-ac`}>{l.derniere_activite ? jourCourt.format(new Date(l.derniere_activite)) : '—'}</td>,
+                        <td key={`${c}-ac`}>{l.derniere_activite ? jourCourt.format(new Date(l.derniere_activite)) : <><span aria-hidden="true">—</span><span className="sr-only">Aucune activité</span></>}</td>,
                       ];
                     })}
                     <td><BoutonRetirerEleve classeId={classe.id} eleveId={eleveId} nom={e.nom} /></td>

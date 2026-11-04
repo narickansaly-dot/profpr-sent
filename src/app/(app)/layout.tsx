@@ -12,7 +12,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
   if (profil.role === 'eleve' && profil.demande_enseignant) {
     return (
       <>
-        <EnTete prenom={profil.nom} role={profil.role} />
+        <EnTete prenom={profil.nom} role="attente" />
         <main className="conteneur"><AttenteValidation prenom={profil.nom} /></main>
       </>
     );

@@ -3,7 +3,8 @@ import { exigerEnseignant } from '@/lib/enseignant/garde';
 import { lireCatalogue, lireClassesEnseignant } from '@/lib/enseignant/requetes';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { NIVEAUX } from '@/lib/profil/onboarding';
-import { FormulaireClasse, type GroupeCours } from '@/components/FormulaireClasse';
+import { grouperParFiliere } from '@/lib/enseignant/catalogue';
+import { FormulaireClasse } from '@/components/FormulaireClasse';
 
 export const metadata = { title: 'Mes classes' };
 
@@ -17,15 +18,7 @@ export default async function PageEnseignant() {
   ]);
   if (filieres.error) throw new Error('Impossible de charger les filières.');
   const titres = new Map(catalogue.map((c) => [c.id, c.titre]));
-  const parFiliere = new Map<string, { ordre: number; groupe: GroupeCours }>();
-  for (const c of catalogue) {
-    const f = c.filiere;
-    const cle = f?.code ?? '';
-    const entree = parFiliere.get(cle) ?? { ordre: f?.ordre ?? 999, groupe: { nom: f?.nom ?? 'Autres cours', cours: [] } };
-    entree.groupe.cours.push({ id: c.id, titre: c.titre });
-    parFiliere.set(cle, entree);
-  }
-  const groupes = [...parFiliere.values()].sort((a, b) => a.ordre - b.ordre).map((e) => e.groupe);
+  const groupes = grouperParFiliere(catalogue);
 
   return (
     <div className="page-enseignant">

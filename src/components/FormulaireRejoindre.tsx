@@ -13,13 +13,18 @@ export function FormulaireRejoindre({ codeInitial }: { codeInitial: string }) {
           name="code" type="text" required maxLength={12}
           autoComplete="off" autoCapitalize="characters" inputMode="text" spellCheck={false}
           defaultValue={etat.code ?? (etat.info ? '' : codeInitial)}
-          aria-describedby="aide-code"
+          aria-describedby={etat.erreur ? 'aide-code erreur-code' : 'aide-code'}
+          aria-invalid={etat.erreur ? true : undefined}
         />
       </label>
       <p id="aide-code" className="aide-code">6 caractères (lettres et chiffres, majuscules ou minuscules), donnés par la personne qui t’enseigne.</p>
-      {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
+      {etat.erreur && <p id="erreur-code" role="alert" className="message-erreur">{etat.erreur}</p>}
       {etat.info && <p role="status" className="message-info">{etat.info}</p>}
-      <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Vérification…' : 'Rejoindre'}</button>
+      {/* Juste avant le bouton : un lien d'invitation préremplit le code, un seul clic suffit à partager ses résultats. */}
+      <p id="info-confidentialite" className="info-confidentialite">
+        En rejoignant une classe, tu partages avec la personne qui t’enseigne ta progression et tes notes pour les cours de la classe, y compris tes résultats antérieurs sur ces cours. Tes réponses détaillées et ton calendrier restent privés.
+      </p>
+      <button type="submit" className="bouton bouton-principal" disabled={enCours} aria-describedby="info-confidentialite">{enCours ? 'Vérification…' : 'Rejoindre'}</button>
     </form>
   );
 }

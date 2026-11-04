@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { lireProfil } from '@/lib/supabase/utilisateur';
-import { creerClientServeur } from '@/lib/supabase/server';
+import { lireClassesEleve } from '@/lib/enseignant/requetes';
 import { normaliserCode } from '@/lib/classes/code';
 import { BoutonQuitter, FormulaireRejoindre } from '@/components/FormulaireRejoindre';
 
@@ -12,10 +12,7 @@ export default async function PageClasses({ searchParams }: { searchParams: Prom
   if (profil?.role !== 'eleve') redirect('/');
   const { code } = await searchParams;
   const codeInitial = normaliserCode((Array.isArray(code) ? code[0] : code) ?? '');
-  const supabase = await creerClientServeur();
-  const { data, error } = await supabase.rpc('classes_eleve');
-  if (error) throw new Error('Impossible de charger tes classes.');
-  const classes = data ?? [];
+  const classes = await lireClassesEleve();
   return (
     <div className="page-classes">
       <h1>Mes classes</h1>
@@ -33,7 +30,7 @@ export default async function PageClasses({ searchParams }: { searchParams: Prom
               <li key={c.id} className="carte ligne-classe">
                 <div className="infos-classe">
                   <h3>{c.nom}</h3>
-                  <p>Classe de {c.enseignant_nom}</p>
+                  {c.enseignant_nom && <p>Classe de {c.enseignant_nom}</p>}
                   <p>Depuis le {dateArrivee.format(new Date(c.rejoint_le))}</p>
                 </div>
                 <BoutonQuitter classeId={c.id} nom={c.nom} />
@@ -41,9 +38,6 @@ export default async function PageClasses({ searchParams }: { searchParams: Prom
             ))}
           </ul>
         )}
-        <p className="info-confidentialite">
-          Ton enseignant voit ta progression et tes notes pour les cours de la classe, y compris tes résultats antérieurs sur ces cours. Il ne voit ni tes réponses détaillées ni ton calendrier.
-        </p>
       </section>
     </div>
   );

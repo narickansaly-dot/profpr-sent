@@ -6,11 +6,17 @@ import { bonneReponseTexte } from '@/lib/enseignant/question';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { SEUIL_REUSSITE } from '@/lib/quiz/regles';
 
-export const metadata = { title: 'Notes du cours' };
+type Params = { params: Promise<{ id: string; coursId: string }> };
 
-function Note({ valeur, valide }: { valeur: number | null | undefined; valide?: boolean }) {
+export async function generateMetadata({ params }: Params) {
+  const { id, coursId } = await params;
+  const d = await chargerNotesCours(id, coursId).catch(() => null);
+  return { title: d ? `Notes : ${d.cours} — ${d.classe.nom}` : 'Notes du cours' };
+}
+
+function Note({ valeur, valide }: { valeur: number | null | undefined; valide: boolean | undefined }) {
   if (valeur == null) return <td className="cellule-vide"><span aria-hidden="true">—</span><span className="sr-only">Pas de note</span></td>;
-  const ok = valide ?? valeur >= SEUIL_REUSSITE;
+  const ok = valide ?? false;
   return (
     <td className={`note-cellule ${ok ? 'note-validee' : 'note-a-revoir'}`}>
       {ok && <span aria-hidden="true">✓ </span>}{formaterNote(valeur)}
@@ -19,7 +25,7 @@ function Note({ valeur, valide }: { valeur: number | null | undefined; valide?: 
   );
 }
 
-export default async function PageNotesCours({ params }: { params: Promise<{ id: string; coursId: string }> }) {
+export default async function PageNotesCours({ params }: Params) {
   await exigerEnseignant();
   const { id, coursId } = await params;
   const d = await chargerNotesCours(id, coursId);
@@ -56,7 +62,7 @@ export default async function PageNotesCours({ params }: { params: Promise<{ id:
                 <thead>
                   <tr>
                     <th scope="col" className="col-eleve">Élève</th>
-                    {chapitres.map((c) => <th key={c.id} scope="col" className="num" title={c.titre}>Ch. {c.numero}</th>)}
+                    {chapitres.map((c) => <th key={c.id} scope="col" className="num" title={c.titre}>Ch. {c.numero}<span className="sr-only"> : {c.titre}</span></th>)}
                     <th scope="col" className="num">Évaluation</th>
                   </tr>
                 </thead>
@@ -65,7 +71,7 @@ export default async function PageNotesCours({ params }: { params: Promise<{ id:
                     <tr key={e.id}>
                       <th scope="row" className="col-eleve">{e.nom}</th>
                       {chapitres.map((c) => <Note key={c.id} valeur={e.notes[c.id]} valide={e.valides[c.id]} />)}
-                      <Note valeur={e.evaluation} />
+                      <Note valeur={e.evaluation} valide={e.evaluationValidee} />
                     </tr>
                   ))}
                 </tbody>
@@ -74,9 +80,9 @@ export default async function PageNotesCours({ params }: { params: Promise<{ id:
                     <th scope="row" className="col-eleve">Moyenne de la classe</th>
                     {chapitres.map((c) => {
                       const m = moyenne(eleves.map((e) => e.notes[c.id]));
-                      return <td key={c.id} className="num">{m == null ? '—' : formaterNote(m)}</td>;
+                      return <td key={c.id} className="num">{m == null ? <><span aria-hidden="true">—</span><span className="sr-only">Pas de note</span></> : formaterNote(m)}</td>;
                     })}
-                    <td className="num">{(() => { const m = moyenne(eleves.map((e) => e.evaluation)); return m == null ? '—' : formaterNote(m); })()}</td>
+                    <td className="num">{(() => { const m = moyenne(eleves.map((e) => e.evaluation)); return m == null ? <><span aria-hidden="true">—</span><span className="sr-only">Pas de note</span></> : formaterNote(m); })()}</td>
                   </tr>
                 </tfoot>
               </table>
@@ -106,7 +112,7 @@ export default async function PageNotesCours({ params }: { params: Promise<{ id:
                 </div>
                 <details>
                   <summary>Voir la bonne réponse</summary>
-                  <p className="bonne-reponse">{bonneReponseTexte(q.propositions, q.bonnes_reponses, q.reponses_acceptees ?? [])}</p>
+                  <p className="bonne-reponse">{bonneReponseTexte(q.type, q.propositions, q.bonnes_reponses, q.reponses_acceptees ?? [])}</p>
                 </details>
               </li>
             ))}

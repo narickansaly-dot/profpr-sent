@@ -1,25 +1,32 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState, useId, useState } from 'react';
 import { regenererCode, type EtatSimple } from '@/app/(app)/enseignant/actions';
 
 export function CodeClasse({ classeId, code }: { classeId: string; code: string }) {
   const [statut, setStatut] = useState('');
   const [etat, envoyer, enCours] = useActionState<EtatSimple, FormData>(regenererCode, {});
+  const etiquette = useId();
+
+  // Vider puis réécrire au rendu suivant : une seconde copie redonne le même texte, qui ne serait pas réannoncé.
+  function annoncer(texte: string) {
+    setStatut('');
+    requestAnimationFrame(() => setStatut(texte));
+  }
 
   async function copier() {
     const lien = `${window.location.origin}/classes?code=${code}`;
     try {
       await navigator.clipboard.writeText(lien);
-      setStatut('Lien copié');
+      annoncer('Lien copié');
     } catch {
-      setStatut(`Copie impossible. Copie ce lien à la main : ${lien}`);
+      annoncer(`Copie impossible. Copie ce lien à la main : ${lien}`);
     }
   }
 
   return (
-    <div className="code-classe">
-      <p className="etiquette">Code d’invitation</p>
+    <div className="code-classe" role="group" aria-labelledby={etiquette}>
+      <p id={etiquette} className="etiquette">Code d’invitation</p>
       <p className="code-grand"><span aria-hidden="true">{code}</span><span className="sr-only">{code.split('').join(' ')}</span></p>
       <div className="actions-code">
         <button type="button" className="bouton bouton-principal" onClick={copier}>Copier le lien d’invitation</button>

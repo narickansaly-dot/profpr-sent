@@ -15,7 +15,6 @@ export function FormulaireDemande({ profil, nom }: { profil: string; nom: string
         Refuser<span className="sr-only"> la demande de {nom}</span>
       </button>
       {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
-      {etat.info && <p role="status" className="message-info">{etat.info}</p>}
     </form>
   );
 }

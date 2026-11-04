@@ -11,9 +11,10 @@ import { NIVEAUX } from '@/lib/profil/onboarding';
 import type { Database } from '@/lib/supabase/types';
 
 // Les états renvoient les valeurs soumises : React 19 vide les champs non contrôlés après une action, on les réaffiche en cas d'erreur.
-export type EtatClasse = { erreur?: string; nom?: string; filiereId?: string; niveau?: string; cours?: string[] };
+// champ : le champ en cause, pour ne marquer invalide que lui (aria-invalid, aria-describedby).
+export type EtatClasse = { erreur?: string; champ?: 'nom' | 'cours'; nom?: string; filiereId?: string; niveau?: string; cours?: string[] };
 export type EtatCours = { erreur?: string; info?: string; cours?: string[] };
-export type EtatEcheance = { erreur?: string; info?: string; ouverture?: string; limite?: string };
+export type EtatEcheance = { erreur?: string; champ?: 'ouverture' | 'limite'; info?: string; ouverture?: string; limite?: string };
 export type EtatSimple = { erreur?: string };
 
 const uuid = z.string().uuid();
@@ -33,7 +34,11 @@ export async function creerClasse(_: EtatClasse, form: FormData): Promise<EtatCl
   const r = schemaClasse.safeParse({
     nom, filiereId: optionnel(form.get('filiereId')), niveau: optionnel(form.get('niveau')), cours: form.getAll('cours'),
   });
-  if (!r.success) return { erreur: r.error.issues[0]?.message ?? messageErreur(undefined), ...saisie };
+  if (!r.success) {
+    const issue = r.error.issues[0];
+    const champ = issue?.path[0] === 'nom' ? 'nom' : issue?.path[0] === 'cours' ? 'cours' : undefined;
+    return { erreur: issue?.message ?? messageErreur(undefined), champ, ...saisie };
+  }
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.rpc('creer_classe', {
     p_nom: r.data.nom,
@@ -42,7 +47,10 @@ export async function creerClasse(_: EtatClasse, form: FormData): Promise<EtatCl
     p_niveau: (r.data.niveau ?? null) as string,
     p_cours: r.data.cours,
   });
-  if (error || !data) return { erreur: messageErreur(error?.message), ...saisie };
+  if (error || !data) {
+    const champ = error?.message.includes('nom_invalide') ? 'nom' : error?.message.includes('cours_invalide') ? 'cours' : undefined;
+    return { erreur: messageErreur(error?.message), champ, ...saisie };
+  }
   revalidatePath('/enseignant');
   redirect(`/enseignant/classes/${data}`);
 }
@@ -84,11 +92,13 @@ export async function definirEcheance(_: EtatEcheance, form: FormData): Promise<
   const ouverture = heureParisVersIso(r.data.ouverture);
   const limite = heureParisVersIso(r.data.limite);
   // Une valeur saisie mais illisible n'est pas « vide » : on refuse plutôt que de supprimer l'échéance.
-  if ((r.data.ouverture.trim() && !ouverture) || (r.data.limite.trim() && !limite)) return { erreur: messageErreur('dates_invalides'), ...saisie };
+  if (r.data.ouverture.trim() && !ouverture) return { erreur: messageErreur('dates_invalides'), champ: 'ouverture', ...saisie };
+  if (r.data.limite.trim() && !limite) return { erreur: messageErreur('dates_invalides'), champ: 'limite', ...saisie };
   const supabase = await creerClientServeur();
   const args = { p_classe: r.data.classe, p_cours: r.data.cours, p_ouverture: ouverture, p_limite: limite } as unknown as ArgsEcheance;
   const { error } = await supabase.rpc('definir_echeance', args);
-  if (error) return { erreur: messageErreur(error.message), ...saisie };
+  // dates_invalides : l'ouverture n'est pas avant la limite, on désigne la limite.
+  if (error) return { erreur: messageErreur(error.message), champ: error.message.includes('dates_invalides') ? 'limite' : undefined, ...saisie };
   revalidatePath(`/enseignant/classes/${r.data.classe}`);
   return { info: ouverture || limite ? 'Échéance enregistrée.' : 'Échéance retirée.' };
 }

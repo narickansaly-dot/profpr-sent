@@ -3,7 +3,7 @@
 import { useActionState } from 'react';
 import { creerClasse, definirCours, retirerEleve, type EtatClasse, type EtatCours, type EtatSimple } from '@/app/(app)/enseignant/actions';
 
-export type GroupeCours = { nom: string; cours: { id: string; titre: string }[] };
+import type { GroupeCours } from '@/lib/enseignant/catalogue';
 
 function ChoixCours({ groupes, coches }: { groupes: GroupeCours[]; coches?: string[] }) {
   return (
@@ -32,7 +32,7 @@ export function FormulaireClasse({ groupes, filieres, niveaux }: {
       <label>
         Nom de la classe
         <input name="nom" type="text" required minLength={2} maxLength={60} autoComplete="off" defaultValue={etat.nom ?? ''}
-          aria-invalid={etat.erreur ? true : undefined} aria-describedby={etat.erreur ? 'erreur-classe' : undefined} />
+          aria-invalid={etat.champ === 'nom' ? true : undefined} aria-describedby={etat.champ === 'nom' ? 'erreur-classe' : undefined} />
       </label>
       <div className="ligne-champs">
         <label>
@@ -50,10 +50,10 @@ export function FormulaireClasse({ groupes, filieres, niveaux }: {
           </select>
         </label>
       </div>
-      <div className="choix-cours">
-        <p className="titre-choix">Cours de la classe</p>
+      <fieldset className="choix-cours" aria-describedby={etat.champ === 'cours' ? 'erreur-classe' : undefined}>
+        <legend className="titre-choix">Cours de la classe</legend>
         <ChoixCours groupes={groupes} coches={etat.cours} />
-      </div>
+      </fieldset>
       {etat.erreur && <p id="erreur-classe" role="alert" className="message-erreur">{etat.erreur}</p>}
       <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Création…' : 'Créer la classe'}</button>
     </form>
@@ -80,7 +80,7 @@ export function BoutonRetirerEleve({ classeId, eleveId, nom }: { classeId: strin
     <form
       action={envoyer}
       onSubmit={(e) => {
-        if (!window.confirm(`Retirer ${nom} de la classe ? Tu ne verras plus sa progression.`)) e.preventDefault();
+        if (!window.confirm(`Retirer ${nom} de la classe ? Tu ne verras plus sa progression. ${nom} pourra revenir avec le code actuel : crée un nouveau code si besoin.`)) e.preventDefault();
       }}
     >
       <input type="hidden" name="classe" value={classeId} />

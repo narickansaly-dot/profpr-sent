@@ -60,8 +60,11 @@
 .cours-carte { margin: 0; color: var(--attenue); font-size: 15px; }
 .carte-classe .bouton { justify-self: start; }
 
-.ligne-champs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.formulaire-classe .titre-choix { margin: 0 0 8px; font-weight: 700; }
+.ligne-champs { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.ligne-champs label { min-width: 0; }
+/* Groupe « Cours de la classe » : un fieldset sans cadre, qui contient les fieldsets par filière. */
+.formulaire-classe .choix-cours { display: block; border: 0; padding: 0; margin: 0; min-width: 0; }
+.formulaire-classe .titre-choix { margin: 0 0 8px; padding: 0; font-weight: 700; }
 .groupe-cours { margin: 0 0 12px; min-width: 0; padding: 8px 14px 12px; }
 .groupe-cours legend { padding: 0 6px; font-weight: 700; color: var(--attenue); }
 .groupe-cours .case { flex: 1 1 100%; }
@@ -74,7 +77,9 @@
 .actions-code { display: flex; flex-wrap: wrap; gap: 12px; }
 .statut-copie { min-height: 1.6em; overflow-wrap: anywhere; font-weight: 400; }
 
-.defilement { overflow-x: auto; border: 1px solid var(--trait); border-radius: var(--rayon); background: var(--surface); max-width: 100%; }
+.defilement { overflow-x: auto; border: 1px solid var(--trait); border-radius: var(--rayon); background: var(--surface); max-width: 100%;
+  /* Contient les textes .sr-only (position absolue) du tableau : sinon ils élargissent la page. */
+  position: relative; }
 .tableau-suivi { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
 .tableau-suivi caption { text-align: left; padding: 12px 14px; font-weight: 700; color: var(--attenue); caption-side: top; }
 .tableau-suivi th, .tableau-suivi td { padding: 10px 14px; border-top: 1px solid var(--trait); text-align: left; vertical-align: middle; white-space: nowrap; }
@@ -98,13 +103,8 @@
 .echeance-actuelle { margin: 12px 0 0; font-size: 15px; }
 /* Les enfants d'une grille ne rétrécissent pas sous leur contenu : sans cela, un select ou un tableau élargit toute la page. */
 .page-enseignant > *, .page-enseignant .carte, .formulaire-classe, .formulaire-classe label { min-width: 0; }
-.page-enseignant select, .page-enseignant input { max-width: 100%; }
-.page-enseignant select { text-overflow: ellipsis; }
-/* Contient les textes .sr-only (position absolue) du tableau : sinon ils élargissent la page. */
-.defilement { position: relative; }
-.ligne-champs { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
-.ligne-champs label { min-width: 0; }
-.page-enseignant select { width: 100%; min-width: 0; }
+.page-enseignant input { max-width: 100%; }
+.page-enseignant select { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
 .page-enseignant { padding-top: 16px; }
 .page-enseignant section.carte { display: grid; gap: 14px; align-content: start; }
 .page-enseignant section[aria-labelledby] > h2 + * { margin-top: 0; }
@@ -123,7 +123,7 @@
 .tableau-notes tfoot .col-eleve { background: color-mix(in srgb, var(--couleur-cours) 8%, var(--surface)); }
 .legende-chapitres { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; font-size: 14px; }
 
-.liste-ratees { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: rang; }
+.liste-ratees { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
 .question-ratee { display: grid; gap: 10px; min-width: 0; overflow-wrap: anywhere; }
 .question-ratee .enonce-ratee { margin: 0; font-weight: 700; font-size: 18px; }
 .taux-erreur { display: grid; gap: 6px; }

@@ -12,9 +12,9 @@ type Nullable<T, K extends keyof T> = Omit<T, K> & { [P in K]: T[P] | null };
 
 export type ClasseEnseignant = Nullable<Retour<'classes_enseignant'>, 'filiere_id' | 'niveau_code'>;
 export type ClasseEleve = Nullable<Retour<'classes_eleve'>, 'enseignant_nom'>;
-export type LigneSuivi = Nullable<Retour<'suivi_classe'>, 'note_evaluation' | 'derniere_activite'>;
+export type LigneSuivi = Nullable<Retour<'suivi_classe'>, 'nom' | 'note_evaluation' | 'derniere_activite'>;
 export type EcheanceClasse = Nullable<Retour<'echeances_classe'>, 'ouverture' | 'limite'>;
-export type LigneNote = Nullable<Retour<'notes_classe'>, 'meilleure_note'>;
+export type LigneNote = Nullable<Retour<'notes_classe'>, 'nom' | 'meilleure_note'>;
 
 export const lireClassesEnseignant = cache(async (): Promise<ClasseEnseignant[]> => {
   const supabase = await creerClientServeur();
@@ -29,14 +29,18 @@ export const lireClasseEnseignant = cache(async (id: string): Promise<ClasseEnse
   return classes.find((c) => c.id === id) ?? null;
 });
 
-export async function lireSuiviClasse(id: string): Promise<{ suivi: LigneSuivi[]; echeances: EcheanceClasse[] }> {
+export async function lireSuivi(id: string): Promise<LigneSuivi[]> {
   const supabase = await creerClientServeur();
-  const [suivi, echeances] = await Promise.all([
-    supabase.rpc('suivi_classe', { p_classe: id }),
-    supabase.rpc('echeances_classe', { p_classe: id }),
-  ]);
-  if (suivi.error || echeances.error) throw new Error('Impossible de charger le suivi de la classe.');
-  return { suivi: suivi.data ?? [], echeances: echeances.data ?? [] };
+  const { data, error } = await supabase.rpc('suivi_classe', { p_classe: id });
+  if (error) throw new Error('Impossible de charger le suivi de la classe.');
+  return data ?? [];
+}
+
+export async function lireEcheances(id: string): Promise<EcheanceClasse[]> {
+  const supabase = await creerClientServeur();
+  const { data, error } = await supabase.rpc('echeances_classe', { p_classe: id });
+  if (error) throw new Error('Impossible de charger les échéances de la classe.');
+  return data ?? [];
 }
 
 export async function lireNotesCours(classeId: string, coursId: string) {

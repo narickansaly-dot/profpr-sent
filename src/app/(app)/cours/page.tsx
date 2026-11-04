@@ -37,7 +37,7 @@ export default async function PageCatalogue() {
                 <div className="grille-cours">
                   {f.cours.filter((c) => c.niveau_code === niveau).map((c) => (
                     <CarteCours key={c.id} slug={c.slug} titre={c.titre} matiere={c.matiere} couleur={c.couleur}
-                      nbChapitres={c.nbChapitres} nbValides={0} />
+                      nbChapitres={c.nbChapitres} sansProgression />
                   ))}
                 </div>
               </div>
