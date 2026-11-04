@@ -1,7 +1,7 @@
 'use client';
 
 import { useActionState } from 'react';
-import { creerClasse, definirCours, retirerEleve, type EtatClasse, type EtatCours } from '@/app/(app)/enseignant/actions';
+import { creerClasse, definirCours, retirerEleve, type EtatClasse, type EtatCours, type EtatSimple } from '@/app/(app)/enseignant/actions';
 
 export type GroupeCours = { nom: string; cours: { id: string; titre: string }[] };
 
@@ -31,19 +31,20 @@ export function FormulaireClasse({ groupes, filieres, niveaux }: {
     <form action={envoyer} className="formulaire formulaire-classe">
       <label>
         Nom de la classe
-        <input name="nom" type="text" required minLength={2} maxLength={60} autoComplete="off" defaultValue={etat.nom ?? ''} />
+        <input name="nom" type="text" required minLength={2} maxLength={60} autoComplete="off" defaultValue={etat.nom ?? ''}
+          aria-invalid={etat.erreur ? true : undefined} aria-describedby={etat.erreur ? 'erreur-classe' : undefined} />
       </label>
       <div className="ligne-champs">
         <label>
           Filière (facultatif)
-          <select name="filiereId" defaultValue="">
+          <select name="filiereId" defaultValue={etat.filiereId ?? ''}>
             <option value="">Aucune</option>
             {filieres.map((f) => <option key={f.id} value={f.id}>{f.nom}</option>)}
           </select>
         </label>
         <label>
           Niveau (facultatif)
-          <select name="niveau" defaultValue="">
+          <select name="niveau" defaultValue={etat.niveau ?? ''}>
             <option value="">Aucun</option>
             {niveaux.map((n) => <option key={n} value={n}>{n}</option>)}
           </select>
@@ -51,9 +52,9 @@ export function FormulaireClasse({ groupes, filieres, niveaux }: {
       </div>
       <div className="choix-cours">
         <p className="titre-choix">Cours de la classe</p>
-        <ChoixCours groupes={groupes} />
+        <ChoixCours groupes={groupes} coches={etat.cours} />
       </div>
-      {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
+      {etat.erreur && <p id="erreur-classe" role="alert" className="message-erreur">{etat.erreur}</p>}
       <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Création…' : 'Créer la classe'}</button>
     </form>
   );
@@ -64,7 +65,7 @@ export function FormulaireCours({ classeId, groupes, coches }: { classeId: strin
   return (
     <form action={envoyer} className="formulaire">
       <input type="hidden" name="classe" value={classeId} />
-      <ChoixCours groupes={groupes} coches={coches} />
+      <ChoixCours groupes={groupes} coches={etat.cours ?? coches} />
       <p className="aide-champ">Retirer un cours supprime aussi son échéance.</p>
       {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
       {etat.info && <p role="status" className="message-info">{etat.info}</p>}
@@ -74,18 +75,20 @@ export function FormulaireCours({ classeId, groupes, coches }: { classeId: strin
 }
 
 export function BoutonRetirerEleve({ classeId, eleveId, nom }: { classeId: string; eleveId: string; nom: string }) {
+  const [etat, envoyer, enCours] = useActionState<EtatSimple, FormData>(retirerEleve, {});
   return (
     <form
-      action={retirerEleve}
+      action={envoyer}
       onSubmit={(e) => {
         if (!window.confirm(`Retirer ${nom} de la classe ? Tu ne verras plus sa progression.`)) e.preventDefault();
       }}
     >
       <input type="hidden" name="classe" value={classeId} />
       <input type="hidden" name="eleve" value={eleveId} />
-      <button type="submit" className="bouton bouton-secondaire bouton-compact">
+      <button type="submit" className="bouton bouton-secondaire bouton-compact" disabled={enCours}>
         Retirer<span className="sr-only"> {nom} de la classe</span>
       </button>
+      {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
     </form>
   );
 }

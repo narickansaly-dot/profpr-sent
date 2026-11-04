@@ -15,6 +15,12 @@ describe('heureParisVersIso', () => {
   it('gère le jour du retour à l’heure d’hiver (25 octobre 2026)', () => {
     expect(heureParisVersIso('2026-10-25T10:00')).toBe('2026-10-25T09:00:00.000Z');
   });
+  it('fige le choix pour une heure inexistante (02:30 le 29 mars) : décalage d’hiver, soit 03:30 à Paris', () => {
+    expect(heureParisVersIso('2026-03-29T02:30')).toBe('2026-03-29T01:30:00.000Z');
+  });
+  it('fige le choix pour une heure ambiguë (02:30 le 25 octobre) : première occurrence, heure d’été', () => {
+    expect(heureParisVersIso('2026-10-25T02:30')).toBe('2026-10-25T01:30:00.000Z');
+  });
   it('renvoie null pour une valeur vide', () => {
     expect(heureParisVersIso('')).toBeNull();
     expect(heureParisVersIso('   ')).toBeNull();

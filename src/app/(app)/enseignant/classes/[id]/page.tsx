@@ -64,7 +64,7 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
               <thead>
                 <tr>
                   <th scope="col" rowSpan={2} className="col-eleve">Élève</th>
-                  {coursClasse.map((c) => <th key={c} scope="colgroup" colSpan={4} className="groupe-cours-tete">{titres.get(c)}</th>)}
+                  {coursClasse.map((c) => <th key={c} scope="col" colSpan={4} className="groupe-cours-tete">{titres.get(c)}</th>)}
                   <th scope="col" rowSpan={2}><span className="sr-only">Actions</span></th>
                 </tr>
                 <tr>

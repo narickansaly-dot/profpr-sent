@@ -15,6 +15,7 @@ export default async function PageEnseignant() {
     lireCatalogue(),
     supabase.from('filiere').select('id, nom').order('ordre'),
   ]);
+  if (filieres.error) throw new Error('Impossible de charger les filières.');
   const titres = new Map(catalogue.map((c) => [c.id, c.titre]));
   const parFiliere = new Map<string, { ordre: number; groupe: GroupeCours }>();
   for (const c of catalogue) {

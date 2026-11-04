@@ -16,11 +16,11 @@ export function FormulaireEcheance({ classeId, coursId, titre, ouverture, limite
       <div className="ligne-champs">
         <label>
           Ouverture
-          <input type="datetime-local" name="ouverture" defaultValue={ouverture} key={`o-${ouverture}`} />
+          <input type="datetime-local" name="ouverture" defaultValue={etat.ouverture ?? ouverture} key={`o-${etat.ouverture ?? ouverture}`} />
         </label>
         <label>
           Date limite
-          <input type="datetime-local" name="limite" defaultValue={limite} key={`l-${limite}`} />
+          <input type="datetime-local" name="limite" defaultValue={etat.limite ?? limite} key={`l-${etat.limite ?? limite}`} />
         </label>
       </div>
       <p className="aide-champ">Laisse les deux champs vides pour retirer l’échéance. Heures de Paris.</p>
