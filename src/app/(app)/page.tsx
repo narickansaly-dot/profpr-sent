@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
+import { lireProfil } from '@/lib/supabase/utilisateur';
 import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { lireTableauDeBord } from '@/lib/quiz/requetes';
 import { formaterNote } from '@/lib/quiz/reponse';
@@ -9,6 +11,9 @@ export const metadata = { title: 'Tableau de bord' };
 const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', timeZone: 'Europe/Paris' });
 
 export default async function Accueil() {
+  const profil = await lireProfil();
+  if (profil?.role === 'enseignant') redirect('/enseignant');
+  if (profil?.role === 'admin_contenu') redirect('/cours');
   const [cours, { tdb, erreur: erreurTdb }] = await Promise.all([
     listerCoursDuProfil(),
     lireTableauDeBord().then(

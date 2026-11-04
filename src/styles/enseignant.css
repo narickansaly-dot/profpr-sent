@@ -1,0 +1,27 @@
+/* ---------- Espace enseignant : inscription, attente, catalogue, demandes ---------- */
+.formulaire [hidden] { display: none !important; }
+.champs-eleve { display: grid; gap: 16px; }
+.formulaire fieldset:disabled { opacity: .6; }
+
+/* Navigation d'en-tête : sous 520 px elle passe sur sa propre ligne, défilante, sans rien masquer. */
+@media (max-width: 520px) {
+  .en-tete { flex-wrap: wrap; row-gap: 4px; }
+  header.en-tete > nav { order: 3; flex: 0 0 100%; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-inline: -4px; padding-inline: 4px; }
+  header.en-tete > nav::-webkit-scrollbar { display: none; }
+  header.en-tete > nav a { flex: none; white-space: nowrap; }
+}
+
+.attente-validation { margin-top: 32px; display: grid; gap: 8px; border-top: 6px solid var(--accent); }
+.attente-validation h1 { margin: 0; }
+.attente-validation p { margin: 0; }
+
+.catalogue .groupe-niveau { margin-bottom: 20px; }
+.catalogue h3 { margin: 16px 0 10px; font-size: 18px; color: var(--attenue); }
+
+.liste-demandes { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+.demande { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+.demande-infos { min-width: 0; flex: 1 1 240px; overflow-wrap: anywhere; }
+.demande-infos h2 { margin: 0 0 4px; font-size: 20px; }
+.demande-infos p { margin: 0; }
+.actions-demande { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.actions-demande p { flex: 1 0 100%; }
