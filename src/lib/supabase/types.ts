@@ -127,6 +127,26 @@ isOneToOne: false
       referencedColumns: ["code"]
     }
                   ]
+                },"echeance_evaluation": {
+                  Row: {
+                    "classe_id": string,"cours_id": string,"limite": string | null,"ouverture": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "classe_id": string,"cours_id": string,"limite"?: string | null,"ouverture"?: string | null
+                  }
+                  Update: {
+                    "classe_id"?: string,"cours_id"?: string,"limite"?: string | null,"ouverture"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "echeance_evaluation_classe_id_cours_id_fkey"
+      columns: ["classe_id","cours_id"]
+isOneToOne: true
+      referencedRelation: "classe_cours"
+      referencedColumns: ["classe_id","cours_id"]
+    }
+                  ]
                 },"filiere": {
                   Row: {
                     "code": string,"id": string,"nom": string,"ordre": number,"voie": Database["public"]['Enums']["voie_t"]
@@ -439,6 +459,9 @@ isOneToOne: false
 "definir_cours_classe":
 { Args: { "p_classe": string,"p_cours": (string)[] }; Returns: undefined
                            },
+"definir_echeance":
+{ Args: { "p_classe": string,"p_cours": string,"p_limite": string,"p_ouverture": string }; Returns: undefined
+                           },
 "demandes_enseignant":
 { Args: Record<PropertyKey, never>; Returns: {
               "email": string,"etablissement": string,"id": string,"inscrit_le": string,"nom": string
@@ -450,11 +473,21 @@ isOneToOne: false
 "demarrer_quiz":
 { Args: { "p_chapitre": string,"p_nb": number,"p_revision"?: boolean }; Returns: string
                            },
+"echeances_classe":
+{ Args: { "p_classe": string }; Returns: {
+              "cours_id": string,"limite": string,"ouverture": string
+            }[]
+                           },
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
+                           },
+"mes_echeances":
+{ Args: { "p_cours"?: string }; Returns: {
+              "classe_nom": string,"cours_id": string,"limite": string,"ouverture": string
+            }[]
                            },
 "notes_classe":
 { Args: { "p_classe": string,"p_cours": string }; Returns: {
