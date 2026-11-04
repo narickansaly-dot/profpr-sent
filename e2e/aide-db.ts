@@ -31,10 +31,10 @@ export async function bonnesReponsesAffichees(tentativeId: string): Promise<numb
 }
 
 export async function validerTousLesChapitres(email: string, coursSlug: string) {
-  const { data: profil } = await db.from('profil').select('id').eq('email', email).single();
+  const eleveId = await idProfil(email);
   const { data: cours } = await db.from('cours').select('chapitre(id)').eq('slug', coursSlug).single();
-  if (!profil || !cours) throw new Error('profil ou cours introuvable');
-  const lignes = cours.chapitre.map((c) => ({ eleve_id: profil.id, chapitre_id: c.id, meilleure_note: 100, valide: true }));
+  if (!cours) throw new Error('cours introuvable');
+  const lignes = cours.chapitre.map((c) => ({ eleve_id: eleveId, chapitre_id: c.id, meilleure_note: 100, valide: true }));
   const { error } = await db.from('progression_chapitre').upsert(lignes);
   if (error) throw error;
 }
