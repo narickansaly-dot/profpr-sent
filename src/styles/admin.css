@@ -55,3 +55,27 @@ a.bouton.bouton-principal { color: #fff; }
 a.bouton.bouton-secondaire { color: var(--encre); }
 .formulaire-cours select, .formulaire-cours input:not([type=color]) { width: 100%; min-width: 0; max-width: 100%; text-overflow: ellipsis; }
 .formulaire .saisie-couleur { width: 9ch; min-width: 9ch; }
+
+/* Éditeur de chapitre */
+.editeur-chapitre { gap: 20px; }
+.editeur-chapitre textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
+.editeur-chapitre textarea:focus-visible { border-color: var(--couleur-cours); }
+.editeur-chapitre .zone-html { font-family: monospace; font-size: 14px; line-height: 1.45; min-height: 16lh; tab-size: 2; }
+.editeur-chapitre input:not([type=file]) { width: 100%; min-width: 0; max-width: 100%; }
+.section-editeur { display: grid; gap: 14px; min-width: 0; margin: 0; padding: 16px; border: 2px solid var(--trait); border-radius: 14px; background: var(--surface); }
+.section-editeur > legend { font: 700 17px var(--police-titres); padding: 0 8px; overflow-wrap: anywhere; }
+.titre-sections { margin: 8px 0 -8px; }
+.ligne-champs { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.barre-insertion { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.barre-insertion .etiquette { margin-right: 4px; }
+.depot-schema { display: grid; gap: 8px; flex: 1 1 100%; padding: 12px; border: 2px dashed var(--trait); border-radius: 12px; background: var(--papier); }
+.depot-schema > label { font-weight: 700; }
+.depot-schema input[type=file] { font: inherit; max-width: 100%; }
+.page-admin .bouton-danger { color: color-mix(in srgb, var(--danger) 85%, #000); border-color: color-mix(in srgb, var(--danger) 45%, var(--trait)); }
+@media (prefers-color-scheme: dark) { .page-admin .bouton-danger { color: var(--danger); } }
+.barre-actions-editeur { position: sticky; bottom: 0; z-index: 5; padding: 12px; margin-inline: -4px; background: color-mix(in srgb, var(--surface) 92%, transparent); border-top: 1px solid var(--trait); backdrop-filter: blur(6px); }
+.panneau-apercu { display: grid; gap: 12px; min-width: 0; padding: 16px; border: 2px solid var(--couleur-cours); border-radius: 14px; background: var(--papier); }
+.panneau-apercu h2 { margin: 0; }
+.apercu-chapitre { min-width: 0; }
+.message-avertissement { margin: 0; font-weight: 700; padding: 10px 14px; border-radius: 12px; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--surface)); }
+.page-admin .vide { color: var(--attenue); }
