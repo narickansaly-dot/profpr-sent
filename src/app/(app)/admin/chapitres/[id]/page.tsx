@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { exigerAdmin } from '@/lib/admin/garde';
 import { lireChapitreAdmin, lireCoursAdmin } from '@/lib/admin/requetes';
 import { EditeurChapitre } from '@/components/admin/EditeurChapitre';
+import { MessageStatut } from '@/components/admin/MessageStatut';
 import { BoutonPublier } from '@/components/admin/BoutonPublier';
 
 export const metadata = { title: 'Modifier le chapitre' };
@@ -30,10 +31,10 @@ export default async function PageModifierChapitre({ params, searchParams }: { p
           <Link href={`/cours/${cours.slug}/${ch.slug}`} className="bouton bouton-secondaire">Voir la page élève</Link>
         </div>
       </div>
-      {enregistre === '1' && <p role="status" className="message-info">Le chapitre est enregistré.</p>}
+      {enregistre === '1' && <MessageStatut texte="Le chapitre est enregistré." />}
       <section className="carte" aria-labelledby="titre-editeur">
         <h2 id="titre-editeur" className="sr-only">Contenu du chapitre</h2>
-        <EditeurChapitre coursId={cours.id} coursSlug={cours.slug} couleur={cours.couleur} chapitreId={ch.id} initial={{
+        <EditeurChapitre key={ch.modifie_le} coursId={cours.id} coursSlug={cours.slug} couleur={cours.couleur} chapitreId={ch.id} initial={{
           slug: ch.slug, numero: String(ch.numero), titre: ch.titre, titre_court: ch.titre_court ?? '', duree: ch.duree ?? '',
           resume: ch.resume ?? '', chapeau: ch.chapeau ?? '', objectifs: ch.objectifs.join('\n'), sections, a_retenir: ch.a_retenir ?? '',
         }} />

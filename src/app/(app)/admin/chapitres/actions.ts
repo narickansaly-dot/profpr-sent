@@ -17,7 +17,8 @@ export type SaisieChapitre = {
   slug: string; numero: string; titre: string; titre_court: string; duree: string; resume: string; chapeau: string;
   objectifs: string; sections: { id: string; titre: string; html: string }[]; a_retenir: string;
 };
-export type EtatChapitre = { erreur?: string };
+/** `champ` : champ du formulaire en cause ; `section` : position (à partir de 0) de la section en cause. */
+export type EtatChapitre = { erreur?: string; champ?: string; section?: number };
 export type EtatApercu = { apercu?: ReactNode; retire?: string[]; erreur?: string };
 
 const uuid = z.string().uuid();
@@ -66,10 +67,14 @@ export async function enregistrerChapitre(coursId: string, chapitreId: string | 
   if (!r.success) {
     const i = r.error.issues[0];
     const champ = String(i.path[0] ?? '');
+    if (champ === 'sections' && typeof i.path[1] === 'number') {
+      return { erreur: `Section ${i.path[1] + 1} : ${i.message}`, champ, section: i.path[1] };
+    }
     const nom: Record<string, string> = { slug: 'l’identifiant d’URL (lettres minuscules, chiffres et tirets)', numero: 'le numéro (de 1 à 99)',
-      titre: 'le titre', titre_court: 'le titre court', duree: 'la durée', resume: 'le résumé', chapeau: 'le chapeau', objectifs: 'les objectifs', a_retenir: 'la zone « Je retiens »' };
-    const detail = champ === 'sections' ? i.message : `Vérifie ${nom[champ] ?? 'le formulaire'}.`;
-    return { erreur: detail };
+      titre: 'le titre', titre_court: 'le titre court (80 caractères au maximum)', duree: 'la durée (40 caractères au maximum)',
+      resume: 'le résumé (1 000 caractères au maximum)', chapeau: 'le chapeau (4 000 caractères au maximum)',
+      objectifs: 'les objectifs (300 caractères au maximum par ligne)', a_retenir: 'la zone « Je retiens » (50 000 caractères au maximum)' };
+    return { erreur: champ === 'sections' ? i.message : `Vérifie ${nom[champ] ?? 'le formulaire'}.`, champ };
   }
   const donnees = {
     ...r.data,
@@ -81,7 +86,7 @@ export async function enregistrerChapitre(coursId: string, chapitreId: string | 
   const { data, error } = await supabase.rpc('enregistrer_chapitre', {
     p_cours: c.data, p_chapitre: (ch?.data ?? null) as string, p_donnees: donnees,
   });
-  if (error) return { erreur: messageErreur(error.message) };
+  if (error) return { erreur: messageErreur(error.message), champ: error.message.includes('slug_deja_pris') ? 'slug' : undefined };
   revalidatePath('/admin');
   redirect(`/admin/chapitres/${data}?enregistre=1`);
 }

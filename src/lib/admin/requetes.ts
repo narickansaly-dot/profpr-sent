@@ -37,7 +37,7 @@ export const lireChapitreAdmin = cache(async (id: string) => {
   if (!estUuid(id)) return null;
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.from('chapitre')
-    .select('id, cours_id, slug, numero, titre, titre_court, duree, resume, chapeau, objectifs, sections, a_retenir, publie')
+    .select('id, cours_id, slug, numero, titre, titre_court, duree, resume, chapeau, objectifs, sections, a_retenir, publie, modifie_le')
     .eq('id', id).maybeSingle();
   if (error) throw new Error('Impossible de charger ce chapitre.');
   return data;

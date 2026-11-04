@@ -80,3 +80,9 @@
 .formulaire-cours .message-erreur { margin: 0; }
 .formulaire-cours .champ { display: grid; gap: 6px; min-width: 0; }
 .formulaire-cours .champ > label { font-weight: 700; }
+.section-editeur > * { min-width: 0; }
+.depot-schema input[type=file] { width: 100%; }
+/* Le formulaire d'éditeur surcharge les règles « fieldset » des formulaires à choix (flex, étiquettes en ligne). */
+.editeur-chapitre .section-editeur { display: grid; gap: 14px; flex-wrap: initial; }
+.editeur-chapitre .section-editeur label { display: grid; gap: 6px; font-weight: 700; min-height: 0; align-items: stretch; }
+.editeur-chapitre input, .editeur-chapitre textarea { font-weight: 400; }

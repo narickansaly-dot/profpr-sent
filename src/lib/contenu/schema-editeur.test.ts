@@ -9,15 +9,22 @@ describe('schemaChapitreEditeur', () => {
     expect(schemaChapitreEditeur.safeParse({ ...ok, sections: [{ id: '_x', titre: 'A', html: '' }] }).success).toBe(false);
     expect(schemaChapitreEditeur.safeParse({ ...ok, sections: [{ id: '1a', titre: 'A', html: '' }] }).success).toBe(false);
   });
-  it('refuse deux sections au même identifiant', () => {
+  it('refuse deux sections au même identifiant, en français', () => {
     const s = { id: 'a', titre: 'A', html: '' };
-    expect(schemaChapitreEditeur.safeParse({ ...ok, sections: [s, s] }).success).toBe(false);
+    const r = schemaChapitreEditeur.safeParse({ ...ok, sections: [s, s] });
+    expect(r.success).toBe(false);
+    expect(!r.success && r.error.issues[0].message).toBe('L’identifiant « a » est déjà utilisé par une autre section.');
+    expect(!r.success && r.error.issues[0].path).toEqual(['sections', 1, 'id']);
   });
 });
 
 describe('balisesRetirees', () => {
   it('signale les balises disparues', () => {
-    expect(balisesRetirees('<p>a</p><script>x</script><img src="x">', '<p>a</p>')).toEqual(['script ×1', 'img ×1']);
+    expect(balisesRetirees('<p>a</p><script>x</script><img src="x">', '<p>a</p>')).toEqual(['script ×1', 'img ×1', 'attribut src ×1']);
+  });
+  it('signale les attributs et styles retirés', () => {
+    expect(balisesRetirees('<p onclick="x" class="a" style="color:red;behavior:url(x)">a</p>', '<p class="a" style="color:red">a</p>'))
+      .toEqual(['attribut onclick ×1', 'style behavior ×1']);
   });
   it('ne signale rien quand tout est conservé', () => expect(balisesRetirees('<P>a</P><br>', '<p>a</p><br />')).toEqual([]));
 });

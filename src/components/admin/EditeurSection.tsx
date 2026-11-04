@@ -17,10 +17,8 @@ type Props = {
   onChange: (p: Partial<SectionSaisie>) => void; onMonter: () => void; onDescendre: () => void; onSupprimer: () => void;
 };
 
-/** Insère `texte` à la position du curseur (ou remplace la sélection) et remet le curseur après l'insertion. */
-export function inserer(zone: HTMLTextAreaElement | null, valeur: string, texte: string): { valeur: string; curseur: number } {
-  const debut = zone?.selectionStart ?? valeur.length;
-  const fin = zone?.selectionEnd ?? valeur.length;
+/** Insère `texte` à la position du curseur (ou remplace la sélection) et donne la nouvelle valeur et la place du curseur. */
+export function inserer(valeur: string, debut: number, fin: number, texte: string): { valeur: string; curseur: number } {
   return { valeur: valeur.slice(0, debut) + texte + valeur.slice(fin), curseur: debut + texte.length };
 }
 
@@ -28,40 +26,51 @@ export function EditeurSection({ section, position, total, coursSlug, onChange, 
   const zone = useRef<HTMLTextAreaElement>(null);
   const id = useId();
   const n = position + 1;
+  // Nom accessible : numéro et titre, pour que « Monter » ne soit jamais ambigu.
+  const nom = `section ${n}${section.titre ? ` « ${section.titre} »` : ''}`;
   function insererTexte(texte: string) {
-    const r = inserer(zone.current, section.html, texte);
+    const z = zone.current;
+    if (!z) return;
+    // On part de la valeur actuelle de la zone (pas d'une copie d'un rendu précédent) : une frappe pendant un envoi reste.
+    const r = inserer(z.value, z.selectionStart, z.selectionEnd, texte);
     onChange({ html: r.valeur });
-    requestAnimationFrame(() => { zone.current?.focus(); zone.current?.setSelectionRange(r.curseur, r.curseur); });
+    requestAnimationFrame(() => { z.focus(); z.setSelectionRange(r.curseur, r.curseur); });
   }
   return (
     <fieldset className="section-editeur">
       <legend>Section {n}{section.titre ? ` — ${section.titre}` : ''}</legend>
       <div className="ligne-champs">
         <label>
-          Titre de la section
-          <input type="text" required maxLength={200} autoComplete="off" value={section.titre} onChange={(e) => onChange({ titre: e.target.value })} />
+          Titre de la section {n}
+          <input id={`titre-${section.cle}`} type="text" required maxLength={200} autoComplete="off" value={section.titre} onChange={(e) => onChange({ titre: e.target.value })} />
         </label>
         <label>
-          Identifiant
+          Identifiant de la section {n}
           <input type="text" required maxLength={64} pattern="[a-z][a-z0-9\-]{0,63}" autoComplete="off" spellCheck={false}
             value={section.id} onChange={(e) => onChange({ id: e.target.value })} />
         </label>
       </div>
-      <div className="barre-insertion" role="toolbar" aria-label={`Insérer dans la section ${n}`}>
-        <span className="etiquette">Insérer</span>
+      <div className="barre-insertion" role="group" aria-label={`Insérer dans la ${nom}`}>
+        <span className="etiquette" aria-hidden="true">Insérer</span>
         {MODELES.map((m) => (
-          <button key={m.nom} type="button" className="bouton bouton-secondaire bouton-compact" onClick={() => insererTexte(m.html)}>{m.nom}</button>
+          <button key={m.nom} type="button" className="bouton bouton-secondaire bouton-compact" onClick={() => insererTexte(m.html)}>
+            {m.nom}<span className="sr-only"> dans la section {n}</span>
+          </button>
         ))}
-        <DepotSchema coursSlug={coursSlug} onInsere={insererTexte} />
+        <DepotSchema coursSlug={coursSlug} libelle={`section ${n}`} onInsere={insererTexte} />
       </div>
       <label htmlFor={`${id}-html`}>HTML de la section {n}</label>
       <textarea id={`${id}-html`} ref={zone} className="zone-html" rows={16} spellCheck={false} value={section.html}
         onChange={(e) => onChange({ html: e.target.value })} />
       <div className="actions-formulaire">
-        <button type="button" className="bouton bouton-secondaire bouton-compact" onClick={onMonter} disabled={position === 0}>Monter<span className="sr-only"> la section {n}</span></button>
-        <button type="button" className="bouton bouton-secondaire bouton-compact" onClick={onDescendre} disabled={position === total - 1}>Descendre<span className="sr-only"> la section {n}</span></button>
+        <button id={`monter-${section.cle}`} type="button" className="bouton bouton-secondaire bouton-compact" onClick={onMonter} disabled={position === 0}>
+          Monter<span className="sr-only"> la {nom}</span>
+        </button>
+        <button id={`descendre-${section.cle}`} type="button" className="bouton bouton-secondaire bouton-compact" onClick={onDescendre} disabled={position === total - 1}>
+          Descendre<span className="sr-only"> la {nom}</span>
+        </button>
         <button type="button" className="bouton bouton-secondaire bouton-compact bouton-danger"
-          onClick={() => { if (confirm(`Supprimer la section ${n} (« ${section.titre || 'sans titre'} ») ?`)) onSupprimer(); }}>Supprimer<span className="sr-only"> la section {n}</span></button>
+          onClick={() => { if (confirm(`Supprimer la ${nom} ?`)) onSupprimer(); }}>Supprimer<span className="sr-only"> la {nom}</span></button>
       </div>
     </fieldset>
   );
