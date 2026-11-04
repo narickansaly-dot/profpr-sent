@@ -21,11 +21,63 @@ const PROPRIETES_STYLE = ['fill', 'stroke', 'stroke-width', 'stroke-dasharray', 
 /** Une référence SVG interne uniquement : url(#identifiant). */
 const URL_INTERNE = /^url\(#[\w-]+\)$/;
 
-/** Origine des images autorisées. Variable absente : base locale (comme les tests). Variable vide : aucune image. */
-function origineSchemas(): string {
-  const base = process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://127.0.0.1:54321';
-  if (!base) return '';
-  return `${base.replace(/\/$/, '')}/storage/v1/object/public/schemas/`;
+const CHEMIN_SCHEMAS = '/storage/v1/object/public/schemas/';
+/** Identifiant de contenu : minuscules, chiffres, tirets ; jamais de « _ » initial (anti DOM clobbering, ex. __next_f). */
+const ID_SUR = /^[a-z][a-z0-9-]{0,63}$/;
+
+/** Origine Supabase configurée. Variable absente : base locale hors production seulement. Vide ou invalide : null (aucune image). */
+function origineSupabase(): URL | null {
+  const brute = process.env.NEXT_PUBLIC_SUPABASE_URL
+    ?? (process.env.NODE_ENV !== 'production' ? 'http://127.0.0.1:54321' : '');
+  try {
+    return brute ? new URL(brute) : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Vrai si `src` vise exactement le bucket schemas de l'origine Supabase (contrôle sur l'URL analysée). */
+function imageAutorisee(src: string, origine: URL | null): boolean {
+  if (!origine || /%2e|%2f|%5c|\\|\.\./i.test(src)) return false;
+  try {
+    const u = new URL(src);
+    return u.origin === origine.origin && u.username === '' && u.password === '' && u.pathname.startsWith(CHEMIN_SCHEMAS);
+  } catch {
+    return false;
+  }
+}
+
+/** Ne garde que les jetons d'identifiant valides d'une liste séparée par des espaces (`for`, `aria-describedby`). */
+function jetonsSurs(valeur: string): string {
+  return valeur.split(/\s+/).filter((j) => ID_SUR.test(j)).join(' ');
+}
+
+const BALISES_A_COUPER = ['script', 'style', 'foreignobject'];
+const MINUSCULES = (t: string) => t.replace(/[A-Z]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 32));
+
+/**
+ * Retire <script>, <style> et <foreignObject> (toute casse) avec leur contenu. Linéaire : chaque balise fermante
+ * est cherchée par indexOf, et une recherche sans résultat n'est jamais refaite pour le même nom.
+ */
+function couperBalises(html: string): string {
+  const bas = MINUSCULES(html);
+  const sansFermeture = new Set<string>();
+  let sortie = '';
+  let curseur = 0;
+  for (const m of bas.matchAll(/<(script|style|foreignobject)\b/g)) {
+    const debut = m.index;
+    const nom = m[1];
+    if (debut < curseur || sansFermeture.has(nom) || !BALISES_A_COUPER.includes(nom)) continue;
+    const fermeture = bas.indexOf(`</${nom}`, debut);
+    const fin = fermeture === -1 ? -1 : bas.indexOf('>', fermeture);
+    if (fin === -1) {
+      sansFermeture.add(nom);
+      continue;
+    }
+    sortie += html.slice(curseur, debut);
+    curseur = fin + 1;
+  }
+  return sortie + html.slice(curseur);
 }
 
 const ATTRIBUTS_AUTORISES: sanitizeHtml.IOptions['allowedAttributes'] = {
@@ -44,8 +96,8 @@ const ATTRIBUTS_AUTORISES: sanitizeHtml.IOptions['allowedAttributes'] = {
 export function nettoyerHtml(html: string): string {
   // Ceinture : <script>, <style> et <foreignObject> en toute casse sont retirés avec leur contenu (le parseur
   // ne reconnaît que les minuscules pour ses balises « texte brut »).
-  const avant = html.replace(/<(script|style|foreignobject)\b[\s\S]*?<\/\1\s*>/gi, '');
-  const origine = origineSchemas();
+  const avant = couperBalises(html);
+  const origine = origineSupabase();
   return sanitizeHtml(avant, {
     allowedTags: [...BALISES_HTML, ...BALISES_SVG],
     allowedAttributes: ATTRIBUTS_AUTORISES,
@@ -62,20 +114,20 @@ export function nettoyerHtml(html: string): string {
           if (nom !== 'style' && /url\s*\(/i.test(valeur) && !URL_INTERNE.test(valeur)) continue;
           sortie[nom] = valeur;
         }
-        if (tagName === 'a' && sortie.href !== undefined) {
-          if (sortie.target === '_blank') sortie.rel = 'noopener noreferrer';
+        for (const cle of ['id', 'for', 'aria-describedby']) {
+          if (sortie[cle] === undefined) continue;
+          const v = cle === 'id' ? (ID_SUR.test(sortie.id) ? sortie.id : '') : jetonsSurs(sortie[cle]);
+          if (v) sortie[cle] = v;
+          else delete sortie[cle];
+        }
+        if (tagName === 'a') {
+          if (sortie.target !== '_blank') delete sortie.target;
+          if (sortie.href !== undefined && sortie.target === '_blank') sortie.rel = 'noopener noreferrer';
           else delete sortie.rel;
-        } else if (tagName === 'a') {
-          delete sortie.target;
-          delete sortie.rel;
         }
         return { tagName, attribs: sortie };
       },
     },
-    exclusiveFilter: (frame) => {
-      if (frame.tag !== 'img') return false;
-      const src = frame.attribs.src ?? '';
-      return !origine || !src.startsWith(origine) || src.includes('..');
-    },
+    exclusiveFilter: (frame) => frame.tag === 'img' && !imageAutorisee(frame.attribs.src ?? '', origine),
   });
 }

@@ -55,6 +55,15 @@ describe('nettoyerHtml', () => {
     ['<p style="fill:url(https://x.fr/a.svg#a)">x</p>', '<p>x</p>'],
     ['<p style="fill:url( #a)">x</p>', '<p>x</p>'],
     ['<p style="fill:red;position:fixed">x</p>', '<p style="fill:red">x</p>'],
+    ['<p id="__next_f">x</p>', '<p>x</p>'],
+    ['<p id="__NEXT_DATA__">x</p>', '<p>x</p>'],
+    ['<p id="a_b">x</p>', '<p>x</p>'],
+    ['<p id="ok-1">x</p>', '<p id="ok-1">x</p>'],
+    ['<label for="__next_f imc-a">x</label>', '<label for="imc-a">x</label>'],
+    ['<label for="__next_f">x</label>', '<label>x</label>'],
+    ['<p aria-describedby="__next imc-a">x</p>', '<p aria-describedby="imc-a">x</p>'],
+    ['<a href="https://e" target="_top">x</a>', '<a href="https://e">x</a>'],
+    ['<svg></p><style><a id="</style><img src=1 onerror=alert(1)>">', '<svg><p></p>"&gt;</svg>'],
     ['<p ONCLICK="a()" onclick="a()">x</p>', '<p>x</p>'],
     ['<svg onload=alert(1)><circle r="1"/></svg>', '<svg><circle r="1"></circle></svg>'],
     ['<svg><style>*{fill:red}</style><circle r="1"/></svg>', '<svg><circle r="1"></circle></svg>'],
@@ -70,6 +79,34 @@ describe('nettoyerHtml', () => {
   });
   it('garde fill:url(#id) dans un style', () => {
     expect(nettoyerHtml('<path style="fill:url(#g);stroke:var(--muted)" />')).toBe('<path style="fill:url(#g);stroke:var(--muted)"></path>');
+  });
+  it.each([
+    'a/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/auth/v1/x',
+    'a/%2e%2e/%2E%2E/autre/x.png',
+    'a/.%2e/x.png',
+    'a/%2e./x.png',
+    'a/../../x.png',
+    'a\\..\\x.png',
+    'a/%2f/x.png',
+  ])('refuse une image avec un segment encodé ou remonté : %s', (fin) => {
+    const base = process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://127.0.0.1:54321';
+    expect(nettoyerHtml(`<img src="${base}/storage/v1/object/public/schemas/${fin}" alt="x">`)).toBe('');
+  });
+  it('refuse les images d’un autre chemin, d’un autre hôte ou avec identifiants', () => {
+    const base = process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://127.0.0.1:54321';
+    const h = new URL(base).host;
+    for (const src of [`${base}/storage/v1/object/public/autre/a.png`, `${base}.evil.com/storage/v1/object/public/schemas/a.png`,
+      `http://u:p@${h}/storage/v1/object/public/schemas/a.png`, `http://${h}@evil.com/storage/v1/object/public/schemas/a.png`,
+      ` ${base}/storage/v1/object/public/schemas/a.png/../b`, 'pas une url'])
+      expect(nettoyerHtml(`<img src="${src}">`)).toBe('');
+  });
+  it('traite 300 Ko d’entrée adverse en moins de 200 ms', () => {
+    for (const unite of ['<script', '<ScRiPt>', '<style', '<foreignObject', '<svg<script']) {
+      const entree = unite.repeat(Math.ceil(300_000 / unite.length));
+      const debut = performance.now();
+      nettoyerHtml(entree);
+      expect(performance.now() - debut).toBeLessThan(200);
+    }
   });
   it('garde marker-end="url(#id)"', () => {
     expect(nettoyerHtml('<line marker-end="url(#fleche)" />')).toContain('marker-end="url(#fleche)"');
