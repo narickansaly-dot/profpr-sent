@@ -25,4 +25,14 @@ export default async function nettoyage() {
     const { error } = await db.auth.admin.deleteUser(id);
     if (error) throw error;
   }
+  // Cours de test du parcours de contenu (slug « e2e-… ») : dépubliés par le test s'ils avaient des résultats,
+  // supprimés ici une fois les comptes de test (et donc leurs tentatives) effacés.
+  const { data: cours, error: erreurCours } = await db.from('cours').select('id, chapitre(id)').like('slug', 'e2e-%');
+  if (erreurCours) throw erreurCours;
+  for (const c of cours ?? []) {
+    const chapitres = (c.chapitre as { id: string }[]).map((ch) => ch.id);
+    if (chapitres.length > 0) await db.from('question').update({ version_de: null }).in('chapitre_id', chapitres);
+    const { error } = await db.from('cours').delete().eq('id', c.id);
+    if (error) console.warn(`Cours de test ${c.id} non supprimé : ${error.message}`);
+  }
 }

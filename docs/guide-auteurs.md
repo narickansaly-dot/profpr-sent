@@ -9,7 +9,7 @@ Le contenu n'entre en base que par deux chemins, tous deux validés par les mêm
 
 ## 1. Le format JSON d'un cours
 
-Un fichier contient **un seul objet** : le cours, avec ses chapitres, qui portent leurs sections et leurs questions. Taille maximale : 4 Mo. Le fichier de référence est `contenu/1re-st2s/bph.json`.
+Un fichier contient **un seul objet** : le cours, avec ses chapitres, qui portent leurs sections et leurs questions. Taille maximale : 3 Mo. Le fichier de référence est `contenu/1re-st2s/bph.json`.
 
 ### Le cours
 
@@ -20,7 +20,7 @@ Un fichier contient **un seul objet** : le cours, avec ses chapitres, qui porten
 | `niveau` | texte | `2de`, `1re` ou `Tle` |
 | `matiere` | texte | obligatoire, 120 caractères au plus |
 | `titre` | texte | obligatoire, 200 caractères au plus |
-| `couleur` | texte | `#rrggbb` ; `#2563eb` par défaut ; refusée si elle contraste trop peu avec le fond blanc |
+| `couleur` | texte | `#rrggbb` ; `#2563eb` par défaut ; refusée si son contraste avec le blanc est inférieur à **4,5:1** (elle sert de fond au texte blanc des boutons ; `#0f766e`, la couleur de BPH, passe) |
 | `chapitres` | liste | au moins un chapitre |
 
 ### Un chapitre
@@ -28,17 +28,17 @@ Un fichier contient **un seul objet** : le cours, avec ses chapitres, qui porten
 | Champ | Type | Règle |
 | --- | --- | --- |
 | `slug` | texte | obligatoire ; minuscules, chiffres et tirets ; unique dans le cours |
-| `numero` | entier | de 1 à 99 ; unique dans le cours |
+| `numero` | entier | de 1 à 99 ; unique dans le cours, y compris parmi les chapitres déjà en base mais absents du fichier |
 | `titre` | texte | obligatoire, 200 caractères au plus |
 | `titre_court`, `duree` | texte | facultatifs (80 et 40 caractères au plus) |
 | `resume` | texte | facultatif, 1000 caractères au plus |
 | `chapeau` | texte | facultatif, 4000 caractères au plus |
 | `objectifs` | liste de textes | facultatif ; 300 caractères au plus par objectif |
-| `sections` | liste | 40 au plus ; chacune a un `id` (minuscules, chiffres, tirets ; unique dans le chapitre), un `titre` et un `html` |
+| `sections` | liste | 40 au plus ; chacune a un `id` (une lettre minuscule, puis minuscules, chiffres ou tirets, 64 caractères au plus ; unique dans le chapitre ; `a-retenir` est réservé), un `titre` et un `html` |
 | `a_retenir` | HTML | facultatif : la zone « Je retiens » |
 | `questions` | liste | peut être vide |
 
-Conseil : commence chaque identifiant de section par une lettre et garde-le sous 64 caractères. L'éditeur de chapitre applique cette règle, plus stricte que celle de l'import.
+L'import, l'éditeur de chapitre et la base appliquent la même règle d'identifiant. `a-retenir` est réservé : c'est l'identifiant du bloc « Je retiens » de la page.
 
 ### Une question
 
@@ -56,10 +56,10 @@ Champs communs à tous les types :
 
 Champs propres à chaque type :
 
-- **`qcm_unique`** : `propositions` (de 2 à 10 textes distincts, 500 caractères au plus) et `bonnes_reponses`, une liste d'**un seul** indice. Les indices commencent à **0**.
+- **`qcm_unique`** : `propositions` (de 2 à 10 textes distincts après suppression des espaces aux bords, 500 caractères au plus) et `bonnes_reponses`, une liste d'**un seul** indice. Les indices commencent à **0**.
 - **`qcm_multiple`** : `propositions` comme ci-dessus et `bonnes_reponses`, une liste d'au moins un indice, sans doublon.
 - **`vrai_faux`** : `bonne_reponse`, un booléen (`true` ou `false`).
-- **`reponse_courte`** : `reponses_acceptees` (de 1 à 20 textes), et si besoin `marge` et `marge_relative` (voir la partie 3).
+- **`reponse_courte`** : `reponses_acceptees` (de 1 à 20 textes de 200 caractères au plus ; une réponse faite seulement de ponctuation, comme « … », est refusée), et si besoin `marge` et `marge_relative` (voir la partie 3).
 
 Un indice de bonne réponse qui dépasse la liste des propositions est refusé : l'erreur indique le chapitre et la question concernés.
 
@@ -184,12 +184,15 @@ Dans l'espace admin, sur la page d'une question, les boutons suivent ce cycle : 
 - modifier une question sans toucher à sa structure ne change pas son statut ;
 - modifier la structure d'une question validée crée une nouvelle version, qui part en **à relire** (partie 5).
 
-**À l'import, le statut du fichier s'applique tel quel.** Sans statut, une question importée est `a_relire` : le contenu généré arrive donc en relecture et n'est tiré dans aucun quiz tant qu'une personne ne l'a pas validé. Écris `"statut": "valide"` seulement pour du contenu déjà relu (c'est le cas du cours BPH).
+**À l'import, le statut du fichier s'applique**, sauf pour une question qui a un signalement ouvert : elle garde son statut actuel (« à relire ») et le signalement reste ouvert, même si le fichier la déclare `valide`. Sans statut, une question importée est `a_relire` : le contenu généré arrive donc en relecture et n'est tiré dans aucun quiz tant qu'une personne ne l'a pas validé. Écris `"statut": "valide"` seulement pour du contenu déjà relu (c'est le cas du cours BPH).
 
 Un enseignant peut signaler une erreur dans une question. La question repasse alors en « à relire » et sort des tirages le temps de la relecture. L'admin traite le signalement sur `/admin/signalements` :
 
 - **Marquer comme traité** : tu as corrigé la question ; elle reste en relecture jusqu'à ce que tu la valides.
-- **Rejeter** : la question est juste ; elle redevient « validée » s'il n'y a plus d'autre signalement ouvert.
+- **Rejeter** : la question est juste ; elle redevient « validée » s'il n'y a plus d'autre signalement ouvert **et si elle n'a pas été modifiée depuis le dernier signalement**. Sinon, elle reste « à relire » : valide-la toi-même après avoir relu le nouveau texte.
+- **Valider** la question (bouton de la page de la question) clôt d'office tous ses signalements ouverts en « traité », sans réponse écrite.
+
+Une question qui a un signalement ouvert ne peut pas être supprimée : traite d'abord le signalement.
 
 L'enseignant lit la décision et ta réponse sur `/enseignant/signalements`.
 
@@ -254,7 +257,7 @@ Conseil : demande la réponse « en °C » dans l'énoncé et accepte `37`, plut
 - `marge_relative: false` (par défaut) : `marge` est une valeur **absolue**, dans la même unité que la réponse. Avec `"reponses_acceptees": ["37"]` et `"marge": 0.5`, `37,4` et `37.5` sont justes ; `36,4` est faux.
 - `marge_relative: true` : `marge` est une **fraction** de la valeur de référence : tolérance = `marge` × |référence|. Donc **`0.1` signifie 10 %**, pas 0,1 %. Avec `["70"]` et `"marge": 0.1`, la tolérance est de 7 : `63` et `77` sont justes, `62` et `78` sont faux.
 
-L'**éditeur de question**, lui, affiche et attend un **pourcentage** : tape `10` dans « Marge de tolérance » avec « Marge relative (en %) » cochée, et la base enregistre `0.1`. Une marge relative va de 0 à 100 %. Une marge relative sans valeur de marge est refusée.
+L'**éditeur de question**, lui, affiche et attend un **pourcentage** : tape `10` dans « Marge de tolérance » avec « Marge relative (en %) » cochée, et la base enregistre `0.1`. Une marge relative va de 0 à 100 % (de `0` à `1` dans le fichier) ; une marge absolue va jusqu'à 1 000 000. L'import applique les mêmes plafonds. Une marge relative sans valeur de marge est refusée.
 
 ## 4. Le HTML autorisé
 
@@ -323,7 +326,7 @@ Détails :
 - Un quiz déjà passé, ou en cours, garde ses propres questions : sa correction montre **l'ancienne version**, avec ses anciennes propositions.
 - Une question validée versionne même si elle n'a jamais été tirée : cela évite qu'un tirage simultané ne calcule l'ordre des propositions sur l'ancienne structure.
 - Les signalements ouverts suivent la question vers sa nouvelle version.
-- Une question déjà tirée ne peut pas être supprimée ; repasse-la en brouillon. À l'import, une question retirée du fichier est **supprimée** si elle n'a jamais servi, **archivée** sinon.
+- Une question déjà tirée ne peut pas être supprimée ; repasse-la en brouillon. À l'import, une question retirée du fichier est **supprimée** si elle n'a jamais servi, **archivée** si elle a servi ou si elle a un signalement ouvert (le signalement reste à traiter).
 - Les questions créées dans l'éditeur n'ont pas de `source` : un import ne les touche jamais.
 
 ## 6. L'import
@@ -341,7 +344,8 @@ npm run import:contenu -- <fichier.json> [--publier] [--distant]
 
 Un import est **rejouable** : réimporter le même fichier ne crée rien et laisse les questions inchangées telles quelles. Attention à deux effets :
 
-- il **réapplique le statut du fichier** : une question que tu as validée dans l'éditeur redevient `a_relire` si le fichier la déclare `a_relire` ;
+- il **réapplique le statut du fichier** : une question que tu as validée dans l'éditeur redevient `a_relire` si le fichier la déclare `a_relire` (sauf une question signalée, qui garde son statut, voir la partie 2) ;
+- il **réapplique aussi le contenu du fichier** à une question importée que tu as modifiée dans l'éditeur : elle garde sa `source`, donc son énoncé, son explication et sa structure redeviennent ceux du fichier ;
 - il remplace les champs du chapitre (titre, résumé, sections, « Je retiens »…) par ceux du fichier : une modification faite dans l'éditeur de chapitre est donc écrasée, à moins de l'avoir reportée dans le fichier.
 
 ### La page `/admin/import`
