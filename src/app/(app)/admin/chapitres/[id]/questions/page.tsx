@@ -21,7 +21,7 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
   if (!ch) notFound();
   const [cours, toutes] = await Promise.all([lireCoursAdmin(ch.cours_id), lireQuestionsChapitre(id)]);
   if (!cours) notFound();
-  const statut = f.statut && f.statut in LIBELLE_STATUT ? f.statut : '';
+  const statut = f.statut && Object.hasOwn(LIBELLE_STATUT, f.statut) ? f.statut : '';
   const type = TYPES_QUESTION.some(([v]) => v === f.type) ? f.type! : '';
   const recherche = (f.q ?? '').trim().slice(0, 100);
   const aiguille = recherche.toLocaleLowerCase('fr');

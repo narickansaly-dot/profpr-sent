@@ -5,7 +5,8 @@ import { useEffect, useRef, useState, useTransition, type CSSProperties, type Fo
 import { enregistrerQuestion, type EtatQuestion } from '@/app/(app)/admin/questions/actions';
 import { TYPES_QUESTION, LIBELLE_DIFFICULTE } from '@/lib/admin/questions';
 import type { SaisieQuestion } from '@/lib/contenu/schema-question-editeur';
-import { ChampReponse } from '@/components/ChampReponse';
+import { ApercuQuestion } from './ApercuQuestion';
+import { GroupeReponseCourte } from './GroupeReponseCourte';
 import type { TypeQuestion } from '@/lib/quiz/reponse';
 
 type Prop = { cle: string; texte: string; bonne: boolean };
@@ -27,7 +28,6 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
   const aFocaliser = useRef<string | null>(null);
   const refErreur = useRef<HTMLParagraphElement>(null);
   const [enCours, lancer] = useTransition();
-  const [choixApercu, setChoixApercu] = useState<number[] | boolean[] | string[] | null>(null);
   const maj = (p: Partial<typeof champs>) => setChamps((c) => ({ ...c, ...p }));
   const type = champs.type;
   const aChoix = type === 'qcm_unique' || type === 'qcm_multiple';
@@ -59,7 +59,6 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
       const premiere = props.findIndex((p) => p.bonne);
       setProps((l) => l.map((p, i) => ({ ...p, bonne: i === premiere })));
     }
-    setChoixApercu(null);
     maj({ type: t });
   };
   const majProp = (cle: string, p: Partial<Prop>) => setProps((l) => l.map((x) => (x.cle === cle ? { ...x, ...p } : x)));
@@ -94,10 +93,8 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
     });
   }
 
-  const propositionsApercu = props.map((p, i) => p.texte.trim() || `Proposition ${i + 1}`);
-  const typeApercu = type as TypeQuestion;
-
   return (
+    <>
     <form onSubmit={enregistrer} noValidate className="formulaire editeur-question" style={{ '--couleur-cours': couleur } as CSSProperties}>
       <div className="champ-question">
         <label htmlFor="champ-type">Type de question</label>
@@ -161,30 +158,8 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
       )}
 
       {type === 'reponse_courte' && (
-        <fieldset className="groupe-propositions">
-          <legend>Réponse courte</legend>
-          <div className="champ-question">
-            <label htmlFor="champ-acceptees">Réponses acceptées (une par ligne)</label>
-            <textarea id="champ-acceptees" {...inv('acceptees', 'aide-acceptees')} rows={3} spellCheck={false}
-              value={champs.acceptees} onChange={(e) => maj({ acceptees: e.target.value })} />
-            <p id="aide-acceptees" className="aide-champ">
-              Guide des auteurs (<code>docs/guide-auteurs.md</code>) : la casse, les accents et la ponctuation de fin sont ignorés,
-              mais les signes + − % ° = &lt; &gt; comptent. « Na+ » et « Na » sont donc deux réponses différentes ; liste les variantes acceptables.
-            </p>
-          </div>
-          <div className="ligne-champs">
-            <div className="champ-question">
-              <label htmlFor="champ-marge">Marge de tolérance (réponses numériques)</label>
-              <input id="champ-marge" {...inv('marge', 'aide-marge')} type="text" inputMode="decimal" autoComplete="off"
-                value={champs.marge} onChange={(e) => maj({ marge: e.target.value })} />
-              <p id="aide-marge" className="aide-champ">Facultatif. La virgule est acceptée. Une réponse numérique est juste si elle est à cette distance d’une valeur acceptée.</p>
-            </div>
-            <label className="case-bonne case-marge" htmlFor="champ-marge-relative">
-              <input id="champ-marge-relative" type="checkbox" checked={champs.margeRelative} onChange={(e) => maj({ margeRelative: e.target.checked })} />
-              <span>Marge relative (en %)</span>
-            </label>
-          </div>
-        </fieldset>
+        <GroupeReponseCourte acceptees={champs.acceptees} marge={champs.marge} margeRelative={champs.margeRelative}
+          erreurAcceptees={enErreur('acceptees')} erreurMarge={enErreur('marge')} onChange={maj} />
       )}
 
       <div className="ligne-champs">
@@ -200,7 +175,7 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
           <div className="choix-simples">
             {[1, 2, 3].map((d) => (
               <label key={d} className="case-bonne">
-                <input type="radio" name="difficulte" checked={champs.difficulte === String(d)} onChange={() => maj({ difficulte: String(d) })} />
+                <input id={d === 1 ? 'champ-difficulte' : undefined} {...(d === 1 ? inv('difficulte') : {})} type="radio" name="difficulte" checked={champs.difficulte === String(d)} onChange={() => maj({ difficulte: String(d) })} />
                 <span>{LIBELLE_DIFFICULTE[d]}</span>
               </label>
             ))}
@@ -220,17 +195,9 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
       </div>
       <p role="status" className="sr-only">{annonce}</p>
 
-      <section className="panneau-apercu apercu-question" aria-labelledby="titre-apercu-question">
-        <h2 id="titre-apercu-question">Aperçu élève</h2>
-        <p className="aide-champ">Voici comment l’élève verra la question pendant un quiz. Tu peux y répondre pour essayer ; rien n’est enregistré.</p>
-        <div className="question carte">
-          <p className="question-enonce" id="enonce-apercu">{champs.enonce.trim() || 'Énoncé de la question'}</p>
-          <div role="group" aria-label="Réponses de l’aperçu">
-            <ChampReponse key={typeApercu} questionId="apercu-question" type={typeApercu} propositions={propositionsApercu}
-              reponse={choixApercu} onChange={(r) => setChoixApercu(r)} />
-          </div>
-        </div>
-      </section>
     </form>
+    <ApercuQuestion key={`${type}:${props.map((p) => p.cle).join(',')}`} type={type as TypeQuestion}
+      enonce={champs.enonce} propositions={props.map((p) => p.texte)} />
+    </>
   );
 }

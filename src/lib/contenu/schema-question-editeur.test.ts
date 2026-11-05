@@ -41,6 +41,11 @@ describe('lireSaisieQuestion', () => {
     expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', margeRelative: true }))).toBe('marge');
     expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: 'abc' }))).toBe('marge');
   });
+  it('plafonne la marge', () => {
+    expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: '500', margeRelative: true }))).toBe('marge');
+    expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: '2000000' }))).toBe('marge');
+    expect('question' in lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: '100', margeRelative: true })).toBe(true);
+  });
   it('exige une réponse acceptée', () => {
     expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '  \n' }))).toBe('acceptees');
   });

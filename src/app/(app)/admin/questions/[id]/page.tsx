@@ -15,7 +15,8 @@ const dateFr = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeStyle: 
 
 export default async function PageQuestion({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ enregistre?: string | string[] }> }) {
   await exigerAdmin();
-  const { id } = await params;
+  const { id: idBrut } = await params;
+  const id = idBrut.toLowerCase();
   const { enregistre } = await searchParams;
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const supabase = await creerClientServeur();

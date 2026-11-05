@@ -26,13 +26,22 @@ export const variantesQuestionImport = [
     marge: z.number().nonnegative().optional(), marge_relative: z.boolean().default(false) }),
 ] as const;
 
-export const schemaQuestionImport = z.discriminatedUnion('type', variantesQuestionImport).refine((q) => !('bonnes_reponses' in q) || indicesValides(q), {
-  message: 'Une bonne réponse ne correspond à aucune proposition.',
-}).refine((q) => !('bonnes_reponses' in q) || new Set(q.bonnes_reponses).size === q.bonnes_reponses.length, {
-  message: 'Une bonne réponse apparaît deux fois.',
-}).refine((q) => q.type !== 'reponse_courte' || !q.marge_relative || q.marge !== undefined, {
-  message: 'Une marge relative demande une valeur de marge.',
-});
+type PourControle = { type: string; propositions?: string[]; bonnes_reponses?: number[]; marge?: number; marge_relative?: boolean };
+
+/** Contrôles croisés d'une question, partagés par l'import et l'éditeur (une seule définition). */
+export const controlesQuestion: { verifie: (q: PourControle) => boolean; message: string }[] = [
+  { verifie: (q) => !q.bonnes_reponses || indicesValides({ propositions: q.propositions ?? [], bonnes_reponses: q.bonnes_reponses }),
+    message: 'Une bonne réponse ne correspond à aucune proposition.' },
+  { verifie: (q) => !q.bonnes_reponses || new Set(q.bonnes_reponses).size === q.bonnes_reponses.length,
+    message: 'Une bonne réponse apparaît deux fois.' },
+  { verifie: (q) => q.type !== 'reponse_courte' || !q.marge_relative || q.marge !== undefined,
+    message: 'Une marge relative demande une valeur de marge.' },
+];
+
+export const schemaQuestionImport = controlesQuestion.reduce(
+  (schema, c) => schema.refine(c.verifie, { message: c.message }),
+  z.discriminatedUnion('type', variantesQuestionImport),
+);
 
 export const schemaChapitreImport = z.object({
   slug: z.string().regex(/^[a-z0-9-]+$/).max(80),

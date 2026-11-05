@@ -1,18 +1,18 @@
 import { z } from 'zod';
-import { variantesQuestionImport, type QuestionImport } from './format-import';
+import { controlesQuestion, variantesQuestionImport, type QuestionImport } from './format-import';
 
 /** Schéma de l'éditeur : celui de l'import, avec une source facultative (le serveur en attribue une ou garde l'actuelle). */
 const facultative = { source: z.string().optional() };
 const [qcmUnique, qcmMultiple, vraiFaux, reponseCourte] = variantesQuestionImport;
-export const schemaQuestionEditeur = z.discriminatedUnion('type', [
-  qcmUnique.omit({ source: true }).extend(facultative),
-  qcmMultiple.omit({ source: true }).extend(facultative),
-  vraiFaux.omit({ source: true }).extend(facultative),
-  reponseCourte.omit({ source: true }).extend(facultative),
-])
-  .refine((q) => !('bonnes_reponses' in q) || q.bonnes_reponses.every((i) => i < q.propositions.length), { message: 'bonnes' })
-  .refine((q) => !('bonnes_reponses' in q) || new Set(q.bonnes_reponses).size === q.bonnes_reponses.length, { message: 'bonnes' })
-  .refine((q) => q.type !== 'reponse_courte' || !q.marge_relative || q.marge !== undefined, { message: 'marge' });
+export const schemaQuestionEditeur = controlesQuestion.reduce(
+  (schema, c) => schema.refine(c.verifie, { message: c.message }),
+  z.discriminatedUnion('type', [
+    qcmUnique.omit({ source: true }).extend(facultative),
+    qcmMultiple.omit({ source: true }).extend(facultative),
+    vraiFaux.omit({ source: true }).extend(facultative),
+    reponseCourte.omit({ source: true }).extend(facultative),
+  ]),
+);
 
 /** Ce que le navigateur envoie : tout est du texte, le serveur convertit et valide. */
 export type SaisieQuestion = {
@@ -51,6 +51,9 @@ export function lireSaisieQuestion(s: SaisieQuestion): { question: QuestionImpor
     brut.reponses_acceptees = s.acceptees.split('\n').map((l) => l.trim()).filter(Boolean);
     const m = lireNombre(s.marge);
     if (Number.isNaN(m)) return { erreur: 'La marge est un nombre positif (la virgule est acceptée).', champ: 'marge' };
+    if (m !== undefined && m > (s.margeRelative ? 100 : 1_000_000)) {
+      return { erreur: s.margeRelative ? 'Une marge relative va de 0 à 100 %.' : 'La marge est trop grande (1 000 000 au maximum).', champ: 'marge' };
+    }
     // En mode relatif, la saisie est en pourcentage ; la base garde une fraction (5 % -> 0,05).
     brut.marge = m === undefined ? undefined : s.margeRelative ? Number((m / 100).toPrecision(12)) : m;
     brut.marge_relative = s.margeRelative;
@@ -74,7 +77,9 @@ export function lireSaisieQuestion(s: SaisieQuestion): { question: QuestionImpor
     case 'difficulte': return { erreur: 'Choisis une difficulté.', champ: 'difficulte' };
     case 'explication': return { erreur: 'L’explication est trop longue (4 000 caractères au maximum).', champ: 'explication' };
   }
-  if (i.message === 'marge') return { erreur: 'Une marge relative demande une valeur de marge.', champ: 'marge' };
-  if (i.message === 'bonnes') return { erreur: 'Les bonnes réponses ne correspondent pas aux propositions.', champ: 'bonne-0' };
+  if (i.message === controlesQuestion[2].message) return { erreur: 'Une marge relative demande une valeur de marge.', champ: 'marge' };
+  if (i.message === controlesQuestion[0].message || i.message === controlesQuestion[1].message) {
+    return { erreur: 'Les bonnes réponses ne correspondent pas aux propositions.', champ: 'bonne-0' };
+  }
   return { erreur: 'Cette question est incomplète ou mal formée.', champ: 'enonce' };
 }
