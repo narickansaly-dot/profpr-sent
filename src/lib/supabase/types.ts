@@ -25,14 +25,14 @@ export type Database = {
           Tables: {
             "chapitre": {
                   Row: {
-                    "a_retenir": string | null,"chapeau": string | null,"cours_id": string,"duree": string | null,"id": string,"numero": number,"objectifs": (string)[],"publie": boolean,"resume": string | null,"sections": NonNullable<Json>,"slug": string,"titre": string,"titre_court": string | null
+                    "a_retenir": string | null,"chapeau": string | null,"cours_id": string,"duree": string | null,"id": string,"modifie_le": string,"numero": number,"objectifs": (string)[],"publie": boolean,"resume": string | null,"sections": NonNullable<Json>,"slug": string,"titre": string,"titre_court": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "a_retenir"?: string | null,"chapeau"?: string | null,"cours_id": string,"duree"?: string | null,"id"?: string,"numero": number,"objectifs"?: (string)[],"publie"?: boolean,"resume"?: string | null,"sections"?: NonNullable<Json>,"slug": string,"titre": string,"titre_court"?: string | null
+                    "a_retenir"?: string | null,"chapeau"?: string | null,"cours_id": string,"duree"?: string | null,"id"?: string,"modifie_le"?: string,"numero": number,"objectifs"?: (string)[],"publie"?: boolean,"resume"?: string | null,"sections"?: NonNullable<Json>,"slug": string,"titre": string,"titre_court"?: string | null
                   }
                   Update: {
-                    "a_retenir"?: string | null,"chapeau"?: string | null,"cours_id"?: string,"duree"?: string | null,"id"?: string,"numero"?: number,"objectifs"?: (string)[],"publie"?: boolean,"resume"?: string | null,"sections"?: NonNullable<Json>,"slug"?: string,"titre"?: string,"titre_court"?: string | null
+                    "a_retenir"?: string | null,"chapeau"?: string | null,"cours_id"?: string,"duree"?: string | null,"id"?: string,"modifie_le"?: string,"numero"?: number,"objectifs"?: (string)[],"publie"?: boolean,"resume"?: string | null,"sections"?: NonNullable<Json>,"slug"?: string,"titre"?: string,"titre_court"?: string | null
                   }
                   Relationships: [
                     {
@@ -103,14 +103,14 @@ isOneToOne: false
                   ]
                 },"cours": {
                   Row: {
-                    "couleur": string,"filiere_id": string | null,"id": string,"matiere": string,"niveau_code": string | null,"ordre": number,"publie": boolean,"slug": string,"titre": string
+                    "couleur": string,"filiere_id": string | null,"id": string,"matiere": string,"modifie_le": string,"niveau_code": string | null,"ordre": number,"publie": boolean,"slug": string,"titre": string
                   }
                   ComputedFields: never
                   Insert: {
-                    "couleur"?: string,"filiere_id"?: string | null,"id"?: string,"matiere": string,"niveau_code"?: string | null,"ordre"?: number,"publie"?: boolean,"slug": string,"titre": string
+                    "couleur"?: string,"filiere_id"?: string | null,"id"?: string,"matiere": string,"modifie_le"?: string,"niveau_code"?: string | null,"ordre"?: number,"publie"?: boolean,"slug": string,"titre": string
                   }
                   Update: {
-                    "couleur"?: string,"filiere_id"?: string | null,"id"?: string,"matiere"?: string,"niveau_code"?: string | null,"ordre"?: number,"publie"?: boolean,"slug"?: string,"titre"?: string
+                    "couleur"?: string,"filiere_id"?: string | null,"id"?: string,"matiere"?: string,"modifie_le"?: string,"niveau_code"?: string | null,"ordre"?: number,"publie"?: boolean,"slug"?: string,"titre"?: string
                   }
                   Relationships: [
                     {
@@ -327,14 +327,14 @@ isOneToOne: false
                   ]
                 },"question": {
                   Row: {
-                    "chapitre_id": string,"cree_le": string,"difficulte": number,"enonce": string,"id": string,"modifie_le": string,"notion_id": string | null,"propositions": NonNullable<Json>,"source": string | null,"statut": Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"]
+                    "chapitre_id": string,"cree_le": string,"difficulte": number,"enonce": string,"id": string,"modifie_le": string,"notion_id": string | null,"propositions": NonNullable<Json>,"source": string | null,"statut": Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"],"version_de": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "chapitre_id": string,"cree_le"?: string,"difficulte"?: number,"enonce": string,"id"?: string,"modifie_le"?: string,"notion_id"?: string | null,"propositions"?: NonNullable<Json>,"source"?: string | null,"statut"?: Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"]
+                    "chapitre_id": string,"cree_le"?: string,"difficulte"?: number,"enonce": string,"id"?: string,"modifie_le"?: string,"notion_id"?: string | null,"propositions"?: NonNullable<Json>,"source"?: string | null,"statut"?: Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"],"version_de"?: string | null
                   }
                   Update: {
-                    "chapitre_id"?: string,"cree_le"?: string,"difficulte"?: number,"enonce"?: string,"id"?: string,"modifie_le"?: string,"notion_id"?: string | null,"propositions"?: NonNullable<Json>,"source"?: string | null,"statut"?: Database["public"]['Enums']["statut_question_t"],"type"?: Database["public"]['Enums']["type_question_t"]
+                    "chapitre_id"?: string,"cree_le"?: string,"difficulte"?: number,"enonce"?: string,"id"?: string,"modifie_le"?: string,"notion_id"?: string | null,"propositions"?: NonNullable<Json>,"source"?: string | null,"statut"?: Database["public"]['Enums']["statut_question_t"],"type"?: Database["public"]['Enums']["type_question_t"],"version_de"?: string | null
                   }
                   Relationships: [
                     {
@@ -348,6 +348,12 @@ isOneToOne: false
       columns: ["notion_id"]
 isOneToOne: false
       referencedRelation: "notion"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "question_version_de_fkey"
+      columns: ["version_de"]
+isOneToOne: false
+      referencedRelation: "question"
       referencedColumns: ["id"]
     }
                   ]
@@ -368,6 +374,38 @@ isOneToOne: false
       columns: ["question_id"]
 isOneToOne: true
       referencedRelation: "question"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"signalement": {
+                  Row: {
+                    "auteur_id": string,"commentaire": string,"cree_le": string,"id": string,"question_id": string,"reponse": string | null,"statut": string,"traite_le": string | null,"traite_par": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "auteur_id": string,"commentaire": string,"cree_le"?: string,"id"?: string,"question_id": string,"reponse"?: string | null,"statut"?: string,"traite_le"?: string | null,"traite_par"?: string | null
+                  }
+                  Update: {
+                    "auteur_id"?: string,"commentaire"?: string,"cree_le"?: string,"id"?: string,"question_id"?: string,"reponse"?: string | null,"statut"?: string,"traite_le"?: string | null,"traite_par"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "signalement_auteur_id_fkey"
+      columns: ["auteur_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "signalement_question_id_fkey"
+      columns: ["question_id"]
+isOneToOne: false
+      referencedRelation: "question"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "signalement_traite_par_fkey"
+      columns: ["traite_par"]
+isOneToOne: false
+      referencedRelation: "profil"
       referencedColumns: ["id"]
     }
                   ]
@@ -435,7 +473,10 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "classes_eleve":
+            "changer_statut_question":
+{ Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
+                           },
+"classes_eleve":
 { Args: Record<PropertyKey, never>; Returns: {
               "enseignant_nom": string,"id": string,"nom": string,"rejoint_le": string
             }[]
@@ -481,6 +522,18 @@ isOneToOne: false
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"enregistrer_chapitre":
+{ Args: { "p_chapitre": string,"p_cours": string,"p_donnees": Json }; Returns: string
+                           },
+"enregistrer_cours":
+{ Args: { "p_cours": string,"p_donnees": Json }; Returns: string
+                           },
+"enregistrer_question":
+{ Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
+                           },
+"importer_cours":
+{ Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
+                           },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
                            },
@@ -489,10 +542,18 @@ isOneToOne: false
               "classe_nom": string,"cours_id": string,"limite": string,"ouverture": string
             }[]
                            },
+"mes_signalements":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"traite_le": string
+            }[]
+                           },
 "notes_classe":
 { Args: { "p_classe": string,"p_cours": string }; Returns: {
               "chapitre_id": string,"chapitre_numero": number,"chapitre_titre": string,"eleve_id": string,"meilleure_note": number,"nom": string,"valide": boolean
             }[]
+                           },
+"notions_chapitre":
+{ Args: { "p_chapitre": string }; Returns: string[]
                            },
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
@@ -500,6 +561,17 @@ isOneToOne: false
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
+"publier_chapitre":
+{ Args: { "p_chapitre": string,"p_publie": boolean }; Returns: undefined
+                           },
+"publier_cours":
+{ Args: { "p_cours": string,"p_publie": boolean }; Returns: undefined
+                           },
+"questions_chapitre_admin":
+{ Args: { "p_chapitre": string }; Returns: {
+              "bonnes_reponses": Json,"difficulte": number,"enonce": string,"explication": string,"id": string,"marge": number,"marge_relative": boolean,"modifie_le": string,"notion": string,"propositions": Json,"reponses_acceptees": (string)[],"signalements_ouverts": number,"source": string,"statut": Database["public"]['Enums']["statut_question_t"],"type": Database["public"]['Enums']["type_question_t"],"utilisee": boolean,"version_de": string
             }[]
                            },
 "questions_ratees_classe":
@@ -535,20 +607,39 @@ isOneToOne: false
 "serie_jours":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
+"signalements_admin":
+{ Args: { "p_statut"?: string }; Returns: {
+              "auteur_email": string,"auteur_nom": string,"chapitre_id": string,"chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"statut_question": Database["public"]['Enums']["statut_question_t"],"traite_le": string
+            }[]
+                           },
+"signaler_question":
+{ Args: { "p_commentaire": string,"p_question": string }; Returns: string
+                           },
 "suivi_classe":
 { Args: { "p_classe": string }; Returns: {
               "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_titre": string,"derniere_activite": string,"eleve_id": string,"essais_evaluation": number,"evaluation_validee": boolean,"nom": string,"note_evaluation": number
             }[]
+                           },
+"suivi_contenu":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "a_relire": number,"brouillons": number,"chapitre_id": string,"chapitre_publie": boolean,"chapitre_titre": string,"cours_id": string,"cours_publie": boolean,"cours_slug": string,"cours_titre": string,"numero": number,"signalements": number,"valides": number
+            }[]
+                           },
+"supprimer_question":
+{ Args: { "p_question": string }; Returns: undefined
                            },
 "terminer_tentative":
 { Args: { "p_tentative": string }; Returns: undefined
                            },
 "traiter_demande_enseignant":
 { Args: { "p_accepter": boolean,"p_profil": string }; Returns: undefined
+                           },
+"traiter_signalement":
+{ Args: { "p_decision": string,"p_reponse"?: string,"p_signalement": string }; Returns: undefined
                            }
           }
           Enums: {
-            "role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_question_t": "brouillon"|"a_relire"|"valide","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
+            "role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_question_t": "brouillon"|"a_relire"|"valide"|"archivee","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -668,7 +759,7 @@ export const Constants = {
           }
         },"public": {
           Enums: {
-            "role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_question_t": ["brouillon", "a_relire", "valide"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
+            "role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_question_t": ["brouillon", "a_relire", "valide", "archivee"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
           }
         }
 } as const

@@ -75,7 +75,7 @@ select is((select count(*)::int from public.question_corrige), 0, 'enseignant : 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000002","role":"authenticated"}', true);
 select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 3, 'admin : voit aussi les brouillons et les cours non publiés');
 select is((select count(*)::int from public.question_corrige where question_id in ('40000000-0000-0000-0000-000000000001','40000000-0000-0000-0000-000000000002','40000000-0000-0000-0000-000000000003')), 2, 'admin : lit les corrigés');
-select lives_ok($$ insert into public.notion (chapitre_id, nom) values ('30000000-0000-0000-0000-000000000001', 'Notion admin') $$, 'admin : peut écrire le contenu');
+select throws_ok($$ insert into public.notion (chapitre_id, nom) values ('30000000-0000-0000-0000-000000000001', 'Notion admin') $$, '42501', null, 'admin : ne peut plus écrire le contenu directement');
 
 -- Visiteur anonyme
 set local role anon;
