@@ -114,8 +114,12 @@ export function EditeurChapitre({ coursId, coursSlug, couleur, chapitreId, initi
     });
   }
 
+  const styleCours = { '--couleur-cours': couleur } as CSSProperties;
+  // L'aperçu est rendu hors du <form> : Entrée dans un champ du contenu prévisualisé (calculatrice, etc.)
+  // ne doit jamais enregistrer le chapitre (envoi implicite du formulaire).
   return (
-    <form onSubmit={enregistrer} className="formulaire editeur-chapitre" style={{ '--couleur-cours': couleur } as CSSProperties}>
+    <>
+    <form onSubmit={enregistrer} className="formulaire editeur-chapitre" style={styleCours}>
       <fieldset className="section-editeur">
         <legend>Informations du chapitre</legend>
         <label>Titre<input id="champ-titre" {...inv('titre')} type="text" required maxLength={200} autoComplete="off" value={champs.titre} onChange={(e) => maj({ titre: e.target.value })} /></label>
@@ -142,6 +146,7 @@ export function EditeurChapitre({ coursId, coursSlug, couleur, chapitreId, initi
       {sections.length === 0 && <p className="vide">Ce chapitre n’a pas encore de section.</p>}
       {sections.map((s, i) => (
         <EditeurSection key={s.cle} section={s} position={i} total={sections.length} coursSlug={coursSlug}
+          enErreur={erreur?.section === i}
           onChange={(p) => majSection(s.cle, p)} onMonter={() => deplacer(i, -1)} onDescendre={() => deplacer(i, 1)}
           onSupprimer={() => supprimer(i)} />
       ))}
@@ -155,15 +160,17 @@ export function EditeurChapitre({ coursId, coursSlug, couleur, chapitreId, initi
         </label>
       </fieldset>
 
-      {erreur && <p ref={refErreur} id="erreur-chapitre" role="alert" tabIndex={-1} className="message-erreur">{erreur.erreur}</p>}
       <div className="actions-formulaire barre-actions-editeur">
+        {/* Dans la barre collante : le message reste visible pendant que le focus est sur le champ en cause. */}
+        {erreur && <p ref={refErreur} id="erreur-chapitre" role="alert" tabIndex={-1} className="message-erreur">{erreur.erreur}</p>}
         <button type="submit" className="bouton bouton-principal" disabled={enregistrement}>{enregistrement ? 'Enregistrement…' : 'Enregistrer'}</button>
         <button type="button" className="bouton bouton-secondaire" onClick={previsualiser} disabled={calcul}>{calcul ? 'Aperçu…' : 'Aperçu'}</button>
         <Link href="/admin" className="bouton bouton-secondaire">Annuler</Link>
       </div>
 
       <p role="status" className="sr-only">{annonce}</p>
-      <section ref={refApercu} className="panneau-apercu" aria-label="Aperçu du chapitre" tabIndex={-1}>
+    </form>
+      <section ref={refApercu} className="panneau-apercu" aria-label="Aperçu du chapitre" tabIndex={-1} style={styleCours}>
         <h2>Aperçu</h2>
         {erreurApercu && <p role="alert" className="message-erreur">{erreurApercu}</p>}
         {!apercu && !erreurApercu && <p className="vide">Clique sur « Aperçu » pour voir le chapitre tel que les élèves le verront.</p>}
@@ -176,6 +183,6 @@ export function EditeurChapitre({ coursId, coursSlug, couleur, chapitreId, initi
           </>
         )}
       </section>
-    </form>
+    </>
   );
 }

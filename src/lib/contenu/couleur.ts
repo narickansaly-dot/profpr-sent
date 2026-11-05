@@ -14,8 +14,14 @@ export function contraste(a: string, b: string): number {
   return (clair + 0.05) / (sombre + 0.05);
 }
 
-/** La couleur du cours sert de bordure ou d'accent : 3:1 minimum contre le blanc (WCAG 1.4.11). */
+/** Contraste minimal de la couleur du cours contre le blanc. */
+export const CONTRASTE_MIN_COURS = 4.5;
+
+/**
+ * La couleur du cours sert aussi de fond à du texte blanc (bouton principal, numéro de chapitre) et de couleur de
+ * texte (pastille) : 4,5:1 minimum contre le blanc (WCAG 1.4.3, texte normal).
+ */
 export function couleurCoursAcceptable(hex: string): boolean {
   if (!/^#[0-9a-f]{6}$/i.test(hex)) return false;
-  return contraste(hex, '#ffffff') >= 3;
+  return contraste(hex, '#ffffff') >= CONTRASTE_MIN_COURS;
 }

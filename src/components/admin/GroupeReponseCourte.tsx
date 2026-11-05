@@ -1,5 +1,3 @@
-'use client';
-
 type Champs = { acceptees: string; marge: string; margeRelative: boolean };
 
 /** Champs propres à la réponse courte : réponses acceptées, marge et marge relative. */

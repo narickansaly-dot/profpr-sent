@@ -14,6 +14,8 @@ const MODELES: { nom: string; html: string }[] = [
 
 type Props = {
   section: SectionSaisie; position: number; total: number; coursSlug: string;
+  /** Vrai quand l'erreur d'enregistrement porte sur cette section (le message est dans #erreur-chapitre). */
+  enErreur?: boolean;
   onChange: (p: Partial<SectionSaisie>) => void; onMonter: () => void; onDescendre: () => void; onSupprimer: () => void;
 };
 
@@ -22,7 +24,7 @@ export function inserer(valeur: string, debut: number, fin: number, texte: strin
   return { valeur: valeur.slice(0, debut) + texte + valeur.slice(fin), curseur: debut + texte.length };
 }
 
-export function EditeurSection({ section, position, total, coursSlug, onChange, onMonter, onDescendre, onSupprimer }: Props) {
+export function EditeurSection({ section, position, total, coursSlug, enErreur = false, onChange, onMonter, onDescendre, onSupprimer }: Props) {
   const zone = useRef<HTMLTextAreaElement>(null);
   const id = useId();
   const n = position + 1;
@@ -42,7 +44,8 @@ export function EditeurSection({ section, position, total, coursSlug, onChange, 
       <div className="ligne-champs">
         <label>
           Titre de la section {n}
-          <input id={`titre-${section.cle}`} type="text" required maxLength={200} autoComplete="off" value={section.titre} onChange={(e) => onChange({ titre: e.target.value })} />
+          <input id={`titre-${section.cle}`} aria-invalid={enErreur || undefined} aria-describedby={enErreur ? 'erreur-chapitre' : undefined}
+            type="text" required maxLength={200} autoComplete="off" value={section.titre} onChange={(e) => onChange({ titre: e.target.value })} />
         </label>
         <label>
           Identifiant de la section {n}

@@ -55,7 +55,9 @@ export default async function PageSignalements({ searchParams }: { searchParams:
                     {s.statut !== 'ouvert' && <span className="statut statut-publie">{LIBELLE_DECISION[s.statut] ?? s.statut}</span>}
                   </div>
                 </div>
-                <h2 className="enonce-signalement">{s.enonce}</h2>
+                {/* Titre court pour la navigation par titres ; l'énoncé complet suit s'il a été coupé. */}
+                <h2 className="enonce-signalement">{tronquer(s.enonce, 80)}</h2>
+                {tronquer(s.enonce, 80) !== s.enonce && <p className="enonce-complet">{s.enonce}</p>}
                 <blockquote className="commentaire-signalement">{s.commentaire}</blockquote>
                 <p className="meta-signalement">
                   Signalé par <strong>{s.auteur_nom ?? 'Compte supprimé'}</strong>{s.auteur_email ? <> ({s.auteur_email})</> : null}, le {date.format(new Date(s.cree_le))}

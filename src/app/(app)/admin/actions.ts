@@ -17,7 +17,7 @@ export type ValeursCours = Record<ChampCours, string>;
 export type EtatCours = { erreur?: string; erreurs?: Partial<Record<ChampCours, string>>; valeurs?: ValeursCours };
 
 const uuid = z.string().uuid();
-const MSG_COULEUR = 'Choisis une couleur assez foncée pour rester lisible sur fond blanc (contraste 3:1 minimum).';
+const MSG_COULEUR = 'Choisis une couleur plus foncée : le texte blanc des boutons doit rester lisible dessus (contraste 4,5:1 minimum).';
 
 const schemaPublication = z.object({ id: uuid, publie: z.enum(['true', 'false']) });
 

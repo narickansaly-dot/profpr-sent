@@ -2,8 +2,8 @@
 
 import { useActionState, useEffect, useRef, useState } from 'react';
 import { importer, verifierImport, type EtatImport, type EtatVerification } from '@/app/(app)/admin/import/actions';
+import { TAILLE_MAX_IMPORT, TAILLE_MAX_LIBELLE } from '@/lib/contenu/limite-import';
 
-const MAX = 4 * 1024 * 1024;
 const AFFICHEES = 30;
 const pluriel = (n: number, un: string, plusieurs: string) => `${n} ${n > 1 ? plusieurs : un}`;
 
@@ -39,9 +39,9 @@ export function FormulaireImport() {
           <input id="champ-fichier" name="fichier" type="file" accept=".json,application/json" required aria-describedby="aide-fichier"
             onChange={(e) => {
               const f = e.target.files?.[0];
-              setTaille(f && f.size > MAX ? 'Ce fichier dépasse la limite de 4 Mo.' : '');
+              setTaille(f && f.size > TAILLE_MAX_IMPORT ? `Ce fichier dépasse la limite de ${TAILLE_MAX_LIBELLE}.` : '');
             }} />
-          <span id="aide-fichier" className="aide-champ">Taille maximale : 4 Mo.</span>
+          <span id="aide-fichier" className="aide-champ">Taille maximale : {TAILLE_MAX_LIBELLE}.</span>
           {taille && <p role="alert" className="message-erreur">{taille}</p>}
         </div>
         <label className="case-import" htmlFor="champ-publier">
@@ -53,9 +53,9 @@ export function FormulaireImport() {
         </div>
       </form>
 
-      {/* Les erreurs sont hors des libellés : la région est focalisable et annoncée à l'apparition. */}
+      {/* Les erreurs sont hors des libellés. La région reçoit le focus (lue une fois, par son titre) : pas de role="alert" en plus. */}
       {(erreurs || erreurV) && (
-        <section className="carte resultat-import resultat-erreurs" ref={erreursRef} tabIndex={-1} role="alert" aria-labelledby="titre-erreurs">
+        <section className="carte resultat-import resultat-erreurs" ref={erreursRef} tabIndex={-1} aria-labelledby="titre-erreurs">
           <h2 id="titre-erreurs">{erreurV ? 'Fichier non vérifié' : 'Fichier invalide : rien n’a été écrit'}</h2>
           {erreurV ? <p>{erreurV}</p> : (
             <>

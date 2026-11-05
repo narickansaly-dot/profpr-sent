@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { exigerAdmin } from '@/lib/admin/garde';
 import { FormulaireImport } from '@/components/admin/FormulaireImport';
+import { TAILLE_MAX_LIBELLE } from '@/lib/contenu/limite-import';
 
 export const metadata = { title: 'Importer un cours' };
 
@@ -17,7 +18,7 @@ export default async function PageImport() {
         <ul>
           <li>Un seul objet JSON par fichier : le cours (<code>slug</code>, <code>filiere</code>, <code>niveau</code>, <code>matiere</code>, <code>titre</code>, <code>couleur</code>) et sa liste de <code>chapitres</code>.</li>
           <li>Chaque chapitre contient ses <code>sections</code> (HTML) et ses <code>questions</code>, identifiées par une <code>source</code> unique dans tout le fichier.</li>
-          <li>Taille maximale : <strong>4 Mo</strong>.</li>
+          <li>Taille maximale : <strong>{TAILLE_MAX_LIBELLE}</strong>.</li>
         </ul>
         <p>Le détail de chaque champ est dans le guide des auteurs : <code>docs/guide-auteurs.md</code>.</p>
       </section>

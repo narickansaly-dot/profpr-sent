@@ -5,6 +5,7 @@ import { chargerNotesCours } from '@/lib/enseignant/notes-cours';
 import { bonneReponseTexte } from '@/lib/enseignant/question';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { BoutonSignaler } from '@/components/BoutonSignaler';
+import { tronquer } from '@/lib/admin/questions';
 import { SEUIL_REUSSITE } from '@/lib/quiz/regles';
 
 type Params = { params: Promise<{ id: string; coursId: string }> };
@@ -101,7 +102,7 @@ export default async function PageNotesCours({ params }: Params) {
           <p className="vide">Pas encore assez de réponses (au moins 5 par question, de 3 élèves différents).</p>
         ) : (
           <ol className="liste-ratees">
-            {ratees.map((q) => (
+            {ratees.map((q, rang) => (
               <li key={q.question_id} className="carte question-ratee">
                 <p className="etiquette">{q.chapitre_titre}</p>
                 <p className="enonce-ratee">{q.enonce}</p>
@@ -115,7 +116,7 @@ export default async function PageNotesCours({ params }: Params) {
                   <summary>Voir la bonne réponse</summary>
                   <p className="bonne-reponse">{bonneReponseTexte(q.type, q.propositions, q.bonnes_reponses, q.reponses_acceptees ?? [])}</p>
                 </details>
-                <BoutonSignaler questionId={q.question_id} />
+                <BoutonSignaler questionId={q.question_id} libelle={`question ${rang + 1}, « ${tronquer(q.enonce, 50)} »`} />
               </li>
             ))}
           </ol>

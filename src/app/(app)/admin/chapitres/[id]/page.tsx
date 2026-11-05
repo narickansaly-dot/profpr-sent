@@ -31,7 +31,7 @@ export default async function PageModifierChapitre({ params, searchParams }: { p
           <Link href={`/cours/${cours.slug}/${ch.slug}`} className="bouton bouton-secondaire">Voir la page élève</Link>
         </div>
       </div>
-      {enregistre === '1' && <MessageStatut texte="Le chapitre est enregistré." />}
+      <MessageStatut texte={enregistre === '1' ? 'Le chapitre est enregistré.' : ''} />
       <section className="carte" aria-labelledby="titre-editeur">
         <h2 id="titre-editeur" className="sr-only">Contenu du chapitre</h2>
         <EditeurChapitre key={ch.modifie_le} coursId={cours.id} coursSlug={cours.slug} couleur={cours.couleur} chapitreId={ch.id} initial={{

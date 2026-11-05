@@ -20,6 +20,8 @@
 .statut-publie::before { content: "✓"; }
 .statut-brouillon { background: var(--surface); color: var(--attenue); border-style: dashed; }
 .statut-brouillon::before { content: "○"; }
+.statut-clos { background: var(--surface); color: var(--attenue); }
+.statut-clos::before { content: "–"; }
 @media (prefers-color-scheme: dark) { .statut-publie { color: var(--succes); } }
 
 .formulaire-publier { display: grid; gap: 4px; }
@@ -27,15 +29,15 @@
 .page-admin .bouton-compact { min-height: 44px; padding: 0 16px; }
 
 .tableau-contenu th[scope=row] { font-weight: 700; white-space: normal; min-width: 140px; max-width: 280px; }
+.tableau-contenu .barre-progression { --couleur-cours: var(--couleur-bloc); min-width: 140px; }
+.tableau-contenu td:nth-child(2) { min-width: 190px; }
+/* Après les règles de base, pour les remplacer. « thead » : l'en-tête doit battre .tableau-suivi .col-eleve (sticky). */
 @media (max-width: 600px) {
-  .tableau-contenu .col-ligne, .tableau-contenu th[scope=row] { position: static; box-shadow: none; min-width: 100px; max-width: 120px; }
+  .tableau-contenu thead .col-ligne, .tableau-contenu th[scope=row] { position: static; box-shadow: none; min-width: 100px; max-width: 120px; }
   .tableau-contenu td:nth-child(2) { min-width: 170px; }
   .tableau-contenu .barre-progression { min-width: 120px; }
 }
-.tableau-contenu .barre-progression { --couleur-cours: var(--couleur-bloc); min-width: 140px; }
-.tableau-contenu td:nth-child(2) { min-width: 190px; }
-.insuffisante { white-space: normal; }
-.insuffisante { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 14px; font-weight: 700; color: color-mix(in srgb, var(--danger) 85%, #000); }
+.insuffisante { white-space: normal; display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 14px; font-weight: 700; color: color-mix(in srgb, var(--danger) 85%, #000); }
 @media (prefers-color-scheme: dark) { .insuffisante { color: var(--danger); } }
 .cellule-publie, .liens-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
 .liens-actions a, .lien-signalements { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; padding-inline: 2px; }
@@ -43,7 +45,7 @@
 /* Formulaire de cours */
 .formulaire-cours { max-width: 640px; }
 .formulaire-cours .message-erreur { font-size: 15px; font-weight: 700; }
-.formulaire-cours [aria-invalid=true] { border-color: var(--danger); }
+.formulaire-cours [aria-invalid=true], .editeur-chapitre [aria-invalid=true] { border-color: var(--danger); }
 .ligne-couleur { display: flex; gap: 12px; align-items: center; }
 .formulaire .selecteur-couleur { width: 64px; min-width: 64px; padding: 4px; cursor: pointer; }
 .formulaire-cours .saisie-couleur { width: 9ch; min-width: 9ch; font-family: var(--police-mono); text-transform: lowercase; }
@@ -71,6 +73,7 @@
 .depot-schema input[type=file] { font: inherit; max-width: 100%; }
 .page-admin .bouton-danger { color: color-mix(in srgb, var(--danger) 85%, #000); border-color: color-mix(in srgb, var(--danger) 45%, var(--trait)); }
 @media (prefers-color-scheme: dark) { .page-admin .bouton-danger { color: var(--danger); } }
+.barre-actions-editeur .message-erreur { flex-basis: 100%; margin: 0; }
 .barre-actions-editeur { position: sticky; bottom: 0; z-index: 5; padding: 12px; margin-inline: -4px; background: color-mix(in srgb, var(--surface) 92%, transparent); border-top: 1px solid var(--trait); backdrop-filter: blur(6px); }
 .panneau-apercu { display: grid; gap: 12px; min-width: 0; padding: 16px; border: 2px solid var(--couleur-cours); border-radius: 14px; background: var(--papier); }
 .panneau-apercu h2 { margin: 0; }
@@ -118,6 +121,7 @@
 .choix-simples { display: flex; flex-wrap: wrap; gap: 4px 24px; }
 .editeur-question code { font-family: var(--police-mono); font-size: .92em; }
 .apercu-question .question { margin: 0; padding: 16px; }
+.apercu-question .aide-champ { margin: 0; }
 .liste-questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .ligne-question { display: grid; gap: 10px; padding: 16px; border-left: 6px solid var(--trait); }
 .ligne-question-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
@@ -170,6 +174,7 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .chemin-signalement { margin: 0; color: var(--attenue); font-weight: 700; overflow-wrap: anywhere; }
 .etats-signalement { display: flex; flex-wrap: wrap; gap: 8px; }
 .enonce-signalement { font-size: 20px; line-height: 1.35; overflow-wrap: anywhere; }
+.enonce-complet { margin: 0; overflow-wrap: anywhere; }
 .commentaire-signalement { margin: 0; padding: 10px 14px; border-left: 4px solid var(--accent); background: var(--papier); border-radius: 0 12px 12px 0; overflow-wrap: anywhere; white-space: pre-wrap; }
 .meta-signalement { color: var(--attenue); font-size: 15px; overflow-wrap: anywhere; }
 .formulaire-decision { display: grid; gap: 12px; padding-top: 12px; border-top: 1px dashed var(--trait); }
@@ -177,3 +182,4 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .formulaire-decision .champ > label { font-weight: 700; }
 .formulaire-decision textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
 .formulaire-decision .message-erreur { margin: 0; font-weight: 700; }
+.editeur-chapitre + .panneau-apercu { margin-top: 20px; }

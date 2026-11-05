@@ -14,7 +14,7 @@ export function ListeCorrection({ lignes, peutSignaler = false }: { lignes: Lign
             <p>Ta réponse : {texteReponse(l.type, l.propositions, l.reponse)}</p>
             {!l.correcte && <p>Bonne réponse : <strong>{bonne}</strong></p>}
             {l.explication && <p className="correction-explication">{l.explication}</p>}
-            {peutSignaler && <BoutonSignaler questionId={l.question_id} />}
+            {peutSignaler && <BoutonSignaler questionId={l.question_id} libelle={`question ${l.ordre}`} />}
           </li>
         );
       })}

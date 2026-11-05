@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
+import { z } from 'zod';
 import { analyserImport, formaterProbleme, TAILLE_MAX_IMPORT } from './lire-import';
 
 const question = { source: 's:1', type: 'qcm_unique', enonce: 'Q ?', propositions: ['a', 'b'], bonnes_reponses: [0] };
@@ -30,10 +31,10 @@ describe('analyserImport', () => {
   });
   it('refuse un texte trop gros avant de le lire', () => {
     const r = analyserImport(' '.repeat(TAILLE_MAX_IMPORT + 1));
-    expect(r).toEqual({ erreurs: ['Le fichier dépasse la limite de 4 Mo.'] });
+    expect(r).toEqual({ erreurs: ['Le fichier dépasse la limite de 3 Mo.'] });
   });
   it('compte les octets, pas les caractères', () => {
-    expect(analyserImport('é'.repeat(TAILLE_MAX_IMPORT / 2 + 1))).toEqual({ erreurs: ['Le fichier dépasse la limite de 4 Mo.'] });
+    expect(analyserImport('é'.repeat(TAILLE_MAX_IMPORT / 2 + 1))).toEqual({ erreurs: ['Le fichier dépasse la limite de 3 Mo.'] });
   });
   it('donne un chemin lisible et un message en français', () => {
     const r = analyserImport(JSON.stringify(cours({ ...question, enonce: '' })));
@@ -41,11 +42,18 @@ describe('analyserImport', () => {
     const e = (r as { erreurs: string[] }).erreurs;
     expect(e[0]).toMatch(/^Chapitre 2, question 1, énoncé : /);
     expect(e.join(' ')).not.toMatch(/Too small|Invalid input/);
+    expect(e[0]).toBe('Chapitre 2, question 1, énoncé : Ce champ ne peut pas être vide.');
   });
   it('traduit une erreur de type', () => {
     const r = analyserImport(JSON.stringify({ ...cours(question), titre: 12 })) as { erreurs: string[] };
     expect(r.erreurs[0]).toMatch(/^titre : /);
     expect(r.erreurs[0]).not.toMatch(/Invalid/);
+  });
+  it('ne change pas la langue des autres schémas zod (pas de configuration globale)', () => {
+    expect(z.string().safeParse(1).error?.issues[0].message).toMatch(/^Invalid input/);
+  });
+  it('garde une marge sous la limite des actions serveur (4 Mo, enveloppe comprise)', () => {
+    expect(TAILLE_MAX_IMPORT).toBe(3 * 1024 * 1024);
   });
   it('accepte le cours BPH', () => {
     const r = analyserImport(readFileSync('contenu/1re-st2s/bph.json', 'utf8'));

@@ -1,11 +1,12 @@
 import { z } from 'zod';
 import { schemaCoursImport, type CoursImport } from './format-import';
 
-// Messages par défaut de zod en français (les messages sur mesure du schéma ne changent pas).
-z.config(z.locales.fr());
+import { TAILLE_MAX_IMPORT, TAILLE_MAX_LIBELLE } from './limite-import';
 
-export const TAILLE_MAX_IMPORT = 4 * 1024 * 1024;
-export const TAILLE_MAX_LIBELLE = '4 Mo';
+export { TAILLE_MAX_IMPORT, TAILLE_MAX_LIBELLE };
+
+// Messages par défaut de zod en français pour cette analyse seulement (aucune configuration globale de zod).
+const ERREURS_FR = z.locales.fr().localeError;
 
 type Probleme = { path: readonly PropertyKey[]; message: string };
 
@@ -59,6 +60,6 @@ export function analyserImport(texte: string): AnalyseImport {
   if (brut === null || typeof brut !== 'object' || Array.isArray(brut)) {
     return { erreurs: ['Le fichier doit contenir un objet JSON décrivant un cours.'] };
   }
-  const lu = schemaCoursImport.safeParse(brut);
+  const lu = schemaCoursImport.safeParse(brut, { error: ERREURS_FR });
   return lu.success ? { cours: lu.data } : { erreurs: formaterProblemes(lu.error.issues) };
 }

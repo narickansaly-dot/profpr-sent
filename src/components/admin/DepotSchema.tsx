@@ -56,7 +56,7 @@ export function DepotSchema({ coursSlug, libelle, onInsere }: { coursSlug: strin
 
   return (
     <>
-      <button ref={declencheur} type="button" className="bouton bouton-secondaire bouton-compact" aria-expanded={ouvert} aria-controls={`${id}-p`}
+      <button ref={declencheur} type="button" className="bouton bouton-secondaire bouton-compact" aria-expanded={ouvert} aria-controls={ouvert ? `${id}-p` : undefined}
         onClick={() => { setOuvert(true); requestAnimationFrame(() => fichier.current?.focus()); }}>
         Image…<span className="sr-only"> dans la {libelle}</span>
       </button>
@@ -64,9 +64,12 @@ export function DepotSchema({ coursSlug, libelle, onInsere }: { coursSlug: strin
         <div id={`${id}-p`} className="depot-schema" role="group" aria-labelledby={`${id}-t`}>
           <p id={`${id}-t`} className="etiquette">Déposer une image dans la {libelle} (PNG, JPEG ou WebP, 2 Mo au maximum)</p>
           <label htmlFor={`${id}-f`}>Fichier</label>
-          <input id={`${id}-f`} ref={fichier} type="file" accept="image/png,image/jpeg,image/webp" />
+          <input id={`${id}-f`} ref={fichier} type="file" accept="image/png,image/jpeg,image/webp"
+            onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (!enCours) void deposer(); } }} />
           <label htmlFor={`${id}-a`}>Texte alternatif (obligatoire)</label>
-          <input id={`${id}-a`} type="text" value={alt} maxLength={300} autoComplete="off" onChange={(e) => setAlt(e.target.value)} />
+          {/* Le panneau est dans le formulaire du chapitre : Entrée dépose l'image au lieu d'enregistrer le chapitre. */}
+          <input id={`${id}-a`} type="text" value={alt} maxLength={300} autoComplete="off" onChange={(e) => setAlt(e.target.value)}
+            onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); if (!enCours) void deposer(); } }} />
           {erreur && <p role="alert" className="message-erreur">{erreur}</p>}
           <div className="actions-formulaire">
             <button type="button" className="bouton bouton-principal bouton-compact" onClick={deposer} disabled={enCours}>{enCours ? 'Envoi…' : 'Déposer et insérer'}</button>

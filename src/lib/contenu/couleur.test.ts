@@ -24,17 +24,23 @@ describe('contraste (valeurs intermédiaires)', () => {
 });
 
 describe('couleurCoursAcceptable', () => {
-  it('accepte le bleu par défaut et la couleur de BPH', () => {
-    expect(contraste('#2563eb', '#ffffff')).toBeGreaterThanOrEqual(3);
+  it('accepte le bleu par défaut et la couleur de BPH (texte blanc lisible, ≥ 4,5:1)', () => {
+    expect(contraste('#2563eb', '#ffffff')).toBeGreaterThanOrEqual(4.5);
+    expect(contraste('#0f766e', '#ffffff')).toBeGreaterThanOrEqual(4.5);
     expect(couleurCoursAcceptable('#2563eb')).toBe(true);
     expect(couleurCoursAcceptable('#0f766e')).toBe(true);
   });
   it('refuse le jaune, trop clair sur fond blanc', () => {
     expect(couleurCoursAcceptable('#ffff00')).toBe(false);
   });
-  it('respecte la limite de 3:1', () => {
-    expect(couleurCoursAcceptable('#949494')).toBe(true); // ≈ 3,03
-    expect(couleurCoursAcceptable('#989898')).toBe(false); // ≈ 2,87
+  it('refuse les couleurs entre 3:1 et 4,5:1 (texte blanc illisible sur le bouton principal)', () => {
+    expect(couleurCoursAcceptable('#0ca678')).toBe(false); // ≈ 3,12
+    expect(couleurCoursAcceptable('#1098ad')).toBe(false); // ≈ 3,43
+    expect(couleurCoursAcceptable('#e8590c')).toBe(false); // ≈ 3,58
+  });
+  it('respecte la limite de 4,5:1', () => {
+    expect(couleurCoursAcceptable('#757575')).toBe(true); // ≈ 4,61
+    expect(couleurCoursAcceptable('#777777')).toBe(false); // ≈ 4,48
   });
   it('refuse un format invalide sans lever d’exception', () => {
     expect(couleurCoursAcceptable('#zz')).toBe(false);

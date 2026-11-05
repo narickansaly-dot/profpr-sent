@@ -15,8 +15,8 @@ export type QuestionInitiale = Omit<SaisieQuestion, 'propositions'> & { proposit
 
 const MIN = 2, MAX = 10;
 
-export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, notions, initial, annulerHref }: {
-  chapitreId: string; questionId?: string; utilisee: boolean; couleur: string; notions: string[];
+export function FormulaireQuestion({ chapitreId, questionId, utilisee, statut, couleur, notions, initial, annulerHref }: {
+  chapitreId: string; questionId?: string; utilisee: boolean; statut?: string; couleur: string; notions: string[];
   initial: QuestionInitiale; annulerHref: string;
 }) {
   const [champs, setChamps] = useState(() => ({ ...initial, propositions: undefined }));
@@ -93,17 +93,20 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
     });
   }
 
+  // Une question valide versionne même jamais tirée (ecrire_question) : l'avertissement vaut pour les deux cas.
+  const versionnee = utilisee || statut === 'valide';
   return (
     <>
     <form onSubmit={enregistrer} noValidate className="formulaire editeur-question" style={{ '--couleur-cours': couleur } as CSSProperties}>
       <div className="champ-question">
         <label htmlFor="champ-type">Type de question</label>
-        <select id="champ-type" {...inv('type', utilisee ? 'aide-utilisee' : undefined)} value={type} onChange={(e) => changerType(e.target.value)}>
+        <select id="champ-type" {...inv('type', versionnee ? 'aide-utilisee' : undefined)} value={type} onChange={(e) => changerType(e.target.value)}>
           {TYPES_QUESTION.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
         </select>
-        {utilisee && (
+        {versionnee && (
           <p id="aide-utilisee" className="aide-champ">
-            Cette question a déjà servi : changer le type, les propositions ou les réponses crée une nouvelle version.
+            {utilisee ? 'Cette question a déjà servi' : 'Cette question est validée'} : changer le type, les propositions ou les
+            réponses crée une nouvelle version{statut === 'valide' ? ', qui repart en relecture (« À relire »)' : ''}.
           </p>
         )}
       </div>
@@ -196,7 +199,7 @@ export function FormulaireQuestion({ chapitreId, questionId, utilisee, couleur, 
       <p role="status" className="sr-only">{annonce}</p>
 
     </form>
-    <ApercuQuestion key={`${type}:${props.map((p) => p.cle).join(',')}`} type={type as TypeQuestion}
+    <ApercuQuestion key={`${type}:${props.map((p) => p.cle).join(',')}`} type={type as TypeQuestion} couleur={couleur}
       enonce={champs.enonce} propositions={props.map((p) => p.texte)} />
     </>
   );

@@ -83,8 +83,11 @@ a.bouton.bouton-secondaire { color: var(--encre); }
 .carte-cours { display: grid; gap: 8px; text-decoration: none; color: var(--encre); border-top: 6px solid var(--couleur-cours); transition: transform .15s ease; }
 .carte-cours:hover { transform: translateY(-3px); }
 .conteneur .carte-cours h3 { margin: 0; font-size: 20px; }
+/* Texte de 13 px : la couleur du cours est mélangée vers --encre pour garder 4,5:1 sur la teinte à 15 % (≥ 5,3:1 en clair). */
 .pastille { justify-self: start; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700;
-  background: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); color: var(--couleur-cours); }
+  background: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); color: color-mix(in srgb, var(--couleur-cours) 75%, var(--encre)); }
+/* En sombre, --encre est clair : on mélange davantage vers lui (≥ 6:1 pour toute couleur de cours acceptée). */
+@media (prefers-color-scheme: dark) { .pastille { color: color-mix(in srgb, var(--couleur-cours) 35%, var(--encre)); } }
 .liste-chapitres { list-style: none; padding: 0; display: grid; gap: 12px; }
 .liste-chapitres a { display: flex; gap: 14px; align-items: center; text-decoration: none; color: var(--encre); }
 .numero-chapitre { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
@@ -102,6 +105,8 @@ a.bouton.bouton-secondaire { color: var(--encre); }
 
 .signaler { margin-top: 12px; display: grid; gap: 8px; justify-items: start; }
 .signaler .formulaire-signaler { width: 100%; max-width: 560px; }
-.signaler .message-info:empty { display: none; }
+/* Région de statut vide : masquée visuellement mais rendue (display:none la retirerait de l'arbre d'accessibilité
+   et l'annonce du message ne serait pas fiable). */
+.signaler .message-info:empty { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
 .formulaire-signaler .champ { display: grid; gap: 6px; }
 .formulaire-signaler textarea { width: 100%; box-sizing: border-box; }

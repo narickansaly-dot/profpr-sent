@@ -86,7 +86,7 @@ export function FormulaireCours({ coursId, initial, filieres, niveaux }: {
             className="saisie-couleur" value={courant.couleur} onChange={(e) => maj({ couleur: e.target.value })}
             {...champ('couleur', 'aide-couleur')} />
         </div>
-        <span id="aide-couleur" className="aide-champ">Format #rrggbb. Elle sert de bordure et d’accent : assez foncée pour être lisible sur fond blanc.</span>
+        <span id="aide-couleur" className="aide-champ">Format #rrggbb. Elle sert de fond au texte blanc des boutons : elle doit être assez foncée (contraste 4,5:1 minimum avec le blanc).</span>
         {erreur('couleur')}
       </div>
       <div className="apercu-cours">

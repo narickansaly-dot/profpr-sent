@@ -72,7 +72,7 @@ export default async function PageQuestion({ params, searchParams }: { params: P
       )}
       <section className="carte" aria-labelledby="titre-form-question">
         <h2 id="titre-form-question" className="sr-only">Contenu de la question</h2>
-        <FormulaireQuestion key={q.modifie_le} chapitreId={chapitreId} questionId={q.id} utilisee={q.utilisee}
+        <FormulaireQuestion key={q.modifie_le} chapitreId={chapitreId} questionId={q.id} utilisee={q.utilisee} statut={q.statut}
           couleur={couleurCoursAcceptable(cours.couleur) ? cours.couleur : '#2563eb'} notions={notions} annulerHref={retour} initial={initial} />
       </section>
     </div>
