@@ -36,6 +36,8 @@ const MESSAGES: Record<string, string> = {
   cours_mal_forme: 'Ce cours est incomplet ou mal formé.',
   reponse_trop_longue: 'La réponse ne doit pas dépasser 1000 caractères.',
   slug_deja_pris: 'Cet identifiant d’URL est déjà utilisé.',
+  numero_deja_pris: 'Ce numéro est déjà utilisé par un autre chapitre du cours.',
+  question_signalee: 'Cette question a un signalement ouvert : traite-le avant de la supprimer.',
   filiere_inconnue: 'Filière inconnue.',
   import_invalide: 'Le fichier d’import est incomplet ou mal formé.',
   commentaire_invalide: 'Ton commentaire doit faire entre 5 et 1000 caractères.',

@@ -1,5 +1,5 @@
 begin;
-select plan(96);
+select plan(105);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000e1', 'admin-i@test.local'),
@@ -121,6 +121,16 @@ select throws_ok($$ select public.enregistrer_chapitre('00000000-0000-0000-0000-
   '{"slug":"ch-a","numero":4,"titre":"T","sections":[]}') $$, 'P0001', 'slug_deja_pris', 'modification : slug déjà pris');
 select throws_ok($$ select public.enregistrer_chapitre(gen_random_uuid(), null,
   '{"slug":"zz","numero":4,"titre":"T","sections":[]}') $$, 'P0001', 'cours_introuvable', 'cours inconnu');
+select throws_ok($$ select public.enregistrer_chapitre('00000000-0000-0000-0000-00000000e001', null,
+  '{"slug":"autre","numero":1,"titre":"T","sections":[]}') $$, 'P0001', 'numero_deja_pris', 'création : numéro déjà pris');
+select throws_ok($$ select public.enregistrer_chapitre('00000000-0000-0000-0000-00000000e001', current_setting('t.nouveau')::uuid,
+  '{"slug":"nouveau","numero":2,"titre":"T","sections":[]}') $$, 'P0001', 'numero_deja_pris', 'modification : numéro déjà pris');
+select throws_ok($$ select public.enregistrer_chapitre('00000000-0000-0000-0000-00000000e001', null,
+  '{"slug":"chiffre","numero":7,"titre":"T","sections":[{"id":"1-intro","titre":"A","html":""}]}') $$,
+  'P0001', 'chapitre_invalide', 'id de section commençant par un chiffre');
+select throws_ok($$ select public.enregistrer_chapitre('00000000-0000-0000-0000-00000000e001', null,
+  '{"slug":"reserve","numero":7,"titre":"T","sections":[{"id":"a-retenir","titre":"A","html":""}]}') $$,
+  'P0001', 'chapitre_invalide', 'id de section réservé (a-retenir)');
 select lives_ok($$ select public.publier_chapitre(current_setting('t.nouveau')::uuid, true) $$, 'chapitre publié');
 select is((select publie from public.chapitre where slug = 'nouveau'), true, 'publie vrai');
 select lives_ok($$ select public.publier_chapitre(current_setting('t.nouveau')::uuid, false) $$, 'chapitre dépublié');
@@ -201,6 +211,11 @@ select is(public.t_val($q$ select count(*) from public.question where enonce = '
 -- Chapitre absent du fichier : signalé, jamais supprimé.
 select is((select public.importer_cours(current_setting('t.p4')::jsonb) -> 'chapitres_absents'), '["imp-ch2"]'::jsonb, 'chapitre absent signalé');
 select is((select count(*)::int from public.chapitre where slug = 'imp-ch2'), 1, 'chapitre absent non supprimé');
+select throws_ok($$ select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb)),
+  '{"slug":"imp-ch9","numero":2,"titre":"Chapitre 9","sections":[],"questions":[]}'::jsonb))) $$,
+  'P0001', 'numero_deja_pris', 'import : numéro déjà pris par un chapitre absent du fichier');
+select is((select count(*)::int from public.chapitre where slug = 'imp-ch9'), 0, 'numéro en conflit : rien n''est écrit');
 
 -- Rien n'est écrit en cas d'échec.
 select set_config('t.avant_ch', (select count(*)::text from public.chapitre), true);
@@ -253,6 +268,20 @@ select is(public.t_val($q$ select count(*) from public.question where source = '
 -- Publication à l'import.
 select lives_ok($$ select public.importer_cours(current_setting('t.p4')::jsonb, true) $$, 'import avec p_publier');
 select is((select publie from public.chapitre where slug = 'imp-ch1'), true, 'p_publier : chapitre publié');
+
+-- Une question signalée retirée du fichier est archivée, jamais supprimée (le signalement disparaîtrait avec elle).
+select is((select public.importer_cours(current_setting('t.cours')::jsonb || jsonb_build_object('chapitres', jsonb_build_array(
+  current_setting('t.ch1')::jsonb || jsonb_build_object('questions', jsonb_build_array(current_setting('t.q1')::jsonb,
+    '{"source":"imp-sig","type":"vrai_faux","enonce":"Signalée","bonnes_reponses":[true],"statut":"valide"}'::jsonb))))) ->> 'cree'),
+  '1', 'question imp-sig créée');
+reset role;
+insert into public.signalement (question_id, auteur_id, commentaire)
+  select id, '00000000-0000-0000-0000-0000000000e2', 'Une erreur ici.' from public.question where source = 'imp-sig';
+set local role authenticated;
+select is((select public.importer_cours(current_setting('t.p4')::jsonb) ->> 'archivee'), '1',
+  'question signalée retirée du fichier : archivée');
+select is(public.t_val($q$ select count(*) from public.signalement s join public.question q on q.id = s.question_id
+  where q.enonce = 'Signalée' and q.statut = 'archivee' and s.statut = 'ouvert' $q$), '1', 'le signalement est conservé');
 
 -- Clé de service.
 reset role;

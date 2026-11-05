@@ -81,7 +81,8 @@ end $$;
 -- concurrent ne voit pas encore sa ligne de tentative_question et calculerait une permutation sur l'ancienne structure.
 -- Énoncé, explication, notion et difficulté se modifient en place, même sur une question tirée : les corrections
 -- passées affichent alors le nouveau texte, et les statistiques par notion suivent la nouvelle notion (voulu).
--- Statut : appelée par l'import (p_editeur = false), le statut fourni s'applique (brouillon par défaut).
+-- Statut : appelée par l'import (p_editeur = false), le statut fourni s'applique (brouillon par défaut), sauf pour une
+-- question qui a un signalement ouvert : elle garde son statut actuel (un réimport ne doit pas annuler un signalement).
 -- Appelée par l'éditeur (p_editeur = true), il est ignoré : création en brouillon, modification en place au statut
 -- actuel, nouvelle version en a_relire si l'ancienne était valide, sinon au statut de l'ancienne.
 create function prive.ecrire_question(p_chapitre uuid, p_question uuid, p jsonb, p_editeur boolean default false,
@@ -150,6 +151,10 @@ begin
   end if;
   if v_ancienne.statut = 'archivee' then
     raise exception 'question_archivee';
+  end if;
+  if not p_editeur
+     and exists (select 1 from public.signalement s where s.question_id = v_ancienne.id and s.statut = 'ouvert') then
+    v_statut := v_ancienne.statut;
   end if;
   select * into v_corrige from public.question_corrige c where c.question_id = v_ancienne.id;
   v_structure := v_ancienne.type <> v_type
@@ -241,6 +246,7 @@ begin
 end $$;
 
 -- Une question déjà tirée ne se supprime pas : ses corrections en dépendent (archiver en la modifiant, ou la repasser en brouillon).
+-- Une question signalée non plus : le signalement disparaîtrait avec elle, sans décision pour l'enseignant.
 create function public.supprimer_question(p_question uuid) returns void
 language plpgsql security definer set search_path = '' as $$
 declare
@@ -249,6 +255,9 @@ begin
   perform prive.exiger_admin();
   if exists (select 1 from public.tentative_question tq where tq.question_id = p_question) then
     raise exception 'question_utilisee';
+  end if;
+  if exists (select 1 from public.signalement s where s.question_id = p_question and s.statut = 'ouvert') then
+    raise exception 'question_signalee';
   end if;
   -- Une référence restante (tirage concurrent, historique, version plus récente) bloque la suppression.
   begin

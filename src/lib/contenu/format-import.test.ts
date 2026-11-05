@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { schemaCoursImport, schemaQuestionImport } from './format-import';
+import { MESSAGE_COULEUR, schemaCoursImport, schemaQuestionImport } from './format-import';
 
 describe('schemaQuestionImport', () => {
   it('accepte un QCM à une réponse et met les valeurs par défaut', () => {
@@ -71,8 +71,8 @@ describe('renforcement du format', () => {
   it('refuse un QCM avec moins de 2 ou plus de 10 propositions, ou une proposition trop longue', () => {
     const base = { source: 'x:1', type: 'qcm_unique', enonce: 'Q', bonnes_reponses: [0] };
     expect(schemaQuestionImport.safeParse({ ...base, propositions: ['a'] }).success).toBe(false);
-    expect(schemaQuestionImport.safeParse({ ...base, propositions: Array(11).fill('a') }).success).toBe(false);
-    expect(schemaQuestionImport.safeParse({ ...base, propositions: Array(10).fill('a') }).success).toBe(true);
+    expect(schemaQuestionImport.safeParse({ ...base, propositions: Array.from({ length: 11 }, (_, i) => `p${i}`) }).success).toBe(false);
+    expect(schemaQuestionImport.safeParse({ ...base, propositions: Array.from({ length: 10 }, (_, i) => `p${i}`) }).success).toBe(true);
     expect(schemaQuestionImport.safeParse({ ...base, propositions: ['a', 'b'.repeat(501)] }).success).toBe(false);
   });
   it('refuse un énoncé de plus de 2000 caractères', () => {
@@ -85,7 +85,7 @@ describe('renforcement du format', () => {
   it('refuse une couleur trop claire avec le message prévu', () => {
     const r = schemaCoursImport.safeParse(cours({ couleur: '#ffff00' }));
     expect(r.success).toBe(false);
-    expect(r.error?.issues[0].message).toBe('Couleur trop claire : contraste insuffisant avec le fond blanc.');
+    expect(r.error?.issues[0].message).toBe(MESSAGE_COULEUR);
   });
   it('contenu/1re-st2s/bph.json est valide', () => {
     const brut = JSON.parse(readFileSync('contenu/1re-st2s/bph.json', 'utf8'));
@@ -125,5 +125,36 @@ describe('renforcement du format', () => {
     expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({
       sections: Array.from({ length: 41 }, (_, i) => ({ id: `s${i}`, titre: 'S', html: '' })) })] })).success).toBe(false);
     expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [{ id: 'a', titre: 'S', html: 'a'.repeat(200001) }] })] })).success).toBe(false);
+  });
+  it('refuse un id de section qui commence par un chiffre ou qui reprend « a-retenir »', () => {
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [{ id: '1-intro', titre: 'S', html: '' }] })] })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [{ id: 'a-retenir', titre: 'S', html: '' }] })] })).success).toBe(false);
+    expect(schemaCoursImport.safeParse(cours({ chapitres: [chap({ sections: [{ id: 'a'.repeat(65), titre: 'S', html: '' }] })] })).success).toBe(false);
+  });
+  it('limite les réponses acceptées comme la base (20 au plus, 200 caractères chacune)', () => {
+    const rc = { source: 'x:1', type: 'reponse_courte', enonce: 'Q' };
+    expect(schemaQuestionImport.safeParse({ ...rc, reponses_acceptees: Array(21).fill('a') }).success).toBe(false);
+    expect(schemaQuestionImport.safeParse({ ...rc, reponses_acceptees: Array.from({ length: 20 }, (_, i) => `r${i}`) }).success).toBe(true);
+    expect(schemaQuestionImport.safeParse({ ...rc, reponses_acceptees: ['a'.repeat(201)] }).success).toBe(false);
+  });
+  it('refuse deux propositions identiques après rognage', () => {
+    const r = schemaQuestionImport.safeParse({ source: 'x:1', type: 'qcm_unique', enonce: 'Q', propositions: ['a', ' a '], bonnes_reponses: [0] });
+    expect(r.error?.issues[0].message).toBe('Deux propositions sont identiques.');
+  });
+  it('refuse une réponse acceptée faite seulement de ponctuation (la base la réduirait à rien)', () => {
+    const rc = { source: 'x:1', type: 'reponse_courte', enonce: 'Q' };
+    for (const vide of ['…', '« »', '?!', '(', '...']) {
+      expect(schemaQuestionImport.safeParse({ ...rc, reponses_acceptees: [vide] }).error?.issues[0].message)
+        .toBe('Une réponse acceptée ne contient que de la ponctuation.');
+    }
+    for (const garde of ['Na+', 'Cl-', '70 %', ')(', '- -']) {
+      expect(schemaQuestionImport.safeParse({ ...rc, reponses_acceptees: [garde] }).success).toBe(true);
+    }
+  });
+  it('plafonne la marge comme l’éditeur (100 % en relatif, 1 000 000 en absolu)', () => {
+    const rc = { source: 'x:1', type: 'reponse_courte', enonce: 'Q', reponses_acceptees: ['70'] };
+    expect(schemaQuestionImport.safeParse({ ...rc, marge: 5, marge_relative: true }).success).toBe(false);
+    expect(schemaQuestionImport.safeParse({ ...rc, marge: 1, marge_relative: true }).success).toBe(true);
+    expect(schemaQuestionImport.safeParse({ ...rc, marge: 1_000_001 }).success).toBe(false);
   });
 });

@@ -100,6 +100,17 @@ describe('nettoyerHtml', () => {
       ` ${base}/storage/v1/object/public/schemas/a.png/../b`, 'pas une url'])
       expect(nettoyerHtml(`<img src="${src}">`)).toBe('');
   });
+  it('refuse une image dont l’URL n’est pas déjà sous sa forme normalisée (NUL ou contrôle en tête, hôte abrégé)', () => {
+    const base = process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://127.0.0.1:54321';
+    const chemin = '/storage/v1/object/public/schemas/a.png';
+    for (const src of [`\u0000${base}${chemin}`, `\u0001${base}${chemin}`, `${base.toUpperCase().replace('HTTP', 'HTTP')}${chemin}`.replace('/STORAGE', '/storage')])
+      expect(nettoyerHtml(`<img src="${src}" alt="x">`)).toBe('');
+    expect(nettoyerHtml(`<img src="${base}${chemin}" alt="x">`)).toBe(`<img src="${base}${chemin}" alt="x" />`);
+  });
+  it('renvoie une chaîne vide au-delà de 200 000 caractères (borne le coût du nettoyage)', () => {
+    expect(nettoyerHtml('a'.repeat(200_001))).toBe('');
+    expect(nettoyerHtml('a'.repeat(200_000))).toHaveLength(200_000);
+  });
   it('traite 300 Ko d’entrée adverse en moins de 200 ms', () => {
     for (const unite of ['<script', '<ScRiPt>', '<style', '<foreignObject', '<svg<script']) {
       const entree = unite.repeat(Math.ceil(300_000 / unite.length));

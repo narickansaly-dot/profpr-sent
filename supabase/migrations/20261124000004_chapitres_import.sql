@@ -19,7 +19,9 @@ begin
      or jsonb_array_length(p->'sections') > 40
      or exists (select 1 from jsonb_array_elements(p->'sections') s
                  where jsonb_typeof(s) <> 'object'
-                    or coalesce(s->>'id', '') !~ '^[a-z0-9-]{1,80}$'
+                    -- Même motif que nettoyerHtml (MOTIF_ID) ; « a-retenir » est réservé au bloc « Je retiens ».
+                    or coalesce(s->>'id', '') !~ '^[a-z][a-z0-9-]{0,63}$'
+                    or s->>'id' = 'a-retenir'
                     or char_length(btrim(coalesce(s->>'titre', ''))) not between 1 and 200
                     or jsonb_typeof(s->'html') <> 'string'
                     or char_length(s->>'html') > 200000)
@@ -83,6 +85,11 @@ begin
   -- L'éditeur ne crée jamais par écrasement : seul l'import réécrit un chapitre existant à partir de son slug.
   if p_chapitre is null and exists (select 1 from public.chapitre c where c.cours_id = p_cours and c.slug = p_donnees->>'slug') then
     raise exception 'slug_deja_pris';
+  end if;
+  if exists (select 1 from public.chapitre c
+              where c.cours_id = p_cours and c.numero = (p_donnees->>'numero')::smallint
+                and c.id is distinct from p_chapitre) then
+    raise exception 'numero_deja_pris';
   end if;
   return prive.ecrire_chapitre(p_cours, p_chapitre, p_donnees, false);
 end $$;
@@ -197,6 +204,13 @@ begin
         <> (select count(*) from jsonb_array_elements(p_cours->'chapitres') x, jsonb_array_elements(x->'questions') y) then
     raise exception 'import_invalide';
   end if;
+  -- Un chapitre absent du fichier (conservé) garde son numéro : un chapitre du fichier ne peut pas le reprendre.
+  if exists (select 1 from public.chapitre c join public.cours co on co.id = c.cours_id
+              where co.slug = p_cours->>'slug'
+                and not exists (select 1 from jsonb_array_elements(p_cours->'chapitres') x where x->>'slug' = c.slug)
+                and exists (select 1 from jsonb_array_elements(p_cours->'chapitres') x where x->>'numero' = c.numero::text)) then
+    raise exception 'numero_deja_pris';
+  end if;
   insert into public.cours as c (slug, filiere_id, niveau_code, matiere, titre, couleur, publie)
     values (p_cours->>'slug', v_filiere, p_cours->>'niveau', btrim(p_cours->>'matiere'), btrim(p_cours->>'titre'),
             lower(coalesce(p_cours->>'couleur', '#2563eb')), coalesce(p_publier, false))
@@ -213,14 +227,16 @@ begin
     end loop;
   end loop;
 
-  -- Questions venues d'un import précédent et retirées du fichier : archivées si déjà tirées, sinon supprimées.
+  -- Questions venues d'un import précédent et retirées du fichier : archivées si déjà tirées ou signalées (le
+  -- signalement ouvert reste visible et à traiter), sinon supprimées.
   -- Le nettoyage vient après tous les chapitres et porte sur toutes les sources du fichier : une source déplacée
   -- vers un autre chapitre est donc refusée (question_autre_chapitre) quel que soit l'ordre des chapitres.
   -- Les questions créées dans l'éditeur (source nulle) ne sont jamais touchées.
   select coalesce(array_agg(btrim(y->>'source')), '{}') into v_sources
     from jsonb_array_elements(p_cours->'chapitres') x, jsonb_array_elements(x->'questions') y;
   for r in select q2.id, (exists (select 1 from public.tentative_question tq where tq.question_id = q2.id)
-                          or exists (select 1 from public.historique_question hq where hq.question_id = q2.id)) as utilisee
+                          or exists (select 1 from public.historique_question hq where hq.question_id = q2.id)
+                          or exists (select 1 from public.signalement s where s.question_id = q2.id and s.statut = 'ouvert')) as utilisee
              from public.question q2
             where q2.chapitre_id = any (v_chapitres) and q2.source is not null and q2.statut <> 'archivee'
               and not (q2.source = any (v_sources)) loop

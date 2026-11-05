@@ -1,5 +1,5 @@
 begin;
-select plan(93);
+select plan(94);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000b1', 'admin-q@test.local'),
@@ -295,6 +295,9 @@ select lives_ok($$ select public.changer_statut_question(
   'Q4 → a_relire');
 select is((select signalements_ouverts from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q4'),
   1, 'signalement encore ouvert avant validation');
+select throws_ok($$ select public.supprimer_question(
+  (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q4')) $$,
+  'P0001', 'question_signalee', 'question avec un signalement ouvert : suppression refusée');
 select lives_ok($$ select public.changer_statut_question(
   (select id from public.questions_chapitre_admin('00000000-0000-0000-0000-00000000c101') where enonce = 'Q4'), 'valide') $$,
   'Q4 → valide');

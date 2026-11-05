@@ -78,6 +78,13 @@ export function lireSaisieQuestion(s: SaisieQuestion): { question: QuestionImpor
     case 'explication': return { erreur: 'L’explication est trop longue (4 000 caractères au maximum).', champ: 'explication' };
   }
   if (i.message === controlesQuestion[2].message) return { erreur: 'Une marge relative demande une valeur de marge.', champ: 'marge' };
+  if (i.message === controlesQuestion[3].message) {
+    const textes = (brut.propositions as string[]).map((t) => t.trim());
+    const doublon = textes.findIndex((t, j) => textes.indexOf(t) !== j);
+    return { erreur: i.message, champ: `proposition-${Math.max(doublon, 0)}` };
+  }
+  if (i.message === controlesQuestion[4].message) return { erreur: i.message, champ: 'acceptees' };
+  if (i.message === controlesQuestion[5].message) return { erreur: i.message, champ: 'marge' };
   if (i.message === controlesQuestion[0].message || i.message === controlesQuestion[1].message) {
     return { erreur: 'Les bonnes réponses ne correspondent pas aux propositions.', champ: 'bonne-0' };
   }

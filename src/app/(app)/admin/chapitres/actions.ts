@@ -10,6 +10,7 @@ import { messageErreur } from '@/lib/erreurs';
 import { exigerAdmin } from '@/lib/admin/garde';
 import { nettoyerHtml } from '@/lib/contenu/html';
 import { balisesRetirees, schemaChapitreEditeur } from '@/lib/contenu/schema-editeur';
+import { idSectionValide } from '@/lib/contenu/identifiant';
 import { ContenuChapitre } from '@/components/ContenuChapitre';
 
 /** Ce que le navigateur envoie : tout est du texte, le serveur convertit et valide. */
@@ -37,7 +38,7 @@ export async function apercuChapitre(brut: SaisieChapitre): Promise<EtatApercu> 
   if (!r.success) return { erreur: 'Le contenu est trop long pour être prévisualisé.' };
   const vus = new Set<string>();
   const sections = r.data.sections.map((s, i) => {
-    let id = /^[a-z][a-z0-9-]{0,63}$/.test(s.id) ? s.id : `section-${i + 1}`;
+    let id = idSectionValide(s.id) ? s.id : `section-${i + 1}`;
     while (vus.has(id)) id = `${id}-bis`;
     vus.add(id);
     return { id, titre: s.titre || 'Section sans titre', html: s.html };
@@ -86,7 +87,10 @@ export async function enregistrerChapitre(coursId: string, chapitreId: string | 
   const { data, error } = await supabase.rpc('enregistrer_chapitre', {
     p_cours: c.data, p_chapitre: (ch?.data ?? null) as string, p_donnees: donnees,
   });
-  if (error) return { erreur: messageErreur(error.message), champ: error.message.includes('slug_deja_pris') ? 'slug' : undefined };
+  if (error) {
+    const champ = error.message.includes('slug_deja_pris') ? 'slug' : error.message.includes('numero_deja_pris') ? 'numero' : undefined;
+    return { erreur: messageErreur(error.message), champ };
+  }
   revalidatePath('/admin');
   redirect(`/admin/chapitres/${data}?enregistre=1`);
 }

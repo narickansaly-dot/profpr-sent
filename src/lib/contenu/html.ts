@@ -1,4 +1,5 @@
 import sanitizeHtml from 'sanitize-html';
+import { MOTIF_ID } from './identifiant';
 
 // Liste blanche établie d'après l'inventaire du contenu BPH (voir html.test.ts). SVG en ligne compris.
 // Tout ce qui n'y figure pas est supprimé, quelle que soit la casse (le parseur ne met pas les noms en minuscules).
@@ -23,7 +24,12 @@ const URL_INTERNE = /^url\(#[\w-]+\)$/;
 
 const CHEMIN_SCHEMAS = '/storage/v1/object/public/schemas/';
 /** Identifiant de contenu : minuscules, chiffres, tirets ; jamais de « _ » initial (anti DOM clobbering, ex. __next_f). */
-const ID_SUR = /^[a-z][a-z0-9-]{0,63}$/;
+const ID_SUR = MOTIF_ID;
+/**
+ * Au-delà, le HTML n'est pas nettoyé (chaîne vide) : sanitize-html est quadratique sur une imbrication profonde non
+ * fermée. La base limite une section à 200 000 caractères, donc un contenu enregistré n'atteint jamais cette borne.
+ */
+export const TAILLE_MAX_HTML = 200_000;
 
 /** Origine Supabase configurée. Variable absente : base locale hors production seulement. Vide ou invalide : null (aucune image). */
 function origineSupabase(): URL | null {
@@ -41,7 +47,9 @@ function imageAutorisee(src: string, origine: URL | null): boolean {
   if (!origine || /%2e|%2f|%5c|\\|\.\./i.test(src)) return false;
   try {
     const u = new URL(src);
-    return u.origin === origine.origin && u.username === '' && u.password === '' && u.pathname.startsWith(CHEMIN_SCHEMAS);
+    // L'URL doit déjà être sous sa forme normalisée : new URL() retire un NUL ou un contrôle en tête, alors que le
+    // navigateur en ferait une URL relative. L'URL contrôlée est ainsi exactement celle que charge le navigateur.
+    return u.href === src && u.origin === origine.origin && u.username === '' && u.password === '' && u.pathname.startsWith(CHEMIN_SCHEMAS);
   } catch {
     return false;
   }
@@ -96,6 +104,7 @@ const ATTRIBUTS_AUTORISES: sanitizeHtml.IOptions['allowedAttributes'] = {
 export function nettoyerHtml(html: string): string {
   // Ceinture : <script>, <style> et <foreignObject> en toute casse sont retirés avec leur contenu (le parseur
   // ne reconnaît que les minuscules pour ses balises « texte brut »).
+  if (html.length > TAILLE_MAX_HTML) return '';
   const avant = couperBalises(html);
   const origine = origineSupabase();
   return sanitizeHtml(avant, {

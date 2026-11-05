@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import { schemaChapitreImport } from './format-import';
+import { ID_RESERVE, MESSAGE_ID_RESERVE, MOTIF_ID } from './identifiant';
 
-/** Identifiant de section ou de contenu : même motif que celui que garde nettoyerHtml. */
-export const MOTIF_ID = /^[a-z][a-z0-9-]{0,63}$/;
+export { MOTIF_ID } from './identifiant';
 
 const base = schemaChapitreImport.shape;
 
@@ -17,7 +17,8 @@ export const schemaChapitreEditeur = z.object({
   chapeau: base.chapeau,
   objectifs: base.objectifs,
   sections: z.array(z.object({
-    id: z.string().regex(MOTIF_ID, 'Un identifiant de section commence par une lettre minuscule et ne contient que des minuscules, des chiffres et des tirets.').max(64),
+    id: z.string().regex(MOTIF_ID, 'Un identifiant de section commence par une lettre minuscule et ne contient que des minuscules, des chiffres et des tirets.').max(64)
+      .refine((id) => id !== ID_RESERVE, MESSAGE_ID_RESERVE),
     titre: z.string().trim().min(1, 'Chaque section a besoin d’un titre.').max(200),
     html: z.string().max(200000, 'Le HTML de la section est trop long (200 000 caractères au maximum).'),
   })).max(40, 'Un chapitre compte 40 sections au maximum.'),
@@ -39,7 +40,9 @@ export type ChapitreEditeur = z.infer<typeof schemaChapitreEditeur>;
 export function inventaireBalises(html: string): Map<string, number> {
   const m = new Map<string, number>();
   const ajoute = (k: string) => m.set(k, (m.get(k) ?? 0) + 1);
-  for (const r of html.matchAll(/<([a-zA-Z][a-zA-Z0-9]*)((?:\s+(?:"[^"]*"|'[^']*'|[^>"'])*)?)\/?>/g)) {
+  // Attributs : une suite de chaînes entre guillemets ou de caractères hors « < » et « > », sans alternative ambiguë
+  // (linéaire, même sur « <p » suivi de milliers d'espaces sans « > », ou sur « <a<a<a… »). Le « / » final d'une balise auto-fermante reste dans r[2], sans effet.
+  for (const r of html.matchAll(/<([a-zA-Z][a-zA-Z0-9]*)((?:"[^"]*"|'[^']*'|[^<>"'])*)>/g)) {
     const nom = r[1].toLowerCase();
     ajoute(nom);
     for (const a of r[2].matchAll(/\s([^\s=\/>"']+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+)))?/g)) {

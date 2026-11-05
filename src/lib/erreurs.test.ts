@@ -64,6 +64,11 @@ describe('messageErreur, espace classes', () => {
     };
     for (const [code, texte] of Object.entries(attendus)) expect(messageErreur(code)).toBe(texte);
   });
+  it('traduit les codes de la vague finale (numéro de chapitre, question signalée)', () => {
+    expect(messageErreur('numero_deja_pris')).toBe('Ce numéro est déjà utilisé par un autre chapitre du cours.');
+    expect(messageErreur('question_signalee'))
+      .toBe('Cette question a un signalement ouvert : traite-le avant de la supprimer.');
+  });
   it('garde decision_invalide de l’étape 3a', () => {
     expect(messageErreur('decision_invalide')).toBe('Choisis de valider ou de refuser la demande.');
   });

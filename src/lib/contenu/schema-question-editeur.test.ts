@@ -46,6 +46,14 @@ describe('lireSaisieQuestion', () => {
     expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: '2000000' }))).toBe('marge');
     expect('question' in lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '1', marge: '100', margeRelative: true })).toBe(true);
   });
+  it('signale deux propositions identiques sur la seconde', () => {
+    const r = lireSaisieQuestion({ ...base, propositions: [{ texte: 'Na+', bonne: true }, { texte: ' Na+ ', bonne: false }] });
+    expect(r).toEqual({ erreur: 'Deux propositions sont identiques.', champ: 'proposition-1' });
+  });
+  it('signale une réponse acceptée faite de ponctuation', () => {
+    expect(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: 'Na+\n…' }))
+      .toEqual({ erreur: 'Une réponse acceptée ne contient que de la ponctuation.', champ: 'acceptees' });
+  });
   it('exige une réponse acceptée', () => {
     expect(champ(lireSaisieQuestion({ ...base, type: 'reponse_courte', acceptees: '  \n' }))).toBe('acceptees');
   });
