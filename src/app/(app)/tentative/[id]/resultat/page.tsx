@@ -5,6 +5,7 @@ import { LONGUEURS_QUIZ, SEUIL_REUSSITE } from '@/lib/quiz/regles';
 import { messageErreur } from '@/lib/erreurs';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { ListeCorrection } from '@/components/ListeCorrection';
+import { lireProfil } from '@/lib/supabase/utilisateur';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
 
 export const metadata = { title: 'Résultat' };
@@ -34,6 +35,7 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
       </div>
     );
   }
+  const profil = await lireProfil();
   const note = Number(correction.note ?? 0);
   const reussi = correction.reussie ?? note >= SEUIL_REUSSITE;
   const evaluation = correction.type === 'evaluation_cours';
@@ -56,7 +58,7 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
         </div>
       </section>
       <h2>Correction</h2>
-      <ListeCorrection lignes={correction.lignes} />
+      <ListeCorrection lignes={correction.lignes} peutSignaler={profil?.role === 'enseignant'} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ const LIENS: Record<Role, { href: string; libelle: string }[]> = {
   attente: [],
   eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/classes', libelle: 'Mes classes' }],
   parent: [{ href: '/', libelle: 'Mes cours' }],
-  enseignant: [{ href: '/enseignant', libelle: 'Mes classes' }, { href: '/cours', libelle: 'Cours' }],
+  enseignant: [{ href: '/enseignant', libelle: 'Mes classes' }, { href: '/cours', libelle: 'Cours' }, { href: '/enseignant/signalements', libelle: 'Signalements' }],
   admin_contenu: [
     { href: '/admin', libelle: 'Contenu' }, { href: '/admin/import', libelle: 'Import' },
     { href: '/admin/signalements', libelle: 'Signalements' }, { href: '/admin/enseignants', libelle: 'Demandes' },

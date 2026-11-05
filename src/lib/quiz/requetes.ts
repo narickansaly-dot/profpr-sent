@@ -45,7 +45,7 @@ export async function lireStatutTentative(id: string) {
 }
 
 export type LigneCorrection = {
-  ordre: number; type: TypeQuestion; enonce: string; propositions: string[];
+  ordre: number; question_id: string; type: TypeQuestion; enonce: string; propositions: string[];
   reponse: ReponseAffichee | null; bonnes_reponses: ReponseAffichee | null;
   reponses_acceptees: string[]; explication: string; correcte: boolean;
 };

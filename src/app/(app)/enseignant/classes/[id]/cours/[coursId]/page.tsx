@@ -4,6 +4,7 @@ import { exigerEnseignant } from '@/lib/enseignant/garde';
 import { chargerNotesCours } from '@/lib/enseignant/notes-cours';
 import { bonneReponseTexte } from '@/lib/enseignant/question';
 import { formaterNote } from '@/lib/quiz/reponse';
+import { BoutonSignaler } from '@/components/BoutonSignaler';
 import { SEUIL_REUSSITE } from '@/lib/quiz/regles';
 
 type Params = { params: Promise<{ id: string; coursId: string }> };
@@ -114,6 +115,7 @@ export default async function PageNotesCours({ params }: Params) {
                   <summary>Voir la bonne réponse</summary>
                   <p className="bonne-reponse">{bonneReponseTexte(q.type, q.propositions, q.bonnes_reponses, q.reponses_acceptees ?? [])}</p>
                 </details>
+                <BoutonSignaler questionId={q.question_id} />
               </li>
             ))}
           </ol>
