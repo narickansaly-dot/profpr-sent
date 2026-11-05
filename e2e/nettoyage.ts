@@ -4,8 +4,13 @@ import { createClient } from '@supabase/supabase-js';
 export default async function nettoyage() {
   process.loadEnvFile('.env.local');
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
-  const hote = new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'http://invalide').hostname;
-  if (!['localhost', '127.0.0.1'].includes(hote)) {
+  let hote: string;
+  try {
+    hote = new URL(url).hostname;
+  } catch {
+    throw new Error('Refusé : NEXT_PUBLIC_SUPABASE_URL est absente ou invalide (la clé service_role est utilisée).');
+  }
+  if (!['localhost', '127.0.0.1', '[::1]'].includes(hote)) {
     throw new Error('Refusé : NEXT_PUBLIC_SUPABASE_URL doit pointer vers la base locale (la clé service_role est utilisée).');
   }
   const db = createClient(url, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });
