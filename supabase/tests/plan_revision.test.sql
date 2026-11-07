@@ -1,5 +1,5 @@
 begin;
-select plan(18);
+select plan(19);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000d1', 'eleve-plan@test.local'),
@@ -21,7 +21,7 @@ select set_config('test.reglages', '{"sessions_par_semaine":3,"duree_minutes":60
 select set_config('test.sessions', jsonb_build_array(
   jsonb_build_object('titre', 'Révision · Ch. 1 Un', 'debut', now() + interval '2 days', 'duree_minutes', 60,
                      'chapitres', jsonb_build_array('30000000-0000-0000-0000-0000000000d1'), 'revision_generale', false),
-  jsonb_build_object('titre', 'Révision générale', 'debut', now() + interval '9 days', 'duree_minutes', 60,
+  jsonb_build_object('titre', 'Révision générale', 'debut', (((((now() + interval '10 days') at time zone 'Europe/Paris')::date - 1) + time '17:00') at time zone 'Europe/Paris'), 'duree_minutes', 60,
                      'chapitres', jsonb_build_array('30000000-0000-0000-0000-0000000000d1', '30000000-0000-0000-0000-0000000000d2'), 'revision_generale', true)
 )::text, true);
 
@@ -43,6 +43,10 @@ select throws_ok(format('select public.accepter_plan_revision(%L, %L::jsonb, %L:
   jsonb_build_array(jsonb_build_object('titre', 'X', 'debut', now() + interval '11 days', 'duree_minutes', 60,
     'chapitres', jsonb_build_array('30000000-0000-0000-0000-0000000000d1'), 'revision_generale', false))),
   'P0001', 'planning_invalide', 'session après l''examen refusée');
+select throws_ok(format('select public.accepter_plan_revision(%L, %L::jsonb, %L::jsonb)', '40000000-0000-0000-0000-0000000000d1', current_setting('test.reglages'),
+  jsonb_build_array(jsonb_build_object('titre', 'X', 'debut', now() + interval '3 days', 'duree_minutes', 60,
+    'chapitres', jsonb_build_array('30000000-0000-0000-0000-0000000000d1'), 'revision_generale', true))),
+  'P0001', 'planning_invalide', 'révision générale refusée hors de la veille de l''examen');
 select lives_ok($$ select public.accepter_plan_revision('40000000-0000-0000-0000-0000000000d1', current_setting('test.reglages')::jsonb, current_setting('test.sessions')::jsonb) $$,
   'le planning est accepté');
 select is((select count(*)::int from public.evenement e join public.plan_revision p on p.id = e.plan_id where p.examen_id = '40000000-0000-0000-0000-0000000000d1'),
@@ -61,7 +65,7 @@ select lives_ok($$ select public.ignorer_reorganisation((select id from public.p
 select is((select count(*)::int from public.plans_a_reorganiser()), 0, 'la proposition disparaît après « Plus tard »');
 
 select lives_ok(format('select public.accepter_plan_revision(%L, %L::jsonb, %L::jsonb)', '40000000-0000-0000-0000-0000000000d1', current_setting('test.reglages'),
-  jsonb_build_array(jsonb_build_object('titre', 'Révision générale', 'debut', now() + interval '9 days', 'duree_minutes', 60,
+  jsonb_build_array(jsonb_build_object('titre', 'Révision générale', 'debut', (((((now() + interval '10 days') at time zone 'Europe/Paris')::date - 1) + time '17:00') at time zone 'Europe/Paris'), 'duree_minutes', 60,
     'chapitres', jsonb_build_array('30000000-0000-0000-0000-0000000000d2'), 'revision_generale', true))),
   'réorganiser remplace le planning');
 select is((select count(*)::int from public.evenement where type = 'revision'), 1, 'les sessions à venir de l''ancien plan sont supprimées');

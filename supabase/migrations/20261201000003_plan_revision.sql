@@ -36,6 +36,7 @@ declare
   v_duree int;
   v_generale boolean;
   v_chapitres uuid[];
+  v_nb_generales int := 0;
 begin
   if public.role_actuel() is distinct from 'eleve' then
     raise exception 'reserve_eleves';
@@ -86,6 +87,8 @@ begin
        or v_debut is null or v_debut < now() - interval '1 hour' or v_debut >= v_examen.debut
        or v_duree is null or v_duree not between 15 and 180
        or cardinality(v_chapitres) not between 1 and 30
+       or (v_generale and ((v_debut at time zone 'Europe/Paris')::date <> (v_examen.debut at time zone 'Europe/Paris')::date - 1
+                           or v_nb_generales > 0))
        or exists (select 1 from unnest(v_chapitres) c
                    where not exists (select 1 from public.chapitre ch where ch.id = c and ch.cours_id = v_examen.cours_id and ch.publie)) then
       raise exception 'planning_invalide';
@@ -94,6 +97,9 @@ begin
       values (auth.uid(), 'revision', v_titre, v_debut, v_duree, v_examen.cours_id, v_plan, v_generale)
       returning id into v_id;
     insert into public.evenement_chapitre (evenement_id, chapitre_id) select v_id, unnest(v_chapitres);
+    if v_generale then
+      v_nb_generales := v_nb_generales + 1;
+    end if;
   end loop;
   return v_plan;
 end $$;
