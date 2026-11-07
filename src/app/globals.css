@@ -3,6 +3,7 @@
 @import "../styles/quiz.css";
 @import "../styles/enseignant.css";
 @import "../styles/admin.css";
+@import "../styles/calendrier.css";
 
 /* Jetons : clair par défaut, sombre selon les préférences du système.
    --couleur-cours est redéfini par chaque page de cours (une couleur par matière) ;
@@ -73,7 +74,7 @@ a.bouton.bouton-secondaire { color: var(--encre); }
 .nom-compte { min-width: 0; max-width: 8ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (min-width: 521px) { .nom-compte { max-width: 16ch; } }
 .bouton-compte span:last-child { white-space: nowrap; }
-@media (max-width: 520px) { .en-tete { padding-inline: 12px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
+@media (max-width: 520px) { .en-tete { padding-inline: 12px; flex-wrap: wrap; gap: 4px 12px; } .en-tete nav { order: 3; flex-basis: 100%; display: flex; flex-wrap: wrap; } .en-tete nav a { padding: 0 10px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
 
 @keyframes apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }

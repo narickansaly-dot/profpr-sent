@@ -6,7 +6,7 @@ type Role = 'eleve' | 'parent' | 'enseignant' | 'admin_contenu' | 'attente';
 
 const LIENS: Record<Role, { href: string; libelle: string }[]> = {
   attente: [],
-  eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/classes', libelle: 'Mes classes' }],
+  eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/calendrier', libelle: 'Calendrier' }, { href: '/classes', libelle: 'Mes classes' }],
   parent: [{ href: '/', libelle: 'Mes cours' }],
   enseignant: [{ href: '/enseignant', libelle: 'Mes classes' }, { href: '/cours', libelle: 'Cours' }, { href: '/enseignant/signalements', libelle: 'Signalements' }],
   admin_contenu: [

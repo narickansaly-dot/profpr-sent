@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
+import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import type { ChapitrePlan, Creneau } from '@/lib/planning/generer';
 
 export type TypeOccurrence = 'revision' | 'devoir' | 'examen_reel' | 'echeance';
@@ -97,4 +98,16 @@ export async function dateLienIcal(): Promise<string | null> {
   const supabase = await creerClientServeur();
   const { data } = await supabase.rpc('mon_jeton_ical');
   return data ?? null;
+}
+
+export type CoursOption = { id: string; titre: string; chapitres: { id: string; numero: number; titre: string }[] };
+
+/** Cours de la filière de l'élève, avec leurs chapitres publiés, pour le formulaire d'événement. */
+export async function optionsCours(): Promise<CoursOption[]> {
+  const cours = await listerCoursDuProfil();
+  const chapitres = await chapitresDesCours(cours.map((c) => c.id));
+  return cours.map((c) => ({
+    id: c.id, titre: c.titre,
+    chapitres: chapitres.filter((ch) => ch.cours_id === c.id).map(({ id, numero, titre }) => ({ id, numero, titre })),
+  }));
 }

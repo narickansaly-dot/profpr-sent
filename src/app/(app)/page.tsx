@@ -5,6 +5,7 @@ import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { lireTableauDeBord } from '@/lib/quiz/requetes';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { CarteCours } from '@/components/CarteCours';
+import { ProchainsEvenements } from '@/components/calendrier/ProchainsEvenements';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
 
 export const metadata = { title: 'Tableau de bord' };
@@ -43,6 +44,8 @@ export default async function Accueil() {
               <CarteCours key={c.id} {...c} nbValides={tdb?.validesParCours.get(c.id) ?? 0} />
             ))}</div>}
       </section>
+
+      {profil?.role === 'eleve' && <ProchainsEvenements />}
 
       <section aria-labelledby="titre-examens">
         <h2 id="titre-examens">Mes notes d’examen</h2>
