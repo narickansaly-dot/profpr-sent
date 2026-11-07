@@ -3,6 +3,7 @@ import { lireProfil, lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { joursEssaiRestants } from '@/lib/acces/essai';
 import { EnTete } from '@/components/EnTete';
 import { BanniereEssai } from '@/components/BanniereEssai';
+import { IndicateurConnexion } from '@/components/IndicateurConnexion';
 import { AttenteValidation } from '@/components/AttenteValidation';
 
 export default async function LayoutApp({ children }: { children: React.ReactNode }) {
@@ -13,6 +14,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     return (
       <>
         <EnTete prenom={profil.nom} role="attente" />
+        <IndicateurConnexion />
         <main className="conteneur"><AttenteValidation prenom={profil.nom} /></main>
       </>
     );
@@ -21,6 +23,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
   return (
     <>
       <EnTete prenom={profil.nom} role={profil.role} />
+      <IndicateurConnexion />
       {eleve && <BanniereEssai joursRestants={joursEssaiRestants(new Date(profil.inscrit_le), new Date())} />}
       <main className="conteneur">{children}</main>
     </>

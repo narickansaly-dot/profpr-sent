@@ -15,6 +15,7 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/auth/callback', false)).toBeNull();
     expect(redirectionPour('/auth/confirm', false)).toBeNull();
     expect(redirectionPour('/ical/abc.ics', false)).toBeNull();
+    expect(redirectionPour('/hors-ligne', false)).toBeNull();
   });
   it('renvoie un élève connecté vers l’accueil depuis connexion et inscription', () => {
     expect(redirectionPour('/connexion', true)).toEqual({ pathname: '/' });

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { deconnecter } from '@/app/(auth)/actions';
+import { BoutonDeconnexion } from '@/components/BoutonDeconnexion';
 
 // « attente » : demande enseignant en cours de vérification, aucune page n'est encore accessible.
 type Role = 'eleve' | 'parent' | 'enseignant' | 'admin_contenu' | 'attente';
@@ -24,13 +24,7 @@ export function EnTete({ prenom, role }: { prenom: string | null; role: Role }) 
           {LIENS[role].map((l) => <Link key={l.href} href={l.href}>{l.libelle}</Link>)}
         </nav>
       )}
-      <form action={deconnecter}>
-        <button type="submit" className="bouton bouton-secondaire bouton-compte">
-          <span className="nom-compte">{prenom ?? 'Mon compte'}</span>
-          <span aria-hidden="true">·</span>
-          <span>Se déconnecter</span>
-        </button>
-      </form>
+      <BoutonDeconnexion prenom={prenom} />
     </header>
   );
 }
