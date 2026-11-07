@@ -4,6 +4,8 @@ const VERSION = 'v1';
 const CACHE_STATIQUE = `statique-${VERSION}`;
 // Préfixe « pages- » : vidé par l'application à la déconnexion (src/lib/pwa/cache.ts).
 const CACHE_PAGES = `pages-${VERSION}`;
+// Cache à part, jamais limité ni vidé par l'application : c'est la page de repli.
+const CACHE_HORS_LIGNE = `hors-ligne-${VERSION}`;
 const HORS_LIGNE = '/hors-ligne';
 const MAX_PAGES = 30;
 const MAX_STATIQUES = 300;
@@ -12,7 +14,7 @@ const CHAPITRE = /^\/cours\/[^/]+\/(?!evaluation$)[^/]+$/;
 
 self.addEventListener('install', (evenement) => {
   evenement.waitUntil((async () => {
-    const cache = await caches.open(CACHE_STATIQUE);
+    const cache = await caches.open(CACHE_HORS_LIGNE);
     await cache.add(new Request(HORS_LIGNE, { cache: 'reload' }));
     await self.skipWaiting();
   })());
@@ -26,10 +28,36 @@ self.addEventListener('activate', (evenement) => {
   })());
 });
 
-// Une réponse n'est mise en cache que si elle est un succès complet (200), sans cookie posé.
+// Une réponse n'est mise en cache que si elle est un succès complet (200), non redirigé.
+// (Set-Cookie n'est jamais visible depuis un service worker : on ne peut pas le tester ici.)
 function cacheable(reponse) {
-  return reponse.status === 200 && !reponse.redirected && !reponse.headers.has('set-cookie');
+  return reponse.status === 200 && !reponse.redirected;
 }
+
+function cleChapitre(url) {
+  return url.origin + url.pathname;
+}
+
+// Mise en cache demandée par la page elle-même : les chapitres ouverts par un lien de l'application
+// (navigation côté client, données RSC) ne passent pas par une navigation interceptée.
+self.addEventListener('message', (evenement) => {
+  const donnees = evenement.data;
+  if (!donnees || donnees.type !== 'mettre-en-cache' || typeof donnees.url !== 'string') return;
+  let url;
+  try { url = new URL(donnees.url, self.location.origin); } catch { return; }
+  if (url.origin !== self.location.origin || !CHAPITRE.test(url.pathname)) return;
+  evenement.waitUntil((async () => {
+    try {
+      const reponse = await fetch(new Request(url.origin + url.pathname, { credentials: 'same-origin', headers: { Accept: 'text/html' } }));
+      if (!cacheable(reponse)) return;
+      const cache = await caches.open(CACHE_PAGES);
+      await cache.put(cleChapitre(url), reponse);
+      await limiter(cache, MAX_PAGES);
+    } catch {
+      // Hors connexion : rien à mettre en cache.
+    }
+  })());
+});
 
 self.addEventListener('fetch', (evenement) => {
   const requete = evenement.request;
@@ -39,39 +67,39 @@ self.addEventListener('fetch', (evenement) => {
   // Données RSC (flight) : jamais de cache ni de détour.
   if (requete.headers.has('RSC') || url.searchParams.has('_rsc')) return;
   if (url.pathname.startsWith('/_next/static/')) {
-    evenement.respondWith(cacheDAbord(requete));
+    evenement.respondWith(cacheDAbord(evenement, requete));
   } else if (requete.mode === 'navigate') {
-    evenement.respondWith(CHAPITRE.test(url.pathname) ? reseauDAbord(requete, url) : reseauOuHorsLigne(requete));
+    evenement.respondWith(CHAPITRE.test(url.pathname) ? reseauDAbord(evenement, requete, url) : reseauOuHorsLigne(requete));
   }
   // Le reste (données RSC, actions serveur, /api, /auth, /ical) passe par le réseau, sans cache.
 });
 
 // Fichiers de build : leur nom change à chaque version, ils ne changent jamais de contenu.
-async function cacheDAbord(requete) {
+async function cacheDAbord(evenement, requete) {
   const cache = await caches.open(CACHE_STATIQUE);
   const enCache = await cache.match(requete);
   if (enCache) return enCache;
   const reponse = await fetch(requete);
   if (cacheable(reponse)) {
-    await cache.put(requete, reponse.clone());
-    await limiter(cache, MAX_STATIQUES);
+    const copie = reponse.clone();
+    evenement.waitUntil((async () => { await cache.put(requete, copie); await limiter(cache, MAX_STATIQUES); })());
   }
   return reponse;
 }
 
-async function reseauDAbord(requete, url) {
-  const cle = url.origin + url.pathname;
+async function reseauDAbord(evenement, requete, url) {
+  const cle = cleChapitre(url);
   const cache = await caches.open(CACHE_PAGES);
   try {
     const reponse = await fetch(requete);
     // Seulement une vraie page de chapitre : pas une redirection vers la connexion, pas une erreur.
     if (cacheable(reponse)) {
-      await cache.put(cle, reponse.clone());
-      await limiter(cache, MAX_PAGES);
+      const copie = reponse.clone();
+      evenement.waitUntil((async () => { await cache.put(cle, copie); await limiter(cache, MAX_PAGES); })());
     }
     return reponse;
   } catch {
-    return (await cache.match(cle)) ?? (await caches.match(HORS_LIGNE)) ?? Response.error();
+    return (await cache.match(cle)) ?? (await repli()) ?? Response.error();
   }
 }
 
@@ -79,7 +107,7 @@ async function reseauOuHorsLigne(requete) {
   try {
     return await fetch(requete);
   } catch {
-    return (await caches.match(HORS_LIGNE)) ?? Response.error();
+    return (await repli()) ?? Response.error();
   }
 }
 
@@ -87,4 +115,9 @@ async function reseauOuHorsLigne(requete) {
 async function limiter(cache, max) {
   const cles = await cache.keys();
   await Promise.all(cles.slice(0, Math.max(0, cles.length - max)).map((c) => cache.delete(c)));
+}
+
+async function repli() {
+  const cache = await caches.open(CACHE_HORS_LIGNE);
+  return cache.match(HORS_LIGNE);
 }

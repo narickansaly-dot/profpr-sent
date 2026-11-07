@@ -4,6 +4,7 @@ import { lireChapitre } from '@/lib/contenu/requetes';
 import { ContenuChapitre } from '@/components/ContenuChapitre';
 import { MarqueurLecture } from '@/components/MarqueurLecture';
 import { BlocQuiz } from '@/components/BlocQuiz';
+import { MiseEnCachePage } from '@/components/MiseEnCachePage';
 
 type Params = { params: Promise<{ slug: string; chapitre: string }> };
 
@@ -31,6 +32,7 @@ export default async function PageChapitre({ params }: Params) {
         </div>
       )}
       <ContenuChapitre sections={ch.sections} aRetenir={ch.a_retenir} />
+      <MiseEnCachePage />
       <MarqueurLecture chapitreId={ch.id} />
       <BlocQuiz chapitreId={ch.id} />
       <nav className="navigation-chapitres" aria-label="Chapitres">

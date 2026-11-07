@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { emailDeTest, inscrireEleve } from './aide-parcours';
 
 const TITRE_CH1 = "Organisation générale de l'organisme humain";
@@ -45,4 +45,44 @@ test('la déconnexion vide les pages mises en cache', async ({ page }) => {
   await page.getByRole('button', { name: /Se déconnecter/ }).click();
   await expect(page).toHaveURL(/\/connexion$/);
   await expect.poll(pagesEnCache).toBe(0);
+});
+
+/** Chemins des pages de chapitre actuellement en cache. */
+const cheminsEnCache = (page: Page) => page.evaluate(async () => {
+  const chemins: string[] = [];
+  for (const nom of (await caches.keys()).filter((c) => c.startsWith('pages-'))) {
+    for (const requete of await (await caches.open(nom)).keys()) chemins.push(new URL(requete.url).pathname);
+  }
+  return chemins;
+});
+
+test('un chapitre ouvert par un lien de l\u2019application reste lisible hors connexion', async ({ page, context }) => {
+  await inscrireEleve(page, emailDeTest('lien'));
+  await page.goto('/cours/bph-1re-st2s');
+  await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+  await page.reload();
+  // Navigation côté client (données RSC) : le chapitre doit tout de même être mis en cache.
+  await page.locator('a[href="/cours/bph-1re-st2s/ch1"]').first().click();
+  await expect(page.getByRole('heading', { level: 1, name: TITRE_CH1 })).toBeVisible();
+  await expect.poll(() => cheminsEnCache(page)).toContain('/cours/bph-1re-st2s/ch1');
+
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1, name: TITRE_CH1 })).toBeVisible();
+  await context.setOffline(false);
+});
+
+test('arriver sur la page de connexion vide les pages mises en cache', async ({ page, context }) => {
+  await inscrireEleve(page, emailDeTest('arrivee'));
+  await page.goto('/cours/bph-1re-st2s/ch1');
+  await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+  await page.reload();
+  await expect.poll(() => cheminsEnCache(page)).toContain('/cours/bph-1re-st2s/ch1');
+  // Session perdue sans passer par le bouton de déconnexion (cookies effacés, session expirée) : seule l'arrivée sur /connexion vide le cache.
+  await context.clearCookies();
+  await page.goto('/connexion');
+  await expect.poll(() => cheminsEnCache(page)).toEqual([]);
+  // Le repli hors connexion, lui, reste en place.
+  const repli = await page.evaluate(async () => !!(await (await caches.open('hors-ligne-v1')).match('/hors-ligne')));
+  expect(repli).toBe(true);
 });
