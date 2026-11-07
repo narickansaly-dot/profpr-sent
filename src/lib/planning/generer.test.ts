@@ -41,6 +41,23 @@ describe('genererPlanning', () => {
     ]);
   });
 
+  it('utilise tous les créneaux quand il y en a moins que de chapitres (7 chapitres, 6 créneaux)', () => {
+    const chapitres = [1, 2, 3, 4, 5, 6, 7].map((k) => ({ ...c2, id: `k${k}`, numero: k, meilleureNote: 10 * k }));
+    const p = genererPlanning({
+      maintenant: new Date('2026-11-07T10:00:00Z'), examenDebut: '2026-11-23T09:00:00Z', chapitres, occupes: [],
+      reglages: { sessionsParSemaine: 3, dureeMinutes: 60, joursPreferes: [1, 2, 3, 4, 5], heureDebut: '17:30' },
+    });
+    const normales = p.sessions.filter((s) => !s.revisionGenerale);
+    expect(normales).toHaveLength(6);
+    expect(p.sessions.filter((s) => s.revisionGenerale)).toHaveLength(1);
+    expect(normales.map((s) => s.chapitres.length)).toEqual([2, 1, 1, 1, 1, 1]);
+    expect(normales.map((s) => s.debut.slice(0, 10))).toEqual([
+      '2026-11-09', '2026-11-10', '2026-11-11', '2026-11-16', '2026-11-17', '2026-11-18',
+    ]);
+    expect(p.regroupe).toBe(true);
+    expect(p.avertissements).toEqual(['Pas assez de créneaux\u00a0: jusqu’à 2 chapitres par session.']);
+  });
+
   it('décale une session qui chevauche un événement existant', () => {
     const p = genererPlanning({ ...base, occupes: [{ debut: '2026-12-02T16:00:00Z', fin: '2026-12-02T17:00:00Z' }] });
     expect(p.sessions[0].debut).toBe('2026-12-02T17:00:00.000Z');

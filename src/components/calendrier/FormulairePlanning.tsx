@@ -11,17 +11,28 @@ const formatSession = new Intl.DateTimeFormat('fr-FR', {
   weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Paris',
 });
 
+function valeursEnvoyees(form: FormData): ValeursPlanning {
+  return {
+    sessions: String(form.get('sessions') ?? ''), duree: String(form.get('duree') ?? ''),
+    jours: form.getAll('jours').map(String), heure: String(form.get('heure') ?? ''),
+  };
+}
+
 /** Un seul réducteur pour les trois boutons : l'état affiché est toujours celui de la dernière action. */
 async function agir(precedent: EtatPlanning, form: FormData): Promise<EtatPlanning> {
   const intention = form.get('intention');
   if (intention === 'accepter') return accepterPlanning(precedent, form);
   if (intention === 'refuser') {
     const r = await refuserPlanning(precedent, form);
-    // Un refus qui échoue garde l'aperçu et la saisie en cours.
-    return { ...precedent, erreur: r.erreur, champ: r.champ };
+    // Un refus qui échoue garde l'aperçu ; la saisie en cours (celle du formulaire envoyé) n'est jamais réinitialisée.
+    return { ...precedent, erreur: r.erreur, champ: r.champ, valeurs: r.valeurs ?? valeursEnvoyees(form) };
   }
   return apercuPlanning(precedent, form);
 }
+
+const deReglages = (r: Reglages): ValeursPlanning => ({
+  sessions: String(r.sessionsParSemaine), duree: String(r.dureeMinutes), jours: r.joursPreferes.map(String), heure: r.heureDebut,
+});
 
 function Envoi({ libelle, enCours, classe }: { libelle: string; enCours: string; classe: string }) {
   const { pending } = useFormStatus();
@@ -29,15 +40,15 @@ function Envoi({ libelle, enCours, classe }: { libelle: string; enCours: string;
 }
 
 /** Champs cachés : l'acceptation et le refus reprennent les réglages de l'aperçu affiché. */
-function ReglagesCaches({ examenId, r, intention }: { examenId: string; r: Reglages; intention: 'accepter' | 'refuser' }) {
+function ReglagesCaches({ examenId, v, intention }: { examenId: string; v: ValeursPlanning; intention: 'accepter' | 'refuser' }) {
   return (
     <>
       <input type="hidden" name="intention" value={intention} />
       <input type="hidden" name="examen" value={examenId} />
-      <input type="hidden" name="sessions" value={r.sessionsParSemaine} />
-      <input type="hidden" name="duree" value={r.dureeMinutes} />
-      {r.joursPreferes.map((j) => <input key={j} type="hidden" name="jours" value={j} />)}
-      <input type="hidden" name="heure" value={r.heureDebut} />
+      <input type="hidden" name="sessions" value={v.sessions} />
+      <input type="hidden" name="duree" value={v.duree} />
+      {v.jours.map((j) => <input key={j} type="hidden" name="jours" value={j} />)}
+      <input type="hidden" name="heure" value={v.heure} />
     </>
   );
 }
@@ -45,10 +56,7 @@ function ReglagesCaches({ examenId, r, intention }: { examenId: string; r: Regla
 export function FormulairePlanning({ examenId, initial, peutRefuser }: { examenId: string; initial: Reglages; peutRefuser: boolean }) {
   const [etat, envoyer] = useActionState<EtatPlanning, FormData>(agir, {});
   const r = etat.reglages ?? initial;
-  const v: ValeursPlanning = etat.valeurs ?? {
-    sessions: String(initial.sessionsParSemaine), duree: String(initial.dureeMinutes),
-    jours: initial.joursPreferes.map(String), heure: initial.heureDebut,
-  };
+  const v: ValeursPlanning = etat.valeurs ?? deReglages(initial);
   const planning = etat.apercu;
   const uid = useId();
   const erreurId = `${uid}-erreur`;
@@ -112,7 +120,7 @@ export function FormulairePlanning({ examenId, initial, peutRefuser }: { examenI
           )}
           {n > 0 && (
             <form action={envoyer} className="actions-planning">
-              <ReglagesCaches examenId={examenId} r={r} intention="accepter" />
+              <ReglagesCaches examenId={examenId} v={deReglages(r)} intention="accepter" />
               <Envoi libelle="Accepter ce planning" enCours="Enregistrement…" classe="bouton-principal" />
             </form>
           )}
@@ -120,7 +128,7 @@ export function FormulairePlanning({ examenId, initial, peutRefuser }: { examenI
       )}
       {peutRefuser && (
         <form action={envoyer} className="actions-planning">
-          <ReglagesCaches examenId={examenId} r={r} intention="refuser" />
+          <ReglagesCaches examenId={examenId} v={v} intention="refuser" />
           <Envoi libelle="Non merci, pas de planning" enCours="Un instant…" classe="bouton-secondaire" />
         </form>
       )}

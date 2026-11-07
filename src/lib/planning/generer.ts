@@ -80,10 +80,19 @@ export function genererPlanning(p: {
   if (creneaux.length === 0) {
     avertissements.push('Aucun créneau libre avant l’examen\u00a0: seule la révision générale est prévue.');
   } else {
-    const parSession = Math.ceil(tries.length / creneaux.length);
-    regroupe = parSession > 1;
+    // Moins de créneaux que de chapitres : on utilise tous les créneaux, en groupes équilibrés (les plus grands d'abord).
+    const nb = Math.min(creneaux.length, tries.length);
+    const taille = Math.floor(tries.length / nb);
+    const reste = tries.length % nb;
     const groupes: ChapitrePlan[][] = [];
-    for (let i = 0; i < tries.length; i += parSession) groupes.push(tries.slice(i, i + parSession));
+    let debutGroupe = 0;
+    for (let i = 0; i < nb; i++) {
+      const n = taille + (i < reste ? 1 : 0);
+      groupes.push(tries.slice(debutGroupe, debutGroupe + n));
+      debutGroupe += n;
+    }
+    const parSession = groupes[0].length;
+    regroupe = parSession > 1;
     groupes.forEach((groupe, i) => {
       sessions.push({
         debut: creneaux[Math.floor((i * creneaux.length) / groupes.length)],

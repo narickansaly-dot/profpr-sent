@@ -6,19 +6,29 @@ import { creerLienIcal, revoquerLienIcal, type EtatLien } from '@/app/(app)/cale
 const formatDate = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' });
 
 export function GestionLienIcal({ actifDepuis }: { actifDepuis: string | null }) {
-  const [creation, creer, enCreation] = useActionState<EtatLien, FormData>(creerLienIcal, {});
-  const [revocation, revoquer, enRevocation] = useActionState<EtatLien, FormData>(revoquerLienIcal, {});
-  const [copie, setCopie] = useState('');
+  // Un seul état pour les deux actions : une révocation réussie efface l'erreur et le lien créé, une création efface l'erreur précédente.
+  const [etat, agir, enCours] = useActionState<EtatLien, FormData>(
+    async (precedent, form) => {
+      if (form.get('operation') === 'revoquer') {
+        const r = await revoquerLienIcal();
+        return r.erreur ? { ...precedent, erreur: r.erreur } : {};
+      }
+      return creerLienIcal();
+    },
+    {},
+  );
+  // La copie est liée au lien pour lequel elle a été faite : un nouveau lien repart sans message.
+  const [copie, setCopie] = useState<{ pour: string; message: string } | null>(null);
   const uid = useId();
-  const erreur = creation.erreur ?? revocation.erreur;
-  // actifDepuis vient du serveur (revalidé après chaque action) : après une révocation, le lien affiché disparaît.
-  const lien = actifDepuis ? creation.lien : undefined;
+  const erreur = etat.erreur;
+  // actifDepuis vient du serveur (revalidé après chaque action) : sans lien actif, rien n'est affiché.
+  const lien = actifDepuis ? etat.lien : undefined;
   const copier = async (valeur: string) => {
     try {
       await navigator.clipboard.writeText(valeur);
-      setCopie('Lien copié.');
+      setCopie({ pour: valeur, message: 'Lien copié.' });
     } catch {
-      setCopie('Copie impossible : sélectionne le lien et copie-le.');
+      setCopie({ pour: valeur, message: 'Copie impossible : sélectionne le lien et copie-le.' });
     }
   };
   return (
@@ -38,14 +48,16 @@ export function GestionLienIcal({ actifDepuis }: { actifDepuis: string | null })
       ) : (
         <p>Aucun lien actif.</p>
       )}
-      <p role="status" className="aide-champ">{copie}</p>
+      <p role="status" className="aide-champ">{lien && copie?.pour === lien ? copie.message : ''}</p>
       <div className="actions-banniere">
-        <form action={creer}>
-          <button type="submit" className="bouton bouton-principal" disabled={enCreation}>{actifDepuis ? 'Créer un nouveau lien' : 'Créer mon lien'}</button>
+        <form action={agir}>
+          <input type="hidden" name="operation" value="creer" />
+          <button type="submit" className="bouton bouton-principal" disabled={enCours}>{actifDepuis ? 'Créer un nouveau lien' : 'Créer mon lien'}</button>
         </form>
         {actifDepuis && (
-          <form action={revoquer} onSubmit={(e) => { if (!window.confirm('Révoquer le lien ? Les agendas abonnés ne recevront plus tes événements.')) e.preventDefault(); }}>
-            <button type="submit" className="bouton bouton-secondaire" disabled={enRevocation}>Révoquer le lien</button>
+          <form action={agir} onSubmit={(e) => { if (!window.confirm('Révoquer le lien ? Les agendas abonnés ne recevront plus tes événements.')) e.preventDefault(); }}>
+            <input type="hidden" name="operation" value="revoquer" />
+            <button type="submit" className="bouton bouton-secondaire" disabled={enCours}>Révoquer le lien</button>
           </form>
         )}
       </div>
