@@ -557,7 +557,10 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "calendrier_ical":
+            "accepter_plan_revision":
+{ Args: { "p_examen": string,"p_reglages": Json,"p_sessions": Json }; Returns: string
+                           },
+"calendrier_ical":
 { Args: { "p_jeton": string }; Returns: {
               "debut": string,"fin": string,"titre": string,"uid": string
             }[]
@@ -626,11 +629,19 @@ isOneToOne: false
 "enregistrer_question":
 { Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
                            },
+"ignorer_reorganisation":
+{ Args: { "p_plan": string }; Returns: undefined
+                           },
 "importer_cours":
 { Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
                            },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
+                           },
+"mes_creneaux_occupes":
+{ Args: { "p_a": string,"p_de": string }; Returns: {
+              "debut": string,"evenement_id": string,"fin": string,"plan_id": string
+            }[]
                            },
 "mes_echeances":
 { Args: { "p_cours"?: string }; Returns: {
@@ -661,6 +672,11 @@ isOneToOne: false
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
+"plans_a_reorganiser":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "examen_id": string,"examen_titre": string,"plan_id": string
+            }[]
+                           },
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
@@ -689,6 +705,9 @@ isOneToOne: false
                            },
 "quitter_classe":
 { Args: { "p_classe": string }; Returns: undefined
+                           },
+"refuser_plan_revision":
+{ Args: { "p_examen": string,"p_reglages": Json }; Returns: undefined
                            },
 "regenerer_code_classe":
 { Args: { "p_classe": string }; Returns: string
