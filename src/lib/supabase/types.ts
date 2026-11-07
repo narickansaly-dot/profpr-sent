@@ -609,6 +609,9 @@ isOneToOne: false
 "demarrer_quiz":
 { Args: { "p_chapitre": string,"p_nb": number,"p_revision"?: boolean }; Returns: string
                            },
+"demarrer_revision_generale":
+{ Args: { "p_evenement": string }; Returns: string
+                           },
 "echeances_classe":
 { Args: { "p_classe": string }; Returns: {
               "cours_id": string,"limite": string,"ouverture": string

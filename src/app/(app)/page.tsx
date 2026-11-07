@@ -70,7 +70,7 @@ export default async function Accueil() {
             {tdb.derniers.map((t) => (
               <li key={t.id} className="carte ligne-tdb">
                 <Link href={`/tentative/${t.id}/resultat`}>
-                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre ?? 'cours'}` : t.chapitre?.titre ?? t.cours?.titre ?? 'Quiz'}
+                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre ?? 'cours'}` : t.chapitre?.titre ?? `Révision générale · ${t.cours?.titre ?? 'cours'}`}
                 </Link>
                 <strong className={t.reussie ? 'note-reussie' : 'note-ratee'}>{formaterNote(Number(t.note ?? 0))}</strong>
                 <span>{t.fin ? jour.format(new Date(t.fin)) : ''}</span>
