@@ -5,6 +5,8 @@ import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { lireTableauDeBord } from '@/lib/quiz/requetes';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { CarteCours } from '@/components/CarteCours';
+import { plansAReorganiser } from '@/lib/calendrier/requetes';
+import { BanniereReorganiser } from '@/components/calendrier/BanniereReorganiser';
 import { ProchainsEvenements } from '@/components/calendrier/ProchainsEvenements';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
 
@@ -15,12 +17,13 @@ export default async function Accueil() {
   const profil = await lireProfil();
   if (profil?.role === 'enseignant') redirect('/enseignant');
   if (profil?.role === 'admin_contenu') redirect('/cours');
-  const [cours, { tdb, erreur: erreurTdb }] = await Promise.all([
+  const [cours, { tdb, erreur: erreurTdb }, aReorganiser] = await Promise.all([
     listerCoursDuProfil(),
     lireTableauDeBord().then(
       (tdb) => ({ tdb, erreur: false }),
       () => ({ tdb: null, erreur: true }),
     ),
+    profil?.role === 'eleve' ? plansAReorganiser() : Promise.resolve([]),
   ]);
   const examens = (tdb?.examens ?? []).filter((e) => e.cours);
   return (
@@ -31,6 +34,10 @@ export default async function Accueil() {
           <p className="serie">🔥 {tdb.serie} jour{tdb.serie > 1 ? 's' : ''} de révision d’affilée</p>
         )}
       </header>
+
+      {aReorganiser.map((p) => (
+        <BanniereReorganiser key={p.plan_id} planId={p.plan_id} examenId={p.examen_id} examenTitre={p.examen_titre} />
+      ))}
 
       {erreurTdb && (
         <p className="vide">Ton tableau de bord n’a pas pu se charger entièrement. Recharge la page dans un instant.</p>

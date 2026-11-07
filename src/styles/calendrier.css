@@ -51,3 +51,14 @@
 .actions-planning, .actions-banniere { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
 .banniere-reorganiser { margin-block: 1rem; border-left: 5px solid var(--accent); }
 .bandeau-hors-ligne { padding: .6rem 1rem; background: var(--accent); color: #1c1b29; font-weight: 700; text-align: center; }
+.item-calendrier .item-titre, .item-type, .page-evenement h1 { overflow-wrap: anywhere; min-width: 0; }
+@media (max-width: 520px) {
+  /* Le jour passe sur sa propre ligne : la colonne du titre n'est plus écrasée. */
+  .item-jour { display: block; }
+  .item-sep { display: none; }
+  .item-calendrier > :is(a, div):has(.item-jour) { grid-template-columns: 1fr; }
+  .item-calendrier .item-horaire:has(.item-jour) { grid-row: auto; }
+}
+.lien-ical { display: grid; gap: .5rem; }
+.lien-ical input { width: 100%; min-width: 0; box-sizing: border-box; min-height: 44px; padding: 0 .75rem; border: 2px solid var(--trait); border-radius: 12px; font: inherit; }
+.lien-ical .aide-champ { margin: 0; }

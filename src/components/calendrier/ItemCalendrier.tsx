@@ -10,7 +10,7 @@ export function ItemCalendrier({ o, avecJour = false }: { o: OccurrenceCalendrie
   const horaire = o.debut === o.fin ? heureParis(o.debut) : `${heureParis(o.debut)} – ${heureParis(o.fin)}`;
   const contenu = (
     <>
-      <span className="item-horaire">{avecJour && <span className="item-jour">{libelleJour(jourParis(new Date(o.debut)))} · </span>}{horaire}</span>
+      <span className="item-horaire">{avecJour && <span className="item-jour">{libelleJour(jourParis(new Date(o.debut)))}<span className="item-sep"> · </span></span>}{horaire}</span>
       <span className="item-titre">{o.titre}</span>
       <span className="item-type">{LIBELLES[o.type]}{o.classe_nom ? ` · ${o.classe_nom}` : ''}{o.lecture_seule && <span className="sr-only"> (lecture seule)</span>}</span>
     </>

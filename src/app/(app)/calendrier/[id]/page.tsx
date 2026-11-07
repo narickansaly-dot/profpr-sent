@@ -4,6 +4,7 @@ import { exigerEleve } from '@/lib/calendrier/garde';
 import { lireEvenement, optionsCours } from '@/lib/calendrier/requetes';
 import { isoVersHeureParis } from '@/lib/enseignant/dates';
 import { FormulaireEvenement } from '@/components/calendrier/FormulaireEvenement';
+import { FormulaireRevisionGenerale } from '@/components/calendrier/FormulaireRevisionGenerale';
 import { BoutonSupprimerEvenement } from '@/components/calendrier/BoutonSupprimerEvenement';
 
 export const metadata = { title: 'Événement' };
@@ -20,6 +21,16 @@ export default async function PageEvenement({ params }: { params: Promise<{ id: 
     <div className="page-evenement">
       <p><Link href={`/calendrier?vue=semaine&date=${local.slice(0, 10)}`}>← Mon calendrier</Link></p>
       <h1>{e.titre}</h1>
+      {e.revision_generale && (
+        <section aria-labelledby="titre-generale">
+          <h2 id="titre-generale">Révision générale</h2>
+          <p>Un quiz de 30 questions au plus sur tous les chapitres de ton examen.</p>
+          <FormulaireRevisionGenerale evenementId={e.id} />
+        </section>
+      )}
+      {e.type === 'examen_reel' && e.cours_id && (
+        <p><Link className="bouton bouton-secondaire" href={`/calendrier/${e.id}/planning`}>Planning de révision</Link></p>
+      )}
       {e.type === 'revision' && !e.revision_generale && chapitres.length > 0 && e.cours && (
         <section aria-labelledby="titre-reviser">
           <h2 id="titre-reviser">Réviser</h2>

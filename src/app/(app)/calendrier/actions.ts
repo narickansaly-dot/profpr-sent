@@ -83,6 +83,9 @@ async function calculer(form: FormData): Promise<
   const donnees = await lirePlanning(examen.data, maintenant);
   if (!donnees) return { ok: false, etat: { erreur: messageErreur('examen_introuvable'), valeurs } };
   if (donnees.passe) return { ok: false, etat: { erreur: messageErreur('examen_passe'), reglages: r.reglages, valeurs } };
+  if (donnees.tropLoin) {
+    return { ok: false, etat: { erreur: 'Ton examen est dans plus d’un an. Reviens plus tard pour ton planning.', reglages: r.reglages, valeurs } };
+  }
   const planning = genererPlanning({
     maintenant, examenDebut: donnees.examen.debut, chapitres: donnees.chapitres, reglages: r.reglages, occupes: donnees.occupes,
   });
