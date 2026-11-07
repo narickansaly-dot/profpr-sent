@@ -74,7 +74,10 @@ export function periodeVue(vue: Vue, jour: string): { jours: string[]; de: strin
 
 export function lireVue(params: { vue?: string; date?: string }, maintenant: Date): { vue: Vue; jour: string } {
   const vue = VUES.includes(params.vue as Vue) ? (params.vue as Vue) : 'semaine';
-  const jour = params.date && estJourValide(params.date) ? params.date : jourParis(maintenant);
+  const aujourdhui = jourParis(maintenant);
+  // Une date trop lointaine (ex. 9999-12-31) ferait échouer le calcul de la période : on retombe sur aujourd'hui.
+  const proche = (j: string) => Math.abs(enMs(j) - enMs(aujourdhui)) <= 5 * 366 * JOUR_MS;
+  const jour = params.date && estJourValide(params.date) && proche(params.date) ? params.date : aujourdhui;
   return { vue, jour };
 }
 

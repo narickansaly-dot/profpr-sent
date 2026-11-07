@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
+import { toutesLesLignes } from '@/lib/supabase/toutesLesLignes';
 import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import type { ChapitrePlan, Creneau } from '@/lib/planning/generer';
 
@@ -17,7 +18,7 @@ const estUuid = (id: string) => z.string().uuid().safeParse(id).success;
 
 export async function lireCalendrier(de: string, a: string): Promise<OccurrenceCalendrier[]> {
   const supabase = await creerClientServeur();
-  const { data, error } = await supabase.rpc('mon_calendrier', { p_de: de, p_a: a });
+  const { data, error } = await toutesLesLignes((debut, fin) => supabase.rpc('mon_calendrier', { p_de: de, p_a: a }).range(debut, fin));
   if (error) throw new Error('Impossible de charger ton calendrier.');
   // chapitres arrive en Json brut et type en texte : on les type ici, en un seul endroit.
   return (data ?? []) as unknown as OccurrenceCalendrier[];
@@ -62,7 +63,7 @@ export async function lirePlanning(examenId: string, maintenant: Date) {
       .eq('cours_id', examen.cours_id).eq('publie', true).order('numero'),
     passe || tropLoin
       ? Promise.resolve({ data: [], error: null })
-      : supabase.rpc('mes_creneaux_occupes', { p_de: maintenant.toISOString(), p_a: examen.debut }),
+      : toutesLesLignes((de, a) => supabase.rpc('mes_creneaux_occupes', { p_de: maintenant.toISOString(), p_a: examen.debut }).range(de, a)),
   ]);
   if (plan.error || chapitres.error || occupes.error) throw new Error('Impossible de charger ton planning.');
   const sessions = plan.data

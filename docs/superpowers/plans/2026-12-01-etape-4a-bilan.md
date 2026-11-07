@@ -78,7 +78,28 @@ Autres décisions du plan, validées à la relecture : heures de Paris uniqueme
 
 ## Revue finale
 
-À compléter après la revue finale de la branche (RLS et droits, fuseaux et changements d'heure, vie privée du cache, cohérence de `prive.fenetre_evaluation` avec `mes_echeances`, accessibilité à 375 px), la vague de corrections et la vérification complète.
+Revue finale de la branche par Opus : verdict « avec corrections » (aucun bloquant).
+
+Points forts relevés :
+- sécurité SQL : droits et `grant` resserrés, fonctions `security definer` avec `search_path` vide, `calendrier_ical` seule fonction ouverte à `anon` et protégée par le jeton ;
+- changements d'heure vérifiés (séries gardant l'heure de Paris, heure ambiguë d'octobre) ;
+- générateur de planning en TypeScript cohérent avec les règles côté SQL ;
+- `prive.fenetre_evaluation` et `mes_echeances` cohérentes entre elles ;
+- service worker soigné (cache des pages vidé à la connexion, page de repli isolée).
+
+Corrections appliquées dans la vague finale :
+- RPC paginées : PostgREST plafonne à 1000 lignes sans le dire. `calendrier_ical`, `mes_creneaux_occupes` et `mon_calendrier` sont lues page par page (`src/lib/supabase/toutesLesLignes.ts`), avec un ordre total en base ; le flux iCal est borné aux 5000 occurrences les plus proches (migration `20261201000006_pagination.sql`) ;
+- espace insécable avant « : » dans deux lignes du README ;
+- `?date=9999-12-31` ne provoque plus d'erreur 500 : une date à plus de 5 ans d'aujourd'hui retombe sur aujourd'hui ;
+- la page d'inscription vide elle aussi le cache des pages, comme la connexion.
+
+Vérification finale : 295 tests unitaires, 664 tests pgTAP, 26 exécutions e2e, typage, lint et build sans erreur.
+
+Mineurs reportés à l'étape 4b :
+- les échéances d'une classe quittée depuis moins de 30 jours ne s'affichent pas dans le calendrier ni dans l'iCal, bien qu'elles s'appliquent encore ;
+- modifier un examen ne met pas à jour son plan, et un examen peut être récurrent ;
+- le plan accepté peut différer de l'aperçu sans que l'élève en soit prévenu ;
+- des réglages qui ne peuvent jamais donner de créneau (par exemple 21 h avec 90 min) demandent un avertissement plus clair.
 
 ## Points reportés, par étape
 

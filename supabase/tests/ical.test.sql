@@ -1,5 +1,5 @@
 begin;
-select plan(10);
+select plan(11);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000b1', 'eleve-ical@test.local'),
@@ -38,6 +38,7 @@ set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000b1","role":"authenticated"}', true);
 select lives_ok($$ select public.revoquer_jeton_ical() $$, 'révocation');
 select is(public.mon_jeton_ical(), null, 'plus de lien actif après la révocation');
+select matches(pg_get_functiondef('public.calendrier_ical(text)'::regprocedure), 'limit 5000', 'le flux iCal est borné à 5000 occurrences');
 
 select * from finish();
 rollback;

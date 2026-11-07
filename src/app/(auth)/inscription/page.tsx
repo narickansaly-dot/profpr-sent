@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { inscrire, connecterAvecGoogle } from '../actions';
 import { cheminSuiteSur } from '@/lib/routes';
+import { ViderCachePages } from '@/components/ViderCachePages';
 import { FormulaireIdentifiants } from '../FormulaireIdentifiants';
 
 export const metadata = { title: 'Créer un compte' };
@@ -10,6 +11,7 @@ export default async function PageInscription({ searchParams }: { searchParams: 
   const parametre = suite ? `?suite=${encodeURIComponent(suite)}` : '';
   return (
     <main className="page-auth">
+      <ViderCachePages />
       <h1>Crée ton compte</h1>
       <p>7 jours pour découvrir tous les cours, gratuitement.</p>
       <FormulaireIdentifiants action={inscrire} libelle="Créer mon compte" autocompleteMotDePasse="new-password" suite={suite} />

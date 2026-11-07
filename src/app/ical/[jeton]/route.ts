@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { genererIcal } from '@/lib/calendrier/ical';
+import { toutesLesLignes } from '@/lib/supabase/toutesLesLignes';
 import type { Database } from '@/lib/supabase/types';
 
 export const dynamic = 'force-dynamic';
@@ -11,7 +12,7 @@ export async function GET(_requete: Request, { params }: { params: Promise<{ jet
   const supabase = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  const { data, error } = await supabase.rpc('calendrier_ical', { p_jeton: jeton.replace(/\.ics$/, '') });
+  const { data, error } = await toutesLesLignes((de, a) => supabase.rpc('calendrier_ical', { p_jeton: jeton.replace(/\.ics$/, '') }).range(de, a));
   const texte = { 'Content-Type': 'text/plain; charset=utf-8' };
   if (error?.message.includes('jeton_inconnu')) return new Response('Calendrier introuvable.', { status: 404, headers: texte });
   if (error || !data) return new Response('Service momentanément indisponible.', { status: 503, headers: texte });

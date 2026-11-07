@@ -45,6 +45,13 @@ describe('dates du calendrier', () => {
     expect(lireVue({ vue: 'mois', date: '2026-12-20' }, maintenant)).toEqual({ vue: 'mois', jour: '2026-12-20' });
     expect(lireVue({ vue: 'annee', date: 'hier' }, maintenant)).toEqual({ vue: 'semaine', jour: '2026-12-01' });
   });
+  it('ignore une date à plus de 5 ans d’aujourd’hui', () => {
+    const maintenant = new Date('2026-12-01T08:00:00Z');
+    expect(lireVue({ date: '9999-12-31' }, maintenant).jour).toBe('2026-12-01');
+    expect(lireVue({ date: '0001-01-01' }, maintenant).jour).toBe('2026-12-01');
+    expect(lireVue({ date: '2031-11-30' }, maintenant).jour).toBe('2031-11-30');
+    expect(lireVue({ date: '2032-06-01' }, maintenant).jour).toBe('2026-12-01');
+  });
   it('navigue d’une période à l’autre', () => {
     expect(naviguer('jour', '2026-12-01', -1)).toBe('2026-11-30');
     expect(naviguer('semaine', '2026-12-01', 1)).toBe('2026-12-08');
