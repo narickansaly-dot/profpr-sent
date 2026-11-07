@@ -648,7 +648,7 @@ isOneToOne: false
                            },
 "mes_echeances":
 { Args: { "p_cours"?: string }; Returns: {
-              "classe_nom": string,"cours_id": string,"limite": string,"ouverture": string
+              "classe_nom": string,"cours_id": string,"limite": string,"ouverture": string,"quittee": boolean
             }[]
                            },
 "mes_signalements":

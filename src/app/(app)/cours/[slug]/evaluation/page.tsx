@@ -47,7 +47,9 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
           <>
             <h3 className="titre-echeances">Date{p.echeances.length > 1 ? 's' : ''} de ta classe</h3>
             <ul className="regles liste-echeances">
-              {p.echeances.map((e, i) => <li key={`${e.classe_nom}-${i}`}>{e.classe_nom} : {libelleEcheance(e)}.</li>)}
+              {p.echeances.map((e, i) => <li key={`${e.classe_nom}-${i}`}>
+                  {e.classe_nom}{e.quittee ? ' (classe quittée, ses dates s’appliquent encore 30 jours)' : ''} : {libelleEcheance(e)}.
+                </li>)}
             </ul>
           </>
         )}
