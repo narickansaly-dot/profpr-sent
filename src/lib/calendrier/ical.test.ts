@@ -20,8 +20,8 @@ describe('genererIcal', () => {
   });
 
   it('échappe les caractères spéciaux du texte', () => {
-    const ics = genererIcal([{ uid: 'e', titre: 'Maths; ch. 1, 2\\3\nfin', debut: '2026-12-07T16:00:00Z', fin: '2026-12-07T17:00:00Z' }], maintenant);
-    expect(ics).toContain('SUMMARY:Maths\; ch. 1\\, 2\\\\3\\nfin\r\n');
+    const ics = genererIcal([{ uid: 'e', titre: 'Maths; ch. 1, 2\\3\nfin\rx', debut: '2026-12-07T16:00:00Z', fin: '2026-12-07T17:00:00Z' }], maintenant);
+    expect(ics).toContain('SUMMARY:Maths\\; ch. 1\\, 2\\\\3\\nfin\\nx\r\n');
   });
 
   it('plie les lignes de plus de 75 octets sans couper un caractère', () => {

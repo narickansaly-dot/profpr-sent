@@ -3,7 +3,7 @@ export type EvenementIcal = { uid: string; titre: string; debut: string; fin: st
 const enUtc = (iso: string) => new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 
 function echapper(texte: string) {
-  return texte.replace(/\\/g, '\\\\').replace(/;/g, '\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+  return texte.replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r\n|\r|\n/g, '\\n');
 }
 
 /** Plie une ligne à 75 octets (RFC 5545, 3.1), sans couper un caractère UTF-8. */

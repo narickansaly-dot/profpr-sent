@@ -12,7 +12,9 @@ export async function GET(_requete: Request, { params }: { params: Promise<{ jet
     auth: { persistSession: false, autoRefreshToken: false },
   });
   const { data, error } = await supabase.rpc('calendrier_ical', { p_jeton: jeton.replace(/\.ics$/, '') });
-  if (error || !data) return new Response('Calendrier introuvable.', { status: 404, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+  const texte = { 'Content-Type': 'text/plain; charset=utf-8' };
+  if (error?.message.includes('jeton_inconnu')) return new Response('Calendrier introuvable.', { status: 404, headers: texte });
+  if (error || !data) return new Response('Service momentanément indisponible.', { status: 503, headers: texte });
   return new Response(genererIcal(data, new Date()), {
     headers: {
       'Content-Type': 'text/calendar; charset=utf-8',
