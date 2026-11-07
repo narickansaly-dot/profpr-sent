@@ -79,3 +79,28 @@ describe('messageErreur, espace classes', () => {
     expect(messageErreur('reponse_invalide')).toBe('Ta réponse n’a pas pu être lue. Réessaie.');
   });
 });
+
+describe('messageErreur, calendrier et planning', () => {
+  it('traduit chaque code levé par les RPC du calendrier', () => {
+    const attendu: Record<string, string> = {
+      reserve_eleves: 'Le calendrier est réservé aux comptes élèves.',
+      evenement_invalide: 'Cet événement est incomplet\u00a0: vérifie le titre, la date et la durée.',
+      repetition_invalide: 'La répétition doit finir après le début, dans l’année qui suit.',
+      cours_indisponible: 'Ce cours n’est pas disponible pour toi.',
+      chapitres_invalides: 'Choisis des chapitres du cours sélectionné.',
+      evenement_introuvable: 'Cet événement n’existe plus.',
+      trop_d_evenements: 'Ton calendrier est plein (500 événements). Supprime d’anciens événements.',
+      periode_invalide: 'Cette période ne peut pas être affichée.',
+      examen_introuvable: 'Cet examen n’existe plus.',
+      examen_passe: 'Cet examen est déjà passé.',
+      planning_invalide: 'Ce planning n’a pas pu être enregistré. Recalcule l’aperçu et réessaie.',
+      plan_introuvable: 'Ce planning n’existe plus.',
+    };
+    for (const [code, texte] of Object.entries(attendu)) expect(messageErreur(code)).toBe(texte);
+  });
+  it('garde les codes déjà traduits que le calendrier peut lever', () => {
+    for (const code of ['non_connecte', 'acces_refuse', 'quiz_indisponible', 'evaluation_en_cours']) {
+      expect(messageErreur(code)).not.toBe('Une erreur est survenue. Réessaie dans un instant.');
+    }
+  });
+});

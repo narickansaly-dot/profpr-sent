@@ -44,6 +44,18 @@ const MESSAGES: Record<string, string> = {
   deja_signalee: 'Tu as déjà signalé cette question.',
   trop_de_signalements: 'Tu as atteint la limite de 20 signalements par jour.',
   signalement_introuvable: 'Ce signalement a déjà été traité.',
+  reserve_eleves: 'Le calendrier est réservé aux comptes élèves.',
+  evenement_invalide: 'Cet événement est incomplet : vérifie le titre, la date et la durée.',
+  repetition_invalide: 'La répétition doit finir après le début, dans l’année qui suit.',
+  cours_indisponible: 'Ce cours n’est pas disponible pour toi.',
+  chapitres_invalides: 'Choisis des chapitres du cours sélectionné.',
+  evenement_introuvable: 'Cet événement n’existe plus.',
+  trop_d_evenements: 'Ton calendrier est plein (500 événements). Supprime d’anciens événements.',
+  periode_invalide: 'Cette période ne peut pas être affichée.',
+  examen_introuvable: 'Cet examen n’existe plus.',
+  examen_passe: 'Cet examen est déjà passé.',
+  planning_invalide: 'Ce planning n’a pas pu être enregistré. Recalcule l’aperçu et réessaie.',
+  plan_introuvable: 'Ce planning n’existe plus.',
 };
 
 export function messageErreur(message: string | undefined): string {
