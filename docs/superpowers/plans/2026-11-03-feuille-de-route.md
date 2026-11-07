@@ -10,7 +10,7 @@ La spec couvre sept étapes qui livrent chacune une version utilisable. Chaque �
 | 2. Quiz, évaluations, tableau de bord élève | `2026-11-10-etape-2-quiz.md` (bilan : `2026-11-10-etape-2-bilan.md`) | Terminé (branche etape-2-quiz) |
 | 3a. Espace enseignant (classes, suivi, échéances) | `2026-11-17-etape-3a-enseignant.md` (bilan : `2026-11-17-etape-3a-bilan.md`) | Terminé (branche etape-3a-enseignant) |
 | 3b. Gestion du contenu (éditeurs, signalements) | `2026-11-24-etape-3b-contenu.md` (bilan : `2026-11-24-etape-3b-bilan.md`) | Terminé (branche etape-3b-contenu) |
-| 4a. Calendrier, planning de révision, PWA hors connexion | `2026-12-01-etape-4a-calendrier.md` | Plan rédigé (branche etape-4a-calendrier) |
+| 4a. Calendrier, planning de révision, PWA hors connexion | `2026-12-01-etape-4a-calendrier.md` (bilan : `2026-12-01-etape-4a-bilan.md`) | Terminé (branche etape-4a-calendrier) |
 | 4b. Notifications Web Push, en-têtes de sécurité, accessibilité | à rédiger après l'étape 4a | — |
 | 5. Abonnements Stripe et RGPD | à rédiger après l'étape 4 | — |
 | 6. Contenu 1re ST2S complet | à rédiger après l'étape 5 | — |

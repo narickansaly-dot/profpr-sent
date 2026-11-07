@@ -65,6 +65,13 @@ Le format du JSON, les statuts, les règles des réponses courtes, le HTML autor
 
 **Ce que l'enseignant ne voit pas** : les réponses détaillées des élèves et leur calendrier de révision. Seules ses propres classes sont visibles.
 
+## Calendrier et hors connexion
+
+L'élève a un calendrier (`/calendrier`) avec un planning de révision proposé avant ses examens, et un lien d'abonnement iCal privé (`/calendrier/partage`).
+
+- Le service worker (`public/sw.js`) n'est actif qu'en production : `npm run build && npm run start`. En développement (`npm run dev`), l'application n'est ni installable ni lisible hors connexion.
+- `NEXT_PUBLIC_SITE_URL` sert à construire les liens iCal en production. Cette valeur est figée au build : la définir avant `npm run build`.
+
 ## Confirmation de l'inscription par e-mail
 
 Sur le projet Supabase hébergé, le modèle d'e-mail « Confirm signup » (Authentication > Email Templates) doit pointer vers :
