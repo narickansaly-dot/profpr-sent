@@ -147,6 +147,64 @@ isOneToOne: true
       referencedColumns: ["classe_id","cours_id"]
     }
                   ]
+                },"evenement": {
+                  Row: {
+                    "cours_id": string | null,"cree_le": string,"debut": string,"duree_minutes": number,"eleve_id": string,"id": string,"jours_semaine": (number)[] | null,"modifie_le": string,"plan_id": string | null,"repeter_jusqu_au": string | null,"repetition": Database["public"]['Enums']["repetition_t"],"revision_generale": boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cours_id"?: string | null,"cree_le"?: string,"debut": string,"duree_minutes": number,"eleve_id": string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
+                  }
+                  Update: {
+                    "cours_id"?: string | null,"cree_le"?: string,"debut"?: string,"duree_minutes"?: number,"eleve_id"?: string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre"?: string,"type"?: Database["public"]['Enums']["type_evenement_t"]
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "evenement_cours_id_fkey"
+      columns: ["cours_id"]
+isOneToOne: false
+      referencedRelation: "cours"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "evenement_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "evenement_plan_fk"
+      columns: ["plan_id"]
+isOneToOne: false
+      referencedRelation: "plan_revision"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"evenement_chapitre": {
+                  Row: {
+                    "chapitre_id": string,"evenement_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "chapitre_id": string,"evenement_id": string
+                  }
+                  Update: {
+                    "chapitre_id"?: string,"evenement_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "evenement_chapitre_chapitre_id_fkey"
+      columns: ["chapitre_id"]
+isOneToOne: false
+      referencedRelation: "chapitre"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "evenement_chapitre_evenement_id_fkey"
+      columns: ["evenement_id"]
+isOneToOne: false
+      referencedRelation: "evenement"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"filiere": {
                   Row: {
                     "code": string,"id": string,"nom": string,"ordre": number,"voie": Database["public"]['Enums']["voie_t"]
@@ -244,6 +302,32 @@ isOneToOne: false
       columns: ["chapitre_id"]
 isOneToOne: false
       referencedRelation: "chapitre"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"plan_revision": {
+                  Row: {
+                    "cree_le": string,"duree_minutes": number,"eleve_id": string,"examen_id": string,"heure_debut": string,"id": string,"jours_preferes": (number)[],"reorganisation_vue_le": string | null,"sessions_par_semaine": number,"statut": Database["public"]['Enums']["statut_plan_t"]
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cree_le"?: string,"duree_minutes": number,"eleve_id": string,"examen_id": string,"heure_debut": string,"id"?: string,"jours_preferes": (number)[],"reorganisation_vue_le"?: string | null,"sessions_par_semaine": number,"statut": Database["public"]['Enums']["statut_plan_t"]
+                  }
+                  Update: {
+                    "cree_le"?: string,"duree_minutes"?: number,"eleve_id"?: string,"examen_id"?: string,"heure_debut"?: string,"id"?: string,"jours_preferes"?: (number)[],"reorganisation_vue_le"?: string | null,"sessions_par_semaine"?: number,"statut"?: Database["public"]['Enums']["statut_plan_t"]
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "plan_revision_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "plan_revision_examen_id_fkey"
+      columns: ["examen_id"]
+isOneToOne: true
+      referencedRelation: "evenement"
       referencedColumns: ["id"]
     }
                   ]
@@ -528,6 +612,9 @@ isOneToOne: false
 "enregistrer_cours":
 { Args: { "p_cours": string,"p_donnees": Json }; Returns: string
                            },
+"enregistrer_evenement":
+{ Args: { "p": Json,"p_id": string }; Returns: string
+                           },
 "enregistrer_question":
 { Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
                            },
@@ -545,6 +632,11 @@ isOneToOne: false
 "mes_signalements":
 { Args: Record<PropertyKey, never>; Returns: {
               "chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"traite_le": string
+            }[]
+                           },
+"mon_calendrier":
+{ Args: { "p_a": string,"p_de": string }; Returns: {
+              "chapitres": Json,"classe_nom": string,"cle": string,"couleur": string,"cours_id": string,"cours_slug": string,"cours_titre": string,"debut": string,"evenement_id": string,"fin": string,"lecture_seule": boolean,"plan_id": string,"revision_generale": boolean,"titre": string,"type": string
             }[]
                            },
 "notes_classe":
@@ -625,6 +717,9 @@ isOneToOne: false
               "a_relire": number,"brouillons": number,"chapitre_id": string,"chapitre_publie": boolean,"chapitre_titre": string,"cours_id": string,"cours_publie": boolean,"cours_slug": string,"cours_titre": string,"numero": number,"signalements": number,"valides": number
             }[]
                            },
+"supprimer_evenement":
+{ Args: { "p_id": string }; Returns: undefined
+                           },
 "supprimer_question":
 { Args: { "p_question": string }; Returns: undefined
                            },
@@ -639,7 +734,7 @@ isOneToOne: false
                            }
           }
           Enums: {
-            "role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_question_t": "brouillon"|"a_relire"|"valide"|"archivee","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
+            "repetition_t": "aucune"|"quotidienne"|"hebdomadaire"|"jours","role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_plan_t": "propose"|"accepte"|"refuse","statut_question_t": "brouillon"|"a_relire"|"valide"|"archivee","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_evenement_t": "revision"|"devoir"|"examen_reel","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -759,7 +854,7 @@ export const Constants = {
           }
         },"public": {
           Enums: {
-            "role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_question_t": ["brouillon", "a_relire", "valide", "archivee"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
+            "repetition_t": ["aucune", "quotidienne", "hebdomadaire", "jours"],"role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_plan_t": ["propose", "accepte", "refuse"],"statut_question_t": ["brouillon", "a_relire", "valide", "archivee"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_evenement_t": ["revision", "devoir", "examen_reel"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
           }
         }
 } as const
