@@ -557,7 +557,12 @@ isOneToOne: false
             [_ in never]: never
           }
           Functions: {
-            "changer_statut_question":
+            "calendrier_ical":
+{ Args: { "p_jeton": string }; Returns: {
+              "debut": string,"fin": string,"titre": string,"uid": string
+            }[]
+                           },
+"changer_statut_question":
 { Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
                            },
 "classes_eleve":
@@ -580,6 +585,9 @@ isOneToOne: false
                            },
 "creer_classe":
 { Args: { "p_cours": (string)[],"p_filiere": string,"p_niveau": string,"p_nom": string }; Returns: string
+                           },
+"creer_jeton_ical":
+{ Args: Record<PropertyKey, never>; Returns: string
                            },
 "definir_cours_classe":
 { Args: { "p_classe": string,"p_cours": (string)[] }; Returns: undefined
@@ -639,6 +647,9 @@ isOneToOne: false
               "chapitres": Json,"classe_nom": string,"cle": string,"couleur": string,"cours_id": string,"cours_slug": string,"cours_titre": string,"debut": string,"evenement_id": string,"fin": string,"lecture_seule": boolean,"plan_id": string,"revision_generale": boolean,"titre": string,"type": string
             }[]
                            },
+"mon_jeton_ical":
+{ Args: Record<PropertyKey, never>; Returns: string
+                           },
 "notes_classe":
 { Args: { "p_classe": string,"p_cours": string }; Returns: {
               "chapitre_id": string,"chapitre_numero": number,"chapitre_titre": string,"eleve_id": string,"meilleure_note": number,"nom": string,"valide": boolean
@@ -692,6 +703,9 @@ isOneToOne: false
                            },
 "retirer_eleve":
 { Args: { "p_classe": string,"p_eleve": string }; Returns: undefined
+                           },
+"revoquer_jeton_ical":
+{ Args: Record<PropertyKey, never>; Returns: undefined
                            },
 "role_actuel":
 { Args: Record<PropertyKey, never>; Returns: Database["public"]['Enums']["role_t"]
