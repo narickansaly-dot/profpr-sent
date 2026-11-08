@@ -72,6 +72,15 @@ L'élève a un calendrier (`/calendrier`) avec un planning de révision proposé
 - Le service worker (`public/sw.js`) n'est actif qu'en production : `npm run build && npm run start`. En développement (`npm run dev`), l'application n'est ni installable ni lisible hors connexion.
 - `NEXT_PUBLIC_SITE_URL` sert à construire les liens iCal en production. Cette valeur est figée au build : la définir avant `npm run build`.
 
+## Notifications
+
+L'élève reçoit des rappels (événements du calendrier, évaluation qui ferme, nouvel essai, révision du jour, relance d'inactivité) par notification Web Push, et les retrouve dans la page Rappels.
+
+- `npm run cles:notifications` ajoute à `.env.local` les clés VAPID, le secret et l'adresse d'envoi (sans les afficher). `npm run db:reset` configure ensuite la tâche planifiée locale, qui appelle la route chaque minute.
+- Les notifications n'arrivent qu'avec le build de production (`npm run build && npm run start`), car le service worker n'est enregistré qu'en production.
+- En production : générer d'autres clés, renseigner les variables sur l'hébergeur, puis lancer `CONFIGURER_PRODUCTION=1 npm run configurer:envoi` avec l'URL publique de la route dans `ENVOI_URL` et les clés du projet hébergé.
+- Sur iPhone, l'application doit être ajoutée à l'écran d'accueil (iOS 16.4 ou plus récent).
+
 ## Confirmation de l'inscription par e-mail
 
 Sur le projet Supabase hébergé, le modèle d'e-mail « Confirm signup » (Authentication > Email Templates) doit pointer vers :

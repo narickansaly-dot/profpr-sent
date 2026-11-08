@@ -127,7 +127,8 @@ insert into public.abonnement_push (eleve_id, endpoint, p256dh, auth, appareil) 
 insert into public.notification_planifiee (id, eleve_id, type, cle, titre, corps, url, envoi_prevu) values
   ('50000000-0000-0000-0000-0000000000c1', '00000000-0000-0000-0000-0000000000c1', 'inactivite', 'test:1', 'On reprend', 'Corps', '/', now() - interval '1 minute'),
   ('50000000-0000-0000-0000-0000000000c2', '00000000-0000-0000-0000-0000000000c1', 'inactivite', 'test:2', 'Plus tard', 'Corps', '/', now() + interval '1 hour');
--- Le test écrit directement l'empreinte du secret (transaction annulée à la fin).
+-- Le test écrit directement l'empreinte du secret (transaction annulée à la fin) ; une base locale configurée en a déjà une.
+delete from prive.cle_envoi;
 insert into prive.cle_envoi (id, empreinte) values (true, extensions.digest(repeat('s', 43), 'sha256'));
 -- c1 a désactivé les rappels d'événements plus haut : on remet des préférences par défaut pour le silence.
 delete from public.preferences_notification;
