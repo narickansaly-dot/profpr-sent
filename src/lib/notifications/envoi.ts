@@ -30,12 +30,13 @@ async function envoyerSansException(envoyer: Envoyer, a: Abonnement, charge: str
 async function traiterLigne(
   l: LigneEnvoi, envoyer: Envoyer, maintenant: Date,
 ): Promise<{ resultat: Resultat; expires: string[] }> {
+  // Sans appareil, rien à retenir : le rappel doit apparaître tout de suite dans /rappels, même pendant le silence.
+  if (l.abonnements.length === 0) {
+    return { resultat: { id: l.id, issue: 'envoyee' }, expires: [] };
+  }
   const apresSilence = decalerSilence(maintenant, { debut: l.silence_debut, fin: l.silence_fin });
   if (apresSilence.getTime() > maintenant.getTime()) {
     return { resultat: { id: l.id, issue: 'decaler', a: apresSilence.toISOString() }, expires: [] };
-  }
-  if (l.abonnements.length === 0) {
-    return { resultat: { id: l.id, issue: 'envoyee' }, expires: [] };
   }
   const charge = JSON.stringify({ id: l.id, titre: l.titre, corps: l.corps, url: l.url });
   const issues = await Promise.all(l.abonnements.map((a) => envoyerSansException(envoyer, a, charge)));

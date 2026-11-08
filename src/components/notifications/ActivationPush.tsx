@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import { activerPush, desactiverPush, lireEtatPush, nomAppareil, type EtatPush } from '@/lib/notifications/client';
+import { abonnementCourant, activerPush, desactiverPush, lireEtatPush, nomAppareil, type EtatPush } from '@/lib/notifications/client';
 import { enregistrerAbonnement, oublierAppareilCourant } from '@/app/(app)/notifications/actions';
 import { GuideIphone } from './GuideIphone';
 
@@ -13,7 +13,21 @@ export function ActivationPush({ clePublique, onActive }: { clePublique: string;
   const [enCours, demarrer] = useTransition();
 
   useEffect(() => {
-    lireEtatPush().then(setEtat).catch(() => setEtat('non_supporte'));
+    let annule = false;
+    (async () => {
+      const lu = await lireEtatPush();
+      if (lu !== 'actif') return lu;
+      // L'abonnement du navigateur peut venir d'un autre compte : on le rattache à l'élève connecté (idempotent).
+      try {
+        const abo = await abonnementCourant();
+        if (!abo) return 'inactif';
+        const r = await enregistrerAbonnement(abo, nomAppareil(navigator.userAgent));
+        return r.erreur ? 'inactif' : 'actif';
+      } catch {
+        return 'inactif';
+      }
+    })().then((e) => { if (!annule) setEtat(e); }).catch(() => { if (!annule) setEtat('non_supporte'); });
+    return () => { annule = true; };
   }, []);
 
   function activer() {

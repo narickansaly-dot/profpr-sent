@@ -36,6 +36,13 @@ describe('traiterLot', () => {
     expect(r.resultats).toEqual([{ id: 'n1', issue: 'envoyee' }]);
     expect(envoyer).not.toHaveBeenCalled();
   });
+  it('sans appareil pendant les heures de silence, la notification est envoyée sans être décalée', async () => {
+    const envoyer = vi.fn(ok);
+    const nuit = new Date('2026-12-10T22:30:00Z');
+    const r = await traiterLot([ligne({ abonnements: [] })], envoyer, nuit);
+    expect(r.resultats).toEqual([{ id: 'n1', issue: 'envoyee' }]);
+    expect(envoyer).not.toHaveBeenCalled();
+  });
   it('un appareil qui répond suffit, l’appareil expiré est signalé', async () => {
     const envoyer: Envoyer = async (a) => (a.endpoint.endsWith('/1') ? { ok: false, expire: true, temporaire: false } : { ok: true });
     const r = await traiterLot([ligne({ abonnements: [abo(1), abo(2)] })], envoyer, maintenant);

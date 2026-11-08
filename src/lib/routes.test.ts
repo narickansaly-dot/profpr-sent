@@ -5,6 +5,9 @@ describe('redirectionPour', () => {
   it('laisse la tâche planifiée appeler la route d’envoi sans session', () => {
     expect(redirectionPour('/api/notifications/envoyer', false)).toBeNull();
   });
+  it('ne rend publique que la route d’envoi, pas le reste de /api/notifications', () => {
+    expect(redirectionPour('/api/notifications/autre', false)).toEqual({ pathname: '/connexion', suite: '/api/notifications/autre' });
+  });
   it('envoie un visiteur non connecté vers la connexion', () => {
     expect(redirectionPour('/', false)).toEqual({ pathname: '/connexion' });
     expect(redirectionPour('/cours/bph-1re-st2s', false)).toEqual({

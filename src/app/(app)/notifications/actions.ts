@@ -47,6 +47,7 @@ export async function retirerAppareil(form: FormData): Promise<void> {
   const supabase = await creerClientServeur();
   await supabase.rpc('supprimer_abonnement_push', { p_id: id.data });
   revalidatePath('/notifications');
+  revalidatePath('/calendrier');
 }
 
 export async function enregistrerPreferences(_: EtatPreferences, form: FormData): Promise<EtatPreferences> {

@@ -3,14 +3,16 @@
 import { useRef, useState } from 'react';
 import { deconnecter } from '@/app/(auth)/actions';
 import { oublierAppareilCourant } from '@/app/(app)/notifications/actions';
-import { desactiverPush } from '@/lib/notifications/client';
+import { endpointCourant, desactiverPush } from '@/lib/notifications/client';
 import { viderCachePages } from '@/lib/pwa/cache';
 
 /** Sur un appareil partagé, la personne suivante ne doit pas recevoir les rappels : on désabonne l'appareil, sans jamais bloquer la déconnexion. */
 async function oublierCetAppareil(): Promise<void> {
   try {
-    const endpoint = await desactiverPush();
-    if (endpoint) await oublierAppareilCourant(endpoint);
+    const endpoint = await endpointCourant();
+    if (!endpoint) return;
+    // En parallèle : si la course de 2 s coupe, le serveur a déjà reçu la demande.
+    await Promise.allSettled([oublierAppareilCourant(endpoint), desactiverPush()]);
   } catch { /* la déconnexion continue */ }
 }
 

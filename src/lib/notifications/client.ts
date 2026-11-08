@@ -76,6 +76,20 @@ export async function activerPush(clePublique: string): Promise<AbonnementNaviga
   return { endpoint: json.endpoint, p256dh: json.keys.p256dh, auth: json.keys.auth };
 }
 
+/** Abonnement actuel du navigateur, sans le modifier (pour le rattacher à l'élève connecté). */
+export async function abonnementCourant(): Promise<AbonnementNavigateur | null> {
+  const abonnement = await abonnementActuel();
+  if (!abonnement) return null;
+  const json = abonnement.toJSON();
+  if (!json.endpoint || !json.keys?.p256dh || !json.keys.auth) return null;
+  return { endpoint: json.endpoint, p256dh: json.keys.p256dh, auth: json.keys.auth };
+}
+
+/** Endpoint de l'abonnement actuel, sans se désabonner. */
+export async function endpointCourant(): Promise<string | null> {
+  return (await abonnementActuel())?.endpoint ?? null;
+}
+
 export async function desactiverPush(): Promise<string | null> {
   const abonnement = await abonnementActuel();
   if (!abonnement) return null;
