@@ -98,6 +98,11 @@ describe('messageErreur, calendrier et planning', () => {
     };
     for (const [code, texte] of Object.entries(attendu)) expect(messageErreur(code)).toBe(texte);
   });
+  it('traduit les erreurs des notifications', () => {
+    expect(messageErreur('abonnement_invalide')).toBe('Cet appareil n’a pas pu être enregistré. Réessaie.');
+    expect(messageErreur('preferences_invalides')).toBe('Tes réglages n’ont pas pu être lus. Vérifie les heures et réessaie.');
+    expect(messageErreur('rappel_invalide')).toBe('Choisis un rappel dans la liste.');
+  });
   it('garde les codes déjà traduits que le calendrier peut lever', () => {
     for (const code of ['non_connecte', 'acces_refuse', 'quiz_indisponible', 'evaluation_en_cours']) {
       expect(messageErreur(code)).not.toBe('Une erreur est survenue. Réessaie dans un instant.');

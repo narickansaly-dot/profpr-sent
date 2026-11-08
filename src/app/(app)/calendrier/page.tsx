@@ -3,6 +3,8 @@ import { exigerEleve } from '@/lib/calendrier/garde';
 import { lireCalendrier, plansAReorganiser } from '@/lib/calendrier/requetes';
 import { jourParis, libellePeriode, lireVue, naviguer, periodeVue, VUES, type Vue } from '@/lib/calendrier/dates';
 import { BanniereReorganiser } from '@/components/calendrier/BanniereReorganiser';
+import { InvitationRappels } from '@/components/notifications/InvitationRappels';
+import { creerClientServeur } from '@/lib/supabase/server';
 import { VueCalendrier } from '@/components/calendrier/VueCalendrier';
 
 export const metadata = { title: 'Calendrier' };
@@ -16,7 +18,14 @@ export default async function PageCalendrier({ searchParams }: { searchParams: P
   const maintenant = new Date();
   const { vue, jour } = lireVue(await searchParams, maintenant);
   const { jours, de, a } = periodeVue(vue, jour);
-  const [occurrences, aReorganiser] = await Promise.all([lireCalendrier(de, a), plansAReorganiser()]);
+  const supabase = await creerClientServeur();
+  const [occurrences, aReorganiser, evenements, appareils] = await Promise.all([
+    lireCalendrier(de, a), plansAReorganiser(),
+    supabase.from('evenement').select('id', { count: 'exact', head: true }),
+    supabase.from('abonnement_push').select('id', { count: 'exact', head: true }),
+  ]);
+  const nbEvenements = evenements.count ?? 0;
+  const nbAppareils = appareils.count ?? 0;
   return (
     <div className="calendrier">
       <header className="calendrier-entete">
@@ -26,6 +35,7 @@ export default async function PageCalendrier({ searchParams }: { searchParams: P
       {aReorganiser.map((p) => (
         <BanniereReorganiser key={p.plan_id} planId={p.plan_id} examenId={p.examen_id} examenTitre={p.examen_titre} />
       ))}
+      {nbEvenements > 0 && nbAppareils === 0 && <InvitationRappels clePublique={process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? ''} />}
       <nav aria-label="Vue du calendrier" className="choix-vue">
         {VUES.map((v) => (
           <Link key={v} href={`/calendrier?vue=${v}&date=${jour}`} aria-current={v === vue ? 'page' : undefined}>{NOMS[v]}</Link>
@@ -38,7 +48,11 @@ export default async function PageCalendrier({ searchParams }: { searchParams: P
         <Link href={`/calendrier?vue=${vue}`} className="lien-aujourdhui">Aujourd’hui</Link>
       </div>
       <VueCalendrier vue={vue} jour={jour} jours={jours} occurrences={occurrences} aujourdhui={jourParis(maintenant)} />
-      <p className="lien-partage"><Link href="/calendrier/partage">Ajouter mon calendrier à un autre agenda</Link></p>
+      <p className="lien-partage">
+        <Link href="/calendrier/partage">Ajouter mon calendrier à un autre agenda</Link>
+        {' · '}
+        <Link href="/notifications">Notifications</Link>
+      </p>
     </div>
   );
 }

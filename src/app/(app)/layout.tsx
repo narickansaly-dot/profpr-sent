@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { lireProfil, lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { joursEssaiRestants } from '@/lib/acces/essai';
+import { compterRappelsNonLus } from '@/lib/notifications/requetes';
 import { EnTete } from '@/components/EnTete';
 import { BanniereEssai } from '@/components/BanniereEssai';
 import { IndicateurConnexion } from '@/components/IndicateurConnexion';
@@ -20,9 +21,10 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     );
   }
   const eleve = profil.role === 'eleve';
+  const rappelsNonLus = eleve ? await compterRappelsNonLus() : 0;
   return (
     <>
-      <EnTete prenom={profil.nom} role={profil.role} />
+      <EnTete prenom={profil.nom} role={profil.role} rappelsNonLus={rappelsNonLus} />
       <IndicateurConnexion />
       {eleve && <BanniereEssai joursRestants={joursEssaiRestants(new Date(profil.inscrit_le), new Date())} />}
       <main className="conteneur">{children}</main>

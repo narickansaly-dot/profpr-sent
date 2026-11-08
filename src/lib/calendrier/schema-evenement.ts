@@ -5,11 +5,15 @@ import { ajouterJours, estJourValide } from './dates';
 export const TYPES_EVENEMENT = ['revision', 'devoir', 'examen_reel'] as const;
 export const REPETITIONS = ['aucune', 'quotidienne', 'hebdomadaire', 'jours'] as const;
 export const DUREES_EVENEMENT = [15, 30, 45, 60, 90, 120, 180] as const;
+export const RAPPELS = [
+  { valeur: '', libelle: 'Aucun rappel' }, { valeur: '10', libelle: '10 minutes avant' },
+  { valeur: '60', libelle: '1 heure avant' }, { valeur: '1440', libelle: 'La veille (24 heures avant)' },
+] as const;
 
-export type ChampEvenement = 'type' | 'titre' | 'jour' | 'heure' | 'duree' | 'cours' | 'chapitres' | 'repetition' | 'jours' | 'jusqu';
+export type ChampEvenement = 'type' | 'titre' | 'jour' | 'heure' | 'duree' | 'cours' | 'chapitres' | 'repetition' | 'jours' | 'jusqu' | 'rappel';
 export type ValeursEvenement = {
   type: string; titre: string; jour: string; heure: string; duree: string; cours: string;
-  chapitres: string[]; repetition: string; jours: string[]; jusqu: string;
+  chapitres: string[]; repetition: string; jours: string[]; jusqu: string; rappel: string;
 };
 /** Objet envoyé tel quel à la RPC enregistrer_evenement. */
 export type DonneesEvenement = {
@@ -28,16 +32,17 @@ const schema = z.object({
   repetition: z.enum(REPETITIONS, { error: 'Choisis une répétition dans la liste.' }),
   jours: z.array(z.coerce.number().int().min(1).max(7)),
   jusqu: z.string().optional(),
+  rappel: z.enum(['', '10', '60', '1440'], { error: 'Choisis un rappel dans la liste.' }),
 });
 
 export function lireFormulaireEvenement(form: FormData):
-  | { ok: true; donnees: DonneesEvenement; valeurs: ValeursEvenement }
+  | { ok: true; donnees: DonneesEvenement; rappel: 10 | 60 | 1440 | null; valeurs: ValeursEvenement }
   | { ok: false; erreur: string; champ: ChampEvenement; valeurs: ValeursEvenement } {
   const texte = (cle: string) => String(form.get(cle) ?? '');
   const valeurs: ValeursEvenement = {
     type: texte('type'), titre: texte('titre'), jour: texte('jour'), heure: texte('heure'), duree: texte('duree'),
     cours: texte('cours'), chapitres: form.getAll('chapitres').map(String), repetition: texte('repetition') || 'aucune',
-    jours: form.getAll('jours').map(String), jusqu: texte('jusqu'),
+    jours: form.getAll('jours').map(String), jusqu: texte('jusqu'), rappel: texte('rappel'),
   };
   const echec = (champ: ChampEvenement, erreur: string) => ({ ok: false as const, erreur, champ, valeurs });
   const r = schema.safeParse({
@@ -60,6 +65,7 @@ export function lireFormulaireEvenement(form: FormData):
   return {
     ok: true,
     valeurs,
+    rappel: d.rappel ? (Number(d.rappel) as 10 | 60 | 1440) : null,
     donnees: {
       type: d.type, titre: d.titre, debut, duree_minutes: d.duree, cours_id: d.cours ?? null, chapitres: d.chapitres,
       repetition: d.repetition,

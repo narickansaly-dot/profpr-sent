@@ -18,7 +18,7 @@ export default async function PageNouvelEvenement({ searchParams }: { searchPara
       <FormulaireEvenement cours={cours} initial={{
         type: (TYPES_EVENEMENT as readonly string[]).includes(type ?? '') ? type! : 'revision',
         titre: '', jour: jour && estJourValide(jour) ? jour : jourParis(new Date()), heure: '17:00', duree: '60',
-        cours: '', chapitres: [], repetition: 'aucune', jours: [], jusqu: '',
+        cours: '', chapitres: [], repetition: 'aucune', jours: [], jusqu: '', rappel: '',
       }} />
     </div>
   );

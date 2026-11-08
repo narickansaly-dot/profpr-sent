@@ -56,6 +56,9 @@ const MESSAGES: Record<string, string> = {
   examen_passe: 'Cet examen est déjà passé.',
   planning_invalide: 'Ce planning n’a pas pu être enregistré. Recalcule l’aperçu et réessaie.',
   plan_introuvable: 'Ce planning n’existe plus.',
+  abonnement_invalide: 'Cet appareil n’a pas pu être enregistré. Réessaie.',
+  preferences_invalides: 'Tes réglages n’ont pas pu être lus. Vérifie les heures et réessaie.',
+  rappel_invalide: 'Choisis un rappel dans la liste.',
 };
 
 export function messageErreur(message: string | undefined): string {
