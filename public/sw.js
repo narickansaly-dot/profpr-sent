@@ -124,12 +124,14 @@ async function repli() {
 
 // Notifications Web Push. Charge envoyée par la route d'envoi : { id, titre, corps, url }.
 function lienInterne(url) {
-  if (typeof url !== 'string' || !url.startsWith('/') || /[\u0000-\u001f\u007f\\]/.test(url)) return '/';
+  const accueil = self.location.origin + '/';
+  if (typeof url !== 'string' || !url.startsWith('/') || /[\u0000-\u001f\u007f\\]/.test(url)) return accueil;
+  if (/\/\.\.?(\/|$|\?|#)/.test(url)) return accueil;
   try {
     const u = new URL(url, self.location.origin);
-    return u.origin === self.location.origin ? u.pathname + u.search + u.hash : '/';
+    return u.origin === self.location.origin ? u.href : accueil;
   } catch {
-    return '/';
+    return accueil;
   }
 }
 
@@ -154,7 +156,7 @@ self.addEventListener('push', (evenement) => {
 
 self.addEventListener('notificationclick', (evenement) => {
   evenement.notification.close();
-  const cible = new URL(lienInterne(evenement.notification.data && evenement.notification.data.url), self.location.origin).href;
+  const cible = lienInterne(evenement.notification.data && evenement.notification.data.url);
   evenement.waitUntil((async () => {
     const fenetres = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     for (const fenetre of fenetres) {
