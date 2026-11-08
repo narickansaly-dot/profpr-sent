@@ -647,6 +647,9 @@ isOneToOne: false
 "cloturer_mes_tentatives_expirees":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
+"configurer_envoi":
+{ Args: { "p_secret": string,"p_url": string }; Returns: undefined
+                           },
 "correction_tentative":
 { Args: { "p_tentative": string }; Returns: {
               "bonnes_reponses": Json,"correcte": boolean,"enonce": string,"explication": string,"ordre": number,"propositions": Json,"question_id": string,"reponse": Json,"reponses_acceptees": (string)[],"type": Database["public"]['Enums']["type_question_t"]
@@ -703,6 +706,14 @@ isOneToOne: false
                            },
 "enregistrer_question":
 { Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
+                           },
+"envoi_reserver":
+{ Args: { "p_limite"?: number,"p_secret": string }; Returns: {
+              "abonnements": Json,"corps": string,"eleve_id": string,"envoi_prevu": string,"essais": number,"id": string,"silence_debut": string,"silence_fin": string,"titre": string,"url": string
+            }[]
+                           },
+"envoi_terminer":
+{ Args: { "p_expires": (string)[],"p_resultats": Json,"p_secret": string }; Returns: undefined
                            },
 "ignorer_reorganisation":
 { Args: { "p_plan": string }; Returns: undefined
