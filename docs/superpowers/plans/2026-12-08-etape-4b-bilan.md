@@ -1,7 +1,7 @@
 # Étape 4b : bilan et points reportés
 
 État final sur la branche `etape-4b-notifications` :
-- 343 tests unitaires (Vitest, 37 fichiers) ;
+- 345 tests unitaires (Vitest, 37 fichiers) ;
 - 727 tests de la base (pgTAP, 23 fichiers) ;
 - 30 exécutions de bout en bout (Playwright : 15 parcours, sur mobile et sur ordinateur, avec un build de production), dont le nouveau parcours des notifications ;
 - typage, lint et build sans erreur.
@@ -52,7 +52,7 @@ Autres écarts, à la tâche 7 :
 - **Pas de gestion de `pushsubscriptionchange`** : si le navigateur renouvelle l'abonnement, l'élève doit réactiver les notifications.
 - **`VERSION = 'v2'` du service worker** : la mise à jour vide les chapitres en cache `pages-v1` ; ils sont remis en cache à la prochaine lecture.
 - **Compteur de l'en-tête** rafraîchi par `router.refresh()` : il peut rester périmé jusqu'à la navigation suivante.
-- **Secret visible dans les tables internes de `pg_net` et `pg_cron`**, lisibles par le rôle `postgres`. S'il fuit, n'importe qui peut déclencher la route (envois dus seulement : elle ne crée pas de notification) et appeler `envoi_reserver` et `envoi_terminer`, donc réserver des lignes, bloquer leurs envois pendant 2 minutes ou les marquer terminées sans envoi. Il permet aussi de lire les points d'envoi et les clés des appareils des élèves ayant une notification due, mais pas d'envoyer soi-même une notification (la clé VAPID privée reste côté serveur) ni d'accéder aux comptes. À régénérer (`cles:notifications` puis `configurer:envoi`) en cas de fuite.
+- **Secret d'envoi visible dans les tables internes de `pg_cron` et dans la file `net.http_request_queue` de `pg_net`** (en-tête `Authorization`, pendant le traitement). En base locale, `net.http_request_queue` est lisible par `anon` et `authenticated` au niveau SQL ; elle n'est pas exposée par PostgREST ni GraphQL (seuls `public` et `graphql_public` le sont). Ne jamais exposer le schéma `net`. Si le secret fuit, avec `envoi_reserver` on peut lire les points d'envoi, les clés `p256dh` et `auth`, les titres, les corps et les liens des notifications dues ; avec `envoi_terminer`, marquer comme envoyée ou en échec, ou décaler, toute ligne en attente dont on connaît l'identifiant, et supprimer des abonnements par point d'envoi. On ne peut pas envoyer soi-même une notification sans la clé VAPID privée, ni accéder aux comptes. À régénérer (`cles:notifications` puis `configurer:envoi`) en cas de fuite.
 - **Livraison « au moins une fois »** : si la route échoue entre l'envoi et `envoi_terminer`, la ligne est renvoyée après la réservation de 2 minutes ; un doublon est possible, une perte non.
 - **Service worker sans test unitaire** : vérifié par des sondes `node` et par le parcours hors connexion.
 - **Notifications seulement avec le build de production**, car le service worker n'est enregistré qu'en production.
@@ -64,7 +64,22 @@ Autres écarts, à la tâche 7 :
 
 ## Revue finale
 
-À compléter après la revue finale de la branche par Opus (droits et RLS, planification, envoi concurrent, service worker, vie privée sur appareil partagé, accessibilité à 375 px).
+Revue finale de la branche par Opus : verdict « fusion possible avec corrections », aucun problème critique.
+
+Points forts :
+- droits et RLS vérifiés en direct sur la base locale ;
+- planification correcte, y compris aux changements d'heure ;
+- envoi avec réservation, réessais, échéance et liste blanche d'hôtes ;
+- liens du service worker limités à l'origine du site ;
+- accessibilité des nouvelles pages.
+
+Corrections appliquées après la revue :
+- appareil partagé : `ViderCachePages` désabonne le navigateur sur les pages de connexion et d'inscription ; `ActivationPush` rattache l'abonnement du navigateur à l'élève connecté (ou affiche « inactif » si l'enregistrement échoue) ; la déconnexion lit le point d'envoi puis l'oublie côté serveur en parallèle du désabonnement, dans la limite de 2 s ;
+- sans appareil, un rappel est envoyé tout de suite dans la liste, même pendant les heures de silence (test ajouté) ;
+- seule la route `/api/notifications/envoyer` est publique (test ajouté) ;
+- retirer un appareil rafraîchit aussi `/calendrier`.
+
+Comptes après correction : 345 tests unitaires (37 fichiers), 727 tests pgTAP (23 fichiers), 30 exécutions Playwright, typage, lint et build sans erreur.
 
 ## Points reportés, par étape
 
@@ -72,8 +87,10 @@ Autres écarts, à la tâche 7 :
 
 Points de l'étape 4b :
 - **Base, planification** : reprise d'un endpoint par un autre élève (appareil partagé, inexploitable sans l'endpoint) ; `marquer_rappels_lus` marque aussi des lignes `en_attente` échues ; départage aléatoire du plafond de 10 appareils dans une même transaction ; schéma `net` lisible par `anon` (défaut Supabase, non exposé par PostgREST) ; `echeance_proche` ignore l'ouverture de l'évaluation.
-- **Envoi** : longueur du secret révélée par le temps de comparaison (négligeable) ; `HTTPS` en majuscules toléré côté TypeScript ; `.env.local` créé en 0644 et clé vide dupliquée par `cles:notifications` ; dédoublonner `expires` ; tests manquants (ordre par lots, appareils mixtes, fin de silence inexistante ou ambiguë au changement d'heure).
+- **Envoi** : longueur du secret révélée par le temps de comparaison (négligeable) ; `HTTPS` en majuscules toléré côté TypeScript ; `.env.local` créé en 0644 et clé vide dupliquée par `cles:notifications` ; tests manquants (ordre par lots, appareils mixtes, fin de silence inexistante ou ambiguë au changement d'heure).
+- **Envoi, à reprendre** : lignes renvoyées toutes les 2 minutes sans limite si `envoi_terminer` échoue en continu (`essais` n'est pas incrémenté à la réservation) ; lignes en attente non revalidées au moment de l'envoi (`echeance_proche` après changement ou validation de l'échéance ou départ de la classe, `nouvel_essai` après validation, `inactivite` après une activité, rappel décalé au-delà de son événement) ; `regler_rappel_evenement` peut supprimer une ligne réservée (doublon possible) ; le délai de `web-push` est un délai d'inactivité de la connexion, pas une durée totale ; la trace Playwright au réessai pourrait enregistrer le secret Bearer local.
 - **Service worker** : libellé d'appareil approximatif pour Chrome et Firefox sur iOS ; badge Android en couleur ; pas de test unitaire.
+- **Interface, à reprendre** : contraste en mode sombre de la pastille du compteur ; deux appareils de même libellé donnent des boutons « Retirer » identiques.
 - **Interface** : invitation qui apparaît après coup (décalage) ; « Nouveau » qui disparaît vite, et lignes arrivées entre-temps marquées lues ; condition « inactif » de l'invitation qui inclut l'autorisation déjà accordée ; retirer l'appareil courant laisse l'abonnement du navigateur ; hôte non vérifié tôt dans `enregistrerAbonnement` ; échec du réglage de rappel seulement journalisé ; bouton de déconnexion resté désactivé si la déconnexion serveur échoue ; repli `form.submit()` hors action React.
 
 Points de l'étape 4a toujours ouverts :
