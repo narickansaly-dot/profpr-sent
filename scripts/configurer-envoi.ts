@@ -1,0 +1,31 @@
+// Enregistre l'empreinte du secret d'envoi et (re)crée la tâche planifiée qui appelle la route chaque minute.
+// Utilise la clé de service : base locale seulement, sauf si CONFIGURER_PRODUCTION=1 est fixé explicitement.
+import { createClient } from '@supabase/supabase-js';
+import type { Database } from '../src/lib/supabase/types';
+
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '';
+const secret = process.env.ENVOI_SECRET;
+const cible = process.env.ENVOI_URL;
+
+if (!secret || !cible) {
+  console.log('ENVOI_SECRET ou ENVOI_URL absent de .env.local : tâche d’envoi non configurée (npm run cles:notifications).');
+  process.exit(0);
+}
+let hote = '';
+try { hote = new URL(url).hostname; } catch { /* vérifié ci-dessous */ }
+if (!['localhost', '127.0.0.1', '[::1]'].includes(hote) && process.env.CONFIGURER_PRODUCTION !== '1') {
+  console.error('Refusé : NEXT_PUBLIC_SUPABASE_URL ne pointe pas vers la base locale (fixer CONFIGURER_PRODUCTION=1 pour la production).');
+  process.exit(1);
+}
+// Pas d'await au niveau du module : les scripts sont exécutés en CommonJS par tsx (voir importer-contenu.ts).
+async function main() {
+  const db = createClient<Database>(url, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });
+  const { error } = await db.rpc('configurer_envoi', { p_url: cible!, p_secret: secret! });
+  if (error) throw new Error(error.message);
+  console.log('Tâche d’envoi configurée (chaque minute).');
+}
+
+main().catch((e) => {
+  console.error('Configuration de la tâche d’envoi impossible :', e instanceof Error ? e.message : String(e));
+  process.exit(1);
+});

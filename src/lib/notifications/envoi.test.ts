@@ -66,4 +66,36 @@ describe('traiterLot', () => {
     const r = await traiterLot([ligne()], envoyer, maintenant);
     expect(r.resultats).toEqual([{ id: 'n1', issue: 'reessayer', a: '2026-12-10T12:01:00.000Z' }]);
   });
+  it('25 lignes, envoyeur qui répond en ordre inverse : l’ordre des lignes est gardé, les appareils expirés s’accumulent', async () => {
+    const lignes = Array.from({ length: 25 }, (_, i) => ligne({ id: `n${i}`, abonnements: [abo(i)] }));
+    const envoyer: Envoyer = async (a) => {
+      const i = Number(a.endpoint.split('/').pop());
+      await new Promise((r) => setTimeout(r, (25 - i) * 2));
+      return i % 5 === 0 ? { ok: false, expire: true, temporaire: false } : { ok: true };
+    };
+    const r = await traiterLot(lignes, envoyer, maintenant);
+    expect(r.resultats.map((x) => x.id)).toEqual(lignes.map((l) => l.id));
+    expect(r.resultats.every((x) => x.issue === 'envoyee')).toBe(true);
+    expect([...r.expires].sort()).toEqual([0, 5, 10, 15, 20].map((i) => `https://push.example/${i}`).sort());
+  });
+  it('un appareil expiré et un appareil en échec temporaire : nouvel essai, l’expiré est retiré', async () => {
+    const envoyer: Envoyer = async (a) => (a.endpoint.endsWith('/1')
+      ? { ok: false, expire: true, temporaire: false } : { ok: false, expire: false, temporaire: true });
+    const r = await traiterLot([ligne({ abonnements: [abo(1), abo(2)] })], envoyer, maintenant);
+    expect(r).toEqual({
+      resultats: [{ id: 'n1', issue: 'reessayer', a: '2026-12-10T12:01:00.000Z' }], expires: ['https://push.example/1'],
+    });
+  });
+  it('un appareil en échec temporaire et un en échec définitif : nouvel essai', async () => {
+    const envoyer: Envoyer = async (a) => (a.endpoint.endsWith('/1')
+      ? { ok: false, expire: false, temporaire: true } : { ok: false, expire: false, temporaire: false });
+    const r = await traiterLot([ligne({ abonnements: [abo(1), abo(2)] })], envoyer, maintenant);
+    expect(r).toEqual({ resultats: [{ id: 'n1', issue: 'reessayer', a: '2026-12-10T12:01:00.000Z' }], expires: [] });
+  });
+  it('un appareil expiré et un en échec définitif : échec, l’expiré est retiré', async () => {
+    const envoyer: Envoyer = async (a) => (a.endpoint.endsWith('/1')
+      ? { ok: false, expire: true, temporaire: false } : { ok: false, expire: false, temporaire: false });
+    const r = await traiterLot([ligne({ abonnements: [abo(1), abo(2)] })], envoyer, maintenant);
+    expect(r).toEqual({ resultats: [{ id: 'n1', issue: 'echec' }], expires: ['https://push.example/1'] });
+  });
 });
