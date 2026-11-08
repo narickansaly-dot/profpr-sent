@@ -1,5 +1,5 @@
 begin;
-select plan(18);
+select plan(26);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000c1', 'eleve-envoi@test.local'),
@@ -82,6 +82,44 @@ select prive.planifier_notifications('2027-01-12 17:45+01');
 select is((select count(*)::int from public.notification_planifiee where evenement_id = '40000000-0000-0000-0000-0000000000c2'), 0,
   'un type désactivé n''est pas planifié');
 
+-- C6, C7, nouvel essai en cours : élèves dédiés (d1 à d5), seuls comptés.
+insert into auth.users (id, email) values
+  ('00000000-0000-0000-0000-0000000000d1', 'd1@test.local'), ('00000000-0000-0000-0000-0000000000d2', 'd2@test.local'),
+  ('00000000-0000-0000-0000-0000000000d3', 'd3@test.local'), ('00000000-0000-0000-0000-0000000000d4', 'd4@test.local'),
+  ('00000000-0000-0000-0000-0000000000d5', 'd5@test.local');
+update public.profil set onboarding_termine = true, inscrit_le = '2027-02-01 10:00+01'
+  where id in ('00000000-0000-0000-0000-0000000000d1', '00000000-0000-0000-0000-0000000000d2', '00000000-0000-0000-0000-0000000000d3',
+               '00000000-0000-0000-0000-0000000000d5');
+update public.profil set inscrit_le = '2027-02-01 10:00+01' where id = '00000000-0000-0000-0000-0000000000d4';
+update public.profil set demande_enseignant = true, etablissement = 'Lycée test' where id = '00000000-0000-0000-0000-0000000000d5';
+-- d1 : classe dont l'échéance (13 janvier 9 h 10) tombe avant la fin de l'essai + 24 h.
+insert into public.inscription_classe (classe_id, eleve_id) values ('60000000-0000-0000-0000-0000000000c1', '00000000-0000-0000-0000-0000000000d1');
+insert into public.tentative (eleve_id, type, cours_id, nb_questions, debut, fin, statut, note, reussie) values
+  ('00000000-0000-0000-0000-0000000000d1', 'evaluation_cours', '20000000-0000-0000-0000-0000000000c1', 40,
+   '2027-01-12 09:00+01', '2027-01-12 09:30+01', 'terminee', 40, false);
+select prive.planifier_notifications('2027-01-13 09:25+01');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-0000000000d1' and type = 'nouvel_essai'), 0,
+  'pas de nouvel essai si l''évaluation ferme avant');
+-- d2 : un nouvel essai est déjà en cours.
+insert into public.tentative (eleve_id, type, cours_id, nb_questions, debut, fin, statut, note, reussie) values
+  ('00000000-0000-0000-0000-0000000000d2', 'evaluation_cours', '20000000-0000-0000-0000-0000000000c1', 40,
+   '2027-01-14 07:00+01', '2027-01-14 08:00+01', 'terminee', 40, false);
+insert into public.tentative (eleve_id, type, cours_id, nb_questions, debut, statut) values
+  ('00000000-0000-0000-0000-0000000000d2', 'evaluation_cours', '20000000-0000-0000-0000-0000000000c1', 40, '2027-01-15 07:50+01', 'en_cours');
+select prive.planifier_notifications('2027-01-15 08:00+01');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-0000000000d2' and type = 'nouvel_essai'), 0,
+  'pas de nouvel essai si un essai est en cours');
+-- d3, d4, d5 : quatre passages espacés de 3 jours.
+select prive.planifier_notifications('2027-02-10 16:50+01');
+select prive.planifier_notifications('2027-02-13 16:50+01');
+select prive.planifier_notifications('2027-02-16 16:50+01');
+select prive.planifier_notifications('2027-02-19 16:50+01');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-0000000000d3' and type = 'inactivite'), 3,
+  'au plus trois relances d''inactivité sans activité');
+select is((select count(*)::int from public.notification_planifiee where eleve_id in ('00000000-0000-0000-0000-0000000000d4', '00000000-0000-0000-0000-0000000000d5')
+            and type = 'inactivite'), 0,
+  'pas de relance sans accueil terminé ni pour une demande d''enseignant');
+
 -- Envoi : une notification due maintenant, un appareil.
 delete from public.notification_planifiee;
 insert into public.abonnement_push (eleve_id, endpoint, p256dh, auth, appareil) values
@@ -105,6 +143,12 @@ select is((select count(*)::int from public.envoi_reserver(repeat('s', 43)) wher
   'une notification réservée ne l''est pas deux fois');
 select throws_ok($$ select public.envoi_terminer(repeat('s', 43), '[{"id":"50000000-0000-0000-0000-0000000000c1","issue":"perdue"}]'::jsonb, '{}') $$,
   'P0001', 'resultat_invalide', 'une issue inconnue est refusée');
+select throws_ok($$ select public.envoi_terminer(repeat('s', 43), '[{"id":"pas-un-uuid","issue":"envoyee"}]'::jsonb, '{}') $$,
+  'P0001', 'resultat_invalide', 'un identifiant invalide est refusé');
+select throws_ok($$ select public.envoi_terminer(repeat('s', 43), '[{"id":"50000000-0000-0000-0000-0000000000c1","issue":"decaler","a":"pas une date"}]'::jsonb, '{}') $$,
+  'P0001', 'resultat_invalide', 'une date invalide est refusée');
+select throws_ok($$ select public.envoi_terminer(repeat('s', 43), '{"id":"x"}'::jsonb, '{}') $$,
+  'P0001', 'resultat_invalide', 'des résultats qui ne sont pas un tableau sont refusés');
 select lives_ok($$ select public.envoi_terminer(repeat('s', 43),
   '[{"id":"50000000-0000-0000-0000-0000000000c1","issue":"envoyee"}]'::jsonb, array['https://fcm.googleapis.com/fcm/send/c1']) $$,
   'les issues sont enregistrées');
@@ -115,6 +159,7 @@ select results_eq($$ select statut::text, envoyee_le is not null, reserve_jusqu_
   $$ values ('envoyee', true, true) $$, 'notification marquée envoyée');
 select is((select count(*)::int from public.abonnement_push where eleve_id = '00000000-0000-0000-0000-0000000000c1'), 0,
   'le point d''envoi expiré est supprimé');
+select is((select count(*)::int from cron.job where jobname = 'purger-historique-cron'), 1, 'la purge de l''historique cron est planifiée');
 
 select * from finish();
 rollback;

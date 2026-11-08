@@ -89,6 +89,9 @@ begin
      and not exists (select 1 from public.inscription_classe ic
                        join public.echeance_evaluation ev on ev.classe_id = ic.classe_id and ev.cours_id = t.cours_id
                       where ic.eleve_id = t.eleve_id and ev.limite is not null and ev.limite <= t.fin + interval '24 hours')
+     and not exists (select 1 from public.tentative te
+                      where te.eleve_id = t.eleve_id and te.cours_id = t.cours_id
+                        and te.type = 'evaluation_cours' and te.statut = 'en_cours')
      and t.fin + interval '24 hours' >= v_de
      and t.fin + interval '24 hours' < v_a
      and t.fin = (select max(t2.fin) from public.tentative t2
@@ -176,11 +179,22 @@ declare
   v_issue text;
 begin
   perform prive.verifier_cle_envoi(p_secret);
+  if jsonb_typeof(coalesce(p_resultats, '[]'::jsonb)) <> 'array' then
+    raise exception 'resultat_invalide';
+  end if;
   for r in select * from jsonb_array_elements(coalesce(p_resultats, '[]'::jsonb)) loop
-    v_issue := r->>'issue';
+    v_issue := case when jsonb_typeof(r) = 'object' then r->>'issue' end;
     if v_issue is null or v_issue not in ('envoyee', 'decaler', 'reessayer', 'echec')
+       or (r->>'id') is null or (r->>'id') !~* '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$'
        or (v_issue in ('decaler', 'reessayer') and (r->>'a') is null) then
       raise exception 'resultat_invalide';
+    end if;
+    if (r->>'a') is not null then
+      begin
+        perform (r->>'a')::timestamptz;
+      exception when others then
+        raise exception 'resultat_invalide';
+      end;
     end if;
     update public.notification_planifiee n set
       statut = case v_issue when 'envoyee' then 'envoyee'::public.statut_notification_t
@@ -213,6 +227,10 @@ end $$;
 -- Planification chaque minute, sous le rôle postgres (anon a un statement_timeout de 3 s). Rejouable.
 select cron.unschedule(j.jobid) from cron.job j where j.jobname = 'planifier-notifications';
 select cron.schedule('planifier-notifications', '* * * * *', $c$select prive.planifier_notifications(now())$c$);
+
+-- cron.log_run est actif : on purge l'historique chaque nuit (il contient la commande, donc le secret).
+select cron.unschedule(j.jobid) from cron.job j where j.jobname = 'purger-historique-cron';
+select cron.schedule('purger-historique-cron', '17 3 * * *', $c$delete from cron.job_run_details where end_time < now() - interval '7 days'$c$);
 
 revoke execute on function prive.verifier_cle_envoi(text), prive.planifier_notifications(timestamptz) from public;
 revoke execute on function public.envoi_reserver(text, int), public.envoi_terminer(text, jsonb, text[]) from public, authenticated;
