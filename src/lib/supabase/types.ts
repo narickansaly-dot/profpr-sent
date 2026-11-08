@@ -23,7 +23,27 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "chapitre": {
+            "abonnement_push": {
+                  Row: {
+                    "appareil": string,"auth": string,"cree_le": string,"eleve_id": string,"endpoint": string,"id": string,"p256dh": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "appareil"?: string,"auth": string,"cree_le"?: string,"eleve_id": string,"endpoint": string,"id"?: string,"p256dh": string
+                  }
+                  Update: {
+                    "appareil"?: string,"auth"?: string,"cree_le"?: string,"eleve_id"?: string,"endpoint"?: string,"id"?: string,"p256dh"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "abonnement_push_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"chapitre": {
                   Row: {
                     "a_retenir": string | null,"chapeau": string | null,"cours_id": string,"duree": string | null,"id": string,"modifie_le": string,"numero": number,"objectifs": (string)[],"publie": boolean,"resume": string | null,"sections": NonNullable<Json>,"slug": string,"titre": string,"titre_court": string | null
                   }
@@ -149,14 +169,14 @@ isOneToOne: true
                   ]
                 },"evenement": {
                   Row: {
-                    "cours_id": string | null,"cree_le": string,"debut": string,"duree_minutes": number,"eleve_id": string,"id": string,"jours_semaine": (number)[] | null,"modifie_le": string,"plan_id": string | null,"repeter_jusqu_au": string | null,"repetition": Database["public"]['Enums']["repetition_t"],"revision_generale": boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
+                    "cours_id": string | null,"cree_le": string,"debut": string,"delai_rappel_minutes": number | null,"duree_minutes": number,"eleve_id": string,"id": string,"jours_semaine": (number)[] | null,"modifie_le": string,"plan_id": string | null,"repeter_jusqu_au": string | null,"repetition": Database["public"]['Enums']["repetition_t"],"revision_generale": boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
                   }
                   ComputedFields: never
                   Insert: {
-                    "cours_id"?: string | null,"cree_le"?: string,"debut": string,"duree_minutes": number,"eleve_id": string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
+                    "cours_id"?: string | null,"cree_le"?: string,"debut": string,"delai_rappel_minutes"?: number | null,"duree_minutes": number,"eleve_id": string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre": string,"type": Database["public"]['Enums']["type_evenement_t"]
                   }
                   Update: {
-                    "cours_id"?: string | null,"cree_le"?: string,"debut"?: string,"duree_minutes"?: number,"eleve_id"?: string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre"?: string,"type"?: Database["public"]['Enums']["type_evenement_t"]
+                    "cours_id"?: string | null,"cree_le"?: string,"debut"?: string,"delai_rappel_minutes"?: number | null,"duree_minutes"?: number,"eleve_id"?: string,"id"?: string,"jours_semaine"?: (number)[] | null,"modifie_le"?: string,"plan_id"?: string | null,"repeter_jusqu_au"?: string | null,"repetition"?: Database["public"]['Enums']["repetition_t"],"revision_generale"?: boolean,"titre"?: string,"type"?: Database["public"]['Enums']["type_evenement_t"]
                   }
                   Relationships: [
                     {
@@ -285,6 +305,32 @@ isOneToOne: false
                   Relationships: [
                     
                   ]
+                },"notification_planifiee": {
+                  Row: {
+                    "cle": string,"corps": string,"cree_le": string,"eleve_id": string,"envoi_prevu": string,"envoyee_le": string | null,"essais": number,"evenement_id": string | null,"id": string,"lue_le": string | null,"reserve_jusqu_au": string | null,"statut": Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cle": string,"corps": string,"cree_le"?: string,"eleve_id": string,"envoi_prevu": string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
+                  }
+                  Update: {
+                    "cle"?: string,"corps"?: string,"cree_le"?: string,"eleve_id"?: string,"envoi_prevu"?: string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre"?: string,"type"?: Database["public"]['Enums']["type_notification_t"],"url"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "notification_planifiee_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "notification_planifiee_evenement_id_fkey"
+      columns: ["evenement_id"]
+isOneToOne: false
+      referencedRelation: "evenement"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"notion": {
                   Row: {
                     "chapitre_id": string,"id": string,"nom": string
@@ -328,6 +374,26 @@ isOneToOne: false
       columns: ["examen_id"]
 isOneToOne: true
       referencedRelation: "evenement"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"preferences_notification": {
+                  Row: {
+                    "echeance_proche": boolean,"eleve_id": string,"inactivite": boolean,"jours_inactivite": number,"modifie_le": string,"nouvel_essai": boolean,"rappel_evenement": boolean,"revision_du_jour": boolean,"silence_debut": string,"silence_fin": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "echeance_proche"?: boolean,"eleve_id": string,"inactivite"?: boolean,"jours_inactivite"?: number,"modifie_le"?: string,"nouvel_essai"?: boolean,"rappel_evenement"?: boolean,"revision_du_jour"?: boolean,"silence_debut"?: string,"silence_fin"?: string
+                  }
+                  Update: {
+                    "echeance_proche"?: boolean,"eleve_id"?: string,"inactivite"?: boolean,"jours_inactivite"?: number,"modifie_le"?: string,"nouvel_essai"?: boolean,"rappel_evenement"?: boolean,"revision_du_jour"?: boolean,"silence_debut"?: string,"silence_fin"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "preferences_notification_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: true
+      referencedRelation: "profil"
       referencedColumns: ["id"]
     }
                   ]
@@ -620,6 +686,9 @@ isOneToOne: false
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"enregistrer_abonnement_push":
+{ Args: { "p_appareil": string,"p_auth": string,"p_endpoint": string,"p_p256dh": string }; Returns: string
+                           },
 "enregistrer_chapitre":
 { Args: { "p_chapitre": string,"p_cours": string,"p_donnees": Json }; Returns: string
                            },
@@ -628,6 +697,9 @@ isOneToOne: false
                            },
 "enregistrer_evenement":
 { Args: { "p": Json,"p_id": string }; Returns: string
+                           },
+"enregistrer_preferences_notification":
+{ Args: { "p": Json }; Returns: undefined
                            },
 "enregistrer_question":
 { Args: { "p_chapitre": string,"p_donnees": Json,"p_question": string }; Returns: string
@@ -640,6 +712,9 @@ isOneToOne: false
                            },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
+                           },
+"marquer_rappels_lus":
+{ Args: Record<PropertyKey, never>; Returns: undefined
                            },
 "mes_creneaux_occupes":
 { Args: { "p_a": string,"p_de": string }; Returns: {
@@ -715,6 +790,9 @@ isOneToOne: false
 "regenerer_code_classe":
 { Args: { "p_classe": string }; Returns: string
                            },
+"regler_rappel_evenement":
+{ Args: { "p_delai": number,"p_id": string }; Returns: undefined
+                           },
 "rejoindre_classe":
 { Args: { "p_code": string }; Returns: {
               "classe_nom": string,"statut": string
@@ -753,6 +831,12 @@ isOneToOne: false
               "a_relire": number,"brouillons": number,"chapitre_id": string,"chapitre_publie": boolean,"chapitre_titre": string,"cours_id": string,"cours_publie": boolean,"cours_slug": string,"cours_titre": string,"numero": number,"signalements": number,"valides": number
             }[]
                            },
+"supprimer_abonnement_push":
+{ Args: { "p_id": string }; Returns: undefined
+                           },
+"supprimer_abonnement_push_endpoint":
+{ Args: { "p_endpoint": string }; Returns: undefined
+                           },
 "supprimer_evenement":
 { Args: { "p_id": string }; Returns: undefined
                            },
@@ -770,7 +854,7 @@ isOneToOne: false
                            }
           }
           Enums: {
-            "repetition_t": "aucune"|"quotidienne"|"hebdomadaire"|"jours","role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_plan_t": "propose"|"accepte"|"refuse","statut_question_t": "brouillon"|"a_relire"|"valide"|"archivee","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_evenement_t": "revision"|"devoir"|"examen_reel","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
+            "repetition_t": "aucune"|"quotidienne"|"hebdomadaire"|"jours","role_t": "eleve"|"parent"|"enseignant"|"admin_contenu","statut_notification_t": "en_attente"|"envoyee"|"echec","statut_plan_t": "propose"|"accepte"|"refuse","statut_question_t": "brouillon"|"a_relire"|"valide"|"archivee","statut_tentative_t": "en_cours"|"terminee"|"expiree","type_evenement_t": "revision"|"devoir"|"examen_reel","type_notification_t": "rappel_evenement"|"echeance_proche"|"nouvel_essai"|"revision_du_jour"|"inactivite","type_question_t": "qcm_unique"|"qcm_multiple"|"vrai_faux"|"reponse_courte","type_tentative_t": "quiz_chapitre"|"revision"|"evaluation_cours","voie_t": "generale"|"technologique"|"professionnelle"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -890,7 +974,7 @@ export const Constants = {
           }
         },"public": {
           Enums: {
-            "repetition_t": ["aucune", "quotidienne", "hebdomadaire", "jours"],"role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_plan_t": ["propose", "accepte", "refuse"],"statut_question_t": ["brouillon", "a_relire", "valide", "archivee"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_evenement_t": ["revision", "devoir", "examen_reel"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
+            "repetition_t": ["aucune", "quotidienne", "hebdomadaire", "jours"],"role_t": ["eleve", "parent", "enseignant", "admin_contenu"],"statut_notification_t": ["en_attente", "envoyee", "echec"],"statut_plan_t": ["propose", "accepte", "refuse"],"statut_question_t": ["brouillon", "a_relire", "valide", "archivee"],"statut_tentative_t": ["en_cours", "terminee", "expiree"],"type_evenement_t": ["revision", "devoir", "examen_reel"],"type_notification_t": ["rappel_evenement", "echeance_proche", "nouvel_essai", "revision_du_jour", "inactivite"],"type_question_t": ["qcm_unique", "qcm_multiple", "vrai_faux", "reponse_courte"],"type_tentative_t": ["quiz_chapitre", "revision", "evaluation_cours"],"voie_t": ["generale", "technologique", "professionnelle"]
           }
         }
 } as const
