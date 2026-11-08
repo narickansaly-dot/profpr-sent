@@ -124,7 +124,13 @@ async function repli() {
 
 // Notifications Web Push. Charge envoyée par la route d'envoi : { id, titre, corps, url }.
 function lienInterne(url) {
-  return typeof url === 'string' && url.startsWith('/') && !url.startsWith('//') && !url.includes('\\') ? url : '/';
+  if (typeof url !== 'string' || !url.startsWith('/') || /[\u0000-\u001f\u007f\\]/.test(url)) return '/';
+  try {
+    const u = new URL(url, self.location.origin);
+    return u.origin === self.location.origin ? u.pathname + u.search + u.hash : '/';
+  } catch {
+    return '/';
+  }
 }
 
 self.addEventListener('push', (evenement) => {
@@ -153,6 +159,16 @@ self.addEventListener('notificationclick', (evenement) => {
     const fenetres = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     for (const fenetre of fenetres) {
       if (fenetre.url === cible && 'focus' in fenetre) return fenetre.focus();
+    }
+    for (const fenetre of fenetres) {
+      if (new URL(fenetre.url).origin !== self.location.origin || !('focus' in fenetre) || !('navigate' in fenetre)) continue;
+      try {
+        await fenetre.focus();
+        await fenetre.navigate(cible);
+        return;
+      } catch {
+        // On essaie d'ouvrir une nouvelle fenêtre.
+      }
     }
     return self.clients.openWindow(cible);
   })());

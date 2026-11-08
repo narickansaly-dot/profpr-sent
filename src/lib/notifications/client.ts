@@ -62,10 +62,15 @@ export async function activerPush(clePublique: string): Promise<AbonnementNaviga
   if (!clePublique) return 'indisponible';
   const reg = await serviceWorkerPret();
   if (!reg) return 'indisponible';
-  const abonnement = await reg.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: base64UrlVersOctets(clePublique),
-  });
+  let abonnement: PushSubscription;
+  try {
+    abonnement = await reg.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: base64UrlVersOctets(clePublique),
+    });
+  } catch {
+    return 'indisponible';
+  }
   const json = abonnement.toJSON();
   if (!json.endpoint || !json.keys?.p256dh || !json.keys.auth) return 'indisponible';
   return { endpoint: json.endpoint, p256dh: json.keys.p256dh, auth: json.keys.auth };
