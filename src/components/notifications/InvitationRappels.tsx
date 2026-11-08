@@ -8,8 +8,9 @@ import { ActivationPush } from './ActivationPush';
 const CLE = 'rappels-invitation-masquee';
 
 /** Invitation au bon moment : le calendrier contient un événement et cet appareil n'a encore rien décidé. */
-export function InvitationRappels({ clePublique }: { clePublique: string }) {
+export function InvitationRappels({ clePublique, sansAppareil }: { clePublique: string; sansAppareil: boolean }) {
   const [visible, setVisible] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     let masquee = false;
@@ -18,17 +19,18 @@ export function InvitationRappels({ clePublique }: { clePublique: string }) {
     lireEtatPush().then((e) => setVisible(e === 'inactif' || e === 'iphone_installer')).catch(() => {});
   }, []);
 
-  if (!visible) return null;
+  // Après l'activation, la page se rafraîchit (sansAppareil passe à faux) : la carte reste, avec sa confirmation.
+  if (!active && !(sansAppareil && visible)) return null;
   function plusTard() {
     try { localStorage.setItem(CLE, '1'); } catch { /* rien */ }
     setVisible(false);
   }
   return (
     <section className="carte invitation-rappels" aria-labelledby="invitation-rappels-titre">
-      <h2 id="invitation-rappels-titre">Active les rappels</h2>
-      <p>Reçois un rappel avant tes révisions et tes devoirs, même quand l’application est fermée. Tu choisis ce que tu reçois dans <Link href="/notifications">tes réglages</Link>.</p>
-      <ActivationPush clePublique={clePublique} onActive={() => setVisible(false)} />
-      <button type="button" className="bouton bouton-secondaire" onClick={plusTard} aria-label="Plus tard pour les rappels">Plus tard</button>
+      <h2 id="invitation-rappels-titre">{active ? 'Rappels activés' : 'Active les rappels'}</h2>
+      {!active && <p>Reçois un rappel avant tes révisions et tes devoirs, même quand l’application est fermée. Tu choisis ce que tu reçois dans <Link href="/notifications">tes réglages</Link>.</p>}
+      <ActivationPush clePublique={clePublique} onActive={() => setActive(true)} />
+      {!active && <button type="button" className="bouton bouton-secondaire" onClick={plusTard} aria-label="Plus tard pour les rappels">Plus tard</button>}
     </section>
   );
 }

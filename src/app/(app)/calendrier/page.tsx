@@ -35,7 +35,7 @@ export default async function PageCalendrier({ searchParams }: { searchParams: P
       {aReorganiser.map((p) => (
         <BanniereReorganiser key={p.plan_id} planId={p.plan_id} examenId={p.examen_id} examenTitre={p.examen_titre} />
       ))}
-      {nbEvenements > 0 && nbAppareils === 0 && <InvitationRappels clePublique={process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? ''} />}
+      {nbEvenements > 0 && <InvitationRappels clePublique={process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? ''} sansAppareil={nbAppareils === 0} />}
       <nav aria-label="Vue du calendrier" className="choix-vue">
         {VUES.map((v) => (
           <Link key={v} href={`/calendrier?vue=${v}&date=${jour}`} aria-current={v === vue ? 'page' : undefined}>{NOMS[v]}</Link>

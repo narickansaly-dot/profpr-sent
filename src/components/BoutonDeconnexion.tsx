@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { deconnecter } from '@/app/(auth)/actions';
 import { oublierAppareilCourant } from '@/app/(app)/notifications/actions';
 import { desactiverPush } from '@/lib/notifications/client';
@@ -20,18 +20,23 @@ function auPlus(ms: number, tache: Promise<void>): Promise<void> {
 
 export function BoutonDeconnexion({ prenom }: { prenom: string | null }) {
   // L'action reste celle du serveur (elle marche sans JavaScript). Le cache est vidé et l'appareil désabonné juste avant, quand c'est possible (2 s au plus).
-  const nettoye = useRef(false);
+  const etape = useRef<'repos' | 'nettoyage' | 'pret'>('repos');
+  const [attente, setAttente] = useState(false);
   async function surEnvoi(e: React.FormEvent<HTMLFormElement>) {
-    if (nettoye.current) return; // deuxième envoi, après le nettoyage : on laisse l'action du serveur partir
+    if (etape.current === 'pret') return; // envoi après nettoyage : l'action du serveur part
     e.preventDefault();
+    if (etape.current === 'nettoyage') return; // double appui : un seul nettoyage, un seul envoi
+    etape.current = 'nettoyage';
+    setAttente(true);
     const form = e.currentTarget;
     await auPlus(2000, Promise.all([viderCachePages(), oublierCetAppareil()]).then(() => undefined));
-    nettoye.current = true;
-    form.requestSubmit();
+    etape.current = 'pret';
+    if (typeof form.requestSubmit === 'function') form.requestSubmit();
+    else form.submit();
   }
   return (
     <form action={deconnecter} onSubmit={surEnvoi}>
-      <button type="submit" className="bouton bouton-secondaire bouton-compte">
+      <button type="submit" className="bouton bouton-secondaire bouton-compte" disabled={attente}>
         <span className="nom-compte">{prenom ?? 'Mon compte'}</span>
         <span aria-hidden="true">·</span>
         <span>Se déconnecter</span>

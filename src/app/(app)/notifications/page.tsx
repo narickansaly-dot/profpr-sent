@@ -17,6 +17,7 @@ export default async function PageNotifications() {
       .maybeSingle(),
     supabase.from('abonnement_push').select('id, appareil, cree_le').order('cree_le', { ascending: false }).order('id'),
   ]);
+  // Une erreur de lecture ne doit pas afficher les valeurs par défaut : l'élève les enregistrerait par-dessus ses vrais réglages.
   const preferences: Preferences = prefs.data ?? PREFERENCES_PAR_DEFAUT;
   return (
     <div className="page-notifications">
@@ -28,7 +29,9 @@ export default async function PageNotifications() {
       </section>
       <section className="carte" aria-labelledby="reglages-titre">
         <h2 id="reglages-titre">Ce que tu reçois</h2>
-        <FormulairePreferences initial={versValeurs(preferences)} />
+        {prefs.error
+          ? <p className="message-erreur" role="alert">Tes réglages n’ont pas pu être chargés. Recharge la page.</p>
+          : <FormulairePreferences initial={versValeurs(preferences)} />}
       </section>
       <section className="carte" aria-labelledby="appareils-titre">
         <h2 id="appareils-titre">Tes appareils</h2>

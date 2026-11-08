@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { messageErreur } from '@/lib/erreurs';
+import { lireProfil } from '@/lib/supabase/utilisateur';
 import { exigerEleve } from '@/lib/calendrier/garde';
 import { lireFormulairePreferences, type ChampPreferences, type ValeursPreferences } from '@/lib/notifications/preferences';
 import type { Json } from '@/lib/supabase/types';
@@ -31,7 +32,8 @@ export async function enregistrerAbonnement(abonnement: unknown, appareil: strin
 }
 
 export async function oublierAppareilCourant(endpoint: string): Promise<void> {
-  await exigerEleve();
+  // Appelée à la déconnexion, y compris par un compte non élève : on sort sans bruit (pas de 404).
+  if ((await lireProfil())?.role !== 'eleve') return;
   if (typeof endpoint !== 'string' || endpoint.length > 1000) return;
   const supabase = await creerClientServeur();
   await supabase.rpc('supprimer_abonnement_push_endpoint', { p_endpoint: endpoint });
