@@ -83,9 +83,20 @@ create function public.enregistrer_abonnement_push(p_endpoint text, p_p256dh tex
 language plpgsql security definer set search_path = '' as $$
 declare
   v_id uuid;
+  v_hote text;
 begin
   if public.role_actuel() is distinct from 'eleve' then
     raise exception 'reserve_eleves';
+  end if;
+  -- Le point d'envoi doit viser un service push connu (sinon le serveur posterait n'importe où).
+  -- Ni identifiants avant l'hôte, ni port : l'hôte est suivi de / ? # ou de la fin.
+  v_hote := lower(substring(coalesce(p_endpoint, '') from '^https://([^/:?#@]+)(?:[/?#]|$)'));
+  if v_hote is null
+     or not (v_hote in ('fcm.googleapis.com', 'updates.push.services.mozilla.com')
+             or v_hote like '%.push.services.mozilla.com'
+             or v_hote like '%.push.apple.com'
+             or v_hote like '%.notify.windows.com') then
+    raise exception 'abonnement_invalide';
   end if;
   if p_endpoint is null or p_endpoint !~ '^https://' or char_length(p_endpoint) > 1000
      or char_length(coalesce(p_p256dh, '')) not between 20 and 200
@@ -133,6 +144,11 @@ declare
 begin
   if public.role_actuel() is distinct from 'eleve' then
     raise exception 'reserve_eleves';
+  end if;
+  if p is null or jsonb_typeof(p) <> 'object'
+     or exists (select 1 from unnest(array['rappel_evenement', 'echeance_proche', 'nouvel_essai', 'revision_du_jour', 'inactivite']) k
+                 where p ? k and jsonb_typeof(p -> k) <> 'boolean') then
+    raise exception 'preferences_invalides';
   end if;
   begin
     v.rappel_evenement := coalesce((p->>'rappel_evenement')::boolean, true);
