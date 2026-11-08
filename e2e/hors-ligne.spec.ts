@@ -83,6 +83,6 @@ test('arriver sur la page de connexion vide les pages mises en cache', async ({ 
   await page.goto('/connexion');
   await expect.poll(() => cheminsEnCache(page)).toEqual([]);
   // Le repli hors connexion, lui, reste en place.
-  const repli = await page.evaluate(async () => !!(await (await caches.open('hors-ligne-v1')).match('/hors-ligne')));
+  const repli = await page.evaluate(async () => !!(await (await caches.open('hors-ligne-v2')).match('/hors-ligne')));
   expect(repli).toBe(true);
 });

@@ -1,6 +1,6 @@
 // Service worker : lecture hors connexion des chapitres déjà ouverts.
 // Changer VERSION à chaque modification de ce fichier : les caches des autres versions sont supprimés à l'activation.
-const VERSION = 'v1';
+const VERSION = 'v2';
 const CACHE_STATIQUE = `statique-${VERSION}`;
 // Préfixe « pages- » : vidé par l'application à la déconnexion (src/lib/pwa/cache.ts).
 const CACHE_PAGES = `pages-${VERSION}`;
@@ -121,3 +121,39 @@ async function repli() {
   const cache = await caches.open(CACHE_HORS_LIGNE);
   return cache.match(HORS_LIGNE);
 }
+
+// Notifications Web Push. Charge envoyée par la route d'envoi : { id, titre, corps, url }.
+function lienInterne(url) {
+  return typeof url === 'string' && url.startsWith('/') && !url.startsWith('//') && !url.includes('\\') ? url : '/';
+}
+
+self.addEventListener('push', (evenement) => {
+  let donnees = {};
+  try {
+    donnees = evenement.data ? evenement.data.json() : {};
+  } catch {
+    donnees = {};
+  }
+  if (!donnees || typeof donnees !== 'object') donnees = {};
+  const titre = typeof donnees.titre === 'string' && donnees.titre ? donnees.titre : 'App lycée';
+  evenement.waitUntil(self.registration.showNotification(titre, {
+    body: typeof donnees.corps === 'string' ? donnees.corps : '',
+    icon: '/icones/192.png',
+    badge: '/icones/192.png',
+    lang: 'fr',
+    tag: typeof donnees.id === 'string' ? donnees.id : undefined,
+    data: { url: lienInterne(donnees.url) },
+  }));
+});
+
+self.addEventListener('notificationclick', (evenement) => {
+  evenement.notification.close();
+  const cible = new URL(lienInterne(evenement.notification.data && evenement.notification.data.url), self.location.origin).href;
+  evenement.waitUntil((async () => {
+    const fenetres = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const fenetre of fenetres) {
+      if (fenetre.url === cible && 'focus' in fenetre) return fenetre.focus();
+    }
+    return self.clients.openWindow(cible);
+  })());
+});
