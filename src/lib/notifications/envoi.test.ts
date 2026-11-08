@@ -98,4 +98,19 @@ describe('traiterLot', () => {
     const r = await traiterLot([ligne({ abonnements: [abo(1), abo(2)] })], envoyer, maintenant);
     expect(r).toEqual({ resultats: [{ id: 'n1', issue: 'echec' }], expires: ['https://push.example/1'] });
   });
+  it('s’arrête avant un paquet quand l’échéance est atteinte : pas de résultat pour les lignes non traitées', async () => {
+    const lignes = Array.from({ length: 25 }, (_, i) => ligne({ id: `n${i}`, abonnements: [abo(i)] }));
+    const envoyer = vi.fn(ok);
+    let t = 0;
+    const horloge = () => (t++ === 0 ? 0 : 100); // le premier paquet passe, le deuxième est refusé
+    const r = await traiterLot(lignes, envoyer, maintenant, new Date(50), horloge);
+    expect(r.resultats.map((x) => x.id)).toEqual(lignes.slice(0, 10).map((l) => l.id));
+    expect(envoyer).toHaveBeenCalledTimes(10);
+  });
+  it('échéance déjà atteinte : rien n’est envoyé', async () => {
+    const envoyer = vi.fn(ok);
+    const r = await traiterLot([ligne()], envoyer, maintenant, new Date(0), () => 1);
+    expect(r).toEqual({ resultats: [], expires: [] });
+    expect(envoyer).not.toHaveBeenCalled();
+  });
 });

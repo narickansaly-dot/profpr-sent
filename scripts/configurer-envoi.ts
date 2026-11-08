@@ -17,6 +17,10 @@ if (!['localhost', '127.0.0.1', '[::1]'].includes(hote) && process.env.CONFIGURE
   console.error('Refusé : NEXT_PUBLIC_SUPABASE_URL ne pointe pas vers la base locale (fixer CONFIGURER_PRODUCTION=1 pour la production).');
   process.exit(1);
 }
+if (process.env.CONFIGURER_PRODUCTION === '1' && (!cible.startsWith('https://') || /host\.docker\.internal|localhost|127\.0\.0\.1/.test(cible))) {
+  console.error('Refusé : en production, ENVOI_URL doit commencer par https:// et ne pas viser host.docker.internal, localhost ou 127.0.0.1.');
+  process.exit(1);
+}
 // Pas d'await au niveau du module : les scripts sont exécutés en CommonJS par tsx (voir importer-contenu.ts).
 async function main() {
   const db = createClient<Database>(url, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });

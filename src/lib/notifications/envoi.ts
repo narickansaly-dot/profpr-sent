@@ -52,13 +52,18 @@ async function traiterLigne(
   return { resultat: { id: l.id, issue: 'echec' }, expires };
 }
 
-/** Traite un lot de notifications réservées, par paquets de 10 en parallèle, dans l'ordre des lignes. */
+/**
+ * Traite un lot de notifications réservées, par paquets de 10 en parallèle, dans l'ordre des lignes.
+ * Avec `limite`, aucun nouveau paquet ne démarre une fois l'échéance atteinte : les lignes non traitées
+ * n'ont pas de résultat et leur réservation expire d'elle-même (elles reviennent plus tard).
+ */
 export async function traiterLot(
-  lignes: LigneEnvoi[], envoyer: Envoyer, maintenant: Date,
+  lignes: LigneEnvoi[], envoyer: Envoyer, maintenant: Date, limite?: Date, horloge: () => number = Date.now,
 ): Promise<{ resultats: Resultat[]; expires: string[] }> {
   const resultats: Resultat[] = [];
   const expires: string[] = [];
   for (let i = 0; i < lignes.length; i += TAILLE_LOT) {
+    if (limite && horloge() >= limite.getTime()) break;
     const traitees = await Promise.all(lignes.slice(i, i + TAILLE_LOT).map((l) => traiterLigne(l, envoyer, maintenant)));
     for (const t of traitees) { resultats.push(t.resultat); expires.push(...t.expires); }
   }
