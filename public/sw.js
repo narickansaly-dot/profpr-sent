@@ -135,6 +135,17 @@ function lienInterne(url) {
   }
 }
 
+// Valeur stockée par le gestionnaire push (URL absolue déjà vérifiée) : on la revalide, sans la réinterpréter.
+function cibleDuClic(stocke) {
+  const accueil = self.location.origin + '/';
+  try {
+    const u = new URL(stocke);
+    return u.origin === self.location.origin ? u.href : accueil;
+  } catch {
+    return accueil;
+  }
+}
+
 self.addEventListener('push', (evenement) => {
   let donnees = {};
   try {
@@ -156,7 +167,7 @@ self.addEventListener('push', (evenement) => {
 
 self.addEventListener('notificationclick', (evenement) => {
   evenement.notification.close();
-  const cible = lienInterne(evenement.notification.data && evenement.notification.data.url);
+  const cible = cibleDuClic(evenement.notification.data && evenement.notification.data.url);
   evenement.waitUntil((async () => {
     const fenetres = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     for (const fenetre of fenetres) {
