@@ -89,8 +89,12 @@ begin
     raise exception 'reserve_eleves';
   end if;
   -- Le point d'envoi doit viser un service push connu (sinon le serveur posterait n'importe où).
-  -- Ni identifiants avant l'hôte, ni port : l'hôte est suivi de / ? # ou de la fin.
-  v_hote := lower(substring(coalesce(p_endpoint, '') from '^https://([^/:?#@]+)(?:[/?#]|$)'));
+  -- Ni antislash, espace ou caractère de contrôle (un analyseur d'URL traite « \ » comme « / »),
+  -- ni identifiants, ni port : l'hôte n'a que lettres, chiffres, tirets et points, puis / ? # ou la fin.
+  if p_endpoint ~ '[\\[:space:][:cntrl:]]' then
+    raise exception 'abonnement_invalide';
+  end if;
+  v_hote := substring(lower(coalesce(p_endpoint, '')) from '^https://([a-z0-9-]+(\.[a-z0-9-]+)*)(?:[/?#]|$)');
   if v_hote is null
      or not (v_hote in ('fcm.googleapis.com', 'updates.push.services.mozilla.com')
              or v_hote like '%.push.services.mozilla.com'

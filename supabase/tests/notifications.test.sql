@@ -1,5 +1,5 @@
 begin;
-select plan(30);
+select plan(37);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000b1', 'eleve-notif@test.local'),
@@ -77,6 +77,20 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 select lives_ok($$ select public.enregistrer_abonnement_push('https://fcm.googleapis.com/fcm/send/m-' || g, repeat('k', 87), repeat('a', 22), 'Appareil ' || g)
   from generate_series(1, 10) g $$, 'dix appareils de plus');
 select is((select count(*)::int from public.abonnement_push), 10, 'onze enregistrements laissent dix appareils');
+select throws_ok($$ select public.enregistrer_abonnement_push('https://evil.example\.push.apple.com/x', repeat('k', 87), repeat('a', 22), 'Test') $$,
+  'P0001', 'abonnement_invalide', 'point d''envoi piégé refusé 1');
+select throws_ok($$ select public.enregistrer_abonnement_push('https://evil.example\.notify.windows.com', repeat('k', 87), repeat('a', 22), 'Test') $$,
+  'P0001', 'abonnement_invalide', 'point d''envoi piégé refusé 2');
+select throws_ok($$ select public.enregistrer_abonnement_push('https://evil.example\.push.services.mozilla.com/x', repeat('k', 87), repeat('a', 22), 'Test') $$,
+  'P0001', 'abonnement_invalide', 'point d''envoi piégé refusé 3');
+select throws_ok($$ select public.enregistrer_abonnement_push('https://.push.apple.com/x', repeat('k', 87), repeat('a', 22), 'Test') $$,
+  'P0001', 'abonnement_invalide', 'point d''envoi piégé refusé 4');
+select throws_ok($$ select public.enregistrer_abonnement_push('https://fcm.googleapis.com/a b', repeat('k', 87), repeat('a', 22), 'Test') $$,
+  'P0001', 'abonnement_invalide', 'point d''envoi piégé refusé 5');
+select lives_ok($$ select public.enregistrer_abonnement_push('https://FCM.googleapis.com/fcm/send/x', repeat('k', 87), repeat('a', 22), 'Majuscules') $$,
+  'un hôte en majuscules est accepté');
+select throws_ok($$ select public.enregistrer_preferences_notification('[1]'::jsonb) $$,
+  'P0001', 'preferences_invalides', 'des préférences qui ne sont pas un objet sont refusées');
 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000000b2","role":"authenticated"}', true);
 select throws_ok($$ select public.regler_rappel_evenement('40000000-0000-0000-0000-0000000000b1', 10) $$,
