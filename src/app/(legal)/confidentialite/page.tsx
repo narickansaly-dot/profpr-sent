@@ -69,6 +69,10 @@ export default function PageConfidentialite() {
           Un administrateur du contenu, quand un enseignant signale une question&nbsp;: il voit le nom et l’adresse
           e-mail de l’enseignant avec le signalement.
         </li>
+        <li>
+          Un parent relié à ton compte, avec un accès limité décrit dans «&nbsp;Comptes parents&nbsp;» (jamais ton
+          calendrier, tes réponses ni tes classes).
+        </li>
         <li>Google, si tu choisis de te connecter avec ton compte Google (fournisseur d’identité).</li>
         <li>
           Les prestataires techniques qui font fonctionner l’application&nbsp;: Supabase (base de données et connexion),
@@ -107,6 +111,46 @@ export default function PageConfidentialite() {
         </li>
       </ul>
 
+      <h2>Comptes parents</h2>
+      <p>
+        Cette section s’adresse aux parents et aux représentants légaux. Vous pouvez créer un compte parent pour suivre
+        un enfant relié à votre compte.
+      </p>
+      <ul>
+        <li>
+          Vos données&nbsp;: votre prénom et votre adresse e-mail. Un compte parent n’a ni filière, ni niveau, ni accès aux
+          cours.
+        </li>
+        <li>
+          Le lien avec l’enfant&nbsp;: pour un enfant de moins de 15&nbsp;ans, le lien se fait par l’adresse e-mail qui a
+          donné l’accord parental&nbsp;; votre compte doit utiliser cette même adresse, une fois confirmée. À partir de
+          15&nbsp;ans, l’élève génère un code à usage unique, valable 48&nbsp;heures, et vous le communique&nbsp;; vous le
+          saisissez dans votre espace. Un élève peut être relié à 2 parents au plus.
+        </li>
+        <li>
+          Ce que vous voyez&nbsp;: l’état de l’accord parental, l’abonnement de l’enfant et un résumé de sa progression
+          pour chaque cours (chapitres validés, meilleure note d’évaluation, cours validé ou non, date de la dernière
+          activité).
+        </li>
+        <li>
+          Ce que vous ne voyez jamais&nbsp;: le calendrier de l’enfant, ses réponses aux quiz et aux évaluations, et ses
+          classes.
+        </li>
+        <li>
+          Retrait de l’accord&nbsp;: pour un enfant de moins de 15&nbsp;ans, vous pouvez retirer votre accord depuis votre
+          espace. Le compte de l’enfant est alors bloqué immédiatement et supprimé après 30&nbsp;jours. Le parent qui a
+          retiré l’accord peut annuler ce retrait avant la suppression&nbsp;; l’enfant ne peut pas l’annuler lui-même.
+        </li>
+        <li>
+          Fin du lien&nbsp;: un parent peut se délier à tout moment. À partir de 15&nbsp;ans, l’élève peut aussi retirer
+          lui-même un lien avec un parent&nbsp;; avant 15&nbsp;ans, il ne le peut pas.
+        </li>
+        <li>
+          Conservation&nbsp;: les liens sont supprimés avec l’un ou l’autre des deux comptes, celui du parent ou celui de
+          l’élève.
+        </li>
+      </ul>
+
       <h2>Cookies et stockage dans ton navigateur</h2>
       <p>
         App lycée n’utilise que des cookies nécessaires à ta connexion (la session). Il n’y a aucun traceur publicitaire
@@ -130,8 +174,8 @@ export default function PageConfidentialite() {
         <li>Rectification&nbsp;: en écrivant à <ACompleter>adresse e-mail pour les données personnelles</ACompleter>.</li>
         <li>Suppression&nbsp;: depuis la page <Link href="/mes-donnees">Mes données</Link>, dans les conditions ci-dessus.</li>
         <li>
-          Retrait du consentement parental&nbsp;: un parent peut le retirer en écrivant à <ACompleter>adresse e-mail pour les données personnelles</ACompleter>.
-          Après ce retrait, le compte de l’élève est supprimé.
+          Retrait du consentement parental&nbsp;: un parent relié à ton compte peut le retirer depuis son espace parent
+          (voir «&nbsp;Comptes parents&nbsp;»). Après ce retrait, le compte de l’élève est supprimé.
         </li>
         <li>
           Réclamation&nbsp;: tu peux saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener noreferrer">cnil.fr</a>).
