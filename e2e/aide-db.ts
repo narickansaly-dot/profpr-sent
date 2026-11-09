@@ -153,7 +153,7 @@ export async function creerCoursARelire(slug: string, n = 3): Promise<string> {
         })),
       }],
     },
-    p_publier: true,
+    p_publier: false,
   });
   if (error) throw error;
   const { data, error: erreurLecture } = await db.from('cours').select('chapitre(id)').eq('slug', slug).single();
