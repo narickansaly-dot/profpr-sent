@@ -10,12 +10,18 @@ language sql stable set search_path = '' as $$
     -- Rappel : l'occurrence (instant dans la clé « rappel:<id>:<epoch>:<délai> ») n'a pas encore commencé.
     when 'rappel_evenement' then coalesce(
       case when split_part(n.cle, ':', 3) ~ '^[0-9]{1,12}$' then to_timestamp(split_part(n.cle, ':', 3)::bigint) > now() end, true)
+      -- ... et l'événement garde le délai de rappel de la clé (clé mal formée : tolérée).
+      and (n.evenement_id is null or split_part(n.cle, ':', 4) !~ '^[0-9]+$'
+           or exists (select 1 from public.evenement e
+                       where e.id = n.evenement_id and e.delai_rappel_minutes::text = split_part(n.cle, ':', 4)))
     -- Échéance : la même date limite existe toujours, l'élève est toujours inscrit, le cours n'est pas validé.
     when 'echeance_proche' then exists (
       select 1 from public.echeance_evaluation ee
         join public.inscription_classe i on i.classe_id = ee.classe_id and i.eleve_id = n.eleve_id
        where ee.classe_id::text = split_part(n.cle, ':', 2) and ee.cours_id::text = split_part(n.cle, ':', 3)
-         and extract(epoch from ee.limite)::bigint::text = split_part(n.cle, ':', 4))
+         and extract(epoch from ee.limite)::bigint::text = split_part(n.cle, ':', 4)
+         -- Pas après la fermeture, ni avant une ouverture repoussée.
+         and ee.limite > now() and (ee.ouverture is null or ee.ouverture <= now()))
       and not exists (
       select 1 from public.progression_cours pc
        where pc.eleve_id = n.eleve_id and pc.cours_id::text = split_part(n.cle, ':', 3) and pc.valide)
@@ -164,13 +170,17 @@ begin
   perform prive.verifier_cle_envoi(p_secret);
   -- Réservée 10 fois sans fin d'envoi : abandon.
   update public.notification_planifiee set statut = 'echec', reserve_jusqu_au = null
-   where statut = 'en_attente' and envoi_prevu <= now() and reservations >= 10
-     and (reserve_jusqu_au is null or reserve_jusqu_au < now());
+   where id in (select x.id from public.notification_planifiee x
+                 where x.statut = 'en_attente' and x.envoi_prevu <= now() and x.reservations >= 10
+                   and (x.reserve_jusqu_au is null or x.reserve_jusqu_au < now())
+                 for update skip locked);
   -- Sans objet au moment de l'envoi : retirée.
-  delete from public.notification_planifiee n
-   where n.statut = 'en_attente' and n.envoi_prevu <= now()
-     and (n.reserve_jusqu_au is null or n.reserve_jusqu_au < now())
-     and not prive.notification_encore_valide(n);
+  delete from public.notification_planifiee
+   where id in (select n.id from public.notification_planifiee n
+                 where n.statut = 'en_attente' and n.envoi_prevu <= now()
+                   and (n.reserve_jusqu_au is null or n.reserve_jusqu_au < now())
+                   and not prive.notification_encore_valide(n)
+                 for update skip locked);
   return query
   with choisies as (
     select n.id from public.notification_planifiee n

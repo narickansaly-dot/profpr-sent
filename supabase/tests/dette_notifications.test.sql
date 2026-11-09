@@ -1,5 +1,5 @@
 begin;
-select plan(13);
+select plan(16);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000000f1', 'eleve-dette-notif@test.local'),
@@ -53,6 +53,45 @@ select is((select count(*)::int from public.notification_planifiee where id = '5
 select is((select count(*)::int from public.notification_planifiee
             where eleve_id = '00000000-0000-0000-0000-0000000000f1' and type = 'echeance_proche'), 0,
   'une alerte dont la date limite a changé est supprimée');
+
+-- Date limite passée : l'alerte (décalée par le silence) est supprimée.
+update public.echeance_evaluation set ouverture = null, limite = now() - interval '1 hour'
+ where classe_id = '60000000-0000-0000-0000-0000000000f1';
+insert into public.notification_planifiee (id, eleve_id, type, cle, titre, corps, url, envoi_prevu) values
+  ('50000000-0000-0000-0000-0000000000fa', '00000000-0000-0000-0000-0000000000f1', 'echeance_proche',
+   'echeance:60000000-0000-0000-0000-0000000000f1:20000000-0000-0000-0000-0000000000f1:' || extract(epoch from now() - interval '1 hour')::bigint,
+   'Évaluation', 'x', '/', now() - interval '1 minute');
+set local role anon;
+select count(*) from public.envoi_reserver(repeat('s', 43));
+reset role;
+select is((select count(*)::int from public.notification_planifiee where id = '50000000-0000-0000-0000-0000000000fa'), 0,
+  'une alerte dont la date limite est passée est supprimée');
+
+-- Ouverture repoussée après maintenant : l'alerte est supprimée.
+update public.echeance_evaluation set ouverture = now() + interval '1 day', limite = now() + interval '2 days'
+ where classe_id = '60000000-0000-0000-0000-0000000000f1';
+insert into public.notification_planifiee (id, eleve_id, type, cle, titre, corps, url, envoi_prevu) values
+  ('50000000-0000-0000-0000-0000000000fb', '00000000-0000-0000-0000-0000000000f1', 'echeance_proche',
+   'echeance:60000000-0000-0000-0000-0000000000f1:20000000-0000-0000-0000-0000000000f1:' || extract(epoch from now() + interval '2 days')::bigint,
+   'Évaluation', 'x', '/', now() - interval '1 minute');
+set local role anon;
+select count(*) from public.envoi_reserver(repeat('s', 43));
+reset role;
+select is((select count(*)::int from public.notification_planifiee where id = '50000000-0000-0000-0000-0000000000fb'), 0,
+  'une alerte dont l''ouverture a été repoussée est supprimée');
+
+-- Rappel dont le délai a changé : supprimé.
+insert into public.evenement (id, eleve_id, type, titre, debut, duree_minutes, delai_rappel_minutes) values
+  ('40000000-0000-0000-0000-0000000000f3', '00000000-0000-0000-0000-0000000000f1', 'devoir', 'Devoir 2', now() + interval '1 day', 60, 60);
+insert into public.notification_planifiee (id, eleve_id, type, cle, evenement_id, titre, corps, url, envoi_prevu) values
+  ('50000000-0000-0000-0000-0000000000fc', '00000000-0000-0000-0000-0000000000f1', 'rappel_evenement',
+   'rappel:40000000-0000-0000-0000-0000000000f3:' || extract(epoch from now() + interval '1 day')::bigint || ':10',
+   '40000000-0000-0000-0000-0000000000f3', 'Devoir 2', 'x', '/', now() - interval '1 minute');
+set local role anon;
+select count(*) from public.envoi_reserver(repeat('s', 43));
+reset role;
+select is((select count(*)::int from public.notification_planifiee where id = '50000000-0000-0000-0000-0000000000fc'), 0,
+  'un rappel dont le délai a changé est supprimé');
 
 -- 3. Une notification devenue sans objet est supprimée à la réservation (cours validé entre-temps).
 insert into public.notification_planifiee (id, eleve_id, type, cle, titre, corps, url, envoi_prevu) values
