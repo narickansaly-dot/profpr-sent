@@ -5,6 +5,7 @@ import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { compterRappelsNonLus } from '@/lib/notifications/requetes';
 import { EnTete } from '@/components/EnTete';
 import { BanniereEssai } from '@/components/BanniereEssai';
+import { BanniereSuppression } from '@/components/BanniereSuppression';
 import { IndicateurConnexion } from '@/components/IndicateurConnexion';
 import { AttenteValidation } from '@/components/AttenteValidation';
 
@@ -17,6 +18,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
       <>
         <EnTete prenom={profil.nom} role="attente" />
         <IndicateurConnexion />
+        {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} />}
         <main className="conteneur"><AttenteValidation prenom={profil.nom} /></main>
       </>
     );
@@ -33,6 +35,7 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     <>
       <EnTete prenom={profil.nom} role={profil.role} rappelsNonLus={rappelsNonLus} />
       <IndicateurConnexion />
+      {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} />}
       {acces && <BanniereEssai acces={acces} titreCoursGratuit={titreCoursGratuit} />}
       <main className="conteneur">{children}</main>
     </>

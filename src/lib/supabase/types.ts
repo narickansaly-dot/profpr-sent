@@ -445,14 +445,14 @@ isOneToOne: true
                   ]
                 },"profil": {
                   Row: {
-                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"]
+                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"],"suppression_demandee_le": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
                   }
                   Update: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"]
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
                   }
                   Relationships: [
                     {
@@ -672,6 +672,9 @@ isOneToOne: false
             "accepter_plan_revision":
 { Args: { "p_examen": string,"p_reglages": Json,"p_sessions": Json }; Returns: string
                            },
+"annuler_suppression_compte":
+{ Args: Record<PropertyKey, never>; Returns: undefined
+                           },
 "calendrier_ical":
 { Args: { "p_jeton": string }; Returns: {
               "debut": string,"fin": string,"titre": string,"uid": string
@@ -718,6 +721,9 @@ isOneToOne: false
                            },
 "demander_consentement":
 { Args: { "p_email": string }; Returns: undefined
+                           },
+"demander_suppression_compte":
+{ Args: Record<PropertyKey, never>; Returns: string
                            },
 "demandes_enseignant":
 { Args: Record<PropertyKey, never>; Returns: {
@@ -774,6 +780,9 @@ isOneToOne: false
                            },
 "envoi_terminer":
 { Args: { "p_expires": (string)[],"p_resultats": Json,"p_secret": string }; Returns: undefined
+                           },
+"exporter_mes_donnees":
+{ Args: Record<PropertyKey, never>; Returns: Json
                            },
 "ignorer_reorganisation":
 { Args: { "p_plan": string }; Returns: undefined
