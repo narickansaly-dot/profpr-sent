@@ -23,7 +23,33 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "abonnement_push": {
+            "abonnement": {
+                  Row: {
+                    "cree_le": string,"eleve_id": string,"fin_grace": string | null,"fin_periode": string,"formule": string,"id": string,"maj_le": string,"payeur_id": string | null,"statut": string,"stripe_abonnement_id": string | null,"stripe_client_id": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cree_le"?: string,"eleve_id": string,"fin_grace"?: string | null,"fin_periode": string,"formule": string,"id"?: string,"maj_le"?: string,"payeur_id"?: string | null,"statut": string,"stripe_abonnement_id"?: string | null,"stripe_client_id"?: string | null
+                  }
+                  Update: {
+                    "cree_le"?: string,"eleve_id"?: string,"fin_grace"?: string | null,"fin_periode"?: string,"formule"?: string,"id"?: string,"maj_le"?: string,"payeur_id"?: string | null,"statut"?: string,"stripe_abonnement_id"?: string | null,"stripe_client_id"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "abonnement_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "abonnement_payeur_id_fkey"
+      columns: ["payeur_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"abonnement_push": {
                   Row: {
                     "appareil": string,"auth": string,"cree_le": string,"eleve_id": string,"endpoint": string,"id": string,"p256dh": string
                   }
@@ -149,20 +175,26 @@ isOneToOne: false
                   ]
                 },"consentement_parental": {
                   Row: {
-                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string
+                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Update: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Relationships: [
                     {
       foreignKeyName: "consentement_parental_eleve_id_fkey"
       columns: ["eleve_id"]
 isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "consentement_parental_retire_par_fkey"
+      columns: ["retire_par"]
+isOneToOne: false
       referencedRelation: "profil"
       referencedColumns: ["id"]
     }
@@ -445,14 +477,14 @@ isOneToOne: true
                   ]
                 },"profil": {
                   Row: {
-                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"],"suppression_demandee_le": string | null
+                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"],"suppression_demandee_le": string | null,"suppression_imposee": boolean
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null,"suppression_imposee"?: boolean
                   }
                   Update: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null,"suppression_imposee"?: boolean
                   }
                   Relationships: [
                     {
@@ -821,7 +853,7 @@ isOneToOne: false
                            },
 "mon_acces":
 { Args: Record<PropertyKey, never>; Returns: {
-              "changement_possible_jusqu_au": string,"consentement_envoye_le": string,"consentement_requis": boolean,"cours_gratuit_id": string,"email_parent": string,"en_essai": boolean,"fin_essai": string,"role": string
+              "abonnement": Json,"changement_possible_jusqu_au": string,"consentement_envoye_le": string,"consentement_requis": boolean,"consentement_retire_le": string,"cours_gratuit_id": string,"email_parent": string,"en_essai": boolean,"fin_essai": string,"role": string,"suppression_prevue_le": string
             }[]
                            },
 "mon_calendrier":
