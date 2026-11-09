@@ -8,6 +8,7 @@ import { FormulaireDemandeConsentement } from '@/components/consentement/Formula
 export const metadata = { title: 'Accord d’un parent' };
 
 const formatDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Paris' });
+const formatJour = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'Europe/Paris' });
 
 // Hors du groupe (app) : le layout de ce groupe redirige vers cette page, elle ne doit donc pas en dépendre.
 export default async function PageConsentement() {
@@ -16,6 +17,24 @@ export default async function PageConsentement() {
   if (!profil?.onboarding_termine) redirect('/bienvenue');
   const acces = profil.role === 'eleve' ? await lireMonAcces() : null;
   if (!acces?.consentementRequis) redirect('/');
+  if (acces.consentementRetireLe) {
+    return (
+      <>
+        <header className="en-tete">
+          <Link href="/" className="logo">App lycée</Link>
+          <BoutonDeconnexion prenom={profil.nom} />
+        </header>
+        <main className="page-auth">
+          <h1>Ton parent a retiré son accord</h1>
+          <p>
+            Ton compte est bloqué{acces.suppressionPrevueLe ? ` et sera supprimé le ${formatJour.format(new Date(acces.suppressionPrevueLe))}` : ''}.
+            Tu peux encore télécharger tes données.
+          </p>
+          <p><Link href="/mes-donnees">Mes données</Link></p>
+        </main>
+      </>
+    );
+  }
   return (
     <>
       <header className="en-tete">

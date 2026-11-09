@@ -3,14 +3,17 @@
 import { useActionState, useId } from 'react';
 import { annulerSuppression, demanderSuppression, type EtatSuppression } from '@/app/mes-donnees/actions';
 
-type Props = { dateSuppression: string | null; enseignant?: boolean };
+type Props = { dateSuppression: string | null; enseignant?: boolean; imposee?: boolean };
 
-export function SuppressionCompte({ dateSuppression, enseignant = false }: Props) {
+export function SuppressionCompte({ dateSuppression, enseignant = false, imposee = false }: Props) {
   const [etatDemande, demander, demandeEnCours] = useActionState<EtatSuppression, FormData>(demanderSuppression, {});
   const [etatAnnulation, annuler, annulationEnCours] = useActionState<EtatSuppression, FormData>(annulerSuppression, {});
   const id = useId();
   const erreurId = `${id}-erreur`;
 
+  if (dateSuppression && imposee) {
+    return <p role="status">Ton compte sera supprimé à partir du {dateSuppression}. La suppression a été demandée par ton parent.</p>;
+  }
   if (dateSuppression) {
     return (
       <form action={annuler} className="formulaire">

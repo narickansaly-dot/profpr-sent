@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useActionState, useId } from 'react';
 import { donnerAccord, type EtatAccord } from '@/app/accord-parental/[jeton]/actions';
 
@@ -10,7 +11,16 @@ export function FormulaireAccord({ jeton }: { jeton: string }) {
   const confirmation = etat.prenom !== undefined
     ? `Merci, votre accord est enregistré. ${etat.prenom || 'Votre enfant'} peut maintenant utiliser l’application.` : '';
   const statut = <p role="status" className="message-info">{confirmation}</p>;
-  if (etat.prenom !== undefined) return statut;
+  if (etat.prenom !== undefined) {
+    return (
+      <>
+        {statut}
+        <p>Vous pouvez suivre la progression de votre enfant avec un compte parent.</p>
+        <p><Link href="/inscription" className="bouton bouton-principal">Créer mon compte parent</Link></p>
+        <p className="aide-champ">Utilisez l’adresse e-mail qui a reçu cette demande.</p>
+      </>
+    );
+  }
   return (
     <>
     {statut}
