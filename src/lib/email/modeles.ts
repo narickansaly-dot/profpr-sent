@@ -1,9 +1,31 @@
 const echapper = (s: string) => s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
+const estLocal = (h: string) => h === 'localhost' || h === '127.0.0.1';
+
+/** Le lien doit être en https (ou http en local) et appartenir à l'origine du site ; sans origine configurée, seul l'hôte local est accepté. */
+function verifierLien(lien: string, origine: string | undefined): void {
+  let u: URL;
+  try {
+    if (/[\s\u0000-\u001f]/.test(lien)) throw new Error();
+    u = new URL(lien);
+  } catch {
+    throw new Error('lien invalide');
+  }
+  const protocoleOk = u.protocol === 'https:' || (u.protocol === 'http:' && estLocal(u.hostname));
+  if (!protocoleOk) throw new Error('lien invalide');
+  if (origine) {
+    let attendue: string;
+    try { attendue = new URL(origine).origin; } catch { throw new Error('lien invalide'); }
+    if (u.origin !== attendue) throw new Error('lien invalide');
+  } else if (!estLocal(u.hostname)) {
+    throw new Error('lien invalide');
+  }
+}
+
 /** E-mail envoyé au parent d'un élève de moins de 15 ans (vouvoiement). */
-export function emailConsentement(o: { prenom: string; lien: string }): { sujet: string; texte: string; html: string } {
-  if (!/^https?:\/\//.test(o.lien)) throw new Error('lien invalide');
-  const prenom = o.prenom.trim() || 'Votre enfant';
+export function emailConsentement(o: { prenom: string; lien: string; origine?: string }): { sujet: string; texte: string; html: string } {
+  verifierLien(o.lien, o.origine ?? process.env.NEXT_PUBLIC_SITE_URL);
+  const prenom = o.prenom.replace(/[\r\n]+/g, ' ').trim().slice(0, 50) || 'Votre enfant';
   const sujet = `${prenom} a besoin de votre accord pour utiliser App lycée`;
   const texte = [
     'Bonjour,',

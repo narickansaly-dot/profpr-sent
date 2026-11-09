@@ -15,4 +15,9 @@ describe('lireConfigSmtp', () => {
     expect(lireConfigSmtp({ SMTP_HOTE: 'h', SMTP_PORT: 'abc', EMAIL_EXPEDITEUR: 'e@x.fr' })).toBeNull();
     expect(lireConfigSmtp({ SMTP_HOTE: 'h', SMTP_PORT: '587' })).toBeNull();
   });
+  it('renvoie null si l’identifiant ou le mot de passe est seul', () => {
+    const b = { SMTP_HOTE: 'h', SMTP_PORT: '587', EMAIL_EXPEDITEUR: 'e@x.fr' };
+    expect(lireConfigSmtp({ ...b, SMTP_UTILISATEUR: 'u' })).toBeNull();
+    expect(lireConfigSmtp({ ...b, SMTP_MOT_DE_PASSE: 'p' })).toBeNull();
+  });
 });
