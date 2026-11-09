@@ -1,7 +1,7 @@
 # Étape 4c : bilan et points reportés
 
 État final sur la branche `etape-4c-securite` :
-- 365 tests unitaires (Vitest, 39 fichiers) ;
+- 366 tests unitaires (Vitest, 39 fichiers) ;
 - 752 tests de la base (pgTAP, 25 fichiers) ;
 - 42 exécutions de bout en bout (Playwright : 21 parcours, sur mobile et sur ordinateur, avec un build de production) : 39 réussies et 3 ignorées (la revue axe ne tourne que sur mobile), dont les trois nouveaux parcours d'accessibilité ;
 - typage, lint et build sans erreur.
@@ -13,6 +13,7 @@
 - **Service worker versionné au build** : `/sw.js?v=<commit ou horodatage>` ; les caches deviennent `statique-<version>`, `pages-<version>` et `hors-ligne-<version>`, et les anciens sont supprimés.
 - **Mise en ligne** : `vercel.json` (région `cdg1`) et guide `docs/mise-en-ligne.md` (projets Vercel et Supabase, import distant, tâche d'envoi, secrets dans un fichier hors dépôt).
 - **Dette de la base** : deux migrations. Calendrier et planning : verrou du profil avant le plafond de 500 événements, titre sans caractère de contrôle, code `type_non_modifiable`, plus de tolérance d'une heure dans le passé, `refuser_plan_revision` qui contrôle l'examen, révision générale limitée au cours de l'événement avec départage aléatoire. Notifications : réservation bornée (10 fois au plus, sinon `echec`), notifications devenues sans objet supprimées à la réservation, `echeance_proche` qui attend l'ouverture de l'évaluation, ligne réservée jamais supprimée par un changement de rappel.
+- **Générateur de planning (reporté de 4a)** : `d <= apres` corrigé et `examenDebut` invalide qui lève une `RangeError` (deux points de la liste de l'étape 4a, désormais traités).
 - **Dette TypeScript et interface** : messages zod en français sur les entrées falsifiées (jours, identifiants), constantes sorties dans des modules sans zod (zod n'est plus dans le bundle client), `hoteDePushAutorise` dans un module sans dépendance, `exigerEleve` qui redirige un visiteur déconnecté, bouton « Plus tard » avec état d'attente.
 - **Accessibilité** : voir la section dédiée ci-dessous.
 
@@ -30,7 +31,7 @@ Rulings du contrôleur (journal d'exécution) :
 - Task 1 — re-revue du correctif typographique faite par le contrôleur au lieu d'un sous-agent — diff de 9 lignes sans logique — coût si faux : une espace mal placée.
 - Task 2 mineurs -> tâche 7 : sortir les constantes (DUREES_EVENEMENT, RAPPELS, DUREES_SESSION, TYPES_NOTIFICATION) dans des modules sans zod pour retirer zod (107 Ko) du bundle client ; garder zod-sans-eval tant qu'un module client importe zod — réduit le bundle et la fragilité — coût faible.
 - Task 2 mineurs -> tâche 9 : e2e sécurité attend networkidle sur le chapitre, vérifie COOP/Permissions-Policy et l'absence de HSTS en http, et le test hors connexion suit les violations de CSP — coût faible.
-- Task 4 — le guide passe par un fichier hors dépôt `.env.production.local` (ignoré par git, droits 600) et `npx tsx --env-file=.env.production.local …`, conseille de coller les clés générées directement dans Vercel ; on ajoute aussi les mineurs (supabase login/mot de passe, clé de service obligatoire pour configurer-envoi, NEXT_PUBLIC_* figées au build, échec de chaque instance) — éviter la fuite de secrets — coût nul.
+- Task 4 — le guide passe par un fichier hors dépôt `.env.distant` (ignoré par git, droits 600) et `npx tsx --env-file=.env.distant …`, conseille de coller les clés générées directement dans Vercel ; on ajoute aussi les mineurs (supabase login/mot de passe, clé de service obligatoire pour configurer-envoi, NEXT_PUBLIC_* figées au build, échec de chaque instance) — éviter la fuite de secrets — coût nul.
 - Task 5 mineurs -> tâche 6 : remettre `if v_id is null then raise exception 'evenement_introuvable'` après l'UPDATE de enregistrer_evenement ; nettoyer les titres de session dans accepter_plan_revision comme ceux du calendrier — durcissement peu coûteux — coût : deux fonctions de plus à recopier.
 - Task 6 — on accepte la correction de l'exemple de test de C8 par l'implémenteur (ouverture 9 h 05, limite 13/01 8 h 10) — l'exemple du contrôleur était faux, la règle est inchangée — coût nul.
 - Task 6 — correctif : validité echeance_proche exige limite > now() et ouverture <= now() ; validité rappel exige le délai courant de l'événement ; UPDATE echec et DELETE en `for update skip locked` — conséquence de C8 et robustesse concurrente — coût faible.
@@ -76,6 +77,7 @@ Lecture manuelle de ce qu'axe ne vérifie pas (code de `LecteurTentative`, `Comp
 - **`/hors-ligne` est dynamique** : elle passe par le proxy à l'installation du service worker.
 - **`style-src 'unsafe-inline'`** : Next.js et les schémas SVG des cours utilisent des styles en ligne ; les scripts, eux, exigent le nonce.
 - **Un nouveau déploiement vide le cache hors connexion** : les chapitres en cache sont remis en cache à la prochaine lecture.
+- **Ligne de rappel réservée** : elle n'est plus supprimée par le déclencheur. Si l'heure change pendant les 2 minutes de réservation et que l'envoi échoue, le nouvel essai peut partir avec l'ancienne occurrence encore à venir.
 - **Contraste de la piste de la barre de progression en mode clair** (1,4:1 pour la piste seule) : la progression est aussi écrite en texte et la barre est décorative (exemption de 1.4.11).
 - **Tableaux et schémas défilants** focalisables même quand rien ne défile (léger bruit de tabulation, sans nom accessible propre).
 
@@ -90,8 +92,9 @@ Lecture manuelle de ce qu'axe ne vérifie pas (code de `LecteurTentative`, `Comp
 **Plus tard (qualité et dette mineure)**
 
 Mineurs de l'étape 4c :
-- Variables : `register()` bloque aussi `next dev` quand une variable manque (voulu) ; `NEXT_PUBLIC_SITE_URL` n'est exigée que sur Vercel en production ; une variable déjà exportée dans le shell l'emporte sur `--env-file` (non rappelé dans le guide).
+- Variables : `register()` bloque aussi `next dev` quand une variable manque (voulu) ; `NEXT_PUBLIC_SITE_URL` n'est exigée que sur Vercel en production ; 
 - CSP et service worker : `x-nonce` posé mais non lu (réservé) ; pas de test du nettoyage des anciens caches ; repli `'dev'` de la version inutile côté composant.
+- Outillage : `db:reset` échoue parfois à l'import juste après la remise à zéro (relancer `npm run import:contenu -- contenu/1re-st2s/bph.json --publier` puis `npm run configurer:envoi`).
 - Base : compteur `reservations` jamais remis à zéro (sans effet avec les bornes actuelles).
 - TypeScript : tests de la tâche 7 écrits avec la correction (échec préalable non observé) ; deux imports placés après du code.
 - Interface : `?n=` reste dans l'URL de `/admin/enseignants` (un rechargement rejoue le message).
@@ -104,7 +107,7 @@ Points de l'étape 4b non traités ici :
 
 Points de l'étape 4a toujours ouverts :
 - **Base** : changement de type refusé avec `evenement_introuvable` (traité par `type_non_modifiable`, à vérifier dans l'interface) ; tests manquants (chemin de mise à jour, limites de 366 jours, durée, fenêtre, plus de 30 chapitres, `reserve_eleves`, cascade de l'examen, changement d'heure d'automne, sessions passées gardées, plafond de 500, refus sans plan).
-- **Générateur** : révision générale hors plafond hebdomadaire ; `d <= apres` au lieu de `d < apres` ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée) ; `examenDebut` invalide lève une `RangeError`.
+- **Générateur** : révision générale hors plafond hebdomadaire  ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée) ; `examenDebut` invalide lève une `RangeError`.
 - **Révision générale** : pas de test au-delà de 30 questions (plafond, alternance, priorité).
 - **iCal** : jeton non revalidé localement avant la RPC ; `Cache-Control: max-age=300` suit le plan ; jeton conservé si le rôle change.
 - **Actions serveur** : `ignorerReorganisation` ignore les erreurs ; `NEXT_PUBLIC_SITE_URL` figé au build.
@@ -120,4 +123,29 @@ Points des bilans 1 à 3b toujours ouverts :
 
 ## Revue finale
 
-À compléter après la revue finale de la branche (`etape-4b-notifications..etape-4c-securite`).
+Revue de la branche (`etape-4b-notifications..etape-4c-securite`) par Opus : fusion possible après correction des points ci-dessous.
+
+Points forts :
+- CSP stricte (nonce, `strict-dynamic`, `frame-ancestors 'none'`) et testée de bout en bout, sans violation sur les pages principales ni hors connexion ;
+- session et redirections du proxy cohérentes (cookies et en-têtes de cache recopiés) ;
+- migrations fidèles au plan et droits d'exécution vérifiés ;
+- coût de `notification_encore_valide` mesuré : 55 ms pour 5 000 lignes ;
+- nettoyeur de HTML sans surface XSS.
+
+Correctifs de la vague finale :
+- guide de mise en ligne : fichier `.env.distant` au lieu de `.env.distant` (Next le charge automatiquement, risque d'e2e contre la production), rappel sur les variables déjà exportées dans le shell, URL du site distincte des URL de redirection, note sur les déploiements Preview ;
+- `session.ts` : cookies et en-têtes de cache cumulés et réappliqués à chaque reconstruction de la réponse ;
+- `env.ts` : URL Supabase en https exigée en production (test ajouté) ;
+- connexion : le champ « mot de passe » n'est marqué en erreur que pour des identifiants invalides ;
+- migration `20261215000003_verrou_profil.sql` : `for no key update` au lieu de `for update` sur le profil dans `enregistrer_evenement` et `accepter_plan_revision` ;
+- `next.config.ts` : version du déploiement normalisée au format du service worker ;
+- e2e sécurité : `Permissions-Policy` contient `camera=()`.
+
+Mineurs conservés : ceux de la section « Plus tard » ci-dessus (aucun n'est bloquant).
+
+## Vérification finale
+
+- `npm test` : 366 tests, 39 fichiers ;
+- `npm run test:db` : 752 tests, 25 fichiers ;
+- `npm run e2e` : 42 exécutions, 39 réussies, 3 ignorées ;
+- typage, lint et build sans erreur.

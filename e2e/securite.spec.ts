@@ -10,7 +10,7 @@ test('les pages portent une CSP avec nonce et les en-têtes de sécurité', asyn
   expect(r.headers()['x-frame-options']).toBe('DENY');
   expect(r.headers()['referrer-policy']).toBe('strict-origin-when-cross-origin');
   expect(r.headers()['cross-origin-opener-policy']).toBe('same-origin');
-  expect(r.headers()['permissions-policy']).toBeTruthy();
+  expect(r.headers()['permissions-policy']).toContain('camera=()');
   // HSTS seulement sur https : jamais sur http://localhost (il se retiendrait pour tout le domaine).
   expect(r.headers()['strict-transport-security']).toBeUndefined();
   const autre = await request.get('/connexion');

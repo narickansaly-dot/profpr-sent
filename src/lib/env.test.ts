@@ -25,10 +25,16 @@ describe('verifierEnvironnement', () => {
     expect(verifierEnvironnement({ NEXT_PUBLIC_SUPABASE_URL: base.NEXT_PUBLIC_SUPABASE_URL }).erreurs)
       .toEqual(['NEXT_PUBLIC_SUPABASE_ANON_KEY est absente.']);
   });
+  it('exige une URL Supabase en https en production', () => {
+    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production', NEXT_PUBLIC_SITE_URL: 'https://exemple.fr' }).erreurs)
+      .toEqual(['NEXT_PUBLIC_SUPABASE_URL doit être une adresse https en production.']);
+    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production', NEXT_PUBLIC_SITE_URL: 'https://exemple.fr', NEXT_PUBLIC_SUPABASE_URL: 'https://abc.supabase.co' }).erreurs)
+      .toEqual([]);
+  });
   it('exige une adresse publique en https en production', () => {
-    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production' }).erreurs)
+    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production', NEXT_PUBLIC_SUPABASE_URL: 'https://abc.supabase.co' }).erreurs)
       .toEqual(['NEXT_PUBLIC_SITE_URL doit être une adresse https en production.']);
-    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production', NEXT_PUBLIC_SITE_URL: 'https://app.example.fr' }).erreurs)
+    expect(verifierEnvironnement({ ...base, ...notifications, VERCEL_ENV: 'production', NEXT_PUBLIC_SITE_URL: 'https://app.example.fr', NEXT_PUBLIC_SUPABASE_URL: 'https://abc.supabase.co' }).erreurs)
       .toEqual([]);
   });
   it('signale un groupe de notifications incomplet ou un secret trop court', () => {

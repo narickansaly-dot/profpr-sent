@@ -16,6 +16,9 @@ export function verifierEnvironnement(env: Env): { erreurs: string[]; avertissem
   const erreurs: string[] = [];
   const avertissements: string[] = [];
   if (!estUrl(env.NEXT_PUBLIC_SUPABASE_URL, ['http:', 'https:'])) erreurs.push('NEXT_PUBLIC_SUPABASE_URL doit être une URL http(s).');
+  if (env.VERCEL_ENV === 'production' && estUrl(env.NEXT_PUBLIC_SUPABASE_URL, ['http:']) && !estUrl(env.NEXT_PUBLIC_SUPABASE_URL, ['https:'])) {
+    erreurs.push('NEXT_PUBLIC_SUPABASE_URL doit être une adresse https en production.');
+  }
   if (!env.NEXT_PUBLIC_SUPABASE_ANON_KEY) erreurs.push('NEXT_PUBLIC_SUPABASE_ANON_KEY est absente.');
   if (env.VERCEL_ENV === 'production' && !estUrl(env.NEXT_PUBLIC_SITE_URL, ['https:'])) {
     erreurs.push('NEXT_PUBLIC_SITE_URL doit être une adresse https en production.');

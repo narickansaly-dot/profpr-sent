@@ -3,7 +3,9 @@ import { ENTETES_SECURITE } from "./src/lib/securite/csp";
 
 // Version du déploiement : nomme les caches du service worker (un nouveau déploiement remplace les anciens).
 // Fixée une seule fois : tous les processus du build partagent la même valeur.
-process.env.NEXT_PUBLIC_VERSION_APP ||= (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 8).toLowerCase() || Date.now().toString(36);
+// Format accepté par le service worker : minuscules et chiffres, 16 caractères au plus.
+const versionBrute = process.env.NEXT_PUBLIC_VERSION_APP || (process.env.VERCEL_GIT_COMMIT_SHA ?? '').slice(0, 8);
+process.env.NEXT_PUBLIC_VERSION_APP = versionBrute.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 16) || Date.now().toString(36);
 
 const nextConfig: NextConfig = {
   env: { NEXT_PUBLIC_VERSION_APP: process.env.NEXT_PUBLIC_VERSION_APP },

@@ -16,6 +16,9 @@ function lireIdentifiants(form: FormData) {
 }
 
 // Code d'erreur Supabase d'abord (stable) ; le message sert de repli pour un serveur qui n'envoie pas de code.
+const identifiantsInvalides = (e: { code?: string; message: string }) =>
+  e.code === 'invalid_credentials' || /invalid login credentials/i.test(e.message);
+
 const dejaInscrit = (e: { code?: string; message: string }) =>
   e.code === 'user_already_exists' || e.code === 'email_exists' || /already registered|already exists/i.test(e.message);
 
@@ -44,7 +47,7 @@ export async function connecter(_: EtatFormulaire, form: FormData): Promise<Etat
   if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form), champ: r.error.issues[0].path[0] === 'email' ? 'email' : 'motDePasse' };
   const supabase = await creerClientServeur();
   const { error } = await supabase.auth.signInWithPassword({ email: r.data.email, password: r.data.motDePasse });
-  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: 'motDePasse' };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: identifiantsInvalides(error) ? 'motDePasse' : undefined };
   redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }
 
