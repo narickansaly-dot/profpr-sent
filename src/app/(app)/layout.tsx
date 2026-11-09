@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { lireProfil, lireUtilisateur } from '@/lib/supabase/utilisateur';
-import { joursEssaiRestants } from '@/lib/acces/essai';
+import { lireMonAcces } from '@/lib/acces/requetes';
+import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { compterRappelsNonLus } from '@/lib/notifications/requetes';
 import { EnTete } from '@/components/EnTete';
 import { BanniereEssai } from '@/components/BanniereEssai';
@@ -21,12 +22,18 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     );
   }
   const eleve = profil.role === 'eleve';
+  const acces = eleve ? await lireMonAcces() : null;
+  // La base reste la barrière ; cette redirection évite seulement une page vide.
+  if (acces?.consentementRequis) redirect('/consentement');
+  const titreCoursGratuit = acces?.coursGratuitId
+    ? (await listerCoursDuProfil()).find((c) => c.id === acces.coursGratuitId)?.titre ?? null
+    : null;
   const rappelsNonLus = eleve ? await compterRappelsNonLus() : 0;
   return (
     <>
       <EnTete prenom={profil.nom} role={profil.role} rappelsNonLus={rappelsNonLus} />
       <IndicateurConnexion />
-      {eleve && <BanniereEssai joursRestants={joursEssaiRestants(new Date(profil.inscrit_le), new Date())} />}
+      {acces && <BanniereEssai acces={acces} titreCoursGratuit={titreCoursGratuit} />}
       <main className="conteneur">{children}</main>
     </>
   );

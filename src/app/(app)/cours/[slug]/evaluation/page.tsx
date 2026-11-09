@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { lireCours } from '@/lib/contenu/requetes';
+import { peutLireCours } from '@/lib/acces/requetes';
+import { CoursVerrouille } from '@/components/acces/CoursVerrouille';
 import { progressionDuCours } from '@/lib/quiz/requetes';
 import { EVALUATION, SEUIL_REUSSITE } from '@/lib/quiz/regles';
 import { formaterNote } from '@/lib/quiz/reponse';
@@ -23,7 +25,9 @@ function libelleEcheance(e: { ouverture: string | null; limite: string | null })
 export default async function PageEvaluation({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const cours = await lireCours(slug);
-  if (!cours || cours.chapitre.length === 0) notFound();
+  if (!cours) notFound();
+  if (!(await peutLireCours(cours.id))) return <CoursVerrouille titre={cours.titre} />;
+  if (cours.chapitre.length === 0) notFound();
   let p: Awaited<ReturnType<typeof progressionDuCours>> | null = null;
   try {
     p = await progressionDuCours(cours.id, cours.chapitre.map((c) => c.id));

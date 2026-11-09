@@ -86,6 +86,9 @@ a.bouton.bouton-secondaire { color: var(--encre); }
 .grille-cours { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .carte-cours { display: grid; gap: 8px; text-decoration: none; color: var(--encre); border-top: 6px solid var(--couleur-cours); transition: transform .15s ease; }
 .carte-cours:hover { transform: translateY(-3px); }
+.carte-verrouillee:hover { transform: none; }
+.badge-verrouille { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; border: 1px solid currentColor; }
+.choix-cours { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
 .conteneur .carte-cours h3 { margin: 0; font-size: 20px; }
 /* Texte de 13 px : la couleur du cours est mélangée vers --encre pour garder 4,5:1 sur la teinte à 15 % (≥ 5,3:1 en clair). */
 .pastille { justify-self: start; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700;
