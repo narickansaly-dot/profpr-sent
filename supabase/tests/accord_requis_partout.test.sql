@@ -1,5 +1,5 @@
 begin;
-select plan(36);
+select plan(43);
 
 -- Aucun traitement d'un élève de moins de 15 ans sans accord, ou après le retrait de l'accord (audit I1).
 -- c11 : accord donné puis retiré par le parent, inscrit en classe. c12 : jamais d'accord. c13 : 15 ans ou plus.
@@ -57,6 +57,12 @@ insert into public.evenement (eleve_id, type, titre, debut, duree_minutes) value
 insert into prive.jeton_ical (eleve_id, empreinte) values
   ('00000000-0000-0000-0000-000000000c11', extensions.digest(repeat('c', 43), 'sha256')),
   ('00000000-0000-0000-0000-000000000c13', extensions.digest(repeat('d', 43), 'sha256'));
+insert into public.echeance_evaluation (classe_id, cours_id, ouverture, limite) values
+  ('60000000-0000-0000-0000-0000000000c1', '20000000-0000-0000-0000-0000000000c1', null, '2027-01-13 09:10+01');
+insert into public.lien_parent (eleve_id, parent_id, origine) values
+  ('00000000-0000-0000-0000-000000000c14', '00000000-0000-0000-0000-000000000c1f', 'accord');
+delete from prive.cle_envoi;
+insert into prive.cle_envoi (id, empreinte) values (true, extensions.digest(repeat('s', 43), 'sha256'));
 delete from public.notification_planifiee where eleve_id in ('00000000-0000-0000-0000-000000000c11', '00000000-0000-0000-0000-000000000c13');
 
 -- Le parent retire son accord pour c11.
@@ -99,12 +105,15 @@ select is((select count(*)::int from public.questions_ratees_classe('60000000-00
   'questions_ratees_classe ne compte plus les réponses de l''élève dont l''accord est retiré');
 reset role;
 
--- Rappels.
+-- Rappels (9 h : rappel d'événement et échéance ; 17 h : relance d'inactivité).
 select prive.planifier_notifications('2027-01-12 09:00+01');
+select prive.planifier_notifications('2027-01-12 17:00+01');
 select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c11'), 0,
   'aucun rappel planifié pour l''élève dont l''accord est retiré');
 select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c13' and type = 'rappel_evenement'), 1,
   'le rappel de l''élève de 15 ans ou plus est planifié');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c13' and type in ('echeance_proche', 'inactivite')), 2,
+  'l''échéance et l''inactivité de l''élève de 15 ans ou plus sont planifiées');
 
 -- Flux iCal.
 set local role anon;
@@ -137,8 +146,9 @@ select is((select count(*)::int from public.questions_ratees_classe('60000000-00
   'après l''annulation, questions_ratees_classe compte de nouveau ses réponses');
 reset role;
 select prive.planifier_notifications('2027-01-12 09:00+01');
-select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c11' and type = 'rappel_evenement'), 1,
-  'après l''annulation, le rappel est planifié');
+select prive.planifier_notifications('2027-01-12 17:00+01');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c11' and type in ('rappel_evenement', 'echeance_proche', 'inactivite')), 3,
+  'après l''annulation, le rappel, l''échéance et l''inactivité sont planifiés');
 set local role anon;
 select set_config('request.jwt.claims', '{"role":"anon"}', true);
 select is((select count(*)::int from public.calendrier_ical(repeat('c', 43)) where titre = 'Exposé iCal'), 1, 'après l''annulation, le flux iCal est servi');
@@ -148,12 +158,33 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 select lives_ok($$ select public.creer_jeton_ical() $$, 'après l''annulation, l''élève crée de nouveau son lien iCal');
 reset role;
 
+-- Notification déjà planifiée : plus envoyée après un retrait, réservable de nouveau après l'annulation (c14 : accord valable).
+insert into public.notification_planifiee (eleve_id, type, cle, titre, corps, url, envoi_prevu) values
+  ('00000000-0000-0000-0000-000000000c14', 'revision_du_jour', 'acc:1', 'Révisions du jour', '1 séance', '/', now() - interval '1 hour');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c1f","role":"authenticated"}', true);
+select lives_ok($$ select public.retirer_consentement('00000000-0000-0000-0000-000000000c14') $$, 'le parent retire son accord pour c14');
+reset role;
+select is((select count(*)::int from public.envoi_reserver(repeat('s', 43)) where eleve_id = '00000000-0000-0000-0000-000000000c14'), 0,
+  'envoi_reserver ne réserve pas une notification déjà planifiée après le retrait');
+select is((select count(*)::int from public.notification_planifiee where eleve_id = '00000000-0000-0000-0000-000000000c14' and cle = 'acc:1'), 0,
+  'la notification sans objet est retirée');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c1f","role":"authenticated"}', true);
+select lives_ok($$ select public.annuler_retrait_consentement('00000000-0000-0000-0000-000000000c14') $$, 'le parent annule le retrait pour c14');
+reset role;
+insert into public.notification_planifiee (eleve_id, type, cle, titre, corps, url, envoi_prevu) values
+  ('00000000-0000-0000-0000-000000000c14', 'revision_du_jour', 'acc:2', 'Révisions du jour', '1 séance', '/', now() - interval '1 hour');
+select is((select count(*)::int from public.envoi_reserver(repeat('s', 43)) where eleve_id = '00000000-0000-0000-0000-000000000c14'), 1,
+  'après l''annulation, une notification est de nouveau réservable');
+
 -- Les droits restent ceux d'avant.
 select ok(has_function_privilege('anon', 'public.calendrier_ical(text)', 'EXECUTE'), 'calendrier_ical reste ouverte à anon');
 select ok(not has_function_privilege('anon', 'public.suivi_classe(uuid)', 'EXECUTE'), 'suivi_classe reste fermée à anon');
 select ok(not has_function_privilege('anon', 'public.creer_jeton_ical()', 'EXECUTE')
           and has_function_privilege('authenticated', 'public.creer_jeton_ical()', 'EXECUTE'), 'creer_jeton_ical reste réservée aux comptes connectés');
 select ok(not has_function_privilege('authenticated', 'prive.planifier_notifications(timestamptz)', 'EXECUTE'), 'planifier_notifications reste inaccessible aux comptes');
+select ok(not has_function_privilege('authenticated', 'prive.notification_encore_valide(public.notification_planifiee)', 'EXECUTE'), 'notification_encore_valide reste inaccessible aux comptes');
 
 select * from finish();
 rollback;
