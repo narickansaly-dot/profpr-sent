@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { changerStatutSelection, type EtatLot } from '@/app/(app)/admin/questions/actions';
 import type { QuestionAdmin } from '@/lib/admin/requetes';
 import { LIBELLE_DIFFICULTE, LIBELLE_TYPE } from '@/lib/admin/questions';
-import { libelleCase, toutEstCoche } from '@/lib/admin/relecture';
+import { libelleCase, toutEstCoche } from '@/lib/admin/relecture-case';
 
 const ETAT_INITIAL: EtatLot = {};
 
