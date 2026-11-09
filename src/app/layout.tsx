@@ -3,6 +3,7 @@ import { connection } from 'next/server';
 import { Fredoka, Nunito } from 'next/font/google';
 import './globals.css';
 import { EnregistrementSW } from '@/components/EnregistrementSW';
+import { PiedDePage } from '@/components/PiedDePage';
 
 const fredoka = Fredoka({ subsets: ['latin'], variable: '--police-fredoka' });
 const nunito = Nunito({ subsets: ['latin'], variable: '--police-nunito' });
@@ -23,6 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="fr" className={`${fredoka.variable} ${nunito.variable}`}>
       <body>
         {children}
+        <PiedDePage />
         <EnregistrementSW />
       </body>
     </html>

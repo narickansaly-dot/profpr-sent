@@ -28,6 +28,14 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/accord-parentalx', false)).toEqual({ pathname: '/connexion', suite: '/accord-parentalx' });
     expect(redirectionPour('/consentement', false)).toEqual({ pathname: '/connexion', suite: '/consentement' });
   });
+  it('laisse lire les pages légales sans session, et seulement elles', () => {
+    for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+      expect(redirectionPour(chemin, false)).toBeNull();
+      expect(redirectionPour(chemin, true)).toBeNull();
+      expect(redirectionPour(chemin + 'x', false)).toEqual({ pathname: '/connexion', suite: chemin + 'x' });
+    }
+    expect(redirectionPour('/mes-donnees', false)).toEqual({ pathname: '/connexion', suite: '/mes-donnees' });
+  });
   it('ne renvoie pas un élève connecté hors de /consentement', () => {
     expect(redirectionPour('/consentement', true)).toBeNull();
   });
