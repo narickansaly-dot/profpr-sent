@@ -15,6 +15,10 @@ function lireIdentifiants(form: FormData) {
   return schemaIdentifiants.safeParse({ email: form.get('email'), motDePasse: form.get('motDePasse') });
 }
 
+// Code d'erreur Supabase d'abord (stable) ; le message sert de repli pour un serveur qui n'envoie pas de code.
+const dejaInscrit = (e: { code?: string; message: string }) =>
+  e.code === 'user_already_exists' || e.code === 'email_exists' || /already registered|already exists/i.test(e.message);
+
 async function lireOrigine() {
   return (await headers()).get('origin') ?? 'http://localhost:3000';
 }
@@ -29,7 +33,7 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
     password: r.data.motDePasse,
     options: { emailRedirectTo: `${origine}/auth/confirm` },
   });
-  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: /already registered|already exists/i.test(error.message) ? 'email' : undefined };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: dejaInscrit(error) ? 'email' : undefined };
   if (!data.session) return { info: 'Compte créé ! Clique sur le lien reçu par e-mail pour l’activer.' };
   const suite = cheminSuiteSur(form.get('suite'));
   redirect(suite ? `/bienvenue?suite=${encodeURIComponent(suite)}` : '/bienvenue');

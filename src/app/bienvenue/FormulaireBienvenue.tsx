@@ -38,11 +38,11 @@ export function FormulaireBienvenue({ filieres, suite }: { filieres: Filiere[]; 
             })}
           </select>
         </label>
-        <fieldset disabled={enseignant}>
+        <fieldset disabled={enseignant} role="radiogroup" {...liaison('niveau')}>
           <legend>Ton niveau</legend>
-          <label><input type="radio" name="niveau" value="2de" defaultChecked={v?.niveau === '2de'} required={!enseignant} {...liaison('niveau')} /> Seconde</label>
-          <label><input type="radio" name="niveau" value="1re" defaultChecked={v?.niveau === '1re'} {...liaison('niveau')} /> Première</label>
-          <label><input type="radio" name="niveau" value="Tle" defaultChecked={v?.niveau === 'Tle'} {...liaison('niveau')} /> Terminale</label>
+          <label><input type="radio" name="niveau" value="2de" defaultChecked={v?.niveau === '2de'} required={!enseignant} /> Seconde</label>
+          <label><input type="radio" name="niveau" value="1re" defaultChecked={v?.niveau === '1re'} /> Première</label>
+          <label><input type="radio" name="niveau" value="Tle" defaultChecked={v?.niveau === 'Tle'} /> Terminale</label>
         </fieldset>
         <label className="case"><input type="checkbox" name="moinsDe15Ans" disabled={enseignant} defaultChecked={v?.moinsDe15Ans} /> J’ai moins de 15 ans</label>
       </div>
