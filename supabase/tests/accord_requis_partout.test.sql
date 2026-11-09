@@ -1,5 +1,5 @@
 begin;
-select plan(43);
+select plan(51);
 
 -- Aucun traitement d'un élève de moins de 15 ans sans accord, ou après le retrait de l'accord (audit I1).
 -- c11 : accord donné puis retiré par le parent, inscrit en classe. c12 : jamais d'accord. c13 : 15 ans ou plus.
@@ -103,6 +103,22 @@ select is((select count(*)::int from public.notes_classe('60000000-0000-0000-000
   'notes_classe montre toujours l''autre élève');
 select is((select count(*)::int from public.questions_ratees_classe('60000000-0000-0000-0000-0000000000c1', '20000000-0000-0000-0000-0000000000c1')), 0,
   'questions_ratees_classe ne compte plus les réponses de l''élève dont l''accord est retiré');
+select is((select nb_eleves from public.classes_enseignant() where id = '60000000-0000-0000-0000-0000000000c1'), 2,
+  'classes_enseignant ne compte pas l''élève dont l''accord est retiré');
+select is((select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-000000000c11'), 0,
+  'l''enseignant ne voit plus l''inscription de l''élève dont l''accord est retiré');
+select is((select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-000000000c13'), 1,
+  'l''enseignant voit toujours l''inscription de l''élève de 15 ans ou plus');
+reset role;
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c11","role":"authenticated"}', true);
+select is((select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-000000000c11'), 1,
+  'l''élève dont l''accord est retiré voit toujours sa propre inscription');
+reset role;
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000c13","role":"authenticated"}', true);
+select is(public.est_eleve_sans_accord('00000000-0000-0000-0000-000000000c11'), false,
+  'est_eleve_sans_accord ne révèle rien à un compte qui n''est pas l''enseignant de l''élève');
 reset role;
 
 -- Rappels (9 h : rappel d'événement et échéance ; 17 h : relance d'inactivité).
@@ -144,6 +160,10 @@ select is((select count(*)::int from public.notes_classe('60000000-0000-0000-000
   'après l''annulation, notes_classe montre de nouveau l''élève');
 select is((select count(*)::int from public.questions_ratees_classe('60000000-0000-0000-0000-0000000000c1', '20000000-0000-0000-0000-0000000000c1')), 1,
   'après l''annulation, questions_ratees_classe compte de nouveau ses réponses');
+select is((select nb_eleves from public.classes_enseignant() where id = '60000000-0000-0000-0000-0000000000c1'), 3,
+  'après l''annulation, classes_enseignant compte de nouveau l''élève');
+select is((select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-000000000c11'), 1,
+  'après l''annulation, l''enseignant voit de nouveau l''inscription');
 reset role;
 select prive.planifier_notifications('2027-01-12 09:00+01');
 select prive.planifier_notifications('2027-01-12 17:00+01');
@@ -183,6 +203,8 @@ select ok(has_function_privilege('anon', 'public.calendrier_ical(text)', 'EXECUT
 select ok(not has_function_privilege('anon', 'public.suivi_classe(uuid)', 'EXECUTE'), 'suivi_classe reste fermée à anon');
 select ok(not has_function_privilege('anon', 'public.creer_jeton_ical()', 'EXECUTE')
           and has_function_privilege('authenticated', 'public.creer_jeton_ical()', 'EXECUTE'), 'creer_jeton_ical reste réservée aux comptes connectés');
+select ok(has_function_privilege('authenticated', 'public.est_eleve_sans_accord(uuid)', 'EXECUTE')
+          and not has_function_privilege('anon', 'public.est_eleve_sans_accord(uuid)', 'EXECUTE'), 'est_eleve_sans_accord est réservée aux comptes connectés');
 select ok(not has_function_privilege('authenticated', 'prive.planifier_notifications(timestamptz)', 'EXECUTE'), 'planifier_notifications reste inaccessible aux comptes');
 select ok(not has_function_privilege('authenticated', 'prive.notification_encore_valide(public.notification_planifiee)', 'EXECUTE'), 'notification_encore_valide reste inaccessible aux comptes');
 

@@ -37,7 +37,7 @@ a { color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); }
 p a:not([class]) { text-decoration: underline; text-underline-offset: 3px; }
 /* Double anneau : la couleur du cours contre l'élément, puis un contour neutre (encre) à >= 3:1 contre le fond, quelle que soit la couleur du cours. */
 :focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; box-shadow: 0 0 0 2px var(--couleur-cours); }
-main[tabindex="-1"]:focus { outline: none; }
+main[tabindex="-1"]:focus { outline: none; box-shadow: none; }
 .lien-evitement { position: absolute; left: 8px; top: -100px; z-index: 100; padding: 12px 16px; border-radius: 12px; background: var(--surface); color: var(--encre); font-weight: 700; }
 .lien-evitement:focus { top: 8px; }
 .lien-action { display: inline-flex; align-items: center; min-height: 44px; }

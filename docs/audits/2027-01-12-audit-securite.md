@@ -6,7 +6,7 @@ Branche `correctifs-audit` (bilan : `docs/superpowers/plans/2027-01-19-correctif
 
 | Constat | Suite |
 |---|---|
-| I1. Moins de 15 ans sans accord ou accord retiré | corrigé (`bb726c2`, `672f832`, migrations `20270119000001` et `20270119000004`) : gardes sur 5 écritures, filtres sur les lectures enseignant, rappels et iCal, notifications déjà en attente retirées. Reste : la politique RLS enseignant « inscriptions visibles » expose encore `eleve_id` et `rejoint_le` d'un élève retiré (ni nom ni résultats) ; les insertions 3 et 4 de la planification des rappels n'ont pas d'assertion dédiée. Reportés |
+| I1. Moins de 15 ans sans accord ou accord retiré | corrigé (`bb726c2`, `672f832`, migrations `20270119000001` et `20270119000004`) : gardes sur 5 écritures, filtres sur les lectures enseignant, rappels et iCal, notifications déjà en attente retirées. Politique RLS enseignant « inscriptions visibles » et `nb_eleves` : corrigés (migration `20270119000007`). Reste : les insertions 3 et 4 de la planification des rappels n'ont pas d'assertion dédiée (reporté) |
 | I2. Adresse e-mail dans le journal d'audit d'Auth | corrigé (`f420979`, migration `20270119000005`) : purge du journal à la suppression du compte, rétention de 90 jours |
 | M1. Mise à jour directe du profil (`onboarding_termine`, `demande_enseignant`) | reporté (demande de passer l'onboarding par une RPC : changement de parcours à concevoir) |
 | M2. Droits résiduels sur `niveau`, droits par défaut | corrigé (`f420979`) pour les tables ; reporté pour les fonctions et les séquences (droits par défaut non modifiés) |

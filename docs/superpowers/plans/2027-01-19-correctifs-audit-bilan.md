@@ -24,8 +24,20 @@ Rapports d'audit : `docs/audits/2027-01-12-audit-securite.md` et `docs/audits/20
 - `20270119000004` : `prive.notification_encore_valide` tient compte de l'accord.
 - `20270119000005` : purge du journal d'audit, rétention de 90 jours, effacement des adresses de parents, droits sur `niveau` et par défaut, déclencheur de l'adresse.
 - `20270119000006` : `exporter_mes_donnees()` complète.
+- `20270119000007` : `classes_enseignant().nb_eleves` et la politique « inscriptions visibles » (branche enseignant) ignorent l'élève dont l'accord est requis ; assistant `public.est_eleve_sans_accord(uuid)` en security definer, car `authenticated` ne peut pas exécuter `prive.consentement_requis` (réservé à l'enseignant de l'élève, pour ne pas révéler l'état de l'accord d'un identifiant quelconque).
 
 Décision du contrôleur : les numéros `000005` et `000006` remplacent `000002` et `000003` prévus au plan, pour respecter l'ordre des noms de fichier après `000004`. À appliquer avant la mise en ligne.
+
+## Suites des revues finales (faites)
+
+1. Confidentialité : espace insécable avant « ; » dans la phrase sur le journal de connexion.
+2. Confidentialité, « Accès et export » : la phrase nomme maintenant parents reliés et liaisons défaites, abonnement, informations de connexion.
+3. Migration `20270119000007` et pgTAP (`accord_requis_partout.test.sql`) : l'enseignant ne voit ni ne compte plus l'élève retiré ; visible de nouveau après l'annulation.
+4. `globals.css` : la cible du lien d'évitement (`main[tabindex="-1"]:focus`) retire aussi le `box-shadow`.
+
+## Gardes volontairement absentes
+
+`regler_rappel_evenement`, `enregistrer_preferences_notification`, `refuser_plan_revision` et `ignorer_reorganisation` n'ont pas de garde `consentement_requis` : elles ne modifient que les données propres de l'élève et ne divulguent rien.
 
 ## Constats reportés
 
@@ -34,7 +46,6 @@ Sécurité :
 - **M3** : relais de spam par l'e-mail d'accord ; le CAPTCHA demande le compte du fournisseur de l'utilisateur.
 - Course très étroite dans la purge (liste des comptes purgés, puis suppression du journal) ; la rétention de 90 jours la rattrape.
 - Droits par défaut des fonctions et des séquences : non modifiés.
-- Politique RLS enseignant « inscriptions visibles » : expose encore `eleve_id` et `rejoint_le` d'un élève retiré (ni nom ni résultats).
 - Planification des rappels : les insertions 3 (nouvel essai) et 4 (révision du jour) n'ont pas d'assertion dédiée.
 
 Accessibilité :
@@ -44,5 +55,6 @@ Accessibilité :
 
 ## Mise en ligne
 
-- Appliquer les migrations `20270119000001`, `20270119000004`, `20270119000005` et `20270119000006`.
+- Appliquer les migrations `20270119000001`, `20270119000004`, `20270119000005`, `20270119000006` et `20270119000007`.
+- Vérifier que, dans le projet hébergé, le rôle `postgres` a DELETE sur `auth.audit_log_entries` et TRIGGER sur `auth.users` ; sinon la purge quotidienne, y compris la suppression de compte, s'interrompt.
 - Compléter dans la page de confidentialité la durée de conservation des journaux de la plateforme d'hébergement (Vercel, plateforme Supabase).
