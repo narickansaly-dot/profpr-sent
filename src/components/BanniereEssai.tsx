@@ -12,7 +12,7 @@ export function BanniereEssai({ acces, titreCoursGratuit = null, maintenant = ne
     const jours = joursAvant(new Date(acces.finEssai), maintenant);
     return (
       <p className="banniere" role="status">
-        🎁 Essai gratuit : encore <strong>{jours} jour{jours > 1 ? 's' : ''}</strong> pour découvrir tous les cours.
+        🎁 Essai gratuit&nbsp;: encore <strong>{jours} jour{jours > 1 ? 's' : ''}</strong> pour découvrir tous les cours.
       </p>
     );
   }
