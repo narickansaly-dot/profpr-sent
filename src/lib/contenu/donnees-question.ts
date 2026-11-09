@@ -21,7 +21,7 @@ export function versDonneesQuestion(q: QuestionImport): DonneesQuestion {
   }
 }
 
-export function versDonneesCours(c: CoursImport) {
+export function versDonneesCours(c: CoursImport, options: { garderStatuts?: boolean } = {}) {
   return {
     slug: c.slug, filiere: c.filiere, niveau: c.niveau, matiere: c.matiere, titre: c.titre, couleur: c.couleur.toLowerCase(),
     chapitres: c.chapitres.map((ch) => ({
@@ -29,7 +29,7 @@ export function versDonneesCours(c: CoursImport) {
       resume: ch.resume ?? '', chapeau: ch.chapeau ?? '', objectifs: ch.objectifs,
       sections: ch.sections.map((s) => ({ id: s.id, titre: s.titre, html: nettoyerHtml(s.html) })),
       a_retenir: ch.a_retenir ? nettoyerHtml(ch.a_retenir) : '',
-      questions: ch.questions.map(versDonneesQuestion),
+      questions: ch.questions.map((q) => (options.garderStatuts ? { ...versDonneesQuestion(q), garder_statut: true } : versDonneesQuestion(q))),
     })),
   };
 }
