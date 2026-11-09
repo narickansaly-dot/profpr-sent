@@ -158,3 +158,60 @@ describe('messageErreur, retour bloqué', () => {
     }
   });
 });
+
+describe('messageErreur, comptes parents', () => {
+  it('traduit pas_parent sans collision avec un autre code', () => {
+    expect(messageErreur('pas_parent')).toBe('Cette page est réservée aux comptes parents.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'pas_parent') expect(a.includes('pas_parent') || 'pas_parent'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit deja_inscrit sans collision avec un autre code', () => {
+    expect(messageErreur('deja_inscrit')).toBe('Ce compte a déjà commencé comme élève\u00a0: il ne peut pas devenir un compte parent.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'deja_inscrit') expect(a.includes('deja_inscrit') || 'deja_inscrit'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit nom_parent_invalide sans collision avec un autre code', () => {
+    expect(messageErreur('nom_parent_invalide')).toBe('Indiquez votre prénom (60 caractères au plus).');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'nom_parent_invalide') expect(a.includes('nom_parent_invalide') || 'nom_parent_invalide'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit trop_de_parents sans collision avec un autre code', () => {
+    expect(messageErreur('trop_de_parents')).toBe('Ce compte élève est déjà relié à deux parents.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'trop_de_parents') expect(a.includes('trop_de_parents') || 'trop_de_parents'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit reserve_15_ans sans collision avec un autre code', () => {
+    expect(messageErreur('reserve_15_ans')).toBe('Avant 15 ans, c’est ton parent qui crée le lien, avec l’adresse qui a reçu la demande d’accord.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'reserve_15_ans') expect(a.includes('reserve_15_ans') || 'reserve_15_ans'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit code_parent_invalide sans collision avec un autre code', () => {
+    expect(messageErreur('code_parent_invalide')).toBe('Ce code n’est pas valable ou a expiré. Demandez un nouveau code à votre enfant.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'code_parent_invalide') expect(a.includes('code_parent_invalide') || 'code_parent_invalide'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit essais_code_epuises sans collision avec un autre code', () => {
+    expect(messageErreur('essais_code_epuises')).toBe('Trop d’essais. Réessayez dans une heure.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'essais_code_epuises') expect(a.includes('essais_code_epuises') || 'essais_code_epuises'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit deliaison_interdite sans collision avec un autre code', () => {
+    expect(messageErreur('deliaison_interdite')).toBe('Avant 15 ans, seul ton parent peut retirer ce lien.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'deliaison_interdite') expect(a.includes('deliaison_interdite') || 'deliaison_interdite'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit lien_introuvable sans collision avec un autre code', () => {
+    expect(messageErreur('lien_introuvable')).toBe('Ce lien n’existe pas ou a déjà été retiré.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'lien_introuvable') expect(a.includes('lien_introuvable') || 'lien_introuvable'.includes(a)).toBe(false);
+    }
+  });
+});

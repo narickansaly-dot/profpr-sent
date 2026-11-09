@@ -73,6 +73,15 @@ export const MESSAGES: Record<string, string> = {
   envois_epuises: 'Trop de demandes d’accord ont été envoyées aujourd’hui (5 par élève, 3 vers une même adresse). Réessaie demain.',
   lien_consentement_invalide: 'Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.',
   retour_bloque: 'Tu ne fais plus partie de cette classe. Tu pourras la rejoindre de nouveau dans 24 heures.',
+  pas_parent: 'Cette page est réservée aux comptes parents.',
+  deja_inscrit: 'Ce compte a déjà commencé comme élève\u00a0: il ne peut pas devenir un compte parent.',
+  nom_parent_invalide: 'Indiquez votre prénom (60 caractères au plus).',
+  trop_de_parents: 'Ce compte élève est déjà relié à deux parents.',
+  reserve_15_ans: 'Avant 15 ans, c’est ton parent qui crée le lien, avec l’adresse qui a reçu la demande d’accord.',
+  code_parent_invalide: 'Ce code n’est pas valable ou a expiré. Demandez un nouveau code à votre enfant.',
+  essais_code_epuises: 'Trop d’essais. Réessayez dans une heure.',
+  deliaison_interdite: 'Avant 15 ans, seul ton parent peut retirer ce lien.',
+  lien_introuvable: 'Ce lien n’existe pas ou a déjà été retiré.',
 };
 
 export function messageErreur(message: string | undefined): string {

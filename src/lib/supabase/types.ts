@@ -369,6 +369,32 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"lien_parent": {
+                  Row: {
+                    "cree_le": string,"eleve_id": string,"origine": string,"parent_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cree_le"?: string,"eleve_id": string,"origine": string,"parent_id": string
+                  }
+                  Update: {
+                    "cree_le"?: string,"eleve_id"?: string,"origine"?: string,"parent_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "lien_parent_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "lien_parent_parent_id_fkey"
+      columns: ["parent_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"niveau": {
                   Row: {
                     "code": string,"nom": string,"ordre": number
@@ -754,6 +780,9 @@ isOneToOne: false
 "definir_echeance":
 { Args: { "p_classe": string,"p_cours": string,"p_limite": string,"p_ouverture": string }; Returns: undefined
                            },
+"delier_parent":
+{ Args: { "p_autre": string }; Returns: undefined
+                           },
 "demander_consentement":
 { Args: { "p_email": string }; Returns: undefined
                            },
@@ -773,6 +802,9 @@ isOneToOne: false
                            },
 "demarrer_revision_generale":
 { Args: { "p_evenement": string }; Returns: string
+                           },
+"devenir_parent":
+{ Args: { "p_nom": string }; Returns: undefined
                            },
 "donner_consentement":
 { Args: { "p_jeton": string }; Returns: string
@@ -819,11 +851,20 @@ isOneToOne: false
 "exporter_mes_donnees":
 { Args: Record<PropertyKey, never>; Returns: Json
                            },
+"generer_code_parent":
+{ Args: Record<PropertyKey, never>; Returns: string
+                           },
 "ignorer_reorganisation":
 { Args: { "p_plan": string }; Returns: undefined
                            },
 "importer_cours":
 { Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
+                           },
+"lier_par_code":
+{ Args: { "p_code": string }; Returns: string
+                           },
+"lier_par_email":
+{ Args: Record<PropertyKey, never>; Returns: number
                            },
 "lire_demande_consentement":
 { Args: { "p_jeton": string }; Returns: {
