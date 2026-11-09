@@ -105,6 +105,10 @@ export default function PageConfidentialite() {
           après un retrait par l’enseignant), puis effacés.
         </li>
         <li>Le lien d’accord envoyé à un parent expire au bout de 7&nbsp;jours.</li>
+        <li>Journaux techniques de connexion&nbsp;: 90&nbsp;jours.</li>
+        <li>
+          Adresse d’un parent qui n’a pas donné son accord&nbsp;: effacée 30&nbsp;jours après la demande.
+        </li>
         <li>
           Les dates de tes tentatives de saisie d’un code de classe servent à limiter les essais&nbsp;; celles qui ont plus
           d’une heure sont effacées à ta tentative suivante, et toutes disparaissent avec ton compte.
