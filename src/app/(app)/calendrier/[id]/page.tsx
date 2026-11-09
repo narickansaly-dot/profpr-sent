@@ -22,7 +22,7 @@ export default async function PageEvenement({ params }: { params: Promise<{ id: 
     ?.libelle.replace(' (24 heures avant)', '').toLowerCase();
   return (
     <div className="page-evenement">
-      <p><Link href={`/calendrier?vue=semaine&date=${local.slice(0, 10)}`}>← Mon calendrier</Link></p>
+      <p><Link className="lien-action" href={`/calendrier?vue=semaine&date=${local.slice(0, 10)}`}>← Mon calendrier</Link></p>
       <h1>{e.titre}</h1>
       {libelleRappel && <p>Rappel&nbsp;: {libelleRappel}</p>}
       {e.revision_generale && (
