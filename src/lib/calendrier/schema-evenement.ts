@@ -3,13 +3,9 @@ import { z } from 'zod';
 import { heureParisVersIso } from '@/lib/enseignant/dates';
 import { ajouterJours, estJourValide } from './dates';
 
-export const TYPES_EVENEMENT = ['revision', 'devoir', 'examen_reel'] as const;
-export const REPETITIONS = ['aucune', 'quotidienne', 'hebdomadaire', 'jours'] as const;
-export const DUREES_EVENEMENT = [15, 30, 45, 60, 90, 120, 180] as const;
-export const RAPPELS = [
-  { valeur: '', libelle: 'Aucun rappel' }, { valeur: '10', libelle: '10 minutes avant' },
-  { valeur: '60', libelle: '1 heure avant' }, { valeur: '1440', libelle: 'La veille (24 heures avant)' },
-] as const;
+import { TYPES_EVENEMENT, REPETITIONS, DUREES_EVENEMENT, RAPPELS } from './constantes';
+
+export { TYPES_EVENEMENT, REPETITIONS, DUREES_EVENEMENT, RAPPELS };
 
 export type ChampEvenement = 'type' | 'titre' | 'jour' | 'heure' | 'duree' | 'cours' | 'chapitres' | 'repetition' | 'jours' | 'jusqu' | 'rappel';
 export type ValeursEvenement = {
@@ -28,10 +24,10 @@ const schema = z.object({
   jour: z.string().refine(estJourValide, 'Choisis une date valide.'),
   heure: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Choisis une heure valide.'),
   duree: z.coerce.number().refine((d) => (DUREES_EVENEMENT as readonly number[]).includes(d), 'Choisis une durée dans la liste.'),
-  cours: z.string().uuid().optional(),
-  chapitres: z.array(z.string().uuid()).max(30),
+  cours: z.string().uuid({ error: 'Choisis un cours dans la liste.' }).optional(),
+  chapitres: z.array(z.string().uuid({ error: 'Choisis des chapitres dans la liste.' })).max(30, 'Choisis 30 chapitres au plus.'),
   repetition: z.enum(REPETITIONS, { error: 'Choisis une répétition dans la liste.' }),
-  jours: z.array(z.coerce.number().int().min(1).max(7)),
+  jours: z.array(z.coerce.number({ error: 'Choisis des jours entre lundi et dimanche.' }).int('Choisis des jours entre lundi et dimanche.').min(1, 'Choisis des jours entre lundi et dimanche.').max(7, 'Choisis des jours entre lundi et dimanche.')),
   jusqu: z.string().optional(),
   rappel: z.enum(['', '10', '60', '1440'], { error: 'Choisis un rappel dans la liste.' }),
 });

@@ -3,7 +3,8 @@
 import { useActionState, useId } from 'react';
 import { useFormStatus } from 'react-dom';
 import { accepterPlanning, apercuPlanning, refuserPlanning, type EtatPlanning, type ValeursPlanning } from '@/app/(app)/calendrier/actions';
-import { DUREES_SESSION, type ChampReglages } from '@/lib/planning/reglages';
+import { DUREES_SESSION } from '@/lib/planning/constantes';
+import type { ChampReglages } from '@/lib/planning/reglages';
 import type { Reglages } from '@/lib/planning/generer';
 
 const JOURS = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];

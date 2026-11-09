@@ -6,7 +6,8 @@ export async function ProchainsEvenements() {
   let liste: OccurrenceCalendrier[] | null;
   try {
     liste = await prochainsEvenements(new Date());
-  } catch {
+  } catch (e) {
+    console.error('prochains événements', e);
     liste = null;
   }
   return (

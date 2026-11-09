@@ -35,7 +35,7 @@ function creneauDuJour(jour: string, reglages: Reglages, occupes: { d: number; f
     if (!iso) continue;
     const d = Date.parse(iso);
     const f = d + reglages.dureeMinutes * MINUTE;
-    if (d <= apres) continue;
+    if (d < apres) continue;
     if (!occupes.some((o) => d < o.f && o.d < f)) return iso;
   }
   return null;
@@ -52,6 +52,7 @@ export function genererPlanning(p: {
 }): Planning {
   const { maintenant, reglages } = p;
   if (p.chapitres.length === 0) return { sessions: [], regroupe: false, avertissements: ['Aucun chapitre à réviser.'] };
+  if (Number.isNaN(Date.parse(p.examenDebut))) return { sessions: [], regroupe: false, avertissements: ['La date de l’examen est invalide.'] };
   const avertissements: string[] = [];
   const examen = Date.parse(p.examenDebut);
   const occupes = p.occupes.map((o) => ({ d: Date.parse(o.debut), f: Date.parse(o.fin) }));

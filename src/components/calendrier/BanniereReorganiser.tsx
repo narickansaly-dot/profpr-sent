@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BoutonPlusTard } from './BoutonPlusTard';
 import { ignorerReorganisation } from '@/app/(app)/calendrier/actions';
 
 export function BanniereReorganiser({ planId, examenId, examenTitre }: { planId: string; examenId: string; examenTitre: string }) {
@@ -9,7 +10,7 @@ export function BanniereReorganiser({ planId, examenId, examenTitre }: { planId:
         <Link className="bouton bouton-principal" href={`/calendrier/${examenId}/planning`}>Réorganiser</Link>
         <form action={ignorerReorganisation}>
           <input type="hidden" name="plan" value={planId} />
-          <button type="submit" className="bouton bouton-secondaire">Plus tard</button>
+          <BoutonPlusTard />
         </form>
       </div>
     </section>

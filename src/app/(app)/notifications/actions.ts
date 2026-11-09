@@ -4,6 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { messageErreur } from '@/lib/erreurs';
+import { hoteDePushAutorise } from '@/lib/notifications/hote';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { exigerEleve } from '@/lib/calendrier/garde';
 import { lireFormulairePreferences, type ChampPreferences, type ValeursPreferences } from '@/lib/notifications/preferences';
@@ -20,7 +21,7 @@ const abonnementSchema = z.object({
 export async function enregistrerAbonnement(abonnement: unknown, appareil: string): Promise<{ erreur?: string }> {
   await exigerEleve();
   const a = abonnementSchema.safeParse(abonnement);
-  if (!a.success) return { erreur: messageErreur('abonnement_invalide') };
+  if (!a.success || !hoteDePushAutorise(a.data.endpoint)) return { erreur: messageErreur('abonnement_invalide') };
   const supabase = await creerClientServeur();
   const { error } = await supabase.rpc('enregistrer_abonnement_push', {
     p_endpoint: a.data.endpoint, p_p256dh: a.data.p256dh, p_auth: a.data.auth, p_appareil: String(appareil).slice(0, 80),
