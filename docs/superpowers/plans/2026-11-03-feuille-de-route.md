@@ -12,7 +12,7 @@ La spec couvre sept étapes qui livrent chacune une version utilisable. Chaque �
 | 3b. Gestion du contenu (éditeurs, signalements) | `2026-11-24-etape-3b-contenu.md` (bilan : `2026-11-24-etape-3b-bilan.md`) | Terminé (branche etape-3b-contenu) |
 | 4a. Calendrier, planning de révision, PWA hors connexion | `2026-12-01-etape-4a-calendrier.md` (bilan : `2026-12-01-etape-4a-bilan.md`) | Terminé (branche etape-4a-calendrier) |
 | 4b. Notifications Web Push | `2026-12-08-etape-4b-notifications.md` (bilan : `2026-12-08-etape-4b-bilan.md`) | Terminé (branche etape-4b-notifications) |
-| 4c. En-têtes de sécurité, déploiement, accessibilité, dette | à rédiger après l'étape 4b | — |
+| 4c. En-têtes de sécurité, déploiement, accessibilité, dette | `2026-12-15-etape-4c-securite.md` | Plan rédigé (branche etape-4c-securite) |
 | 5. Abonnements Stripe et RGPD | à rédiger après l'étape 4 | — |
 | 6. Contenu 1re ST2S complet | à rédiger après l'étape 5 | — |
 | 7. Stores, nouveaux types de questions, établissements, autres filières | plus tard | — |
