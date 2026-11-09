@@ -103,3 +103,13 @@ npm run import:contenu -- <fichier.json> [--publier] [--distant]
 - Les administrateurs peuvent aussi importer depuis `/admin/import` (vérification du résumé, puis confirmation).
 
 Mise en ligne : voir `docs/mise-en-ligne.md`.
+
+## Sécurité
+
+- **CSP avec nonce** : le proxy (`src/proxy.ts`) crée un nonce aléatoire à chaque requête et pose `Content-Security-Policy` (`script-src 'self' 'nonce-…' 'strict-dynamic'`, `frame-ancestors 'none'`, etc.). La politique est construite par `politiqueContenu` (`src/lib/securite/csp.ts`, testée). Les pages sont donc rendues à la demande. `style-src` garde `'unsafe-inline'` (styles en ligne de Next et des schémas).
+- **En-têtes** sur toutes les routes : `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`, `Cross-Origin-Opener-Policy`, et `Strict-Transport-Security` seulement en https (jamais sur `http://localhost`).
+- **Variables d'environnement** : `src/instrumentation.ts` les vérifie au démarrage du serveur (pas au build). Une variable obligatoire absente arrête le démarrage avec un message clair ; un groupe de notifications incomplet est signalé.
+- **Service worker** : sa version est liée au déploiement (commit Vercel, sinon horodatage du build), lue dans `/sw.js?v=…`. Un nouveau déploiement remplace et vide les anciens caches hors connexion.
+- **Accessibilité** : `npx playwright test e2e/accessibilite.spec.ts` passe axe-core (WCAG 2.1 A et AA, impacts grave et critique) sur les pages principales, en clair et en sombre.
+
+Mise en ligne (Vercel en région `cdg1`, Supabase en UE) : voir [`docs/mise-en-ligne.md`](docs/mise-en-ligne.md).
