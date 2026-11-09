@@ -1,5 +1,5 @@
 begin;
-select plan(21);
+select plan(23);
 
 insert into auth.users (id, email, email_confirmed_at) values
   ('00000000-0000-0000-0000-0000000005d1', 'suivi-enfant@test.local', now()),
@@ -27,6 +27,11 @@ insert into public.chapitre (id, cours_id, slug, numero, titre, publie) values
   ('30000000-0000-0000-0000-0000000005d2', '20000000-0000-0000-0000-0000000005d1', 'ch2', 2, 'Chapitre 2', true);
 insert into public.progression_chapitre (eleve_id, chapitre_id, meilleure_note, valide, valide_le) values
   ('00000000-0000-0000-0000-0000000005d1', '30000000-0000-0000-0000-0000000005d1', 80, true, now());
+-- Une tentative terminée de l'enfant : sans elle, « le parent ne lit pas les tentatives » compterait 0 à vide.
+insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions, statut, debut, fin, note, reussie) values
+  ('40000000-0000-0000-0000-0000000005d1', '00000000-0000-0000-0000-0000000005d1', 'quiz_chapitre',
+   '20000000-0000-0000-0000-0000000005d1', '30000000-0000-0000-0000-0000000005d1', 1, 'terminee',
+   '2027-01-04 09:50:00+00', '2027-01-04 10:00:00+00', 80, true);
 
 set local role authenticated;
 
@@ -35,6 +40,8 @@ select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000
 select is((select count(*)::int from public.enfants_du_parent()), 2, 'le parent voit ses deux enfants');
 select results_eq($$ select chapitres_valides, chapitres_total from public.progression_enfant('00000000-0000-0000-0000-0000000005d1') $$,
   $$ values (1, 2) $$, 'progression par cours');
+select is((select derniere_activite from public.progression_enfant('00000000-0000-0000-0000-0000000005d1')),
+  '2027-01-04 10:00:00+00'::timestamptz, 'dernière activité : la fin de la tentative terminée');
 select is((select count(*)::int from public.tentative where eleve_id = '00000000-0000-0000-0000-0000000005d1'), 0,
   'le parent ne lit pas les tentatives de l''enfant');
 select throws_ok($$ select count(*) from public.lien_parent $$, '42501', null, 'aucune lecture directe des liens');
@@ -64,6 +71,15 @@ select lives_ok($$ select public.exporter_mes_donnees() $$, 'l''export reste dis
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005d3","role":"authenticated"}', true);
 select throws_ok($$ select public.annuler_retrait_consentement('00000000-0000-0000-0000-0000000005d1') $$,
   'P0001', 'lien_introuvable', 'un autre parent n''annule pas');
+-- Le second parent est relié à l'enfant (insertion directe, hors RPC) : il n'est plus « non relié »,
+-- mais il n'a pas fait le retrait, donc il ne peut pas l'annuler.
+reset role;
+insert into public.lien_parent (eleve_id, parent_id, origine) values
+  ('00000000-0000-0000-0000-0000000005d1', '00000000-0000-0000-0000-0000000005d3', 'code');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005d3","role":"authenticated"}', true);
+select throws_ok($$ select public.annuler_retrait_consentement('00000000-0000-0000-0000-0000000005d1') $$,
+  'P0001', 'retrait_impossible', 'un parent relié mais auteur d''un autre retrait n''annule pas');
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005d2","role":"authenticated"}', true);
 select lives_ok($$ select public.annuler_retrait_consentement('00000000-0000-0000-0000-0000000005d1') $$, 'le parent annule le retrait');
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005d1","role":"authenticated"}', true);
