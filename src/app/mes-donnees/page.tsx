@@ -28,7 +28,7 @@ export default async function PageMesDonnees() {
         </section>
         <section aria-labelledby="titre-suppression">
           <h2 id="titre-suppression">Supprimer mon compte</h2>
-          <SuppressionCompte dateSuppression={profil.suppression_demandee_le ? formaterDateSuppression(profil.suppression_demandee_le) : null} />
+          <SuppressionCompte enseignant={profil.role === 'enseignant'} dateSuppression={profil.suppression_demandee_le ? formaterDateSuppression(profil.suppression_demandee_le) : null} />
         </section>
         <p><Link href="/">Retour à l’accueil</Link></p>
       </main>

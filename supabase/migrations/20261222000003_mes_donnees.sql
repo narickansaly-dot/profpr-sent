@@ -13,6 +13,11 @@ begin
   if auth.uid() is null then
     raise exception 'non_connecte';
   end if;
+  -- Le dernier administrateur du contenu ne peut pas disparaître (la purge applique la même règle).
+  if public.role_actuel() = 'admin_contenu' and not exists (
+       select 1 from public.profil a where a.role = 'admin_contenu' and a.id <> auth.uid() and a.suppression_demandee_le is null) then
+    raise exception 'dernier_admin';
+  end if;
   -- Une nouvelle demande ne repousse pas la date déjà fixée.
   update public.profil set suppression_demandee_le = coalesce(suppression_demandee_le, now())
    where id = auth.uid()
@@ -31,11 +36,21 @@ end $$;
 
 -- Une seule requête, uniquement les données de l'appelant (auth.uid()).
 create function public.exporter_mes_donnees() returns jsonb
-language sql stable security definer set search_path = '' as $$
-  select jsonb_build_object(
+language plpgsql security definer set search_path = '' as $$
+declare
+  r record;
+begin
+  -- Même garde que correction_tentative : l'export ne doit pas révéler les corrections pendant une évaluation ouverte.
+  for r in select id, type from public.tentative where eleve_id = auth.uid() and statut = 'en_cours' loop
+    if not prive.cloturer_si_expiree(r.id) and r.type = 'evaluation_cours' then
+      raise exception 'evaluation_en_cours';
+    end if;
+  end loop;
+  return jsonb_build_object(
     'profil', (select jsonb_build_object(
         'nom', p.nom, 'email', p.email, 'role', p.role, 'filiere', f.nom, 'niveau', p.niveau_code,
-        'moins_de_15_ans', p.moins_de_15_ans, 'inscrit_le', p.inscrit_le, 'etablissement', p.etablissement,
+        'moins_de_15_ans', p.moins_de_15_ans, 'onboarding_termine', p.onboarding_termine,
+        'demande_enseignant', p.demande_enseignant, 'inscrit_le', p.inscrit_le, 'etablissement', p.etablissement,
         'suppression_demandee_le', p.suppression_demandee_le)
       from public.profil p left join public.filiere f on f.id = p.filiere_id where p.id = auth.uid()),
     'classes', coalesce((select jsonb_agg(jsonb_build_object('classe', c.nom, 'enseignant', e.nom, 'rejoint_le', i.rejoint_le) order by i.rejoint_le)
@@ -60,8 +75,9 @@ language sql stable security definer set search_path = '' as $$
     'tentatives', coalesce((select jsonb_agg(jsonb_build_object(
         'type', t.type, 'cours', co.titre, 'chapitre', ch.titre, 'debut', t.debut, 'fin', t.fin, 'date_limite', t.date_limite,
         'statut', t.statut, 'note', t.note, 'reussie', t.reussie,
-        'questions', coalesce((select jsonb_agg(jsonb_build_object('enonce', q.enonce, 'reponse', tq.reponse, 'correcte', tq.correcte,
-                                                                    'repondu_le', tq.repondu_le) order by tq.ordre)
+        'questions', coalesce((select jsonb_agg(case when t.statut = 'en_cours' then jsonb_build_object('enonce', q.enonce)
+                                                       else jsonb_build_object('enonce', q.enonce, 'reponse', tq.reponse, 'correcte', tq.correcte,
+                                                                               'repondu_le', tq.repondu_le) end order by tq.ordre)
                                  from public.tentative_question tq join public.question q on q.id = tq.question_id
                                 where tq.tentative_id = t.id), '[]'::jsonb)) order by t.debut)
       from public.tentative t
@@ -99,9 +115,15 @@ language sql stable security definer set search_path = '' as $$
     'signalements', coalesce((select jsonb_agg(jsonb_build_object(
         'enonce', q.enonce, 'commentaire', s.commentaire, 'statut', s.statut, 'reponse', s.reponse, 'cree_le', s.cree_le, 'traite_le', s.traite_le) order by s.cree_le)
       from public.signalement s join public.question q on q.id = s.question_id
-      where s.auteur_id = auth.uid()), '[]'::jsonb)
-  )
-$$;
+      where s.auteur_id = auth.uid()), '[]'::jsonb),
+    -- Signalements traités par l'appelant (administrateur) : sans l'identité de l'auteur.
+    'signalements_traites', coalesce((select jsonb_agg(jsonb_build_object(
+        'enonce', q.enonce, 'statut', s.statut, 'reponse', s.reponse, 'traite_le', s.traite_le) order by s.traite_le)
+      from public.signalement s join public.question q on q.id = s.question_id
+      where s.traite_par = auth.uid()), '[]'::jsonb),
+    'essais_code_classe', coalesce((select jsonb_agg(e.essai_le order by e.essai_le) from prive.essai_code e where e.eleve_id = auth.uid()), '[]'::jsonb)
+  );
+end $$;
 
 -- Chaque nuit : comptes dont la suppression est échue, départs de classe de plus de 30 jours.
 create function prive.purges_quotidiennes() returns void
@@ -110,7 +132,10 @@ begin
   -- Cascade : auth.users -> profil -> classes (et leurs inscriptions, échéances, départs) et toutes les données de la personne.
   delete from auth.users u
    using public.profil p
-   where p.id = u.id and p.suppression_demandee_le < now() - interval '30 days';
+   where p.id = u.id and p.suppression_demandee_le < now() - interval '30 days'
+     -- Le dernier administrateur du contenu est conservé.
+     and (p.role <> 'admin_contenu' or exists (
+           select 1 from public.profil a where a.role = 'admin_contenu' and a.id <> p.id and a.suppression_demandee_le is null));
   delete from prive.depart_classe where quitte_le < now() - interval '30 days';
 end $$;
 revoke execute on function prive.purges_quotidiennes() from public;

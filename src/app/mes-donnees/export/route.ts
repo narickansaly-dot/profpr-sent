@@ -1,4 +1,5 @@
 import { creerClientServeur } from '@/lib/supabase/server';
+import { messageErreur } from '@/lib/erreurs';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,6 +9,10 @@ export async function GET() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return new Response('Connecte-toi pour télécharger tes données.', { status: 401, headers: { 'Cache-Control': 'no-store' } });
   const { data, error } = await supabase.rpc('exporter_mes_donnees');
+  // Pendant une évaluation ouverte, la base refuse l'export (il révélerait les corrections).
+  if (error?.message.includes('evaluation_en_cours')) {
+    return new Response(messageErreur('evaluation_en_cours'), { status: 409, headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' } });
+  }
   if (error) return new Response('Export impossible pour le moment.', { status: 503, headers: { 'Cache-Control': 'no-store' } });
   const jour = new Date().toISOString().slice(0, 10);
   return new Response(JSON.stringify(data, null, 2), {

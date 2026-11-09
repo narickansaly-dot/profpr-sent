@@ -3,9 +3,9 @@
 import { useActionState, useId } from 'react';
 import { annulerSuppression, demanderSuppression, type EtatSuppression } from '@/app/mes-donnees/actions';
 
-type Props = { dateSuppression: string | null };
+type Props = { dateSuppression: string | null; enseignant?: boolean };
 
-export function SuppressionCompte({ dateSuppression }: Props) {
+export function SuppressionCompte({ dateSuppression, enseignant = false }: Props) {
   const [etatDemande, demander, demandeEnCours] = useActionState<EtatSuppression, FormData>(demanderSuppression, {});
   const [etatAnnulation, annuler, annulationEnCours] = useActionState<EtatSuppression, FormData>(annulerSuppression, {});
   const id = useId();
@@ -14,7 +14,7 @@ export function SuppressionCompte({ dateSuppression }: Props) {
   if (dateSuppression) {
     return (
       <form action={annuler} className="formulaire">
-        <p role="status">Ton compte sera supprimé le {dateSuppression}.</p>
+        <p role="status">Ton compte sera supprimé à partir du {dateSuppression}.</p>
         {etatAnnulation.erreur && <p role="alert" className="message-erreur">{etatAnnulation.erreur}</p>}
         <button type="submit" className="bouton bouton-principal" disabled={annulationEnCours}>
           {annulationEnCours ? 'Annulation…' : 'Annuler la suppression'}
@@ -25,6 +25,7 @@ export function SuppressionCompte({ dateSuppression }: Props) {
   return (
     <form action={demander} className="formulaire">
       <p>Ton compte et tous tes résultats seront supprimés 30 jours après ta demande. Tu peux annuler jusque-là en te reconnectant.</p>
+      {enseignant && <p>Tes classes seront aussi supprimées&nbsp;: tes élèves en seront retirés et leurs échéances disparaîtront.</p>}
       <label className="case">
         <input type="checkbox" name="comprends" value="oui" required
           aria-invalid={etatDemande.erreur ? true : undefined} aria-describedby={etatDemande.erreur ? erreurId : undefined} />

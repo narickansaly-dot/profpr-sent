@@ -1,4 +1,5 @@
 export const MESSAGES: Record<string, string> = {
+  dernier_admin: 'Tu es le seul administrateur du contenu\u00a0: désigne-en un autre avant de demander la suppression de ton compte.',
   non_connecte: 'Ta session a expiré. Reconnecte-toi.',
   acces_refuse: 'Tu n’as pas accès à ce cours pour le moment.',
   longueur_invalide: 'Choisis un quiz de 15, 20 ou 30 questions.',

@@ -140,3 +140,12 @@ describe('messageErreur, consentement parental', () => {
     }
   });
 });
+
+describe('messageErreur, mes données', () => {
+  it('traduit dernier_admin sans collision avec un autre code', () => {
+    expect(messageErreur('dernier_admin')).toBe('Tu es le seul administrateur du contenu\u00a0: désigne-en un autre avant de demander la suppression de ton compte.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'dernier_admin') expect(a.includes('dernier_admin') || 'dernier_admin'.includes(a)).toBe(false);
+    }
+  });
+});

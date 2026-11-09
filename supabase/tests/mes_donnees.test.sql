@@ -1,5 +1,5 @@
 begin;
-select plan(29);
+select plan(37);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000005c1', 'eleve-donnees@test.local'),
@@ -61,6 +61,7 @@ insert into public.notification_planifiee (eleve_id, type, cle, titre, corps, ur
 insert into public.acces_gratuit (eleve_id, cours_id) values ('00000000-0000-0000-0000-0000000005c1', '20000000-0000-0000-0000-0000000005c1');
 insert into public.consentement_parental (eleve_id, email_parent, jeton_empreinte, donne_le)
   values ('00000000-0000-0000-0000-0000000005c1', 'parent-donnees@example.fr', '\xdeadbeef', now());
+insert into prive.essai_code (eleve_id) values ('00000000-0000-0000-0000-0000000005c1');
 insert into prive.jeton_ical (eleve_id, empreinte) values ('00000000-0000-0000-0000-0000000005c1', '\xcafebabe');
 insert into public.signalement (question_id, auteur_id, commentaire) values
   ('40000000-0000-0000-0000-0000000005c1', '00000000-0000-0000-0000-0000000005c2', 'Énoncé ambigu, à revoir.');
@@ -70,8 +71,8 @@ set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
 select set_config('test.export_eleve', public.exporter_mes_donnees()::text, true);
 select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb) k order by k collate "C"),
-  array['acces_gratuit','appareils','classes','classes_creees','consentement','departs_classe','evenements','historique_questions','notifications',
-        'plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','signalements','tentatives'],
+  array['acces_gratuit','appareils','classes','classes_creees','consentement','departs_classe','essais_code_classe','evenements','historique_questions','notifications',
+        'plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','signalements','signalements_traites','tentatives'],
   'l''export a toutes les rubriques');
 select is(current_setting('test.export_eleve')::jsonb->'profil'->>'email', 'eleve-donnees@test.local', 'le profil de l''appelant');
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'tentatives'), 1, 'une seule tentative exportée');
@@ -83,6 +84,34 @@ select is(current_setting('test.export_eleve')::jsonb->'appareils'->0, jsonb_bui
 select is(current_setting('test.export_eleve') ~ 'secret-endpoint|jeton|p256dh|deadbeef|cafebabe', false, 'aucun secret dans l''export (endpoint, clés, jetons)');
 select is(current_setting('test.export_eleve')::jsonb->'consentement'->>'email_parent', 'parent-donnees@example.fr', 'le consentement est exporté sans empreinte');
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'departs_classe'), 1, 'ses départs de classe');
+
+select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'essais_code_classe'), 1, 'ses essais de code de classe (dates seulement)');
+select is(current_setting('test.export_eleve')::jsonb->'profil'->>'onboarding_termine', 'true', 'le profil indique l''inscription terminée');
+
+-- Garde de l'évaluation : un quiz en cours n'expose ni réponse ni justesse ; une évaluation ouverte bloque l'export.
+reset role;
+insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions, statut) values
+  ('70000000-0000-0000-0000-0000000005c4', '00000000-0000-0000-0000-0000000005c1', 'quiz_chapitre', '20000000-0000-0000-0000-0000000005c1',
+   '30000000-0000-0000-0000-0000000005c1', 1, 'en_cours');
+insert into public.tentative_question (tentative_id, ordre, question_id, reponse, correcte) values
+  ('70000000-0000-0000-0000-0000000005c4', 1, '40000000-0000-0000-0000-0000000005c1', '0', true);
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
+select is(jsonb_path_exists(public.exporter_mes_donnees(),
+  '$.tentatives[*] ? (@.statut == "en_cours").questions[*] ? (exists(@.reponse) || exists(@.correcte))'), false,
+  'une tentative en cours ne livre ni réponse ni justesse');
+reset role;
+insert into public.tentative (id, eleve_id, type, cours_id, nb_questions, statut, date_limite) values
+  ('70000000-0000-0000-0000-0000000005c5', '00000000-0000-0000-0000-0000000005c1', 'evaluation_cours', '20000000-0000-0000-0000-0000000005c1',
+   1, 'en_cours', now() + interval '1 hour');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
+select throws_ok($$ select public.exporter_mes_donnees() $$, 'P0001', 'evaluation_en_cours', 'export refusé pendant une évaluation ouverte');
+reset role;
+update public.tentative set date_limite = now() - interval '1 minute' where id = '70000000-0000-0000-0000-0000000005c5';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
+select lives_ok($$ select public.exporter_mes_donnees() $$, 'export possible une fois l''évaluation expirée');
 
 -- 9 à 12 : demande et annulation.
 select ok(public.demander_suppression_compte() between now() + interval '30 days' - interval '1 minute' and now() + interval '30 days' + interval '1 minute',
@@ -133,6 +162,7 @@ select is(
   + (select count(*)::int from public.consentement_parental where eleve_id = '00000000-0000-0000-0000-0000000005c1')
   + (select count(*)::int from public.inscription_classe where eleve_id = '00000000-0000-0000-0000-0000000005c1')
   + (select count(*)::int from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-0000000005c1')
+  + (select count(*)::int from prive.essai_code where eleve_id = '00000000-0000-0000-0000-0000000005c1')
   + (select count(*)::int from prive.jeton_ical where eleve_id = '00000000-0000-0000-0000-0000000005c1')
   + (select count(*)::int from public.signalement where auteur_id in ('00000000-0000-0000-0000-0000000005c1', '00000000-0000-0000-0000-0000000005c2')),
   0, 'cascade complète : aucune ligne orpheline');
@@ -141,6 +171,24 @@ select is((select count(*)::int from public.tentative where eleve_id = '00000000
 select is((select array_agg(classe_id order by classe_id) from prive.depart_classe where eleve_id = '00000000-0000-0000-0000-0000000005c3'),
   array['60000000-0000-0000-0000-0000000005c3'::uuid], 'départ de classe : 35 jours purgé, 2 jours gardé');
 select is((select count(*)::int from cron.job where jobname = 'purges-quotidiennes' and schedule = '23 3 * * *'), 1, 'purge planifiée chaque nuit');
+
+-- Dernier administrateur : les autres administrateurs de la base locale sont mis « en suppression » dans cette transaction.
+insert into auth.users (id, email) values
+  ('00000000-0000-0000-0000-0000000005c6', 'admin-un@test.local'),
+  ('00000000-0000-0000-0000-0000000005c7', 'admin-deux@test.local');
+update public.profil set role = 'admin_contenu' where id in ('00000000-0000-0000-0000-0000000005c6', '00000000-0000-0000-0000-0000000005c7');
+update public.profil set suppression_demandee_le = now()
+ where role = 'admin_contenu' and id not in ('00000000-0000-0000-0000-0000000005c6', '00000000-0000-0000-0000-0000000005c7');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c6","role":"authenticated"}', true);
+select lives_ok($$ select public.demander_suppression_compte() $$, 'un administrateur peut demander sa suppression s''il en reste un autre');
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c7","role":"authenticated"}', true);
+select throws_ok($$ select public.demander_suppression_compte() $$, 'P0001', 'dernier_admin', 'le dernier administrateur ne peut pas demander sa suppression');
+reset role;
+update public.profil set suppression_demandee_le = now() - interval '31 days' where id in
+  ('00000000-0000-0000-0000-0000000005c6', '00000000-0000-0000-0000-0000000005c7');
+select prive.purges_quotidiennes();
+select is((select count(*)::int from auth.users where id in ('00000000-0000-0000-0000-0000000005c6', '00000000-0000-0000-0000-0000000005c7')), 2, 'la purge conserve le dernier administrateur');
 
 select * from finish();
 rollback;
