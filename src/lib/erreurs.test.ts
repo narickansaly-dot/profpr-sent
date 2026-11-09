@@ -149,3 +149,12 @@ describe('messageErreur, mes données', () => {
     }
   });
 });
+
+describe('messageErreur, retour bloqué', () => {
+  it('traduit retour_bloque sans collision avec un autre code', () => {
+    expect(messageErreur('retour_bloque')).toBe('Ton enseignant ou ton enseignante t’a retiré de cette classe. Tu pourras la rejoindre de nouveau dans 24 heures.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'retour_bloque') expect(a.includes('retour_bloque') || 'retour_bloque'.includes(a)).toBe(false);
+    }
+  });
+});
