@@ -21,11 +21,14 @@ const schemaEnseignant = z.object({
   nom: schemaNom,
   etablissement: z.string().trim().min(2, 'Indique ton établissement.').max(120, 'Le nom de l’établissement est trop long.'),
 });
-export const schemaOnboarding = z.discriminatedUnion('profil', [schemaEleve, schemaEnseignant]);
+const schemaParent = z.object({ profil: z.literal('parent'), nom: schemaNom });
+export const schemaOnboarding = z.discriminatedUnion('profil', [schemaEleve, schemaEnseignant, schemaParent]);
 export type DonneesOnboarding = z.infer<typeof schemaOnboarding>;
 
 export function lireFormulaireOnboarding(form: FormData) {
-  const profil = form.get('profil') === 'enseignant' ? 'enseignant' : 'eleve';
+  const brut = form.get('profil');
+  const profil = brut === 'enseignant' || brut === 'parent' ? brut : 'eleve';
+  if (profil === 'parent') return schemaOnboarding.safeParse({ profil, nom: form.get('nom') ?? '' });
   return profil === 'enseignant'
     ? schemaOnboarding.safeParse({ profil, nom: form.get('nom') ?? '', etablissement: form.get('etablissement') ?? '' })
     : schemaOnboarding.safeParse({

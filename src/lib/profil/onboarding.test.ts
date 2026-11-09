@@ -62,4 +62,12 @@ describe('lireFormulaireOnboarding', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'L'.repeat(61), filiereId, niveau: '1re' }));
     expect(r.error?.issues[0].message).toBe('Ton prénom est trop long.');
   });
+  it('lit un profil parent avec son seul prénom', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: 'Camille' }));
+    expect(r.success && r.data).toEqual({ profil: 'parent', nom: 'Camille' });
+  });
+  it('exige le prénom d’un parent', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: '' }));
+    expect(r.error?.issues[0].message).toBe('Indique ton prénom.');
+  });
 });

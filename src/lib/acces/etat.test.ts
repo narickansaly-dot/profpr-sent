@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { coursOuvert, doitChoisirCours, type MonAcces } from './etat';
+import { abonne, coursOuvert, doitChoisirCours, lireAbonnement, type MonAcces } from './etat';
 
 const base: MonAcces = {
   role: 'eleve', enEssai: false, finEssai: '2026-12-01T10:00:00Z', coursGratuitId: null,
   changementPossibleJusquAu: null, consentementRequis: false, emailParent: null, consentementEnvoyeLe: null,
+  abonnement: null, consentementRetireLe: null, suppressionPrevueLe: null,
 };
 
 describe('accès', () => {
@@ -34,5 +35,25 @@ describe('accès', () => {
   it('un cours gratuit dépublié (id nul) oblige à choisir de nouveau', () => {
     const a = { ...base, coursGratuitId: null, changementPossibleJusquAu: null };
     expect(doitChoisirCours(a)).toBe(true);
+  });
+  it('un abonné voit tout et n’a rien à choisir, même après l’essai', () => {
+    const a = { ...base, abonnement: { formule: 'mensuelle' as const, statut: 'actif', finPeriode: '2027-01-01T00:00:00Z', finGrace: null, actif: true } };
+    expect(abonne(a)).toBe(true);
+    expect(coursOuvert(a, 'x')).toBe(true);
+    expect(doitChoisirCours(a)).toBe(false);
+  });
+  it('un abonnement inactif ne change rien', () => {
+    const a = { ...base, abonnement: { formule: 'mensuelle' as const, statut: 'expire', finPeriode: '2026-01-01T00:00:00Z', finGrace: null, actif: false } };
+    expect(abonne(a)).toBe(false);
+    expect(doitChoisirCours(a)).toBe(true);
+  });
+  it('lit le JSON d’abonnement de la base', () => {
+    expect(lireAbonnement({ formule: 'annuelle', statut: 'actif', fin_periode: '2027-01-01T00:00:00Z', fin_grace: null, actif: true }))
+      .toEqual({ formule: 'annuelle', statut: 'actif', finPeriode: '2027-01-01T00:00:00Z', finGrace: null, actif: true });
+  });
+  it('renvoie null pour un JSON d’abonnement inattendu', () => {
+    expect(lireAbonnement({ formule: 'x' })).toBeNull();
+    expect(lireAbonnement('n’importe quoi')).toBeNull();
+    expect(lireAbonnement(null)).toBeNull();
   });
 });

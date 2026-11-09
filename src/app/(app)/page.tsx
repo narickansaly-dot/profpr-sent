@@ -18,6 +18,7 @@ const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', t
 export default async function Accueil() {
   const profil = await lireProfil();
   if (profil?.role === 'enseignant') redirect('/enseignant');
+  if (profil?.role === 'parent') redirect('/parent');
   if (profil?.role === 'admin_contenu') redirect('/cours');
   const acces = profil?.role === 'eleve' ? await lireMonAcces() : null;
   if (acces?.consentementRequis) redirect('/consentement');

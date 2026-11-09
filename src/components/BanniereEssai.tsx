@@ -4,10 +4,22 @@ import { doitChoisirCours, type MonAcces } from '@/lib/acces/etat';
 
 const dateHeure = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Paris' });
 
+const jourMois = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', timeZone: 'Europe/Paris' });
+
 type Props = { acces: MonAcces; titreCoursGratuit?: string | null; maintenant?: Date };
 
 export function BanniereEssai({ acces, titreCoursGratuit = null, maintenant = new Date() }: Props) {
   if (acces.consentementRequis) return null;
+  if (acces.abonnement?.actif) {
+    if (acces.abonnement.statut === 'impaye' && acces.abonnement.finGrace) {
+      return (
+        <p className="banniere banniere-fin" role="status">
+          Le paiement de ton abonnement a échoué. Tu gardes l’accès à tous les cours jusqu’au {jourMois.format(new Date(acces.abonnement.finGrace))}.
+        </p>
+      );
+    }
+    return null;
+  }
   if (acces.enEssai && acces.finEssai) {
     const jours = joursAvant(new Date(acces.finEssai), maintenant);
     return (

@@ -4,14 +4,15 @@ import { redirect } from 'next/navigation';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { cheminSuiteSur } from '@/lib/routes';
+import { messageErreur } from '@/lib/erreurs';
 import { lireFormulaireOnboarding } from '@/lib/profil/onboarding';
 
-export type ValeursBienvenue = { profil: 'eleve' | 'enseignant'; nom: string; filiereId: string; niveau: string; moinsDe15Ans: boolean; etablissement: string };
+export type ValeursBienvenue = { profil: 'eleve' | 'enseignant' | 'parent'; nom: string; filiereId: string; niveau: string; moinsDe15Ans: boolean; etablissement: string };
 export type EtatBienvenue = { erreur?: string; valeurs?: ValeursBienvenue; essai?: number; champ?: 'nom' | 'filiereId' | 'niveau' | 'etablissement' };
 
 export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): Promise<EtatBienvenue> {
   const valeurs: ValeursBienvenue = {
-    profil: form.get('profil') === 'enseignant' ? 'enseignant' : 'eleve',
+    profil: form.get('profil') === 'enseignant' ? 'enseignant' : form.get('profil') === 'parent' ? 'parent' : 'eleve',
     nom: String(form.get('nom') ?? ''),
     filiereId: String(form.get('filiereId') ?? ''),
     niveau: String(form.get('niveau') ?? ''),
@@ -30,6 +31,11 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   const user = await lireUtilisateur();
   if (!user) redirect('/connexion');
   const supabase = await creerClientServeur();
+  if (r.data.profil === 'parent') {
+    const { error } = await supabase.rpc('devenir_parent', { p_nom: r.data.nom });
+    if (error) return { erreur: messageErreur(error.message), valeurs, essai };
+    redirect('/parent');
+  }
   if (r.data.profil === 'enseignant') {
     const { data, error } = await supabase.from('profil').update({
       nom: r.data.nom,
