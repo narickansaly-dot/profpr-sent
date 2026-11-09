@@ -307,14 +307,14 @@ isOneToOne: false
                   ]
                 },"notification_planifiee": {
                   Row: {
-                    "cle": string,"corps": string,"cree_le": string,"eleve_id": string,"envoi_prevu": string,"envoyee_le": string | null,"essais": number,"evenement_id": string | null,"id": string,"lue_le": string | null,"reserve_jusqu_au": string | null,"statut": Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
+                    "cle": string,"corps": string,"cree_le": string,"eleve_id": string,"envoi_prevu": string,"envoyee_le": string | null,"essais": number,"evenement_id": string | null,"id": string,"lue_le": string | null,"reservations": number,"reserve_jusqu_au": string | null,"statut": Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
                   }
                   ComputedFields: never
                   Insert: {
-                    "cle": string,"corps": string,"cree_le"?: string,"eleve_id": string,"envoi_prevu": string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
+                    "cle": string,"corps": string,"cree_le"?: string,"eleve_id": string,"envoi_prevu": string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reservations"?: number,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre": string,"type": Database["public"]['Enums']["type_notification_t"],"url": string
                   }
                   Update: {
-                    "cle"?: string,"corps"?: string,"cree_le"?: string,"eleve_id"?: string,"envoi_prevu"?: string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre"?: string,"type"?: Database["public"]['Enums']["type_notification_t"],"url"?: string
+                    "cle"?: string,"corps"?: string,"cree_le"?: string,"eleve_id"?: string,"envoi_prevu"?: string,"envoyee_le"?: string | null,"essais"?: number,"evenement_id"?: string | null,"id"?: string,"lue_le"?: string | null,"reservations"?: number,"reserve_jusqu_au"?: string | null,"statut"?: Database["public"]['Enums']["statut_notification_t"],"titre"?: string,"type"?: Database["public"]['Enums']["type_notification_t"],"url"?: string
                   }
                   Relationships: [
                     {
