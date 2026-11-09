@@ -1,9 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { createClient } from '@supabase/supabase-js';
 import { analyserImport } from '../src/lib/contenu/lire-import';
+import { paquets } from '../src/lib/contenu/paquets';
 import { versDonneesCours } from '../src/lib/contenu/donnees-question';
 import { messageErreur } from '../src/lib/erreurs';
 import type { Database } from '../src/lib/supabase/types';
+
+// Paquets courts : une longue liste dans .in() dépasse la longueur d'URL de PostgREST.
+const TAILLE_PAQUET = 100;
 
 const args = process.argv.slice(2);
 const USAGE = 'Usage : npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--distant]';
@@ -62,10 +66,10 @@ async function main() {
   if (garderStatuts) {
     const sources = cours.chapitres.flatMap((ch) => ch.questions.filter((q) => (q.statut ?? 'a_relire') !== 'valide').map((q) => q.source));
     let conserves = 0;
-    for (let i = 0; i < sources.length; i += 500) {
-      const { count, error: e } = await db.from('question').select('id', { count: 'exact', head: true })
-        .in('source', sources.slice(i, i + 500)).eq('statut', 'valide');
-      if (e) echouer(`Bilan des statuts impossible : ${e.message}`);
+    for (const paquet of paquets(sources, TAILLE_PAQUET)) {
+      const { count, error: e, status } = await db.from('question').select('id', { count: 'exact', head: true })
+        .in('source', paquet).eq('statut', 'valide');
+      if (e) echouer(`Bilan des statuts impossible : ${e.message || e.code || e.details || String(status)}`);
       conserves += count ?? 0;
     }
     console.log(`  statuts_conserves: ${conserves}`);
