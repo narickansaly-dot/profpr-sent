@@ -744,6 +744,9 @@ isOneToOne: false
 "changer_statut_question":
 { Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
                            },
+"changer_statut_questions":
+{ Args: { "p_questions": (string)[],"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: number
+                           },
 "choisir_cours_gratuit":
 { Args: { "p_cours": string }; Returns: undefined
                            },

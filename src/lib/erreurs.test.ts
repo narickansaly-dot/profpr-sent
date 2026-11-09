@@ -99,6 +99,9 @@ describe('messageErreur, calendrier et planning', () => {
     };
     for (const [code, texte] of Object.entries(attendu)) expect(messageErreur(code)).toBe(texte);
   });
+  it('traduit l’erreur de la sélection en lot', () => {
+    expect(messageErreur('trop_de_questions')).toBe('Sélectionne au plus 200 questions à la fois.');
+  });
   it('traduit les erreurs des notifications', () => {
     expect(messageErreur('abonnement_invalide')).toBe('Cet appareil n’a pas pu être enregistré. Réessaie.');
     expect(messageErreur('preferences_invalides')).toBe('Tes réglages n’ont pas pu être lus. Vérifie les heures et réessaie.');
