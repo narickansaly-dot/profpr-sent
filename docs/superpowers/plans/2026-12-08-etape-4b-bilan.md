@@ -12,6 +12,7 @@
 - **Planification en base** : cinq types de notifications (rappel d'un événement, échéance proche, nouvel essai, révision du jour, inactivité), planifiés par une tâche `pg_cron` chaque minute, sans doublon (clé unique), avec heures de Paris et changements d'heure.
 - **Rappel d'un événement** : champ « Rappel » dans le formulaire de l'événement (aucun, 10 minutes, 1 heure, la veille), réglé par `regler_rappel_evenement`.
 - **Route d'envoi** `POST /api/notifications/envoyer` : protégée par un secret (empreinte en base), réservation des lignes par `envoi_reserver` (`skip locked`), envoi Web Push par lots de 10, réessais à 1, 2, 4 puis 8 minutes, suppression des points d'envoi expirés, heures de silence appliquées au moment de l'envoi.
+- **Après la contre-revue finale** : chaque ouverture de « Notifications » sur un appareil abonné réécrit son abonnement (la date « ajouté le » devient celle de la dernière visite ; ne réenregistrer que si le propriétaire change) ; un élève dont la session expire sur son propre appareil perd son abonnement en arrivant sur la page de connexion (prix de la protection sur appareil partagé, il doit le réactiver).
 - **Service worker** : affichage de la notification et clic vers un lien interne seulement (même origine), sans régression du hors connexion.
 - **Interface** :
   - page `/notifications` (réglages, activation de cet appareil, liste des appareils, guide d'installation sur iPhone) ;
