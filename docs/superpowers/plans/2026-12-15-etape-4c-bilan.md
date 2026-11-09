@@ -107,7 +107,7 @@ Points de l'étape 4b non traités ici :
 
 Points de l'étape 4a toujours ouverts :
 - **Base** : changement de type refusé avec `evenement_introuvable` (traité par `type_non_modifiable`, à vérifier dans l'interface) ; tests manquants (chemin de mise à jour, limites de 366 jours, durée, fenêtre, plus de 30 chapitres, `reserve_eleves`, cascade de l'examen, changement d'heure d'automne, sessions passées gardées, plafond de 500, refus sans plan).
-- **Générateur** : révision générale hors plafond hebdomadaire  ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée).
+- **Générateur** : révision générale hors plafond hebdomadaire ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée).
 - **Révision générale** : pas de test au-delà de 30 questions (plafond, alternance, priorité).
 - **iCal** : jeton non revalidé localement avant la RPC ; `Cache-Control: max-age=300` suit le plan ; jeton conservé si le rôle change.
 - **Actions serveur** : `ignorerReorganisation` ignore les erreurs ; `NEXT_PUBLIC_SITE_URL` figé au build.
