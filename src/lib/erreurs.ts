@@ -72,7 +72,7 @@ export const MESSAGES: Record<string, string> = {
   envoi_trop_rapproche: 'Attends 10 minutes avant d’envoyer un nouvel e-mail.',
   envois_epuises: 'Tu as envoyé 5 e-mails aujourd’hui. Réessaie demain.',
   lien_consentement_invalide: 'Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.',
-  retour_bloque: 'Ton enseignant ou ton enseignante t’a retiré de cette classe. Tu pourras la rejoindre de nouveau dans 24 heures.',
+  retour_bloque: 'Tu ne fais plus partie de cette classe. Tu pourras la rejoindre de nouveau dans 24 heures.',
 };
 
 export function messageErreur(message: string | undefined): string {
