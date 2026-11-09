@@ -23,6 +23,14 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/ical/abc.ics', false)).toBeNull();
     expect(redirectionPour('/hors-ligne', false)).toBeNull();
   });
+  it('laisse un parent sans session ouvrir la page d’accord, et seulement elle', () => {
+    expect(redirectionPour('/accord-parental/xyz', false)).toBeNull();
+    expect(redirectionPour('/accord-parentalx', false)).toEqual({ pathname: '/connexion', suite: '/accord-parentalx' });
+    expect(redirectionPour('/consentement', false)).toEqual({ pathname: '/connexion', suite: '/consentement' });
+  });
+  it('ne renvoie pas un élève connecté hors de /consentement', () => {
+    expect(redirectionPour('/consentement', true)).toBeNull();
+  });
   it('renvoie un élève connecté vers l’accueil depuis connexion et inscription', () => {
     expect(redirectionPour('/connexion', true)).toEqual({ pathname: '/' });
     expect(redirectionPour('/inscription', true)).toEqual({ pathname: '/' });

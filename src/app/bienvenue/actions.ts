@@ -53,5 +53,7 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   if (error || !data || data.length === 0) {
     return { erreur: 'Impossible d’enregistrer ton profil. Réessaie.', valeurs, essai };
   }
+  // Moins de 15 ans : rien n'est ouvert avant l'accord d'un parent.
+  if (eleve.moinsDe15Ans) redirect('/consentement');
   redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }
