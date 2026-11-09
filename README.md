@@ -101,3 +101,5 @@ npm run import:contenu -- <fichier.json> [--publier] [--distant]
 - Un fichier invalide n'écrit rien : toutes les erreurs sont listées avec leur chemin (« Chapitre 2, question 5 : … »).
 - Le bilan indique les questions créées, modifiées, en nouvelle version, inchangées, archivées et supprimées. Un import est rejouable : les questions inchangées restent telles quelles.
 - Les administrateurs peuvent aussi importer depuis `/admin/import` (vérification du résumé, puis confirmation).
+
+Mise en ligne : voir `docs/mise-en-ligne.md`.
