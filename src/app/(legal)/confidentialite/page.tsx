@@ -128,8 +128,8 @@ export default function PageConfidentialite() {
           saisissez dans votre espace. Un élève peut être relié à 2 parents au plus.
         </li>
         <li>
-          Ce que vous voyez&nbsp;: l’état de l’accord parental, l’abonnement de l’enfant et un résumé de sa progression
-          pour chaque cours (chapitres validés, meilleure note d’évaluation, cours validé ou non, date de la dernière
+          Ce que vous voyez&nbsp;: le prénom et le niveau de l’enfant, l’état de l’accord parental, l’abonnement de
+          l’enfant et un résumé de sa progression pour chaque cours (chapitres validés, meilleure note d’évaluation, cours validé ou non, date de la dernière
           activité).
         </li>
         <li>
@@ -142,7 +142,8 @@ export default function PageConfidentialite() {
           retiré l’accord peut annuler ce retrait avant la suppression&nbsp;; l’enfant ne peut pas l’annuler lui-même.
         </li>
         <li>
-          Fin du lien&nbsp;: un parent peut se délier à tout moment. À partir de 15&nbsp;ans, l’élève peut aussi retirer
+          Fin du lien&nbsp;: un parent peut se délier à tout moment, sauf pendant le retrait de son accord (il doit d’abord l’annuler). Un lien
+          délié n’est pas recréé automatiquement&nbsp;; pour un enfant de moins de 15&nbsp;ans, il ne peut plus être recréé. À partir de 15&nbsp;ans, l’élève peut aussi retirer
           lui-même un lien avec un parent&nbsp;; avant 15&nbsp;ans, il ne le peut pas.
         </li>
         <li>
