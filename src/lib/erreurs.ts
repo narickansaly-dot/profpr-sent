@@ -50,6 +50,7 @@ const MESSAGES: Record<string, string> = {
   cours_indisponible: 'Ce cours n’est pas disponible pour toi.',
   chapitres_invalides: 'Choisis des chapitres du cours sélectionné.',
   evenement_introuvable: 'Cet événement n’existe plus.',
+  type_non_modifiable: 'Le type d’un événement ne change pas après sa création.',
   trop_d_evenements: 'Ton calendrier est plein (500 événements). Supprime d’anciens événements.',
   periode_invalide: 'Cette période ne peut pas être affichée.',
   examen_introuvable: 'Cet examen n’existe plus.',
