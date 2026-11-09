@@ -1,15 +1,5 @@
-import { expect, test, type Page } from '@playwright/test';
-import { emailDeTest, inscrireEleve } from './aide-parcours';
-
-/** Relève les violations de CSP signalées par le navigateur pendant la visite. */
-async function suivreViolations(page: Page) {
-  const violations: string[] = [];
-  page.on('console', (m) => { if (/Content Security Policy|Content-Security-Policy/i.test(m.text())) violations.push(m.text()); });
-  await page.addInitScript(() => {
-    document.addEventListener('securitypolicyviolation', (e) => console.error(`Content Security Policy : ${e.violatedDirective} ${e.blockedURI}`));
-  });
-  return violations;
-}
+import { expect, test } from '@playwright/test';
+import { emailDeTest, inscrireEleve, suivreViolations } from './aide-parcours';
 
 test('les pages portent une CSP avec nonce et les en-têtes de sécurité', async ({ request }) => {
   const r = await request.get('/connexion');
@@ -19,6 +9,10 @@ test('les pages portent une CSP avec nonce et les en-têtes de sécurité', asyn
   expect(r.headers()['x-content-type-options']).toBe('nosniff');
   expect(r.headers()['x-frame-options']).toBe('DENY');
   expect(r.headers()['referrer-policy']).toBe('strict-origin-when-cross-origin');
+  expect(r.headers()['cross-origin-opener-policy']).toBe('same-origin');
+  expect(r.headers()['permissions-policy']).toBeTruthy();
+  // HSTS seulement sur https : jamais sur http://localhost (il se retiendrait pour tout le domaine).
+  expect(r.headers()['strict-transport-security']).toBeUndefined();
   const autre = await request.get('/connexion');
   expect(autre.headers()['content-security-policy']).not.toBe(csp);
 });
@@ -36,6 +30,7 @@ test('aucune violation de CSP sur les pages principales', async ({ page }) => {
   await page.getByRole('link', { name: /Biologie et physiopathologie humaines/ }).first().click();
   await page.getByRole('link', { name: /Organisation générale de l'organisme humain/ }).click();
   await expect(page.locator('.contenu-chapitre svg').first()).toBeVisible();
+  await page.waitForLoadState('networkidle');
   expect(violations).toEqual([]);
 });
 

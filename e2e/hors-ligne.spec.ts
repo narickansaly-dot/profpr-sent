@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { emailDeTest, inscrireEleve } from './aide-parcours';
+import { emailDeTest, inscrireEleve, suivreViolations } from './aide-parcours';
 
 const TITRE_CH1 = "Organisation générale de l'organisme humain";
 
@@ -15,6 +15,7 @@ test('le manifeste et les icônes sont publics', async ({ request }) => {
 });
 
 test('un chapitre déjà ouvert reste lisible hors connexion', async ({ page, context }) => {
+  const violations = await suivreViolations(page);
   await inscrireEleve(page, emailDeTest('hors-ligne'));
   await page.goto('/cours/bph-1re-st2s/ch1');
   // Au premier chargement, le service worker s'installe ; on recharge pour que la page passe par lui et soit mise en cache.
@@ -26,6 +27,8 @@ test('un chapitre déjà ouvert reste lisible hors connexion', async ({ page, co
   await page.reload();
   await expect(page.getByRole('heading', { level: 1, name: TITRE_CH1 })).toBeVisible();
   await expect(page.getByRole('status').filter({ hasText: 'Tu es hors connexion' })).toBeVisible();
+  // Le rechargement hors connexion rejoue l'en-tête CSP et le nonce mis en cache ensemble : aucune violation.
+  expect(violations).toEqual([]);
   await page.goto('/cours/bph-1re-st2s/ch2');
   await expect(page.getByRole('heading', { level: 1, name: 'Tu es hors connexion' })).toBeVisible();
   await context.setOffline(false);

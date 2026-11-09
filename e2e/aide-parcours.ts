@@ -46,3 +46,13 @@ export async function repondreJusteQuestion(page: Page, i: number, total: number
 export async function repondreJuste(page: Page, bonnes: number[][]) {
   for (let i = 0; i < bonnes.length; i++) await repondreJusteQuestion(page, i, bonnes.length, bonnes[i]);
 }
+
+/** Relève les violations de CSP signalées par le navigateur pendant la visite. */
+export async function suivreViolations(page: Page) {
+  const violations: string[] = [];
+  page.on('console', (m) => { if (/Content Security Policy|Content-Security-Policy/i.test(m.text())) violations.push(m.text()); });
+  await page.addInitScript(() => {
+    document.addEventListener('securitypolicyviolation', (e) => console.error(`Content Security Policy : ${e.violatedDirective} ${e.blockedURI}`));
+  });
+  return violations;
+}
