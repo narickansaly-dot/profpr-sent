@@ -33,11 +33,11 @@ export default function PageConfidentialite() {
         <li>Ta progression dans les cours.</li>
         <li>Ton calendrier&nbsp;: événements, échéances et plans de révision que tu crées.</li>
         <li>Tes préférences de rappel, les appareils sur lesquels tu as activé les notifications, et les rappels envoyés.</li>
-        <li>Les classes que tu as rejointes, quittées ou dont tu as été retiré, les dates de tes tentatives de saisie d’un code de classe, et les questions que tu as signalées.</li>
+        <li>Les classes que tu as rejointes, quittées ou dont tu as été retiré, et les dates de tes tentatives de saisie d’un code de classe.</li>
         <li>Le cours gratuit que tu as choisi.</li>
         <li>
-          Pour les enseignants&nbsp;: le nom de l’établissement et la demande de validation du statut d’enseignant,
-          examinée par un administrateur du contenu.
+          Pour les enseignants&nbsp;: le nom de l’établissement, la demande de validation du statut d’enseignant,
+          examinée par un administrateur du contenu, et les questions signalées.
         </li>
         <li>
           Si tu te connectes avec Google&nbsp;: ton nom et ton adresse e-mail, fournis par Google. Nous ne recevons pas ton mot
@@ -66,8 +66,8 @@ export default function PageConfidentialite() {
           calendrier.
         </li>
         <li>
-          Un administrateur du contenu, quand tu signales une question&nbsp;: il voit ton nom et ton adresse e-mail avec
-          ton signalement.
+          Un administrateur du contenu, quand un enseignant signale une question&nbsp;: il voit le nom et l’adresse
+          e-mail de l’enseignant avec le signalement.
         </li>
         <li>Google, si tu choisis de te connecter avec ton compte Google (fournisseur d’identité).</li>
         <li>

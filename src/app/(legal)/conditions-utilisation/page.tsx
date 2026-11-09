@@ -26,13 +26,15 @@ export default function PageConditions() {
       <h2>Essai et cours gratuit</h2>
       <p>
         Tu peux utiliser tous les cours pendant un essai de 7&nbsp;jours. Ensuite, tu gardes l’accès à un cours gratuit de
-        ton choix. Les conditions générales de vente des abonnements seront ajoutées avec l’abonnement.
+        ton choix, parmi les cours de ta filière et de ton niveau. Tu peux changer ce choix une seule fois, dans les
+        48&nbsp;heures qui suivent ton premier choix&nbsp;; ensuite, il est définitif. Les conditions générales de vente
+        des abonnements seront ajoutées avec l’abonnement.
       </p>
 
       <h2>Règles de bonne conduite</h2>
       <ul>
         <li>Utilise l’application pour apprendre, sans chercher à contourner ses limites ni à accéder aux comptes des autres.</li>
-        <li>Signale une question erronée avec le bouton prévu, et non en la détournant de son usage.</li>
+        <li>Pour les enseignants&nbsp;: signale une question erronée avec le bouton prévu, sans détourner ce signalement de son usage.</li>
         <li>Garde le code de ta classe pour les élèves concernés&nbsp;; un enseignant peut retirer un élève de sa classe.</li>
         <li>Pendant une évaluation, ne cherche pas à obtenir la correction avant la fin.</li>
       </ul>
