@@ -17,7 +17,7 @@ export function FormulaireCodeParent() {
           defaultValue={etat.code ?? ''} key={`c-${etat.code ?? ''}-${etat.info ?? ''}`}
           aria-describedby={etat.erreur ? `${aide} ${erreur}` : aide} aria-invalid={etat.erreur ? true : undefined} />
       </label>
-      <p id={aide} className="aide-champ">Votre enfant le trouve dans son espace, sur la page de son compte. Les tirets et les espaces sont ignorés.</p>
+      <p id={aide} className="aide-champ">Votre enfant crée ce code depuis la page «&nbsp;Mes données&nbsp;» de son compte. Les tirets et les espaces sont ignorés.</p>
       {etat.erreur && <p id={erreur} role="alert" className="message-erreur">{etat.erreur}</p>}
       {etat.info && <p role="status" className="message-info">{etat.info}</p>}
       <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Vérification…' : 'Relier cet enfant'}</button>

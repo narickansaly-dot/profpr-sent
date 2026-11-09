@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { etatConsentement, normaliserCode, resumeProgression } from './format';
+import { etatConsentement, normaliserCode, resumeDepuisResultat, resumeProgression } from './format';
 
 describe('espace parent', () => {
   it('normalise le code saisi', () => {
@@ -19,5 +19,13 @@ describe('espace parent', () => {
       { chapitresValides: 1, chapitresTotal: 4, derniereActivite: '2026-12-10T10:00:00Z' },
       { chapitresValides: 2, chapitresTotal: 2, derniereActivite: null },
     ])).toEqual({ valides: 3, total: 6, derniereActivite: '2026-12-10T10:00:00Z' });
+  });
+  it('signale une progression indisponible quand la lecture a échoué', async () => {
+    const [ok, ko] = await Promise.allSettled([
+      Promise.resolve([{ chapitresValides: 1, chapitresTotal: 2, derniereActivite: null }]),
+      Promise.reject(new Error('lien_introuvable')),
+    ]);
+    expect(resumeDepuisResultat(ok)).toEqual({ valides: 1, total: 2, derniereActivite: null });
+    expect(resumeDepuisResultat(ko)).toBeNull();
   });
 });

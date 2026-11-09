@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { lireEnfants, lireProgressionEnfant } from '@/lib/parent/requetes';
-import { resumeProgression } from '@/lib/parent/format';
+import { resumeDepuisResultat } from '@/lib/parent/format';
 import { CarteEnfant } from '@/components/parent/CarteEnfant';
 import { FormulaireCodeParent } from '@/components/parent/FormulaireCodeParent';
 
@@ -15,7 +15,8 @@ export default async function PageParent() {
   const supabase = await creerClientServeur();
   await supabase.rpc('lier_par_email');
   const enfants = await lireEnfants();
-  const resumes = await Promise.all(enfants.map(async (e) => resumeProgression(await lireProgressionEnfant(e.eleveId))));
+  // Une lecture en échec n'abat que la carte concernée, pas la page.
+  const resumes = (await Promise.allSettled(enfants.map((e) => lireProgressionEnfant(e.eleveId)))).map(resumeDepuisResultat);
   return (
     <div className="page-parent">
       <h1>Mes enfants</h1>
@@ -23,7 +24,7 @@ export default async function PageParent() {
         <p className="vide">Aucun enfant n’est relié à votre compte pour l’instant.</p>
       ) : (
         <ul className="liste-enfants">
-          {enfants.map((e, i) => <CarteEnfant key={e.eleveId} enfant={e} valides={resumes[i].valides} total={resumes[i].total} />)}
+          {enfants.map((e, i) => <CarteEnfant key={e.eleveId} enfant={e} resume={resumes[i]} />)}
         </ul>
       )}
       <section className="carte" aria-label="Relier un enfant">

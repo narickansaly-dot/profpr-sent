@@ -39,3 +39,10 @@ export function resumeProgression(lignes: LigneResume[]): { valides: number; tot
     derniereActivite: derniere,
   };
 }
+
+export type ResumeProgression = ReturnType<typeof resumeProgression>;
+
+/** Résultat d'une lecture de progression : null quand la lecture a échoué (« progression indisponible »). */
+export function resumeDepuisResultat(r: PromiseSettledResult<LigneResume[]>): ResumeProgression | null {
+  return r.status === 'fulfilled' ? resumeProgression(r.value) : null;
+}
