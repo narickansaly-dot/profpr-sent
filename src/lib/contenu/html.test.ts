@@ -19,7 +19,13 @@ function inventaire(html: string): string[] {
 
 describe('nettoyerHtml', () => {
   it('garde intact tout le contenu BPH (balises et attributs)', () => {
-    for (const html of morceaux) expect(inventaire(nettoyerHtml(html))).toEqual(inventaire(html));
+    // Seul ajout voulu : tabindex="0" sur les zones défilantes (voir le test suivant).
+    for (const html of morceaux) expect(inventaire(nettoyerHtml(html)).filter((e) => e !== 'div@tabindex')).toEqual(inventaire(html));
+  });
+  it('rend focalisables au clavier les tableaux et les schémas défilants, et eux seuls', () => {
+    const sortie = nettoyerHtml('<div class="tbl"><table></table></div><figure><div class="scroll"></div></figure><div class="autre"></div><div class="tbl" tabindex="5"></div>');
+    expect(sortie).toBe('<div class="tbl" tabindex="0"><table></table></div><figure><div class="scroll" tabindex="0"></div></figure><div class="autre"></div><div class="tbl" tabindex="0"></div>');
+    expect(nettoyerHtml('<div tabindex="0" class="autre"></div>')).toBe('<div class="autre"></div>');
   });
   it('garde viewBox et linearGradient avec leur casse', () => {
     const svg = '<svg viewBox="0 0 10 10" role="img" aria-label="x"><defs><linearGradient id="g"><stop offset="0" /></linearGradient></defs></svg>';

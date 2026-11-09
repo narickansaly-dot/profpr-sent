@@ -31,6 +31,8 @@
 body { background: var(--papier); color: var(--encre); font-family: var(--police-corps); font-size: 17px; line-height: 1.6; margin: 0; }
 h1, h2, h3 { font-family: var(--police-titres); line-height: 1.2; text-wrap: balance; }
 a { color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); }
+/* Tailwind retire le soulignement : un lien dans une phrase doit se distinguer autrement que par la couleur (WCAG 1.4.1, 3:1 impossible avec le texte). */
+p a:not([class]) { text-decoration: underline; text-underline-offset: 3px; }
 :focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; }
 
 .conteneur { max-width: 860px; margin: 0 auto; padding: 0 16px 48px; animation: apparition .35s ease-out both; }
