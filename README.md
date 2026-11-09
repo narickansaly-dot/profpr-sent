@@ -122,7 +122,7 @@ npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--dista
 
 - `npm run import:contenu -- contenu/1re-st2s/bph.json --publier` importe le cours BPH et le publie.
 - Sans `--publier`, un cours ou un chapitre nouveau reste en brouillon ; un cours déjà publié le reste.
-- `--garder-statuts` : une question déjà `valide` dont la structure ne change pas reste `valide` ; une structure changée repart en nouvelle version `a_relire`. À utiliser pour les réimports du cours BPH après validation par l'enseignant.
+- `--garder-statuts` : une question déjà `valide` (ou `brouillon`) dont la structure ne change pas garde son statut ; une structure changée crée une nouvelle version `a_relire` (elle reste `brouillon` pour un brouillon). À utiliser pour les réimports du cours BPH après validation par l'enseignant.
 - Le script refuse toute base qui n'est pas locale, sauf avec `--distant`.
 - Un fichier invalide n'écrit rien : toutes les erreurs sont listées avec leur chemin (« Chapitre 2, question 5 : … »).
 - Le bilan indique les questions créées, modifiées, en nouvelle version, inchangées, archivées et supprimées. Un import est rejouable : les questions inchangées restent telles quelles.

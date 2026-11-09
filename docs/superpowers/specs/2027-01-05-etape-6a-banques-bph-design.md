@@ -96,6 +96,7 @@ Aujourd'hui, réimporter `bph.json` réapplique le statut du fichier (guide des 
 - Le script d'import reçoit l'option **`--garder-statuts`**.
 - Avant l'import, le script lit en base le statut des questions de ce cours, par `source`.
 - Une question **déjà en base au statut `valide`**, dont le fichier dit `a_relire` ou `brouillon`, est importée avec le statut `valide`. Son contenu suit les règles habituelles : une modification de structure crée toujours une nouvelle version `a_relire`.
+- Une question **déjà en base au statut `brouillon`** garde aussi ce statut (le fichier ne la rend jamais plus visible) : même si sa structure change, la nouvelle version reste `brouillon` (migration `20270105000003`).
 - Le bilan indique le nombre de statuts conservés.
 - Sans l'option, le comportement actuel ne change pas.
 

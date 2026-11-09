@@ -1,5 +1,5 @@
 begin;
-select plan(7);
+select plan(14);
 
 insert into public.filiere (id, voie, code, nom) values ('10000000-0000-0000-0000-0000000006a1', 'technologique', 'GST', 'Filière garder');
 insert into public.cours (id, slug, filiere_id, niveau_code, matiere, titre, publie) values
@@ -35,6 +35,39 @@ select is((select statut::text from public.question where source = 'g:2'), 'a_re
 select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
   '{"source":"g:1","type":"qcm_unique","enonce":"Question un, reformulée","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"a_relire"}');
 select is((select statut::text from public.question where source = 'g:1'), 'a_relire', 'sans garder_statut, le réimport repasse à a_relire');
+
+-- Brouillon : conservé au réimport avec garder_statut (le fichier ne rend jamais une question plus visible).
+select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:3","type":"qcm_unique","enonce":"Question trois","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"brouillon"}');
+select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:4","type":"qcm_unique","enonce":"Question quatre","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"brouillon"}');
+
+select is((select resultat from prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:3","type":"qcm_unique","enonce":"Question trois","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"valide","garder_statut":true}')),
+  'inchangee', 'brouillon, structure inchangée : rien ne change');
+select is((select statut::text from public.question where source = 'g:3'), 'brouillon', 'le statut brouillon est conservé');
+
+select is((select resultat from prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:3","type":"qcm_unique","enonce":"Question trois, reformulée","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"valide","garder_statut":true}')),
+  'modifiee', 'brouillon : énoncé modifié en place');
+select is((select statut::text from public.question where source = 'g:3'), 'brouillon', 'toujours brouillon après une modification de texte');
+
+-- Structure changée sur un brouillon déjà tiré : la nouvelle version reste brouillon.
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-0000000006a9', 'eleve-garder@test.local');
+insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions, statut, fin, note, reussie) values
+  ('00000000-0000-0000-0000-0000000006a2', '00000000-0000-0000-0000-0000000006a9', 'quiz_chapitre',
+   '20000000-0000-0000-0000-0000000006a1', '30000000-0000-0000-0000-0000000006a1', 1, 'terminee', now(), 100, true);
+insert into public.tentative_question (tentative_id, ordre, question_id, permutation, reponse, correcte, repondu_le) values
+  ('00000000-0000-0000-0000-0000000006a2', 1, (select id from public.question where source = 'g:4'), '{1,0}', '[0]', true, now());
+select is((select resultat from prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:4","type":"qcm_unique","enonce":"Question quatre","propositions":["A","C"],"bonnes_reponses":[1],"explication":"E","statut":"valide","garder_statut":true}')),
+  'versionnee', 'brouillon, structure changée : nouvelle version');
+select is((select statut::text from public.question where source = 'g:4'), 'brouillon', 'la nouvelle version reste brouillon');
+
+-- Sans garder_statut, le statut du fichier s'applique à un brouillon.
+select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:3","type":"qcm_unique","enonce":"Question trois, reformulée","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"a_relire"}');
+select is((select statut::text from public.question where source = 'g:3'), 'a_relire', 'sans garder_statut, un brouillon passe au statut du fichier');
 
 select * from finish();
 rollback;
