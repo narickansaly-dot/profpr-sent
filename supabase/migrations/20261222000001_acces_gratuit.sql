@@ -70,6 +70,8 @@ begin
                   where c.id = p_cours and c.filiere_id = p.filiere_id and c.niveau_code = p.niveau_code) then
     raise exception 'cours_hors_filiere';
   end if;
+  -- Sérialise les appels simultanés du même élève (la ligne acces_gratuit n'existe pas encore au premier choix).
+  perform 1 from public.profil where id = auth.uid() for update;
   select * into v from public.acces_gratuit where eleve_id = auth.uid() for update;
   if not found then
     insert into public.acces_gratuit (eleve_id, cours_id) values (auth.uid(), p_cours)
@@ -313,7 +315,71 @@ begin
   return v_id;
 end $$;
 
+-- Lecture et réponse d'une tentative : l'accès doit encore exister (reprise de 24 heures comprise).
+-- Corps de 20261110000007 (questions_tentative) et 20261110000004 (repondre) + refus acces_refuse.
+create or replace function public.questions_tentative(p_tentative uuid)
+returns table (ordre smallint, question_id uuid, type public.type_question_t, enonce text, propositions jsonb, reponse jsonb)
+language plpgsql security definer set search_path = '' as $$
+#variable_conflict use_column
+begin
+  if not exists (select 1 from public.tentative t where t.id = p_tentative and t.eleve_id = auth.uid()) then
+    raise exception 'tentative_introuvable';
+  end if;
+  perform prive.cloturer_si_expiree(p_tentative);
+  if not exists (select 1 from public.tentative t where t.id = p_tentative and t.statut = 'en_cours') then
+    raise exception 'tentative_terminee';
+  end if;
+  if not exists (select 1 from public.tentative t where t.id = p_tentative
+                  and prive.acces_cours(auth.uid(), t.cours_id, true)) then
+    raise exception 'acces_refuse';
+  end if;
+  return query
+    select tq.ordre, tq.question_id, q.type, q.enonce,
+           prive.propositions_affichees(q.propositions, tq.permutation),
+           prive.vers_affiche(q.type, tq.permutation, tq.reponse)
+      from public.tentative_question tq
+      join public.question q on q.id = tq.question_id
+     where tq.tentative_id = p_tentative
+     order by tq.ordre;
+end $$;
+
+create or replace function public.repondre(p_tentative uuid, p_question uuid, p_reponse jsonb) returns text
+language plpgsql security definer set search_path = '' as $$
+declare
+  v_statut public.statut_tentative_t;
+  v_cours uuid;
+  v_type public.type_question_t;
+  v_permutation smallint[];
+begin
+  select statut, cours_id into v_statut, v_cours from public.tentative where id = p_tentative and eleve_id = auth.uid() for update;
+  if not found then
+    raise exception 'tentative_introuvable';
+  end if;
+  -- Pas d'exception ici : elle annulerait la clôture.
+  if prive.cloturer_si_expiree(p_tentative) then
+    return 'temps_ecoule';
+  end if;
+  if v_statut <> 'en_cours' then
+    return 'terminee';
+  end if;
+  if not prive.acces_cours(auth.uid(), v_cours, true) then
+    raise exception 'acces_refuse';
+  end if;
+  select q.type, tq.permutation into v_type, v_permutation
+    from public.tentative_question tq join public.question q on q.id = tq.question_id
+   where tq.tentative_id = p_tentative and tq.question_id = p_question;
+  if not found then
+    raise exception 'question_hors_tentative';
+  end if;
+  update public.tentative_question
+     set reponse = prive.vers_original(v_type, v_permutation, p_reponse), repondu_le = now()
+   where tentative_id = p_tentative and question_id = p_question;
+  return 'ok';
+end $$;
+
 revoke execute on function public.choisir_cours_gratuit(uuid), public.mon_acces(),
+  public.questions_tentative(uuid), public.repondre(uuid, uuid, jsonb),
   public.demarrer_quiz(uuid, int, boolean), public.demarrer_evaluation(uuid), public.demarrer_revision_generale(uuid) from public, anon;
 grant execute on function public.choisir_cours_gratuit(uuid), public.mon_acces(),
+  public.questions_tentative(uuid), public.repondre(uuid, uuid, jsonb),
   public.demarrer_quiz(uuid, int, boolean), public.demarrer_evaluation(uuid), public.demarrer_revision_generale(uuid) to authenticated;

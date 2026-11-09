@@ -1,5 +1,5 @@
 begin;
-select plan(24);
+select plan(31);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000005a1', 'fin-essai@test.local'),
@@ -69,8 +69,17 @@ select throws_ok($$ select public.choisir_cours_gratuit('20000000-0000-0000-0000
 
 -- Reprise de 24 heures : seulement pour une tentative commencée pendant l'essai (fin de l'essai il y a 1 heure).
 reset role;
-insert into public.tentative (eleve_id, type, cours_id, nb_questions, debut, date_limite, statut) values
-  ('00000000-0000-0000-0000-0000000005a5', 'evaluation_cours', '20000000-0000-0000-0000-0000000005a1', 40, now() - interval '90 minutes', now() + interval '1 hour', 'en_cours');
+insert into public.question (id, chapitre_id, type, enonce, propositions, statut, source) values
+  ('50000000-0000-0000-0000-0000000005a1', '30000000-0000-0000-0000-0000000005a1', 'qcm_unique', 'Q acces', '["bon","faux"]', 'valide', 'acces:1');
+insert into public.tentative (id, eleve_id, type, cours_id, chapitre_id, nb_questions, debut, statut) values
+  ('60000000-0000-0000-0000-0000000005a1', '00000000-0000-0000-0000-0000000005a5', 'quiz_chapitre', '20000000-0000-0000-0000-0000000005a1',
+   '30000000-0000-0000-0000-0000000005a1', 1, now() - interval '90 minutes', 'en_cours');
+insert into public.tentative_question (tentative_id, ordre, question_id, permutation) values
+  ('60000000-0000-0000-0000-0000000005a1', 1, '50000000-0000-0000-0000-0000000005a1', '{0,1}');
+insert into public.evenement (id, eleve_id, type, titre, debut, duree_minutes, cours_id, revision_generale) values
+  ('40000000-0000-0000-0000-0000000005a1', '00000000-0000-0000-0000-0000000005a5', 'revision', 'Révision générale', now() + interval '1 day', 60,
+   '20000000-0000-0000-0000-0000000005a1', true);
+insert into public.evenement_chapitre values ('40000000-0000-0000-0000-0000000005a1', '30000000-0000-0000-0000-0000000005a1');
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005a5","role":"authenticated"}', true);
 select is(public.peut_lire_cours('20000000-0000-0000-0000-0000000005a1'), true,
@@ -79,6 +88,14 @@ select throws_ok($$ select public.demarrer_quiz('30000000-0000-0000-0000-0000000
   'P0001', 'acces_refuse', 'pendant une reprise, on ne démarre pas de nouveau quiz');
 select throws_ok($$ select public.demarrer_evaluation('20000000-0000-0000-0000-0000000005a1') $$,
   'P0001', 'acces_refuse', 'pendant une reprise, on ne démarre pas de nouvelle évaluation');
+select throws_ok($$ select public.demarrer_revision_generale('40000000-0000-0000-0000-0000000005a1') $$,
+  'P0001', 'acces_refuse', 'pendant une reprise, on ne démarre pas de révision générale');
+select is((select count(*) from public.questions_tentative('60000000-0000-0000-0000-0000000005a1')), 1::bigint,
+  'questions_tentative lisible pendant la reprise');
+select is(public.repondre('60000000-0000-0000-0000-0000000005a1', '50000000-0000-0000-0000-0000000005a1', '[0]'), 'ok',
+  'repondre accepté pendant la reprise');
+select is((select count(*) from public.chapitre where cours_id = '20000000-0000-0000-0000-0000000005a1'), 1::bigint,
+  'RLS : le chapitre est lisible pendant la reprise');
 reset role;
 update public.tentative set debut = now() - interval '10 minutes' where eleve_id = '00000000-0000-0000-0000-0000000005a5';
 set local role authenticated;
@@ -88,6 +105,12 @@ reset role;
 update public.tentative set debut = now() - interval '25 hours' where eleve_id = '00000000-0000-0000-0000-0000000005a5';
 set local role authenticated;
 select is(public.peut_lire_cours('20000000-0000-0000-0000-0000000005a1'), false, 'au-delà de 24 heures, plus d''accès');
+select throws_ok($$ select * from public.questions_tentative('60000000-0000-0000-0000-0000000005a1') $$,
+  'P0001', 'acces_refuse', 'questions_tentative refusée au-delà de 24 heures hors essai');
+select throws_ok($$ select public.repondre('60000000-0000-0000-0000-0000000005a1', '50000000-0000-0000-0000-0000000005a1', '[0]') $$,
+  'P0001', 'acces_refuse', 'repondre refusé au-delà de 24 heures hors essai');
+select is((select count(*) from public.chapitre where cours_id = '20000000-0000-0000-0000-0000000005a1'), 0::bigint,
+  'RLS : le chapitre n''est plus lisible sans reprise');
 
 -- Cours gratuit retiré de la publication : l'élève doit en choisir un autre, sans consommer son changement.
 reset role;
