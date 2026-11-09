@@ -2,7 +2,7 @@
 
 État final sur la branche `etape-6a-banques-bph` :
 - 505 tests unitaires (Vitest, 52 fichiers) ;
-- 981 tests de la base (pgTAP, 36 fichiers) ;
+- 988 tests de la base (pgTAP, 36 fichiers) ;
 - 76 exécutions de bout en bout (Playwright, mobile et ordinateur, avec un build de production) : 68 réussies et 8 ignorées (la revue axe ne tourne que sur mobile). Une première exécution complète a vu échouer une fois `e2e/contenu.spec.ts` sur mobile (clé étrangère `tentative_question`, erreur 23503). Cause : le nettoyage final supprimait la question de test avec la clé de service, et un parcours lancé en parallèle l'avait tirée dans un quiz. Correctif : le `finally` accepte l'erreur 23503 à cet endroit précis, et `retirerCours` retire la question en supprimant le cours ;
 - typage et build sans erreur ; lint sans erreur (le même avertissement `no-unused-vars` dans `src/app/mes-donnees/actions.ts`) ;
 - `npm run banque:verifier -- N` conforme pour les chapitres 1 à 7 (130 questions chacun) ;
