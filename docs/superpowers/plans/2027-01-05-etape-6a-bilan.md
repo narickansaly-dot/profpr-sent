@@ -3,10 +3,10 @@
 État final sur la branche `etape-6a-banques-bph` :
 - 505 tests unitaires (Vitest, 52 fichiers) ;
 - 981 tests de la base (pgTAP, 36 fichiers) ;
-- 76 exécutions de bout en bout (Playwright, mobile et ordinateur, avec un build de production) : 68 réussies et 8 ignorées (la revue axe ne tourne que sur mobile). Une première exécution complète a vu échouer une fois `e2e/contenu.spec.ts` sur mobile (clé étrangère `tentative_question` à la suppression d'une question, parcours lancé en parallèle des autres) ; ce parcours réussit seul et la seconde exécution complète est entièrement verte. À surveiller, non reproduit ;
+- 76 exécutions de bout en bout (Playwright, mobile et ordinateur, avec un build de production) : 68 réussies et 8 ignorées (la revue axe ne tourne que sur mobile). Une première exécution complète a vu échouer une fois `e2e/contenu.spec.ts` sur mobile (clé étrangère `tentative_question`, erreur 23503). Cause : le nettoyage final supprimait la question de test avec la clé de service, et un parcours lancé en parallèle l'avait tirée dans un quiz. Correctif : le `finally` accepte l'erreur 23503 à cet endroit précis, et `retirerCours` retire la question en supprimant le cours ;
 - typage et build sans erreur ; lint sans erreur (le même avertissement `no-unused-vars` dans `src/app/mes-donnees/actions.ts`) ;
 - `npm run banque:verifier -- N` conforme pour les chapitres 1 à 7 (130 questions chacun) ;
-- `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts`, rejoué deux fois après `npm run db:reset` : 1050 questions inchangées, rien de créé ni de modifié, `statuts_conserves : 0` (le cours est déjà dans la graine ; aucune question n'était validée).
+- `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts`, rejoué deux fois après `npm run db:reset` : 1050 questions inchangées, rien de créé ni de modifié, `statuts_conserves : 0` (le cours est déjà dans la graine : les 140 anciennes questions y sont déjà `valide`, et le décompte exclut les questions que le fichier déclare déjà `valide`).
 
 Commandes : `npm run db:reset`, `npm run test:db`, `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, `npm run e2e`.
 
@@ -15,7 +15,7 @@ Commandes : `npm run db:reset`, `npm run test:db`, `npm test`, `npm run typechec
 - **Banques de questions** : 130 nouvelles questions par chapitre pour les 7 chapitres de BPH (910 au total), en plus des 20 questions existantes de chaque chapitre : 150 par chapitre, 1050 pour le cours. Les nouvelles questions arrivent en `a_relire` : aucune n'est tirée dans un quiz avant validation.
 - **Règles de rédaction** (spec § 3) : types 65 / 26 / 26 / 13, difficultés 52 / 52 / 26 (à plus ou moins 3 près), clé `bph:chN:banque:NNN`, liste fermée de notions par chapitre, explication obligatoire.
 - **Chaîne de production** : `npm run banque:texte -- N` (texte du chapitre pour rédiger et relire), `npm run banque:verifier -- N` (conformité, doublons par trigrammes, biais de longueur, notions) et `npm run banque:fusionner -- N` (ajout au `bph.json`).
-- **`--garder-statuts`** au réimport : une question `valide` dont la structure ne change pas reste `valide` ; une structure changée repart en nouvelle version `a_relire`. La règle est appliquée en base (migrations `20270105000001` et `20270105000002`).
+- **`--garder-statuts`** au réimport : une question `valide` dont la structure ne change pas reste `valide` ; une structure changée repart en nouvelle version `a_relire`. Une question `brouillon` garde aussi son statut (même si la structure change : la nouvelle version reste `brouillon`). La règle est appliquée en base (migrations `20270105000001` et `20270105000003` ; la `000002` porte la relecture en lot).
 - **Relecture en lot dans l'admin** : sélection de questions et changement de statut en une fois, pour que l'enseignant valide les banques.
 - **Relecture de chaque banque contre le cours** par un relecteur distinct de l'auteur, question par question, sans échantillonnage.
 
@@ -73,7 +73,12 @@ Chaque rapport liste les questions corrigées ou remplacées et se termine par �
 
 Relevés par les relecteurs ; le texte des cours n'a pas été modifié.
 - Chapitre 6 : le cours appelle la troponine une « enzyme » ; c'est une protéine. L'explication de la question `bph:ch6:banque:127` a été corrigée, le cours reste à revoir.
-- Chapitre 5 : le cours dit que la douleur de l'ulcère est « calmée par les repas » ; c'est discutable pour l'ulcère gastrique.
+- Chapitre 5 : le cours dit que la douleur de l'ulcère est « calmée par les repas » ; c'est discutable pour l'ulcère gastrique. La question `bph:ch5:banque:114` reprend ce point (ulcère calmé par les repas) : à valider avec prudence.
+
+Points de qualité des questions, à traiter avec l'enseignant :
+- **Doublons entre chapitres** : `bph:ch1:quiz:6` et `bph:ch5:banque:033` ont le même énoncé ; `bph:ch1:quiz:2` et `bph:ch6:banque:002` sont très proches.
+- **Énoncé sans sujet** : `bph:ch3:banque:005` est à reformuler.
+- **Typographie des 140 anciennes questions** : elles utilisent une espace normale avant « ? : ; ! ». À harmoniser plus tard sur l'énoncé et l'explication seulement : modifier les propositions créerait de nouvelles versions et masquerait des questions validées.
 
 ## Limites connues et acceptées
 
@@ -83,11 +88,10 @@ Spec § 9 :
 - Les quiz ne puisent dans les nouvelles questions qu'au fur et à mesure de la validation.
 
 Autres :
-- Le parcours `e2e/contenu.spec.ts` a échoué une fois sur mobile dans une exécution complète (voir plus haut), sans reproduction.
 
 ## Mise en ligne
 
-- Appliquer les migrations `20270105000001` et `20270105000002`.
+- Appliquer les migrations `20270105000001`, `20270105000002` et `20270105000003`.
 - Import de production : `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts --distant`, à lancer volontairement par l'utilisateur. Sans `--publier`, un cours déjà publié le reste.
 - Les nouvelles questions restent invisibles aux élèves tant que l'enseignant ne les a pas validées dans l'admin (relecture en lot).
 
