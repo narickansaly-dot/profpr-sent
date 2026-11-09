@@ -1,6 +1,9 @@
 // Service worker : lecture hors connexion des chapitres déjà ouverts.
-// Changer VERSION à chaque modification de ce fichier : les caches des autres versions sont supprimés à l'activation.
-const VERSION = 'v2';
+// Version du déploiement, passée dans l'URL d'enregistrement (/sw.js?v=…). Les caches des autres versions sont supprimés à l'activation.
+const VERSION = (() => {
+  const v = new URL(self.location.href).searchParams.get('v') ?? '';
+  return /^[a-z0-9]{1,16}$/.test(v) ? v : 'dev';
+})();
 const CACHE_STATIQUE = `statique-${VERSION}`;
 // Préfixe « pages- » : vidé par l'application à la déconnexion (src/lib/pwa/cache.ts).
 const CACHE_PAGES = `pages-${VERSION}`;

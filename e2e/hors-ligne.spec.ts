@@ -83,6 +83,14 @@ test('arriver sur la page de connexion vide les pages mises en cache', async ({ 
   await page.goto('/connexion');
   await expect.poll(() => cheminsEnCache(page)).toEqual([]);
   // Le repli hors connexion, lui, reste en place.
-  const repli = await page.evaluate(async () => !!(await (await caches.open('hors-ligne-v2')).match('/hors-ligne')));
+  const { cles, script, repli } = await page.evaluate(async () => {
+    const cles = await caches.keys();
+    const script = (await navigator.serviceWorker.getRegistration())?.active?.scriptURL ?? '';
+    const nom = cles.find((c) => c.startsWith('hors-ligne-'));
+    return { cles, script, repli: nom ? !!(await (await caches.open(nom)).match('/hors-ligne')) : false };
+  });
+  const version = new URL(script).searchParams.get('v');
+  expect(version).toMatch(/^[a-z0-9]{1,16}$/);
+  expect(cles).toContain(`hors-ligne-${version}`);
   expect(repli).toBe(true);
 });
