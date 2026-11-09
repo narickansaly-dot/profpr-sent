@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { changerStatutSelection, type EtatLot } from '@/app/(app)/admin/questions/actions';
 import type { QuestionAdmin } from '@/lib/admin/requetes';
 import { LIBELLE_DIFFICULTE, LIBELLE_TYPE } from '@/lib/admin/questions';
-import { libelleCase, toutEstCoche } from '@/lib/admin/relecture-case';
+import { libelleCase, libelleModifier, toutEstCoche } from '@/lib/admin/relecture-case';
 
 const ETAT_INITIAL: EtatLot = {};
 
@@ -85,7 +85,7 @@ export function RelectureQuestions({ chapitreId, questions }: { chapitreId: stri
                 <Corrige q={q} />
                 {q.explication && <p className="relecture-explication"><strong>Explication&nbsp;:</strong> {q.explication}</p>}
                 <Link href={`/admin/questions/${q.id}`} className="lien-modifier-question">
-                  Modifier<span className="sr-only"> la question {i + 1}</span>
+                  <span aria-hidden="true">Modifier</span><span className="sr-only">{libelleModifier(q)}</span>
                 </Link>
               </article>
             ))}

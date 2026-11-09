@@ -35,6 +35,9 @@ Commandes : `npm run db:reset`, `npm run test:db`, `npm test`, `npm run typechec
 - **T2** : le cas « true » en chaîne n'est pas testé ; le test « éditeur » n'est pas falsifiable (mutant équivalent).
 - **T3** : l'ensemble des cases cochées n'est jamais élagué quand la liste change ; `enCours` est partagé entre parents ; le focus ne passe que sur le message d'info ; la garde de double envoi n'est pas testée.
 - **T4** : l'espace insécable U+00A0 est écrit littéralement dans le code.
+- **Focus** : le contour de focus de la région de statut (`tabIndex -1`) n'est pas vérifié visuellement.
+
+Corrigés après la revue finale : le texte genré « Tu es déjà relié à deux parents. » devient « Ton compte est déjà relié à deux parents. » ; le libellé caché du lien « Modifier » de la relecture utilise le même repère stable que la case (`libelleModifier`, « Modifier la question bph:ch1:banque:012 »).
 
 ## Points restants du bilan 6a (non traités ici)
 

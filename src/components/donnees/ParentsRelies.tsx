@@ -80,7 +80,7 @@ export function ParentsRelies({ parents, peutGerer }: { parents: ParentRelie[]; 
         ? <p>Ton parent se relie à ton compte avec l’adresse qui a reçu la demande d’accord.</p>
         : peutCreerCode(parents.length)
           ? <CodeParent />
-          : <p>Tu es déjà relié à deux parents.</p>}
+          : <p>Ton compte est déjà relié à deux parents.</p>}
     </>
   );
 }
