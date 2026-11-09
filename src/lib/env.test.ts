@@ -9,7 +9,7 @@ const notifications = {
 describe('verifierEnvironnement', () => {
   it('accepte une configuration locale minimale, avec un avertissement pour les notifications absentes', () => {
     expect(verifierEnvironnement(base)).toEqual({
-      erreurs: [], avertissements: ['Notifications désactivées : NEXT_PUBLIC_VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUJET, ENVOI_SECRET absentes.'],
+      erreurs: [], avertissements: ['Notifications désactivées\u00a0: NEXT_PUBLIC_VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUJET, ENVOI_SECRET absentes.'],
     });
   });
   it('accepte une configuration complète', () => {
@@ -33,10 +33,10 @@ describe('verifierEnvironnement', () => {
   });
   it('signale un groupe de notifications incomplet ou un secret trop court', () => {
     expect(verifierEnvironnement({ ...base, ...notifications, VAPID_PRIVATE_KEY: undefined }).avertissements)
-      .toEqual(['Notifications désactivées : VAPID_PRIVATE_KEY absente.']);
+      .toEqual(['Notifications désactivées\u00a0: VAPID_PRIVATE_KEY absente.']);
     expect(verifierEnvironnement({ ...base, ...notifications, ENVOI_SECRET: 'court' }).avertissements)
-      .toEqual(['Notifications désactivées : ENVOI_SECRET doit compter au moins 32 caractères.']);
+      .toEqual(['Notifications désactivées\u00a0: ENVOI_SECRET doit compter au moins 32 caractères.']);
     expect(verifierEnvironnement({ ...base, ...notifications, VAPID_SUJET: 'contact' }).avertissements)
-      .toEqual(['Notifications désactivées : VAPID_SUJET doit commencer par mailto: ou https:.']);
+      .toEqual(['Notifications désactivées\u00a0: VAPID_SUJET doit commencer par mailto: ou https:.']);
   });
 });

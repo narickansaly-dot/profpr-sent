@@ -22,13 +22,13 @@ export function verifierEnvironnement(env: Env): { erreurs: string[]; avertissem
   }
   const absentes = NOTIFICATIONS.filter((cle) => !env[cle]);
   if (absentes.length === NOTIFICATIONS.length) {
-    avertissements.push(`Notifications désactivées : ${absentes.join(', ')} absentes.`);
+    avertissements.push(`Notifications désactivées\u00a0: ${absentes.join(', ')} absentes.`);
   } else if (absentes.length > 0) {
-    avertissements.push(`Notifications désactivées : ${absentes.join(', ')} ${absentes.length > 1 ? 'absentes' : 'absente'}.`);
+    avertissements.push(`Notifications désactivées\u00a0: ${absentes.join(', ')} ${absentes.length > 1 ? 'absentes' : 'absente'}.`);
   } else if ((env.ENVOI_SECRET ?? '').length < 32) {
-    avertissements.push('Notifications désactivées : ENVOI_SECRET doit compter au moins 32 caractères.');
+    avertissements.push('Notifications désactivées\u00a0: ENVOI_SECRET doit compter au moins 32 caractères.');
   } else if (!/^(mailto:|https:)/.test(env.VAPID_SUJET ?? '')) {
-    avertissements.push('Notifications désactivées : VAPID_SUJET doit commencer par mailto: ou https:.');
+    avertissements.push('Notifications désactivées\u00a0: VAPID_SUJET doit commencer par mailto: ou https:.');
   }
   return { erreurs, avertissements };
 }

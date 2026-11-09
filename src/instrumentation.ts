@@ -6,6 +6,6 @@ export async function register() {
   const { erreurs, avertissements } = verifierEnvironnement(process.env);
   for (const a of avertissements) console.warn(`[configuration] ${a}`);
   if (erreurs.length > 0) {
-    throw new Error(`Configuration invalide :\n- ${erreurs.join('\n- ')}`);
+    throw new Error(`Configuration invalide\u00a0:\n- ${erreurs.join('\n- ')}`);
   }
 }
