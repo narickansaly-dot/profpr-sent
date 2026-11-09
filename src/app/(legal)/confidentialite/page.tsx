@@ -44,7 +44,7 @@ export default function PageConfidentialite() {
           de passe Google.
         </li>
         <li>
-          Des données techniques de connexion (adresse IP, appareil, journaux de Supabase Auth et de Vercel), gardées{' '}
+          Des données techniques de connexion (adresse IP, appareil). Le journal de connexion de l’application (Supabase Auth) est gardé 90&nbsp;jours ; les journaux de la plateforme d’hébergement (Vercel, plateforme Supabase) sont gardés{' '}
           <ACompleter>durée de conservation des journaux</ACompleter>.
         </li>
       </ul>
@@ -105,7 +105,7 @@ export default function PageConfidentialite() {
           après un retrait par l’enseignant), puis effacés.
         </li>
         <li>Le lien d’accord envoyé à un parent expire au bout de 7&nbsp;jours.</li>
-        <li>Journaux techniques de connexion&nbsp;: 90&nbsp;jours.</li>
+        <li>Journal de connexion de l’application (Supabase Auth)&nbsp;: 90&nbsp;jours.</li>
         <li>
           Adresse d’un parent qui n’a pas donné son accord&nbsp;: effacée 30&nbsp;jours après la demande.
         </li>
