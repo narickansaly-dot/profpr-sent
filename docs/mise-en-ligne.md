@@ -17,7 +17,8 @@ Ce guide liste ce qui se règle à la main pour publier l'application. Rien n'es
 - Authentification :
   - mot de passe d'au moins **8 caractères** ;
   - confirmation de l'adresse e-mail activée, modèle « Confirm signup » en français ;
-  - URL du site et URL de redirection : `https://<domaine>/auth/callback` et `https://<domaine>/auth/confirm` ;
+  - URL du site : `https://<domaine>` ;
+  - URL de redirection autorisées : `https://<domaine>/auth/callback` et `https://<domaine>/auth/confirm` ;
   - fournisseur Google : identifiants OAuth du projet Google, URL de redirection fournie par Supabase.
 - Extensions `pg_cron` et `pg_net` : activées par les migrations.
 - Ne jamais ajouter le schéma `net` ni `prive` aux schémas exposés par l'API.

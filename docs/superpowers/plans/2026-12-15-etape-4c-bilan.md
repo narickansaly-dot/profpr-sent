@@ -92,7 +92,7 @@ Lecture manuelle de ce qu'axe ne vérifie pas (code de `LecteurTentative`, `Comp
 **Plus tard (qualité et dette mineure)**
 
 Mineurs de l'étape 4c :
-- Variables : `register()` bloque aussi `next dev` quand une variable manque (voulu) ; `NEXT_PUBLIC_SITE_URL` n'est exigée que sur Vercel en production ; 
+- Variables : `register()` bloque aussi `next dev` quand une variable manque (voulu) ; `NEXT_PUBLIC_SITE_URL` n'est exigée que sur Vercel en production.
 - CSP et service worker : `x-nonce` posé mais non lu (réservé) ; pas de test du nettoyage des anciens caches ; repli `'dev'` de la version inutile côté composant.
 - Outillage : `db:reset` échoue parfois à l'import juste après la remise à zéro (relancer `npm run import:contenu -- contenu/1re-st2s/bph.json --publier` puis `npm run configurer:envoi`).
 - Base : compteur `reservations` jamais remis à zéro (sans effet avec les bornes actuelles).
@@ -107,7 +107,7 @@ Points de l'étape 4b non traités ici :
 
 Points de l'étape 4a toujours ouverts :
 - **Base** : changement de type refusé avec `evenement_introuvable` (traité par `type_non_modifiable`, à vérifier dans l'interface) ; tests manquants (chemin de mise à jour, limites de 366 jours, durée, fenêtre, plus de 30 chapitres, `reserve_eleves`, cascade de l'examen, changement d'heure d'automne, sessions passées gardées, plafond de 500, refus sans plan).
-- **Générateur** : révision générale hors plafond hebdomadaire  ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée) ; `examenDebut` invalide lève une `RangeError`.
+- **Générateur** : révision générale hors plafond hebdomadaire  ; décalage aussi pour la règle des 30 minutes ; tests manquants (22 h, semaine, veille non préférée).
 - **Révision générale** : pas de test au-delà de 30 questions (plafond, alternance, priorité).
 - **iCal** : jeton non revalidé localement avant la RPC ; `Cache-Control: max-age=300` suit le plan ; jeton conservé si le rôle change.
 - **Actions serveur** : `ignorerReorganisation` ignore les erreurs ; `NEXT_PUBLIC_SITE_URL` figé au build.
@@ -133,7 +133,7 @@ Points forts :
 - nettoyeur de HTML sans surface XSS.
 
 Correctifs de la vague finale :
-- guide de mise en ligne : fichier `.env.distant` au lieu de `.env.distant` (Next le charge automatiquement, risque d'e2e contre la production), rappel sur les variables déjà exportées dans le shell, URL du site distincte des URL de redirection, note sur les déploiements Preview ;
+- guide de mise en ligne : fichier `.env.distant` au lieu de `.env.production.local` (Next le charge automatiquement, risque d'e2e contre la production), rappel sur les variables déjà exportées dans le shell, URL du site distincte des URL de redirection, note sur les déploiements Preview ;
 - `session.ts` : cookies et en-têtes de cache cumulés et réappliqués à chaque reconstruction de la réponse ;
 - `env.ts` : URL Supabase en https exigée en production (test ajouté) ;
 - connexion : le champ « mot de passe » n'est marqué en erreur que pour des identifiants invalides ;
