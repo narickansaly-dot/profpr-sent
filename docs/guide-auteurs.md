@@ -374,7 +374,7 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 }
 ```
 
-- `notions` : la liste fermée du chapitre (5 à 12 intitulés). Chaque question en choisit une.
+- `notions` : la liste fermée du chapitre (5 à 12 intitulés de 40 caractères au plus, sans doublon). Chaque question en choisit une.
 - `questions` : le même format que dans `bph.json` (les indices commencent à 0 ; `vrai_faux` utilise `bonne_reponse` ; `reponse_courte` utilise `reponses_acceptees`). Pas de champ `statut` : la fusion l'impose à `a_relire`.
 - Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130`.
 
@@ -400,7 +400,7 @@ npm run banque:fusionner -- N   # ajoute les questions au chapitre N de bph.json
 5. difficultés réparties en 52 (niveau 1), 52 (niveau 2) et 26 (niveau 3), à plus ou moins 3 près ;
 6. une explication non vide ;
 7. une notion présente dans la liste du fichier ;
-8. aucune proposition « Toutes les réponses ci-dessus » ni « Aucune des réponses » (sans égard à la casse ni aux accents) ;
+8. aucune proposition du type « Toutes les réponses ci-dessus », « Toutes ces réponses », « Aucune de ces réponses », « Toutes les propositions » (sans égard à la casse ni aux accents) ;
 9. un `qcm_multiple` a 2 ou 3 bonnes réponses, et son énoncé contient « Coche toutes les réponses exactes. » ;
 10. aucune position ne porte plus de 40 % des bonnes réponses des `qcm_unique` ;
 11. la bonne réponse n'est la plus longue que dans moins de 40 % des `qcm_unique` ;

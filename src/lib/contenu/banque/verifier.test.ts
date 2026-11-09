@@ -182,3 +182,95 @@ describe('similarite', () => {
     expect(similarite('Où est le foie ?', 'Ou est le foie')).toBe(1);
   });
 });
+
+describe('verifierBanque : variantes de la règle 10', () => {
+  it.each([
+    'Toutes les réponses précédentes',
+    'Toutes ces réponses',
+    'Aucune de ces réponses',
+    'Toutes les propositions',
+    'Aucune des propositions',
+    'Toutes les réponses ci-dessus',
+    'Aucune des réponses',
+  ])('refuse « %s »', (texte) => {
+    const f = fabriquer();
+    const q = question(f, 'qcm_unique', 2);
+    q.propositions[3] = texte;
+    expect(verifierBanque(f, [])).toContain(`proposition interdite : ${q.source}`);
+  });
+
+  it('accepte une proposition légitime comme « Toutes les cellules »', () => {
+    const f = fabriquer();
+    question(f, 'qcm_unique', 2).propositions[3] = 'Toutes les cellules';
+    question(f, 'qcm_unique', 3).propositions[3] = 'Aucune cellule nerveuse';
+    expect(verifierBanque(f, []).filter((e) => e.startsWith('proposition interdite'))).toEqual([]);
+  });
+});
+
+describe('verifierBanque : liste de notions', () => {
+  const avec = (notions: string[]) => {
+    const f = fabriquer();
+    f.notions = notions;
+    return verifierBanque(f, []).filter((e) => e.startsWith('liste de notions invalide'));
+  };
+  it('accepte de 5 à 12 notions', () => {
+    expect(avec(['A', 'B', 'C', 'D', 'E'])).toEqual([]);
+    expect(avec(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'])).toEqual([]);
+  });
+  it('refuse moins de 5 notions', () => {
+    expect(avec(['A', 'B', 'C', 'D'])).toEqual(['liste de notions invalide : 4 notions (attendu de 5 à 12)']);
+  });
+  it('refuse plus de 12 notions', () => {
+    expect(avec(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'])).toEqual(['liste de notions invalide : 13 notions (attendu de 5 à 12)']);
+  });
+  it('refuse une notion trop longue ou vide', () => {
+    const longue = 'x'.repeat(41);
+    expect(avec(['A', 'B', 'C', 'D', longue])).toEqual([`liste de notions invalide : « ${longue} » dépasse 40 caractères`]);
+    expect(avec(['A', 'B', 'C', 'D', '  '])).toEqual(['liste de notions invalide : une notion est vide']);
+  });
+  it('refuse un doublon, sans égard à la casse ni aux accents', () => {
+    expect(avec(['Cœur', 'Foie', 'Reins', 'Rate', 'FOIE'])).toEqual(['liste de notions invalide : « FOIE » en double']);
+    expect(avec(['Homéostasie', 'B', 'C', 'D', 'homeostasie'])).toEqual(['liste de notions invalide : « homeostasie » en double']);
+  });
+});
+
+describe('verifierBanque : seuils limites', () => {
+  const uniques = (f: FichierBanque) => f.questions.filter((q) => q.type === 'qcm_unique') as Q[];
+  const biais = (e: string[]) => e.filter((m) => m.startsWith('biais de position'));
+  const longueur = (e: string[]) => e.filter((m) => m.startsWith('biais de longueur'));
+
+  it('position : 40 % exactement passe, au-dessus échoue', () => {
+    const f = fabriquer();
+    uniques(f).forEach((q, k) => { q.bonnes_reponses = [k < 26 ? 0 : 1 + (k % 3)]; });
+    expect(biais(verifierBanque(f, []))).toEqual([]);
+    uniques(f).forEach((q, k) => { q.bonnes_reponses = [k < 27 ? 0 : 1 + (k % 3)]; });
+    expect(biais(verifierBanque(f, []))).toEqual(['biais de position : la position 1 porte 42 % des bonnes réponses (40 % au plus)']);
+  });
+
+  it('longueur : 40 % exactement échoue, en dessous passe', () => {
+    const allonger = (n: number) => {
+      const f = fabriquer();
+      uniques(f).slice(0, n).forEach((q) => { q.propositions[q.bonnes_reponses[0]] += ' et plus encore'; });
+      return longueur(verifierBanque(f, []));
+    };
+    expect(allonger(26)).toEqual(['biais de longueur : la bonne réponse est la plus longue dans 40 % des QCM (moins de 40 %)']);
+    expect(allonger(25)).toEqual([]);
+  });
+
+  it('similarité : une paire juste au-dessus de 0,8 est signalée, une paire légitime vers 0,6 ne l\'est pas', () => {
+    const a = 'Quel organe produit la bile et la stocke dans la vésicule biliaire ?';
+    const proche = 'Quel organe produit la bile et la stocke dans la vésicule biliaire chez l’adulte ?';
+    const legitime = 'Quel organe stocke la bile dans la vésicule ?';
+    expect(similarite(a, proche)).toBeGreaterThan(0.8);
+    expect(similarite(a, proche)).toBeLessThan(0.82);
+    expect(similarite(a, legitime)).toBeGreaterThan(0.55);
+    expect(similarite(a, legitime)).toBeLessThan(0.7);
+    const f = fabriquer();
+    f.questions[20].enonce = a;
+    f.questions[21].enonce = proche;
+    f.questions[22].enonce = legitime;
+    const e = verifierBanque(f, []).filter((m) => m.startsWith('énoncés trop proches'));
+    expect(e).toHaveLength(1);
+    expect(e[0]).toMatch(/\(0,8\d\) : bph:ch1:banque:021 et bph:ch1:banque:022$/);
+  });
+});

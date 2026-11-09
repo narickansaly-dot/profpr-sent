@@ -40,7 +40,12 @@ export function similarite(a: string, b: string): number {
 const pourcent = (x: number) => Math.round(x * 100);
 const decimal = (x: number) => x.toFixed(2).replace('.', ',');
 
-const PROPOSITIONS_INTERDITES = ['toutes les reponses ci dessus', 'aucune des reponses'];
+export const NOTIONS_MIN = 5;
+export const NOTIONS_MAX = 12;
+export const NOTION_LONGUEUR_MAX = 40;
+
+/** Sur le texte normalisé : « toutes les réponses… », « aucune de ces réponses », « toutes les propositions »… */
+const PROPOSITION_INTERDITE = /\b(toutes|aucune)( (les|des|ces|de ces))? (reponses|propositions)\b/;
 const ESPACE_NORMALE_AVANT_SIGNE = / [:;!?]/;
 
 type Brute = Record<string, unknown>;
@@ -92,6 +97,21 @@ export function verifierBanque(f: FichierBanque, existantes: QuestionImport[]): 
     if (Math.abs(n - quota) > TOLERANCE) erreurs.push(`répartition des difficultés : ${niveau} → ${n} (attendu ${quota} ± ${TOLERANCE})`);
   }
 
+  // Liste fermée de notions : 5 à 12, de 1 à 40 caractères, sans doublon.
+  const invalide = (raison: string) => erreurs.push(`liste de notions invalide : ${raison}`);
+  if (f.notions.length < NOTIONS_MIN || f.notions.length > NOTIONS_MAX) {
+    invalide(`${f.notions.length} notion${f.notions.length > 1 ? 's' : ''} (attendu de ${NOTIONS_MIN} à ${NOTIONS_MAX})`);
+  }
+  const vuesNotions = new Set<string>();
+  for (const n of f.notions) {
+    const propre = n.trim();
+    if (propre === '') invalide('une notion est vide');
+    else if (propre.length > NOTION_LONGUEUR_MAX) invalide(`« ${propre} » dépasse ${NOTION_LONGUEUR_MAX} caractères`);
+    const cle = normaliser(propre);
+    if (cle !== '' && vuesNotions.has(cle)) invalide(`« ${propre} » en double`);
+    vuesNotions.add(cle);
+  }
+
   // 7 à 9. Explication et notion.
   brutes.forEach((q, i) => {
     if (texte(q.explication).trim() === '') erreurs.push(`explication manquante : ${nom(q, i)}`);
@@ -102,7 +122,7 @@ export function verifierBanque(f: FichierBanque, existantes: QuestionImport[]): 
 
   // 10 à 12. Propositions et qcm_multiple.
   brutes.forEach((q, i) => {
-    if (propositionsDe(q).some((p) => PROPOSITIONS_INTERDITES.some((x) => normaliser(p).includes(x)))) {
+    if (propositionsDe(q).some((p) => PROPOSITION_INTERDITE.test(normaliser(p)))) {
       erreurs.push(`proposition interdite : ${nom(q, i)}`);
     }
     if (q.type === 'qcm_multiple' && valides.has(i)) {

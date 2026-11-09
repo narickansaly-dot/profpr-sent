@@ -1,7 +1,7 @@
 import type { QuestionImport } from '../format-import';
 import type { FichierBanque } from './format';
 
-export const NOTIONS = ['Cellule', 'Tissus', 'Homéostasie'];
+export const NOTIONS = ['Cellule', 'Tissus', 'Homéostasie', 'Imagerie', 'Organites'];
 const SYLLABES = ['ba', 'ro', 'mi', 'tu', 'le', 'so', 'ka', 'vi', 'dé', 'pu', 'no', 'fé', 'za', 'li', 'mo', 'ré', 'ju', 'ta', 'ne', 'gu'];
 
 /** Mot pseudo-aléatoire de trois syllabes : des énoncés sans rapport entre eux. */
@@ -22,7 +22,7 @@ export function fabriquer(chapitre = 1): FichierBanque {
   for (let i = 0; i < 130; i++) {
     const base = {
       source: `bph:ch${chapitre}:banque:${num(i)}`,
-      notion: NOTIONS[i % 3],
+      notion: NOTIONS[i % 5],
       difficulte: i % 5 < 2 ? 1 : i % 5 < 4 ? 2 : 3,
       explication: 'Le cours le dit.',
       statut: 'a_relire' as const,
