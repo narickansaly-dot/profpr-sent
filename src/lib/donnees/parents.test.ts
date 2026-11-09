@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formaterCodeParent, sectionParents } from './parents';
+import { formaterCodeParent, peutCreerCode, sectionParents } from './parents';
 
 describe('formaterCodeParent', () => {
   it('groupe le code par 4', () => {
@@ -31,5 +31,13 @@ describe('sectionParents', () => {
   it('autres rôles : aucune section', () => {
     expect(sectionParents('enseignant', false)).toBeNull();
     expect(sectionParents('admin', false)).toBeNull();
+  });
+});
+
+describe('peutCreerCode', () => {
+  it('masque le bouton à partir de deux parents', () => {
+    expect(peutCreerCode(0)).toBe(true);
+    expect(peutCreerCode(1)).toBe(true);
+    expect(peutCreerCode(2)).toBe(false);
   });
 });

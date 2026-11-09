@@ -106,6 +106,7 @@ test('code parent, parent relié visible côté élève, puis déliaison', async
     await page.getByLabel(/ne verra plus ma progression/).check();
     await page.getByRole('button', { name: /Ne plus partager avec ce parent/ }).click();
     await expect(page.getByText('Aucun parent n’est relié à ton compte.')).toBeVisible();
+    await expect(page.getByRole('status').filter({ hasText: 'Ce parent ne voit plus ta progression.' })).toBeVisible();
     await parent.goto('/parent');
     await expect(parent.getByText('Aucun enfant n’est relié à votre compte pour l’instant.')).toBeVisible();
     await expect(parent.getByRole('link', { name: /Voir le détail/ })).toHaveCount(0);

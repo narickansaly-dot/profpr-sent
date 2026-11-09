@@ -180,7 +180,7 @@ test('admin : relecture en lot des questions', async ({ page }, testInfo) => {
     await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
     await expect(page.locator('article.carte-relecture')).toHaveCount(3);
     await verifier(page, '/admin/chapitres/<id>/questions?relecture=1');
-    await page.getByLabel('Sélectionner la question 1').check();
+    await page.getByLabel(`Sélectionner la question ${slug}:1`).check();
     await page.getByRole('button', { name: 'Valider la sélection' }).click();
     await expect(page.getByRole('status').filter({ hasText: '1 question validée.' })).toBeVisible();
     await verifier(page, 'relecture (après validation)');

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lireSelection, messageLot } from './relecture';
+import { libelleCase, lireSelection, messageLot, toutEstCoche } from './relecture';
 
 const U1 = '11111111-1111-4111-8111-111111111111';
 const U2 = '22222222-2222-4222-8222-222222222222';
@@ -30,5 +30,25 @@ describe('relecture en lot', () => {
     expect(messageLot(1, 'valide')).toBe('1 question validée.');
     expect(messageLot(24, 'valide')).toBe('24 questions validées.');
     expect(messageLot(3, 'brouillon')).toBe('3 questions repassées en brouillon.');
+  });
+});
+
+describe('libelleCase', () => {
+  it('porte la source quand elle existe', () => {
+    expect(libelleCase({ source: 'bph:ch1:banque:012', enonce: 'Quelle est la réponse ?' })).toBe('Sélectionner la question bph:ch1:banque:012');
+  });
+  it('retombe sur les 40 premiers caractères de l’énoncé sans source', () => {
+    const enonce = 'Quelle est la fréquence cardiaque normale au repos chez un adulte ?';
+    expect(libelleCase({ source: null, enonce })).toBe(`Sélectionner la question ${enonce.slice(0, 40).trim()}`);
+    expect(libelleCase({ source: '  ', enonce: 'Court' })).toBe('Sélectionner la question Court');
+  });
+});
+
+describe('toutEstCoche', () => {
+  it('suit l’état réel des cases', () => {
+    expect(toutEstCoche([], new Set())).toBe(false);
+    expect(toutEstCoche(['a', 'b'], new Set(['a']))).toBe(false);
+    expect(toutEstCoche(['a', 'b'], new Set(['a', 'b']))).toBe(true);
+    expect(toutEstCoche(['a'], new Set(['a', 'disparue']))).toBe(true);
   });
 });

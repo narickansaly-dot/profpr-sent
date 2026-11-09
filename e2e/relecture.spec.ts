@@ -16,12 +16,19 @@ test('relecture en lot : cocher deux questions à relire et les valider', async 
     await expect(cartes).toHaveCount(3);
     await expect(cartes.first().getByText('Bonne réponse', { exact: true })).toBeVisible();
 
-    await page.getByLabel('Sélectionner la question 1').check();
-    await page.getByLabel('Sélectionner la question 3').check();
+    await page.getByLabel(`Sélectionner la question ${slug}:1`).check();
+    await page.getByLabel(`Sélectionner la question ${slug}:3`).check();
+    await page.getByRole('button', { name: 'Tout cocher' }).click();
+    await page.getByLabel(`Sélectionner la question ${slug}:2`).uncheck();
+    await expect(page.getByRole('button', { name: 'Tout cocher' })).toBeVisible();
+    await page.getByLabel(`Sélectionner la question ${slug}:2`).check();
+    await expect(page.getByRole('button', { name: 'Tout décocher' })).toBeVisible();
+    await page.getByLabel(`Sélectionner la question ${slug}:2`).uncheck();
     await page.getByRole('button', { name: 'Valider la sélection' }).click();
 
     await expect(page.getByRole('status').filter({ hasText: '2 questions validées.' })).toBeVisible();
     await expect(cartes).toHaveCount(1);
+    await expect(page.getByRole('status').filter({ hasText: '2 questions validées.' })).toBeFocused();
     await page.getByRole('link', { name: 'Retour à la liste' }).click();
     await expect(page.getByRole('list', { name: 'Nombre de questions par statut' }).getByRole('listitem').filter({ hasText: 'Validée' })).toContainText('2');
   } finally {
