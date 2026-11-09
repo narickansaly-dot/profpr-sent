@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { messageErreur } from './erreurs';
+import { MESSAGES, messageErreur } from './erreurs';
 
 describe('messageErreur', () => {
   it('traduit les codes de la base', () => {
@@ -116,5 +116,26 @@ describe('messageErreur, accès gratuit', () => {
     expect(messageErreur('essai_en_cours')).toBe('Ton essai n’est pas terminé\u00a0: tous les cours sont encore ouverts.');
     expect(messageErreur('choix_definitif')).toBe('Ton choix de cours gratuit est définitif.');
     expect(messageErreur('cours_hors_filiere')).toBe('Ce cours n’appartient pas à ta filière ou à ton niveau.');
+  });
+});
+
+describe('messageErreur, consentement parental', () => {
+  it('traduit les codes du consentement', () => {
+    expect(messageErreur('age_verrouille')).toBe('Ton âge ne peut plus être modifié après l’inscription.');
+    expect(messageErreur('consentement_inutile')).toBe('L’accord d’un parent n’est demandé qu’aux élèves de moins de 15 ans.');
+    expect(messageErreur('email_parent_invalide')).toBe('Indique une adresse e-mail valide pour ton parent.');
+    expect(messageErreur('consentement_deja_donne')).toBe('Ton parent a déjà donné son accord.');
+    expect(messageErreur('envoi_trop_rapproche')).toBe('Attends 10 minutes avant d’envoyer un nouvel e-mail.');
+    expect(messageErreur('envois_epuises')).toBe('Tu as envoyé 5 e-mails aujourd’hui. Réessaie demain.');
+    expect(messageErreur('lien_consentement_invalide')).toBe('Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.');
+  });
+  it('aucun code n’est sous-chaîne d’un autre', () => {
+    const codes = ['age_verrouille', 'consentement_inutile', 'email_parent_invalide', 'consentement_deja_donne', 'envoi_trop_rapproche', 'envois_epuises', 'lien_consentement_invalide'];
+    const autres = Object.keys(MESSAGES);
+    for (const c of codes) {
+      for (const a of autres) {
+        if (a !== c) expect(a.includes(c) || c.includes(a)).toBe(false);
+      }
+    }
   });
 });

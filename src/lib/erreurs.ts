@@ -1,4 +1,4 @@
-const MESSAGES: Record<string, string> = {
+export const MESSAGES: Record<string, string> = {
   non_connecte: 'Ta session a expiré. Reconnecte-toi.',
   acces_refuse: 'Tu n’as pas accès à ce cours pour le moment.',
   longueur_invalide: 'Choisis un quiz de 15, 20 ou 30 questions.',
@@ -63,6 +63,13 @@ const MESSAGES: Record<string, string> = {
   essai_en_cours: 'Ton essai n’est pas terminé : tous les cours sont encore ouverts.',
   choix_definitif: 'Ton choix de cours gratuit est définitif.',
   cours_hors_filiere: 'Ce cours n’appartient pas à ta filière ou à ton niveau.',
+  age_verrouille: 'Ton âge ne peut plus être modifié après l’inscription.',
+  consentement_inutile: 'L’accord d’un parent n’est demandé qu’aux élèves de moins de 15 ans.',
+  email_parent_invalide: 'Indique une adresse e-mail valide pour ton parent.',
+  consentement_deja_donne: 'Ton parent a déjà donné son accord.',
+  envoi_trop_rapproche: 'Attends 10 minutes avant d’envoyer un nouvel e-mail.',
+  envois_epuises: 'Tu as envoyé 5 e-mails aujourd’hui. Réessaie demain.',
+  lien_consentement_invalide: 'Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.',
 };
 
 export function messageErreur(message: string | undefined): string {

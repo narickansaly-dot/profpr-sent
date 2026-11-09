@@ -147,6 +147,26 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"consentement_parental": {
+                  Row: {
+                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                  }
+                  Update: {
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "consentement_parental_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"cours": {
                   Row: {
                     "couleur": string,"filiere_id": string | null,"id": string,"matiere": string,"modifie_le": string,"niveau_code": string | null,"ordre": number,"publie": boolean,"slug": string,"titre": string
@@ -696,6 +716,9 @@ isOneToOne: false
 "definir_echeance":
 { Args: { "p_classe": string,"p_cours": string,"p_limite": string,"p_ouverture": string }; Returns: undefined
                            },
+"demander_consentement":
+{ Args: { "p_email": string }; Returns: undefined
+                           },
 "demandes_enseignant":
 { Args: Record<PropertyKey, never>; Returns: {
               "email": string,"etablissement": string,"id": string,"inscrit_le": string,"nom": string
@@ -710,9 +733,17 @@ isOneToOne: false
 "demarrer_revision_generale":
 { Args: { "p_evenement": string }; Returns: string
                            },
+"donner_consentement":
+{ Args: { "p_jeton": string }; Returns: string
+                           },
 "echeances_classe":
 { Args: { "p_classe": string }; Returns: {
               "cours_id": string,"limite": string,"ouverture": string
+            }[]
+                           },
+"emettre_jeton_consentement":
+{ Args: { "p_eleve": string,"p_secret": string }; Returns: {
+              "email": string,"jeton": string,"prenom": string
             }[]
                            },
 "en_essai":
@@ -750,6 +781,11 @@ isOneToOne: false
 "importer_cours":
 { Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
                            },
+"lire_demande_consentement":
+{ Args: { "p_jeton": string }; Returns: {
+              "deja_donne": boolean,"prenom": string
+            }[]
+                           },
 "marquer_chapitre_lu":
 { Args: { "p_chapitre": string }; Returns: undefined
                            },
@@ -773,7 +809,7 @@ isOneToOne: false
                            },
 "mon_acces":
 { Args: Record<PropertyKey, never>; Returns: {
-              "changement_possible_jusqu_au": string,"cours_gratuit_id": string,"en_essai": boolean,"fin_essai": string,"role": string
+              "changement_possible_jusqu_au": string,"consentement_envoye_le": string,"consentement_requis": boolean,"cours_gratuit_id": string,"email_parent": string,"en_essai": boolean,"fin_essai": string,"role": string
             }[]
                            },
 "mon_calendrier":
