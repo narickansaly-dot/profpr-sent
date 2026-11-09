@@ -17,6 +17,7 @@ La spec couvre sept étapes qui livrent chacune une version utilisable. Chaque �
 | 5b. Comptes parents, CGV, fondations des abonnements (sans paiement) | spec : `../specs/2026-12-29-etape-5b-parents-design.md`, plan : `2026-12-29-etape-5b-parents.md` (bilan : `2026-12-29-etape-5b-bilan.md`) | Terminé (branche etape-5b-parents) |
 | 5c. Paiement Stripe | après la création d'un compte Stripe | — |
 | 6a. Banques de questions BPH (environ 150 par chapitre) | `2027-01-05-etape-6a-banques-bph.md` (spec : `../specs/2027-01-05-etape-6a-banques-bph-design.md`) | Terminé (branche etape-6a-banques-bph) ; [bilan](2027-01-05-etape-6a-bilan.md) |
+| Dette 5b et 6a | `2027-01-12-dette-5b-6a.md` | Terminé (branche dette-5b-6a) ; [bilan](2027-01-12-dette-5b-6a-bilan.md) |
 | 6b. Autres matières de 1re ST2S | après l'étape 6a | — |
 | 7. Stores, nouveaux types de questions, établissements, autres filières | plus tard | — |
 
