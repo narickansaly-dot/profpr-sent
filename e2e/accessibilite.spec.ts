@@ -2,7 +2,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import { vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
-import { emailDeTest, inscrireEleve, inscrireEleveMineur } from './aide-parcours';
+import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant } from './aide-parcours';
 
 // Revue d'accessibilité automatique (WCAG 2.1 A et AA) à la largeur mobile, en clair puis en sombre.
 // axe ne remplace pas une lecture manuelle (ordre du focus, annonces) : voir le bilan de l'étape 4c.
@@ -148,9 +148,23 @@ test('mes données et pages légales', async ({ page }) => {
   await page.getByRole('button', { name: 'Demander la suppression' }).click();
   await expect(page.getByRole('button', { name: 'Annuler la suppression' })).toBeVisible();
   await verifier(page, '/mes-donnees (suppression demandée)');
-  for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+  for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation', '/conditions-vente']) {
     await page.goto(chemin);
     await expect(page.locator('main')).toBeVisible();
     await verifier(page, chemin);
+  }
+});
+
+test('espace parent : mes enfants et suivi d’un enfant', async ({ page, browser }, testInfo) => {
+  test.setTimeout(120_000);
+  await inscrireEleve(page, emailDeTest('axe-enfant'));
+  const { parent, contexte, eleveId } = await relierParentEtEnfant(page, browser, testInfo, 'axe-parent');
+  try {
+    await verifier(parent, '/parent');
+    await parent.goto(`/parent/enfant/${eleveId}`);
+    await expect(parent.getByRole('heading', { name: 'Gérer le compte de Léa' })).toBeVisible();
+    await verifier(parent, '/parent/enfant/<id>');
+  } finally {
+    await contexte.close();
   }
 });

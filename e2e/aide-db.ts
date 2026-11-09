@@ -116,3 +116,20 @@ export async function creerCoursPublie(slug: string): Promise<{ id: string; slug
   if (erreurChapitre) throw erreurChapitre;
   return { id: cours.id, slug, titre };
 }
+
+/** Confirme l'adresse e-mail d'un compte par l'API admin (réservé aux tests : sert si la confirmation est activée en local). */
+export async function confirmerEmail(email: string) {
+  const id = await idProfil(email);
+  const { error } = await db.auth.admin.updateUserById(id, { email_confirm: true });
+  if (error) throw error;
+}
+
+/** Crée ou met à jour l'abonnement d'un élève, sans passer par Stripe (réservé aux tests : clé service_role, base locale). */
+export async function simulerAbonnement(email: string, statut: 'actif' | 'impaye' | 'resilie' | 'expire', finPeriode: Date, finGrace?: Date) {
+  const eleveId = await idProfil(email);
+  const { error } = await db.from('abonnement').upsert({
+    eleve_id: eleveId, formule: 'mensuelle', statut,
+    fin_periode: finPeriode.toISOString(), fin_grace: finGrace ? finGrace.toISOString() : null,
+  }, { onConflict: 'eleve_id' });
+  if (error) throw error;
+}

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
-import { emailDeTest, inscrireEleve, inscrireEleveMineur, suivreViolations } from './aide-parcours';
+import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant, suivreViolations } from './aide-parcours';
 
 test('les pages portent une CSP avec nonce et les en-têtes de sécurité', async ({ request }) => {
   const r = await request.get('/connexion');
@@ -49,7 +49,7 @@ test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, br
   const violations = await suivreViolations(page);
   const email = emailDeTest('csp-acces');
   await inscrireEleve(page, email);
-  for (const chemin of ['/mes-donnees', '/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+  for (const chemin of ['/mes-donnees', '/mentions-legales', '/confidentialite', '/conditions-utilisation', '/conditions-vente']) {
     await page.goto(chemin);
     await expect(page.locator('main')).toBeVisible();
   }
@@ -89,5 +89,22 @@ test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, br
     expect(violationsMineur).toEqual([]);
   } finally {
     await mineur.close();
+  }
+});
+
+test('aucune violation de CSP sur les pages parent', async ({ page, browser }, testInfo) => {
+  test.setTimeout(120_000);
+  await inscrireEleve(page, emailDeTest('csp-enfant'));
+  const { parent, contexte, eleveId } = await relierParentEtEnfant(page, browser, testInfo, 'csp-parent');
+  try {
+    const violations = await suivreViolations(parent);
+    for (const chemin of ['/parent', `/parent/enfant/${eleveId}`]) {
+      await parent.goto(chemin);
+      await expect(parent.locator('main, .page-parent').first()).toBeVisible();
+      await parent.waitForLoadState('networkidle');
+    }
+    expect(violations).toEqual([]);
+  } finally {
+    await contexte.close();
   }
 });

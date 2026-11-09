@@ -103,6 +103,15 @@ L'application envoie un seul e-mail, celui de l'accord parental (élève de moin
 - **Pages légales** : `/mentions-legales`, `/confidentialite`, `/conditions-utilisation` sont des trames à compléter (champs entre crochets) et à faire relire par un juriste avant la mise en vente. Aucune bannière de cookies : seuls des cookies de session sont utilisés.
 - **Accès** : essai de 7 jours, puis un cours gratuit au choix (changement possible une fois pendant 48 heures). Un élève de moins de 15 ans n'accède à rien tant qu'un parent n'a pas donné son accord ; l'essai commence à cet accord.
 
+## Parents
+
+- **Compte parent** : à l'inscription, « Parent d'un élève » (page `/bienvenue`). Un parent n'a accès à aucun cours ; sa page d'accueil est `/parent` (« Mes enfants »).
+- **Liaison** : un parent d'un élève de moins de 15 ans est relié automatiquement s'il s'inscrit avec l'adresse qui a reçu la demande d'accord. Pour un élève de plus de 15 ans, l'élève crée un code dans « Mes données » (8 caractères, 48 heures, usage unique) que le parent saisit sur `/parent` (5 essais par heure).
+- **Suivi** : progression par cours de chaque enfant (`/parent/enfant/<id>`). L'élève voit ses parents dans « Mes données » et peut les délier.
+- **Retrait de l'accord** : le parent d'un moins de 15 ans peut retirer son accord (compte bloqué, suppression à J+30, annulation possible) ou ne plus suivre l'enfant.
+- **Abonnements** : la table existe et ouvre tous les cours (abonné actif ou en délai de grâce), mais rien ne la remplit avant l'étape 5c (Stripe). Les tests la remplissent avec `simulerAbonnement` (`e2e/aide-db.ts`).
+- **Conditions de vente** : `/conditions-vente`, trame à compléter et à faire relire.
+
 ## Contenu
 
 Le contenu entre en base uniquement par des fichiers JSON validés (`src/lib/contenu/format-import.ts`) ou par les éditeurs de l'espace admin, qui appliquent les mêmes règles. Le format est décrit dans le [guide des auteurs](docs/guide-auteurs.md).
