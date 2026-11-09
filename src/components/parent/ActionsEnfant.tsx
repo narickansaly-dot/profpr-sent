@@ -1,6 +1,7 @@
 'use client';
 
 import { useActionState, useId, type ReactNode } from 'react';
+import { explicationDeliaison } from '@/lib/parent/format';
 import { annulerRetrait, delier, retirerAccord, type EtatAction } from '@/app/(app)/parent/actions';
 
 type ActionServeur = (etat: EtatAction, form: FormData) => Promise<EtatAction>;
@@ -28,9 +29,9 @@ function FormulaireConfirme({ action, eleveId, titre, explication, libelleCase, 
   );
 }
 
-type Props = { eleveId: string; nom: string; peutRetirer: boolean; retireParMoi: boolean };
+type Props = { eleveId: string; nom: string; peutRetirer: boolean; retireParMoi: boolean; moins15: boolean };
 
-export function ActionsEnfant({ eleveId, nom, peutRetirer, retireParMoi }: Props) {
+export function ActionsEnfant({ eleveId, nom, peutRetirer, retireParMoi, moins15 }: Props) {
   return (
     <section className="actions-enfant" aria-labelledby="titre-actions">
       <h2 id="titre-actions">Gérer le compte de {nom}</h2>
@@ -44,9 +45,13 @@ export function ActionsEnfant({ eleveId, nom, peutRetirer, retireParMoi }: Props
           explication="Le compte de votre enfant sera réactivé et sa suppression annulée."
           libelleCase="Je confirme vouloir rétablir mon accord." bouton="Annuler le retrait" />
       )}
-      <FormulaireConfirme action={delier} eleveId={eleveId} titre="Ne plus suivre cet enfant" danger
-        explication="Vous ne verrez plus sa progression. Pour le suivre de nouveau, il faudra un nouveau code."
-        libelleCase="Je confirme ne plus vouloir suivre cet enfant." bouton="Ne plus suivre cet enfant" />
+      {retireParMoi ? (
+        <p className="aide-champ">Pour ne plus suivre cet enfant, annulez d’abord le retrait de votre accord.</p>
+      ) : (
+        <FormulaireConfirme action={delier} eleveId={eleveId} titre="Ne plus suivre cet enfant" danger
+          explication={explicationDeliaison(moins15)}
+          libelleCase="Je confirme ne plus vouloir suivre cet enfant." bouton="Ne plus suivre cet enfant" />
+      )}
     </section>
   );
 }

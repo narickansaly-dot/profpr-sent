@@ -26,6 +26,7 @@ export default async function PageMesDonnees() {
     const { data } = await supabase.rpc('parents_de_l_eleve');
     parents = (data ?? []).map((p) => ({ id: p.parent_id, nom: p.nom?.trim() || 'Parent', lieLe: formatJour.format(new Date(p.lie_le)) }));
   }
+  const parent = profil.role === 'parent';
   const enfants = section === 'enfants_suivis' ? await lireEnfants() : [];
   return (
     <>
@@ -37,7 +38,7 @@ export default async function PageMesDonnees() {
         <h1>Mes données</h1>
         <section aria-labelledby="titre-export">
           <h2 id="titre-export">Télécharger mes données</h2>
-          <p>Un fichier JSON avec tout ce que l’application garde sur toi.</p>
+          <p>Un fichier JSON avec tout ce que l’application garde sur {parent ? 'vous' : 'toi'}.</p>
           <a className="bouton bouton-principal" href="/mes-donnees/export" download>Télécharger mes données</a>
         </section>
         {(section === 'eleve_15_ans' || section === 'eleve_moins_15_ans') && (
@@ -57,7 +58,7 @@ export default async function PageMesDonnees() {
         )}
         <section aria-labelledby="titre-suppression">
           <h2 id="titre-suppression">Supprimer mon compte</h2>
-          <SuppressionCompte imposee={profil.suppression_imposee} enseignant={profil.role === 'enseignant'} dateSuppression={profil.suppression_demandee_le ? formaterDateSuppression(profil.suppression_demandee_le) : null} />
+          <SuppressionCompte parent={parent} imposee={profil.suppression_imposee} enseignant={profil.role === 'enseignant'} dateSuppression={profil.suppression_demandee_le ? formaterDateSuppression(profil.suppression_demandee_le) : null} />
         </section>
         <p><Link href="/">Retour à l’accueil</Link></p>
       </main>

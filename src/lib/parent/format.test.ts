@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { etatConsentement, normaliserCode, resumeDepuisResultat, resumeProgression } from './format';
+import { etatConsentement, explicationDeliaison, normaliserCode, resumeDepuisResultat, resumeProgression } from './format';
 
 describe('espace parent', () => {
   it('normalise le code saisi', () => {
@@ -27,5 +27,9 @@ describe('espace parent', () => {
     ]);
     expect(resumeDepuisResultat(ok)).toEqual({ valides: 1, total: 2, derniereActivite: null });
     expect(resumeDepuisResultat(ko)).toBeNull();
+  });
+  it('explique la déliaison selon l’âge de l’enfant', () => {
+    expect(explicationDeliaison(true)).toBe('Vous ne verrez plus la progression de cet enfant. Ce lien ne pourra pas être recréé automatiquement.');
+    expect(explicationDeliaison(false)).toBe('Vous ne verrez plus la progression de cet enfant. Pour le suivre de nouveau, il faudra un nouveau code.');
   });
 });

@@ -16,11 +16,11 @@ const uuid = z.string().uuid();
 export async function relierParCode(_: EtatCode, form: FormData): Promise<EtatCode> {
   const saisie = String(form.get('code') ?? '');
   const r = schemaCode.safeParse(normaliserCode(saisie));
-  if (!r.success) return { erreur: messageErreur('code_parent_invalide'), code: saisie };
+  if (!r.success) return { erreur: messageErreur('code_parent_invalide', 'parent'), code: saisie };
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.rpc('lier_par_code', { p_code: r.data });
-  if (error) return { erreur: messageErreur(error.message), code: saisie };
-  if (data !== 'lie') return { erreur: messageErreur(data ?? undefined), code: saisie };
+  if (error) return { erreur: messageErreur(error.message, 'parent'), code: saisie };
+  if (data !== 'lie') return { erreur: messageErreur(data ?? undefined, 'parent'), code: saisie };
   revalidatePath('/parent');
   return { info: 'Votre enfant est maintenant relié à votre compte.' };
 }
@@ -29,7 +29,7 @@ export async function relierParCode(_: EtatCode, form: FormData): Promise<EtatCo
 function lireDemande(form: FormData): { id: string } | { erreur: string } {
   if (form.get('confirme') !== 'on') return { erreur: 'Cochez la case pour confirmer.' };
   const id = uuid.safeParse(form.get('eleveId'));
-  if (!id.success) return { erreur: messageErreur('lien_introuvable') };
+  if (!id.success) return { erreur: messageErreur('lien_introuvable', 'parent') };
   return { id: id.data };
 }
 
@@ -38,7 +38,7 @@ export async function retirerAccord(_: EtatAction, form: FormData): Promise<Etat
   if ('erreur' in d) return d;
   const supabase = await creerClientServeur();
   const { error } = await supabase.rpc('retirer_consentement', { p_eleve: d.id });
-  if (error) return { erreur: messageErreur(error.message) };
+  if (error) return { erreur: messageErreur(error.message, 'parent') };
   revalidatePath('/parent');
   revalidatePath(`/parent/enfant/${d.id}`);
   redirect(`/parent/enfant/${d.id}`);
@@ -49,7 +49,7 @@ export async function annulerRetrait(_: EtatAction, form: FormData): Promise<Eta
   if ('erreur' in d) return d;
   const supabase = await creerClientServeur();
   const { error } = await supabase.rpc('annuler_retrait_consentement', { p_eleve: d.id });
-  if (error) return { erreur: messageErreur(error.message) };
+  if (error) return { erreur: messageErreur(error.message, 'parent') };
   revalidatePath('/parent');
   revalidatePath(`/parent/enfant/${d.id}`);
   redirect(`/parent/enfant/${d.id}`);
@@ -60,7 +60,7 @@ export async function delier(_: EtatAction, form: FormData): Promise<EtatAction>
   if ('erreur' in d) return d;
   const supabase = await creerClientServeur();
   const { error } = await supabase.rpc('delier_parent', { p_autre: d.id });
-  if (error) return { erreur: messageErreur(error.message) };
+  if (error) return { erreur: messageErreur(error.message, 'parent') };
   revalidatePath('/parent');
   redirect('/parent');
 }

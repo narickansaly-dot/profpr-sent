@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { MESSAGES, messageErreur } from './erreurs';
+import { MESSAGES, destinataireDuRole, messageErreur } from './erreurs';
 
 describe('messageErreur', () => {
   it('traduit les codes de la base', () => {
-    expect(messageErreur('quiz_indisponible')).toBe('Ce quiz n’a pas encore assez de questions. Reviens bientôt !');
+    expect(messageErreur('quiz_indisponible')).toBe('Ce quiz n’a pas encore assez de questions. Reviens bientôt\u00a0!');
     expect(messageErreur('delai_attente')).toBe('Patiente 24 heures entre deux essais de l’évaluation.');
   });
   it('traduit evaluation_en_cours', () => {
@@ -49,8 +49,8 @@ describe('messageErreur, espace classes', () => {
       question_archivee: 'Cette question a été remplacée par une nouvelle version.',
       question_autre_chapitre: 'Cette source est déjà utilisée dans un autre chapitre.',
       source_deja_prise: 'Cette source est déjà utilisée par une autre question.',
-      question_utilisee: 'Cette question a déjà servi dans des quiz : elle ne peut pas être supprimée. Repasse-la en brouillon.',
-      transition_invalide: 'Ce changement de statut n’est pas possible : une question passe par « à relire » avant d’être validée.',
+      question_utilisee: 'Cette question a déjà servi dans des quiz\u00a0: elle ne peut pas être supprimée. Repasse-la en brouillon.',
+      transition_invalide: 'Ce changement de statut n’est pas possible\u00a0: une question passe par «\u00a0à relire\u00a0» avant d’être validée.',
       chapitre_invalide: 'Ce chapitre est incomplet ou mal formé (vérifie le slug et les identifiants de section).',
       chapitre_introuvable: 'Ce chapitre n’existe plus.',
       cours_introuvable: 'Ce cours n’existe plus.',
@@ -67,7 +67,7 @@ describe('messageErreur, espace classes', () => {
   it('traduit les codes de la vague finale (numéro de chapitre, question signalée)', () => {
     expect(messageErreur('numero_deja_pris')).toBe('Ce numéro est déjà utilisé par un autre chapitre du cours.');
     expect(messageErreur('question_signalee'))
-      .toBe('Cette question a un signalement ouvert : traite-le avant de la supprimer.');
+      .toBe('Cette question a un signalement ouvert\u00a0: traite-le avant de la supprimer.');
   });
   it('garde decision_invalide de l’étape 3a', () => {
     expect(messageErreur('decision_invalide')).toBe('Choisis de valider ou de refuser la demande.');
@@ -173,7 +173,7 @@ describe('messageErreur, comptes parents', () => {
     }
   });
   it('traduit nom_parent_invalide sans collision avec un autre code', () => {
-    expect(messageErreur('nom_parent_invalide')).toBe('Indiquez votre prénom (60 caractères au plus).');
+    expect(messageErreur('nom_parent_invalide')).toBe('Indiquez votre prénom (2 à 60 caractères).');
     for (const a of Object.keys(MESSAGES)) {
       if (a !== 'nom_parent_invalide') expect(a.includes('nom_parent_invalide') || 'nom_parent_invalide'.includes(a)).toBe(false);
     }
@@ -221,15 +221,39 @@ describe('messageErreur, comptes parents', () => {
     }
   });
   it('traduit consentement_retire sans collision avec un autre code', () => {
-    expect(messageErreur('consentement_retire')).toBe('Ton parent a retiré son accord : tu ne peux pas faire de nouvelle demande.');
+    expect(messageErreur('consentement_retire')).toBe('Ton parent a retiré son accord\u00a0: tu ne peux pas faire de nouvelle demande.');
     for (const a of Object.keys(MESSAGES)) {
       if (a !== 'consentement_retire') expect(a.includes('consentement_retire') || 'consentement_retire'.includes(a)).toBe(false);
     }
   });
   it('traduit suppression_imposee sans collision avec un autre code', () => {
-    expect(messageErreur('suppression_imposee')).toBe('La suppression a été demandée par ton parent : seul ton parent peut l’annuler.');
+    expect(messageErreur('suppression_imposee')).toBe('La suppression a été demandée par ton parent\u00a0: seul ton parent peut l’annuler.');
     for (const a of Object.keys(MESSAGES)) {
       if (a !== 'suppression_imposee') expect(a.includes('suppression_imposee') || 'suppression_imposee'.includes(a)).toBe(false);
     }
+  });
+  it('traduit retrait_en_cours sans collision avec un autre code', () => {
+    expect(messageErreur('retrait_en_cours')).toBe('Annulez d’abord le retrait de votre accord. Sinon, le compte de votre enfant sera supprimé à la date prévue.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'retrait_en_cours') expect(a.includes('retrait_en_cours') || 'retrait_en_cours'.includes(a)).toBe(false);
+    }
+  });
+  it('choisit la variante vouvoyée pour un parent sans changer celle des élèves', () => {
+    expect(messageErreur('boom', 'parent')).toBe('Une erreur est survenue. Réessayez dans un instant.');
+    expect(messageErreur(undefined, 'parent')).toBe('Une erreur est survenue. Réessayez dans un instant.');
+    expect(messageErreur('non_connecte', 'parent')).toBe('Votre session a expiré. Reconnectez-vous.');
+    expect(messageErreur('lien_introuvable', 'parent')).toBe('Ce lien n’existe pas ou a déjà été retiré.');
+    expect(messageErreur('boom', 'eleve')).toBe('Une erreur est survenue. Réessaie dans un instant.');
+    expect(messageErreur('boom')).toBe('Une erreur est survenue. Réessaie dans un instant.');
+    expect(messageErreur('non_connecte')).toBe('Ta session a expiré. Reconnecte-toi.');
+  });
+  it('n’a aucune espace normale avant « : ; ! ? » dans les textes visibles', () => {
+    for (const [code, texte] of Object.entries(MESSAGES)) {
+      expect(texte, code).not.toMatch(/ [:;!?]/);
+    }
+  });
+  it('choisit le destinataire selon le rôle', () => {
+    expect(destinataireDuRole('parent')).toBe('parent');
+    for (const r of ['eleve', 'enseignant', 'admin', null, undefined]) expect(destinataireDuRole(r)).toBe('eleve');
   });
 });

@@ -55,7 +55,7 @@ export function FormulaireBienvenue({ filieres, suite }: { filieres: Filiere[]; 
       </label>
       {parent && <p className="aide-champ">Vous pourrez ensuite relier le compte de votre enfant.</p>}
       {etat.erreur && <p id="bienvenue-erreur" role="alert" className="message-erreur">{etat.erreur}</p>}
-      <button type="submit" className="bouton bouton-principal" disabled={enCours}>C’est parti !</button>
+      <button type="submit" className="bouton bouton-principal" disabled={enCours}>C’est parti&nbsp;!</button>
     </form>
   );
 }

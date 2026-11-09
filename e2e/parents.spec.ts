@@ -47,6 +47,14 @@ test('accord, compte parent, suivi, retrait puis annulation du retrait', async (
     await expect(parent.getByText(/Accord donné le /).first()).toBeVisible();
     await page.goto('/');
     await expect(page.getByRole('heading', { name: 'Mes cours' })).toBeVisible();
+
+    // « Ne plus suivre » : le lien n'est pas recréé par l'adresse de l'accord, ni au rechargement.
+    await expect(parent.getByText('Ce lien ne pourra pas être recréé automatiquement.')).toBeVisible();
+    await parent.getByLabel('Je confirme ne plus vouloir suivre cet enfant.').check();
+    await parent.getByRole('button', { name: 'Ne plus suivre cet enfant' }).click();
+    await expect(parent).toHaveURL(/\/parent$/);
+    await parent.goto('/parent');
+    await expect(parent.getByText('Aucun enfant n’est relié à votre compte pour l’instant.')).toBeVisible();
   } finally {
     await ctx.close();
   }

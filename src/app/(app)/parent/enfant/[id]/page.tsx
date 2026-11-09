@@ -50,7 +50,7 @@ export default async function PageEnfant({ params }: { params: Promise<{ id: str
         </div>
       )}
       <ActionsEnfant eleveId={enfant.eleveId} nom={enfant.nom}
-        peutRetirer={enfant.moins15 && enfant.donneLe !== null && enfant.retireLe === null} retireParMoi={enfant.retireParMoi} />
+        peutRetirer={enfant.moins15 && enfant.donneLe !== null && enfant.retireLe === null} retireParMoi={enfant.retireParMoi} moins15={enfant.moins15} />
     </div>
   );
 }

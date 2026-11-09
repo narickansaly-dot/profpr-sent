@@ -33,7 +33,7 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   const supabase = await creerClientServeur();
   if (r.data.profil === 'parent') {
     const { error } = await supabase.rpc('devenir_parent', { p_nom: r.data.nom });
-    if (error) return { erreur: messageErreur(error.message), valeurs, essai };
+    if (error) return { erreur: messageErreur(error.message, 'parent'), valeurs, essai };
     redirect('/parent');
   }
   if (r.data.profil === 'enseignant') {

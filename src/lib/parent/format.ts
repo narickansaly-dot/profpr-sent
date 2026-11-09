@@ -46,3 +46,10 @@ export type ResumeProgression = ReturnType<typeof resumeProgression>;
 export function resumeDepuisResultat(r: PromiseSettledResult<LigneResume[]>): ResumeProgression | null {
   return r.status === 'fulfilled' ? resumeProgression(r.value) : null;
 }
+
+/** Explication de « Ne plus suivre cet enfant » : avant 15 ans, le lien ne peut pas être recréé automatiquement. */
+export function explicationDeliaison(moins15: boolean): string {
+  return moins15
+    ? 'Vous ne verrez plus la progression de cet enfant. Ce lien ne pourra pas être recréé automatiquement.'
+    : 'Vous ne verrez plus la progression de cet enfant. Pour le suivre de nouveau, il faudra un nouveau code.';
+}
