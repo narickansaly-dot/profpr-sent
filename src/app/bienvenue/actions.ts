@@ -7,7 +7,7 @@ import { cheminSuiteSur } from '@/lib/routes';
 import { lireFormulaireOnboarding } from '@/lib/profil/onboarding';
 
 export type ValeursBienvenue = { profil: 'eleve' | 'enseignant'; nom: string; filiereId: string; niveau: string; moinsDe15Ans: boolean; etablissement: string };
-export type EtatBienvenue = { erreur?: string; valeurs?: ValeursBienvenue; essai?: number };
+export type EtatBienvenue = { erreur?: string; valeurs?: ValeursBienvenue; essai?: number; champ?: 'nom' | 'filiereId' | 'niveau' | 'etablissement' };
 
 export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): Promise<EtatBienvenue> {
   const valeurs: ValeursBienvenue = {
@@ -20,7 +20,13 @@ export async function terminerOnboarding(etat: EtatBienvenue, form: FormData): P
   };
   const essai = (etat.essai ?? 0) + 1;
   const r = lireFormulaireOnboarding(form);
-  if (!r.success) return { erreur: r.error.issues[0].message, valeurs, essai };
+  if (!r.success) {
+    const champ = r.error.issues[0].path[0];
+    return {
+      erreur: r.error.issues[0].message, valeurs, essai,
+      champ: champ === 'nom' || champ === 'filiereId' || champ === 'niveau' || champ === 'etablissement' ? champ : undefined,
+    };
+  }
   const user = await lireUtilisateur();
   if (!user) redirect('/connexion');
   const supabase = await creerClientServeur();

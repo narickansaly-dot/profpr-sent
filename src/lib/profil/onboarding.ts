@@ -4,7 +4,9 @@ export const NIVEAUX = ['2de', '1re', 'Tle'] as const;
 
 // Mêmes règles que la contrainte profil_nom_ck (migration 20261117000002) : 2 à 60 caractères,
 // sans caractère de contrôle ni de mise en forme bidirectionnelle.
-const schemaNom = z.string().trim().min(2, 'Indique ton prénom.').max(60, 'Ton prénom est trop long.')
+const schemaNom = z.string().trim()
+  .refine((s) => [...s].length >= 2, 'Indique ton prénom.')
+  .refine((s) => [...s].length <= 60, 'Ton prénom est trop long.')
   .regex(/^[^\p{Cc}\u200e\u200f\u202a-\u202e\u2066-\u2069]*$/u, 'Ton prénom contient des caractères non autorisés.');
 
 const schemaEleve = z.object({

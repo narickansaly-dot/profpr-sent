@@ -7,6 +7,7 @@
 .barre-progression span { display: block; height: 100%; border-radius: inherit; min-width: 0;
   background: linear-gradient(90deg, var(--couleur-cours), color-mix(in srgb, var(--couleur-cours) 70%, #fff));
   transition: width .5s cubic-bezier(.2, .8, .2, 1); }
+@media (prefers-color-scheme: dark) { .barre-progression { background: color-mix(in srgb, var(--encre) 40%, var(--surface)); } }
 
 .badge-valide { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-weight: 700; font-size: 14px; margin: 0;
   background: color-mix(in srgb, var(--succes) 16%, var(--surface)); color: color-mix(in srgb, var(--succes) 80%, #000);

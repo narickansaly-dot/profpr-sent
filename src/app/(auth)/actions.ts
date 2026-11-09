@@ -7,7 +7,7 @@ import { schemaIdentifiants } from '@/lib/auth/identifiants';
 import { traduireErreurAuth } from '@/lib/auth/erreurs';
 import { cheminSuiteSur } from '@/lib/routes';
 
-export type EtatFormulaire = { erreur?: string; info?: string; email?: string };
+export type EtatFormulaire = { erreur?: string; info?: string; email?: string; champ?: 'email' | 'motDePasse' };
 
 const lireEmail = (form: FormData) => String(form.get('email') ?? '');
 
@@ -21,7 +21,7 @@ async function lireOrigine() {
 
 export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form) };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form), champ: r.error.issues[0].path[0] === 'email' ? 'email' : 'motDePasse' };
   const supabase = await creerClientServeur();
   const origine = await lireOrigine();
   const { data, error } = await supabase.auth.signUp({
@@ -29,7 +29,7 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
     password: r.data.motDePasse,
     options: { emailRedirectTo: `${origine}/auth/confirm` },
   });
-  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: /already registered|already exists/i.test(error.message) ? 'email' : undefined };
   if (!data.session) return { info: 'Compte créé ! Clique sur le lien reçu par e-mail pour l’activer.' };
   const suite = cheminSuiteSur(form.get('suite'));
   redirect(suite ? `/bienvenue?suite=${encodeURIComponent(suite)}` : '/bienvenue');
@@ -37,10 +37,10 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
 
 export async function connecter(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form) };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form), champ: r.error.issues[0].path[0] === 'email' ? 'email' : 'motDePasse' };
   const supabase = await creerClientServeur();
   const { error } = await supabase.auth.signInWithPassword({ email: r.data.email, password: r.data.motDePasse });
-  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form) };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: 'motDePasse' };
   redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }
 

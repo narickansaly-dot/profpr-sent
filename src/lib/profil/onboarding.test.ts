@@ -25,6 +25,11 @@ describe('lireFormulaireOnboarding', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'a'.repeat(61), filiereId, niveau: '1re' }));
     expect(r.error?.issues[0].message).toBe('Ton prénom est trop long.');
   });
+  it('compte le prénom en caractères, pas en unités UTF-16', () => {
+    expect(lireFormulaireOnboarding(formulaire({ nom: '😀', filiereId, niveau: '1re' })).error?.issues[0].message).toBe('Indique ton prénom.');
+    expect(lireFormulaireOnboarding(formulaire({ nom: '😀😀', filiereId, niveau: '1re' })).success).toBe(true);
+    expect(lireFormulaireOnboarding(formulaire({ nom: '😀'.repeat(60), filiereId, niveau: '1re' })).success).toBe(true);
+  });
   it('lit un formulaire sans profil comme un profil élève', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'Léa', filiereId, niveau: '1re' }));
     expect(r.success && r.data.profil).toBe('eleve');

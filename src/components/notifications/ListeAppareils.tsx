@@ -12,7 +12,7 @@ export function ListeAppareils({ appareils }: { appareils: Appareil[] }) {
           <span>{a.appareil || 'Appareil'}<span className="aide-champ"> · ajouté le {libelleJour(jourParis(new Date(a.cree_le)))}</span></span>
           <form action={retirerAppareil}>
             <input type="hidden" name="id" value={a.id} />
-            <button type="submit" className="bouton bouton-secondaire">Retirer<span className="sr-only"> {a.appareil}, ajouté le {libelleJour(jourParis(new Date(a.cree_le)))}</span></button>
+            <button type="submit" className="bouton bouton-secondaire">Retirer<span className="sr-only"> {a.appareil || 'Appareil'}, ajouté le {libelleJour(jourParis(new Date(a.cree_le)))}</span></button>
           </form>
         </li>
       ))}

@@ -35,7 +35,7 @@ export async function cocherEtAttendreSauvegarde(page: Page, indice: number) {
 
 /** Répond juste à la question `i` (0-based) du lecteur, vérifie la pastille, puis passe à la suivante (ou termine). */
 export async function repondreJusteQuestion(page: Page, i: number, total: number, bonnes: number[]) {
-  await expect(page.getByText(`Question ${i + 1} / ${total}`, { exact: true })).toBeVisible();
+  await expect(page.locator('.lecteur-position').filter({ hasText: new RegExp(`^Question ${i + 1}\\D+${total}$`) })).toBeVisible();
   for (const indice of bonnes) await cocherEtAttendreSauvegarde(page, indice);
   await expect(page.getByRole('button', { name: `Question ${i + 1}, répondue` })).toBeVisible();
   const suivant = i < total - 1 ? 'Suivante →' : 'Terminer';
