@@ -363,7 +363,7 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 
 `contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre) :
 
-```json
+```jsonc
 {
   "chapitre": 1,
   "notions": ["Organites", "Tissus", "Homéostasie"],
