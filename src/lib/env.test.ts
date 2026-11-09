@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { verifierEnvironnement } from './env';
 
-const base = { NEXT_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54321', NEXT_PUBLIC_SUPABASE_ANON_KEY: 'cle-anon' };
+const smtp = { SMTP_HOTE: '127.0.0.1', SMTP_PORT: '54325', EMAIL_EXPEDITEUR: 'noreply@app-lycee.local' };
+const base = { NEXT_PUBLIC_SUPABASE_URL: 'http://127.0.0.1:54321', NEXT_PUBLIC_SUPABASE_ANON_KEY: 'cle-anon', ...smtp };
 const notifications = {
   NEXT_PUBLIC_VAPID_PUBLIC_KEY: 'BPub', VAPID_PRIVATE_KEY: 'priv', VAPID_SUJET: 'mailto:contact@example.com', ENVOI_SECRET: 's'.repeat(43),
 };
@@ -11,6 +12,10 @@ describe('verifierEnvironnement', () => {
     expect(verifierEnvironnement(base)).toEqual({
       erreurs: [], avertissements: ['Notifications désactivées\u00a0: NEXT_PUBLIC_VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUJET, ENVOI_SECRET absentes.'],
     });
+  });
+  it('signale un SMTP absent ou incomplet', () => {
+    expect(verifierEnvironnement({ ...base, ...notifications, SMTP_HOTE: undefined }).avertissements)
+      .toEqual(['E-mails désactivés\u00a0: SMTP_HOTE, SMTP_PORT et EMAIL_EXPEDITEUR sont nécessaires (consentement parental impossible).']);
   });
   it('accepte une configuration complète', () => {
     expect(verifierEnvironnement({ ...base, ...notifications })).toEqual({ erreurs: [], avertissements: [] });

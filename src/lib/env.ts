@@ -1,3 +1,5 @@
+import { lireConfigSmtp } from './email/config';
+
 type Env = Record<string, string | undefined>;
 
 const NOTIFICATIONS = ['NEXT_PUBLIC_VAPID_PUBLIC_KEY', 'VAPID_PRIVATE_KEY', 'VAPID_SUJET', 'ENVOI_SECRET'] as const;
@@ -32,6 +34,9 @@ export function verifierEnvironnement(env: Env): { erreurs: string[]; avertissem
     avertissements.push('Notifications désactivées\u00a0: ENVOI_SECRET doit compter au moins 32 caractères.');
   } else if (!/^(mailto:|https:)/.test(env.VAPID_SUJET ?? '')) {
     avertissements.push('Notifications désactivées\u00a0: VAPID_SUJET doit commencer par mailto: ou https:.');
+  }
+  if (!lireConfigSmtp(env)) {
+    avertissements.push('E-mails désactivés\u00a0: SMTP_HOTE, SMTP_PORT et EMAIL_EXPEDITEUR sont nécessaires (consentement parental impossible).');
   }
   return { erreurs, avertissements };
 }
