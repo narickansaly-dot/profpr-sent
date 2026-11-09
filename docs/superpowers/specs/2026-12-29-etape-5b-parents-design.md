@@ -117,8 +117,8 @@ Le parent a prouvé qu'il contrôle l'adresse en ouvrant le lien d'accord. La co
 
 - **Côté élève**, dans « Mes données », section « Parents reliés » : `generer_code_parent()` renvoie le code en clair, une seule fois. Elle est réservée aux élèves qui n'ont pas l'indicateur « moins de 15 ans ».
 - **Côté parent** : `lier_par_code(code)`.
-  - Codes d'erreur possibles : `code_invalide` (code inconnu ou expiré) et `trop_de_parents`.
-  - Au plus **5 essais échoués par parent et par heure**. Au-delà : `trop_d_essais`.
+  - Codes d'erreur possibles : `code_parent_invalide` (code inconnu ou expiré) et `trop_de_parents`.
+  - Au plus **5 essais échoués par parent et par heure**. Au-delà : `essais_code_epuises`.
   - Le code est supprimé dès qu'il a servi.
 
 ### Lectures du parent
@@ -198,14 +198,20 @@ Nouveaux codes à ajouter dans `src/lib/erreurs.ts`, avec leur message :
 
 | Code | Message |
 |---|---|
-| `code_invalide` | Ce code n'est pas valable ou a expiré. Demande un nouveau code à ton enfant. |
-| `trop_d_essais` | Trop d'essais. Réessaie dans une heure. |
+| `code_parent_invalide` | Ce code n'est pas valable ou a expiré. Demande un nouveau code à ton enfant. |
+| `essais_code_epuises` | Trop d'essais. Réessaie dans une heure. |
 | `trop_de_parents` | Ce compte élève est déjà relié à deux parents. |
 | `deliaison_interdite` | Avant 15 ans, seul ton parent peut retirer ce lien. |
 | `consentement_retire` | Ton parent a retiré son accord : tu ne peux pas faire de nouvelle demande. |
 | `suppression_imposee` | La suppression a été demandée par ton parent : seul ton parent peut l'annuler. |
 | `deja_inscrit` | Ce compte a déjà commencé comme élève : il ne peut pas devenir un compte parent. |
 | `pas_parent` | Cette page est réservée aux comptes parents. |
+| `reserve_15_ans` | Avant 15 ans, c'est ton parent qui crée le lien, avec l'adresse qui a reçu la demande d'accord. |
+| `lien_introuvable` | Ce lien n'existe pas ou a déjà été retiré. |
+| `retrait_impossible` | Ce retrait n'est pas possible pour ce compte. |
+| `nom_parent_invalide` | Indiquez votre prénom (60 caractères au plus). |
+
+Les messages adressés au parent le vouvoient (`code_parent_invalide` : « Demandez un nouveau code à votre enfant. », `essais_code_epuises` : « Réessayez dans une heure. »).
 
 ## 10. Sécurité
 
