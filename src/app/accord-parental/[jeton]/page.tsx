@@ -21,6 +21,18 @@ export default async function PageAccord({ params }: { params: Promise<{ jeton: 
     );
   }
   const prenom = demande.prenom || 'Votre enfant';
+  if (demande.retire) {
+    return (
+      <main className="page-auth">
+        <h1>Accord retiré</h1>
+        <p>
+          Vous avez retiré votre accord. Le compte de votre enfant est bloqué et sera supprimé à la date prévue.
+          Pour annuler le retrait, connectez-vous à votre compte parent.
+        </p>
+        <p><Link href="/connexion">Me connecter</Link></p>
+      </main>
+    );
+  }
   if (demande.deja_donne) {
     return (
       <main className="page-auth">

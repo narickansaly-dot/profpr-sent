@@ -92,6 +92,7 @@ export const MESSAGES: Record<string, string> = {
 // Variante vouvoyée pour les comptes parents (aucun texte élève ou enseignant n'est modifié).
 const MESSAGES_PARENT: Record<string, string> = {
   non_connecte: 'Votre session a expiré. Reconnectez-vous.',
+  consentement_retire: 'L’accord a été retiré\u00a0: cette page ne permet plus de le donner.',
 };
 
 export type Destinataire = 'eleve' | 'parent';

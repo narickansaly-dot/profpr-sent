@@ -41,6 +41,16 @@ test('accord, compte parent, suivi, retrait puis annulation du retrait', async (
     await expect(page).toHaveURL(/\/consentement$/);
     await expect(page.getByRole('heading', { name: 'Ton parent a retiré son accord' })).toBeVisible();
 
+    // L'ancien lien d'accord, rejoué après le retrait, n'invite plus à créer un compte parent.
+    const rejeu = await ctx.newPage();
+    await rejeu.goto(lien);
+    await expect(rejeu.getByRole('heading', { name: 'Accord retiré' })).toBeVisible();
+    await expect(rejeu.getByText(/Vous avez retiré votre accord\./)).toBeVisible();
+    await expect(rejeu.getByRole('link', { name: 'Me connecter' })).toHaveAttribute('href', '/connexion');
+    await expect(rejeu.getByRole('button', { name: 'Je donne mon accord' })).toHaveCount(0);
+    await expect(rejeu.getByRole('link', { name: 'Créer mon compte parent' })).toHaveCount(0);
+    await rejeu.close();
+
     // Annulation : l'élève retrouve son tableau de bord.
     await parent.getByLabel('Je confirme vouloir rétablir mon accord.').check();
     await parent.getByRole('button', { name: 'Annuler le retrait' }).click();

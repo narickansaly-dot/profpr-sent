@@ -879,7 +879,7 @@ isOneToOne: false
                            },
 "lire_demande_consentement":
 { Args: { "p_jeton": string }; Returns: {
-              "deja_donne": boolean,"prenom": string
+              "deja_donne": boolean,"prenom": string,"retire": boolean
             }[]
                            },
 "marquer_chapitre_lu":
