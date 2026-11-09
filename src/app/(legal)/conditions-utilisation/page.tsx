@@ -58,13 +58,13 @@ export default function PageConditions() {
 
       <h2>Modification des conditions</h2>
       <p>
-        Ces conditions peuvent évoluer. En cas de changement important, tu en seras informé dans l’application.
+        Ces conditions peuvent évoluer. En cas de changement important, nous t’en informerons dans l’application.{' '}
         <ACompleter>date de dernière mise à jour</ACompleter>
       </p>
 
       <h2>Droit applicable</h2>
       <p>
-        Ces conditions sont régies par le droit français. <ACompleter>juridiction compétente, à valider avec un juriste</ACompleter>
+        Ces conditions sont régies par le droit français.{' '}<ACompleter>juridiction compétente, à valider avec un juriste</ACompleter>
       </p>
     </>
   );

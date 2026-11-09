@@ -33,8 +33,20 @@ export default function PageConfidentialite() {
         <li>Ta progression dans les cours.</li>
         <li>Ton calendrier&nbsp;: événements, échéances et plans de révision que tu crées.</li>
         <li>Tes préférences de rappel, les appareils sur lesquels tu as activé les notifications, et les rappels envoyés.</li>
-        <li>Les classes que tu as rejointes, quittées ou dont tu as été retiré, les tentatives de saisie d’un code de classe, et les questions que tu as signalées.</li>
+        <li>Les classes que tu as rejointes, quittées ou dont tu as été retiré, les dates de tes tentatives de saisie d’un code de classe, et les questions que tu as signalées.</li>
         <li>Le cours gratuit que tu as choisi.</li>
+        <li>
+          Pour les enseignants&nbsp;: le nom de l’établissement et la demande de validation du statut d’enseignant,
+          examinée par un administrateur du contenu.
+        </li>
+        <li>
+          Si tu te connectes avec Google&nbsp;: ton nom et ton adresse e-mail, fournis par Google. Nous ne recevons pas ton mot
+          de passe Google.
+        </li>
+        <li>
+          Des données techniques de connexion (adresse IP, appareil, journaux de Supabase Auth et de Vercel), gardées{' '}
+          <ACompleter>durée de conservation des journaux</ACompleter>.
+        </li>
       </ul>
 
       <h2>À quoi servent-elles, et sur quelle base&nbsp;?</h2>
@@ -53,6 +65,11 @@ export default function PageConfidentialite() {
           Ton enseignant, si tu as rejoint sa classe&nbsp;: il voit ta progression et tes notes. Il ne voit jamais ton
           calendrier.
         </li>
+        <li>
+          Un administrateur du contenu, quand tu signales une question&nbsp;: il voit ton nom et ton adresse e-mail avec
+          ton signalement.
+        </li>
+        <li>Google, si tu choisis de te connecter avec ton compte Google (fournisseur d’identité).</li>
         <li>
           Les prestataires techniques qui font fonctionner l’application&nbsp;: Supabase (base de données et connexion),
           Vercel (hébergement), <ACompleter>fournisseur d’envoi des e-mails</ACompleter> (e-mails d’accord parental) et les
@@ -84,14 +101,18 @@ export default function PageConfidentialite() {
           après un retrait par l’enseignant), puis effacés.
         </li>
         <li>Le lien d’accord envoyé à un parent expire au bout de 7&nbsp;jours.</li>
+        <li>
+          Les dates de tes tentatives de saisie d’un code de classe servent à limiter les essais&nbsp;; celles qui ont plus
+          d’une heure sont effacées à ta tentative suivante, et toutes disparaissent avec ton compte.
+        </li>
       </ul>
 
       <h2>Cookies et stockage dans ton navigateur</h2>
       <p>
         App lycée n’utilise que des cookies nécessaires à ta connexion (la session). Il n’y a aucun traceur publicitaire
         ni aucune mesure d’audience&nbsp;: c’est pour cela qu’aucune bannière de cookies ne s’affiche. Pour te laisser relire
-        des chapitres sans connexion, ton navigateur peut aussi garder en mémoire des pages de cours déjà ouvertes&nbsp;; tu
-        peux les vider depuis l’application ou dans les réglages de ton navigateur.
+        des chapitres sans connexion, ton navigateur peut aussi garder en mémoire des pages de cours déjà ouvertes&nbsp;; elles
+        sont vidées quand tu te déconnectes ou quand tu ouvres la page de connexion, ou depuis les réglages de ton navigateur.
       </p>
 
       <h2>Quels sont tes droits&nbsp;?</h2>
@@ -106,10 +127,11 @@ export default function PageConfidentialite() {
           révoquer à tout moment depuis le calendrier), les empreintes des jetons de sécurité et les clés techniques de
           notification de tes appareils.
         </li>
-        <li>Rectification&nbsp;: tu peux corriger ton profil depuis l’application, ou écrire à <ACompleter>adresse e-mail pour les données personnelles</ACompleter>.</li>
+        <li>Rectification&nbsp;: en écrivant à <ACompleter>adresse e-mail pour les données personnelles</ACompleter>.</li>
         <li>Suppression&nbsp;: depuis la page <Link href="/mes-donnees">Mes données</Link>, dans les conditions ci-dessus.</li>
         <li>
           Retrait du consentement parental&nbsp;: un parent peut le retirer en écrivant à <ACompleter>adresse e-mail pour les données personnelles</ACompleter>.
+          Après ce retrait, le compte de l’élève est supprimé.
         </li>
         <li>
           Réclamation&nbsp;: tu peux saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener noreferrer">cnil.fr</a>).
