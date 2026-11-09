@@ -44,7 +44,7 @@ const MESSAGES: Record<string, string> = {
   deja_signalee: 'Tu as déjà signalé cette question.',
   trop_de_signalements: 'Tu as atteint la limite de 20 signalements par jour.',
   signalement_introuvable: 'Ce signalement a déjà été traité.',
-  reserve_eleves: 'Le calendrier est réservé aux comptes élèves.',
+  reserve_eleves: 'Réservé aux comptes élèves.',
   evenement_invalide: 'Cet événement est incomplet : vérifie le titre, la date et la durée.',
   repetition_invalide: 'La répétition doit finir après le début, dans l’année qui suit.',
   cours_indisponible: 'Ce cours n’est pas disponible pour toi.',
@@ -60,6 +60,9 @@ const MESSAGES: Record<string, string> = {
   abonnement_invalide: 'Cet appareil n’a pas pu être enregistré. Réessaie.',
   preferences_invalides: 'Tes réglages n’ont pas pu être lus. Vérifie les heures et réessaie.',
   rappel_invalide: 'Choisis un rappel dans la liste.',
+  essai_en_cours: 'Ton essai n’est pas terminé : tous les cours sont encore ouverts.',
+  choix_definitif: 'Ton choix de cours gratuit est définitif.',
+  cours_hors_filiere: 'Ce cours n’appartient pas à ta filière ou à ton niveau.',
 };
 
 export function messageErreur(message: string | undefined): string {

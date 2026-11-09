@@ -43,6 +43,32 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"acces_gratuit": {
+                  Row: {
+                    "change_utilise": boolean,"choisi_le": string,"cours_id": string,"eleve_id": string,"modifie_le": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "change_utilise"?: boolean,"choisi_le"?: string,"cours_id": string,"eleve_id": string,"modifie_le"?: string | null
+                  }
+                  Update: {
+                    "change_utilise"?: boolean,"choisi_le"?: string,"cours_id"?: string,"eleve_id"?: string,"modifie_le"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "acces_gratuit_cours_id_fkey"
+      columns: ["cours_id"]
+isOneToOne: false
+      referencedRelation: "cours"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "acces_gratuit_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"chapitre": {
                   Row: {
                     "a_retenir": string | null,"chapeau": string | null,"cours_id": string,"duree": string | null,"id": string,"modifie_le": string,"numero": number,"objectifs": (string)[],"publie": boolean,"resume": string | null,"sections": NonNullable<Json>,"slug": string,"titre": string,"titre_court": string | null
@@ -634,6 +660,9 @@ isOneToOne: false
 "changer_statut_question":
 { Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
                            },
+"choisir_cours_gratuit":
+{ Args: { "p_cours": string }; Returns: undefined
+                           },
 "classes_eleve":
 { Args: Record<PropertyKey, never>; Returns: {
               "enseignant_nom": string,"id": string,"nom": string,"rejoint_le": string
@@ -740,6 +769,11 @@ isOneToOne: false
 "mes_signalements":
 { Args: Record<PropertyKey, never>; Returns: {
               "chapitre_titre": string,"commentaire": string,"cours_titre": string,"cree_le": string,"enonce": string,"id": string,"question_id": string,"reponse": string,"statut": string,"traite_le": string
+            }[]
+                           },
+"mon_acces":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "changement_possible_jusqu_au": string,"cours_gratuit_id": string,"en_essai": boolean,"fin_essai": string,"role": string
             }[]
                            },
 "mon_calendrier":

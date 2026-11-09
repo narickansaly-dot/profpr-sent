@@ -83,7 +83,7 @@ describe('messageErreur, espace classes', () => {
 describe('messageErreur, calendrier et planning', () => {
   it('traduit chaque code levé par les RPC du calendrier', () => {
     const attendu: Record<string, string> = {
-      reserve_eleves: 'Le calendrier est réservé aux comptes élèves.',
+      reserve_eleves: 'Réservé aux comptes élèves.',
       evenement_invalide: 'Cet événement est incomplet\u00a0: vérifie le titre, la date et la durée.',
       repetition_invalide: 'La répétition doit finir après le début, dans l’année qui suit.',
       cours_indisponible: 'Ce cours n’est pas disponible pour toi.',
@@ -108,5 +108,13 @@ describe('messageErreur, calendrier et planning', () => {
     for (const code of ['non_connecte', 'acces_refuse', 'quiz_indisponible', 'evaluation_en_cours']) {
       expect(messageErreur(code)).not.toBe('Une erreur est survenue. Réessaie dans un instant.');
     }
+  });
+});
+
+describe('messageErreur, accès gratuit', () => {
+  it('traduit les codes du cours gratuit', () => {
+    expect(messageErreur('essai_en_cours')).toBe('Ton essai n’est pas terminé\u00a0: tous les cours sont encore ouverts.');
+    expect(messageErreur('choix_definitif')).toBe('Ton choix de cours gratuit est définitif.');
+    expect(messageErreur('cours_hors_filiere')).toBe('Ce cours n’appartient pas à ta filière ou à ton niveau.');
   });
 });
