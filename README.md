@@ -117,15 +117,28 @@ L'application envoie un seul e-mail, celui de l'accord parental (élève de moin
 Le contenu entre en base uniquement par des fichiers JSON validés (`src/lib/contenu/format-import.ts`) ou par les éditeurs de l'espace admin, qui appliquent les mêmes règles. Le format est décrit dans le [guide des auteurs](docs/guide-auteurs.md).
 
 ```bash
-npm run import:contenu -- <fichier.json> [--publier] [--distant]
+npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--distant]
 ```
 
 - `npm run import:contenu -- contenu/1re-st2s/bph.json --publier` importe le cours BPH et le publie.
 - Sans `--publier`, un cours ou un chapitre nouveau reste en brouillon ; un cours déjà publié le reste.
+- `--garder-statuts` : une question déjà `valide` dont la structure ne change pas reste `valide` ; une structure changée repart en nouvelle version `a_relire`. À utiliser pour les réimports du cours BPH après validation par l'enseignant.
 - Le script refuse toute base qui n'est pas locale, sauf avec `--distant`.
 - Un fichier invalide n'écrit rien : toutes les erreurs sont listées avec leur chemin (« Chapitre 2, question 5 : … »).
 - Le bilan indique les questions créées, modifiées, en nouvelle version, inchangées, archivées et supprimées. Un import est rejouable : les questions inchangées restent telles quelles.
 - Les administrateurs peuvent aussi importer depuis `/admin/import` (vérification du résumé, puis confirmation).
+
+### Banques de questions
+
+Les banques de questions de BPH se fabriquent chapitre par chapitre, dans `contenu/1re-st2s/banques/` :
+
+```bash
+npm run banque:texte -- <n>       # texte du chapitre, pour rédiger et relire
+npm run banque:verifier -- <n>    # contrôle la banque (types, difficultés, notions, doublons, biais de longueur)
+npm run banque:fusionner -- <n>   # ajoute les questions de la banque à bph.json
+```
+
+Les questions fusionnées arrivent en `a_relire` et ne sont tirées qu'une fois validées dans l'admin. Voir bilan : [étape 6a](docs/superpowers/plans/2027-01-05-etape-6a-bilan.md).
 
 Mise en ligne : voir `docs/mise-en-ligne.md`.
 
