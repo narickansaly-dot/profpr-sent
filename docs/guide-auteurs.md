@@ -354,3 +354,56 @@ Un import est **rejouable** : réimporter le même fichier ne crée rien et lais
 1. Choisis le fichier JSON, coche « Publier le cours et les nouveaux chapitres » si besoin, puis clique sur « Vérifier ».
 2. Lis le résumé : titre, nombre de chapitres, questions par statut, et si le cours existe déjà. Si le fichier est invalide, la liste des erreurs s'affiche et rien n'est écrit.
 3. Clique sur « Importer » : le bilan s'affiche (créées, modifiées, nouvelles versions, inchangées, archivées, supprimées).
+
+## 7. Banques de questions
+
+Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans `bph.json`, qui reste la seule source de vérité du cours.
+
+### Le fichier de travail
+
+`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre) :
+
+```json
+{
+  "chapitre": 1,
+  "notions": ["Organites", "Tissus", "Homéostasie"],
+  "questions": [
+    { "source": "bph:ch1:banque:001", "type": "qcm_unique", "enonce": "…", "propositions": ["…", "…", "…", "…"],
+      "bonnes_reponses": [2], "difficulte": 1, "explication": "…", "notion": "Tissus" }
+  ]
+}
+```
+
+- `notions` : la liste fermée du chapitre (5 à 12 intitulés). Chaque question en choisit une.
+- `questions` : le même format que dans `bph.json` (les indices commencent à 0 ; `vrai_faux` utilise `bonne_reponse` ; `reponse_courte` utilise `reponses_acceptees`). Pas de champ `statut` : la fusion l'impose à `a_relire`.
+- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130`.
+
+### Les trois commandes
+
+```bash
+npm run banque:texte -- N       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
+npm run banque:verifier -- N    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
+npm run banque:fusionner -- N   # ajoute les questions au chapitre N de bph.json
+```
+
+- `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. `bph.json` est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
+- Après la fusion, importe le cours avec `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts` (partie 6).
+
+### Les règles contrôlées
+
+`banque:verifier` signale toutes ces erreurs en une fois :
+
+1. chaque question passe le validateur d'import ;
+2. les sources sont uniques ;
+3. les sources respectent `bph:chN:banque:NNN`, avec le bon numéro de chapitre ;
+4. types répartis en 65 `qcm_unique`, 26 `qcm_multiple`, 26 `vrai_faux` et 13 `reponse_courte`, à plus ou moins 3 près ;
+5. difficultés réparties en 52 (niveau 1), 52 (niveau 2) et 26 (niveau 3), à plus ou moins 3 près ;
+6. une explication non vide ;
+7. une notion présente dans la liste du fichier ;
+8. aucune proposition « Toutes les réponses ci-dessus » ni « Aucune des réponses » (sans égard à la casse ni aux accents) ;
+9. un `qcm_multiple` a 2 ou 3 bonnes réponses, et son énoncé contient « Coche toutes les réponses exactes. » ;
+10. aucune position ne porte plus de 40 % des bonnes réponses des `qcm_unique` ;
+11. la bonne réponse n'est la plus longue que dans moins de 40 % des `qcm_unique` ;
+12. deux énoncés (entre eux, ou avec une question existante du chapitre) ne sont pas trop proches : similarité de 0,8 au plus (trigrammes de caractères, accents et ponctuation ignorés) ;
+13. les `vrai_faux` ont au plus 60 % de vrais, et au plus 60 % de faux ;
+14. une espace insécable (et non une espace normale) avant « : ; ! ? » dans l'énoncé, les propositions et l'explication.
