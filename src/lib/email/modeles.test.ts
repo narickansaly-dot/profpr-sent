@@ -4,7 +4,7 @@ import { emailConsentement } from './modeles';
 describe('emailConsentement', () => {
   const m = emailConsentement({ prenom: 'Léa', lien: 'https://app.example.fr/accord-parental/abc', origine: 'https://app.example.fr' });
   it('vouvoie le parent et donne le lien', () => {
-    expect(m.sujet).toBe('Léa a besoin de votre accord pour utiliser App lycée');
+    expect(m.sujet).toBe('Un accord parental est demandé pour App lycée');
     expect(m.texte).toContain('https://app.example.fr/accord-parental/abc');
     expect(m.texte).toContain('Ce lien est valable 7 jours.');
     expect(m.html).toContain('href="https://app.example.fr/accord-parental/abc"');
@@ -14,9 +14,11 @@ describe('emailConsentement', () => {
     expect(x.html).not.toContain('<b>Léa</b>');
     expect(x.html).toContain('&lt;b&gt;Léa&lt;/b&gt;');
   });
-  it('limite le prénom à 50 caractères dans le sujet', () => {
-    const x = emailConsentement({ prenom: 'A'.repeat(80), lien: 'https://a.fr/x', origine: 'https://a.fr' });
-    expect(x.sujet).toBe(`${'A'.repeat(50)} a besoin de votre accord pour utiliser App lycée`);
+  it('ne met pas le prénom dans le sujet, et le limite à 50 caractères dans le corps', () => {
+    const x = emailConsentement({ prenom: 'Z'.repeat(80), lien: 'https://a.fr/x', origine: 'https://a.fr' });
+    expect(x.sujet).toBe('Un accord parental est demandé pour App lycée');
+    expect(x.texte).toContain(`${'Z'.repeat(50)} s’est inscrit`);
+    expect(x.texte).not.toContain('Z'.repeat(51));
   });
   it('accepte http sur l’hôte local, sans origine configurée', () => {
     expect(() => emailConsentement({ prenom: 'Léa', lien: 'http://localhost:3000/accord-parental/x' })).not.toThrow();

@@ -18,7 +18,7 @@ test('un élève de moins de 15 ans attend l’accord d’un parent, donné depu
   await expect(page.getByText(`E-mail envoyé à ${emailParent}.`)).toBeVisible();
 
   const message = await dernierEmail(emailParent);
-  expect(message.sujet).toContain('a besoin de votre accord');
+  expect(message.sujet).toBe('Un accord parental est demandé pour App lycée');
   const lien = lienDansEmail(message.texte, /\/accord-parental\//);
 
   // Le parent n'a aucune session : nouveau contexte de navigation.

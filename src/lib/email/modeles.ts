@@ -26,7 +26,8 @@ function verifierLien(lien: string, origine: string | undefined): void {
 export function emailConsentement(o: { prenom: string; lien: string; origine?: string }): { sujet: string; texte: string; html: string } {
   verifierLien(o.lien, o.origine ?? process.env.NEXT_PUBLIC_SITE_URL);
   const prenom = o.prenom.replace(/[\r\n]+/g, ' ').trim().slice(0, 50) || 'Votre enfant';
-  const sujet = `${prenom} a besoin de votre accord pour utiliser App lycée`;
+  // Sujet sans le prénom : il reste lisible dans les aperçus de messagerie et les journaux du serveur d'e-mail.
+  const sujet = 'Un accord parental est demandé pour App lycée';
   const texte = [
     'Bonjour,',
     '',
