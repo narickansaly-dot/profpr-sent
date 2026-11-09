@@ -36,6 +36,30 @@ test('pages publiques : connexion et inscription', async ({ page }) => {
   }
 });
 
+test('page introuvable (URL inconnue, connecté) : 404, titre français, repères', async ({ page }) => {
+  await inscrireEleve(page, emailDeTest('axe-404'));
+  for (const chemin of ['/page-qui-n-existe-pas', '/cours/cours-inexistant']) {
+    const reponse = await page.goto(chemin);
+    expect(reponse?.status()).toBe(404);
+    await expect(page).toHaveTitle(/Page introuvable/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Page introuvable' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Retour à l’accueil' })).toBeVisible();
+    await expect(page.locator('main')).toHaveCount(1);
+    await verifier(page, chemin);
+  }
+});
+
+test('lien d’évitement : premier arrêt du clavier, vise le contenu', async ({ page }) => {
+  await page.goto('/connexion');
+  await page.keyboard.press('Tab');
+  const lien = page.getByRole('link', { name: 'Aller au contenu' });
+  await expect(lien).toBeFocused();
+  await expect(lien).toBeInViewport();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/#contenu$/);
+  await expect(page.locator('main#contenu')).toBeVisible();
+});
+
 test('bienvenue (juste après l’inscription)', async ({ page }) => {
   await page.goto('/inscription');
   await page.getByLabel('Adresse e-mail').fill(emailDeTest('axe-bienvenue'));

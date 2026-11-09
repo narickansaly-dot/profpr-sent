@@ -26,7 +26,7 @@ export default async function PageChapitre({ params }: Params) {
   const { cours, chapitre: ch, precedent, suivant } = r;
   return (
     <article style={{ '--couleur-cours': cours.couleur } as React.CSSProperties}>
-      <Link href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
+      <Link className="lien-action" href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
       <p className="pastille">Chapitre {ch.numero}{ch.duree ? ` · ${ch.duree}` : ''}</p>
       <h1>{ch.titre}</h1>
       {ch.chapeau && <p><strong>{ch.chapeau}</strong></p>}

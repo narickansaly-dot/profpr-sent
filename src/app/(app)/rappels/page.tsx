@@ -19,7 +19,7 @@ export default async function PageRappels() {
   return (
     <div className="page-rappels">
       <h1>Rappels</h1>
-      <p><Link href="/notifications">Régler mes notifications</Link></p>
+      <p><Link href="/notifications" className="lien-action">Régler mes notifications</Link></p>
       {rappels.length === 0 ? <p>Aucun rappel pour l’instant.</p> : (
         <ul className="liste-rappels">
           {rappels.map((r) => (

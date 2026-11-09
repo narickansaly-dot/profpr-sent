@@ -15,7 +15,7 @@ export default async function PageMesSignalements() {
   const signalements = await lireMesSignalements();
   return (
     <div className="page-enseignant">
-      <p className="fil"><Link href="/enseignant">← Mes classes</Link></p>
+      <p className="fil"><Link href="/enseignant" className="lien-action">← Mes classes</Link></p>
       <h1>Mes signalements</h1>
       {signalements.length === 0 ? (
         <p className="vide">Tu n’as encore signalé aucune question. Utilise « Signaler une erreur » dans la correction d’un quiz ou dans le suivi d’une classe.</p>

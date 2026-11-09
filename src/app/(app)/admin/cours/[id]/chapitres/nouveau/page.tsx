@@ -14,7 +14,7 @@ export default async function PageNouveauChapitre({ params }: { params: Promise<
   const suivant = Math.min(99, Math.max(0, ...cours.chapitre.map((c) => c.numero)) + 1);
   return (
     <div className="page-admin">
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <h1>Nouveau chapitre — {cours.titre}</h1>
       <section className="carte" aria-labelledby="titre-editeur">
         <h2 id="titre-editeur" className="sr-only">Contenu du chapitre</h2>

@@ -24,13 +24,13 @@ export default async function PageConsentement() {
           <Link href="/" className="logo">App lycée</Link>
           <BoutonDeconnexion prenom={profil.nom} />
         </header>
-        <main className="page-auth">
+        <main id="contenu" tabIndex={-1} className="page-auth">
           <h1>Ton parent a retiré son accord</h1>
           <p>
             Ton compte est bloqué{acces.suppressionPrevueLe ? ` et sera supprimé le ${formatJour.format(new Date(acces.suppressionPrevueLe))}` : ''}.
             Tu peux encore télécharger tes données.
           </p>
-          <p><Link href="/mes-donnees">Mes données</Link></p>
+          <p><Link href="/mes-donnees" className="lien-action">Mes données</Link></p>
         </main>
       </>
     );
@@ -41,7 +41,7 @@ export default async function PageConsentement() {
         <Link href="/" className="logo">App lycée</Link>
         <BoutonDeconnexion prenom={profil.nom} />
       </header>
-      <main className="page-auth">
+      <main id="contenu" tabIndex={-1} className="page-auth">
         <h1>Il nous faut l’accord d’un parent</h1>
         <p>
           Comme tu as moins de 15 ans, un parent ou ton représentant légal doit accepter que tu utilises App lycée.

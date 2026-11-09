@@ -17,7 +17,7 @@ export default async function PageEnfant({ params }: { params: Promise<{ id: str
   const lignes = await lireProgressionEnfant(id);
   return (
     <div className="page-parent">
-      <p><Link href="/parent">← Mes enfants</Link></p>
+      <p><Link href="/parent" className="lien-action">← Mes enfants</Link></p>
       <h1>{enfant.nom}</h1>
       <p>{etatConsentement({ moins15: enfant.moins15, donneLe: enfant.donneLe, retireLe: enfant.retireLe, suppressionPrevueLe: enfant.suppressionPrevueLe })}</p>
       {lignes.length === 0 ? (

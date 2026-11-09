@@ -9,7 +9,7 @@ export default async function PageImport() {
   await exigerAdmin();
   return (
     <div className="page-admin">
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <h1>Importer un cours</h1>
       <p className="vide">Dépose le fichier JSON d’un cours : tu vérifies d’abord ce qu’il contient, puis tu confirmes. Un import peut être refait sans risque : les questions inchangées restent telles quelles.</p>
       <FormulaireImport />

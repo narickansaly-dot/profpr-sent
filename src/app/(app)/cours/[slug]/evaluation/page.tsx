@@ -38,7 +38,7 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
   const essaisTermines = p ? p.essais.filter((e) => e.statut !== 'en_cours') : [];
   return (
     <div style={{ '--couleur-cours': cours.couleur } as React.CSSProperties}>
-      <Link href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
+      <Link className="lien-action" href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
       <h1>Évaluation : {cours.titre}</h1>
       <div className="carte">
         <h2>Comment ça marche</h2>

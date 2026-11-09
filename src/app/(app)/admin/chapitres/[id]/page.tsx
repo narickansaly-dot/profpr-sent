@@ -22,7 +22,7 @@ export default async function PageModifierChapitre({ params, searchParams }: { p
   const titre = `Ch. ${ch.numero} — ${ch.titre}`;
   return (
     <div className="page-admin">
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <div className="entete-bloc">
         <h1>Modifier le chapitre</h1>
         <div className="actions-bloc">

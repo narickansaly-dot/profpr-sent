@@ -11,7 +11,7 @@ export default async function PageConnexion({ searchParams }: { searchParams: Pr
   const suite = cheminSuiteSur(suiteBrute) ?? undefined;
   const parametre = suite ? `?suite=${encodeURIComponent(suite)}` : '';
   return (
-    <main className="page-auth">
+    <main id="contenu" tabIndex={-1} className="page-auth">
       <ViderCachePages />
       <h1>Te revoilà !</h1>
       {erreur === 'google' && <p role="alert" className="message-erreur">La connexion avec Google a échoué. Réessaie.</p>}
