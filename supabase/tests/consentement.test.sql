@@ -1,5 +1,5 @@
 begin;
-select plan(26);
+select plan(37);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000005b1', 'jeune@test.local'),
@@ -19,6 +19,9 @@ set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005b1","role":"authenticated"}', true);
 select is(public.peut_lire_cours('20000000-0000-0000-0000-0000000005b1'), false, 'moins de 15 ans sans accord : aucun cours');
 select is((select consentement_requis from public.mon_acces()), true, 'mon_acces signale le consentement requis');
+select is((select en_essai from public.mon_acces()), false, 'sans accord, mon_acces ne montre aucun essai');
+select is((select fin_essai from public.mon_acces()), null, 'sans accord, mon_acces ne donne aucune fin d''essai');
+select throws_ok($$ select public.choisir_cours_gratuit('20000000-0000-0000-0000-0000000005b1') $$, 'P0001', 'consentement_requis', 'sans accord, pas de choix de cours gratuit');
 select throws_ok($$ update public.profil set moins_de_15_ans = false where id = '00000000-0000-0000-0000-0000000005b1' $$,
   'P0001', 'age_verrouille', 'l''âge ne change plus après l''inscription');
 select lives_ok($$ update public.profil set onboarding_termine = false where id = '00000000-0000-0000-0000-0000000005b1' $$, 'inscription rouverte');
@@ -70,6 +73,42 @@ update public.consentement_parental set donne_le = null, demande_le = now() - in
 set local role anon;
 select throws_ok(format('select public.donner_consentement(%L)', current_setting('test.jeton')),
   'P0001', 'lien_consentement_invalide', 'un lien de plus de 7 jours ne vaut plus');
+
+-- Un renvoi invalide l'ancien lien.
+reset role;
+update public.consentement_parental set dernier_envoi_le = now() - interval '1 hour' where eleve_id = '00000000-0000-0000-0000-0000000005b1';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005b1","role":"authenticated"}', true);
+select lives_ok($$ select public.demander_consentement('nouveau@example.fr') $$, 'renvoi accepté');
+reset role;
+set local role anon;
+select throws_ok(format('select * from public.lire_demande_consentement(%L)', current_setting('test.jeton')),
+  'P0001', 'lien_consentement_invalide', 'l''ancien jeton ne se lit plus après un renvoi');
+select throws_ok(format('select public.donner_consentement(%L)', current_setting('test.jeton')),
+  'P0001', 'lien_consentement_invalide', 'l''ancien jeton ne donne plus l''accord après un renvoi');
+select lives_ok($$ select * from public.emettre_jeton_consentement(repeat('s', 43), '00000000-0000-0000-0000-0000000005b1') $$, 'un nouveau jeton est émis après le renvoi');
+
+-- Une demande de plus de 7 jours n'émet plus de jeton.
+reset role;
+update public.consentement_parental set jeton_empreinte = null, demande_le = now() - interval '8 days' where eleve_id = '00000000-0000-0000-0000-0000000005b1';
+set local role anon;
+select throws_ok($$ select * from public.emettre_jeton_consentement(repeat('s', 43), '00000000-0000-0000-0000-0000000005b1') $$,
+  'P0001', 'lien_consentement_invalide', 'pas de jeton pour une demande de plus de 7 jours');
+
+-- Au plus 5 envois par jour, remis à zéro le lendemain.
+reset role;
+update public.consentement_parental set demande_le = now(), dernier_envoi_le = now() - interval '1 hour', envois_du_jour = 5,
+  jour_envois = (now() at time zone 'Europe/Paris')::date where eleve_id = '00000000-0000-0000-0000-0000000005b1';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005b1","role":"authenticated"}', true);
+select throws_ok($$ select public.demander_consentement('nouveau@example.fr') $$, 'P0001', 'envois_epuises', 'pas de 6e envoi dans la journée');
+reset role;
+update public.consentement_parental set jour_envois = jour_envois - 1 where eleve_id = '00000000-0000-0000-0000-0000000005b1';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005b1","role":"authenticated"}', true);
+select lives_ok($$ select public.demander_consentement('nouveau@example.fr') $$, 'le lendemain, l''envoi est de nouveau possible');
+reset role;
+select is((select envois_du_jour::int from public.consentement_parental where eleve_id = '00000000-0000-0000-0000-0000000005b1'), 1, 'le compteur repart à 1');
 
 select * from finish();
 rollback;

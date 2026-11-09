@@ -63,6 +63,7 @@ export const MESSAGES: Record<string, string> = {
   essai_en_cours: 'Ton essai n’est pas terminé : tous les cours sont encore ouverts.',
   choix_definitif: 'Ton choix de cours gratuit est définitif.',
   cours_hors_filiere: 'Ce cours n’appartient pas à ta filière ou à ton niveau.',
+  consentement_requis: 'L’accord d’un parent est nécessaire avant de choisir un cours.',
   age_verrouille: 'Ton âge ne peut plus être modifié après l’inscription.',
   consentement_inutile: 'L’accord d’un parent n’est demandé qu’aux élèves de moins de 15 ans.',
   email_parent_invalide: 'Indique une adresse e-mail valide pour ton parent.',

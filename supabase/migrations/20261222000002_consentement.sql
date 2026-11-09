@@ -72,7 +72,9 @@ create function public.mon_acces()
 returns table (role text, en_essai boolean, fin_essai timestamptz, cours_gratuit_id uuid, changement_possible_jusqu_au timestamptz,
                consentement_requis boolean, email_parent text, consentement_envoye_le timestamptz)
 language sql stable security definer set search_path = '' as $$
-  select p.role::text, public.en_essai(), prive.fin_essai(p.id), c.id,
+  select p.role::text,
+         case when prive.consentement_requis(p.id) then false else public.en_essai() end,
+         case when prive.consentement_requis(p.id) then null else prive.fin_essai(p.id) end, c.id,
          case when c.id is not null and not a.change_utilise and a.choisi_le > now() - interval '48 hours'
               then a.choisi_le + interval '48 hours' end,
          prive.consentement_requis(p.id), k.email_parent, k.dernier_envoi_le
@@ -103,6 +105,8 @@ begin
   if char_length(v_email) not between 3 and 254 or v_email !~ '^[^@[:space:]]+@[^@[:space:]]+\.[^@[:space:]]+$' then
     raise exception 'email_parent_invalide';
   end if;
+  -- Sérialise les appels simultanés du même élève (la ligne de consentement n'existe pas encore au premier envoi).
+  perform 1 from public.profil where id = auth.uid() for update;
   select * into v from public.consentement_parental where eleve_id = auth.uid() for update;
   if found then
     if v.donne_le is not null then
@@ -196,3 +200,52 @@ revoke execute on function public.emettre_jeton_consentement(text, uuid) from pu
 grant execute on function public.emettre_jeton_consentement(text, uuid) to anon;
 revoke execute on function public.lire_demande_consentement(text), public.donner_consentement(text) from public;
 grant execute on function public.lire_demande_consentement(text), public.donner_consentement(text) to anon, authenticated;
+
+-- Corps de la tâche 1 + refus tant que l'accord parental manque.
+create or replace function public.choisir_cours_gratuit(p_cours uuid) returns void
+language plpgsql security definer set search_path = '' as $$
+declare
+  v public.acces_gratuit;
+  v_publie boolean;
+begin
+  if public.role_actuel() is distinct from 'eleve' then
+    raise exception 'reserve_eleves';
+  end if;
+  -- Sans accord parental, aucun choix : il figerait le délai de 48 heures avant tout accès.
+  if prive.consentement_requis(auth.uid()) then
+    raise exception 'consentement_requis';
+  end if;
+  if public.en_essai() then
+    raise exception 'essai_en_cours';
+  end if;
+  if not exists (select 1 from public.cours where id = p_cours and publie) then
+    raise exception 'cours_indisponible';
+  end if;
+  if not exists (select 1 from public.cours c join public.profil p on p.id = auth.uid()
+                  where c.id = p_cours and c.filiere_id = p.filiere_id and c.niveau_code = p.niveau_code) then
+    raise exception 'cours_hors_filiere';
+  end if;
+  -- Sérialise les appels simultanés du même élève (la ligne acces_gratuit n'existe pas encore au premier choix).
+  perform 1 from public.profil where id = auth.uid() for update;
+  select * into v from public.acces_gratuit where eleve_id = auth.uid() for update;
+  if not found then
+    insert into public.acces_gratuit (eleve_id, cours_id) values (auth.uid(), p_cours)
+    on conflict (eleve_id) do nothing;
+    return;
+  end if;
+  if v.cours_id = p_cours then
+    return;
+  end if;
+  select publie into v_publie from public.cours where id = v.cours_id;
+  if not coalesce(v_publie, false) then
+    -- Le cours choisi n'est plus publié : nouveau choix, sans consommer le changement unique.
+    update public.acces_gratuit set cours_id = p_cours, choisi_le = now(), modifie_le = now()
+     where eleve_id = auth.uid();
+    return;
+  end if;
+  if v.change_utilise or v.choisi_le < now() - interval '48 hours' then
+    raise exception 'choix_definitif';
+  end if;
+  update public.acces_gratuit set cours_id = p_cours, change_utilise = true, modifie_le = now()
+   where eleve_id = auth.uid();
+end $$;

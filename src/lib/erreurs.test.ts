@@ -121,6 +121,7 @@ describe('messageErreur, accès gratuit', () => {
 
 describe('messageErreur, consentement parental', () => {
   it('traduit les codes du consentement', () => {
+    expect(messageErreur('consentement_requis')).toBe('L’accord d’un parent est nécessaire avant de choisir un cours.');
     expect(messageErreur('age_verrouille')).toBe('Ton âge ne peut plus être modifié après l’inscription.');
     expect(messageErreur('consentement_inutile')).toBe('L’accord d’un parent n’est demandé qu’aux élèves de moins de 15 ans.');
     expect(messageErreur('email_parent_invalide')).toBe('Indique une adresse e-mail valide pour ton parent.');
@@ -130,7 +131,7 @@ describe('messageErreur, consentement parental', () => {
     expect(messageErreur('lien_consentement_invalide')).toBe('Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.');
   });
   it('aucun code n’est sous-chaîne d’un autre', () => {
-    const codes = ['age_verrouille', 'consentement_inutile', 'email_parent_invalide', 'consentement_deja_donne', 'envoi_trop_rapproche', 'envois_epuises', 'lien_consentement_invalide'];
+    const codes = ['consentement_requis', 'age_verrouille', 'consentement_inutile', 'email_parent_invalide', 'consentement_deja_donne', 'envoi_trop_rapproche', 'envois_epuises', 'lien_consentement_invalide'];
     const autres = Object.keys(MESSAGES);
     for (const c of codes) {
       for (const a of autres) {
