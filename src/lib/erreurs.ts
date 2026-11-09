@@ -82,6 +82,9 @@ export const MESSAGES: Record<string, string> = {
   essais_code_epuises: 'Trop d’essais. Réessayez dans une heure.',
   deliaison_interdite: 'Avant 15 ans, seul ton parent peut retirer ce lien.',
   lien_introuvable: 'Ce lien n’existe pas ou a déjà été retiré.',
+  retrait_impossible: 'Ce retrait n’est pas possible pour ce compte.',
+  consentement_retire: 'Ton parent a retiré son accord : tu ne peux pas faire de nouvelle demande.',
+  suppression_imposee: 'La suppression a été demandée par ton parent : seul ton parent peut l’annuler.',
 };
 
 export function messageErreur(message: string | undefined): string {

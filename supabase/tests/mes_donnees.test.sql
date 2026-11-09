@@ -71,8 +71,8 @@ set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
 select set_config('test.export_eleve', public.exporter_mes_donnees()::text, true);
 select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb) k order by k collate "C"),
-  array['acces_gratuit','appareils','classes','classes_creees','consentement','departs_classe','essais_code_classe','evenements','historique_questions','notifications',
-        'plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','retraits_classe','signalements','signalements_traites','tentatives'],
+  array['abonnement','acces_gratuit','appareils','classes','classes_creees','consentement','departs_classe','enfants_suivis','essais_code_classe','evenements','historique_questions','notifications',
+        'parents_relies','plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','retrait_consentement','retraits_classe','signalements','signalements_traites','tentatives'],
   'l''export a toutes les rubriques');
 select is(current_setting('test.export_eleve')::jsonb->'profil'->>'email', 'eleve-donnees@test.local', 'le profil de l''appelant');
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'tentatives'), 1, 'une seule tentative exportée');

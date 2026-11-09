@@ -214,4 +214,22 @@ describe('messageErreur, comptes parents', () => {
       if (a !== 'lien_introuvable') expect(a.includes('lien_introuvable') || 'lien_introuvable'.includes(a)).toBe(false);
     }
   });
+  it('traduit retrait_impossible sans collision avec un autre code', () => {
+    expect(messageErreur('retrait_impossible')).toBe('Ce retrait n’est pas possible pour ce compte.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'retrait_impossible') expect(a.includes('retrait_impossible') || 'retrait_impossible'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit consentement_retire sans collision avec un autre code', () => {
+    expect(messageErreur('consentement_retire')).toBe('Ton parent a retiré son accord : tu ne peux pas faire de nouvelle demande.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'consentement_retire') expect(a.includes('consentement_retire') || 'consentement_retire'.includes(a)).toBe(false);
+    }
+  });
+  it('traduit suppression_imposee sans collision avec un autre code', () => {
+    expect(messageErreur('suppression_imposee')).toBe('La suppression a été demandée par ton parent : seul ton parent peut l’annuler.');
+    for (const a of Object.keys(MESSAGES)) {
+      if (a !== 'suppression_imposee') expect(a.includes('suppression_imposee') || 'suppression_imposee'.includes(a)).toBe(false);
+    }
+  });
 });

@@ -730,6 +730,9 @@ isOneToOne: false
             "accepter_plan_revision":
 { Args: { "p_examen": string,"p_reglages": Json,"p_sessions": Json }; Returns: string
                            },
+"annuler_retrait_consentement":
+{ Args: { "p_eleve": string }; Returns: undefined
+                           },
 "annuler_suppression_compte":
 { Args: Record<PropertyKey, never>; Returns: undefined
                            },
@@ -822,6 +825,11 @@ isOneToOne: false
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"enfants_du_parent":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "abonnement": Json,"consentement_donne_le": string,"consentement_retire_le": string,"eleve_id": string,"lie_le": string,"moins_de_15_ans": boolean,"niveau": string,"nom": string,"origine": string,"retire_par_moi": boolean,"suppression_prevue_le": string
+            }[]
+                           },
 "enregistrer_abonnement_push":
 { Args: { "p_appareil": string,"p_auth": string,"p_endpoint": string,"p_p256dh": string }; Returns: string
                            },
@@ -913,6 +921,11 @@ isOneToOne: false
 "notions_chapitre":
 { Args: { "p_chapitre": string }; Returns: string[]
                            },
+"parents_de_l_eleve":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "lie_le": string,"nom": string,"origine": string,"parent_id": string
+            }[]
+                           },
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
@@ -924,6 +937,11 @@ isOneToOne: false
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
+"progression_enfant":
+{ Args: { "p_eleve": string }; Returns: {
+              "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_valide": boolean,"derniere_activite": string,"meilleure_note": number,"titre": string
             }[]
                            },
 "publier_chapitre":
@@ -966,6 +984,9 @@ isOneToOne: false
                            },
 "repondre":
 { Args: { "p_question": string,"p_reponse": Json,"p_tentative": string }; Returns: string
+                           },
+"retirer_consentement":
+{ Args: { "p_eleve": string }; Returns: string
                            },
 "retirer_eleve":
 { Args: { "p_classe": string,"p_eleve": string }; Returns: undefined
