@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { vieillirInscription } from './aide-db';
+import { creerCoursARelire, rendreAdmin, supprimerCoursDeTest, vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
 import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant, suivreViolations } from './aide-parcours';
 
@@ -106,5 +106,23 @@ test('aucune violation de CSP sur les pages parent', async ({ page, browser }, t
     expect(violations).toEqual([]);
   } finally {
     await contexte.close();
+  }
+});
+
+test('aucune violation de CSP sur la relecture en lot (admin)', async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
+  const slug = `e2e-csp-relecture-${testInfo.project.name}-${Date.now()}`.toLowerCase();
+  try {
+    const chapitreId = await creerCoursARelire(slug, 2);
+    const violations = await suivreViolations(page);
+    const email = emailDeTest('csp-admin');
+    await inscrireEleve(page, email);
+    await rendreAdmin(email);
+    await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
+    await expect(page.locator('article.carte-relecture')).toHaveCount(2);
+    await page.waitForLoadState('networkidle');
+    expect(violations).toEqual([]);
+  } finally {
+    await supprimerCoursDeTest(slug);
   }
 });

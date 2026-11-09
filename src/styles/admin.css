@@ -183,3 +183,18 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .formulaire-decision textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
 .formulaire-decision .message-erreur { margin: 0; font-weight: 700; }
 .editeur-chapitre + .panneau-apercu { margin-top: 20px; }
+
+/* Relecture en lot des questions */
+.relecture { display: grid; gap: 16px; }
+.relecture-liste { display: grid; gap: 12px; }
+.carte-relecture { display: grid; gap: 10px; padding: 16px; border-left: 6px solid var(--trait); }
+.carte-relecture > * { margin: 0; min-width: 0; }
+.carte-relecture-tete { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+.case-relecture { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; min-width: 44px; font-weight: 700; cursor: pointer; }
+.case-relecture input { width: 28px; height: 28px; flex: none; accent-color: var(--couleur-cours); }
+.relecture-meta { color: var(--attenue); font-size: 15px; }
+.relecture-propositions { margin: 0; padding-left: 22px; display: grid; gap: 6px; }
+.relecture-bonne { color: color-mix(in srgb, var(--succes) 80%, var(--encre)); }
+@media (prefers-color-scheme: dark) { .relecture-bonne { color: var(--succes); } }
+.relecture-reponse, .relecture-explication { overflow-wrap: anywhere; }
+.relecture-actions { position: sticky; bottom: 0; padding: 12px 0; background: var(--papier); }

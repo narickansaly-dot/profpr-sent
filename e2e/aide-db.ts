@@ -133,3 +133,39 @@ export async function simulerAbonnement(email: string, statut: 'actif' | 'impaye
   }, { onConflict: 'eleve_id' });
   if (error) throw error;
 }
+
+/**
+ * Importe un cours de test `e2e-…` d'un chapitre avec `n` questions QCM à relire (réservé aux tests) ; renvoie l'id du chapitre.
+ * Le cours reste publié : `supprimerCoursDeTest` le retire.
+ */
+export async function creerCoursARelire(slug: string, n = 3): Promise<string> {
+  if (!slug.startsWith('e2e-')) throw new Error('le slug d’un cours de test commence par « e2e- »');
+  const { error } = await db.rpc('importer_cours', {
+    p_cours: {
+      slug, filiere: 'ST2S', niveau: '1re', matiere: 'Test e2e', titre: `Cours e2e ${slug}`, couleur: '#0f766e',
+      chapitres: [{
+        slug: 'ch1', numero: 1, titre: 'Chapitre de relecture', objectifs: [],
+        sections: [{ id: 'intro', titre: 'Introduction', html: '<p>Section de test.</p>' }],
+        questions: Array.from({ length: n }, (_, i) => ({
+          source: `${slug}:${i + 1}`, type: 'qcm_unique', statut: 'a_relire', difficulte: 2, explication: `Explication ${i + 1}.`,
+          enonce: `Question de relecture n° ${i + 1} : quelle est la bonne réponse ?`,
+          propositions: [`Bonne réponse ${i + 1}.`, `Mauvaise réponse ${i + 1}a.`, `Mauvaise réponse ${i + 1}b.`], bonnes_reponses: [0],
+        })),
+      }],
+    },
+    p_publier: true,
+  });
+  if (error) throw error;
+  const { data, error: erreurLecture } = await db.from('cours').select('chapitre(id)').eq('slug', slug).single();
+  if (erreurLecture || !data) throw erreurLecture ?? new Error('cours introuvable');
+  return data.chapitre[0].id;
+}
+
+/** Supprime un cours de test sans résultat d'élève (les versions se référencent entre elles : on les détache d'abord). */
+export async function supprimerCoursDeTest(slug: string) {
+  const { data } = await db.from('cours').select('id, chapitre(id)').eq('slug', slug).maybeSingle();
+  if (!data) return;
+  const chapitres = data.chapitre.map((c) => c.id);
+  if (chapitres.length > 0) await db.from('question').update({ version_de: null }).in('chapitre_id', chapitres);
+  await db.from('cours').delete().eq('id', data.id);
+}

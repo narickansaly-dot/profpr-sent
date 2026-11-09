@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
-import { vieillirInscription } from './aide-db';
+import { creerCoursARelire, rendreAdmin, supprimerCoursDeTest, vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
 import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant } from './aide-parcours';
 
@@ -166,5 +166,25 @@ test('espace parent : mes enfants et suivi d’un enfant', async ({ page, browse
     await verifier(parent, '/parent/enfant/<id>');
   } finally {
     await contexte.close();
+  }
+});
+
+test('admin : relecture en lot des questions', async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
+  const slug = `e2e-axe-relecture-${testInfo.project.name}-${Date.now()}`.toLowerCase();
+  try {
+    const chapitreId = await creerCoursARelire(slug, 3);
+    const email = emailDeTest('axe-admin');
+    await inscrireEleve(page, email);
+    await rendreAdmin(email);
+    await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
+    await expect(page.locator('article.carte-relecture')).toHaveCount(3);
+    await verifier(page, '/admin/chapitres/<id>/questions?relecture=1');
+    await page.getByLabel('Sélectionner la question 1').check();
+    await page.getByRole('button', { name: 'Valider la sélection' }).click();
+    await expect(page.getByRole('status').filter({ hasText: '1 question validée.' })).toBeVisible();
+    await verifier(page, 'relecture (après validation)');
+  } finally {
+    await supprimerCoursDeTest(slug);
   }
 });
