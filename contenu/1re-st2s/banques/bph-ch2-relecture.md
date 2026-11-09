@@ -18,9 +18,12 @@ Relecture des 130 questions de `bph-ch2.json` contre le texte du chapitre (`npm 
 | bph:ch2:banque:053 | Doublon de la 051 (mutation spontanée par erreur de réplication). | Remplacée : vrai/faux (faux, difficulté 2) : ΔF508 n'est pas une insertion mais une délétion. |
 | bph:ch2:banque:059 | Bonne réponse recopiant presque toute la phrase du cours sur la télophase, et la plus longue. | Corrigée : bonne réponse réduite à « un noyau se reforme à chaque pôle ». |
 | bph:ch2:banque:063 | Doublon de la 066 (rôles de la mitose, dont la cicatrisation) et de la question existante bis:6. | Remplacée : vrai/faux (faux, difficulté 2) : chaque cellule fille reçoit une chromatide de chaque chromosome, pas les deux (figure 2.4). |
+| bph:ch2:banque:066 | Doublon de la question existante bis:6 (rôles de la mitose : croissance, renouvellement des tissus). Relevé à la revue de la tâche. | Remplacée : qcm_multiple (difficulté 1) sur les traitements du cancer (immunothérapie, radiothérapie, chirurgie ; la kinésithérapie respiratoire relève de la mucoviscidose). |
 | bph:ch2:banque:068 | Redite de la 057 : « l'enveloppe du noyau disparaît en prophase » était testé deux fois. | Corrigée : bonnes réponses « condensation » et « fuseau » ; nouveau distracteur « alignement sur la plaque équatoriale » (métaphase) ; explication reprise. |
 | bph:ch2:banque:080 | Doublon de la 086 (définition de l'hétérozygote) et de la question existante bis:5. | Remplacée : vrai/faux (faux, difficulté 1) : un allèle dominant est noté en majuscule. |
 | bph:ch2:banque:084 | Doublon de la 072 (allèle récessif : ne s'exprime que chez l'homozygote), signalé par la rédaction. | Remplacée : qcm_multiple (difficulté 3) : génotypes de phénotype [sain] pour une maladie autosomique récessive, (A//A) et (A//a). |
+| bph:ch2:banque:085 | Doublon de la question existante quiz:5 (risque de 1/4 pour deux parents porteurs), ici en pourcentage. Relevé à la revue de la tâche. | Remplacée : réponse courte (difficulté 3) : la division du cytoplasme en télophase s'appelle la cytodiérèse. |
+| bph:ch2:banque:086 | Doublon de la question existante bis:5 (définition de l'hétérozygote). Relevé à la revue de la tâche. | Remplacée : réponse courte (difficulté 1) : les chromosomes sexuels s'appellent aussi gonosomes. |
 | bph:ch2:banque:093 | Difficulté 2 pour un rappel direct (hématies détruites plus vite). | Corrigée : difficulté 2 → 1. |
 | bph:ch2:banque:096 | Variante sans accent absente. | Corrigée : ajout de « hemoglobine S ». |
 | bph:ch2:banque:097 | `marge_relative` de 10 % : 1 800 ou 2 200 acceptés pour une valeur du cours (1 sur 2 000), trop permissif. | Corrigée : `marge` 0, sans marge relative. |
@@ -33,13 +36,13 @@ Relecture des 130 questions de `bph-ch2.json` contre le texte du chapitre (`npm 
 
 ## Totaux
 
-- Gardées sans changement : 106
+- Gardées sans changement : 103
 - Corrigées : 10 (011, 013, 030, 059, 068, 093, 096, 097, 112, 120)
-- Remplacées : 14 (008, 019, 028, 034, 039, 044, 053, 063, 080, 084, 107, 113, 125, 126)
+- Remplacées : 17 (008, 019, 028, 034, 039, 044, 053, 063, 066, 080, 084, 085, 086, 107, 113, 125, 126), dont 066, 085 et 086 au second tour, après la revue de la tâche
 
 Répartition après relecture : types 64 / 26 / 27 / 13 (vrai/faux : 13 vrais, 14 faux, contre 16 / 11 avant) ; difficultés 50 / 54 / 26 ; `npm run banque:verifier -- 2` : « Banque du chapitre 2 conforme : 130 questions. »
 
-Probabilités recalculées : 073 (enfant (A//a) : 1/4 + 1/4 = 1/2), 074 (enfant sain porteur : 2 cases sur 3 = 2/3), 078 (gamètes A et a, 1/2 chacun), 083 (génotypes possibles), 085 (1/4 = 25 %), 081 (risque inchangé à chaque grossesse) : toutes justes et conformes à l'échiquier du cours.
+Probabilités recalculées : 073 (enfant (A//a) : 1/4 + 1/4 = 1/2), 074 (enfant sain porteur : 2 cases sur 3 = 2/3), 078 (gamètes A et a, 1/2 chacun), 083 (génotypes possibles), 081 (risque inchangé à chaque grossesse) : toutes justes et conformes à l'échiquier du cours.
 
 Points signalés par la rédaction et jugés acceptables :
 
@@ -53,8 +56,13 @@ Points signalés par la rédaction et jugés acceptables :
 1. **073** : la probabilité 1/2 d'avoir un enfant (A//a) n'est pas écrite dans le cours ; elle se compte dans l'échiquier (deux cases sur quatre). À garder si tu veux faire lire l'échiquier.
 2. **003** : même compétence que la question existante quiz:0 (écrire le brin complémentaire), avec une autre séquence. Gardée comme exercice d'application.
 3. **081** : même idée que la question existante quiz:5 (risque de 1/4 à chaque grossesse, quel que soit l'état des enfants précédents), dans l'autre sens (premier enfant sain). Gardée faute d'autre matière, à écarter si tu la juges redondante.
-4. **085** : le risque de 25 % est un rappel direct, coté 3 ; gardé pour respecter les quotas de difficulté.
+4. **085** : la cytodiérèse n'apparaît qu'entre parenthèses dans le cours ; la question est cotée 3 pour cette raison.
 5. **120** : le distracteur « hépatite A » est absent du cours (qui cite les hépatites B et C) ; il reste faux. « VIH » a été retiré, car c'est un cofacteur réel du cancer du col.
 6. **019** : le génotype (A//O) applique la notation (A//a) du cours aux allèles du groupe sanguin ; la déduction « deux allèles différents → hétérozygote » relie deux définitions.
 7. **053 et 099** : toutes deux portent sur ΔF508 (type de mutation pour la 053, conséquence sur la protéine pour la 099) ; angles différents, mais même exemple.
 8. **015** : la définition du chromosome est rangée dans la notion « Gènes et allèles » (section « Gènes, allèles et chromosomes » du cours) ; on peut la passer en « Caryotype et chromosomes ».
+9. **Quasi-doublons avec les questions existantes, laissés à ta décision** :
+   - 104 (mucus épais et collant) et quiz:7 (pourquoi le mucus est épais) ;
+   - 114 (la trisomie 21 n'est pas une substitution) et quiz:8 (mauvaise séparation des chromosomes pendant la méiose) ;
+   - 124 (cellules cancéreuses dans le sang ou la lymphe) et quiz:9 (définition d'une métastase) ;
+   - 030 (gamètes haploïdes à 23 chromosomes) et quiz:3 (nombre de chromosomes d'un spermatozoïde).
