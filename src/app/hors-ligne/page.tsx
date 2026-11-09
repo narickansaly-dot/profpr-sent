@@ -1,5 +1,5 @@
 export const metadata = { title: 'Hors connexion' };
-export const dynamic = 'force-static';
+// Pas de rendu statique : le nonce de la CSP doit figurer sur les scripts de chaque réponse (le layout racine le force).
 
 export default function PageHorsLigne() {
   return (

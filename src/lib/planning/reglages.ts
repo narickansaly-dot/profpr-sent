@@ -1,3 +1,4 @@
+import '@/lib/zod-sans-eval';
 import { z } from 'zod';
 import type { Reglages } from './generer';
 

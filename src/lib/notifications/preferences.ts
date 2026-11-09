@@ -1,3 +1,4 @@
+import '@/lib/zod-sans-eval';
 import { z } from 'zod';
 
 export const TYPES_NOTIFICATION = [

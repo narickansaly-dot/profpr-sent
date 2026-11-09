@@ -1,3 +1,4 @@
+import '@/lib/zod-sans-eval';
 import { z } from 'zod';
 import { heureParisVersIso } from '@/lib/enseignant/dates';
 import { ajouterJours, estJourValide } from './dates';

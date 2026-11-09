@@ -1,10 +1,19 @@
 import type { NextConfig } from "next";
+import { ENTETES_SECURITE } from "./src/lib/securite/csp";
 
 const nextConfig: NextConfig = {
   // Le JSON d'un cours complet pèse environ 250 Ko : la limite par défaut (1 Mo) est trop juste pour l'import depuis l'interface.
   experimental: { serverActions: { bodySizeLimit: '4mb' } },
   async headers() {
     return [
+      {
+        source: '/(.*)',
+        headers: [
+          ...ENTETES_SECURITE,
+          ...((process.env.NEXT_PUBLIC_SITE_URL ?? '').startsWith('https://')
+            ? [{ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' }] : []),
+        ],
+      },
       {
         source: '/sw.js',
         headers: [
