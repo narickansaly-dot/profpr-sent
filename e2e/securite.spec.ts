@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { emailDeTest, inscrireEleve, suivreViolations } from './aide-parcours';
+import { vieillirInscription } from './aide-db';
+import { dernierEmail, lienDansEmail } from './aide-mailpit';
+import { emailDeTest, inscrireEleve, inscrireEleveMineur, suivreViolations } from './aide-parcours';
 
 test('les pages portent une CSP avec nonce et les en-têtes de sécurité', async ({ request }) => {
   const r = await request.get('/connexion');
@@ -40,4 +42,52 @@ test('la page hors connexion ne déclenche aucune violation de CSP', async ({ pa
   await expect(page.getByRole('heading', { name: 'Tu es hors connexion' })).toBeVisible();
   await page.waitForLoadState('networkidle');
   expect(violations).toEqual([]);
+});
+
+test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, browser }, testInfo) => {
+  test.setTimeout(120_000);
+  const violations = await suivreViolations(page);
+  const email = emailDeTest('csp-acces');
+  await inscrireEleve(page, email);
+  for (const chemin of ['/mes-donnees', '/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+    await page.goto(chemin);
+    await expect(page.locator('main')).toBeVisible();
+  }
+  await vieillirInscription(email, 8);
+  for (const chemin of ['/choisir-cours', '/cours/bph-1re-st2s']) {
+    await page.goto(chemin);
+    await expect(page.locator('main')).toBeVisible();
+  }
+  await page.waitForLoadState('networkidle');
+  expect(violations).toEqual([]);
+
+  // Élève de moins de 15 ans : page de demande, puis page d'accord du parent (autre contexte, sans session).
+  const mineur = await browser.newContext({ ...testInfo.project.use, baseURL: 'http://localhost:3000' });
+  try {
+    const eleve = await mineur.newPage();
+    const violationsMineur = await suivreViolations(eleve);
+    const emailMineur = emailDeTest('csp-mineur');
+    const emailParent = `parent-${emailMineur.split('@')[0]}@test.local`;
+    await inscrireEleveMineur(eleve, emailMineur);
+    await expect(eleve.locator('main')).toBeVisible();
+    await eleve.getByLabel('Adresse e-mail de ton parent').fill(emailParent);
+    await eleve.getByRole('button', { name: 'Envoyer la demande' }).click();
+    await expect(eleve.getByText(`E-mail envoyé à ${emailParent}.`)).toBeVisible();
+    const lien = lienDansEmail((await dernierEmail(emailParent)).texte, /\/accord-parental\//);
+    const parentCtx = await browser.newContext({ ...testInfo.project.use, baseURL: 'http://localhost:3000' });
+    try {
+      const parent = await parentCtx.newPage();
+      const violationsParent = await suivreViolations(parent);
+      await parent.goto(lien);
+      await expect(parent.getByRole('heading', { name: 'Autorisation parentale' })).toBeVisible();
+      await parent.waitForLoadState('networkidle');
+      expect(violationsParent).toEqual([]);
+    } finally {
+      await parentCtx.close();
+    }
+    await eleve.waitForLoadState('networkidle');
+    expect(violationsMineur).toEqual([]);
+  } finally {
+    await mineur.close();
+  }
 });

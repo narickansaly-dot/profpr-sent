@@ -83,3 +83,36 @@ export async function questionsDeTentative(tentativeId: string): Promise<{ id: s
     return { id: q.id, type: q.type, propositions: q.propositions as string[] };
   });
 }
+
+const ilYa = (jours: number) => new Date(Date.now() - jours * 86_400_000).toISOString();
+
+/** Recule la date d'inscription d'un compte (réservé aux tests) : sert à sortir de l'essai de 7 jours. */
+export async function vieillirInscription(email: string, jours: number) {
+  const { error } = await db.from('profil').update({ inscrit_le: ilYa(jours) }).eq('email', email);
+  if (error) throw error;
+}
+
+/** Recule la date de la demande de suppression d'un compte (réservé aux tests). */
+export async function vieillirDemandeSuppression(email: string, jours: number) {
+  const { error } = await db.from('profil').update({ suppression_demandee_le: ilYa(jours) }).eq('email', email);
+  if (error) throw error;
+}
+
+/**
+ * Publie un second cours de la même filière et du même niveau que le cours BPH, avec un chapitre (réservé aux tests).
+ * Slug « e2e-… » : le nettoyage global le supprime. Sert à vérifier qu'un cours non choisi reste fermé.
+ */
+export async function creerCoursPublie(slug: string): Promise<{ id: string; slug: string; titre: string }> {
+  if (!slug.startsWith('e2e-')) throw new Error('le slug d’un cours de test commence par « e2e- »');
+  const { data: modele, error: erreurModele } = await db.from('cours').select('filiere_id, niveau_code').eq('slug', 'bph-1re-st2s').single();
+  if (erreurModele || !modele) throw erreurModele ?? new Error('cours BPH introuvable');
+  const titre = `Cours e2e ${slug}`;
+  const { data: cours, error } = await db.from('cours')
+    .insert({ slug, filiere_id: modele.filiere_id, niveau_code: modele.niveau_code, matiere: 'Test e2e', titre, couleur: '#0f766e', publie: true })
+    .select('id').single();
+  if (error || !cours) throw error ?? new Error('cours non créé');
+  const { error: erreurChapitre } = await db.from('chapitre')
+    .insert({ cours_id: cours.id, slug: 'ch1', numero: 1, titre: 'Chapitre de test', sections: [{ id: 'intro', titre: 'Introduction', html: '<p>Section de test.</p>' }], publie: true });
+  if (erreurChapitre) throw erreurChapitre;
+  return { id: cours.id, slug, titre };
+}

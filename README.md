@@ -87,6 +87,22 @@ Sur le projet Supabase hébergé, le modèle d'e-mail « Confirm signup » (Auth
 `{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email`.
 Ajouter aussi `<url-du-site>/auth/confirm` aux Redirect URLs. En local, `supabase/config.toml` est déjà réglé.
 
+## E-mails
+
+L'application envoie un seul e-mail, celui de l'accord parental (élève de moins de 15 ans). Variables (voir `.env.example`) : `SMTP_HOTE`, `SMTP_PORT`, `SMTP_UTILISATEUR`, `SMTP_MOT_DE_PASSE`, `EMAIL_EXPEDITEUR`. Sans elles, l'envoi échoue avec un message clair et la vérification au démarrage le signale.
+
+- En local, Mailpit reçoit tout : SMTP sur `127.0.0.1:54325` (réglé dans `supabase/config.toml`, section `[local_smtp]`), boîte de lecture sur http://127.0.0.1:54324. Renseigner `SMTP_HOTE=127.0.0.1`, `SMTP_PORT=54325` et une adresse d'expéditeur, sans identifiants.
+- Le lien de l'e-mail se construit uniquement depuis `NEXT_PUBLIC_SITE_URL` (en local, `http://localhost:3000` par défaut en développement ; le build de production l'exige, les tests e2e la fixent dans `playwright.config.ts`).
+- En production : un fournisseur SMTP avec TLS (les identifiants imposent `requireTLS`).
+
+## Données personnelles
+
+- **Export** : la page `/mes-donnees` télécharge un fichier JSON (profil, classes, progression, tentatives et réponses, calendrier, plans, préférences, appareils sans clés, consentement, cours gratuit, signalements). Le jeton du lien iCal n'y figure pas (secret, révocable). L'export est refusé pendant une évaluation ouverte.
+- **Suppression** : tout compte peut la demander depuis `/mes-donnees`. Une bannière permet d'annuler pendant 30 jours ; ensuite la tâche planifiée `purges-quotidiennes` (chaque jour à 3 h 23, `prive.purges_quotidiennes()`) supprime le compte et tout ce qui en dépend (les classes d'un enseignant sont supprimées avec lui). Le dernier administrateur du contenu est conservé.
+- **Purges** : la même tâche supprime après 30 jours les départs et les retraits de classe (qui bloquent un retour pendant 24 heures).
+- **Pages légales** : `/mentions-legales`, `/confidentialite`, `/conditions-utilisation` sont des trames à compléter (champs entre crochets) et à faire relire par un juriste avant la mise en vente. Aucune bannière de cookies : seuls des cookies de session sont utilisés.
+- **Accès** : essai de 7 jours, puis un cours gratuit au choix (changement possible une fois pendant 48 heures). Un élève de moins de 15 ans n'accède à rien tant qu'un parent n'a pas donné son accord ; l'essai commence à cet accord.
+
 ## Contenu
 
 Le contenu entre en base uniquement par des fichiers JSON validés (`src/lib/contenu/format-import.ts`) ou par les éditeurs de l'espace admin, qui appliquent les mêmes règles. Le format est décrit dans le [guide des auteurs](docs/guide-auteurs.md).

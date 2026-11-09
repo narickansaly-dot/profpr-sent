@@ -1,6 +1,8 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
-import { emailDeTest, inscrireEleve } from './aide-parcours';
+import { vieillirInscription } from './aide-db';
+import { dernierEmail, lienDansEmail } from './aide-mailpit';
+import { emailDeTest, inscrireEleve, inscrireEleveMineur } from './aide-parcours';
 
 // Revue d'accessibilité automatique (WCAG 2.1 A et AA) à la largeur mobile, en clair puis en sombre.
 // axe ne remplace pas une lecture manuelle (ordre du focus, annonces) : voir le bilan de l'étape 4c.
@@ -92,4 +94,63 @@ test('pages d’un élève connecté', async ({ page }) => {
   await page.locator('.choix .option').first().click();
   await expect(page.locator('.sauvegarde')).toHaveText('Réponses enregistrées');
   await verifier(page, 'quiz (réponse cochée)');
+});
+
+test('accès après l’essai : accueil verrouillé, choix du cours gratuit, cours fermé', async ({ page }) => {
+  test.setTimeout(120_000);
+  const email = emailDeTest('axe-acces');
+  await inscrireEleve(page, email);
+  await vieillirInscription(email, 8);
+  await page.goto('/');
+  await expect(page.getByText('Ton essai est terminé.')).toBeVisible();
+  await verifier(page, '/ (essai terminé)');
+  await page.goto('/choisir-cours');
+  await expect(page.getByRole('heading', { name: 'Choisis ton cours gratuit' })).toBeVisible();
+  await verifier(page, '/choisir-cours');
+  // Envoi sans choix : le contrôle du serveur ne passe pas ici (la case radio est obligatoire), on vérifie donc la page de cours fermé.
+  await page.goto('/cours/bph-1re-st2s');
+  await expect(page.getByRole('heading', { name: 'Ce cours n’est pas ouvert pour toi' })).toBeVisible();
+  await verifier(page, '/cours (verrouillé)');
+});
+
+test('consentement parental : demande, page d’accord (en clair et en sombre)', async ({ page, browser }, testInfo) => {
+  test.setTimeout(120_000);
+  const email = emailDeTest('axe-mineur');
+  const emailParent = `parent-${email.split('@')[0]}@test.local`;
+  await inscrireEleveMineur(page, email);
+  await verifier(page, '/consentement');
+  await page.getByLabel('Adresse e-mail de ton parent').fill(emailParent);
+  await page.getByRole('button', { name: 'Envoyer la demande' }).click();
+  await expect(page.getByText(`E-mail envoyé à ${emailParent}.`)).toBeVisible();
+  await verifier(page, '/consentement (envoyé)');
+
+  const lien = lienDansEmail((await dernierEmail(emailParent)).texte, /\/accord-parental\//);
+  const contexte = await browser.newContext({ ...testInfo.project.use, baseURL: 'http://localhost:3000' });
+  try {
+    const parent = await contexte.newPage();
+    await parent.goto(lien);
+    await expect(parent.getByRole('heading', { name: 'Autorisation parentale' })).toBeVisible();
+    await verifier(parent, '/accord-parental/<jeton>');
+    await parent.goto('/accord-parental/introuvable');
+    await expect(parent.getByRole('heading', { name: 'Lien expiré ou invalide' })).toBeVisible();
+    await verifier(parent, '/accord-parental (invalide)');
+  } finally {
+    await contexte.close();
+  }
+});
+
+test('mes données et pages légales', async ({ page }) => {
+  await inscrireEleve(page, emailDeTest('axe-donnees'));
+  await page.goto('/mes-donnees');
+  await expect(page.getByRole('heading', { name: 'Mes données', exact: true })).toBeVisible();
+  await verifier(page, '/mes-donnees');
+  await page.getByLabel('Je comprends que la suppression sera définitive').check();
+  await page.getByRole('button', { name: 'Demander la suppression' }).click();
+  await expect(page.getByRole('button', { name: 'Annuler la suppression' })).toBeVisible();
+  await verifier(page, '/mes-donnees (suppression demandée)');
+  for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+    await page.goto(chemin);
+    await expect(page.locator('main')).toBeVisible();
+    await verifier(page, chemin);
+  }
 });

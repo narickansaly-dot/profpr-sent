@@ -56,3 +56,18 @@ export async function suivreViolations(page: Page) {
   });
   return violations;
 }
+
+/** Inscrit un élève qui coche « J'ai moins de 15 ans » et l'amène sur la page d'attente de l'accord parental. */
+export async function inscrireEleveMineur(page: Page, email: string) {
+  await page.goto('/inscription');
+  await page.getByLabel('Adresse e-mail').fill(email);
+  await page.getByLabel('Mot de passe').fill('motdepasse-test');
+  await page.getByRole('button', { name: 'Créer mon compte' }).click();
+  await expect(page).toHaveURL(/\/bienvenue$/);
+  await page.getByLabel('Ton prénom').fill('Léa');
+  await page.getByLabel('Ta filière').selectOption({ label: 'ST2S — Sciences et technologies de la santé et du social' });
+  await page.getByLabel('Première').check();
+  await page.getByLabel('J’ai moins de 15 ans').check();
+  await page.getByRole('button', { name: 'C’est parti !' }).click();
+  await expect(page).toHaveURL(/\/consentement$/);
+}
