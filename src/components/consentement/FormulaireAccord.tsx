@@ -7,17 +7,16 @@ export function FormulaireAccord({ jeton }: { jeton: string }) {
   const [etat, envoyer, enCours] = useActionState<EtatAccord, FormData>(donnerAccord.bind(null, jeton), {});
   const id = useId();
   const erreur = `${id}-erreur`;
-  if (etat.prenom !== undefined) {
-    return (
-      <p role="status" className="message-info">
-        Merci, votre accord est enregistré. {etat.prenom || 'Votre enfant'} peut maintenant utiliser l’application.
-      </p>
-    );
-  }
+  const confirmation = etat.prenom !== undefined
+    ? `Merci, votre accord est enregistré. ${etat.prenom || 'Votre enfant'} peut maintenant utiliser l’application.` : '';
+  const statut = <p role="status" className="message-info">{confirmation}</p>;
+  if (etat.prenom !== undefined) return statut;
   return (
+    <>
+    {statut}
     <form action={envoyer} className="formulaire">
       <label className="case">
-        <input type="checkbox" name="confirme" required aria-invalid={etat.erreur ? true : undefined}
+        <input type="checkbox" name="confirme" required aria-invalid={etat.erreur?.startsWith('Cochez') ? true : undefined}
           aria-describedby={etat.erreur ? erreur : undefined} />
         Je suis son parent ou son représentant légal et j’accepte qu’il ou elle utilise App lycée.
       </label>
@@ -26,5 +25,6 @@ export function FormulaireAccord({ jeton }: { jeton: string }) {
         {enCours ? 'Enregistrement…' : 'Je donne mon accord'}
       </button>
     </form>
+    </>
   );
 }

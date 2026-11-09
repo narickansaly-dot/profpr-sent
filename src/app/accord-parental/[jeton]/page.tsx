@@ -36,11 +36,11 @@ export default async function PageAccord({ params }: { params: Promise<{ jeton: 
         {prenom} souhaite utiliser App lycée, une application de cours et de quiz pour le lycée.
         Comme il ou elle a moins de 15 ans, votre accord est nécessaire.
       </p>
-      <p>L’application garde :</p>
+      <p>L’application garde&nbsp;:</p>
       <ul>
-        <li>son prénom et son adresse e-mail ;</li>
-        <li>sa filière et son niveau ;</li>
-        <li>ses résultats aux quiz ;</li>
+        <li>son prénom et son adresse e-mail&nbsp;;</li>
+        <li>sa filière et son niveau&nbsp;;</li>
+        <li>ses résultats aux quiz&nbsp;;</li>
         <li>son calendrier de révision.</li>
       </ul>
       <p>Aucune publicité, aucun traceur. <Link href="/confidentialite">Politique de confidentialité</Link></p>

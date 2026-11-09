@@ -26,12 +26,12 @@ export default async function PageConsentement() {
         <h1>Il nous faut l’accord d’un parent</h1>
         <p>
           Comme tu as moins de 15 ans, un parent ou ton représentant légal doit accepter que tu utilises App lycée.
-          Indique son adresse e-mail : nous lui envoyons un lien.
+          Indique son adresse e-mail&nbsp;: nous lui envoyons un lien.
         </p>
         {acces.emailParent && acces.consentementEnvoyeLe && (
           <p>
-            Un e-mail a été envoyé à {acces.emailParent} le {formatDate.format(new Date(acces.consentementEnvoyeLe))}.
-            Il est valable 7 jours.
+            Dernière demande pour {acces.emailParent} le {formatDate.format(new Date(acces.consentementEnvoyeLe))}.
+            Le lien est valable 7 jours.
           </p>
         )}
         <FormulaireDemandeConsentement emailConnu={acces.emailParent} />

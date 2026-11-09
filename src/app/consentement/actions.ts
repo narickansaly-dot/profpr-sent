@@ -8,7 +8,6 @@ import { lireUtilisateur } from '@/lib/supabase/utilisateur';
 import { messageErreur } from '@/lib/erreurs';
 import { envoyerEmail } from '@/lib/email/envoyer';
 import { emailConsentement } from '@/lib/email/modeles';
-import { urlDuSite } from '@/lib/site';
 
 export type EtatDemande = { erreur?: string; envoye?: boolean; email?: string };
 
@@ -45,8 +44,10 @@ export async function demanderConsentement(_: EtatDemande, form: FormData): Prom
     return echec;
   }
   try {
-    // Le lien ne se construit que depuis l'origine du site, jamais depuis les en-têtes de la requête.
-    const message = emailConsentement({ prenom: ligne.prenom, lien: `${await urlDuSite()}/accord-parental/${ligne.jeton}` });
+    // Le lien ne se construit que depuis NEXT_PUBLIC_SITE_URL (repli local hors production), jamais depuis les en-têtes de la requête.
+    const origine = process.env.NEXT_PUBLIC_SITE_URL || (process.env.NODE_ENV !== 'production' ? 'http://localhost:3000' : '');
+    if (!origine) throw new Error('origine du site absente');
+    const message = emailConsentement({ prenom: ligne.prenom, lien: `${origine.replace(/\/$/, '')}/accord-parental/${ligne.jeton}` });
     await envoyerEmail({ a: ligne.email, ...message });
   } catch (e) {
     console.error('consentement : envoi impossible', e instanceof Error ? e.message : 'inconnu');

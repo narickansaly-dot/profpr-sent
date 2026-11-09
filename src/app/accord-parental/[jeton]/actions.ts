@@ -12,6 +12,8 @@ export async function donnerAccord(jeton: string, _: EtatAccord, form: FormData)
   const supabase = await creerClientServeur();
   const { data, error } = await supabase.rpc('donner_consentement', { p_jeton: jeton });
   // Le jeton n'est jamais journalisé ; l'erreur reste générique.
-  if (error) return { erreur: messageErreur(error.message) };
+  if (error) {
+    return { erreur: error.message.includes('lien_consentement_invalide') ? messageErreur(error.message) : 'Une erreur est survenue. Réessayez dans un instant.' };
+  }
   return { prenom: data ?? '' };
 }
