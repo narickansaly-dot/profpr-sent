@@ -11,9 +11,9 @@ update public.profil set onboarding_termine = true, moins_de_15_ans = false wher
 insert into public.filiere (id, voie, code, nom) values ('10000000-0000-0000-0000-0000000005b1', 'technologique', 'CSP', 'Filière consentement');
 insert into public.cours (id, slug, filiere_id, niveau_code, matiere, titre, publie) values
   ('20000000-0000-0000-0000-0000000005b1', 'cours-consentement', '10000000-0000-0000-0000-0000000005b1', '1re', 'C', 'Cours consentement', true);
--- Le test écrit directement l'empreinte du secret (transaction annulée à la fin) ; une base locale configurée en a déjà une.
-delete from prive.cle_envoi;
-insert into prive.cle_envoi (id, empreinte) values (true, extensions.digest(repeat('s', 43), 'sha256'));
+-- Le test écrit directement l'empreinte du secret de consentement (transaction annulée à la fin) ; une base locale configurée en a déjà une.
+delete from prive.cle_consentement;
+insert into prive.cle_consentement (id, empreinte) values (true, extensions.digest(repeat('s', 43), 'sha256'));
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005b1","role":"authenticated"}', true);
@@ -45,7 +45,7 @@ select lives_ok($$ update public.profil set moins_de_15_ans = true, nom = 'Neuf'
 reset role;
 set local role anon;
 select throws_ok($$ select * from public.emettre_jeton_consentement('mauvais-secret', '00000000-0000-0000-0000-0000000005b1') $$,
-  'P0001', 'cle_envoi_invalide', 'mauvais secret refusé');
+  'P0001', 'cle_consentement_invalide', 'mauvais secret refusé');
 select throws_ok($$ select * from public.emettre_jeton_consentement(repeat('s', 43), '00000000-0000-0000-0000-0000000005b2') $$,
   'P0001', 'lien_consentement_invalide', 'aucune demande en attente : refusé');
 select lives_ok($$ select set_config('test.jeton', (select jeton from public.emettre_jeton_consentement(repeat('s', 43), '00000000-0000-0000-0000-0000000005b1')), true) $$,

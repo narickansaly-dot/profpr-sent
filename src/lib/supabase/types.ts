@@ -699,6 +699,9 @@ isOneToOne: false
 "cloturer_mes_tentatives_expirees":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
+"configurer_consentement":
+{ Args: { "p_secret": string }; Returns: undefined
+                           },
 "configurer_envoi":
 { Args: { "p_secret": string,"p_url": string }; Returns: undefined
                            },

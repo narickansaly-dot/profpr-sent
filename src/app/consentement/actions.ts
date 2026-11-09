@@ -14,7 +14,7 @@ export type EtatDemande = { erreur?: string; envoye?: boolean; email?: string };
 /**
  * Demande l'accord d'un parent.
  * 1. La base enregistre la demande avec la session de l'élève (limites : 10 minutes entre deux envois, 5 par jour).
- * 2. Le jeton est émis par un appel distinct, avec le secret d'envoi et sans session : l'élève ne le voit jamais.
+ * 2. Le jeton est émis par un appel distinct, avec le secret du consentement (CONSENTEMENT_SECRET) et sans session : l'élève ne le voit jamais.
  * 3. Le jeton va directement dans l'e-mail ; il n'est ni renvoyé à la page ni journalisé.
  * Une demande compte dès l'étape 1 : si l'envoi échoue, l'élève doit attendre 10 minutes avant de réessayer
  * (le jeton perdu n'est pas réémis, une nouvelle demande en génère un autre).
@@ -27,10 +27,10 @@ export async function demanderConsentement(_: EtatDemande, form: FormData): Prom
   const { error } = await supabase.rpc('demander_consentement', { p_email: email });
   if (error) return { erreur: messageErreur(error.message), email };
 
-  const secret = process.env.ENVOI_SECRET;
+  const secret = process.env.CONSENTEMENT_SECRET;
   const echec = { erreur: 'L’e-mail n’a pas pu partir. Réessaie dans 10 minutes.', email };
   if (!secret) {
-    console.error('consentement : ENVOI_SECRET absent');
+    console.error('consentement : CONSENTEMENT_SECRET absent');
     return echec;
   }
   // Client anonyme sans session : emettre_jeton_consentement vérifie elle-même le secret. Pas de clé de service.

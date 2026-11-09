@@ -127,7 +127,7 @@ describe('messageErreur, consentement parental', () => {
     expect(messageErreur('email_parent_invalide')).toBe('Indique une adresse e-mail valide pour ton parent.');
     expect(messageErreur('consentement_deja_donne')).toBe('Ton parent a déjà donné son accord.');
     expect(messageErreur('envoi_trop_rapproche')).toBe('Attends 10 minutes avant d’envoyer un nouvel e-mail.');
-    expect(messageErreur('envois_epuises')).toBe('Tu as envoyé 5 e-mails aujourd’hui. Réessaie demain.');
+    expect(messageErreur('envois_epuises')).toBe('Trop de demandes d’accord ont été envoyées aujourd’hui (5 par élève, 3 vers une même adresse). Réessaie demain.');
     expect(messageErreur('lien_consentement_invalide')).toBe('Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.');
   });
   it('aucun code n’est sous-chaîne d’un autre', () => {

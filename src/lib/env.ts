@@ -38,5 +38,10 @@ export function verifierEnvironnement(env: Env): { erreurs: string[]; avertissem
   if (!lireConfigSmtp(env)) {
     avertissements.push('E-mails désactivés\u00a0: SMTP_HOTE, SMTP_PORT et EMAIL_EXPEDITEUR sont nécessaires (consentement parental impossible).');
   }
+  if (!env.CONSENTEMENT_SECRET) {
+    avertissements.push('Consentement parental impossible\u00a0: CONSENTEMENT_SECRET absente.');
+  } else if (env.CONSENTEMENT_SECRET.length < 32) {
+    avertissements.push('Consentement parental impossible\u00a0: CONSENTEMENT_SECRET doit compter au moins 32 caractères.');
+  }
   return { erreurs, avertissements };
 }

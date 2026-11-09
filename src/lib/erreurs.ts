@@ -70,7 +70,7 @@ export const MESSAGES: Record<string, string> = {
   email_parent_invalide: 'Indique une adresse e-mail valide pour ton parent.',
   consentement_deja_donne: 'Ton parent a déjà donné son accord.',
   envoi_trop_rapproche: 'Attends 10 minutes avant d’envoyer un nouvel e-mail.',
-  envois_epuises: 'Tu as envoyé 5 e-mails aujourd’hui. Réessaie demain.',
+  envois_epuises: 'Trop de demandes d’accord ont été envoyées aujourd’hui (5 par élève, 3 vers une même adresse). Réessaie demain.',
   lien_consentement_invalide: 'Ce lien n’est plus valable. Demandez à votre enfant de vous en envoyer un nouveau.',
   retour_bloque: 'Tu ne fais plus partie de cette classe. Tu pourras la rejoindre de nouveau dans 24 heures.',
 };
