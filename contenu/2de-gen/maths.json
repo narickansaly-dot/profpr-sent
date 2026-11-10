@@ -2530,6 +2530,2532 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "ch2",
+      "numero": 2,
+      "titre": "Multiples, diviseurs et nombres premiers",
+      "titre_court": "Arithmétique",
+      "duree": "2 semaines",
+      "resume": "Multiples et diviseurs dans ℤ, critères de divisibilité, nombres pairs et impairs, nombres premiers et décomposition, fractions irréductibles, propositions, implication, réciproque et types de raisonnement.",
+      "chapeau": "Les entiers cachent beaucoup de régularités : pourquoi le carré d'un nombre impair est-il toujours impair ? Comment savoir si 221 est premier ? Ce chapitre fixe le vocabulaire des multiples et des diviseurs, et apprend à démontrer une propriété plutôt qu'à la vérifier sur quelques exemples.",
+      "objectifs": [
+        "reconnaître un multiple, un diviseur, un nombre pair ou impair, et écrire un pair 2k et un impair 2k + 1 ;",
+        "démontrer que la somme de deux multiples de a est un multiple de a et que le carré d'un impair est impair ;",
+        "reconnaître un nombre premier et décomposer un entier en produit de facteurs premiers ;",
+        "rendre une fraction irréductible ;",
+        "formuler une implication, sa réciproque, une équivalence et la négation d'une proposition simple ;",
+        "choisir un raisonnement : contre-exemple, disjonction des cas, raisonnement par l'absurde."
+      ],
+      "sections": [
+        {
+          "id": "multiples-diviseurs",
+          "titre": "Multiples et diviseurs",
+          "html": "\n<p>On travaille ici avec les entiers naturels (ℕ) et les entiers relatifs (ℤ).</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Soit a et b deux entiers relatifs. On dit que a est un <strong>multiple</strong> de b s'il existe un entier relatif k tel que a = k × b. On dit aussi que b est un <strong>diviseur</strong> de a, ou que b <strong>divise</strong> a, ou que a est <strong>divisible</strong> par b (quand b ≠ 0).</p></div>\n<p>Exemples : 42 = 6 × 7, donc 42 est un multiple de 7 et 7 est un diviseur de 42. −15 = (−3) × 5, donc −15 est un multiple de 5. 0 = 0 × b : 0 est un multiple de tout entier.</p>\n<p>Les diviseurs positifs de 12 sont 1, 2, 3, 4, 6 et 12. On les trouve par paires : 1 × 12, 2 × 6, 3 × 4. Tout entier n non nul a au moins deux diviseurs positifs quand n ⩾ 2 : 1 et n lui-même.</p>\n<h3>Critères de divisibilité</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Un entier est divisible par…</th><th>si et seulement si…</th><th>Exemple</th></tr></thead>\n<tbody>\n<tr><td>2</td><td>son chiffre des unités est 0, 2, 4, 6 ou 8</td><td>3 578</td></tr>\n<tr><td>5</td><td>son chiffre des unités est 0 ou 5</td><td>2 045</td></tr>\n<tr><td>10</td><td>son chiffre des unités est 0</td><td>760</td></tr>\n<tr><td>3</td><td>la somme de ses chiffres est divisible par 3</td><td>411 (4 + 1 + 1 = 6)</td></tr>\n<tr><td>9</td><td>la somme de ses chiffres est divisible par 9</td><td>738 (7 + 3 + 8 = 18)</td></tr>\n</tbody></table></div>\n<h3>Somme de deux multiples</h3>\n<div class=\"def\"><b class=\"t\">Propriété et démonstration</b><p>Soit a un entier. La somme de deux multiples de a est un multiple de a.</p><p>En effet, si m = k × a et n = k' × a avec k et k' entiers, alors m + n = k × a + k' × a = (k + k') × a. Comme k + k' est un entier, m + n est un multiple de a.</p></div>\n<p>Exemple : 35 et 56 sont des multiples de 7 ; leur somme 91 = 13 × 7 aussi. De la même façon, la différence de deux multiples de a est un multiple de a.</p>\n<h3>Le plus grand multiple inférieur à un nombre</h3>\n<p>Pour trouver le plus grand multiple de 7 inférieur ou égal à 100, on effectue la division euclidienne : 100 = 7 × 14 + 2. Le plus grand multiple cherché est 7 × 14 = 98. Le reste 2 vaut 0 exactement quand 100 est un multiple de 7.</p>\n"
+        },
+        {
+          "id": "pairs-impairs",
+          "titre": "Nombres pairs et impairs",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un entier est <strong>pair</strong> s'il est un multiple de 2 : il s'écrit 2k, avec k entier. Un entier est <strong>impair</strong> s'il n'est pas pair : il s'écrit 2k + 1, avec k entier.</p></div>\n<p>Exemples : 18 = 2 × 9 est pair ; 23 = 2 × 11 + 1 est impair ; −7 = 2 × (−4) + 1 est impair ; 0 = 2 × 0 est pair.</p>\n<p>Deux entiers qui se suivent, n et n + 1, sont dits <strong>consécutifs</strong> : l'un est pair, l'autre impair.</p>\n<h3>Le carré d'un nombre impair</h3>\n<div class=\"def\"><b class=\"t\">Propriété et démonstration</b><p>Le carré d'un nombre impair est impair.</p><p>Soit n un entier impair : n = 2k + 1 avec k entier. Alors n² = (2k + 1)² = 4k² + 4k + 1 = 2(2k² + 2k) + 1. Comme 2k² + 2k est un entier, n² s'écrit 2K + 1 : il est impair.</p></div>\n<p>De même, le carré d'un nombre pair est pair : (2k)² = 4k² = 2 × (2k²).</p>\n<p>On en déduit une propriété utile : <strong>si n² est pair, alors n est pair</strong>. En effet, si n était impair, n² serait impair. C'est ce résultat qui sert à démontrer que √2 est irrationnel (chapitre 1).</p>\n<h3>Sommes et produits</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th></th><th>pair + pair</th><th>impair + impair</th><th>pair + impair</th><th>pair × n'importe quel entier</th><th>impair × impair</th></tr></thead>\n<tbody><tr><td>Résultat</td><td>pair</td><td>pair</td><td>impair</td><td>pair</td><td>impair</td></tr></tbody></table></div>\n<p>Exemple de preuve : (2k + 1) + (2k' + 1) = 2(k + k' + 1) est pair.</p>\n"
+        },
+        {
+          "id": "nombres-premiers",
+          "titre": "Nombres premiers et décomposition",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>nombre premier</strong> est un entier naturel qui a exactement deux diviseurs positifs : 1 et lui-même.</p></div>\n<p>1 n'est pas premier (il n'a qu'un seul diviseur positif). 2 est le seul nombre premier pair. Les nombres premiers inférieurs à 50 sont : 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.</p>\n<h3>Tester si un entier est premier</h3>\n<p>Pour savoir si un entier n ⩾ 2 est premier, on cherche un diviseur parmi 2, 3, 4… Il suffit de tester les entiers d dont le carré ne dépasse pas n (d² ⩽ n) : si n = d × e avec d ⩽ e, alors d² ⩽ d × e = n.</p>\n<p>Exemple : 221. On teste 2, 3, 5, 7, 11, 13 (14² = 196 ⩽ 221 mais 15² = 225 &gt; 221). On trouve 221 = 13 × 17 : 221 n'est pas premier. Pour 89, aucun entier de 2 à 9 ne le divise (10² = 100 &gt; 89) : 89 est premier.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">Fonction est_premier(n)<br>    Si n &lt; 2 : renvoyer Faux<br>    d ← 2<br>    Tant que d × d ⩽ n<br>        Si le reste de n par d vaut 0 : renvoyer Faux<br>        d ← d + 1<br>    Fin Tant que<br>    Renvoyer Vrai</div>\n<h3>Décomposition en produit de facteurs premiers</h3>\n<div class=\"def\"><b class=\"t\">Propriété (admise)</b><p>Tout entier n ⩾ 2 s'écrit comme un produit de nombres premiers. Cette écriture est unique, à l'ordre des facteurs près.</p></div>\n<p>Méthode : on divise successivement par les plus petits nombres premiers possibles.</p>\n<p>360 = 2 × 180 = 2 × 2 × 90 = 2 × 2 × 2 × 45 = 2 × 2 × 2 × 3 × 15 = 2<sup>3</sup> × 3<sup>2</sup> × 5.</p>\n<p>La décomposition donne tous les diviseurs : un diviseur de 360 ne contient que les facteurs 2, 3 et 5, avec des exposants au plus égaux à 3, 2 et 1.</p>\n"
+        },
+        {
+          "id": "fractions-irreductibles",
+          "titre": "Fractions irréductibles",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une fraction a/b est <strong>irréductible</strong> quand le seul diviseur positif commun à a et à b est 1 : on ne peut plus la simplifier.</p></div>\n<p>Pour rendre une fraction irréductible, on simplifie par les facteurs communs au numérateur et au dénominateur. La décomposition en facteurs premiers les fait apparaître.</p>\n<p>Exemple : 84/120. On décompose : 84 = 2<sup>2</sup> × 3 × 7 et 120 = 2<sup>3</sup> × 3 × 5. Les facteurs communs sont 2<sup>2</sup> × 3 = 12. Donc 84/120 = (12 × 7)/(12 × 10) = 7/10.</p>\n<p>On peut aussi simplifier par étapes : 84/120 = 42/60 = 21/30 = 7/10. Le résultat est le même ; il faut seulement vérifier à la fin qu'aucun facteur commun ne reste.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>On simplifie un <em>produit</em>, jamais une somme : (3 + 5)/3 ne vaut pas 5. Et un résultat de calcul se donne sous forme irréductible : 18/24 s'écrit 3/4.</p></div>\n"
+        },
+        {
+          "id": "propositions",
+          "titre": "Propositions, implication et réciproque",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>proposition</strong> est un énoncé mathématique qui est soit vrai, soit faux. Une proposition peut contenir une variable : « n est pair » est vraie pour n = 4 et fausse pour n = 7.</p></div>\n<h3>« Et », « ou », négation</h3>\n<ul>\n<li>« P et Q » est vraie quand P et Q sont vraies toutes les deux.</li>\n<li>« P ou Q » est vraie quand au moins une des deux est vraie (le « ou » est inclusif).</li>\n<li>La <strong>négation</strong> de P, « non P », est vraie quand P est fausse. La négation de « n est pair » est « n est impair » ; celle de « x &gt; 3 » est « x ⩽ 3 ».</li>\n</ul>\n<h3>Implication et réciproque</h3>\n<p>« Si P, alors Q » est une <strong>implication</strong>, notée P ⇒ Q : chaque fois que P est vraie, Q est vraie. Exemple : « si un entier se termine par 0, alors il est divisible par 5 ».</p>\n<p>La <strong>réciproque</strong> de « si P, alors Q » est « si Q, alors P ». Elle peut être fausse alors que l'implication est vraie : « si un entier est divisible par 5, alors il se termine par 0 » est faux (25).</p>\n<p>Quand l'implication et sa réciproque sont vraies, on dit que P et Q sont <strong>équivalentes</strong>, et on écrit P ⇔ Q ou « P si et seulement si Q ». Exemple : « n est pair si et seulement si n² est pair ».</p>\n<h3>Quantificateurs</h3>\n<p>« <strong>Pour tout</strong> réel x, x² ⩾ 0 » affirme une propriété de tous les réels. « <strong>Il existe</strong> un entier n tel que n² = 49 » affirme qu'au moins un entier convient (ici 7, et aussi −7).</p>\n"
+        },
+        {
+          "id": "raisonnements",
+          "titre": "Raisonner : contre-exemple, disjonction des cas, absurde",
+          "html": "\n<h3>Le contre-exemple</h3>\n<p>Pour montrer qu'une proposition « pour tout… » est <strong>fausse</strong>, il suffit d'un seul cas où elle ne marche pas : un <strong>contre-exemple</strong>. « Tout nombre impair est premier » est faux : 9 est impair et 9 = 3 × 3.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>À l'inverse, vérifier une propriété sur des exemples, même nombreux, ne la démontre pas. n² + n + 41 est premier pour n = 0, 1, 2… jusqu'à 39, mais pas pour n = 40 : 40² + 40 + 41 = 41².</p></div>\n<h3>La disjonction des cas</h3>\n<p>On sépare la situation en cas qui couvrent toutes les possibilités, et on démontre la propriété dans chaque cas.</p>\n<p>Exemple : n(n + 1) est pair pour tout entier n. <em>Cas 1</em> : n est pair, n = 2k, et n(n + 1) = 2k(n + 1) est pair. <em>Cas 2</em> : n est impair, alors n + 1 est pair, n + 1 = 2k, et n(n + 1) = 2kn est pair. Les deux cas couvrent tous les entiers : la propriété est démontrée.</p>\n<h3>Le raisonnement par l'absurde</h3>\n<p>On suppose que la propriété à démontrer est fausse, et on en déduit une contradiction ; la supposition est donc impossible.</p>\n<p>Exemple : il n'existe pas de plus grand entier pair. Supposons qu'il en existe un, N. Alors N + 2 est aussi pair et N + 2 &gt; N : contradiction. C'est le même schéma que la démonstration de l'irrationalité de √2 (chapitre 1).</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>a est un multiple de b (b divise a) s'il existe un entier k tel que a = k × b. La somme de deux multiples de a est un multiple de a : ka + k'a = (k + k')a.</li>\n<li>Pair : 2k ; impair : 2k + 1. Le carré d'un impair est impair : (2k + 1)² = 2(2k² + 2k) + 1.</li>\n<li>Un nombre premier a exactement deux diviseurs positifs : 1 et lui-même. 1 n'est pas premier ; 2 est le seul premier pair. On teste les diviseurs d tels que d² ⩽ n.</li>\n<li>Tout entier n ⩾ 2 se décompose de façon unique en produit de facteurs premiers (360 = 2<sup>3</sup> × 3<sup>2</sup> × 5).</li>\n<li>Une fraction irréductible n'a plus de facteur commun au numérateur et au dénominateur.</li>\n<li>La réciproque de « si P, alors Q » est « si Q, alors P » ; elle peut être fausse. Un seul contre-exemple suffit à prouver qu'une proposition « pour tout » est fausse.</li>\n<li>Raisonnements : disjonction des cas, raisonnement par l'absurde.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch2:banque:001",
+          "enonce": "Que signifie « a est un multiple de b » ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "C'est la définition : a s'obtient en multipliant b par un entier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il existe un entier k tel que a = k × b",
+            "Il existe un entier k tel que b = k × a",
+            "a est plus grand que b",
+            "a et b sont tous les deux pairs"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:002",
+          "enonce": "Puisque 42 = 6 × 7, que peut-on affirmer ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "42 est un multiple de 6 et de 7 ; 6 et 7 sont des diviseurs de 42.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "42 est un diviseur de 7",
+            "7 est un diviseur de 42",
+            "7 est un multiple de 42",
+            "6 est un multiple de 42"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:003",
+          "enonce": "Lequel de ces nombres est un multiple de 8 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "96 = 8 × 12 ; 84, 100 et 36 ne sont pas divisibles par 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "84",
+            "100",
+            "96",
+            "36"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:004",
+          "enonce": "Quelle est la liste complète des diviseurs positifs de 12 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "Paires : 1 × 12, 2 × 6, 3 × 4. 1 et 12 sont aussi des diviseurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2, 3, 4, 6",
+            "1, 2, 3, 4, 6",
+            "1, 12, 24, 36",
+            "1, 2, 3, 4, 6, 12"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:005",
+          "enonce": "Combien le nombre 18 a-t-il de diviseurs positifs ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "1, 2, 3, 6, 9 et 18 : six diviseurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6",
+            "4",
+            "5",
+            "9"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:006",
+          "enonce": "Quel nombre est à la fois un multiple de 4 et de 6 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "36 = 4 × 9 = 6 × 6 ; 18 et 42 ne sont pas multiples de 4, 28 n'est pas multiple de 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "18",
+            "36",
+            "28",
+            "42"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:007",
+          "enonce": "L'entier 0 est-il un multiple de 5 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "0 = 0 × b : 0 est un multiple de tout entier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, car 0 est plus petit que 5",
+            "Non, car 0 n'est pas un entier",
+            "Oui, car 0 = 0 × 5",
+            "Seulement si on travaille dans ℤ"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:008",
+          "enonce": "Avec 100 = 7 × 14 + 2, quel est le plus grand multiple de 7 inférieur ou égal à 100 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "7 × 14 = 98 ; le multiple suivant, 105, dépasse 100.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "100",
+            "91",
+            "105",
+            "98"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:009",
+          "enonce": "Pour un entier a fixé, que dit la propriété démontrée dans le cours sur la somme de deux multiples de a ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "ka + k'a = (k + k')a.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle est un multiple de a",
+            "Elle est égale à 2a",
+            "Elle est un diviseur de a",
+            "Elle n'est jamais un multiple de a"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:010",
+          "enonce": "Parmi ces nombres, lequel divise 45 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "45 = 15 × 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "15",
+            "6",
+            "4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:011",
+          "enonce": "Quels nombres sont des diviseurs de 30 ? Coche toutes les réponses exactes.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "30 = 5 × 6 = 2 × 15 ; 4 ne divise pas 30, et 60 est un multiple de 30.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "6",
+            "15",
+            "5",
+            "4",
+            "60"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:012",
+          "enonce": "Parmi ces entiers relatifs, lesquels sont des multiples de 6 ? Coche toutes les réponses exactes.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "−18 = (−3) × 6, 0 = 0 × 6, 54 = 9 × 6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−15",
+            "−18",
+            "26",
+            "54",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:013",
+          "enonce": "On sait que a et b sont des multiples de 11. Lesquels de ces nombres sont alors forcément des multiples de 11 ? Coche toutes les réponses exactes.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 3,
+          "explication": "Somme, différence et produit par un entier de multiples de 11 restent des multiples de 11 ; a + 1 n'est jamais un multiple de 11 quand a en est un, et a/2 n'est pas toujours entier (a = 11 donne 5,5).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a + 1",
+            "a − b",
+            "3a",
+            "a + b",
+            "a/2"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:014",
+          "enonce": "Si 7 divise 63, alors 63 est un multiple de 7.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "« 7 divise 63 » et « 63 est un multiple de 7 » disent la même chose : 63 = 9 × 7.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:015",
+          "enonce": "Le nombre 1 est un diviseur de tout entier.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "n = n × 1 pour tout entier n.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:016",
+          "enonce": "La somme de deux multiples de 4 peut ne pas être un multiple de 4.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "4k + 4k' = 4(k + k') est toujours un multiple de 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:017",
+          "enonce": "Quel est le quotient k tel que 91 = k × 7 ? Réponds par un nombre.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "91 = 13 × 7 : 91 est un multiple de 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "13"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:018",
+          "enonce": "Combien y a-t-il de multiples de 6 entre 1 et 100 ? Réponds par un nombre.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "6 × 16 = 96 ⩽ 100 < 102 = 6 × 17 : ce sont 6 × 1, …, 6 × 16.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "16"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:019",
+          "enonce": "Quel critère permet de savoir qu'un entier est divisible par 3 ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "Exemple : 411, car 4 + 1 + 1 = 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Son chiffre des unités est 3",
+            "Il se termine par 0 ou 5",
+            "La somme de ses chiffres est divisible par 3",
+            "Il est impair"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:020",
+          "enonce": "À quoi reconnaît-on un entier divisible par 5 ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "2 045 est divisible par 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La somme de ses chiffres vaut 5",
+            "Il est impair",
+            "Son premier chiffre est 5",
+            "Son chiffre des unités est 0 ou 5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:021",
+          "enonce": "Lequel de ces nombres est divisible par 9 ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "7 + 3 + 8 = 18, divisible par 9 ; 4 + 5 + 6 = 15 ne l'est pas.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "738",
+            "739",
+            "456",
+            "1 000"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:022",
+          "enonce": "Par lequel de ces entiers le nombre 2 310 est-il divisible ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "Il se termine par 0 (2, 5, 10) et 2 + 3 + 1 + 0 = 6 (3, mais pas 9).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par 2 et 5 seulement",
+            "Par 2, 3, 5 et 10",
+            "Par 9 et 10",
+            "Par 3 seulement"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:023",
+          "enonce": "Le nombre 5 724 est-il divisible par 9 ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "La somme des chiffres, 18, est divisible par 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, car il est pair",
+            "Non, car il ne se termine pas par 9",
+            "Oui, car 5 + 7 + 2 + 4 = 18",
+            "Oui, car il se termine par 4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:024",
+          "enonce": "Quels nombres sont divisibles par 2 ? Coche toutes les réponses exactes.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "Le chiffre des unités est pair pour 3 578, 1 000 et 46.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1 000",
+            "46",
+            "2 047",
+            "3 578",
+            "333"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:025",
+          "enonce": "Le nombre 1 215 est divisible par quels entiers ? Coche toutes les réponses exactes.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "Il se termine par 5 (5 mais pas 2 ni 10) ; 1 + 2 + 1 + 5 = 9 (3 et 9).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5",
+            "9",
+            "10",
+            "2",
+            "3"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:026",
+          "enonce": "Quels nombres sont divisibles à la fois par 3 et par 5 ? Coche toutes les réponses exactes.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 3,
+          "explication": "Il faut un chiffre des unités 0 ou 5 et une somme des chiffres multiple de 3 ; 35 : 3 + 5 = 8 ; 333 se termine par 3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "45",
+            "0",
+            "35",
+            "120",
+            "333"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:027",
+          "enonce": "Tout nombre qui se termine par 3 est divisible par 3.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "Contre-exemple : 13 n'est pas divisible par 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:028",
+          "enonce": "Un entier divisible par 9 est aussi divisible par 3.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "9 = 3 × 3 : si n = 9k, alors n = 3 × (3k).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:029",
+          "enonce": "Tout multiple de 3 est aussi un multiple de 9.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 3,
+          "explication": "Contre-exemple : 12 est divisible par 3, pas par 9. C'est la réciproque de la propriété précédente, et elle est fausse.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:030",
+          "enonce": "Quel est le plus petit chiffre que l'on peut écrire à la place de ★ pour que 7★1 soit divisible par 3 ? Réponds par un chiffre.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "7 + ★ + 1 doit être un multiple de 3 : 8 + 1 = 9 convient, donc ★ = 1.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:031",
+          "enonce": "Comment s'écrit un entier impair ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "Un impair est un pair augmenté de 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2k, avec k entier",
+            "k + 1, avec k entier",
+            "3k, avec k entier",
+            "2k + 1, avec k entier"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:032",
+          "enonce": "Quelle écriture montre que 23 est impair ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "23 s'écrit 2k + 1 avec k = 11.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "23 = 2 × 11 + 1",
+            "23 = 20 + 3",
+            "23 = 2 × 12 − 1, donc il est pair",
+            "23 = 23 × 1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:033",
+          "enonce": "Le nombre 0 est-il pair ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "0 s'écrit 2k avec k = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, il n'est ni pair ni impair",
+            "Oui, car 0 = 2 × 0",
+            "Non, il est impair",
+            "Cela dépend du contexte"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:034",
+          "enonce": "Que peut-on dire de la somme de deux nombres impairs ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "(2k + 1) + (2k' + 1) = 2(k + k' + 1).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle est toujours impaire",
+            "Elle est paire ou impaire selon les cas",
+            "Elle est toujours paire",
+            "Elle est toujours un nombre premier"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:035",
+          "enonce": "Que peut-on dire du produit d'un entier pair par un entier quelconque ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "2k × m = 2(km) est pair.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il est toujours impair",
+            "Il est pair seulement si l'autre entier est pair",
+            "Il est toujours premier",
+            "Il est toujours pair"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:036",
+          "enonce": "Comment s'écrit −7 sous la forme 2k + 1 ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "2 × (−4) + 1 = −8 + 1 = −7, avec k = −4 entier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−7 = 2 × (−4) + 1",
+            "−7 = 2 × (−3) + 1",
+            "−7 = 2 × 3 + 1",
+            "−7 = 2 × (−3) − 1, il n'a pas la forme 2k + 1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:037",
+          "enonce": "Dans la démonstration « le carré d'un impair est impair », quelle égalité est utilisée ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 3,
+          "explication": "On développe : 4k² + 4k + 1, puis on factorise 2 dans 4k² + 4k.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(2k + 1)² = 4k² + 1",
+            "(2k + 1)² = 2(2k² + 2k) + 1",
+            "(2k + 1)² = 2k² + 1",
+            "(2k)² = 4k²"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:038",
+          "enonce": "Pourquoi peut-on dire que « si n² est pair, alors n est pair » ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 3,
+          "explication": "On utilise la propriété du carré d'un impair : un impair donnerait un carré impair.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car tout carré est pair",
+            "Car n² = 2n",
+            "Si n était impair, n² serait impair",
+            "Car n est toujours pair"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:039",
+          "enonce": "Parmi deux entiers consécutifs n et n + 1, que peut-on affirmer ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "Ajouter 1 change la parité ; leur somme 2n + 1 est impaire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils sont tous les deux pairs",
+            "Ils sont tous les deux impairs",
+            "Leur somme est paire",
+            "L'un est pair et l'autre impair"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:040",
+          "enonce": "Quels entiers sont impairs ? Coche toutes les réponses exactes.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "−3 = 2 × (−2) + 1 ; 101 et 2 027 se terminent par un chiffre impair.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0",
+            "101",
+            "−12",
+            "−3",
+            "2 027"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:041",
+          "enonce": "Pour k entier, lesquelles de ces expressions désignent toujours un entier pair ? Coche toutes les réponses exactes.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "2k + 4 = 2(k + 2), 4k = 2(2k), 2k − 2 = 2(k − 1) ; k + 2 dépend de k.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4k",
+            "2k + 4",
+            "2k + 1",
+            "2k − 2",
+            "k + 2"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:042",
+          "enonce": "Avec k entier, quelles expressions donnent un nombre impair quelle que soit la valeur de k ? Coche toutes les réponses exactes.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 3,
+          "explication": "2k + 7 = 2(k + 3) + 1 ; 4k − 1 = 2(2k − 1) + 1 ; le carré d'un impair est impair. 3k + 1 et k² + 1 dépendent de k.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4k − 1",
+            "k² + 1",
+            "(2k + 1)²",
+            "3k + 1",
+            "2k + 7"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:043",
+          "enonce": "La somme de deux nombres pairs est paire.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "2k + 2k' = 2(k + k').",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:044",
+          "enonce": "Le produit de deux nombres impairs est pair.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "Contre-exemple : 3 × 5 = 15 est impair.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:045",
+          "enonce": "Le carré d'un nombre pair est pair.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "(2k)² = 4k² = 2 × (2k²).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:046",
+          "enonce": "La somme d'un nombre pair et d'un nombre impair est paire.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 2,
+          "explication": "2k + (2k' + 1) = 2(k + k') + 1 est impaire.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:047",
+          "enonce": "Pour écrire 37 sous la forme 2k + 1, quelle valeur de k faut-il prendre ? Réponds par un nombre.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "2 × 18 + 1 = 37.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "18"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:048",
+          "enonce": "On écrit (2k + 1)² = 2K + 1. Exprime K en fonction de k. (Exemple de forme : 3k² + k)",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 3,
+          "explication": "(2k + 1)² = 4k² + 4k + 1 = 2(2k² + 2k) + 1, donc K = 2k² + 2k.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2k² + 2k",
+            "2k²+2k",
+            "2k^2 + 2k",
+            "2k^2+2k",
+            "2k(k + 1)",
+            "2k(k+1)",
+            "2(k² + k)",
+            "2(k²+k)"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:049",
+          "enonce": "Qu'est-ce qu'un nombre premier ?",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "C'est la définition du cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un entier naturel qui a exactement deux diviseurs positifs, 1 et lui-même",
+            "Un entier impair",
+            "Un entier qui n'a aucun diviseur",
+            "Un entier qui n'est divisible que par 2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:050",
+          "enonce": "Le nombre 1 est-il premier ?",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "Un premier a exactement deux diviseurs ; 1 n'en a qu'un.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Oui, il n'est divisible que par 1 et lui-même",
+            "Non, il n'a qu'un seul diviseur positif",
+            "Oui, c'est le plus petit nombre premier",
+            "Non, car il est impair"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:051",
+          "enonce": "Quel est le seul nombre premier pair ?",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "Tout autre nombre pair est divisible par 2 et par lui-même, donc a au moins trois diviseurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0",
+            "4",
+            "2",
+            "Il n'y en a pas"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:052",
+          "enonce": "Lequel de ces nombres est premier ?",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "39 = 3 × 13, 51 = 3 × 17, 57 = 3 × 19 ; 37 n'a que 1 et 37 comme diviseurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "39",
+            "51",
+            "57",
+            "37"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:053",
+          "enonce": "Pour savoir si 221 est premier, jusqu'à quel entier suffit-il de chercher un diviseur ?",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "On teste les entiers d tels que d² ⩽ 221 : jusqu'à 14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "14, car 15² = 225 dépasse 221",
+            "220",
+            "110, la moitié de 221",
+            "22"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:054",
+          "enonce": "Quelle écriture prouve que 221 n'est pas premier ?",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "Un diviseur autre que 1 et 221 suffit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "221 = 200 + 21",
+            "221 = 13 × 17",
+            "221 = 1 × 221",
+            "221 est impair"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:055",
+          "enonce": "Combien y a-t-il de nombres premiers inférieurs à 20 ?",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "2, 3, 5, 7, 11, 13, 17, 19.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "9",
+            "8",
+            "10"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:056",
+          "enonce": "Quel entier faut-il tester pour conclure que 91 n'est pas premier ?",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "91 = 7 × 13.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "5",
+            "11",
+            "7"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:057",
+          "enonce": "Pourquoi suffit-il de tester les diviseurs d tels que d² ⩽ n ?",
+          "notion": "Nombres premiers",
+          "difficulte": 3,
+          "explication": "Le plus petit des deux facteurs a un carré au plus égal à n.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Si n = d × e avec d ⩽ e, alors d² ⩽ n",
+            "Car n n'a jamais de diviseur plus grand que √n",
+            "Car les grands diviseurs sont tous pairs",
+            "Car un nombre premier est inférieur à son carré"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:058",
+          "enonce": "Dans l'algorithme est_premier du cours, que renvoie-t-on dès que le reste de n par d vaut 0 ?",
+          "notion": "Nombres premiers",
+          "difficulte": 3,
+          "explication": "Un diviseur d avec 2 ⩽ d et d² ⩽ n prouve que n n'est pas premier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Vrai, car d divise n",
+            "Faux, car d est un diviseur de n",
+            "La valeur de d + 1",
+            "Le nombre n"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:059",
+          "enonce": "Lesquels de ces nombres sont premiers ? Coche toutes les réponses exactes.",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "1 n'est pas premier, 21 = 3 × 7.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "29",
+            "21",
+            "13",
+            "1",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:060",
+          "enonce": "Quels nombres ne sont pas premiers ? Coche toutes les réponses exactes.",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "49 = 7², 57 = 3 × 19, 1 n'a qu'un diviseur ; 43 et 53 sont premiers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1",
+            "57",
+            "49",
+            "43",
+            "53"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:061",
+          "enonce": "Quels nombres premiers divisent 2 310 ? Coche toutes les réponses exactes.",
+          "notion": "Nombres premiers",
+          "difficulte": 3,
+          "explication": "2 310 = 2 × 3 × 5 × 7 × 11.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "13",
+            "11",
+            "17",
+            "7",
+            "2"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:062",
+          "enonce": "Tout nombre impair est premier.",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "Contre-exemple : 9 = 3 × 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:063",
+          "enonce": "Le nombre 89 est premier.",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "Aucun entier de 2 à 9 ne divise 89, et 10² = 100 > 89.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:064",
+          "enonce": "Un nombre premier supérieur à 2 est forcément impair.",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "S'il était pair, il serait divisible par 2 et ne serait pas premier.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:065",
+          "enonce": "Comme n² + n + 41 est premier pour n = 0, 1, 2, 3, il est premier pour tout entier n.",
+          "notion": "Nombres premiers",
+          "difficulte": 3,
+          "explication": "Des exemples ne démontrent rien : pour n = 40, on obtient 41², qui n'est pas premier.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:066",
+          "enonce": "Quel est le plus petit nombre premier supérieur à 20 ? Réponds par un nombre.",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "21 = 3 × 7 et 22 = 2 × 11 ne sont pas premiers ; 23 l'est.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "23"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:067",
+          "enonce": "Quel est le plus petit diviseur premier de 323 ? Réponds par un nombre.",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "323 n'est divisible ni par 2, 3, 5, 7, 11, ni par 13 ; 323 = 17 × 19.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "17"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:068",
+          "enonce": "Quelle est la décomposition de 360 en produit de facteurs premiers ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "On divise par 2 trois fois, par 3 deux fois, puis il reste 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2² × 3² × 10",
+            "6² × 10",
+            "2³ × 3² × 5",
+            "2³ × 45"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:069",
+          "enonce": "Quelle est la décomposition de 12 en facteurs premiers ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "6 et 4 ne sont pas premiers ; 12 = 2 × 2 × 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2 × 6",
+            "3 × 4",
+            "1 × 12",
+            "2² × 3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:070",
+          "enonce": "Quel entier a pour décomposition 2 × 3² × 7 ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 2,
+          "explication": "2 × 9 × 7 = 126.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "126",
+            "84",
+            "42",
+            "252"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:071",
+          "enonce": "Écris 84 comme produit de nombres premiers : quelle écriture convient ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 2,
+          "explication": "84 = 2 × 42 = 2 × 2 × 21 = 2² × 3 × 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4 × 21",
+            "2² × 3 × 7",
+            "2 × 42",
+            "2³ × 7"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:072",
+          "enonce": "Sachant que 360 = 2³ × 3² × 5, lequel de ces nombres n'est pas un diviseur de 360 ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 3,
+          "explication": "16 = 2⁴ demande quatre facteurs 2 : 360 n'en a que trois.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "24",
+            "45",
+            "16",
+            "72"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:073",
+          "enonce": "Le produit 2⁴ × 3 × 5² × 7 est-il un multiple de 75 ?",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 3,
+          "explication": "Les facteurs 3 et 5² de 75 sont présents dans la décomposition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, car 75 n'est pas premier",
+            "Non, car il faudrait 5³",
+            "On ne peut pas le savoir sans le calculer",
+            "Oui, car 75 = 3 × 5²"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:074",
+          "enonce": "Quelles écritures sont des décompositions en facteurs premiers ? Coche toutes les réponses exactes.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 2,
+          "explication": "9 et 4 ne sont pas premiers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "13²",
+            "3 × 5 × 11",
+            "4 × 5",
+            "2 × 9",
+            "2³ × 7"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:075",
+          "enonce": "Sachant que 150 = 2 × 3 × 5², lesquels de ces nombres divisent 150 ? Coche toutes les réponses exactes.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 3,
+          "explication": "4 = 2² et 9 = 3² ont des exposants trop grands.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "75",
+            "9",
+            "30",
+            "4",
+            "25"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:076",
+          "enonce": "L'écriture 2 × 3 × 4 est une décomposition en produit de facteurs premiers.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "4 n'est pas premier : 2 × 3 × 4 = 2³ × 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:077",
+          "enonce": "Les nombres 2³ × 5 et 5 × 2³ ont deux décompositions différentes.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 2,
+          "explication": "C'est la même décomposition : seul l'ordre des facteurs change.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:078",
+          "enonce": "Dans la décomposition de 72 = 2ⁿ × 3², quelle est la valeur de n ? Réponds par un nombre.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 2,
+          "explication": "72 = 8 × 9 = 2³ × 3².",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:079",
+          "enonce": "Combien le nombre 2³ × 3² a-t-il de diviseurs positifs ? Réponds par un nombre.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 3,
+          "explication": "Un diviseur s'écrit 2ᵃ × 3ᵇ avec a de 0 à 3 (4 choix) et b de 0 à 2 (3 choix) : 4 × 3 = 12.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:080",
+          "enonce": "Quand dit-on qu'une fraction est irréductible ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "On ne peut plus la simplifier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Quand 1 est le seul diviseur positif commun au numérateur et au dénominateur",
+            "Quand son numérateur est premier",
+            "Quand elle est inférieure à 1",
+            "Quand son dénominateur est pair"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:081",
+          "enonce": "Quelle est la forme irréductible de 18/24 ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "18 = 6 × 3 et 24 = 6 × 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9/12",
+            "3/4",
+            "6/8",
+            "1/6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:082",
+          "enonce": "Quelle fraction est irréductible ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "8 = 2³ et 15 = 3 × 5 n'ont aucun facteur commun.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6/9",
+            "10/25",
+            "8/15",
+            "14/21"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:083",
+          "enonce": "Quelle est la forme irréductible de 84/120 ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "Le facteur commun est 12 : 84/120 = 7/10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "21/30",
+            "42/60",
+            "14/20",
+            "7/10"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:084",
+          "enonce": "Quelle est la forme irréductible de 45/75 ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "45 = 3² × 5 et 75 = 3 × 5² : on simplifie par 15.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3/5",
+            "9/15",
+            "15/25",
+            "5/3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:085",
+          "enonce": "Quelle simplification est fausse ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "On ne simplifie pas une somme : (3 + 5)/3 = 8/3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15/35 = 3/7",
+            "(3 + 5)/3 = 5",
+            "(2 × 7)/(2 × 9) = 7/9",
+            "40/100 = 2/5"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:086",
+          "enonce": "Quelle est la forme irréductible de 2³ × 3 × 5 / (2² × 3² × 7) ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 3,
+          "explication": "On simplifie par 2² × 3 = 12 : il reste (2 × 5)/(3 × 7).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "30/63",
+            "2/3",
+            "10/21",
+            "120/252"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:087",
+          "enonce": "Quelle est la forme irréductible de 1/6 + 1/10 ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 3,
+          "explication": "1/6 + 1/10 = 5/30 + 3/30 = 8/30 = 4/15.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2/16",
+            "1/8",
+            "16/60",
+            "4/15"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:088",
+          "enonce": "Lesquelles de ces fractions sont égales à 2/3 ? Coche toutes les réponses exactes.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "On multiplie numérateur et dénominateur par 2, 5 ou 11.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3/2",
+            "22/33",
+            "5/6",
+            "10/15",
+            "4/6"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:089",
+          "enonce": "Parmi ces fractions, lesquelles ne sont pas irréductibles ? Coche toutes les réponses exactes.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "21/49 se simplifie par 7, 35/40 par 5, 26/39 par 13.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "35/40",
+            "26/39",
+            "9/16",
+            "21/49",
+            "11/12"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:090",
+          "enonce": "Quelles égalités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 3,
+          "explication": "5/12 + 1/4 = 8/12 = 2/3 ; 7/9 ne se simplifie pas.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5/12 + 1/4 = 6/16",
+            "(4/9) × (3/8) = 1/6",
+            "7/(7 + 2) = 1/2",
+            "2/9 + 1/6 = 7/18",
+            "120/36 = 10/3"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:091",
+          "enonce": "La fraction 12/18 est irréductible.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "12 et 18 ont 6 comme diviseur commun : 12/18 = 2/3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:092",
+          "enonce": "Si le numérateur et le dénominateur sont deux nombres premiers différents, la fraction est irréductible.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "Deux premiers différents n'ont que 1 comme diviseur positif commun.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:093",
+          "enonce": "Une fraction dont le numérateur et le dénominateur sont pairs peut être irréductible.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 3,
+          "explication": "Ils ont alors 2 comme diviseur commun : on peut simplifier par 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:094",
+          "enonce": "Donne la forme irréductible de 35/49 (écris a/b).",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "35 = 5 × 7 et 49 = 7 × 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5/7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:095",
+          "enonce": "Donne la forme irréductible de 2/15 + 1/10 (écris a/b).",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "2/15 + 1/10 = 4/30 + 3/30 = 7/30, et 7 est premier, ne divise pas 30.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7/30"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:096",
+          "enonce": "Qu'est-ce qu'une proposition mathématique ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "C'est la définition du cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un énoncé qui est soit vrai, soit faux",
+            "Une question sans réponse",
+            "Un calcul numérique",
+            "Une figure géométrique"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:097",
+          "enonce": "Quelle est la négation de « n est pair » pour un entier n ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "Un entier qui n'est pas pair est impair.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "n est premier",
+            "n est impair",
+            "n est nul",
+            "n est positif"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:098",
+          "enonce": "Quelle est la négation de « x > 3 » ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "Le contraire de « strictement supérieur » est « inférieur ou égal ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x < 3",
+            "x ⩾ 3",
+            "x ⩽ 3",
+            "x > −3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:099",
+          "enonce": "La proposition « 6 est pair et 6 est premier » est-elle vraie ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 2,
+          "explication": "« P et Q » demande que les deux soient vraies.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Oui, car 6 est pair",
+            "Oui, car au moins une partie est vraie",
+            "On ne peut pas savoir",
+            "Non, car 6 n'est pas premier"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:100",
+          "enonce": "La proposition « 9 est pair ou 9 est un multiple de 3 » est-elle vraie ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 2,
+          "explication": "« P ou Q » est vraie dès qu'une des deux est vraie.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Oui, car 9 est un multiple de 3",
+            "Non, car 9 n'est pas pair",
+            "Non, il faut que les deux soient vraies",
+            "Elle n'a pas de sens"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:101",
+          "enonce": "Quelle est la négation de « a ⩽ b » ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 2,
+          "explication": "Si a n'est pas inférieur ou égal à b, alors a est strictement supérieur à b.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a < b",
+            "a > b",
+            "a ⩾ b",
+            "a ≠ b"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:102",
+          "enonce": "Que signifie « il existe un entier n tel que n² = 49 » ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 3,
+          "explication": "« Il existe » signifie « au moins un » : ici 7 et −7 conviennent.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Tous les entiers vérifient n² = 49",
+            "Exactement un entier vérifie n² = 49",
+            "Au moins un entier vérifie n² = 49",
+            "Aucun entier ne vérifie n² = 49"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:103",
+          "enonce": "Quelle phrase utilise une quantification universelle ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 3,
+          "explication": "« Pour tout » exprime une propriété de tous les éléments.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il existe un réel x tel que x² = 2",
+            "Le nombre 5 est premier",
+            "x est un entier",
+            "Pour tout réel x, x² ⩾ 0"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:104",
+          "enonce": "Lesquelles de ces phrases sont des propositions vraies ? Coche toutes les réponses exactes.",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "12 est pair, 1 n'est pas premier, 0 est pair.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "7 est un nombre premier",
+            "15 est un multiple de 5",
+            "0 est impair",
+            "12 est impair",
+            "1 est premier"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:105",
+          "enonce": "Quelles propositions sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 2,
+          "explication": "« Ou » demande au moins une partie vraie ; « et », les deux.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10 est pair ou 10 est impair",
+            "4 est pair ou 4 est premier",
+            "9 est pair ou 9 est premier",
+            "3 est premier et 3 est impair",
+            "8 est pair et 8 est premier"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:106",
+          "enonce": "Pour quelles valeurs de n la proposition « n est impair et n est premier » est-elle vraie ? Coche toutes les réponses exactes.",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 3,
+          "explication": "2 est premier mais pair ; 9 est impair mais pas premier.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "9",
+            "11",
+            "23",
+            "3",
+            "2"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:107",
+          "enonce": "« 2 + 2 = 5 » est une proposition.",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "C'est un énoncé qui a une valeur de vérité : il est faux, mais c'est bien une proposition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:108",
+          "enonce": "Pour que « P ou Q » soit fausse, il faut que P et Q soient fausses toutes les deux.",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 3,
+          "explication": "Il suffit qu'une des deux soit vraie pour que « P ou Q » soit vraie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:109",
+          "enonce": "Quelle est la réciproque de « si un entier se termine par 0, alors il est divisible par 5 » ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 1,
+          "explication": "On échange l'hypothèse et la conclusion.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Si un entier est divisible par 5, alors il se termine par 0",
+            "Si un entier ne se termine pas par 0, alors il n'est pas divisible par 5",
+            "Un entier se termine par 0 et il est divisible par 5",
+            "Si un entier est divisible par 0, il se termine par 5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:110",
+          "enonce": "Comment se lit l'écriture P ⇒ Q ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 1,
+          "explication": "C'est une implication.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "« P et Q »",
+            "« si P, alors Q »",
+            "« P ou Q »",
+            "« Q, donc P »"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:111",
+          "enonce": "Quand dit-on que deux propositions P et Q sont équivalentes ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "On écrit P ⇔ Q, « P si et seulement si Q ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Quand P et Q sont toutes les deux vraies",
+            "Quand P ⇒ Q est vraie",
+            "Quand P ⇒ Q et sa réciproque Q ⇒ P sont vraies",
+            "Quand P et Q parlent du même nombre"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:112",
+          "enonce": "Quelle équivalence est vraie pour tout entier n ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "Si n est pair, n² aussi ; si n² est pair, n l'est (sinon n² serait impair).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "n est premier si et seulement si n est impair",
+            "n est multiple de 3 si et seulement si n est multiple de 9",
+            "n est pair si et seulement si n + 1 est pair",
+            "n est pair si et seulement si n² est pair"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:113",
+          "enonce": "On sait que « si x = 3, alors x² = 9 » est vraie. Que dire de sa réciproque ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 3,
+          "explication": "x² = 9 n'impose pas x = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle est fausse, car x = −3 donne aussi x² = 9",
+            "Elle est vraie",
+            "Elle est vraie pour les réels positifs seulement, donc vraie",
+            "Une réciproque est toujours fausse"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:114",
+          "enonce": "Lesquelles de ces implications sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Implication et réciproque",
+          "difficulte": 1,
+          "explication": "Les trois dernières ont des contre-exemples : 4, −2 et 9.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Si n est pair, alors n est multiple de 6",
+            "Si n est impair, alors n est premier",
+            "Si x² = 4, alors x = 2",
+            "Si n est multiple de 6, alors n est pair",
+            "Si x = 2, alors x² = 4"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:115",
+          "enonce": "Pour quelles implications la réciproque est-elle aussi vraie ? Coche toutes les réponses exactes.",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "6 est pair sans être multiple de 4 ; −3 ; 9 est impair sans être premier.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Si x = 3, alors x² = 9",
+            "Si n est pair, alors n + 1 est impair",
+            "Si x = 5, alors x + 1 = 6",
+            "Si n est multiple de 4, alors n est pair",
+            "Si un nombre est premier et différent de 2, alors il est impair"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:116",
+          "enonce": "Lesquelles de ces phrases expriment une équivalence vraie ? Coche toutes les réponses exactes.",
+          "notion": "Implication et réciproque",
+          "difficulte": 3,
+          "explication": "x = −1 ; 2 et 9 ; 13 et 12 sont des contre-exemples pour les autres.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² = 1 si et seulement si x = 1",
+            "n est pair si et seulement si n² est pair",
+            "x + 2 = 5 si et seulement si x = 3",
+            "n est premier si et seulement si n est impair",
+            "n est divisible par 3 si et seulement s'il se termine par 3"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:117",
+          "enonce": "Si une implication est vraie, sa réciproque est toujours vraie.",
+          "notion": "Implication et réciproque",
+          "difficulte": 1,
+          "explication": "Contre-exemple : « si x = 3, alors x² = 9 » est vraie, mais pas « si x² = 9, alors x = 3 ».",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:118",
+          "enonce": "L'implication « si n est un multiple de 10, alors n est pair » est vraie.",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "n = 10k = 2 × (5k).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:119",
+          "enonce": "« P si et seulement si Q » signifie que P ⇒ Q et Q ⇒ P sont vraies.",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "C'est la définition d'une équivalence.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:120",
+          "enonce": "La réciproque de « si n est pair, alors n² est pair » est fausse.",
+          "notion": "Implication et réciproque",
+          "difficulte": 3,
+          "explication": "La réciproque « si n² est pair, alors n est pair » est vraie : si n était impair, n² serait impair.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:121",
+          "enonce": "Comment montrer que « tout nombre impair est premier » est faux ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 1,
+          "explication": "Un seul contre-exemple suffit à prouver qu'une proposition « pour tout » est fausse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Vérifier sur 3, 5 et 7",
+            "Donner un contre-exemple, comme 9",
+            "Faire un raisonnement par l'absurde sur 1",
+            "Tester tous les nombres impairs"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:122",
+          "enonce": "Que faut-il pour prouver qu'une proposition « pour tout entier n » est fausse ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 1,
+          "explication": "Un cas où la proposition est fausse suffit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Au moins dix contre-exemples",
+            "Une démonstration par l'absurde obligatoirement",
+            "Un seul contre-exemple",
+            "Une vérification sur les premiers entiers"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:123",
+          "enonce": "Quel raisonnement consiste à supposer le contraire de ce que l'on veut démontrer et à aboutir à une contradiction ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "Exemple : l'irrationalité de √2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La disjonction des cas",
+            "Le contre-exemple",
+            "La réciproque",
+            "Le raisonnement par l'absurde"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:124",
+          "enonce": "Pour démontrer que n(n + 1) est pair, on distingue « n pair » et « n impair ». Quel est ce raisonnement ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "On traite séparément des cas qui couvrent toutes les possibilités.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une disjonction des cas",
+            "Un raisonnement par l'absurde",
+            "Un contre-exemple",
+            "Une réciproque"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:125",
+          "enonce": "Vérifier une propriété sur les entiers de 1 à 1 000 suffit-il à la démontrer pour tous les entiers ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "Des exemples, même nombreux, ne démontrent pas une propriété générale.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Oui, 1 000 cas suffisent",
+            "Non, elle peut être fausse pour un entier plus grand",
+            "Oui, si la calculatrice le confirme",
+            "Non, il faut aller jusqu'à 10 000"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:126",
+          "enonce": "Dans la preuve « il n'existe pas de plus grand entier pair », on suppose qu'il en existe un, N. Quelle contradiction obtient-on ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 3,
+          "explication": "N + 2 = 2k + 2 = 2(k + 1) est pair et dépasse N.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "N est impair",
+            "N est égal à 0",
+            "N + 2 est pair et plus grand que N",
+            "N + 1 est pair"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:127",
+          "enonce": "Quel contre-exemple montre que « pour tout entier n, n² + n + 41 est premier » est faux ?",
+          "notion": "Types de raisonnement",
+          "difficulte": 3,
+          "explication": "40² + 40 + 41 = 1 681 = 41².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "n = 1",
+            "n = 2",
+            "n = 0",
+            "n = 40"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:128",
+          "enonce": "Lesquels de ces nombres sont des contre-exemples à « tout multiple de 3 est impair » ? Coche toutes les réponses exactes.",
+          "notion": "Types de raisonnement",
+          "difficulte": 1,
+          "explication": "6 et 12 sont multiples de 3 et pairs ; 9, 15 et 21 sont impairs.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "21",
+            "12",
+            "15",
+            "9",
+            "6"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:129",
+          "enonce": "Quelles méthodes sont des raisonnements étudiés dans ce chapitre ? Coche toutes les réponses exactes.",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "Vérifier sur des exemples ou lire une figure ne démontre pas.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le raisonnement par l'absurde",
+            "Le contre-exemple",
+            "La lecture sur une figure",
+            "La vérification sur trois exemples",
+            "La disjonction des cas"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:130",
+          "enonce": "Quelles propositions sont fausses, chacune avec au moins un contre-exemple ? Coche toutes les réponses exactes.",
+          "notion": "Types de raisonnement",
+          "difficulte": 3,
+          "explication": "x = 1 (ou 0,5) et 2 sont des contre-exemples ; les trois autres sont vraies.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Tout nombre premier est impair",
+            "Pour tout réel x, x² ⩾ 0",
+            "Pour tout réel x, x² > x",
+            "Pour tout entier n, 2n est pair",
+            "La somme de deux pairs est paire"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:131",
+          "enonce": "Un seul contre-exemple suffit à prouver qu'une affirmation générale est fausse.",
+          "notion": "Types de raisonnement",
+          "difficulte": 1,
+          "explication": "Une affirmation « pour tout » doit marcher dans tous les cas.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:132",
+          "enonce": "Pour démontrer une propriété par disjonction des cas, les cas doivent couvrir toutes les possibilités.",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "Sinon, un cas oublié pourrait contredire la propriété.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:133",
+          "enonce": "Un raisonnement par l'absurde commence par supposer que la propriété à démontrer est vraie.",
+          "notion": "Types de raisonnement",
+          "difficulte": 2,
+          "explication": "On suppose qu'elle est fausse, et on aboutit à une contradiction.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:134",
+          "enonce": "Donne le plus petit entier naturel n pour lequel n² + n + 41 n'est pas premier. Réponds par un nombre.",
+          "notion": "Types de raisonnement",
+          "difficulte": 3,
+          "explication": "Pour n = 40, on obtient 41².",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "40"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:135",
+          "enonce": "Quel nombre n'est pas un diviseur de 24 ?",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 1,
+          "explication": "24 = 3 × 8 = 2 × 12 ; 5 ne divise pas 24.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "3",
+            "8",
+            "12"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:136",
+          "enonce": "Pour quel chiffre ★ le nombre 31★ est-il divisible par 10 ?",
+          "notion": "Critères de divisibilité",
+          "difficulte": 2,
+          "explication": "Divisible par 10 : chiffre des unités 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "0",
+            "5",
+            "3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:137",
+          "enonce": "Que vaut la somme de trois entiers consécutifs n, n + 1, n + 2 en fonction de n ?",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1) : c'est un multiple de 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3n",
+            "n + 3",
+            "3n + 3",
+            "3n + 2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:138",
+          "enonce": "Quelle est la somme des nombres premiers inférieurs à 10 ?",
+          "notion": "Nombres premiers",
+          "difficulte": 2,
+          "explication": "2 + 3 + 5 + 7 = 17.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15",
+            "18",
+            "28",
+            "17"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:139",
+          "enonce": "Par quel nombre peut-on simplifier 14/35 ?",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "14 = 2 × 7 et 35 = 5 × 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "5",
+            "2",
+            "14"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:140",
+          "enonce": "Dans « si P, alors Q », comment appelle-t-on Q ?",
+          "notion": "Implication et réciproque",
+          "difficulte": 2,
+          "explication": "P est l'hypothèse, Q la conclusion.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'hypothèse",
+            "La conclusion",
+            "La réciproque",
+            "La négation"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:141",
+          "enonce": "Que doit vérifier « P et Q » pour être vraie ?",
+          "notion": "Propositions et connecteurs",
+          "difficulte": 1,
+          "explication": "« Et » demande les deux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Au moins une des deux est vraie",
+            "P est vraie",
+            "P et Q sont vraies toutes les deux",
+            "Q est fausse"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:142",
+          "enonce": "On peut simplifier (2 + 7)/2 en 7.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 1,
+          "explication": "On ne simplifie pas une somme : (2 + 7)/2 = 9/2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:143",
+          "enonce": "La décomposition de 30 en facteurs premiers est 2 × 3 × 5.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "2, 3 et 5 sont premiers et 2 × 3 × 5 = 30.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch2:banque:144",
+          "enonce": "Quel est le plus grand facteur premier de 84 ? Réponds par un nombre.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "84 = 2² × 3 × 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:145",
+          "enonce": "Avec 250 = 9 × 27 + 7, quel est le reste de la division de 250 par 9 ? Réponds par un nombre.",
+          "notion": "Multiples et diviseurs",
+          "difficulte": 2,
+          "explication": "250 = 9 × 27 + 7 et 7 < 9.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch2:banque:146",
+          "enonce": "Lesquels de ces nombres sont des multiples de 10 ? Coche toutes les réponses exactes.",
+          "notion": "Critères de divisibilité",
+          "difficulte": 1,
+          "explication": "Leur chiffre des unités est 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "760",
+            "105",
+            "55",
+            "1 001",
+            "1 000"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:147",
+          "enonce": "Quelles fractions sont sous forme irréductible ? Coche toutes les réponses exactes.",
+          "notion": "Fractions irréductibles",
+          "difficulte": 2,
+          "explication": "15/27 = 5/9 et 8/20 = 2/5 se simplifient encore.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "7/12",
+            "1/3",
+            "15/27",
+            "8/20",
+            "5/9"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:148",
+          "enonce": "Parmi ces écritures de 60, lesquelles ne contiennent que des facteurs premiers ? Coche toutes les réponses exactes.",
+          "notion": "Décomposition en facteurs premiers",
+          "difficulte": 1,
+          "explication": "4, 15, 30, 6 et 10 ne sont pas premiers ; l'ordre des facteurs ne compte pas.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4 × 15",
+            "2² × 3 × 5",
+            "2 × 30",
+            "6 × 10",
+            "5 × 3 × 2 × 2"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:149",
+          "enonce": "Lesquels de ces nombres s'écrivent 2k avec k entier ? Coche toutes les réponses exactes.",
+          "notion": "Nombres pairs et impairs",
+          "difficulte": 1,
+          "explication": "0 = 2 × 0, −14 = 2 × (−7), 88 = 2 × 44 ; 7 et −3 sont impairs.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−3",
+            "−14",
+            "88",
+            "7",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch2:banque:150",
+          "enonce": "Combien de diviseurs positifs a un nombre premier ? Réponds par un nombre.",
+          "notion": "Nombres premiers",
+          "difficulte": 1,
+          "explication": "Exactement deux : 1 et lui-même.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
