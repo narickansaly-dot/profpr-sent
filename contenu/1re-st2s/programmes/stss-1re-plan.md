@@ -2,14 +2,16 @@
 
 Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 janvier 2019, annexe 3, BO spécial n° 1 du 22 janvier 2019). Les notions sont citées avec leur intitulé officiel et leur code `[N…]`, les capacités exigibles avec leur code `[C…]` (codes définis dans `stss-1re.md`).
 
-**Statut** : proposition soumise à la validation de l'enseignant (arrêt 1). Rien n'est rédigé avant cette validation.
+**Statut** : plan validé par l'enseignant à l'arrêt 1 (10 novembre 2026), avec les décisions listées en fin de document.
 
 ## Principes du découpage
 
-- Un chapitre par question du programme, sauf la question 1 (« Qu'est-ce que la santé ? Qu'est-ce que le bien-être ? Qu'est-ce que la cohésion sociale ? »), partagée en deux chapitres : le texte officiel la découpe lui-même en deux tableaux (« Santé » ; « Bien-être et cohésion sociale »), et le second porte à lui seul 11 notions.
-- L'ordre suit celui du programme : module « Santé, bien-être et cohésion sociale » (chapitres 1 à 5), module « Protection sociale » (chapitre 6), module « Modes d'intervention sociale et en santé » (chapitres 7 et 8), pôle méthodologique (chapitre 9).
-- Le pôle méthodologique « accompagne de manière transversale le pôle thématique » et la recherche documentaire « nécessite un temps dédié » : il forme un chapitre à part (chapitre 9), que l'enseignant peut placer plus tôt ou travailler en parallèle. Le programme laisse la progression à l'initiative du professeur.
-- Durées indicatives : 32 semaines au total, à ajuster par l'enseignant.
+- Un chapitre par question du programme, avec deux exceptions qui suivent les tableaux du texte officiel :
+  - la question 1 (« Qu'est-ce que la santé ? Qu'est-ce que le bien-être ? Qu'est-ce que la cohésion sociale ? ») est partagée en deux chapitres, « Santé » et « Bien-être et cohésion sociale » ;
+  - la question 8 (pôle méthodologique) est partagée en deux chapitres, « Recherche documentaire » et « Démarche d'étude ».
+- Ordre : module « Santé, bien-être et cohésion sociale » (chapitres 1 à 3, puis 6 et 7), pôle méthodologique (chapitres 4 et 5), module « Protection sociale » (chapitre 8), module « Modes d'intervention sociale et en santé » (chapitres 9 et 10).
+- Le pôle méthodologique « accompagne de manière transversale le pôle thématique » et la recherche documentaire « nécessite un temps dédié ». Il est placé juste après le chapitre 3 (indicateurs), puis réinvesti dans les chapitres suivants. Le programme laisse la progression à l'initiative du professeur.
+- Durées indicatives : 32 semaines au total.
 
 ## Vue d'ensemble
 
@@ -18,12 +20,13 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 | 1 | La santé, de l'individu à la population | Santé | 3 semaines | Q1, tableau « Santé » |
 | 2 | Bien-être, socialisation et cohésion sociale | Cohésion sociale | 4 semaines | Q1, tableau « Bien-être et cohésion sociale » |
 | 3 | Mesurer la santé, le bien-être et la cohésion sociale | Indicateurs | 3 semaines | Q2 |
-| 4 | Déterminants de santé et émergence d'un problème de santé | Problèmes de santé | 4 semaines | Q3 |
-| 5 | Inégalités, précarité, exclusion : l'émergence d'un problème social | Problèmes sociaux | 3 semaines | Q4 |
-| 6 | La protection sociale | Protection sociale | 5 semaines | Q5 |
-| 7 | Agir en santé | Action en santé | 4 semaines | Q6 |
-| 8 | Agir sur les problèmes sociaux : l'intervention sociale | Intervention sociale | 3 semaines | Q7 |
-| 9 | Recherche documentaire et démarche d'étude en santé-social | Méthodologie | 3 semaines | Q8 (pôle méthodologique) |
+| 4 | La recherche documentaire en santé-social | Recherche documentaire | 1 semaine | Q8, tableau « Recherche documentaire » |
+| 5 | La démarche d'étude en santé-social | Démarche d'étude | 2 semaines | Q8, tableau « L'étude au service de l'action » |
+| 6 | Déterminants de santé et émergence d'un problème de santé | Problèmes de santé | 4 semaines | Q3 |
+| 7 | Inégalités, précarité, exclusion : l'émergence d'un problème social | Problèmes sociaux | 3 semaines | Q4 |
+| 8 | La protection sociale | Protection sociale | 5 semaines | Q5 |
+| 9 | Agir en santé | Action en santé | 4 semaines | Q6 |
+| 10 | Agir sur les problèmes sociaux : l'intervention sociale | Intervention sociale | 3 semaines | Q7 |
 
 ---
 
@@ -54,7 +57,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 4. **La santé publique et ses préoccupations.** La santé publique s'intéresse à la santé de la population et aux actions collectives.
    Repérer, à partir d'exemples d'actualité, des préoccupations de santé publique.
 5. **Analyser une question sanitaire.** Méthode : partir d'une situation, mobiliser les approches de la santé, formuler les enjeux.
-   Ouverture vers les interventions possibles, étudiées aux chapitres 7 et 8.
+   Ouverture vers les interventions possibles, étudiées aux chapitres 9 et 10.
 
 ---
 
@@ -88,7 +91,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 5. **Des liens sociaux à la cohésion sociale.** Les différents liens sociaux et le rôle de la socialisation dans l'intégration sociale.
    Les facteurs de cohésion sociale ; mise en perspective avec les leviers d'intervention possibles.
 6. **Normes sociales et santé.** Comment les normes sociales influencent les comportements et la santé.
-   Analyse d'exemples, en lien avec les déterminants sociaux étudiés au chapitre 4.
+   Analyse d'exemples, en lien avec les déterminants sociaux étudiés au chapitre 6.
 
 ---
 
@@ -126,7 +129,70 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 4 : Déterminants de santé et émergence d'un problème de santé
+## Chapitre 4 : La recherche documentaire en santé-social
+
+- **Titre court** : Recherche documentaire
+- **Durée indicative** : 1 semaine, en temps dédié ; la démarche est ensuite réinvestie dans tous les chapitres suivants.
+- **Question du programme** : « Comment les études scientifiques en santé-social contribuent-elles à la connaissance d'une population ? » (pôle méthodologique), tableau « Recherche documentaire dans le domaine sanitaire et social ».
+- **Notions couvertes** : [N62] Source d'information ; [N63] fiabilité de la source ; [N64] qualité de l'information ; [N65] requête ; [N66] références ; [N67] typologie des principales bases documentaires du champ.
+- **Capacités exigibles** : [C43], [C44].
+
+**Objectifs**
+
+- Je sais formuler un questionnement et une requête pour chercher une information sanitaire ou sociale.
+- Je sais distinguer les principaux types de bases documentaires du champ et noter mes références.
+- Je sais juger la fiabilité d'une source et la qualité d'une information.
+- Je sais constituer et structurer un corpus documentaire sur un sujet sanitaire ou social.
+- Je sais expliquer l'apport de la recherche documentaire à une étude.
+
+**Sections prévues**
+
+1. **Pourquoi une recherche documentaire ?** Rechercher ce qui a déjà été étudié est un préalable à toute étude.
+   L'apport de la recherche documentaire à une étude et à l'analyse des thèmes du programme.
+2. **Questionner et formuler une requête.** Du sujet au questionnement, puis aux mots-clés d'une requête.
+   La typologie des principales bases documentaires du champ sanitaire et social.
+3. **Évaluer les sources.** Fiabilité de la source et qualité de l'information : critères d'analyse critique.
+   Exercice : comparer plusieurs sources sur un même sujet.
+4. **Constituer un corpus et citer ses références.** Collecter, trier et structurer un corpus documentaire.
+   Rédiger une synthèse et noter ses références.
+---
+
+## Chapitre 5 : La démarche d'étude en santé-social
+
+- **Titre court** : Démarche d'étude
+- **Durée indicative** : 2 semaines, en temps dédié ; la démarche est ensuite réinvestie dans les chapitres suivants (analyse d'études, diagnostic, évaluation).
+- **Question du programme** : « Comment les études scientifiques en santé-social contribuent-elles à la connaissance d'une population ? » (pôle méthodologique), tableau « L'étude au service de l'action » et « La démarche d'étude, de sa cohérence à son adaptation aux contextes ».
+- **Notions couvertes** : [N68] Démarche ; [N69] protocole d'étude ; [N70] méthode de recueil de données ; [N71] producteur de données ; [N72] objet d'étude ; [N73] hypothèses ; [N74] outils de recueil de données ; [N75] spécificités des données et des informations à caractère sanitaire et social ; [N76] protection de l'information ; [N77] éthique ; [N78] échantillon ; [N79] traitement des données. Reprend [N19] producteur de données.
+- **Capacités exigibles** : [C45] à [C51].
+
+**Objectifs**
+
+- Je sais argumenter l'intérêt d'une étude pour connaître l'état de santé ou un fait social, élaborer un projet ou l'évaluer.
+- Je sais construire un objet d'étude à partir d'une demande et formuler des hypothèses.
+- Je sais argumenter le choix d'une méthode, des outils de recueil de données et de l'échantillon.
+- Je sais repérer les questions éthiques et réglementaires posées par une étude, dont la protection de l'information.
+- Je sais traiter des données quantitatives pour produire une information.
+- Je sais expliquer l'importance de la présentation d'une étude et de sa diffusion.
+
+**Sections prévues**
+
+1. **L'étude au service de l'action.** Les apports des études à la compréhension des questions sanitaires et sociales.
+   La place de la démarche d'étude dans le diagnostic et l'évaluation.
+2. **Construire l'objet d'étude.** De la demande, du besoin ou de la commande initiale à l'objet d'étude, dans son contexte institutionnel.
+   Formuler des hypothèses et établir un protocole d'étude.
+3. **Méthodes et outils de recueil de données.** Méthodes qualitatives et quantitatives, et leur complémentarité ; outils d'enquête ; producteurs de données.
+   Les spécificités des données et des informations à caractère sanitaire et social.
+4. **L'échantillon.** Comment on construit l'échantillon d'une étude.
+   Présenter et justifier ce choix.
+5. **Éthique et protection de l'information.** Les questions éthiques et réglementaires posées par une étude.
+   Protéger les informations recueillies.
+6. **Traiter les données.** Traitement des données quantitatives avec le tableur et stratégies d'analyse.
+   Produire une information à partir des données d'une étude.
+7. **Présenter et diffuser l'étude.** Présentation de l'étude, rapport d'études, perspectives.
+   Pourquoi la présentation et la diffusion d'une étude comptent.
+---
+
+## Chapitre 6 : Déterminants de santé et émergence d'un problème de santé
 
 - **Titre court** : Problèmes de santé
 - **Durée indicative** : 4 semaines
@@ -160,7 +226,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 5 : Inégalités, précarité, exclusion : l'émergence d'un problème social
+## Chapitre 7 : Inégalités, précarité, exclusion : l'émergence d'un problème social
 
 - **Titre court** : Problèmes sociaux
 - **Durée indicative** : 3 semaines
@@ -188,7 +254,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 6 : La protection sociale
+## Chapitre 8 : La protection sociale
 
 - **Titre court** : Protection sociale
 - **Durée indicative** : 5 semaines
@@ -222,7 +288,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 7 : Agir en santé
+## Chapitre 9 : Agir en santé
 
 - **Titre court** : Action en santé
 - **Durée indicative** : 4 semaines
@@ -248,7 +314,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 3. **Restauration de la santé et parcours de santé.** Soigner et accompagner la personne tout au long de son parcours de santé.
    L'apport de la protection sociale à la santé des populations.
 4. **Veille et sécurité sanitaire.** Surveiller l'état de santé de la population et protéger contre les risques.
-   Lien avec les alertes et crises sanitaires du chapitre 4.
+   Lien avec les alertes et crises sanitaires du chapitre 6.
 5. **Les acteurs en santé.** Diversité des acteurs et des structures, à différentes échelles territoriales.
    Le rôle de chacun dans une intervention en santé.
 6. **Droits et participation de la personne.** Les droits de la personne dans une action en santé.
@@ -256,7 +322,7 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 8 : Agir sur les problèmes sociaux : l'intervention sociale
+## Chapitre 10 : Agir sur les problèmes sociaux : l'intervention sociale
 
 - **Titre court** : Intervention sociale
 - **Durée indicative** : 3 semaines
@@ -290,42 +356,6 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 
 ---
 
-## Chapitre 9 : Recherche documentaire et démarche d'étude en santé-social
-
-- **Titre court** : Méthodologie
-- **Durée indicative** : 3 semaines, en temps dédié ; la démarche est ensuite réinvestie dans les autres chapitres.
-- **Question du programme** : « Comment les études scientifiques en santé-social contribuent-elles à la connaissance d'une population ? » (pôle méthodologique).
-- **Notions couvertes** : [N62] Source d'information ; [N63] fiabilité de la source ; [N64] qualité de l'information ; [N65] requête ; [N66] références ; [N67] typologie des principales bases documentaires du champ ; [N68] Démarche ; [N69] protocole d'étude ; [N70] méthode de recueil de données ; [N71] producteur de données ; [N72] objet d'étude ; [N73] hypothèses ; [N74] outils de recueil de données ; [N75] spécificités des données et des informations à caractère sanitaire et social ; [N76] protection de l'information ; [N77] éthique ; [N78] échantillon ; [N79] traitement des données.
-- **Capacités exigibles** : [C43] à [C51].
-
-**Objectifs**
-
-- Je sais mener une recherche documentaire : questionner, formuler une requête, collecter et citer mes références.
-- Je sais juger la fiabilité d'une source et la qualité d'une information.
-- Je sais expliquer l'apport d'une étude à la connaissance, au diagnostic et à l'évaluation.
-- Je sais construire un objet d'étude et formuler des hypothèses.
-- Je sais argumenter le choix d'une méthode, d'outils de recueil et d'un échantillon.
-- Je sais repérer les questions éthiques et de protection de l'information posées par une étude.
-
-**Sections prévues**
-
-1. **Pourquoi des études en santé-social ?** Les apports des études à la compréhension des questions sanitaires et sociales.
-   La place de l'étude dans le diagnostic et l'évaluation.
-2. **La recherche documentaire.** Questionnement, requête, typologie des principales bases documentaires du champ.
-   Constituer et structurer un corpus ; noter ses références.
-3. **Évaluer l'information.** Fiabilité de la source, qualité de l'information, analyse critique.
-   Faire la synthèse d'un corpus documentaire.
-4. **Construire l'objet d'étude.** De la demande ou du besoin à l'objet d'étude, dans son contexte institutionnel.
-   Formuler des hypothèses et établir un protocole d'étude.
-5. **Méthodes et outils de recueil de données.** Méthodes qualitatives et quantitatives, et leur complémentarité ; outils d'enquête ; producteurs de données.
-   Construire un échantillon et justifier ses choix.
-6. **Traiter et présenter les données.** Traitement des données quantitatives et stratégies d'analyse.
-   Présentation de l'étude, rapport d'études, diffusion et perspectives.
-7. **Éthique et protection de l'information.** Les spécificités des données à caractère sanitaire et social.
-   Les questions éthiques et réglementaires posées par une étude.
-
----
-
 ## Table de correspondance
 
 ### Notions vers chapitres
@@ -338,81 +368,81 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 | N2 | santé globale | Q1 | 1 | |
 | N3 | santé individuelle | Q1 | 1 | |
 | N4 | santé collective | Q1 | 1 | |
-| N5 | santé publique | Q1 | 1 | 4 |
+| N5 | santé publique | Q1 | 1 | 6 |
 | N6 | Bien-être | Q1 | 2 | |
 | N7 | socialisation | Q1 | 2 | |
 | N8 | normes, valeurs | Q1 | 2 | |
 | N9 | identité sociale | Q1 | 2 | |
 | N10 | stratification sociale | Q1 | 2 | |
-| N11 | cohésion sociale | Q1 | 2 | 5 |
-| N12 | intégration sociale | Q1 | 2 | 5 |
+| N11 | cohésion sociale | Q1 | 2 | 7 |
+| N12 | intégration sociale | Q1 | 2 | 7 |
 | N13 | société | Q1 | 2 | |
 | N14 | groupes sociaux | Q1 | 2 | |
-| N15 | liens sociaux | Q1 | 2 | 5 |
+| N15 | liens sociaux | Q1 | 2 | 7 |
 | N16 | fait social | Q1 | 2 | |
 | N17 | Indicateurs | Q2 | 3 | |
 | N18 | indicateurs composites | Q2 | 3 | |
-| N19 | producteur de données | Q2 | 3 | 9 |
+| N19 | producteur de données | Q2 | 3 | 5 |
 | N20 | disparités, gradient social | Q2 | 3 | |
-| N21 | inégalités | Q2 | 3 | 5 |
-| N22 | épidémiologie | Q2 | 3 | 4 |
-| N23 | Facteurs de risque | Q3 | 4 | |
-| N24 | déterminants | Q3 | 4 | 7 |
-| N25 | déterminants sociaux et environnementaux | Q3 | 4 | |
-| N26 | Préoccupation | Q3 | 4 | |
-| N27 | risque | Q3 | 4 | |
-| N28 | risque sanitaire | Q3 | 4 | |
-| N29 | alerte sanitaire | Q3 | 4 | 7 |
-| N30 | crise sanitaire | Q3 | 4 | 7 |
-| N31 | problème de santé | Q3 | 4 | |
-| N32 | Problème social | Q4 | 5 | |
-| N33 | précarité | Q4 | 5 | |
-| N34 | pauvreté | Q4 | 5 | |
-| N35 | processus d'exclusion | Q4 | 5 | 8 |
-| N36 | Risques sociaux | Q5 | 6 | |
-| N37 | principes et techniques | Q5 | 6 | |
-| N38 | techniques de protection sociale (assurance - assistance) | Q5 | 6 | |
-| N39 | protection individuelle, collective | Q5 | 6 | |
-| N40 | prestation sociale | Q5 | 6 | |
-| N41 | droits sociaux | Q5 | 6 | |
-| N42 | accès aux droits | Q5 | 6 | |
-| N43 | Composantes du système de protection sociale | Q5 | 6 | |
-| N44 | aide sociale | Q5 | 6 | |
-| N45 | protection universelle | Q5 | 6 | |
-| N46 | protection complémentaire | Q5 | 6 | |
-| N47 | régimes de sécurité sociale | Q5 | 6 | |
-| N48 | caractère subsidiaire | Q5 | 6 | |
-| N49 | Veille et sécurité sanitaire | Q6 | 7 | |
-| N50 | promotion de la santé | Q6 | 7 | |
-| N51 | éducation pour la santé | Q6 | 7 | |
-| N52 | prévention | Q6 | 7 | |
-| N53 | restauration de la santé | Q6 | 7 | |
-| N54 | droits de la personne | Q6 | 7 | 8 |
-| N55 | acteurs en santé | Q6 | 7 | |
-| N56 | parcours de santé | Q6 | 7 | |
-| N57 | Diagnostic social | Q7 | 8 | |
-| N58 | intervention sociale | Q7 | 8 | |
-| N59 | développement social local | Q7 | 8 | |
-| N60 | accompagnement social | Q7 | 8 | |
-| N61 | insertion sociale | Q7 | 8 | |
-| N62 | Source d'information | Q8 | 9 | |
-| N63 | fiabilité de la source | Q8 | 9 | |
-| N64 | qualité de l'information | Q8 | 9 | |
-| N65 | requête | Q8 | 9 | |
-| N66 | références | Q8 | 9 | |
-| N67 | typologie des principales bases documentaires du champ | Q8 | 9 | |
-| N68 | Démarche | Q8 | 9 | |
-| N69 | protocole d'étude | Q8 | 9 | |
-| N70 | méthode de recueil de données | Q8 | 9 | |
-| N71 | producteur de données | Q8 | 9 | |
-| N72 | objet d'étude | Q8 | 9 | |
-| N73 | hypothèses | Q8 | 9 | |
-| N74 | outils de recueil de données | Q8 | 9 | |
-| N75 | spécificités des données et des informations à caractère sanitaire et social | Q8 | 9 | |
-| N76 | protection de l'information | Q8 | 9 | |
-| N77 | éthique | Q8 | 9 | |
-| N78 | échantillon | Q8 | 9 | |
-| N79 | traitement des données | Q8 | 9 | |
+| N21 | inégalités | Q2 | 3 | 7 |
+| N22 | épidémiologie | Q2 | 3 | 6 |
+| N23 | Facteurs de risque | Q3 | 6 | |
+| N24 | déterminants | Q3 | 6 | 9 |
+| N25 | déterminants sociaux et environnementaux | Q3 | 6 | |
+| N26 | Préoccupation | Q3 | 6 | |
+| N27 | risque | Q3 | 6 | |
+| N28 | risque sanitaire | Q3 | 6 | |
+| N29 | alerte sanitaire | Q3 | 6 | 9 |
+| N30 | crise sanitaire | Q3 | 6 | 9 |
+| N31 | problème de santé | Q3 | 6 | |
+| N32 | Problème social | Q4 | 7 | |
+| N33 | précarité | Q4 | 7 | |
+| N34 | pauvreté | Q4 | 7 | |
+| N35 | processus d'exclusion | Q4 | 7 | 10 |
+| N36 | Risques sociaux | Q5 | 8 | |
+| N37 | principes et techniques | Q5 | 8 | |
+| N38 | techniques de protection sociale (assurance - assistance) | Q5 | 8 | |
+| N39 | protection individuelle, collective | Q5 | 8 | |
+| N40 | prestation sociale | Q5 | 8 | |
+| N41 | droits sociaux | Q5 | 8 | |
+| N42 | accès aux droits | Q5 | 8 | |
+| N43 | Composantes du système de protection sociale | Q5 | 8 | |
+| N44 | aide sociale | Q5 | 8 | |
+| N45 | protection universelle | Q5 | 8 | |
+| N46 | protection complémentaire | Q5 | 8 | |
+| N47 | régimes de sécurité sociale | Q5 | 8 | |
+| N48 | caractère subsidiaire | Q5 | 8 | |
+| N49 | Veille et sécurité sanitaire | Q6 | 9 | |
+| N50 | promotion de la santé | Q6 | 9 | |
+| N51 | éducation pour la santé | Q6 | 9 | |
+| N52 | prévention | Q6 | 9 | |
+| N53 | restauration de la santé | Q6 | 9 | |
+| N54 | droits de la personne | Q6 | 9 | 10 |
+| N55 | acteurs en santé | Q6 | 9 | |
+| N56 | parcours de santé | Q6 | 9 | |
+| N57 | Diagnostic social | Q7 | 10 | |
+| N58 | intervention sociale | Q7 | 10 | |
+| N59 | développement social local | Q7 | 10 | |
+| N60 | accompagnement social | Q7 | 10 | |
+| N61 | insertion sociale | Q7 | 10 | |
+| N62 | Source d'information | Q8 | 4 | |
+| N63 | fiabilité de la source | Q8 | 4 | |
+| N64 | qualité de l'information | Q8 | 4 | |
+| N65 | requête | Q8 | 4 | |
+| N66 | références | Q8 | 4 | |
+| N67 | typologie des principales bases documentaires du champ | Q8 | 4 | |
+| N68 | Démarche | Q8 | 5 | |
+| N69 | protocole d'étude | Q8 | 5 | |
+| N70 | méthode de recueil de données | Q8 | 5 | |
+| N71 | producteur de données | Q8 | 5 | |
+| N72 | objet d'étude | Q8 | 5 | |
+| N73 | hypothèses | Q8 | 5 | |
+| N74 | outils de recueil de données | Q8 | 5 | |
+| N75 | spécificités des données et des informations à caractère sanitaire et social | Q8 | 5 | |
+| N76 | protection de l'information | Q8 | 5 | |
+| N77 | éthique | Q8 | 5 | |
+| N78 | échantillon | Q8 | 5 | |
+| N79 | traitement des données | Q8 | 5 | |
 
 **Bilan** : 79 notions sur 79 ont un chapitre principal. Notions non couvertes : **0**. Aucune notion n'est laissée de côté.
 
@@ -423,17 +453,21 @@ Plan déduit du programme officiel conservé dans `stss-1re.md` (arrêté du 17 
 | 1. Santé | N1 à N5 | | C1 à C3 |
 | 2. Cohésion sociale | N6 à N16 | | C4 à C7 |
 | 3. Indicateurs | N17 à N22 | | C8 à C12 |
-| 4. Problèmes de santé | N23 à N31 | N5, N22 | C13 à C19 |
-| 5. Problèmes sociaux | N32 à N35 | N11, N12, N15, N21 | C20 à C23 |
-| 6. Protection sociale | N36 à N48 | | C24 à C31 |
-| 7. Action en santé | N49 à N56 | N24, N29, N30 | C32 à C37 |
-| 8. Intervention sociale | N57 à N61 | N35, N54 | C38 à C42 |
-| 9. Méthodologie | N62 à N79 | N19 | C43 à C51 |
+| 4. Recherche documentaire | N62 à N67 | | C43, C44 |
+| 5. Démarche d'étude | N68 à N79 | N19 | C45 à C51 |
+| 6. Problèmes de santé | N23 à N31 | N5, N22 | C13 à C19 |
+| 7. Problèmes sociaux | N32 à N35 | N11, N12, N15, N21 | C20 à C23 |
+| 8. Protection sociale | N36 à N48 | | C24 à C31 |
+| 9. Action en santé | N49 à N56 | N24, N29, N30 | C32 à C37 |
+| 10. Intervention sociale | N57 à N61 | N35, N54 | C38 à C42 |
 
-**Bilan** : les 51 capacités exigibles [C1] à [C51] sont rattachées à un chapitre. Chaque chapitre ne traite que des notions et capacités de sa question du programme, et ne reprend que des notions déjà présentes dans le programme : aucun chapitre ne sort du programme.
+**Bilan** : les 51 capacités exigibles [C1] à [C51] sont rattachées à un chapitre. Chaque chapitre traite à titre principal les notions et capacités de sa question (ou de son tableau) du programme. Il ne remobilise que des notions déjà étudiées dans un autre chapitre, indiquées en « Notions reprises ». Aucun chapitre ne sort du programme.
 
-## Points à valider par l'enseignant
+## Décisions de l'enseignant (arrêt 1)
 
-- Découpage de la question 1 en deux chapitres (1 et 2), ou regroupement en un seul chapitre.
-- Place du chapitre 9 (méthodologie) : en fin d'année, plus tôt (par exemple après le chapitre 3), ou travaillé en parallèle.
-- Durées indicatives.
+Décisions prises le 10 novembre 2026 :
+
+- La question 1 reste partagée en deux chapitres : « Santé » (chapitre 1) et « Bien-être et cohésion sociale » (chapitre 2).
+- Le chapitre de méthodologie est partagé en deux chapitres, selon les deux tableaux officiels : « Recherche documentaire » (chapitre 4) et « Démarche d'étude » (chapitre 5).
+- La méthodologie est placée juste après le chapitre 3 (indicateurs). Elle est ensuite réinvestie dans les chapitres suivants. Nouvel ordre : 1 Santé, 2 Bien-être et cohésion sociale, 3 Indicateurs, 4 Recherche documentaire, 5 Démarche d'étude, 6 Problèmes de santé, 7 Problèmes sociaux, 8 Protection sociale, 9 Agir en santé, 10 Intervention sociale.
+- Durées : total maintenu à 32 semaines, dont 1 semaine pour la recherche documentaire et 2 semaines pour la démarche d'étude.
