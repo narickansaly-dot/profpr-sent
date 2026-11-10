@@ -6,7 +6,7 @@ Relecture des 150 questions de `svt-ch4.json` contre le texte du chapitre 4 (« 
 
 | Source | Problème | Décision |
 |---|---|---|
-| Quinze qcm_unique (dont 003, 010, 013, 016, 028, 042, 058, 064, 066, 069, 070, 072, 073, 074) | Biais de longueur : la bonne réponse était la plus longue dans 55 % des qcm_unique (seuil : moins de 40 %). | Un distracteur de chaque question allongé ou remplacé par une proposition plausible de même forme ; la bonne réponse est inchangée. Résultat : 26 sur 75. |
+| Quinze qcm_unique | Biais de longueur : la bonne réponse était la plus longue dans 55 % des qcm_unique (seuil : moins de 40 %). | Un distracteur de chaque question allongé ou remplacé par une proposition plausible de même forme ; la bonne réponse est inchangée. Résultat : 26 sur 75. |
 | svt:ch4:banque:114 | Énoncé presque identique à la 029 (« L'être humain descend-il du chimpanzé ? »). | Reformulée : « Le chimpanzé est l'ancêtre de l'être humain. » (faux). |
 | svt:ch4:banque:144, 145, 150 | Réponses courtes qui doublaient une question à choix (spéciation, tétrapodes) ou dont la réponse attendue était ambiguë (« au plus 1 % » des espèces encore vivantes). | Remplacées : le ragondin (espèce envahissante), l'âge des plus anciennes traces de vie (3500 Ma), un calcul de pourcentage d'espèces disparues. |
 
