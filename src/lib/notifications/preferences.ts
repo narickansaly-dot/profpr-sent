@@ -1,12 +1,9 @@
+import '@/lib/zod-sans-eval';
 import { z } from 'zod';
 
-export const TYPES_NOTIFICATION = [
-  { cle: 'rappel_evenement', libelle: 'Rappels avant tes événements' },
-  { cle: 'echeance_proche', libelle: 'Évaluation qui ferme bientôt' },
-  { cle: 'nouvel_essai', libelle: 'Nouvel essai d’évaluation disponible' },
-  { cle: 'revision_du_jour', libelle: 'Séances de révision du jour (7 h 30)' },
-  { cle: 'inactivite', libelle: 'Relance après quelques jours sans réviser (17 h)' },
-] as const;
+import { TYPES_NOTIFICATION } from './constantes';
+
+export { TYPES_NOTIFICATION };
 export type TypeNotification = (typeof TYPES_NOTIFICATION)[number]['cle'];
 
 export type Preferences = Record<TypeNotification, boolean> & {

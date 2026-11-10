@@ -125,7 +125,7 @@ delete from public.notification_planifiee;
 insert into public.abonnement_push (eleve_id, endpoint, p256dh, auth, appareil) values
   ('00000000-0000-0000-0000-0000000000c1', 'https://fcm.googleapis.com/fcm/send/c1', repeat('k', 87), repeat('a', 22), 'Test');
 insert into public.notification_planifiee (id, eleve_id, type, cle, titre, corps, url, envoi_prevu) values
-  ('50000000-0000-0000-0000-0000000000c1', '00000000-0000-0000-0000-0000000000c1', 'inactivite', 'test:1', 'On reprend', 'Corps', '/', now() - interval '1 minute'),
+  ('50000000-0000-0000-0000-0000000000c1', '00000000-0000-0000-0000-0000000000c1', 'revision_du_jour', 'jour:test:1', 'Révisions du jour', 'Corps', '/', now() - interval '1 minute'),
   ('50000000-0000-0000-0000-0000000000c2', '00000000-0000-0000-0000-0000000000c1', 'inactivite', 'test:2', 'Plus tard', 'Corps', '/', now() + interval '1 hour');
 -- Le test écrit directement l'empreinte du secret (transaction annulée à la fin) ; une base locale configurée en a déjà une.
 delete from prive.cle_envoi;

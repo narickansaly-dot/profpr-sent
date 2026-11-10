@@ -96,4 +96,17 @@ describe('genererPlanning', () => {
   it('prévient quand il n’y a aucun chapitre', () => {
     expect(genererPlanning({ ...base, chapitres: [] })).toEqual({ sessions: [], regroupe: false, avertissements: ['Aucun chapitre à réviser.'] });
   });
+
+  it('accepte une session qui commence exactement 30 minutes après maintenant', () => {
+    const p = genererPlanning({
+      ...base, maintenant: new Date('2026-12-07T15:30:00Z'), // lundi 16 h 30 à Paris
+      reglages: { ...reglages, joursPreferes: [1], heureDebut: '17:00' },
+    });
+    expect(p.sessions.map((s) => s.debut)).toContain('2026-12-07T16:00:00.000Z');
+  });
+  it('renvoie un planning vide avec un avertissement pour une date d’examen invalide', () => {
+    expect(genererPlanning({ ...base, examenDebut: 'pas une date' })).toEqual({
+      sessions: [], regroupe: false, avertissements: ['La date de l’examen est invalide.'],
+    });
+  });
 });

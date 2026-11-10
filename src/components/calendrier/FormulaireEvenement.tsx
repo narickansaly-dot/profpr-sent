@@ -2,7 +2,8 @@
 
 import { useActionState, useId, useState } from 'react';
 import { enregistrerEvenement, type EtatEvenement } from '@/app/(app)/calendrier/actions';
-import { DUREES_EVENEMENT, RAPPELS, type ChampEvenement, type ValeursEvenement } from '@/lib/calendrier/schema-evenement';
+import { DUREES_EVENEMENT, RAPPELS } from '@/lib/calendrier/constantes';
+import type { ChampEvenement, ValeursEvenement } from '@/lib/calendrier/schema-evenement';
 import type { CoursOption } from '@/lib/calendrier/requetes';
 
 const TYPES = [

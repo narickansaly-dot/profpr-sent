@@ -1,4 +1,4 @@
-// Ajoute à .env.local les clés VAPID et le secret d'envoi s'ils manquent, sans jamais les afficher.
+// Ajoute à .env.local les clés VAPID, le secret d'envoi et celui du consentement parental s'ils manquent, sans jamais les afficher.
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 import { randomBytes } from 'node:crypto';
 import * as webpush from 'web-push';
@@ -14,6 +14,7 @@ if (!present('NEXT_PUBLIC_VAPID_PUBLIC_KEY') || !present('VAPID_PRIVATE_KEY')) {
 }
 if (!present('VAPID_SUJET')) ajouts.push('VAPID_SUJET=mailto:contact@example.com');
 if (!present('ENVOI_SECRET')) ajouts.push(`ENVOI_SECRET=${randomBytes(32).toString('base64url')}`);
+if (!present('CONSENTEMENT_SECRET')) ajouts.push(`CONSENTEMENT_SECRET=${randomBytes(32).toString('base64url')}`);
 if (!present('ENVOI_URL')) ajouts.push('ENVOI_URL=http://host.docker.internal:3000/api/notifications/envoyer');
 
 if (ajouts.length === 0) {

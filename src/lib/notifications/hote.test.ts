@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { hoteDePushAutorise } from './webpush';
+import { hoteDePushAutorise } from './hote';
 
 describe('hoteDePushAutorise', () => {
   it('accepte les services push connus', () => {

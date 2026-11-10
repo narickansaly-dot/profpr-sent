@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test';
 import { db, idProfil } from './aide-db';
 import { emailDeTest, inscrireEleve } from './aide-parcours';
 
+test.use({ trace: 'off' });
+
 const secret = process.env.ENVOI_SECRET ?? '';
 
 test('la route d’envoi refuse un appel sans le bon secret', async ({ request }) => {

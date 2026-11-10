@@ -1,14 +1,17 @@
+import '@/lib/zod-sans-eval';
 import { z } from 'zod';
 import type { Reglages } from './generer';
 
-export const DUREES_SESSION = [30, 45, 60, 90] as const;
+import { DUREES_SESSION } from './constantes';
+
+export { DUREES_SESSION };
 export const REGLAGES_PAR_DEFAUT: Reglages = { sessionsParSemaine: 3, dureeMinutes: 45, joursPreferes: [1, 2, 3, 4, 5], heureDebut: '17:30' };
 export type ChampReglages = 'sessions' | 'duree' | 'jours' | 'heure';
 
 const schema = z.object({
   sessions: z.coerce.number().int().min(1, 'Choisis entre 1 et 7 sessions par semaine.').max(7, 'Choisis entre 1 et 7 sessions par semaine.'),
   duree: z.coerce.number().refine((d) => (DUREES_SESSION as readonly number[]).includes(d), 'Choisis une durée dans la liste.'),
-  jours: z.array(z.coerce.number().int().min(1).max(7)).min(1, 'Choisis au moins un jour.'),
+  jours: z.array(z.coerce.number({ error: 'Choisis des jours entre lundi et dimanche.' }).int('Choisis des jours entre lundi et dimanche.').min(1, 'Choisis des jours entre lundi et dimanche.').max(7, 'Choisis des jours entre lundi et dimanche.')).min(1, 'Choisis au moins un jour.'),
   heure: z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, 'Choisis une heure de début entre 6 h et 21 h.')
     .refine((h) => h >= '06:00' && h <= '21:00', 'Choisis une heure de début entre 6 h et 21 h.'),
 });

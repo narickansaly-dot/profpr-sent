@@ -2,7 +2,8 @@
 
 import { useActionState, useState } from 'react';
 import { enregistrerPreferences, type EtatPreferences } from '@/app/(app)/notifications/actions';
-import { TYPES_NOTIFICATION, type ValeursPreferences } from '@/lib/notifications/preferences';
+import { TYPES_NOTIFICATION } from '@/lib/notifications/constantes';
+import type { ValeursPreferences } from '@/lib/notifications/preferences';
 
 export function FormulairePreferences({ initial }: { initial: ValeursPreferences }) {
   const [modifie, setModifie] = useState(false);
