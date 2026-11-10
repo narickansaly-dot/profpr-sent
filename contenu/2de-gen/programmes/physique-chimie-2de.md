@@ -8,6 +8,7 @@
 - **URL de l'annexe (PDF, 13 pages, 469 712 octets)**, liée depuis la page du BO : https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf
 - **Même fichier sur Éduscol** (identique octet pour octet, SHA-1 `aa8d3a1669dcee5f0eaef831bc6d4f8a07f14560`) : https://eduscol.education.fr/document/22663/download
 - **Date de récupération** : 10 novembre 2026.
+- **Version en vigueur pour 2026-2027** (vérifiée le 10 novembre 2026) : la page Éduscol « Programmes et ressources en physique-chimie - voie GT » (https://eduscol.education.gouv.fr/5829/programmes-et-ressources-en-physique-chimie-voie-gt, mise à jour en mars 2026) range toujours, sous « Programmes en vigueur », le programme de « Seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019) ». Une recherche sur education.gouv.fr n'a trouvé aucun arrêté plus récent qui remplace ou modifie ce programme ; seul un projet de programme de physique-chimie du **cycle 4** (collège), daté de juillet 2025, est paru. Le programme de 2019 est donc celui qui s'applique, sans changement à signaler.
 
 Le texte ci-dessous reprend fidèlement l'annexe pour la structure, les notions et contenus, et les capacités. Ajouts, qui ne figurent pas dans le texte officiel : les codes entre crochets (`[N…]` pour les notions et contenus, `[C…]` pour les capacités), qui servent à la table de correspondance du plan ; les titres « Partie 0 » à « Partie 3 ».
 
