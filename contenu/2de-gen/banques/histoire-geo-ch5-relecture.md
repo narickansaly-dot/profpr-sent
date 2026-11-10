@@ -18,9 +18,9 @@ Banque : `histoire-geo-ch5.json`, 150 questions au statut `a_relire` après fusi
 | --- | --- | --- |
 | ch5:banque:035 | L'armée de Louis XIV « dépasse 300 000 hommes » en temps de guerre : les historiens donnent 300 000 à 400 000 hommes au plus fort de la guerre de la Ligue d'Augsbourg. Les distracteurs sont éloignés (3 000, 30 000, 3 millions). | Garder. |
 | Cours, tableau des territoires | La Lorraine (1766) est présentée comme un « héritage » : elle revient à la France à la mort de Stanislas Leszczynski, en application du traité de Vienne (1738). Aucune question ne porte sur ce mode d'acquisition. | Préciser le cours si l'enseignant le souhaite. |
-| ch5:banque:116 | Le château de Versailles était d'abord un pavillon de chasse de Louis XIII : fait exact, mais secondaire. | Garder ou rejeter. |
-| ch5:banque:117 | Louis XIV limite le droit de remontrance en 1673 : date exacte, mais détail fin pour une 2de. | Garder ou rejeter selon le niveau d'exigence. |
-| Questions sur Villers-Cotterêts (007 à 009, 041, 042, 062, 063) | Le cours affirme que les articles sur la langue sont « toujours en vigueur » : c'est exact (articles 110 et 111), et c'est un fait souvent évoqué. | Garder. |
+| ch5:banque:127 | Le château de Versailles était d'abord un pavillon de chasse de Louis XIII : fait exact, mais secondaire. | Garder ou rejeter. |
+| ch5:banque:128 | Louis XIV limite le droit de remontrance en 1673 : date exacte, mais détail fin pour une 2de. | Garder ou rejeter selon le niveau d'exigence. |
+| ch5:banque:063, 131 | Le cours affirme que les articles sur la langue sont « toujours en vigueur » : c'est exact (articles 110 et 111), et c'est un fait souvent évoqué. | Garder. |
 
 ## Contrôles
 
