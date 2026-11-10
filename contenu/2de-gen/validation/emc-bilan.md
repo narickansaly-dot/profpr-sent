@@ -2,6 +2,10 @@
 
 Branche `claude/contenu-2de-emc-89b137`, 10 novembre 2026. Rien n'est poussé ni importé.
 
+## Changement de programme
+
+Le programme d'EMC de seconde a changé : l'ancien programme (arrêté du 17 janvier 2019) a été **abrogé** par l'arrêté du 29 mai 2024 (NOR : MENE2413934A, JO du 12 juin 2024, BO n° 24 du 13 juin 2024). Selon son article 3, ce nouveau programme s'applique en seconde générale et technologique depuis la rentrée 2024. C'est donc lui qui est applicable en 2026-2027, et c'est lui que suit le cours. Le thème de l'année devient « Droits, libertés et responsabilité », en trois axes : État de droit et laïcité ; information ; environnement. Seule modification ultérieure signalée par Légifrance : l'arrêté du 16 février 2026, lié au BNMA (voir le point 3 de « Points à trancher »).
+
 ## Ce qui a été fait
 
 1. **Programme officiel** (`programmes/emc-2de.md`) : arrêté du 29 mai 2024 (BO n° 24 du 13 juin 2024), en vigueur en seconde depuis la rentrée 2024 ; il a abrogé le programme de 2019. Partie « Seconde : Droits, libertés et responsabilité » transcrite fidèlement depuis l'annexe (PDF du ministère, pages 22 et 23) : 3 axes de 6 heures, 14 notions, 12 contenus, 16 démarches, codés `[N…]`, `[C…]`, `[D…]`.
