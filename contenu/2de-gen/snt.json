@@ -1,0 +1,2479 @@
+{
+  "slug": "snt-2de-gen",
+  "filiere": "GEN",
+  "niveau": "2de",
+  "matiere": "SNT",
+  "titre": "Sciences numériques et technologie",
+  "couleur": "#0e7490",
+  "chapitres": [
+    {
+      "slug": "ch1",
+      "numero": 1,
+      "titre": "Programmer en Python",
+      "titre_court": "Python",
+      "duree": "4 semaines",
+      "resume": "Algorithmes, langages et programmes ; variables et affectation ; séquences d'instructions ; instructions conditionnelles ; boucles bornées et non bornées ; fonctions.",
+      "chapeau": "Tous les thèmes de SNT reposent sur des programmes : un routeur, un moteur de recherche ou un appareil photo exécutent des instructions écrites par des humains. Dans ce chapitre, tu apprends les bases de la programmation en Python, que tu réutiliseras dans tous les chapitres suivants.",
+      "objectifs": [
+        "utiliser des variables et l'affectation ;",
+        "écrire une séquence d'instructions et suivre l'état des variables ;",
+        "écrire une instruction conditionnelle ;",
+        "écrire une boucle bornée et une boucle non bornée ;",
+        "définir et appeler une fonction pour résoudre un problème."
+      ],
+      "sections": [
+        {
+          "id": "algorithmes",
+          "titre": "Algorithmes, langages et programmes",
+          "html": "<p>L'informatique repose sur <strong>quatre concepts</strong> que tu retrouveras dans chaque thème de SNT :</p>\n<ul>\n<li>les <strong>données</strong> : des informations très diverses (textes, images, sons, mesures, sommes d'argent…) représentées sous une forme numérique, c'est-à-dire avec des 0 et des 1 ;</li>\n<li>les <strong>algorithmes</strong> : des suites finies et précises d'opérations qui décrivent comment traiter des données pour résoudre un problème ;</li>\n<li>les <strong>langages</strong> : ils permettent d'écrire un algorithme sous une forme qu'une machine peut exécuter, un <strong>programme</strong> ;</li>\n<li>les <strong>machines</strong> : ordinateurs, téléphones, objets connectés, qui exécutent les programmes en enchaînant un très grand nombre d'instructions simples.</li>\n</ul>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>algorithme</strong> est une suite finie et ordonnée d'instructions permettant de résoudre un problème. Un <strong>programme</strong> est la traduction d'un algorithme dans un langage de programmation.</p></div>\n<p>Une recette de cuisine ressemble à un algorithme : des ingrédients (les données), des étapes dans un ordre précis (les instructions), un résultat. Mais une machine ne devine rien : chaque instruction doit être écrite sans ambiguïté.</p>\n<h3>Le langage Python</h3>\n<p>En SNT, on programme en <strong>Python</strong>, un langage créé par Guido van Rossum et publié en 1991. Il est très utilisé, gratuit, et ses programmes se lisent assez facilement. On écrit un programme dans un éditeur (Thonny, EduPython, un carnet en ligne…), puis on l'exécute : l'<strong>interpréteur</strong> Python lit les instructions une à une, de haut en bas.</p>\n<p>Deux instructions servent dès le début :</p>\n<ul>\n<li><strong>print</strong> affiche une valeur à l'écran ;</li>\n<li><strong>input</strong> demande à l'utilisateur de taper un texte au clavier et renvoie ce texte.</li>\n</ul>\n<div class=\"def code\"><b class=\"t\">Python</b><p>nom = input(\"Comment t'appelles-tu ? \")<br>print(\"Bonjour\", nom)</p></div><p>Si l'utilisateur tape Inès, le programme affiche <em>Bonjour Inès</em>. Le texte placé entre guillemets est une <strong>chaîne de caractères</strong> : Python l'affiche tel quel.</p>\n<p>Une ligne qui commence par le signe # est un <strong>commentaire</strong> : Python l'ignore. Les commentaires servent à expliquer le programme à celui qui le lit.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Python est très strict : une parenthèse oubliée, un guillemet non fermé ou un mot mal orthographié (Print au lieu de print) provoque une <strong>erreur</strong>, et le programme s'arrête en affichant un message. Lire ce message aide à trouver la ligne fautive.</p></div>"
+        },
+        {
+          "id": "variables",
+          "titre": "Variables et affectation",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>variable</strong> est un nom qui désigne une valeur rangée dans la mémoire de l'ordinateur. L'<strong>affectation</strong> donne une valeur à une variable ; en Python, elle s'écrit avec le signe =.</p></div>\n<div class=\"def code\"><b class=\"t\">Python</b><p>age = 15<br>prenom = \"Lina\"<br>taille = 1.62</p></div><p>L'instruction age = 15 se lit « age reçoit 15 ». Le signe = n'est pas une égalité mathématique : il range la valeur de droite dans la variable de gauche. On peut donc écrire age = age + 1 : Python calcule d'abord age + 1 avec l'ancienne valeur, puis range le résultat dans age, qui vaut alors 16.</p>\n<h3>Choisir un nom</h3>\n<p>Un nom de variable commence par une lettre ou le signe _, ne contient ni espace ni tiret, et ne doit pas être un mot réservé de Python (if, for, while, def…). Python distingue les majuscules et les minuscules : Age et age sont deux variables différentes. Un nom clair, comme prix_total, rend le programme plus lisible que p.</p>\n<h3>Les types de valeurs</h3>\n<p>Chaque valeur a un <strong>type</strong>, qui indique ce qu'elle représente et les opérations possibles :</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Type</th><th>Ce qu'il représente</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td>int</td><td>un nombre entier</td><td>15, -3, 0</td></tr>\n<tr><td>float</td><td>un nombre décimal (le séparateur est un point)</td><td>1.62, 0.5, -2.0</td></tr>\n<tr><td>str</td><td>une chaîne de caractères, entre guillemets</td><td>\"Lina\", \"15\", \"bonjour\"</td></tr>\n<tr><td>bool</td><td>un booléen : vrai ou faux</td><td>True, False</td></tr>\n</tbody></table></div>\n<p>Attention : \"15\" (avec guillemets) est une chaîne, pas un nombre. La fonction <strong>type</strong> donne le type d'une valeur : type(1.62) renvoie float.</p>\n<h3>Les opérations</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Opération</th><th>Symbole</th><th>Exemple</th><th>Résultat</th></tr></thead>\n<tbody>\n<tr><td>addition</td><td>+</td><td>7 + 2</td><td>9</td></tr>\n<tr><td>soustraction</td><td>-</td><td>7 - 2</td><td>5</td></tr>\n<tr><td>multiplication</td><td>*</td><td>7 * 2</td><td>14</td></tr>\n<tr><td>division</td><td>/</td><td>7 / 2</td><td>3.5</td></tr>\n<tr><td>quotient entier</td><td>//</td><td>7 // 2</td><td>3</td></tr>\n<tr><td>reste de la division entière</td><td>%</td><td>7 % 2</td><td>1</td></tr>\n<tr><td>puissance</td><td>**</td><td>7 ** 2</td><td>49</td></tr>\n</tbody></table></div>\n<p>Les priorités sont celles des mathématiques : 2 + 3 * 4 vaut 14, et (2 + 3) * 4 vaut 20. La division / donne toujours un float : 6 / 2 vaut 3.0. Le reste % sert souvent à tester la parité : un nombre n est pair quand n % 2 vaut 0.</p>\n<p>Avec des chaînes, + <strong>concatène</strong> (met bout à bout) : \"SN\" + \"T\" donne \"SNT\". Et \"ab\" * 3 donne \"ababab\". En revanche, \"15\" + 1 provoque une erreur : on n'additionne pas une chaîne et un nombre.</p>\n<h3>Convertir</h3>\n<p>La fonction input renvoie toujours une chaîne. Pour calculer avec ce que l'utilisateur a tapé, il faut la <strong>convertir</strong> : int(\"15\") donne l'entier 15, float(\"1.62\") donne le décimal 1.62, et str(15) donne la chaîne \"15\".</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>annee = int(input(\"Année de naissance : \"))<br>print(\"Tu as environ\", 2026 - annee, \"ans\")</p></div>"
+        },
+        {
+          "id": "sequences",
+          "titre": "Séquences d'instructions",
+          "html": "<p>Une <strong>séquence d'instructions</strong> est une suite d'instructions exécutées l'une après l'autre, dans l'ordre où elles sont écrites. Changer l'ordre peut changer le résultat.</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>a = 5<br>b = a * 2<br>a = 1<br>print(a, b)</p></div><p>Ce programme affiche 1 10 : quand b est calculé, a vaut encore 5. Le changement de a à la ligne 3 ne modifie pas b après coup.</p>\n<h3>Suivre l'état des variables</h3>\n<p>Pour comprendre un programme, on construit un <strong>tableau d'état</strong> : une ligne par instruction exécutée, une colonne par variable. On y note la valeur de chaque variable après l'instruction.</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>x = 3<br>y = x + 4<br>x = x * y<br>y = y - x</p></div><div class=\"tbl\"><table>\n<thead><tr><th>Instruction</th><th>x</th><th>y</th></tr></thead>\n<tbody>\n<tr><td>x = 3</td><td>3</td><td>(pas encore définie)</td></tr>\n<tr><td>y = x + 4</td><td>3</td><td>7</td></tr>\n<tr><td>x = x * y</td><td>21</td><td>7</td></tr>\n<tr><td>y = y - x</td><td>21</td><td>-14</td></tr>\n</tbody></table></div>\n<h3>Échanger deux variables</h3>\n<p>Pour échanger les valeurs de a et b, écrire a = b puis b = a ne marche pas : après a = b, l'ancienne valeur de a est perdue, et les deux variables valent b. On passe par une variable temporaire :</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>temp = a<br>a = b<br>b = temp</p></div><p>Python permet aussi d'écrire directement a, b = b, a.</p>"
+        },
+        {
+          "id": "conditions",
+          "titre": "Instructions conditionnelles",
+          "html": "<p>Un programme doit souvent choisir entre plusieurs actions selon la situation : c'est le rôle de l'<strong>instruction conditionnelle</strong>.</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>note = float(input(\"Ta note : \"))<br>if note &gt;= 10:<br>    print(\"Admis\")<br>else:<br>    print(\"Non admis\")</p></div><p>La <strong>condition</strong> note >= 10 est une expression qui vaut True ou False. Si elle vaut True, Python exécute le bloc placé sous if ; sinon, il exécute le bloc placé sous else. La partie else est facultative.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>La ligne du if se termine par deux-points, et les instructions du bloc sont <strong>indentées</strong> : décalées vers la droite, en général de quatre espaces. C'est l'indentation qui indique à Python où commence et où finit le bloc. Une indentation incorrecte provoque une erreur ou change le sens du programme.</p></div>\n<h3>Les comparaisons</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Symbole</th><th>Sens</th><th>Exemple vrai</th></tr></thead>\n<tbody>\n<tr><td>==</td><td>égal à</td><td>3 == 3</td></tr>\n<tr><td>!=</td><td>différent de</td><td>3 != 4</td></tr>\n<tr><td>&lt; et &gt;</td><td>strictement inférieur, strictement supérieur</td><td>2 &lt; 5</td></tr>\n<tr><td>&lt;= et &gt;=</td><td>inférieur ou égal, supérieur ou égal</td><td>5 &gt;= 5</td></tr>\n</tbody></table></div>\n<p>Ne confonds pas = (affectation : on range une valeur) et == (comparaison : on pose une question dont la réponse est True ou False).</p>\n<h3>Plusieurs cas avec elif</h3>\n<p>Le mot elif (contraction de « else if ») permet d'enchaîner plusieurs conditions. Python les teste dans l'ordre et exécute le premier bloc dont la condition est vraie, puis ignore les autres.</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>temperature = 23<br>if temperature &lt; 10:<br>    print(\"Froid\")<br>elif temperature &lt; 25:<br>    print(\"Doux\")<br>else:<br>    print(\"Chaud\")</p></div><p>Ici, la première condition est fausse, la deuxième est vraie : le programme affiche Doux, et la partie else n'est pas exécutée.</p>\n<h3>Combiner des conditions</h3>\n<p>Les opérateurs <strong>and</strong>, <strong>or</strong> et <strong>not</strong> combinent des conditions :</p>\n<ul>\n<li>c1 and c2 est vrai seulement si c1 et c2 sont vraies toutes les deux ;</li>\n<li>c1 or c2 est vrai si au moins une des deux est vraie ;</li>\n<li>not c est vrai si c est fausse.</li>\n</ul>\n<p>Exemple : age >= 12 and age &lt;= 17 est vrai pour un âge compris entre 12 et 17 ans inclus.</p>"
+        },
+        {
+          "id": "boucles",
+          "titre": "Boucles bornées et non bornées",
+          "html": "<p>Une <strong>boucle</strong> répète un bloc d'instructions. On distingue deux sortes de boucles.</p>\n<h3>La boucle bornée : for</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>boucle bornée</strong> répète un bloc un nombre de fois connu à l'avance. En Python, elle s'écrit avec <strong>for</strong>.</p></div>\n<div class=\"def code\"><b class=\"t\">Python</b><p>for i in range(5):<br>    print(i)</p></div><p>range(5) produit les entiers 0, 1, 2, 3, 4 : le bloc est exécuté 5 fois, et la variable i prend successivement ces valeurs. On peut aussi écrire range(début, fin) : range(2, 6) donne 2, 3, 4, 5. La valeur de fin n'est jamais atteinte.</p>\n<h3>Accumuler et compter</h3>\n<p>On utilise souvent une boucle avec un <strong>accumulateur</strong>, une variable initialisée avant la boucle et mise à jour à chaque tour :</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>somme = 0<br>for i in range(1, 11):<br>    somme = somme + i<br>print(somme)</p></div><p>Ce programme calcule 1 + 2 + … + 10 et affiche 55. Un <strong>compteur</strong> fonctionne de la même façon, mais augmente de 1 à chaque fois qu'un événement se produit.</p>\n<p>La boucle for parcourt aussi une chaîne, lettre par lettre : for lettre in \"SNT\": print(lettre) affiche S, puis N, puis T.</p>\n<h3>La boucle non bornée : while</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>boucle non bornée</strong> répète un bloc tant qu'une condition est vraie, sans que l'on sache à l'avance combien de tours seront faits. En Python, elle s'écrit avec <strong>while</strong>.</p></div>\n<div class=\"def code\"><b class=\"t\">Python</b><p>capital = 1000<br>annees = 0<br>while capital &lt; 2000:<br>    capital = capital * 1.05<br>    annees = annees + 1<br>print(annees)</p></div><p>Ce programme cherche au bout de combien d'années un capital placé à 5 % par an double. Python teste la condition avant chaque tour ; dès qu'elle est fausse, il sort de la boucle et passe à la suite. Il affiche 15.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Si la condition d'un while reste toujours vraie, la boucle ne s'arrête jamais : c'est une <strong>boucle infinie</strong>. Il faut que le bloc modifie une variable de la condition pour qu'elle finisse par devenir fausse. Si l'on oublie la ligne capital = capital * 1.05, le programme tourne sans fin.</p></div>\n<h3>Choisir sa boucle</h3>\n<ul>\n<li>On connaît le nombre de répétitions (afficher les 10 premiers multiples de 7, parcourir les pixels d'une image) : boucle <strong>for</strong>.</li>\n<li>On répète jusqu'à ce qu'une situation se produise (redemander un mot de passe tant qu'il est faux, attendre qu'un capteur dépasse un seuil) : boucle <strong>while</strong>.</li>\n</ul>"
+        },
+        {
+          "id": "fonctions",
+          "titre": "Fonctions",
+          "html": "<p>Tu utilises déjà des fonctions de Python : print, input, int, range… On peut aussi écrire ses propres fonctions.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>fonction</strong> est un bloc d'instructions auquel on donne un nom, et qui peut recevoir des valeurs (les <strong>paramètres</strong>) et renvoyer un résultat avec <strong>return</strong>. On la <strong>définit</strong> une fois avec def, puis on l'<strong>appelle</strong> autant de fois que nécessaire.</p></div>\n<div class=\"def code\"><b class=\"t\">Python</b><p>def aire_rectangle(longueur, largeur):<br>    aire = longueur * largeur<br>    return aire<br><br>print(aire_rectangle(4, 3))<br>print(aire_rectangle(10, 2.5))</p></div><p>La définition ne fait rien toute seule : elle explique à Python ce que fera la fonction. À l'appel aire_rectangle(4, 3), le paramètre longueur reçoit 4, largeur reçoit 3, et la fonction renvoie 12. Le programme affiche 12, puis 25.0.</p>\n<h3>return et print</h3>\n<p>return renvoie une valeur au programme qui a appelé la fonction, qui peut la ranger dans une variable ou la réutiliser dans un calcul. print se contente de l'afficher à l'écran. Dès que Python rencontre return, il sort de la fonction : les instructions placées après ne sont pas exécutées.</p>\n<h3>Pourquoi écrire des fonctions ?</h3>\n<ul>\n<li><strong>Réutiliser</strong> : un calcul écrit une seule fois sert partout dans le programme.</li>\n<li><strong>Découper</strong> un problème complexe en petits problèmes plus simples, chacun réglé par une fonction.</li>\n<li><strong>Corriger</strong> plus facilement : une erreur se corrige à un seul endroit.</li>\n</ul>\n<h3>Modéliser un phénomène</h3>\n<p>Les programmes servent à modéliser des phénomènes physiques, économiques ou sociaux. Par exemple, une fonction peut calculer le prix d'un trajet en taxi :</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>def prix_taxi(km):<br>    if km &lt;= 2:<br>        return 7<br>    else:<br>        return 7 + (km - 2) * 1.5</p></div><p>prix_taxi(1) renvoie 7 (forfait), et prix_taxi(10) renvoie 7 + 8 × 1,5 = 19.0. Une fonction peut contenir des conditions, des boucles, et appeler d'autres fonctions : tu en écriras dans tous les thèmes de SNT.</p>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Un <strong>algorithme</strong> est une suite finie d'instructions qui résout un problème ; un <strong>programme</strong> le traduit dans un langage, ici Python.</li>\n<li>Une <strong>variable</strong> désigne une valeur ; l'<strong>affectation</strong> s'écrit = (x = x + 1 augmente x de 1). Types : int, float, str, bool.</li>\n<li>input renvoie une chaîne : on la convertit avec int ou float pour calculer.</li>\n<li>Une <strong>séquence</strong> s'exécute dans l'ordre ; un tableau d'état suit les valeurs des variables.</li>\n<li>if / elif / else exécute un bloc selon une condition ; = affecte, == compare ; l'indentation délimite les blocs.</li>\n<li>La boucle <strong>bornée</strong> for répète un nombre de fois connu (range(n) donne 0 à n - 1) ; la boucle <strong>non bornée</strong> while répète tant qu'une condition est vraie (attention à la boucle infinie).</li>\n<li>Une <strong>fonction</strong> se définit avec def, reçoit des paramètres, renvoie un résultat avec return, et s'appelle autant de fois que nécessaire.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch1:banque:001",
+          "enonce": "Comment appelle-t-on une suite finie et ordonnée d'instructions qui permet de résoudre un problème ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Un algorithme est une suite finie et ordonnée d'instructions permettant de résoudre un problème.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un algorithme",
+            "Un processeur",
+            "Une variable",
+            "Un booléen"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:002",
+          "enonce": "Qu'est-ce qu'un programme ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Un programme traduit un algorithme dans un langage, pour qu'une machine puisse l'exécuter.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une liste de fichiers enregistrés sur un disque",
+            "Une donnée rangée dans la mémoire",
+            "Un ordinateur capable de calculer très vite",
+            "La traduction d'un algorithme dans un langage de programmation"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:003",
+          "enonce": "Lequel de ces quatre concepts de l'informatique désigne les ordinateurs, téléphones et objets qui exécutent les programmes ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Les machines exécutent les programmes en enchaînant un très grand nombre d'instructions simples.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les données",
+            "Les algorithmes",
+            "Les machines",
+            "Les langages"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:004",
+          "enonce": "Quelle instruction Python affiche une valeur à l'écran ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "print affiche une valeur ; input demande une saisie au clavier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "input",
+            "print",
+            "int",
+            "range"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:005",
+          "enonce": "Quelle instruction Python demande à l'utilisateur de taper un texte au clavier ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "input attend que l'utilisateur tape un texte et renvoie ce texte.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "return",
+            "input",
+            "type",
+            "print"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:006",
+          "enonce": "Par quel signe commence une ligne de commentaire en Python ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Une ligne qui commence par # est un commentaire : Python l'ignore.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "//",
+            "=",
+            "#",
+            "%"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:007",
+          "enonce": "Dans quel ordre l'interpréteur Python exécute-t-il les instructions d'un programme sans boucle ni condition ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "L'interpréteur lit les instructions une à une, de haut en bas.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une à une, de haut en bas",
+            "De bas en haut",
+            "Toutes en même temps",
+            "Dans un ordre choisi au hasard"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:008",
+          "enonce": "Que fait l'instruction age = 15 ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Le signe = est l'affectation : la valeur de droite est rangée dans la variable de gauche.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle affiche 15 à l'écran",
+            "Elle crée une fonction appelée age",
+            "Elle teste si age est égal à 15",
+            "Elle range la valeur 15 dans la variable age"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:009",
+          "enonce": "Quel est le type de la valeur 1.62 ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "1.62 est un nombre décimal : type float (le séparateur décimal est un point).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "bool",
+            "str",
+            "int",
+            "float"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:010",
+          "enonce": "Quel est le type de la valeur \"15\", écrite entre guillemets ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Entre guillemets, c'est une chaîne de caractères (str), même si elle contient des chiffres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "bool",
+            "int",
+            "str",
+            "float"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:011",
+          "enonce": "Quelles sont les deux valeurs possibles d'un booléen en Python ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Le type bool a deux valeurs : True et False.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "True et False",
+            "0 et 1 seulement",
+            "Oui et Non",
+            "\"vrai\" et \"faux\""
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:012",
+          "enonce": "Lequel de ces noms de variable est accepté par Python ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Un nom commence par une lettre ou _, sans espace ni tiret.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2prix",
+            "prix_total",
+            "prix-total",
+            "prix total"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:013",
+          "enonce": "Quel quotient entier renvoie l'opération 7 // 2 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "// donne le quotient entier : 7 = 2 × 3 + 1, donc 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "14",
+            "3",
+            "3.5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:014",
+          "enonce": "Quel reste obtient-on en calculant 7 % 2 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "% donne le reste de la division entière : 7 = 2 × 3 + 1, le reste est 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "3.5",
+            "0",
+            "3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:015",
+          "enonce": "Quel symbole calcule une puissance en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "** est la puissance : 7 ** 2 vaut 49.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "//",
+            "**",
+            "*",
+            "^"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:016",
+          "enonce": "Que donne \"SN\" + \"T\" en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "Avec des chaînes, + concatène : il met les textes bout à bout.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "\"SN T\"",
+            "Une erreur",
+            "\"TSN\"",
+            "\"SNT\""
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:017",
+          "enonce": "Quelle fonction convertit la chaîne \"15\" en nombre entier ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "int(\"15\") donne l'entier 15.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "float",
+            "int",
+            "print",
+            "str"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:018",
+          "enonce": "Comment appelle-t-on une suite d'instructions exécutées l'une après l'autre, dans l'ordre où elles sont écrites ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 1,
+          "explication": "C'est la définition d'une séquence d'instructions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une séquence d'instructions",
+            "Un paramètre",
+            "Une instruction conditionnelle",
+            "Une boucle bornée"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:019",
+          "enonce": "À quoi sert un tableau d'état ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 1,
+          "explication": "Une ligne par instruction exécutée, une colonne par variable : on suit leurs valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À choisir le nom des variables",
+            "À ranger les fichiers d'un programme",
+            "À lister les erreurs de Python",
+            "À suivre la valeur des variables après chaque instruction"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:020",
+          "enonce": "Quel mot-clé commence une instruction conditionnelle en Python ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "if introduit la condition ; for et while introduisent des boucles, def une fonction.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "while",
+            "def",
+            "if",
+            "for"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:021",
+          "enonce": "Quel symbole teste l'égalité de deux valeurs en Python ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "== compare ; = est l'affectation.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            ">=",
+            "==",
+            "!=",
+            "="
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:022",
+          "enonce": "Quel symbole signifie « différent de » en Python ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "!= est vrai quand les deux valeurs sont différentes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "!=",
+            "==",
+            "<>",
+            "=/"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:023",
+          "enonce": "Comment Python sait-il quelles instructions font partie du bloc d'un if ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "Ce sont les lignes indentées (décalées) sous le if qui forment le bloc.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Grâce aux accolades",
+            "Grâce aux commentaires",
+            "Grâce à l'indentation des lignes",
+            "Grâce aux guillemets"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:024",
+          "enonce": "Quels entiers produit range(5) ?",
+          "notion": "Boucles bornées",
+          "difficulte": 1,
+          "explication": "range(5) commence à 0 et s'arrête avant 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0, 1, 2, 3, 4, 5",
+            "5 seulement",
+            "1, 2, 3, 4, 5",
+            "0, 1, 2, 3, 4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:025",
+          "enonce": "Quel mot-clé introduit une boucle bornée en Python ?",
+          "notion": "Boucles bornées",
+          "difficulte": 1,
+          "explication": "La boucle bornée s'écrit avec for.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "while",
+            "for",
+            "if",
+            "def"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:026",
+          "enonce": "Avec quel mot-clé écrit-on une boucle non bornée ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 1,
+          "explication": "La boucle non bornée s'écrit avec while.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "while",
+            "return",
+            "for",
+            "elif"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:027",
+          "enonce": "Comment appelle-t-on une boucle dont la condition reste toujours vraie ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 1,
+          "explication": "Si la condition ne devient jamais fausse, la boucle ne s'arrête jamais.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une fonction récursive",
+            "Une séquence",
+            "Une boucle bornée",
+            "Une boucle infinie"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:028",
+          "enonce": "Quel mot-clé sert à définir une fonction en Python ?",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "On définit une fonction avec def.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "func",
+            "return",
+            "def",
+            "fun"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:029",
+          "enonce": "Quel mot-clé permet à une fonction de renvoyer un résultat ?",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "return renvoie une valeur au programme qui a appelé la fonction.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "def",
+            "return",
+            "input",
+            "print"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:030",
+          "enonce": "Comment appelle-t-on les valeurs qu'une fonction reçoit entre parenthèses lors de sa définition ?",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "longueur et largeur sont les paramètres de aire_rectangle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les boucles",
+            "Les commentaires",
+            "Les paramètres",
+            "Les types"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:031",
+          "enonce": "Après les instructions age = 15 puis age = age + 1, que vaut age ?",
+          "notion": "Variables et types",
+          "difficulte": 2,
+          "explication": "Python calcule age + 1 avec l'ancienne valeur (15), puis range 16 dans age.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15",
+            "1",
+            "Python affiche une erreur",
+            "16"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:032",
+          "enonce": "Que renvoie type(1.62) ?",
+          "notion": "Variables et types",
+          "difficulte": 2,
+          "explication": "type donne le type d'une valeur ; 1.62 est un float.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "float",
+            "bool",
+            "int",
+            "str"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:033",
+          "enonce": "Pourquoi Age et age sont-ils deux variables différentes ?",
+          "notion": "Variables et types",
+          "difficulte": 2,
+          "explication": "Python est sensible à la casse : Age et age sont deux noms différents.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Age est un mot réservé de Python",
+            "Un nom ne peut pas commencer par une majuscule",
+            "age est un nombre et Age une chaîne",
+            "Python distingue majuscules et minuscules"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:034",
+          "enonce": "Pourquoi ne peut-on pas appeler une variable for ?",
+          "notion": "Variables et types",
+          "difficulte": 2,
+          "explication": "if, for, while, def… sont des mots réservés : ils ne peuvent pas servir de noms.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nom est trop court",
+            "C'est un mot réservé de Python",
+            "Il commence par une minuscule",
+            "Il contient une lettre interdite"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:035",
+          "enonce": "Que vaut 2 + 3 * 4 en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "La multiplication est prioritaire : 3 × 4 = 12, puis 2 + 12 = 14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "24",
+            "20",
+            "14",
+            "9"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:036",
+          "enonce": "En tenant compte des parenthèses, quel résultat donne (2 + 3) * 4 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "Les parenthèses sont calculées d'abord : 5 × 4 = 20.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20",
+            "9",
+            "24",
+            "14"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:037",
+          "enonce": "Que vaut 6 / 2 en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "La division / donne toujours un float : 3.0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "\"3\"",
+            "3.0",
+            "Une erreur",
+            "3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:038",
+          "enonce": "Que donne \"ab\" * 3 en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "Multiplier une chaîne par un entier la répète.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "\"ab3\"",
+            "\"aaabbb\"",
+            "\"ababab\"",
+            "Une erreur"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:039",
+          "enonce": "Que se passe-t-il quand Python exécute \"15\" + 1 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "\"15\" est une chaîne, 1 un entier : + ne peut pas les combiner.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une erreur : on n'additionne pas une chaîne et un nombre",
+            "Il affiche \"151\"",
+            "Il affiche 15",
+            "Il affiche 16"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:040",
+          "enonce": "Pourquoi faut-il souvent écrire int(input(…)) ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "input renvoie une chaîne ; pour calculer, on la convertit en nombre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce que int affiche le résultat",
+            "Parce que input ne fonctionne qu'avec int",
+            "Parce que input renvoie un booléen",
+            "Parce que input renvoie toujours une chaîne"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:041",
+          "enonce": "Que donne str(15) ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "str convertit une valeur en chaîne de caractères.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La chaîne \"15\"",
+            "Le décimal 15.0",
+            "L'entier 15",
+            "La valeur True"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:042",
+          "enonce": "Comment tester qu'un entier n est pair ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "Un nombre pair a un reste nul dans la division par 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "n * 2 == 0",
+            "n // 2 == 1",
+            "n % 2 == 0",
+            "n / 2 == 0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:043",
+          "enonce": "Après a = 5, b = a * 2, puis a = 1, que vaut b ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "b est calculé quand a vaut 5 ; changer a ensuite ne modifie pas b.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "2",
+            "5",
+            "10"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:044",
+          "enonce": "Après x = 3, puis y = x + 4, puis x = x * y, que vaut x ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "y vaut 7, puis x = 3 × 7 = 21.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "21",
+            "7",
+            "12"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:045",
+          "enonce": "Pour échanger les valeurs de a et b, pourquoi a = b puis b = a ne marche-t-il pas ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "Les deux variables finissent par valoir b : il faut une variable temporaire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les deux instructions s'annulent",
+            "Après a = b, l'ancienne valeur de a est perdue",
+            "Python interdit d'écrire a = b",
+            "b = a provoque une erreur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:046",
+          "enonce": "Quelle instruction échange directement les valeurs de a et b en Python ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "Python permet l'affectation multiple a, b = b, a.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "swap(a, b)",
+            "a == b",
+            "a = b = a",
+            "a, b = b, a"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:047",
+          "enonce": "Avec temperature = 23, qu'affiche le programme if temperature < 10 → \"Froid\", elif temperature < 25 → \"Doux\", sinon → \"Chaud\" ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "La première condition est fausse, la deuxième vraie : Python affiche Doux et ignore le reste.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Doux",
+            "Chaud",
+            "Doux puis Chaud",
+            "Froid"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:048",
+          "enonce": "Que vaut l'expression 5 >= 5 ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": ">= signifie supérieur ou égal : 5 est égal à 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "False",
+            "5",
+            "True",
+            "Une erreur"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:049",
+          "enonce": "Pour quelles valeurs de age l'expression age >= 12 and age <= 17 est-elle vraie ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "and exige que les deux conditions soient vraies : entre 12 et 17 inclus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "De 13 à 16 ans",
+            "De 12 à 17 ans inclus",
+            "Seulement 12 et 17",
+            "Moins de 12 ou plus de 17 ans"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:050",
+          "enonce": "Que vaut not (3 > 5) ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "3 > 5 est faux ; not inverse : True.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "True",
+            "False",
+            "3",
+            "5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:051",
+          "enonce": "Par quel signe se termine la ligne d'un if ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "La ligne if condition se termine par deux-points, puis le bloc est indenté.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parenthèse fermante",
+            "Point-virgule",
+            "Deux-points",
+            "Point"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:052",
+          "enonce": "Quelle liste de valeurs donne range(2, 6) ?",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "range(début, fin) commence à début et s'arrête avant fin.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2 et 6",
+            "2, 3, 4, 5, 6",
+            "3, 4, 5, 6",
+            "2, 3, 4, 5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:053",
+          "enonce": "Que calcule le programme somme = 0, puis for i in range(1, 11): somme = somme + i ?",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "range(1, 11) donne 1 à 10 ; somme accumule ces valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La somme des entiers de 0 à 11",
+            "Le produit des entiers de 1 à 10",
+            "La somme des entiers de 1 à 10",
+            "Le nombre d'entiers de 1 à 11"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:054",
+          "enonce": "Combien de fois le bloc de for i in range(5) est-il exécuté ?",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "range(5) produit 5 valeurs : 0, 1, 2, 3, 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6 fois",
+            "5 fois",
+            "Tant que i est inférieur à 5, sans limite",
+            "4 fois"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:055",
+          "enonce": "Qu'affiche for lettre in \"SNT\": print(lettre) ?",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "La boucle for parcourt une chaîne lettre par lettre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une erreur",
+            "SNT en une fois",
+            "T, puis N, puis S",
+            "S, puis N, puis T"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:056",
+          "enonce": "Quand Python teste-t-il la condition d'une boucle while ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 2,
+          "explication": "La condition est testée avant chaque tour ; si elle est fausse, Python sort de la boucle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Avant chaque tour de boucle",
+            "Une seule fois, au début du programme",
+            "Seulement au dernier tour",
+            "Après la fin de la boucle"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:057",
+          "enonce": "Dans quelle situation une boucle while convient-elle mieux qu'une boucle for ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 2,
+          "explication": "On ne sait pas à l'avance combien d'essais seront nécessaires : boucle non bornée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Afficher les 10 premiers multiples de 7",
+            "Redemander un mot de passe tant qu'il est faux",
+            "Parcourir les lettres d'un mot",
+            "Répéter exactement 20 fois un calcul"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:058",
+          "enonce": "Avec def aire_rectangle(longueur, largeur): return longueur * largeur, que renvoie aire_rectangle(4, 3) ?",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "longueur reçoit 4, largeur reçoit 3 : la fonction renvoie 4 × 3 = 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12",
+            "Rien, la fonction ne fait qu'afficher",
+            "7",
+            "43"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:059",
+          "enonce": "Que se passe-t-il quand Python exécute seulement la définition def f(x): return 2 * x, sans l'appeler ?",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "La définition explique ce que fera la fonction ; elle ne s'exécute qu'à l'appel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Python affiche une erreur",
+            "Python calcule 2 * x et affiche le résultat",
+            "Python demande une valeur de x",
+            "Rien n'est calculé : la fonction est seulement définie"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:060",
+          "enonce": "Quelle différence y a-t-il entre return et print dans une fonction ?",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "La valeur renvoyée par return peut être rangée dans une variable ou réutilisée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il n'y a aucune différence",
+            "print arrête la fonction, return non",
+            "return renvoie la valeur au programme, print l'affiche seulement",
+            "return affiche la valeur, print la renvoie"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:061",
+          "enonce": "Après x = 3, y = x + 4, x = x * y, puis y = y - x, que vaut y ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "x vaut 21 et y vaut 7 avant la dernière ligne : 7 - 21 = -14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "-21",
+            "14",
+            "-14",
+            "7"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:062",
+          "enonce": "Après a = 4, b = 7, temp = a, a = b, puis b = temp, que valent a et b ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "La variable temporaire garde l'ancienne valeur de a : les valeurs sont échangées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a vaut 7 et b vaut 4",
+            "a et b valent 4",
+            "a et b valent 7",
+            "a vaut 4 et b vaut 7"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:063",
+          "enonce": "Après a = 4, b = 7, puis a = b, puis b = a, que valent a et b ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "Après a = b, a vaut 7 ; puis b = a donne 7 : l'ancienne valeur 4 est perdue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a vaut 7 et b vaut 4",
+            "a et b valent 7",
+            "a vaut 4 et b vaut 7",
+            "a et b valent 4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:064",
+          "enonce": "Que vaut 17 // 5 + 17 % 5 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 3,
+          "explication": "17 = 5 × 3 + 2 : quotient 3, reste 2, total 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3.4",
+            "3",
+            "2",
+            "5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:065",
+          "enonce": "Si l'utilisateur tape 2010 à la question annee = int(input(\"Année de naissance\")), que vaut 2026 - annee ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 3,
+          "explication": "int convertit la saisie en entier : 2026 - 2010 = 16.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "16",
+            "2026",
+            "Une erreur, annee est une chaîne",
+            "\"16\""
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:066",
+          "enonce": "Avec note = 10, qu'affiche if note > 10: print(\"Bien\") elif note == 10: print(\"Juste\") else: print(\"Insuffisant\") ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 3,
+          "explication": "10 > 10 est faux, 10 == 10 est vrai : Juste.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Bien puis Juste",
+            "Juste",
+            "Bien",
+            "Insuffisant"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:067",
+          "enonce": "Avec x = 8, que vaut l'expression x > 5 and x % 2 == 1 ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 3,
+          "explication": "x > 5 est vrai mais 8 % 2 vaut 0 : la seconde condition est fausse, donc and donne False.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "8",
+            "1",
+            "False",
+            "True"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:068",
+          "enonce": "Avec x = 8, que vaut l'expression x < 5 or x % 2 == 0 ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 3,
+          "explication": "x < 5 est faux mais 8 est pair : or est vrai si au moins une condition l'est.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "False",
+            "0",
+            "8",
+            "True"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:069",
+          "enonce": "Que vaut s après s = 0, puis for i in range(4): s = s + i ?",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "i prend 0, 1, 2, 3 : 0 + 1 + 2 + 3 = 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "3",
+            "10",
+            "6"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:070",
+          "enonce": "Que vaut p après p = 1, puis for i in range(1, 5): p = p * i ?",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "i prend 1, 2, 3, 4 : 1 × 2 × 3 × 4 = 24.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "120",
+            "24",
+            "10",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:071",
+          "enonce": "Combien de fois Bonjour est-il affiché par for i in range(3, 9): print(\"Bonjour\") ?",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "range(3, 9) donne 3, 4, 5, 6, 7, 8 : six valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5 fois",
+            "3 fois",
+            "6 fois",
+            "9 fois"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:072",
+          "enonce": "Que vaut n après n = 1, puis while n < 20: n = n * 2 ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "n vaut 1, 2, 4, 8, 16, puis 32 : 32 < 20 est faux, la boucle s'arrête.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "32",
+            "64",
+            "20",
+            "16"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:073",
+          "enonce": "Pourquoi la boucle x = 5, puis while x > 0: print(x) ne s'arrête-t-elle jamais ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "Pour qu'une boucle while s'arrête, le bloc doit modifier une variable de la condition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x > 0 est une condition interdite",
+            "x devrait être un float",
+            "print arrête la boucle trop tard",
+            "x n'est jamais modifié dans le bloc"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:074",
+          "enonce": "Avec la fonction prix_taxi du cours (7 € jusqu'à 2 km, puis 1,5 € par km supplémentaire), que renvoie prix_taxi(6) ?",
+          "notion": "Fonctions",
+          "difficulte": 3,
+          "explication": "6 > 2 : 7 + (6 - 2) × 1,5 = 7 + 6 = 13.0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "13.0",
+            "16.0",
+            "7",
+            "9.0"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:075",
+          "enonce": "Avec def f(x): return x + 1, puis print(\"fini\") placé après le return dans le bloc, qu'affiche l'appel f(3) ?",
+          "notion": "Fonctions",
+          "difficulte": 3,
+          "explication": "Dès que Python rencontre return, il sort de la fonction : la suite n'est pas exécutée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une erreur",
+            "fini",
+            "Rien : la fonction renvoie 4 et sort avant le print",
+            "4 puis fini"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:076",
+          "enonce": "Quels sont des concepts fondamentaux de l'informatique cités dans le cours ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Les quatre concepts sont les données, les algorithmes, les langages et les machines.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les algorithmes",
+            "Les langages",
+            "Les données",
+            "Les écrans"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:077",
+          "enonce": "Quelles affirmations sur Python sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Python a été créé par Guido van Rossum et publié en 1991.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il a été inventé par Tim Berners-Lee",
+            "Il a été publié en 1991",
+            "Il est réservé aux téléphones",
+            "C'est un langage de programmation"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:078",
+          "enonce": "Quelles erreurs empêchent un programme Python de s'exécuter ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Python est strict : parenthèse oubliée ou mot mal orthographié provoquent une erreur ; un commentaire est ignoré.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Print écrit avec une majuscule",
+            "Une ligne vide entre deux instructions",
+            "Un commentaire commençant par #",
+            "Une parenthèse oubliée"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:079",
+          "enonce": "Quels noms de variables sont acceptés par Python ? Coche toutes les réponses exactes.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Pas d'espace, et pas de mot réservé comme if.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "_compteur",
+            "if",
+            "note_finale",
+            "note finale"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:080",
+          "enonce": "Quelles valeurs sont de type int ? Coche toutes les réponses exactes.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "int représente un nombre entier ; 1.62 est un float, \"15\" une chaîne.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "-3",
+            "15",
+            "\"15\"",
+            "1.62"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:081",
+          "enonce": "Quelles valeurs sont des chaînes de caractères (str) ? Coche toutes les réponses exactes.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Une chaîne s'écrit entre guillemets.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "\"15\"",
+            "True",
+            "15",
+            "\"Lina\""
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:082",
+          "enonce": "Quels symboles sont des opérateurs de calcul en Python ? Coche toutes les réponses exactes.",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "// et % calculent ; == compare, # commence un commentaire.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "==",
+            "#",
+            "//",
+            "%"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:083",
+          "enonce": "Quelles fonctions convertissent une valeur d'un type à un autre ? Coche toutes les réponses exactes.",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "int, float et str convertissent ; print affiche, range produit des entiers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "range",
+            "float",
+            "int",
+            "print"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:084",
+          "enonce": "Quels mots-clés servent à écrire une instruction conditionnelle ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "for introduit une boucle.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "elif",
+            "if",
+            "for",
+            "else"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:085",
+          "enonce": "Quelles expressions valent True ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "3 est égal à 3 et différent de 4 ; les deux autres comparaisons sont fausses.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3 == 3",
+            "3 != 4",
+            "5 < 2",
+            "4 >= 9"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:086",
+          "enonce": "Quelles situations relèvent d'une boucle bornée ? Coche toutes les réponses exactes.",
+          "notion": "Boucles bornées",
+          "difficulte": 1,
+          "explication": "On connaît le nombre de répétitions : boucle for.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Afficher les 10 premiers multiples de 7",
+            "Attendre qu'un capteur dépasse un seuil",
+            "Parcourir tous les pixels d'une image",
+            "Redemander un mot de passe tant qu'il est faux"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:087",
+          "enonce": "Quelles sont des raisons d'écrire des fonctions ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "Réutiliser, découper, corriger plus facilement à un seul endroit.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Éviter d'utiliser des variables",
+            "Réutiliser un calcul à plusieurs endroits",
+            "Rendre le programme impossible à corriger",
+            "Découper un problème en problèmes plus simples"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:088",
+          "enonce": "Quelles instructions augmentent de 1 la valeur de la variable n ? Coche toutes les réponses exactes.",
+          "notion": "Variables et types",
+          "difficulte": 2,
+          "explication": "n = 1 + n donne le même résultat que n = n + 1 ; == compare, et n + 1 = n est invalide.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "n == n + 1",
+            "n = n + 1",
+            "n + 1 = n",
+            "n = 1 + n"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:089",
+          "enonce": "Parmi ces calculs, lesquels ont pour résultat le nombre 3 ? Coche toutes les réponses exactes.",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "7 // 2 vaut 3 et 9 % 6 vaut 3 ; 7 / 2 vaut 3.5 et 2 ** 3 vaut 8.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "7 / 2",
+            "9 % 6",
+            "2 ** 3",
+            "7 // 2"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:090",
+          "enonce": "Quelles instructions provoquent une erreur ? Coche toutes les réponses exactes.",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "On n'additionne pas une chaîne et un nombre, et \"bonjour\" ne se convertit pas en entier.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "int(\"bonjour\")",
+            "\"15\" + 1",
+            "str(15) + \"1\"",
+            "int(\"15\") + 1"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:091",
+          "enonce": "Quelles expressions valent un float ? Coche toutes les réponses exactes.",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "/ donne toujours un float ; // et int donnent des entiers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "int(\"8\")",
+            "7 // 2",
+            "6 / 2",
+            "float(\"1.5\")"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:092",
+          "enonce": "Après x = 2, puis y = x * 5, puis x = 0, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "y est calculé quand x vaut 2 ; changer x ensuite ne change pas y.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "y vaut 10",
+            "x vaut 2",
+            "x vaut 0",
+            "y vaut 0"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:093",
+          "enonce": "Pour quelles valeurs de x l'expression x > 0 and x < 10 est-elle vraie ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "Il faut x strictement entre 0 et 10.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "9",
+            "1",
+            "10",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:094",
+          "enonce": "La condition x < 0 or x > 100 est satisfaite pour quelles valeurs de x ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "Il suffit qu'une des deux conditions soit vraie.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "-5",
+            "150",
+            "50",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:095",
+          "enonce": "Quelles affirmations sur elif sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "Dès qu'une condition est vraie, son bloc est exécuté et les autres sont ignorés ; else est facultatif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Seul le premier bloc dont la condition est vraie est exécuté",
+            "Tous les blocs dont la condition est vraie sont exécutés",
+            "Python teste les conditions dans l'ordre",
+            "elif doit toujours être suivi de else"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:096",
+          "enonce": "Quelles instructions répètent un bloc exactement 4 fois ? Coche toutes les réponses exactes.",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "range(4) et range(1, 5) produisent quatre valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "for i in range(5):",
+            "for i in range(3):",
+            "for i in range(4):",
+            "for i in range(1, 5):"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:097",
+          "enonce": "Quelles affirmations sur la boucle while sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Boucles non bornées",
+          "difficulte": 2,
+          "explication": "C'est une boucle non bornée : elle s'arrête quand la condition devient fausse.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle ne peut pas contenir de calcul",
+            "On ne connaît pas toujours à l'avance le nombre de tours",
+            "Elle s'exécute toujours au moins dix fois",
+            "Elle répète un bloc tant qu'une condition est vraie"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:098",
+          "enonce": "Avec def double(x): return 2 * x, quelles instructions affichent 10 ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "double(5) vaut 10 ; double(2) + 6 = 4 + 6 = 10. print(double) n'appelle pas la fonction.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "print(double(2) + 6)",
+            "print(double(5))",
+            "print(double)",
+            "double(10)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:099",
+          "enonce": "Quelles affirmations sur un appel de fonction sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "À l'appel, chaque paramètre reçoit une valeur ; une fonction se réutilise autant que nécessaire.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "On peut appeler une fonction plusieurs fois",
+            "Une fonction ne peut avoir qu'un paramètre",
+            "Les paramètres reçoivent les valeurs placées entre parenthèses",
+            "La fonction doit être définie après l'appel"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:100",
+          "enonce": "Après a = 3, b = 5, a = a + b, b = a - b, puis a = a - b, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "a devient 8, b = 8 - 5 = 3, a = 8 - 3 = 5 : les valeurs ont été échangées.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a vaut 5",
+            "b vaut 3",
+            "a vaut 8",
+            "b vaut 5"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:101",
+          "enonce": "Avec x = 15, quelles conditions sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 3,
+          "explication": "15 est divisible par 3 et par 5, et n'est pas inférieur à 10.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x % 3 == 0 and x % 5 == 0",
+            "x % 2 == 0 or x > 20",
+            "x == 15 and x != 15",
+            "not (x < 10)"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:102",
+          "enonce": "Quels programmes affichent 10 ? Coche toutes les réponses exactes.",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "0 + 1 + 2 + 3 + 4 = 10 et 1 + 2 + 3 + 4 = 10 ; le troisième affiche 9, le dernier 45.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "s = 0, puis for i in range(1, 5): s = s + i, puis print(s)",
+            "s = 0, puis for i in range(5): s = s + i, puis print(s)",
+            "s = 0, puis for i in range(10): s = s + i, puis print(s)",
+            "s = 0, puis for i in range(1, 11): s = s + 1, puis print(s - 1)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:103",
+          "enonce": "Le programme capital = 1000, annees = 0, puis while capital < 2000: capital = capital * 1.05 et annees = annees + 1. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "Le capital augmente de 5 % par tour ; sans cette ligne, la condition reste toujours vraie.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il cherche le nombre d'années pour que le capital double",
+            "Il fait exactement 2000 tours",
+            "Il affiche le capital à chaque tour",
+            "Sans la ligne capital = capital * 1.05, il ne s'arrête jamais"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:104",
+          "enonce": "Quels programmes s'arrêtent ? Coche toutes les réponses exactes.",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "Le troisième augmente sans fin ; le quatrième passe de 1 à -1 sans jamais valoir 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "n = 1, puis while n > 0: n = n + 1",
+            "n = 1, puis while n < 100: n = n * 3",
+            "n = 5, puis while n != 0: n = n - 2",
+            "n = 10, puis while n > 0: n = n - 3"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:105",
+          "enonce": "Avec la fonction prix_taxi du cours (7 € jusqu'à 2 km, puis 1,5 € par km supplémentaire), quels appels renvoient 7 ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions",
+          "difficulte": 3,
+          "explication": "Jusqu'à 2 km, c'est le forfait de 7 ; au-delà, le prix augmente.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "prix_taxi(3)",
+            "prix_taxi(2)",
+            "prix_taxi(0.5 + 2.5)",
+            "prix_taxi(1)"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch1:banque:106",
+          "enonce": "Une machine peut deviner une instruction ambiguë d'un programme.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Une machine ne devine rien : chaque instruction doit être écrite sans ambiguïté.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:107",
+          "enonce": "Python ignore les lignes qui commencent par #.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Ce sont des commentaires, destinés à celui qui lit le programme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:108",
+          "enonce": "Python a été créé par Guido van Rossum.",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Il l'a publié en 1991.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:109",
+          "enonce": "En Python, le signe = signifie que les deux côtés sont égaux, comme en mathématiques.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "= est l'affectation : il range la valeur de droite dans la variable de gauche.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:110",
+          "enonce": "\"15\" et 15 sont deux valeurs de types différents.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "\"15\" est une chaîne (str), 15 est un entier (int).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:111",
+          "enonce": "Un nom de variable peut contenir une espace.",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "Un nom ne contient ni espace ni tiret.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:112",
+          "enonce": "En Python, le séparateur décimal d'un float est une virgule.",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "C'est un point : 1.62.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:113",
+          "enonce": "La fonction input renvoie toujours une chaîne de caractères.",
+          "notion": "Opérations et conversions",
+          "difficulte": 1,
+          "explication": "Il faut la convertir avec int ou float pour calculer.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:114",
+          "enonce": "La partie else d'une instruction conditionnelle est obligatoire.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "else est facultatif.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:115",
+          "enonce": "range(5) produit les entiers de 1 à 5.",
+          "notion": "Boucles bornées",
+          "difficulte": 1,
+          "explication": "range(5) produit 0, 1, 2, 3, 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:116",
+          "enonce": "Une boucle while répète un bloc tant qu'une condition est vraie.",
+          "notion": "Boucles non bornées",
+          "difficulte": 1,
+          "explication": "C'est la définition de la boucle non bornée.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:117",
+          "enonce": "Une fonction doit être définie avant de pouvoir être appelée.",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "On la définit avec def, puis on l'appelle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:118",
+          "enonce": "6 / 2 vaut l'entier 3.",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "La division / donne toujours un float : 3.0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:119",
+          "enonce": "\"SN\" + \"T\" donne \"SNT\".",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "+ concatène deux chaînes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:120",
+          "enonce": "Changer l'ordre de deux instructions d'une séquence peut changer le résultat du programme.",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "Les instructions s'exécutent dans l'ordre ; une valeur calculée dépend de ce qui a été fait avant.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:121",
+          "enonce": "Après a = 5, b = a * 2, puis a = 1, b vaut 2.",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "b a été calculé quand a valait 5 : b vaut 10.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:122",
+          "enonce": "Dans une suite if / elif / else, plusieurs blocs peuvent être exécutés si plusieurs conditions sont vraies.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "Seul le premier bloc dont la condition est vraie est exécuté.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:123",
+          "enonce": "L'expression c1 or c2 est vraie si au moins une des deux conditions est vraie.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "or demande au moins une condition vraie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:124",
+          "enonce": "Une indentation incorrecte peut changer le sens d'un programme Python.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 2,
+          "explication": "L'indentation délimite les blocs.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:125",
+          "enonce": "Dans range(2, 6), la valeur 6 est atteinte.",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "La valeur de fin n'est jamais atteinte : 2, 3, 4, 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:126",
+          "enonce": "Dans une boucle while, la condition est testée après chaque tour.",
+          "notion": "Boucles non bornées",
+          "difficulte": 2,
+          "explication": "Elle est testée avant chaque tour.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:127",
+          "enonce": "Une fonction peut appeler une autre fonction.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "Une fonction peut contenir des conditions, des boucles et appeler d'autres fonctions.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:128",
+          "enonce": "La définition d'une fonction exécute immédiatement ses instructions.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "La définition ne fait rien toute seule ; les instructions s'exécutent à l'appel.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:129",
+          "enonce": "Une fonction peut être appelée plusieurs fois avec des valeurs différentes.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "aire_rectangle(4, 3) puis aire_rectangle(10, 2.5), par exemple.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:130",
+          "enonce": "Avec n = 9, l'expression n % 2 == 0 vaut True.",
+          "notion": "Opérations et conversions",
+          "difficulte": 3,
+          "explication": "9 % 2 vaut 1 : 9 est impair.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:131",
+          "enonce": "Après x = 2, x = x * x, puis x = x + x, x vaut 8.",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "x vaut 4, puis 4 + 4 = 8.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:132",
+          "enonce": "Avec age = 17, l'expression not (age >= 18) vaut True.",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 3,
+          "explication": "age >= 18 est faux, not l'inverse.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:133",
+          "enonce": "Après s = 0, puis for i in range(3): s = s + 2, s vaut 6.",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "Trois tours, 2 ajouté à chaque fois.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch1:banque:134",
+          "enonce": "Le programme n = 0, puis while n != 7: n = n + 2 finit par s'arrêter.",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "n prend 0, 2, 4, 6, 8… et ne vaut jamais 7 : boucle infinie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:135",
+          "enonce": "Après return, une fonction continue d'exécuter les instructions suivantes de son bloc.",
+          "notion": "Fonctions",
+          "difficulte": 3,
+          "explication": "Dès que Python rencontre return, il sort de la fonction.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch1:banque:136",
+          "enonce": "Quel langage de programmation utilise-t-on en SNT ?",
+          "notion": "Algorithmes et programmes",
+          "difficulte": 1,
+          "explication": "Le programme de SNT fixe le langage Python.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Python"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:137",
+          "enonce": "Quel mot de Python désigne le type des nombres entiers ?",
+          "notion": "Variables et types",
+          "difficulte": 1,
+          "explication": "int pour integer, entier.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "int"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:138",
+          "enonce": "Quel mot-clé, contraction de « else if », permet d'enchaîner plusieurs conditions ?",
+          "notion": "Instructions conditionnelles",
+          "difficulte": 1,
+          "explication": "elif teste une nouvelle condition si les précédentes sont fausses.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "elif"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:139",
+          "enonce": "Combien de valeurs produit range(10) ?",
+          "notion": "Boucles bornées",
+          "difficulte": 1,
+          "explication": "De 0 à 9 : dix valeurs.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:140",
+          "enonce": "Une boucle qui se répète tant qu'une condition reste vraie commence par quel mot ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 1,
+          "explication": "La boucle non bornée s'écrit avec while.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "while"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:141",
+          "enonce": "Par quel mot de trois lettres commence la définition d'une fonction ?",
+          "notion": "Fonctions",
+          "difficulte": 1,
+          "explication": "def, pour define.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "def"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:142",
+          "enonce": "Que vaut 7 ** 2 en Python ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "** est la puissance : 7 × 7 = 49.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "49"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:143",
+          "enonce": "Dans la division entière de 23 par 5, quel reste donne 23 % 5 ?",
+          "notion": "Opérations et conversions",
+          "difficulte": 2,
+          "explication": "23 = 5 × 4 + 3 : le reste est 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:144",
+          "enonce": "Après x = 3, puis y = x + 4, que vaut y ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 2,
+          "explication": "3 + 4 = 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:145",
+          "enonce": "Après s = 0, puis for i in range(1, 11): s = s + i, que vaut s ?",
+          "notion": "Boucles bornées",
+          "difficulte": 2,
+          "explication": "1 + 2 + … + 10 = 55.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "55"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:146",
+          "enonce": "En combien d'années un capital placé à 5 % par an double-t-il, d'après le programme du cours ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 2,
+          "explication": "Le programme du cours affiche 15.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "15"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:147",
+          "enonce": "Avec la fonction prix_taxi du cours, que renvoie prix_taxi(10) ? Donne le nombre seul.",
+          "notion": "Fonctions",
+          "difficulte": 2,
+          "explication": "7 + (10 - 2) × 1,5 = 19.0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "19",
+            "19.0"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:148",
+          "enonce": "Après a = 2, b = a + 3, a = b * a, puis b = a - b, que vaut b ?",
+          "notion": "Séquences d'instructions",
+          "difficulte": 3,
+          "explication": "b = 5, a = 5 × 2 = 10, puis b = 10 - 5 = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:149",
+          "enonce": "Après p = 1, puis for i in range(3): p = p * 2, que vaut p ?",
+          "notion": "Boucles bornées",
+          "difficulte": 3,
+          "explication": "Trois tours : 1 × 2 × 2 × 2 = 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch1:banque:150",
+          "enonce": "Après n = 100 et c = 0, puis while n > 1: n = n // 2 et c = c + 1, que vaut c ?",
+          "notion": "Boucles non bornées",
+          "difficulte": 3,
+          "explication": "n prend 50, 25, 12, 6, 3, 1 : six tours.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        }
+      ]
+    }
+  ]
+}
