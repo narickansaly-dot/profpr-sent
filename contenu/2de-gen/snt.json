@@ -2474,6 +2474,2486 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch2",
+      "numero": 2,
+      "titre": "Internet",
+      "titre_court": "Internet",
+      "duree": "4 semaines",
+      "resume": "Un réseau de réseaux ; adresses IP et paquets ; protocoles IP et TCP ; routage ; DNS ; pair-à-pair, réseaux physiques et ordre de grandeur du trafic.",
+      "chapeau": "Chaque jour, tu envoies des messages, regardes des vidéos et consultes des sites hébergés à l'autre bout du monde. Tout cela passe par Internet, un immense réseau de réseaux où les données voyagent découpées en paquets, guidées par des protocoles communs.",
+      "objectifs": [
+        "distinguer Internet et le Web ;",
+        "expliquer le découpage des données en paquets et le principe du routage ;",
+        "distinguer le rôle des protocoles IP et TCP ;",
+        "retrouver une adresse IP à partir d'une adresse symbolique grâce au DNS, et inversement ;",
+        "décrire l'intérêt des réseaux pair-à-pair et leurs usages illicites ;",
+        "caractériser des réseaux physiques et l'ordre de grandeur du trafic sur Internet."
+      ],
+      "sections": [
+        {
+          "id": "reseau-de-reseaux",
+          "titre": "Un réseau de réseaux",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p><strong>Internet</strong> est un réseau mondial qui relie entre eux des millions de réseaux (réseaux d'entreprises, d'universités, de fournisseurs d'accès, réseaux domestiques…). Toutes les machines connectées communiquent grâce à des règles communes, les <strong>protocoles</strong>.</p></div>\n<p>Un <strong>réseau informatique</strong> est un ensemble de machines reliées entre elles pour échanger des données. Le réseau de ta maison relie ta box, ton téléphone, ton ordinateur ; le réseau du lycée relie des centaines de postes. Internet interconnecte tous ces réseaux : c'est un <strong>réseau de réseaux</strong>.</p>\n<h3>Repères historiques</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>1969</td><td>ARPANET, réseau financé par l'armée américaine, relie les ordinateurs de quatre universités : c'est l'ancêtre d'Internet.</td></tr>\n<tr><td>1974</td><td>Vinton Cerf et Robert Kahn publient le protocole TCP/IP, qui permet de relier des réseaux différents.</td></tr>\n<tr><td>1983</td><td>ARPANET adopte TCP/IP : on considère souvent cette date comme la naissance d'Internet.</td></tr>\n<tr><td>1984</td><td>Création du DNS, l'annuaire qui associe des noms aux adresses des machines.</td></tr>\n<tr><td>Années 1990</td><td>Ouverture au grand public, avec les fournisseurs d'accès et le développement du Web.</td></tr>\n</tbody></table></div>\n<p>Le Français Louis Pouzin a joué un rôle important : au début des années 1970, son réseau expérimental Cyclades a montré qu'on pouvait transmettre des données découpées en petits morceaux indépendants, une idée reprise par TCP/IP.</p>\n<h3>Internet n'est pas le Web</h3>\n<p>On confond souvent les deux. Internet est l'<strong>infrastructure</strong> : les câbles, les machines, les protocoles qui transportent les données. Le <strong>Web</strong> n'est qu'une des <strong>applications</strong> qui utilisent Internet, comme le courrier électronique, la messagerie instantanée, les jeux en ligne ou la visioconférence. Le Web est étudié au chapitre 3.</p>"
+        },
+        {
+          "id": "adresses-paquets",
+          "titre": "Adresses IP et paquets",
+          "html": "<h3>L'adresse IP</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Chaque machine connectée à un réseau reçoit une <strong>adresse IP</strong> (Internet Protocol), qui l'identifie sur ce réseau, comme une adresse postale identifie une maison.</p></div>\n<p>Une adresse <strong>IPv4</strong> est formée de 4 nombres compris entre 0 et 255, séparés par des points, par exemple 192.168.1.27. Chaque nombre est codé sur 8 bits (un octet) : une adresse IPv4 occupe donc 32 bits, ce qui donne environ 4,3 milliards d'adresses (2<sup>32</sup>).</p>\n<p>Avec des milliards d'appareils connectés, ce nombre ne suffit plus. La version <strong>IPv6</strong> utilise des adresses de 128 bits, écrites en hexadécimal, par exemple 2001:0db8:85a3:0000:0000:8a2e:0370:7334. Elle offre un nombre d'adresses gigantesque.</p>\n<p>Ta box reçoit une adresse IP publique de ton fournisseur d'accès ; les appareils de ta maison ont des adresses locales (souvent 192.168.x.x), valables seulement dans ton réseau domestique.</p>\n<h3>Les paquets</h3>\n<p>Les données ne voyagent pas d'un seul bloc. Un fichier, une photo ou une vidéo sont découpés en petits morceaux appelés <strong>paquets</strong>, de quelques centaines à environ 1 500 octets.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>paquet</strong> est un petit bloc de données qui circule sur le réseau. Il contient une partie des données à transmettre et un <strong>en-tête</strong> qui indique notamment l'adresse IP de l'expéditeur et celle du destinataire.</p></div>\n<p>Découper en paquets a plusieurs avantages : le réseau est partagé entre de nombreux utilisateurs au lieu d'être monopolisé par un gros envoi, et si un paquet est perdu, on renvoie seulement ce paquet, pas tout le fichier.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 560 120\" role=\"img\" aria-label=\"Un fichier découpé en quatre paquets, chacun avec un en-tête contenant les adresses et un numéro\"><rect class=\"fc\" x=\"10\" y=\"35\" width=\"120\" height=\"50\" rx=\"6\"/><text class=\"tb\" x=\"70\" y=\"65\" text-anchor=\"middle\">Fichier</text><line class=\"ln\" x1=\"135\" y1=\"60\" x2=\"175\" y2=\"60\"/><polygon class=\"fs\" points=\"175,55 185,60 175,65\"/><g><rect class=\"fg\" x=\"195\" y=\"20\" width=\"80\" height=\"80\" rx=\"6\"/><rect class=\"fa\" x=\"195\" y=\"20\" width=\"80\" height=\"24\" rx=\"6\"/><text class=\"tm\" x=\"235\" y=\"36\" text-anchor=\"middle\">en-tête n° 1</text><text class=\"tx\" x=\"235\" y=\"72\" text-anchor=\"middle\">données</text></g><g><rect class=\"fg\" x=\"285\" y=\"20\" width=\"80\" height=\"80\" rx=\"6\"/><rect class=\"fa\" x=\"285\" y=\"20\" width=\"80\" height=\"24\" rx=\"6\"/><text class=\"tm\" x=\"325\" y=\"36\" text-anchor=\"middle\">en-tête n° 2</text><text class=\"tx\" x=\"325\" y=\"72\" text-anchor=\"middle\">données</text></g><g><rect class=\"fg\" x=\"375\" y=\"20\" width=\"80\" height=\"80\" rx=\"6\"/><rect class=\"fa\" x=\"375\" y=\"20\" width=\"80\" height=\"24\" rx=\"6\"/><text class=\"tm\" x=\"415\" y=\"36\" text-anchor=\"middle\">en-tête n° 3</text><text class=\"tx\" x=\"415\" y=\"72\" text-anchor=\"middle\">données</text></g><g><rect class=\"fg\" x=\"465\" y=\"20\" width=\"80\" height=\"80\" rx=\"6\"/><rect class=\"fa\" x=\"465\" y=\"20\" width=\"80\" height=\"24\" rx=\"6\"/><text class=\"tm\" x=\"505\" y=\"36\" text-anchor=\"middle\">en-tête n° 4</text><text class=\"tx\" x=\"505\" y=\"72\" text-anchor=\"middle\">données</text></g></svg></div><figcaption><b>Figure 1</b>Un fichier est découpé en paquets ; chaque en-tête porte les adresses IP et le numéro du paquet.</figcaption></figure>"
+        },
+        {
+          "id": "ip-tcp",
+          "titre": "Les protocoles IP et TCP",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>protocole</strong> est un ensemble de règles qui fixent la façon dont des machines échangent des données. Pour communiquer, deux machines doivent utiliser les mêmes protocoles.</p></div>\n<p>Internet repose sur deux protocoles complémentaires, que l'on désigne ensemble par <strong>TCP/IP</strong>.</p>\n<h3>IP : acheminer les paquets</h3>\n<p>Le protocole <strong>IP</strong> (Internet Protocol) s'occupe de l'<strong>adressage</strong> et de l'<strong>acheminement</strong> : il place les adresses de l'expéditeur et du destinataire dans l'en-tête de chaque paquet et le fait avancer, de réseau en réseau, vers sa destination. Mais IP ne garantit rien : un paquet peut être perdu, abîmé, arriver en double ou dans le désordre.</p>\n<h3>TCP : fiabiliser la transmission</h3>\n<p>Le protocole <strong>TCP</strong> (Transmission Control Protocol) s'occupe de la <strong>fiabilité</strong> de la transmission :</p>\n<ul>\n<li>il découpe les données en segments <strong>numérotés</strong>, confiés à IP ;</li>\n<li>le destinataire renvoie un <strong>accusé de réception</strong> pour chaque paquet bien reçu ;</li>\n<li>si l'expéditeur ne reçoit pas d'accusé de réception au bout d'un certain temps, il <strong>renvoie</strong> le paquet ;</li>\n<li>à l'arrivée, TCP remet les paquets <strong>dans l'ordre</strong> grâce à leurs numéros et reconstitue les données.</li>\n</ul>\n<p>On peut comparer : IP est le facteur qui transporte les enveloppes, TCP est l'expéditeur méticuleux qui numérote ses lettres, demande un avis de réception et renvoie celles qui se perdent.</p>\n<h3>Fiable, mais sans garantie de délai</h3>\n<p>Grâce à TCP, les données finissent par arriver complètes et dans l'ordre : la transmission est <strong>fiable</strong>. Mais personne ne peut garantir <strong>quand</strong> elles arriveront : les paquets suivent des chemins différents, attendent dans des routeurs encombrés, doivent parfois être renvoyés. Il n'y a donc <strong>aucune garantie temporelle</strong>. Pour un courriel, quelques secondes de retard ne gênent pas ; pour un appel vidéo ou un jeu en ligne, le délai (la <strong>latence</strong>) se voit : image figée, son haché.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Fiabilité et rapidité sont deux choses différentes : TCP garantit que les données arrivent complètes, pas qu'elles arrivent vite.</p></div>"
+        },
+        {
+          "id": "routage",
+          "titre": "Le routage",
+          "html": "<p>Entre ton téléphone et le serveur d'une vidéo, il n'y a pas de câble direct. Les paquets traversent une série de machines spécialisées, les <strong>routeurs</strong>.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>routeur</strong> est une machine qui relie plusieurs réseaux et qui transmet chaque paquet reçu vers le routeur suivant, en direction de sa destination. Le <strong>routage</strong> est le choix, de proche en proche, du chemin suivi par les paquets.</p></div>\n<h3>Comment un routeur choisit-il ?</h3>\n<p>Chaque routeur possède une <strong>table de routage</strong>, qui indique pour chaque destination (ou groupe d'adresses) à quel voisin envoyer le paquet. Un routeur ne connaît pas le chemin complet : il sait seulement quel est le prochain « saut ». Les routeurs échangent régulièrement des informations avec leurs voisins pour mettre à jour leurs tables.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 560 190\" role=\"img\" aria-label=\"Réseau de cinq routeurs reliant un ordinateur A à un serveur B par plusieurs chemins possibles\"><line class=\"lm\" x1=\"60\" y1=\"95\" x2=\"160\" y2=\"50\"/><line class=\"lm\" x1=\"60\" y1=\"95\" x2=\"160\" y2=\"140\"/><line class=\"lm\" x1=\"160\" y1=\"50\" x2=\"290\" y2=\"50\"/><line class=\"lm\" x1=\"160\" y1=\"140\" x2=\"290\" y2=\"140\"/><line class=\"lm\" x1=\"160\" y1=\"50\" x2=\"290\" y2=\"140\"/><line class=\"lm\" x1=\"290\" y1=\"50\" x2=\"410\" y2=\"95\"/><line class=\"lm\" x1=\"290\" y1=\"140\" x2=\"410\" y2=\"95\"/><line class=\"lm\" x1=\"410\" y1=\"95\" x2=\"510\" y2=\"95\"/><line class=\"lc\" x1=\"60\" y1=\"95\" x2=\"160\" y2=\"50\"/><line class=\"lc\" x1=\"160\" y1=\"50\" x2=\"290\" y2=\"50\"/><line class=\"lc\" x1=\"290\" y1=\"50\" x2=\"410\" y2=\"95\"/><line class=\"lc\" x1=\"410\" y1=\"95\" x2=\"510\" y2=\"95\"/><rect class=\"fp\" x=\"30\" y=\"80\" width=\"60\" height=\"30\" rx=\"5\"/><text class=\"tb\" x=\"60\" y=\"100\" text-anchor=\"middle\">A</text><circle class=\"fc\" cx=\"160\" cy=\"50\" r=\"18\"/><text class=\"tx\" x=\"160\" y=\"55\" text-anchor=\"middle\">R1</text><circle class=\"fc\" cx=\"160\" cy=\"140\" r=\"18\"/><text class=\"tx\" x=\"160\" y=\"145\" text-anchor=\"middle\">R2</text><circle class=\"fc\" cx=\"290\" cy=\"50\" r=\"18\"/><text class=\"tx\" x=\"290\" y=\"55\" text-anchor=\"middle\">R3</text><circle class=\"fc\" cx=\"290\" cy=\"140\" r=\"18\"/><text class=\"tx\" x=\"290\" y=\"145\" text-anchor=\"middle\">R4</text><circle class=\"fc\" cx=\"410\" cy=\"95\" r=\"18\"/><text class=\"tx\" x=\"410\" y=\"100\" text-anchor=\"middle\">R5</text><rect class=\"fp\" x=\"480\" y=\"80\" width=\"60\" height=\"30\" rx=\"5\"/><text class=\"tb\" x=\"510\" y=\"100\" text-anchor=\"middle\">B</text></svg></div><figcaption><b>Figure 2</b>Plusieurs chemins relient A à B ; en couleur, un chemin possible. Si R3 tombe en panne, les paquets passent par R4.</figcaption></figure>\n<h3>Un réseau maillé et robuste</h3>\n<p>Les routeurs sont reliés en <strong>maillage</strong> : il existe en général plusieurs chemins entre deux machines. Si un routeur tombe en panne ou si une liaison est saturée, les paquets suivants prennent un autre chemin. Deux paquets d'un même fichier peuvent ainsi suivre des chemins différents et arriver dans le désordre : c'est TCP qui les remet en ordre. Cette organisation sans centre rend Internet très robuste.</p>\n<h3>Les limites du routage</h3>\n<ul>\n<li><strong>Congestion</strong> : quand trop de paquets arrivent, un routeur les met en file d'attente ; si la file est pleine, il en détruit. Les paquets sont alors perdus et doivent être renvoyés.</li>\n<li><strong>Pannes</strong> : le temps que les tables de routage se mettent à jour, des paquets peuvent être perdus.</li>\n<li><strong>Durée de vie</strong> : pour qu'un paquet ne tourne pas indéfiniment en cas d'erreur de routage, son en-tête contient un compteur, le TTL (<em>Time To Live</em>), diminué de 1 à chaque routeur traversé. Quand il atteint 0, le paquet est détruit.</li>\n</ul>\n<p>La commande traceroute (tracert sous Windows) affiche la liste des routeurs traversés pour atteindre une machine : on y voit souvent une dizaine à une vingtaine de sauts.</p>"
+        },
+        {
+          "id": "dns",
+          "titre": "Le DNS",
+          "html": "<p>Pour joindre une machine, il faut son adresse IP. Mais retenir 172.217.20.163 est difficile : on préfère écrire un nom comme www.exemple.fr. Ce nom est une <strong>adresse symbolique</strong>.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Le <strong>DNS</strong> (Domain Name System, système de noms de domaine) est un annuaire réparti sur de nombreux serveurs dans le monde, qui fait correspondre les adresses symboliques (noms de domaine) et les adresses IP.</p></div>\n<h3>La résolution d'un nom</h3>\n<p>Quand tu tapes www.exemple.fr, ton appareil interroge d'abord un <strong>serveur DNS</strong>, en général celui de ton fournisseur d'accès : « Quelle est l'adresse IP de www.exemple.fr ? ». Si ce serveur ne connaît pas la réponse, il la cherche auprès d'autres serveurs, puis la renvoie. Ton appareil peut alors contacter la machine par son adresse IP. Cette opération s'appelle la <strong>résolution</strong> de nom. Les réponses sont gardées quelque temps en mémoire (en cache) pour aller plus vite la fois suivante.</p>\n<p>On peut aussi faire l'inverse : retrouver le nom associé à une adresse IP (résolution inverse). Les commandes nslookup ou dig permettent de faire ces recherches.</p>\n<h3>Une organisation hiérarchique</h3>\n<p>Un nom de domaine se lit de droite à gauche, du plus général au plus précis. Dans www.exemple.fr :</p>\n<ul>\n<li>fr est le <strong>domaine de premier niveau</strong> (ici celui de la France ; il en existe d'autres comme com, org, de…) ;</li>\n<li>exemple est le nom de domaine choisi par son propriétaire ;</li>\n<li>www désigne une machine ou un service de ce domaine.</li>\n</ul>\n<p>Les serveurs DNS sont organisés comme un arbre : des serveurs racines connaissent les serveurs de chaque domaine de premier niveau, qui connaissent ceux de chaque domaine, et ainsi de suite.</p>"
+        },
+        {
+          "id": "p2p-trafic",
+          "titre": "Pair-à-pair, réseaux physiques et trafic",
+          "html": "<h3>Client-serveur et pair-à-pair</h3>\n<p>Dans le modèle <strong>client-serveur</strong>, des machines puissantes, les serveurs, fournissent un service (une vidéo, une page) à des clients qui le demandent. Si le serveur tombe en panne ou est saturé, le service s'arrête.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Dans un réseau <strong>pair-à-pair</strong> (<em>peer-to-peer</em>, P2P), chaque machine est à la fois cliente et serveur : elle télécharge des données auprès des autres et en fournit elle-même.</p></div>\n<p>Intérêts du pair-à-pair : la charge est répartie entre tous les participants, il n'y a pas de serveur central coûteux ou fragile, et plus un fichier est partagé, plus il se télécharge vite, car on récupère ses morceaux auprès de nombreuses machines. Il est utilisé pour diffuser des logiciels libres, des mises à jour de jeux, ou dans certaines applications d'appel.</p>\n<p>Mais le pair-à-pair a aussi des <strong>usages illicites</strong> : partager des films, de la musique ou des logiciels sans l'autorisation de leurs auteurs est une atteinte au droit d'auteur, punie par la loi. Les fichiers téléchargés de cette façon peuvent aussi contenir des logiciels malveillants. La technique n'est pas illégale en elle-même : c'est le contenu partagé sans droit qui l'est.</p>\n<h3>Internet ne dépend pas du réseau physique</h3>\n<p>Les protocoles d'Internet fonctionnent quel que soit le support qui transporte les données. Un même paquet peut passer par le Wi-Fi de ta maison, un câble en cuivre, une fibre optique sous l'océan, puis le réseau 4G d'un téléphone.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Réseau physique</th><th>Type</th><th>Débit indicatif</th></tr></thead>\n<tbody>\n<tr><td>Modem téléphonique (années 1990)</td><td>filaire, obsolète</td><td>56 kbit/s</td></tr>\n<tr><td>ADSL sur ligne téléphonique en cuivre</td><td>filaire</td><td>de 1 à 20 Mbit/s</td></tr>\n<tr><td>Fibre optique</td><td>filaire, actuel</td><td>de 1 à 8 Gbit/s</td></tr>\n<tr><td>Wi-Fi</td><td>sans fil, local</td><td>quelques centaines de Mbit/s</td></tr>\n<tr><td>4G, 5G</td><td>sans fil, réseau mobile</td><td>de quelques dizaines de Mbit/s à plus de 1 Gbit/s</td></tr>\n<tr><td>Satellite</td><td>sans fil</td><td>quelques dizaines à quelques centaines de Mbit/s, latence élevée pour les satellites lointains</td></tr>\n</tbody></table></div>\n<p>Le <strong>débit</strong> est la quantité de données transmises par seconde, en bits par seconde (bit/s). 1 kbit/s = 1 000 bit/s, 1 Mbit/s = 1 million de bit/s, 1 Gbit/s = 1 milliard de bit/s. Les grands câbles sous-marins en fibre optique, qui relient les continents, transportent l'essentiel du trafic intercontinental.</p>\n<h3>L'ordre de grandeur du trafic</h3>\n<p>Le trafic sur Internet augmente très vite : il est multiplié par plusieurs dizaines en une décennie. Au milieu des années 2020, il se compte en <strong>centaines d'exaoctets par mois</strong> à l'échelle mondiale (1 exaoctet = 1 milliard de gigaoctets). La <strong>vidéo</strong> en représente la plus grande part, plus de la moitié.</p>\n<p>Ce trafic a un coût énergétique : les réseaux, les centres de données et les milliards d'appareils consomment de l'électricité, et leur fabrication utilise des ressources. Le numérique représente quelques pour cent des émissions mondiales de gaz à effet de serre. Regarder une vidéo en définition plus faible, télécharger moins ou garder plus longtemps ses appareils réduit cet impact.</p>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li><strong>Internet</strong> est un réseau mondial de réseaux ; le <strong>Web</strong> n'est qu'une de ses applications.</li>\n<li>Chaque machine a une <strong>adresse IP</strong> : IPv4 (4 nombres de 0 à 255, 32 bits) ou IPv6 (128 bits).</li>\n<li>Les données sont découpées en <strong>paquets</strong> munis d'un en-tête (adresses de l'expéditeur et du destinataire).</li>\n<li><strong>IP</strong> adresse et achemine les paquets, sans garantie ; <strong>TCP</strong> numérote, vérifie par accusés de réception, renvoie les paquets perdus et remet tout dans l'ordre.</li>\n<li>La transmission est <strong>fiable</strong>, mais sans <strong>garantie de délai</strong>.</li>\n<li>Les <strong>routeurs</strong> transmettent les paquets de proche en proche grâce à leurs tables de routage ; le réseau maillé est robuste, mais la congestion et les pannes causent des pertes.</li>\n<li>Le <strong>DNS</strong> traduit une adresse symbolique en adresse IP, et inversement.</li>\n<li>En <strong>pair-à-pair</strong>, chaque machine est cliente et serveur : utile pour répartir la charge, mais aussi utilisé pour des partages illicites.</li>\n<li>Internet fonctionne sur tous les réseaux physiques (cuivre, fibre, Wi-Fi, 4G/5G, satellite) ; le trafic mondial, dominé par la vidéo, se compte en centaines d'exaoctets par mois.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch2:banque:001",
+          "enonce": "Comment peut-on décrire Internet en une expression ?",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Internet interconnecte des millions de réseaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un seul très gros ordinateur",
+            "Un logiciel de navigation",
+            "Un site Web géant",
+            "Un réseau de réseaux"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:002",
+          "enonce": "Comment appelle-t-on un ensemble de règles qui fixent la façon dont des machines échangent des données ?",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Pour communiquer, deux machines doivent utiliser les mêmes protocoles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un protocole",
+            "Un navigateur",
+            "Un routeur",
+            "Un paquet"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:003",
+          "enonce": "Quelle affirmation sur le Web est exacte ?",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Internet est l'infrastructure ; le Web est une application, comme le courriel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "C'est le câble qui relie les continents",
+            "C'est un autre nom d'Internet",
+            "C'est une des applications qui utilisent Internet",
+            "C'est le protocole qui achemine les paquets"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:004",
+          "enonce": "Qu'est-ce qu'un réseau informatique ?",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "La maison, le lycée ont leur réseau ; Internet relie ces réseaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un programme qui affiche des pages Web sur un écran d'ordinateur",
+            "Un ensemble de machines reliées pour échanger des données",
+            "Une liste d'adresses de sites",
+            "Un câble en fibre optique"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:005",
+          "enonce": "Comment s'appelle le réseau créé en 1969, ancêtre d'Internet ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "ARPANET reliait les ordinateurs de quatre universités américaines.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ARPANET",
+            "Wi-Fi",
+            "Cyclades",
+            "Minitel"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:006",
+          "enonce": "Qui a publié le protocole TCP/IP en 1974 ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Vinton Cerf et Robert Kahn ont conçu TCP/IP.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Guido van Rossum",
+            "Louis Pouzin seul",
+            "Tim Berners-Lee et Robert Cailliau",
+            "Vinton Cerf et Robert Kahn"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:007",
+          "enonce": "En quelle année le DNS a-t-il été créé ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Le DNS date de 1984.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1974",
+            "1969",
+            "1984",
+            "1995"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:008",
+          "enonce": "À quoi sert une adresse IP ?",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "Comme une adresse postale identifie une maison.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À protéger un mot de passe",
+            "À identifier une machine sur un réseau",
+            "À nommer un site Web",
+            "À mesurer le débit d'une connexion"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:009",
+          "enonce": "Laquelle de ces adresses est une adresse IPv4 valide ?",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "4 nombres de 0 à 255 séparés par des points ; 300 dépasse 255.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "192.168.1.300",
+            "192.168.1",
+            "192.168.1.27",
+            "www.exemple.fr"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:010",
+          "enonce": "Combien de nombres compte une adresse IPv4 ?",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "Quatre nombres de 0 à 255, séparés par des points.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "8",
+            "6",
+            "32"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:011",
+          "enonce": "Pourquoi a-t-on créé IPv6 ?",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "IPv4 offre environ 4,3 milliards d'adresses : trop peu aujourd'hui.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour remplacer le DNS et ses serveurs dans le monde entier",
+            "Les adresses IPv4 ne suffisent plus pour tous les appareils",
+            "IPv4 ne fonctionnait pas en Wi-Fi",
+            "IPv4 était trop lent"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:012",
+          "enonce": "Comment appelle-t-on les petits blocs de données qui circulent sur Internet ?",
+          "notion": "Paquets",
+          "difficulte": 1,
+          "explication": "Les données sont découpées en paquets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des routeurs",
+            "Des protocoles",
+            "Des domaines",
+            "Des paquets"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:013",
+          "enonce": "Que contient l'en-tête d'un paquet, entre autres ?",
+          "notion": "Paquets",
+          "difficulte": 1,
+          "explication": "L'en-tête indique d'où vient le paquet et où il va.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les adresses IP de l'expéditeur et du destinataire",
+            "Le nom du fournisseur d'accès",
+            "Le mot de passe de l'utilisateur",
+            "La liste de tous les routeurs du monde"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:014",
+          "enonce": "Quel protocole s'occupe d'adresser et d'acheminer les paquets ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "IP place les adresses et fait avancer les paquets vers leur destination.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "TCP",
+            "IP",
+            "DNS",
+            "HTTP"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:015",
+          "enonce": "Quel protocole s'occupe de la fiabilité de la transmission ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "TCP numérote, vérifie la réception et renvoie les paquets perdus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Wi-Fi",
+            "DNS",
+            "TCP",
+            "IP"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:016",
+          "enonce": "Que renvoie le destinataire pour chaque paquet bien reçu avec TCP ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "L'accusé de réception confirme l'arrivée du paquet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une copie du paquet",
+            "Un nom de domaine",
+            "Une nouvelle adresse IP",
+            "Un accusé de réception"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:017",
+          "enonce": "Que signifie l'expression « TCP/IP » ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "Internet repose sur ces deux protocoles complémentaires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'association des deux protocoles d'Internet, TCP et IP",
+            "Une adresse de serveur",
+            "Le nom d'un fournisseur d'accès",
+            "Un type de câble"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:018",
+          "enonce": "Comment appelle-t-on la machine qui relie plusieurs réseaux et transmet les paquets vers leur destination ?",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "Le routeur transmet chaque paquet au routeur suivant.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un capteur",
+            "Un serveur DNS",
+            "Un client",
+            "Un routeur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:019",
+          "enonce": "Que contient la table de routage d'un routeur ?",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "Le routeur connaît le prochain saut, pas le chemin complet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le contenu de tous les paquets",
+            "Les mots de passe des utilisateurs",
+            "À quel voisin envoyer un paquet selon sa destination",
+            "La liste des sites Web autorisés"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:020",
+          "enonce": "Quelle commande affiche la liste des routeurs traversés pour atteindre une machine ?",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "traceroute (tracert sous Windows) montre les sauts successifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "print",
+            "traceroute",
+            "ping-pong",
+            "nslookup"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:021",
+          "enonce": "À quoi sert le DNS ?",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "Le DNS est l'annuaire d'Internet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À renvoyer les paquets perdus pendant une transmission",
+            "À faire correspondre noms de domaine et adresses IP",
+            "À découper les données en paquets",
+            "À chiffrer les communications"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:022",
+          "enonce": "Comment appelle-t-on un nom comme www.exemple.fr, plus facile à retenir qu'une adresse IP ?",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "C'est un nom de domaine, ou adresse symbolique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une adresse symbolique",
+            "Un paquet",
+            "Un protocole",
+            "Une adresse physique"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:023",
+          "enonce": "Dans www.exemple.fr, que désigne fr ?",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "fr est le domaine de premier niveau de la France.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le protocole utilisé",
+            "Le fournisseur d'accès",
+            "Le domaine de premier niveau",
+            "Le nom de la machine"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:024",
+          "enonce": "Dans un réseau pair-à-pair, quel est le rôle de chaque machine ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 1,
+          "explication": "Chaque pair télécharge et fournit des données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle est seulement serveur",
+            "Elle ne fait que router les paquets",
+            "Elle est seulement cliente",
+            "Elle est à la fois cliente et serveur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:025",
+          "enonce": "Dans le modèle client-serveur, qui fournit le service ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 1,
+          "explication": "Le serveur fournit le service que le client demande.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le DNS",
+            "Le client",
+            "Le routeur",
+            "Le serveur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:026",
+          "enonce": "Quel réseau physique, aujourd'hui obsolète, offrait un débit de 56 kbit/s ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "Les modems des années 1990 plafonnaient à 56 kbit/s.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le Wi-Fi",
+            "Le modem téléphonique",
+            "La fibre optique",
+            "La 5G"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:027",
+          "enonce": "Quelle grandeur exprime la quantité de données transmises par seconde ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "Le débit se mesure en bits par seconde.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le TTL",
+            "La latence",
+            "Le débit",
+            "L'adresse IP"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:028",
+          "enonce": "Lequel de ces réseaux est sans fil ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "4G et 5G sont des réseaux mobiles sans fil.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La 4G",
+            "La fibre optique",
+            "L'ADSL",
+            "Le câble en cuivre"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:029",
+          "enonce": "Quel type de contenu représente la plus grande part du trafic sur Internet ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "La vidéo représente plus de la moitié du trafic.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le courrier électronique",
+            "La vidéo",
+            "Les messages instantanés",
+            "Les pages de texte"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:030",
+          "enonce": "Qu'est-ce qui transporte l'essentiel du trafic intercontinental ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "Les grands câbles sous-marins relient les continents.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les câbles sous-marins en fibre optique",
+            "Les lignes téléphoniques en cuivre",
+            "Les satellites géostationnaires",
+            "Les réseaux Wi-Fi"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:031",
+          "enonce": "Pourquoi dit-on qu'Internet est l'infrastructure et le Web une application ?",
+          "notion": "Internet et ses applications",
+          "difficulte": 2,
+          "explication": "Courriel, jeux, visioconférence utilisent aussi Internet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le Web est plus ancien qu'Internet",
+            "Internet ne sert qu'au Web",
+            "Internet transporte les données ; le Web s'en sert pour donner accès à des pages",
+            "Le Web transporte les paquets d'Internet"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:032",
+          "enonce": "Quel apport du réseau français Cyclades a été repris par TCP/IP ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "Louis Pouzin a montré l'intérêt des petits morceaux indépendants.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Afficher des pages avec des liens",
+            "Associer des noms aux adresses IP",
+            "Relier les ordinateurs par satellite",
+            "Transmettre des données découpées en morceaux indépendants"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:033",
+          "enonce": "Pourquoi 1983 est-elle souvent présentée comme la date de naissance d'Internet ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "L'adoption de TCP/IP permet de relier des réseaux différents.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ARPANET adopte alors TCP/IP",
+            "Le Wi-Fi est créé",
+            "Le DNS est inventé",
+            "Le premier site Web est publié"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:034",
+          "enonce": "Sur combien de bits est codée une adresse IPv4 ?",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "4 nombres de 8 bits : 32 bits.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "128",
+            "32",
+            "4",
+            "8"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:035",
+          "enonce": "Combien d'adresses IPv4 différentes existe-t-il environ ?",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "2 puissance 32 donne environ 4,3 milliards.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "256",
+            "4 millions",
+            "4,3 milliards",
+            "Un nombre illimité"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:036",
+          "enonce": "Quelle est la longueur, en bits, d'une adresse IPv6 ?",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "IPv6 utilise des adresses de 128 bits.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "64",
+            "256",
+            "32",
+            "128"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:037",
+          "enonce": "Que peut-on dire d'une adresse comme 192.168.1.12 sur un réseau domestique ?",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "Les appareils de la maison ont souvent des adresses locales 192.168.x.x.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "C'est l'adresse publique attribuée à la box par le fournisseur d'accès",
+            "C'est une adresse locale, valable dans le réseau de la maison",
+            "C'est l'adresse du serveur DNS mondial",
+            "C'est une adresse IPv6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:038",
+          "enonce": "Quelle est la taille maximale typique d'un paquet ?",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "Quelques centaines à environ 1 500 octets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ 1 gigaoctet",
+            "Exactement 1 bit",
+            "Environ 1 500 octets",
+            "Environ 1 mégaoctet"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:039",
+          "enonce": "Quel avantage apporte le découpage en paquets quand un morceau se perd ?",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "Seul le paquet manquant est réémis.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le fichier arrive quand même complet sans rien renvoyer",
+            "On doit renvoyer tout le fichier",
+            "Le routeur reconstitue le paquet perdu",
+            "On renvoie seulement le paquet perdu"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:040",
+          "enonce": "Pourquoi le découpage en paquets permet-il de partager le réseau ?",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "Les paquets de nombreux utilisateurs s'intercalent sur les liaisons.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un gros envoi ne monopolise pas la liaison",
+            "Les paquets sont plus rapides que la lumière",
+            "Chaque utilisateur reçoit sa propre fibre",
+            "Les paquets ne passent pas par les routeurs"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:041",
+          "enonce": "Que garantit le protocole IP à lui seul ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "IP achemine sans garantie ; la fiabilité vient de TCP.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Que chaque paquet reçoit un accusé de réception",
+            "Rien : un paquet peut être perdu ou arriver dans le désordre",
+            "Que tous les paquets arrivent dans l'ordre",
+            "Que les paquets arrivent en moins d'une seconde"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:042",
+          "enonce": "Que fait l'expéditeur TCP s'il ne reçoit pas d'accusé de réception au bout d'un certain temps ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "Le paquet est considéré comme perdu et réémis.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il demande l'adresse au DNS",
+            "Il change d'adresse IP",
+            "Il renvoie le paquet",
+            "Il abandonne toute la transmission"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:043",
+          "enonce": "Comment TCP remet-il les paquets dans l'ordre à l'arrivée ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "Chaque segment est numéroté au départ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Grâce à leurs numéros",
+            "Grâce à leur heure de départ",
+            "Grâce au nom de domaine",
+            "Grâce à l'adresse du routeur"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:044",
+          "enonce": "Dans la comparaison du cours, quel rôle joue IP ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "TCP est l'expéditeur méticuleux ; IP transporte.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le bureau qui renvoie les lettres perdues",
+            "L'annuaire qui donne les adresses",
+            "L'expéditeur qui numérote ses lettres",
+            "Le facteur qui transporte les enveloppes"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:045",
+          "enonce": "Pourquoi n'y a-t-il aucune garantie sur le moment où les données arrivent ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "Fiable ne veut pas dire rapide.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les adresses IP changent à chaque paquet",
+            "TCP ralentit volontairement les paquets",
+            "Les paquets attendent, changent de chemin ou doivent être renvoyés",
+            "Le DNS bloque les paquets trop rapides"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:046",
+          "enonce": "Pour quel usage un retard de transmission est-il le plus visible ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "Image figée, son haché : la latence se voit en temps réel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'envoi d'un courriel",
+            "Un appel vidéo",
+            "Le téléchargement d'une mise à jour la nuit",
+            "La sauvegarde d'un fichier sur un serveur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:047",
+          "enonce": "Que sait un routeur du chemin d'un paquet ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Le routage se fait de proche en proche.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le chemin choisi par l'expéditeur",
+            "Le chemin complet jusqu'à la destination",
+            "Rien : il envoie le paquet au hasard",
+            "Seulement à quel voisin l'envoyer ensuite"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:048",
+          "enonce": "Que se passe-t-il pour les paquets suivants quand un routeur tombe en panne ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Le réseau maillé offre plusieurs chemins.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils prennent un autre chemin",
+            "Ils reviennent à l'expéditeur",
+            "Ils attendent que le routeur soit réparé",
+            "Ils sont tous détruits"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:049",
+          "enonce": "Pourquoi deux paquets d'un même fichier peuvent-ils arriver dans le désordre ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "TCP les remet ensuite dans l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le DNS les mélange",
+            "Le destinataire les lit au hasard",
+            "Ils peuvent suivre des chemins différents",
+            "IP les envoie volontairement à l'envers"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:050",
+          "enonce": "Que fait un routeur congestionné dont la file d'attente est pleine ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Les paquets détruits devront être renvoyés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il renvoie les paquets à l'expéditeur",
+            "Il agrandit sa mémoire sans limite",
+            "Il ralentit la lumière dans les fibres",
+            "Il détruit des paquets"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:051",
+          "enonce": "À quoi sert le TTL dans l'en-tête d'un paquet ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Diminué de 1 à chaque routeur, le paquet est détruit à 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À éviter qu'un paquet tourne indéfiniment dans le réseau",
+            "À compter les accusés de réception",
+            "À chiffrer les données",
+            "À indiquer le nom du site visité"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:052",
+          "enonce": "Que fait d'abord ton appareil quand tu tapes www.exemple.fr ?",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "Il faut l'adresse IP pour contacter la machine.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il envoie directement un paquet au site",
+            "Il demande l'adresse IP à un serveur DNS",
+            "Il demande au routeur le contenu de la page",
+            "Il cherche le site dans son historique"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:053",
+          "enonce": "Comment appelle-t-on l'opération qui trouve l'adresse IP correspondant à un nom ?",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "Le DNS résout le nom en adresse IP.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le routage",
+            "Le découpage",
+            "La résolution de nom",
+            "La compression"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:054",
+          "enonce": "Pourquoi les réponses du DNS sont-elles gardées en cache ?",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "Une réponse déjà connue n'a pas à être redemandée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour aller plus vite la fois suivante",
+            "Pour changer d'adresse IP",
+            "Pour éviter les accusés de réception",
+            "Pour surveiller les utilisateurs"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:055",
+          "enonce": "Dans quel sens se lit un nom de domaine, du plus général au plus précis ?",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "fr, puis exemple, puis www.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Du milieu vers les bords",
+            "Dans n'importe quel ordre",
+            "De gauche à droite",
+            "De droite à gauche"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:056",
+          "enonce": "Pourquoi un fichier très partagé en pair-à-pair se télécharge-t-il plus vite ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 2,
+          "explication": "Plus il y a de pairs, plus il y a de sources.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il est compressé davantage",
+            "Ses morceaux viennent de nombreuses machines à la fois",
+            "Il est stocké sur un serveur plus puissant",
+            "Il passe par moins de routeurs"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:057",
+          "enonce": "Quel est un point faible du modèle client-serveur que le pair-à-pair évite ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 2,
+          "explication": "Le pair-à-pair n'a pas de serveur central fragile.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une panne du serveur arrête le service",
+            "Les clients ne peuvent rien télécharger",
+            "Il interdit les vidéos",
+            "Il ne fonctionne pas avec TCP/IP"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:058",
+          "enonce": "Que signifie l'indépendance d'Internet par rapport au réseau physique ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "Un même paquet peut passer par le Wi-Fi, le cuivre, la fibre, la 4G.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Internet n'utilise aucun câble",
+            "Chaque support a son propre Internet",
+            "Internet ne marche que par satellite",
+            "Ses protocoles fonctionnent quel que soit le support"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:059",
+          "enonce": "Combien vaut 1 Gbit/s ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "1 Gbit/s = 1 milliard de bit/s.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 milliard d'octets par minute",
+            "1 million de bits par seconde",
+            "1 milliard de bits par seconde",
+            "1 000 bits par seconde"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:060",
+          "enonce": "Quel réseau physique offre en général le débit le plus élevé à la maison ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "La fibre atteint plusieurs Gbit/s.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'ADSL",
+            "La fibre optique",
+            "Le modem téléphonique",
+            "Le satellite lointain"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:061",
+          "enonce": "Pourquoi aucun nombre d'une adresse IPv4 ne dépasse-t-il 255 ?",
+          "notion": "Adresses IP",
+          "difficulte": 3,
+          "explication": "8 bits permettent 256 valeurs, de 0 à 255.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "C'est une règle du DNS",
+            "255 est le nombre de pays reliés",
+            "Les routeurs refusent les grands nombres",
+            "Chaque nombre est codé sur 8 bits"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:062",
+          "enonce": "Quelle adresse ne peut pas être une adresse IPv4 ?",
+          "notion": "Adresses IP",
+          "difficulte": 3,
+          "explication": "256 dépasse la valeur maximale d'un octet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "172.16.0.1",
+            "8.8.8.8",
+            "10.0.256.1",
+            "10.0.255.1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:063",
+          "enonce": "Un fichier de 15 000 octets est envoyé en paquets de 1 500 octets de données. Combien de paquets faut-il au minimum ?",
+          "notion": "Paquets",
+          "difficulte": 3,
+          "explication": "15 000 / 1 500 = 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "15",
+            "100",
+            "1 500"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:064",
+          "enonce": "Le paquet n° 3 d'un envoi n'arrive pas. Que se passe-t-il avec TCP ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 3,
+          "explication": "Seul le paquet manquant est renvoyé, puis TCP remet tout dans l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le routeur fabrique un nouveau paquet n° 3",
+            "L'expéditeur, sans accusé de réception, renvoie le paquet n° 3",
+            "Le destinataire utilise un fichier incomplet",
+            "Tout l'envoi recommence depuis le paquet n° 1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:065",
+          "enonce": "Quelle affirmation distingue correctement fiabilité et délai ?",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 3,
+          "explication": "Fiable, mais sans garantie temporelle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "TCP garantit une arrivée rapide, pas des données complètes",
+            "TCP garantit des données complètes, pas une arrivée rapide",
+            "Ni IP ni TCP ne garantissent des données complètes",
+            "IP garantit les deux"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:066",
+          "enonce": "Dans la figure du cours, A envoie à B par R1, R3 et R5. R3 tombe en panne. Par quel chemin les paquets peuvent-ils passer ?",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "R1 est relié à R4, et R4 à R5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "R2, R3, R5",
+            "Aucun : la communication est coupée",
+            "R1, R3, R5",
+            "R1, R4, R5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:067",
+          "enonce": "Un paquet part avec un TTL de 64. Au passage de combien de routeurs son TTL atteint-il 0 ?",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "Le TTL diminue de 1 à chaque routeur : 64 routeurs le font passer de 64 à 0, et le paquet est alors détruit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "64",
+            "32",
+            "Il n'atteint jamais 0",
+            "128"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:068",
+          "enonce": "Pourquoi l'absence de centre rend-elle Internet robuste ?",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "Le maillage offre des chemins de secours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les paquets ne peuvent pas se perdre",
+            "Les routeurs connaissent tous les chemins complets",
+            "Aucune panne isolée ne coupe tout le réseau",
+            "Un ordinateur central surveille tout"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:069",
+          "enonce": "Pourquoi le DNS est-il réparti sur de nombreux serveurs organisés en arbre ?",
+          "notion": "DNS",
+          "difficulte": 3,
+          "explication": "Serveurs racines, puis domaines de premier niveau, puis domaines.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour découper les noms en paquets",
+            "Pour remplacer les routeurs",
+            "Aucun serveur ne pourrait connaître et servir seul tous les noms",
+            "Pour que chaque pays ait le même nom"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:070",
+          "enonce": "Dans le nom mail.lycee-exemple.fr, que désigne mail ?",
+          "notion": "DNS",
+          "difficulte": 3,
+          "explication": "Comme www, la partie de gauche désigne une machine ou un service.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le pays du site",
+            "Le protocole de transport",
+            "Le domaine de premier niveau",
+            "Une machine ou un service du domaine lycee-exemple.fr"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:071",
+          "enonce": "Un élève télécharge en pair-à-pair un film récent sans l'accord de ses auteurs. Qu'est-ce qui est illégal ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 3,
+          "explication": "La technique est légale ; le partage sans droit porte atteinte au droit d'auteur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Posséder une adresse IP",
+            "Partager ce contenu sans droit",
+            "Utiliser le protocole TCP",
+            "Utiliser la technique du pair-à-pair"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:072",
+          "enonce": "Pourquoi un satellite lointain gêne-t-il un jeu en ligne même avec un bon débit ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 3,
+          "explication": "Le signal fait un très long trajet : le délai est grand.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La latence est élevée",
+            "Le débit est trop faible",
+            "Les paquets n'ont pas d'en-tête",
+            "Le DNS ne fonctionne pas"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:073",
+          "enonce": "Combien de gigaoctets représente 1 exaoctet ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 3,
+          "explication": "1 exaoctet = 1 milliard de gigaoctets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 000 milliards",
+            "1 000",
+            "1 million",
+            "1 milliard"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:074",
+          "enonce": "Lequel de ces gestes réduit le plus directement l'impact énergétique du trafic ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 3,
+          "explication": "La vidéo domine le trafic ; baisser la définition réduit les données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Utiliser des adresses IPv6",
+            "Regarder des vidéos en définition plus faible",
+            "Écrire les noms de domaine en minuscules",
+            "Changer de navigateur chaque mois"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:075",
+          "enonce": "Quel ordre chronologique est exact ?",
+          "notion": "Repères historiques",
+          "difficulte": 3,
+          "explication": "1969, 1974, 1984.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "DNS, ARPANET, TCP/IP",
+            "TCP/IP, DNS, ARPANET",
+            "ARPANET, TCP/IP, DNS",
+            "ARPANET, DNS, TCP/IP"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:076",
+          "enonce": "Quelles sont des applications qui utilisent Internet ? Coche toutes les réponses exactes.",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Le câble est un support physique, pas une application.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le câble en cuivre",
+            "Le Web",
+            "Le courrier électronique",
+            "La visioconférence"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:077",
+          "enonce": "Quelles dates correspondent à un événement cité dans le cours ? Coche toutes les réponses exactes.",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "1974 est TCP/IP ; 1983 l'adoption de TCP/IP par ARPANET.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1984 : création du DNS",
+            "1969 : ARPANET",
+            "1983 : invention du Wi-Fi",
+            "1974 : premier site Web"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:078",
+          "enonce": "Quelles adresses sont des adresses IPv4 valides ? Coche toutes les réponses exactes.",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "4 nombres de 0 à 255 ; 300 est trop grand, 1.2.3 n'en a que trois.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "300.1.2.3",
+            "10.0.0.1",
+            "255.255.255.0",
+            "1.2.3"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:079",
+          "enonce": "Quelles informations figurent dans l'en-tête d'un paquet ? Coche toutes les réponses exactes.",
+          "notion": "Paquets",
+          "difficulte": 1,
+          "explication": "L'en-tête porte notamment les adresses.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La liste des sites visités",
+            "Le mot de passe du destinataire",
+            "L'adresse IP du destinataire",
+            "L'adresse IP de l'expéditeur"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:080",
+          "enonce": "Quels sont des rôles du protocole TCP ? Coche toutes les réponses exactes.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "TCP fiabilise : numérotation, accusés de réception, réémission, remise en ordre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Choisir le câble utilisé",
+            "Attribuer les noms de domaine",
+            "Renvoyer les paquets perdus",
+            "Numéroter les segments"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:081",
+          "enonce": "Que fait le protocole IP lors d'une transmission ? Coche toutes les réponses exactes.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "IP adresse et achemine, sans garantie.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Faire avancer le paquet vers sa destination",
+            "Garantir l'ordre d'arrivée",
+            "Envoyer des accusés de réception",
+            "Placer les adresses dans l'en-tête"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:082",
+          "enonce": "Que peut-on dire d'un routeur ? Coche toutes les réponses exactes.",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "La traduction est le rôle du DNS.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il possède une table de routage",
+            "Il connaît le chemin complet de chaque paquet",
+            "Il relie plusieurs réseaux",
+            "Il traduit les noms en adresses IP"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:083",
+          "enonce": "Quelles commandes permettent d'interroger le DNS ? Coche toutes les réponses exactes.",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "traceroute affiche les routeurs traversés.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "print",
+            "nslookup",
+            "dig",
+            "traceroute"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:084",
+          "enonce": "Quels sont des intérêts du pair-à-pair ? Coche toutes les réponses exactes.",
+          "notion": "Pair-à-pair",
+          "difficulte": 1,
+          "explication": "Le pair-à-pair n'empêche ni les partages illicites ni les logiciels malveillants.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Garantir l'absence de logiciel malveillant",
+            "Se passer d'un serveur central",
+            "Répartir la charge entre les participants",
+            "Rendre légal tout partage de fichiers"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:085",
+          "enonce": "Quels réseaux physiques sont filaires ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "5G et Wi-Fi sont sans fil.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'ADSL",
+            "Le Wi-Fi",
+            "La 5G",
+            "La fibre optique"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:086",
+          "enonce": "Quelles unités mesurent un débit ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "Le débit est en bits par seconde.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Octet",
+            "Gbit/s",
+            "Hertz",
+            "kbit/s"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:087",
+          "enonce": "Quels éléments font partie de l'infrastructure d'Internet ? Coche toutes les réponses exactes.",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Pages et vidéos sont des contenus transportés.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les routeurs",
+            "Les vidéos",
+            "Les câbles",
+            "Les pages Web"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:088",
+          "enonce": "Quels sont des avantages du découpage en paquets ? Coche toutes les réponses exactes.",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "Des paquets peuvent se perdre ; ils sont alors renvoyés.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les données ne peuvent plus se perdre",
+            "Le réseau est partagé entre de nombreux utilisateurs",
+            "Les paquets ne passent jamais par un routeur",
+            "Un paquet perdu est renvoyé seul"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:089",
+          "enonce": "Qu'est-ce qui peut arriver à un paquet transporté par IP ? Coche toutes les réponses exactes.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "IP ne garantit rien : perte, double, désordre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Être transformé en nom de domaine",
+            "Être perdu",
+            "Arriver dans le désordre",
+            "Changer d'adresse de destination en route"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:090",
+          "enonce": "À propos de la fiabilité et du délai, que peut-on affirmer ? Coche toutes les réponses exactes.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "Fiable, sans garantie temporelle ; la réémission est le fait de TCP.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il n'y a aucune garantie sur le délai d'arrivée",
+            "IP renvoie lui-même les paquets perdus",
+            "TCP garantit une arrivée en moins d'une seconde",
+            "La transmission avec TCP est fiable"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:091",
+          "enonce": "Quelles sont des limites du routage ? Coche toutes les réponses exactes.",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "File pleine ou panne : des paquets se perdent.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'interdiction des chemins multiples",
+            "L'absence d'adresse dans l'en-tête",
+            "Les pannes de routeurs ou de liaisons",
+            "La congestion des routeurs"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:092",
+          "enonce": "Que sait-on du compteur TTL d'un paquet ? Coche toutes les réponses exactes.",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Time To Live : durée de vie en nombre de sauts.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le paquet est détruit quand il atteint 0",
+            "Il est fixé par le DNS",
+            "Il diminue de 1 à chaque routeur",
+            "Il indique l'heure d'arrivée"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:093",
+          "enonce": "Parmi ces caractéristiques, lesquelles sont celles du DNS ? Coche toutes les réponses exactes.",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "C'est un annuaire réparti ; la résolution inverse existe.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il permet aussi de retrouver un nom à partir d'une adresse IP",
+            "Il garantit l'ordre d'arrivée des données",
+            "Il achemine les paquets",
+            "Il est réparti sur de nombreux serveurs"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:094",
+          "enonce": "Dans www.exemple.fr, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "Se lit de droite à gauche.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "exemple est le nom du fournisseur d'accès",
+            "www est le domaine de premier niveau",
+            "fr est le domaine de premier niveau",
+            "exemple est le nom choisi par le propriétaire"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:095",
+          "enonce": "Quels sont des usages licites du pair-à-pair cités dans le cours ? Coche toutes les réponses exactes.",
+          "notion": "Pair-à-pair",
+          "difficulte": 2,
+          "explication": "Le partage sans droit est illicite.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Diffuser de la musique piratée",
+            "Partager des films sans l'accord des auteurs",
+            "Distribuer des mises à jour de jeux",
+            "Diffuser des logiciels libres"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:096",
+          "enonce": "Quels réseaux offrent un débit pouvant dépasser 1 Gbit/s ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "L'ADSL plafonne vers 20 Mbit/s, le modem à 56 kbit/s.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'ADSL",
+            "La 5G",
+            "Le modem téléphonique",
+            "La fibre optique"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:097",
+          "enonce": "Quelles affirmations sur le trafic d'Internet sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "Centaines d'exaoctets par mois, en forte hausse.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il diminue depuis les années 2010",
+            "Il augmente très vite",
+            "Il se compte en kilooctets par mois",
+            "La vidéo en représente plus de la moitié"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:098",
+          "enonce": "Qu'est-ce qui caractérise les adresses IPv6 ? Coche toutes les réponses exactes.",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "IPv6 offre un nombre gigantesque d'adresses.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle offre moins d'adresses qu'IPv4",
+            "Elles comptent 4 nombres de 0 à 255",
+            "Ses adresses font 128 bits",
+            "Elles s'écrivent en hexadécimal"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:099",
+          "enonce": "Quelles personnes sont liées aux débuts d'Internet ? Coche toutes les réponses exactes.",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "Niépce est un pionnier de la photographie, van Rossum le créateur de Python.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Vinton Cerf",
+            "Guido van Rossum",
+            "Nicéphore Niépce",
+            "Louis Pouzin"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:100",
+          "enonce": "Un appel vidéo saccade alors que le fichier envoyé par courriel arrive intact. Quelles explications sont cohérentes ? Coche toutes les réponses exactes.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 3,
+          "explication": "Fiabilité sans garantie temporelle : le délai gêne le temps réel.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "IP garantit les délais mais pas les données",
+            "Les paquets subissent des délais variables",
+            "Le DNS ralentit les vidéos",
+            "TCP peut renvoyer des paquets, ce qui ajoute du retard"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:101",
+          "enonce": "Dans la figure du cours, quels chemins relient A à B ? Coche toutes les réponses exactes.",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "R1 et R5 ne sont pas reliés directement ; R3 et R4 non plus.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "R1, R3, R5",
+            "R1, R5",
+            "R2, R4, R5",
+            "R2, R3, R4"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:102",
+          "enonce": "Une box reçoit l'adresse publique 82.64.10.5 et le téléphone de la maison l'adresse 192.168.1.20. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Adresses IP",
+          "difficulte": 3,
+          "explication": "Adresse publique de la box, adresses locales des appareils.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "82.64.10.5 est attribuée par le fournisseur d'accès",
+            "82.64.10.5 est une adresse IPv6",
+            "192.168.1.20 n'est valable que dans le réseau de la maison",
+            "192.168.1.20 identifie le téléphone partout sur Internet"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:103",
+          "enonce": "Quelles étapes font partie de la consultation de www.exemple.fr ? Coche toutes les réponses exactes.",
+          "notion": "DNS",
+          "difficulte": 3,
+          "explication": "Le DNS résout le nom ; les paquets utilisent l'adresse IP.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Envoyer le nom de domaine dans chaque paquet à la place de l'adresse",
+            "Interroger un serveur DNS",
+            "Demander au routeur de traduire le nom",
+            "Contacter la machine par son adresse IP"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:104",
+          "enonce": "Quels risques présente le téléchargement de fichiers en pair-à-pair hors des cadres autorisés ? Coche toutes les réponses exactes.",
+          "notion": "Pair-à-pair",
+          "difficulte": 3,
+          "explication": "Risques juridiques et de sécurité.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La coupure définitive d'Internet",
+            "La destruction de l'adresse IP",
+            "Des sanctions pour atteinte au droit d'auteur",
+            "Des logiciels malveillants dans les fichiers"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:105",
+          "enonce": "Quelles affirmations sur l'impact du numérique sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 3,
+          "explication": "Le numérique représente quelques pour cent des émissions mondiales.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le numérique n'émet aucun gaz à effet de serre",
+            "La fabrication des appareils utilise des ressources",
+            "Le trafic n'a aucun coût énergétique",
+            "Les centres de données consomment de l'électricité"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch2:banque:106",
+          "enonce": "Internet et le Web désignent exactement la même chose.",
+          "notion": "Internet et ses applications",
+          "difficulte": 1,
+          "explication": "Le Web est une application d'Internet.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:107",
+          "enonce": "ARPANET a été créé en 1969.",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Il reliait quatre universités américaines.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:108",
+          "enonce": "Une adresse IPv4 contient quatre nombres compris entre 0 et 255.",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "Séparés par des points.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:109",
+          "enonce": "Une vidéo voyage sur Internet d'un seul bloc, sans être découpée.",
+          "notion": "Paquets",
+          "difficulte": 1,
+          "explication": "Elle est découpée en paquets.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:110",
+          "enonce": "TCP envoie des accusés de réception pour vérifier que les paquets sont bien arrivés.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "C'est le destinataire qui renvoie un accusé pour chaque paquet reçu.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:111",
+          "enonce": "Le protocole IP garantit que les paquets arrivent dans l'ordre.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "C'est TCP qui remet les paquets dans l'ordre.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:112",
+          "enonce": "Un routeur connaît le chemin complet de chaque paquet jusqu'à sa destination.",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "Il connaît seulement le prochain saut.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:113",
+          "enonce": "Le DNS fait correspondre des noms de domaine et des adresses IP.",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "C'est l'annuaire d'Internet.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:114",
+          "enonce": "Dans un réseau pair-à-pair, chaque machine peut fournir des données aux autres.",
+          "notion": "Pair-à-pair",
+          "difficulte": 1,
+          "explication": "Chaque pair est client et serveur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:115",
+          "enonce": "Le Wi-Fi est un réseau filaire.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "C'est un réseau sans fil local.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:116",
+          "enonce": "Le débit se mesure en bits par seconde.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 1,
+          "explication": "kbit/s, Mbit/s, Gbit/s.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:117",
+          "enonce": "Utiliser un logiciel de pair-à-pair est illégal en soi.",
+          "notion": "Pair-à-pair",
+          "difficulte": 1,
+          "explication": "C'est le partage de contenus sans droit qui est illégal.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:118",
+          "enonce": "Le DNS a été créé avant le protocole TCP/IP.",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "TCP/IP date de 1974, le DNS de 1984.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:119",
+          "enonce": "IPv6 a été créée parce que le nombre d'adresses IPv4 ne suffit plus.",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "Environ 4,3 milliards d'adresses IPv4 seulement.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:120",
+          "enonce": "Si un paquet est perdu, il faut renvoyer tout le fichier.",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "On renvoie seulement le paquet perdu.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:121",
+          "enonce": "Une transmission fiable est forcément une transmission rapide.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 2,
+          "explication": "TCP garantit l'intégrité, pas le délai.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:122",
+          "enonce": "Deux paquets d'un même fichier peuvent suivre des chemins différents.",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Le réseau maillé offre plusieurs chemins.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:123",
+          "enonce": "Un routeur congestionné peut détruire des paquets.",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Quand sa file d'attente est pleine.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:124",
+          "enonce": "Un nom de domaine se lit de gauche à droite, du plus général au plus précis.",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "De droite à gauche : fr, puis exemple, puis www.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:125",
+          "enonce": "Ton appareil interroge en général le serveur DNS de ton fournisseur d'accès.",
+          "notion": "DNS",
+          "difficulte": 2,
+          "explication": "Celui-ci cherche la réponse ailleurs s'il ne la connaît pas.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:126",
+          "enonce": "Un même paquet peut passer par le Wi-Fi, puis par une fibre optique, puis par un réseau 4G.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "Internet est indépendant du réseau physique.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:127",
+          "enonce": "Le courrier électronique représente la plus grande part du trafic sur Internet.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "C'est la vidéo.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:128",
+          "enonce": "Le courrier électronique utilise Internet sans passer par le Web.",
+          "notion": "Internet et ses applications",
+          "difficulte": 2,
+          "explication": "C'est une autre application d'Internet.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:129",
+          "enonce": "Les adresses 192.168.x.x de ta maison sont visibles et utilisables partout sur Internet.",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "Ce sont des adresses locales, valables dans ton réseau.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:130",
+          "enonce": "Sans TTL, un paquet mal routé pourrait tourner indéfiniment dans le réseau.",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "Le TTL limite sa durée de vie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:131",
+          "enonce": "Le protocole TCP numérote les segments pour que le destinataire puisse les remettre dans l'ordre.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 3,
+          "explication": "Les numéros servent à reconstituer les données.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:132",
+          "enonce": "256.10.10.10 est une adresse IPv4 valide.",
+          "notion": "Adresses IP",
+          "difficulte": 3,
+          "explication": "Chaque nombre va de 0 à 255.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:133",
+          "enonce": "Pour envoyer 6 000 octets en paquets de 1 500 octets de données, il faut au moins 4 paquets.",
+          "notion": "Paquets",
+          "difficulte": 3,
+          "explication": "6 000 / 1 500 = 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:134",
+          "enonce": "Dans un réseau pair-à-pair, plus un fichier est partagé, plus son téléchargement est lent.",
+          "notion": "Pair-à-pair",
+          "difficulte": 3,
+          "explication": "Plus il y a de sources, plus c'est rapide.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch2:banque:135",
+          "enonce": "Le trafic mondial d'Internet se compte en centaines d'exaoctets par mois.",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 3,
+          "explication": "Au milieu des années 2020.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch2:banque:136",
+          "enonce": "Quel protocole, associé à IP, rend la transmission fiable ? Donne son sigle.",
+          "notion": "Protocoles IP et TCP",
+          "difficulte": 1,
+          "explication": "TCP : Transmission Control Protocol.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "TCP"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:137",
+          "enonce": "Quel est le sigle de l'annuaire qui traduit les noms de domaine en adresses IP ?",
+          "notion": "DNS",
+          "difficulte": 1,
+          "explication": "Domain Name System.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "DNS"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:138",
+          "enonce": "Quel est le nom du réseau de 1969, ancêtre d'Internet ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Financé par l'armée américaine.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "ARPANET",
+            "Arpanet",
+            "ARPAnet"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:139",
+          "enonce": "Comment s'appelle la machine qui transmet les paquets d'un réseau à l'autre ?",
+          "notion": "Routage",
+          "difficulte": 1,
+          "explication": "Le routeur choisit le prochain saut.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "routeur",
+            "un routeur",
+            "le routeur"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:140",
+          "enonce": "Comment appelle-t-on la partie d'un paquet qui contient les adresses IP ?",
+          "notion": "Paquets",
+          "difficulte": 1,
+          "explication": "L'en-tête précède les données.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "en-tête",
+            "l'en-tête",
+            "entête",
+            "en tête"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:141",
+          "enonce": "Quelle version du protocole IP utilise des adresses de 128 bits ?",
+          "notion": "Adresses IP",
+          "difficulte": 1,
+          "explication": "IPv4 utilise 32 bits.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "IPv6",
+            "IP v6",
+            "IPV6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:142",
+          "enonce": "Combien de bits compte une adresse IPv4 ?",
+          "notion": "Adresses IP",
+          "difficulte": 2,
+          "explication": "4 octets de 8 bits.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "32"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:143",
+          "enonce": "Environ combien d'octets mesure au maximum un paquet, d'après le cours ? Écris le nombre sans espace.",
+          "notion": "Paquets",
+          "difficulte": 2,
+          "explication": "Quelques centaines à environ 1 500 octets.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1500"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:144",
+          "enonce": "Quel sigle désigne le compteur de durée de vie d'un paquet ?",
+          "notion": "Routage",
+          "difficulte": 2,
+          "explication": "Time To Live.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "TTL"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:145",
+          "enonce": "Comment dit-on peer-to-peer en français ?",
+          "notion": "Pair-à-pair",
+          "difficulte": 2,
+          "explication": "Chaque machine est un pair.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "pair-à-pair",
+            "pair à pair",
+            "pair a pair",
+            "pair-a-pair"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:146",
+          "enonce": "Quel débit maximal, en kbit/s, offrait le modem téléphonique des années 1990 ?",
+          "notion": "Réseaux physiques et trafic",
+          "difficulte": 2,
+          "explication": "56 kbit/s.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "56"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:147",
+          "enonce": "En quelle année ARPANET a-t-il adopté TCP/IP ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "On parle souvent de naissance d'Internet.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1983"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:148",
+          "enonce": "Quelle est la plus grande valeur possible d'un des quatre nombres d'une adresse IPv4 ?",
+          "notion": "Adresses IP",
+          "difficulte": 3,
+          "explication": "8 bits : de 0 à 255.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "255"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:149",
+          "enonce": "Combien de paquets de 1 500 octets de données faut-il au minimum pour envoyer 4 500 octets ?",
+          "notion": "Paquets",
+          "difficulte": 3,
+          "explication": "4 500 / 1 500 = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch2:banque:150",
+          "enonce": "Un paquet part avec un TTL de 10 et traverse 4 routeurs. Que vaut son TTL ?",
+          "notion": "Routage",
+          "difficulte": 3,
+          "explication": "10 - 4 = 6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
