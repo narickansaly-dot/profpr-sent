@@ -7430,6 +7430,2483 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch4",
+      "numero": 4,
+      "titre": "Les réseaux sociaux",
+      "titre_court": "Réseaux sociaux",
+      "duree": "4 semaines",
+      "resume": "Caractéristiques et histoire des réseaux sociaux ; identité numérique et confidentialité ; modèle économique ; graphes : distance, excentricité, rayon, diamètre et centre ; petit monde et bulles de filtres ; cyberviolence.",
+      "chapeau": "Partager une photo, suivre un créateur, discuter avec ses amis : les réseaux sociaux font partie du quotidien. Ils reposent sur des liens entre personnes, qu'on peut étudier avec des graphes, et sur un modèle économique qui utilise nos données. Les connaître permet de mieux protéger sa vie privée et de réagir face à la cyberviolence.",
+      "objectifs": [
+        "connaître les principales caractéristiques des réseaux sociaux, les comparer et les situer historiquement ;",
+        "gérer son identité numérique et paramétrer la confidentialité de ses données ;",
+        "identifier les sources de revenus des entreprises de réseaux sociaux ;",
+        "déterminer la distance, l'excentricité, le rayon, le diamètre et le centre d'un graphe simple ;",
+        "expliquer le « petit monde » et l'effet du choix de ses amis sur l'information reçue ;",
+        "connaître les formes de cyberviolence, la loi et les ressources pour lutter contre elle."
+      ],
+      "sections": [
+        {
+          "id": "reseaux-varies",
+          "titre": "Des réseaux sociaux variés",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>réseau social</strong> est une application, basée sur les technologies du Web, qui met en relation des internautes pour qu'ils échangent et forment des communautés d'intérêts : amis, collègues, fans d'un sport ou d'un artiste…</p></div>\n<h3>Repères historiques</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Date</th><th>Réseau ou événement</th></tr></thead>\n<tbody>\n<tr><td>1967</td><td>Expérience du sociologue Stanley Milgram sur le « petit monde » (voir plus bas).</td></tr>\n<tr><td>1995</td><td>Classmates permet de retrouver d'anciens camarades de classe.</td></tr>\n<tr><td>2003</td><td>LinkedIn, réseau professionnel.</td></tr>\n<tr><td>2004</td><td>Facebook, d'abord réservé aux étudiants de Harvard, puis ouvert à tous en 2006.</td></tr>\n<tr><td>2005</td><td>YouTube, partage de vidéos.</td></tr>\n<tr><td>2006</td><td>Twitter, messages courts (renommé X en 2023).</td></tr>\n<tr><td>2010</td><td>Instagram, partage de photos.</td></tr>\n<tr><td>2011</td><td>Snapchat, messages éphémères.</td></tr>\n<tr><td>2016</td><td>TikTok (Douyin en Chine), vidéos courtes recommandées par un algorithme.</td></tr>\n</tbody></table></div>\n<h3>Comparer des réseaux sociaux</h3>\n<p>Les réseaux sociaux se distinguent par plusieurs caractéristiques :</p>\n<ul>\n<li>le <strong>type de contenu</strong> : texte, photos, vidéos courtes ou longues, messages éphémères ;</li>\n<li>le <strong>type de relation</strong> : lien d'« amitié » réciproque (les deux personnes acceptent) ou <strong>abonnement</strong> à sens unique (on suit quelqu'un sans qu'il nous suive) ;</li>\n<li>le <strong>public visé</strong> : grand public, professionnels, communautés précises ;</li>\n<li>la façon de choisir ce qui s'affiche : fil chronologique des comptes suivis, ou fil composé par un <strong>algorithme de recommandation</strong> ;</li>\n<li>l'<strong>âge minimum</strong> fixé par les conditions générales d'utilisation (CGU), souvent 13 ans. En France, la loi fixe à 15 ans l'âge en dessous duquel l'accord d'un parent est nécessaire pour que le réseau traite les données personnelles d'un mineur.</li>\n</ul>\n<p>Les <strong>conditions générales d'utilisation</strong> sont le contrat entre l'utilisateur et le réseau. Elles précisent notamment ce que le réseau a le droit de faire des contenus publiés et des données collectées.</p>"
+        },
+        {
+          "id": "identite",
+          "titre": "Identité numérique et confidentialité",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>L'<strong>identité numérique</strong> est l'ensemble des traces qu'une personne laisse sur Internet : profils, publications, photos, commentaires, mentions « j'aime », mais aussi ce que les autres publient à son sujet.</p></div>\n<p>On distingue les traces <strong>volontaires</strong> (ce que je publie), les traces <strong>laissées par d'autres</strong> (une photo où l'on m'identifie) et les traces <strong>involontaires</strong> (données de connexion, localisation, historique). L'<strong>e-réputation</strong> est l'image d'une personne ou d'une entreprise qui ressort de ces traces : ce qu'un recruteur ou un futur employeur trouvera en tapant son nom.</p>\n<h3>Identification et authentification</h3>\n<ul>\n<li>L'<strong>identification</strong> consiste à dire qui l'on est : on donne un identifiant (pseudo, adresse électronique, numéro de téléphone).</li>\n<li>L'<strong>authentification</strong> consiste à le prouver : on fournit un mot de passe, un code reçu par SMS, une empreinte digitale.</li>\n</ul>\n<p>L'<strong>authentification à deux facteurs</strong> demande deux preuves de nature différente (par exemple ce que je sais, le mot de passe, et ce que je possède, le téléphone) : un pirate qui a volé le mot de passe ne peut pas se connecter. Un bon mot de passe est long, différent pour chaque compte, et n'est jamais communiqué.</p>\n<h3>Paramétrer la confidentialité</h3>\n<ul>\n<li>passer son compte en mode <strong>privé</strong> : seuls les abonnés acceptés voient les publications ;</li>\n<li>choisir qui peut voir chaque publication, m'identifier, m'envoyer des messages ;</li>\n<li>désactiver la localisation des publications ;</li>\n<li>vérifier les applications tierces qui ont accès au compte ;</li>\n<li>réfléchir avant de publier : une publication peut être copiée (capture d'écran) et rester visible même après suppression.</li>\n</ul>\n<p>Le <strong>RGPD</strong> (Règlement général sur la protection des données, appliqué depuis 2018 dans l'Union européenne) donne à chacun des droits : savoir quelles données sont collectées, y accéder, les faire rectifier ou effacer.</p>"
+        },
+        {
+          "id": "modele-economique",
+          "titre": "Le modèle économique",
+          "html": "<p>La plupart des réseaux sociaux sont <strong>gratuits</strong> pour l'utilisateur. Pourtant, ce sont des entreprises parmi les plus riches du monde. D'où vient leur argent ?</p>\n<ul>\n<li><strong>La publicité ciblée</strong> : c'est la principale source de revenus. Le réseau collecte des données sur chaque utilisateur (âge, centres d'intérêt, abonnements, contenus aimés, temps passé, localisation) et vend aux annonceurs la possibilité de montrer leurs publicités aux personnes les plus susceptibles d'être intéressées.</li>\n<li><strong>Les abonnements payants</strong> et options : badge vérifié, absence de publicité, fonctions supplémentaires.</li>\n<li><strong>Les commissions</strong> sur les achats faits dans l'application, les dons aux créateurs, les ventes de boutiques.</li>\n<li>la valorisation des <strong>données</strong> elles-mêmes, par exemple pour entraîner des algorithmes.</li>\n</ul>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Une formule résume ce modèle : « Si c'est gratuit, c'est toi le produit. » L'utilisateur paie avec ses données et son attention. Plus il reste longtemps sur l'application, plus il voit de publicités : les réseaux sont donc conçus pour capter l'attention (fil infini, notifications, lecture automatique).</p></div>\n<p>Les <strong>influenceurs</strong> participent aussi à ce modèle : des marques les rémunèrent pour présenter leurs produits. En France, la loi de 2023 sur l'influence commerciale les oblige à signaler clairement ces partenariats (mention « publicité » ou « collaboration commerciale »).</p>"
+        },
+        {
+          "id": "graphes",
+          "titre": "Modéliser un réseau par un graphe",
+          "html": "<p>Pour étudier un réseau social, on le représente par un <strong>graphe</strong>.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>graphe</strong> est formé de <strong>sommets</strong> (ici, les personnes) reliés par des <strong>arêtes</strong> (ici, les liens entre elles). Deux sommets reliés par une arête sont dits <strong>voisins</strong>.</p></div>\n<p>Quand le lien est réciproque (amitié), le graphe est <strong>non orienté</strong> : les arêtes sont de simples traits. Quand le lien est à sens unique (abonnement), on utilise un graphe <strong>orienté</strong>, dont les arêtes sont des flèches. Dans ce chapitre, on étudie des graphes non orientés.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 560 170\" role=\"img\" aria-label=\"Graphe de six élèves : A relié à B et C, B relié à C, C relié à D, D relié à E, E relié à F\"><line class=\"ln\" x1=\"60\" y1=\"40\" x2=\"60\" y2=\"130\"/><line class=\"ln\" x1=\"60\" y1=\"40\" x2=\"170\" y2=\"85\"/><line class=\"ln\" x1=\"60\" y1=\"130\" x2=\"170\" y2=\"85\"/><line class=\"ln\" x1=\"170\" y1=\"85\" x2=\"290\" y2=\"85\"/><line class=\"ln\" x1=\"290\" y1=\"85\" x2=\"400\" y2=\"85\"/><line class=\"ln\" x1=\"400\" y1=\"85\" x2=\"510\" y2=\"85\"/><circle class=\"fc\" cx=\"60\" cy=\"40\" r=\"20\"/><text class=\"tb\" x=\"60\" y=\"45\" text-anchor=\"middle\">A</text><circle class=\"fc\" cx=\"60\" cy=\"130\" r=\"20\"/><text class=\"tb\" x=\"60\" y=\"135\" text-anchor=\"middle\">B</text><circle class=\"fc\" cx=\"170\" cy=\"85\" r=\"20\"/><text class=\"tb\" x=\"170\" y=\"90\" text-anchor=\"middle\">C</text><circle class=\"fa\" cx=\"290\" cy=\"85\" r=\"20\"/><text class=\"tb\" x=\"290\" y=\"90\" text-anchor=\"middle\">D</text><circle class=\"fc\" cx=\"400\" cy=\"85\" r=\"20\"/><text class=\"tb\" x=\"400\" y=\"90\" text-anchor=\"middle\">E</text><circle class=\"fc\" cx=\"510\" cy=\"85\" r=\"20\"/><text class=\"tb\" x=\"510\" y=\"90\" text-anchor=\"middle\">F</text></svg></div><figcaption><b>Figure 1</b>Un graphe d'amis entre six élèves : A, B, C, D, E et F. Le sommet D est le centre.</figcaption></figure>\n<h3>Distance entre deux sommets</h3>\n<p>Un <strong>chemin</strong> est une suite d'arêtes qui mène d'un sommet à un autre. La <strong>distance</strong> entre deux sommets est le nombre d'arêtes du plus court chemin qui les relie. Dans la figure 1, la distance entre A et D est 2 (A-C, puis C-D), et la distance entre A et F est 4.</p>\n<h3>Excentricité, rayon, diamètre et centre</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>L'<strong>excentricité</strong> d'un sommet est sa plus grande distance aux autres sommets. Le <strong>diamètre</strong> du graphe est la plus grande excentricité ; le <strong>rayon</strong> est la plus petite excentricité ; le <strong>centre</strong> est formé du ou des sommets dont l'excentricité est égale au rayon.</p></div>\n<p>Pour les trouver, on remplit le tableau des distances, puis on prend le maximum de chaque ligne :</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Sommet</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>Excentricité</th></tr></thead>\n<tbody>\n<tr><td>A</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>4</td><td>4</td></tr>\n<tr><td>B</td><td>1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>4</td></tr>\n<tr><td>C</td><td>1</td><td>1</td><td>0</td><td>1</td><td>2</td><td>3</td><td>3</td></tr>\n<tr><td>D</td><td>2</td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td></tr>\n<tr><td>E</td><td>3</td><td>3</td><td>2</td><td>1</td><td>0</td><td>1</td><td>3</td></tr>\n<tr><td>F</td><td>4</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td><td>4</td></tr>\n</tbody></table></div>\n<p>Résultat : le <strong>diamètre</strong> vaut 4 (par exemple entre A et F), le <strong>rayon</strong> vaut 2, et le <strong>centre</strong> est D. Le diamètre mesure la plus grande « distance sociale » du groupe ; un sommet du centre peut joindre tout le monde en peu d'étapes : c'est une position stratégique pour faire circuler une information.</p>\n<p>Le <strong>degré</strong> d'un sommet est son nombre de voisins : C a pour degré 3, F a pour degré 1. Une personne de degré élevé a beaucoup de contacts directs, mais n'est pas forcément au centre.</p>\n<h3>En Python</h3>\n<p>Un graphe peut être représenté par la liste des voisins de chaque sommet. Une fonction peut alors calculer le degré d'un sommet :</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>voisins = {\"A\": [\"B\", \"C\"], \"B\": [\"A\", \"C\"], \"C\": [\"A\", \"B\", \"D\"],<br>           \"D\": [\"C\", \"E\"], \"E\": [\"D\", \"F\"], \"F\": [\"E\"]}<br><br>def degre(sommet):<br>    return len(voisins[sommet])<br><br>print(degre(\"C\"))</p></div><p>Ce programme affiche 3. La fonction len donne le nombre d'éléments d'une liste.</p>"
+        },
+        {
+          "id": "petit-monde",
+          "titre": "Petit monde et bulles de filtres",
+          "html": "<h3>L'expérience de Milgram</h3>\n<p>En 1967, le sociologue américain Stanley Milgram demande à des habitants du centre des États-Unis de faire parvenir une lettre à un inconnu de Boston, en la transmettant seulement à une connaissance qu'ils tutoient, qui fait de même, et ainsi de suite. Les lettres arrivées à destination sont passées en moyenne par environ <strong>six</strong> personnes. D'où l'idée des « <strong>six degrés de séparation</strong> » : deux personnes quelconques seraient reliées par une courte chaîne de connaissances.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un réseau est un <strong>petit monde</strong> quand, malgré un très grand nombre de sommets, la distance entre deux sommets quelconques reste petite.</p></div>\n<p>Sur les réseaux sociaux, le monde est encore plus petit : une étude publiée par Facebook en 2016 trouvait une distance moyenne d'environ 3,5 entre deux utilisateurs. Conséquence : une information, vraie ou fausse, peut se propager très vite à des millions de personnes en quelques partages.</p>\n<h3>L'information dépend du choix de ses amis</h3>\n<p>Ce que tu vois sur un réseau social n'est pas « ce qui se passe dans le monde » : c'est ce que publient les comptes que tu suis, et ce que l'algorithme choisit de te montrer. L'<strong>algorithme de recommandation</strong> met en avant les contenus qui ressemblent à ceux avec lesquels tu as déjà interagi (aimés, partagés, regardés longtemps), car ce sont eux qui te retiennent le plus.</p>\n<p>Comme on choisit souvent des amis qui nous ressemblent, et que l'algorithme renforce ces choix, on risque de s'enfermer dans une <strong>bulle de filtres</strong> : on ne voit plus que des opinions proches des siennes, et l'on peut croire qu'elles sont partagées par tout le monde. Les contenus qui provoquent des émotions fortes, comme la colère, sont souvent davantage partagés, ce qui favorise la diffusion de fausses informations.</p>\n<p>Pour en sortir : suivre des sources variées, chercher l'information hors du réseau, vérifier avant de partager, se demander pourquoi un contenu nous est montré.</p>"
+        },
+        {
+          "id": "cyberviolence",
+          "titre": "La cyberviolence",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>La <strong>cyberviolence</strong> désigne les violences commises à l'aide des outils numériques : réseaux sociaux, messageries, jeux en ligne. Quand elle est répétée, on parle de <strong>cyberharcèlement</strong>.</p></div>\n<p>Elle prend plusieurs formes :</p>\n<ul>\n<li>le <strong>harcèlement</strong> : messages insultants, menaces, moqueries répétées ;</li>\n<li>les propos <strong>discriminatoires</strong> : racistes, sexistes, homophobes, visant un handicap ;</li>\n<li>la diffusion de rumeurs ou de photos humiliantes, l'usurpation d'identité (créer un faux compte au nom de quelqu'un) ;</li>\n<li>le <strong>sexting</strong> non consenti : diffuser une photo intime de quelqu'un sans son accord est un délit, même si la personne l'avait envoyée volontairement ;</li>\n<li>l'exclusion volontaire d'un groupe de discussion, le « raid » : de nombreuses personnes qui s'en prennent ensemble à une même victime.</li>\n</ul>\n<h3>Ce que dit la loi</h3>\n<p>L'<strong>article 222-33-2-2 du code pénal</strong> punit le <strong>harcèlement moral</strong> : des propos ou comportements répétés qui ont pour objet ou pour effet de dégrader les conditions de vie d'une personne et d'altérer sa santé physique ou mentale. Il s'applique aussi quand plusieurs personnes agissent de façon concertée contre une même victime, même si chacune n'a agi qu'une fois. Les peines sont aggravées, jusqu'à plusieurs années de prison et des dizaines de milliers d'euros d'amende, notamment quand les faits sont commis en ligne ou contre un mineur de 15 ans. Un mineur auteur de harcèlement peut être poursuivi, et ses parents peuvent avoir à réparer le dommage.</p>\n<h3>Réagir</h3>\n<ul>\n<li>ne pas répondre au harceleur et ne pas relayer les contenus ;</li>\n<li><strong>garder des preuves</strong> : captures d'écran avec la date et le nom du compte ;</li>\n<li><strong>signaler</strong> le contenu ou le compte au réseau social, et le bloquer ;</li>\n<li>en parler à un adulte de confiance : parent, professeur, CPE, infirmière scolaire ;</li>\n<li>appeler le <strong>3018</strong>, numéro national gratuit et anonyme contre le cyberharcèlement, qui peut aussi faire supprimer des contenus ;</li>\n<li>signaler un contenu illégal sur la plateforme <strong>Pharos</strong> du ministère de l'Intérieur, et porter plainte.</li>\n</ul>\n<p>Témoin d'une cyberviolence, on peut aussi agir : ne pas « liker » ni partager, soutenir la victime, signaler.</p>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Un <strong>réseau social</strong> met en relation des internautes ; les réseaux diffèrent par leurs contenus, leurs liens (amitié réciproque ou abonnement), leur public et leur algorithme.</li>\n<li>L'<strong>identité numérique</strong> est l'ensemble de ses traces en ligne ; l'<strong>e-réputation</strong> est l'image qui en ressort. <strong>Identification</strong> : dire qui l'on est ; <strong>authentification</strong> : le prouver.</li>\n<li>Les réseaux gratuits vivent surtout de la <strong>publicité ciblée</strong>, grâce aux données des utilisateurs.</li>\n<li>Un réseau se modélise par un <strong>graphe</strong> (sommets et arêtes). <strong>Distance</strong> : plus court chemin ; <strong>excentricité</strong> : plus grande distance d'un sommet ; <strong>diamètre</strong> : plus grande excentricité ; <strong>rayon</strong> : plus petite ; <strong>centre</strong> : sommets d'excentricité égale au rayon.</li>\n<li><strong>Petit monde</strong> (Milgram, 1967) : les distances restent petites même dans un immense réseau.</li>\n<li>L'information reçue dépend des amis choisis et de l'algorithme : risque de <strong>bulle de filtres</strong>.</li>\n<li>La <strong>cyberviolence</strong> (harcèlement, discrimination, diffusion d'images intimes…) est punie par la loi (article 222-33-2-2 du code pénal). Garder des preuves, signaler, en parler, appeler le <strong>3018</strong>.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch4:banque:001",
+          "enonce": "Qu'est-ce qu'un réseau social ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Il permet de former des communautés d'intérêts.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un logiciel qui protège l'ordinateur contre les virus et les pirates",
+            "Un moteur de recherche spécialisé dans les actualités du monde entier",
+            "Un câble qui relie les ordinateurs d'un même quartier entre eux",
+            "Une application qui met en relation des internautes autour d'intérêts communs"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:002",
+          "enonce": "Quel réseau social, créé en 2004, était d'abord réservé aux étudiants de Harvard ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Il a été ouvert à tous en 2006.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Facebook",
+            "Snapchat",
+            "LinkedIn",
+            "Instagram"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:003",
+          "enonce": "Quel réseau social est d'abord tourné vers la vie professionnelle ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "LinkedIn, créé en 2003.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "TikTok",
+            "Snapchat",
+            "LinkedIn",
+            "Instagram"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:004",
+          "enonce": "Quel réseau, créé en 2011, s'est fait connaître par ses messages éphémères ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Les messages disparaissent après lecture.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Facebook",
+            "Snapchat",
+            "LinkedIn",
+            "YouTube"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:005",
+          "enonce": "Comment s'appelle le contrat entre l'utilisateur et le réseau social ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Les CGU fixent notamment l'usage des données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les conditions générales d'utilisation",
+            "La licence Creative Commons du réseau",
+            "Le règlement intérieur de l'établissement",
+            "Le certificat de sécurité HTTPS du site"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:006",
+          "enonce": "Qu'est-ce que l'identité numérique ?",
+          "notion": "Identité numérique",
+          "difficulte": 1,
+          "explication": "Profils, publications, photos, commentaires, mentions…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le mot de passe choisi pour se connecter à un compte",
+            "L'adresse IP attribuée à l'ordinateur par la box",
+            "L'ensemble des traces qu'une personne laisse sur Internet",
+            "Le numéro de la carte d'identité enregistré par l'État"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:007",
+          "enonce": "Comment appelle-t-on l'image d'une personne qui ressort de ses traces en ligne ?",
+          "notion": "Identité numérique",
+          "difficulte": 1,
+          "explication": "C'est ce que trouvera un recruteur en tapant son nom.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le centre",
+            "Le degré",
+            "L'authentification",
+            "L'e-réputation"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:008",
+          "enonce": "Qu'est-ce que l'identification ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "L'authentification consiste à le prouver.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Signaler un contenu choquant au réseau social",
+            "Dire qui l'on est, en donnant un identifiant",
+            "Supprimer son compte et toutes ses données",
+            "Prouver qui l'on est avec un mot de passe ou une empreinte"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:009",
+          "enonce": "Qu'est-ce que l'authentification ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "Mot de passe, code reçu par SMS, empreinte digitale…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Accepter les conditions générales d'utilisation du réseau",
+            "Publier une photo de profil où l'on est reconnaissable",
+            "Choisir un pseudo différent pour chaque réseau social",
+            "Prouver son identité, par exemple avec un mot de passe"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:010",
+          "enonce": "Que signifie passer son compte en mode privé ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "On choisit qui peut voir ses publications.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le réseau ne collecte plus aucune donnée sur l'utilisateur",
+            "Seuls les abonnés acceptés voient les publications",
+            "Les publications sont supprimées après vingt-quatre heures",
+            "Personne ne peut plus voir le profil, même ses amis proches"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:011",
+          "enonce": "Quel texte européen, appliqué depuis 2018, protège les données personnelles ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "Règlement général sur la protection des données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le RGPD",
+            "Le DNS",
+            "Le W3C",
+            "Le code pénal"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:012",
+          "enonce": "Quelle est la principale source de revenus des réseaux sociaux gratuits ?",
+          "notion": "Modèle économique",
+          "difficulte": 1,
+          "explication": "Les données permettent de cibler les publicités.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La vente de téléphones",
+            "Les dons des utilisateurs",
+            "La publicité ciblée",
+            "Les subventions de l'État"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:013",
+          "enonce": "Que vend un réseau social aux annonceurs ?",
+          "notion": "Modèle économique",
+          "difficulte": 1,
+          "explication": "Le ciblage repose sur les données collectées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les mots de passe des utilisateurs qui se sont inscrits récemment",
+            "La possibilité de montrer des publicités aux personnes ciblées",
+            "Des abonnements à la fibre optique et à la téléphonie mobile",
+            "Les téléphones des utilisateurs, reconditionnés après usage"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:014",
+          "enonce": "Que résume la formule « Si c'est gratuit, c'est toi le produit » ?",
+          "notion": "Modèle économique",
+          "difficulte": 1,
+          "explication": "Les données servent à vendre de la publicité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'utilisateur paie avec ses données et son attention",
+            "Les utilisateurs sont payés pour publier des contenus",
+            "Les produits vendus sur le réseau sont tous gratuits",
+            "Le réseau social est un service public financé par l'impôt"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:015",
+          "enonce": "Dans un graphe qui représente un réseau social, que représentent les sommets ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Les arêtes représentent les liens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les liens entre les personnes",
+            "Les messages échangés",
+            "Les publicités affichées",
+            "Les personnes"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:016",
+          "enonce": "Comment appelle-t-on deux sommets reliés par une arête ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Ils sont directement reliés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des centres",
+            "Des rayons",
+            "Des voisins",
+            "Des diamètres"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:017",
+          "enonce": "Quel type de graphe représente des liens d'amitié réciproques ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Les arêtes sont de simples traits.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un graphe vide",
+            "Un graphe pondéré",
+            "Un graphe orienté",
+            "Un graphe non orienté"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:018",
+          "enonce": "Quel type de graphe représente des abonnements à sens unique ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Les arêtes sont des flèches.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un graphe sans arêtes",
+            "Un graphe orienté",
+            "Un graphe complet",
+            "Un graphe non orienté"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:019",
+          "enonce": "Qu'est-ce que la distance entre deux sommets d'un graphe ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "On compte les arêtes du plus court chemin.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nombre d'arêtes du plus court chemin qui les relie",
+            "Le nombre de voisins du premier sommet, sans compter le second",
+            "Le nombre total de sommets du graphe, quel que soit le chemin",
+            "La longueur en centimètres du trait tracé entre les deux sommets"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:020",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), combien d'arêtes compte au minimum un chemin de A à D ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "A-C, puis C-D : deux arêtes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "1",
+            "2",
+            "4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:021",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), quel sommet est le centre ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "D a la plus petite excentricité, 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "D",
+            "C",
+            "A",
+            "F"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:022",
+          "enonce": "Comment appelle-t-on la plus grande excentricité des sommets d'un graphe ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "Le rayon est la plus petite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le centre",
+            "Le diamètre",
+            "Le rayon",
+            "Le degré"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:023",
+          "enonce": "Qui a réalisé en 1967 l'expérience du « petit monde » ?",
+          "notion": "Petit monde",
+          "difficulte": 1,
+          "explication": "Un sociologue américain.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Tim Berners-Lee",
+            "Mark Zuckerberg",
+            "Vinton Cerf",
+            "Stanley Milgram"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:024",
+          "enonce": "Par combien de personnes les lettres de l'expérience de Milgram sont-elles passées en moyenne ?",
+          "notion": "Petit monde",
+          "difficulte": 1,
+          "explication": "D'où les « six degrés de séparation ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ cent",
+            "Environ vingt",
+            "Environ six",
+            "Environ deux"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:025",
+          "enonce": "Qu'est-ce qui choisit les contenus d'un fil composé automatiquement ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 1,
+          "explication": "Il met en avant ce qui retient l'utilisateur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un modérateur humain pour chaque utilisateur",
+            "L'ordre alphabétique des noms des comptes",
+            "Le fournisseur d'accès à Internet",
+            "Un algorithme de recommandation"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:026",
+          "enonce": "Comment appelle-t-on l'enfermement dans des contenus proches de ses propres opinions ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 1,
+          "explication": "L'algorithme renforce nos choix.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un raid",
+            "Un petit monde",
+            "Une bulle de filtres",
+            "Une e-réputation"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:027",
+          "enonce": "Comment appelle-t-on une cyberviolence répétée contre une même personne ?",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Messages, menaces, moqueries répétés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'authentification",
+            "Le cyberharcèlement",
+            "Le référencement",
+            "La recommandation"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:028",
+          "enonce": "Quel numéro national gratuit aide les victimes de cyberharcèlement ?",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Il est gratuit et anonyme.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le 3018",
+            "Le 404",
+            "Le 112",
+            "Le 3615"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:029",
+          "enonce": "Quel est le premier réflexe à avoir face à des messages de cyberharcèlement ?",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Les preuves servent pour signaler et porter plainte.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Supprimer immédiatement tous les messages reçus",
+            "Partager les messages pour prévenir tous ses amis",
+            "Répondre au harceleur avec les mêmes insultes",
+            "Garder des preuves par des captures d'écran"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:030",
+          "enonce": "Quel article du code pénal punit le harcèlement moral, cité par le programme ?",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Il s'applique aussi au harcèlement en ligne.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'article 9 du Code civil",
+            "L'article 222-33-2-2",
+            "L'article 1er de la Constitution",
+            "L'article 404 du code de la route"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:031",
+          "enonce": "Qu'est-ce qui distingue un abonnement d'un lien d'« amitié » ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 2,
+          "explication": "On peut suivre quelqu'un sans qu'il nous suive.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'amitié est réservée aux réseaux professionnels comme LinkedIn",
+            "L'abonnement concerne seulement les entreprises et les marques",
+            "L'abonnement est à sens unique, l'amitié est réciproque",
+            "L'abonnement est payant, alors que l'amitié est toujours gratuite"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:032",
+          "enonce": "En France, en dessous de quel âge l'accord d'un parent est-il nécessaire pour que le réseau traite les données d'un mineur ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 2,
+          "explication": "Les CGU fixent souvent 13 ans comme âge minimum, la loi française 15 ans pour le consentement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15 ans",
+            "13 ans",
+            "18 ans",
+            "16 ans"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:033",
+          "enonce": "Quelle caractéristique distingue TikTok d'un fil purement chronologique ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 2,
+          "explication": "Les vidéos courtes sont recommandées par un algorithme.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un algorithme choisit les vidéos montrées",
+            "Il n'affiche aucune publicité",
+            "Les vidéos disparaissent automatiquement après leur lecture",
+            "Il est réservé aux professionnels"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:034",
+          "enonce": "Laquelle de ces traces est une trace laissée par d'autres ?",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "On distingue traces volontaires, laissées par d'autres et involontaires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ton historique de connexion",
+            "La localisation de ton téléphone",
+            "Une publication que tu as écrite toi-même",
+            "Une photo où un ami t'a identifié"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:035",
+          "enonce": "Laquelle de ces traces est involontaire ?",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "On ne choisit pas toujours de les laisser.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un commentaire publié sous une vidéo",
+            "Un message posté sur un forum",
+            "Les données de localisation enregistrées par une application",
+            "Une photo de profil choisie"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:036",
+          "enonce": "Pourquoi faut-il réfléchir avant de publier ?",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "Une capture d'écran suffit à la conserver.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une publication coûte de l'argent à chaque partage",
+            "Une publication peut être copiée et rester visible après suppression",
+            "Une publication modifie l'adresse IP de l'ordinateur",
+            "Les publications sont lues par le fournisseur d'accès uniquement"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:037",
+          "enonce": "Qu'est-ce que l'authentification à deux facteurs ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Ce que je sais et ce que je possède, par exemple.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Se connecter depuis deux appareils en même temps",
+            "Demander deux preuves de nature différente, comme un mot de passe et un code reçu",
+            "Avoir deux comptes sur le même réseau social",
+            "Utiliser deux mots de passe différents l'un après l'autre"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:038",
+          "enonce": "Pourquoi l'authentification à deux facteurs protège-t-elle un compte ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Il lui manque le second facteur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle chiffre toutes les publications du compte",
+            "Elle rend le mot de passe inutile et le supprime",
+            "Elle cache le compte aux moteurs de recherche",
+            "Un pirate qui a volé le mot de passe ne peut pas se connecter seul"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:039",
+          "enonce": "Quel droit le RGPD donne-t-il aux utilisateurs ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Accès, rectification, effacement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Demander l'effacement de leurs données",
+            "Supprimer le compte d'un autre utilisateur",
+            "Obliger un réseau à rester gratuit",
+            "Lire les messages privés des autres"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:040",
+          "enonce": "Quelles données permettent de cibler la publicité ?",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "Le réseau collecte de nombreuses données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Aucune donnée : la publicité est la même pour tous",
+            "Uniquement la marque du téléphone utilisé",
+            "Les centres d'intérêt, les contenus aimés et la localisation",
+            "Uniquement le nom et le prénom de l'utilisateur"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:041",
+          "enonce": "Pourquoi les réseaux sont-ils conçus pour capter l'attention ?",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "Fil infini, notifications, lecture automatique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour diminuer le nombre de notifications",
+            "Parce que la loi les y oblige",
+            "Pour réduire la consommation d'énergie des serveurs",
+            "Plus l'utilisateur reste, plus il voit de publicités"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:042",
+          "enonce": "Quelle obligation la loi de 2023 impose-t-elle aux influenceurs ?",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "Mention « publicité » ou « collaboration commerciale ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Utiliser un compte privé",
+            "Publier au moins une vidéo par jour sur chacun de leurs comptes",
+            "Signaler clairement les partenariats commerciaux",
+            "Ne jamais parler de marques"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:043",
+          "enonce": "Qu'est-ce que le degré d'un sommet ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 2,
+          "explication": "C a pour degré 3 dans la figure 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Son nombre de voisins",
+            "Sa plus grande distance aux autres",
+            "Sa distance au centre",
+            "Le nombre total d'arêtes du graphe"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:044",
+          "enonce": "Combien de voisins a le sommet C de la figure 1 ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 2,
+          "explication": "C est relié à A, B et D.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "3",
+            "2",
+            "1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:045",
+          "enonce": "Sur la figure 1, en combien d'étapes au minimum une information passe-t-elle de A à F ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "A-C, C-D, D-E, E-F.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "5",
+            "2",
+            "3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:046",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), quelle est l'excentricité de C ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Sa plus grande distance est celle à F : 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "1",
+            "4",
+            "3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:047",
+          "enonce": "Figure 1 : que vaut le rayon, c'est-à-dire la plus petite excentricité ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "La plus petite excentricité est celle de D : 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "3",
+            "2",
+            "4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:048",
+          "enonce": "Que vaut le diamètre du graphe d'amis dessiné à la figure 1 ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "La plus grande excentricité est 4 (A, B et F).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6",
+            "4",
+            "3",
+            "2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:049",
+          "enonce": "Comment trouve-t-on le centre d'un graphe ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Le centre n'est pas forcément le sommet de plus haut degré.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On garde les sommets dont l'excentricité égale le diamètre",
+            "On garde le sommet placé au milieu du dessin",
+            "On garde le sommet qui a le plus de voisins",
+            "On garde les sommets dont l'excentricité est égale au rayon"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:050",
+          "enonce": "On relie quatre sommets en ligne : P-Q, Q-R, R-S. Que vaut le diamètre ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "La distance entre P et S est 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "2",
+            "3",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:051",
+          "enonce": "Un sommet T est relié à U, V et W, qui ne sont reliés qu'à lui. Quel est le rayon ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "T est à distance 1 de tous les autres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:052",
+          "enonce": "Qu'est-ce qu'un réseau « petit monde » ?",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "Les chaînes de connaissances sont courtes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un réseau immense où la distance entre deux sommets reste petite",
+            "Un réseau réservé aux habitants d'une même ville",
+            "Un réseau qui compte moins de cent membres actifs",
+            "Un réseau où chaque membre connaît tous les autres"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:053",
+          "enonce": "Quelle distance moyenne entre deux utilisateurs une étude de Facebook a-t-elle trouvée en 2016 ?",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "Le monde des réseaux sociaux est encore plus petit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ 3,5",
+            "Environ 1",
+            "Environ 10",
+            "Environ 6"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:054",
+          "enonce": "Quelle conséquence a l'effet « petit monde » sur la diffusion de l'information ?",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "Vraie ou fausse, elle se propage vite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Seuls les amis directs reçoivent une information",
+            "Une information peut atteindre des millions de personnes en peu de partages",
+            "Une information met des années à se diffuser",
+            "Les fausses informations ne peuvent pas circuler"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:055",
+          "enonce": "Quels contenus un algorithme de recommandation met-il en avant ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 2,
+          "explication": "Ils te retiennent le plus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ceux qui ont été publiés en premier dans l'histoire",
+            "Ceux que l'État a vérifiés",
+            "Ceux qui sont classés par ordre alphabétique",
+            "Ceux qui ressemblent à ceux avec lesquels tu as interagi"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:056",
+          "enonce": "Pourquoi les contenus qui suscitent la colère se diffusent-ils souvent davantage ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 2,
+          "explication": "Ce qui favorise aussi les fausses informations.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils sont payés par les réseaux sociaux",
+            "Ils sont plus courts que les autres",
+            "Ils provoquent beaucoup de réactions et de partages",
+            "Ils sont toujours vrais et vérifiés par des journalistes avant publication"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:057",
+          "enonce": "Diffuser sans son accord une photo intime qu'une personne avait envoyée volontairement est…",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Le consentement à l'envoi n'est pas un consentement à la diffusion.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une simple maladresse sans conséquence",
+            "Autorisé, puisqu'elle l'avait envoyée",
+            "Un délit",
+            "Autorisé si le compte est privé"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:058",
+          "enonce": "Qu'est-ce qu'un « raid » en ligne ?",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "La loi le punit même si chacun n'a agi qu'une fois.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une panne générale d'un réseau social qui touche tous les utilisateurs",
+            "De nombreuses personnes qui s'en prennent ensemble à une même victime",
+            "Une campagne de publicité ciblée",
+            "Le piratage d'un serveur DNS"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:059",
+          "enonce": "Sur quelle plateforme du ministère de l'Intérieur peut-on signaler un contenu illégal ?",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Pharos reçoit les signalements de contenus illicites.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pharos",
+            "Pronote",
+            "Parcoursup",
+            "Géoportail"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:060",
+          "enonce": "Que peut faire un témoin de cyberviolence ?",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Ne pas relayer, c'est déjà agir.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Partager le contenu dans tous ses groupes pour alerter tout le monde",
+            "Rejoindre le groupe pour observer",
+            "Répondre aux harceleurs par des menaces",
+            "Ne pas partager, soutenir la victime et signaler"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:061",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), quels sommets ont une excentricité de 4 ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "A et B sont à distance 4 de F, et F à distance 4 de A et B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A, B et F",
+            "A et F seulement",
+            "D seulement",
+            "C et E"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:062",
+          "enonce": "Quels sommets forment le centre d'un graphe en ligne P-Q-R-S ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "Q et R ont une excentricité de 2, égale au rayon.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Q seulement",
+            "P et S",
+            "Q et R",
+            "Tous les sommets"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:063",
+          "enonce": "Graphe en étoile (T au milieu, relié à U, V et W) : quelle est la plus grande distance entre deux sommets ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "U et V, par exemple, sont à distance 2 en passant par T.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "2",
+            "1",
+            "3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:064",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), on ajoute une arête entre A et F. Quel est le nouveau diamètre ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "A et F deviennent voisins ; les plus grandes distances sont alors celles entre B et E (B-A-F-E ou B-C-D-E) : 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "4",
+            "1",
+            "3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:065",
+          "enonce": "Un graphe a un rayon de 2 et un diamètre de 2. Que peut-on dire de ses sommets ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "Toutes les excentricités sont comprises entre 2 et 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le graphe a forcément deux sommets",
+            "Ils ont tous la même excentricité, donc tous sont au centre",
+            "Un seul sommet est au centre",
+            "Aucun sommet n'est au centre"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:066",
+          "enonce": "Pourquoi le sommet de plus haut degré n'est-il pas forcément au centre ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 3,
+          "explication": "Dans la figure 1, C a le plus haut degré, mais le centre est D.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le centre a toujours un seul voisin",
+            "Le degré se calcule seulement sur les graphes orientés",
+            "Le centre est toujours le sommet dessiné au milieu",
+            "Avoir beaucoup de voisins ne garantit pas d'être proche de tous les sommets"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:067",
+          "enonce": "Avec voisins = {\"A\": [\"B\", \"C\"], \"B\": [\"A\"], \"C\": [\"A\"]} et def degre(s): return len(voisins[s]), que renvoie degre(\"A\") ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 3,
+          "explication": "A a deux voisins : B et C.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "1",
+            "2",
+            "0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:068",
+          "enonce": "Pourquoi la distance moyenne est-elle plus petite sur un réseau social que dans l'expérience de Milgram ?",
+          "notion": "Petit monde",
+          "difficulte": 3,
+          "explication": "Plus de liens, et des liens lointains, raccourcissent les chaînes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Chaque utilisateur a de nombreux contacts, souvent éloignés géographiquement",
+            "Les algorithmes suppriment les intermédiaires",
+            "Les lettres de Milgram passaient par Internet",
+            "Les réseaux sociaux comptent moins de personnes que les États-Unis"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:069",
+          "enonce": "Lina ne suit que des comptes qui partagent ses opinions et aime leurs publications. Que risque-t-il de se passer ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 3,
+          "explication": "C'est le mécanisme de la bulle de filtres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Son compte devient privé",
+            "Son fil devient chronologique",
+            "L'algorithme lui montre de plus en plus d'opinions semblables",
+            "L'algorithme lui montre surtout des avis opposés"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:070",
+          "enonce": "Quel geste aide le plus à sortir d'une bulle de filtres ?",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 3,
+          "explication": "Varier les sources et vérifier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Suivre des sources variées et chercher l'information hors du réseau",
+            "Désactiver l'authentification à deux facteurs",
+            "Aimer davantage les contenus de ses amis proches",
+            "Passer plus de temps sur l'application chaque jour"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:071",
+          "enonce": "Un réseau propose une version payante sans publicité. Pourquoi la plupart des utilisateurs restent-ils sur la version gratuite, rentable pour le réseau ?",
+          "notion": "Modèle économique",
+          "difficulte": 3,
+          "explication": "Les utilisateurs gratuits paient par leurs données et leur attention.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La version gratuite ne collecte aucune donnée",
+            "Le réseau perd de l'argent sur chaque utilisateur gratuit",
+            "La publicité est financée par l'État",
+            "Le réseau gagne de l'argent grâce à la publicité affichée aux utilisateurs gratuits"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:072",
+          "enonce": "Un futur employeur tape le nom d'une candidate dans un moteur de recherche. Qu'examine-t-il ?",
+          "notion": "Identité numérique",
+          "difficulte": 3,
+          "explication": "L'image qui ressort de ses traces en ligne.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Son authentification",
+            "Son e-réputation",
+            "Son degré dans un graphe",
+            "Son adresse IP"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:073",
+          "enonce": "Laquelle de ces combinaisons est une authentification à deux facteurs ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 3,
+          "explication": "Deux preuves de nature différente : ce que je sais, ce que je possède.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un mot de passe, puis un deuxième mot de passe plus long que le premier",
+            "Un mot de passe et un code reçu par SMS sur son téléphone",
+            "Un pseudo et une adresse électronique",
+            "Un identifiant et une photo de profil"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:074",
+          "enonce": "Plusieurs élèves envoient chacun un seul message moqueur à la même victime, de façon concertée. Que dit l'article 222-33-2-2 ?",
+          "notion": "Cyberviolence",
+          "difficulte": 3,
+          "explication": "La loi prend en compte l'action concertée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Seul le premier élève peut être poursuivi",
+            "Ce n'est pas du harcèlement, car aucun n'a répété",
+            "Il peut s'agir de harcèlement, même si chacun n'a agi qu'une fois",
+            "La loi ne s'applique pas en ligne"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:075",
+          "enonce": "Pourquoi faut-il noter la date et le nom du compte sur les captures d'écran ?",
+          "notion": "Cyberviolence",
+          "difficulte": 3,
+          "explication": "Les preuves doivent être précises.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour retrouver le mot de passe du harceleur",
+            "Pour pouvoir répondre au harceleur plus tard",
+            "Pour publier les captures sur son propre compte",
+            "Pour constituer des preuves utilisables lors d'un signalement ou d'une plainte"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:076",
+          "enonce": "Quels réseaux sociaux reposent surtout sur le partage de photos ou de vidéos ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "LinkedIn est professionnel, Classmates servait à retrouver d'anciens camarades.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Classmates",
+            "Instagram",
+            "YouTube",
+            "LinkedIn"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:077",
+          "enonce": "Quelles caractéristiques permettent de comparer des réseaux sociaux ? Coche toutes les réponses exactes.",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Aussi le public visé et l'algorithme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le nom du fondateur",
+            "Le type de relation entre utilisateurs",
+            "Le type de contenu",
+            "La couleur du logo"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:078",
+          "enonce": "Quelles traces font partie de l'identité numérique ? Coche toutes les réponses exactes.",
+          "notion": "Identité numérique",
+          "difficulte": 1,
+          "explication": "Ce sont des traces laissées en ligne.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les notes écrites dans un cahier",
+            "Le groupe sanguin noté dans un carnet de santé papier",
+            "Les publications",
+            "Les commentaires"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:079",
+          "enonce": "Quels sont des moyens d'authentification ? Coche toutes les réponses exactes.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "Le pseudo sert à s'identifier.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Un mot de passe",
+            "Un pseudo",
+            "Une photo de profil",
+            "Une empreinte digitale"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:080",
+          "enonce": "Quels réglages améliorent la confidentialité d'un compte ? Coche toutes les réponses exactes.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "On choisit qui voit quoi.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Passer le compte en mode privé",
+            "Accepter toutes les demandes d'abonnement",
+            "Partager son mot de passe avec ses amis",
+            "Désactiver la localisation des publications"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:081",
+          "enonce": "Quelles sont des sources de revenus des réseaux sociaux ? Coche toutes les réponses exactes.",
+          "notion": "Modèle économique",
+          "difficulte": 1,
+          "explication": "Aussi les commissions sur les achats.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les impôts locaux",
+            "La publicité ciblée",
+            "Les abonnements payants",
+            "La vente d'adresses IP"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:082",
+          "enonce": "Quels éléments composent un graphe ? Coche toutes les réponses exactes.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Sommets reliés par des arêtes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Des arêtes",
+            "Des balises",
+            "Des sommets",
+            "Des cookies"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:083",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), quels sommets sont voisins de C ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "C est relié à A, B et D.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "E",
+            "D",
+            "B",
+            "A"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:084",
+          "enonce": "Quelles affirmations sur l'expérience de Milgram sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Petit monde",
+          "difficulte": 1,
+          "explication": "Environ six intermédiaires.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les lettres passaient de connaissance en connaissance",
+            "Elle utilisait Facebook",
+            "Les lettres passaient en moyenne par cent personnes",
+            "Elle date de 1967"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:085",
+          "enonce": "Quelles sont des formes de cyberviolence ? Coche toutes les réponses exactes.",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Bloquer et signaler sont des réactions.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le harcèlement par messages",
+            "Le blocage d'un compte insultant",
+            "La diffusion de rumeurs",
+            "Le signalement d'un contenu"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:086",
+          "enonce": "À qui un élève victime de cyberharcèlement peut-il en parler ? Coche toutes les réponses exactes.",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Et appeler le 3018.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Au harceleur, pour négocier",
+            "Au CPE ou à un professeur",
+            "À un parent",
+            "À personne, pour éviter les ennuis"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:087",
+          "enonce": "Quelles actions de l'utilisateur influencent l'algorithme de recommandation ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 1,
+          "explication": "Les interactions guident les recommandations.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Regarder longtemps une vidéo",
+            "Changer de fond d'écran",
+            "Recharger la batterie",
+            "Aimer un contenu"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:088",
+          "enonce": "Quelles traces sont involontaires ? Coche toutes les réponses exactes.",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "On ne choisit pas toujours de les laisser.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une publication écrite soi-même",
+            "Une photo de profil choisie",
+            "Les données de connexion",
+            "La localisation enregistrée par une application"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:089",
+          "enonce": "Quelles règles rendent un mot de passe plus sûr ? Coche toutes les réponses exactes.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Et il n'est jamais communiqué.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il est long",
+            "Il est différent pour chaque compte",
+            "Il est communiqué à ses meilleurs amis",
+            "Il reprend sa date de naissance"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:090",
+          "enonce": "Quels droits le RGPD donne-t-il ? Coche toutes les réponses exactes.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Et demander leur effacement.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Obtenir un compte gratuit à vie",
+            "Lire les données des autres",
+            "Accéder à ses données",
+            "Faire rectifier ses données"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:091",
+          "enonce": "Quels procédés servent à capter l'attention des utilisateurs ? Coche toutes les réponses exactes.",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "Plus de temps passé, plus de publicités vues.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le fil infini",
+            "L'arrêt automatique après dix minutes",
+            "Le mode avion",
+            "Les notifications"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:092",
+          "enonce": "Quelles mentions doit afficher un influenceur pour un partenariat ? Coche toutes les réponses exactes.",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "La loi de 2023 l'impose.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "« publicité »",
+            "« collaboration commerciale »",
+            "« contenu neutre »",
+            "« avis personnel gratuit »"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:093",
+          "enonce": "Sur la figure 1, quels élèves sont exactement à deux liens de D ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "E est à distance 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "F",
+            "A",
+            "E",
+            "B"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:094",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), quels sommets ont une excentricité de 3 ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "D a 2 ; A a 4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "E",
+            "C",
+            "D",
+            "A"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:095",
+          "enonce": "Dans le graphe P-Q, Q-R, R-S (quatre sommets en ligne), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Q et R forment le centre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le rayon vaut 2",
+            "La distance entre P et S est 3",
+            "Le diamètre vaut 4",
+            "P est au centre"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:096",
+          "enonce": "Quelles affirmations sur les graphes orientés sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 2,
+          "explication": "Comme les abonnements.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ils représentent des liens à sens unique",
+            "Ils représentent seulement l'amitié réciproque",
+            "Les arêtes sont des flèches",
+            "Ils n'ont pas de sommets"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:097",
+          "enonce": "Quelles affirmations sur les « six degrés de séparation » sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "Environ six intermédiaires en moyenne.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'idée vient de l'expérience de Milgram",
+            "Deux inconnus seraient reliés par une courte chaîne de connaissances",
+            "Chacun connaît directement six millions de personnes",
+            "Il faut six ans pour joindre un inconnu"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:098",
+          "enonce": "Quels sont des risques d'une bulle de filtres ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 2,
+          "explication": "L'algorithme renforce nos choix.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Perdre son mot de passe",
+            "Croire que son opinion est partagée par tous",
+            "Recevoir trop d'avis opposés",
+            "Ne voir que des opinions proches des siennes"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:099",
+          "enonce": "Que prévoit la loi sur le harcèlement moral ? Coche toutes les réponses exactes.",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Article 222-33-2-2 du code pénal.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Un mineur peut être poursuivi",
+            "Le harcèlement en ligne n'est pas puni",
+            "Les peines sont aggravées quand les faits sont commis en ligne",
+            "Seuls les adultes peuvent être victimes"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:100",
+          "enonce": "Dans le graphe où T est relié à U, à V et à W (et rien d'autre), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "T a une excentricité de 1, les autres de 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "T est le centre",
+            "Le diamètre vaut 2",
+            "Le rayon vaut 2",
+            "U est au centre"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:101",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), on supprime l'arête C-D. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "Le graphe est coupé en deux morceaux.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "D reste au centre du graphe",
+            "La distance entre D et F reste 2",
+            "Il n'existe plus de chemin entre A et F",
+            "La distance entre A et F devient 5"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:102",
+          "enonce": "Avec voisins = {\"A\": [\"B\", \"C\"], \"B\": [\"A\", \"C\"], \"C\": [\"A\", \"B\", \"D\"], \"D\": [\"C\"]}, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 3,
+          "explication": "len compte les voisins de chaque sommet.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "degre(\"B\") renvoie 1",
+            "degre(\"C\") renvoie 3",
+            "degre(\"D\") renvoie 1",
+            "degre(\"A\") renvoie 3"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:103",
+          "enonce": "Un élève veut vérifier une information choquante vue sur un réseau. Quelles démarches sont pertinentes ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 3,
+          "explication": "Le nombre de réactions ne prouve rien.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Se fier au nombre de « j'aime »",
+            "Se demander pourquoi ce contenu lui est montré",
+            "La partager pour voir ce qu'en pensent les autres",
+            "Chercher la même information dans des médias reconnus"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:104",
+          "enonce": "Pourquoi les données des utilisateurs ont-elles de la valeur pour un réseau social ? Coche toutes les réponses exactes.",
+          "notion": "Modèle économique",
+          "difficulte": 3,
+          "explication": "Le ciblage et les algorithmes sont au cœur du modèle.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elles réduisent le coût de l'électricité",
+            "Elles servent à entraîner des algorithmes",
+            "Elles sont revendues aux fournisseurs d'accès pour router les paquets",
+            "Elles permettent de mieux cibler la publicité"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:105",
+          "enonce": "Une élève découvre un faux compte à son nom qui publie des moqueries. Quelles réactions sont adaptées ? Coche toutes les réponses exactes.",
+          "notion": "Cyberviolence",
+          "difficulte": 3,
+          "explication": "Usurpation d'identité : garder des preuves, signaler, en parler.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Créer à son tour un faux compte au nom du harceleur",
+            "Faire des captures d'écran datées",
+            "Ne rien dire pour ne pas aggraver la situation",
+            "Signaler le compte au réseau et appeler le 3018"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch4:banque:106",
+          "enonce": "Facebook a été créé avant LinkedIn.",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "LinkedIn date de 2003, Facebook de 2004.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:107",
+          "enonce": "Les conditions générales d'utilisation précisent ce que le réseau peut faire des données collectées.",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "Ce sont le contrat entre l'utilisateur et le réseau.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:108",
+          "enonce": "Ce que les autres publient à ton sujet fait partie de ton identité numérique.",
+          "notion": "Identité numérique",
+          "difficulte": 1,
+          "explication": "Par exemple une photo où l'on t'identifie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:109",
+          "enonce": "Donner son pseudo, c'est s'authentifier.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "C'est s'identifier ; s'authentifier, c'est le prouver.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:110",
+          "enonce": "Un réseau social gratuit ne gagne pas d'argent avec ses utilisateurs.",
+          "notion": "Modèle économique",
+          "difficulte": 1,
+          "explication": "Il vend de la publicité ciblée grâce à leurs données.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:111",
+          "enonce": "Dans un graphe d'amis, les arêtes représentent les liens entre personnes.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "Les sommets représentent les personnes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:112",
+          "enonce": "La distance entre deux sommets est le nombre d'arêtes du plus court chemin qui les relie.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:113",
+          "enonce": "Le rayon d'un graphe est sa plus grande excentricité.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "C'est le diamètre ; le rayon est la plus petite.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:114",
+          "enonce": "Selon l'idée des « six degrés de séparation », deux personnes quelconques seraient reliées par une courte chaîne de connaissances.",
+          "notion": "Petit monde",
+          "difficulte": 1,
+          "explication": "Issue de l'expérience de Milgram.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:115",
+          "enonce": "Le fil d'un réseau social montre de façon neutre tout ce qui se passe dans le monde.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 1,
+          "explication": "Il dépend des comptes suivis et de l'algorithme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:116",
+          "enonce": "Le 3018 est un numéro payant réservé aux adultes.",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Il est gratuit et anonyme, ouvert aux jeunes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:117",
+          "enonce": "Il est conseillé de garder des preuves d'un cyberharcèlement.",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Captures d'écran datées.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:118",
+          "enonce": "Sur un réseau à abonnement, on peut suivre quelqu'un sans qu'il nous suive.",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 2,
+          "explication": "La relation est à sens unique.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:119",
+          "enonce": "Supprimer une publication garantit qu'elle a disparu définitivement d'Internet.",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "Elle a pu être copiée.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:120",
+          "enonce": "Avec l'authentification à deux facteurs, un mot de passe volé suffit au pirate pour se connecter.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Il lui manque le second facteur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:121",
+          "enonce": "Les influenceurs doivent signaler leurs partenariats commerciaux.",
+          "notion": "Modèle économique",
+          "difficulte": 2,
+          "explication": "Loi de 2023 sur l'influence commerciale.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:122",
+          "enonce": "Le degré d'un sommet est son nombre de voisins.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 2,
+          "explication": "C a pour degré 3 dans la figure 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:123",
+          "enonce": "Le centre d'un graphe est toujours le sommet qui a le plus de voisins.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Dans la figure 1, C a le plus de voisins, mais le centre est D.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:124",
+          "enonce": "Dans un graphe, un sommet du centre a une excentricité égale au rayon.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "C'est la définition du centre.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:125",
+          "enonce": "Sur Facebook, la distance moyenne entre deux utilisateurs est supérieure à dix.",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "Environ 3,5 selon l'étude de 2016.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:126",
+          "enonce": "L'algorithme de recommandation favorise les contenus qui retiennent l'utilisateur.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 2,
+          "explication": "Ceux qui ressemblent à ceux avec lesquels il a interagi.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:127",
+          "enonce": "Diffuser une photo intime reçue volontairement est autorisé si on ne l'a pas prise soi-même.",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "C'est un délit sans l'accord de la personne.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:128",
+          "enonce": "Un mineur peut être poursuivi pour harcèlement en ligne.",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Ses parents peuvent aussi avoir à réparer le dommage.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:129",
+          "enonce": "Le RGPD s'applique dans l'Union européenne depuis 2018.",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 2,
+          "explication": "Il protège les données personnelles.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:130",
+          "enonce": "Dans le graphe P-Q, Q-R, R-S, le sommet P fait partie du centre.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "P a une excentricité de 3 ; le centre est formé de Q et R.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:131",
+          "enonce": "Dans un graphe où un sommet est relié à tous les autres, le rayon vaut 1.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "Ce sommet est à distance 1 de tous.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:132",
+          "enonce": "Le diamètre d'un graphe est toujours au moins égal à son rayon.",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "La plus grande excentricité dépasse ou égale la plus petite.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:133",
+          "enonce": "Un graphe orienté convient pour représenter des amitiés réciproques.",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 3,
+          "explication": "On utilise un graphe non orienté.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:134",
+          "enonce": "Choisir des amis qui nous ressemblent peut renforcer une bulle de filtres.",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 3,
+          "explication": "L'algorithme amplifie ce choix.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch4:banque:135",
+          "enonce": "Un harcèlement concerté n'est puni que si chaque participant a agi plusieurs fois.",
+          "notion": "Cyberviolence",
+          "difficulte": 3,
+          "explication": "Il peut être puni même si chacun n'a agi qu'une fois.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch4:banque:136",
+          "enonce": "Quel est le nom du sociologue de l'expérience du « petit monde » de 1967 ?",
+          "notion": "Petit monde",
+          "difficulte": 1,
+          "explication": "Stanley Milgram.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Milgram",
+            "Stanley Milgram"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:137",
+          "enonce": "Quel numéro gratuit et anonyme peut-on appeler en cas de cyberharcèlement ?",
+          "notion": "Cyberviolence",
+          "difficulte": 1,
+          "explication": "Le 3018.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3018"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:138",
+          "enonce": "Quel est le sigle du règlement européen sur la protection des données ?",
+          "notion": "Authentification et confidentialité",
+          "difficulte": 1,
+          "explication": "Règlement général sur la protection des données.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "RGPD"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:139",
+          "enonce": "Combien de liens au minimum séparent D et F dans le graphe de la figure 1 ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 1,
+          "explication": "D-E, puis E-F.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:140",
+          "enonce": "F n'est relié qu'à un seul autre sommet sur la figure 1 : quel est donc son degré ?",
+          "notion": "Graphes : vocabulaire",
+          "difficulte": 1,
+          "explication": "F n'est relié qu'à E.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:141",
+          "enonce": "En quelle année Facebook a-t-il été créé ?",
+          "notion": "Réseaux sociaux et leur histoire",
+          "difficulte": 1,
+          "explication": "D'abord à Harvard.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2004"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:142",
+          "enonce": "Dans la figure 1, quelle est la plus grande distance entre E et un autre sommet ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Sa plus grande distance est celle à A et B : 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:143",
+          "enonce": "Pour une chaîne de quatre sommets P, Q, R, S, quelle est la plus petite excentricité ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 2,
+          "explication": "Q et R ont une excentricité de 2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:144",
+          "enonce": "Combien d'intermédiaires environ séparaient deux personnes dans l'expérience de Milgram ?",
+          "notion": "Petit monde",
+          "difficulte": 2,
+          "explication": "D'où les six degrés de séparation.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6",
+            "six"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:145",
+          "enonce": "Comment appelle-t-on l'enfermement dans des contenus conformes à ses opinions ? (trois mots)",
+          "notion": "Algorithmes et bulles de filtres",
+          "difficulte": 2,
+          "explication": "Effet des algorithmes de recommandation.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "bulle de filtres",
+            "bulle de filtre",
+            "une bulle de filtres",
+            "bulles de filtres"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:146",
+          "enonce": "Quel mot composé désigne la réputation en ligne d'une personne ou d'une marque ?",
+          "notion": "Identité numérique",
+          "difficulte": 2,
+          "explication": "Ce qu'on trouve en tapant son nom.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "e-réputation",
+            "e reputation",
+            "ereputation",
+            "l'e-réputation"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:147",
+          "enonce": "Quel est le nom de la plateforme de signalement des contenus illicites du ministère de l'Intérieur ?",
+          "notion": "Cyberviolence",
+          "difficulte": 2,
+          "explication": "Pharos.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Pharos"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:148",
+          "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), si l'on ajoute une arête entre B et E, quelle devient la distance entre A et F ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "A-B, B-E, E-F.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:149",
+          "enonce": "Dans le graphe où T est relié à U, à V et à W (et rien d'autre), quelle est l'excentricité de U ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "U est à distance 2 de V et W, en passant par T.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch4:banque:150",
+          "enonce": "Un graphe compte 5 sommets en ligne : 1-2-3-4-5. Quel sommet forme le centre ?",
+          "notion": "Distance, rayon, diamètre, centre",
+          "difficulte": 3,
+          "explication": "Le sommet 3 a une excentricité de 2, la plus petite.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
