@@ -6,7 +6,7 @@ Ce guide liste ce qui se règle à la main pour publier l'application. Rien n'es
 
 - Région : **Europe** (Paris `eu-west-3` ou Francfort `eu-central-1`). Les données des élèves restent en Europe (spec, section 9).
 - Version de Postgres : **17** (le droit `MAINTAIN` utilisé par les migrations l'exige).
-- Appliquer les migrations : `npx supabase login`, puis `npx supabase link --project-ref <ref>` (le mot de passe de la base est demandé), puis `npx supabase db push` (le mot de passe est redemandé si besoin).
+- Appliquer les migrations : `npx supabase login`, puis `npx supabase link --project-ref <ref>` (le mot de passe de la base est demandé), puis `npx supabase db push --remote` (le mot de passe est redemandé si besoin). Depuis la CLI v3, `db push` sans `--remote` vise la base **locale** et ne touche pas au projet hébergé.
 - Importer le cours, depuis un poste de confiance. Ne jamais taper de secret en préfixe de commande (il resterait dans l'historique du shell). Créer à la racine du dépôt un fichier `.env.distant` (ignoré par git grâce à `.gitignore`), protégé par `chmod 600 .env.distant`, contenant `NEXT_PUBLIC_SUPABASE_URL` et `SUPABASE_SERVICE_ROLE_KEY` du projet hébergé, puis :
 
       npx tsx --env-file=.env.distant scripts/importer-contenu.ts contenu/1re-st2s/bph.json --publier --distant
