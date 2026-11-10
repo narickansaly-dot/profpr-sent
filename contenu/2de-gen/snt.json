@@ -8620,7 +8620,7 @@
           "enonce": "Dans le graphe de la figure 1 du cours (A-B, A-C, B-C, C-D, D-E, E-F), on ajoute une arête entre A et F. Quel est le nouveau diamètre ?",
           "notion": "Distance, rayon, diamètre, centre",
           "difficulte": 3,
-          "explication": "A et F deviennent voisins ; les plus grandes distances sont alors celles entre B et E (B-A-F-E ou B-C-D-E) : 3.",
+          "explication": "A et F deviennent voisins ; les plus grandes distances sont alors celles entre B et E (B-A-F-E ou B-C-D-E) : 3.",
           "statut": "a_relire",
           "type": "qcm_unique",
           "propositions": [
@@ -17334,6 +17334,2482 @@
           "type": "reponse_courte",
           "reponses_acceptees": [
             "12"
+          ],
+          "marge_relative": false
+        }
+      ]
+    },
+    {
+      "slug": "ch8",
+      "numero": 8,
+      "titre": "La photographie numérique",
+      "titre_court": "Photographie",
+      "duree": "4 semaines",
+      "resume": "De l'argentique au numérique ; capteur, photosites et filtre de Bayer ; pixels, définition, résolution, couleurs RVB, profondeur de couleur et poids d'une image ; métadonnées EXIF ; algorithmes de l'appareil photo ; traitement d'image par programme.",
+      "chapeau": "Chaque jour, des milliards de photos sont prises avec des téléphones. Une photo numérique n'est pas une simple empreinte de la lumière : c'est un tableau de nombres, construit par un capteur et transformé par de nombreux algorithmes avant d'apparaître sur l'écran. Et ces nombres, on peut les modifier par programme.",
+      "objectifs": [
+        "situer les grandes étapes de l'histoire de la photographie ;",
+        "distinguer les photosites du capteur et les pixels de l'image, et comparer leurs résolutions ;",
+        "coder une couleur en RVB et calculer la taille d'une image non compressée ;",
+        "retrouver les métadonnées EXIF d'une photographie ;",
+        "expliciter des algorithmes de prise de vue et les étapes de construction de l'image finale ;",
+        "traiter une image par programme en agissant sur les trois composantes de ses pixels."
+      ],
+      "sections": [
+        {
+          "id": "histoire",
+          "titre": "De l'argentique au numérique",
+          "html": "<p>Pendant plus d'un siècle, la photographie a été <strong>argentique</strong> : la lumière noircit des cristaux de sels d'argent déposés sur une plaque ou un film, qu'il faut ensuite développer chimiquement. Ses progrès ont été lents, liés à l'optique, à la mécanique et à la chimie. Le numérique a tout changé en quelques décennies.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>1826</td><td>Nicéphore Niépce réalise la plus ancienne photographie connue, une vue depuis sa fenêtre, après des heures de pose.</td></tr>\n<tr><td>1839</td><td>Présentation du daguerréotype, procédé de Louis Daguerre : la photographie se diffuse.</td></tr>\n<tr><td>1957</td><td>Russell Kirsch numérise une photo de son fils : la première image numérique, de 176 × 176 pixels.</td></tr>\n<tr><td>1969</td><td>Willard Boyle et George Smith inventent le capteur CCD, qui transforme la lumière en signal électrique (prix Nobel de physique 2009).</td></tr>\n<tr><td>1975</td><td>Steven Sasson, ingénieur chez Kodak, construit le premier appareil photo numérique : 0,01 mégapixel, 23 secondes pour enregistrer une image sur une cassette.</td></tr>\n<tr><td>2000</td><td>Premiers téléphones équipés d'un appareil photo, au Japon.</td></tr>\n<tr><td>Années 2010</td><td>Le smartphone devient l'appareil photo le plus utilisé au monde ; les capteurs CMOS remplacent les CCD.</td></tr>\n</tbody></table></div>\n<p>Conséquences : la photo est devenue gratuite et immédiate, on en prend et on en partage énormément, on la retouche facilement. Cela pose des questions nouvelles : droit à l'image (on ne publie pas la photo de quelqu'un sans son accord), retouches qui trompent, images fabriquées, informations cachées dans les fichiers.</p>"
+        },
+        {
+          "id": "capteur",
+          "titre": "Capteur et photosites",
+          "html": "<p>Dans un appareil numérique, la pellicule est remplacée par un <strong>capteur</strong> : une puce couverte de millions de minuscules cellules sensibles à la lumière.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>photosite</strong> est une cellule du capteur qui mesure la quantité de lumière qu'elle reçoit pendant la prise de vue et la convertit en signal électrique, puis en nombre. La <strong>résolution du capteur</strong> est son nombre de photosites, exprimé en mégapixels (millions).</p></div>\n<h3>Le filtre de Bayer</h3>\n<p>Un photosite mesure une intensité lumineuse, pas une couleur. Pour obtenir les couleurs, on place devant le capteur une mosaïque de petits filtres rouges, verts et bleus : le <strong>filtre de Bayer</strong>. Chaque photosite ne reçoit donc qu'une couleur. La mosaïque contient <strong>deux fois plus de filtres verts</strong> que de rouges ou de bleus (50 % de vert, 25 % de rouge, 25 % de bleu), car l'œil humain est plus sensible au vert.</p>\n<figure class=\"fig small\"><div class=\"scroll\"><svg viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"Mosaïque de Bayer de 4 sur 4 : alternance de vert et rouge sur une ligne, de bleu et vert sur la suivante\"><g><rect x=\"20\" y=\"20\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"60\" y=\"20\" width=\"40\" height=\"40\" fill=\"#e53935\"/><rect x=\"100\" y=\"20\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"140\" y=\"20\" width=\"40\" height=\"40\" fill=\"#e53935\"/><rect x=\"20\" y=\"60\" width=\"40\" height=\"40\" fill=\"#1e88e5\"/><rect x=\"60\" y=\"60\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"100\" y=\"60\" width=\"40\" height=\"40\" fill=\"#1e88e5\"/><rect x=\"140\" y=\"60\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"20\" y=\"100\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"60\" y=\"100\" width=\"40\" height=\"40\" fill=\"#e53935\"/><rect x=\"100\" y=\"100\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"140\" y=\"100\" width=\"40\" height=\"40\" fill=\"#e53935\"/><rect x=\"20\" y=\"140\" width=\"40\" height=\"40\" fill=\"#1e88e5\"/><rect x=\"60\" y=\"140\" width=\"40\" height=\"40\" fill=\"#4caf50\"/><rect x=\"100\" y=\"140\" width=\"40\" height=\"40\" fill=\"#1e88e5\"/><rect x=\"140\" y=\"140\" width=\"40\" height=\"40\" fill=\"#4caf50\"/></g><text x=\"40\" y=\"45\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"14\">V</text><text x=\"80\" y=\"45\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"14\">R</text><text x=\"40\" y=\"85\" text-anchor=\"middle\" fill=\"#ffffff\" font-size=\"14\">B</text></svg></div><figcaption><b>Figure 1</b>Un morceau de filtre de Bayer : sur 16 photosites, 8 sont verts (V), 4 rouges (R) et 4 bleus (B).</figcaption></figure>\n<h3>Photosites et pixels : ne pas confondre</h3>\n<p>Le photosite appartient au <strong>capteur</strong> (le matériel) ; le <strong>pixel</strong> appartient à l'<strong>image</strong> (le fichier). Leur nombre n'est pas forcément le même : un capteur de 48 millions de photosites peut produire, selon les réglages, une image de 48 mégapixels ou une image de 12 mégapixels, en regroupant les photosites par quatre (ce qui améliore les photos en faible lumière). Choisir un format d'image plus petit dans les réglages, ou recadrer, donne aussi moins de pixels que de photosites.</p>"
+        },
+        {
+          "id": "pixels",
+          "titre": "Pixels, définition et couleurs",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Une image numérique est un tableau de <strong>pixels</strong> (<em>picture elements</em>), de petits carrés de couleur uniforme. La <strong>définition</strong> d'une image est son nombre de pixels, souvent donnée par « largeur × hauteur ».</p></div>\n<p>Une image de 4 000 × 3 000 pixels contient 4 000 × 3 000 = 12 000 000 pixels, soit 12 mégapixels. Chaque pixel est repéré par ses coordonnées (x, y) : x est le numéro de colonne, y le numéro de ligne, en partant de (0, 0) en haut à gauche.</p>\n<h3>La résolution d'impression</h3>\n<p>La <strong>résolution</strong> d'une image imprimée ou affichée est le nombre de pixels par unité de longueur, souvent en <strong>pixels par pouce</strong> (ppp, ou dpi en anglais ; 1 pouce = 2,54 cm). Une photo imprimée à 300 ppp est nette ; à 72 ppp, on voit les pixels. Une image de 3 000 pixels de large, imprimée à 300 ppp, mesure 3 000 / 300 = 10 pouces, soit 25,4 cm.</p>\n<h3>Coder une couleur : RVB</h3>\n<p>Un écran affiche les couleurs en mélangeant trois lumières : <strong>rouge</strong>, <strong>vert</strong> et <strong>bleu</strong> (synthèse additive). La couleur d'un pixel est donc codée par trois nombres, ses <strong>composantes</strong> (R, V, B). Le plus souvent, chaque composante est un entier de <strong>0</strong> (absence de cette lumière) à <strong>255</strong> (intensité maximale), codé sur 8 bits, soit un octet.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Couleur</th><th>R</th><th>V</th><th>B</th></tr></thead>\n<tbody>\n<tr><td>Noir</td><td>0</td><td>0</td><td>0</td></tr>\n<tr><td>Blanc</td><td>255</td><td>255</td><td>255</td></tr>\n<tr><td>Rouge</td><td>255</td><td>0</td><td>0</td></tr>\n<tr><td>Vert</td><td>0</td><td>255</td><td>0</td></tr>\n<tr><td>Bleu</td><td>0</td><td>0</td><td>255</td></tr>\n<tr><td>Jaune</td><td>255</td><td>255</td><td>0</td></tr>\n<tr><td>Gris moyen</td><td>128</td><td>128</td><td>128</td></tr>\n</tbody></table></div>\n<p>Quand les trois composantes sont égales, on obtient un gris, plus ou moins clair. Avec 256 valeurs par composante, on peut coder 256 × 256 × 256 = 16 777 216 couleurs, environ 16,8 millions.</p>\n<h3>La profondeur de couleur et le poids d'une image</h3>\n<p>La <strong>profondeur de couleur</strong> est le nombre de bits utilisés pour coder la couleur d'un pixel. En RVB avec un octet par composante, elle vaut 3 × 8 = <strong>24 bits</strong>, soit 3 octets par pixel. Une image en noir et blanc pur n'a besoin que d'1 bit par pixel ; une image en 256 niveaux de gris, de 8 bits.</p>\n<p>Le <strong>poids</strong> d'une image non compressée se calcule ainsi : nombre de pixels × nombre d'octets par pixel. Une image de 4 000 × 3 000 pixels en 24 bits pèse 12 000 000 × 3 = 36 000 000 octets, soit 36 Mo. C'est beaucoup : c'est pourquoi on compresse les images (voir plus bas).</p>"
+        },
+        {
+          "id": "exif",
+          "titre": "Les métadonnées EXIF",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Les <strong>métadonnées EXIF</strong> (<em>Exchangeable Image File Format</em>) sont des informations enregistrées par l'appareil dans le fichier de la photo, en plus de l'image elle-même.</p></div>\n<p>Elles contiennent notamment : la marque et le modèle de l'appareil, la date et l'heure de la prise de vue, la définition, les réglages (durée d'exposition, ouverture, sensibilité ISO, focale, usage du flash), l'orientation, et parfois les <strong>coordonnées GPS</strong> du lieu.</p>\n<p>Pour les lire, on affiche les propriétés du fichier sur un ordinateur, ou les informations de la photo dans la galerie du téléphone ; des logiciels et des sites spécialisés les affichent en détail. Elles servent à classer les photos par date ou par lieu, à vérifier l'origine d'une image (enquête, journalisme), à apprendre la photographie en comparant les réglages.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Une photo prise chez soi avec la géolocalisation activée contient l'emplacement du domicile. Beaucoup de réseaux sociaux effacent les métadonnées à la publication, mais pas tous, ni les messageries ou les envois de fichiers. On peut désactiver la géolocalisation de l'appareil photo, ou effacer les métadonnées avant de partager.</p></div>"
+        },
+        {
+          "id": "algorithmes",
+          "titre": "Les algorithmes de l'appareil photo",
+          "html": "<p>Entre l'appui sur le déclencheur et l'image finale, l'appareil exécute de nombreux algorithmes. Certains interviennent <strong>avant</strong> la prise de vue, d'autres <strong>après</strong>, pour construire l'image.</p>\n<h3>Avant la prise de vue</h3>\n<ul>\n<li><strong>La mise au point automatique</strong> : l'appareil règle l'objectif pour que le sujet soit net, par exemple en cherchant le réglage où les contrastes de la zone visée sont les plus forts.</li>\n<li><strong>L'exposition automatique</strong> : l'appareil mesure la lumière et choisit la durée d'exposition, l'ouverture et la sensibilité pour que l'image ne soit ni trop sombre ni trop claire.</li>\n<li><strong>La détection des visages</strong>, pour faire la mise au point et l'exposition sur eux.</li>\n</ul>\n<h3>La construction de l'image finale</h3>\n<ol>\n<li><strong>Acquisition</strong> : chaque photosite mesure la lumière reçue à travers son filtre de couleur.</li>\n<li><strong>Dématriçage</strong> : chaque photosite ne connaît qu'une couleur ; l'algorithme calcule les deux composantes manquantes de chaque pixel à partir des photosites voisins (par exemple, la composante rouge d'un pixel « vert » est estimée par la moyenne de ses voisins rouges).</li>\n<li><strong>Balance des blancs</strong> : l'éclairage change les couleurs (une lampe à incandescence rend tout orangé). L'algorithme corrige les composantes pour qu'un objet blanc paraisse blanc.</li>\n<li><strong>Corrections</strong> : réduction du bruit (grain), renforcement de la netteté, correction des défauts de l'objectif, réglage du contraste et des couleurs.</li>\n<li><strong>Compression</strong> et enregistrement, avec les métadonnées EXIF.</li>\n</ol>\n<h3>La photographie computationnelle</h3>\n<p>Les smartphones vont plus loin : ils prennent souvent <strong>plusieurs images</strong> en une fraction de seconde et les combinent. Le mode <strong>HDR</strong> (<em>High Dynamic Range</em>) fusionne des images sous-exposées et surexposées pour voir à la fois les détails dans les zones sombres et dans le ciel. Le mode nuit additionne de nombreuses images pour réduire le bruit. Le mode portrait estime la profondeur de la scène pour flouter l'arrière-plan.</p>\n<h3>La compression</h3>\n<p>Le format <strong>JPEG</strong> compresse beaucoup les images, <strong>avec pertes</strong> : il supprime des détails peu visibles, et l'image ne peut plus être retrouvée exactement. Une photo de 36 Mo non compressée ne pèse souvent que quelques Mo en JPEG. Le format <strong>PNG</strong> compresse <strong>sans pertes</strong>, mais moins fortement. Le format <strong>RAW</strong> conserve les données brutes du capteur, avant le dématriçage, pour pouvoir tout régler ensuite sur ordinateur.</p>"
+        },
+        {
+          "id": "traitement",
+          "titre": "Traiter une image par programme",
+          "html": "<p>Comme une image est un tableau de pixels, chacun codé par trois nombres, un programme peut la transformer en modifiant ces nombres. En Python, on utilise souvent la bibliothèque <strong>PIL</strong> (Pillow).</p>\n<div class=\"def code\"><b class=\"t\">Python</b><p>from PIL import Image<br><br>img = Image.open(\"photo.jpg\")<br>largeur, hauteur = img.size<br>for x in range(largeur):<br>    for y in range(hauteur):<br>        r, v, b = img.getpixel((x, y))<br>        img.putpixel((x, y), (255 - r, 255 - v, 255 - b))<br>img.save(\"negatif.jpg\")</p></div><p>img.size donne la largeur et la hauteur ; deux boucles imbriquées parcourent tous les pixels ; getpixel lit les trois composantes d'un pixel, putpixel écrit les nouvelles. Ici, chaque composante c est remplacée par 255 - c : on obtient le <strong>négatif</strong> de l'image (le noir devient blanc, le rouge devient cyan).</p>\n<h3>D'autres transformations</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Effet</th><th>Calcul sur chaque pixel (r, v, b)</th></tr></thead>\n<tbody>\n<tr><td>Négatif</td><td>(255 - r, 255 - v, 255 - b)</td></tr>\n<tr><td>Niveaux de gris</td><td>on calcule g = (r + v + b) // 3, puis on écrit (g, g, g)</td></tr>\n<tr><td>Garder seulement le rouge</td><td>(r, 0, 0)</td></tr>\n<tr><td>Éclaircir</td><td>ajouter une même valeur aux trois composantes, sans dépasser 255</td></tr>\n<tr><td>Noir et blanc (seuil)</td><td>si g est supérieur à 127, blanc (255, 255, 255), sinon noir (0, 0, 0)</td></tr>\n</tbody></table></div>\n<p>Exemple : le pixel (200, 100, 30) devient (55, 155, 225) en négatif, et (110, 110, 110) en niveaux de gris, car (200 + 100 + 30) // 3 = 110. Les filtres des applications de retouche utilisent des calculs de ce type, parfois en tenant compte aussi des pixels voisins (flou, netteté).</p>\n<p>Une image de 12 mégapixels demande 12 millions de tours de boucle : c'est beaucoup pour un programme Python simple, qui peut mettre plusieurs secondes. Les appareils photo utilisent des processeurs spécialisés pour faire ces calculs en un instant.</p>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>De Niépce (1826) au smartphone : capteur CCD (1969), premier appareil numérique (1975), téléphones avec appareil photo (2000).</li>\n<li>Le <strong>capteur</strong> est formé de <strong>photosites</strong> ; le <strong>filtre de Bayer</strong> (50 % vert, 25 % rouge, 25 % bleu) donne à chacun une couleur. Les <strong>pixels</strong> sont ceux de l'image : leur nombre peut différer de celui des photosites.</li>\n<li><strong>Définition</strong> = nombre de pixels (largeur × hauteur) ; <strong>résolution</strong> = pixels par pouce (1 pouce = 2,54 cm).</li>\n<li>Couleur <strong>RVB</strong> : trois composantes de 0 à 255 ; <strong>profondeur</strong> de 24 bits (3 octets) ; environ 16,8 millions de couleurs. Poids non compressé = pixels × octets par pixel.</li>\n<li>Les <strong>métadonnées EXIF</strong> donnent l'appareil, la date, les réglages et parfois le lieu.</li>\n<li>Algorithmes : mise au point et exposition automatiques, <strong>dématriçage</strong>, <strong>balance des blancs</strong>, réduction du bruit, HDR, <strong>compression</strong> (JPEG avec pertes, PNG sans pertes).</li>\n<li>Un programme transforme une image en modifiant les composantes de ses pixels : négatif (255 - c), niveaux de gris ((r + v + b) // 3).</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch8:banque:001",
+          "enonce": "Qui a réalisé la plus ancienne photographie connue, en 1826 ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Une vue depuis sa fenêtre, après des heures de pose.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Steven Sasson",
+            "Louis Daguerre",
+            "Russell Kirsch",
+            "Nicéphore Niépce"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:002",
+          "enonce": "Comment s'appelle le procédé de photographie présenté en 1839 ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Procédé de Louis Daguerre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le filtre de Bayer",
+            "Le daguerréotype",
+            "Le format JPEG",
+            "Le capteur CCD"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:003",
+          "enonce": "Dans quelle entreprise Steven Sasson a-t-il construit le premier appareil photo numérique ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "En 1975.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Kodak",
+            "IBM",
+            "Intel",
+            "Google"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:004",
+          "enonce": "Sur quoi repose la photographie argentique ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Il faut ensuite développer chimiquement le film.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des photosites qui mesurent la lumière reçue à travers un filtre",
+            "Des pixels codés en RVB",
+            "Des sels d'argent qui noircissent à la lumière",
+            "Un microcontrôleur qui calcule l'image"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:005",
+          "enonce": "Qu'est-ce qu'un photosite ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 1,
+          "explication": "Il convertit la lumière en signal électrique, puis en nombre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une cellule du capteur qui mesure la lumière reçue",
+            "Un réglage de l'appareil qui choisit la durée de pose",
+            "Un petit carré de couleur uniforme dans l'image",
+            "Un site Web qui permet de partager ses photos"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:006",
+          "enonce": "Qu'est-ce qui remplace la pellicule dans un appareil photo numérique ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 1,
+          "explication": "Une puce couverte de millions de photosites.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'écran",
+            "L'objectif",
+            "Le capteur",
+            "Le flash"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:007",
+          "enonce": "En quelle unité exprime-t-on souvent la résolution d'un capteur ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 1,
+          "explication": "Des millions de photosites.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En pixels par pouce",
+            "En mégapixels",
+            "En mégaoctets",
+            "En kilomètres"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:008",
+          "enonce": "À quoi sert le filtre de Bayer ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 1,
+          "explication": "C'est une mosaïque de filtres rouges, verts et bleus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À enregistrer le lieu de la prise de vue",
+            "À faire la mise au point automatique",
+            "À compresser l'image en JPEG",
+            "À donner une couleur à chaque photosite"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:009",
+          "enonce": "Quelle couleur est la plus représentée dans un filtre de Bayer ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 1,
+          "explication": "50 % de vert, car l'œil y est plus sensible.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le vert",
+            "Le blanc",
+            "Le rouge",
+            "Le bleu"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:010",
+          "enonce": "Qu'est-ce qu'un pixel ?",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "Picture element.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un fichier de métadonnées enregistré avec la photo",
+            "Une lentille placée devant le capteur de l'appareil",
+            "Une cellule du capteur sensible à la lumière",
+            "Un petit carré de couleur uniforme qui compose l'image"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:011",
+          "enonce": "Comment appelle-t-on le nombre de pixels d'une image ?",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "Souvent donnée par largeur × hauteur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Sa compression",
+            "Sa définition",
+            "Sa profondeur de couleur",
+            "Sa résolution d'impression"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:012",
+          "enonce": "Combien de pixels contient une image de 4 000 × 3 000 pixels ?",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "4 000 × 3 000 = 12 000 000.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,2 million",
+            "120 millions",
+            "12 millions",
+            "7 000"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:013",
+          "enonce": "Quelles sont les coordonnées du pixel situé en haut à gauche d'une image ?",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "x est la colonne, y la ligne.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(0, 0)",
+            "(1, 1)",
+            "(0, 255)",
+            "(255, 255)"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:014",
+          "enonce": "En quelle unité exprime-t-on la résolution d'une image imprimée ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 1,
+          "explication": "ppp, ou dpi.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En degrés",
+            "En pixels par pouce",
+            "En octets",
+            "En mégapixels"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:015",
+          "enonce": "Combien de centimètres mesure un pouce ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 1,
+          "explication": "1 pouce = 2,54 cm.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 cm",
+            "25,4 cm",
+            "2,54 cm",
+            "10 cm"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:016",
+          "enonce": "Quelles sont les trois couleurs de base utilisées par un écran ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Synthèse additive : RVB.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Rouge, jaune et bleu",
+            "Cyan, magenta et jaune",
+            "Noir, gris et blanc",
+            "Rouge, vert et bleu"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:017",
+          "enonce": "Un pixel dont les trois composantes valent 0 apparaît de quelle couleur ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Aucune lumière.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Blanc",
+            "Gris",
+            "Rouge",
+            "Noir"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:018",
+          "enonce": "Quelle couleur obtient-on quand rouge, vert et bleu sont tous au maximum ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Les trois lumières au maximum.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Noir",
+            "Gris clair",
+            "Blanc",
+            "Jaune"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:019",
+          "enonce": "Quelle teinte affiche un écran pour le triplet R = 255, V = 0, B = 0 ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Seule la lumière rouge, au maximum.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Bleu",
+            "Rouge",
+            "Jaune",
+            "Vert"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:020",
+          "enonce": "Entre quelles valeurs varie une composante RVB codée sur un octet ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "256 valeurs possibles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0 et 255",
+            "-128 et 128",
+            "0 et 100",
+            "1 et 256"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:021",
+          "enonce": "Quelle est la profondeur de couleur d'une image RVB avec un octet par composante ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 1,
+          "explication": "3 × 8 = 24 bits.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "8 bits",
+            "256 bits",
+            "24 bits",
+            "3 bits"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:022",
+          "enonce": "Que sont les métadonnées EXIF ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 1,
+          "explication": "Appareil, date, réglages, parfois lieu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des informations enregistrées par l'appareil dans le fichier de la photo",
+            "Les pixels les plus clairs de l'image, gardés à part",
+            "Un format de compression sans pertes pour les photos",
+            "Une technique pour flouter l'arrière-plan d'un portrait pris avec un smartphone"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:023",
+          "enonce": "Laquelle de ces informations peut figurer dans les métadonnées EXIF ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 1,
+          "explication": "Aussi la date, les réglages, le lieu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nom de la personne photographiée",
+            "Le mot de passe du téléphone",
+            "Le prix de l'appareil",
+            "Le modèle de l'appareil"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:024",
+          "enonce": "Que fait la mise au point automatique ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 1,
+          "explication": "Par exemple en cherchant le contraste maximal.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle choisit la couleur dominante de la photo selon la saison",
+            "Elle règle l'objectif pour que le sujet soit net",
+            "Elle compresse l'image avant l'enregistrement",
+            "Elle enregistre le lieu de la prise de vue"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:025",
+          "enonce": "Que corrige la balance des blancs ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 1,
+          "explication": "Un objet blanc doit paraître blanc.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le poids du fichier",
+            "Les couleurs faussées par l'éclairage",
+            "Le flou dû au mouvement",
+            "La position du sujet dans le cadre de la photo"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:026",
+          "enonce": "Que fait le mode HDR d'un smartphone ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 1,
+          "explication": "On voit les détails dans les zones sombres et claires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il transforme la photo en noir et blanc",
+            "Il supprime toutes les métadonnées",
+            "Il fusionne des images sous-exposées et surexposées",
+            "Il augmente le nombre de photosites du capteur pendant la prise de vue"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:027",
+          "enonce": "Quel format compresse les photos avec pertes ?",
+          "notion": "Compression",
+          "difficulte": 1,
+          "explication": "Il supprime des détails peu visibles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "JPEG",
+            "CSV",
+            "PNG",
+            "RAW"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:028",
+          "enonce": "Quel format conserve les données brutes du capteur ?",
+          "notion": "Compression",
+          "difficulte": 1,
+          "explication": "Avant le dématriçage.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "PNG",
+            "HTML",
+            "JPEG",
+            "RAW"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:029",
+          "enonce": "Quelle bibliothèque Python est souvent utilisée pour traiter des images ?",
+          "notion": "Traitement par programme",
+          "difficulte": 1,
+          "explication": "Image.open, getpixel, putpixel…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "PIL (Pillow)",
+            "microbit",
+            "math",
+            "csv"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:030",
+          "enonce": "Que fait la méthode getpixel((x, y)) ?",
+          "notion": "Traitement par programme",
+          "difficulte": 1,
+          "explication": "putpixel écrit, save enregistre, size donne les dimensions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle écrit une nouvelle couleur dans le pixel",
+            "Elle enregistre l'image sur le disque",
+            "Elle lit les composantes du pixel (x, y)",
+            "Elle donne la largeur et la hauteur de l'image"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:031",
+          "enonce": "Qu'a réalisé Russell Kirsch en 1957 ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "Une photo de son fils, numérisée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le premier téléphone avec appareil photo",
+            "Le premier capteur CCD",
+            "Le premier appareil photo numérique portable",
+            "La première image numérique, de 176 × 176 pixels"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:032",
+          "enonce": "Qu'ont inventé Willard Boyle et George Smith en 1969 ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "Prix Nobel de physique 2009.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le format JPEG",
+            "Le capteur CCD",
+            "Le daguerréotype",
+            "Le filtre de Bayer"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:033",
+          "enonce": "Quel type de capteur a remplacé le CCD dans la plupart des appareils actuels ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "Dans les années 2010.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le film argentique",
+            "Le capteur CMOS",
+            "La photorésistance",
+            "Le capteur à ultrasons"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:034",
+          "enonce": "Pourquoi un photosite ne mesure-t-il pas directement une couleur ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "D'où le filtre de Bayer.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il ne mesure qu'une intensité lumineuse",
+            "Il mesure seulement la distance au sujet",
+            "Il ne reçoit la lumière qu'à travers le flash",
+            "Il ne fonctionne qu'en noir et blanc la nuit"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:035",
+          "enonce": "Un capteur de 48 millions de photosites regroupe ses photosites par quatre. Quelle est la définition de l'image ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "48 / 4 = 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4 mégapixels",
+            "48 mégapixels",
+            "192 mégapixels",
+            "12 mégapixels"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:036",
+          "enonce": "Pourquoi regroupe-t-on parfois les photosites par quatre ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "Les quatre mesures sont combinées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour que l'image soit en noir et blanc",
+            "Pour ajouter des métadonnées",
+            "Pour améliorer les photos en faible lumière",
+            "Pour augmenter la définition de l'image"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:037",
+          "enonce": "Quelle différence y a-t-il entre photosite et pixel ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "Leur nombre n'est pas forcément le même.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le photosite est plus grand que l'image entière",
+            "Le photosite appartient au capteur, le pixel à l'image",
+            "Il n'y a aucune différence",
+            "Le pixel est une cellule du capteur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:038",
+          "enonce": "Sur 16 photosites d'un filtre de Bayer, combien sont rouges ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 2,
+          "explication": "25 % de rouge.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "2",
+            "16",
+            "8"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:039",
+          "enonce": "Pourquoi le filtre de Bayer contient-il deux fois plus de vert ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 2,
+          "explication": "Cela améliore le rendu perçu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le vert ne laisse pas passer la lumière",
+            "Le vert coûte moins cher à fabriquer",
+            "Les écrans n'affichent pas le rouge",
+            "L'œil humain est plus sensible au vert"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:040",
+          "enonce": "Combien de pixels compte une image de 1 920 × 1 080 pixels, environ ?",
+          "notion": "Pixels et définition",
+          "difficulte": 2,
+          "explication": "1 920 × 1 080 = 2 073 600.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "200 000",
+            "3 000",
+            "2 millions",
+            "20 millions"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:041",
+          "enonce": "Dans les coordonnées (x, y) d'un pixel, que représente x ?",
+          "notion": "Pixels et définition",
+          "difficulte": 2,
+          "explication": "y est le numéro de ligne.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La luminosité",
+            "Le numéro de colonne",
+            "La couleur",
+            "Le numéro de ligne"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:042",
+          "enonce": "Quelle largeur, en pouces, mesure une image de 3 000 pixels imprimée à 300 ppp ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 2,
+          "explication": "3 000 / 300 = 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 pouces",
+            "30 pouces",
+            "900 pouces",
+            "10 pouces"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:043",
+          "enonce": "Pourquoi une photo imprimée à 72 ppp paraît-elle moins nette qu'à 300 ppp ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 2,
+          "explication": "Moins de pixels par pouce.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle est compressée sans pertes",
+            "Elle a perdu ses métadonnées",
+            "Ses pixels sont plus grands, donc visibles",
+            "Elle contient moins de couleurs"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:044",
+          "enonce": "En synthèse additive, mélanger rouge et vert au maximum, sans bleu, donne quelle couleur ?",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "Rouge + vert = jaune, en synthèse additive.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Jaune",
+            "Magenta",
+            "Blanc",
+            "Cyan"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:045",
+          "enonce": "Que peut-on dire d'un pixel dont les trois composantes sont égales ?",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "(128, 128, 128) est un gris moyen.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "C'est une couleur vive",
+            "C'est forcément du blanc",
+            "C'est un gris, plus ou moins clair",
+            "C'est forcément du noir"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:046",
+          "enonce": "Combien de couleurs peut-on coder avec 256 valeurs par composante RVB ?",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "256 × 256 × 256 = 16 777 216.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ 16,8 millions",
+            "65 536",
+            "256",
+            "768"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:047",
+          "enonce": "Combien d'octets faut-il pour coder un pixel en RVB 24 bits ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "24 bits = 3 octets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "3",
+            "24",
+            "8"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:048",
+          "enonce": "Quel est le poids non compressé d'une image de 4 000 × 3 000 pixels en 24 bits ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "12 000 000 × 3 = 36 000 000 octets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12 Mo",
+            "24 Mo",
+            "288 Mo",
+            "36 Mo"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:049",
+          "enonce": "Combien de bits faut-il par pixel pour une image en noir et blanc pur ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "Deux valeurs : noir ou blanc.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "24",
+            "8",
+            "3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:050",
+          "enonce": "Pourquoi une photo prise chez soi peut-elle révéler son adresse ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 2,
+          "explication": "Si la géolocalisation est activée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le format JPEG enregistre le nom de la commune",
+            "Le capteur photographie toujours la plaque de la rue",
+            "Ses métadonnées EXIF peuvent contenir les coordonnées GPS",
+            "Le filtre de Bayer garde une trace du lieu"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:051",
+          "enonce": "À quoi les métadonnées EXIF servent-elles aux journalistes ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 2,
+          "explication": "Par exemple lors d'une enquête.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À colorer les photos en noir et blanc",
+            "À supprimer le bruit des images de nuit",
+            "À augmenter la définition des photos",
+            "À vérifier l'origine et la date d'une image"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:052",
+          "enonce": "Qu'est-ce que le dématriçage ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Chaque photosite ne connaît qu'une couleur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Retirer le filtre de Bayer du capteur juste après la prise de vue, puis le remettre",
+            "Calculer les deux composantes manquantes de chaque pixel à partir des voisins",
+            "Supprimer les métadonnées avant de partager",
+            "Compresser l'image en supprimant des détails"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:053",
+          "enonce": "Pourquoi une photo prise sous une lampe à incandescence paraît-elle orangée sans correction ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "La balance des blancs corrige cela.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'éclairage change les couleurs captées",
+            "Le capteur ne voit pas le bleu",
+            "La mise au point est mauvaise",
+            "Le format JPEG ajoute de l'orange"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:054",
+          "enonce": "Comment fonctionne le mode nuit d'un smartphone ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "C'est de la photographie computationnelle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il augmente le nombre de photosites",
+            "Il additionne de nombreuses images pour réduire le bruit",
+            "Il enregistre seulement les pixels clairs",
+            "Il allume le flash pendant plusieurs secondes de suite"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:055",
+          "enonce": "Que choisit l'exposition automatique ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Pour que l'image ne soit ni trop sombre ni trop claire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le format de compression",
+            "Les coordonnées GPS",
+            "La durée d'exposition, l'ouverture et la sensibilité",
+            "La couleur du filtre de Bayer"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:056",
+          "enonce": "Que signifie une compression avec pertes ?",
+          "notion": "Compression",
+          "difficulte": 2,
+          "explication": "C'est le cas du JPEG.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le fichier perd ses métadonnées EXIF",
+            "La photo devient un peu plus floue à chaque nouvelle ouverture du fichier",
+            "L'image perd sa définition",
+            "Des informations sont supprimées et ne peuvent pas être retrouvées"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:057",
+          "enonce": "Quel calcul donne le négatif d'une composante c ?",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "Le noir (0) devient blanc (255).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "c - 255",
+            "c × 255",
+            "255 - c",
+            "c / 255"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:058",
+          "enonce": "Quel calcul transforme un pixel (r, v, b) en niveaux de gris dans le cours ?",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "On prend la moyenne des trois composantes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(r × v × b) // 3",
+            "(255 - r, 255 - v, 255 - b)",
+            "(r, 0, 0)",
+            "g = (r + v + b) // 3, puis (g, g, g)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:059",
+          "enonce": "Pourquoi utilise-t-on deux boucles imbriquées pour traiter une image ?",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "x parcourt les colonnes, y les lignes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour lire puis écrire chaque fichier",
+            "Pour parcourir toutes les colonnes et toutes les lignes",
+            "Parce que Python interdit d'utiliser une seule boucle pour une image",
+            "Pour traiter deux images en même temps"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:060",
+          "enonce": "Que donne img.size dans le programme du cours ?",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "largeur, hauteur = img.size.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La largeur et la hauteur de l'image",
+            "Le poids du fichier en octets",
+            "La date de la photo",
+            "Le nombre de couleurs différentes"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:061",
+          "enonce": "Que voit-on à l'écran pour un pixel où R vaut 0, et où V et B valent 255 ?",
+          "notion": "Codage RVB",
+          "difficulte": 3,
+          "explication": "Vert + bleu donnent du cyan en synthèse additive.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Cyan",
+            "Magenta",
+            "Jaune",
+            "Gris"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:062",
+          "enonce": "Que devient le pixel (200, 100, 30) en négatif ?",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "255 - 200, 255 - 100, 255 - 30.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(45, 145, 215)",
+            "(200, 100, 30)",
+            "(55, 155, 225)",
+            "(110, 110, 110)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:063",
+          "enonce": "Que devient le pixel (90, 120, 30) en niveaux de gris avec la méthode du cours ?",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "(90 + 120 + 30) // 3 = 80.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(240, 240, 240)",
+            "(80, 80, 80)",
+            "(120, 120, 120)",
+            "(90, 90, 90)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:064",
+          "enonce": "Avec le seuil du cours, un pixel de niveau de gris g = 127 devient…",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "Il faut g supérieur à 127 pour obtenir du blanc.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Rouge",
+            "Gris moyen",
+            "Blanc",
+            "Noir"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:065",
+          "enonce": "Combien de tours de boucle fait le programme du cours sur une image de 1 000 × 800 pixels ?",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "Un tour par pixel : 1 000 × 800.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 000",
+            "1 800",
+            "800 000",
+            "8 000"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:066",
+          "enonce": "Quel est le poids non compressé d'une image de 1 000 × 1 000 pixels en 256 niveaux de gris ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 3,
+          "explication": "8 bits = 1 octet par pixel : 1 000 000 octets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 Mo",
+            "3 Mo",
+            "256 Mo",
+            "8 Mo"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:067",
+          "enonce": "Une image de 2 000 × 1 500 pixels en 24 bits pèse 1 Mo en JPEG. Quel est son poids non compressé ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 3,
+          "explication": "3 000 000 pixels × 3 octets = 9 Mo : le JPEG l'a divisé par 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 Mo",
+            "9 Mo",
+            "24 Mo",
+            "1 Mo"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:068",
+          "enonce": "Quelle largeur en centimètres mesure, environ, une image de 1 200 pixels imprimée à 300 ppp ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 3,
+          "explication": "1 200 / 300 = 4 pouces ; 4 × 2,54 ≈ 10,2 cm.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,2 cm",
+            "4 cm",
+            "25,4 cm",
+            "10,2 cm"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:069",
+          "enonce": "Un appareil a un capteur de 24 millions de photosites. On règle l'image sur 6 mégapixels. Que peut-on dire ?",
+          "notion": "Capteur et photosites",
+          "difficulte": 3,
+          "explication": "Photosites et pixels n'ont pas forcément le même nombre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'image a moins de pixels que le capteur n'a de photosites",
+            "Le capteur passe à 6 millions de photosites",
+            "L'image a toujours 24 millions de pixels",
+            "Le réglage est impossible"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:070",
+          "enonce": "Pour un pixel situé sur un photosite vert, comment le dématriçage estime-t-il sa composante rouge ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 3,
+          "explication": "Par exemple par une moyenne des voisins.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En la mettant à 0",
+            "En la recopiant de la composante verte",
+            "En la lisant dans les métadonnées",
+            "À partir des photosites rouges voisins"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:071",
+          "enonce": "Comment la mise au point automatique peut-elle repérer que le sujet est net ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 3,
+          "explication": "Une image floue a des contrastes faibles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En lisant la date dans les métadonnées",
+            "En mesurant la température du capteur",
+            "En cherchant le réglage où les contrastes de la zone visée sont les plus forts",
+            "En comptant les pixels blancs de l'image et en gardant le réglage qui en donne le plus"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:072",
+          "enonce": "Pourquoi un photographe enregistre-t-il en RAW plutôt qu'en JPEG ?",
+          "notion": "Compression",
+          "difficulte": 3,
+          "explication": "Le RAW est avant le dématriçage.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour supprimer les métadonnées",
+            "Pour tout régler ensuite à partir des données brutes du capteur",
+            "Pour partager plus vite sur les réseaux",
+            "Pour obtenir des fichiers plus légers"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:073",
+          "enonce": "On enregistre dix fois de suite la même photo en JPEG en la modifiant un peu. Que risque-t-on ?",
+          "notion": "Compression",
+          "difficulte": 3,
+          "explication": "Chaque compression avec pertes supprime des détails.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Aucun changement",
+            "Une image qui devient en RAW",
+            "Un fichier de plus en plus lourd",
+            "Une perte de qualité qui s'accumule"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:074",
+          "enonce": "Un réseau social efface les métadonnées à la publication, mais pas une messagerie. Que faut-il faire avant d'envoyer une photo de chez soi par messagerie ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 3,
+          "explication": "Le lieu peut être lu par le destinataire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La convertir en noir et blanc",
+            "Augmenter sa définition",
+            "Effacer ses métadonnées ou désactiver la géolocalisation",
+            "La compresser en PNG"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:075",
+          "enonce": "Quel ordre chronologique est exact ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "1839, 1957, 1969.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Daguerréotype, première image numérique, capteur CCD",
+            "Première image numérique, daguerréotype, capteur CCD",
+            "Daguerréotype, capteur CCD, première image numérique",
+            "Capteur CCD, daguerréotype, première image numérique"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:076",
+          "enonce": "Quelles personnes ont marqué l'histoire de la photographie ? Coche toutes les réponses exactes.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Dijkstra : plus court chemin ; Milgram : petit monde.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Louis Daguerre",
+            "Edsger Dijkstra",
+            "Stanley Milgram",
+            "Nicéphore Niépce"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:077",
+          "enonce": "Quelles affirmations sur le capteur sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Capteur et photosites",
+          "difficulte": 1,
+          "explication": "C'est une puce sensible à la lumière.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il compresse l'image en JPEG",
+            "Il est fait de sels d'argent",
+            "Il remplace la pellicule",
+            "Il est couvert de photosites"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:078",
+          "enonce": "Quelles couleurs trouve-t-on dans un filtre de Bayer ? Coche toutes les réponses exactes.",
+          "notion": "Filtre de Bayer",
+          "difficulte": 1,
+          "explication": "Pas de jaune.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Rouge",
+            "Jaune",
+            "Vert",
+            "Bleu"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:079",
+          "enonce": "Quels codes RVB correspondent à un gris ? Coche toutes les réponses exactes.",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Trois composantes égales.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(50, 50, 50)",
+            "(255, 0, 0)",
+            "(128, 128, 128)",
+            "(0, 0, 255)"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:080",
+          "enonce": "Quelles informations peuvent figurer dans les métadonnées EXIF ? Coche toutes les réponses exactes.",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 1,
+          "explication": "Aussi l'appareil, l'ouverture, le lieu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le nom des amis présents",
+            "La durée d'exposition",
+            "La date de la prise de vue",
+            "Le contenu des messages du téléphone"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:081",
+          "enonce": "Quels algorithmes interviennent avant la prise de vue ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 1,
+          "explication": "Les deux derniers interviennent après.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'enregistrement des métadonnées",
+            "La mise au point automatique",
+            "La compression JPEG",
+            "L'exposition automatique"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:082",
+          "enonce": "Quels sont des formats d'image ? Coche toutes les réponses exactes.",
+          "notion": "Compression",
+          "difficulte": 1,
+          "explication": "Aussi RAW.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "CSV",
+            "NMEA",
+            "PNG",
+            "JPEG"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:083",
+          "enonce": "Quelles méthodes de PIL sont utilisées dans le programme du cours ? Coche toutes les réponses exactes.",
+          "notion": "Traitement par programme",
+          "difficulte": 1,
+          "explication": "Et Image.open, size, save.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "getpixel",
+            "putpixel",
+            "scroll",
+            "split"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:084",
+          "enonce": "Quelles affirmations sur les pixels sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "Ce sont les photosites qui mesurent.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ils composent l'image",
+            "Ce sont des cellules du capteur",
+            "Ce sont de petits carrés de couleur uniforme",
+            "Ils mesurent la lumière"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:085",
+          "enonce": "Quelles affirmations sur la résolution d'impression sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Résolution d'impression",
+          "difficulte": 1,
+          "explication": "1 pouce = 2,54 cm.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle est toujours de 72 ppp",
+            "À 300 ppp, une photo est nette",
+            "Elle s'exprime en mégaoctets",
+            "Elle s'exprime en pixels par pouce"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:086",
+          "enonce": "Quelles affirmations sur le codage RVB sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Trois composantes : rouge, vert, bleu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(255, 255, 255) code le noir",
+            "(0, 0, 0) code le noir",
+            "Il utilise quatre composantes",
+            "Chaque composante va de 0 à 255"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:087",
+          "enonce": "Quelles dates sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Le CCD date de 1969.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "2000 : invention du capteur CCD",
+            "1957 : premier smartphone",
+            "1826 : plus ancienne photographie connue",
+            "1975 : premier appareil photo numérique"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:088",
+          "enonce": "Quelles profondeurs de couleur sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "24 bits pour la couleur RVB.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3 bits pour 16,8 millions de couleurs",
+            "24 bits pour le noir et blanc pur",
+            "1 bit pour le noir et blanc pur",
+            "8 bits pour 256 niveaux de gris"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:089",
+          "enonce": "Une image fait 2 000 × 1 000 pixels en 24 bits. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "2 000 000 × 3 octets.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle pèse 2 Mo non compressée",
+            "Elle pèse 24 Mo non compressée",
+            "Elle contient 2 millions de pixels",
+            "Elle pèse 6 Mo non compressée"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:090",
+          "enonce": "Quelles étapes font partie de la construction de l'image après l'acquisition ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Puis corrections et compression.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La mise au point",
+            "La balance des blancs",
+            "Le dématriçage",
+            "Le choix du sujet"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:091",
+          "enonce": "Quels modes relèvent de la photographie computationnelle ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Le smartphone combine plusieurs images.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le daguerréotype",
+            "La photo argentique",
+            "Le mode nuit",
+            "Le HDR"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:092",
+          "enonce": "Que sait-on des formats JPEG, PNG et RAW ? Coche toutes les réponses exactes.",
+          "notion": "Compression",
+          "difficulte": 2,
+          "explication": "RAW conserve les données brutes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "JPEG compresse avec pertes",
+            "PNG compresse sans pertes",
+            "RAW est le format le plus compressé",
+            "PNG compresse plus fortement que JPEG"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:093",
+          "enonce": "Quels gestes protègent la vie privée quand on partage une photo ? Coche toutes les réponses exactes.",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 2,
+          "explication": "Le lieu peut révéler le domicile.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Effacer les métadonnées avant l'envoi",
+            "Augmenter la définition",
+            "Ajouter un filtre de couleur",
+            "Désactiver la géolocalisation de l'appareil photo"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:094",
+          "enonce": "Quels calculs transforment correctement un pixel (r, v, b) ? Coche toutes les réponses exactes.",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "Le dernier supprime le rouge.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(r, r, r) donne le négatif",
+            "(255 - r, 255 - v, 255 - b) donne le négatif",
+            "(0, v, b) garde seulement le rouge",
+            "(r, 0, 0) garde seulement le rouge"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:095",
+          "enonce": "Quelles situations donnent une image avec moins de pixels que le capteur n'a de photosites ? Coche toutes les réponses exactes.",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "Aussi recadrer l'image.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Prendre la photo en plein soleil",
+            "Activer la géolocalisation",
+            "Choisir un format d'image plus petit dans les réglages",
+            "Regrouper les photosites par quatre"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:096",
+          "enonce": "Quels codes RVB correspondent à une couleur où le rouge domine ? Coche toutes les réponses exactes.",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "Composante R la plus forte.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(0, 0, 255)",
+            "(30, 200, 30)",
+            "(255, 0, 0)",
+            "(200, 30, 30)"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:097",
+          "enonce": "Quelles conséquences du numérique sur la photographie le cours cite-t-il ? Coche toutes les réponses exactes.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "Le droit à l'image s'applique toujours.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La retouche est devenue facile",
+            "Les photos ne peuvent plus être partagées",
+            "Il n'y a plus de droit à l'image",
+            "La photo est devenue gratuite et immédiate"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:098",
+          "enonce": "Une image fait 1 920 × 1 080 pixels. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Pixels et définition",
+          "difficulte": 2,
+          "explication": "1 920 × 1 080 = 2 073 600.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle contient environ 2 millions de pixels",
+            "Elle contient 3 000 pixels",
+            "Sa largeur est de 1 920 pixels",
+            "Sa hauteur est de 1 920 pixels"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:099",
+          "enonce": "Le pixel (100, 150, 200) est transformé. Quels résultats sont corrects ? Coche toutes les réponses exactes.",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "(100 + 150 + 200) // 3 = 150.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Niveaux de gris : (450, 450, 450)",
+            "Niveaux de gris : (150, 150, 150)",
+            "Négatif : (155, 105, 55)",
+            "Négatif : (100, 150, 200)"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:100",
+          "enonce": "Une photo de 12 mégapixels en 24 bits pèse 3 Mo en JPEG. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Profondeur et poids",
+          "difficulte": 3,
+          "explication": "36 / 3 = 12.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La compression est sans pertes",
+            "Son poids non compressé est de 12 Mo",
+            "Son poids non compressé est de 36 Mo",
+            "La compression a divisé le poids par 12"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:101",
+          "enonce": "Sur un morceau de filtre de Bayer de 8 × 8 photosites, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Filtre de Bayer",
+          "difficulte": 3,
+          "explication": "64 photosites : 50 % vert, 25 % rouge, 25 % bleu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "32 photosites sont verts",
+            "32 photosites sont rouges",
+            "16 photosites sont bleus",
+            "Tous les photosites mesurent les trois couleurs"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:102",
+          "enonce": "Une image de 2 400 × 1 800 pixels est imprimée à 300 ppp. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Résolution d'impression",
+          "difficulte": 3,
+          "explication": "2 400 / 300 = 8 ; 1 800 / 300 = 6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle mesure 8 cm de large",
+            "Elle mesure 8 pouces de large",
+            "Elle mesure 6 pouces de haut",
+            "Elle mesure 24 pouces de large"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:103",
+          "enonce": "Une photo de nuit est bruitée et orangée. Quels algorithmes peuvent l'améliorer ? Coche toutes les réponses exactes.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 3,
+          "explication": "Le bruit et la dominante orange se corrigent.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La géolocalisation",
+            "Le filtre de Bayer",
+            "La réduction du bruit",
+            "La balance des blancs"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:104",
+          "enonce": "On veut éclaircir une image en ajoutant 50 à chaque composante. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "Une composante ne dépasse pas 255.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le pixel (100, 100, 100) devient (150, 150, 150)",
+            "Il faut limiter les composantes à 255",
+            "Le noir reste noir",
+            "Le pixel (230, 10, 10) devient (280, 60, 60)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:105",
+          "enonce": "Quelles affirmations comparent correctement RAW et JPEG ? Coche toutes les réponses exactes.",
+          "notion": "Compression",
+          "difficulte": 3,
+          "explication": "Le RAW garde tout ; le JPEG compresse avec pertes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le JPEG conserve les données brutes du capteur",
+            "Le RAW est enregistré avant le dématriçage",
+            "Le RAW perd plus d'informations que le JPEG",
+            "Le JPEG est plus léger que le RAW"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch8:banque:106",
+          "enonce": "La photographie argentique utilise des sels d'argent sensibles à la lumière.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Il faut ensuite développer le film.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:107",
+          "enonce": "Le premier appareil photo numérique date de 2000.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "1975, chez Kodak ; 2000 : premiers téléphones avec appareil photo.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:108",
+          "enonce": "Un photosite est un élément du capteur.",
+          "notion": "Capteur et photosites",
+          "difficulte": 1,
+          "explication": "Le pixel est un élément de l'image.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:109",
+          "enonce": "Le filtre de Bayer contient autant de rouge que de vert.",
+          "notion": "Filtre de Bayer",
+          "difficulte": 1,
+          "explication": "Deux fois plus de vert.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:110",
+          "enonce": "Une image de 4 000 × 3 000 pixels contient 12 mégapixels.",
+          "notion": "Pixels et définition",
+          "difficulte": 1,
+          "explication": "12 000 000 pixels.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:111",
+          "enonce": "Le code RVB (0, 0, 0) correspond au blanc.",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Au noir.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:112",
+          "enonce": "Un écran forme les couleurs en mélangeant du rouge, du vert et du bleu.",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "Synthèse additive.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:113",
+          "enonce": "En RVB 24 bits, chaque pixel occupe 3 octets.",
+          "notion": "Profondeur et poids",
+          "difficulte": 1,
+          "explication": "Un octet par composante.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:114",
+          "enonce": "Les métadonnées EXIF peuvent contenir les coordonnées GPS du lieu de la prise de vue.",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 1,
+          "explication": "Si la géolocalisation est activée.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:115",
+          "enonce": "La balance des blancs sert à rendre l'image plus nette.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 1,
+          "explication": "Elle corrige les couleurs faussées par l'éclairage.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:116",
+          "enonce": "Le format PNG compresse les images avec pertes.",
+          "notion": "Compression",
+          "difficulte": 1,
+          "explication": "PNG est sans pertes ; JPEG avec pertes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:117",
+          "enonce": "putpixel permet d'écrire une nouvelle couleur dans un pixel.",
+          "notion": "Traitement par programme",
+          "difficulte": 1,
+          "explication": "getpixel lit, putpixel écrit.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:118",
+          "enonce": "Une image a toujours exactement autant de pixels que le capteur a de photosites.",
+          "notion": "Capteur et photosites",
+          "difficulte": 2,
+          "explication": "Les réglages peuvent changer la définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:119",
+          "enonce": "Une image de 3 000 pixels de large imprimée à 300 ppp mesure 10 pouces de large.",
+          "notion": "Résolution d'impression",
+          "difficulte": 2,
+          "explication": "3 000 / 300 = 10.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:120",
+          "enonce": "Une photo imprimée à 72 ppp est plus nette qu'à 300 ppp.",
+          "notion": "Résolution d'impression",
+          "difficulte": 2,
+          "explication": "Moins de pixels par pouce : moins nette.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:121",
+          "enonce": "Le code RVB (255, 255, 0) correspond au jaune.",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "Rouge + vert.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:122",
+          "enonce": "Une image en 256 niveaux de gris utilise 24 bits par pixel.",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "8 bits suffisent.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:123",
+          "enonce": "Une image de 4 000 × 3 000 pixels en 24 bits pèse 36 Mo non compressée.",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "12 000 000 × 3 octets.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:124",
+          "enonce": "Tous les moyens d'envoyer une photo effacent ses métadonnées.",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 2,
+          "explication": "Certains réseaux le font, pas toutes les messageries.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:125",
+          "enonce": "Le dématriçage calcule les composantes manquantes de chaque pixel à partir des voisins.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Chaque photosite ne connaît qu'une couleur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:126",
+          "enonce": "Un smartphone peut combiner plusieurs images prises en une fraction de seconde.",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "HDR, mode nuit.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:127",
+          "enonce": "Une image compressée en JPEG peut être retrouvée exactement telle qu'avant la compression.",
+          "notion": "Compression",
+          "difficulte": 2,
+          "explication": "Des détails ont été supprimés.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:128",
+          "enonce": "Le négatif d'une composante c se calcule par 255 - c.",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "Le noir devient blanc.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:129",
+          "enonce": "Le capteur CCD a valu le prix Nobel de physique à ses inventeurs.",
+          "notion": "Histoire de la photographie",
+          "difficulte": 2,
+          "explication": "En 2009.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:130",
+          "enonce": "Avec la moyenne entière des trois composantes, le pixel (60, 90, 120) donne le gris (90, 90, 90).",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "(60 + 90 + 120) // 3 = 90.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:131",
+          "enonce": "Le négatif de (255, 0, 128) est (0, 255, 128).",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "255 - 128 = 127 : le négatif est (0, 255, 127).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:132",
+          "enonce": "Une image de 1 000 × 1 000 pixels en noir et blanc pur pèse 1 Mo non compressée.",
+          "notion": "Profondeur et poids",
+          "difficulte": 3,
+          "explication": "1 bit par pixel : 1 000 000 bits = 125 000 octets.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:133",
+          "enonce": "Sur 100 photosites d'un filtre de Bayer, environ 50 sont verts.",
+          "notion": "Filtre de Bayer",
+          "difficulte": 3,
+          "explication": "50 % de vert.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:134",
+          "enonce": "Une image de 600 pixels de large imprimée à 300 ppp mesure environ 5,1 cm.",
+          "notion": "Résolution d'impression",
+          "difficulte": 3,
+          "explication": "600 / 300 = 2 pouces ; 2 × 2,54 = 5,08 cm.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch8:banque:135",
+          "enonce": "Regrouper les photosites par quatre augmente la définition de l'image.",
+          "notion": "Capteur et photosites",
+          "difficulte": 3,
+          "explication": "Il la divise par quatre, mais améliore les photos en faible lumière.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch8:banque:136",
+          "enonce": "Quelle est la plus grande valeur d'une composante RVB codée sur un octet ?",
+          "notion": "Codage RVB",
+          "difficulte": 1,
+          "explication": "De 0 à 255.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "255"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:137",
+          "enonce": "Quel sigle désigne les métadonnées enregistrées dans une photo ?",
+          "notion": "Métadonnées EXIF",
+          "difficulte": 1,
+          "explication": "Exchangeable Image File Format.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "EXIF"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:138",
+          "enonce": "Quel est le nom de famille de l'auteur de la plus ancienne photographie connue (1826) ?",
+          "notion": "Histoire de la photographie",
+          "difficulte": 1,
+          "explication": "Nicéphore Niépce.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Niépce",
+            "Niepce",
+            "Nicéphore Niépce"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:139",
+          "enonce": "Quel est le nom du filtre en mosaïque rouge, vert et bleu placé devant le capteur ?",
+          "notion": "Filtre de Bayer",
+          "difficulte": 1,
+          "explication": "Filtre de Bayer.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Bayer",
+            "filtre de Bayer",
+            "le filtre de Bayer"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:140",
+          "enonce": "Combien de bits utilise un pixel en couleur RVB, avec un octet par composante ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 1,
+          "explication": "3 × 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "24"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:141",
+          "enonce": "Quel format d'image courant compresse avec pertes ? (sigle)",
+          "notion": "Compression",
+          "difficulte": 1,
+          "explication": "PNG est sans pertes.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "JPEG",
+            "JPG"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:142",
+          "enonce": "Combien de mégapixels contient une image de 3 000 × 2 000 pixels ?",
+          "notion": "Pixels et définition",
+          "difficulte": 2,
+          "explication": "6 000 000 pixels.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:143",
+          "enonce": "Quelle est la composante verte du code RVB du jaune ?",
+          "notion": "Codage RVB",
+          "difficulte": 2,
+          "explication": "Jaune : (255, 255, 0).",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "255"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:144",
+          "enonce": "Combien d'octets pèse, non compressé, un pixel RVB 24 bits ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 2,
+          "explication": "24 / 8 = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3",
+            "trois"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:145",
+          "enonce": "Combien de pouces de large mesure une image de 1 500 pixels imprimée à 300 ppp ?",
+          "notion": "Résolution d'impression",
+          "difficulte": 2,
+          "explication": "1 500 / 300 = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:146",
+          "enonce": "Comment s'appelle l'étape qui calcule les composantes manquantes de chaque pixel à partir des photosites voisins ?",
+          "notion": "Algorithmes de prise de vue",
+          "difficulte": 2,
+          "explication": "Dématriçage.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "dématriçage",
+            "le dématriçage",
+            "dematricage"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:147",
+          "enonce": "Quel est le négatif de la composante 70 ?",
+          "notion": "Traitement par programme",
+          "difficulte": 2,
+          "explication": "255 - 70 = 185.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "185"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:148",
+          "enonce": "Quel est en Mo le poids non compressé d'une image de 2 000 × 1 500 pixels en RVB 24 bits ?",
+          "notion": "Profondeur et poids",
+          "difficulte": 3,
+          "explication": "3 000 000 × 3 = 9 000 000 octets.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "9"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:149",
+          "enonce": "Quelle valeur g donne la méthode du cours pour le pixel (10, 20, 33) ?",
+          "notion": "Traitement par programme",
+          "difficulte": 3,
+          "explication": "(10 + 20 + 33) // 3 = 63 // 3 = 21.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "21"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch8:banque:150",
+          "enonce": "Combien de couleurs différentes peut-on coder en RVB avec 256 valeurs par composante ? Écris le nombre sans espace.",
+          "notion": "Codage RVB",
+          "difficulte": 3,
+          "explication": "256 × 256 × 256.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "16777216"
           ],
           "marge_relative": false
         }
