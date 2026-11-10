@@ -18,6 +18,6 @@ Contrôle automatique (`verifierBanque`, préfixe `emc`, 150 questions) : confor
 - **Grappes** : règlement européen sur les services numériques (063, 064, 066, 099, 101, 131, 149) ; Pharos (061, 062, 098, 130) ; Code européen de 2018 (067, 100, 150).
 - **Question 064** (DSA pleinement applicable depuis février 2024) : les distracteurs sont des dates sans rapport (1881, 2009, 2018) ; question facile à deviner, mais exacte.
 - **Question 147** : réponse « 10 » ; la réponse courte accepte aussi « article 10 ».
-- **Question 040 / 136** : la réponse courte sur la chambre d'écho accepte aussi « bulle de filtres », synonyme donné par le cours.
+- **Question 143** : la réponse courte sur la chambre d'écho accepte aussi « bulle de filtres », synonyme donné par le cours.
 - **Réponses courtes en anglais** (fact-checking, deepfake, DSA) : le cours donne ces termes entre parenthèses ; à garder ou non selon la politique de l'enseignant sur les anglicismes.
 - **Règlement européen sur l'IA (048)** : l'obligation de signaler les hypertrucages est présentée au présent ; son application est progressive. À vérifier si l'enseignant veut une date précise.
