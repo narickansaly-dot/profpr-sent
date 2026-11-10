@@ -12383,6 +12383,2483 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch6",
+      "numero": 6,
+      "titre": "Localisation, cartographie et mobilité",
+      "titre_court": "Localisation",
+      "duree": "4 semaines",
+      "resume": "Latitude et longitude ; géolocalisation par satellites (GPS, Galileo) ; trame NMEA 0183 ; cartes numériques, Géoportail et OpenStreetMap ; calcul d'itinéraire sur un graphe ; mobilité et confidentialité de la position.",
+      "chapeau": "Ton téléphone sait où tu te trouves à quelques mètres près, et te guide jusqu'à une adresse inconnue en tenant compte des bouchons. Derrière ces services, il y a des satellites, des cartes faites de couches de données, et des algorithmes qui cherchent le plus court chemin dans un graphe.",
+      "objectifs": [
+        "repérer un lieu par sa latitude et sa longitude ;",
+        "décrire le principe de fonctionnement de la géolocalisation par satellites ;",
+        "décoder une trame NMEA pour trouver des coordonnées géographiques ;",
+        "identifier les couches d'information d'une carte numérique et contribuer à OpenStreetMap ;",
+        "représenter un calcul d'itinéraire comme un problème sur un graphe ;",
+        "régler les paramètres de confidentialité de sa position."
+      ],
+      "sections": [
+        {
+          "id": "coordonnees",
+          "titre": "Se repérer sur la Terre",
+          "html": "<p>Pour désigner un point de la surface de la Terre sans ambiguïté, on utilise deux nombres, ses <strong>coordonnées géographiques</strong>.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>La <strong>latitude</strong> est l'angle qui mesure la position d'un point au nord ou au sud de l'<strong>équateur</strong>, de 0° à 90° N ou S. La <strong>longitude</strong> est l'angle qui mesure sa position à l'est ou à l'ouest du <strong>méridien de Greenwich</strong>, de 0° à 180° E ou O.</p></div>\n<p>Les points de même latitude forment un <strong>parallèle</strong> ; les points de même longitude forment un <strong>méridien</strong>. Paris se trouve à environ 48,86° de latitude nord et 2,35° de longitude est.</p>\n<h3>Deux écritures des angles</h3>\n<p>Un angle peut s'écrire en <strong>degrés décimaux</strong> (48,8567°) ou en <strong>degrés et minutes</strong> (48° 51,4'). Un degré vaut 60 minutes. Pour convertir des degrés et minutes en degrés décimaux, on divise les minutes par 60 et on les ajoute aux degrés :</p>\n<p>48° 51,4' = 48 + 51,4 / 60 = 48 + 0,8567 ≈ 48,8567°.</p>\n<p>Les coordonnées au sud de l'équateur ou à l'ouest de Greenwich sont souvent écrites avec un signe moins : -33,87° de latitude désigne un point au sud.</p>\n<h3>Repères historiques</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>1959</td><td>Edsger Dijkstra publie un algorithme qui calcule le plus court chemin dans un graphe.</td></tr>\n<tr><td>1973</td><td>Lancement du programme GPS par l'armée américaine ; premier satellite en 1978.</td></tr>\n<tr><td>1995</td><td>Le GPS est pleinement opérationnel.</td></tr>\n<tr><td>2000</td><td>Fin de la dégradation volontaire du signal destiné aux civils : la précision passe d'une centaine de mètres à une dizaine de mètres.</td></tr>\n<tr><td>2004</td><td>Création d'OpenStreetMap, carte collaborative libre.</td></tr>\n<tr><td>2005</td><td>Lancement de Google Maps.</td></tr>\n<tr><td>2006</td><td>Lancement de Géoportail par l'IGN.</td></tr>\n<tr><td>2016</td><td>Premiers services du système européen Galileo.</td></tr>\n</tbody></table></div>"
+        },
+        {
+          "id": "satellites",
+          "titre": "La géolocalisation par satellites",
+          "html": "<p>Un récepteur GPS (dans un téléphone, une voiture, une montre) calcule sa position grâce aux signaux de satellites. On parle de <strong>géolocalisation par satellites</strong>.</p>\n<h3>Plusieurs systèmes</h3>\n<ul>\n<li>le <strong>GPS</strong> (États-Unis) : une trentaine de satellites, à environ 20 200 km d'altitude ;</li>\n<li><strong>Galileo</strong> (Union européenne) : une trentaine de satellites, à environ 23 200 km d'altitude ; c'est un système civil, qui donne à l'Europe son indépendance ;</li>\n<li>GLONASS (Russie) et BeiDou (Chine).</li>\n</ul>\n<p>Les récepteurs actuels utilisent souvent plusieurs systèmes à la fois, ce qui améliore la précision.</p>\n<h3>Le principe : mesurer des distances</h3>\n<p>Chaque satellite porte une <strong>horloge atomique</strong> très précise et émet en permanence un signal qui indique sa position et l'heure exacte d'émission. Le récepteur, lui, ne fait qu'écouter : il n'envoie rien.</p>\n<ol>\n<li>Le récepteur compare l'heure d'émission du signal et son heure de réception : il en déduit la <strong>durée du trajet</strong>, de l'ordre de 0,07 seconde.</li>\n<li>Le signal voyage à la vitesse de la lumière, environ 300 000 km/s. La distance au satellite vaut donc : <strong>distance = vitesse × durée</strong>. Par exemple, 300 000 × 0,07 = 21 000 km.</li>\n<li>Connaissant sa distance à un satellite, le récepteur sait qu'il se trouve sur une sphère centrée sur ce satellite. Avec un deuxième satellite, il est sur l'intersection de deux sphères (un cercle) ; avec un troisième, il ne reste que deux points, dont un seul est à la surface de la Terre. Ce calcul s'appelle la <strong>trilatération</strong>.</li>\n<li>L'horloge du récepteur est beaucoup moins précise que celles des satellites. Un <strong>quatrième satellite</strong> permet de corriger ce décalage d'horloge. Il faut donc capter au moins <strong>4 satellites</strong>.</li>\n</ol>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 560 200\" role=\"img\" aria-label=\"Trois cercles centrés sur trois satellites se coupent en un seul point, la position du récepteur\"><circle class=\"lc\" cx=\"190\" cy=\"110\" r=\"84.7\" fill=\"none\"/><circle class=\"la\" cx=\"350\" cy=\"100\" r=\"92.6\" fill=\"none\"/><circle class=\"ld\" cx=\"270\" cy=\"40\" r=\"103.0\" fill=\"none\"/><circle class=\"fs\" cx=\"190\" cy=\"110\" r=\"5\"/><text class=\"tc\" x=\"140\" y=\"115\">S1</text><circle class=\"fsa\" cx=\"350\" cy=\"100\" r=\"5\"/><text class=\"ta\" x=\"362\" y=\"105\">S2</text><circle class=\"fg\" cx=\"270\" cy=\"40\" r=\"5\"/><text class=\"tm\" x=\"282\" y=\"35\">S3</text><circle class=\"fp\" cx=\"268\" cy=\"143\" r=\"6\"/><text class=\"tb\" x=\"282\" y=\"165\">Récepteur</text></svg></div><figcaption><b>Figure 1</b>Trilatération, vue en deux dimensions : la position du récepteur est le point commun aux cercles centrés sur chaque satellite.</figcaption></figure>\n<h3>La précision</h3>\n<p>La lumière parcourt 300 m en une microseconde (un millionième de seconde) : une petite erreur de temps donne une grande erreur de position. C'est pourquoi les satellites ont des horloges atomiques. Un téléphone est précis à quelques mètres en terrain dégagé. La précision baisse entre de hauts immeubles (les signaux rebondissent), sous un tunnel ou à l'intérieur d'un bâtiment, où les signaux passent mal.</p>\n<p>Un téléphone ne se localise pas qu'avec les satellites : il utilise aussi les antennes relais du réseau mobile et les bornes Wi-Fi voisines, dont les positions sont connues. Cela permet une localisation plus rapide, et parfois à l'intérieur des bâtiments.</p>"
+        },
+        {
+          "id": "nmea",
+          "titre": "La trame NMEA 0183",
+          "html": "<p>Le récepteur GPS transmet ses résultats à l'appareil (téléphone, ordinateur de bord) sous forme de lignes de texte normalisées par la norme <strong>NMEA 0183</strong>, utilisée à l'origine dans la marine.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>trame NMEA</strong> est une ligne de texte qui commence par le signe $, suivi d'un code qui indique le type de trame, puis de champs séparés par des virgules. Elle se termine par * et une somme de contrôle, qui permet de détecter une erreur de transmission.</p></div>\n<p>La trame <strong>GGA</strong> donne la position :</p>\n<div class=\"def code\"><b class=\"t\">Trame NMEA</b><p>$GPGGA,091530,4851.400,N,00221.050,E,1,07,1.2,35.0,M,47.0,M,,*75</p></div><div class=\"tbl\"><table>\n<thead><tr><th>Champ</th><th>Valeur</th><th>Sens</th></tr></thead>\n<tbody>\n<tr><td>Type</td><td>$GPGGA</td><td>GP : système GPS ; GGA : trame de position</td></tr>\n<tr><td>Heure</td><td>091530</td><td>9 h 15 min 30 s, en temps universel (UTC)</td></tr>\n<tr><td>Latitude</td><td>4851.400</td><td>48° 51,400' (2 chiffres pour les degrés, puis les minutes)</td></tr>\n<tr><td>Hémisphère</td><td>N</td><td>nord (S : sud)</td></tr>\n<tr><td>Longitude</td><td>00221.050</td><td>002° 21,050' (3 chiffres pour les degrés, puis les minutes)</td></tr>\n<tr><td>Direction</td><td>E</td><td>est (W : ouest)</td></tr>\n<tr><td>Qualité</td><td>1</td><td>position calculée (0 : pas de position)</td></tr>\n<tr><td>Satellites</td><td>07</td><td>nombre de satellites utilisés</td></tr>\n<tr><td>Précision</td><td>1.2</td><td>indicateur de précision horizontale (plus il est petit, meilleure est la précision)</td></tr>\n<tr><td>Altitude</td><td>35.0,M</td><td>altitude de 35 mètres</td></tr>\n</tbody></table></div>\n<p>Conversion en degrés décimaux : latitude 48 + 51,400 / 60 ≈ 48,8567° N ; longitude 2 + 21,050 / 60 ≈ 2,3508° E. Ce point est à Paris.</p>\n<h3>En Python</h3>\n<div class=\"def code\"><b class=\"t\">Python</b><p>trame = \"$GPGGA,091530,4851.400,N,00221.050,E,1,07,1.2,35.0,M,47.0,M,,*75\"<br>champs = trame.split(\",\")<br><br>def en_degres(texte, nb_chiffres_degres):<br>    degres = int(texte[0:nb_chiffres_degres])<br>    minutes = float(texte[nb_chiffres_degres:])<br>    return degres + minutes / 60<br><br>latitude = en_degres(champs[2], 2)<br>longitude = en_degres(champs[4], 3)<br>print(latitude, longitude)</p></div><p>trame.split(\",\") découpe la trame à chaque virgule et renvoie la liste des champs : champs[0] vaut \"$GPGGA\", champs[2] vaut \"4851.400\". L'écriture texte[0:2] donne les 2 premiers caractères d'une chaîne, et texte[2:] la suite. Le programme affiche environ 48.8567 et 2.3508.</p>"
+        },
+        {
+          "id": "cartes",
+          "titre": "Les cartes numériques",
+          "html": "<p>Une carte numérique est formée de <strong>couches</strong> superposées, que l'on peut afficher ou masquer : fond de carte, photographies aériennes, routes, limites administratives, relief, cadastre, zones inondables… Chaque couche est un ensemble de données géographiques.</p>\n<h3>Géoportail</h3>\n<p><strong>Géoportail</strong> est le portail cartographique public français, géré par l'IGN (Institut national de l'information géographique et forestière). Il permet de superposer des centaines de couches : cartes anciennes, photographies aériennes de différentes années, parcelles du cadastre, pistes cyclables, risques naturels… En comparant deux photographies aériennes d'un même lieu à des dates différentes, on voit par exemple l'extension d'une ville. On peut aussi mesurer des distances et des surfaces.</p>\n<h3>OpenStreetMap</h3>\n<p><strong>OpenStreetMap</strong> (OSM) est une carte du monde <strong>collaborative et libre</strong>, construite par des millions de contributeurs bénévoles, sur le modèle de Wikipédia. Chacun peut, après avoir créé un compte, ajouter ou corriger des éléments : un banc, un passage piéton, un commerce, un chemin. Les données sont sous licence libre : elles peuvent être réutilisées gratuitement, à condition de citer la source. De nombreuses applications de randonnée, de vélo ou de transport s'en servent.</p>\n<p>Les cartes collaboratives sont souvent très détaillées là où les contributeurs sont nombreux, et parfois incomplètes ailleurs. Lors de catastrophes naturelles, des volontaires cartographient en urgence les zones touchées pour aider les secours.</p>"
+        },
+        {
+          "id": "itineraires",
+          "titre": "Calculer un itinéraire",
+          "html": "<p>Pour calculer un itinéraire, un logiciel représente le réseau routier par un <strong>graphe</strong> : les <strong>sommets</strong> sont des carrefours ou des lieux, les <strong>arêtes</strong> sont les tronçons de route qui les relient. Chaque arête porte un <strong>poids</strong> : la distance en kilomètres, ou la durée du trajet, ou le prix. On parle de <strong>graphe pondéré</strong>.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 560 210\" role=\"img\" aria-label=\"Graphe pondéré de cinq lieux A, B, C, D, E avec des distances en kilomètres\"><line class=\"lm\" x1=\"60\" y1=\"105\" x2=\"200\" y2=\"40\"/><line class=\"lm\" x1=\"60\" y1=\"105\" x2=\"200\" y2=\"170\"/><line class=\"lm\" x1=\"200\" y1=\"40\" x2=\"200\" y2=\"170\"/><line class=\"lm\" x1=\"200\" y1=\"40\" x2=\"360\" y2=\"40\"/><line class=\"lm\" x1=\"200\" y1=\"170\" x2=\"360\" y2=\"40\"/><line class=\"lm\" x1=\"360\" y1=\"40\" x2=\"500\" y2=\"105\"/><line class=\"lm\" x1=\"200\" y1=\"170\" x2=\"500\" y2=\"105\"/><text class=\"tm\" x=\"118\" y=\"62\">4</text><text class=\"tm\" x=\"118\" y=\"155\">2</text><text class=\"tm\" x=\"208\" y=\"110\">1</text><text class=\"tm\" x=\"278\" y=\"32\">5</text><text class=\"tm\" x=\"268\" y=\"110\">8</text><text class=\"tm\" x=\"436\" y=\"62\">3</text><text class=\"tm\" x=\"350\" y=\"160\">10</text><circle class=\"fc\" cx=\"60\" cy=\"105\" r=\"18\"/><text class=\"tb\" x=\"60\" y=\"110\" text-anchor=\"middle\">A</text><circle class=\"fc\" cx=\"200\" cy=\"40\" r=\"18\"/><text class=\"tb\" x=\"200\" y=\"45\" text-anchor=\"middle\">B</text><circle class=\"fc\" cx=\"200\" cy=\"170\" r=\"18\"/><text class=\"tb\" x=\"200\" y=\"175\" text-anchor=\"middle\">C</text><circle class=\"fc\" cx=\"360\" cy=\"40\" r=\"18\"/><text class=\"tb\" x=\"360\" y=\"45\" text-anchor=\"middle\">D</text><circle class=\"fa\" cx=\"500\" cy=\"105\" r=\"18\"/><text class=\"tb\" x=\"500\" y=\"110\" text-anchor=\"middle\">E</text></svg></div><figcaption><b>Figure 2</b>Un graphe pondéré : les poids sont des distances en kilomètres. Arêtes : A-B 4, A-C 2, B-C 1, B-D 5, C-D 8, D-E 3, C-E 10.</figcaption></figure>\n<p>Calculer un itinéraire, c'est chercher dans ce graphe le <strong>chemin de poids total minimal</strong> entre deux sommets : c'est le problème du <strong>plus court chemin</strong>. Le poids d'un chemin est la somme des poids de ses arêtes.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Chemin de A à E</th><th>Calcul</th><th>Longueur</th></tr></thead>\n<tbody>\n<tr><td>A, C, E</td><td>2 + 10</td><td>12 km</td></tr>\n<tr><td>A, B, D, E</td><td>4 + 5 + 3</td><td>12 km</td></tr>\n<tr><td>A, C, D, E</td><td>2 + 8 + 3</td><td>13 km</td></tr>\n<tr><td>A, C, B, D, E</td><td>2 + 1 + 5 + 3</td><td>11 km</td></tr>\n</tbody></table></div>\n<p>Le plus court chemin est A, C, B, D, E, avec 11 km, alors qu'il passe par plus de sommets que les autres. De même, pour aller de A à B, mieux vaut passer par C (2 + 1 = 3 km) que prendre l'arête directe (4 km).</p>\n<h3>L'algorithme de Dijkstra</h3>\n<p>Sur un vrai réseau routier, avec des millions de sommets, on ne peut pas essayer tous les chemins. L'<strong>algorithme de Dijkstra</strong> (1959) trouve le plus court chemin efficacement. Son principe : partir du point de départ, puis, de proche en proche, fixer à chaque étape la distance minimale du sommet non encore traité le plus proche du départ, en mettant à jour les distances de ses voisins. Les logiciels de navigation utilisent des améliorations de cette idée.</p>\n<p>Le « meilleur » itinéraire dépend du poids choisi : le plus court en distance n'est pas toujours le plus rapide (autoroute plus longue mais plus rapide), ni le moins cher (péages). Les applications tiennent aussi compte du trafic en temps réel, qu'elles estiment grâce aux positions transmises par les téléphones de leurs utilisateurs.</p>"
+        },
+        {
+          "id": "mobilite",
+          "titre": "Mobilité et confidentialité",
+          "html": "<p>La géolocalisation a transformé les pratiques : navigation en voiture, à vélo ou à pied, horaires des transports en temps réel, vélos et trottinettes en libre-service, livraison suivie, covoiturage, recherche d'un téléphone perdu, appel d'urgence localisé, suivi d'une activité sportive.</p>\n<h3>Des traces de déplacement</h3>\n<p>Mais la position est une donnée personnelle très révélatrice : l'historique de tes déplacements indique où tu habites (le lieu où tu passes la nuit), où tu étudies, ce que tu fais le week-end, qui tu fréquentes. De nombreuses applications demandent l'accès à la localisation sans en avoir besoin, et certaines revendent ces données à des fins publicitaires.</p>\n<h3>Régler la confidentialité de sa position</h3>\n<ul>\n<li>dans les réglages du téléphone, choisir pour chaque application si elle a accès à la position : <strong>toujours</strong>, <strong>seulement pendant l'utilisation</strong>, ou <strong>jamais</strong> ;</li>\n<li>donner une position <strong>approximative</strong> plutôt que précise quand c'est suffisant (une application météo n'a pas besoin de ta rue) ;</li>\n<li>consulter et effacer l'<strong>historique des positions</strong> enregistré par le compte du téléphone ;</li>\n<li>désactiver la géolocalisation des photos (métadonnées EXIF) ;</li>\n<li>vérifier avec qui on partage sa position en temps réel, et pour combien de temps.</li>\n</ul>\n<p>Désactiver la localisation dans les réglages empêche les applications d'obtenir la position par satellites et par Wi-Fi ; le réseau mobile, lui, connaît toujours l'antenne à laquelle le téléphone est connecté, mais cette information est protégée par la loi.</p>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Un lieu est repéré par sa <strong>latitude</strong> (nord ou sud de l'équateur) et sa <strong>longitude</strong> (est ou ouest du méridien de Greenwich). 1° = 60' : 48° 51,4' ≈ 48,8567°.</li>\n<li>Les systèmes <strong>GPS</strong> (États-Unis) et <strong>Galileo</strong> (Europe) utilisent des satellites munis d'horloges atomiques. Le récepteur mesure la durée du trajet des signaux et en déduit ses distances (distance = vitesse × durée, vitesse ≈ 300 000 km/s) : c'est la <strong>trilatération</strong>. Il faut au moins <strong>4 satellites</strong>.</li>\n<li>Une trame <strong>NMEA 0183</strong> GGA contient l'heure, la latitude, la longitude, le nombre de satellites et l'altitude, séparés par des virgules.</li>\n<li>Une carte numérique superpose des <strong>couches</strong> (Géoportail) ; <strong>OpenStreetMap</strong> est une carte collaborative et libre.</li>\n<li>Un itinéraire se calcule sur un <strong>graphe pondéré</strong> : on cherche le chemin de poids total minimal (algorithme de <strong>Dijkstra</strong>).</li>\n<li>La position est une donnée personnelle : on règle l'accès de chaque application (toujours, pendant l'utilisation, jamais).</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch6:banque:001",
+          "enonce": "Quel angle mesure la position d'un point au nord ou au sud de l'équateur ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "De 0° à 90° nord ou sud.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le méridien",
+            "La longitude",
+            "La latitude",
+            "L'altitude"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:002",
+          "enonce": "Par rapport à quelle ligne mesure-t-on la longitude ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "De 0° à 180° est ou ouest.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le méridien de Greenwich",
+            "Le cercle polaire arctique",
+            "Le tropique du Cancer",
+            "L'équateur"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:003",
+          "enonce": "Combien de minutes compte un degré d'angle ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "1° = 60'.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "360",
+            "100",
+            "24",
+            "60"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:004",
+          "enonce": "Comment appelle-t-on l'ensemble des points de même latitude ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "Les points de même longitude forment un méridien.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un fuseau",
+            "Un parallèle",
+            "Un équateur",
+            "Un méridien"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:005",
+          "enonce": "Quel pays a lancé le programme GPS en 1973 ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Il a été lancé par l'armée américaine.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La Chine",
+            "Les États-Unis",
+            "La France",
+            "La Russie"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:006",
+          "enonce": "Quel système de géolocalisation par satellites a été développé par l'Union européenne ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Premiers services en 2016.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "GPS",
+            "GLONASS",
+            "Galileo",
+            "BeiDou"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:007",
+          "enonce": "Qui a publié en 1959 un algorithme de calcul du plus court chemin ?",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "L'algorithme de Dijkstra.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Edsger Dijkstra",
+            "Herman Hollerith",
+            "Stanley Milgram",
+            "Tim Berners-Lee"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:008",
+          "enonce": "Que porte chaque satellite GPS pour mesurer le temps très précisément ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Une petite erreur de temps donne une grande erreur de position.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un sablier électronique",
+            "Un chronomètre mécanique",
+            "Une montre connectée",
+            "Une horloge atomique"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:009",
+          "enonce": "Que fait un récepteur GPS de téléphone vis-à-vis des satellites ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Le récepteur est passif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il écoute leurs signaux sans rien leur envoyer",
+            "Il leur demande l'autorisation de se localiser",
+            "Il leur transmet la liste des applications",
+            "Il leur envoie sa position toutes les secondes"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:010",
+          "enonce": "À quelle altitude environ se trouvent les satellites GPS ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Environ 20 200 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "200 km",
+            "20 200 km",
+            "2 000 000 km",
+            "36 km"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:011",
+          "enonce": "À quelle vitesse se propage le signal d'un satellite ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "C'est la vitesse de la lumière.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ 3 000 km/s",
+            "Environ 300 km/h",
+            "Environ 300 000 km/s",
+            "Environ 340 m/s"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:012",
+          "enonce": "Quelle formule le récepteur utilise-t-il pour calculer sa distance à un satellite ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Vitesse de la lumière × durée du trajet.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "distance = vitesse + durée",
+            "distance = vitesse ÷ durée",
+            "distance = durée ÷ vitesse",
+            "distance = vitesse × durée"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:013",
+          "enonce": "Combien de satellites un récepteur doit-il capter au minimum pour calculer sa position ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Trois pour la position, un pour corriger l'horloge du récepteur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "2",
+            "4",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:014",
+          "enonce": "Comment s'appelle le calcul de position à partir de distances à plusieurs points connus ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Le récepteur est à l'intersection de sphères.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La synchronisation",
+            "La trilatération",
+            "La triangulation des angles",
+            "L'indexation"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:015",
+          "enonce": "Par quel caractère commence une trame NMEA ?",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Elle se termine par * et une somme de contrôle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "#",
+            "*",
+            "@",
+            "$"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:016",
+          "enonce": "Quel caractère sépare les champs d'une trame NMEA ?",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Les champs sont séparés par des virgules.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La virgule",
+            "Le point-virgule",
+            "La barre oblique",
+            "L'espace"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:017",
+          "enonce": "Quel type de trame NMEA donne la position ?",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "La trame GGA.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "GGA",
+            "GPS",
+            "CSV",
+            "DNS"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:018",
+          "enonce": "À quoi sert la somme de contrôle placée après le signe * d'une trame NMEA ?",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Elle permet de vérifier la trame.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À donner l'altitude du récepteur",
+            "À chiffrer la position transmise",
+            "À indiquer le nombre de satellites utilisés pour le calcul",
+            "À détecter une erreur de transmission"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:019",
+          "enonce": "De quoi est formée une carte numérique comme Géoportail ?",
+          "notion": "Cartes numériques",
+          "difficulte": 1,
+          "explication": "Fond de carte, photographies aériennes, routes, cadastre…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "D'une liste de coordonnées écrites en trames NMEA",
+            "De pages HTML reliées entre elles par des liens",
+            "De couches superposées que l'on peut afficher ou masquer",
+            "D'une seule image fixe qu'on ne peut pas modifier"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:020",
+          "enonce": "Quel organisme public gère Géoportail ?",
+          "notion": "Cartes numériques",
+          "difficulte": 1,
+          "explication": "Institut national de l'information géographique et forestière.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La CNIL",
+            "L'IGN",
+            "Le W3C",
+            "Le CERN"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:021",
+          "enonce": "Qu'est-ce qu'OpenStreetMap ?",
+          "notion": "OpenStreetMap",
+          "difficulte": 1,
+          "explication": "Construite par des contributeurs bénévoles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une carte du monde collaborative et libre",
+            "Le site officiel de cartes de l'État",
+            "Un système de satellites européen",
+            "Une application de covoiturage payante, réservée aux abonnés"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:022",
+          "enonce": "Qui construit OpenStreetMap ?",
+          "notion": "OpenStreetMap",
+          "difficulte": 1,
+          "explication": "Sur le modèle de Wikipédia.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Uniquement les agents de l'IGN",
+            "Les satellites, automatiquement et sans intervention humaine",
+            "Des millions de contributeurs bénévoles",
+            "Une seule entreprise américaine"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:023",
+          "enonce": "Dans le graphe d'un réseau routier, que représentent les sommets ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 1,
+          "explication": "Les arêtes sont les tronçons de route.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des distances en kilomètres",
+            "Des satellites",
+            "Des tronçons de route",
+            "Des carrefours ou des lieux"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:024",
+          "enonce": "Comment appelle-t-on un graphe dont les arêtes portent une distance, une durée ou un prix ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 1,
+          "explication": "Chaque arête a un poids.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un graphe complet",
+            "Un graphe pondéré",
+            "Un graphe vide",
+            "Un graphe orienté"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:025",
+          "enonce": "Comment calcule-t-on le poids d'un chemin dans un graphe pondéré ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 1,
+          "explication": "Le plus court chemin a le poids total minimal.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En additionnant les poids de ses arêtes",
+            "En comptant le nombre de ses sommets",
+            "En multipliant les poids de ses arêtes",
+            "En gardant le poids de la plus longue arête"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:026",
+          "enonce": "Que calcule l'algorithme de Dijkstra ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 1,
+          "explication": "Il fixe de proche en proche les distances minimales.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nombre de couches affichées sur une carte numérique",
+            "La latitude d'une ville",
+            "La position d'un récepteur GPS",
+            "Le plus court chemin dans un graphe"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:027",
+          "enonce": "Laquelle de ces applications utilise la géolocalisation ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "Aussi les vélos en libre-service, le covoiturage…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un dictionnaire installé hors ligne sur l'ordinateur",
+            "Une application de navigation",
+            "Une calculatrice",
+            "Un traitement de texte"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:028",
+          "enonce": "Quels sont les trois choix courants d'accès d'une application à la position ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "Réglage dans le téléphone, application par application.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Nord, sud, est",
+            "Wi-Fi, 4G, satellite",
+            "Toujours, pendant l'utilisation, jamais",
+            "Matin, midi, soir"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:029",
+          "enonce": "Pourquoi la position est-elle une donnée personnelle sensible pour la vie privée ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "L'historique de déplacements est très révélateur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle indique la marque et le modèle du téléphone",
+            "Elle permet de connaître le mot de passe du téléphone",
+            "Elle est toujours publiée sur les réseaux sociaux",
+            "Elle révèle où l'on habite, étudie et qui l'on fréquente"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:030",
+          "enonce": "Quelle est environ la latitude de Paris ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "Sa longitude est d'environ 2,35° E.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0°",
+            "48,86° N",
+            "2,35° N",
+            "90° N"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:031",
+          "enonce": "Combien vaut 45° 30' en degrés décimaux ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "30 / 60 = 0,5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "45,5°",
+            "45,30°",
+            "45,3°",
+            "4,53°"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:032",
+          "enonce": "Combien vaut 48° 15' en degrés décimaux ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "15 / 60 = 0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "48,15°",
+            "48,5°",
+            "48,25°",
+            "48,0015°"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:033",
+          "enonce": "Que signifie souvent un signe moins devant une latitude, comme -33,87° ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "Le signe moins remplace la lettre S.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le point est au sud de l'équateur",
+            "La mesure est fausse",
+            "Le point est à l'ouest de Greenwich",
+            "Le point est situé sous le niveau de la mer"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:034",
+          "enonce": "Qu'a changé en 2000 la fin de la dégradation volontaire du signal GPS civil ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "Les civils ont eu une meilleure précision.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les téléphones ont cessé de capter le GPS",
+            "Le nombre de satellites en orbite a été divisé par deux",
+            "La précision est passée d'une centaine à une dizaine de mètres",
+            "Le GPS est devenu payant pour les particuliers"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:035",
+          "enonce": "Quel ordre chronologique est exact ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "1959, 1973, 2004.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Programme GPS, Dijkstra, OpenStreetMap",
+            "Algorithme de Dijkstra, programme GPS, OpenStreetMap",
+            "OpenStreetMap, programme GPS, Dijkstra",
+            "Dijkstra, OpenStreetMap, programme GPS"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:036",
+          "enonce": "Pourquoi l'Union européenne a-t-elle développé Galileo ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 2,
+          "explication": "C'est un système civil.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour calculer les itinéraires routiers",
+            "Pour remplacer les cartes papier de l'IGN",
+            "Parce que le GPS ne fonctionne pas en Europe",
+            "Pour disposer d'un système civil indépendant du GPS américain"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:037",
+          "enonce": "Pourquoi un récepteur qui utilise plusieurs systèmes (GPS, Galileo…) est-il plus précis ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 2,
+          "explication": "Plus de satellites, meilleure géométrie et meilleure précision.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il émet un signal plus puissant",
+            "Ses satellites sont plus proches de la Terre",
+            "Il capte davantage de satellites",
+            "Il n'a plus besoin d'horloge"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:038",
+          "enonce": "Un signal met 0,07 s pour arriver d'un satellite. Quelle est la distance parcourue ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "300 000 × 0,07 = 21 000 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "21 000 km",
+            "4 200 km",
+            "210 000 km",
+            "2 100 km"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:039",
+          "enonce": "Pourquoi faut-il un quatrième satellite ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "L'horloge du récepteur est moins précise.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour remplacer un satellite en panne",
+            "Pour envoyer la position au serveur",
+            "Pour connaître l'altitude du satellite",
+            "Pour corriger le décalage de l'horloge du récepteur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:040",
+          "enonce": "Quelle distance parcourt la lumière en une microseconde ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "300 000 km/s × 0,000001 s = 0,3 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 m",
+            "300 m",
+            "30 cm",
+            "300 km"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:041",
+          "enonce": "Pourquoi la précision GPS baisse-t-elle entre de hauts immeubles ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "Le trajet mesuré est faussé.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le Wi-Fi brouille les satellites",
+            "Les satellites évitent les villes",
+            "Les immeubles émettent de faux signaux satellites",
+            "Les signaux rebondissent sur les façades"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:042",
+          "enonce": "Avec deux satellites, où le récepteur peut-il se trouver ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "Un troisième satellite réduit à deux points.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "N'importe où sur la Terre",
+            "En un point unique",
+            "Sur un cercle, intersection de deux sphères",
+            "Sur une sphère entière"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:043",
+          "enonce": "Comment un téléphone peut-il se localiser à l'intérieur d'un bâtiment ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "Leurs positions sont connues.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Grâce aux bornes Wi-Fi et aux antennes relais voisines",
+            "Il ne peut jamais se localiser à l'intérieur",
+            "Grâce à la boussole et à l'appareil photo uniquement",
+            "Grâce à un cinquième satellite placé au-dessus de lui"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:044",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, à quelle heure UTC la position a-t-elle été calculée ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "Le champ 143005 se lit hh mm ss.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5 h 48 min 60 s",
+            "14 h 30 min 05 s",
+            "1 h 43 min 00 s",
+            "14 h 05 min 30 s"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:045",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, combien de satellites sont utilisés ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "Le champ 09 donne le nombre de satellites.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9",
+            "49",
+            "8",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:046",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, quelle est l'altitude ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "Le champ 212.0,M.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "49 m",
+            "548 m",
+            "0,8 m",
+            "212 m"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:047",
+          "enonce": "Dans le champ de latitude 4851.400 d'une trame GGA, que représentent 48 ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "2 chiffres pour les degrés, puis les minutes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les minutes",
+            "Les degrés",
+            "Les centièmes de degré",
+            "Les secondes"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:048",
+          "enonce": "Dans une trame GGA, combien de chiffres représentent les degrés de la longitude ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "La longitude va jusqu'à 180° : 3 chiffres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "1",
+            "3",
+            "2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:049",
+          "enonce": "Que renvoie l'instruction trame.split(\",\") en Python ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "Elle découpe à chaque virgule.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La liste des champs de la trame",
+            "Le premier champ seulement, sans les autres",
+            "Le nombre de virgules de la trame",
+            "La trame sans ses virgules, en un seul texte"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:050",
+          "enonce": "Que permet de voir la comparaison de deux photographies aériennes d'un même lieu à des dates différentes ?",
+          "notion": "Cartes numériques",
+          "difficulte": 2,
+          "explication": "Géoportail propose des photographies de différentes années.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nombre d'habitants de chaque maison",
+            "L'évolution du lieu, comme l'extension d'une ville",
+            "Les itinéraires les plus rapides",
+            "La position des satellites à ces deux dates"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:051",
+          "enonce": "Laquelle de ces informations est une couche que l'on peut afficher sur Géoportail ?",
+          "notion": "Cartes numériques",
+          "difficulte": 2,
+          "explication": "Aussi les risques naturels, les pistes cyclables…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les messages des réseaux sociaux",
+            "Les cookies des sites Web",
+            "Les mots de passe des habitants",
+            "Les parcelles du cadastre"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:052",
+          "enonce": "À quelle condition peut-on réutiliser les données d'OpenStreetMap ?",
+          "notion": "OpenStreetMap",
+          "difficulte": 2,
+          "explication": "Les données sont sous licence libre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Seulement pour un usage scolaire",
+            "En payant une licence annuelle",
+            "En citant la source",
+            "En demandant l'accord de l'IGN"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:053",
+          "enonce": "Pourquoi OpenStreetMap peut-il être incomplet dans certaines régions ?",
+          "notion": "OpenStreetMap",
+          "difficulte": 2,
+          "explication": "Il est très détaillé là où les contributeurs sont nombreux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les données y sont effacées chaque année",
+            "Les satellites ne survolent pas ces régions",
+            "Il dépend du nombre de contributeurs sur place",
+            "La loi interdit de cartographier ces zones"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:054",
+          "enonce": "Dans le graphe de la figure 2, quelle est la longueur du chemin A, C, E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "2 + 10 = 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12 km",
+            "10 km",
+            "11 km",
+            "13 km"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:055",
+          "enonce": "Dans le graphe de la figure 2, quel est le plus court chemin de A à B ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "2 + 1 = 3 km, mieux que 4 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A, C, D, B (15 km)",
+            "A, C, B (3 km)",
+            "A, B, C (5 km)",
+            "L'arête directe A, B (4 km)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:056",
+          "enonce": "Pourquoi le plus court chemin en distance n'est-il pas toujours le meilleur itinéraire ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "Le résultat dépend du poids choisi.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La distance ne peut pas servir de poids",
+            "Les logiciels ignorent les distances",
+            "Un chemin court est toujours plus dangereux",
+            "Le plus rapide ou le moins cher peut être différent"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:057",
+          "enonce": "Comment les applications de navigation estiment-elles le trafic en temps réel ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "Les positions permettent de mesurer les vitesses.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Grâce aux satellites, qui photographient chaque voiture",
+            "Grâce aux positions transmises par les téléphones de leurs utilisateurs",
+            "Grâce aux cartes papier mises à jour chaque matin",
+            "Grâce à des agents de police placés à chaque carrefour"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:058",
+          "enonce": "Pourquoi utilise-t-on l'algorithme de Dijkstra plutôt que d'essayer tous les chemins ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 2,
+          "explication": "Des millions de sommets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Sur un vrai réseau, il y a beaucoup trop de chemins possibles",
+            "Essayer tous les chemins donne un résultat faux",
+            "L'algorithme de Dijkstra donne un chemin approximatif",
+            "Les graphes routiers n'ont qu'un seul chemin"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:059",
+          "enonce": "Quel réglage suffit pour une application météo ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 2,
+          "explication": "Elle n'a pas besoin de ta rue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le partage de position en temps réel avec ses amis",
+            "Une position précise en permanence",
+            "L'accès à l'historique des positions",
+            "Une position approximative"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:060",
+          "enonce": "Que peut révéler l'historique des positions enregistré par un téléphone ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 2,
+          "explication": "Les habitudes de déplacement sont révélatrices.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le contenu de ses messages privés",
+            "Ses notes au lycée",
+            "Le lieu où l'on passe la nuit, donc son domicile",
+            "Le code de sa carte bancaire"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:061",
+          "enonce": "Combien vaut 2° 21,05' en degrés décimaux, arrondi au millième ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 3,
+          "explication": "21,05 / 60 ≈ 0,351.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2,035°",
+            "2,105°",
+            "2,351°",
+            "2,211°"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:062",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, quelle est la latitude en degrés décimaux, arrondie au centième ?",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "45 + 17,25 / 60 = 45,2875 ≈ 45,29.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "45,29° N",
+            "4,52° N",
+            "45,25° N",
+            "45,17° N"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:063",
+          "enonce": "Convertis en degrés décimaux la longitude 00548.600,E lue dans une trame GGA (arrondi au centième).",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "5 + 48,6 / 60 = 5,81.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5,49° E",
+            "0,55° E",
+            "54,86° E",
+            "5,81° E"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:064",
+          "enonce": "Avec champs = trame.split(\",\") sur la trame du cours, que vaut champs[4] ?",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "champs[0] est $GPGGA, champs[1] l'heure, champs[2] la latitude, champs[3] N, champs[4] la longitude.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "\"N\"",
+            "\"00221.050\"",
+            "\"4851.400\"",
+            "\"E\""
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:065",
+          "enonce": "Dans la fonction en_degres du cours, que renvoie en_degres(\"4530.000\", 2) ?",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "45 + 30 / 60 = 45,5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4530.0",
+            "45.3",
+            "75.0",
+            "45.5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:066",
+          "enonce": "Un récepteur se trompe d'un millième de seconde dans la mesure d'une durée. Quelle erreur de distance cela provoque-t-il ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 3,
+          "explication": "300 000 km/s × 0,001 s = 300 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "30 m",
+            "300 m",
+            "300 km",
+            "3 km"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:067",
+          "enonce": "Avec trois satellites, il reste deux positions possibles. Pourquoi une seule convient-elle ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 3,
+          "explication": "L'autre est dans l'espace.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une seule est à la surface de la Terre",
+            "Le récepteur choisit au hasard",
+            "Le quatrième satellite est toujours absent",
+            "Les deux points sont au même endroit"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:068",
+          "enonce": "Dans la figure 2, quel est le plus court chemin de A à E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "2 + 1 + 5 + 3 = 11 km, contre 12 ou 13 pour les autres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A, C, D, E",
+            "A, C, B, D, E",
+            "A, C, E",
+            "A, B, D, E"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:069",
+          "enonce": "Dans la figure 2, la route B-D est fermée. Quelle est la nouvelle longueur du plus court chemin de A à E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "A, C, E : 12 km ; A, C, D, E : 13 km.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "11 km",
+            "13 km",
+            "15 km",
+            "12 km"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:070",
+          "enonce": "Dans la figure 2, quelle est la distance minimale entre B et E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "B, D, E : 5 + 3 = 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9 km",
+            "10 km",
+            "8 km",
+            "11 km"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:071",
+          "enonce": "Dans l'algorithme de Dijkstra, quel sommet traite-t-on à chaque étape ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 3,
+          "explication": "Sa distance minimale est alors fixée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le sommet non traité le plus proche du départ",
+            "Le sommet qui a le plus de voisins",
+            "Un sommet choisi au hasard",
+            "Le sommet le plus éloigné du départ"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:072",
+          "enonce": "Dans la figure 2, en partant de A, quel sommet l'algorithme de Dijkstra fixe-t-il en premier après A ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 3,
+          "explication": "C est le voisin le plus proche de A.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "D, à 8 km",
+            "C, à 2 km",
+            "E, à 10 km",
+            "B, à 4 km"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:073",
+          "enonce": "Une élève désactive la localisation de son téléphone. Qui connaît encore une position approximative ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 3,
+          "explication": "Le réseau mobile connaît l'antenne ; c'est protégé par la loi.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Toutes les applications installées",
+            "Personne, en aucun cas",
+            "Les satellites GPS",
+            "L'opérateur, grâce à l'antenne relais utilisée"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:074",
+          "enonce": "Une application de lampe torche demande l'accès permanent à la position. Quelle réaction est la plus adaptée ?",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 3,
+          "explication": "Certaines applications revendent ces données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Accepter seulement la nuit",
+            "Accepter : toutes les applications en ont besoin",
+            "Refuser : elle n'en a pas besoin",
+            "Accepter, puis désinstaller le GPS"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:075",
+          "enonce": "Pour savoir si une maison est en zone inondable, que faut-il faire sur Géoportail ?",
+          "notion": "Cartes numériques",
+          "difficulte": 3,
+          "explication": "Chaque couche est un ensemble de données géographiques.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Contribuer à OpenStreetMap",
+            "Afficher la couche des risques naturels sur la carte",
+            "Décoder une trame NMEA de la maison",
+            "Calculer un itinéraire jusqu'à la maison"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:076",
+          "enonce": "Quelles affirmations sur les coordonnées géographiques sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "Latitude : équateur ; longitude : Greenwich.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La longitude va de 0° à 180°",
+            "La latitude va de 0° à 90°",
+            "La longitude se mesure à partir de l'équateur",
+            "La latitude se mesure à partir de Greenwich"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:077",
+          "enonce": "Quels sont des systèmes de géolocalisation par satellites ? Coche toutes les réponses exactes.",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Aussi GLONASS et BeiDou.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "NMEA",
+            "Galileo",
+            "OpenStreetMap",
+            "GPS"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:078",
+          "enonce": "Quelles informations le signal d'un satellite contient-il ? Coche toutes les réponses exactes.",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Le récepteur calcule ensuite sa propre position.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'heure exacte d'émission",
+            "La position du récepteur",
+            "La position du satellite",
+            "Le nom du propriétaire du téléphone"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:079",
+          "enonce": "Quels champs trouve-t-on dans une trame GGA ? Coche toutes les réponses exactes.",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Aussi la longitude, les satellites, l'altitude.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La latitude",
+            "La vitesse du vent",
+            "L'heure",
+            "Le nom de la rue"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:080",
+          "enonce": "Quelles couches peut-on afficher sur une carte numérique ? Coche toutes les réponses exactes.",
+          "notion": "Cartes numériques",
+          "difficulte": 1,
+          "explication": "Aussi le relief, le cadastre…",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les mots de passe des habitants",
+            "Les photographies aériennes",
+            "Les messages privés",
+            "Les routes"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:081",
+          "enonce": "Quelles affirmations sur OpenStreetMap sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "OpenStreetMap",
+          "difficulte": 1,
+          "explication": "C'est une carte collaborative.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il est réservé aux professionnels",
+            "Chacun peut y ajouter des éléments",
+            "Il est géré par l'armée américaine",
+            "Ses données sont sous licence libre"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:082",
+          "enonce": "Quels poids une arête d'un graphe routier peut-elle porter ? Coche toutes les réponses exactes.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 1,
+          "explication": "Aussi un prix (péages).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Un nombre de satellites",
+            "Une distance",
+            "Une latitude",
+            "Une durée de trajet"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:083",
+          "enonce": "Quels services reposent sur la géolocalisation ? Coche toutes les réponses exactes.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "Aussi la navigation, le covoiturage…",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'impression d'un document",
+            "Les vélos en libre-service",
+            "Le suivi d'une livraison",
+            "La lecture d'un livre papier"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:084",
+          "enonce": "Quels réglages protègent la confidentialité de sa position ? Coche toutes les réponses exactes.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "Aussi la position approximative.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Activer la localisation des photos",
+            "Choisir l'accès de chaque application",
+            "Partager sa position en permanence avec tous",
+            "Effacer l'historique des positions"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:085",
+          "enonce": "Quelles dates sont correctes ? Coche toutes les réponses exactes.",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Premier satellite GPS en 1978 ; Géoportail en 2006.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1995 : création de Géoportail",
+            "2004 : création d'OpenStreetMap",
+            "1959 : premier satellite GPS",
+            "2016 : premiers services de Galileo"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:086",
+          "enonce": "Où la géolocalisation par satellites fonctionne-t-elle mal ? Coche toutes les réponses exactes.",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Les signaux passent mal.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "En pleine campagne, ciel dégagé",
+            "Dans un tunnel",
+            "À l'intérieur d'un bâtiment",
+            "En mer, loin des côtes"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:087",
+          "enonce": "Quelles affirmations sur l'algorithme de Dijkstra sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 1,
+          "explication": "Edsger Dijkstra.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il calcule la position GPS",
+            "Il calcule un plus court chemin",
+            "Il date de 1959",
+            "Il a été inventé par l'IGN"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:088",
+          "enonce": "Quelles écritures désignent le même angle ? Coche toutes les réponses exactes.",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "45 / 60 = 0,75.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "30° 75'",
+            "30,75°",
+            "30° 45'",
+            "30,45°"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:089",
+          "enonce": "Quelles affirmations sur les satellites GPS sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "GPS et Galileo",
+          "difficulte": 2,
+          "explication": "Ils émettent ; les récepteurs écoutent.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ils sont à environ 20 200 km d'altitude",
+            "Il y en a une trentaine",
+            "Ils sont tous immobiles au-dessus de Paris",
+            "Ils reçoivent la position des téléphones"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:090",
+          "enonce": "Pourquoi les satellites ont-ils des horloges atomiques ? Coche toutes les réponses exactes.",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "La lumière parcourt 300 m en une microseconde.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Pour économiser leur énergie",
+            "Pour afficher l'heure sur les téléphones",
+            "Une petite erreur de temps donne une grande erreur de distance",
+            "La distance se calcule à partir d'une durée"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:091",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "N et E ; qualité 1 : position calculée.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le point est à l'est de Greenwich",
+            "Le point est dans l'hémisphère nord",
+            "La position n'a pas pu être calculée",
+            "L'altitude est de 49 m"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:092",
+          "enonce": "Quelles affirmations sur la norme NMEA 0183 sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "Le récepteur transmet ainsi ses résultats.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ses trames sont des lignes de texte",
+            "Elle sert à écrire des pages Web",
+            "Elle chiffre la position",
+            "Elle vient à l'origine de la marine"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:093",
+          "enonce": "Que permet Géoportail ? Coche toutes les réponses exactes.",
+          "notion": "Cartes numériques",
+          "difficulte": 2,
+          "explication": "C'est le portail public de l'IGN.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Superposer des couches",
+            "Mesurer des distances et des surfaces",
+            "Modifier librement les données de l'IGN",
+            "Calculer la position d'un satellite"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:094",
+          "enonce": "Dans la figure 2, quels chemins de A à E mesurent 12 km ? Coche toutes les réponses exactes.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "13 km et 11 km pour les deux derniers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "A, C, E",
+            "A, C, D, E",
+            "A, B, D, E",
+            "A, C, B, D, E"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:095",
+          "enonce": "Dans la figure 2, quels sommets sont voisins de D ? Coche toutes les réponses exactes.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "D est relié à B, C et E, mais pas à A.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "C",
+            "E",
+            "B",
+            "A"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:096",
+          "enonce": "Quelles informations un historique de positions peut-il révéler ? Coche toutes les réponses exactes.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 2,
+          "explication": "Et les personnes fréquentées.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les activités du week-end",
+            "Le domicile",
+            "Le mot de passe du compte",
+            "Le contenu des appels"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:097",
+          "enonce": "Comment peut-on contribuer à OpenStreetMap ? Coche toutes les réponses exactes.",
+          "notion": "OpenStreetMap",
+          "difficulte": 2,
+          "explication": "Après avoir créé un compte.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Corriger le nom d'un commerce",
+            "Modifier les satellites GPS",
+            "Supprimer les données d'une autre carte",
+            "Ajouter un passage piéton manquant"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:098",
+          "enonce": "Quels événements ont eu lieu avant 2000 ? Coche toutes les réponses exactes.",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "1973 et 1959 ; 2004 et 2016.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le lancement du programme GPS",
+            "Les premiers services de Galileo",
+            "La création d'OpenStreetMap",
+            "La publication de l'algorithme de Dijkstra"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:099",
+          "enonce": "Dans la figure 2, quelles distances minimales depuis A sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 2,
+          "explication": "D : 8 km (A, C, B, D) ; E : 11 km.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "E : 12 km",
+            "D : 9 km",
+            "C : 2 km",
+            "B : 3 km"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:100",
+          "enonce": "Avec champs = trame.split(\",\") sur la trame du cours, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "champs[1] est l'heure, champs[2] la latitude.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "champs[0] vaut \"$GPGGA\"",
+            "champs[2] vaut \"E\"",
+            "champs[3] vaut \"N\"",
+            "champs[1] vaut \"4851.400\""
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:101",
+          "enonce": "Un récepteur ne capte que 3 satellites. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Trilatération et précision",
+          "difficulte": 3,
+          "explication": "Il faut au moins 4 satellites.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Sa position sera moins fiable",
+            "Il connaît sa position exacte au centimètre près",
+            "Il ne peut pas corriger le décalage de son horloge",
+            "Il peut demander sa position aux satellites"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:102",
+          "enonce": "On ajoute dans la figure 2 une route directe A-E de 10 km. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "10 km < 11 km.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le plus court chemin de A à E mesure alors 10 km",
+            "Il ne passe plus par B ni D",
+            "Le chemin A, C, E devient le plus court",
+            "Le plus court chemin reste A, C, B, D, E"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:103",
+          "enonce": "Le poids des arêtes est maintenant la durée en minutes. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "Seuls les poids changent.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "On applique le même algorithme avec ces nouveaux poids",
+            "Le graphe n'a plus de sommets",
+            "L'algorithme de Dijkstra ne fonctionne plus",
+            "Le chemin le plus rapide peut différer du plus court en distance"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:104",
+          "enonce": "Quelles applications ont réellement besoin de la position précise pendant leur utilisation ? Coche toutes les réponses exactes.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 3,
+          "explication": "Les autres n'en ont pas besoin.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une application de vélos en libre-service",
+            "Un jeu de cartes",
+            "Une application de navigation",
+            "Une calculatrice"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:105",
+          "enonce": "Quelles coordonnées désignent un point de l'hémisphère sud ? Coche toutes les réponses exactes.",
+          "notion": "Latitude et longitude",
+          "difficulte": 3,
+          "explication": "Le signe moins ou la lettre S indiquent le sud.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "22° S",
+            "48,86° N",
+            "-33,87° de latitude",
+            "2,35° E"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch6:banque:106",
+          "enonce": "La latitude se mesure par rapport à l'équateur.",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "Au nord ou au sud.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:107",
+          "enonce": "Un degré vaut 100 minutes.",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "Un degré vaut 60 minutes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:108",
+          "enonce": "Galileo est le système de géolocalisation de l'Union européenne.",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Premiers services en 2016.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:109",
+          "enonce": "Un téléphone envoie sa position aux satellites GPS pour se localiser.",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Il écoute seulement leurs signaux.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:110",
+          "enonce": "Il faut capter au moins 4 satellites pour se localiser.",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Le quatrième corrige l'horloge du récepteur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:111",
+          "enonce": "Une trame NMEA commence par le signe $.",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Puis le type de trame.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:112",
+          "enonce": "Dans une trame NMEA, les champs sont séparés par des points-virgules.",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "Par des virgules.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:113",
+          "enonce": "Géoportail est géré par l'IGN.",
+          "notion": "Cartes numériques",
+          "difficulte": 1,
+          "explication": "Institut national de l'information géographique et forestière.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:114",
+          "enonce": "OpenStreetMap est une carte payante réalisée par une seule entreprise.",
+          "notion": "OpenStreetMap",
+          "difficulte": 1,
+          "explication": "Elle est collaborative et libre.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:115",
+          "enonce": "Dans un graphe routier, les arêtes représentent les tronçons de route.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 1,
+          "explication": "Les sommets sont les carrefours ou les lieux.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:116",
+          "enonce": "Une application météo a besoin de la position précise de ta rue.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 1,
+          "explication": "Une position approximative suffit.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:117",
+          "enonce": "Le premier satellite GPS a été lancé en 1978.",
+          "notion": "Repères historiques",
+          "difficulte": 1,
+          "explication": "Le programme a été lancé en 1973.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:118",
+          "enonce": "48° 30' correspond à 48,30°.",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "30 / 60 = 0,5 : 48,5°.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:119",
+          "enonce": "Le signal d'un satellite met environ 0,07 seconde pour atteindre la Terre.",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "Pour environ 21 000 km.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:120",
+          "enonce": "Une erreur d'une microseconde sur la durée donne une erreur d'environ 300 m.",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "300 000 km/s × 0,000001 s.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:121",
+          "enonce": "Dans une trame GGA, la latitude est écrite en degrés décimaux.",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "En degrés et minutes : 4851.400 = 48° 51,400'.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:122",
+          "enonce": "Dans une trame GGA, la lettre W indique une longitude à l'ouest de Greenwich.",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "E pour est, W pour ouest.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:123",
+          "enonce": "Le plus court chemin entre deux sommets est toujours celui qui passe par le moins de sommets.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "Dans la figure 2, le plus court chemin de A à E passe par 5 sommets.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:124",
+          "enonce": "Dans la figure 2, l'arête directe A-B n'est pas le plus court chemin de A à B.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "A, C, B mesure 3 km.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:125",
+          "enonce": "L'algorithme de Dijkstra essaie un par un tous les chemins possibles.",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 2,
+          "explication": "Il fixe de proche en proche les distances minimales.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:126",
+          "enonce": "Désactiver la géolocalisation des photos évite d'enregistrer le lieu dans leurs métadonnées.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 2,
+          "explication": "Les métadonnées EXIF peuvent contenir le lieu.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:127",
+          "enonce": "Lors de catastrophes naturelles, des volontaires cartographient les zones touchées sur OpenStreetMap.",
+          "notion": "OpenStreetMap",
+          "difficulte": 2,
+          "explication": "Pour aider les secours.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:128",
+          "enonce": "Les satellites Galileo sont plus bas que les satellites GPS.",
+          "notion": "GPS et Galileo",
+          "difficulte": 2,
+          "explication": "Environ 23 200 km contre 20 200 km.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:129",
+          "enonce": "Sur une carte numérique, on peut masquer certaines couches.",
+          "notion": "Cartes numériques",
+          "difficulte": 2,
+          "explication": "On les affiche ou on les masque.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:130",
+          "enonce": "La longitude 00548.600 d'une trame GGA vaut environ 5,81°.",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "5 + 48,6 / 60 = 5,81.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:131",
+          "enonce": "Dans la figure 2, si la route B-D est fermée, le plus court chemin de A à E mesure 13 km.",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "A, C, E mesure 12 km.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:132",
+          "enonce": "Avec trois satellites seulement, le récepteur peut corriger le décalage de son horloge.",
+          "notion": "Trilatération et précision",
+          "difficulte": 3,
+          "explication": "Il faut un quatrième satellite.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:133",
+          "enonce": "Dans la figure 2, en partant de A, la distance minimale de D vaut 8 km.",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 3,
+          "explication": "A, C, B, D : 2 + 1 + 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch6:banque:134",
+          "enonce": "Désactiver la localisation empêche l'opérateur mobile de savoir à quelle antenne le téléphone est relié.",
+          "notion": "Mobilité et confidentialité",
+          "difficulte": 3,
+          "explication": "Le réseau connaît toujours l'antenne.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:135",
+          "enonce": "Le point de coordonnées 48,86° N et 2,35° O est à Paris.",
+          "notion": "Latitude et longitude",
+          "difficulte": 3,
+          "explication": "Paris est à 2,35° E.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch6:banque:136",
+          "enonce": "Quel est le nom du système européen de géolocalisation par satellites ?",
+          "notion": "GPS et Galileo",
+          "difficulte": 1,
+          "explication": "Premiers services en 2016.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Galileo"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:137",
+          "enonce": "Combien de satellites faut-il capter au minimum pour se localiser ?",
+          "notion": "Trilatération et précision",
+          "difficulte": 1,
+          "explication": "Trois pour la position, un pour l'horloge.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4",
+            "quatre"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:138",
+          "enonce": "Quel est le nom de la norme des trames de position, suivi de son numéro ? (exemple : ABC 123)",
+          "notion": "Trame NMEA",
+          "difficulte": 1,
+          "explication": "NMEA 0183.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "NMEA 0183",
+            "NMEA0183",
+            "NMEA"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:139",
+          "enonce": "Quel est le sigle de l'institut public qui gère Géoportail ?",
+          "notion": "Cartes numériques",
+          "difficulte": 1,
+          "explication": "Institut national de l'information géographique et forestière.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "IGN"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:140",
+          "enonce": "Quel est le nom de la carte collaborative et libre créée en 2004 ?",
+          "notion": "OpenStreetMap",
+          "difficulte": 1,
+          "explication": "Construite par des bénévoles.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "OpenStreetMap",
+            "Open Street Map",
+            "OSM"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:141",
+          "enonce": "Combien de minutes y a-t-il dans un degré d'angle ?",
+          "notion": "Latitude et longitude",
+          "difficulte": 1,
+          "explication": "1° = 60'.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "60",
+            "soixante"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:142",
+          "enonce": "Combien vaut 12° 45' en degrés décimaux ? Écris le nombre seul.",
+          "notion": "Latitude et longitude",
+          "difficulte": 2,
+          "explication": "45 / 60 = 0,75.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12,75",
+            "12.75"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:143",
+          "enonce": "En km, quelle distance parcourt un signal en 0,08 s à 300 000 km/s ? Écris le nombre sans espace.",
+          "notion": "Trilatération et précision",
+          "difficulte": 2,
+          "explication": "300 000 × 0,08 = 24 000.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "24000"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:144",
+          "enonce": "Dans la trame $GPGGA,143005,4517.250,N,00548.600,E,1,09,0.8,212.0,M,49.0,M,,*43, quel champ, d'une lettre, donne l'hémisphère de la latitude ?",
+          "notion": "Trame NMEA",
+          "difficulte": 2,
+          "explication": "N pour nord.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "N"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:145",
+          "enonce": "Dans la figure 2, quelle est la longueur en km du chemin A, B, D, E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 2,
+          "explication": "4 + 5 + 3 = 12.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:146",
+          "enonce": "Quel est le nom de l'informaticien qui a publié en 1959 un algorithme de plus court chemin ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 2,
+          "explication": "Edsger Dijkstra.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "Dijkstra",
+            "Edsger Dijkstra"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:147",
+          "enonce": "En quelle année Galileo a-t-il offert ses premiers services ?",
+          "notion": "Repères historiques",
+          "difficulte": 2,
+          "explication": "Système européen.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2016"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:148",
+          "enonce": "Dans la figure 2, quelle est en km la longueur du plus court chemin de A à E ?",
+          "notion": "Graphes et itinéraires",
+          "difficulte": 3,
+          "explication": "A, C, B, D, E : 2 + 1 + 5 + 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "11"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:149",
+          "enonce": "Le champ de latitude 4517.250 d'une trame GGA correspond à combien de degrés décimaux, arrondi au centième ?",
+          "notion": "Trame NMEA",
+          "difficulte": 3,
+          "explication": "45 + 17,25 / 60 ≈ 45,29.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "45,29",
+            "45.29"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch6:banque:150",
+          "enonce": "Dans la figure 2, quelle est en km la distance minimale de A à D ?",
+          "notion": "Algorithme de Dijkstra",
+          "difficulte": 3,
+          "explication": "A, C, B, D : 2 + 1 + 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
