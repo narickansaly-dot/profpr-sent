@@ -8,7 +8,7 @@ Contrôle automatique (`verifierBanque`, préfixe `emc`, 150 questions) : confor
 
 | Règle | Problème | Décision |
 |---|---|---|
-| Biais de longueur | La bonne réponse était la plus longue dans 49 % des QCM. | Un distracteur allongé (même sens, même plausibilité) dans treize QCM, dont 018, 024, 026, 034, 037, 038, 043, 046, 055, 064, 069 et 075. |
+| Biais de longueur | La bonne réponse était la plus longue dans 49 % des QCM. | Un distracteur allongé (même sens, même plausibilité) dans douze QCM : 018, 024, 026, 034, 037, 038, 043, 046, 055, 064, 069 et 075. |
 | Difficultés | 54 questions de niveau 1 (57 au moins). | 020, 034, 035 et 036 (rappel direct d'un sigle ou d'un exemple du tableau) passent de 2 à 1. |
 | Énoncés proches | Réponse courte sur la loi Neuwirth, doublon du QCM 009 (0,83) ; réponse courte sur l'état d'urgence de 2015, doublon du QCM 045 (0,85). | Remplacées : 138 (nombre de signataires du manifeste de 1971) et 144 (bracelet électronique). |
 
