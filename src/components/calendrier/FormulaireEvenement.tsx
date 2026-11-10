@@ -2,7 +2,8 @@
 
 import { useActionState, useId, useState } from 'react';
 import { enregistrerEvenement, type EtatEvenement } from '@/app/(app)/calendrier/actions';
-import { DUREES_EVENEMENT, type ChampEvenement, type ValeursEvenement } from '@/lib/calendrier/schema-evenement';
+import { DUREES_EVENEMENT, RAPPELS } from '@/lib/calendrier/constantes';
+import type { ChampEvenement, ValeursEvenement } from '@/lib/calendrier/schema-evenement';
 import type { CoursOption } from '@/lib/calendrier/requetes';
 
 const TYPES = [
@@ -24,6 +25,7 @@ export function FormulaireEvenement({ id, cours, initial }: Props) {
   const uid = useId();
   const erreurId = `${uid}-erreur`;
   const aideHeure = `${uid}-aide-heure`;
+  const aideRappel = `${uid}-aide-rappel`;
   const aideChapitres = `${uid}-aide-chapitres`;
   // Seul le champ en cause est marqué invalide et relié au message d'erreur.
   const decrit = (champ: ChampEvenement, aide?: string) => ({
@@ -61,6 +63,13 @@ export function FormulaireEvenement({ id, cours, initial }: Props) {
         </label>
       </div>
       <p id={aideHeure} className="aide-champ">Heure de Paris.</p>
+      <label>
+        Rappel
+        <select name="rappel" id="rappel" defaultValue={v.rappel} {...decrit('rappel', aideRappel)}>
+          {RAPPELS.map((r) => <option key={r.valeur} value={r.valeur}>{r.libelle}</option>)}
+        </select>
+      </label>
+      <p id={aideRappel} className="aide-champ">Une notification sur tes appareils, ou dans la page Rappels.</p>
       <label>
         Cours
         <select name="cours" value={coursId} onChange={(e) => setCoursId(e.target.value)} {...decrit('cours')}>

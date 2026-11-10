@@ -1,6 +1,9 @@
 // Service worker : lecture hors connexion des chapitres déjà ouverts.
-// Changer VERSION à chaque modification de ce fichier : les caches des autres versions sont supprimés à l'activation.
-const VERSION = 'v1';
+// Version du déploiement, passée dans l'URL d'enregistrement (/sw.js?v=…). Les caches des autres versions sont supprimés à l'activation.
+const VERSION = (() => {
+  const v = new URL(self.location.href).searchParams.get('v') ?? '';
+  return /^[a-z0-9]{1,16}$/.test(v) ? v : 'dev';
+})();
 const CACHE_STATIQUE = `statique-${VERSION}`;
 // Préfixe « pages- » : vidé par l'application à la déconnexion (src/lib/pwa/cache.ts).
 const CACHE_PAGES = `pages-${VERSION}`;
@@ -121,3 +124,68 @@ async function repli() {
   const cache = await caches.open(CACHE_HORS_LIGNE);
   return cache.match(HORS_LIGNE);
 }
+
+// Notifications Web Push. Charge envoyée par la route d'envoi : { id, titre, corps, url }.
+function lienInterne(url) {
+  const accueil = self.location.origin + '/';
+  if (typeof url !== 'string' || !url.startsWith('/') || /[\u0000-\u001f\u007f\\]/.test(url)) return accueil;
+  if (/\/\.\.?(\/|$|\?|#)/.test(url)) return accueil;
+  try {
+    const u = new URL(url, self.location.origin);
+    return u.origin === self.location.origin ? u.href : accueil;
+  } catch {
+    return accueil;
+  }
+}
+
+// Valeur stockée par le gestionnaire push (URL absolue déjà vérifiée) : on la revalide, sans la réinterpréter.
+function cibleDuClic(stocke) {
+  const accueil = self.location.origin + '/';
+  try {
+    const u = new URL(stocke);
+    return u.origin === self.location.origin ? u.href : accueil;
+  } catch {
+    return accueil;
+  }
+}
+
+self.addEventListener('push', (evenement) => {
+  let donnees = {};
+  try {
+    donnees = evenement.data ? evenement.data.json() : {};
+  } catch {
+    donnees = {};
+  }
+  if (!donnees || typeof donnees !== 'object') donnees = {};
+  const titre = typeof donnees.titre === 'string' && donnees.titre ? donnees.titre : 'App lycée';
+  evenement.waitUntil(self.registration.showNotification(titre, {
+    body: typeof donnees.corps === 'string' ? donnees.corps : '',
+    icon: '/icones/192.png',
+    badge: '/icones/192.png',
+    lang: 'fr',
+    tag: typeof donnees.id === 'string' ? donnees.id : undefined,
+    data: { url: lienInterne(donnees.url) },
+  }));
+});
+
+self.addEventListener('notificationclick', (evenement) => {
+  evenement.notification.close();
+  const cible = cibleDuClic(evenement.notification.data && evenement.notification.data.url);
+  evenement.waitUntil((async () => {
+    const fenetres = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const fenetre of fenetres) {
+      if (fenetre.url === cible && 'focus' in fenetre) return fenetre.focus();
+    }
+    for (const fenetre of fenetres) {
+      if (new URL(fenetre.url).origin !== self.location.origin || !('focus' in fenetre) || !('navigate' in fenetre)) continue;
+      try {
+        await fenetre.focus();
+        await fenetre.navigate(cible);
+        return;
+      } catch {
+        // On essaie d'ouvrir une nouvelle fenêtre.
+      }
+    }
+    return self.clients.openWindow(cible);
+  })());
+});

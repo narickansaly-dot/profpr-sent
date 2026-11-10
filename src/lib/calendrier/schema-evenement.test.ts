@@ -39,8 +39,32 @@ describe('lireFormulaireEvenement', () => {
     const r = lireFormulaireEvenement(formulaire({ ...valide, heure: '25:00', cours: COURS }));
     expect(r).toMatchObject({ ok: false, champ: 'heure', valeurs: { titre: ' Exposé ', cours: COURS } });
   });
+  it('lit le rappel choisi', () => {
+    const r = lireFormulaireEvenement(formulaire({ ...valide, rappel: '60' }));
+    expect(r.ok && r.rappel).toBe(60);
+  });
+  it('sans rappel, renvoie null', () => {
+    const r = lireFormulaireEvenement(formulaire(valide));
+    expect(r.ok && r.rappel).toBeNull();
+  });
+  it('refuse un rappel hors liste', () => {
+    expect(lireFormulaireEvenement(formulaire({ ...valide, rappel: '30' })))
+      .toMatchObject({ ok: false, champ: 'rappel', erreur: 'Choisis un rappel dans la liste.' });
+  });
   it('refuse un titre vide', () => {
     expect(lireFormulaireEvenement(formulaire({ ...valide, titre: '  ' })))
       .toMatchObject({ ok: false, champ: 'titre', erreur: 'Donne un titre à l’événement.' });
+  });
+  it('répond en français à un cours ou un chapitre falsifié', () => {
+    const f = formulaire({ ...valide, cours: 'pas-un-uuid' });
+    expect(lireFormulaireEvenement(f)).toMatchObject({ ok: false, champ: 'cours', erreur: 'Choisis un cours dans la liste.' });
+    const g = formulaire({ ...valide, cours: COURS, chapitres: ['x'] });
+    expect(lireFormulaireEvenement(g)).toMatchObject({ ok: false, champ: 'chapitres', erreur: 'Choisis des chapitres dans la liste.' });
+  });
+  it('répond en français à un jour de semaine falsifié', () => {
+    for (const faux of ['9', '0', '1.5', 'abc']) {
+      const f = formulaire({ ...valide, repetition: 'jours', jusqu: valide.jour, jours: [faux] });
+      expect(lireFormulaireEvenement(f), faux).toMatchObject({ ok: false, champ: 'jours', erreur: 'Choisis des jours entre lundi et dimanche.' });
+    }
   });
 });

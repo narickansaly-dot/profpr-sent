@@ -4,7 +4,7 @@ import { lireProfil } from '@/lib/supabase/utilisateur';
 
 export type Section = { id: string; titre: string; html: string };
 
-export async function listerCoursDuProfil() {
+export const listerCoursDuProfil = cache(async () => {
   const profil = await lireProfil();
   if (!profil?.filiere_id || !profil.niveau_code) return [];
   const supabase = await creerClientServeur();
@@ -12,7 +12,7 @@ export async function listerCoursDuProfil() {
     .select('id, slug, titre, matiere, couleur, chapitre(count)')
     .eq('filiere_id', profil.filiere_id).eq('niveau_code', profil.niveau_code).order('ordre');
   return (data ?? []).map((c) => ({ ...c, nbChapitres: c.chapitre[0]?.count ?? 0 }));
-}
+});
 
 export const lireCours = cache(async (slug: string) => {
   const supabase = await creerClientServeur();

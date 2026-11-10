@@ -2,10 +2,12 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { nettoyerHtml } from './html';
 
-const bph = JSON.parse(readFileSync('contenu/1re-st2s/bph.json', 'utf8')) as {
-  chapitres: { sections: { html: string }[]; a_retenir?: string }[];
-};
-const morceaux = bph.chapitres.flatMap((c) => [...c.sections.map((s) => s.html), c.a_retenir ?? '']);
+type CoursJson = { chapitres: { sections: { html: string }[]; a_retenir?: string }[] };
+const morceauxDe = (nom: string) =>
+  (JSON.parse(readFileSync(`contenu/1re-st2s/${nom}.json`, 'utf8')) as CoursJson).chapitres.flatMap((c) => [
+    ...c.sections.map((s) => s.html),
+    c.a_retenir ?? '',
+  ]);
 
 /** Inventaire « balise@attribut » d'un fragment, pour vérifier que rien d'utile n'est retiré. */
 function inventaire(html: string): string[] {
@@ -18,8 +20,14 @@ function inventaire(html: string): string[] {
 }
 
 describe('nettoyerHtml', () => {
-  it('garde intact tout le contenu BPH (balises et attributs)', () => {
-    for (const html of morceaux) expect(inventaire(nettoyerHtml(html))).toEqual(inventaire(html));
+  it.each(['bph', 'stss'])('garde intact tout le contenu de %s (balises et attributs)', (nom) => {
+    // Seul ajout voulu : tabindex="0" sur les zones défilantes (voir le test suivant).
+    for (const html of morceauxDe(nom)) expect(inventaire(nettoyerHtml(html)).filter((e) => e !== 'div@tabindex')).toEqual(inventaire(html));
+  });
+  it('rend focalisables au clavier les tableaux et les schémas défilants, et eux seuls', () => {
+    const sortie = nettoyerHtml('<div class="tbl"><table></table></div><figure><div class="scroll"></div></figure><div class="autre"></div><div class="tbl" tabindex="5"></div>');
+    expect(sortie).toBe('<div class="tbl" tabindex="0"><table></table></div><figure><div class="scroll" tabindex="0"></div></figure><div class="autre"></div><div class="tbl" tabindex="0"></div>');
+    expect(nettoyerHtml('<div tabindex="0" class="autre"></div>')).toBe('<div class="autre"></div>');
   });
   it('garde viewBox et linearGradient avec leur casse', () => {
     const svg = '<svg viewBox="0 0 10 10" role="img" aria-label="x"><defs><linearGradient id="g"><stop offset="0" /></linearGradient></defs></svg>';

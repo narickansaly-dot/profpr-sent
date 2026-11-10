@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { lireChapitre } from '@/lib/contenu/requetes';
+import { lireChapitre, lireCours } from '@/lib/contenu/requetes';
+import { peutLireCours } from '@/lib/acces/requetes';
+import { CoursVerrouille } from '@/components/acces/CoursVerrouille';
 import { ContenuChapitre } from '@/components/ContenuChapitre';
 import { MarqueurLecture } from '@/components/MarqueurLecture';
 import { BlocQuiz } from '@/components/BlocQuiz';
@@ -16,12 +18,15 @@ export async function generateMetadata({ params }: Params) {
 
 export default async function PageChapitre({ params }: Params) {
   const { slug, chapitre } = await params;
+  const cours0 = await lireCours(slug);
+  if (!cours0) notFound();
+  if (!(await peutLireCours(cours0.id))) return <CoursVerrouille titre={cours0.titre} />;
   const r = await lireChapitre(slug, chapitre);
   if (!r) notFound();
   const { cours, chapitre: ch, precedent, suivant } = r;
   return (
     <article style={{ '--couleur-cours': cours.couleur } as React.CSSProperties}>
-      <Link href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
+      <Link className="lien-action" href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
       <p className="pastille">Chapitre {ch.numero}{ch.duree ? ` · ${ch.duree}` : ''}</p>
       <h1>{ch.titre}</h1>
       {ch.chapeau && <p><strong>{ch.chapeau}</strong></p>}

@@ -35,7 +35,7 @@ export const lireEvenement = cache(async (id: string) => {
   const supabase = await creerClientServeur();
   const { data } = await supabase.from('evenement')
     // Une seule chaîne littérale : supabase-js en déduit le type du résultat.
-    .select('id, type, titre, debut, duree_minutes, cours_id, repetition, jours_semaine, repeter_jusqu_au, plan_id, revision_generale, cours(slug, titre, couleur), evenement_chapitre(chapitre(id, slug, titre, numero))')
+    .select('id, type, titre, debut, duree_minutes, cours_id, repetition, jours_semaine, repeter_jusqu_au, plan_id, revision_generale, delai_rappel_minutes, cours(slug, titre, couleur), evenement_chapitre(chapitre(id, slug, titre, numero))')
     .eq('id', id).maybeSingle();
   return data;
 });

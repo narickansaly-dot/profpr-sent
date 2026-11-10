@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { exigerEleve } from '@/lib/calendrier/garde';
 import { lireEvenement, optionsCours } from '@/lib/calendrier/requetes';
 import { isoVersHeureParis } from '@/lib/enseignant/dates';
+import { RAPPELS } from '@/lib/calendrier/schema-evenement';
 import { FormulaireEvenement } from '@/components/calendrier/FormulaireEvenement';
 import { FormulaireRevisionGenerale } from '@/components/calendrier/FormulaireRevisionGenerale';
 import { BoutonSupprimerEvenement } from '@/components/calendrier/BoutonSupprimerEvenement';
@@ -17,10 +18,13 @@ export default async function PageEvenement({ params }: { params: Promise<{ id: 
   const local = isoVersHeureParis(e.debut);
   const chapitres = e.evenement_chapitre.flatMap((ec) => (ec.chapitre ? [ec.chapitre] : [])).sort((a, b) => a.numero - b.numero);
   const cours = await optionsCours();
+  const libelleRappel = RAPPELS.find((r) => r.valeur !== '' && r.valeur === String(e.delai_rappel_minutes))
+    ?.libelle.replace(' (24 heures avant)', '').toLowerCase();
   return (
     <div className="page-evenement">
-      <p><Link href={`/calendrier?vue=semaine&date=${local.slice(0, 10)}`}>← Mon calendrier</Link></p>
+      <p><Link className="lien-action" href={`/calendrier?vue=semaine&date=${local.slice(0, 10)}`}>← Mon calendrier</Link></p>
       <h1>{e.titre}</h1>
+      {libelleRappel && <p>Rappel&nbsp;: {libelleRappel}</p>}
       {e.revision_generale && (
         <section aria-labelledby="titre-generale">
           <h2 id="titre-generale">Révision générale</h2>
@@ -48,7 +52,7 @@ export default async function PageEvenement({ params }: { params: Promise<{ id: 
         <FormulaireEvenement id={e.id} cours={cours} initial={{
           type: e.type, titre: e.titre, jour: local.slice(0, 10), heure: local.slice(11, 16), duree: String(e.duree_minutes),
           cours: e.cours_id ?? '', chapitres: chapitres.map((c) => c.id), repetition: e.repetition,
-          jours: (e.jours_semaine ?? []).map(String), jusqu: e.repeter_jusqu_au ?? '',
+          jours: (e.jours_semaine ?? []).map(String), jusqu: e.repeter_jusqu_au ?? '', rappel: String(e.delai_rappel_minutes ?? ''),
         }} />
       </section>
       <BoutonSupprimerEvenement id={e.id} titre={e.titre} examen={e.type === 'examen_reel'} />

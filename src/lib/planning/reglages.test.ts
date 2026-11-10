@@ -26,6 +26,12 @@ describe('lireReglages', () => {
         .toMatchObject({ ok: false, champ: 'heure' });
     }
   });
+  it('répond en français à un jour falsifié', () => {
+    for (const faux of ['0', '8', '1.5', 'abc']) {
+      expect(lireReglages(formulaire({ sessions: '3', duree: '45', jours: [faux], heure: '17:30' })), faux)
+        .toMatchObject({ ok: false, champ: 'jours', erreur: 'Choisis des jours entre lundi et dimanche.' });
+    }
+  });
   it('prépare les réglages pour la base', () => {
     expect(versReglagesRpc({ sessionsParSemaine: 2, dureeMinutes: 60, joursPreferes: [6, 7], heureDebut: '10:00' }))
       .toEqual({ sessions_par_semaine: 2, duree_minutes: 60, jours_preferes: [6, 7], heure_debut: '10:00' });

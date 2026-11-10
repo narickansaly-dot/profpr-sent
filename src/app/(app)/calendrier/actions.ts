@@ -55,6 +55,9 @@ export async function enregistrerEvenement(_: EtatEvenement, form: FormData): Pr
       : error?.message.includes('chapitres_invalides') ? 'chapitres' : undefined;
     return { erreur: messageErreur(error?.message), champ, valeurs: lu.valeurs };
   }
+  // Le rappel se règle à part ; l'événement est déjà enregistré, un échec ici n'est pas bloquant.
+  const rappel = await supabase.rpc('regler_rappel_evenement', { p_id: data, p_delai: lu.rappel as number });
+  if (rappel.error) console.error('regler_rappel_evenement', rappel.error.message);
   revaliderCalendrier();
   if (!id && lu.donnees.type === 'examen_reel' && lu.donnees.cours_id) redirect(`/calendrier/${data}/planning`);
   redirect(`/calendrier?vue=semaine&date=${lu.valeurs.jour}`);

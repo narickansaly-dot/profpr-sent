@@ -5,18 +5,19 @@ import { lireChapitreAdmin, lireCoursAdmin, lireQuestionsChapitre } from '@/lib/
 import { LIBELLE_STATUT, TYPES_QUESTION } from '@/lib/admin/questions';
 import { couleurCoursAcceptable } from '@/lib/contenu/couleur';
 import { ListeQuestionsAdmin } from '@/components/admin/ListeQuestionsAdmin';
+import { RelectureQuestions } from '@/components/admin/RelectureQuestions';
 import { MessageStatut } from '@/components/admin/MessageStatut';
 
 export const metadata = { title: 'Questions du chapitre' };
 
-type Params = { statut?: string; type?: string; signalees?: string; q?: string; supprimee?: string };
+type Params = { statut?: string; type?: string; signalees?: string; q?: string; supprimee?: string; relecture?: string };
 const un = (v: string | string[] | undefined) => (typeof v === 'string' ? v : undefined);
 
 export default async function PageQuestionsChapitre({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   await exigerAdmin();
   const { id } = await params;
   const brut = await searchParams;
-  const f: Params = { statut: un(brut.statut), type: un(brut.type), signalees: un(brut.signalees), q: un(brut.q), supprimee: un(brut.supprimee) };
+  const f: Params = { statut: un(brut.statut), type: un(brut.type), signalees: un(brut.signalees), q: un(brut.q), supprimee: un(brut.supprimee), relecture: un(brut.relecture) };
   const ch = await lireChapitreAdmin(id);
   if (!ch) notFound();
   const [cours, toutes] = await Promise.all([lireCoursAdmin(ch.cours_id), lireQuestionsChapitre(id)]);
@@ -30,10 +31,12 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
     && (!signalees || q.signalements_ouverts > 0) && (!aiguille || q.enonce.toLocaleLowerCase('fr').includes(aiguille)));
   const filtre = !!(statut || type || signalees || recherche);
   const nb = (s: string) => toutes.filter((q) => q.statut === s).length;
+  const relecture = f.relecture === '1';
+  const aRelire = toutes.filter((q) => q.statut === 'a_relire');
   const couleur = couleurCoursAcceptable(cours.couleur) ? cours.couleur : undefined;
   return (
     <div className="page-admin" style={couleur ? ({ '--couleur-cours': couleur } as React.CSSProperties) : undefined}>
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <div className="entete-bloc">
         <div>
           <p className="etiquette">{cours.titre}</p>
@@ -48,6 +51,15 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
         ))}
         <li><span className="etiquette">Total</span> <strong>{toutes.length}</strong></li>
       </ul>
+      {relecture ? (
+        <>
+          <p><Link className="lien-action" href={`/admin/chapitres/${id}/questions`}>Retour à la liste</Link></p>
+          <RelectureQuestions chapitreId={id} questions={aRelire} />
+        </>
+      ) : (<>
+      {aRelire.length > 0 && (
+        <p><Link href={`/admin/chapitres/${id}/questions?relecture=1`} className="bouton bouton-secondaire">Relire les questions à relire ({aRelire.length})</Link></p>
+      )}
       <form method="get" className="formulaire filtres-questions" role="search" aria-label="Filtrer les questions">
         <div className="champ-question">
           <label htmlFor="filtre-statut">Statut</label>
@@ -81,6 +93,7 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
       </p>
       <ListeQuestionsAdmin questions={visibles}
         vide={filtre ? 'Aucune question ne correspond à ces filtres.' : 'Ce chapitre n’a pas encore de question. Crée la première.'} />
+      </>)}
     </div>
   );
 }

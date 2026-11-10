@@ -13,12 +13,12 @@ export default async function PageNouvelEvenement({ searchParams }: { searchPara
   const cours = await optionsCours();
   return (
     <div className="page-evenement">
-      <p><Link href="/calendrier">← Mon calendrier</Link></p>
+      <p><Link href="/calendrier" className="lien-action">← Mon calendrier</Link></p>
       <h1>Nouvel événement</h1>
       <FormulaireEvenement cours={cours} initial={{
         type: (TYPES_EVENEMENT as readonly string[]).includes(type ?? '') ? type! : 'revision',
         titre: '', jour: jour && estJourValide(jour) ? jour : jourParis(new Date()), heure: '17:00', duree: '60',
-        cours: '', chapitres: [], repetition: 'aucune', jours: [], jusqu: '',
+        cours: '', chapitres: [], repetition: 'aucune', jours: [], jusqu: '', rappel: '',
       }} />
     </div>
   );
