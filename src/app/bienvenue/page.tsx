@@ -9,7 +9,7 @@ export default async function PageBienvenue({ searchParams }: { searchParams: Pr
   const supabase = await creerClientServeur();
   const { data: filieres, error } = await supabase.from('filiere').select('id, voie, nom').order('ordre');
   return (
-    <main className="page-auth">
+    <main id="contenu" tabIndex={-1} className="page-auth">
       <h1>Bienvenue !</h1>
       <p>Dis-nous où tu en es pour qu’on te montre les bons cours.</p>
       {error ? (

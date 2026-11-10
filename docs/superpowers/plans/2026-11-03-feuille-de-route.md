@@ -14,8 +14,13 @@ La spec couvre sept étapes qui livrent chacune une version utilisable. Chaque �
 | 4b. Notifications Web Push | `2026-12-08-etape-4b-notifications.md` (bilan : `2026-12-08-etape-4b-bilan.md`) | Terminé (branche etape-4b-notifications) |
 | 4c. En-têtes de sécurité, déploiement, accessibilité, dette | `2026-12-15-etape-4c-securite.md` (bilan : `2026-12-15-etape-4c-bilan.md`) | Terminé (branche etape-4c-securite) |
 | 5a. Accès gratuit, consentement parental, données personnelles, pages légales | `2026-12-22-etape-5a-rgpd.md` (bilan : `2026-12-22-etape-5a-bilan.md`) | Terminé (branche etape-5a-rgpd) |
-| 5b. Abonnements Stripe, comptes parents, CGV | à rédiger après l'étape 5a | — |
-| 6. Contenu 1re ST2S complet | à rédiger après l'étape 5 | — |
+| 5b. Comptes parents, CGV, fondations des abonnements (sans paiement) | spec : `../specs/2026-12-29-etape-5b-parents-design.md`, plan : `2026-12-29-etape-5b-parents.md` (bilan : `2026-12-29-etape-5b-bilan.md`) | Terminé (branche etape-5b-parents) |
+| 5c. Paiement Stripe | après la création d'un compte Stripe | — |
+| 6a. Banques de questions BPH (environ 150 par chapitre) | `2027-01-05-etape-6a-banques-bph.md` (spec : `../specs/2027-01-05-etape-6a-banques-bph-design.md`) | Terminé (branche etape-6a-banques-bph) ; [bilan](2027-01-05-etape-6a-bilan.md) |
+| Dette 5b et 6a | `2027-01-12-dette-5b-6a.md` | Terminé (branche dette-5b-6a) ; [bilan](2027-01-12-dette-5b-6a-bilan.md) |
+| Correctifs des audits | `2027-01-19-correctifs-audit.md` | Terminé (branche correctifs-audit) ; [bilan](2027-01-19-correctifs-audit-bilan.md) |
+| 6b. STSS de 1re ST2S (programme officiel + IA) | `2027-01-26-etape-6b-stss.md` (spec : `../specs/2027-01-26-etape-6b-stss-design.md`) | Terminé (branche etape-6b-stss) ; [bilan](2027-01-26-etape-6b-bilan.md) |
+| 6c. Physique-chimie pour la santé | à faire | — |
 | 7. Stores, nouveaux types de questions, établissements, autres filières | plus tard | — |
 
 ## Répartition des modèles (économie de tokens)

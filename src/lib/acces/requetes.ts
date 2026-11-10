@@ -1,7 +1,7 @@
 import 'server-only';
 import { cache } from 'react';
 import { creerClientServeur } from '@/lib/supabase/server';
-import type { MonAcces } from './etat';
+import { lireAbonnement, type MonAcces } from './etat';
 
 /** Accès de l'utilisateur, lu une seule fois par rendu. Après une action qui le change, ne pas relire avec cette fonction. */
 export const lireMonAcces = cache(async (): Promise<MonAcces | null> => {
@@ -18,6 +18,9 @@ export const lireMonAcces = cache(async (): Promise<MonAcces | null> => {
     consentementRequis: l.consentement_requis,
     emailParent: l.email_parent,
     consentementEnvoyeLe: l.consentement_envoye_le,
+    abonnement: l.abonnement ? lireAbonnement(l.abonnement) : null,
+    consentementRetireLe: l.consentement_retire_le,
+    suppressionPrevueLe: l.suppression_prevue_le,
   };
 });
 

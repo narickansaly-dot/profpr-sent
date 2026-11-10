@@ -1,0 +1,11 @@
+.page-parent { display: grid; gap: 24px; }
+.liste-enfants { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.carte-enfant { display: grid; gap: 8px; }
+.carte-enfant h2, .carte-enfant p { margin: 0; }
+.actions-enfant { display: grid; gap: 16px; }
+.formulaire-confirme h3, .formulaire-confirme p { margin: 0; }
+.page-parent .bouton-danger { color: color-mix(in srgb, var(--danger) 85%, #000); border-color: color-mix(in srgb, var(--danger) 45%, var(--trait)); }
+@media (prefers-color-scheme: dark) { .page-parent .bouton-danger { color: var(--danger); } }
+@media (max-width: 480px) { .page-parent .bouton { width: 100%; text-align: center; } }
+.formulaire-confirme .case { display: flex; align-items: center; gap: 12px; min-height: 44px; font-weight: 400; }
+.formulaire-confirme .case input { flex: none; width: 24px; height: 24px; }

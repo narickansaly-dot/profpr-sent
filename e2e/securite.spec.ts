@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
-import { vieillirInscription } from './aide-db';
+import { creerCoursARelire, rendreAdmin, supprimerCoursDeTest, vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
-import { emailDeTest, inscrireEleve, inscrireEleveMineur, suivreViolations } from './aide-parcours';
+import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant, suivreViolations } from './aide-parcours';
 
 test('les pages portent une CSP avec nonce et les en-têtes de sécurité', async ({ request }) => {
   const r = await request.get('/connexion');
@@ -44,12 +44,26 @@ test('la page hors connexion ne déclenche aucune violation de CSP', async ({ pa
   expect(violations).toEqual([]);
 });
 
+test('les pages introuvables répondent 404 sans violation de CSP', async ({ page }) => {
+  const violations = await suivreViolations(page);
+  await page.goto('/connexion');
+  await inscrireEleve(page, emailDeTest('csp-404'));
+  for (const chemin of ['/page-qui-n-existe-pas', '/cours/cours-inexistant']) {
+    const reponse = await page.goto(chemin);
+    expect(reponse?.status()).toBe(404);
+    await expect(page).toHaveTitle(/Page introuvable/);
+    await expect(page.getByRole('heading', { name: 'Page introuvable' })).toBeVisible();
+  }
+  await page.waitForLoadState('networkidle');
+  expect(violations).toEqual([]);
+});
+
 test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, browser }, testInfo) => {
   test.setTimeout(120_000);
   const violations = await suivreViolations(page);
   const email = emailDeTest('csp-acces');
   await inscrireEleve(page, email);
-  for (const chemin of ['/mes-donnees', '/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+  for (const chemin of ['/mes-donnees', '/mentions-legales', '/confidentialite', '/conditions-utilisation', '/conditions-vente']) {
     await page.goto(chemin);
     await expect(page.locator('main')).toBeVisible();
   }
@@ -89,5 +103,40 @@ test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, br
     expect(violationsMineur).toEqual([]);
   } finally {
     await mineur.close();
+  }
+});
+
+test('aucune violation de CSP sur les pages parent', async ({ page, browser }, testInfo) => {
+  test.setTimeout(120_000);
+  await inscrireEleve(page, emailDeTest('csp-enfant'));
+  const { parent, contexte, eleveId } = await relierParentEtEnfant(page, browser, testInfo, 'csp-parent');
+  try {
+    const violations = await suivreViolations(parent);
+    for (const chemin of ['/parent', `/parent/enfant/${eleveId}`]) {
+      await parent.goto(chemin);
+      await expect(parent.locator('main, .page-parent').first()).toBeVisible();
+      await parent.waitForLoadState('networkidle');
+    }
+    expect(violations).toEqual([]);
+  } finally {
+    await contexte.close();
+  }
+});
+
+test('aucune violation de CSP sur la relecture en lot (admin)', async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
+  const slug = `e2e-csp-relecture-${testInfo.project.name}-${Date.now()}`.toLowerCase();
+  try {
+    const chapitreId = await creerCoursARelire(slug, 2);
+    const violations = await suivreViolations(page);
+    const email = emailDeTest('csp-admin');
+    await inscrireEleve(page, email);
+    await rendreAdmin(email);
+    await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
+    await expect(page.locator('article.carte-relecture')).toHaveCount(2);
+    await page.waitForLoadState('networkidle');
+    expect(violations).toEqual([]);
+  } finally {
+    await supprimerCoursDeTest(slug);
   }
 });

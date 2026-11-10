@@ -29,7 +29,7 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/consentement', false)).toEqual({ pathname: '/connexion', suite: '/consentement' });
   });
   it('laisse lire les pages légales sans session, et seulement elles', () => {
-    for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation']) {
+    for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation', '/conditions-vente']) {
       expect(redirectionPour(chemin, false)).toBeNull();
       expect(redirectionPour(chemin, true)).toBeNull();
       expect(redirectionPour(chemin + 'x', false)).toEqual({ pathname: '/connexion', suite: chemin + 'x' });

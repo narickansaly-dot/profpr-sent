@@ -45,7 +45,7 @@ export default async function PageQuestion({ params, searchParams }: { params: P
   const code = typeof enregistre === 'string' ? enregistre : '';
   return (
     <div className="page-admin">
-      <p className="fil"><Link href={retour}>← Retour aux questions du chapitre {ch.numero}</Link></p>
+      <p className="fil"><Link href={retour} className="lien-action">← Retour aux questions du chapitre {ch.numero}</Link></p>
       <div className="entete-bloc">
         <div>
           <p className="etiquette">{cours.titre} · Ch. {ch.numero}</p>
@@ -67,7 +67,7 @@ export default async function PageQuestion({ params, searchParams }: { params: P
               </li>
             ))}
           </ul>
-          <p><Link href="/admin/signalements">Traiter les signalements</Link></p>
+          <p><Link href="/admin/signalements" className="lien-action">Traiter les signalements</Link></p>
         </section>
       )}
       <section className="carte" aria-labelledby="titre-form-question">

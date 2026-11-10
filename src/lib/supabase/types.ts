@@ -23,7 +23,33 @@ export type Database = {
           }
         },"public": {
           Tables: {
-            "abonnement_push": {
+            "abonnement": {
+                  Row: {
+                    "cree_le": string,"eleve_id": string,"fin_grace": string | null,"fin_periode": string,"formule": string,"id": string,"maj_le": string,"payeur_id": string | null,"statut": string,"stripe_abonnement_id": string | null,"stripe_client_id": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cree_le"?: string,"eleve_id": string,"fin_grace"?: string | null,"fin_periode": string,"formule": string,"id"?: string,"maj_le"?: string,"payeur_id"?: string | null,"statut": string,"stripe_abonnement_id"?: string | null,"stripe_client_id"?: string | null
+                  }
+                  Update: {
+                    "cree_le"?: string,"eleve_id"?: string,"fin_grace"?: string | null,"fin_periode"?: string,"formule"?: string,"id"?: string,"maj_le"?: string,"payeur_id"?: string | null,"statut"?: string,"stripe_abonnement_id"?: string | null,"stripe_client_id"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "abonnement_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "abonnement_payeur_id_fkey"
+      columns: ["payeur_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"abonnement_push": {
                   Row: {
                     "appareil": string,"auth": string,"cree_le": string,"eleve_id": string,"endpoint": string,"id": string,"p256dh": string
                   }
@@ -149,20 +175,26 @@ isOneToOne: false
                   ]
                 },"consentement_parental": {
                   Row: {
-                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string
+                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string | null,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Update: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Relationships: [
                     {
       foreignKeyName: "consentement_parental_eleve_id_fkey"
       columns: ["eleve_id"]
 isOneToOne: true
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "consentement_parental_retire_par_fkey"
+      columns: ["retire_par"]
+isOneToOne: false
       referencedRelation: "profil"
       referencedColumns: ["id"]
     }
@@ -337,6 +369,32 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"lien_parent": {
+                  Row: {
+                    "cree_le": string,"eleve_id": string,"origine": string,"parent_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cree_le"?: string,"eleve_id": string,"origine": string,"parent_id": string
+                  }
+                  Update: {
+                    "cree_le"?: string,"eleve_id"?: string,"origine"?: string,"parent_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "lien_parent_eleve_id_fkey"
+      columns: ["eleve_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "lien_parent_parent_id_fkey"
+      columns: ["parent_id"]
+isOneToOne: false
+      referencedRelation: "profil"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"niveau": {
                   Row: {
                     "code": string,"nom": string,"ordre": number
@@ -445,14 +503,14 @@ isOneToOne: true
                   ]
                 },"profil": {
                   Row: {
-                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"],"suppression_demandee_le": string | null
+                    "demande_enseignant": boolean,"email": string | null,"etablissement": string | null,"filiere_id": string | null,"id": string,"inscrit_le": string,"moins_de_15_ans": boolean | null,"niveau_code": string | null,"nom": string | null,"onboarding_termine": boolean,"role": Database["public"]['Enums']["role_t"],"suppression_demandee_le": string | null,"suppression_imposee": boolean
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id": string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null,"suppression_imposee"?: boolean
                   }
                   Update: {
-                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null
+                    "demande_enseignant"?: boolean,"email"?: string | null,"etablissement"?: string | null,"filiere_id"?: string | null,"id"?: string,"inscrit_le"?: string,"moins_de_15_ans"?: boolean | null,"niveau_code"?: string | null,"nom"?: string | null,"onboarding_termine"?: boolean,"role"?: Database["public"]['Enums']["role_t"],"suppression_demandee_le"?: string | null,"suppression_imposee"?: boolean
                   }
                   Relationships: [
                     {
@@ -672,6 +730,9 @@ isOneToOne: false
             "accepter_plan_revision":
 { Args: { "p_examen": string,"p_reglages": Json,"p_sessions": Json }; Returns: string
                            },
+"annuler_retrait_consentement":
+{ Args: { "p_eleve": string }; Returns: undefined
+                           },
 "annuler_suppression_compte":
 { Args: Record<PropertyKey, never>; Returns: undefined
                            },
@@ -682,6 +743,9 @@ isOneToOne: false
                            },
 "changer_statut_question":
 { Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
+                           },
+"changer_statut_questions":
+{ Args: { "p_questions": (string)[],"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: number
                            },
 "choisir_cours_gratuit":
 { Args: { "p_cours": string }; Returns: undefined
@@ -722,6 +786,9 @@ isOneToOne: false
 "definir_echeance":
 { Args: { "p_classe": string,"p_cours": string,"p_limite": string,"p_ouverture": string }; Returns: undefined
                            },
+"delier_parent":
+{ Args: { "p_autre": string }; Returns: undefined
+                           },
 "demander_consentement":
 { Args: { "p_email": string }; Returns: undefined
                            },
@@ -742,6 +809,9 @@ isOneToOne: false
 "demarrer_revision_generale":
 { Args: { "p_evenement": string }; Returns: string
                            },
+"devenir_parent":
+{ Args: { "p_nom": string }; Returns: undefined
+                           },
 "donner_consentement":
 { Args: { "p_jeton": string }; Returns: string
                            },
@@ -757,6 +827,11 @@ isOneToOne: false
                            },
 "en_essai":
 { Args: Record<PropertyKey, never>; Returns: boolean
+                           },
+"enfants_du_parent":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "abonnement": Json,"consentement_donne_le": string,"consentement_retire_le": string,"eleve_id": string,"lie_le": string,"moins_de_15_ans": boolean,"niveau": string,"nom": string,"origine": string,"retire_par_moi": boolean,"suppression_prevue_le": string
+            }[]
                            },
 "enregistrer_abonnement_push":
 { Args: { "p_appareil": string,"p_auth": string,"p_endpoint": string,"p_p256dh": string }; Returns: string
@@ -784,8 +859,14 @@ isOneToOne: false
 "envoi_terminer":
 { Args: { "p_expires": (string)[],"p_resultats": Json,"p_secret": string }; Returns: undefined
                            },
+"est_eleve_sans_accord":
+{ Args: { "p_eleve": string }; Returns: boolean
+                           },
 "exporter_mes_donnees":
 { Args: Record<PropertyKey, never>; Returns: Json
+                           },
+"generer_code_parent":
+{ Args: Record<PropertyKey, never>; Returns: string
                            },
 "ignorer_reorganisation":
 { Args: { "p_plan": string }; Returns: undefined
@@ -793,9 +874,15 @@ isOneToOne: false
 "importer_cours":
 { Args: { "p_cours": Json,"p_publier"?: boolean }; Returns: Json
                            },
+"lier_par_code":
+{ Args: { "p_code": string }; Returns: string
+                           },
+"lier_par_email":
+{ Args: Record<PropertyKey, never>; Returns: number
+                           },
 "lire_demande_consentement":
 { Args: { "p_jeton": string }; Returns: {
-              "deja_donne": boolean,"prenom": string
+              "deja_donne": boolean,"prenom": string,"retire": boolean
             }[]
                            },
 "marquer_chapitre_lu":
@@ -821,7 +908,7 @@ isOneToOne: false
                            },
 "mon_acces":
 { Args: Record<PropertyKey, never>; Returns: {
-              "changement_possible_jusqu_au": string,"consentement_envoye_le": string,"consentement_requis": boolean,"cours_gratuit_id": string,"email_parent": string,"en_essai": boolean,"fin_essai": string,"role": string
+              "abonnement": Json,"changement_possible_jusqu_au": string,"consentement_envoye_le": string,"consentement_requis": boolean,"consentement_retire_le": string,"cours_gratuit_id": string,"email_parent": string,"en_essai": boolean,"fin_essai": string,"role": string,"suppression_prevue_le": string
             }[]
                            },
 "mon_calendrier":
@@ -840,6 +927,11 @@ isOneToOne: false
 "notions_chapitre":
 { Args: { "p_chapitre": string }; Returns: string[]
                            },
+"parents_de_l_eleve":
+{ Args: Record<PropertyKey, never>; Returns: {
+              "lie_le": string,"nom": string,"origine": string,"parent_id": string
+            }[]
+                           },
 "peut_lire_cours":
 { Args: { "p_cours": string }; Returns: boolean
                            },
@@ -851,6 +943,11 @@ isOneToOne: false
 "points_faibles":
 { Args: { "p_limite"?: number }; Returns: {
               "chapitre_id": string,"chapitre_slug": string,"cours_slug": string,"libelle": string,"reponses": number,"taux_erreur": number
+            }[]
+                           },
+"progression_enfant":
+{ Args: { "p_eleve": string }; Returns: {
+              "chapitres_total": number,"chapitres_valides": number,"cours_id": string,"cours_valide": boolean,"derniere_activite": string,"meilleure_note": number,"titre": string
             }[]
                            },
 "publier_chapitre":
@@ -893,6 +990,9 @@ isOneToOne: false
                            },
 "repondre":
 { Args: { "p_question": string,"p_reponse": Json,"p_tentative": string }; Returns: string
+                           },
+"retirer_consentement":
+{ Args: { "p_eleve": string }; Returns: string
                            },
 "retirer_eleve":
 { Args: { "p_classe": string,"p_eleve": string }; Returns: undefined

@@ -21,7 +21,7 @@ export default async function PageChoisirCours() {
       <div>
         <h1>Choisis ton cours gratuit</h1>
         <p className="carte">Ton essai dure jusqu’au {dateLongue.format(new Date(acces.finEssai))}. Tous les cours sont ouverts d’ici là.</p>
-        <p><Link href="/">Retour à l’accueil</Link></p>
+        <p><Link href="/" className="lien-action">Retour à l’accueil</Link></p>
       </div>
     );
   }
@@ -32,7 +32,7 @@ export default async function PageChoisirCours() {
       <div>
         <h1>Ton cours gratuit</h1>
         <p className="carte">Ton cours gratuit est <strong>{choisi?.titre ?? 'un cours de ta filière'}</strong>. Ce choix est définitif.</p>
-        <p><Link href="/">Retour à l’accueil</Link></p>
+        <p><Link href="/" className="lien-action">Retour à l’accueil</Link></p>
       </div>
     );
   }

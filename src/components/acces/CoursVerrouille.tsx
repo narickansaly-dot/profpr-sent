@@ -19,7 +19,7 @@ export async function CoursVerrouille({ titre }: { titre: string }) {
       <h1>Ce cours n’est pas ouvert pour toi</h1>
       <p><strong>{titre}</strong></p>
       <p>{explication}</p>
-      <p><Link href="/">Retour à l’accueil</Link></p>
+      <p><Link href="/" className="lien-action">Retour à l’accueil</Link></p>
     </div>
   );
 }

@@ -18,8 +18,8 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
       <>
         <EnTete prenom={profil.nom} role="attente" />
         <IndicateurConnexion />
-        {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} />}
-        <main className="conteneur"><AttenteValidation prenom={profil.nom} /></main>
+        {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} imposee={profil.suppression_imposee} />}
+        <main id="contenu" tabIndex={-1} className="conteneur"><AttenteValidation prenom={profil.nom} /></main>
       </>
     );
   }
@@ -35,9 +35,9 @@ export default async function LayoutApp({ children }: { children: React.ReactNod
     <>
       <EnTete prenom={profil.nom} role={profil.role} rappelsNonLus={rappelsNonLus} />
       <IndicateurConnexion />
-      {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} />}
+      {profil.suppression_demandee_le && <BanniereSuppression demandeeLe={profil.suppression_demandee_le} imposee={profil.suppression_imposee} parent={profil.role === 'parent'} />}
       {acces && <BanniereEssai acces={acces} titreCoursGratuit={titreCoursGratuit} />}
-      <main className="conteneur">{children}</main>
+      <main id="contenu" tabIndex={-1} className="conteneur">{children}</main>
     </>
   );
 }

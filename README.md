@@ -103,20 +103,47 @@ L'application envoie un seul e-mail, celui de l'accord parental (élève de moin
 - **Pages légales** : `/mentions-legales`, `/confidentialite`, `/conditions-utilisation` sont des trames à compléter (champs entre crochets) et à faire relire par un juriste avant la mise en vente. Aucune bannière de cookies : seuls des cookies de session sont utilisés.
 - **Accès** : essai de 7 jours, puis un cours gratuit au choix (changement possible une fois pendant 48 heures). Un élève de moins de 15 ans n'accède à rien tant qu'un parent n'a pas donné son accord ; l'essai commence à cet accord.
 
+## Parents
+
+- **Compte parent** : à l'inscription, « Parent d'un élève » (page `/bienvenue`). Un parent n'a accès à aucun cours ; sa page d'accueil est `/parent` (« Mes enfants »).
+- **Liaison** : un parent d'un élève de moins de 15 ans est relié automatiquement s'il s'inscrit avec l'adresse qui a reçu la demande d'accord. Pour un élève de plus de 15 ans, l'élève crée un code dans « Mes données » (8 caractères, 48 heures, usage unique) que le parent saisit sur `/parent` (5 essais par heure).
+- **Suivi** : progression par cours de chaque enfant (`/parent/enfant/<id>`). L'élève voit ses parents dans « Mes données » et peut les délier.
+- **Retrait de l'accord** : le parent d'un moins de 15 ans peut retirer son accord (compte bloqué, suppression à J+30, annulation possible) ou ne plus suivre l'enfant.
+- **Abonnements** : la table existe et ouvre tous les cours (abonné actif ou en délai de grâce), mais rien ne la remplit avant l'étape 5c (Stripe). Les tests la remplissent avec `simulerAbonnement` (`e2e/aide-db.ts`).
+- **Conditions de vente** : `/conditions-vente`, trame à compléter et à faire relire.
+
 ## Contenu
 
 Le contenu entre en base uniquement par des fichiers JSON validés (`src/lib/contenu/format-import.ts`) ou par les éditeurs de l'espace admin, qui appliquent les mêmes règles. Le format est décrit dans le [guide des auteurs](docs/guide-auteurs.md).
 
 ```bash
-npm run import:contenu -- <fichier.json> [--publier] [--distant]
+npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--distant]
 ```
 
 - `npm run import:contenu -- contenu/1re-st2s/bph.json --publier` importe le cours BPH et le publie.
 - Sans `--publier`, un cours ou un chapitre nouveau reste en brouillon ; un cours déjà publié le reste.
+- `--garder-statuts` : une question déjà `valide` (ou `brouillon`) dont la structure ne change pas garde son statut ; une structure changée crée une nouvelle version `a_relire` (elle reste `brouillon` pour un brouillon). À utiliser pour les réimports du cours BPH après validation par l'enseignant.
 - Le script refuse toute base qui n'est pas locale, sauf avec `--distant`.
 - Un fichier invalide n'écrit rien : toutes les erreurs sont listées avec leur chemin (« Chapitre 2, question 5 : … »).
 - Le bilan indique les questions créées, modifiées, en nouvelle version, inchangées, archivées et supprimées. Un import est rejouable : les questions inchangées restent telles quelles.
 - Les administrateurs peuvent aussi importer depuis `/admin/import` (vérification du résumé, puis confirmation).
+
+### Banques de questions
+
+Les banques de questions se fabriquent chapitre par chapitre, dans `contenu/1re-st2s/banques/`. L'option `--cours` choisit le cours : `bph` (par défaut) ou `stss` (fichier `stss.json`, dix chapitres de 150 questions) :
+
+```bash
+npm run banque:texte -- <n>       # texte du chapitre, pour rédiger et relire
+npm run banque:verifier -- <n>    # contrôle la banque (types, difficultés, notions, doublons, biais de longueur)
+npm run banque:fusionner -- <n>   # ajoute les questions de la banque à bph.json
+
+# même chose pour STSS : ajouter --cours stss
+npm run banque:texte -- <n> --cours stss
+npm run banque:verifier -- <n> --cours stss
+npm run banque:fusionner -- <n> --cours stss   # ajoute à stss.json
+```
+
+Les questions fusionnées arrivent en `a_relire` et ne sont tirées qu'une fois validées dans l'admin. Voir bilans : [étape 6a](docs/superpowers/plans/2027-01-05-etape-6a-bilan.md) et [étape 6b](docs/superpowers/plans/2027-01-26-etape-6b-bilan.md).
 
 Mise en ligne : voir `docs/mise-en-ligne.md`.
 
