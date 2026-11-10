@@ -21,7 +21,7 @@ Même règle qu'au chapitre 1 : les accents, la casse et ¿ ¡ sont ignorés par
 
 - Types : 75 / 30 / 30 (17 vrais, 13 faux) / 15.
 - Difficultés : 60 / 58 / 32.
-- Bonne réponse la plus longue : 26 qcm_unique sur 75 (35 %).
+- Bonne réponse la plus longue : 27 qcm_unique sur 75 (36 %).
 - Notions (8) : métiers (17), études et emploi (19), futur simple (28), obligation (19), souhaits et projets (16), compréhension de l'écrit (22), culture (18), s'exprimer (11).
 
 Contrôle `verifierBanque` (préfixe `espagnol`, 150 questions) : « Banque du chapitre 2 conforme : 150 questions. »
