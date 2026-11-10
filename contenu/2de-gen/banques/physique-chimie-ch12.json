@@ -1,0 +1,2298 @@
+{
+  "chapitre": 12,
+  "notions": [
+    "Dipôle, tension, intensité",
+    "Multimètre",
+    "Sécurité",
+    "Loi des nœuds",
+    "Loi des mailles",
+    "Caractéristique",
+    "Modéliser une caractéristique",
+    "Point de fonctionnement",
+    "Loi d'Ohm",
+    "Capteurs",
+    "Étalonnage et microcontrôleur"
+  ],
+  "questions": [
+    {
+      "source": "physique-chimie-2de:ch12:banque:001",
+      "type": "vrai_faux",
+      "enonce": "L'intensité du courant s'exprime en ampère.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "L'unité de l'intensité est l'ampère (A).",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:002",
+      "type": "vrai_faux",
+      "enonce": "Si UAB = 2,5 V, alors UBA = −2,5 V.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La tension est une grandeur algébrique : UBA = −UAB.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:003",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on un composant électrique qui possède deux bornes ? Donne un seul mot.",
+      "reponses_acceptees": [
+        "dipôle",
+        "dipôles",
+        "un dipôle",
+        "dipole"
+      ],
+      "difficulte": 1,
+      "explication": "Un composant à deux bornes est un dipôle.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Un appareil affiche UAB = −3,2 V. Que vaut UBA ?",
+      "propositions": [
+        "−3,2 V",
+        "0 V",
+        "3,2 V",
+        "6,4 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "UBA = −UAB = −(−3,2) = 3,2 V.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:005",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels sont des dipôles ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une lampe",
+        "Un nœud du circuit",
+        "Un moteur",
+        "Une résistance"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une lampe, un moteur et une résistance ont deux bornes. Un nœud est un point relié à trois fils au moins.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quelle phrase est correcte ?",
+      "propositions": [
+        "La tension aux bornes de la lampe est de 4,5 V",
+        "L'intensité aux bornes de la lampe est de 0,20 A",
+        "La tension qui traverse la lampe est de 4,5 V",
+        "L'intensité entre deux points est de 0,20 A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La tension existe entre deux points (aux bornes d'un dipôle) ; le courant traverse une branche, on parle de son intensité.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité de la tension électrique ?",
+      "propositions": [
+        "L'ampère (A)",
+        "L'ohm (Ω)",
+        "Le volt (V)",
+        "Le milliampère (mA)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La tension s'exprime en volt (V).",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la tension électrique sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est toujours positive",
+        "Elle s'exprime en volt",
+        "Elle se mesure entre deux points du circuit",
+        "Elle traverse le dipôle comme le courant"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La tension UAB se mesure entre deux points, en volt ; c'est une grandeur algébrique, qui peut être négative.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un dipôle ?",
+      "propositions": [
+        "Un point du circuit relié à trois fils au moins",
+        "Un composant électrique qui possède deux bornes",
+        "Un chemin fermé formé de plusieurs branches",
+        "Un appareil qui mesure l'intensité du courant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un dipôle (lampe, moteur, résistance…) possède deux bornes.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité de l'intensité du courant ?",
+      "propositions": [
+        "L'ampère (A)",
+        "Le volt (V)",
+        "L'ohm (Ω)",
+        "Le kiloohm (kΩ)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité du courant s'exprime en ampère (A) ; le volt est l'unité de la tension.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:011",
+      "type": "vrai_faux",
+      "enonce": "La tension UAB se mesure en un seul point du circuit.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "La tension se mesure entre deux points, A et B.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Un voltmètre affiche UAB = 5,0 V. Quelle est la valeur de UBA ?",
+      "propositions": [
+        "5,0 V",
+        "0 V",
+        "0,20 V",
+        "−5,0 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La tension est algébrique : UBA = −UAB = −5,0 V.",
+      "notion": "Dipôle, tension, intensité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:013",
+      "type": "qcm_unique",
+      "enonce": "On veut mesurer une tension d'environ 3,5 V avec un voltmètre aux calibres 2 V, 20 V, 200 V et 1 000 V. Quel calibre convient ?",
+      "propositions": [
+        "2 V",
+        "20 V",
+        "200 V",
+        "1 000 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On choisit le plus petit calibre supérieur à la valeur mesurée : 20 V, car 2 V est inférieur à 3,5 V.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Pour mesurer UAB, comment relie-t-on les bornes du voltmètre ?",
+      "propositions": [
+        "V au point B et COM au point A",
+        "V et COM au point A",
+        "V au point A et COM au générateur",
+        "V au point A et COM au point B"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Pour UAB, la borne « V » est reliée à A et la borne « COM » à B.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quel appareil mesure l'intensité du courant ?",
+      "propositions": [
+        "Un voltmètre",
+        "Un thermomètre",
+        "Un générateur",
+        "Un ampèremètre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité se mesure avec un ampèremètre.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Une intensité de 0,020 A s'exprime aussi en milliampère. Quelle est sa valeur ?",
+      "propositions": [
+        "2,0 mA",
+        "0,20 mA",
+        "20 mA",
+        "200 mA"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "1 mA = 10⁻³ A, donc 0,020 A = 20 × 10⁻³ A = 20 mA.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Un voltmètre se branche en dérivation.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La tension se mesure entre deux points : le voltmètre est en dérivation.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:018",
+      "type": "vrai_faux",
+      "enonce": "Pour mesurer une tension, on ouvre le circuit pour y insérer le voltmètre.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "C'est l'ampèremètre qu'on insère en ouvrant le circuit ; le voltmètre se branche sans ouvrir.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:019",
+      "type": "qcm_multiple",
+      "enonce": "Quelles actions sont correctes pour mesurer une intensité ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Ouvrir le circuit pour y insérer l'ampèremètre",
+        "Commencer par le plus grand calibre",
+        "Brancher l'ampèremètre en dérivation aux bornes du dipôle",
+        "Utiliser les bornes « A » (ou « mA ») et « COM »"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'ampèremètre se place en série, sur les bornes A (ou mA) et COM, en partant du plus grand calibre.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:020",
+      "type": "qcm_multiple",
+      "enonce": "Pour mesurer la tension UAB aux bornes d'un dipôle, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On n'ouvre pas le circuit pour le brancher",
+        "Le voltmètre se branche en dérivation entre A et B",
+        "La borne « V » est reliée à B",
+        "Le voltmètre se place en série avec le dipôle"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le voltmètre est en dérivation, sans ouvrir le circuit, avec « V » relié à A et « COM » relié à B.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Comment branche-t-on un voltmètre ?",
+      "propositions": [
+        "En dérivation, sans ouvrir le circuit",
+        "En série, en ouvrant le circuit",
+        "En série avec le générateur",
+        "En court-circuit aux bornes du générateur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le voltmètre se branche en dérivation entre les deux points considérés, sans ouvrir le circuit.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:022",
+      "type": "reponse_courte",
+      "enonce": "Un ampèremètre affiche 250 mA. Exprime cette intensité en ampère.",
+      "reponses_acceptees": [
+        "0,25"
+      ],
+      "difficulte": 2,
+      "explication": "250 mA = 250 × 10⁻³ A = 0,25 A.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Comment branche-t-on un ampèremètre ?",
+      "propositions": [
+        "En dérivation, aux bornes du dipôle étudié",
+        "En série, en ouvrant le circuit pour l'y insérer",
+        "En dérivation, sans ouvrir le circuit",
+        "En série, sans ouvrir le circuit"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'ampèremètre se place en série : on ouvre le circuit pour l'insérer.",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:024",
+      "type": "reponse_courte",
+      "enonce": "Quel appareil permet de mesurer l'intensité du courant ? Donne son nom.",
+      "reponses_acceptees": [
+        "ampèremètre",
+        "ampèremètres",
+        "un ampèremètre",
+        "l'ampèremètre",
+        "multimètre",
+        "un multimètre",
+        "le multimètre"
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité se mesure avec un ampèremètre (fonction du multimètre).",
+      "notion": "Multimètre"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il si l'on place un ampèremètre en dérivation aux bornes d'un dipôle ?",
+      "propositions": [
+        "Il mesure la tension aux bornes du dipôle",
+        "Il n'a aucun effet sur le circuit",
+        "Il court-circuite le dipôle et peut être détruit",
+        "Il mesure l'intensité avec plus de précision"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un ampèremètre en dérivation court-circuite le dipôle et peut être détruit.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:026",
+      "type": "vrai_faux",
+      "enonce": "On peut brancher un montage de laboratoire sur une prise du secteur de 230 V.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "On ne branche jamais un montage sur le secteur : on utilise des piles ou des alimentations basse tension.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Quelles règles de sécurité faut-il respecter ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Relier les deux bornes du générateur pour le tester",
+        "Respecter les valeurs maximales indiquées sur les composants",
+        "Éteindre le générateur avant toute modification",
+        "Ne jamais utiliser le secteur (230 V) pour un montage"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pas de secteur, générateur éteint avant modification, valeurs maximales respectées ; relier les bornes d'un générateur est un court-circuit.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Quelle démarche est correcte pour réaliser un montage ?",
+      "propositions": [
+        "Monter le circuit générateur allumé, puis le faire vérifier",
+        "Allumer le générateur, puis brancher les fils un par un",
+        "Brancher les fils générateur allumé, sans vérification",
+        "Monter le circuit, générateur éteint, le faire vérifier, puis allumer"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "On réalise le montage générateur éteint, on le fait vérifier, puis on allume.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle source d'énergie peut-on utiliser pour un montage au laboratoire ?",
+      "propositions": [
+        "La prise du secteur (230 V)",
+        "Une pile ou une alimentation basse tension",
+        "Une prise du secteur munie d'une rallonge",
+        "Un fil relié directement à la prise"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On ne branche jamais un montage sur le secteur (230 V) : on utilise des piles ou des alimentations basse tension.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:030",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on le fait de relier directement les deux bornes d'un générateur par un fil ? Donne le nom.",
+      "reponses_acceptees": [
+        "court-circuit",
+        "un court-circuit",
+        "court circuit",
+        "un court circuit",
+        "le court-circuit"
+      ],
+      "difficulte": 2,
+      "explication": "Relier directement les deux bornes d'un générateur par un fil est un court-circuit.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Il faut éteindre le générateur avant de modifier un montage.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "On éteint avant toute modification du montage.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Quelles situations sont dangereuses pour le matériel ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un ampèremètre est placé en dérivation aux bornes d'une lampe",
+        "L'alimentation est éteinte avant de modifier le montage",
+        "Un voltmètre est placé en dérivation aux bornes d'une lampe",
+        "Un fil relie directement les deux bornes d'une pile"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le court-circuit d'une pile et l'ampèremètre en dérivation sont dangereux ; le voltmètre en dérivation est le branchement normal.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Que risque-t-il de se produire si l'on relie directement les deux bornes d'une pile par un fil ?",
+      "propositions": [
+        "Les fils et la pile peuvent chauffer",
+        "La tension de la pile double",
+        "L'intensité du courant devient nulle",
+        "La pile se recharge plus vite"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "C'est un court-circuit : il peut faire chauffer les fils et la pile.",
+      "notion": "Sécurité"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:034",
+      "type": "qcm_unique",
+      "enonce": "À un nœud arrivent I1 = 1,2 A et I2 = 0,8 A. Il en repart I3 = 0,5 A et I4. Quelle est l'intensité I4 ?",
+      "propositions": [
+        "0,5 A",
+        "2,5 A",
+        "1,5 A",
+        "0,9 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "I1 + I2 = I3 + I4, donc I4 = 1,2 + 0,8 − 0,5 = 1,5 A.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on une branche ?",
+      "propositions": [
+        "Une portion de circuit entre deux nœuds consécutifs",
+        "Un chemin fermé qu'on parcourt dans un sens",
+        "Un point du circuit relié à au moins trois fils",
+        "Un dipôle relié au reste du circuit par un seul fil"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une branche est une portion de circuit entre deux nœuds consécutifs ; ses dipôles sont en série.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:036",
+      "type": "qcm_multiple",
+      "enonce": "Un nœud relie trois fils : le courant I arrive, I1 et I2 repartent. Quelles relations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "I = I1 − I2",
+        "I2 = I + I1",
+        "I1 = I − I2",
+        "I = I1 + I2"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La somme des intensités qui arrivent est égale à la somme de celles qui repartent : I = I1 + I2, donc I1 = I − I2.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Un point du circuit relié à deux fils seulement est un nœud.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Un nœud est relié à au moins trois fils.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:038",
+      "type": "vrai_faux",
+      "enonce": "Un nœud relie trois fils. Un courant de 0,40 A arrive et 0,15 A repart par un fil : 0,25 A repart par le troisième.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "0,40 = 0,15 + I, donc I = 0,25 A.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:039",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la loi des nœuds sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les charges électriques ne s'accumulent pas au nœud",
+        "Il n'y a qu'un seul courant qui arrive à un nœud",
+        "Les tensions se partagent au nœud",
+        "Ce qui arrive à un nœud en repart"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La loi des nœuds porte sur les intensités : tout ce qui arrive repart.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:040",
+      "type": "reponse_courte",
+      "enonce": "Comment s'appelle la loi : « la somme des intensités qui arrivent à un point est égale à la somme de celles qui en repartent » ?",
+      "reponses_acceptees": [
+        "loi des nœuds",
+        "la loi des nœuds",
+        "loi des noeuds",
+        "la loi des noeuds",
+        "lois des nœuds",
+        "lois des noeuds"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la loi des nœuds.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:041",
+      "type": "vrai_faux",
+      "enonce": "À un nœud, ce sont les intensités qui se partagent.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La loi des nœuds porte sur les intensités ; les tensions de dipôles en dérivation sont égales.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Un nœud est un point du circuit relié à…",
+      "propositions": [
+        "exactement deux fils",
+        "au moins trois fils",
+        "un seul fil",
+        "un seul dipôle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un nœud est un point relié à au moins trois fils.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Au nœud N, deux courants arrivent : 0,30 A et 0,20 A. Un seul courant en repart. Quelle est son intensité ?",
+      "propositions": [
+        "0,10 A",
+        "0,25 A",
+        "0,060 A",
+        "0,50 A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Loi des nœuds : I = 0,30 + 0,20 = 0,50 A.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Au nœud B arrive un courant I = 0,60 A. Il repart par deux branches, avec I1 = 0,25 A et I2. Quelle est la valeur de I2 ?",
+      "propositions": [
+        "0,85 A",
+        "0,15 A",
+        "0,35 A",
+        "0,25 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "I = I1 + I2, donc I2 = 0,60 − 0,25 = 0,35 A.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:045",
+      "type": "reponse_courte",
+      "enonce": "À un nœud, un courant de 2,5 A arrive. Il repart dans deux branches : 1,0 A dans l'une. Quelle est l'intensité dans l'autre branche, en A ?",
+      "reponses_acceptees": [
+        "1,5"
+      ],
+      "difficulte": 2,
+      "explication": "2,5 = 1,0 + I, donc I = 1,5 A.",
+      "notion": "Loi des nœuds"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "Un générateur (P, N) alimente une résistance R1 entre P et B, puis une lampe L et une résistance R2 en dérivation entre B et N. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "R2 est traversée par tout le courant du générateur",
+        "La tension de R2 s'ajoute à celle de la lampe",
+        "Le courant du générateur traverse R1",
+        "La lampe et R2 ont la même tension"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "R1 est dans la branche du générateur : tout le courant la traverse. L et R2 sont en dérivation : même tension, et le courant se partage entre elles au nœud B.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:047",
+      "type": "reponse_courte",
+      "enonce": "On mesure UAB = 8,0 V et UAC = 5,0 V. Quelle est la valeur de UCB, en V ?",
+      "reponses_acceptees": [
+        "3",
+        "3,0"
+      ],
+      "difficulte": 3,
+      "explication": "UAB = UAC + UCB, donc UCB = 8,0 − 5,0 = 3,0 V.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Une lampe et un moteur sont en dérivation aux bornes d'une pile. La tension aux bornes de la lampe est de 4,5 V. Quelle est la tension aux bornes du moteur ?",
+      "propositions": [
+        "9,0 V",
+        "4,5 V",
+        "2,25 V",
+        "0 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Deux dipôles en dérivation ont la même tension à leurs bornes.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:049",
+      "type": "vrai_faux",
+      "enonce": "On peut additionner une tension de 3 V et une intensité de 2 A.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "On n'additionne jamais une tension et une intensité : ce sont deux grandeurs différentes.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Dans une maille A, B, C, on mesure UAB = 6,0 V et UBC = −2,0 V. Quelle est la valeur de UCA, en V ?",
+      "reponses_acceptees": [
+        "-4",
+        "-4,0",
+        "−4",
+        "−4,0"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles : UAB + UBC + UCA = 0, donc UCA = −(6,0 − 2,0) = −4,0 V.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:051",
+      "type": "vrai_faux",
+      "enonce": "Dans une maille, la somme des tensions parcourues dans un sens est nulle.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la loi des mailles.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Pour une maille A, B, C, quelles relations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "UAC = UAB + UBC",
+        "UAB = UBC + UCA",
+        "UAC = UAB − UBC",
+        "UAB + UBC + UCA = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La loi des mailles donne UAB + UBC + UCA = 0, donc UAC = UAB + UBC.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Pour une maille A, B, C, quelle est la loi des mailles ?",
+      "propositions": [
+        "UAB + UBC = UCA",
+        "UAB + UBC + UCA = 0",
+        "UAB − UBC + UCA = 0",
+        "UAB × UBC × UCA = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans une maille, la somme des tensions parcourues dans un sens est nulle.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:054",
+      "type": "qcm_multiple",
+      "enonce": "Deux dipôles D1 et D2 sont en dérivation entre les nœuds B et N. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Leurs tensions s'additionnent",
+        "Ils sont toujours traversés par la même intensité",
+        "Ils ont la même tension à leurs bornes",
+        "Leurs tensions ne se partagent pas"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "En dérivation, les tensions sont égales ; ce sont les intensités qui se partagent.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:055",
+      "type": "qcm_unique",
+      "enonce": "On mesure UAB = 2,0 V et UBC = 3,0 V. Quelle est la valeur de UAC ?",
+      "propositions": [
+        "1,0 V",
+        "6,0 V",
+        "−5,0 V",
+        "5,0 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Les tensions s'additionnent le long d'un chemin : UAC = UAB + UBC = 5,0 V.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un générateur de tension UPN = 9,0 V alimente deux lampes L1 et L2 en série. On mesure 3,5 V aux bornes de L1. Quelle est la tension aux bornes de L2 ?",
+      "propositions": [
+        "12,5 V",
+        "3,5 V",
+        "4,5 V",
+        "5,5 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Maille : UL1 + UL2 = UPN, donc UL2 = 9,0 − 3,5 = 5,5 V.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:057",
+      "type": "vrai_faux",
+      "enonce": "Deux dipôles en dérivation se partagent la tension, comme des courants se partagent à un nœud.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "En dérivation, les tensions sont égales ; ce sont les intensités qui se partagent.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on une maille ?",
+      "propositions": [
+        "Un chemin fermé du circuit, formé de branches",
+        "Un point du circuit relié à trois fils au moins",
+        "Une portion de circuit entre deux nœuds consécutifs",
+        "Un dipôle relié au circuit par deux fils"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une maille est un chemin fermé du circuit, formé de branches, qu'on parcourt sans passer deux fois par le même point.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Dans une maille P, B, N, on a UPB + UBN + UNP = 0 avec UPB = 7,0 V et UNP = −12 V. Quelle est la valeur de UBN ?",
+      "propositions": [
+        "5,0 V",
+        "19 V",
+        "−5,0 V",
+        "7,0 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "UBN = −UPB − UNP = −7,0 + 12 = 5,0 V.",
+      "notion": "Loi des mailles"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel montage permet de tracer la caractéristique d'un dipôle ?",
+      "propositions": [
+        "Un ampèremètre en série avec le dipôle et un voltmètre en dérivation à ses bornes",
+        "Un voltmètre en série avec le dipôle et un ampèremètre en dérivation",
+        "Deux ampèremètres en série avec le dipôle",
+        "Deux voltmètres en série avec le dipôle"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "L'ampèremètre est en série avec le dipôle, le voltmètre en dérivation à ses bornes.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Pour tracer la caractéristique d'une DEL, quel élément faut-il ajouter ?",
+      "propositions": [
+        "Une résistance de protection en dérivation sur la DEL",
+        "Une résistance de protection en série avec la DEL",
+        "Un second voltmètre en série avec la DEL",
+        "Un fil reliant directement les deux bornes de la DEL"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Pour une DEL, on ajoute une résistance de protection en série.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Quels dipôles ont une caractéristique qui n'est pas une droite passant par l'origine ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La pile",
+        "La lampe à filament",
+        "La DEL",
+        "Le conducteur ohmique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Seul le conducteur ohmique a une droite passant par l'origine.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:063",
+      "type": "reponse_courte",
+      "enonce": "Comment s'appelle la tension en dessous de laquelle le courant dans une DEL est presque nul ?",
+      "reponses_acceptees": [
+        "tension seuil",
+        "la tension seuil",
+        "seuil",
+        "le seuil"
+      ],
+      "difficulte": 2,
+      "explication": "Sous la tension seuil, le courant est presque nul.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Quel dipôle a une caractéristique avec une tension seuil ?",
+      "propositions": [
+        "La résistance (conducteur ohmique)",
+        "La pile",
+        "La lampe à filament",
+        "La DEL"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le courant dans une DEL est presque nul sous la tension seuil, puis augmente fortement.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:065",
+      "type": "vrai_faux",
+      "enonce": "La caractéristique d'une lampe à filament est une droite qui passe par l'origine.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Pour une lampe, c'est une courbe : la tension augmente de plus en plus vite.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Que devient la tension aux bornes d'une pile quand l'intensité qu'elle débite augmente ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle diminue",
+        "Elle reste constante",
+        "Elle augmente de plus en plus vite"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La caractéristique d'une pile est telle que la tension diminue quand l'intensité débitée augmente.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:067",
+      "type": "vrai_faux",
+      "enonce": "On peut aussi représenter une caractéristique par la courbe I = g(U).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La caractéristique peut être tracée en U = f(I) ou en I = g(U).",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Quelles précautions faut-il prendre pour tracer une caractéristique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Brancher l'ampèremètre en dérivation",
+        "Ne pas dépasser l'intensité maximale du dipôle",
+        "Éteindre l'alimentation entre deux montages",
+        "Garder la tension de l'alimentation fixe"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On respecte l'intensité maximale et on éteint entre deux montages ; la tension de l'alimentation est réglée à chaque mesure.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Que représente la caractéristique tension-courant d'un dipôle ?",
+      "propositions": [
+        "L'intensité I en fonction de la durée du fonctionnement",
+        "La résistance du dipôle en fonction de sa masse",
+        "La tension U à ses bornes en fonction de l'intensité I qui le traverse",
+        "La tension du générateur en fonction du temps"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La caractéristique est la courbe U = f(I) (ou I = g(U)).",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:070",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on la courbe qui représente la tension aux bornes d'un dipôle en fonction de l'intensité qui le traverse ? Donne un mot.",
+      "reponses_acceptees": [
+        "caractéristique",
+        "la caractéristique",
+        "une caractéristique",
+        "caractéristique tension-courant",
+        "la caractéristique tension-courant"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la caractéristique tension-courant du dipôle.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'allure de la caractéristique d'une résistance ?",
+      "propositions": [
+        "Une courbe dont la tension augmente de plus en plus vite",
+        "Un courant presque nul, puis une forte augmentation",
+        "Une droite qui passe par l'origine",
+        "Une droite dont la tension diminue quand I augmente"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Pour un conducteur ohmique, la caractéristique est une droite qui passe par l'origine.",
+      "notion": "Caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Les points mesurés pour une DEL ne sont pas alignés. Que peut-on conclure ?",
+      "propositions": [
+        "Le dipôle est ohmique",
+        "La droite passe par l'origine",
+        "Il suffit de refaire un graphique plus grand",
+        "Un modèle affine ne convient pas"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Pour une DEL, un modèle affine ne convient pas.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:073",
+      "type": "qcm_unique",
+      "enonce": "On modélise la caractéristique d'une résistance par U = a × I + b. Que vaut b environ ?",
+      "propositions": [
+        "b est proche de 0",
+        "b est proche de 1",
+        "b est égal à la résistance",
+        "b est égal à l'intensité maximale"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Pour une résistance, la droite passe par l'origine : b est proche de 0.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:074",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations faut-il pour modéliser un nuage de points et quels résultats obtient-on ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Entrées : deux listes de valeurs mesurées, I et U",
+        "Entrée : la résistance, connue à l'avance",
+        "Sortie : le graphique avec points et modèle",
+        "Sortie : les valeurs de a et b"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Entrées : les listes de I et U ; sorties : graphique, a et b.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Un modèle affine U = a × I + b convient pour une DEL.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Les points d'une DEL ne sont pas alignés.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Que fait un programme Python qui modélise une caractéristique ?",
+      "propositions": [
+        "Il mesure lui-même I et U avec un multimètre",
+        "Il trace une courbe passant exactement par chaque point",
+        "Il cherche la droite U = a × I + b qui passe au plus près des points",
+        "Il calcule seulement la moyenne des intensités"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le programme place les points (I ; U), puis cherche la droite U = a × I + b la plus proche.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:077",
+      "type": "reponse_courte",
+      "enonce": "Pour un dipôle ohmique modélisé par U = a × I + b (U en V, I en A), a est égal à la grandeur du dipôle qui s'exprime en ohm. Quel est son nom ?",
+      "reponses_acceptees": [
+        "résistance",
+        "la résistance",
+        "R"
+      ],
+      "difficulte": 2,
+      "explication": "Le coefficient a est le coefficient directeur de la droite : c'est la résistance R.",
+      "notion": "Modéliser une caractéristique"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on le point de fonctionnement ?",
+      "propositions": [
+        "Le point de départ de la caractéristique du générateur",
+        "Le point d'intersection des caractéristiques du générateur et du dipôle",
+        "Le point le plus haut de la caractéristique du dipôle",
+        "Le couple maximal (I ; U) que supporte le dipôle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le point de fonctionnement est l'intersection des deux caractéristiques, tracées sur un même graphique.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Les caractéristiques d'une pile et d'une résistance se coupent au point (0,40 A ; 3,6 V). Quelle est la résistance ?",
+      "propositions": [
+        "0,11 Ω",
+        "1,4 Ω",
+        "9,0 Ω",
+        "4,0 Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "R = U / I = 3,6 / 0,40 = 9,0 Ω.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:080",
+      "type": "vrai_faux",
+      "enonce": "Avec U = 2,0 × I pour une résistance et U = 9,0 − 1,0 × I pour une pile (U en V, I en A), l'intensité au point de fonctionnement est de 4,5 A.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "2,0 × I = 9,0 − 1,0 × I donne 3,0 × I = 9,0 et I = 3,0 A, pas 4,5 A.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:081",
+      "type": "reponse_courte",
+      "enonce": "Une pile a pour caractéristique U = 12 − 3,0 × I et une résistance U = 5,0 × I (U en V, I en A). Quelle est l'intensité au point de fonctionnement, en A ?",
+      "reponses_acceptees": [
+        "1,5"
+      ],
+      "difficulte": 3,
+      "explication": "5,0 × I = 12 − 3,0 × I donne 8,0 × I = 12 et I = 12 / 8,0 = 1,5 A.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Une pile a pour caractéristique U = 10 − 2,0 × I et une résistance U = 3,0 × I (U en V, I en A). Quelle est la tension au point de fonctionnement ?",
+      "propositions": [
+        "6,0 V",
+        "10 V",
+        "4,0 V",
+        "2,0 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "3,0 × I = 10 − 2,0 × I donne I = 2,0 A, puis U = 3,0 × 2,0 = 6,0 V.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:083",
+      "type": "qcm_unique",
+      "enonce": "La caractéristique d'une pile est U = 6,0 − 2,0 × I et celle d'une résistance U = 4,0 × I (U en V, I en A). Quelle est l'intensité au point de fonctionnement ?",
+      "propositions": [
+        "1,5 A",
+        "3,0 A",
+        "1,0 A",
+        "0,50 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "4,0 × I = 6,0 − 2,0 × I donc 6,0 × I = 6,0 et I = 1,0 A.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Au point de fonctionnement d'un dipôle branché sur un générateur, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tension est la même aux bornes du générateur et du dipôle",
+        "L'intensité est la même dans le générateur et dans le dipôle",
+        "Les deux tensions s'additionnent",
+        "Les deux caractéristiques ne se coupent pas"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le point de fonctionnement est commun aux deux caractéristiques : même U, même I.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Un dipôle est branché aux bornes d'un générateur. Que partagent-ils ?",
+      "propositions": [
+        "La même tension mais des intensités différentes",
+        "La même intensité mais des tensions opposées",
+        "Des tensions et des intensités différentes",
+        "La même tension et la même intensité"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Ils ont la même tension U et sont traversés par la même intensité I.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:086",
+      "type": "reponse_courte",
+      "enonce": "Un voltmètre branché aux bornes d'une résistance (U = 5,0 × I) alimentée par une pile (U = 6,0 − 1,0 × I) affiche la tension du point de fonctionnement. Quelle valeur lit-on, en V ? (U en V, I en A)",
+      "reponses_acceptees": [
+        "5",
+        "5,0"
+      ],
+      "difficulte": 2,
+      "explication": "5,0 × I = 6,0 − 1,0 × I donne I = 1,0 A, puis U = 5,0 × 1,0 = 5,0 V.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Pour trouver un point de fonctionnement, on trace les deux caractéristiques sur deux graphiques séparés.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On les trace sur le même graphique, et on lit leur intersection.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Une pile a pour caractéristique U = 8,0 − 2,0 × I et un dipôle U = 2,0 × I (U en V, I en A). Quel est le point de fonctionnement (I ; U) ?",
+      "propositions": [
+        "(4,0 A ; 2,0 V)",
+        "(2,0 A ; 8,0 V)",
+        "(4,0 A ; 8,0 V)",
+        "(2,0 A ; 4,0 V)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "2,0 × I = 8,0 − 2,0 × I donne I = 2,0 A, puis U = 2,0 × 2,0 = 4,0 V.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Le point de fonctionnement se lit à l'intersection des deux caractéristiques.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est le couple (I ; U) commun au générateur et au dipôle.",
+      "notion": "Point de fonctionnement"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:090",
+      "type": "vrai_faux",
+      "enonce": "Avec R = 100 Ω et I = 25 mA, on peut écrire I = 25 A dans la loi d'Ohm.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Il faut convertir : 25 mA = 0,025 A.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Une résistance de 100 Ω est traversée par un courant de 0,050 A. Quelle est la tension à ses bornes ?",
+      "propositions": [
+        "2 000 V",
+        "0,00050 V",
+        "50 V",
+        "5,0 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "U = R × I = 100 × 0,050 = 5,0 V.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Une résistance de 1,5 kΩ est soumise à une tension de 6,0 V. Quelle intensité la traverse ?",
+      "propositions": [
+        "4,0 mA",
+        "4,0 A",
+        "250 mA",
+        "0,40 mA"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "R = 1 500 Ω, donc I = 6,0 / 1 500 = 4,0 × 10⁻³ A = 4,0 mA.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Quelles propriétés caractérisent un dipôle ohmique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le quotient U / I est constant",
+        "La tension est constante quelle que soit I",
+        "U est proportionnelle à I",
+        "Le quotient U / I augmente avec I"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Pour un dipôle ohmique, U / I est constant et vaut R.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:094",
+      "type": "reponse_courte",
+      "enonce": "Aux bornes d'un conducteur ohmique, on mesure 7,5 V quand l'intensité est de 50 mA. Quelle est sa résistance, en Ω ?",
+      "reponses_acceptees": [
+        "150"
+      ],
+      "difficulte": 2,
+      "explication": "R = U / I = 7,5 / 0,050 = 150 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Un dipôle ohmique de résistance 50 Ω est traversé par 0,20 A. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pour une intensité de 0,40 A, la tension reste de 10 V",
+        "La tension à ses bornes est de 10 V",
+        "Pour une intensité de 0,40 A, la tension est de 20 V",
+        "La tension à ses bornes est de 250 V"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U = 50 × 0,20 = 10 V ; si I double, U double : 20 V.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:096",
+      "type": "vrai_faux",
+      "enonce": "1 kΩ = 100 Ω.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "1 kΩ = 1 000 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Pour un dipôle ohmique, que devient la tension quand l'intensité double ?",
+      "propositions": [
+        "Elle est divisée par deux",
+        "Elle reste la même",
+        "Elle double",
+        "Elle est multipliée par quatre"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U est proportionnelle à I : si I double, U double.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Pour un dipôle ohmique, la tension est proportionnelle à l'intensité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour un dipôle ohmique, U = R × I : U est proportionnelle à I.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:099",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la tension, en V, aux bornes d'une résistance de 330 Ω traversée par un courant de 20 mA ?",
+      "reponses_acceptees": [
+        "6,6"
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I = 330 × 0,020 = 6,6 V.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:100",
+      "type": "qcm_unique",
+      "enonce": "La caractéristique U = f(I) d'un dipôle ohmique est une droite passant par l'origine et par le point (0,050 A ; 6,0 V). Quel est son coefficient directeur ?",
+      "propositions": [
+        "0,0083 Ω",
+        "0,30 Ω",
+        "120 Ω",
+        "6,0 Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "R = U / I = 6,0 / 0,050 = 120 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Pour un dipôle on mesure (0,010 A ; 2,2 V), (0,020 A ; 4,4 V) et (0,040 A ; 8,8 V). Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le quotient U / I diminue quand I augmente",
+        "Le dipôle est ohmique",
+        "Sa résistance est de 0,0045 Ω",
+        "Sa résistance est de 220 Ω"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "U / I = 220 Ω pour les trois mesures : quotient constant, donc dipôle ohmique de résistance 220 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures de la loi d'Ohm sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "R = U / I",
+        "R = I / U",
+        "U = R × I",
+        "I = U / R"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "De U = R × I on déduit I = U / R et R = U / I.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Pour une lampe, on mesure (0,10 A ; 1,0 V) puis (0,20 A ; 3,0 V). Que peut-on conclure ?",
+      "propositions": [
+        "La lampe est ohmique avec R = 10 Ω",
+        "La lampe est ohmique avec R = 15 Ω",
+        "La lampe est ohmique avec R = 5,0 Ω",
+        "La lampe n'est pas ohmique : le quotient U / I change"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "U / I vaut 10 Ω puis 15 Ω : il n'est pas constant, donc la lampe n'est pas un dipôle ohmique.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Une résistance de 150 Ω est traversée par une intensité de 20 mA. Quelle est la tension à ses bornes ?",
+      "propositions": [
+        "3,0 V",
+        "3 000 V",
+        "7,5 V",
+        "0,13 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "I = 0,020 A, donc U = 150 × 0,020 = 3,0 V.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Les mesures sur un dipôle sont : (0,10 A ; 0,50 V), (0,20 A ; 1,0 V) et (0,30 A ; 1,5 V). Quelle est sa résistance ?",
+      "propositions": [
+        "0,20 Ω",
+        "5,0 Ω",
+        "0,50 Ω",
+        "50 Ω"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "U / I = 0,50 / 0,10 = 1,0 / 0,20 = 1,5 / 0,30 = 5,0 Ω : le quotient est constant.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Aux bornes d'une résistance de 4 Ω, on mesure 12 V. Quelle est l'intensité du courant ?",
+      "propositions": [
+        "48 A",
+        "3 A",
+        "0,33 A",
+        "8 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "I = U / R = 12 / 4 = 3 A.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:107",
+      "type": "qcm_multiple",
+      "enonce": "Dans quels cas ne faut-il pas utiliser la loi d'Ohm ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pour un conducteur ohmique",
+        "Pour une résistance de 100 Ω",
+        "Pour une lampe à filament",
+        "Pour une DEL"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La loi d'Ohm ne s'applique qu'aux dipôles ohmiques, pas à une lampe ni à une DEL.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité de la résistance ?",
+      "propositions": [
+        "L'ohm (Ω)",
+        "Le volt (V)",
+        "L'ampère (A)",
+        "Le milliampère (mA)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La résistance s'exprime en ohm (Ω).",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'expression de la loi d'Ohm ?",
+      "propositions": [
+        "U = R / I",
+        "U = R × I",
+        "I = R × U",
+        "R = I / U"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La loi d'Ohm s'écrit U = R × I, avec U en V, R en Ω et I en A.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Un dipôle ohmique soumis à 6,0 V est traversé par 0,030 A : sa résistance est de 200 Ω.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "R = U / I = 6,0 / 0,030 = 200 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Quelle tension faut-il appliquer à un conducteur ohmique de 470 Ω pour y faire passer 10 mA ?",
+      "propositions": [
+        "4,7 V",
+        "4 700 V",
+        "47 V",
+        "0,021 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "I = 0,010 A, donc U = 470 × 0,010 = 4,7 V.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Un dipôle ohmique soumis à 9,0 V est traversé par 30 mA. Quelle est sa résistance ?",
+      "propositions": [
+        "0,30 Ω",
+        "270 Ω",
+        "3,3 Ω",
+        "300 Ω"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "R = U / I = 9,0 / 0,030 = 300 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Si on double la tension aux bornes d'un conducteur ohmique, sa résistance double aussi.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "La résistance R = U / I ne change pas : I double aussi.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:114",
+      "type": "vrai_faux",
+      "enonce": "La résistance d'un dipôle s'exprime en ohm.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "L'unité de la résistance est l'ohm (Ω).",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Pour une lampe à filament, le quotient U / I est constant.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Pour une lampe, U / I change d'une mesure à l'autre : elle n'est pas ohmique.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Avant d'appliquer U = R × I, dans quelle unité faut-il exprimer l'intensité ?",
+      "propositions": [
+        "En milliampère (mA)",
+        "En volt (V)",
+        "En ampère (A)",
+        "En ohm (Ω)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Il faut convertir l'intensité en ampère et la résistance en ohm.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:117",
+      "type": "qcm_multiple",
+      "enonce": "Quelles conversions sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2 kΩ = 20 Ω",
+        "25 mA = 0,025 A",
+        "50 mA = 5 A",
+        "1,5 kΩ = 1 500 Ω"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1 mA = 10⁻³ A et 1 kΩ = 1 000 Ω.",
+      "notion": "Loi d'Ohm"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Quel est le nom du capteur résistif dont la résistance dépend de l'éclairement ?",
+      "propositions": [
+        "La thermistance",
+        "Le microphone",
+        "La photorésistance",
+        "L'accéléromètre"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une photorésistance a une résistance qui dépend de l'éclairement.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Pour la thermistance la plus courante, comment varie la résistance quand la température augmente ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle diminue",
+        "Elle reste constante",
+        "Elle devient nulle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Pour la thermistance la plus courante, la résistance diminue quand la température augmente.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:120",
+      "type": "qcm_multiple",
+      "enonce": "Quelles associations entre un capteur et la grandeur qu'il détecte sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Jauge de contrainte : le son",
+        "Sonde de température d'un four : l'éclairement",
+        "Capteur de recul d'une voiture : la distance",
+        "Capteur de pression des pneus : la pression"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le capteur de pression détecte la pression et le capteur de recul la distance.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Un thermostat utilise une sonde de température.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un thermostat ou un four contient une sonde de température.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un lampadaire s'allume automatiquement la nuit. Quelle grandeur son capteur détecte-t-il ?",
+      "propositions": [
+        "L'éclairement",
+        "La température",
+        "La pression",
+        "Le son"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le capteur de lumière du lampadaire détecte l'éclairement.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Dans un smartphone, quelle grandeur l'accéléromètre détecte-t-il ?",
+      "propositions": [
+        "Le mouvement",
+        "L'éclairement",
+        "Le son",
+        "La pression"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le smartphone contient un accéléromètre (mouvement), un capteur de luminosité (éclairement) et un microphone (son).",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Une thermistance courante voit sa résistance croître lorsque la température monte.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elle diminue quand la température augmente.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Une photorésistance a une résistance qui dépend de l'éclairement.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition de la photorésistance.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Quel capteur d'une balance électronique détecte la déformation due à la masse posée ?",
+      "propositions": [
+        "La photorésistance",
+        "La thermistance",
+        "Le microphone",
+        "La jauge de contrainte"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La balance électronique utilise une jauge de contrainte.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Que fait un capteur électrique ?",
+      "propositions": [
+        "Il transforme une grandeur électrique en grandeur physique",
+        "Il transforme une grandeur physique en grandeur électrique mesurable",
+        "Il fournit l'énergie nécessaire au fonctionnement d'un circuit",
+        "Il modifie la tension aux bornes d'un générateur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un capteur électrique transforme une grandeur physique (température, éclairement…) en grandeur électrique.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les capteurs résistifs sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une photorésistance est un capteur résistif",
+        "Une thermistance est un capteur résistif",
+        "Leur résistance reste constante quelle que soit la grandeur",
+        "Leur résistance varie avec la grandeur physique étudiée"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Un capteur résistif est un capteur dont la résistance varie avec la grandeur physique étudiée.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Quels capteurs trouve-t-on dans un smartphone ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un microphone",
+        "Un capteur de luminosité",
+        "Une jauge de contrainte",
+        "Un accéléromètre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un smartphone contient un capteur de luminosité, un microphone et un accéléromètre.",
+      "notion": "Capteurs"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la courbe d'étalonnage sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On peut la prolonger sans limite",
+        "Elle n'est valable que dans le domaine des mesures",
+        "On y lit la grandeur à partir de la résistance mesurée",
+        "Elle relie la résistance du capteur à la grandeur d'intérêt"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La courbe sert à convertir R en grandeur d'intérêt, dans le domaine étudié seulement.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:131",
+      "type": "reponse_courte",
+      "enonce": "Une thermistance étalonnée donne 9,0 kΩ à 20 °C et 5,0 kΩ à 30 °C. Une mesure donne 8,0 kΩ : estime θ, en °C, avec un segment entre les deux points.",
+      "reponses_acceptees": [
+        "22,5",
+        "22.5"
+      ],
+      "marge": 0.5,
+      "difficulte": 3,
+      "explication": "R baisse de 0,40 kΩ par °C. De 9,0 à 8,0 kΩ, R a baissé de 1,0 kΩ : 1,0 / 0,40 = 2,5 °C, donc θ = 22,5 °C.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Comment doit être l'ohmmètre par rapport au dipôle étudié ?",
+      "propositions": [
+        "Branché sur un dipôle hors circuit, jamais alimenté",
+        "Branché sur un dipôle alimenté par un générateur",
+        "Branché en série avec un ampèremètre",
+        "Branché en dérivation sur une pile"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "L'ohmmètre se branche sur un dipôle hors circuit, jamais alimenté.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme d'une carte à microcontrôleur, quelle étape est le calcul ?",
+      "propositions": [
+        "Lire la tension mesurée sur une broche de la carte",
+        "Afficher la température obtenue sur un écran",
+        "Convertir la tension en température par l'étalonnage",
+        "Allumer une DEL quand la température dépasse un seuil"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le calcul déduit la grandeur d'intérêt grâce à la relation d'étalonnage.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Une thermistance a R = 10 kΩ à 10 °C et R = 6,0 kΩ à 20 °C. On mesure R = 7,0 kΩ. Quelle température obtient-on en assimilant la courbe à un segment ?",
+      "propositions": [
+        "15 °C",
+        "12,5 °C",
+        "20 °C",
+        "17,5 °C"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "R baisse de 0,40 kΩ par °C. De 10 à 7,0 kΩ, R a baissé de 3,0 kΩ : 3,0 / 0,40 = 7,5 °C, donc θ = 10 + 7,5 = 17,5 °C.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:135",
+      "type": "qcm_multiple",
+      "enonce": "Une thermistance a R = 4,0 kΩ à 40 °C et R = 2,5 kΩ à 50 °C. Quelles résistances correspondent à une température comprise entre 40 et 50 °C ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "R = 3,5 kΩ",
+        "R = 3,0 kΩ",
+        "R = 5,0 kΩ",
+        "R = 2,0 kΩ"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "R diminue de 4,0 à 2,5 kΩ entre 40 et 50 °C : seules des valeurs comprises entre 2,5 et 4,0 kΩ conviennent.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Quel appareil mesure la résistance d'une thermistance pendant l'étalonnage ?",
+      "propositions": [
+        "Un ampèremètre",
+        "Un thermomètre",
+        "Un ohmmètre",
+        "Un générateur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'ohmmètre est un multimètre réglé pour mesurer une résistance, en ohm.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:137",
+      "type": "vrai_faux",
+      "enonce": "On peut prolonger la courbe d'étalonnage au-delà des mesures.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La courbe n'est valable que dans le domaine étudié.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Une courbe d'étalonnage est tracée de 10 °C à 50 °C. Peut-on l'utiliser pour une température de 90 °C ?",
+      "propositions": [
+        "Oui, en la prolongeant par une droite",
+        "Non, on ne la prolonge pas au-delà des mesures",
+        "Oui, elle est valable à toute température",
+        "Oui, si on mesure R avec précision"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La courbe d'étalonnage n'est valable que dans le domaine étudié.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Un capteur à thermistance est branché. Quelle phrase est exacte ?",
+      "propositions": [
+        "Le capteur donne directement la température en °C",
+        "Le capteur donne une tension égale à la température",
+        "Le capteur donne une intensité égale à la température",
+        "Le capteur donne une résistance, qu'on convertit en température avec la courbe"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Un capteur ne donne pas directement la température : il donne une résistance, qu'il faut convertir.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Entre 20 °C et 30 °C, la résistance d'une thermistance passe de 12 kΩ à 8,0 kΩ. Une mesure donne 10 kΩ. Quelle température obtient-on, en assimilant la courbe à un segment ?",
+      "propositions": [
+        "20 °C",
+        "25 °C",
+        "30 °C",
+        "22 °C"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "R baisse de 4,0 kΩ pour 10 °C. 10 kΩ est à mi-chemin entre 12 et 8,0 : θ = 25 °C.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Quelles actions font partie du protocole d'étalonnage d'une thermistance ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La plonger, protégée dans un tube étanche, dans un bain d'eau",
+        "Utiliser un thermomètre de référence",
+        "Attendre que l'affichage se stabilise avant de mesurer",
+        "Mesurer R dès que l'eau est versée, sans attendre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On attend que l'affichage se stabilise, puis on mesure R pour une température donnée par le thermomètre de référence.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Quelle est une sortie possible du programme d'une carte à microcontrôleur ?",
+      "propositions": [
+        "Allumer une DEL au-delà d'une température choisie",
+        "Lire la tension mesurée sur une broche de la carte",
+        "Mesurer la résistance du capteur à l'ohmmètre",
+        "Tracer la caractéristique tension-courant du capteur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "La sortie affiche la valeur ou déclenche une action, comme allumer une DEL.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:143",
+      "type": "vrai_faux",
+      "enonce": "On mesure la résistance d'une thermistance avec un ohmmètre.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "L'ohmmètre mesure une résistance, en ohm.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Que représente la courbe d'étalonnage d'une thermistance ?",
+      "propositions": [
+        "La température en fonction du temps",
+        "La résistance en fonction de la température",
+        "La tension d'un générateur en fonction de I",
+        "L'intensité en fonction de la tension"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La courbe d'étalonnage est R = f(θ).",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Quelles étapes font partie du programme d'une carte à microcontrôleur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Lire la tension sur une broche",
+        "Afficher la valeur ou déclencher une action",
+        "Tracer la courbe d'étalonnage dans un bain d'eau",
+        "Déduire la grandeur grâce à la relation d'étalonnage"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le programme lit une tension (entrée), calcule la grandeur (calcul), puis affiche ou agit (sortie).",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:146",
+      "type": "qcm_unique",
+      "enonce": "Dans un montage avec une carte à microcontrôleur, que mesure la carte ?",
+      "propositions": [
+        "Directement la température, sans aucune conversion",
+        "La résistance de la thermistance, en ohm",
+        "Le nombre de dipôles branchés sur la carte",
+        "Une tension qui dépend de la résistance du capteur"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le capteur est monté en série avec une résistance fixe ; la carte mesure une tension qui dépend de la résistance du capteur.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Quelles précautions faut-il prendre pendant l'étalonnage ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Brancher l'ohmmètre sur un dipôle hors circuit",
+        "Manipuler l'eau chaude avec soin et loin des prises",
+        "Plonger la thermistance sans protection dans l'eau",
+        "Brancher l'ohmmètre sur un circuit alimenté"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "L'ohmmètre se branche hors circuit ; la thermistance est protégée dans un tube étanche et l'eau chaude est manipulée loin des prises.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:148",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'entrée du programme d'une carte qui lit un capteur résistif ?",
+      "propositions": [
+        "La tension lue sur une broche de la carte",
+        "L'allumage d'une DEL au-delà d'un seuil",
+        "La valeur affichée à l'écran de la carte",
+        "La courbe d'étalonnage tracée sur papier"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le programme lit d'abord la tension mesurée sur une broche.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:149",
+      "type": "qcm_unique",
+      "enonce": "Pendant l'étalonnage, à quoi sert le thermomètre de référence plongé dans le bain ?",
+      "propositions": [
+        "À mesurer la résistance de la thermistance plongée",
+        "À chauffer le bain d'eau jusqu'à la bonne température",
+        "À protéger la thermistance du contact avec l'eau",
+        "À donner la température associée à chaque mesure de R"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On associe à chaque résistance mesurée une température connue, donnée par le thermomètre de référence.",
+      "notion": "Étalonnage et microcontrôleur"
+    },
+    {
+      "source": "physique-chimie-2de:ch12:banque:150",
+      "type": "qcm_unique",
+      "enonce": "Comment trouve-t-on une température inconnue avec une courbe d'étalonnage ?",
+      "propositions": [
+        "On mesure θ avec le capteur, puis on lit R sur la courbe",
+        "On mesure R, puis on divise R par l'intensité",
+        "On mesure R, puis on lit θ sur la courbe",
+        "On mesure U, puis on lit R sur l'axe des températures"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On mesure la résistance, puis on lit la température sur la courbe R = f(θ).",
+      "notion": "Étalonnage et microcontrôleur"
+    }
+  ]
+}
