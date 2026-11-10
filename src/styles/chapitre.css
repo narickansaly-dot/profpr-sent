@@ -54,7 +54,7 @@
 /* ---------- Outil interactif ---------- */
 .contenu-chapitre .tool { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; background: var(--surface); border: 1px solid var(--trait); border-radius: 14px; padding: 16px; margin: 16px 0; }
 .contenu-chapitre .tool label { display: grid; gap: 4px; font-size: 14px; color: var(--attenue); }
-.contenu-chapitre .tool input { font: inherit; font-size: 16px; width: 120px; min-height: 44px; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--trait); background: var(--papier); color: var(--encre); }
+.contenu-chapitre .tool input { font: inherit; font-size: 16px; width: 120px; min-height: 44px; padding: 8px 10px; border-radius: 10px; border: 2px solid var(--bord-champ); background: var(--papier); color: var(--encre); }
 .contenu-chapitre .tool output { font-family: var(--police-mono); font-size: 15px; min-width: 200px; padding-bottom: 8px; }
 
 /* ---------- Prose (Tailwind Preflight remet tout à zéro : on restaure titres, listes, paragraphes) ---------- */
@@ -67,3 +67,6 @@
 .contenu-chapitre li { max-width: 68ch; }
 .contenu-chapitre strong { font-weight: 700; color: var(--encre); }
 @media (max-width: 520px) { .contenu-chapitre h2 { font-size: 24px; } }
+
+/* Image déposée depuis l'éditeur (bucket schemas) */
+.contenu-chapitre .fig img { display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 8px; }

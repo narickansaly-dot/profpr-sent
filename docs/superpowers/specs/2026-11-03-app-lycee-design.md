@@ -92,6 +92,7 @@ voie (générale / technologique / professionnelle)
 - Un enseignant ne lit que la progression et les notes des élèves inscrits dans ses classes. Il n'a jamais accès à leurs calendriers personnels ni à leurs abonnements.
 - Un parent ne voit que l'abonnement et le consentement des élèves auxquels il est lié.
 - Les élèves et les enseignants ne lisent que les questions au statut `valide`, **jamais les bonnes réponses ni les explications** : celles-ci ne sont renvoyées qu'après correction, par une fonction serveur.
+  - Seule exception : un enseignant voit la bonne réponse (jamais l'explication) des questions les plus ratées par sa classe, via la fonction serveur `questions_ratees_classe`. Une question n'y figure qu'avec au moins 5 réponses de 3 élèves différents de la classe, sur des tentatives terminées.
 - Seul un `admin_contenu` peut écrire du contenu.
 - Un élève sans accès à un cours ne peut pas lire ses chapitres ni ses questions.
 

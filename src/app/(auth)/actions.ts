@@ -5,12 +5,22 @@ import { redirect } from 'next/navigation';
 import { creerClientServeur } from '@/lib/supabase/server';
 import { schemaIdentifiants } from '@/lib/auth/identifiants';
 import { traduireErreurAuth } from '@/lib/auth/erreurs';
+import { cheminSuiteSur } from '@/lib/routes';
 
-export type EtatFormulaire = { erreur?: string; info?: string };
+export type EtatFormulaire = { erreur?: string; info?: string; email?: string; champ?: 'email' | 'motDePasse' };
+
+const lireEmail = (form: FormData) => String(form.get('email') ?? '');
 
 function lireIdentifiants(form: FormData) {
   return schemaIdentifiants.safeParse({ email: form.get('email'), motDePasse: form.get('motDePasse') });
 }
+
+// Code d'erreur Supabase d'abord (stable) ; le message sert de repli pour un serveur qui n'envoie pas de code.
+const identifiantsInvalides = (e: { code?: string; message: string }) =>
+  e.code === 'invalid_credentials' || /invalid login credentials/i.test(e.message);
+
+const dejaInscrit = (e: { code?: string; message: string }) =>
+  e.code === 'user_already_exists' || e.code === 'email_exists' || /already registered|already exists/i.test(e.message);
 
 async function lireOrigine() {
   return (await headers()).get('origin') ?? 'http://localhost:3000';
@@ -18,7 +28,7 @@ async function lireOrigine() {
 
 export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form), champ: r.error.issues[0].path[0] === 'email' ? 'email' : 'motDePasse' };
   const supabase = await creerClientServeur();
   const origine = await lireOrigine();
   const { data, error } = await supabase.auth.signUp({
@@ -26,18 +36,19 @@ export async function inscrire(_: EtatFormulaire, form: FormData): Promise<EtatF
     password: r.data.motDePasse,
     options: { emailRedirectTo: `${origine}/auth/confirm` },
   });
-  if (error) return { erreur: traduireErreurAuth(error.message) };
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: dejaInscrit(error) ? 'email' : undefined };
   if (!data.session) return { info: 'Compte créé ! Clique sur le lien reçu par e-mail pour l’activer.' };
-  redirect('/bienvenue');
+  const suite = cheminSuiteSur(form.get('suite'));
+  redirect(suite ? `/bienvenue?suite=${encodeURIComponent(suite)}` : '/bienvenue');
 }
 
 export async function connecter(_: EtatFormulaire, form: FormData): Promise<EtatFormulaire> {
   const r = lireIdentifiants(form);
-  if (!r.success) return { erreur: r.error.issues[0].message };
+  if (!r.success) return { erreur: r.error.issues[0].message, email: lireEmail(form), champ: r.error.issues[0].path[0] === 'email' ? 'email' : 'motDePasse' };
   const supabase = await creerClientServeur();
   const { error } = await supabase.auth.signInWithPassword({ email: r.data.email, password: r.data.motDePasse });
-  if (error) return { erreur: traduireErreurAuth(error.message) };
-  redirect('/');
+  if (error) return { erreur: traduireErreurAuth(error.message), email: lireEmail(form), champ: identifiantsInvalides(error) ? 'motDePasse' : undefined };
+  redirect(cheminSuiteSur(form.get('suite')) ?? '/');
 }
 
 export async function connecterAvecGoogle() {

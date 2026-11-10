@@ -1,0 +1,94 @@
+'use client';
+
+import { useActionState } from 'react';
+import { creerClasse, definirCours, retirerEleve, type EtatClasse, type EtatCours, type EtatSimple } from '@/app/(app)/enseignant/actions';
+
+import type { GroupeCours } from '@/lib/enseignant/catalogue';
+
+function ChoixCours({ groupes, coches }: { groupes: GroupeCours[]; coches?: string[] }) {
+  return (
+    <>
+      {groupes.map((g) => (
+        <fieldset key={g.nom} className="groupe-cours">
+          <legend>{g.nom}</legend>
+          {g.cours.map((c) => (
+            <label key={c.id} className="case">
+              <input type="checkbox" name="cours" value={c.id} defaultChecked={coches?.includes(c.id)} />
+              {c.titre}
+            </label>
+          ))}
+        </fieldset>
+      ))}
+    </>
+  );
+}
+
+export function FormulaireClasse({ groupes, filieres, niveaux }: {
+  groupes: GroupeCours[]; filieres: { id: string; nom: string }[]; niveaux: readonly string[];
+}) {
+  const [etat, envoyer, enCours] = useActionState<EtatClasse, FormData>(creerClasse, {});
+  return (
+    <form action={envoyer} className="formulaire formulaire-classe">
+      <label>
+        Nom de la classe
+        <input name="nom" type="text" required minLength={2} maxLength={60} autoComplete="off" defaultValue={etat.nom ?? ''}
+          aria-invalid={etat.champ === 'nom' ? true : undefined} aria-describedby={etat.champ === 'nom' ? 'erreur-classe' : undefined} />
+      </label>
+      <div className="ligne-champs">
+        <label>
+          Filière (facultatif)
+          <select name="filiereId" defaultValue={etat.filiereId ?? ''}>
+            <option value="">Aucune</option>
+            {filieres.map((f) => <option key={f.id} value={f.id}>{f.nom}</option>)}
+          </select>
+        </label>
+        <label>
+          Niveau (facultatif)
+          <select name="niveau" defaultValue={etat.niveau ?? ''}>
+            <option value="">Aucun</option>
+            {niveaux.map((n) => <option key={n} value={n}>{n}</option>)}
+          </select>
+        </label>
+      </div>
+      <fieldset className="choix-cours" aria-describedby={etat.champ === 'cours' ? 'erreur-classe' : undefined}>
+        <legend className="titre-choix">Cours de la classe</legend>
+        <ChoixCours groupes={groupes} coches={etat.cours} />
+      </fieldset>
+      {etat.erreur && <p id="erreur-classe" role="alert" className="message-erreur">{etat.erreur}</p>}
+      <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Création…' : 'Créer la classe'}</button>
+    </form>
+  );
+}
+
+export function FormulaireCours({ classeId, groupes, coches }: { classeId: string; groupes: GroupeCours[]; coches: string[] }) {
+  const [etat, envoyer, enCours] = useActionState<EtatCours, FormData>(definirCours, {});
+  return (
+    <form action={envoyer} className="formulaire">
+      <input type="hidden" name="classe" value={classeId} />
+      <ChoixCours groupes={groupes} coches={etat.cours ?? coches} />
+      <p className="aide-champ">Retirer un cours supprime aussi son échéance.</p>
+      {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
+      {etat.info && <p role="status" className="message-info">{etat.info}</p>}
+      <button type="submit" className="bouton bouton-principal" disabled={enCours}>{enCours ? 'Enregistrement…' : 'Enregistrer les cours'}</button>
+    </form>
+  );
+}
+
+export function BoutonRetirerEleve({ classeId, eleveId, nom }: { classeId: string; eleveId: string; nom: string }) {
+  const [etat, envoyer, enCours] = useActionState<EtatSimple, FormData>(retirerEleve, {});
+  return (
+    <form
+      action={envoyer}
+      onSubmit={(e) => {
+        if (!window.confirm(`Retirer ${nom} de la classe\u00a0? L’élève sera retiré de la classe et ne pourra pas la rejoindre à nouveau pendant 24 heures.`)) e.preventDefault();
+      }}
+    >
+      <input type="hidden" name="classe" value={classeId} />
+      <input type="hidden" name="eleve" value={eleveId} />
+      <button type="submit" className="bouton bouton-secondaire bouton-compact" disabled={enCours}>
+        Retirer<span className="sr-only"> {nom} de la classe</span>
+      </button>
+      {etat.erreur && <p role="alert" className="message-erreur">{etat.erreur}</p>}
+    </form>
+  );
+}
