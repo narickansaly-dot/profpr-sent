@@ -30,6 +30,7 @@ export function lireCoursArgument(argv: string[]): ConfigCours {
   const i = argv.indexOf('--cours');
   if (i === -1) return COURS_BANQUE.bph;
   const nom = argv[i + 1];
+  if (nom === undefined) throw new Error('--cours attend un nom : bph ou stss');
   if (nom !== 'bph' && nom !== 'stss') throw new Error(`cours inconnu : ${nom} (attendu bph ou stss)`);
   return COURS_BANQUE[nom];
 }

@@ -17,6 +17,7 @@ describe('configuration des cours', () => {
   it('lit --cours, bph par défaut', () => {
     expect(lireCoursArgument(['3'])).toBe(COURS_BANQUE.bph);
     expect(lireCoursArgument(['3', '--cours', 'stss'])).toBe(COURS_BANQUE.stss);
+    expect(() => lireCoursArgument(['3', '--cours'])).toThrow('--cours attend un nom : bph ou stss');
     expect(() => lireCoursArgument(['3', '--cours', 'svt'])).toThrow('cours inconnu : svt (attendu bph ou stss)');
   });
   it('décrit les deux cours', () => {

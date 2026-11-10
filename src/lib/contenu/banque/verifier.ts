@@ -57,7 +57,7 @@ const reponsesDe = (q: Brute): number[] => (Array.isArray(q.bonnes_reponses) ? q
 
 /**
  * Contrôle un fichier de travail. Renvoie la liste des erreurs (vide si tout va bien).
- * `existantes` : les questions déjà présentes dans le chapitre de `bph.json`, pour détecter les doublons proches.
+ * `existantes` : les questions déjà présentes dans le chapitre du fichier du cours (`bph.json` ou `stss.json`), pour détecter les doublons proches.
  */
 export function verifierBanque(f: FichierBanque, existantes: QuestionImport[], config: ConfigCours = COURS_BANQUE.bph): string[] {
   const quotas = quotasPour(config.total);
@@ -74,7 +74,7 @@ export function verifierBanque(f: FichierBanque, existantes: QuestionImport[], c
   });
 
   // 2 à 4. Sources : uniques, au format <préfixe>:chN:banque:NNN, avec le bon chapitre.
-  const motif = new RegExp(`^${config.prefixe}:ch(\\d+):banque:\\d{3}$`);
+  const motif = new RegExp(`^${config.prefixe.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:ch(\\d+):banque:\\d{3}$`);
   const vues = new Set<string>();
   const doublons = new Set<string>();
   brutes.forEach((q) => {

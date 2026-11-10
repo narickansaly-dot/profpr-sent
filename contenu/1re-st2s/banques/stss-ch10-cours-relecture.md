@@ -51,6 +51,7 @@ Points vérifiés et laissés tels quels :
 4. **Titre de la loi de 1998** (résolu) : les titres sont désormais identiques dans les chapitres 7 et 10 (« loi du 29 juillet 1998 d'orientation relative à la lutte contre les exclusions »), comme la citation de l'article 1er. Plus rien à harmoniser.
 5. **Associations nommées** : le chapitre cite les Restos du cœur, le Secours populaire, la Croix-Rouge et Emmaüs. Ces noms peuvent être retirés si vous préférez ne pas citer d'organismes privés.
 6. **CCAS** : le chapitre présente le CCAS comme l'acteur communal. Dans les petites communes, l'action sociale peut être assurée directement par la commune ou par un centre intercommunal (CIAS). Le chapitre ne le précise pas, pour rester simple.
+7. **CAF et Assurance maladie rangées parmi les acteurs publics** : la section « Les acteurs publics » les cite, alors que ce sont des organismes de droit privé chargés d'une mission de service public. La question `stss:ch10:banque:047` (« Les deux autres sont des acteurs publics ») suit le texte. Simplification acceptable en 1re ; à nuancer ou à garder selon votre manuel.
 
 ## Éléments datés à vérifier avant publication
 

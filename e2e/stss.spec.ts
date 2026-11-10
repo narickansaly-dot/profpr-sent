@@ -16,6 +16,12 @@ test('un élève de 1re ST2S ne voit pas un cours non publié', async ({ page },
   await expect(page.getByRole('link', { name: /Biologie et physiopathologie humaines/ }).first()).toBeVisible();
   await expect(page.getByText(cours.titre)).toHaveCount(0);
   await expect(page.getByText('STSS e2e non publié')).toHaveCount(0);
+  // Ni par l'adresse directe (le cours n'existe pas pour lui : page 404), ni dans la page de choix des cours.
+  const reponse = await page.goto(`/cours/${cours.slug}`);
+  expect(reponse?.status()).toBe(404);
+  await page.goto('/choisir-cours');
+  await expect(page.getByText(cours.titre)).toHaveCount(0);
+  await expect(page.getByText('STSS e2e non publié')).toHaveCount(0);
 });
 
 test('l’admin voit un cours non publié dans le suivi du contenu, marqué « Brouillon »', async ({ page }, testInfo) => {

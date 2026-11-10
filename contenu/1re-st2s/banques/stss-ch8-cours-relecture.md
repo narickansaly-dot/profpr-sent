@@ -49,6 +49,7 @@ Relecture indépendante (task 3, step 2, N = 8). Fichier corrigé : `.superpower
 6. **Longueur** : environ 17 000 caractères, un peu au-dessus de la cible. Si vous voulez couper, voici les premiers candidats :
    - la ligne « 1945-1975 » du tableau chronologique ;
    - le paragraphe de comparaison avec le NHS, qui recoupe en partie le tableau Bismarck / Beveridge.
+7. **Techniques de protection sociale** : le « Je retiens » (point 4) annonce deux techniques, l'assurance et l'assistance, puis mentionne la protection universelle. La section, elle, donne trois définitions au même niveau. Le programme parle de « assurance - assistance », donc le « Je retiens » est fidèle, mais un élève peut hésiter. Si vous voulez lever le doute, présentez dans la section la protection universelle comme une logique qui s'ajoute aux deux techniques.
 
 ## Éléments datés à vérifier avant publication
 

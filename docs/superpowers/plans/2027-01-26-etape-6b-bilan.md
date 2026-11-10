@@ -15,14 +15,14 @@ Commandes : `npm run db:reset`, import de STSS avec `--garder-statuts`, `npm run
 - **Un second cours complet, STSS de 1re ST2S** : 10 chapitres rédigés d'après le programme officiel, dans `contenu/1re-st2s/stss.json`, importé **non publié**. Le cours reste invisible aux élèves tant que l'enseignant ne le publie pas, chapitre par chapitre.
 - **Banques de questions** : 150 questions par chapitre, 1500 au total (STSS n'avait aucune question existante). Elles arrivent en `a_relire` : aucune n'est tirée dans un quiz avant validation. Types 75 / 30 / 30 / 15 et difficultés 60 / 60 / 30 (à plus ou moins 3 près), clé `stss:chN:banque:NNN`.
 - **Option `--cours`** pour `banque:texte`, `banque:verifier` et `banque:fusionner` : `bph` par défaut, `stss` pour le nouveau cours (commits de la tâche 1).
-- **Test e2e autonome** `e2e/stss.spec.ts` : il crée son propre cours non publié et vérifie que l'admin le voit marqué « Brouillon ».
+- **Test e2e autonome** `e2e/stss.spec.ts` : il crée son propre cours non publié et vérifie qu'un élève de 1re ST2S ne voit pas un cours non publié (ni dans « Mes cours », ni par l'adresse directe, ni dans le choix des cours), puis que l'admin le voit marqué « Brouillon ».
 - **Relecture** de chaque chapitre du cours contre le programme et les sources, puis de chaque banque contre le cours, par un relecteur distinct de l'auteur, sans échantillonnage. Revues d'ensemble du cours (tâche 3) et des banques (tâche 4).
 
 ## Source officielle du programme
 
 Arrêté du 17 janvier 2019, NOR MENE1901642A, J.O. du 20 janvier 2019 ; annexe 3, « Programme de sciences et techniques sanitaires et sociales de première ST2S » ; Bulletin officiel spécial n° 1 du 22 janvier 2019. Récupéré le 10 novembre 2026 ; Légifrance : aucun texte modificatif. Référence détaillée et URL : `contenu/1re-st2s/programmes/stss-1re.md`. Couverture : 79 notions sur 79 et 51 capacités sur 51.
 
-Décision de l'enseignant à l'arrêt 1 : 10 chapitres (la question 9 du programme est coupée en deux, « Recherche documentaire » et « Démarche d'étude », placés après le chapitre 3).
+Décision de l'enseignant à l'arrêt 1 : 10 chapitres (le module de méthodologie est coupé en deux, selon ses deux tableaux officiels : « Recherche documentaire » et « Démarche d'étude », placés après le chapitre 3).
 
 ## Par chapitre
 
@@ -79,6 +79,10 @@ Chaque rapport se termine par « Points de doute pour l'enseignant » : à lire 
 - chapitre 9 : [cours](../../../contenu/1re-st2s/banques/stss-ch9-cours-relecture.md), [banque](../../../contenu/1re-st2s/banques/stss-ch9-relecture.md)
 - chapitre 10 : [cours](../../../contenu/1re-st2s/banques/stss-ch10-cours-relecture.md), [banque](../../../contenu/1re-st2s/banques/stss-ch10-relecture.md)
 
+Deux points de doute ajoutés après la revue finale :
+- **Chapitre 8, « Je retiens » point 4** : il annonce deux techniques (assurance, assistance) alors que la section en définit trois au même niveau (avec la protection universelle). Le « Je retiens » suit le programme ; à harmoniser au choix de l'enseignant.
+- **Chapitre 10, « Les acteurs publics »** : la CAF et l'Assurance maladie sont des organismes de droit privé chargés d'une mission de service public. Simplification acceptable en 1re, cohérente avec la question `stss:ch10:banque:047`.
+
 ## Six Mineurs de la revue des banques, laissés à l'enseignant
 
 Aucune erreur de fond ; à traiter pendant la relecture en lot.
@@ -115,4 +119,6 @@ Autres :
 
 ## Revue finale
 
-À faire : revue Opus de toute la branche (menée par le contrôleur).
+Revue Opus de toute la branche faite : verdict **prêt pour PR**, 0 Critique, 0 Important, 10 Mineurs (détail : `.superpowers/sdd/2027-01-26-etape-6b-stss/review-final.md`).
+
+Corrigés dans une vague unique : 1 (`--cours` sans valeur, RegExp échappée), 2 (commentaires), 3 (`stss.json` testé avec `bph.json`), 4 (e2e : accès direct et choix des cours), 5 à 7 (ce bilan), 8 (`docs/mise-en-ligne.md`). Les points 9 et 10 touchent au texte du cours : ils sont laissés à l'enseignant (points de doute des chapitres 8 et 10).
