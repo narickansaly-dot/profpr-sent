@@ -99,20 +99,20 @@ export async function vieillirDemandeSuppression(email: string, jours: number) {
 }
 
 /**
- * Publie un second cours de la même filière et du même niveau que le cours BPH, avec un chapitre (réservé aux tests).
+ * Crée un second cours de la même filière et du même niveau que le cours BPH, avec un chapitre (réservé aux tests).
  * Slug « e2e-… » : le nettoyage global le supprime. Sert à vérifier qu'un cours non choisi reste fermé.
  */
-export async function creerCoursPublie(slug: string): Promise<{ id: string; slug: string; titre: string }> {
+export async function creerCoursPublie(slug: string, options: { publie?: boolean; titre?: string } = {}): Promise<{ id: string; slug: string; titre: string }> {
   if (!slug.startsWith('e2e-')) throw new Error('le slug d’un cours de test commence par « e2e- »');
   const { data: modele, error: erreurModele } = await db.from('cours').select('filiere_id, niveau_code').eq('slug', 'bph-1re-st2s').single();
   if (erreurModele || !modele) throw erreurModele ?? new Error('cours BPH introuvable');
-  const titre = `Cours e2e ${slug}`;
+  const { publie = true, titre = `Cours e2e ${slug}` } = options;
   const { data: cours, error } = await db.from('cours')
-    .insert({ slug, filiere_id: modele.filiere_id, niveau_code: modele.niveau_code, matiere: 'Test e2e', titre, couleur: '#0f766e', publie: true })
+    .insert({ slug, filiere_id: modele.filiere_id, niveau_code: modele.niveau_code, matiere: 'Test e2e', titre, couleur: '#0f766e', publie })
     .select('id').single();
   if (error || !cours) throw error ?? new Error('cours non créé');
   const { error: erreurChapitre } = await db.from('chapitre')
-    .insert({ cours_id: cours.id, slug: 'ch1', numero: 1, titre: 'Chapitre de test', sections: [{ id: 'intro', titre: 'Introduction', html: '<p>Section de test.</p>' }], publie: true });
+    .insert({ cours_id: cours.id, slug: 'ch1', numero: 1, titre: 'Chapitre de test', sections: [{ id: 'intro', titre: 'Introduction', html: '<p>Section de test.</p>' }], publie });
   if (erreurChapitre) throw erreurChapitre;
   return { id: cours.id, slug, titre };
 }
@@ -132,4 +132,40 @@ export async function simulerAbonnement(email: string, statut: 'actif' | 'impaye
     fin_periode: finPeriode.toISOString(), fin_grace: finGrace ? finGrace.toISOString() : null,
   }, { onConflict: 'eleve_id' });
   if (error) throw error;
+}
+
+/**
+ * Importe un cours de test `e2e-…` d'un chapitre avec `n` questions QCM à relire (réservé aux tests) ; renvoie l'id du chapitre.
+ * Le cours reste publié : `supprimerCoursDeTest` le retire.
+ */
+export async function creerCoursARelire(slug: string, n = 3): Promise<string> {
+  if (!slug.startsWith('e2e-')) throw new Error('le slug d’un cours de test commence par « e2e- »');
+  const { error } = await db.rpc('importer_cours', {
+    p_cours: {
+      slug, filiere: 'ST2S', niveau: '1re', matiere: 'Test e2e', titre: `Cours e2e ${slug}`, couleur: '#0f766e',
+      chapitres: [{
+        slug: 'ch1', numero: 1, titre: 'Chapitre de relecture', objectifs: [],
+        sections: [{ id: 'intro', titre: 'Introduction', html: '<p>Section de test.</p>' }],
+        questions: Array.from({ length: n }, (_, i) => ({
+          source: `${slug}:${i + 1}`, type: 'qcm_unique', statut: 'a_relire', difficulte: 2, explication: `Explication ${i + 1}.`,
+          enonce: `Question de relecture n° ${i + 1} : quelle est la bonne réponse ?`,
+          propositions: [`Bonne réponse ${i + 1}.`, `Mauvaise réponse ${i + 1}a.`, `Mauvaise réponse ${i + 1}b.`], bonnes_reponses: [0],
+        })),
+      }],
+    },
+    p_publier: false,
+  });
+  if (error) throw error;
+  const { data, error: erreurLecture } = await db.from('cours').select('chapitre(id)').eq('slug', slug).single();
+  if (erreurLecture || !data) throw erreurLecture ?? new Error('cours introuvable');
+  return data.chapitre[0].id;
+}
+
+/** Supprime un cours de test sans résultat d'élève (les versions se référencent entre elles : on les détache d'abord). */
+export async function supprimerCoursDeTest(slug: string) {
+  const { data } = await db.from('cours').select('id, chapitre(id)').eq('slug', slug).maybeSingle();
+  if (!data) return;
+  const chapitres = data.chapitre.map((c) => c.id);
+  if (chapitres.length > 0) await db.from('question').update({ version_de: null }).in('chapitre_id', chapitres);
+  await db.from('cours').delete().eq('id', data.id);
 }

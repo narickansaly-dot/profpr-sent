@@ -13,6 +13,9 @@
     "typecheck": "tsc --noEmit",
     "db:start": "supabase start",
     "import:contenu": "tsx --env-file=.env.local scripts/importer-contenu.ts",
+    "banque:texte": "tsx scripts/texte-chapitre.ts",
+    "banque:verifier": "tsx scripts/verifier-banque.ts",
+    "banque:fusionner": "tsx scripts/fusionner-banque.ts",
     "cles:notifications": "tsx scripts/cles-notifications.ts",
     "configurer:envoi": "tsx --env-file=.env.local scripts/configurer-envoi.ts",
     "db:reset": "supabase db reset && npm run import:contenu -- contenu/1re-st2s/bph.json --publier && npm run configurer:envoi"

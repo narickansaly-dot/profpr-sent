@@ -12,3 +12,10 @@ export function formaterCodeParent(code: string): string {
   const net = code.replace(/[\s-]/g, '').toUpperCase();
   return net.match(/.{1,4}/g)?.join('-') ?? '';
 }
+
+export const PARENTS_MAX = 2;
+
+/** Le bouton de création de code n'apparaît que tant que l'élève a moins de deux parents reliés. */
+export function peutCreerCode(nbParents: number): boolean {
+  return nbParents < PARENTS_MAX;
+}

@@ -99,6 +99,9 @@ describe('messageErreur, calendrier et planning', () => {
     };
     for (const [code, texte] of Object.entries(attendu)) expect(messageErreur(code)).toBe(texte);
   });
+  it('traduit l’erreur de la sélection en lot', () => {
+    expect(messageErreur('trop_de_questions')).toBe('Sélectionne au plus 200 questions à la fois.');
+  });
   it('traduit les erreurs des notifications', () => {
     expect(messageErreur('abonnement_invalide')).toBe('Cet appareil n’a pas pu être enregistré. Réessaie.');
     expect(messageErreur('preferences_invalides')).toBe('Tes réglages n’ont pas pu être lus. Vérifie les heures et réessaie.');
@@ -255,5 +258,14 @@ describe('messageErreur, comptes parents', () => {
   it('choisit le destinataire selon le rôle', () => {
     expect(destinataireDuRole('parent')).toBe('parent');
     for (const r of ['eleve', 'enseignant', 'admin', null, undefined]) expect(destinataireDuRole(r)).toBe('eleve');
+  });
+});
+
+describe('messageErreur, consentement_retire sur la page d’accord', () => {
+  it('garde le tutoiement pour l’élève', () => {
+    expect(messageErreur('consentement_retire')).toBe('Ton parent a retiré son accord\u00a0: tu ne peux pas faire de nouvelle demande.');
+  });
+  it('vouvoie le parent', () => {
+    expect(messageErreur('consentement_retire', 'parent')).toBe('L’accord a été retiré\u00a0: cette page ne permet plus de le donner.');
   });
 });

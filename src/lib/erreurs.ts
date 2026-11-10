@@ -44,6 +44,7 @@ export const MESSAGES: Record<string, string> = {
   commentaire_invalide: 'Ton commentaire doit faire entre 5 et 1000 caractères.',
   deja_signalee: 'Tu as déjà signalé cette question.',
   trop_de_signalements: 'Tu as atteint la limite de 20 signalements par jour.',
+  trop_de_questions: 'Sélectionne au plus 200 questions à la fois.',
   signalement_introuvable: 'Ce signalement a déjà été traité.',
   reserve_eleves: 'Réservé aux comptes élèves.',
   evenement_invalide: 'Cet événement est incomplet : vérifie le titre, la date et la durée.',
@@ -91,6 +92,7 @@ export const MESSAGES: Record<string, string> = {
 // Variante vouvoyée pour les comptes parents (aucun texte élève ou enseignant n'est modifié).
 const MESSAGES_PARENT: Record<string, string> = {
   non_connecte: 'Votre session a expiré. Reconnectez-vous.',
+  consentement_retire: 'L’accord a été retiré\u00a0: cette page ne permet plus de le donner.',
 };
 
 export type Destinataire = 'eleve' | 'parent';

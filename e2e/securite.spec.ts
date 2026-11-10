@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { vieillirInscription } from './aide-db';
+import { creerCoursARelire, rendreAdmin, supprimerCoursDeTest, vieillirInscription } from './aide-db';
 import { dernierEmail, lienDansEmail } from './aide-mailpit';
 import { emailDeTest, inscrireEleve, inscrireEleveMineur, relierParentEtEnfant, suivreViolations } from './aide-parcours';
 
@@ -40,6 +40,20 @@ test('la page hors connexion ne déclenche aucune violation de CSP', async ({ pa
   const violations = await suivreViolations(page);
   await page.goto('/hors-ligne');
   await expect(page.getByRole('heading', { name: 'Tu es hors connexion' })).toBeVisible();
+  await page.waitForLoadState('networkidle');
+  expect(violations).toEqual([]);
+});
+
+test('les pages introuvables répondent 404 sans violation de CSP', async ({ page }) => {
+  const violations = await suivreViolations(page);
+  await page.goto('/connexion');
+  await inscrireEleve(page, emailDeTest('csp-404'));
+  for (const chemin of ['/page-qui-n-existe-pas', '/cours/cours-inexistant']) {
+    const reponse = await page.goto(chemin);
+    expect(reponse?.status()).toBe(404);
+    await expect(page).toHaveTitle(/Page introuvable/);
+    await expect(page.getByRole('heading', { name: 'Page introuvable' })).toBeVisible();
+  }
   await page.waitForLoadState('networkidle');
   expect(violations).toEqual([]);
 });
@@ -106,5 +120,23 @@ test('aucune violation de CSP sur les pages parent', async ({ page, browser }, t
     expect(violations).toEqual([]);
   } finally {
     await contexte.close();
+  }
+});
+
+test('aucune violation de CSP sur la relecture en lot (admin)', async ({ page }, testInfo) => {
+  test.setTimeout(120_000);
+  const slug = `e2e-csp-relecture-${testInfo.project.name}-${Date.now()}`.toLowerCase();
+  try {
+    const chapitreId = await creerCoursARelire(slug, 2);
+    const violations = await suivreViolations(page);
+    const email = emailDeTest('csp-admin');
+    await inscrireEleve(page, email);
+    await rendreAdmin(email);
+    await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
+    await expect(page.locator('article.carte-relecture')).toHaveCount(2);
+    await page.waitForLoadState('networkidle');
+    expect(violations).toEqual([]);
+  } finally {
+    await supprimerCoursDeTest(slug);
   }
 });

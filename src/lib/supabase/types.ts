@@ -175,14 +175,14 @@ isOneToOne: false
                   ]
                 },"consentement_parental": {
                   Row: {
-                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
+                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string | null,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Update: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Relationships: [
                     {
@@ -744,6 +744,9 @@ isOneToOne: false
 "changer_statut_question":
 { Args: { "p_question": string,"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: undefined
                            },
+"changer_statut_questions":
+{ Args: { "p_questions": (string)[],"p_statut": Database["public"]['Enums']["statut_question_t"] }; Returns: number
+                           },
 "choisir_cours_gratuit":
 { Args: { "p_cours": string }; Returns: undefined
                            },
@@ -856,6 +859,9 @@ isOneToOne: false
 "envoi_terminer":
 { Args: { "p_expires": (string)[],"p_resultats": Json,"p_secret": string }; Returns: undefined
                            },
+"est_eleve_sans_accord":
+{ Args: { "p_eleve": string }; Returns: boolean
+                           },
 "exporter_mes_donnees":
 { Args: Record<PropertyKey, never>; Returns: Json
                            },
@@ -876,7 +882,7 @@ isOneToOne: false
                            },
 "lire_demande_consentement":
 { Args: { "p_jeton": string }; Returns: {
-              "deja_donne": boolean,"prenom": string
+              "deja_donne": boolean,"prenom": string,"retire": boolean
             }[]
                            },
 "marquer_chapitre_lu":

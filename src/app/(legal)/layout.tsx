@@ -7,7 +7,7 @@ export default function LayoutLegal({ children }: { children: React.ReactNode })
       <header className="en-tete">
         <Link href="/" className="logo">App lycée</Link>
       </header>
-      <main className="page-legale">{children}</main>
+      <main id="contenu" tabIndex={-1} className="page-legale">{children}</main>
     </>
   );
 }
