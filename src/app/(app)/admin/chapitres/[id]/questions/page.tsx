@@ -36,7 +36,7 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
   const couleur = couleurCoursAcceptable(cours.couleur) ? cours.couleur : undefined;
   return (
     <div className="page-admin" style={couleur ? ({ '--couleur-cours': couleur } as React.CSSProperties) : undefined}>
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <div className="entete-bloc">
         <div>
           <p className="etiquette">{cours.titre}</p>
@@ -53,7 +53,7 @@ export default async function PageQuestionsChapitre({ params, searchParams }: { 
       </ul>
       {relecture ? (
         <>
-          <p><Link href={`/admin/chapitres/${id}/questions`}>Retour à la liste</Link></p>
+          <p><Link className="lien-action" href={`/admin/chapitres/${id}/questions`}>Retour à la liste</Link></p>
           <RelectureQuestions chapitreId={id} questions={aRelire} />
         </>
       ) : (<>

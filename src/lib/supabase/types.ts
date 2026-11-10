@@ -175,14 +175,14 @@ isOneToOne: false
                   ]
                 },"consentement_parental": {
                   Row: {
-                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
+                    "demande_le": string,"dernier_envoi_le": string,"donne_le": string | null,"eleve_id": string,"email_parent": string | null,"envois_du_jour": number,"jeton_empreinte": string | null,"jour_envois": string,"retire_le": string | null,"retire_par": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent": string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id": string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Update: {
-                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
+                    "demande_le"?: string,"dernier_envoi_le"?: string,"donne_le"?: string | null,"eleve_id"?: string,"email_parent"?: string | null,"envois_du_jour"?: number,"jeton_empreinte"?: string | null,"jour_envois"?: string,"retire_le"?: string | null,"retire_par"?: string | null
                   }
                   Relationships: [
                     {
@@ -858,6 +858,9 @@ isOneToOne: false
                            },
 "envoi_terminer":
 { Args: { "p_expires": (string)[],"p_resultats": Json,"p_secret": string }; Returns: undefined
+                           },
+"est_eleve_sans_accord":
+{ Args: { "p_eleve": string }; Returns: boolean
                            },
 "exporter_mes_donnees":
 { Args: Record<PropertyKey, never>; Returns: Json

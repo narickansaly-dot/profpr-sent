@@ -1,7 +1,7 @@
 import type { CoursImport, QuestionImport } from '../format-import';
 import type { FichierBanque } from './format';
 
-/** Sérialisation de bph.json : 2 espaces, saut de ligne final, ordre des clés conservé. */
+/** Sérialisation du fichier du cours (`bph.json` ou `stss.json`) : 2 espaces, saut de ligne final, ordre des clés conservé. */
 export function serialiserCours(cours: CoursImport): string {
   return `${JSON.stringify(cours, null, 2)}\n`;
 }

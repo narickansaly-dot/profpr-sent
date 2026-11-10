@@ -23,6 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="fr" className={`${fredoka.variable} ${nunito.variable}`}>
       <body>
+        <a href="#contenu" className="lien-evitement">Aller au contenu</a>
         {children}
         <PiedDePage />
         <EnregistrementSW />

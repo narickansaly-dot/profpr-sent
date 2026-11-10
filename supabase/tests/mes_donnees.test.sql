@@ -1,16 +1,20 @@
 begin;
-select plan(37);
+select plan(49);
 
 insert into auth.users (id, email) values
   ('00000000-0000-0000-0000-0000000005c1', 'eleve-donnees@test.local'),
   ('00000000-0000-0000-0000-0000000005c2', 'prof-donnees@test.local'),
   ('00000000-0000-0000-0000-0000000005c3', 'autre-donnees@test.local'),
-  ('00000000-0000-0000-0000-0000000005c5', 'prof-reste@test.local');
+  ('00000000-0000-0000-0000-0000000005c5', 'prof-reste@test.local'),
+  ('00000000-0000-0000-0000-0000000005c8', 'parent-export@test.local'),
+  ('00000000-0000-0000-0000-0000000005c9', 'enfant-retrait@test.local');
 update public.profil set role = 'enseignant', nom = 'Prof Données' where id = '00000000-0000-0000-0000-0000000005c2';
 update public.profil set role = 'enseignant', nom = 'Prof Reste' where id = '00000000-0000-0000-0000-0000000005c5';
 insert into public.filiere (id, voie, code, nom) values ('10000000-0000-0000-0000-0000000005c1', 'technologique', 'DON', 'Filière données');
 update public.profil set onboarding_termine = true, nom = 'Camille', filiere_id = '10000000-0000-0000-0000-0000000005c1', niveau_code = '1re',
   moins_de_15_ans = true where id = '00000000-0000-0000-0000-0000000005c1';
+update public.profil set role = 'parent', nom = 'Parent Export' where id = '00000000-0000-0000-0000-0000000005c8';
+update public.profil set nom = 'Enfant Retrait' where id = '00000000-0000-0000-0000-0000000005c9';
 update public.profil set onboarding_termine = true, nom = 'Autre' where id = '00000000-0000-0000-0000-0000000005c3';
 
 insert into public.cours (id, slug, filiere_id, niveau_code, matiere, titre, publie) values
@@ -61,6 +65,18 @@ insert into public.notification_planifiee (eleve_id, type, cle, titre, corps, ur
 insert into public.acces_gratuit (eleve_id, cours_id) values ('00000000-0000-0000-0000-0000000005c1', '20000000-0000-0000-0000-0000000005c1');
 insert into public.consentement_parental (eleve_id, email_parent, jeton_empreinte, donne_le)
   values ('00000000-0000-0000-0000-0000000005c1', 'parent-donnees@example.fr', '\xdeadbeef', now());
+insert into public.consentement_parental (eleve_id, email_parent, jeton_empreinte, donne_le, retire_le, retire_par)
+  values ('00000000-0000-0000-0000-0000000005c9', 'parent-export@example.fr', '\xfeedface', now() - interval '2 days', now() - interval '1 day',
+          '00000000-0000-0000-0000-0000000005c8');
+insert into prive.deliaison (eleve_id, parent_id, delie_le) values
+  ('00000000-0000-0000-0000-0000000005c1', '00000000-0000-0000-0000-0000000005c8', now() - interval '4 days'),
+  ('00000000-0000-0000-0000-0000000005c3', '00000000-0000-0000-0000-0000000005c5', now() - interval '5 days');
+insert into prive.code_parent (eleve_id, empreinte, expire_le) values
+  ('00000000-0000-0000-0000-0000000005c1', '\xf00dcafe', now() + interval '1 hour');
+insert into auth.identities (id, user_id, provider, provider_id, identity_data)
+  select gen_random_uuid(), id, 'email', id::text, jsonb_build_object('sub', id::text, 'email', email, 'secret_jeton', 'identite-secrete')
+  from auth.users where id in ('00000000-0000-0000-0000-0000000005c1', '00000000-0000-0000-0000-0000000005c8');
+update auth.users set last_sign_in_at = '2027-01-10 08:00:00+00' where id = '00000000-0000-0000-0000-0000000005c1';
 insert into prive.essai_code (eleve_id) values ('00000000-0000-0000-0000-0000000005c1');
 insert into prive.jeton_ical (eleve_id, empreinte) values ('00000000-0000-0000-0000-0000000005c1', '\xcafebabe');
 insert into public.signalement (question_id, auteur_id, commentaire) values
@@ -71,8 +87,8 @@ set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c1","role":"authenticated"}', true);
 select set_config('test.export_eleve', public.exporter_mes_donnees()::text, true);
 select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb) k order by k collate "C"),
-  array['abonnement','acces_gratuit','appareils','classes','classes_creees','consentement','departs_classe','enfants_suivis','essais_code_classe','evenements','historique_questions','notifications',
-        'parents_relies','plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','retrait_consentement','retraits_classe','signalements','signalements_traites','tentatives'],
+  array['abonnement','acces_gratuit','appareils','classes','classes_creees','code_parent','connexion','consentement','consentement_envois','deliaisons','departs_classe','enfants_suivis','essais_code_classe','evenements','historique_questions','jeton_ical','notifications',
+        'parents_relies','plans_revision','preferences_notification','profil','progression_chapitres','progression_cours','retrait_consentement','retraits_classe','retraits_faits','signalements','signalements_traites','tentatives'],
   'l''export a toutes les rubriques');
 select is(current_setting('test.export_eleve')::jsonb->'profil'->>'email', 'eleve-donnees@test.local', 'le profil de l''appelant');
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'tentatives'), 1, 'une seule tentative exportée');
@@ -81,9 +97,23 @@ select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'evene
 select is(position('5c3' in current_setting('test.export_eleve')), 0, 'rien de l''autre élève');
 select is(current_setting('test.export_eleve')::jsonb->'appareils'->0, jsonb_build_object('appareil', 'Téléphone de Camille', 'cree_le', current_setting('test.export_eleve')::jsonb->'appareils'->0->'cree_le'),
   'appareils : libellé et date seulement');
-select is(current_setting('test.export_eleve') ~ 'secret-endpoint|jeton|p256dh|deadbeef|cafebabe', false, 'aucun secret dans l''export (endpoint, clés, jetons)');
+select is(current_setting('test.export_eleve') ~* 'secret-endpoint|empreinte|p256dh|deadbeef|cafebabe|f00dcafe|feedface|identite-secrete|token', false, 'aucun secret dans l''export (endpoint, clés, empreintes, jetons)');
 select is(current_setting('test.export_eleve')::jsonb->'consentement'->>'email_parent', 'parent-donnees@example.fr', 'le consentement est exporté sans empreinte');
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'departs_classe'), 1, 'ses départs de classe');
+
+-- Export complet : chaque nouvelle clé, sans empreinte ni jeton.
+select is(current_setting('test.export_eleve')::jsonb->'deliaisons',
+  jsonb_build_array(jsonb_build_object('role', 'eleve', 'nom', 'Parent Export', 'delie_le', current_setting('test.export_eleve')::jsonb->'deliaisons'->0->'delie_le')),
+  'déliaisons : la sienne seulement, avec la date');
+select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb->'jeton_ical') k), array['cree_le'], 'jeton iCal : la date de création seulement');
+select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb->'code_parent') k), array['expire_le'], 'code parent : l''expiration seulement');
+select is((current_setting('test.export_eleve')::jsonb->'consentement_envois'->>'envois_du_jour')::int, 1, 'consentement : nombre d''envois du jour');
+select isnt(current_setting('test.export_eleve')::jsonb->'consentement_envois'->>'dernier_envoi_le', null, 'consentement : dernier envoi');
+select is(current_setting('test.export_eleve')::jsonb->'connexion'->'fournisseurs', '["email"]'::jsonb, 'connexion : fournisseur d''authentification');
+select is(array(select k from jsonb_object_keys(current_setting('test.export_eleve')::jsonb->'connexion') k order by k), array['created_at','fournisseurs','last_sign_in_at'],
+  'connexion : fournisseurs et dates, sans jeton ni identité');
+select is(current_setting('test.export_eleve')::jsonb->'connexion'->>'last_sign_in_at', '2027-01-10T08:00:00+00:00', 'connexion : dernière connexion lue dans Auth');
+select is(current_setting('test.export_eleve') ~* 'empreinte|token|identite-secrete|f00dcafe', false, 'ni empreinte ni jeton parmi les nouvelles clés');
 
 select is(jsonb_array_length(current_setting('test.export_eleve')::jsonb->'essais_code_classe'), 1, 'ses essais de code de classe (dates seulement)');
 select is(current_setting('test.export_eleve')::jsonb->'profil'->>'onboarding_termine', 'true', 'le profil indique l''inscription terminée');
@@ -129,6 +159,17 @@ select is(jsonb_array_length(current_setting('test.export_prof')::jsonb->'classe
 select is(jsonb_array_length(current_setting('test.export_prof')::jsonb->'signalements'), 1, 'un enseignant exporte ses signalements');
 select is(position('5c1' in current_setting('test.export_prof')), 0, 'l''export d''un enseignant ne contient pas ses élèves');
 select throws_ok($$ select prive.purges_quotidiennes() $$, '42501', null, 'la purge n''est pas appelable par un compte');
+
+-- Parent : déliaison côté parent, retraits faits, pas de code ni de jeton d'élève.
+select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-0000000005c8","role":"authenticated"}', true);
+select set_config('test.export_parent', public.exporter_mes_donnees()::text, true);
+select is(current_setting('test.export_parent')::jsonb->'deliaisons',
+  jsonb_build_array(jsonb_build_object('role', 'parent', 'nom', 'Camille', 'delie_le', current_setting('test.export_parent')::jsonb->'deliaisons'->0->'delie_le')),
+  'parent : déliaison avec le prénom de l''enfant');
+select is(current_setting('test.export_parent')::jsonb->'retraits_faits',
+  jsonb_build_array(jsonb_build_object('enfant', 'Enfant Retrait', 'retire_le', current_setting('test.export_parent')::jsonb->'retraits_faits'->0->'retire_le')),
+  'parent : retraits d''accord faits (prénom de l''enfant, date)');
+select is(current_setting('test.export_parent')::jsonb->'code_parent', 'null'::jsonb, 'parent : pas le code de l''enfant');
 
 reset role;
 set local role anon;

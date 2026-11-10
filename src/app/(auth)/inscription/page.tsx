@@ -10,7 +10,7 @@ export default async function PageInscription({ searchParams }: { searchParams: 
   const suite = cheminSuiteSur((await searchParams).suite) ?? undefined;
   const parametre = suite ? `?suite=${encodeURIComponent(suite)}` : '';
   return (
-    <main className="page-auth">
+    <main id="contenu" tabIndex={-1} className="page-auth">
       <ViderCachePages />
       <h1>Crée ton compte</h1>
       <p>7 jours pour découvrir tous les cours, gratuitement.</p>

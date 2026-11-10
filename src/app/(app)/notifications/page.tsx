@@ -21,7 +21,7 @@ export default async function PageNotifications() {
   const preferences: Preferences = prefs.data ?? PREFERENCES_PAR_DEFAUT;
   return (
     <div className="page-notifications">
-      <p><Link href="/rappels">← Mes rappels</Link></p>
+      <p><Link href="/rappels" className="lien-action">← Mes rappels</Link></p>
       <h1>Notifications</h1>
       <section className="carte" aria-labelledby="appareil-titre">
         <h2 id="appareil-titre">Sur cet appareil</h2>

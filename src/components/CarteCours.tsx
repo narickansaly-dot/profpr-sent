@@ -11,7 +11,7 @@ export function CarteCours({ slug, titre, matiere, couleur, nbChapitres, nbValid
         <span className="pastille">{matiere}</span>
         <h3>{titre}</h3>
         <p><span className="badge-verrouille">Verrouillé</span></p>
-        {proposerChoix && <p><Link href="/choisir-cours">Choisir ce cours gratuit</Link></p>}
+        {proposerChoix && <p><Link href="/choisir-cours" className="lien-action">Choisir ce cours gratuit</Link></p>}
       </div>
     );
   }

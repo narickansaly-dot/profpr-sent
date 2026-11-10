@@ -5,6 +5,12 @@ import { emailDeTest, inscrireEleve } from './aide-parcours';
 test('l’élève télécharge ses données', async ({ page }) => {
   const email = emailDeTest('export');
   await inscrireEleve(page, email);
+  // Un lien iCal existe : l'export en donne la date, jamais le jeton.
+  await page.goto('/calendrier/partage');
+  await page.getByRole('button', { name: 'Créer mon lien' }).click();
+  const lien = await page.getByLabel('Ton lien privé').inputValue();
+  const jetonIcal = new URL(lien).pathname.split('/').filter(Boolean).pop()?.replace(/\.ics$/, '') ?? '';
+  expect(jetonIcal).toMatch(/^[A-Za-z0-9_-]{43}$/);
   await page.goto('/mes-donnees');
   const [telechargement] = await Promise.all([
     page.waitForEvent('download'),
@@ -18,8 +24,11 @@ test('l’élève télécharge ses données', async ({ page }) => {
     expect(donnees, cle).toHaveProperty(cle);
   }
   expect(donnees.profil).toMatchObject({ email, role: 'eleve', niveau: '1re' });
-  // Aucun secret : ni jeton d'agenda, ni clé d'appareil.
-  expect(contenu).not.toMatch(/jeton|p256dh|endpoint/);
+  // Aucun secret : ni jeton d'agenda (valeur), ni empreinte, ni clé d'appareil.
+  expect(contenu).not.toMatch(/p256dh|endpoint|empreinte|token/i);
+  expect(contenu).not.toContain(jetonIcal);
+  expect(contenu).not.toMatch(/[A-Za-z0-9_-]{43}/);
+  expect(Object.keys(donnees.jeton_ical as object)).toEqual(['cree_le']);
 });
 
 test('la demande de suppression affiche une bannière, l’annulation la retire', async ({ page }) => {

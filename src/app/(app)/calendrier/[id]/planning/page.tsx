@@ -19,7 +19,7 @@ export default async function PagePlanning({ params }: { params: Promise<{ id: s
     : REGLAGES_PAR_DEFAUT;
   return (
     <div className="page-planning">
-      <p><Link href={`/calendrier/${id}`}>← {p.examen.titre}</Link></p>
+      <p><Link className="lien-action" href={`/calendrier/${id}`}>← {p.examen.titre}</Link></p>
       <h1>Planning de révision</h1>
       <p>{p.examen.titre} · {formatDate.format(new Date(p.examen.debut))}{p.examen.cours ? ` · ${p.examen.cours.titre}` : ''}</p>
       {p.passe ? <p className="vide">Cet examen est passé.</p>

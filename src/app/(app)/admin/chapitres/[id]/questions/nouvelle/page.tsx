@@ -17,7 +17,7 @@ export default async function PageNouvelleQuestion({ params }: { params: Promise
   const retour = `/admin/chapitres/${id}/questions`;
   return (
     <div className="page-admin">
-      <p className="fil"><Link href={retour}>← Retour aux questions du chapitre {ch.numero}</Link></p>
+      <p className="fil"><Link href={retour} className="lien-action">← Retour aux questions du chapitre {ch.numero}</Link></p>
       <h1>Nouvelle question</h1>
       <p className="aide-champ">Elle sera créée en brouillon : tu pourras ensuite l’envoyer en relecture puis la valider.</p>
       <section className="carte" aria-labelledby="titre-form-question">
