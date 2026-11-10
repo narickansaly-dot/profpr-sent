@@ -11,6 +11,12 @@ Ce guide liste ce qui se règle à la main pour publier l'application. Rien n'es
 
       npx tsx --env-file=.env.distant scripts/importer-contenu.ts contenu/1re-st2s/bph.json --publier --distant
 
+  Pour le cours de STSS, la même commande **sans `--publier`** :
+
+      npx tsx --env-file=.env.distant scripts/importer-contenu.ts contenu/1re-st2s/stss.json --garder-statuts --distant
+
+  Avertissement : ne jamais ajouter `--publier` : c'est l'enseignant qui publie, chapitre par chapitre, depuis l'admin.
+
   Ce fichier ne s'appelle pas `.env.production.local` à dessein : Next charge automatiquement `.env.production.local` pour `next build` et `next start`, et un fichier oublié ferait tourner `npm run e2e` contre la base de production. Ouvre un nouveau terminal sans variable Supabase exportée : une variable déjà définie dans le shell l'emporte sur `--env-file`.
 
   C'est la commande du script `import:contenu` de `package.json`, avec le fichier d'environnement de production à la place de `.env.local`. Sans `--distant`, le script refuse toute base qui n'est pas locale. Supprimer le fichier ensuite (ou ne le garder que sur un poste de confiance).
@@ -29,24 +35,28 @@ Ce guide liste ce qui se règle à la main pour publier l'application. Rien n'es
 - Variables d'environnement (Production) :
   - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` ;
   - `NEXT_PUBLIC_SITE_URL=https://<domaine>` ;
-  - `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUJET=mailto:<adresse de contact>`, `ENVOI_SECRET` : générer de **nouvelles** clés, différentes des clés locales (`npx web-push generate-vapid-keys` et `openssl rand -base64 32`). Coller les clés générées directement dans le tableau de bord Vercel (et dans le fichier privé de la section 3 si besoin), jamais dans un fichier suivi par git, puis effacer le terminal (`clear`) ;
+  - `NEXT_PUBLIC_VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUJET=mailto:<adresse de contact>`, `ENVOI_SECRET`, `CONSENTEMENT_SECRET` (secret distinct d'`ENVOI_SECRET`, qui permet d'émettre le lien d'accord parental ; sans lui, le serveur signale au démarrage « Consentement parental impossible ») : générer de **nouvelles** clés, différentes des clés locales (`npx web-push generate-vapid-keys`, et `openssl rand -base64 32` une fois pour chaque secret). Coller les clés générées directement dans le tableau de bord Vercel (et dans le fichier privé de la section 3 si besoin), jamais dans un fichier suivi par git, puis effacer le terminal (`clear`) ;
   - ne pas mettre `SUPABASE_SERVICE_ROLE_KEY` dans Vercel : l'application ne l'utilise pas.
 - Déploiements Preview de Vercel : les désactiver, ou leur donner un projet Supabase séparé et leurs propres variables (sinon chaque instance échoue au démarrage faute de variables de production).
 - Toutes les variables `NEXT_PUBLIC_*` (pas seulement `NEXT_PUBLIC_SITE_URL`) sont figées au build : les changer demande un nouveau déploiement.
 - L'application vérifie ces variables **au démarrage du serveur** (`src/instrumentation.ts`), pas pendant le build : une variable obligatoire absente n'empêche pas le déploiement, mais chaque instance du serveur échoue au démarrage : toutes les requêtes échouent tant que la variable n'est pas corrigée. Les notifications incomplètes sont signalées dans les journaux (préfixe `[configuration]`). **Consulter les journaux après chaque déploiement.**
 - En développement, une variable obligatoire manquante empêche aussi `npm run dev` de démarrer.
 
-## 3. Tâche d'envoi des notifications
+## 3. Tâche d'envoi des notifications et secret du consentement
 
-Une fois le site en ligne, depuis un poste de confiance. Ne jamais taper de secret en préfixe de commande. Créer (ou compléter) le fichier `.env.distant` à la racine du dépôt (ignoré par git), protégé par `chmod 600 .env.distant`, avec `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (obligatoire aussi pour ce script), `ENVOI_SECRET` (le même que dans Vercel), `ENVOI_URL=https://<domaine>/api/notifications/envoyer` et `CONFIGURER_PRODUCTION=1`, puis :
+Une fois le site en ligne, depuis un poste de confiance. Ne jamais taper de secret en préfixe de commande. Créer (ou compléter) le fichier `.env.distant` à la racine du dépôt (ignoré par git), protégé par `chmod 600 .env.distant`, avec `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (obligatoire aussi pour ce script), `ENVOI_SECRET` et `CONSENTEMENT_SECRET` (les mêmes que dans Vercel), `ENVOI_URL=https://<domaine>/api/notifications/envoyer` et `CONFIGURER_PRODUCTION=1`, puis :
 
     npx tsx --env-file=.env.distant scripts/configurer-envoi.ts
 
 Supprimer ensuite le fichier (ou ne le garder que sur un poste de confiance).
 
-Le script refuse la production si `ENVOI_URL` ne commence pas par `https://` ou vise `localhost`, `127.0.0.1` ou `host.docker.internal`. Sans `ENVOI_SECRET` ou `ENVOI_URL`, il n'écrit rien.
+Le script refuse la production si `ENVOI_URL` ne commence pas par `https://` ou vise `localhost`, `127.0.0.1` ou `host.docker.internal`. Sans `ENVOI_SECRET` ou `ENVOI_URL`, il ne configure pas la tâche d'envoi ; sans `CONSENTEMENT_SECRET`, il ne configure pas le consentement parental.
 
-Vérifier ensuite dans Supabase (SQL) : `select jobname, schedule from cron.job;` doit lister `planifier-notifications`, `envoi-notifications` et `purger-historique-cron`.
+Le secret d'envoi est rangé dans Supabase Vault (`vault.secrets`, nom `envoi_secret`) : la commande de la tâche `envoi-notifications` le lit au moment de chaque exécution et n'en contient aucune copie. La base ne garde que l'empreinte SHA-256 des deux secrets pour les vérifier. La migration `20261222000005_secrets.sql` supprime une tâche d'envoi créée avant elle (sa commande contenait le secret) : **relancer le script après cette migration**, sinon les notifications ne partent plus.
+
+Changer un secret (rotation) : générer une nouvelle valeur, la mettre dans Vercel et dans `.env.distant`, relancer le script, redéployer. L'historique des exécutions (`cron.job_run_details`) des tâches créées avant la migration `20261222000005_secrets.sql` contient l'ancien secret d'envoi en clair : après la rotation, le purger dans Supabase (SQL) avec `delete from cron.job_run_details;` (la tâche `purger-historique-cron` n'efface que les lignes de plus de 7 jours).
+
+Vérifier ensuite dans Supabase (SQL) : `select jobname, schedule from cron.job;` doit lister `planifier-notifications`, `envoi-notifications`, `purger-historique-cron` et `purges-quotidiennes`, et `select count(*) from cron.job where command like '%Bearer %' and command not like '%vault.decrypted_secrets%';` doit renvoyer 0 (aucun secret dans les commandes).
 
 ## 4. Vérifications après la mise en ligne
 

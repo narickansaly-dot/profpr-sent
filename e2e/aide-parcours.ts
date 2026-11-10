@@ -1,4 +1,4 @@
-import { expect, type Page } from '@playwright/test';
+import { expect, type Browser, type BrowserContext, type Page, type TestInfo } from '@playwright/test';
 
 export function emailDeTest(prefixe: string) {
   return `${prefixe}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}@test.local`;
@@ -55,4 +55,53 @@ export async function suivreViolations(page: Page) {
     document.addEventListener('securitypolicyviolation', (e) => console.error(`Content Security Policy : ${e.violatedDirective} ${e.blockedURI}`));
   });
   return violations;
+}
+
+/** Inscrit un élève qui coche « J'ai moins de 15 ans » et l'amène sur la page d'attente de l'accord parental. */
+export async function inscrireEleveMineur(page: Page, email: string) {
+  await page.goto('/inscription');
+  await page.getByLabel('Adresse e-mail').fill(email);
+  await page.getByLabel('Mot de passe').fill('motdepasse-test');
+  await page.getByRole('button', { name: 'Créer mon compte' }).click();
+  await expect(page).toHaveURL(/\/bienvenue$/);
+  await page.getByLabel('Ton prénom').fill('Léa');
+  await page.getByLabel('Ta filière').selectOption({ label: 'ST2S — Sciences et technologies de la santé et du social' });
+  await page.getByLabel('Première').check();
+  await page.getByLabel('J’ai moins de 15 ans').check();
+  await page.getByRole('button', { name: 'C’est parti !' }).click();
+  await expect(page).toHaveURL(/\/consentement$/);
+}
+
+/** Inscrit un compte parent (« Parent d’un élève », prénom « Camille ») et attend la page « Mes enfants ». */
+export async function inscrireParent(page: Page, email: string) {
+  await page.goto('/inscription');
+  await page.getByLabel('Adresse e-mail').fill(email);
+  await page.getByLabel('Mot de passe').fill('motdepasse-test');
+  await page.getByRole('button', { name: 'Créer mon compte' }).click();
+  await expect(page).toHaveURL(/\/bienvenue$/);
+  await page.getByLabel('Parent d’un élève').check();
+  await page.getByLabel('Votre prénom').fill('Camille');
+  await page.getByRole('button', { name: 'C’est parti !' }).click();
+  await expect(page).toHaveURL(/\/parent$/);
+  await expect(page.getByRole('heading', { name: 'Mes enfants' })).toBeVisible();
+}
+
+/**
+ * Prépare un parent relié à un enfant : `page` (déjà élève de plus de 15 ans, inscrit) crée un code, un parent
+ * l'utilise dans un autre contexte. Renvoie la page du parent, son contexte (à fermer) et l'identifiant de l'enfant.
+ */
+export async function relierParentEtEnfant(page: Page, browser: Browser, testInfo: TestInfo, prefixe: string): Promise<{ parent: Page; contexte: BrowserContext; eleveId: string }> {
+  await page.goto('/mes-donnees');
+  await page.getByRole('button', { name: 'Créer un code pour un parent' }).click();
+  const code = (await page.locator('.code-parent').innerText()).trim();
+  const contexte = await browser.newContext({ ...testInfo.project.use, baseURL: 'http://localhost:3000' });
+  const parent = await contexte.newPage();
+  await inscrireParent(parent, emailDeTest(prefixe));
+  await parent.getByLabel('Code de votre enfant').fill(code);
+  await parent.getByRole('button', { name: 'Relier cet enfant' }).click();
+  const lien = parent.getByRole('link', { name: /Voir le détail/ });
+  await expect(lien).toBeVisible();
+  const eleveId = (await lien.getAttribute('href'))?.split('/').pop();
+  if (!eleveId) throw new Error('identifiant de l’enfant introuvable');
+  return { parent, contexte, eleveId };
 }

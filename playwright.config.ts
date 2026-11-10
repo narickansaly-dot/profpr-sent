@@ -15,5 +15,7 @@ export default defineConfig({
     url: 'http://localhost:3000',
     reuseExistingServer: false,
     timeout: 180_000,
+    // L'e-mail du parent ne se construit que depuis l'origine configurée (jamais depuis les en-têtes) : le build de production en a besoin.
+    env: { NEXT_PUBLIC_SITE_URL: 'http://localhost:3000' },
   },
 });

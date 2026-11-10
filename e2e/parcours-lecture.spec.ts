@@ -15,7 +15,7 @@ test('un élève s’inscrit, choisit sa filière et lit un chapitre', async ({ 
 
   await terminerBienvenue(page);
 
-  await expect(page.getByText(/Essai gratuit : encore 7 jours/)).toBeVisible();
+  await expect(page.getByText(/Essai gratuit\s:\sencore 7 jours/)).toBeVisible();
   await page.getByRole('link', { name: /Biologie et physiopathologie humaines/ }).click();
 
   await page.getByRole('link', { name: /Organisation générale de l'organisme humain/ }).click();

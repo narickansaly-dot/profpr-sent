@@ -14,6 +14,12 @@ describe('lireFormulaireOnboarding', () => {
     const r = lireFormulaireOnboarding(formulaire({ profil: 'eleve', nom: ' Léa ', filiereId, niveau: '1re', moinsDe15Ans: 'on' }));
     expect(r.success && r.data).toEqual({ profil: 'eleve', nom: 'Léa', filiereId, niveau: '1re', moinsDe15Ans: true });
   });
+  it('vouvoie le parent qui oublie son prénom ou le saisit mal', () => {
+    expect(lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: ' ' })).error?.issues[0].message).toBe('Indiquez votre prénom.');
+    expect(lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: 'a'.repeat(61) })).error?.issues[0].message).toBe('Votre prénom est trop long.');
+    expect(lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: 'Lé\u202Ea' })).error?.issues[0].message).toBe('Votre prénom contient des caractères non autorisés.');
+    expect(lireFormulaireOnboarding(formulaire({ profil: 'enseignant', nom: ' ', etablissement: 'Lycée' })).error?.issues[0].message).toBe('Indique ton prénom.');
+  });
   it('refuse un prénom avec caractère de contrôle ou bidi, comme la base', () => {
     for (const nom of ['Lé\u202Ea', 'Lé\na', 'Lé\u2066a']) {
       const r = lireFormulaireOnboarding(formulaire({ nom, filiereId, niveau: '1re' }));
@@ -61,5 +67,13 @@ describe('lireFormulaireOnboarding', () => {
   it('refuse un prénom de plus de 60 caractères', () => {
     const r = lireFormulaireOnboarding(formulaire({ nom: 'L'.repeat(61), filiereId, niveau: '1re' }));
     expect(r.error?.issues[0].message).toBe('Ton prénom est trop long.');
+  });
+  it('lit un profil parent avec son seul prénom', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: 'Camille' }));
+    expect(r.success && r.data).toEqual({ profil: 'parent', nom: 'Camille' });
+  });
+  it('exige le prénom d’un parent', () => {
+    const r = lireFormulaireOnboarding(formulaire({ profil: 'parent', nom: '' }));
+    expect(r.error?.issues[0].message).toBe('Indiquez votre prénom.');
   });
 });

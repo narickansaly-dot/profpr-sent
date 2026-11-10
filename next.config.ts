@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Le jeton du parent est dans l'URL : il ne doit fuiter ni par Referer ni par un cache.
+        source: '/accord-parental/:jeton*',
+        headers: [
+          { key: 'Referrer-Policy', value: 'no-referrer' },
+          { key: 'Cache-Control', value: 'no-store' },
+        ],
+      },
+      {
         source: '/sw.js',
         headers: [
           { key: 'Content-Type', value: 'application/javascript; charset=utf-8' },

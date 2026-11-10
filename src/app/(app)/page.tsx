@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { lireMonAcces } from '@/lib/acces/requetes';
+import { coursOuvert, doitChoisirCours } from '@/lib/acces/etat';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { lireTableauDeBord } from '@/lib/quiz/requetes';
@@ -16,7 +18,10 @@ const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', t
 export default async function Accueil() {
   const profil = await lireProfil();
   if (profil?.role === 'enseignant') redirect('/enseignant');
+  if (profil?.role === 'parent') redirect('/parent');
   if (profil?.role === 'admin_contenu') redirect('/cours');
+  const acces = profil?.role === 'eleve' ? await lireMonAcces() : null;
+  if (acces?.consentementRequis) redirect('/consentement');
   const [cours, { tdb, erreur: erreurTdb }, aReorganiser] = await Promise.all([
     listerCoursDuProfil(),
     lireTableauDeBord().then(
@@ -46,9 +51,10 @@ export default async function Accueil() {
       <section aria-labelledby="titre-cours">
         <h2 id="titre-cours">Mes cours</h2>
         {cours.length === 0
-          ? <p className="carte">Les cours de ta filière arrivent bientôt. Reviens vite !</p>
+          ? <p className="carte">Les cours de ta filière arrivent bientôt. Reviens vite&nbsp;!</p>
           : <div className="grille-cours">{cours.map((c) => (
-              <CarteCours key={c.id} {...c} nbValides={tdb?.validesParCours.get(c.id) ?? 0} />
+              <CarteCours key={c.id} {...c} nbValides={tdb?.validesParCours.get(c.id) ?? 0}
+                verrouille={acces ? !coursOuvert(acces, c.id) : false} proposerChoix={acces ? doitChoisirCours(acces) : false} />
             ))}</div>}
       </section>
 

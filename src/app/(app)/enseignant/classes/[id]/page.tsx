@@ -38,7 +38,7 @@ export default async function PageClasse({ params }: { params: Promise<{ id: str
 
   return (
     <div className="page-enseignant page-classe-ens">
-      <p className="fil"><Link href="/enseignant">← Mes classes</Link></p>
+      <p className="fil"><Link href="/enseignant" className="lien-action">← Mes classes</Link></p>
       <h1>{classe.nom}</h1>
 
       <section className="carte" aria-labelledby="titre-code">

@@ -224,7 +224,8 @@ test('gestion du contenu : éditeurs, versionnage, nettoyage, signalement et imp
     await Promise.all([ctxAdmin.close(), ctxEleve.close(), ctxEns.close()]);
     if (questionVf) {
       const { error } = await db.from('question').delete().eq('id', questionVf);
-      if (error) throw error;
+      // 23503 : un parcours parallèle a tiré la question ; retirerCours la retire alors des élèves.
+      if (error && error.code !== '23503') throw error;
     }
     await retirerCours(slug);
   }
