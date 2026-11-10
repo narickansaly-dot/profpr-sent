@@ -75,7 +75,7 @@ select is((select count(*)::int from public.question_corrige), 0, 'enseignant : 
 select set_config('request.jwt.claims', '{"sub":"00000000-0000-0000-0000-000000000002","role":"authenticated"}', true);
 select is((select count(*)::int from public.chapitre where cours_id in ('20000000-0000-0000-0000-000000000001','20000000-0000-0000-0000-000000000002')), 3, 'admin : voit aussi les brouillons et les cours non publiés');
 select is((select count(*)::int from public.question_corrige where question_id in ('40000000-0000-0000-0000-000000000001','40000000-0000-0000-0000-000000000002','40000000-0000-0000-0000-000000000003')), 2, 'admin : lit les corrigés');
-select lives_ok($$ insert into public.notion (chapitre_id, nom) values ('30000000-0000-0000-0000-000000000001', 'Notion admin') $$, 'admin : peut écrire le contenu');
+select throws_ok($$ insert into public.notion (chapitre_id, nom) values ('30000000-0000-0000-0000-000000000001', 'Notion admin') $$, '42501', null, 'admin : ne peut plus écrire le contenu directement');
 
 -- Visiteur anonyme
 set local role anon;
@@ -90,7 +90,7 @@ select throws_ok($$ insert into public.filiere (voie, code, nom) values ('genera
 select throws_ok($$ select public.role_actuel() $$, '42501', null, 'anonyme : ne peut pas appeler les fonctions d''accès');
 
 select is((select count(*)::int from pg_proc p join pg_namespace n on n.oid = p.pronamespace
-  where n.nspname = 'public' and has_function_privilege('anon', p.oid, 'EXECUTE')), 0, 'anonyme : aucun EXECUTE sur les fonctions du schéma public');
+  where n.nspname = 'public' and p.proname not in ('calendrier_ical', 'envoi_reserver', 'envoi_terminer', 'lire_demande_consentement', 'donner_consentement', 'emettre_jeton_consentement') and has_function_privilege('anon', p.oid, 'EXECUTE')), 0, 'anonyme : aucun EXECUTE sur les fonctions du schéma public (sauf calendrier_ical, ouverte par jeton, les RPC d''envoi et d''émission du jeton, protégées par secret, et les deux RPC du consentement parental, protégées par jeton)');
 select is(has_table_privilege('anon', 'public.question_corrige', 'MAINTAIN'), false, 'anonyme : pas de MAINTAIN sur question_corrige');
 select is(has_table_privilege('anon', 'public.profil', 'MAINTAIN'), false, 'anonyme : pas de MAINTAIN sur profil');
 select is(has_table_privilege('anon', 'public.question', 'SELECT'), false, 'anonyme : pas de SELECT sur question');

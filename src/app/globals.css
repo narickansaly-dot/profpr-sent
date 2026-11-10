@@ -1,13 +1,19 @@
 @import "tailwindcss";
 @import "../styles/chapitre.css";
 @import "../styles/quiz.css";
+@import "../styles/enseignant.css";
+@import "../styles/parent.css";
+@import "../styles/admin.css";
+@import "../styles/calendrier.css";
+@import "../styles/notifications.css";
+@import "../styles/legal.css";
 
 /* Jetons : clair par défaut, sombre selon les préférences du système.
    --couleur-cours est redéfini par chaque page de cours (une couleur par matière) ;
    sa valeur doit rester à >= 4.5:1 contre le blanc (texte des boutons). */
 :root {
-  --encre: #1c1b29; --attenue: #5b5d72; --trait: #e3e1ee; --surface: #ffffff; --papier: #f7f5ff;
-  --accent: #f59e0b; --succes: #15803d; --danger: #dc2626; --couleur-cours: #4f46e5;
+  --encre: #1c1b29; --attenue: #5b5d72; --trait: #e3e1ee; --bord-champ: #8b8da3; --surface: #ffffff; --papier: #f7f5ff;
+  --accent: #f59e0b; --succes: #15803d; --danger: #b91c1c; --couleur-cours: #4f46e5;
   --rayon: 14px;
   --police-titres: var(--police-fredoka), "Nunito", system-ui, sans-serif;
   --police-corps: var(--police-nunito), system-ui, sans-serif;
@@ -18,7 +24,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --encre: #eeedf7; --attenue: #a8a9be; --trait: #2f2e44; --surface: #1b1a2b; --papier: #131222;
+    --encre: #eeedf7; --attenue: #a8a9be; --trait: #2f2e44; --bord-champ: #6b6d85; --surface: #1b1a2b; --papier: #131222;
     --succes: #4ade80; --danger: #f87171;
     color-scheme: dark;
   }
@@ -27,7 +33,14 @@
 body { background: var(--papier); color: var(--encre); font-family: var(--police-corps); font-size: 17px; line-height: 1.6; margin: 0; }
 h1, h2, h3 { font-family: var(--police-titres); line-height: 1.2; text-wrap: balance; }
 a { color: color-mix(in srgb, var(--couleur-cours) 60%, var(--encre)); }
-:focus-visible { outline: 3px solid var(--couleur-cours); outline-offset: 2px; border-radius: 6px; }
+/* Tailwind retire le soulignement : un lien dans une phrase doit se distinguer autrement que par la couleur (WCAG 1.4.1, 3:1 impossible avec le texte). */
+p a:not([class]) { text-decoration: underline; text-underline-offset: 3px; }
+/* Double anneau : la couleur du cours contre l'élément, puis un contour neutre (encre) à >= 3:1 contre le fond, quelle que soit la couleur du cours. */
+:focus-visible { outline: 3px solid var(--encre); outline-offset: 2px; box-shadow: 0 0 0 2px var(--couleur-cours); }
+main[tabindex="-1"]:focus { outline: none; box-shadow: none; }
+.lien-evitement { position: absolute; left: 8px; top: -100px; z-index: 100; padding: 12px 16px; border-radius: 12px; background: var(--surface); color: var(--encre); font-weight: 700; }
+.lien-evitement:focus { top: 8px; }
+.lien-action { display: inline-flex; align-items: center; min-height: 44px; }
 
 .conteneur { max-width: 860px; margin: 0 auto; padding: 0 16px 48px; animation: apparition .35s ease-out both; }
 .carte { background: var(--surface); border: 1px solid var(--trait); border-radius: var(--rayon); padding: 20px; box-shadow: var(--ombre-carte); }
@@ -41,19 +54,23 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 .bouton:active:not(:disabled) { transform: scale(.97); }
 .bouton:disabled { opacity: .6; cursor: progress; }
 .bouton-principal { background: var(--couleur-cours); color: #fff; box-shadow: 0 4px 0 color-mix(in srgb, var(--couleur-cours) 70%, #000); }
-.bouton-secondaire { background: var(--surface); color: var(--encre); border-color: var(--trait); }
+.bouton-secondaire { background: var(--surface); color: var(--encre); border-color: var(--bord-champ); }
+a.bouton { text-decoration: none; }
+a.bouton.bouton-principal { color: #fff; }
+a.bouton.bouton-secondaire { color: var(--encre); }
 
 .formulaire { display: grid; gap: 16px; }
 .formulaire label { display: grid; gap: 6px; font-weight: 700; }
 .formulaire input:not([type=radio]):not([type=checkbox]), .formulaire select {
-  min-height: 48px; padding: 0 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; }
+  min-height: 48px; padding: 0 14px; border: 2px solid var(--bord-champ); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; }
 .formulaire input:focus-visible, .formulaire select:focus-visible { border-color: var(--couleur-cours); }
-.formulaire fieldset { border: 2px solid var(--trait); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 16px; }
+.formulaire fieldset { border: 2px solid var(--bord-champ); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 16px; }
 .formulaire .case, .formulaire fieldset label { display: flex; align-items: center; gap: 8px; font-weight: 400; min-height: 44px; }
 .message-erreur { color: var(--danger); font-weight: 700; margin: 0; }
 .message-info { color: var(--succes); font-weight: 700; margin: 0; }
 
 .page-auth { max-width: 420px; margin: 0 auto; padding: 48px 16px; display: grid; gap: 16px; animation: apparition .35s ease-out both; }
+.page-auth h1 { margin: 0; font-size: clamp(28px, 7vw, 36px); }
 
 .en-tete { display: flex; align-items: center; gap: 16px; padding: 12px 16px; background: var(--surface); border-bottom: 1px solid var(--trait); position: sticky; top: 0; z-index: 10; }
 .en-tete nav { flex: 1; }
@@ -63,11 +80,11 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 .banniere { margin: 16px auto; max-width: 860px; padding: 12px 16px; border-radius: var(--rayon); background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
 .banniere-fin { background: color-mix(in srgb, var(--danger) 12%, var(--surface)); }
 .bouton-compte { max-width: 100%; min-width: 0; padding: 0 14px; }
-.en-tete form { min-width: 0; }
+.en-tete form { min-width: 0; margin-left: auto; }
 .nom-compte { min-width: 0; max-width: 8ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 @media (min-width: 521px) { .nom-compte { max-width: 16ch; } }
 .bouton-compte span:last-child { white-space: nowrap; }
-@media (max-width: 520px) { .en-tete nav { display: none; } .en-tete { padding-inline: 12px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
+@media (max-width: 520px) { .en-tete { padding-inline: 12px; flex-wrap: wrap; gap: 4px 12px; } .en-tete nav { order: 3; flex-basis: 100%; display: flex; flex-wrap: wrap; } .en-tete nav a { padding: 0 10px; } .en-tete form { margin-left: auto; } .banniere { margin-inline: 16px; } }
 
 @keyframes apparition { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
@@ -76,9 +93,15 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 .grille-cours { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
 .carte-cours { display: grid; gap: 8px; text-decoration: none; color: var(--encre); border-top: 6px solid var(--couleur-cours); transition: transform .15s ease; }
 .carte-cours:hover { transform: translateY(-3px); }
+.carte-verrouillee:hover { transform: none; }
+.badge-verrouille { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700; border: 1px solid currentColor; }
+.choix-cours { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
 .conteneur .carte-cours h3 { margin: 0; font-size: 20px; }
+/* Texte de 13 px : la couleur du cours est mélangée vers --encre pour garder 4,5:1 sur la teinte à 15 % (≥ 5,3:1 en clair). */
 .pastille { justify-self: start; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 700;
-  background: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); color: var(--couleur-cours); }
+  background: color-mix(in srgb, var(--couleur-cours) 15%, var(--surface)); color: color-mix(in srgb, var(--couleur-cours) 75%, var(--encre)); }
+/* En sombre, le texte reste à l'encre et le fond porte la couleur du cours : le contraste ne dépend plus de la couleur choisie. */
+@media (prefers-color-scheme: dark) { .pastille { color: var(--encre); background: color-mix(in srgb, var(--couleur-cours) 30%, var(--surface)); } }
 .liste-chapitres { list-style: none; padding: 0; display: grid; gap: 12px; }
 .liste-chapitres a { display: flex; gap: 14px; align-items: center; text-decoration: none; color: var(--encre); }
 .numero-chapitre { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
@@ -93,3 +116,15 @@ a.carte:hover { transform: translateY(-2px); border-color: var(--couleur-cours);
 
 /* Texte réservé aux lecteurs d'écran */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.signaler { margin-top: 12px; display: grid; gap: 8px; justify-items: start; }
+.signaler .formulaire-signaler { width: 100%; max-width: 560px; }
+/* Région de statut vide : masquée visuellement mais rendue (display:none la retirerait de l'arbre d'accessibilité
+   et l'annonce du message ne serait pas fiable). */
+.signaler .message-info:empty { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+.formulaire-signaler .champ { display: grid; gap: 6px; }
+.formulaire-signaler textarea { width: 100%; box-sizing: border-box; }
+.bandeau-hors-ligne { margin: 0; padding: 10px 16px; text-align: center; font-weight: 600; background: color-mix(in srgb, var(--accent) 18%, var(--surface)); }
+
+.liste-parents { list-style: none; padding: 0; display: grid; gap: 12px; }
+.code-parent { font-size: 28px; letter-spacing: .12em; font-variant-numeric: tabular-nums; margin: 0 0 8px; }

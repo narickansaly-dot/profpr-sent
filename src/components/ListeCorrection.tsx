@@ -1,7 +1,8 @@
 import { texteReponse } from '@/lib/quiz/reponse';
 import type { LigneCorrection as Ligne } from '@/lib/quiz/requetes';
+import { BoutonSignaler } from '@/components/BoutonSignaler';
 
-export function ListeCorrection({ lignes }: { lignes: Ligne[] }) {
+export function ListeCorrection({ lignes, peutSignaler = false }: { lignes: Ligne[]; peutSignaler?: boolean }) {
   return (
     <ol className="liste-correction">
       {lignes.map((l) => {
@@ -13,6 +14,7 @@ export function ListeCorrection({ lignes }: { lignes: Ligne[] }) {
             <p>Ta réponse : {texteReponse(l.type, l.propositions, l.reponse)}</p>
             {!l.correcte && <p>Bonne réponse : <strong>{bonne}</strong></p>}
             {l.explication && <p className="correction-explication">{l.explication}</p>}
+            {peutSignaler && <BoutonSignaler questionId={l.question_id} libelle={`question ${l.ordre}`} />}
           </li>
         );
       })}

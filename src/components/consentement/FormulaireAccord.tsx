@@ -1,0 +1,40 @@
+'use client';
+
+import Link from 'next/link';
+import { useActionState, useId } from 'react';
+import { donnerAccord, type EtatAccord } from '@/app/accord-parental/[jeton]/actions';
+
+export function FormulaireAccord({ jeton }: { jeton: string }) {
+  const [etat, envoyer, enCours] = useActionState<EtatAccord, FormData>(donnerAccord.bind(null, jeton), {});
+  const id = useId();
+  const erreur = `${id}-erreur`;
+  const confirmation = etat.prenom !== undefined
+    ? `Merci, votre accord est enregistré. ${etat.prenom || 'Votre enfant'} peut maintenant utiliser l’application.` : '';
+  const statut = <p role="status" className="message-info">{confirmation}</p>;
+  if (etat.prenom !== undefined) {
+    return (
+      <>
+        {statut}
+        <p>Vous pouvez suivre la progression de votre enfant avec un compte parent.</p>
+        <p><Link href="/inscription" className="bouton bouton-principal">Créer mon compte parent</Link></p>
+        <p className="aide-champ">Utilisez l’adresse e-mail qui a reçu cette demande.</p>
+      </>
+    );
+  }
+  return (
+    <>
+    {statut}
+    <form action={envoyer} className="formulaire">
+      <label className="case">
+        <input type="checkbox" name="confirme" required aria-invalid={etat.erreur?.startsWith('Cochez') ? true : undefined}
+          aria-describedby={etat.erreur ? erreur : undefined} />
+        Je suis son parent ou son représentant légal et j’accepte qu’il ou elle utilise App lycée.
+      </label>
+      {etat.erreur && <p id={erreur} role="alert" className="message-erreur">{etat.erreur}</p>}
+      <button type="submit" className="bouton bouton-principal" disabled={enCours}>
+        {enCours ? 'Enregistrement…' : 'Je donne mon accord'}
+      </button>
+    </form>
+    </>
+  );
+}

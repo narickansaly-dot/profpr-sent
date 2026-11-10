@@ -157,7 +157,9 @@ export function LecteurTentative({ tentativeId, questions, dateLimite, serveurMa
     <div className="lecteur">
       {erreurFin && <p role="alert" className="message-erreur">La correction n’a pas pu se lancer. Réessaie de terminer le quiz.</p>}
       <div className="lecteur-barre">
-        <span className="lecteur-position">Question {index + 1} / {questions.length}</span>
+        <span className="lecteur-position" aria-live="polite" aria-atomic="true">
+          Question {index + 1}<span aria-hidden="true"> / </span><span className="sr-only"> sur </span>{questions.length}
+        </span>
         {dateLimite && <CompteARebours dateLimite={dateLimite} serveurMaintenant={serveurMaintenant} onFin={() => terminer(false)} />}
         {erreurSauvegarde
           ? <p role="alert" className="sauvegarde sauvegarde-erreur">{sauvegardeLibelle}</p>

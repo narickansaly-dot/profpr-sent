@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts jetables et notes de travail des agents.
+    ".superpowers/**",
   ]),
 ]);
 

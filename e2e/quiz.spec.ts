@@ -30,6 +30,6 @@ test('les réponses sont conservées après un rechargement', async ({ page }) =
   await expect(page).toHaveURL(/\/tentative\//);
   await cocherEtAttendreSauvegarde(page, 0);
   await page.reload();
-  await expect(page.getByText('Question 2 / 15', { exact: true })).toBeVisible();
+  await expect(page.locator('.lecteur-position').filter({ hasText: /^Question 2\D+15$/ })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Question 1, répondue' })).toBeVisible();
 });
