@@ -4954,6 +4954,2482 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch3",
+      "numero": 3,
+      "titre": "Le Web",
+      "titre_court": "Web",
+      "duree": "4 semaines",
+      "resume": "Repères historiques ; hypertexte, HTML et CSS ; URL et requêtes HTTP ; modèle client/serveur ; moteurs de recherche ; sécurité, confidentialité et notions juridiques.",
+      "chapeau": "Le Web est l'application d'Internet que tu utilises le plus : des milliards de pages reliées par des liens, que ton navigateur demande à des serveurs et affiche à l'écran. Comprendre comment une page est écrite, demandée et trouvée aide à naviguer avec plus d'esprit critique et de sécurité.",
+      "objectifs": [
+        "situer les grandes étapes du développement du Web ;",
+        "distinguer le contenu d'une page (HTML) et son style (CSS), et modifier une page simple ;",
+        "décomposer une URL et reconnaître une page sécurisée ;",
+        "décomposer une requête HTTP et identifier les paramètres passés ;",
+        "distinguer ce qui est exécuté par le client et par le serveur ;",
+        "analyser les résultats d'un moteur de recherche et régler son navigateur ;",
+        "connaître quelques notions juridiques : droit d'auteur, licence, droit d'usage."
+      ],
+      "sections": [
+        {
+          "id": "histoire",
+          "titre": "Naissance et développement du Web",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Le <strong>Web</strong> (toile, en anglais), ou World Wide Web, est un système qui donne accès à des documents (pages, images, sons, vidéos) reliés entre eux par des <strong>liens hypertextes</strong> et accessibles par Internet.</p></div>\n<p>Le Web n'est pas Internet : c'est une application qui utilise Internet pour transporter ses pages (chapitre 2).</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Date</th><th>Événement</th></tr></thead>\n<tbody>\n<tr><td>1965</td><td>Ted Nelson invente le mot « hypertexte » : un texte qui renvoie à d'autres textes.</td></tr>\n<tr><td>1989</td><td>Au CERN, près de Genève, Tim Berners-Lee propose un système de documents liés, pour que les chercheurs partagent leurs travaux. Il est aidé par Robert Cailliau.</td></tr>\n<tr><td>1990-1991</td><td>Premier serveur Web, premier navigateur et premier site, au CERN.</td></tr>\n<tr><td>1993</td><td>Le CERN met la technologie du Web dans le domaine public : chacun peut l'utiliser librement. Le navigateur Mosaic, qui affiche texte et images ensemble, rend le Web populaire.</td></tr>\n<tr><td>1994</td><td>Création du W3C (World Wide Web Consortium), qui fixe les standards du Web, comme HTML et CSS.</td></tr>\n<tr><td>1998</td><td>Création du moteur de recherche Google.</td></tr>\n<tr><td>Années 2000</td><td>Web participatif : blogs, Wikipédia (2001), réseaux sociaux ; chacun publie et commente.</td></tr>\n<tr><td>Années 2010</td><td>Le smartphone devient le principal moyen d'accès au Web.</td></tr>\n</tbody></table></div>\n<p>Trois inventions de Tim Berners-Lee forment la base du Web : le langage <strong>HTML</strong> pour écrire les pages, les adresses <strong>URL</strong> pour les désigner, et le protocole <strong>HTTP</strong> pour les transférer.</p>"
+        },
+        {
+          "id": "html-css",
+          "titre": "Hypertexte, HTML et CSS",
+          "html": "<h3>L'hypertexte</h3>\n<p>Un <strong>lien hypertexte</strong> est un élément d'une page (un mot, une image, un bouton) qui renvoie vers une autre ressource : une autre page, un autre endroit de la même page, une image, une vidéo, un fichier à télécharger. Les liens permettent une lecture non linéaire : chacun suit son propre chemin. Les pages reliées par des liens forment une immense toile.</p>\n<h3>Le langage HTML : le contenu</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p><strong>HTML</strong> (HyperText Markup Language) est un langage de balisage qui décrit le <strong>contenu</strong> et la <strong>structure</strong> d'une page : titres, paragraphes, listes, liens, images.</p></div>\n<p>Le contenu est encadré par des <strong>balises</strong> : une balise ouvrante &lt;p&gt; et une balise fermante &lt;/p&gt; entourent un paragraphe. Certaines balises ont des <strong>attributs</strong>, qui précisent des informations, comme l'adresse d'un lien.</p>\n<div class=\"def code\"><b class=\"t\">HTML</b><p>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;title&gt;Mon club&lt;/title&gt;<br>    &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;h1&gt;Club d'astronomie&lt;/h1&gt;<br>    &lt;p&gt;Rendez-vous le &lt;strong&gt;mercredi&lt;/strong&gt; à 14 h.&lt;/p&gt;<br>    &lt;a href=\"https://www.exemple.fr/planning.html\"&gt;Voir le planning&lt;/a&gt;<br>    &lt;img src=\"lune.jpg\" alt=\"La Lune vue au télescope\"&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</p></div><div class=\"tbl\"><table>\n<thead><tr><th>Balise</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td>&lt;head&gt;</td><td>en-tête de la page : titre de l'onglet, lien vers la feuille de style ; non affiché dans la page</td></tr>\n<tr><td>&lt;body&gt;</td><td>corps de la page : tout ce qui est affiché</td></tr>\n<tr><td>&lt;h1&gt; à &lt;h6&gt;</td><td>titres, du plus important au moins important</td></tr>\n<tr><td>&lt;p&gt;</td><td>paragraphe</td></tr>\n<tr><td>&lt;strong&gt;</td><td>texte important (souvent affiché en gras)</td></tr>\n<tr><td>&lt;a href=\"…\"&gt;</td><td>lien hypertexte ; l'attribut href donne l'adresse de destination</td></tr>\n<tr><td>&lt;img src=\"…\" alt=\"…\"&gt;</td><td>image ; src donne le fichier, alt un texte de remplacement (lu par les synthèses vocales)</td></tr>\n<tr><td>&lt;ul&gt; et &lt;li&gt;</td><td>liste à puces et ses éléments</td></tr>\n</tbody></table></div>\n<h3>Le langage CSS : le style</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p><strong>CSS</strong> (Cascading Style Sheets, feuilles de style en cascade) est un langage qui décrit la <strong>présentation</strong> d'une page : couleurs, polices, tailles, marges, disposition.</p></div>\n<div class=\"def code\"><b class=\"t\">CSS</b><p>h1 {<br>  color: navy;<br>  font-size: 32px;<br>}<br>p {<br>  font-family: Arial;<br>  color: #333333;<br>}</p></div><p>Une règle CSS commence par un <strong>sélecteur</strong> (ici h1 ou p), qui indique les éléments concernés, suivi de <strong>propriétés</strong> et de leurs <strong>valeurs</strong> entre accolades. Cette feuille de style colore en bleu marine tous les titres h1 de la page.</p>\n<h3>Séparer le contenu et le style</h3>\n<p>HTML dit <strong>ce que contient</strong> la page, CSS dit <strong>comment l'afficher</strong>. Cette séparation a des avantages : on change l'apparence de tout un site en modifiant une seule feuille de style ; le même contenu peut être présenté autrement sur un téléphone, un ordinateur ou une imprimante ; le code est plus clair.</p>\n<p>Pour étudier une page, le navigateur propose d'<strong>afficher le code source</strong> (souvent Ctrl + U) et des <strong>outils de développement</strong> (touche F12), qui montrent le HTML et le CSS de chaque élément et permettent de les modifier pour essayer, sans changer la page sur le serveur.</p>"
+        },
+        {
+          "id": "url-http",
+          "titre": "URL et HTTP",
+          "html": "<h3>Décomposer une URL</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>URL</strong> (Uniform Resource Locator) est l'adresse d'une ressource sur le Web.</p></div>\n<p>Exemple : https://www.exemple.fr/sport/foot.html?equipe=lyon&amp;page=2</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Partie</th><th>Exemple</th><th>Rôle</th></tr></thead>\n<tbody>\n<tr><td>Protocole</td><td>https</td><td>la façon de dialoguer avec le serveur</td></tr>\n<tr><td>Nom de domaine</td><td>www.exemple.fr</td><td>le serveur à contacter (son adresse IP est trouvée par le DNS)</td></tr>\n<tr><td>Chemin</td><td>/sport/foot.html</td><td>la ressource demandée sur ce serveur, souvent rangée dans des dossiers</td></tr>\n<tr><td>Paramètres</td><td>?equipe=lyon&amp;page=2</td><td>des informations transmises au serveur, après le signe ? et séparées par &amp;, sous la forme nom=valeur</td></tr>\n</tbody></table></div>\n<h3>Le protocole HTTP</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p><strong>HTTP</strong> (HyperText Transfer Protocol) est le protocole qui organise le dialogue entre le navigateur (le client) et le serveur Web : le client envoie une <strong>requête</strong>, le serveur renvoie une <strong>réponse</strong>.</p></div>\n<div class=\"def code\"><b class=\"t\">HTTP</b><p>GET /sport/foot.html?equipe=lyon&amp;page=2 HTTP/1.1<br>Host: www.exemple.fr<br>User-Agent: Mozilla/5.0 (Windows NT 10.0) Firefox/128.0<br>Accept-Language: fr</p></div><p>La première ligne de la requête contient la <strong>méthode</strong> (GET), la ressource demandée avec ses paramètres, et la version du protocole. Les lignes suivantes, les <strong>en-têtes</strong>, précisent le serveur visé (Host), le navigateur utilisé (User-Agent), la langue souhaitée…</p>\n<p>Deux méthodes sont très utilisées :</p>\n<ul>\n<li><strong>GET</strong> demande une ressource ; les paramètres éventuels sont écrits dans l'URL, donc visibles dans la barre d'adresse et dans l'historique ;</li>\n<li><strong>POST</strong> envoie des données au serveur, par exemple le contenu d'un formulaire ; les paramètres sont placés dans le corps de la requête, pas dans l'URL. On l'utilise pour un mot de passe ou un message.</li>\n</ul>\n<p>La réponse du serveur commence par un <strong>code d'état</strong> : 200 signifie que tout s'est bien passé, 404 que la ressource n'existe pas, 500 qu'une erreur s'est produite sur le serveur. Elle contient ensuite la ressource demandée, par exemple le code HTML de la page. Pour afficher une page complète, le navigateur envoie souvent des dizaines de requêtes : une pour le HTML, puis une par feuille de style, image ou script.</p>\n<h3>HTTPS : reconnaître une page sécurisée</h3>\n<p>Avec HTTP, les échanges circulent en clair : quelqu'un qui intercepte les paquets peut les lire. <strong>HTTPS</strong> (le S signifie <em>secure</em>) <strong>chiffre</strong> les échanges entre le navigateur et le serveur, et le serveur prouve son identité par un <strong>certificat</strong>. Une page est sécurisée quand son URL commence par https et que le navigateur affiche un cadenas ou une icône équivalente dans la barre d'adresse.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>HTTPS garantit que la communication est chiffrée et que tu parles bien au serveur du nom de domaine affiché. Il ne garantit pas que le site est honnête : un site d'hameçonnage peut avoir un cadenas. Vérifie toujours le nom de domaine.</p></div>"
+        },
+        {
+          "id": "client-serveur",
+          "titre": "Le modèle client/serveur",
+          "html": "<div class=\"def\"><b class=\"t\">Définition</b><p>Dans le <strong>modèle client/serveur</strong>, un <strong>client</strong> (le navigateur) envoie des requêtes à un <strong>serveur</strong> (un ordinateur qui héberge le site et attend les requêtes), qui lui renvoie des réponses.</p></div>\n<h3>Pages statiques et pages dynamiques</h3>\n<p>Une page <strong>statique</strong> est un fichier HTML stocké tel quel sur le serveur : tout le monde reçoit la même page. Une page <strong>dynamique</strong> est fabriquée par un programme du serveur au moment de la requête, souvent à partir d'une base de données : ta page de messagerie, les résultats d'une recherche ou ton panier d'achat sont différents pour chacun.</p>\n<h3>Ce qui s'exécute où</h3>\n<ul>\n<li><strong>Côté serveur</strong> : des programmes (écrits par exemple en PHP ou en Python) reçoivent la requête, consultent la base de données, vérifient un mot de passe et produisent la page HTML envoyée. Le client ne voit jamais ce code, seulement son résultat.</li>\n<li><strong>Côté client</strong> : le navigateur affiche le HTML et applique le CSS ; il exécute aussi des programmes en <strong>JavaScript</strong>, envoyés avec la page, qui la rendent interactive (menu qui se déplie, vérification d'un formulaire avant l'envoi, carte que l'on déplace).</li>\n</ul>\n<p>En inspectant une page avec les outils de développement, on voit le HTML, le CSS et le JavaScript reçus : c'est ce qui est exécuté par le client. Le code du serveur, lui, n'apparaît pas.</p>"
+        },
+        {
+          "id": "moteurs",
+          "titre": "Les moteurs de recherche",
+          "html": "<p>Il existe des milliards de pages. Pour trouver une information, on utilise un <strong>moteur de recherche</strong>, qui fonctionne en trois étapes.</p>\n<ol>\n<li><strong>Exploration</strong> : des programmes appelés robots (<em>crawlers</em>) parcourent le Web en suivant les liens d'une page à l'autre et récupèrent le contenu des pages.</li>\n<li><strong>Indexation</strong> : le moteur analyse les pages et construit un <strong>index</strong>, comme l'index d'un livre : pour chaque mot, la liste des pages qui le contiennent.</li>\n<li><strong>Classement</strong> : à chaque requête, le moteur cherche dans l'index les pages qui correspondent et les classe selon leur pertinence supposée. Il tient compte de nombreux critères : présence des mots dans le titre, fraîcheur, popularité de la page (combien de pages font un lien vers elle, et lesquelles), position de l'utilisateur, recherches précédentes…</li>\n</ol>\n<p>Le premier algorithme de Google, le PageRank, considérait qu'une page est importante si beaucoup de pages importantes font un lien vers elle.</p>\n<h3>Une analyse critique des résultats</h3>\n<ul>\n<li>Les premiers résultats ne sont pas forcément les plus fiables : ils sont les mieux classés par l'algorithme, qui ne vérifie pas la vérité de ce qu'il affiche.</li>\n<li>Certains résultats sont des <strong>annonces payées</strong>, signalées par la mention « sponsorisé » ou « annonce ».</li>\n<li>Les résultats sont <strong>personnalisés</strong> : deux personnes qui tapent la même requête peuvent obtenir des résultats différents.</li>\n<li>Les moteurs vivent surtout de la publicité, ce qui oriente leurs choix.</li>\n</ul>\n<p>Pour évaluer une source : qui est l'auteur ? Quel est le site (institution, média, site personnel, site commercial) ? La page est-elle datée ? L'information est-elle confirmée par d'autres sources indépendantes ? Comparer plusieurs moteurs aide aussi à prendre du recul.</p>\n<h3>Les enjeux de la publication</h3>\n<p>Ce qui est publié sur le Web peut être copié, indexé et retrouvé très longtemps après, même si on l'a supprimé. Publier, c'est aussi engager sa responsabilité : on n'a pas le droit de diffamer, d'insulter ou de publier la photo de quelqu'un sans son accord. En France, une personne peut demander à un moteur de recherche de déréférencer certaines informations la concernant : c'est le <strong>droit à l'oubli</strong>.</p>"
+        },
+        {
+          "id": "securite-droit",
+          "titre": "Sécurité, confidentialité et droit",
+          "html": "<h3>Les cookies</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>cookie</strong> est un petit fichier texte qu'un site enregistre dans le navigateur de l'utilisateur, et que le navigateur lui renvoie à chaque nouvelle visite.</p></div>\n<p>Les cookies servent à rester connecté, à mémoriser un panier ou une langue. Mais les <strong>cookies tiers</strong>, déposés par d'autres entreprises que le site visité (régies publicitaires), permettent de <strong>suivre</strong> un internaute de site en site pour lui proposer de la publicité ciblée. En Europe, un site doit demander ton consentement avant de déposer des cookies qui ne sont pas indispensables, et tu dois pouvoir refuser aussi facilement qu'accepter.</p>\n<h3>Régler son navigateur</h3>\n<ul>\n<li>bloquer les cookies tiers et les traqueurs ;</li>\n<li>effacer régulièrement l'historique et les cookies ;</li>\n<li>utiliser la <strong>navigation privée</strong> : l'historique et les cookies ne sont pas conservés <strong>sur l'appareil</strong> après la fermeture de la fenêtre. Mais les sites visités, le fournisseur d'accès ou le réseau du lycée voient toujours la navigation : elle n'est pas anonyme ;</li>\n<li>choisir un moteur de recherche respectueux de la vie privée ;</li>\n<li>garder le navigateur à jour, pour corriger les failles de sécurité.</li>\n</ul>\n<h3>Naviguer prudemment</h3>\n<p>L'<strong>hameçonnage</strong> (<em>phishing</em>) imite un site connu pour voler des identifiants : vérifie l'URL avant de taper un mot de passe. Ne télécharge pas de fichiers depuis des sites douteux, et fais analyser les fichiers suspects par un antivirus.</p>\n<h3>Notions juridiques</h3>\n<ul>\n<li>Le <strong>droit d'auteur</strong> protège automatiquement une œuvre originale (texte, photo, musique, dessin, vidéo, logiciel) dès sa création, sans formalité. L'auteur décide qui peut la reproduire et la diffuser. Une image trouvée sur le Web n'est donc pas libre de droits.</li>\n<li>Une <strong>licence</strong> est un contrat par lequel l'auteur accorde certains droits d'utilisation. Les licences <strong>Creative Commons</strong> permettent par exemple de réutiliser une œuvre à condition de citer l'auteur (BY), parfois sans usage commercial (NC), sans modification (ND) ou en partageant dans les mêmes conditions (SA).</li>\n<li>Le <strong>droit d'usage</strong> est ce que l'on a le droit de faire d'une œuvre que l'on a obtenue : acheter un film en ligne donne le droit de le regarder, pas de le diffuser.</li>\n<li>La <strong>valeur d'un bien</strong> numérique est particulière : une copie ne coûte presque rien et n'enlève rien à l'original. C'est pourquoi le droit encadre la copie et la diffusion.</li>\n</ul>"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Le <strong>Web</strong>, inventé en 1989 au CERN par Tim Berners-Lee, est un ensemble de documents reliés par des <strong>liens hypertextes</strong> ; c'est une application d'Internet.</li>\n<li><strong>HTML</strong> décrit le contenu et la structure d'une page avec des balises ; <strong>CSS</strong> décrit sa présentation.</li>\n<li>Une <strong>URL</strong> se décompose en protocole, nom de domaine, chemin et paramètres (après ?).</li>\n<li><strong>HTTP</strong> : le client envoie une requête (GET, POST…), le serveur renvoie une réponse avec un code (200, 404…). <strong>HTTPS</strong> chiffre les échanges (cadenas).</li>\n<li>Le <strong>serveur</strong> exécute ses programmes et fabrique les pages dynamiques ; le <strong>client</strong> affiche HTML et CSS et exécute le JavaScript.</li>\n<li>Un moteur de recherche <strong>explore</strong>, <strong>indexe</strong> et <strong>classe</strong> ; ses résultats sont classés, personnalisés, parfois payés : il faut les analyser avec esprit critique.</li>\n<li>Les <strong>cookies tiers</strong> servent à suivre l'internaute ; on règle son navigateur pour les bloquer. La navigation privée n'est pas anonyme.</li>\n<li>Le <strong>droit d'auteur</strong> protège toute œuvre dès sa création ; une <strong>licence</strong> précise les droits accordés.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "snt:ch3:banque:001",
+          "enonce": "Qui a proposé le Web en 1989 ?",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Tim Berners-Lee, au CERN, aidé de Robert Cailliau.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Louis Pouzin",
+            "Ted Nelson",
+            "Vinton Cerf",
+            "Tim Berners-Lee"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:002",
+          "enonce": "Dans quel organisme le Web a-t-il été inventé ?",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Au CERN, près de Genève, pour que les chercheurs partagent leurs travaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La NASA",
+            "Google",
+            "Le CERN",
+            "L'armée américaine"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:003",
+          "enonce": "Qui a inventé le mot « hypertexte » en 1965 ?",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Ted Nelson a imaginé des textes qui renvoient à d'autres textes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Robert Cailliau",
+            "Ted Nelson",
+            "Tim Berners-Lee",
+            "Robert Kahn"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:004",
+          "enonce": "Quel organisme, créé en 1994, fixe les standards du Web comme HTML et CSS ?",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "World Wide Web Consortium.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le W3C",
+            "Le CERN",
+            "Le DNS",
+            "Le RGPD"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:005",
+          "enonce": "Qu'est-ce qu'un lien hypertexte ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "Un mot, une image ou un bouton qui mène ailleurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un élément d'une page qui renvoie vers une autre ressource",
+            "Un mot de passe enregistré",
+            "Un câble qui relie deux serveurs situés dans des pays différents",
+            "Un fichier de style"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:006",
+          "enonce": "Que décrit le langage HTML ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "La présentation relève du CSS.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les couleurs et les polices d'une page",
+            "Le contenu et la structure d'une page",
+            "La vitesse de connexion",
+            "Le chemin des paquets sur Internet"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:007",
+          "enonce": "Comment s'écrit la balise fermante d'un paragraphe ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "La balise fermante reprend le nom avec une barre oblique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "<p/>",
+            "<p>",
+            "</p>",
+            "<\\p>"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:008",
+          "enonce": "Quelle balise HTML crée un lien hypertexte ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "La balise a, avec l'attribut href.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "<img>",
+            "<p>",
+            "<h1>",
+            "<a>"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:009",
+          "enonce": "Quelle balise contient tout ce qui est affiché dans la page ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "head contient l'en-tête, non affiché.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "<body>",
+            "<title>",
+            "<head>",
+            "<link>"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:010",
+          "enonce": "Que décrit le langage CSS ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 1,
+          "explication": "Couleurs, polices, tailles, marges, disposition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les adresses des serveurs qui hébergent la page",
+            "La présentation d'une page",
+            "Les liens entre les pages",
+            "Le contenu d'une page"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:011",
+          "enonce": "Que signifie CSS ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 1,
+          "explication": "Cascading Style Sheets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Chemin de sécurité standard des sites",
+            "Serveur central sécurisé",
+            "Code source du site",
+            "Feuilles de style en cascade"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:012",
+          "enonce": "Qu'est-ce qu'une URL ?",
+          "notion": "URL",
+          "difficulte": 1,
+          "explication": "Uniform Resource Locator.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un protocole de chiffrement des échanges entre machines",
+            "Le nom d'un navigateur",
+            "L'adresse d'une ressource sur le Web",
+            "Une balise HTML"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:013",
+          "enonce": "Dans https://www.exemple.fr/sport/foot.html, quel est le nom de domaine ?",
+          "notion": "URL",
+          "difficulte": 1,
+          "explication": "Le nom de domaine désigne le serveur à contacter.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "foot.html",
+            "https",
+            "/sport/foot.html",
+            "www.exemple.fr"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:014",
+          "enonce": "Après quel signe commencent les paramètres d'une URL ?",
+          "notion": "URL",
+          "difficulte": 1,
+          "explication": "Les paramètres suivent le ?, sous la forme nom=valeur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "?",
+            "#",
+            "@",
+            "/"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:015",
+          "enonce": "Quel protocole organise le dialogue entre le navigateur et le serveur Web ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "HyperText Transfer Protocol.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "CSS",
+            "HTTP",
+            "TCP",
+            "DNS"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:016",
+          "enonce": "Que signifie le code d'état 404 ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "200 : succès ; 500 : erreur du serveur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La page est sécurisée par un certificat valide",
+            "Le serveur a planté",
+            "La ressource demandée n'existe pas",
+            "Tout s'est bien passé"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:017",
+          "enonce": "Que signifie le code d'état 200 ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "Le serveur renvoie la ressource demandée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le site est en maintenance",
+            "Le serveur a rencontré une erreur",
+            "La page n'existe pas",
+            "Tout s'est bien passé"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:018",
+          "enonce": "Quel indice montre qu'une page est sécurisée ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "HTTPS chiffre les échanges.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'URL commence par https et un cadenas s'affiche",
+            "Le site a un nom en .fr",
+            "La page s'affiche rapidement",
+            "La page contient beaucoup d'images et de vidéos récentes"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:019",
+          "enonce": "Dans le modèle client/serveur du Web, qui est le client ?",
+          "notion": "Client et serveur",
+          "difficulte": 1,
+          "explication": "Le navigateur envoie des requêtes au serveur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le routeur",
+            "Le serveur",
+            "Le navigateur",
+            "Le moteur de recherche"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:020",
+          "enonce": "Quel langage exécuté par le navigateur rend une page interactive ?",
+          "notion": "Client et serveur",
+          "difficulte": 1,
+          "explication": "JavaScript est envoyé avec la page et exécuté côté client.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "HTML",
+            "JavaScript",
+            "PHP",
+            "SQL"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:021",
+          "enonce": "Comment appelle-t-on une page fabriquée par un programme du serveur au moment de la requête ?",
+          "notion": "Client et serveur",
+          "difficulte": 1,
+          "explication": "Elle est souvent construite à partir d'une base de données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un cookie",
+            "Une feuille de style",
+            "Une page statique",
+            "Une page dynamique"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:022",
+          "enonce": "Comment appelle-t-on les programmes qui parcourent le Web en suivant les liens ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 1,
+          "explication": "Les robots (crawlers) récupèrent le contenu des pages.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des navigateurs",
+            "Des cookies",
+            "Des robots d'exploration",
+            "Des routeurs"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:023",
+          "enonce": "Comment s'appelle l'étape où le moteur construit, pour chaque mot, la liste des pages qui le contiennent ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 1,
+          "explication": "Comme l'index d'un livre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le classement",
+            "L'indexation",
+            "Le chiffrement",
+            "L'exploration"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:024",
+          "enonce": "Comment sont signalés les résultats payés dans un moteur de recherche ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 1,
+          "explication": "Ce sont des annonces publicitaires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par une mention comme « sponsorisé » ou « annonce »",
+            "Par une couleur rouge",
+            "Par le cadenas de HTTPS",
+            "Ils ne sont jamais signalés"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:025",
+          "enonce": "Qu'est-ce qu'un cookie ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Le navigateur le renvoie au site à chaque visite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un logiciel de navigation",
+            "Un petit fichier texte enregistré par un site dans le navigateur",
+            "Un virus qui détruit les fichiers enregistrés sur le disque dur",
+            "Un code d'état HTTP"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:026",
+          "enonce": "À quoi sert un cookie utile au fonctionnement d'un site ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Certains cookies sont indispensables.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À bloquer les publicités",
+            "À chiffrer les mots de passe",
+            "À rester connecté ou à mémoriser un panier",
+            "À accélérer la connexion Internet de tout le foyer"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:027",
+          "enonce": "Comment appelle-t-on l'imitation d'un site connu pour voler des identifiants ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Phishing en anglais : vérifie l'URL.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le référencement",
+            "L'indexation",
+            "Le routage",
+            "L'hameçonnage"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:028",
+          "enonce": "Quand une œuvre est-elle protégée par le droit d'auteur ?",
+          "notion": "Notions juridiques",
+          "difficulte": 1,
+          "explication": "La protection est automatique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Dès sa création, sans formalité",
+            "Seulement après un dépôt payant",
+            "Seulement si elle est publiée dans un livre",
+            "Seulement si elle porte le signe ©"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:029",
+          "enonce": "Comment appelle-t-on le contrat par lequel un auteur accorde certains droits d'utilisation de son œuvre ?",
+          "notion": "Notions juridiques",
+          "difficulte": 1,
+          "explication": "Les licences Creative Commons en sont un exemple.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un certificat",
+            "Un cookie",
+            "Un index",
+            "Une licence"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:030",
+          "enonce": "Que signifie la mention BY d'une licence Creative Commons ?",
+          "notion": "Notions juridiques",
+          "difficulte": 1,
+          "explication": "NC : pas d'usage commercial ; ND : pas de modification ; SA : mêmes conditions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pas d'usage commercial",
+            "Pas de modification",
+            "Il faut citer l'auteur",
+            "Partage dans les mêmes conditions"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:031",
+          "enonce": "Pourquoi l'année 1993 est-elle importante pour le Web ?",
+          "notion": "Histoire du Web",
+          "difficulte": 2,
+          "explication": "Chacun peut alors l'utiliser librement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le CERN met le Web dans le domaine public et Mosaic le popularise",
+            "Google est créé",
+            "Le W3C est fondé",
+            "Tim Berners-Lee propose au CERN son projet de documents liés"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:032",
+          "enonce": "Quelles sont les trois inventions de Tim Berners-Lee à la base du Web ?",
+          "notion": "Histoire du Web",
+          "difficulte": 2,
+          "explication": "Écrire les pages, les désigner, les transférer.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Wi-Fi, 4G et fibre",
+            "HTML, URL et HTTP",
+            "TCP, IP et DNS",
+            "CSS, JavaScript et PHP"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:033",
+          "enonce": "Qu'est-ce qui caractérise le Web des années 2000 ?",
+          "notion": "Histoire du Web",
+          "difficulte": 2,
+          "explication": "Blogs, Wikipédia, réseaux sociaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La naissance d'ARPANET",
+            "Le Web participatif : chacun publie et commente",
+            "L'invention de l'hypertexte",
+            "La disparition progressive des moteurs de recherche"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:034",
+          "enonce": "À quoi sert l'attribut href de la balise <a> ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "href contient l'URL visée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À afficher une image",
+            "À choisir la couleur du lien",
+            "À donner le titre affiché dans l'onglet du navigateur",
+            "À donner l'adresse de destination du lien"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:035",
+          "enonce": "À quoi sert l'attribut alt d'une image ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "Il est lu par les synthèses vocales et affiché si l'image manque.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À créer un lien vers l'image",
+            "À indiquer le fichier de l'image",
+            "À fournir un texte de remplacement",
+            "À fixer la taille de l'image"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:036",
+          "enonce": "Dans quelle partie de la page HTML trouve-t-on le titre de l'onglet et le lien vers la feuille de style ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "head n'est pas affiché dans la page.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Dans <head>",
+            "Dans <body>",
+            "Dans <p>",
+            "Dans <a>"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:037",
+          "enonce": "Pourquoi dit-on que l'hypertexte permet une lecture non linéaire ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "On n'est pas obligé de lire dans l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le texte change à chaque lecture",
+            "Les pages n'ont pas de début",
+            "Le texte se lit de droite à gauche",
+            "Chacun suit son propre chemin de lien en lien"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:038",
+          "enonce": "Dans la règle CSS h1 { color: navy; }, que désigne h1 ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 2,
+          "explication": "color est la propriété, navy la valeur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le nom du fichier CSS",
+            "Le sélecteur : les éléments concernés",
+            "La valeur de la couleur",
+            "La propriété modifiée"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:039",
+          "enonce": "Quel est l'avantage de séparer le contenu (HTML) et le style (CSS) ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 2,
+          "explication": "La présentation peut aussi s'adapter à l'écran.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Rendre les pages plus difficiles à copier",
+            "Supprimer le besoin d'un serveur",
+            "Changer l'apparence de tout un site en modifiant une seule feuille",
+            "Accélérer la fibre optique"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:040",
+          "enonce": "Dans la règle p { color: #333333; }, que représente #333333 ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 2,
+          "explication": "C'est la valeur de la propriété color.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une valeur de couleur",
+            "Un numéro de page",
+            "Une adresse IP",
+            "Un sélecteur"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:041",
+          "enonce": "Dans https://www.exemple.fr/sport/foot.html?equipe=lyon, quel est le chemin ?",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Le chemin désigne la ressource sur le serveur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "equipe=lyon",
+            "https",
+            "/sport/foot.html",
+            "www.exemple.fr"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:042",
+          "enonce": "Dans une URL, comment sont séparés plusieurs paramètres ?",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Exemple : ?equipe=lyon&page=2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par le signe &",
+            "Par une barre oblique",
+            "Par le signe ?",
+            "Par un point"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:043",
+          "enonce": "Quel service traduit le nom de domaine d'une URL en adresse IP ?",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Vu au chapitre 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le navigateur seul",
+            "Le DNS",
+            "CSS",
+            "HTTP"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:044",
+          "enonce": "Que contient la première ligne d'une requête HTTP ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Par exemple : GET /sport/foot.html HTTP/1.1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le contenu HTML de la page",
+            "Le code d'état de la réponse",
+            "Le mot de passe de l'utilisateur et son nom de compte, en clair",
+            "La méthode, la ressource demandée et la version du protocole"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:045",
+          "enonce": "Quel en-tête d'une requête HTTP indique le navigateur utilisé ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Host indique le serveur, Accept-Language la langue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Host",
+            "GET",
+            "User-Agent",
+            "Accept-Language"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:046",
+          "enonce": "Avec la méthode GET, où sont placés les paramètres ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Ils sont donc visibles dans la barre d'adresse et l'historique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Dans le corps de la requête",
+            "Dans le certificat",
+            "Dans un cookie",
+            "Dans l'URL"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:047",
+          "enonce": "Pourquoi utilise-t-on POST pour envoyer un mot de passe ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Avec GET, ils apparaîtraient dans la barre d'adresse et l'historique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les paramètres ne sont pas écrits dans l'URL",
+            "POST est plus rapide que GET",
+            "GET est interdit sur les formulaires",
+            "POST chiffre automatiquement toutes les données envoyées"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:048",
+          "enonce": "Quand un serveur répond avec le code 500, qu'est-ce que cela indique ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "404 : ressource introuvable.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La ressource n'existe pas",
+            "Une erreur s'est produite sur le serveur",
+            "La page a déménagé",
+            "Tout s'est bien passé"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:049",
+          "enonce": "Que permet le certificat d'un site en HTTPS ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Les échanges sont chiffrés et le serveur est identifié.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Au navigateur d'aller plus vite",
+            "Au moteur de classer la page",
+            "Au serveur de prouver son identité",
+            "Au site de déposer des cookies"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:050",
+          "enonce": "Quel code ne voit-on jamais en inspectant une page dans le navigateur ?",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Le client ne reçoit que le résultat du programme du serveur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le code des programmes du serveur",
+            "Le JavaScript envoyé avec la page",
+            "Le HTML de la page",
+            "Le CSS de la page"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:051",
+          "enonce": "Quelle page est le plus probablement statique ?",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Une page statique est un fichier HTML stocké tel quel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ton panier d'achat",
+            "La page de présentation d'un club, identique pour tous",
+            "Ta boîte de messagerie",
+            "Les résultats d'une recherche sur un moteur, mis à jour en continu"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:052",
+          "enonce": "Où est vérifié un mot de passe saisi sur un site ?",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Le serveur consulte sa base de données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Dans le DNS",
+            "Côté client, dans le CSS",
+            "Dans l'URL",
+            "Côté serveur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:053",
+          "enonce": "Que faisait le premier algorithme de Google, le PageRank ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "La popularité se mesurait par les liens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il vérifiait la vérité des pages",
+            "Il classait les pages par ordre alphabétique",
+            "Il affichait d'abord les pages les plus récentes, puis les plus anciennes, quel que soit leur contenu",
+            "Il jugeait une page importante si des pages importantes faisaient un lien vers elle"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:054",
+          "enonce": "Pourquoi deux personnes peuvent-elles obtenir des résultats différents pour la même requête ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Position, recherches précédentes… influencent le classement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les résultats sont personnalisés",
+            "Les pages changent de nom",
+            "Le moteur tire les résultats au hasard",
+            "L'une utilise HTTPS et l'autre non"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:055",
+          "enonce": "Que garantit le fait qu'un résultat apparaisse en première position ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "L'algorithme ne vérifie pas la vérité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Qu'il a été vérifié par des experts",
+            "Seulement qu'il est le mieux classé par l'algorithme",
+            "Qu'il est le plus récent",
+            "Qu'il est le plus fiable"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:056",
+          "enonce": "Qu'est-ce que le droit à l'oubli ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Possible en France, sous conditions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Effacer son historique de navigation",
+            "Oublier son mot de passe sans aucune conséquence pour son compte",
+            "Demander à un moteur de déréférencer des informations sur soi",
+            "Supprimer un site du Web"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:057",
+          "enonce": "Que sont les cookies tiers ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 2,
+          "explication": "Souvent des régies publicitaires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Des cookies effacés à chaque visite",
+            "Des cookies déposés par d'autres entreprises que le site visité",
+            "Des cookies indispensables au panier",
+            "Des cookies créés par l'utilisateur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:058",
+          "enonce": "Que permet la navigation privée ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 2,
+          "explication": "Les sites et le réseau voient toujours la navigation.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Chiffrer tous les sites",
+            "Être anonyme sur Internet",
+            "Ne pas conserver l'historique et les cookies sur l'appareil",
+            "Cacher toute sa navigation au fournisseur d'accès et aux sites visités"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:059",
+          "enonce": "Que te donne l'achat d'un film en ligne ?",
+          "notion": "Notions juridiques",
+          "difficulte": 2,
+          "explication": "C'est un droit d'usage.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le droit de le regarder",
+            "Le droit d'auteur sur le film",
+            "Le droit de le revendre en copies",
+            "Le droit de le diffuser à tous"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:060",
+          "enonce": "Pourquoi la valeur d'un bien numérique est-elle particulière ?",
+          "notion": "Notions juridiques",
+          "difficulte": 2,
+          "explication": "D'où l'encadrement de la copie et de la diffusion.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il ne peut pas être copié",
+            "Il appartient définitivement à celui qui le télécharge en premier",
+            "Il s'use à chaque lecture",
+            "Une copie ne coûte presque rien et n'enlève rien à l'original"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:061",
+          "enonce": "Dans https://www.exemple.fr/recherche?q=volcan&lang=fr, quelle valeur prend le paramètre lang ?",
+          "notion": "URL",
+          "difficulte": 3,
+          "explication": "Les paramètres sont de la forme nom=valeur, séparés par &.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "volcan",
+            "recherche",
+            "fr",
+            "q"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:062",
+          "enonce": "Quelle URL désigne une page sécurisée du domaine banque-exemple.fr ?",
+          "notion": "URL",
+          "difficulte": 3,
+          "explication": "Le protocole est https et le nom de domaine se lit de droite à gauche : le troisième est un domaine connexion-rapide.com.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "https://banque-exemple.fr.connexion-rapide.com/compte",
+            "https://compte-banque-exemple.net",
+            "http://banque-exemple.fr/compte",
+            "https://banque-exemple.fr/compte"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:063",
+          "enonce": "Un formulaire envoie ses données par GET : nom=Lina. Où ces données apparaissent-elles ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "Avec GET, les paramètres sont écrits dans l'URL.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Seulement dans le corps de la requête",
+            "Dans l'URL, donc dans la barre d'adresse et l'historique",
+            "Dans le code CSS de la page",
+            "Nulle part, elles sont chiffrées"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:064",
+          "enonce": "Un site d'hameçonnage affiche un cadenas. Que peut-on en conclure ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "HTTPS ne garantit pas l'honnêteté du site.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La communication avec ce site est chiffrée, mais le site peut être malhonnête",
+            "Le site appartient à une banque",
+            "Le site a été vérifié et approuvé par le moteur de recherche qui l'affiche",
+            "Le site est forcément honnête"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:065",
+          "enonce": "Pour afficher une page avec 2 feuilles de style et 5 images, combien de requêtes le navigateur envoie-t-il au minimum ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "Une pour le HTML, puis une par feuille de style et par image : 1 + 2 + 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "8",
+            "5",
+            "1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:066",
+          "enonce": "Sur un site, un menu se déplie quand tu cliques, sans nouvelle requête au serveur. Qu'est-ce qui l'exécute ?",
+          "notion": "Client et serveur",
+          "difficulte": 3,
+          "explication": "Le JavaScript s'exécute côté client.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un programme PHP exécuté par le serveur",
+            "Le DNS",
+            "La feuille de style seule, sans programme",
+            "Un programme JavaScript exécuté par le navigateur"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:067",
+          "enonce": "Pourquoi deux élèves reçoivent-ils une page différente en ouvrant leur messagerie ?",
+          "notion": "Client et serveur",
+          "difficulte": 3,
+          "explication": "Le serveur construit la page à partir de la base de données.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La page est dynamique, fabriquée par le serveur pour chacun",
+            "La page est statique",
+            "Leurs feuilles de style sont différentes",
+            "Leurs navigateurs n'interprètent pas le même code HTML de la même façon"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:068",
+          "enonce": "Que fait <a href=\"planning.html\">Voir le planning</a> ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 3,
+          "explication": "Le texte entre les balises est cliquable ; href donne la destination.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il affiche l'image planning.html",
+            "Il affiche « planning.html » en gras",
+            "Il affiche « Voir le planning », qui mène à la page planning.html",
+            "Il charge la feuille de style planning.html"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:069",
+          "enonce": "Que provoque la règle h1 { color: navy; font-size: 32px; } ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 3,
+          "explication": "Le sélecteur h1 vise tous les titres h1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le titre de l'onglet change de couleur",
+            "Tous les titres h1 deviennent bleu marine, en 32 pixels",
+            "Seul le premier paragraphe change",
+            "Tous les liens deviennent bleus"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:070",
+          "enonce": "Un site veut une version de ses pages adaptée à l'impression. Que modifie-t-il de préférence ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 3,
+          "explication": "Le même contenu peut être présenté autrement grâce au CSS.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La feuille de style",
+            "Le nom de domaine",
+            "Le protocole HTTP",
+            "Le contenu HTML de chaque page"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:071",
+          "enonce": "Pourquoi le modèle économique des moteurs de recherche invite-t-il à la prudence ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 3,
+          "explication": "Annonces payées et intérêts commerciaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils sont financés par les auteurs des pages",
+            "Ils sont payés par les utilisateurs",
+            "Ils vérifient chaque page avant de l'afficher et suppriment les erreurs",
+            "Ils vivent surtout de la publicité, qui oriente leurs choix"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:072",
+          "enonce": "Quelle démarche permet le mieux d'évaluer une information trouvée sur le Web ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 3,
+          "explication": "Croiser les sources et identifier l'auteur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Garder le premier résultat du moteur",
+            "Vérifier que la page a un cadenas",
+            "Chercher l'auteur, la date et des sources indépendantes qui la confirment",
+            "Compter le nombre d'images et de liens publicitaires présents sur la page"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:073",
+          "enonce": "Pourquoi les cookies tiers posent-ils un problème de vie privée ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 3,
+          "explication": "Pour proposer de la publicité ciblée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils permettent de suivre l'internaute de site en site",
+            "Ils effacent l'historique",
+            "Ils empêchent de rester connecté",
+            "Ils ralentissent le chargement des images"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:074",
+          "enonce": "Un élève utilise la navigation privée au lycée. Qui peut encore voir les sites qu'il visite ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 3,
+          "explication": "La navigation privée n'efface que les traces sur l'appareil.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Seulement l'appareil, après fermeture",
+            "Seulement ses parents",
+            "Personne",
+            "Le réseau du lycée et les sites visités"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:075",
+          "enonce": "Une photo sous licence CC BY-NC peut être réutilisée…",
+          "notion": "Notions juridiques",
+          "difficulte": 3,
+          "explication": "BY : citer l'auteur ; NC : pas d'usage commercial.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour une publicité payante",
+            "En citant l'auteur, sans usage commercial",
+            "Seulement sans la modifier",
+            "Sans citer l'auteur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:076",
+          "enonce": "Quels événements ont eu lieu au CERN ? Coche toutes les réponses exactes.",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Google est né en 1998 ; Ted Nelson a inventé le mot en 1965.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'invention du mot hypertexte",
+            "La création de Google",
+            "La proposition du Web par Tim Berners-Lee",
+            "Le premier site Web"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:077",
+          "enonce": "Quelles sont des balises HTML ? Coche toutes les réponses exactes.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "color est une propriété CSS, navy une valeur.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "color",
+            "navy",
+            "<p>",
+            "<h1>"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:078",
+          "enonce": "Vers quoi un lien hypertexte peut-il renvoyer ? Coche toutes les réponses exactes.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "Il renvoie vers une ressource du Web.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une autre page",
+            "Une adresse IP de la box",
+            "Une image ou une vidéo",
+            "Un routeur"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:079",
+          "enonce": "Quels éléments relèvent du CSS ? Coche toutes les réponses exactes.",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 1,
+          "explication": "Le texte et les liens sont du contenu HTML.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La couleur des titres",
+            "L'adresse d'un lien",
+            "Le texte d'un paragraphe",
+            "La police des paragraphes"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:080",
+          "enonce": "Quelles sont des parties d'une URL ? Coche toutes les réponses exactes.",
+          "notion": "URL",
+          "difficulte": 1,
+          "explication": "Protocole, nom de domaine, chemin, paramètres.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le protocole",
+            "La balise body",
+            "Le nom de domaine",
+            "Le code d'état"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:081",
+          "enonce": "Quelles sont des méthodes HTTP citées dans le cours ? Coche toutes les réponses exactes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "HTML et CSS sont des langages.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "GET",
+            "HTML",
+            "POST",
+            "CSS"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:082",
+          "enonce": "Quels sont des codes d'état HTTP ? Coche toutes les réponses exactes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "200 : succès ; 404 : introuvable.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "443.5",
+            "404",
+            "192",
+            "200"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:083",
+          "enonce": "Que fait le navigateur côté client ? Coche toutes les réponses exactes.",
+          "notion": "Client et serveur",
+          "difficulte": 1,
+          "explication": "La base de données et le PHP sont côté serveur.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Exécuter le JavaScript",
+            "Exécuter le code PHP du serveur",
+            "Afficher le HTML",
+            "Consulter la base de données du site"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:084",
+          "enonce": "Quelles sont les étapes du fonctionnement d'un moteur de recherche ? Coche toutes les réponses exactes.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 1,
+          "explication": "Le routage concerne les paquets d'Internet.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'exploration",
+            "Le routage",
+            "L'indexation",
+            "Le classement"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:085",
+          "enonce": "Quels réglages protègent la vie privée dans un navigateur ? Coche toutes les réponses exactes.",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Les mises à jour corrigent les failles.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Bloquer les cookies tiers",
+            "Accepter tous les cookies",
+            "Effacer régulièrement l'historique",
+            "Désactiver les mises à jour"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:086",
+          "enonce": "Quelles œuvres sont protégées par le droit d'auteur ? Coche toutes les réponses exactes.",
+          "notion": "Notions juridiques",
+          "difficulte": 1,
+          "explication": "Le droit d'auteur protège une œuvre originale, pas une idée brute.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une adresse IP",
+            "Une idée non exprimée",
+            "Un logiciel",
+            "Une photo originale"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:087",
+          "enonce": "Quels gestes protègent de l'hameçonnage ? Coche toutes les réponses exactes.",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Un site d'hameçonnage imite un site connu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Vérifier l'URL avant de taper un mot de passe",
+            "Cliquer sur les liens qui annoncent un gain",
+            "Se méfier des liens reçus par message",
+            "Donner son mot de passe à un site qui le demande par courriel"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:088",
+          "enonce": "Quelles affirmations sur l'histoire du Web sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Histoire du Web",
+          "difficulte": 2,
+          "explication": "ARPANET date de 1969, le Web de 1989.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le W3C a créé le langage Python",
+            "Le Web est plus ancien qu'ARPANET",
+            "Le smartphone est devenu le principal accès au Web dans les années 2010",
+            "Le Web a été placé dans le domaine public en 1993"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:089",
+          "enonce": "Dans <img src=\"lune.jpg\" alt=\"La Lune\">, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "img affiche une image.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "alt donne un texte de remplacement",
+            "src crée un lien vers une autre page",
+            "alt indique la taille de l'image",
+            "src indique le fichier de l'image"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:090",
+          "enonce": "Dans la règle p { font-family: Arial; }, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 2,
+          "explication": "Arial est la valeur.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Arial est un sélecteur",
+            "font-family est une propriété",
+            "p est le sélecteur",
+            "p désigne la page entière"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:091",
+          "enonce": "Dans https://www.exemple.fr/sport/foot.html?equipe=lyon&page=2, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Les paramètres suivent le ?.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "equipe et page sont des noms de paramètres",
+            "www.exemple.fr est le chemin",
+            "https est le nom de domaine",
+            "lyon est une valeur de paramètre"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:092",
+          "enonce": "Quelles informations peuvent figurer dans les en-têtes d'une requête HTTP ? Coche toutes les réponses exactes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Le code d'état est dans la réponse.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le code d'état 404",
+            "Le contenu de la feuille de style",
+            "La langue souhaitée",
+            "Le serveur visé (Host)"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:093",
+          "enonce": "Que garantit HTTPS ? Coche toutes les réponses exactes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Un site malhonnête peut avoir un cadenas.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les échanges sont chiffrés",
+            "Le serveur prouve son identité par un certificat",
+            "Le contenu est vrai",
+            "Le site est honnête"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:094",
+          "enonce": "Quelles pages sont dynamiques ? Coche toutes les réponses exactes.",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Une page dynamique est fabriquée à la demande.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ton panier d'achat",
+            "Les résultats d'une recherche",
+            "Un fichier HTML identique pour tous",
+            "La page fixe de présentation d'un club"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:095",
+          "enonce": "Qu'est-ce qui s'exécute côté serveur ? Coche toutes les réponses exactes.",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Le serveur produit la page ; le client l'affiche.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La consultation de la base de données",
+            "La fabrication de la page HTML envoyée",
+            "Le JavaScript du menu déroulant",
+            "L'affichage du CSS"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:096",
+          "enonce": "Quels critères un moteur peut-il utiliser pour classer les pages ? Coche toutes les réponses exactes.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Le moteur ne vérifie pas la vérité.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La vérité de l'information",
+            "La popularité de la page",
+            "La couleur du site",
+            "La présence des mots dans le titre"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:097",
+          "enonce": "Quelles questions aident à évaluer une source sur le Web ? Coche toutes les réponses exactes.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "On cherche aussi des sources indépendantes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Qui est l'auteur ?",
+            "La page est-elle en première position ?",
+            "Le site a-t-il beaucoup d'images ?",
+            "La page est-elle datée ?"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:098",
+          "enonce": "Que permet la navigation privée ? Coche toutes les réponses exactes.",
+          "notion": "Cookies et réglages",
+          "difficulte": 2,
+          "explication": "Elle n'est pas anonyme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ne pas garder les cookies après fermeture",
+            "Rendre l'internaute anonyme",
+            "Ne pas garder l'historique sur l'appareil",
+            "Cacher la navigation au fournisseur d'accès"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:099",
+          "enonce": "Quelles mentions existent dans les licences Creative Commons ? Coche toutes les réponses exactes.",
+          "notion": "Notions juridiques",
+          "difficulte": 2,
+          "explication": "BY, NC, ND, SA.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "ND : pas de modification",
+            "BY : citer l'auteur",
+            "FR : usage en France seulement",
+            "OK : libre de tout droit"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:100",
+          "enonce": "Quelles URL appartiennent au domaine exemple.fr ? Coche toutes les réponses exactes.",
+          "notion": "URL",
+          "difficulte": 3,
+          "explication": "Le domaine se lit de droite à gauche : le 3e est promo-gratuite.com.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "https://exemple.fr.promo-gratuite.com/",
+            "https://www.exemple.fr/page",
+            "https://boutique.exemple.fr/",
+            "https://www.exemple-fr.net/"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:101",
+          "enonce": "Un élève tape son mot de passe sur un formulaire qui utilise GET en HTTP. Quels problèmes cela pose-t-il ? Coche toutes les réponses exactes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "Il faut POST et HTTPS.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le mot de passe apparaît dans l'URL et l'historique",
+            "Les échanges circulent en clair",
+            "Le serveur ne peut pas le recevoir",
+            "Le mot de passe est effacé par le DNS"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:102",
+          "enonce": "En inspectant une page avec les outils de développement, que peut-on voir ? Coche toutes les réponses exactes.",
+          "notion": "Client et serveur",
+          "difficulte": 3,
+          "explication": "On ne voit que ce que le client a reçu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le HTML reçu",
+            "Le contenu de la base de données du site",
+            "Le code PHP du serveur",
+            "Le JavaScript envoyé avec la page"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:103",
+          "enonce": "Pourquoi le premier résultat d'une recherche n'est-il pas forcément fiable ? Coche toutes les réponses exactes.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 3,
+          "explication": "Analyse critique nécessaire.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il peut être une annonce payée",
+            "Il est toujours le plus ancien",
+            "L'algorithme classe sans vérifier la vérité",
+            "Il est choisi au hasard"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:104",
+          "enonce": "Une élève veut illustrer un exposé publié en ligne. Quelles images peut-elle utiliser ? Coche toutes les réponses exactes.",
+          "notion": "Notions juridiques",
+          "difficulte": 3,
+          "explication": "Une image trouvée sur le Web n'est pas libre de droits.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une image sans mention d'auteur trouvée sur un blog",
+            "Une photo d'un magazine trouvée par un moteur",
+            "Une image sous licence CC BY, en citant l'auteur",
+            "Sa propre photo"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:105",
+          "enonce": "Un site te demande ton accord pour des cookies publicitaires. Que dit la règle européenne ? Coche toutes les réponses exactes.",
+          "notion": "Cookies et réglages",
+          "difficulte": 3,
+          "explication": "Le consentement est obligatoire pour les cookies non indispensables.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les cookies publicitaires sont interdits",
+            "Refuser doit être aussi facile qu'accepter",
+            "Le consentement doit être demandé",
+            "Le site peut les déposer sans rien demander"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "snt:ch3:banque:106",
+          "enonce": "Le Web a été inventé avant Internet.",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Internet (ARPANET, 1969) est antérieur au Web (1989).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:107",
+          "enonce": "Mosaic est un navigateur qui a rendu le Web populaire.",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Il affichait texte et images ensemble.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:108",
+          "enonce": "HTML décrit la présentation d'une page : couleurs et polices.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "C'est le rôle du CSS.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:109",
+          "enonce": "Une balise fermante comporte une barre oblique, comme </p>.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "La balise ouvrante est <p>.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:110",
+          "enonce": "CSS permet de changer la couleur des titres d'une page.",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 1,
+          "explication": "La couleur relève de la présentation.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:111",
+          "enonce": "Dans une URL, les paramètres sont placés après le signe ?.",
+          "notion": "URL",
+          "difficulte": 1,
+          "explication": "Sous la forme nom=valeur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:112",
+          "enonce": "Le code 404 signifie que la page a bien été trouvée.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "404 : ressource introuvable.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:113",
+          "enonce": "HTTPS chiffre les échanges entre le navigateur et le serveur.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "Le S signifie secure.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:114",
+          "enonce": "Le navigateur est un client du serveur Web.",
+          "notion": "Client et serveur",
+          "difficulte": 1,
+          "explication": "Il envoie les requêtes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:115",
+          "enonce": "Un moteur de recherche vérifie que les informations qu'il affiche sont vraies.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 1,
+          "explication": "Il classe sans vérifier.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:116",
+          "enonce": "La navigation privée rend l'internaute anonyme.",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Les sites et le réseau voient toujours la navigation.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:117",
+          "enonce": "Une image trouvée avec un moteur de recherche est libre de droits.",
+          "notion": "Notions juridiques",
+          "difficulte": 1,
+          "explication": "Elle reste protégée par le droit d'auteur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:118",
+          "enonce": "La partie <head> d'une page HTML est affichée dans la page.",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "Elle contient l'en-tête, non affiché.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:119",
+          "enonce": "Modifier une seule feuille de style peut changer l'apparence de tout un site.",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 2,
+          "explication": "C'est l'intérêt de séparer contenu et style.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:120",
+          "enonce": "Le nom de domaine d'une URL désigne le serveur à contacter.",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Son adresse IP est trouvée par le DNS.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:121",
+          "enonce": "Avec la méthode POST, les paramètres sont écrits dans l'URL.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Ils sont dans le corps de la requête.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:122",
+          "enonce": "Pour afficher une page, le navigateur envoie souvent de nombreuses requêtes.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "Une pour le HTML, puis une par image, feuille de style ou script.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:123",
+          "enonce": "En inspectant une page, on peut lire le code des programmes exécutés sur le serveur.",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "On ne voit que le résultat envoyé.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:124",
+          "enonce": "Une page statique est identique pour tous les visiteurs.",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "C'est un fichier stocké tel quel.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:125",
+          "enonce": "Deux personnes qui tapent la même requête obtiennent toujours les mêmes résultats.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Les résultats sont personnalisés.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:126",
+          "enonce": "Un contenu supprimé du Web peut avoir été copié et rester trouvable.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Ce qui est publié peut être copié et indexé.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:127",
+          "enonce": "Les cookies tiers sont déposés par le site que l'on visite lui-même.",
+          "notion": "Cookies et réglages",
+          "difficulte": 2,
+          "explication": "Ils sont déposés par d'autres entreprises.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:128",
+          "enonce": "Acheter un film en ligne donne le droit de le diffuser publiquement.",
+          "notion": "Notions juridiques",
+          "difficulte": 2,
+          "explication": "On n'obtient qu'un droit d'usage.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:129",
+          "enonce": "Le droit d'auteur protège aussi les logiciels.",
+          "notion": "Notions juridiques",
+          "difficulte": 2,
+          "explication": "Un logiciel est une œuvre.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:130",
+          "enonce": "Un site qui affiche un cadenas peut quand même être un site d'hameçonnage.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "HTTPS ne garantit pas l'honnêteté.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:131",
+          "enonce": "Dans https://exemple.fr.gain-facile.com/, le nom de domaine appartient au propriétaire d'exemple.fr.",
+          "notion": "URL",
+          "difficulte": 3,
+          "explication": "Le domaine se lit de droite à gauche : c'est gain-facile.com.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:132",
+          "enonce": "Le JavaScript d'une page s'exécute sur le serveur avant l'envoi.",
+          "notion": "Client et serveur",
+          "difficulte": 3,
+          "explication": "Il est envoyé avec la page et exécuté par le navigateur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:133",
+          "enonce": "Selon le principe du PageRank, un lien venant d'une page importante compte davantage.",
+          "notion": "Moteurs de recherche",
+          "difficulte": 3,
+          "explication": "Une page est importante si des pages importantes pointent vers elle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:134",
+          "enonce": "Grâce au CSS, un même contenu HTML peut être présenté différemment sur un téléphone et sur un ordinateur.",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 3,
+          "explication": "La présentation s'adapte à l'écran.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "snt:ch3:banque:135",
+          "enonce": "Le W3C a été créé avant que le CERN ne mette le Web dans le domaine public.",
+          "notion": "Histoire du Web",
+          "difficulte": 3,
+          "explication": "Domaine public en 1993, W3C en 1994.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "snt:ch3:banque:136",
+          "enonce": "Quel protocole sécurisé, version chiffrée de HTTP, affiche un cadenas ? Donne son sigle.",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "Le S signifie secure.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "HTTPS"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:137",
+          "enonce": "Quel est le sigle du langage qui décrit le contenu d'une page Web ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 1,
+          "explication": "HyperText Markup Language.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "HTML"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:138",
+          "enonce": "Quel est le sigle du langage qui décrit la présentation d'une page Web ?",
+          "notion": "Feuilles de style CSS",
+          "difficulte": 1,
+          "explication": "Cascading Style Sheets.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "CSS"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:139",
+          "enonce": "En quelle année Tim Berners-Lee a-t-il proposé le Web ?",
+          "notion": "Histoire du Web",
+          "difficulte": 1,
+          "explication": "Au CERN.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1989"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:140",
+          "enonce": "Quel code d'état HTTP indique une page introuvable ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 1,
+          "explication": "200 : succès.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "404"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:141",
+          "enonce": "Comment appelle-t-on le petit fichier texte qu'un site enregistre dans le navigateur ?",
+          "notion": "Cookies et réglages",
+          "difficulte": 1,
+          "explication": "Le navigateur le renvoie au site.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "cookie",
+            "un cookie",
+            "cookies",
+            "témoin",
+            "un témoin"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:142",
+          "enonce": "Quelle méthode HTTP place les paramètres dans l'URL ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 2,
+          "explication": "POST les place dans le corps de la requête.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "GET"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:143",
+          "enonce": "Dans https://www.exemple.fr/sport/foot.html, quel est le protocole ?",
+          "notion": "URL",
+          "difficulte": 2,
+          "explication": "Le protocole est au début de l'URL.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "https"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:144",
+          "enonce": "Les menus qui se déplient et les cartes que l'on déplace sont programmés dans quel langage, exécuté côté client ?",
+          "notion": "Client et serveur",
+          "difficulte": 2,
+          "explication": "Il est envoyé avec la page.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "JavaScript",
+            "Javascript",
+            "JS"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:145",
+          "enonce": "Quel organisme, créé en 1994, fixe les standards du Web ? Donne son sigle.",
+          "notion": "Histoire du Web",
+          "difficulte": 2,
+          "explication": "World Wide Web Consortium.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "W3C"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:146",
+          "enonce": "Quel attribut de la balise <a> contient l'adresse de destination du lien ?",
+          "notion": "Hypertexte et HTML",
+          "difficulte": 2,
+          "explication": "href pour hypertext reference.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "href"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:147",
+          "enonce": "Comment s'appelle l'étape où le moteur range les mots et les pages qui les contiennent ?",
+          "notion": "Moteurs de recherche",
+          "difficulte": 2,
+          "explication": "Après l'exploration, avant le classement.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "indexation",
+            "l'indexation"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:148",
+          "enonce": "Dans https://www.exemple.fr/meteo?ville=lille&jour=3, quelle est la valeur du paramètre ville ?",
+          "notion": "URL",
+          "difficulte": 3,
+          "explication": "ville=lille.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "lille"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:149",
+          "enonce": "Combien de requêtes faut-il au minimum pour une page HTML qui contient 3 images et 1 feuille de style ?",
+          "notion": "Requêtes HTTP et HTTPS",
+          "difficulte": 3,
+          "explication": "1 + 3 + 1 = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "snt:ch3:banque:150",
+          "enonce": "Dans une licence Creative Commons, quelle mention interdit l'usage commercial ?",
+          "notion": "Notions juridiques",
+          "difficulte": 3,
+          "explication": "Non commercial.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "NC"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
