@@ -19,5 +19,5 @@ Contrôle automatique : `verifierBanque` (les 17 règles de `banque:verifier`, p
 ## Points de doute pour l'enseignant
 
 - **Paires proches gardées** : sommet de l'ordre judiciaire (040, 120 en vrai/faux inverse, 142 en QCM multiple) ; article 16 de la DDHC (024 et 025 sont deux QCM, 105 un QCM multiple sur les mêmes conditions que 025) ; QPC (038, 041, 042, 088, 119, 141) ; Kelsen (028 et 140). Elles sont justes ; à écarter à la validation si deux d'entre elles tombent dans le même quiz.
-- **Décision « burkini »** (questions 047 à 056, 084 à 087, 117 à 120, 147) : le sujet est sensible. Les questions s'en tiennent au raisonnement juridique (ordre public, nécessité, proportionnalité). Si l'enseignant change l'étude de cas du chapitre, ces questions sont à remplacer.
-- **Chiffres susceptibles de changer** : 46 États au Conseil de l'Europe, 27 à l'Union européenne (058, 093, 095, 113). Justes au 10 novembre 2026.
+- **Décision « burkini »** (questions 048 à 058, 089 à 092, 122 à 125, 143, 144 et 147) : le sujet est sensible. Les questions s'en tiennent au raisonnement juridique (ordre public, nécessité, proportionnalité). Si l'enseignant change l'étude de cas du chapitre, ces questions sont à remplacer.
+- **Chiffres susceptibles de changer** : 46 États au Conseil de l'Europe, 27 à l'Union européenne (061, 093, 095, 116, 130). Justes au 10 novembre 2026.
