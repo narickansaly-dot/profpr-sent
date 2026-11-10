@@ -1,104 +1,116 @@
-# Programme officiel : langues vivantes (espagnol), classe de seconde générale et technologique
+# Programme officiel : espagnol, classe de seconde générale et technologique
 
 ## Référence
 
-- **Texte** : arrêté du 17 janvier 2019 fixant le programme d'enseignement commun et d'enseignement optionnel de langues vivantes de la classe de seconde générale et technologique et des classes de première et terminale des voies générale et technologique, NOR : MENE1901585A.
-- **Annexe** : annexe 1, « Programme de langues vivantes de seconde générale et technologique, enseignements commun et optionnel ». Le programme est commun à toutes les langues vivantes étrangères et régionales (LVER) : il n'a pas de partie propre à l'espagnol.
-- **Bulletin officiel** : Bulletin officiel spécial n° 1 du 22 janvier 2019.
-- **Page de l'arrêté** : https://www.education.gouv.fr/bo/19/Special1/MENE1901585A.htm (non lue : le site refuse les accès automatiques).
-- **Annexe 1 (PDF, 22 pages)**, texte lu : copie diffusée par le SNES, https://www.snes.edu/IMG/pdf/lv_com_opt_annexe-1_2e_bo.pdf ; même document sur Éduscol, https://eduscol.education.fr/document/24676/download (fichier `spe585annexe11062952pdf-84267.pdf`).
-- **Date de récupération** : 10 novembre 2026.
+- **Texte** : arrêté du 5 mai 2025 fixant les programmes de langues vivantes étrangères du lycée général et technologique, NOR : MENE2504621A, **Bulletin officiel n° 22 du 29 mai 2025** (https://www.education.gouv.fr/bo/2025/Hebdo22/MENE2504621A).
+- **Entrée en vigueur** : en seconde GT à la rentrée 2025-2026, puis en première et terminale à la rentrée 2026-2027 (article 4). L'article 3 abroge l'arrêté du 17 janvier 2019 (ancien programme, BO spécial n° 1 du 22 janvier 2019) « en ce qu'il concerne les langues vivantes étrangères ». La session 2de-anglais a vérifié ces deux articles sur la page du BO.
+- **Annexe** : annexe 10, « Programme d'espagnol pour les classes de lycée général et technologique » (PDF, 42 pages) : https://www.education.gouv.fr/sites/default/files/annexe-10-programme-d-espagnol-pour-les-classes-de-lyc-e-g-n-ral-et-technologique-440376.pdf
+- **Date de récupération** : 10 novembre 2026. J'ai téléchargé le PDF et lu son texte, extrait avec pypdf.
 
-Le texte ci-dessous résume fidèlement l'annexe 1. Les citations entre guillemets sont exactes. Les codes entre crochets (`[A1]` à `[A8]` pour les axes, `[L…]` pour les composantes de la langue, `[AL…]` pour les activités langagières) ne figurent pas dans le texte officiel : ils servent à la table de correspondance du plan.
+Le texte ci-dessous résume la partie « Préambule commun » et la partie « Classe de seconde » de l'annexe 10. Les citations entre guillemets sont exactes. Les codes entre crochets (`[A1]` à `[A6]` pour les axes, `[L…]` pour les outils linguistiques) ne figurent pas dans le texte officiel : ils servent à la table de correspondance du plan.
 
-### Attention : un nouveau programme est entré en vigueur
+## Sommaire de l'annexe 10
 
-Un nouveau programme de langues vivantes a été publié au **BO n° 22 du 29 mai 2025**. D'après la page de l'académie de Bordeaux consacrée à l'espagnol (https://ent2d.ac-bordeaux.fr/disciplines/espagnol/?p=6366, publiée le 12 septembre 2025), il s'applique **en seconde dès la rentrée 2025**, et en première et terminale à la rentrée 2026. Le programme de 2019 ne reste en vigueur en seconde que pour les langues **régionales**. Le texte de 2025 n'a pas pu être lu : le BO renvoie une erreur 403 aux accès automatiques.
-
-Ce cours suit le programme de 2019, comme le demandait la commande. **Point à trancher par l'enseignant** : vérifier les thèmes du programme de 2025 et, s'ils diffèrent, réaffecter les chapitres. Le vocabulaire et la grammaire de chaque chapitre restent utilisables.
-
-## Organisation générale
-
-Sommaire de l'annexe 1 :
-
-- Préambule
-- L'étude de la langue
-- Formation culturelle et interculturelle
-- L'organisation de l'enseignement
-- Tableaux des descripteurs des activités langagières
-
-## Préambule
-
-Le rôle des langues vivantes est rendu « plus fondamental encore » par la mondialisation des échanges, la diversité culturelle et la communication électronique. L'objectif essentiel au lycée est de « conforter sensiblement » les progrès de la **compétence orale**, sans dissocier l'oral et l'écrit, qui sont complémentaires. L'élève doit devenir actif et autonome : échanger, convaincre et débattre à l'oral ; décrire, raconter, expliquer et argumenter à l'écrit.
+- Préambule commun : objectifs généraux de l'enseignement des langues vivantes étrangères et régionales, contenus et objectifs d'apprentissage, approches pédagogiques, supports et outils.
+- Classe de seconde : niveaux visés à la fin de l'année ; repères culturels (LVA, LVB et LVC) ; repères linguistiques (LVA et LVB) : activités langagières et outils linguistiques ; repères linguistiques (LVC).
+- Classes de première et de terminale : même organisation, avec d'autres axes.
 
 ## Niveaux visés (CECRL)
 
-- À l'entrée au lycée, en LV2 (LVB au lycée), « le niveau A2 du CECRL doit être atteint dans au moins deux activités langagières ».
-- **En LVB, « les élèves de seconde consolident et complètent leur niveau A2 pour atteindre le niveau B1 à la fin de la terminale ».**
-- Pour comparaison : en LVA, les élèves de seconde confortent le niveau B1 (B2 en fin de terminale) ; en LVC, ils construisent le niveau A2 en seconde.
+| Classe | LVB | LVA |
+| --- | --- | --- |
+| seconde | **A2+** | B1+ |
+| première | B1 | B1+ |
+| terminale | B1 | B2 |
 
-Conséquence pour ce cours : le niveau de référence est **A2 consolidé, avec une ouverture vers B1**. Les textes sont courts et simples, les phrases sont au présent et aux temps du passé les plus courants, et le chapitre 7 introduit les premières formes du subjonctif.
+En LVC, le niveau visé en seconde est A1+. Le texte précise : « lorsque le niveau visé est accompagné du signe « + », cela signifie que le niveau supérieur est atteint dans au moins l'une des activités langagières ».
 
-## L'étude de la langue
+**Pour ce cours, le niveau visé est A2+ (LVB).** Les listes de lexique et de grammaire du programme distinguent un niveau A2+ et un niveau B1+ (pour la LVA). Le cours suit le niveau A2+ et n'emprunte au niveau B1+ que quelques mots utiles. Les points de grammaire marqués B1+ ne sont pas enseignés.
 
-Le lexique et la grammaire sont « toujours abordés à partir de documents et toujours en lien avec un contexte d'utilisation ». Au lycée, l'approche devient « raisonnée et plus systématisée ».
+## Préambule commun (résumé)
 
-- **[L1] Maîtrise du vocabulaire** : le lexique est orienté par les contenus culturels du programme. Il couvre la description, l'explication, la narration et l'argumentation. Il est étudié en contexte et mis en réseau par la composition, la dérivation et les champs sémantiques, avec une mémorisation régulière à la maison.
-- **[L2] Correction grammaticale** : découvrir les règles d'usage à partir des documents, identifier les points de syntaxe et de morphologie, puis les remobiliser souvent. L'élève compare avec le français et les autres langues qu'il connaît (approche plurilingue).
-- **[L3] Maîtrise phonologique** : articulation, prosodie (intonation, rythme, accent tonique) et intelligibilité ; correspondances entre graphie et phonie. La poésie, la chanson et les documents audiovisuels authentiques y ont leur place. L'erreur fait partie des apprentissages.
-- **[L4] Maîtrise de l'écriture** : orthographe, ponctuation et mise en page, par des entraînements réguliers et brefs. Les écrits numériques (messagerie, réseaux sociaux) demandent une attention particulière.
+- L'apprentissage des langues participe à la formation du citoyen éclairé : comprendre la diversité du monde, développer l'esprit critique, prendre conscience de son identité et découvrir celle des autres.
+- Activités langagières : compréhension de l'oral et de l'écrit, expression orale en continu, expression écrite, interaction orale et écrite, médiation. Elles sont « indissociables les unes des autres ».
+- Supports : documents authentiques, contextualisés et sourcés. Le cahier sert de trace écrite, avec des bilans lexicaux et grammaticaux. Le numérique et l'IA sont à utiliser avec esprit critique, dans le respect des règles.
+- Organisation des axes au lycée : « dans la voie générale, cinq axes parmi les six proposés doivent être traités pendant l'année, dont obligatoirement l'axe 6 », dans l'ordre choisi par le professeur. Deux axes peuvent être associés dans une même séquence. Les objets d'étude sont « proposés à titre indicatif ».
 
-## Les activités langagières
+## Classe de seconde : présentation
 
-- **[AL1] Réception** (compréhension de l'oral et de l'écrit) : aller du plus accessible (titre, thème, sens global, situation d'énonciation) vers les informations complexes (implicite). Stratégies : hypothèses, repérage d'indices, inférence, interprétation, appui sur le répertoire plurilingue.
-- **[AL2] Production** (expression orale et écrite) : décrire, raconter, expliquer, argumenter, en s'appuyant sur une activité de compréhension préalable. Stratégies : reformulation, adaptation du message, autocorrection.
-- **[AL3] Interaction** (orale et écrite) : discussions, débats, interviews ; courriels, messages, forums. Stratégies : reprise, relance, coopération, négociation.
-- **[AL4] Médiation** : expliciter pour autrui un discours lu ou entendu, de la paraphrase à la traduction ; rendre compréhensibles des repères culturels.
+En seconde, les élèves de LVA et de LVB « s'appuient sur les connaissances du monde hispanique qu'ils ont acquises au collège ». Les thèmes culturels doivent permettre de « construire une vision plus complexe intégrant différents points de vue ». Les acquis linguistiques du collège sont « consolidés et enrichis afin de permettre aux élèves d'exprimer un propos nuancé ». Le lexique, la grammaire, la phonologie et l'orthographe font l'objet d'une « approche raisonnée et systématisée ».
 
-## Formation culturelle et interculturelle
+## Repères culturels : les six axes
 
-En seconde, l'enseignement s'organise autour d'une thématique, **« l'art de vivre ensemble »**. Elle est commune à toutes les langues, mais chacune la décline selon son aire culturelle. Il s'agit de « problématiser davantage les questions de cohésion sociale et culturelle ». La thématique se décline en **huit axes** : « au fil de l'année, les professeurs abordent au moins six axes sur les huit de la liste, selon un ordre qu'ils choisissent ». Chaque axe est traité en une à trois séquences.
+### [A1] Représentation de soi et rapport à autrui
 
-### [A1] Vivre entre générations
+Dans une société où l'image est omniprésente, chacun se définit dans son rapport aux autres ; concilier confiance en soi et acceptation sociale peut être un défi. Le cinéma, le théâtre et la fiction évoquent le lien entre les individus.
+Objets d'étude possibles : portraits et autoportraits, traces de l'histoire personnelle et de la société (conseillé en LVC) ; le sentiment d'appartenance ; la langue comme identité.
 
-Les bouleversements démographiques (vieillissement, allongement des études et du travail) modifient les liens entre générations : le « conflit des générations » laisse place au « lien intergénérationnel ». Sur quelles traditions reposent ces liens selon les cultures ? Comment sont-ils bousculés ou réinventés (« jeunisme » des anciens, « syndrome de Peter Pan », enfants chargés de responsabilités d'adultes) ? Comment la presse, la littérature, les séries et la publicité en rendent-elles compte ?
+### [A2] Vivre entre générations
 
-### [A2] Les univers professionnels, le monde du travail
+Vivre entre générations suppose « une écoute et un respect mutuels ». Le désaccord n'empêche pas de vivre ensemble. Des écrits, l'expression artistique et les actions solidaires rapprochent les époques et les expériences.
+Objets d'étude possibles : l'histoire en héritage ; famille(s), les liens du sang ? (conseillé en LVC) ; se tourner vers les autres pour consolider les liens intergénérationnels.
 
-La seconde est une année charnière pour l'orientation. Comment choisit-on un métier ? Quels métiers font rêver ? Les professions, la notion de travail et les conditions d'emploi diffèrent selon les pays. Le travail est un lieu de socialisation : comment concilier qualité de vie et exigences économiques ? Changer de travail implique parfois de partir à l'étranger, et les migrations liées au travail inspirent la littérature et le cinéma.
+### [A3] Le passé dans le présent
 
-### [A3] Le village, le quartier, la ville
+L'Espagne et l'Amérique hispanique ont été marquées par des rencontres de cultures qui ont laissé des traces (vestiges, monuments, écrits, récits, commémorations). Ces sociétés construisent leur identité en célébrant cet héritage ou en le questionnant. Elles tirent les leçons des « pages sombres de [leur] histoire (régimes totalitaires, formes d'oppression, conflits, etc.) ».
+Objets d'étude possibles : sur les traces du passé, appréhender un héritage culturel ; les fêtes traditionnelles qui rythment le calendrier du monde hispanique (conseillé en LVC) ; le récit national, entre célébration, réinterprétation et opposition.
 
-Ces lieux portent l'inscription d'une culture, et les relations de voisinage varient selon le climat et les codes culturels. Ce sont des espaces chargés d'émotion (poésie, peinture, chanson), qu'on quitte (nostalgie) ou où l'on s'installe. Certains sont ancrés dans un passé ancestral, d'autres sont des villes cosmopolites en mutation (villes-monde). Des correspondances existent entre métropoles (villes portuaires, villes nouvelles, villes-musées), et certaines villes nourrissent un imaginaire mythique.
+### [A4] Défis et transitions
 
-### [A4] Représentation de soi et rapport à autrui
+La mondialisation, les inégalités, le changement climatique et les transitions démographiques et technologiques sont des défis pour les sociétés. Ils inquiètent, mais ils suscitent aussi des questionnements féconds. Les sociétés hispaniques y apportent des réponses adaptées à leur réalité, au risque de conflits ou de rejets.
+Objets d'étude possibles : la ville de demain, répondre aux défis environnementaux et sociaux (conseillé en LVC) ; l'engagement de la jeunesse ; le tourisme, une (r)évolution en marche ? Les différentes facettes du tourisme.
 
-Être accepté passe souvent par les codes vestimentaires, les goûts affichés, un style. Le groupe joue un rôle décisif dans l'image que l'adolescent a de lui-même, et les réseaux sociaux interrogent l'image de soi. La mode peut créer des tensions, et l'envie de conformité peut stigmatiser la différence et conduire au rejet. Le cinéma, le théâtre et la fiction interrogent le naturel et les faux-semblants.
+### [A5] Créer et recréer
 
-### [A5] Sports et société
+L'art est une expression de la pensée humaine. Certaines œuvres fondent une culture commune, « un patrimoine qui se réinvente en permanence » : réécriture de mythes, adaptations au cinéma, réutilisation d'images emblématiques, retour de certaines modes.
+Objets d'étude possibles : l'art revisité, réinterprétations et détournements d'œuvres connues (conseillé en LVC) ; la mode, à l'image de la société ? ; contes et légendes d'hier à aujourd'hui.
 
-Le sport permet un accomplissement personnel (santé, bien-être) et socialise (clubs, équipes). Il traverse toute la société, des jeux de quartier aux cérémonies médiatisées. Il rassemble ou divise, renforce le sentiment d'appartenance nationale et peut avoir des incidences politiques. Il permet le dépassement de soi, mais le culte de la performance peut faire souffrir.
+### [A6] L'Espagne au-delà des clichés (axe obligatoire)
 
-### [A6] La création et le rapport aux arts
+« Seconde destination touristique mondiale, l'Espagne réunit en son territoire une palette de paysages naturels variés » : les terres celtes du nord, la *meseta* au centre, les chaînes de montagnes, les côtes méditerranéenne et atlantique. La capitale, au centre, est attractive, et les régions côtières sont très peuplées et dynamiques. L'art, la gastronomie, les modes de vie et l'habitat montrent une riche diversité.
+Objets d'étude possibles : les représentations de la culture espagnole, dépasser les stéréotypes (conseillé en LVC) ; Madrid, une capitale fascinante ; la mer, une ressource de premier ordre.
 
-Le rapport à la langue se consolide à travers les arts (peinture, musique, architecture, danse, fiction, théâtre, poésie). Quelle place pour l'art au quotidien ? Comment rendre vivantes les œuvres du passé, exprimer une émotion dans une autre langue, débattre de l'utilité de l'art ? L'art se réinvente (bande dessinée, roman graphique, *street art*, *land art*) ; il peut être consensuel ou en rupture.
+## Repères linguistiques : activités langagières (LVB, A2+)
 
-### [A7] Sauver la planète, penser les futurs possibles
+- **[L1] Compréhension** : « repérer et comprendre les informations principales relevant de situations prévisibles ou de sujets familiers, exprimées dans un vocabulaire fréquent », à l'oral à condition que le propos soit clair et lent. Stratégies : indices paratextuels, champs lexicaux, mots transparents, articulations logiques simples.
+- **[L2] Expression orale et écrite** : présenter ou décrire son environnement (gens, lieux, projets, habitudes, activités passées, expériences), justifier ses goûts et ses préférences, comparer simplement.
+- **[L3] Interaction et médiation** : interagir dans des situations structurées ou prévisibles, poser des questions et y répondre, échanger des idées sur des sujets familiers, transmettre les informations pertinentes de textes informatifs courts et simples.
 
-L'avenir de la planète est un défi partagé, abordé avec des sensibilités différentes : la préoccupation écologique n'a pas la même ancienneté partout. Elle pose la question du rapport à la nature, dicte des codes de conduite et inspire des politiques environnementales. La cause animale rejoint le débat (chasse, corrida). La question invite à imaginer des mondes possibles (villes végétalisées) et à reconsidérer la consommation.
+## Outils linguistiques (listes « indicatives et non exhaustives »)
 
-### [A8] Le passé dans le présent
+### [L4] Phonologie et prosodie
 
-Le poids de l'histoire est omniprésent. Il suscite le désir de s'opposer aux traditions ou de les célébrer, et nourrit le rétro, le néo et le kitsch, les cérémonies costumées, les musées et les parcs thématiques. Le passé peut fonder l'identité ; les lieux de mémoire se sont multipliés et font de la mémoire un devoir. Comment le passé et le présent s'articulent-ils dans une aire géographique ?
+Schéma accentuel des mots oxytons, paroxytons et proparoxytons ; liens entre phonie et graphie ; schémas intonatifs (phrase déclarative, exclamative, interrogative, injonctive) ; accentuation de la forme enclitique ; débit et découpage.
 
-## L'organisation de l'enseignement (extraits)
+### [L5] Lexique A2+ par axe (extraits de la liste officielle)
 
-Les élèves sont incités à augmenter leur temps d'exposition à la langue en dehors de la classe (films, séries, radio, sources en version originale). L'annexe se termine par des tableaux de descripteurs du CECRL par activité langagière et par niveau.
+| Axe | Lexique A2+ (liste officielle) |
+| --- | --- |
+| A1 | yo, el autorretrato, el retrato, ser, estar, soler, gustar, física y moralmente, la descripción, la apariencia y los gustos, la relación, apreciar, llevarse bien/mal, la ropa, la manera de vestir, hablar un idioma, la nacionalidad, los datos personales |
+| A2 | los abuelos, los bisabuelos, los jóvenes, los ancianos, las diferencias, cuidar, aprender, respetar, el respeto, convivir, la convivencia, compartir, recordar, los recuerdos, la memoria, la solidaridad, plantear el problema, el conflicto generacional, ponerse nervioso, pedir permiso, pedir perdón, perdonar |
+| A3 | el pasado, el presente, la historia, el monumento, la arquitectura, el patrimonio, el museo, recordar, visitar, transmitir, la herencia, las influencias, la fiesta, los días festivos, el turismo, celebrar |
+| A4 | el desafío, la transición, el cambio, el calentamiento global, el parque eólico, la dificultad, adaptar(se), las nuevas tecnologías, el desarrollo sostenible, los recursos, la ciudad, los jóvenes, la juventud, el turismo, veranear, la estancia |
+| A5 | el arte, las artes plásticas, la belleza, la moda, el diseñador, el boceto, el traje, la música, la pintura, el cine, la literatura, el teatro, la ciudad, la calle, los artistas, compaginar, crear, inventar, transformar, adaptar, aludir a, la leyenda |
+| A6 | el mar, las costas, a orillas de, el puerto, el comercio marítimo, la tierra, la montaña, la ciudad, el campo, los paisajes, la playa, la arena, las olas, los turistas, las tapas, la fiesta, echar la siesta, los tópicos o clichés, superar |
+
+Le programme donne aussi une liste B1+ pour chaque axe (par exemple *la autoestima, la brecha generacional, antaño, el porvenir, una obra maestra, el lienzo, la península ibérica, los mariscos*).
+
+### [L6] Grammaire A2+ (points marqués B1+ exclus)
+
+- **Le verbe** : présent de l'indicatif (réguliers ; *conocer, parecerse, conducir, huir* ; diphtongues *poder, soñar, encontrar, empezar* ; affaiblissement *pedir, vestir* ; modifications orthographiques *coger, distinguir* ; irréguliers *dar, decir, ir, hacer, querer, salir, venir, traer, saber* ; *ir a* + infinitif pour le futur proche) ; présent du subjonctif (réguliers, *proteger*, diphtongues, affaiblissement, *tener, saber, ser, conocer*) ; futur (réguliers ; *tener, decir, salir, hacer, poder*) ; impératif (l'ordre à toutes les personnes ; la défense : *no* + subjonctif) ; imparfait (*era, iba, veía, había*) ; passé simple (réguliers ; irréguliers courants *tener, decir, hacer, poder, venir*) ; passé composé (*haber* + participes réguliers et irréguliers) ; subjonctif imparfait (réguliers, *ser, ir*) ; conditionnel (réguliers) ; états de l'action (*estar* + gérondif, *seguir* + gérondif, *volver a* + infinitif).
+- **Le nom** : genre et nombre ; articles ; absence de partitif (*¿Quieres agua?*) ; diminutifs *-ito, -illo* ; noms de mers, fleuves et montagnes au masculin ; pas d'article devant les noms de pays.
+- **Adjectifs et pronoms** : pronoms sujets pour insister ; *usted* ; pronoms compléments en enclise ; possessifs ; *poco, mucho, muy* ; démonstratifs ; *lo* + adjectif ; *cualquiera* ; apocope ; superlatif absolu.
+- **Se situer** : marqueurs de temps et d'espace (*aquí, allí, hoy, mañana, después, antes, antes de, después de*) ; dates et années.
+- **La phrase** : *a* devant un COD de personne ; phrases interrogatives et impératives ; comparatifs (*más / menos… que, tan(to)… como*) ; obligation personnelle (*tener que*) et impersonnelle (*hay que*) ; *se* + 3e personne (*Se ve una casa, se habla español*) ; connecteurs (*entonces, luego, por ejemplo, o sea*) ; volonté (*quiero que…*) ; simultanéité (*al* + infinitif).
 
 ## Récapitulatif des éléments à couvrir
 
 | Code | Élément | Nature |
 | --- | --- | --- |
-| A1 à A8 | les huit axes culturels | contenus culturels (six au moins à traiter) |
-| L1 à L4 | vocabulaire, grammaire, phonologie, écriture | composantes de la langue |
-| AL1 à AL4 | réception, production, interaction, médiation | activités langagières |
+| A1 à A6 | les six axes culturels | contenus culturels (cinq au moins en voie générale, dont l'axe 6) |
+| L1 à L3 | compréhension, expression, interaction et médiation | activités langagières |
+| L4 à L6 | phonologie, lexique, grammaire | outils linguistiques (listes indicatives) |
+
+## Ancien programme (pour mémoire)
+
+La première version de ce cours suivait le programme de 2019 (thématique « l'art de vivre ensemble », huit axes, LVB « A2 consolidé » en seconde). Ce programme est abrogé pour les langues vivantes étrangères. Le cours a été réorganisé selon le programme de 2025 : voir `espagnol-2de-plan.md`.
