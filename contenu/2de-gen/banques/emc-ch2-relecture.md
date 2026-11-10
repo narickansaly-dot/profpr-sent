@@ -10,7 +10,7 @@ Le premier jet échouait au contrôle sur trois règles. Corrections :
 
 | Règle | Problème | Décision |
 |---|---|---|
-| Difficultés | 51 / 62 / 37 : plusieurs questions de simple rappel étaient cotées 3. | Recotées : 017, 021, 034, 071, 117 (rappels directs, de 3 à 1 ou 2) ; 007, 023, 048, 067, 105 (de 2 à 1). |
+| Difficultés | 51 / 62 / 37 : plusieurs questions de simple rappel étaient cotées 3. | Recotées : 021, 035, 071, 072, 114, 150 et le vrai/faux devenu 124 (rappels directs, de 3 à 1 ou 2) ; 007, 023, 048, 067, 109 (de 2 à 1). |
 | Biais de longueur | La bonne réponse était la plus longue dans 45 % des QCM. | Distracteurs allongés ou bonne réponse resserrée dans 001, 005, 029, 037, 042, 052, 057, 060, 063 (même sens). |
 | Énoncés proches | 005 / 108 (0,85) et 087 / 088 (0,82). | 108 cite la phrase complète de l'article 1er ; 088 est reformulée (« Que faut-il retenir de la place de la laïcité face à l'athéisme et aux religions ? »). |
 
@@ -28,4 +28,4 @@ Le premier jet échouait au contrôle sur trois règles. Corrections :
 - **Paires proches gardées** : rapporteur de la loi (014 en QCM, 138 en réponse courte) ; loi de 2004 (046 en QCM, 144 en réponse courte) ; Charte de la laïcité à l'École (048, 049, 145).
 - **Question 059 (patient aux urgences)** : l'exemple vient de la règle du cours (« il ne peut pas refuser d'être soigné par un médecin de l'autre sexe en cas d'urgence »). Situation sensible ; formulation à vérifier.
 - **Question 066 (entreprise de vêtements)** : la conclusion (« ni justifiée ni proportionnée ») découle des deux conditions du cours ; un juge apprécierait au cas par cas.
-- **Parents accompagnateurs (052, 098, 118)** : règle présentée sans nuance de jurisprudence ; conforme au cours, à confirmer avec le manuel.
+- **Parents accompagnateurs (052, 093, 128)** : règle présentée sans nuance de jurisprudence ; conforme au cours, à confirmer avec le manuel.
