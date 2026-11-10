@@ -5087,7 +5087,7 @@
         {
           "id": "conditionnelle",
           "titre": "L'instruction conditionnelle",
-          "html": "\n<p>Une instruction conditionnelle exécute des instructions seulement si une <strong>condition</strong> est vraie.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">if condition:<br>    instructions si la condition est vraie<br>else:<br>    instructions sinon</div>\n<p>La ligne if se termine par deux-points ; les instructions qui en dépendent sont <strong>indentées</strong> (décalées de quatre espaces). La partie else est facultative. Pour enchaîner plusieurs cas, on utilise <strong>elif</strong> (« sinon si »).</p>\n<h3>Écrire une condition</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Python</th><th>Sens</th></tr></thead>\n<tbody>\n<tr><td>a == b</td><td>a est égal à b (deux signes =)</td></tr>\n<tr><td>a != b</td><td>a est différent de b</td></tr>\n<tr><td>a &lt; b, a &lt;= b</td><td>a &lt; b, a ⩽ b</td></tr>\n<tr><td>a &gt; b, a &gt;= b</td><td>a &gt; b, a ⩾ b</td></tr>\n<tr><td>c1 and c2, c1 or c2, not c</td><td>« et », « ou », « non »</td></tr>\n</tbody></table></div>\n<p>Une condition est un <strong>booléen</strong> : elle vaut True ou False. Exemple : 7 % 2 == 1 vaut True, car 7 est impair.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">note = 13<br>if note &gt;= 16:<br>    mention = \"très bien\"<br>elif note &gt;= 14:<br>    mention = \"bien\"<br>elif note &gt;= 12:<br>    mention = \"assez bien\"<br>else:<br>    mention = \"aucune\"</div>\n<p>Ici, note >= 16 et note >= 14 sont fausses, note >= 12 est vraie : mention reçoit \"assez bien\", et les tests suivants ne sont pas faits.</p>\n"
+          "html": "\n<p>Une instruction conditionnelle exécute des instructions seulement si une <strong>condition</strong> est vraie.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">if condition:<br>    instructions si la condition est vraie<br>else:<br>    instructions sinon</div>\n<p>La ligne if se termine par deux-points ; les instructions qui en dépendent sont <strong>indentées</strong> (décalées de quatre espaces). La partie else est facultative. Pour enchaîner plusieurs cas, on utilise <strong>elif</strong> (« sinon si »).</p>\n<h3>Écrire une condition</h3>\n<div class=\"tbl\"><table>\n<thead><tr><th>Python</th><th>Sens</th></tr></thead>\n<tbody>\n<tr><td>a == b</td><td>a est égal à b (deux signes =)</td></tr>\n<tr><td>a != b</td><td>a est différent de b</td></tr>\n<tr><td>a &lt; b, a &lt;= b</td><td>a &lt; b, a ⩽ b</td></tr>\n<tr><td>a &gt; b, a &gt;= b</td><td>a &gt; b, a ⩾ b</td></tr>\n<tr><td>c1 and c2, c1 or c2, not c</td><td>« et », « ou », « non »</td></tr>\n</tbody></table></div>\n<p>Une condition est un <strong>booléen</strong> : elle vaut True ou False. Exemple : 7 % 2 == 1 vaut True, car 7 est impair.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">note = 13<br>if note &gt;= 16:<br>    mention = \"très bien\"<br>elif note &gt;= 14:<br>    mention = \"bien\"<br>elif note &gt;= 12:<br>    mention = \"assez bien\"<br>else:<br>    mention = \"aucune\"</div>\n<p>Ici, note &gt;= 16 et note &gt;= 14 sont fausses, note &gt;= 12 est vraie : mention reçoit \"assez bien\", et les tests suivants ne sont pas faits.</p>\n"
         },
         {
           "id": "boucle-for",
@@ -7573,6 +7573,2518 @@
             "48"
           ],
           "marge_relative": false
+        }
+      ]
+    },
+    {
+      "slug": "ch4",
+      "numero": 4,
+      "titre": "Puissances, racines carrées et calcul littéral",
+      "titre_court": "Calcul littéral",
+      "duree": "3 semaines",
+      "resume": "Puissances entières relatives et écriture scientifique, racines carrées, développement et réduction, identités remarquables, factorisation, expressions fractionnaires, exprimer une variable en fonction des autres.",
+      "chapeau": "Le calcul littéral remplace les nombres par des lettres pour raisonner sur tous les cas à la fois. Ce chapitre rassemble les règles de calcul sur les puissances et les racines carrées, puis les outils pour transformer une expression : développer, factoriser, choisir la forme la plus utile.",
+      "objectifs": [
+        "appliquer les règles de calcul sur les puissances entières relatives et utiliser l'écriture scientifique ;",
+        "calculer avec des racines carrées et connaître la relation √(a²) = |a| ;",
+        "développer, réduire et factoriser une expression, notamment avec les identités remarquables ;",
+        "calculer avec des expressions fractionnaires ;",
+        "exprimer une variable en fonction des autres dans une formule ;",
+        "choisir la forme la plus adaptée d'une expression pour résoudre un problème."
+      ],
+      "sections": [
+        {
+          "id": "puissances",
+          "titre": "Puissances entières relatives",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Pour un réel a et un entier naturel n ⩾ 1, a<sup>n</sup> = a × a × … × a (n facteurs). On pose a<sup>0</sup> = 1 pour a ≠ 0, et, pour a ≠ 0, a<sup>−n</sup> = 1/a<sup>n</sup>.</p></div>\n<p>Exemples : 2<sup>5</sup> = 32 ; (−3)<sup>2</sup> = 9 ; −3<sup>2</sup> = −9 (le carré porte sur 3 seulement) ; 10<sup>−3</sup> = 1/1000 = 0,001 ; 2<sup>−1</sup> = 1/2.</p>\n<div class=\"def\"><b class=\"t\">Règles de calcul</b><p>Pour a et b non nuls et n, p entiers relatifs :</p><ul>\n<li>a<sup>n</sup> × a<sup>p</sup> = a<sup>n+p</sup> ;</li>\n<li>a<sup>n</sup> / a<sup>p</sup> = a<sup>n−p</sup> ;</li>\n<li>(a<sup>n</sup>)<sup>p</sup> = a<sup>n×p</sup> ;</li>\n<li>(a × b)<sup>n</sup> = a<sup>n</sup> × b<sup>n</sup> et (a/b)<sup>n</sup> = a<sup>n</sup>/b<sup>n</sup>.</li></ul></div>\n<p>Exemples : 5<sup>3</sup> × 5<sup>4</sup> = 5<sup>7</sup> ; 7<sup>2</sup>/7<sup>5</sup> = 7<sup>−3</sup> ; (2<sup>3</sup>)<sup>4</sup> = 2<sup>12</sup> ; (3x)<sup>2</sup> = 9x<sup>2</sup>.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Il n'y a pas de règle pour une somme : 2<sup>3</sup> + 2<sup>4</sup> = 8 + 16 = 24, qui n'est pas 2<sup>7</sup> = 128. Et (a + b)<sup>2</sup> n'est pas a<sup>2</sup> + b<sup>2</sup>.</p></div>\n<h3>Signe d'une puissance</h3>\n<p>Une puissance d'un nombre négatif est positive si l'exposant est pair, négative s'il est impair : (−2)<sup>4</sup> = 16, (−2)<sup>3</sup> = −8.</p>\n<h3>Écriture scientifique</h3>\n<p>Tout décimal positif non nul s'écrit a × 10<sup>n</sup>, avec 1 ⩽ a &lt; 10 et n entier relatif : c'est son <strong>écriture scientifique</strong>. Exemples : 45 000 = 4,5 × 10<sup>4</sup> ; 0,000 72 = 7,2 × 10<sup>−4</sup>. La masse de la Terre, environ 5,97 × 10<sup>24</sup> kg, se lit ainsi d'un coup d'œil.</p>\n<h3>Une puissance qui dépasse un seuil</h3>\n<p>Pour trouver la première puissance de 1,5 supérieure à 100, on multiplie par 1,5 tant que le résultat reste inférieur ou égal à 100 :</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">def premiere_puissance(q, seuil):<br>    n = 0<br>    p = 1<br>    while p &lt;= seuil:<br>        p = p * q<br>        n = n + 1<br>    return n</div>\n<p>premiere_puissance(1.5, 100) renvoie 12 : 1,5<sup>11</sup> ≈ 86,5 et 1,5<sup>12</sup> ≈ 129,7.</p>\n"
+        },
+        {
+          "id": "racines",
+          "titre": "Racines carrées",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Pour un réel a ⩾ 0, la <strong>racine carrée</strong> de a, notée √a, est le seul réel <strong>positif</strong> dont le carré vaut a.</p></div>\n<p>Exemples : √49 = 7 ; √0,25 = 0,5 ; √0 = 0. Le nombre −7 a aussi pour carré 49, mais √49 désigne le nombre positif 7. √(−4) n'existe pas : un carré n'est jamais négatif.</p>\n<div class=\"def\"><b class=\"t\">Propriétés</b><ul>\n<li>Pour a ⩾ 0 : (√a)<sup>2</sup> = a.</li>\n<li>Pour tout réel a : √(a<sup>2</sup>) = |a|. Par exemple √((−5)<sup>2</sup>) = √25 = 5 = |−5|.</li>\n<li>Pour a ⩾ 0 et b ⩾ 0 : √(ab) = √a × √b.</li>\n<li>Pour a ⩾ 0 et b &gt; 0 : √(a/b) = √a / √b.</li></ul></div>\n<div class=\"def\"><b class=\"t\">Démonstration de √(ab) = √a × √b</b><p>Les nombres √a × √b et √(ab) sont positifs. Le carré du premier vaut (√a × √b)<sup>2</sup> = (√a)<sup>2</sup> × (√b)<sup>2</sup> = ab. C'est donc le nombre positif dont le carré est ab : c'est √(ab).</p></div>\n<h3>Pas de règle pour la somme</h3>\n<p>√(9 + 16) = √25 = 5, alors que √9 + √16 = 3 + 4 = 7. Plus généralement :</p>\n<div class=\"def\"><b class=\"t\">Propriété et démonstration</b><p>Si a et b sont strictement positifs, √(a + b) &lt; √a + √b.</p><p>Les deux nombres sont positifs ; comparons leurs carrés. (√a + √b)<sup>2</sup> = a + 2√a√b + b, qui est strictement supérieur à a + b = (√(a + b))<sup>2</sup>, car 2√a√b &gt; 0. Deux nombres positifs sont rangés dans le même ordre que leurs carrés, d'où le résultat.</p></div>\n<h3>Simplifier une racine</h3>\n<p>On fait apparaître un carré parfait : √50 = √(25 × 2) = 5√2 ; √12 = √(4 × 3) = 2√3. Alors √50 + √8 = 5√2 + 2√2 = 7√2.</p>\n<p>On écrit souvent un quotient sans racine au dénominateur : 1/√2 = √2/(√2 × √2) = √2/2.</p>\n"
+        },
+        {
+          "id": "developper",
+          "titre": "Développer et réduire",
+          "html": "\n<p><strong>Développer</strong> un produit, c'est l'écrire sous forme d'une somme. <strong>Réduire</strong>, c'est regrouper les termes de même nature.</p>\n<div class=\"def\"><b class=\"t\">Distributivité</b><p>Pour tous réels k, a, b, c, d : k(a + b) = ka + kb et (a + b)(c + d) = ac + ad + bc + bd.</p></div>\n<p>Exemples :</p>\n<ul>\n<li>3(2x − 5) = 6x − 15 ;</li>\n<li>−2(x − 4) = −2x + 8 (attention au signe) ;</li>\n<li>(x + 3)(2x − 1) = 2x<sup>2</sup> − x + 6x − 3 = 2x<sup>2</sup> + 5x − 3.</li>\n</ul>\n<p>Un signe moins devant une parenthèse change tous les signes à l'intérieur : 5 − (x − 2) = 5 − x + 2 = 7 − x.</p>\n<p>Pour vérifier un développement, on peut tester une valeur : avec x = 1, (x + 3)(2x − 1) = 4 × 1 = 4 et 2 + 5 − 3 = 4. Un test réussi ne prouve rien, mais un test raté révèle une erreur.</p>\n"
+        },
+        {
+          "id": "identites",
+          "titre": "Les identités remarquables",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriété</b><p>Pour tous réels a et b :</p><ul>\n<li>(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup> ;</li>\n<li>(a − b)<sup>2</sup> = a<sup>2</sup> − 2ab + b<sup>2</sup> ;</li>\n<li>(a − b)(a + b) = a<sup>2</sup> − b<sup>2</sup>.</li></ul></div>\n<p>Elles se démontrent en développant : (a + b)<sup>2</sup> = (a + b)(a + b) = a<sup>2</sup> + ab + ba + b<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>.</p>\n<h3>Une illustration géométrique</h3>\n<p>Pour a et b positifs, un carré de côté a + b se découpe en un carré de côté a, un carré de côté b et deux rectangles de côtés a et b. Son aire (a + b)<sup>2</sup> vaut donc a<sup>2</sup> + b<sup>2</sup> + 2ab.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 240 240\" role=\"img\" aria-label=\"Carré de côté a plus b découpé en un carré a au carré, un carré b au carré et deux rectangles a fois b\">\n<rect x=\"20\" y=\"20\" width=\"200\" height=\"200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/>\n<rect x=\"20\" y=\"20\" width=\"130\" height=\"130\" fill=\"#4338ca\" fill-opacity=\"0.18\" stroke=\"currentColor\"/>\n<rect x=\"150\" y=\"150\" width=\"70\" height=\"70\" fill=\"#4338ca\" fill-opacity=\"0.45\" stroke=\"currentColor\"/>\n<rect x=\"150\" y=\"20\" width=\"70\" height=\"130\" fill=\"none\" stroke=\"currentColor\"/>\n<rect x=\"20\" y=\"150\" width=\"130\" height=\"70\" fill=\"none\" stroke=\"currentColor\"/>\n<text x=\"85\" y=\"90\" font-size=\"16\" text-anchor=\"middle\">a²</text><text x=\"185\" y=\"190\" font-size=\"16\" text-anchor=\"middle\">b²</text>\n<text x=\"185\" y=\"90\" font-size=\"16\" text-anchor=\"middle\">ab</text><text x=\"85\" y=\"190\" font-size=\"16\" text-anchor=\"middle\">ab</text>\n<text x=\"85\" y=\"14\" font-size=\"13\" text-anchor=\"middle\">a</text><text x=\"185\" y=\"14\" font-size=\"13\" text-anchor=\"middle\">b</text>\n</svg></div><figcaption>(a + b)² = a² + 2ab + b².</figcaption></figure>\n<h3>Développer avec les identités</h3>\n<ul>\n<li>(x + 5)<sup>2</sup> = x<sup>2</sup> + 10x + 25 ;</li>\n<li>(3x − 2)<sup>2</sup> = 9x<sup>2</sup> − 12x + 4 ;</li>\n<li>(2x + 7)(2x − 7) = 4x<sup>2</sup> − 49.</li>\n</ul>\n<p>Calcul mental : 101<sup>2</sup> = (100 + 1)<sup>2</sup> = 10 201 ; 49 × 51 = (50 − 1)(50 + 1) = 2 500 − 1 = 2 499.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>(a + b)<sup>2</sup> ≠ a<sup>2</sup> + b<sup>2</sup> : il manque le double produit 2ab. Avec a = 3 et b = 4, (3 + 4)<sup>2</sup> = 49 alors que 3<sup>2</sup> + 4<sup>2</sup> = 25.</p></div>\n"
+        },
+        {
+          "id": "factoriser",
+          "titre": "Factoriser",
+          "html": "\n<p><strong>Factoriser</strong> une somme, c'est l'écrire sous forme d'un produit. C'est l'opération inverse du développement.</p>\n<h3>Avec un facteur commun</h3>\n<p>ka + kb = k(a + b). Exemples : 6x + 9 = 3(2x + 3) ; x<sup>2</sup> − 5x = x(x − 5) ; (x + 1)(x − 3) + (x + 1)(2x + 5) = (x + 1)[(x − 3) + (2x + 5)] = (x + 1)(3x + 2).</p>\n<h3>Avec une identité remarquable</h3>\n<p>On lit les identités de droite à gauche :</p>\n<ul>\n<li>x<sup>2</sup> − 49 = x<sup>2</sup> − 7<sup>2</sup> = (x − 7)(x + 7) ;</li>\n<li>x<sup>2</sup> + 6x + 9 = x<sup>2</sup> + 2 × x × 3 + 3<sup>2</sup> = (x + 3)<sup>2</sup> ;</li>\n<li>4x<sup>2</sup> − 20x + 25 = (2x)<sup>2</sup> − 2 × 2x × 5 + 5<sup>2</sup> = (2x − 5)<sup>2</sup> ;</li>\n<li>(x + 2)<sup>2</sup> − 16 = (x + 2 − 4)(x + 2 + 4) = (x − 2)(x + 6).</li>\n</ul>\n<h3>Choisir la forme adaptée</h3>\n<p>Une même expression a plusieurs formes. Exemple : A(x) = (x − 3)<sup>2</sup> − 4.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Forme</th><th>Écriture</th><th>Utile pour…</th></tr></thead>\n<tbody>\n<tr><td>développée réduite</td><td>x<sup>2</sup> − 6x + 5</td><td>calculer A(0) = 5</td></tr>\n<tr><td>factorisée</td><td>(x − 1)(x − 5)</td><td>résoudre A(x) = 0 (x = 1 ou x = 5) ; étudier le signe</td></tr>\n<tr><td>de départ</td><td>(x − 3)<sup>2</sup> − 4</td><td>voir que A(x) ⩾ −4, avec égalité pour x = 3</td></tr>\n</tbody></table></div>\n"
+        },
+        {
+          "id": "fractions",
+          "titre": "Expressions fractionnaires",
+          "html": "\n<p>Les règles de calcul sur les fractions s'appliquent aux expressions littérales, à condition que les dénominateurs ne soient pas nuls.</p>\n<ul>\n<li>Pour additionner, on met au même dénominateur : 1/x + 2/3 = 3/(3x) + 2x/(3x) = (3 + 2x)/(3x), pour x ≠ 0.</li>\n<li>Pour multiplier, on multiplie les numérateurs et les dénominateurs : (x/2) × (4/x<sup>2</sup>) = 4x/(2x<sup>2</sup>) = 2/x, pour x ≠ 0.</li>\n<li>Diviser par une fraction, c'est multiplier par son inverse : (a/b) / (c/d) = (a/b) × (d/c).</li>\n</ul>\n<p>Exemple : pour x ≠ 1, 2 − 3/(x − 1) = 2(x − 1)/(x − 1) − 3/(x − 1) = (2x − 5)/(x − 1).</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Une valeur qui annule un dénominateur est interdite : l'expression 5/(x − 2) n'est pas définie pour x = 2. On ne simplifie que des facteurs : (x + 3)/x ne se simplifie pas.</p></div>\n<h3>Comparer deux nombres</h3>\n<p>Pour comparer A et B, on étudie le signe de leur différence : si A − B &gt; 0, alors A &gt; B. Pour deux nombres strictement positifs, on peut aussi comparer leur quotient à 1 : si A/B &gt; 1, alors A &gt; B. Ces méthodes sont reprises au chapitre 5.</p>\n"
+        },
+        {
+          "id": "variable",
+          "titre": "Exprimer une variable en fonction des autres",
+          "html": "\n<p>Une formule relie plusieurs grandeurs. On peut l'utiliser « dans l'autre sens » en isolant la grandeur cherchée, avec les mêmes règles que pour résoudre une équation.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Formule</th><th>Grandeur isolée</th></tr></thead>\n<tbody>\n<tr><td>U = RI (loi d'Ohm)</td><td>I = U/R ; R = U/I</td></tr>\n<tr><td>d = vt (distance, vitesse, durée)</td><td>v = d/t ; t = d/v</td></tr>\n<tr><td>S = πr<sup>2</sup> (aire d'un disque)</td><td>r = √(S/π), car r ⩾ 0</td></tr>\n<tr><td>V = abc (volume d'un pavé)</td><td>c = V/(ab)</td></tr>\n<tr><td>V = πr<sup>2</sup>h (volume d'un cylindre)</td><td>h = V/(πr<sup>2</sup>)</td></tr>\n</tbody></table></div>\n<p>Cas d'une relation du premier degré ax + by = c, avec b ≠ 0 : by = c − ax, donc y = (c − ax)/b. Exemple : 2x + 3y = 12 donne y = (12 − 2x)/3 = 4 − (2/3)x.</p>\n<p>Exemple d'application : un cylindre a un volume de 500 cm<sup>3</sup> et un rayon de 5 cm. Sa hauteur vaut h = 500/(π × 25) ≈ 6,4 cm.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>a<sup>n</sup> × a<sup>p</sup> = a<sup>n+p</sup> ; a<sup>n</sup>/a<sup>p</sup> = a<sup>n−p</sup> ; (a<sup>n</sup>)<sup>p</sup> = a<sup>np</sup> ; a<sup>−n</sup> = 1/a<sup>n</sup> ; a<sup>0</sup> = 1. Écriture scientifique : a × 10<sup>n</sup> avec 1 ⩽ a &lt; 10.</li>\n<li>√a est le réel positif dont le carré vaut a ; √(a<sup>2</sup>) = |a| ; √(ab) = √a × √b ; √(a + b) &lt; √a + √b pour a, b &gt; 0.</li>\n<li>(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup> ; (a − b)<sup>2</sup> = a<sup>2</sup> − 2ab + b<sup>2</sup> ; (a − b)(a + b) = a<sup>2</sup> − b<sup>2</sup>.</li>\n<li>Développer : produit → somme. Factoriser : somme → produit (facteur commun ou identité).</li>\n<li>Expressions fractionnaires : même dénominateur pour additionner ; valeurs interdites qui annulent un dénominateur.</li>\n<li>Isoler une variable dans une formule : U = RI donne I = U/R ; ax + by = c donne y = (c − ax)/b.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch4:banque:001",
+          "enonce": "Que vaut 2⁵ ?",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "2⁵ = 2 × 2 × 2 × 2 × 2 = 32.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "32",
+            "10",
+            "25",
+            "16"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:002",
+          "enonce": "Par quelle puissance de 5 peut-on remplacer le produit 5³ × 5⁴ ?",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "On additionne les exposants : 3 + 4 = 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5¹²",
+            "5⁷",
+            "25⁷",
+            "5¹"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:003",
+          "enonce": "Quelle est l'écriture décimale de 10⁻³ ?",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "10⁻³ = 1/10³ = 1/1000.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1000",
+            "0,0001",
+            "0,001",
+            "−0,001"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:004",
+          "enonce": "Combien vaut un nombre non nul élevé à la puissance 0 ?",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "Par convention, a⁰ = 1 pour a ≠ 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0",
+            "Le nombre lui-même",
+            "Il n'est pas défini",
+            "1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:005",
+          "enonce": "Le quotient 7² / 7⁵ s'écrit sous la forme 7ⁿ. Quel est n ?",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "On soustrait les exposants : 2 − 5 = −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3",
+            "3",
+            "10",
+            "−7"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:006",
+          "enonce": "Quelle écriture simplifiée correspond à (2³)⁴ ?",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "Puissance d'une puissance : on multiplie les exposants.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2⁷",
+            "2¹²",
+            "8⁷",
+            "2⁸¹"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:007",
+          "enonce": "Quelle est la valeur de −3², sans parenthèses ?",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "Le carré porte seulement sur 3 : −3² = −(3²).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9",
+            "−6",
+            "−9",
+            "6"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:008",
+          "enonce": "Quel est le signe de (−2)⁷ ?",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "Un nombre négatif élevé à une puissance impaire est négatif : −128.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Positif, car c'est une puissance",
+            "Positif, car 7 est premier",
+            "Nul",
+            "Négatif, car l'exposant est impair"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:009",
+          "enonce": "Quelle expression est égale à (3x)² ?",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "(3x)² = 3² × x² = 9x².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9x²",
+            "3x²",
+            "6x²",
+            "9x"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:010",
+          "enonce": "Le nombre 4³ × 8² s'écrit 2ⁿ. Quel est n ?",
+          "notion": "Puissances",
+          "difficulte": 3,
+          "explication": "4³ = 2⁶ et 8² = 2⁶ : 2⁶ × 2⁶ = 2¹².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "12",
+            "10",
+            "36"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:011",
+          "enonce": "D'après le programme du cours, que renvoie premiere_puissance(2, 1000) ?",
+          "notion": "Puissances",
+          "difficulte": 3,
+          "explication": "2⁹ = 512 ⩽ 1000 et 2¹⁰ = 1024 > 1000.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9",
+            "11",
+            "10",
+            "1024"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:012",
+          "enonce": "Quelles égalités sur les puissances sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "On n'additionne pas les exposants dans une somme : 8 + 4 = 12 ; 3⁰ = 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10⁻² = 0,01",
+            "3⁰ = 0",
+            "(−1)⁴ = 1",
+            "2³ × 2² = 2⁵",
+            "2³ + 2² = 2⁵"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:013",
+          "enonce": "Parmi ces expressions, lesquelles ont la même valeur que 2⁻³ ? Coche toutes les réponses exactes.",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "2⁻³ = 1/2³ = 1/8 = 0,125 : un exposant négatif ne rend pas le nombre négatif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−6",
+            "1/8",
+            "−8",
+            "1/2³",
+            "0,125"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:014",
+          "enonce": "Pour a et b non nuls, quelles égalités sont toujours vraies ? Coche toutes les réponses exactes.",
+          "notion": "Puissances",
+          "difficulte": 3,
+          "explication": "Il n'y a pas de règle pour une somme ; a² × a³ = a⁵.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a² × a³ = a⁶",
+            "(a + b)² = a² + b²",
+            "(ab)³ = a³b³",
+            "a⁻¹ × a = 1",
+            "(a/b)² = a²/b²"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:015",
+          "enonce": "Le nombre 10⁻² est négatif.",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "10⁻² = 0,01 est positif : l'exposant négatif indique un inverse.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:016",
+          "enonce": "Pour tout réel a non nul, a³ × a³ = a⁶.",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "3 + 3 = 6.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:017",
+          "enonce": "2³ + 2⁴ = 2⁷.",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "8 + 16 = 24, alors que 2⁷ = 128 : pas de règle pour une somme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:018",
+          "enonce": "(−5)⁴ et −5⁴ sont égaux.",
+          "notion": "Puissances",
+          "difficulte": 3,
+          "explication": "(−5)⁴ = 625, alors que −5⁴ = −625.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:019",
+          "enonce": "Calcule 3⁴. Réponds par un nombre.",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "3 × 3 × 3 × 3 = 81.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "81"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:020",
+          "enonce": "Écris 2⁻² sous forme décimale.",
+          "notion": "Puissances",
+          "difficulte": 2,
+          "explication": "2⁻² = 1/4 = 0,25.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,25",
+            "0.25"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:021",
+          "enonce": "Quelle est l'écriture scientifique de 45 000 ?",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "1 ⩽ 4,5 < 10 et 4,5 × 10 000 = 45 000.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "45 × 10³",
+            "4,5 × 10³",
+            "0,45 × 10⁵",
+            "4,5 × 10⁴"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:022",
+          "enonce": "Quelle écriture est une écriture scientifique ?",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "Il faut un nombre a tel que 1 ⩽ a < 10, multiplié par une puissance de 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7,2 × 10⁻⁴",
+            "72 × 10⁻⁵",
+            "0,72 × 10⁻³",
+            "7,2 × 5⁻⁴"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:023",
+          "enonce": "Comment s'écrit 0,000 72 en notation scientifique ?",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "On décale la virgule de 4 rangs vers la droite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7,2 × 10⁴",
+            "7,2 × 10⁻⁴",
+            "72 × 10⁻⁶",
+            "7,2 × 10⁻⁵"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:024",
+          "enonce": "Que vaut (3 × 10⁵) × (2 × 10⁻²) en écriture scientifique ?",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "3 × 2 = 6 et 10⁵ × 10⁻² = 10³.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6 × 10⁻¹⁰",
+            "5 × 10³",
+            "6 × 10³",
+            "6 × 10⁷"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:025",
+          "enonce": "Quelle est l'écriture scientifique de (8 × 10³) × (5 × 10⁴) ?",
+          "notion": "Écriture scientifique",
+          "difficulte": 3,
+          "explication": "8 × 5 = 40 = 4 × 10, donc 40 × 10⁷ = 4 × 10⁸.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "40 × 10⁷",
+            "4 × 10⁷",
+            "13 × 10⁷",
+            "4 × 10⁸"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:026",
+          "enonce": "Lesquelles de ces écritures sont des écritures scientifiques ? Coche toutes les réponses exactes.",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "Le nombre devant la puissance doit être entre 1 inclus et 10 exclu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10,5 × 10¹",
+            "0,5 × 10³",
+            "3 × 10⁰",
+            "9,99 × 10⁻⁷",
+            "1,05 × 10²"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:027",
+          "enonce": "L'écriture 5,97 × 10²⁴ est une écriture scientifique.",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "1 ⩽ 5,97 < 10.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:028",
+          "enonce": "L'écriture scientifique de 0,05 est 5 × 10⁻².",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "5 × 0,01 = 0,05.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:029",
+          "enonce": "On écrit 360 000 = 3,6 × 10ⁿ. Donne n.",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "3,6 × 100 000 = 360 000.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:030",
+          "enonce": "Que vaut √49 ?",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "√49 désigne le nombre positif dont le carré vaut 49.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "−7",
+            "7 ou −7",
+            "24,5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:031",
+          "enonce": "Pour quels réels a la racine carrée √a est-elle définie ?",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "Un carré n'est jamais négatif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour tout réel a",
+            "Pour a ⩾ 0",
+            "Pour a > 1",
+            "Pour a entier"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:032",
+          "enonce": "Pour a ⩾ 0, que vaut (√a)² ?",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "Par définition, le carré de √a vaut a.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2a",
+            "√a",
+            "a",
+            "a²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:033",
+          "enonce": "Que vaut √((−5)²) ?",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "√((−5)²) = √25 = 5 = |−5|.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−5",
+            "25",
+            "Il n'existe pas",
+            "5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:034",
+          "enonce": "Comment simplifier √50 ?",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "50 = 25 × 2 et √25 = 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5√2",
+            "25√2",
+            "2√5",
+            "10√5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:035",
+          "enonce": "Que donne la somme √50 + √8 une fois simplifiée ?",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "5√2 + 2√2 = 7√2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√58",
+            "7√2",
+            "9√2",
+            "7√4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:036",
+          "enonce": "Quel nombre est égal à 1/√2 sans racine au dénominateur ?",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "On multiplie en haut et en bas par √2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2/√2",
+            "√2",
+            "√2/2",
+            "1/2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:037",
+          "enonce": "Quel nombre est égal à √3 × √12 ?",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "√3 × √12 = √36 = 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√15",
+            "36",
+            "3√2",
+            "6"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:038",
+          "enonce": "Pour un réel x quelconque, à quoi est égal √(x²) ?",
+          "notion": "Racines carrées",
+          "difficulte": 3,
+          "explication": "Si x < 0, √(x²) = −x : c'est la valeur absolue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "|x|",
+            "x",
+            "−x",
+            "x²"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:039",
+          "enonce": "Dans la démonstration de √(a + b) < √a + √b, que compare-t-on ?",
+          "notion": "Racines carrées",
+          "difficulte": 3,
+          "explication": "(√a + √b)² = a + b + 2√a√b > a + b.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les inverses des deux nombres",
+            "Les carrés des deux nombres positifs",
+            "Les valeurs approchées à la calculatrice",
+            "Les racines de a et b séparément"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:040",
+          "enonce": "Parmi ces racines carrées, lesquelles sont correctement calculées ? Coche toutes les réponses exactes.",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "La racine d'un nombre positif est positive.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "√0,25 = 0,5",
+            "√4 = −2",
+            "√0 = 0",
+            "√9 = 4,5",
+            "√1 = 1"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:041",
+          "enonce": "Quelles égalités sont vraies pour a = 9 et b = 16 ? Coche toutes les réponses exactes.",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "√144 = 12 = 3 × 4 ; √25 = 5, alors que √9 + √16 = 7.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "√(a + b) = 5",
+            "√(ab) = 144",
+            "√(ab) = √a × √b",
+            "√(a + b) = √a + √b",
+            "√a + √b = 25"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:042",
+          "enonce": "Quelles écritures donnent le nombre 2√6 ? Coche toutes les réponses exactes.",
+          "notion": "Racines carrées",
+          "difficulte": 3,
+          "explication": "√24 = √(4 × 6) = 2√6 ; √2 × √12 = √24 ; √6 + √6 = 2√6 ; √12 = 2√3 et 2 + √6 ≠ 2√6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "√6 + √6",
+            "2 + √6",
+            "√2 × √12",
+            "√24",
+            "√12"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:043",
+          "enonce": "√(−4) = −2.",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "La racine d'un nombre négatif n'existe pas ; et une racine carrée est toujours positive.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:044",
+          "enonce": "√(9 + 16) = √9 + √16.",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "√25 = 5, alors que √9 + √16 = 7.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:045",
+          "enonce": "Pour a ⩾ 0 et b ⩾ 0, √(ab) = √a × √b.",
+          "notion": "Racines carrées",
+          "difficulte": 2,
+          "explication": "C'est une propriété démontrée dans le cours.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:046",
+          "enonce": "Pour tout réel x, √(x²) = x.",
+          "notion": "Racines carrées",
+          "difficulte": 3,
+          "explication": "Contre-exemple : x = −3 donne √9 = 3 ≠ −3. En fait √(x²) = |x|.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:047",
+          "enonce": "Calcule √144. Réponds par un nombre.",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "12² = 144.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:048",
+          "enonce": "On écrit √72 = a√2 avec a entier. Donne a.",
+          "notion": "Racines carrées",
+          "difficulte": 3,
+          "explication": "72 = 36 × 2 et √36 = 6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:049",
+          "enonce": "Quel est le développement de 3(2x − 5) ?",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "On multiplie chaque terme par 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6x − 5",
+            "5x − 15",
+            "6x − 15",
+            "6x + 15"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:050",
+          "enonce": "En développant −2(x − 4), qu'obtient-on ?",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "−2 × (−4) = +8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2x − 8",
+            "−2x − 4",
+            "2x + 8",
+            "−2x + 8"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:051",
+          "enonce": "Que signifie « développer » une expression ?",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "Factoriser est l'opération inverse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Transformer un produit en somme",
+            "Transformer une somme en produit",
+            "Calculer sa valeur pour x = 0",
+            "Écrire une fraction"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:052",
+          "enonce": "Quelle est la forme développée réduite de (x + 3)(2x − 1) ?",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "2x² − x + 6x − 3 = 2x² + 5x − 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2x² − 3",
+            "2x² + 5x − 3",
+            "2x² + 7x − 3",
+            "3x + 2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:053",
+          "enonce": "Que devient 5 − (x − 2) quand on supprime les parenthèses ?",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "Le signe moins change les signes : 5 − x + 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 − x",
+            "3 + x",
+            "7 − x",
+            "7 + x"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:054",
+          "enonce": "On développe (x − 1)(x + 4). Quel coefficient trouve-t-on devant x ?",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "x² + 4x − x − 4 = x² + 3x − 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "−4",
+            "4",
+            "3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:055",
+          "enonce": "Quelle est la forme réduite de (2x − 1)(x + 3) − 2x(x + 1) ?",
+          "notion": "Développer et réduire",
+          "difficulte": 3,
+          "explication": "2x² + 5x − 3 − 2x² − 2x = 3x − 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3x − 3",
+            "4x² + 3x − 3",
+            "x − 3",
+            "5x − 3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:056",
+          "enonce": "Quels développements sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "Il faut multiplier chaque terme, avec son signe.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x(x − 3) = x² − 3x",
+            "5(x − 2) = 5x − 2",
+            "2(3x − 1) = 6x − 1",
+            "4(x + 2) = 4x + 8",
+            "−(x + 1) = −x + 1"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:057",
+          "enonce": "Quels produits redonnent x² − x − 6 une fois développés ? Coche toutes les réponses exactes.",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "(x − 3)(x + 2) = x² + 2x − 3x − 6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(x − 3)²",
+            "(x − 3)(x + 2)",
+            "(x + 2)(x − 3)",
+            "(x + 3)(x − 2)",
+            "(x − 6)(x + 1)"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:058",
+          "enonce": "3(x + 4) = 3x + 4.",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "On multiplie aussi 4 par 3 : 3x + 12.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:059",
+          "enonce": "(x + 1)(x + 2) = x² + 3x + 2.",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "x² + 2x + x + 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:060",
+          "enonce": "Si une égalité entre deux expressions est vraie pour x = 0, x = 1 et x = 2, elle est vraie pour tout x.",
+          "notion": "Développer et réduire",
+          "difficulte": 3,
+          "explication": "Des tests ne démontrent pas une égalité ; il faut développer.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:061",
+          "enonce": "On développe (x + 5)(x − 2) = x² + bx − 10. Donne b.",
+          "notion": "Développer et réduire",
+          "difficulte": 2,
+          "explication": "−2x + 5x = 3x.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:062",
+          "enonce": "Quel est le développement de (a + b)² ?",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "C'est la première identité remarquable.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a² + b²",
+            "a² + 2ab + b²",
+            "a² + ab + b²",
+            "2a + 2b"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:063",
+          "enonce": "Quel résultat donne le produit (a − b)(a + b) ?",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "Les termes −ab et +ab s'annulent.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a² + b²",
+            "a² − 2ab + b²",
+            "a² − b²",
+            "(a − b)²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:064",
+          "enonce": "Quelle expression développée correspond à (x + 5)² ?",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "2 × x × 5 = 10x.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x² + 25",
+            "x² + 5x + 25",
+            "2x + 10",
+            "x² + 10x + 25"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:065",
+          "enonce": "Avec l'identité (a − b)², que donne (3x − 2)² ?",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "(3x)² − 2 × 3x × 2 + 2².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9x² − 12x + 4",
+            "9x² − 4",
+            "3x² − 12x + 4",
+            "9x² − 6x + 4"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:066",
+          "enonce": "Le produit (2x + 7)(2x − 7) vaut :",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "(2x)² − 7².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4x² + 49",
+            "4x² − 49",
+            "2x² − 49",
+            "4x² − 28x − 49"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:067",
+          "enonce": "Comment calculer mentalement 49 × 51 ?",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "C'est l'identité (a − b)(a + b) = a² − b².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "49 × 50 + 1 = 2 451",
+            "50 × 50 = 2 500",
+            "(50 − 1)(50 + 1) = 2 500 − 1 = 2 499",
+            "(50 − 1)² = 2 401"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:068",
+          "enonce": "Que vaut 101² calculé avec une identité remarquable ?",
+          "notion": "Identités remarquables",
+          "difficulte": 3,
+          "explication": "(100 + 1)² = 10 000 + 200 + 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10 001",
+            "10 101",
+            "1 021",
+            "10 201"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:069",
+          "enonce": "Dans l'illustration géométrique de (a + b)², que représentent les deux rectangles ?",
+          "notion": "Identités remarquables",
+          "difficulte": 3,
+          "explication": "Le grand carré se découpe en a², b² et deux rectangles a × b.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux aires égales à ab, soit le terme 2ab",
+            "Les aires a² et b²",
+            "L'aire totale (a + b)²",
+            "Le périmètre du grand carré"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:070",
+          "enonce": "Quelles égalités sont des identités remarquables exactes ? Coche toutes les réponses exactes.",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "Il ne faut pas oublier le double produit.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(a − b)² = a² − 2ab + b²",
+            "(a + b)² = a² + b²",
+            "(a + b)² = a² + ab + b²",
+            "(a − b)² = a² − b²",
+            "(a + b)(a − b) = a² − b²"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:071",
+          "enonce": "Le carré (x − 4)² peut s'écrire de plusieurs façons. Lesquelles sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "(4 − x)² = (x − 4)², car un nombre et son opposé ont le même carré.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(4 − x)²",
+            "x² − 16",
+            "x² − 8x + 16",
+            "x² − 4x + 16",
+            "x² + 16"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:072",
+          "enonce": "Pour quelles valeurs a et b a-t-on (a + b)² = a² + b² ? Coche toutes les réponses exactes.",
+          "notion": "Identités remarquables",
+          "difficulte": 3,
+          "explication": "Il faut 2ab = 0, donc a = 0 ou b = 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a = 1 et b = 1",
+            "a = −3 et b = −3",
+            "a = 0 et b = 3",
+            "a = 5 et b = 0",
+            "a = 2 et b = −1"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:073",
+          "enonce": "(x + 3)² = x² + 9.",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "Il manque le double produit : (x + 3)² = x² + 6x + 9.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:074",
+          "enonce": "(x − 1)(x + 1) = x² − 1.",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "C'est l'identité (a − b)(a + b) = a² − b².",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:075",
+          "enonce": "(a − b)² = (b − a)² pour tous réels a et b.",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "b − a = −(a − b) et (−u)² = u².",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:076",
+          "enonce": "On développe (x + 6)² = x² + bx + 36. Donne b.",
+          "notion": "Identités remarquables",
+          "difficulte": 2,
+          "explication": "2 × x × 6 = 12x.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:077",
+          "enonce": "Calcule 99² sans calculatrice. Réponds par un nombre sans espace.",
+          "notion": "Identités remarquables",
+          "difficulte": 3,
+          "explication": "(100 − 1)² = 10 000 − 200 + 1 = 9 801.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "9801"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:078",
+          "enonce": "Quelle est une factorisation de 6x + 9 ?",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "3 est un facteur commun à 6x et à 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6(x + 9)",
+            "3(2x + 3)",
+            "3(2x + 9)",
+            "9(6x + 1)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:079",
+          "enonce": "Quelle écriture factorise x² − 5x ?",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "x est un facteur commun.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x(x − 5x)",
+            "5x(x − 1)",
+            "x(x − 5)",
+            "(x − 5)²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:080",
+          "enonce": "Que signifie « factoriser » une expression ?",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "C'est l'inverse de développer.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'écrire sous forme d'une somme",
+            "Calculer sa valeur",
+            "Supprimer les parenthèses",
+            "L'écrire sous forme d'un produit"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:081",
+          "enonce": "Quelle identité permet de factoriser x² − 49 ?",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "x² − 49 = x² − 7² = (x − 7)(x + 7).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a² − b² = (a − b)(a + b)",
+            "(a + b)² = a² + 2ab + b²",
+            "(a − b)² = a² − 2ab + b²",
+            "ka + kb = k(a + b)"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:082",
+          "enonce": "Que donne x² + 6x + 9 une fois factorisé ?",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "x² + 2 × x × 3 + 3².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(x + 9)²",
+            "(x + 3)²",
+            "(x + 3)(x − 3)",
+            "x(x + 6) + 9"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:083",
+          "enonce": "Quelle est la forme factorisée de 4x² − 20x + 25 ?",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "(2x)² − 2 × 2x × 5 + 5².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(4x − 5)²",
+            "(2x + 5)²",
+            "(2x − 5)²",
+            "(2x − 5)(2x + 5)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:084",
+          "enonce": "Le facteur commun de (x + 1)(x − 3) + (x + 1)(2x + 5) est :",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "(x + 1) apparaît dans les deux termes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x − 3",
+            "2x + 5",
+            "x",
+            "x + 1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:085",
+          "enonce": "Quelle est la forme factorisée de (x + 1)(x − 3) + (x + 1)(2x + 5) ?",
+          "notion": "Factoriser",
+          "difficulte": 3,
+          "explication": "(x + 1)[(x − 3) + (2x + 5)] = (x + 1)(3x + 2).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(x + 1)(3x + 2)",
+            "(x + 1)(x + 8)",
+            "(x + 1)²(3x + 2)",
+            "(x + 1)(3x − 8)"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:086",
+          "enonce": "Comment factoriser (x + 2)² − 16 ?",
+          "notion": "Factoriser",
+          "difficulte": 3,
+          "explication": "a² − b² avec a = x + 2 et b = 4 : (x + 2 − 4)(x + 2 + 4).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(x + 2 − 16)(x + 2 + 16)",
+            "(x − 2)(x + 6)",
+            "(x − 14)(x + 18)",
+            "(x + 6)²"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:087",
+          "enonce": "Quelle factorisation de 9x² − 1 est correcte ?",
+          "notion": "Factoriser",
+          "difficulte": 3,
+          "explication": "(3x)² − 1².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(9x − 1)(9x + 1)",
+            "(3x − 1)²",
+            "(3x − 1)(3x + 1)",
+            "9(x − 1)(x + 1)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:088",
+          "enonce": "Quelles écritures sont des factorisations de 10x + 15 ? Coche toutes les réponses exactes.",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "5 × 2x + 5 × 3 ; 10 × x + 10 × 1,5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10x + 15",
+            "5(2x + 15)",
+            "5(2x + 3)",
+            "(10x + 15) × 1 + 0",
+            "10(x + 1,5)"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:089",
+          "enonce": "Quelles expressions se factorisent avec l'identité a² − b² ? Coche toutes les réponses exactes.",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "x² + 25 est une somme ; x² − 10x + 25 = (x − 5)².",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² − 10x + 25",
+            "x² − 25",
+            "x² + 25",
+            "4x² − 9",
+            "16 − x²"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:090",
+          "enonce": "Quelles expressions sont égales à (x − 1)(x + 1) − 3(x + 1) ? Coche toutes les réponses exactes.",
+          "notion": "Factoriser",
+          "difficulte": 3,
+          "explication": "On factorise par x + 1 : (x + 1)(x − 1 − 3).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(x − 1)(x − 2)",
+            "x² − 3x − 4",
+            "(x + 1)(x − 4)",
+            "(x + 1)(x − 2)",
+            "x² − 3x − 2"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:091",
+          "enonce": "x² − 9 = (x − 3)(x + 3).",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "C'est l'identité a² − b² avec a = x et b = 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:092",
+          "enonce": "x² + 4 se factorise en (x + 2)(x − 2).",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "(x + 2)(x − 2) = x² − 4 ; une somme de deux carrés ne se factorise pas ainsi.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:093",
+          "enonce": "x² − 14x + 49 = (x − 7)².",
+          "notion": "Factoriser",
+          "difficulte": 3,
+          "explication": "x² − 2 × x × 7 + 7².",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:094",
+          "enonce": "On factorise x² − 64 = (x − a)(x + a) avec a > 0. Donne a.",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "64 = 8².",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:095",
+          "enonce": "Pour A(x) = (x − 3)² − 4, quelle forme permet de résoudre A(x) = 0 le plus facilement ?",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 2,
+          "explication": "Un produit est nul si et seulement si l'un des facteurs est nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La forme développée x² − 6x + 5",
+            "La forme (x − 3)² − 4",
+            "Aucune, il faut la calculatrice",
+            "La forme factorisée (x − 1)(x − 5)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:096",
+          "enonce": "Pour A(x) = (x − 1)(x − 5), quelle forme donne directement A(0) ?",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 2,
+          "explication": "On lit A(0) = 5, le terme constant.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La forme développée x² − 6x + 5",
+            "La forme factorisée seule",
+            "Aucune forme",
+            "La forme (x − 3)² + 4"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:097",
+          "enonce": "Pourquoi l'écriture (x − 3)² − 4 montre-t-elle que A(x) ⩾ −4 pour tout x ?",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 3,
+          "explication": "(x − 3)² ⩾ 0, donc (x − 3)² − 4 ⩾ −4 ; égalité pour x = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car x − 3 est toujours positif",
+            "Car un carré est toujours positif ou nul",
+            "Car −4 est négatif",
+            "Car A(3) = 0"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:098",
+          "enonce": "Pour A(x) = (x − 3)² − 4, quelles écritures sont égales à A(x) ? Coche toutes les réponses exactes.",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 2,
+          "explication": "(x − 3)² − 4 = x² − 6x + 9 − 4 = x² − 6x + 5 = (x − 1)(x − 5).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² − 6x + 5",
+            "(x − 1)(x − 5)",
+            "x² − 6x − 5",
+            "(x − 3)(x + 3) − 4",
+            "(x + 1)(x + 5)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:099",
+          "enonce": "Une même expression peut s'écrire sous plusieurs formes égales.",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 2,
+          "explication": "Développée, factorisée ou autre : on choisit selon le problème.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:100",
+          "enonce": "Pour résoudre x² − 6x + 5 = 0, la forme développée est la plus pratique.",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 3,
+          "explication": "La forme factorisée (x − 1)(x − 5) donne directement x = 1 ou x = 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:101",
+          "enonce": "A(x) = (x − 3)² − 4 atteint sa plus petite valeur pour une valeur de x. Laquelle ? Réponds par un nombre.",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 3,
+          "explication": "Le carré (x − 3)² est nul pour x = 3 : A(3) = −4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:102",
+          "enonce": "Pour quelle valeur de x l'expression 5/(x − 2) n'est-elle pas définie ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 1,
+          "explication": "x = 2 annule le dénominateur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "−2",
+            "2",
+            "0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:103",
+          "enonce": "Que vaut 1/x + 2/3, pour x ≠ 0, sur un seul trait de fraction ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "Dénominateur commun 3x.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3/(x + 3)",
+            "(1 + 2)/(x + 3)",
+            "(2 + x)/(3x)",
+            "(3 + 2x)/(3x)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:104",
+          "enonce": "Que donne (x/2) × (4/x²), pour x ≠ 0, après simplification ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "4x/(2x²) = 2/x.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2/x",
+            "2x",
+            "4/(2x)²",
+            "x/2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:105",
+          "enonce": "Pour x ≠ 1, comment s'écrit 2 − 3/(x − 1) sur un seul trait de fraction ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "2(x − 1) − 3 = 2x − 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(2x − 1)/(x − 1)",
+            "(2x − 5)/(x − 1)",
+            "−1/(x − 1)",
+            "(2x + 1)/(x − 1)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:106",
+          "enonce": "Pour comparer deux nombres A et B, on calcule A − B = −0,2. Que conclure ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 3,
+          "explication": "Une différence négative signifie que A est plus petit que B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A > B",
+            "A = B",
+            "A < B",
+            "On ne peut rien conclure"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:107",
+          "enonce": "Deux nombres positifs vérifient A/B = 1,05. Que conclure ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 3,
+          "explication": "Pour des nombres strictement positifs, un quotient supérieur à 1 signifie A > B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A < B",
+            "A = B",
+            "A − B = 1,05",
+            "A > B"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:108",
+          "enonce": "Quelles valeurs de x sont interdites dans 7/(x(x + 3)) ? Coche toutes les réponses exactes.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 1,
+          "explication": "Le dénominateur est nul pour x = 0 ou x = −3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0",
+            "1",
+            "3",
+            "−3",
+            "7"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:109",
+          "enonce": "Pour x ≠ 0, quels calculs de fractions sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "x/3 + x/6 = 2x/6 + x/6 = 3x/6 ; on ne simplifie pas une somme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1/(2x) = 2/x",
+            "(x + 3)/x = 3",
+            "(2/x) × (x/4) = 1/2",
+            "x/3 + x/6 = x/2",
+            "1/x + 1/x = 2/(2x)"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:110",
+          "enonce": "On peut simplifier (x + 3)/x en 3.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 1,
+          "explication": "On ne simplifie que des facteurs, pas des termes d'une somme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:111",
+          "enonce": "Pour x ≠ 0, 1/x + 1/x = 2/x.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "Même dénominateur : on additionne les numérateurs.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:112",
+          "enonce": "Quelle valeur de x est interdite dans (x + 1)/(2x − 8) ? Réponds par un nombre.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "2x − 8 = 0 pour x = 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:113",
+          "enonce": "Dans la loi d'Ohm U = RI, comment exprime-t-on I ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On divise les deux membres par R.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "I = U/R",
+            "I = UR",
+            "I = R/U",
+            "I = U − R"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:114",
+          "enonce": "Avec d = vt, comment exprimer la durée t ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On divise par v.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "t = dv",
+            "t = d/v",
+            "t = v/d",
+            "t = d − v"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:115",
+          "enonce": "Avec S = πr², comment exprimer le rayon r, sachant que r ⩾ 0 ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 2,
+          "explication": "r² = S/π et r est positif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "r = S/π",
+            "r = √S/π²",
+            "r = √(S/π)",
+            "r = (S/π)²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:116",
+          "enonce": "Avec V = abc, comment exprimer c ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 2,
+          "explication": "On divise par ab.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "c = Vab",
+            "c = V − ab",
+            "c = ab/V",
+            "c = V/(ab)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:117",
+          "enonce": "Avec 2x + 3y = 12, comment exprimer y en fonction de x ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 2,
+          "explication": "3y = 12 − 2x, puis on divise par 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "y = 4 − (2/3)x",
+            "y = 12 − 2x",
+            "y = 4 − 2x",
+            "y = (12 + 2x)/3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:118",
+          "enonce": "Avec V = πr²h, quelle est la hauteur d'un cylindre de volume 500 cm³ et de rayon 5 cm, arrondie au dixième ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 3,
+          "explication": "h = 500/(25π) ≈ 6,37.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20 cm",
+            "6,4 cm",
+            "31,8 cm",
+            "2,0 cm"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:119",
+          "enonce": "Avec ax + by = c et b ≠ 0, quelle est l'expression de y ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 3,
+          "explication": "by = c − ax.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "y = c − ax − b",
+            "y = (c + ax)/b",
+            "y = (c − ax)/b",
+            "y = b(c − ax)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:120",
+          "enonce": "À partir de d = vt, quelles égalités sont justes (v et t non nuls) ? Coche toutes les réponses exactes.",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On isole la grandeur cherchée en divisant.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "v = dt",
+            "v = d/t",
+            "d = v/t",
+            "t = d/v",
+            "t = v/d"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:121",
+          "enonce": "Avec P = 2(L + l), quelles expressions de L sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Exprimer une variable",
+          "difficulte": 3,
+          "explication": "L + l = P/2, donc L = P/2 − l = (P − 2l)/2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L = P/2 − l",
+            "L = P − 2l",
+            "L = P/(2l)",
+            "L = 2P − l",
+            "L = (P − 2l)/2"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:122",
+          "enonce": "Si U = RI avec R ≠ 0, alors I = U/R.",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On divise par R.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:123",
+          "enonce": "Si S = πr² avec r ⩾ 0, alors r = S/π.",
+          "notion": "Exprimer une variable",
+          "difficulte": 2,
+          "explication": "r² = S/π, donc r = √(S/π).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:124",
+          "enonce": "Un trajet de 150 km est parcouru à 60 km/h. Quelle est sa durée en heures ? Réponds par un nombre.",
+          "notion": "Exprimer une variable",
+          "difficulte": 2,
+          "explication": "t = d/v = 150/60 = 2,5 h.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2,5",
+            "2.5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:125",
+          "enonce": "Une résistance de 20 ohms est traversée par un courant de 0,5 ampère. Quelle est la tension U = RI en volts ? Réponds par un nombre.",
+          "notion": "Exprimer une variable",
+          "difficulte": 3,
+          "explication": "U = 20 × 0,5 = 10 V.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:126",
+          "enonce": "Dans (a + b)² = a² + 2ab + b², comment appelle-t-on le terme 2ab ?",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "C'est le terme qu'on oublie souvent.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le carré de a",
+            "La différence",
+            "Le facteur commun",
+            "Le double produit"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:127",
+          "enonce": "Quel nombre positif a pour carré 0,81 ?",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "0,9 × 0,9 = 0,81, donc √0,81 = 0,9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,9",
+            "0,09",
+            "9",
+            "0,405"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:128",
+          "enonce": "Quel est le facteur commun aux termes de 7x² + 14x ?",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "7x² + 14x = 7x(x + 2).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "7x",
+            "x²",
+            "14x"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:129",
+          "enonce": "Avec l'aire d'un rectangle A = L × l, comment exprimer la largeur l ?",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On divise par L.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "l = A × L",
+            "l = L/A",
+            "l = A/L",
+            "l = A − L"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:130",
+          "enonce": "Combien de termes obtient-on avant réduction en développant (a + b)(c + d) ?",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "ac + ad + bc + bd.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "3",
+            "6",
+            "4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:131",
+          "enonce": "√16 = 4.",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "4 est positif et 4² = 16.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:132",
+          "enonce": "L'écriture 12 × 10³ est une écriture scientifique.",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "12 n'est pas compris entre 1 et 10 : on écrit 1,2 × 10⁴.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:133",
+          "enonce": "L'expression 3/x n'est pas définie pour x = 0.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 1,
+          "explication": "On ne divise pas par 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch4:banque:134",
+          "enonce": "Avec d = vt, on a v = d × t.",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "v = d/t.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:135",
+          "enonce": "On factorise 5x + 20 = 5(x + a). Donne a.",
+          "notion": "Factoriser",
+          "difficulte": 1,
+          "explication": "5 × 4 = 20.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:136",
+          "enonce": "Combien vaut 10³ ? Réponds par un nombre sans espace.",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "10 × 10 × 10 = 1000.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1000"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch4:banque:137",
+          "enonce": "Quelles écritures sont égales à 3 000 ? Coche toutes les réponses exactes.",
+          "notion": "Écriture scientifique",
+          "difficulte": 1,
+          "explication": "3 × 1000 et 30 × 100 ; 3³ = 27.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "30 × 10²",
+            "3 × 10⁴",
+            "0,3 × 10³",
+            "3 × 10³",
+            "3³"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:138",
+          "enonce": "Parmi ces expressions, lesquelles sont écrites sous forme factorisée ? Coche toutes les réponses exactes.",
+          "notion": "Choisir la forme adaptée",
+          "difficulte": 1,
+          "explication": "Une forme factorisée est un produit ; x² − 9 est une différence.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3x(x + 1)",
+            "x² − 9",
+            "x(x + 1) + 2",
+            "(x − 2)(x + 7)",
+            "x² + 5x − 14"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:139",
+          "enonce": "Pour quelles valeurs de x l'expression 1/(x² − 4) n'est-elle pas définie ? Coche toutes les réponses exactes.",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 2,
+          "explication": "x² − 4 = (x − 2)(x + 2) s'annule pour x = 2 et x = −2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "2",
+            "4",
+            "−2",
+            "−4",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:140",
+          "enonce": "Quelle puissance de 5 désigne l'inverse de 5 ?",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "5⁻¹ = 1/5 : l'exposant −1 indique l'inverse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5⁻¹",
+            "−5",
+            "5¹",
+            "−5⁻¹"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:141",
+          "enonce": "En développant 4(x + 3), on obtient :",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "4 × x + 4 × 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4x + 3",
+            "4x + 12",
+            "x + 12",
+            "4x + 7"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:142",
+          "enonce": "Quel est le dénominateur commun le plus simple pour additionner x/4 et x/6 ?",
+          "notion": "Expressions fractionnaires",
+          "difficulte": 1,
+          "explication": "12 est le plus petit multiple commun de 4 et de 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "24",
+            "10",
+            "12",
+            "4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:143",
+          "enonce": "Lesquels de ces produits valent a² − b² une fois développés ? Coche toutes les réponses exactes.",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "L'ordre des facteurs ne compte pas ; (a − b)² et (a + b)² contiennent un double produit.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a(a − b²)",
+            "(a + b)²",
+            "(a − b)(a + b)",
+            "(a − b)²",
+            "(a + b)(a − b)"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:144",
+          "enonce": "Quelles expressions sont écrites sous forme de somme (forme développée) ? Coche toutes les réponses exactes.",
+          "notion": "Développer et réduire",
+          "difficulte": 1,
+          "explication": "Les trois dernières sont des produits.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x(x + 3)",
+            "x² + 3x",
+            "(x + 1)²",
+            "2x − 7",
+            "2(x − 7)"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:145",
+          "enonce": "Quels nombres ont une racine carrée entière ? Coche toutes les réponses exactes.",
+          "notion": "Racines carrées",
+          "difficulte": 1,
+          "explication": "√36 = 6, √81 = 9, √1 = 1 ; √50 = 5√2 et √8 = 2√2 ne sont pas entiers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "36",
+            "8",
+            "50",
+            "1",
+            "81"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:146",
+          "enonce": "La formule A = L × l donne l'aire d'un rectangle. Quelles égalités en découlent, pour L et l non nuls ? Coche toutes les réponses exactes.",
+          "notion": "Exprimer une variable",
+          "difficulte": 1,
+          "explication": "On isole une longueur en divisant l'aire par l'autre longueur.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L = A × l",
+            "l = A/L",
+            "A = L/l",
+            "L = A/l",
+            "l = L − A"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:147",
+          "enonce": "Quelles puissances de 10 sont strictement inférieures à 1 ? Coche toutes les réponses exactes.",
+          "notion": "Puissances",
+          "difficulte": 1,
+          "explication": "10⁰ = 1 ; les exposants négatifs donnent 0,1 et 0,001.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10²",
+            "10⁻¹",
+            "10¹",
+            "10⁰",
+            "10⁻³"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:148",
+          "enonce": "Dans quelles expressions x est-il un facteur commun à tous les termes ? Coche toutes les réponses exactes.",
+          "notion": "Factoriser",
+          "difficulte": 2,
+          "explication": "x² − 3x = x(x − 3) et 5x + x³ = x(5 + x²) ; dans les autres, un terme ne contient pas x.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5x + x³",
+            "x² − 3",
+            "x + 1",
+            "4 − x",
+            "x² − 3x"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:149",
+          "enonce": "Quels nombres sont strictement plus grands que 10⁶ ? Coche toutes les réponses exactes.",
+          "notion": "Écriture scientifique",
+          "difficulte": 2,
+          "explication": "On compare d'abord les exposants, puis les nombres devant.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10⁻⁶",
+            "9,9 × 10⁵",
+            "1,1 × 10⁷",
+            "2,5 × 10⁶",
+            "5 × 10³"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch4:banque:150",
+          "enonce": "Pour tous réels a et b, (a + b)² est égal à a² + 2ab + b².",
+          "notion": "Identités remarquables",
+          "difficulte": 1,
+          "explication": "C'est la première identité remarquable.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
         }
       ]
     }
