@@ -260,3 +260,12 @@ describe('messageErreur, comptes parents', () => {
     for (const r of ['eleve', 'enseignant', 'admin', null, undefined]) expect(destinataireDuRole(r)).toBe('eleve');
   });
 });
+
+describe('messageErreur, consentement_retire sur la page d’accord', () => {
+  it('garde le tutoiement pour l’élève', () => {
+    expect(messageErreur('consentement_retire')).toBe('Ton parent a retiré son accord\u00a0: tu ne peux pas faire de nouvelle demande.');
+  });
+  it('vouvoie le parent', () => {
+    expect(messageErreur('consentement_retire', 'parent')).toBe('L’accord a été retiré\u00a0: cette page ne permet plus de le donner.');
+  });
+});

@@ -10,7 +10,7 @@ export default async function PagePartage() {
   const actifDepuis = await dateLienIcal();
   return (
     <div className="page-partage">
-      <p><Link href="/calendrier">← Mon calendrier</Link></p>
+      <p><Link href="/calendrier" className="lien-action">← Mon calendrier</Link></p>
       <h1>Ajouter mon calendrier à un autre agenda</h1>
       <p>Avec ce lien privé, Google Agenda, le Calendrier d’Apple ou Outlook affichent tes révisions, tes devoirs, tes examens et les échéances de tes classes. Ils se mettent à jour seuls, en général en quelques heures.</p>
       <p className="message-info">Ce lien donne accès à ton calendrier sans mot de passe&nbsp;: ne le partage pas. Tu peux le révoquer à tout moment.</p>

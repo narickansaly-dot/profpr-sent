@@ -87,8 +87,8 @@ describe('renforcement du format', () => {
     expect(r.success).toBe(false);
     expect(r.error?.issues[0].message).toBe(MESSAGE_COULEUR);
   });
-  it('contenu/1re-st2s/bph.json est valide', () => {
-    const brut = JSON.parse(readFileSync('contenu/1re-st2s/bph.json', 'utf8'));
+  it.each(['bph', 'stss'])('contenu/1re-st2s/%s.json est valide', (nom) => {
+    const brut = JSON.parse(readFileSync(`contenu/1re-st2s/${nom}.json`, 'utf8'));
     const r = schemaCoursImport.safeParse(brut);
     expect(r.error?.issues ?? []).toEqual([]);
   });

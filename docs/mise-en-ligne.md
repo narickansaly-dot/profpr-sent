@@ -11,6 +11,12 @@ Ce guide liste ce qui se règle à la main pour publier l'application. Rien n'es
 
       npx tsx --env-file=.env.distant scripts/importer-contenu.ts contenu/1re-st2s/bph.json --publier --distant
 
+  Pour le cours de STSS, la même commande **sans `--publier`** :
+
+      npx tsx --env-file=.env.distant scripts/importer-contenu.ts contenu/1re-st2s/stss.json --garder-statuts --distant
+
+  Avertissement : ne jamais ajouter `--publier` : c'est l'enseignant qui publie, chapitre par chapitre, depuis l'admin.
+
   Ce fichier ne s'appelle pas `.env.production.local` à dessein : Next charge automatiquement `.env.production.local` pour `next build` et `next start`, et un fichier oublié ferait tourner `npm run e2e` contre la base de production. Ouvre un nouveau terminal sans variable Supabase exportée : une variable déjà définie dans le shell l'emporte sur `--env-file`.
 
   C'est la commande du script `import:contenu` de `package.json`, avec le fichier d'environnement de production à la place de `.env.local`. Sans `--distant`, le script refuse toute base qui n'est pas locale. Supprimer le fichier ensuite (ou ne le garder que sur un poste de confiance).

@@ -34,7 +34,7 @@ export default async function PageMesDonnees() {
         <Link href="/" className="logo">App lycée</Link>
         <BoutonDeconnexion prenom={profil.nom} />
       </header>
-      <main className="conteneur">
+      <main id="contenu" tabIndex={-1} className="conteneur">
         <h1>Mes données</h1>
         <section aria-labelledby="titre-export">
           <h2 id="titre-export">Télécharger mes données</h2>
@@ -53,14 +53,14 @@ export default async function PageMesDonnees() {
             {enfants.length === 0 ? <p>Aucun enfant n’est relié à votre compte.</p> : (
               <ul>{enfants.map((e) => <li key={e.eleveId}>{e.nom}</li>)}</ul>
             )}
-            <p><Link href="/parent">Suivre la progression de vos enfants</Link></p>
+            <p><Link href="/parent" className="lien-action">Suivre la progression de vos enfants</Link></p>
           </section>
         )}
         <section aria-labelledby="titre-suppression">
           <h2 id="titre-suppression">Supprimer mon compte</h2>
           <SuppressionCompte parent={parent} imposee={profil.suppression_imposee} enseignant={profil.role === 'enseignant'} dateSuppression={profil.suppression_demandee_le ? formaterDateSuppression(profil.suppression_demandee_le) : null} />
         </section>
-        <p><Link href="/">Retour à l’accueil</Link></p>
+        <p><Link href="/" className="lien-action">Retour à l’accueil</Link></p>
       </main>
     </>
   );

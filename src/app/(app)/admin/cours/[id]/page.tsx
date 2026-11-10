@@ -23,7 +23,7 @@ export default async function PageModifierCours({ params }: { params: Promise<{ 
   };
   return (
     <div className="page-admin">
-      <p className="fil"><Link href="/admin">← Retour au suivi du contenu</Link></p>
+      <p className="fil"><Link href="/admin" className="lien-action">← Retour au suivi du contenu</Link></p>
       <h1>Modifier le cours</h1>
       <section className="carte" aria-labelledby="titre-formulaire">
         <h2 id="titre-formulaire" className="sr-only">Informations du cours</h2>

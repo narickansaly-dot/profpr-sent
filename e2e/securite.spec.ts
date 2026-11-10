@@ -44,6 +44,20 @@ test('la page hors connexion ne déclenche aucune violation de CSP', async ({ pa
   expect(violations).toEqual([]);
 });
 
+test('les pages introuvables répondent 404 sans violation de CSP', async ({ page }) => {
+  const violations = await suivreViolations(page);
+  await page.goto('/connexion');
+  await inscrireEleve(page, emailDeTest('csp-404'));
+  for (const chemin of ['/page-qui-n-existe-pas', '/cours/cours-inexistant']) {
+    const reponse = await page.goto(chemin);
+    expect(reponse?.status()).toBe(404);
+    await expect(page).toHaveTitle(/Page introuvable/);
+    await expect(page.getByRole('heading', { name: 'Page introuvable' })).toBeVisible();
+  }
+  await page.waitForLoadState('networkidle');
+  expect(violations).toEqual([]);
+});
+
 test('aucune violation de CSP sur les pages de l’étape 5a', async ({ page, browser }, testInfo) => {
   test.setTimeout(120_000);
   const violations = await suivreViolations(page);

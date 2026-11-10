@@ -13,7 +13,8 @@ export async function donnerAccord(jeton: string, _: EtatAccord, form: FormData)
   const { data, error } = await supabase.rpc('donner_consentement', { p_jeton: jeton });
   // Le jeton n'est jamais journalisé ; l'erreur reste générique.
   if (error) {
-    return { erreur: error.message.includes('lien_consentement_invalide') ? messageErreur(error.message) : 'Une erreur est survenue. Réessayez dans un instant.' };
+    const connu = error.message.includes('lien_consentement_invalide') || error.message.includes('consentement_retire');
+    return { erreur: connu ? messageErreur(error.message, 'parent') : 'Une erreur est survenue. Réessayez dans un instant.' };
   }
   return { prenom: data ?? '' };
 }

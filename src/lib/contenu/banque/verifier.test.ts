@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { QuestionImport } from '../format-import';
 import { fabriquer } from './fabrique';
 import type { FichierBanque } from './format';
+import { COURS_BANQUE } from './cours';
 import {
   QUOTAS_DIFFICULTE, QUOTAS_TYPES, SEUIL_LONGUEUR, SEUIL_POSITION, SEUIL_SIMILARITE, SEUIL_VRAI_FAUX, TOLERANCE,
   similarite, verifierBanque,
@@ -23,6 +24,26 @@ describe('constantes', () => {
     expect(SEUIL_VRAI_FAUX).toBe(0.6);
     expect(QUOTAS_TYPES).toEqual({ qcm_unique: 65, qcm_multiple: 26, vrai_faux: 26, reponse_courte: 13 });
     expect(QUOTAS_DIFFICULTE).toEqual({ 1: 52, 2: 52, 3: 26 });
+  });
+});
+
+describe('verifierBanque, cours stss', () => {
+  it('accepte une banque stss de 150 questions avec la config stss', () => {
+    expect(verifierBanque(fabriquer(150, 'stss'), [], COURS_BANQUE.stss)).toEqual([]);
+  });
+  it('refuse la même banque avec la config bph', () => {
+    const erreurs = verifierBanque(fabriquer(150, 'stss'), []);
+    expect(erreurs).toContain('source invalide : stss:ch1:banque:001 (attendu bph:ch1:banque:NNN)');
+  });
+  it('refuse une source bph dans une banque stss', () => {
+    const f = fabriquer(150, 'stss');
+    f.questions[0].source = 'bph:ch1:banque:001';
+    expect(verifierBanque(f, [], COURS_BANQUE.stss)).toContain('source invalide : bph:ch1:banque:001 (attendu stss:ch1:banque:NNN)');
+  });
+  it('applique les quotas de 150 questions', () => {
+    const f = fabriquer(130, 'stss');
+    const erreurs = verifierBanque(f, [], COURS_BANQUE.stss);
+    expect(erreurs).toContain('répartition des types : qcm_unique 65 (attendu 75 ± 3)');
   });
 });
 

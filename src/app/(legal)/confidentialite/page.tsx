@@ -44,7 +44,7 @@ export default function PageConfidentialite() {
           de passe Google.
         </li>
         <li>
-          Des données techniques de connexion (adresse IP, appareil, journaux de Supabase Auth et de Vercel), gardées{' '}
+          Des données techniques de connexion (adresse IP, appareil). Le journal de connexion de l’application (Supabase Auth) est gardé 90&nbsp;jours&nbsp;; les journaux de la plateforme d’hébergement (Vercel, plateforme Supabase) sont gardés{' '}
           <ACompleter>durée de conservation des journaux</ACompleter>.
         </li>
       </ul>
@@ -105,6 +105,10 @@ export default function PageConfidentialite() {
           après un retrait par l’enseignant), puis effacés.
         </li>
         <li>Le lien d’accord envoyé à un parent expire au bout de 7&nbsp;jours.</li>
+        <li>Journal de connexion de l’application (Supabase Auth)&nbsp;: 90&nbsp;jours.</li>
+        <li>
+          Adresse d’un parent qui n’a pas donné son accord&nbsp;: effacée 30&nbsp;jours après la demande.
+        </li>
         <li>
           Les dates de tes tentatives de saisie d’un code de classe servent à limiter les essais&nbsp;; celles qui ont plus
           d’une heure sont effacées à ta tentative suivante, et toutes disparaissent avec ton compte.
@@ -165,7 +169,7 @@ export default function PageConfidentialite() {
         <li>
           Accès et export&nbsp;: la page <Link href="/mes-donnees">Mes données</Link> te permet de télécharger un fichier JSON
           avec ton profil, tes classes, ta progression, tes tentatives et tes réponses, ton calendrier, tes préférences
-          et tes appareils (nom et date seulement), ton consentement parental et ton cours gratuit.
+          et tes appareils (nom et date seulement), ton consentement parental, ton cours gratuit, tes parents reliés et les liaisons défaites, ton abonnement, ainsi que tes informations de connexion (fournisseur, dates de création et de dernière connexion).
         </li>
         <li>
           Ce que l’export ne contient pas, volontairement&nbsp;: le jeton de ton calendrier iCal (c’est un secret que tu peux

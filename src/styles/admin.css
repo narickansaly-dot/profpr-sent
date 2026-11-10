@@ -58,7 +58,7 @@
 
 /* Éditeur de chapitre */
 .editeur-chapitre { gap: 20px; }
-.editeur-chapitre textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
+.editeur-chapitre textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--bord-champ); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
 .editeur-chapitre textarea:focus-visible { border-color: var(--couleur-cours); }
 .editeur-chapitre .zone-html { font-family: monospace; font-size: 14px; line-height: 1.45; min-height: 16lh; tab-size: 2; }
 .editeur-chapitre input:not([type=file]) { width: 100%; min-width: 0; max-width: 100%; }
@@ -104,7 +104,7 @@
 .champ-question > label { font-weight: 700; }
 .editeur-question { gap: 20px; }
 .editeur-question :is(input:not([type=radio]):not([type=checkbox]), select, textarea) { width: 100%; min-width: 0; max-width: 100%; }
-.editeur-question textarea { padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
+.editeur-question textarea { padding: 10px 14px; border: 2px solid var(--bord-champ); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
 .editeur-question :is(input, select, textarea):focus-visible { border-color: var(--couleur-cours); }
 .editeur-question [aria-invalid=true] { border-color: var(--danger); }
 .editeur-question .aide-champ { margin: 0; }
@@ -144,7 +144,7 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .formulaire-import h2, .resultat-import h2 { margin: 0; font-size: 22px; }
 .formulaire-import .champ { display: grid; gap: 6px; min-width: 0; }
 .formulaire-import .champ > label { font-weight: 700; }
-.formulaire-import input[type=file] { width: 100%; max-width: 100%; padding: 10px; border: 2px dashed var(--trait); border-radius: 12px; background: var(--papier); font: inherit; }
+.formulaire-import input[type=file] { width: 100%; max-width: 100%; padding: 10px; border: 2px dashed var(--bord-champ); border-radius: 12px; background: var(--papier); font: inherit; }
 .formulaire .case-import, .case-import { display: flex; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; font-weight: 700; cursor: pointer; }
 .case-import input { width: 24px; height: 24px; flex: none; accent-color: var(--encre); }
 .resultat-import { display: grid; gap: 14px; max-width: 720px; border-left: 6px solid var(--trait); }
@@ -180,7 +180,7 @@ a.marque-signalee { color: color-mix(in srgb, var(--danger) 85%, #000); border-c
 .formulaire-decision { display: grid; gap: 12px; padding-top: 12px; border-top: 1px dashed var(--trait); }
 .formulaire-decision .champ { display: grid; gap: 6px; min-width: 0; }
 .formulaire-decision .champ > label { font-weight: 700; }
-.formulaire-decision textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--trait); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
+.formulaire-decision textarea { width: 100%; min-width: 0; padding: 10px 14px; border: 2px solid var(--bord-champ); border-radius: 12px; background: var(--surface); color: var(--encre); font: inherit; line-height: 1.5; resize: vertical; }
 .formulaire-decision .message-erreur { margin: 0; font-weight: 700; }
 .editeur-chapitre + .panneau-apercu { margin-top: 20px; }
 

@@ -22,3 +22,5 @@ export function messageLot(n: number, statut: StatutLot): string {
   const s = n > 1 ? 's' : '';
   return statut === 'valide' ? `${n} question${s} validée${s}.` : `${n} question${s} repassée${s} en brouillon.`;
 }
+
+export { libelleCase, toutEstCoche } from './relecture-case';

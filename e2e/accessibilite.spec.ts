@@ -23,7 +23,7 @@ async function verifier(page: Page, nom: string) {
   for (const mode of MODES) {
     await page.emulateMedia({ colorScheme: mode });
     // Laisse finir les transitions de couleur (180 ms) : axe mesurerait sinon des teintes intermédiaires.
-    await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished)), new Promise((r) => setTimeout(r, 1500))]));
+    await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished.catch(() => undefined))), new Promise((r) => setTimeout(r, 1500))]));
     expect.soft(await violationsGraves(page), `${nom} (${mode})`).toEqual([]);
   }
 }
@@ -34,6 +34,30 @@ test('pages publiques : connexion et inscription', async ({ page }) => {
     await expect(page.locator('main')).toBeVisible();
     await verifier(page, chemin);
   }
+});
+
+test('page introuvable (URL inconnue, connecté) : 404, titre français, repères', async ({ page }) => {
+  await inscrireEleve(page, emailDeTest('axe-404'));
+  for (const chemin of ['/page-qui-n-existe-pas', '/cours/cours-inexistant']) {
+    const reponse = await page.goto(chemin);
+    expect(reponse?.status()).toBe(404);
+    await expect(page).toHaveTitle(/Page introuvable/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Page introuvable' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Retour à l’accueil' })).toBeVisible();
+    await expect(page.locator('main')).toHaveCount(1);
+    await verifier(page, chemin);
+  }
+});
+
+test('lien d’évitement : premier arrêt du clavier, vise le contenu', async ({ page }) => {
+  await page.goto('/connexion');
+  await page.keyboard.press('Tab');
+  const lien = page.getByRole('link', { name: 'Aller au contenu' });
+  await expect(lien).toBeFocused();
+  await expect(lien).toBeInViewport();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/#contenu$/);
+  await expect(page.locator('main#contenu')).toBeVisible();
 });
 
 test('bienvenue (juste après l’inscription)', async ({ page }) => {
@@ -180,7 +204,7 @@ test('admin : relecture en lot des questions', async ({ page }, testInfo) => {
     await page.goto(`/admin/chapitres/${chapitreId}/questions?relecture=1`);
     await expect(page.locator('article.carte-relecture')).toHaveCount(3);
     await verifier(page, '/admin/chapitres/<id>/questions?relecture=1');
-    await page.getByLabel('Sélectionner la question 1').check();
+    await page.getByLabel(`Sélectionner la question ${slug}:1`).check();
     await page.getByRole('button', { name: 'Valider la sélection' }).click();
     await expect(page.getByRole('status').filter({ hasText: '1 question validée.' })).toBeVisible();
     await verifier(page, 'relecture (après validation)');

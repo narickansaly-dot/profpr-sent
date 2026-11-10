@@ -1,5 +1,5 @@
 begin;
-select plan(14);
+select plan(19);
 
 insert into public.filiere (id, voie, code, nom) values ('10000000-0000-0000-0000-0000000006a1', 'technologique', 'GST', 'Filière garder');
 insert into public.cours (id, slug, filiere_id, niveau_code, matiere, titre, publie) values
@@ -68,6 +68,30 @@ select is((select statut::text from public.question where source = 'g:4'), 'brou
 select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
   '{"source":"g:3","type":"qcm_unique","enonce":"Question trois, reformulée","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"a_relire"}');
 select is((select statut::text from public.question where source = 'g:3'), 'a_relire', 'sans garder_statut, un brouillon passe au statut du fichier');
+
+-- garder_statut n'accepte qu'un booléen JSON : toute autre valeur est une question invalide (pas une erreur de cast brute).
+select throws_ok($$ select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:5","type":"qcm_unique","enonce":"Question cinq","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"valide","garder_statut":"oui"}') $$,
+  'P0001', 'question_invalide', 'garder_statut : une chaîne est refusée');
+
+-- Appel éditeur : garder_statut ne garde rien (c'est la règle de l'éditeur qui s'applique : une structure changée sur une question valide repart à relire).
+select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:5","type":"qcm_unique","enonce":"Question cinq","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"valide"}');
+select is((select resultat from prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:5","type":"qcm_unique","enonce":"Question cinq","propositions":["A","C"],"bonnes_reponses":[1],"explication":"E","statut":"valide","garder_statut":true}', true)),
+  'versionnee', 'éditeur avec garder_statut : nouvelle version');
+select is((select statut::text from public.question where source = 'g:5'), 'a_relire', 'éditeur avec garder_statut : la nouvelle version part en relecture');
+
+-- Question validée avec un signalement ouvert, garder_statut et structure changée : la nouvelle version est à relire.
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-0000000006a8', 'signaleur-garder@test.local');
+select prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:6","type":"qcm_unique","enonce":"Question six","propositions":["A","B"],"bonnes_reponses":[0],"explication":"E","statut":"valide"}');
+insert into public.signalement (question_id, auteur_id, commentaire)
+  select id, '00000000-0000-0000-0000-0000000006a8', 'Une erreur ici.' from public.question where source = 'g:6';
+select is((select resultat from prive.ecrire_question('30000000-0000-0000-0000-0000000006a1', null,
+  '{"source":"g:6","type":"qcm_unique","enonce":"Question six","propositions":["A","C"],"bonnes_reponses":[1],"explication":"E","statut":"valide","garder_statut":true}')),
+  'versionnee', 'signalée, garder_statut, structure changée : nouvelle version');
+select is((select statut::text from public.question where source = 'g:6'), 'a_relire', 'la nouvelle version d''une question signalée part en relecture');
 
 select * from finish();
 rollback;

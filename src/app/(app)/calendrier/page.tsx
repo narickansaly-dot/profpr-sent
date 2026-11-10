@@ -49,9 +49,9 @@ export default async function PageCalendrier({ searchParams }: { searchParams: P
       </div>
       <VueCalendrier vue={vue} jour={jour} jours={jours} occurrences={occurrences} aujourdhui={jourParis(maintenant)} />
       <p className="lien-partage">
-        <Link href="/calendrier/partage">Ajouter mon calendrier à un autre agenda</Link>
+        <Link className="lien-action" href="/calendrier/partage">Ajouter mon calendrier à un autre agenda</Link>
         {' · '}
-        <Link href="/notifications">Notifications</Link>
+        <Link className="lien-action" href="/notifications">Notifications</Link>
       </p>
     </div>
   );
