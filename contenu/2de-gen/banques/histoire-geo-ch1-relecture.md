@@ -14,11 +14,11 @@ Banque : `histoire-geo-ch1.json`, 150 questions au statut `a_relire` après fusi
 | --- | --- | --- |
 | ch1:banque:007 | Le XVe siècle « de 1401 à 1500 » : c'est la convention stricte. Beaucoup de manuels et d'élèves comptent de 1400 à 1499. | Garder : le cours donne la convention stricte. Rejeter si l'enseignant préfère ne pas évaluer ce point. |
 | ch1:banque:011 | Distracteur « Les fils de citoyens athéniens majeurs » : il est juste qu'ils soient citoyens, mais la formulation peut troubler. | Garder, ou reformuler en « Les hommes nés de parents athéniens ». |
-| ch1:banque:014 et suivantes | « Environ 40 000 citoyens » (cours) : estimation courante, mais les historiens donnent 30 000 à 40 000. Aucune question ne demande ce chiffre précis. | Rien à changer dans la banque ; vérifier le cours avec le manuel. |
+| ch1:banque:100 | L'explication cite « environ 40 000 citoyens » (comme le cours) : estimation courante, les historiens donnent 30 000 à 40 000. | Garder ; vérifier le chiffre du cours avec le manuel. |
 | ch1:banque:023 | 509 av. J.-C. pour la République et 753 pour la fondation « légendaire » de Rome : dates traditionnelles. | Garder. |
-| ch1:banque:096 | « 50 à 70 millions d'habitants » au IIe siècle : estimation large, conforme au cours. | Garder. |
+| ch1:banque:126 | « 50 à 70 millions d'habitants » au IIe siècle : estimation large, conforme au cours. | Garder. |
 | ch1:banque:064 | Le tirage au sort donne « à chaque citoyen » la possibilité d'exercer une charge : simplification (âge minimal de 30 ans pour certaines charges, non dit dans le cours). | Garder au niveau 2de. |
-| QCM « multiples » d'héritage (M1.7, langues issues du latin) | « L'anglais » est un distracteur : l'anglais a beaucoup emprunté au latin, mais ce n'est pas une langue romane. | Garder ; l'explication dit que le français, l'italien et l'espagnol viennent du latin. |
+| ch1:banque:087 | « L'anglais » est un distracteur : l'anglais a beaucoup emprunté au latin, mais ce n'est pas une langue romane. | Garder ; l'explication dit que le français, l'italien et l'espagnol viennent du latin. |
 | Introduction | La périodisation (introduction du programme, 2 heures) est évaluée dans ce chapitre : 20 questions environ. | Vérifier que cela convient à la progression de l'enseignant. |
 
 ## Contrôles
