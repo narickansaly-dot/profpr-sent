@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { schemaQuestionImport, type QuestionImport } from '../format-import';
+import { COURS_BANQUE, quotasPour, type ConfigCours } from './cours';
 import type { FichierBanque } from './format';
 
 export const TOLERANCE = 3;
@@ -7,8 +8,8 @@ export const SEUIL_POSITION = 0.4;
 export const SEUIL_LONGUEUR = 0.4;
 export const SEUIL_SIMILARITE = 0.8;
 export const SEUIL_VRAI_FAUX = 0.6;
-export const QUOTAS_TYPES = { qcm_unique: 65, qcm_multiple: 26, vrai_faux: 26, reponse_courte: 13 } as const;
-export const QUOTAS_DIFFICULTE = { 1: 52, 2: 52, 3: 26 } as const;
+export const QUOTAS_TYPES = quotasPour(130).types;
+export const QUOTAS_DIFFICULTE = quotasPour(130).difficultes;
 
 export const MENTION_QCM_MULTIPLE = 'Coche toutes les réponses exactes.';
 
@@ -58,7 +59,8 @@ const reponsesDe = (q: Brute): number[] => (Array.isArray(q.bonnes_reponses) ? q
  * Contrôle un fichier de travail. Renvoie la liste des erreurs (vide si tout va bien).
  * `existantes` : les questions déjà présentes dans le chapitre de `bph.json`, pour détecter les doublons proches.
  */
-export function verifierBanque(f: FichierBanque, existantes: QuestionImport[]): string[] {
+export function verifierBanque(f: FichierBanque, existantes: QuestionImport[], config: ConfigCours = COURS_BANQUE.bph): string[] {
+  const quotas = quotasPour(config.total);
   const erreurs: string[] = [];
   const brutes = f.questions as unknown as Brute[];
   const nom = (q: Brute, i: number) => (typeof q.source === 'string' && q.source !== '' ? q.source : `n° ${i + 1}`);
@@ -71,8 +73,8 @@ export function verifierBanque(f: FichierBanque, existantes: QuestionImport[]): 
     else for (const m of new Set(lu.error.issues.map((p) => p.message))) erreurs.push(`question ${nom(q, i)} : ${m}`);
   });
 
-  // 2 à 4. Sources : uniques, au format bph:chN:banque:NNN, avec le bon chapitre.
-  const motif = /^bph:ch(\d+):banque:\d{3}$/;
+  // 2 à 4. Sources : uniques, au format <préfixe>:chN:banque:NNN, avec le bon chapitre.
+  const motif = new RegExp(`^${config.prefixe}:ch(\\d+):banque:\\d{3}$`);
   const vues = new Set<string>();
   const doublons = new Set<string>();
   brutes.forEach((q) => {
@@ -84,15 +86,15 @@ export function verifierBanque(f: FichierBanque, existantes: QuestionImport[]): 
   for (const q of brutes) {
     const s = texte(q.source);
     const m = motif.exec(s);
-    if (!m || Number(m[1]) !== f.chapitre) erreurs.push(`source invalide : ${s} (attendu bph:ch${f.chapitre}:banque:NNN)`);
+    if (!m || Number(m[1]) !== f.chapitre) erreurs.push(`source invalide : ${s} (attendu ${config.prefixe}:ch${f.chapitre}:banque:NNN)`);
   }
 
   // 5 et 6. Répartitions.
-  for (const [type, quota] of Object.entries(QUOTAS_TYPES)) {
+  for (const [type, quota] of Object.entries(quotas.types)) {
     const n = brutes.filter((q) => q.type === type).length;
     if (Math.abs(n - quota) > TOLERANCE) erreurs.push(`répartition des types : ${type} ${n} (attendu ${quota} ± ${TOLERANCE})`);
   }
-  for (const [niveau, quota] of Object.entries(QUOTAS_DIFFICULTE)) {
+  for (const [niveau, quota] of Object.entries(quotas.difficultes)) {
     const n = brutes.filter((q) => q.difficulte === Number(niveau)).length;
     if (Math.abs(n - quota) > TOLERANCE) erreurs.push(`répartition des difficultés : ${niveau} → ${n} (attendu ${quota} ± ${TOLERANCE})`);
   }

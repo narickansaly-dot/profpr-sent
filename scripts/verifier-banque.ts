@@ -1,19 +1,28 @@
 import { readFileSync } from 'node:fs';
+import { lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
 import { analyserImport } from '../src/lib/contenu/lire-import';
 import { schemaFichierBanque } from '../src/lib/contenu/banque/format';
 import { verifierBanque } from '../src/lib/contenu/banque/verifier';
 
-const COURS = 'contenu/1re-st2s/bph.json';
-const numero = Number(process.argv[2]);
+const argv = process.argv.slice(2);
+const numero = Number(argv[0]);
 
 function echouer(message: string): never {
   console.error(message);
   process.exit(1);
 }
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N');
+let config: ConfigCours;
+try {
+  config = lireCoursArgument(argv);
+} catch (e) {
+  echouer(e instanceof Error ? e.message : String(e));
+}
+const COURS = config.fichier;
 
-const chemin = `contenu/1re-st2s/banques/bph-ch${numero}.json`;
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N [--cours stss]');
+
+const chemin = `contenu/1re-st2s/banques/${config.nom}-ch${numero}.json`;
 let brut: unknown;
 try {
   brut = JSON.parse(readFileSync(chemin, 'utf8'));
@@ -34,7 +43,7 @@ if ('erreurs' in lu) {
 }
 const existantes = lu.cours.chapitres.find((c) => c.numero === numero)?.questions ?? [];
 
-const erreurs = verifierBanque(fichier.data, existantes);
+const erreurs = verifierBanque(fichier.data, existantes, config);
 if (erreurs.length > 0) {
   for (const e of erreurs) console.error(`  ${e}`);
   echouer(`Banque du chapitre ${numero} non conforme : ${erreurs.length} erreur${erreurs.length > 1 ? 's' : ''}.`);

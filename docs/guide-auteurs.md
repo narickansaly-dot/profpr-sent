@@ -357,11 +357,11 @@ Un import est **rejouable** : réimporter le même fichier ne crée rien et lais
 
 ## 7. Banques de questions
 
-Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans `bph.json`, qui reste la seule source de vérité du cours.
+Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans le fichier du cours (`bph.json`, ou `stss.json` avec `--cours stss`), qui reste la seule source de vérité du cours.
 
 ### Le fichier de travail
 
-`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre) :
+`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS) :
 
 ```jsonc
 {
@@ -376,15 +376,17 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 
 - `notions` : la liste fermée du chapitre (5 à 12 intitulés de 40 caractères au plus, sans doublon). Chaque question en choisit une.
 - `questions` : le même format que dans `bph.json` (les indices commencent à 0 ; `vrai_faux` utilise `bonne_reponse` ; `reponse_courte` utilise `reponses_acceptees`). Pas de champ `statut` : la fusion l'impose à `a_relire`.
-- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130`.
+- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130` (BPH) ou de `stss:chN:banque:001` à `stss:chN:banque:150` (STSS).
 
 ### Les trois commandes
 
 ```bash
-npm run banque:texte -- N       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
-npm run banque:verifier -- N    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
-npm run banque:fusionner -- N   # ajoute les questions au chapitre N de bph.json
+npm run banque:texte -- N [--cours stss]       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
+npm run banque:verifier -- N [--cours stss]    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
+npm run banque:fusionner -- N [--cours stss]   # ajoute les questions au chapitre N du cours
 ```
+
+Sans `--cours`, c'est `bph`. Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
 
 - `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. `bph.json` est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
 - Script ponctuel : `npx tsx scripts/typo-anciennes-questions.ts` a remplacé les espaces avant « ? : ; ! » par des espaces insécables dans l'énoncé et l'explication des anciennes questions (`quiz`, `bis`), sans toucher aux propositions ; le rejouer est sans effet.
@@ -396,9 +398,9 @@ npm run banque:fusionner -- N   # ajoute les questions au chapitre N de bph.json
 
 1. chaque question passe le validateur d'import ;
 2. les sources sont uniques ;
-3. les sources respectent `bph:chN:banque:NNN`, avec le bon numéro de chapitre ;
-4. types répartis en 65 `qcm_unique`, 26 `qcm_multiple`, 26 `vrai_faux` et 13 `reponse_courte`, à plus ou moins 3 près ;
-5. difficultés réparties en 52 (niveau 1), 52 (niveau 2) et 26 (niveau 3), à plus ou moins 3 près ;
+3. les sources respectent `<préfixe>:chN:banque:NNN` (`bph` ou `stss`), avec le bon numéro de chapitre ;
+4. types répartis en 65 `qcm_unique`, 26 `qcm_multiple`, 26 `vrai_faux` et 13 `reponse_courte` (BPH ; 75 / 30 / 30 / 15 pour STSS), à plus ou moins 3 près ;
+5. difficultés réparties en 52 (niveau 1), 52 (niveau 2) et 26 (niveau 3) (BPH ; 60 / 60 / 30 pour STSS), à plus ou moins 3 près ;
 6. une explication non vide ;
 7. une notion présente dans la liste du fichier ;
 8. aucune proposition du type « Toutes les réponses ci-dessus », « Toutes ces réponses », « Aucune de ces réponses », « Toutes les propositions » (sans égard à la casse ni aux accents) ;
