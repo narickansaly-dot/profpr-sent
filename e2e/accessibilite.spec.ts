@@ -23,7 +23,7 @@ async function verifier(page: Page, nom: string) {
   for (const mode of MODES) {
     await page.emulateMedia({ colorScheme: mode });
     // Laisse finir les transitions de couleur (180 ms) : axe mesurerait sinon des teintes intermédiaires.
-    await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished)), new Promise((r) => setTimeout(r, 1500))]));
+    await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished.catch(() => undefined))), new Promise((r) => setTimeout(r, 1500))]));
     expect.soft(await violationsGraves(page), `${nom} (${mode})`).toEqual([]);
   }
 }

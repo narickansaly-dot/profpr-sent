@@ -1,21 +1,30 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { schemaQuestionImport, type CoursImport } from '../src/lib/contenu/format-import';
+import { lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
 import { analyserImport } from '../src/lib/contenu/lire-import';
 import { schemaFichierBanque } from '../src/lib/contenu/banque/format';
 import { fusionnerBanque, serialiserCours } from '../src/lib/contenu/banque/fusionner';
 import { verifierBanque } from '../src/lib/contenu/banque/verifier';
 
-const COURS = 'contenu/1re-st2s/bph.json';
-const numero = Number(process.argv[2]);
+const argv = process.argv.slice(2);
+const numero = Number(argv[0]);
 
 function echouer(message: string): never {
   console.error(message);
   process.exit(1);
 }
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:fusionner -- N');
+let config: ConfigCours;
+try {
+  config = lireCoursArgument(argv);
+} catch (e) {
+  echouer(e instanceof Error ? e.message : String(e));
+}
+const COURS = config.fichier;
 
-const chemin = `contenu/1re-st2s/banques/bph-ch${numero}.json`;
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:fusionner -- N [--cours stss]');
+
+const chemin = `contenu/1re-st2s/banques/${config.nom}-ch${numero}.json`;
 let brutBanque: unknown;
 try {
   brutBanque = JSON.parse(readFileSync(chemin, 'utf8'));
@@ -33,10 +42,10 @@ if ('erreurs' in lu) {
   echouer(`Fichier invalide : ${COURS}`);
 }
 const existantes = lu.cours.chapitres.find((c) => c.numero === numero)?.questions ?? [];
-const erreurs = verifierBanque(fichier.data, existantes);
+const erreurs = verifierBanque(fichier.data, existantes, config);
 if (erreurs.length > 0) {
   for (const e of erreurs) console.error(`  ${e}`);
-  echouer(`Fusion refusée : la banque du chapitre ${numero} n’est pas conforme (npm run banque:verifier -- ${numero}).`);
+  echouer(`Fusion refusée : la banque du chapitre ${numero} n’est pas conforme (npm run banque:verifier -- ${numero}${config.nom === 'bph' ? '' : ` --cours ${config.nom}`}).`);
 }
 
 try {

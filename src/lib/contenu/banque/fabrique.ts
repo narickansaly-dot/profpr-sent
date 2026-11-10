@@ -14,14 +14,14 @@ function mot(n: number): string {
 
 const num = (i: number) => String(i + 1).padStart(3, '0');
 
-/** Fichier valide de 130 questions, quotas exacts : types 65/26/26/13, difficultés 52/52/26, positions en rotation. */
-export function fabriquer(chapitre = 1): FichierBanque {
+/** Fichier valide de `total` questions (multiple de 10), quotas exacts : types 50/20/20/10 %, difficultés 40/40/20 %, positions en rotation. */
+export function fabriquer(total = 130, prefixe = 'bph', chapitre = 1): FichierBanque {
   const questions: QuestionImport[] = [];
   let unique = 0;
   let vf = 0;
-  for (let i = 0; i < 130; i++) {
+  for (let i = 0; i < total; i++) {
     const base = {
-      source: `bph:ch${chapitre}:banque:${num(i)}`,
+      source: `${prefixe}:ch${chapitre}:banque:${num(i)}`,
       notion: NOTIONS[i % 5],
       difficulte: i % 5 < 2 ? 1 : i % 5 < 4 ? 2 : 3,
       explication: 'Le cours le dit.',

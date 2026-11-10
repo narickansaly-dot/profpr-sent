@@ -130,15 +130,20 @@ npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--dista
 
 ### Banques de questions
 
-Les banques de questions de BPH se fabriquent chapitre par chapitre, dans `contenu/1re-st2s/banques/` :
+Les banques de questions se fabriquent chapitre par chapitre, dans `contenu/1re-st2s/banques/`. L'option `--cours` choisit le cours : `bph` (par défaut) ou `stss` (fichier `stss.json`, dix chapitres de 150 questions) :
 
 ```bash
 npm run banque:texte -- <n>       # texte du chapitre, pour rédiger et relire
 npm run banque:verifier -- <n>    # contrôle la banque (types, difficultés, notions, doublons, biais de longueur)
 npm run banque:fusionner -- <n>   # ajoute les questions de la banque à bph.json
+
+# même chose pour STSS : ajouter --cours stss
+npm run banque:texte -- <n> --cours stss
+npm run banque:verifier -- <n> --cours stss
+npm run banque:fusionner -- <n> --cours stss   # ajoute à stss.json
 ```
 
-Les questions fusionnées arrivent en `a_relire` et ne sont tirées qu'une fois validées dans l'admin. Voir bilan : [étape 6a](docs/superpowers/plans/2027-01-05-etape-6a-bilan.md).
+Les questions fusionnées arrivent en `a_relire` et ne sont tirées qu'une fois validées dans l'admin. Voir bilans : [étape 6a](docs/superpowers/plans/2027-01-05-etape-6a-bilan.md) et [étape 6b](docs/superpowers/plans/2027-01-26-etape-6b-bilan.md).
 
 Mise en ligne : voir `docs/mise-en-ligne.md`.
 
