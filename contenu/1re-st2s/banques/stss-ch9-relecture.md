@@ -68,7 +68,7 @@ Répartition après relecture :
 1. **007** : l'éducation thérapeutique du patient est comptée dans la restauration de la santé. Le cours la place dans cette sous-partie, à propos des maladies chroniques, mais ne dit pas explicitement que la restauration la « comprend ».
 2. **060** : « signer un contrat local de santé » est compté comme un rôle de l'ARS. Le cours dit seulement qu'elle « peut » le signer avec une collectivité.
 3. **117** : le cours classe « aider les fumeurs à arrêter » dans la prévention. Un élève pourrait défendre l'éducation pour la santé.
-4. **124** : on déduit que la personne pèse sur les décisions en co-construction et en « décision et action ». Le cours ne le dit en toutes lettres que pour la concertation.
+4. **124** : on déduit que la personne pèse sur les décisions en co-construction et en « décision et action ». Le cours ne le dit en toutes lettres que pour la concertation. **Réglé après la revue d'ensemble** : la question demande maintenant dans quels degrés la personne mène elle-même l'action (co-construction, décision et action), ce que le cours dit en toutes lettres.
 5. **125** : l'ARS est comptée comme un acteur de la veille, parce qu'elle reçoit les signalements. Le cours la cite bien dans « Les acteurs de la veille ».
 6. **065** : la réponse acceptée « CLS » est un sigle absent du cours. Elle est sans risque, mais tu peux la retirer.
 7. **054 et 059** : le sigle se déduit des initiales du nom donné dans l'énoncé. C'est acceptable en difficulté 1 ou 2, mais la réponse se lit presque dans l'énoncé.
