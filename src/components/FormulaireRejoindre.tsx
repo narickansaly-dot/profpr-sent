@@ -36,7 +36,7 @@ export function BoutonQuitter({ classeId, nom }: { classeId: string; nom: string
       action={envoyer}
       className="quitter-classe"
       onSubmit={(e) => {
-        if (!window.confirm('Quitter cette classe ? Tu ne seras plus suivi·e dans cette classe et ta progression ne sera plus visible.')) e.preventDefault();
+        if (!window.confirm('Quitter cette classe ? Ton enseignant ou ton enseignante ne verra plus ta progression. Pendant 30 jours, les dates d’évaluation de cette classe continuent de s’appliquer à toi.')) e.preventDefault();
       }}
     >
       <input type="hidden" name="classe" value={classeId} />

@@ -80,7 +80,7 @@ export function BoutonRetirerEleve({ classeId, eleveId, nom }: { classeId: strin
     <form
       action={envoyer}
       onSubmit={(e) => {
-        if (!window.confirm(`Retirer ${nom} de la classe ? Tu ne verras plus sa progression. ${nom} pourra revenir avec le code actuel : crée un nouveau code si besoin.`)) e.preventDefault();
+        if (!window.confirm(`Retirer ${nom} de la classe\u00a0? L’élève sera retiré de la classe et ne pourra pas la rejoindre à nouveau pendant 24 heures.`)) e.preventDefault();
       }}
     >
       <input type="hidden" name="classe" value={classeId} />

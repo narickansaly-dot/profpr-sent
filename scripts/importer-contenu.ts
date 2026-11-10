@@ -1,69 +1,79 @@
 import { readFileSync } from 'node:fs';
 import { createClient } from '@supabase/supabase-js';
-import { schemaCoursImport, type QuestionImport } from '../src/lib/contenu/format-import';
+import { analyserImport } from '../src/lib/contenu/lire-import';
+import { paquets } from '../src/lib/contenu/paquets';
+import { versDonneesCours } from '../src/lib/contenu/donnees-question';
+import { messageErreur } from '../src/lib/erreurs';
 import type { Database } from '../src/lib/supabase/types';
 
-const [fichier, option] = process.argv.slice(2);
-if (!fichier) throw new Error('Usage : npx tsx --env-file=.env.local scripts/importer-contenu.ts <fichier.json> [--publier]');
-const publier = option === '--publier';
+// Paquets courts : une longue liste dans .in() dépasse la longueur d'URL de PostgREST.
+const TAILLE_PAQUET = 100;
 
-const db = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, {
-  auth: { persistSession: false },
-});
+const args = process.argv.slice(2);
+const USAGE = 'Usage : npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--distant]';
+const inconnues = args.filter((a) => a.startsWith('--') && !['--publier', '--garder-statuts', '--distant'].includes(a));
+const fichier = args.find((a) => !a.startsWith('--'));
+const publier = args.includes('--publier');
+const garderStatuts = args.includes('--garder-statuts');
+const distant = args.includes('--distant');
 
-function verifier<T>(r: { data: T; error: { message: string } | null }, contexte: string): NonNullable<T> {
-  if (r.error || r.data == null) throw new Error(`${contexte} : ${r.error?.message ?? 'aucune donnée'}`);
-  return r.data as NonNullable<T>;
+function echouer(message: string): never {
+  console.error(message);
+  process.exit(1);
 }
 
-function corrige(q: QuestionImport) {
-  switch (q.type) {
-    case 'qcm_unique':
-    case 'qcm_multiple':
-      return { bonnes_reponses: q.bonnes_reponses, reponses_acceptees: [], marge: null, marge_relative: false };
-    case 'vrai_faux':
-      return { bonnes_reponses: [q.bonne_reponse], reponses_acceptees: [], marge: null, marge_relative: false };
-    case 'reponse_courte':
-      return { bonnes_reponses: [], reponses_acceptees: q.reponses_acceptees, marge: q.marge ?? null, marge_relative: q.marge_relative };
+if (inconnues.length > 0) echouer(`Option inconnue : ${inconnues.join(', ')}.\n${USAGE}`);
+if (!fichier) echouer(USAGE);
+
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const cle = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!url || !cle) {
+  echouer('Variables manquantes : NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY doivent être définies (voir .env.local).');
+}
+
+// Garde « base locale » : la clé service_role ne doit pas partir vers une base distante par mégarde.
+let hote: string;
+try {
+  hote = new URL(url).hostname;
+} catch {
+  echouer('NEXT_PUBLIC_SUPABASE_URL n’est pas une URL valide (voir .env.local).');
+}
+if (!['localhost', '127.0.0.1', '[::1]'].includes(hote)) {
+  if (!distant) {
+    echouer(`Refusé : ${hote} n’est pas la base locale. Ajoute --distant pour importer volontairement sur une base distante.`);
   }
+  console.warn(`ATTENTION : import sur une base DISTANTE (${hote}) avec la clé service_role.`);
 }
+
+const db = createClient<Database>(url, cle, { auth: { persistSession: false } });
 
 // Pas d'await au niveau supérieur : le projet est en CommonJS.
 async function main() {
-  const cours = schemaCoursImport.parse(JSON.parse(readFileSync(fichier, 'utf8')));
-
-  const filiere = verifier(await db.from('filiere').select('id').eq('code', cours.filiere).single(), `Filière ${cours.filiere}`);
-  const { id: coursId } = verifier(await db.from('cours').upsert({
-    slug: cours.slug, filiere_id: filiere.id, niveau_code: cours.niveau, matiere: cours.matiere,
-    titre: cours.titre, couleur: cours.couleur, publie: publier,
-  }, { onConflict: 'slug' }).select('id').single(), `Cours ${cours.slug}`);
-
-  let total = 0;
-  for (const ch of cours.chapitres) {
-    const { id: chapitreId } = verifier(await db.from('chapitre').upsert({
-      cours_id: coursId, slug: ch.slug, numero: ch.numero, titre: ch.titre, titre_court: ch.titre_court ?? null,
-      duree: ch.duree ?? null, resume: ch.resume ?? null, chapeau: ch.chapeau ?? null, objectifs: ch.objectifs,
-      sections: ch.sections, a_retenir: ch.a_retenir ?? null, publie: publier,
-    }, { onConflict: 'cours_id,slug' }).select('id').single(), `Chapitre ${ch.slug}`);
-
-    for (const q of ch.questions) {
-      let notionId: string | null = null;
-      if (q.notion) {
-        notionId = verifier(await db.from('notion').upsert({ chapitre_id: chapitreId, nom: q.notion },
-          { onConflict: 'chapitre_id,nom' }).select('id').single(), `Notion ${q.notion}`).id;
-      }
-      const { id: questionId } = verifier(await db.from('question').upsert({
-        source: q.source, chapitre_id: chapitreId, notion_id: notionId, type: q.type, enonce: q.enonce,
-        propositions: 'propositions' in q ? q.propositions : [], difficulte: q.difficulte, statut: q.statut,
-        modifie_le: new Date().toISOString(),
-      }, { onConflict: 'source' }).select('id').single(), `Question ${q.source}`);
-      verifier(await db.from('question_corrige').upsert({
-        question_id: questionId, explication: q.explication, ...corrige(q),
-      }).select('question_id').single(), `Corrigé ${q.source}`);
-      total++;
-    }
+  const lu = analyserImport(readFileSync(fichier!, 'utf8'));
+  if ('erreurs' in lu) {
+    for (const e of lu.erreurs) console.error(`  ${e}`);
+    echouer(`Fichier invalide : ${fichier}`);
   }
-  console.log(`Importé : ${cours.titre}, ${cours.chapitres.length} chapitres, ${total} questions${publier ? ' (publié)' : ' (non publié)'}.`);
+  const cours = lu.cours;
+  const { data, error } = await db.rpc('importer_cours', { p_cours: versDonneesCours(cours, { garderStatuts }), p_publier: publier });
+  if (error) echouer(`Import refusé : ${messageErreur(error.message)} (${error.message})`);
+  if (!data || typeof data !== 'object') echouer('Import refusé : la base n’a renvoyé aucun bilan.');
+  const b = data as Record<string, unknown>;
+  console.log(`Importé : ${cours.titre}, ${cours.chapitres.length} chapitres${publier ? ' (publié)' : ' (non publié)'}.`);
+  for (const cle of ['cree', 'modifiee', 'versionnee', 'inchangee', 'archivee', 'supprimee']) console.log(`  ${cle}: ${b[cle]}`);
+  const absents = b.chapitres_absents;
+  console.log(`  chapitres_absents: ${Array.isArray(absents) ? JSON.stringify(absents) : absents}`);
+  if (garderStatuts) {
+    const sources = cours.chapitres.flatMap((ch) => ch.questions.filter((q) => (q.statut ?? 'a_relire') !== 'valide').map((q) => q.source));
+    let conserves = 0;
+    for (const paquet of paquets(sources, TAILLE_PAQUET)) {
+      const { count, error: e, status } = await db.from('question').select('id', { count: 'exact', head: true })
+        .in('source', paquet).eq('statut', 'valide');
+      if (e) echouer(`Bilan des statuts impossible : ${e.message || e.code || e.details || String(status)}`);
+      conserves += count ?? 0;
+    }
+    console.log(`  statuts_conserves: ${conserves}`);
+  }
 }
 
-main().catch((e) => { console.error(e instanceof Error ? e.message : e); process.exit(1); });
+main().catch((e) => echouer(e instanceof Error ? e.message : String(e)));

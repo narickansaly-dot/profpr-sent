@@ -5,6 +5,7 @@ import { LONGUEURS_QUIZ, SEUIL_REUSSITE } from '@/lib/quiz/regles';
 import { messageErreur } from '@/lib/erreurs';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { ListeCorrection } from '@/components/ListeCorrection';
+import { lireProfil } from '@/lib/supabase/utilisateur';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
 
 export const metadata = { title: 'Résultat' };
@@ -34,6 +35,7 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
       </div>
     );
   }
+  const profil = await lireProfil();
   const note = Number(correction.note ?? 0);
   const reussi = correction.reussie ?? note >= SEUIL_REUSSITE;
   const evaluation = correction.type === 'evaluation_cours';
@@ -41,7 +43,8 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
   return (
     <div style={{ '--couleur-cours': correction.cours?.couleur } as React.CSSProperties}>
       <section className={`carte resultat ${reussi ? 'reussi' : 'rate'}`}>
-        <p className="pastille">{evaluation ? `Évaluation · ${correction.cours?.titre}` : `Quiz · ${correction.chapitre?.titre}`}</p>
+        <p className="pastille">{evaluation ? `Évaluation · ${correction.cours?.titre}`
+          : correction.chapitre ? `Quiz · ${correction.chapitre.titre}` : `Révision générale · ${correction.cours?.titre}`}</p>
         <h1>{reussi ? <>{evaluation ? 'Évaluation réussie' : 'Quiz réussi'} <span aria-hidden="true">🎉</span></> : 'Pas encore…'}</h1>
         <p className="resultat-note">{formaterNote(note)}</p>
         <p>{justes} bonne{justes > 1 ? 's' : ''} réponse{justes > 1 ? 's' : ''} sur {correction.lignes.length}.
@@ -52,11 +55,14 @@ export default async function PageResultat({ params }: { params: Promise<{ id: s
             <FormulaireQuiz chapitreId={correction.chapitre.id} longueurs={[LONGUEURS_QUIZ[0]]}
               libelle={reussi ? 'Refaire un quiz' : 'Retenter avec de nouvelles questions'} />
           )}
+          {!evaluation && !correction.chapitre && (
+            <Link href="/calendrier" className="bouton bouton-secondaire">Retour au calendrier</Link>
+          )}
           <Link className="bouton bouton-secondaire" href={correction.cours ? `/cours/${correction.cours.slug}` : '/'}>Retour au cours</Link>
         </div>
       </section>
       <h2>Correction</h2>
-      <ListeCorrection lignes={correction.lignes} />
+      <ListeCorrection lignes={correction.lignes} peutSignaler={profil?.role === 'enseignant'} />
     </div>
   );
 }

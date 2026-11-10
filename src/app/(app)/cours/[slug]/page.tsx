@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { lireCours } from '@/lib/contenu/requetes';
+import { peutLireCours } from '@/lib/acces/requetes';
+import { CoursVerrouille } from '@/components/acces/CoursVerrouille';
 import { progressionDuCours } from '@/lib/quiz/requetes';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { BarreProgression } from '@/components/BarreProgression';
@@ -10,6 +12,7 @@ export default async function PageCours({ params }: { params: Promise<{ slug: st
   const { slug } = await params;
   const cours = await lireCours(slug);
   if (!cours) notFound();
+  if (!(await peutLireCours(cours.id))) return <CoursVerrouille titre={cours.titre} />;
   let progression: Awaited<ReturnType<typeof progressionDuCours>> | null = null;
   let erreurProgression = false;
   if (cours.chapitre.length > 0) {
@@ -25,7 +28,7 @@ export default async function PageCours({ params }: { params: Promise<{ slug: st
       <p className="pastille">{cours.matiere}</p>
       <h1>{cours.titre}</h1>
       {cours.chapitre.length === 0 ? (
-        <p className="carte">Ton essai est terminé : ce cours n’est plus accessible pour le moment.</p>
+        <p className="carte">Les chapitres de ce cours arrivent bientôt.</p>
       ) : (
         <>
         {erreurProgression && <p className="vide">Ta progression n’a pas pu être chargée. Recharge la page dans un instant.</p>}

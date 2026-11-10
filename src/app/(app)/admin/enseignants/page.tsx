@@ -2,23 +2,24 @@ import { notFound } from 'next/navigation';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { lireDemandesEnseignant } from '@/lib/enseignant/requetes';
 import { FormulaireDemande } from './FormulaireDemande';
+import { MessageStatut } from '@/components/admin/MessageStatut';
 
 export const metadata = { title: 'Demandes enseignant' };
 const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Paris' });
 
 const CONFIRMATIONS: Record<string, string> = { accepte: 'Compte enseignant validé.', refuse: 'Demande refusée.' };
 
-export default async function PageDemandes({ searchParams }: { searchParams: Promise<{ traite?: string | string[] }> }) {
+export default async function PageDemandes({ searchParams }: { searchParams: Promise<{ traite?: string | string[]; n?: string | string[] }> }) {
   const profil = await lireProfil();
   if (profil?.role !== 'admin_contenu') notFound();
-  const { traite } = await searchParams;
+  const { traite, n } = await searchParams;
   const confirmation = typeof traite === 'string' ? CONFIRMATIONS[traite] : undefined;
   const demandes = await lireDemandesEnseignant();
   return (
     <div className="admin-demandes">
       <h1>Demandes de comptes enseignants</h1>
-      {/* Région toujours présente, hors de la liste : son texte change sans qu'elle soit démontée, il est donc annoncé. */}
-      <p role="status" className="message-info">{confirmation ?? ''}</p>
+      {/* Région toujours présente, hors de la liste ; le texte est inséré après le montage, il est donc annoncé. */}
+      <MessageStatut texte={confirmation ?? ''} cle={typeof n === 'string' ? n : undefined} />
       {demandes.length === 0 ? (
         <p className="vide">Aucune demande en attente.</p>
       ) : (

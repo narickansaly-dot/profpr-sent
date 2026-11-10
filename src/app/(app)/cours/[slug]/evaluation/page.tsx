@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { lireCours } from '@/lib/contenu/requetes';
+import { peutLireCours } from '@/lib/acces/requetes';
+import { CoursVerrouille } from '@/components/acces/CoursVerrouille';
 import { progressionDuCours } from '@/lib/quiz/requetes';
 import { EVALUATION, SEUIL_REUSSITE } from '@/lib/quiz/regles';
 import { formaterNote } from '@/lib/quiz/reponse';
@@ -23,7 +25,9 @@ function libelleEcheance(e: { ouverture: string | null; limite: string | null })
 export default async function PageEvaluation({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const cours = await lireCours(slug);
-  if (!cours || cours.chapitre.length === 0) notFound();
+  if (!cours) notFound();
+  if (!(await peutLireCours(cours.id))) return <CoursVerrouille titre={cours.titre} />;
+  if (cours.chapitre.length === 0) notFound();
   let p: Awaited<ReturnType<typeof progressionDuCours>> | null = null;
   try {
     p = await progressionDuCours(cours.id, cours.chapitre.map((c) => c.id));
@@ -34,7 +38,7 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
   const essaisTermines = p ? p.essais.filter((e) => e.statut !== 'en_cours') : [];
   return (
     <div style={{ '--couleur-cours': cours.couleur } as React.CSSProperties}>
-      <Link href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
+      <Link className="lien-action" href={`/cours/${cours.slug}`}>← {cours.titre}</Link>
       <h1>Évaluation : {cours.titre}</h1>
       <div className="carte">
         <h2>Comment ça marche</h2>
@@ -47,7 +51,9 @@ export default async function PageEvaluation({ params }: { params: Promise<{ slu
           <>
             <h3 className="titre-echeances">Date{p.echeances.length > 1 ? 's' : ''} de ta classe</h3>
             <ul className="regles liste-echeances">
-              {p.echeances.map((e, i) => <li key={`${e.classe_nom}-${i}`}>{e.classe_nom} : {libelleEcheance(e)}.</li>)}
+              {p.echeances.map((e, i) => <li key={`${e.classe_nom}-${i}`}>
+                  {e.classe_nom}{e.quittee ? ' (classe quittée, ses dates s’appliquent encore 30 jours)' : ''} : {libelleEcheance(e)}.
+                </li>)}
             </ul>
           </>
         )}

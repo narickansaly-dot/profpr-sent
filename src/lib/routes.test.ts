@@ -2,6 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { cheminSuiteSur, redirectionPour } from './routes';
 
 describe('redirectionPour', () => {
+  it('laisse la tâche planifiée appeler la route d’envoi sans session', () => {
+    expect(redirectionPour('/api/notifications/envoyer', false)).toBeNull();
+  });
+  it('ne rend publique que la route d’envoi, pas le reste de /api/notifications', () => {
+    expect(redirectionPour('/api/notifications/autre', false)).toEqual({ pathname: '/connexion', suite: '/api/notifications/autre' });
+  });
   it('envoie un visiteur non connecté vers la connexion', () => {
     expect(redirectionPour('/', false)).toEqual({ pathname: '/connexion' });
     expect(redirectionPour('/cours/bph-1re-st2s', false)).toEqual({
@@ -14,6 +20,24 @@ describe('redirectionPour', () => {
     expect(redirectionPour('/inscription', false)).toBeNull();
     expect(redirectionPour('/auth/callback', false)).toBeNull();
     expect(redirectionPour('/auth/confirm', false)).toBeNull();
+    expect(redirectionPour('/ical/abc.ics', false)).toBeNull();
+    expect(redirectionPour('/hors-ligne', false)).toBeNull();
+  });
+  it('laisse un parent sans session ouvrir la page d’accord, et seulement elle', () => {
+    expect(redirectionPour('/accord-parental/xyz', false)).toBeNull();
+    expect(redirectionPour('/accord-parentalx', false)).toEqual({ pathname: '/connexion', suite: '/accord-parentalx' });
+    expect(redirectionPour('/consentement', false)).toEqual({ pathname: '/connexion', suite: '/consentement' });
+  });
+  it('laisse lire les pages légales sans session, et seulement elles', () => {
+    for (const chemin of ['/mentions-legales', '/confidentialite', '/conditions-utilisation', '/conditions-vente']) {
+      expect(redirectionPour(chemin, false)).toBeNull();
+      expect(redirectionPour(chemin, true)).toBeNull();
+      expect(redirectionPour(chemin + 'x', false)).toEqual({ pathname: '/connexion', suite: chemin + 'x' });
+    }
+    expect(redirectionPour('/mes-donnees', false)).toEqual({ pathname: '/connexion', suite: '/mes-donnees' });
+  });
+  it('ne renvoie pas un élève connecté hors de /consentement', () => {
+    expect(redirectionPour('/consentement', true)).toBeNull();
   });
   it('renvoie un élève connecté vers l’accueil depuis connexion et inscription', () => {
     expect(redirectionPour('/connexion', true)).toEqual({ pathname: '/' });
