@@ -1,0 +1,2535 @@
+{
+  "slug": "maths-2de-gen",
+  "filiere": "GEN",
+  "niveau": "2de",
+  "matiere": "Mathématiques",
+  "titre": "Mathématiques, seconde générale et technologique",
+  "couleur": "#4338ca",
+  "chapitres": [
+    {
+      "slug": "ch1",
+      "numero": 1,
+      "titre": "Nombres réels, intervalles et valeur absolue",
+      "titre_court": "Nombres réels",
+      "duree": "3 semaines",
+      "resume": "Ensembles de nombres ℕ, ℤ, 𝔻, ℚ et ℝ, nombres irrationnels, intervalles, intersection et réunion, valeur absolue et distance, encadrements et arrondis.",
+      "chapeau": "Entiers, décimaux, fractions, racines carrées, π : tous ces nombres trouvent leur place sur une même droite graduée. Ce chapitre les range en ensembles, décrit des « morceaux » de droite appelés intervalles et mesure l'écart entre deux nombres avec la valeur absolue.",
+      "objectifs": [
+        "associer à chaque point de la droite graduée un nombre réel, et réciproquement ;",
+        "reconnaître les ensembles ℕ, ℤ, 𝔻, ℚ et ℝ et utiliser les symboles ∈ et ⊂ ;",
+        "savoir pourquoi 1/3 n'est pas décimal et pourquoi √2 est irrationnel ;",
+        "noter, représenter et lire un intervalle, utiliser intersection et réunion ;",
+        "calculer une distance avec la valeur absolue et traduire |x − a| ⩽ r par un intervalle ;",
+        "encadrer un nombre réel et l'arrondir avec un nombre de chiffres significatifs adapté."
+      ],
+      "sections": [
+        {
+          "id": "ensembles",
+          "titre": "Les ensembles de nombres",
+          "html": "\n<p>Depuis l'école primaire, tu as rencontré des nombres de plus en plus variés. En seconde, on les range dans des <strong>ensembles</strong>, chacun noté par une lettre majuscule à double barre.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>Ensemble</th><th>Nom</th><th>Ce qu'il contient</th><th>Exemples</th></tr></thead>\n<tbody>\n<tr><td>ℕ</td><td>entiers naturels</td><td>0, 1, 2, 3…</td><td>0 ; 7 ; 2026</td></tr>\n<tr><td>ℤ</td><td>entiers relatifs</td><td>les entiers naturels et leurs opposés</td><td>−5 ; 0 ; 12</td></tr>\n<tr><td>𝔻</td><td>nombres décimaux</td><td>les nombres qui s'écrivent a/10<sup>n</sup> avec a entier relatif et n entier naturel</td><td>2,35 ; −0,7 ; 3/4 = 0,75</td></tr>\n<tr><td>ℚ</td><td>nombres rationnels</td><td>les quotients a/b avec a entier relatif et b entier relatif non nul</td><td>1/3 ; −2/7 ; 5</td></tr>\n<tr><td>ℝ</td><td>nombres réels</td><td>tous les nombres qui repèrent un point d'une droite graduée</td><td>√2 ; π ; −1,5</td></tr>\n</tbody></table></div>\n<h3>Appartenance et inclusion</h3>\n<p>Pour dire qu'un nombre est un <strong>élément</strong> d'un ensemble, on utilise le symbole ∈ (« appartient à ») ; sinon ∉ (« n'appartient pas à »). Par exemple : −3 ∈ ℤ, mais −3 ∉ ℕ ; 0,25 ∈ 𝔻.</p>\n<p>Tout entier naturel est un entier relatif, tout entier relatif est un décimal (il s'écrit avec n = 0), tout décimal est rationnel, et tout rationnel est réel. On dit que chaque ensemble est <strong>inclus</strong> dans le suivant, et on note :</p>\n<p style=\"text-align:center\"><strong>ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ</strong></p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 420 220\" role=\"img\" aria-label=\"Cinq ensembles emboîtés : N dans Z, Z dans D, D dans Q, Q dans R\">\n<rect x=\"5\" y=\"5\" width=\"410\" height=\"210\" rx=\"18\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<rect x=\"25\" y=\"30\" width=\"300\" height=\"170\" rx=\"16\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<rect x=\"45\" y=\"55\" width=\"200\" height=\"130\" rx=\"14\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<rect x=\"65\" y=\"80\" width=\"120\" height=\"95\" rx=\"12\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<rect x=\"80\" y=\"105\" width=\"65\" height=\"60\" rx=\"10\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<text x=\"390\" y=\"28\" font-size=\"16\" text-anchor=\"end\">ℝ</text><text x=\"305\" y=\"50\" font-size=\"16\" text-anchor=\"end\">ℚ</text>\n<text x=\"230\" y=\"75\" font-size=\"16\" text-anchor=\"end\">𝔻</text><text x=\"175\" y=\"98\" font-size=\"16\" text-anchor=\"end\">ℤ</text>\n<text x=\"112\" y=\"125\" font-size=\"16\" text-anchor=\"middle\">ℕ</text>\n<text x=\"112\" y=\"150\" font-size=\"13\" text-anchor=\"middle\">0 ; 7</text><text x=\"165\" y=\"160\" font-size=\"13\" text-anchor=\"middle\">−5</text>\n<text x=\"215\" y=\"140\" font-size=\"13\" text-anchor=\"middle\">0,75</text><text x=\"285\" y=\"120\" font-size=\"13\" text-anchor=\"middle\">1/3</text>\n<text x=\"370\" y=\"110\" font-size=\"13\" text-anchor=\"middle\">√2</text><text x=\"370\" y=\"150\" font-size=\"13\" text-anchor=\"middle\">π</text>\n</svg></div><figcaption>Les ensembles de nombres sont emboîtés les uns dans les autres.</figcaption></figure>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un ensemble A est <strong>inclus</strong> dans un ensemble B, noté A ⊂ B, quand tout élément de A est aussi un élément de B. On dit aussi que A est un <strong>sous-ensemble</strong> de B.</p></div>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>∈ relie un <em>nombre</em> à un ensemble (2 ∈ ℕ) ; ⊂ relie deux <em>ensembles</em> (ℕ ⊂ ℤ). Écrire « 2 ⊂ ℕ » n'a pas de sens.</p></div>\n"
+        },
+        {
+          "id": "rationnels-irrationnels",
+          "titre": "Décimaux, rationnels et irrationnels",
+          "html": "\n<h3>Un rationnel qui n'est pas décimal : 1/3</h3>\n<p>La calculatrice affiche 1/3 ≈ 0,333 333 3, mais l'écriture ne s'arrête jamais. Prouvons que 1/3 n'est pas décimal.</p>\n<div class=\"def\"><b class=\"t\">Démonstration</b><p>Supposons que 1/3 soit décimal : il s'écrirait a/10<sup>n</sup> avec a entier et n entier naturel. Alors 1/3 = a/10<sup>n</sup>, donc 10<sup>n</sup> = 3a : 10<sup>n</sup> serait un multiple de 3. Or 10<sup>n</sup> = 2<sup>n</sup> × 5<sup>n</sup> ne contient pas le facteur 3, et la somme de ses chiffres (un 1 suivi de zéros) vaut 1, qui n'est pas multiple de 3. C'est impossible : 1/3 n'est donc pas décimal.</p></div>\n<p>Ainsi 𝔻 ⊂ ℚ, mais ℚ contient des nombres qui ne sont pas dans 𝔻. Un rationnel est décimal quand sa forme irréductible a un dénominateur qui ne contient que les facteurs 2 et 5 : 3/4, 7/20 ou 1/8 sont décimaux, 1/3, 2/7 ou 5/6 ne le sont pas.</p>\n<h3>Des nombres qui ne sont pas rationnels</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un nombre réel qui n'est pas rationnel est dit <strong>irrationnel</strong> : il ne peut pas s'écrire comme le quotient de deux entiers.</p></div>\n<p>La géométrie en fournit des exemples : la diagonale d'un carré de côté 1 mesure √2 (théorème de Pythagore), et le périmètre d'un cercle de diamètre 1 mesure π. Ces deux nombres sont irrationnels. La découverte de l'irrationalité de √2, chez les mathématiciens grecs, a provoqué une véritable crise : on pensait que toute longueur était un rapport d'entiers.</p>\n<div class=\"def\"><b class=\"t\">Démonstration : √2 est irrationnel</b><p>On raisonne <strong>par l'absurde</strong> : on suppose le contraire et on aboutit à une contradiction. Supposons que √2 = p/q, avec p et q entiers strictement positifs et la fraction <strong>irréductible</strong>. En élevant au carré, 2 = p²/q², donc p² = 2q² : p² est pair. Le carré d'un nombre impair étant impair (chapitre 2), p est pair ; écrivons p = 2k. Alors 4k² = 2q², soit q² = 2k² : q² est pair, donc q est pair. Ainsi p et q sont tous les deux pairs, et la fraction p/q n'est pas irréductible : c'est une contradiction. Donc √2 n'est pas rationnel.</p></div>\n<p>D'autres racines carrées sont irrationnelles, comme √3 ou √5. Mais attention : √9 = 3 et √0,25 = 0,5 sont décimaux.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>La calculatrice ne manipule que des valeurs approchées. Elle affiche √2 ≈ 1,414213562, mais ce nombre décimal n'est pas √2 : son carré n'est pas exactement 2. Les « nombres de la calculatrice » ne sont pas les nombres réels.</p></div>\n"
+        },
+        {
+          "id": "intervalles",
+          "titre": "La droite numérique et les intervalles",
+          "html": "\n<p>Sur une droite graduée, munie d'une origine O et d'une unité, chaque point est repéré par un unique nombre réel, son <strong>abscisse</strong> ; réciproquement, chaque réel est l'abscisse d'un unique point. On parle de <strong>droite numérique</strong> : elle représente ℝ.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Un <strong>intervalle</strong> est l'ensemble des réels x compris entre deux bornes, ou supérieurs (ou inférieurs) à une borne. On le décrit par des inégalités.</p></div>\n<div class=\"tbl\"><table>\n<thead><tr><th>Inégalité</th><th>Intervalle</th><th>Se lit</th></tr></thead>\n<tbody>\n<tr><td>2 ⩽ x ⩽ 5</td><td>[2 ; 5]</td><td>intervalle fermé 2, 5</td></tr>\n<tr><td>2 &lt; x &lt; 5</td><td>]2 ; 5[</td><td>intervalle ouvert 2, 5</td></tr>\n<tr><td>2 ⩽ x &lt; 5</td><td>[2 ; 5[</td><td>fermé en 2, ouvert en 5</td></tr>\n<tr><td>2 &lt; x ⩽ 5</td><td>]2 ; 5]</td><td>ouvert en 2, fermé en 5</td></tr>\n<tr><td>x ⩾ 2</td><td>[2 ; +∞[</td><td>de 2 inclus à plus l'infini</td></tr>\n<tr><td>x &gt; 2</td><td>]2 ; +∞[</td><td>de 2 exclu à plus l'infini</td></tr>\n<tr><td>x ⩽ 5</td><td>]−∞ ; 5]</td><td>de moins l'infini à 5 inclus</td></tr>\n<tr><td>x &lt; 5</td><td>]−∞ ; 5[</td><td>de moins l'infini à 5 exclu</td></tr>\n</tbody></table></div>\n<p>Le crochet est tourné <strong>vers l'intérieur</strong> quand la borne appartient à l'intervalle (inégalité large ⩽), <strong>vers l'extérieur</strong> quand elle n'y appartient pas (inégalité stricte &lt;). Les symboles +∞ et −∞ ne sont pas des nombres : du côté de l'infini, le crochet est toujours ouvert. L'ensemble ℝ tout entier s'écrit ]−∞ ; +∞[.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 420 70\" role=\"img\" aria-label=\"Représentation de l'intervalle crochet fermé 2, crochet ouvert 5 sur une droite graduée\">\n<line x1=\"10\" y1=\"35\" x2=\"410\" y2=\"35\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n<line x1=\"130\" y1=\"35\" x2=\"250\" y2=\"35\" stroke=\"#4338ca\" stroke-width=\"5\"/>\n<text x=\"122\" y=\"44\" font-size=\"22\" fill=\"#4338ca\">[</text><text x=\"250\" y=\"44\" font-size=\"22\" fill=\"#4338ca\">[</text>\n<text x=\"130\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">2</text><text x=\"250\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">5</text>\n<line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"40\" stroke=\"currentColor\"/><text x=\"50\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">0</text>\n<line x1=\"90\" y1=\"30\" x2=\"90\" y2=\"40\" stroke=\"currentColor\"/><text x=\"90\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">1</text>\n</svg></div><figcaption>L'intervalle [2 ; 5[ : 2 en fait partie, 5 non.</figcaption></figure>\n<p>Pour savoir si un nombre appartient à un intervalle, on vérifie l'inégalité. Par exemple, 4,99 ∈ [2 ; 5[ car 2 ⩽ 4,99 &lt; 5 ; mais 5 ∉ [2 ; 5[.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Un intervalle [2 ; 5] contient une infinité de nombres réels, pas seulement les entiers 2, 3, 4 et 5 : 2,5, π ou √10 en font aussi partie.</p></div>\n"
+        },
+        {
+          "id": "intersection-reunion",
+          "titre": "Intersection et réunion",
+          "html": "\n<p>Deux ensembles A et B peuvent être combinés de deux façons.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>L'<strong>intersection</strong> de A et B, notée A ∩ B (« A inter B »), est l'ensemble des éléments qui appartiennent à A <strong>et</strong> à B.</p><p>La <strong>réunion</strong> de A et B, notée A ∪ B (« A union B »), est l'ensemble des éléments qui appartiennent à A <strong>ou</strong> à B (ou aux deux).</p></div>\n<p>En mathématiques, le « ou » est <strong>inclusif</strong> : un élément qui appartient aux deux ensembles appartient à la réunion.</p>\n<h3>Avec des intervalles</h3>\n<p>On représente les deux intervalles sur la même droite, puis on lit le résultat.</p>\n<ul>\n<li>[−1 ; 4] ∩ [2 ; 7] = [2 ; 4] : les nombres communs aux deux intervalles.</li>\n<li>[−1 ; 4] ∪ [2 ; 7] = [−1 ; 7] : les nombres d'au moins un des deux intervalles.</li>\n<li>]−∞ ; 1[ ∩ [3 ; +∞[ est vide : aucun nombre n'est à la fois inférieur à 1 et supérieur ou égal à 3. On note ∅ l'ensemble vide.</li>\n<li>]−∞ ; 1[ ∪ [3 ; +∞[ ne peut pas s'écrire comme un seul intervalle : il y a un « trou » entre 1 et 3.</li>\n</ul>\n<p>Une condition avec « et » donne une intersection : « x ⩾ −2 et x &lt; 3 » s'écrit x ∈ [−2 ; 3[. Une condition avec « ou » donne une réunion : « x &lt; 0 ou x &gt; 5 » s'écrit x ∈ ]−∞ ; 0[ ∪ ]5 ; +∞[.</p>\n<h3>Complémentaire</h3>\n<p>Le <strong>complémentaire</strong> d'un ensemble A dans un ensemble E est l'ensemble des éléments de E qui n'appartiennent pas à A. On le note E \\ A, ou Ā. Par exemple, dans ℝ, le complémentaire de [2 ; +∞[ est ]−∞ ; 2[.</p>\n"
+        },
+        {
+          "id": "valeur-absolue",
+          "titre": "Valeur absolue et distance",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>La <strong>valeur absolue</strong> d'un réel a, notée |a|, est la distance entre le point d'abscisse a et l'origine de la droite numérique. Elle est toujours positive ou nulle.</p></div>\n<p>Concrètement, |a| = a si a ⩾ 0, et |a| = −a si a &lt; 0. Exemples : |7| = 7 ; |−7| = 7 ; |0| = 0 ; |3 − π| = π − 3, car 3 − π est négatif.</p>\n<div class=\"def\"><b class=\"t\">Propriété</b><p>La <strong>distance</strong> entre deux réels a et b, c'est-à-dire entre les points d'abscisses a et b, est |a − b|, qui est aussi égal à |b − a|.</p></div>\n<p>Exemples : la distance entre 2 et 9 vaut |2 − 9| = 7 ; la distance entre −3 et 5 vaut |−3 − 5| = 8 ; la distance entre −4 et −1 vaut 3.</p>\n<h3>Intervalle de centre a et de rayon r</h3>\n<p>Soit a un réel et r un réel positif. Les réels x dont la distance à a est inférieure ou égale à r sont ceux de l'intervalle [a − r ; a + r], de <strong>centre</strong> a et de <strong>rayon</strong> r.</p>\n<div class=\"def\"><b class=\"t\">Propriété</b><p>|x − a| ⩽ r équivaut à x ∈ [a − r ; a + r], c'est-à-dire a − r ⩽ x ⩽ a + r.</p></div>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 420 80\" role=\"img\" aria-label=\"Intervalle de centre a et de rayon r : de a moins r à a plus r\">\n<line x1=\"10\" y1=\"40\" x2=\"410\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n<line x1=\"110\" y1=\"40\" x2=\"310\" y2=\"40\" stroke=\"#4338ca\" stroke-width=\"5\"/>\n<text x=\"102\" y=\"49\" font-size=\"22\" fill=\"#4338ca\">[</text><text x=\"304\" y=\"49\" font-size=\"22\" fill=\"#4338ca\">]</text>\n<circle cx=\"210\" cy=\"40\" r=\"4\" fill=\"currentColor\"/>\n<text x=\"110\" y=\"72\" font-size=\"13\" text-anchor=\"middle\">a − r</text><text x=\"210\" y=\"72\" font-size=\"13\" text-anchor=\"middle\">a</text><text x=\"310\" y=\"72\" font-size=\"13\" text-anchor=\"middle\">a + r</text>\n<text x=\"160\" y=\"25\" font-size=\"13\" text-anchor=\"middle\">r</text><text x=\"260\" y=\"25\" font-size=\"13\" text-anchor=\"middle\">r</text>\n</svg></div><figcaption>Les réels x tels que |x − a| ⩽ r.</figcaption></figure>\n<p>Exemples : |x − 3| ⩽ 2 équivaut à x ∈ [1 ; 5]. Dans l'autre sens, l'intervalle [−1 ; 7] a pour centre (−1 + 7)/2 = 3 et pour rayon (7 − (−1))/2 = 4 : il est décrit par |x − 3| ⩽ 4.</p>\n<p>Avec une inégalité stricte, on obtient un intervalle ouvert : |x − 3| &lt; 2 équivaut à x ∈ ]1 ; 5[.</p>\n"
+        },
+        {
+          "id": "encadrements",
+          "titre": "Encadrements, arrondis et chiffres significatifs",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p><strong>Encadrer</strong> un réel x, c'est trouver deux nombres a et b tels que a ⩽ x ⩽ b. L'<strong>amplitude</strong> de l'encadrement est b − a.</p></div>\n<p>Un <strong>encadrement décimal à 10<sup>−n</sup> près</strong> est un encadrement par deux décimaux qui ont n chiffres après la virgule et qui diffèrent de 10<sup>−n</sup>. Pour π : 3 ⩽ π ⩽ 4 (à l'unité), 3,1 ⩽ π ⩽ 3,2 (à 10<sup>−1</sup> près), 3,14 ⩽ π ⩽ 3,15 (à 10<sup>−2</sup> près).</p>\n<h3>Troncature et arrondi</h3>\n<p>La <strong>troncature</strong> à 10<sup>−n</sup> d'un nombre positif consiste à couper son écriture décimale après le n-ième chiffre. L'<strong>arrondi</strong> à 10<sup>−n</sup> est la valeur la plus proche avec n décimales : on regarde le chiffre suivant ; s'il vaut 5 ou plus, on augmente le dernier chiffre gardé de 1.</p>\n<p>Pour √2 ≈ 1,41421 : la troncature au centième est 1,41 ; l'arrondi au millième est 1,414. Pour 2/3 ≈ 0,6667 : la troncature au centième est 0,66, l'arrondi au centième est 0,67.</p>\n<h3>Chiffres significatifs</h3>\n<p>Les <strong>chiffres significatifs</strong> d'un nombre sont ses chiffres à partir du premier chiffre non nul en partant de la gauche. 0,00352 a trois chiffres significatifs (3, 5 et 2) ; 12,40 en a quatre. Dans un problème, on arrondit en gardant un nombre de chiffres significatifs adapté à la précision des données : il est inutile de donner une longueur au micromètre près si les mesures sont prises au millimètre.</p>\n<p>Exemple : un disque a un rayon mesuré de 2,3 cm (deux chiffres significatifs). Son aire π × 2,3² ≈ 16,619 cm² s'écrit raisonnablement 17 cm².</p>\n<h3>Encadrer √2 par balayage</h3>\n<p>Pour encadrer √2 à 0,1 près, on teste 1 ; 1,1 ; 1,2… et on s'arrête au premier nombre dont le carré dépasse 2 : 1,4² = 1,96 et 1,5² = 2,25, donc 1,4 ⩽ √2 ⩽ 1,5. On recommence ensuite avec un pas de 0,01 à partir de 1,4. En langage naturel :</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">x ← 1<br>pas ← 0,1<br>Tant que (x + pas)² ⩽ 2<br>    x ← x + pas<br>Fin Tant que<br>Afficher x et x + pas</div>\n<p>Cet algorithme est programmé en Python au chapitre 3.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>ℕ ⊂ ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ. Un décimal s'écrit a/10<sup>n</sup>, un rationnel a/b (b ≠ 0). ∈ relie un élément à un ensemble, ⊂ relie deux ensembles.</li>\n<li>1/3 est rationnel mais pas décimal ; √2 et π sont <strong>irrationnels</strong> (√2 se démontre par l'absurde).</li>\n<li>Un intervalle traduit des inégalités : a ⩽ x &lt; b s'écrit [a ; b[. Crochet tourné vers l'intérieur : borne incluse ; du côté de ±∞, crochet toujours ouvert.</li>\n<li>A ∩ B : éléments de A <strong>et</strong> de B ; A ∪ B : éléments de A <strong>ou</strong> de B.</li>\n<li>|a| est la distance de a à 0 ; la distance entre a et b est |a − b|.</li>\n<li>|x − a| ⩽ r équivaut à x ∈ [a − r ; a + r].</li>\n<li>Encadrer à 10<sup>−n</sup> près, tronquer, arrondir ; adapter le nombre de chiffres significatifs aux données.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch1:banque:001",
+          "enonce": "Quel ensemble est noté ℤ ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "ℤ désigne les entiers relatifs : les entiers naturels et leurs opposés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les entiers relatifs",
+            "Les entiers naturels",
+            "Les nombres décimaux",
+            "Les nombres rationnels"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:002",
+          "enonce": "Quel ensemble contient tous les nombres qui repèrent un point d'une droite graduée ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "ℝ, l'ensemble des réels, est représenté par toute la droite numérique.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℚ",
+            "ℝ",
+            "𝔻",
+            "ℤ"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:003",
+          "enonce": "Le nombre −4 n'est pas un entier naturel. Dans quel ensemble le range-t-on d'abord ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "−4 est un entier négatif : il n'est pas dans ℕ, mais il est dans ℤ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℕ",
+            "𝔻",
+            "ℤ",
+            "ℚ"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:004",
+          "enonce": "Où ranger 2/7, dont l'écriture décimale ne s'arrête pas ? Choisis le plus petit ensemble qui le contient.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "2/7 est un quotient d'entiers dont le dénominateur contient le facteur 7 : il est rationnel, pas décimal.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "𝔻",
+            "ℤ",
+            "ℝ",
+            "ℚ"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:005",
+          "enonce": "Quel est l'ensemble le plus précis pour classer −0,125 ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "−0,125 = −125/10³ : c'est un décimal, mais pas un entier.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "𝔻",
+            "ℤ",
+            "ℚ",
+            "ℝ"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:006",
+          "enonce": "Une racine carrée peut être entière. À quel plus petit ensemble de nombres appartient √16 ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 2,
+          "explication": "√16 = 4, entier naturel : l'écriture avec une racine ne suffit pas à dire qu'un nombre est irrationnel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℝ",
+            "ℕ",
+            "ℚ",
+            "𝔻"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:007",
+          "enonce": "Pourquoi 1 − √3 n'est-il pas un nombre rationnel ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 3,
+          "explication": "√3 est irrationnel, donc 1 − √3 aussi : sinon √3 = 1 − (1 − √3) serait rationnel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce qu'il est négatif",
+            "Parce qu'il s'écrit avec un signe moins",
+            "Sinon √3 = 1 − (1 − √3) serait rationnel",
+            "Parce que 1 et 3 sont impairs"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:008",
+          "enonce": "Quels nombres sont des entiers naturels ? Coche toutes les réponses exactes.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "ℕ contient 0, 1, 2… ; 8/2 = 4 en fait partie, −2 et 1,5 non.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "8/2",
+            "−2",
+            "1,5",
+            "15",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:009",
+          "enonce": "Quels nombres sont décimaux ? Coche toutes les réponses exactes.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 2,
+          "explication": "3/8 = 0,375 et −4 sont décimaux ; 1/6 a un dénominateur avec le facteur 3, et √3 est irrationnel.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3/8",
+            "√3",
+            "0,007",
+            "1/6",
+            "−4"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:010",
+          "enonce": "Quels nombres sont rationnels mais pas décimaux ? Coche toutes les réponses exactes.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 2,
+          "explication": "1/3 et 5/7 sont des quotients d'entiers non décimaux ; 0,5 et 3/25 = 0,12 sont décimaux ; √2 n'est pas rationnel.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5/7",
+            "1/3",
+            "0,5",
+            "√2",
+            "3/25"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:011",
+          "enonce": "Après simplification, lesquelles de ces écritures donnent un entier relatif ? Coche toutes les réponses exactes.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 3,
+          "explication": "−√25 = −5, (−3)² = 9 et −20/5 = −4 sont entiers ; −2,5 ne l'est pas, √8 est irrationnel.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−20/5",
+            "(−3)²",
+            "−2,5",
+            "−√25",
+            "√8"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:012",
+          "enonce": "Tout entier relatif est un nombre décimal.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "Un entier relatif a s'écrit a/10⁰ : c'est un décimal.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:013",
+          "enonce": "Un nombre décimal est forcément un entier.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "Contre-exemple : 0,5 est décimal mais n'est pas entier.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:014",
+          "enonce": "Le nombre 0 appartient à ℕ.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "ℕ = {0 ; 1 ; 2 ; …} : 0 est un entier naturel.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:015",
+          "enonce": "Combien d'entiers naturels sont strictement inférieurs à 6 ? Réponds par un nombre.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "Ce sont 0, 1, 2, 3, 4 et 5 : il y en a 6, car 0 est un entier naturel.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:016",
+          "enonce": "Combien d'entiers relatifs x vérifient −3 ⩽ x ⩽ 3 ? Réponds par un nombre.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 2,
+          "explication": "−3, −2, −1, 0, 1, 2, 3 : sept entiers.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:017",
+          "enonce": "Comment se lit le symbole ∈, placé entre un nombre et un ensemble ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "∈ relie un élément à un ensemble : il se lit « appartient à ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "« est inclus dans »",
+            "« est égal à »",
+            "« contient »",
+            "« appartient à »"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:018",
+          "enonce": "Que signifie le symbole ⊂ écrit entre deux ensembles A et B ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "⊂ relie deux ensembles : A ⊂ B se lit « A est inclus dans B ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "« est inclus dans »",
+            "« appartient à »",
+            "« est inférieur à »",
+            "« n'appartient pas à »"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:019",
+          "enonce": "Parmi ces écritures, laquelle utilise correctement le symbole d'appartenance ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "∈ relie un nombre à un ensemble, et −3 est un entier relatif ; −3 n'est pas un entier naturel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3 ⊂ ℤ",
+            "−3 ∈ ℤ",
+            "ℤ ∈ ℚ",
+            "−3 ∈ ℕ"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:020",
+          "enonce": "Quelle inclusion entre ensembles de nombres est vraie ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 2,
+          "explication": "Tout décimal est rationnel : 𝔻 est inclus dans ℚ ; l'inverse est faux (1/3).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℚ ⊂ 𝔻",
+            "𝔻 ∈ ℚ",
+            "𝔻 ⊂ ℚ",
+            "ℝ ⊂ ℚ"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:021",
+          "enonce": "Une seule de ces écritures est fausse : laquelle ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 2,
+          "explication": "π est irrationnel : il n'appartient pas à ℚ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "π ∈ ℝ",
+            "√2 ∉ ℚ",
+            "0,5 ∈ 𝔻",
+            "π ∈ ℚ"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:022",
+          "enonce": "Quelle est l'écriture correcte de « l'ensemble des entiers naturels est un sous-ensemble des réels » ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 3,
+          "explication": "« Sous-ensemble de » se traduit par le symbole d'inclusion ⊂.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℕ ⊂ ℝ",
+            "ℕ ∈ ℝ",
+            "ℝ ⊂ ℕ",
+            "ℝ ∈ ℕ"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:023",
+          "enonce": "Quelles relations entre nombres et ensembles sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "ℕ ⊂ ℤ, 2,5 est décimal et √2 est réel ; ℚ n'est pas inclus dans ℤ, et −1 n'est pas naturel.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "ℚ ⊂ ℤ",
+            "ℕ ⊂ ℤ",
+            "√2 ∈ ℝ",
+            "2,5 ∈ 𝔻",
+            "−1 ∈ ℕ"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:024",
+          "enonce": "Repère les écritures justes, qui mêlent appartenance et inclusion. Coche toutes les réponses exactes.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 2,
+          "explication": "4/9 est rationnel non décimal ; π n'est pas décimal.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4/9 ∈ 𝔻",
+            "4/9 ∈ ℚ",
+            "ℤ ⊂ 𝔻",
+            "π ∈ 𝔻",
+            "−2 ∉ ℕ"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:025",
+          "enonce": "On note E = {1 ; 2 ; 3 ; 4} et A = {2 ; 4}. Quelles écritures sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 3,
+          "explication": "Tous les éléments de A sont dans E, donc A ⊂ E ; 3 n'est pas dans A. E n'est pas inclus dans A, et A est un ensemble, pas un élément de E.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "E ⊂ A",
+            "2 ∈ E",
+            "A ∈ E",
+            "A ⊂ E",
+            "3 ∉ A"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:026",
+          "enonce": "On peut écrire 5 ⊂ ℕ.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "5 est un nombre : on écrit 5 ∈ ℕ. Le symbole ⊂ relie deux ensembles.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:027",
+          "enonce": "Si A ⊂ B, alors tout élément de B est un élément de A.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 2,
+          "explication": "C'est l'inverse : tout élément de A est un élément de B. Exemple : ℕ ⊂ ℤ mais −1 ∈ ℤ et −1 ∉ ℕ.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:028",
+          "enonce": "Le complémentaire de ℚ dans ℝ est l'ensemble des nombres irrationnels.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 3,
+          "explication": "Les réels qui ne sont pas rationnels sont, par définition, les irrationnels.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:029",
+          "enonce": "Comment appelle-t-on un réel qui ne peut pas s'écrire comme quotient de deux entiers ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "Un irrationnel est un réel qui n'est pas rationnel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un décimal",
+            "Un irrationnel",
+            "Un entier relatif",
+            "Un rationnel"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:030",
+          "enonce": "Quel nombre est irrationnel ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "√2 est irrationnel ; √4 = 2, 1/3 et 0,333 sont rationnels.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√4",
+            "1/3",
+            "√2",
+            "0,333"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:031",
+          "enonce": "Quelle longueur, tirée de la géométrie, est un nombre irrationnel ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "La diagonale d'un carré de côté 1 mesure √2 ; les autres longueurs valent 3, 2 et 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le côté d'un carré d'aire 9",
+            "Le rayon d'un cercle de diamètre 4",
+            "Le périmètre d'un carré de côté 1",
+            "La diagonale d'un carré de côté 1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:032",
+          "enonce": "Pourquoi 3/4 est-il décimal ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "3/4 = 75/10² : il s'écrit avec une puissance de 10 au dénominateur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car 3/4 = 75/100",
+            "Car 3 et 4 sont des entiers",
+            "Car 3/4 est inférieur à 1",
+            "Car 4 est un nombre pair"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:033",
+          "enonce": "Quel rationnel n'est pas décimal ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "6 = 2 × 3 contient le facteur 3 ; 8, 20 et 25 ne contiennent que les facteurs 2 et 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7/8",
+            "5/6",
+            "9/20",
+            "3/25"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:034",
+          "enonce": "Dans la démonstration « 1/3 n'est pas décimal », à quelle égalité aboutit-on en supposant 1/3 = a/10ⁿ ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "En croisant les produits, 1 × 10ⁿ = 3 × a : 10ⁿ serait un multiple de 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a = 3 × 10ⁿ",
+            "3 = a × 10ⁿ",
+            "10ⁿ = 3a",
+            "10ⁿ = a/3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:035",
+          "enonce": "Quel type de raisonnement sert à démontrer que √2 est irrationnel ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "On suppose que √2 est rationnel et on aboutit à une contradiction.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un contre-exemple",
+            "Un calcul à la calculatrice",
+            "Une vérification sur des exemples",
+            "Un raisonnement par l'absurde"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:036",
+          "enonce": "Dans la démonstration de l'irrationalité de √2, quelle est la contradiction finale ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 3,
+          "explication": "Si p et q sont pairs, la fraction p/q se simplifie par 2 : elle n'est pas irréductible, contrairement à l'hypothèse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "p et q sont tous les deux pairs",
+            "p est impair",
+            "q est nul",
+            "√2 est négatif"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:037",
+          "enonce": "Pourquoi la valeur 1,414213562 affichée par la calculatrice n'est-elle pas égale à √2 ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "Un décimal est rationnel ; √2 ne l'est pas. La calculatrice affiche une valeur approchée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La calculatrice se trompe toujours",
+            "C'est un décimal, alors que √2 est irrationnel",
+            "√2 est plus petit que 1",
+            "√2 est un entier"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:038",
+          "enonce": "Quel nombre est décimal ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 3,
+          "explication": "√0,49 = 0,7 ; √0,9 et √2/2 sont irrationnels, π/4 aussi.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√0,9",
+            "√2/2",
+            "√0,49",
+            "π/4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:039",
+          "enonce": "Quels nombres sont irrationnels ? Coche toutes les réponses exactes.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "√9 = 3 ; 22/7 et 3,14 sont rationnels. π et √5 sont irrationnels.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "22/7",
+            "√5",
+            "√9",
+            "π",
+            "3,14"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:040",
+          "enonce": "Parmi ces nombres, lesquels peuvent s'écrire comme quotient de deux entiers ? Coche toutes les réponses exactes.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "√36 = 6, −0,8 et 13/11 sont rationnels ; √7 et 2π sont irrationnels.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "√7",
+            "2π",
+            "−0,8",
+            "13/11",
+            "√36"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:041",
+          "enonce": "Quelles fractions irréductibles sont des nombres décimaux ? Coche toutes les réponses exactes.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 3,
+          "explication": "40 = 2³ × 5, 16 = 2⁴, 125 = 5³ : seuls les facteurs 2 et 5. 15 et 21 contiennent le facteur 3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1/16",
+            "9/125",
+            "4/21",
+            "7/40",
+            "2/15"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:042",
+          "enonce": "Le nombre π est rationnel.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "π est irrationnel. 22/7 ou 3,14 n'en sont que des valeurs approchées.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:043",
+          "enonce": "Le nombre 1/3 est rationnel.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "1/3 est un quotient d'entiers : il est rationnel, même s'il n'est pas décimal.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:044",
+          "enonce": "Toute racine carrée d'un entier est irrationnelle.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "Contre-exemple : √25 = 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:045",
+          "enonce": "Le produit de deux irrationnels est toujours irrationnel.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 3,
+          "explication": "Contre-exemple : √2 × √2 = 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:046",
+          "enonce": "Écris 3/8 sous forme décimale.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "3/8 = 375/1000 = 0,375.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,375",
+            "0.375"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:047",
+          "enonce": "Donne l'écriture décimale de la fraction trois quarts.",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "3/4 = 75/100 = 0,75 : c'est un automatisme à connaître.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,75",
+            "0.75"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:048",
+          "enonce": "Traduis −2 ⩽ x < 3 par un intervalle.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "−2 est inclus (crochet vers l'intérieur), 3 est exclu (crochet vers l'extérieur).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−2 ; 3]",
+            "[−2 ; 3]",
+            "]−2 ; 3[",
+            "[−2 ; 3["
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:049",
+          "enonce": "Les réels strictement supérieurs à 4 forment quel intervalle ?",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "4 est exclu et, du côté de +∞, le crochet est toujours ouvert.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]4 ; +∞[",
+            "[4 ; +∞[",
+            "]−∞ ; 4[",
+            "]4 ; +∞]"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:050",
+          "enonce": "Comment noter l'ensemble des réels inférieurs ou égaux à −1 ?",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "−1 est inclus ; du côté de −∞, le crochet est ouvert.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; −1[",
+            "]−∞ ; −1]",
+            "[−1 ; +∞[",
+            "[−∞ ; −1]"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:051",
+          "enonce": "Quelle double inégalité vérifie x quand x ∈ ]0 ; 5] ?",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "Crochet ouvert en 0 : inégalité stricte ; crochet fermé en 5 : inégalité large.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0 ⩽ x ⩽ 5",
+            "0 ⩽ x < 5",
+            "0 < x ⩽ 5",
+            "0 < x < 5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:052",
+          "enonce": "Dire que x appartient à [−3 ; +∞[, c'est dire que…",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "Les réels supérieurs ou égaux à −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x > −3",
+            "x ⩽ −3",
+            "x < −3",
+            "x ⩾ −3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:053",
+          "enonce": "Comment s'écrit l'ensemble ℝ sous forme d'intervalle ?",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "ℝ est l'intervalle ]−∞ ; +∞[, ouvert aux deux bouts.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; +∞[",
+            "[−∞ ; +∞]",
+            "[0 ; +∞[",
+            "]0 ; +∞["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:054",
+          "enonce": "Quel nombre appartient à l'intervalle ]2 ; 3[ ?",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "√5 ≈ 2,24 est entre 2 et 3 ; 2 est exclu, √10 ≈ 3,16 et 3,5 sont trop grands.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "√5",
+            "√10",
+            "3,5"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:055",
+          "enonce": "Quel nombre n'appartient pas à [−1 ; 1] ?",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "−1,01 < −1 ; les bornes −1 et 1 sont incluses.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1",
+            "0,99",
+            "−1,01",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:056",
+          "enonce": "Quel intervalle contient π mais pas 3,15 ?",
+          "notion": "Intervalles",
+          "difficulte": 3,
+          "explication": "π ≈ 3,1416 est dans ]3,1 ; 3,15[, et 3,15 est exclu de cet intervalle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]3,14 ; 3,2[",
+            "[3 ; 3,15]",
+            "]3,15 ; 4[",
+            "]3,1 ; 3,15["
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:057",
+          "enonce": "Un nombre x vérifie « x est positif et strictement inférieur à 10 ». Quel intervalle convient ?",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "« Positif » signifie x ⩾ 0 ; « strictement inférieur à 10 » signifie x < 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[0 ; 10[",
+            "]0 ; 10]",
+            "[0 ; 10]",
+            "]−∞ ; 10["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:058",
+          "enonce": "Quels nombres appartiennent à [1 ; 4[ ? Coche toutes les réponses exactes.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "1 est inclus, 3,99 et π ≈ 3,14 sont entre 1 et 4 ; 4 est exclu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "π",
+            "4",
+            "1",
+            "3,99",
+            "0,9"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:059",
+          "enonce": "Lesquels de ces réels sont inférieurs ou égaux à −2 ? Coche toutes les réponses exactes.",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "−√5 ≈ −2,24 ⩽ −2 ; −1,9 > −2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−100",
+            "−1,9",
+            "−2",
+            "−√5",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:060",
+          "enonce": "Quelles écritures décrivent les réels x tels que x ⩾ 7 ? Coche toutes les réponses exactes.",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "x ⩾ 7 s'écrit aussi 7 ⩽ x ou x ∈ [7 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "7 ⩽ x",
+            "]7 ; +∞[",
+            "[7 ; +∞[",
+            "]−∞ ; 7]",
+            "x > 7"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:061",
+          "enonce": "Quels intervalles contiennent √3 ? Coche toutes les réponses exactes.",
+          "notion": "Intervalles",
+          "difficulte": 3,
+          "explication": "√3 ≈ 1,732 : il est dans les trois premiers, mais pas dans ]1,74 ; 2] ni [1,8 ; 3].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "]1,74 ; 2]",
+            "[1,8 ; 3]",
+            "]1 ; 2[",
+            "[1,73 ; 1,74[",
+            "[1,7 ; 1,8]"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:062",
+          "enonce": "Le nombre 5 appartient à l'intervalle [2 ; 5[.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "Le crochet en 5 est tourné vers l'extérieur : 5 est exclu.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:063",
+          "enonce": "L'intervalle [2 ; 5] contient une infinité de nombres réels.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "Il contient 2,5, 2,51, π, √10… pas seulement les entiers.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:064",
+          "enonce": "On peut écrire l'intervalle [3 ; +∞].",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "+∞ n'est pas un nombre : le crochet est toujours ouvert de ce côté, [3 ; +∞[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:065",
+          "enonce": "L'intervalle ]4 ; 4[ contient le nombre 4.",
+          "notion": "Intervalles",
+          "difficulte": 3,
+          "explication": "]4 ; 4[ est vide : aucun réel ne vérifie 4 < x < 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:066",
+          "enonce": "Chaque point de la droite numérique est repéré par un unique nombre réel.",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "C'est le sens de la droite numérique : points et réels se correspondent un à un.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:067",
+          "enonce": "Combien d'entiers appartiennent à l'intervalle [3 ; 8] ? Réponds par un nombre.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "3, 4, 5, 6, 7 et 8 : six entiers, bornes comprises.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:068",
+          "enonce": "Dénombre les entiers strictement compris entre −2 et 3. Réponds par un nombre.",
+          "notion": "Intervalles",
+          "difficulte": 2,
+          "explication": "−1, 0, 1 et 2 : les bornes −2 et 3 sont exclues.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:069",
+          "enonce": "Que désigne A ∩ B ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 1,
+          "explication": "∩ est l'intersection : les éléments communs aux deux ensembles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les éléments qui sont dans A ou dans B",
+            "Les éléments qui sont dans A et dans B",
+            "Les éléments de A qui ne sont pas dans B",
+            "Les éléments qui ne sont ni dans A ni dans B"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:070",
+          "enonce": "Quels éléments forment la réunion A ∪ B ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 1,
+          "explication": "∪ est la réunion ; le « ou » mathématique inclut les éléments communs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les éléments communs à A et à B",
+            "Les éléments de B qui ne sont pas dans A",
+            "Les éléments qui sont dans A ou dans B",
+            "Les éléments qui sont dans un seul des deux"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:071",
+          "enonce": "Que vaut [−1 ; 4] ∩ [2 ; 7] ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 1,
+          "explication": "Les nombres communs aux deux intervalles vont de 2 à 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−1 ; 7]",
+            "[−1 ; 2]",
+            "[4 ; 7]",
+            "[2 ; 4]"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:072",
+          "enonce": "En réunissant [−1 ; 4] et [2 ; 7], quel intervalle obtient-on ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 1,
+          "explication": "Les deux intervalles se chevauchent : leur réunion va de −1 à 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−1 ; 7]",
+            "[2 ; 4]",
+            "[−1 ; 2] ∪ [4 ; 7]",
+            "[4 ; 7]"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:073",
+          "enonce": "Que vaut ]0 ; 5[ ∩ [3 ; 8] ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "Commun aux deux : de 3 (inclus dans le second) à 5 (exclu du premier).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]0 ; 8]",
+            "[3 ; 5[",
+            "]3 ; 5]",
+            "[3 ; 8]"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:074",
+          "enonce": "Que vaut ]−∞ ; 2] ∩ [2 ; +∞[ ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "Le seul réel à la fois ⩽ 2 et ⩾ 2 est 2 lui-même.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "∅",
+            "ℝ",
+            "{2}",
+            "]−∞ ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:075",
+          "enonce": "Que vaut ]−∞ ; 1[ ∩ [3 ; +∞[ ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "Aucun réel n'est à la fois inférieur à 1 et supérieur ou égal à 3 : l'intersection est vide.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[1 ; 3]",
+            "]1 ; 3[",
+            "ℝ",
+            "∅"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:076",
+          "enonce": "Quel ensemble correspond à « x ⩾ −2 et x < 3 » ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "« Et » se traduit par une intersection : [−2 ; +∞[ ∩ ]−∞ ; 3[ = [−2 ; 3[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−2 ; 3[",
+            "]−∞ ; 3[",
+            "[−2 ; +∞[",
+            "]−2 ; 3]"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:077",
+          "enonce": "Quel ensemble correspond à « x < 0 ou x > 5 » ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "« Ou » se traduit par une réunion d'intervalles ; il reste un trou entre 0 et 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]0 ; 5[",
+            "]−∞ ; 0[ ∪ ]5 ; +∞[",
+            "[0 ; 5]",
+            "∅"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:078",
+          "enonce": "Quel est le complémentaire de [2 ; +∞[ dans ℝ ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 3,
+          "explication": "Ce sont les réels qui ne vérifient pas x ⩾ 2, c'est-à-dire x < 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; 2]",
+            "]2 ; +∞[",
+            "]−∞ ; 2[",
+            "[−2 ; 2]"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:079",
+          "enonce": "Quels nombres sont dans la réunion [0 ; 3] ∪ [5 ; 6] ? Coche toutes les réponses exactes.",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "4 est dans le trou entre 3 et 5 ; 6,1 dépasse 6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5,5",
+            "6,1",
+            "4",
+            "3",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:080",
+          "enonce": "Lesquels de ces réels sont à la fois dans ]−3 ; 2] et dans [0 ; 5[ ? Coche toutes les réponses exactes.",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "L'intersection vaut [0 ; 2].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1,5",
+            "2",
+            "−1",
+            "4",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:081",
+          "enonce": "Quelles égalités entre intervalles ou ensembles sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Intersection et réunion",
+          "difficulte": 3,
+          "explication": "]0 ; 4[ ∪ ]4 ; 9[ ne contient pas 4 ; ℕ ∪ ℤ = ℤ.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "ℕ ∪ ℤ = ℕ",
+            "]0 ; 4[ ∩ ]2 ; 9[ = ]2 ; 4[",
+            "ℕ ∩ ℤ = ℕ",
+            "[1 ; 3] ∪ [3 ; 5] = [1 ; 5]",
+            "]0 ; 4[ ∪ ]4 ; 9[ = ]0 ; 9["
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:082",
+          "enonce": "On note A = [−2 ; 5] et B = ]1 ; 8]. Quelles écritures sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Intersection et réunion",
+          "difficulte": 3,
+          "explication": "A ∩ B = ]1 ; 5] (1 est exclu de B) ; A ∪ B = [−2 ; 8] contient 7 mais pas −3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "A ∩ B = [1 ; 5]",
+            "7 ∈ A ∪ B",
+            "−3 ∈ A ∪ B",
+            "A ∪ B = [−2 ; 8]",
+            "A ∩ B = ]1 ; 5]"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:083",
+          "enonce": "Un élément commun à A et à B appartient à A ∪ B.",
+          "notion": "Intersection et réunion",
+          "difficulte": 1,
+          "explication": "Le « ou » mathématique est inclusif : un élément des deux ensembles est dans la réunion.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:084",
+          "enonce": "L'intersection de deux intervalles est toujours un intervalle non vide.",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "Contre-exemple : [0 ; 1] ∩ [2 ; 3] = ∅.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:085",
+          "enonce": "La réunion ]−∞ ; 1[ ∪ [3 ; +∞[ peut s'écrire comme un seul intervalle.",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "Les nombres entre 1 et 3 n'en font pas partie : il y a un trou.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:086",
+          "enonce": "Combien d'entiers appartiennent à [−3 ; 4] ∩ [0 ; 10] ? Réponds par un nombre.",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "L'intersection vaut [0 ; 4] : elle contient 0, 1, 2, 3 et 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:087",
+          "enonce": "Combien d'entiers appartiennent à [−2 ; 1] ∪ [4 ; 6] ? Réponds par un nombre.",
+          "notion": "Intersection et réunion",
+          "difficulte": 3,
+          "explication": "−2, −1, 0, 1 puis 4, 5, 6 : sept entiers.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:088",
+          "enonce": "Que vaut |−7| ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "La valeur absolue est la distance à 0 : elle est positive.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−7",
+            "0",
+            "1/7",
+            "7"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:089",
+          "enonce": "Que représente |a| sur la droite numérique ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "|a| est la distance de a à 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La distance entre le point d'abscisse a et l'origine",
+            "L'opposé de a",
+            "L'inverse de a",
+            "Le point symétrique de a par rapport à 1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:090",
+          "enonce": "Quelle est la distance entre les réels 2 et 9 ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "|2 − 9| = |−7| = 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−7",
+            "7",
+            "11",
+            "4,5"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:091",
+          "enonce": "Quelle expression donne la distance entre les réels a et b ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "La distance entre a et b est |a − b| = |b − a|.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a − b",
+            "|a| + |b|",
+            "|a − b|",
+            "a + b"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:092",
+          "enonce": "Que vaut |3 − π| ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "3 − π < 0, donc sa valeur absolue est son opposé, π − 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 − π",
+            "3 + π",
+            "−3 − π",
+            "π − 3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:093",
+          "enonce": "Que vaut |√2 − 1| ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "√2 ≈ 1,41 > 1 : √2 − 1 est positif, il est égal à sa valeur absolue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√2 − 1",
+            "1 − √2",
+            "√2 + 1",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:094",
+          "enonce": "Les réels x tels que |x − 3| ⩽ 2 forment quel intervalle ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "Centre 3, rayon 2 : de 3 − 2 = 1 à 3 + 2 = 5, bornes incluses.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−1 ; 5]",
+            "[1 ; 5]",
+            "[3 ; 5]",
+            "]1 ; 5["
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:095",
+          "enonce": "Quel intervalle correspond à |x − 2| < 0,5 ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "Inégalité stricte : intervalle ouvert de centre 2 et de rayon 0,5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[1,5 ; 2,5]",
+            "]2 ; 2,5[",
+            "]1,5 ; 2,5[",
+            "]−2,5 ; 2,5["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:096",
+          "enonce": "Quelle condition décrit l'intervalle [−1 ; 7] ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "Centre (−1 + 7)/2 = 3, rayon (7 − (−1))/2 = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "|x − 4| ⩽ 3",
+            "|x + 3| ⩽ 4",
+            "|x − 7| ⩽ 1",
+            "|x − 3| ⩽ 4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:097",
+          "enonce": "Combien de réels x vérifient |x − 5| = 3 ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "Les réels à distance 3 de 5 sont 5 − 3 = 2 et 5 + 3 = 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux : 2 et 8",
+            "Un seul : 8",
+            "Aucun",
+            "Une infinité"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:098",
+          "enonce": "Quelle est la distance entre −4 et −1 ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "|−4 − (−1)| = |−3| = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "3",
+            "−3",
+            "−5"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:099",
+          "enonce": "Quelles valeurs absolues sont correctement calculées ? Coche toutes les réponses exactes.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "Une valeur absolue est toujours positive ou nulle.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "|−0,5| = −0,5",
+            "|−5| = 5",
+            "|0| = 0",
+            "|5| = 5",
+            "|−5| = −5"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:100",
+          "enonce": "Quels nombres x vérifient |x − 1| ⩽ 3 ? Coche toutes les réponses exactes.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "|x − 1| ⩽ 3 équivaut à x ∈ [−2 ; 4].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0",
+            "5",
+            "−3",
+            "4",
+            "−2"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:101",
+          "enonce": "Quelles affirmations sont vraies pour tout réel a ? Coche toutes les réponses exactes.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "|a| = a seulement si a ⩾ 0 ; |a + 1| = |a| + 1 est faux pour a = −1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "|a + 1| = |a| + 1",
+            "|a| = a",
+            "|a| ⩾ 0",
+            "|a − 3| = |3 − a|",
+            "|−a| = |a|"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:102",
+          "enonce": "Quels réels sont à une distance inférieure ou égale à 2 de −3 ? Coche toutes les réponses exactes.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "|x + 3| ⩽ 2 équivaut à x ∈ [−5 ; −1].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−5",
+            "−1",
+            "0",
+            "−3,5",
+            "−6"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:103",
+          "enonce": "La valeur absolue d'un nombre est toujours positive ou nulle.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "C'est une distance : elle ne peut pas être négative.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:104",
+          "enonce": "|x − 4| ⩽ 1 équivaut à x ∈ [3 ; 5].",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "Centre 4, rayon 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:105",
+          "enonce": "Pour tout réel x, |x| = x.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "Contre-exemple : |−2| = 2 ≠ −2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:106",
+          "enonce": "Le nombre 2,9 vérifie |x − 2| < 1.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "|2,9 − 2| = 0,9 < 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:107",
+          "enonce": "Quelle est la distance entre les réels −3 et 5 ? Réponds par un nombre.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "|−3 − 5| = |−8| = 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:108",
+          "enonce": "L'intervalle [−2 ; 10] s'écrit |x − c| ⩽ r. Donne le centre c.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "Centre : (−2 + 10)/2 = 4 ; le rayon vaut 6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:109",
+          "enonce": "L'intervalle [−2 ; 10] s'écrit |x − c| ⩽ r. Donne le rayon r.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "Rayon : (10 − (−2))/2 = 6, la moitié de la longueur de l'intervalle.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:110",
+          "enonce": "Quelle est l'amplitude de l'encadrement 3,14 ⩽ π ⩽ 3,15 ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Amplitude : 3,15 − 3,14 = 0,01.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,1",
+            "3,14",
+            "0,01",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:111",
+          "enonce": "Quel est l'arrondi de 2,476 au centième ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Le chiffre des millièmes est 6 ⩾ 5 : on augmente le chiffre des centièmes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2,47",
+            "2,5",
+            "2,476",
+            "2,48"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:112",
+          "enonce": "Quelle est la troncature de 2,476 au centième ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Tronquer, c'est couper après le chiffre des centièmes, sans arrondir.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2,47",
+            "2,48",
+            "2,4",
+            "2,5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:113",
+          "enonce": "Quel encadrement de √2 est à 10⁻¹ près ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Deux décimaux à une décimale qui diffèrent de 0,1 ; 1,4² = 1,96 et 1,5² = 2,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 ⩽ √2 ⩽ 2",
+            "1,4 ⩽ √2 ⩽ 1,5",
+            "1,41 ⩽ √2 ⩽ 1,42",
+            "1,4 ⩽ √2 ⩽ 1,6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:114",
+          "enonce": "Combien de chiffres significatifs a le nombre 0,00352 ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "On compte à partir du premier chiffre non nul : 3, 5 et 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "6",
+            "3",
+            "2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:115",
+          "enonce": "Combien de chiffres significatifs a le nombre 12,40 ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "1, 2, 4 et 0 : le zéro final après la virgule est significatif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "2",
+            "5",
+            "4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:116",
+          "enonce": "Quel est l'arrondi de 1/3 au millième ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "1/3 ≈ 0,33333… : le chiffre suivant est 3 < 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,333",
+            "0,334",
+            "0,33",
+            "0,3333"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:117",
+          "enonce": "Quel est l'encadrement de √10 à l'unité ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "3² = 9 ⩽ 10 ⩽ 16 = 4².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2 ⩽ √10 ⩽ 3",
+            "3 ⩽ √10 ⩽ 4",
+            "4 ⩽ √10 ⩽ 5",
+            "9 ⩽ √10 ⩽ 10"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:118",
+          "enonce": "Un rayon mesuré à 2,3 cm donne une aire calculée de 16,619 cm². Quelle valeur est la plus raisonnable à communiquer ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "La donnée a deux chiffres significatifs : on garde deux chiffres significatifs dans le résultat.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "16,619 cm²",
+            "16,6190 cm²",
+            "17 cm²",
+            "20,0 cm²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:119",
+          "enonce": "Dans l'algorithme de balayage pour √2 avec un pas de 0,1, après quel nombre la boucle s'arrête-t-elle ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "1,4² = 1,96 ⩽ 2 mais 1,5² = 2,25 > 2 : x reste à 1,4 et l'encadrement est [1,4 ; 1,5].",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,5",
+            "1,3",
+            "2",
+            "1,4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:120",
+          "enonce": "Quel encadrement d'amplitude 0,01 contient √3 ≈ 1,732 ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "1,73² = 2,9929 ⩽ 3 ⩽ 3,0276 = 1,74².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,73 ⩽ √3 ⩽ 1,74",
+            "1,72 ⩽ √3 ⩽ 1,73",
+            "1,7 ⩽ √3 ⩽ 1,8",
+            "1,74 ⩽ √3 ⩽ 1,75"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:121",
+          "enonce": "Quelle est la troncature de π à 10⁻³ ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "π ≈ 3,14159… : on coupe après la troisième décimale.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3,142",
+            "3,141",
+            "3,14",
+            "3,1416"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:122",
+          "enonce": "Quels encadrements de π sont corrects ? Coche toutes les réponses exactes.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "π ≈ 3,1416.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3,2 ⩽ π ⩽ 3,3",
+            "3,14 ⩽ π ⩽ 3,15",
+            "3,1 ⩽ π ⩽ 3,2",
+            "3 ⩽ π ⩽ 4",
+            "3,15 ⩽ π ⩽ 3,16"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:123",
+          "enonce": "Quels nombres ont exactement trois chiffres significatifs ? Coche toutes les réponses exactes.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "0,0450 (4, 5, 0), 107 et 3,20 en ont trois ; 0,04 n'en a qu'un ; 125,01 en a cinq.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,0450",
+            "125,01",
+            "107",
+            "0,04",
+            "3,20"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:124",
+          "enonce": "Pour x = 5,8361, quelles valeurs sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "5,8361 : arrondi au dixième 5,8 ; au centième 5,84 ; troncature au centième 5,83 ; troncature au dixième 5,8 ; arrondi à l'unité 6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "troncature au centième : 5,83",
+            "arrondi au dixième : 5,8",
+            "troncature au dixième : 5,9",
+            "arrondi au centième : 5,84",
+            "arrondi à l'unité : 5"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:125",
+          "enonce": "Quels décimaux sont à moins de 0,01 de 5/7 ≈ 0,714 ? Coche toutes les réponses exactes.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "|0,71 − 0,714| ≈ 0,004 et |0,72 − 0,714| ≈ 0,006 sont inférieurs à 0,01 ; 0,7, 0,73 et 0,75 en sont trop loin.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,72",
+            "0,73",
+            "0,75",
+            "0,7",
+            "0,71"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:126",
+          "enonce": "Arrondir et tronquer un nombre donnent toujours le même résultat.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Contre-exemple : 2,476 au centième donne 2,48 (arrondi) et 2,47 (troncature).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:127",
+          "enonce": "L'encadrement 1,41 ⩽ √2 ⩽ 1,42 est d'amplitude 0,01.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "1,42 − 1,41 = 0,01.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:128",
+          "enonce": "Le nombre 0,0070 a deux chiffres significatifs.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "On compte à partir du 7 : 7 et le zéro final.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:129",
+          "enonce": "Un résultat calculé à partir de mesures au millimètre peut être donné au micromètre près.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "La précision d'un résultat ne peut pas dépasser celle des données.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:130",
+          "enonce": "Si 1,41 ⩽ x ⩽ 1,42, alors x a pour arrondi au dixième 1,4.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "Tout nombre de [1,41 ; 1,42] s'arrondit à 1,4 au dixième, car son chiffre des centièmes est 1 ou 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:131",
+          "enonce": "Donne l'arrondi de 7,25 au dixième.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "Le chiffre des centièmes est 5 : on augmente le chiffre des dixièmes.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7,3",
+            "7.3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:132",
+          "enonce": "Quel est le plus grand entier n tel que n ⩽ √50 ? Réponds par un nombre.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "7² = 49 ⩽ 50 < 64 = 8² : 7 ⩽ √50 < 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:133",
+          "enonce": "Donne l'arrondi de √2 au millième.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 3,
+          "explication": "√2 ≈ 1,41421 : le chiffre des dix-millièmes est 2 < 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1,414",
+            "1.414"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:134",
+          "enonce": "Quel nombre appartient à ℕ ?",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "√49 = 7 est un entier naturel.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1",
+            "0,5",
+            "√49",
+            "−√49"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:135",
+          "enonce": "Quelle forme ont les décimaux ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 2,
+          "explication": "C'est la définition de 𝔻.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a/b, avec b entier non nul quelconque",
+            "√a, avec a entier",
+            "a × π, avec a entier",
+            "a/10ⁿ, avec a entier relatif et n entier naturel"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:136",
+          "enonce": "Comment est tourné le crochet quand la borne appartient à l'intervalle ?",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "Exemple : [2 ; 5] contient 2 et 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Vers l'intérieur de l'intervalle",
+            "Vers l'extérieur de l'intervalle",
+            "Il est remplacé par une parenthèse",
+            "Il est supprimé"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:137",
+          "enonce": "Quel est le centre de l'intervalle [3 ; 11] ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "(3 + 11)/2 = 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "7",
+            "8",
+            "14"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:138",
+          "enonce": "Quel mot prononce-t-on pour le symbole de l'écriture A ∪ B ?",
+          "notion": "Intersection et réunion",
+          "difficulte": 2,
+          "explication": "A ∪ B se lit « A union B ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "« inter »",
+            "« inclus dans »",
+            "« union »",
+            "« appartient à »"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:139",
+          "enonce": "Quelle est la valeur approchée de π au centième ?",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "π ≈ 3,14159 : au centième, 3,14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3,15",
+            "3,1",
+            "3,142",
+            "3,14"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:140",
+          "enonce": "Quel réel est le plus proche de 1 parmi les suivants ?",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 3,
+          "explication": "Distances à 1 : 0,2 ; 0,3 ; 0,35 ; 0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,2",
+            "0,7",
+            "1,35",
+            "0,75"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:141",
+          "enonce": "Quel ensemble est inclus dans tous les autres parmi ℤ, ℚ, ℝ, 𝔻 ?",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 2,
+          "explication": "ℤ ⊂ 𝔻 ⊂ ℚ ⊂ ℝ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℚ",
+            "ℤ",
+            "ℝ",
+            "𝔻"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:142",
+          "enonce": "Quelle valeur est exacte ?",
+          "notion": "Rationnels et irrationnels",
+          "difficulte": 1,
+          "explication": "Seul √9 = 3 est une égalité exacte ; les autres sont des valeurs approchées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√2 = 1,414",
+            "π = 3,14",
+            "√9 = 3",
+            "1/3 = 0,33"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:143",
+          "enonce": "Le nombre −0,5 appartient à ℤ.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 2,
+          "explication": "−0,5 n'est pas entier ; c'est un décimal.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:144",
+          "enonce": "On peut écrire 0,5 ∈ ℚ.",
+          "notion": "Appartenance et inclusion",
+          "difficulte": 1,
+          "explication": "0,5 = 1/2 est rationnel.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:145",
+          "enonce": "3 ⩽ √11 ⩽ 4 est un encadrement à l'unité de √11.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 2,
+          "explication": "9 ⩽ 11 ⩽ 16.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch1:banque:146",
+          "enonce": "Que vaut |−2,5| + |1,5| ? Réponds par un nombre.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 2,
+          "explication": "2,5 + 1,5 = 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch1:banque:147",
+          "enonce": "Quelles inégalités décrivent l'intervalle ]−1 ; 3[ ? Coche toutes les réponses exactes.",
+          "notion": "Intervalles",
+          "difficulte": 1,
+          "explication": "Intervalle ouvert aux deux bornes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−1 < x ⩽ 3",
+            "−1 ⩽ x ⩽ 3",
+            "x < −1 ou x > 3",
+            "x > −1 et x < 3",
+            "−1 < x < 3"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:148",
+          "enonce": "Parmi ces calculs de distance sur la droite numérique, lesquels sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Valeur absolue et distance",
+          "difficulte": 1,
+          "explication": "Une distance est |a − b| : elle est positive ; entre 5 et 7, elle vaut 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "entre −2 et 2 : 4",
+            "entre −1 et −6 : 5",
+            "entre 0 et −3 : −3",
+            "entre 5 et 7 : 12",
+            "entre 1 et 4 : 3"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:149",
+          "enonce": "Lesquels de ces arrondis de 4,567 sont corrects ? Coche toutes les réponses exactes.",
+          "notion": "Encadrements et arrondis",
+          "difficulte": 1,
+          "explication": "On regarde le chiffre qui suit le dernier chiffre gardé : 7 ⩾ 5 donne 4,57 ; 6 ⩾ 5 donne 4,6 ; 5 ⩾ 5 donne 5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4,56 au centième",
+            "4,5 au dixième",
+            "5 à l'unité",
+            "4,6 au dixième",
+            "4,57 au centième"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch1:banque:150",
+          "enonce": "Quels nombres appartiennent à ℤ sans appartenir à ℕ ? Coche toutes les réponses exactes.",
+          "notion": "Ensembles de nombres",
+          "difficulte": 1,
+          "explication": "Ce sont les entiers strictement négatifs ; 0 et 7 sont naturels, −1,5 n'est pas entier.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0",
+            "−1",
+            "−1,5",
+            "7",
+            "−12"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        }
+      ]
+    }
+  ]
+}
