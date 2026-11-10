@@ -10087,6 +10087,2534 @@
           "bonne_reponse": true
         }
       ]
+    },
+    {
+      "slug": "ch5",
+      "numero": 5,
+      "titre": "Inégalités, équations et inéquations",
+      "titre_court": "Équations et inéquations",
+      "duree": "3 semaines",
+      "resume": "Ensemble des solutions, équations du premier degré, équations produit nul, équations x² = a, opérations sur les inégalités, comparaison de deux nombres, inéquations du premier degré, modélisation.",
+      "chapeau": "Trouver le prix à partir duquel une offre devient avantageuse, la durée qui permet d'atteindre un objectif : beaucoup de problèmes se ramènent à une équation ou à une inéquation. Ce chapitre apprend à les résoudre proprement et à écrire l'ensemble de toutes leurs solutions.",
+      "objectifs": [
+        "écrire l'ensemble des solutions d'une équation ou d'une inéquation ;",
+        "résoudre une équation du premier degré, une équation produit nul et une équation x² = a ;",
+        "additionner des inégalités et multiplier une inégalité par un réel positif ou négatif ;",
+        "comparer deux nombres par le signe de leur différence ou par leur quotient ;",
+        "résoudre une inéquation du premier degré et donner ses solutions sous forme d'intervalle ;",
+        "modéliser un problème par une équation ou une inéquation."
+      ],
+      "sections": [
+        {
+          "id": "ensemble-solutions",
+          "titre": "Ensemble des solutions",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>solution</strong> d'une équation (ou d'une inéquation) d'inconnue x est une valeur de x qui rend l'égalité (ou l'inégalité) vraie. <strong>Résoudre</strong>, c'est trouver <strong>toutes</strong> les solutions. On note souvent S l'ensemble des solutions.</p></div>\n<p>Exemples :</p>\n<ul>\n<li>2x + 1 = 7 a une seule solution : S = {3}.</li>\n<li>x² = 9 a deux solutions : S = {−3 ; 3}.</li>\n<li>x² = −4 n'a aucune solution réelle : S = ∅.</li>\n<li>x + 1 &gt; 3 a une infinité de solutions : S = ]2 ; +∞[.</li>\n<li>2(x + 1) = 2x + 2 est vraie pour tout x : S = ℝ.</li>\n</ul>\n<p>Pour savoir si un nombre est solution, on le <strong>teste</strong> : on remplace x par ce nombre et on vérifie. 4 est-il solution de x² − 3x = 4 ? 16 − 12 = 4 : oui.</p>\n<h3>Équations équivalentes</h3>\n<p>Deux équations sont <strong>équivalentes</strong> quand elles ont le même ensemble de solutions. On passe d'une équation à une équation équivalente :</p>\n<ul>\n<li>en ajoutant ou en soustrayant un même nombre aux deux membres ;</li>\n<li>en multipliant ou en divisant les deux membres par un même nombre <strong>non nul</strong>.</li>\n</ul>\n"
+        },
+        {
+          "id": "premier-degre",
+          "titre": "Équations du premier degré",
+          "html": "\n<p>Une équation du premier degré s'écrit, après réduction, ax + b = 0 avec a ≠ 0. Sa solution unique est x = −b/a.</p>\n<p>Méthode : on regroupe les termes en x d'un côté, les nombres de l'autre, puis on divise par le coefficient de x.</p>\n<p>Exemple : 5x − 3 = 2x + 9. On soustrait 2x : 3x − 3 = 9. On ajoute 3 : 3x = 12. On divise par 3 : x = 4. S = {4}.</p>\n<p>Exemple avec parenthèses : 3(x − 2) = 5 − (x + 3). On développe : 3x − 6 = 2 − x. Puis 4x = 8 et x = 2.</p>\n<p>Exemple avec fractions : x/2 + x/3 = 10. On multiplie par 6 : 3x + 2x = 60, donc x = 12.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Si les x disparaissent, on lit le résultat : 2x + 3 = 2x + 5 donne 3 = 5, impossible : S = ∅. Et 3(x + 1) = 3x + 3 donne 0 = 0 : S = ℝ.</p></div>\n"
+        },
+        {
+          "id": "produit-nul",
+          "titre": "Équations produit nul et équations x² = a",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriété</b><p>Un produit de facteurs est nul si et seulement si l'un au moins de ses facteurs est nul : A × B = 0 équivaut à A = 0 ou B = 0.</p></div>\n<p>Exemple : (x − 3)(2x + 5) = 0 équivaut à x − 3 = 0 ou 2x + 5 = 0, soit x = 3 ou x = −5/2. S = {−5/2 ; 3}.</p>\n<p>Pour utiliser cette propriété, il faut d'abord <strong>tout passer dans un membre</strong> et <strong>factoriser</strong> (chapitre 4).</p>\n<ul>\n<li>x<sup>2</sup> = 5x équivaut à x<sup>2</sup> − 5x = 0, soit x(x − 5) = 0 : S = {0 ; 5}. Diviser par x aurait fait perdre la solution 0.</li>\n<li>x<sup>2</sup> − 16 = 0 équivaut à (x − 4)(x + 4) = 0 : S = {−4 ; 4}.</li>\n<li>(x + 1)<sup>2</sup> = 9 équivaut à (x + 1)<sup>2</sup> − 9 = 0, soit (x + 1 − 3)(x + 1 + 3) = 0 : S = {−4 ; 2}.</li>\n</ul>\n<h3>L'équation x² = a</h3>\n<div class=\"def\"><b class=\"t\">Propriété</b><ul>\n<li>Si a &gt; 0, l'équation x<sup>2</sup> = a a deux solutions : √a et −√a.</li>\n<li>Si a = 0, elle a une seule solution : 0.</li>\n<li>Si a &lt; 0, elle n'a aucune solution réelle.</li></ul></div>\n<p>Exemples : x<sup>2</sup> = 7 donne S = {−√7 ; √7} ; x<sup>2</sup> = −3 donne S = ∅.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>x<sup>2</sup> = 9 n'équivaut pas à x = 3 : on oublierait la solution −3.</p></div>\n"
+        },
+        {
+          "id": "inegalites",
+          "titre": "Opérations sur les inégalités",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriétés</b><p>Pour tous réels a, b, c :</p><ul>\n<li>ajouter ou soustraire un même nombre conserve l'ordre : si a &lt; b, alors a + c &lt; b + c ;</li>\n<li>multiplier par un nombre <strong>strictement positif</strong> conserve l'ordre : si a &lt; b et c &gt; 0, alors ac &lt; bc ;</li>\n<li>multiplier par un nombre <strong>strictement négatif</strong> <strong>change le sens</strong> : si a &lt; b et c &lt; 0, alors ac &gt; bc ;</li>\n<li>on peut additionner deux inégalités de même sens : si a &lt; b et c &lt; d, alors a + c &lt; b + d.</li></ul></div>\n<p>Exemple : 2 &lt; 5. En multipliant par −3, on obtient −6 &gt; −15 : l'ordre est inversé.</p>\n<p>Ces règles sont liées au sens de variation d'une fonction affine x ↦ cx : elle est croissante si c &gt; 0 et décroissante si c &lt; 0 (chapitre 9). Une fonction croissante conserve l'ordre, une fonction décroissante l'inverse.</p>\n<h3>Encadrer une expression</h3>\n<p>Si 1 ⩽ x ⩽ 4, alors 3 ⩽ 3x ⩽ 12, puis 1 ⩽ 3x − 2 ⩽ 10. Et −4 ⩽ −x ⩽ −1 (multiplication par −1).</p>\n<p>Si 2 &lt; a &lt; 3 et 5 &lt; b &lt; 7, alors 7 &lt; a + b &lt; 10.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>On ne soustrait pas deux inégalités membre à membre : avec les mêmes a et b, on écrit −7 &lt; −b &lt; −5 puis on additionne : −5 &lt; a − b &lt; −2.</p></div>\n"
+        },
+        {
+          "id": "comparer",
+          "titre": "Comparer deux nombres",
+          "html": "\n<p>Pour comparer deux nombres A et B, une méthode sûre consiste à étudier le <strong>signe de leur différence</strong> :</p>\n<ul>\n<li>si A − B &gt; 0, alors A &gt; B ;</li>\n<li>si A − B &lt; 0, alors A &lt; B ;</li>\n<li>si A − B = 0, alors A = B.</li>\n</ul>\n<p>Exemple : pour tout réel x, comparer (x + 1)<sup>2</sup> et 2x. On calcule (x + 1)<sup>2</sup> − 2x = x<sup>2</sup> + 1, qui est strictement positif. Donc (x + 1)<sup>2</sup> &gt; 2x pour tout x.</p>\n<p>Pour deux nombres <strong>strictement positifs</strong>, on peut aussi comparer leur quotient à 1 : si A/B &gt; 1, alors A &gt; B ; si A/B &lt; 1, alors A &lt; B.</p>\n<p>Exemple : 2<sup>30</sup> et 3<sup>20</sup>. Le quotient 2<sup>30</sup>/3<sup>20</sup> = (2<sup>3</sup>/3<sup>2</sup>)<sup>10</sup> = (8/9)<sup>10</sup> &lt; 1, donc 2<sup>30</sup> &lt; 3<sup>20</sup>.</p>\n<h3>Deux nombres positifs et leurs carrés</h3>\n<p>Pour a et b positifs, a &lt; b équivaut à a<sup>2</sup> &lt; b<sup>2</sup>. Exemple : 2√3 et 3√2 ? (2√3)<sup>2</sup> = 12 et (3√2)<sup>2</sup> = 18, donc 2√3 &lt; 3√2.</p>\n"
+        },
+        {
+          "id": "inequations",
+          "titre": "Inéquations du premier degré",
+          "html": "\n<p>Une inéquation du premier degré se résout comme une équation, avec une règle supplémentaire : <strong>quand on multiplie ou qu'on divise par un nombre négatif, on change le sens de l'inégalité</strong>.</p>\n<p>Exemple 1 : 3x − 4 &lt; 11. On ajoute 4 : 3x &lt; 15. On divise par 3, positif : x &lt; 5. S = ]−∞ ; 5[.</p>\n<p>Exemple 2 : 2 − 5x ⩾ 12. On soustrait 2 : −5x ⩾ 10. On divise par −5, négatif : <strong>x ⩽ −2</strong>. S = ]−∞ ; −2].</p>\n<p>Exemple 3 : 4x + 1 &gt; x − 8. On soustrait x : 3x + 1 &gt; −8, puis 3x &gt; −9 et x &gt; −3. S = ]−3 ; +∞[.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 420 70\" role=\"img\" aria-label=\"Ensemble des solutions de x strictement supérieur à moins 3 représenté sur une droite\">\n<line x1=\"10\" y1=\"35\" x2=\"410\" y2=\"35\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n<line x1=\"150\" y1=\"35\" x2=\"410\" y2=\"35\" stroke=\"#4338ca\" stroke-width=\"5\"/>\n<text x=\"150\" y=\"44\" font-size=\"22\" fill=\"#4338ca\">]</text>\n<text x=\"150\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">−3</text>\n<line x1=\"270\" y1=\"30\" x2=\"270\" y2=\"40\" stroke=\"currentColor\"/><text x=\"270\" y=\"65\" font-size=\"13\" text-anchor=\"middle\">0</text>\n</svg></div><figcaption>S = ]−3 ; +∞[ : −3 est exclu, l'inégalité est stricte.</figcaption></figure>\n<p>On vérifie avec une valeur : x = 0 est-il solution de 4x + 1 &gt; x − 8 ? 1 &gt; −8 : oui, et 0 appartient bien à ]−3 ; +∞[.</p>\n"
+        },
+        {
+          "id": "modeliser",
+          "titre": "Modéliser un problème",
+          "html": "\n<p>Pour résoudre un problème concret :</p>\n<ol>\n<li>on choisit l'inconnue et on précise ce qu'elle représente (avec son unité) ;</li>\n<li>on traduit l'énoncé par une équation ou une inéquation ;</li>\n<li>on la résout ;</li>\n<li>on interprète le résultat dans le contexte (une durée est positive, un nombre de personnes est entier…).</li>\n</ol>\n<p><strong>Exemple</strong>. Une salle de sport propose deux formules : formule A, 15 € par séance ; formule B, un abonnement de 60 € puis 9 € par séance. À partir de combien de séances la formule B est-elle moins chère ?</p>\n<p>Soit n le nombre de séances. Formule A : 15n ; formule B : 60 + 9n. On cherche 60 + 9n &lt; 15n, soit 60 &lt; 6n, donc n &gt; 10. La formule B est moins chère à partir de 11 séances ; pour 10 séances, les deux coûtent 150 €.</p>\n<p><strong>Exemple</strong>. Le périmètre d'un rectangle vaut 56 cm et sa longueur dépasse sa largeur de 6 cm. Avec ℓ la largeur : 2(ℓ + ℓ + 6) = 56, donc 4ℓ + 12 = 56 et ℓ = 11 cm ; la longueur vaut 17 cm.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Résoudre, c'est trouver toutes les solutions ; S peut être un ensemble fini, un intervalle, ∅ ou ℝ.</li>\n<li>Premier degré : on isole x ; ax + b = 0 (a ≠ 0) donne x = −b/a.</li>\n<li>A × B = 0 équivaut à A = 0 ou B = 0 : on se ramène à 0, puis on factorise.</li>\n<li>x<sup>2</sup> = a : deux solutions ±√a si a &gt; 0, une seule (0) si a = 0, aucune si a &lt; 0.</li>\n<li>Multiplier une inégalité par un nombre négatif <strong>change son sens</strong> ; ajouter un nombre ou multiplier par un positif le conserve. On additionne deux inégalités de même sens.</li>\n<li>Comparer A et B : signe de A − B ; pour des positifs, comparer A/B à 1, ou comparer les carrés.</li>\n<li>Modéliser : inconnue, mise en équation, résolution, interprétation.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch5:banque:001",
+          "enonce": "Que signifie « résoudre » une équation ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "Il faut l'ensemble complet des solutions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Trouver toutes ses solutions",
+            "Trouver une solution",
+            "Vérifier qu'elle est juste",
+            "La développer"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:002",
+          "enonce": "Le nombre 4 est-il solution de x² − 3x = 4 ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "On remplace x par 4 et on vérifie l'égalité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, car 4 − 3 = 1",
+            "Oui, car 16 − 12 = 4",
+            "Non, car 4² = 8",
+            "On ne peut pas le savoir sans résoudre"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:003",
+          "enonce": "Quel est l'ensemble des solutions de l'équation 2x + 1 = 7 ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "2x = 6, donc x = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{4}",
+            "{−3}",
+            "{3}",
+            "]3 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:004",
+          "enonce": "Quel ensemble de solutions a l'équation x² = −4 dans ℝ ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "Un carré n'est jamais négatif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{−2 ; 2}",
+            "{−2}",
+            "ℝ",
+            "∅"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:005",
+          "enonce": "Quelles solutions a l'égalité 2(x + 1) = 2x + 2 ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "En développant, on obtient la même expression des deux côtés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Tous les réels : S = ℝ",
+            "Aucune",
+            "Seulement 0",
+            "Seulement 1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:006",
+          "enonce": "Quelle opération ne donne pas forcément une équation équivalente ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "On multiplie ou divise seulement par un nombre non nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ajouter 5 aux deux membres",
+            "Multiplier les deux membres par 0",
+            "Diviser les deux membres par 2",
+            "Soustraire x aux deux membres"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:007",
+          "enonce": "Lequel de ces nombres n'est pas solution de x² − 5x + 6 ⩽ 0 ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 3,
+          "explication": "Pour x = 4 : 16 − 20 + 6 = 2 > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "2,5",
+            "4",
+            "3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:008",
+          "enonce": "Quels nombres ont un carré égal à 9 ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "3² = 9 et (−3)² = 9.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3",
+            "−3",
+            "9",
+            "−9",
+            "4,5"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:009",
+          "enonce": "Quels réels vérifient l'inégalité x + 1 > 3 ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "x + 1 > 3 équivaut à x > 2 ; √5 ≈ 2,24.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "2",
+            "2,5",
+            "10",
+            "√5",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:010",
+          "enonce": "Quels ensembles de solutions sont corrects ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 3,
+          "explication": "x² = 0 donne {0} ; 2x = 0 donne {0} ; x² = 1 donne {−1 ; 1}.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² = 1 : S = {1}",
+            "x − x = 0 : S = ℝ",
+            "x² = 0 : S = ∅",
+            "3x = 3x + 1 : S = ∅",
+            "2x = 0 : S = ℝ"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:011",
+          "enonce": "Une équation peut avoir plusieurs solutions.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "Exemple : x² = 9 a deux solutions.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:012",
+          "enonce": "Une inéquation a toujours un nombre fini de solutions.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "x + 1 > 3 a une infinité de solutions : ]2 ; +∞[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:013",
+          "enonce": "Combien de solutions réelles a l'équation (x − 1)(x − 2)(x − 3) = 0 ? Réponds par un nombre.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "1, 2 et 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:014",
+          "enonce": "Quelle est la solution de 5x − 3 = 2x + 9 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "3x = 12, donc x = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "6",
+            "12",
+            "4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:015",
+          "enonce": "Pour résoudre 3x = 12, que fait-on ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "x = 12/3 = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On divise les deux membres par 3",
+            "On soustrait 3",
+            "On multiplie par 3",
+            "On ajoute 12"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:016",
+          "enonce": "Quelle valeur de x vérifie x − 7 = 2 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On ajoute 7 aux deux membres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "9",
+            "−5",
+            "14"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:017",
+          "enonce": "Quelle est la solution de l'équation 3(x − 2) = 5 − (x + 3) ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "3x − 6 = 2 − x, donc 4x = 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2",
+            "1",
+            "2",
+            "4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:018",
+          "enonce": "En multipliant x/2 + x/3 = 10 par 6, quelle équation obtient-on ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "On multiplie chaque terme par 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x + x = 60",
+            "3x + 2x = 10",
+            "6x/2 + x/3 = 60",
+            "3x + 2x = 60"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:019",
+          "enonce": "Pour quelle valeur de x a-t-on 7 − 2x = 1 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "−2x = −6, donc x = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "−3",
+            "4",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:020",
+          "enonce": "Quelle est la solution générale de ax + b = 0, avec a ≠ 0 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "ax = −b, puis on divise par a.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x = b/a",
+            "x = −b/a",
+            "x = −a/b",
+            "x = a − b"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:021",
+          "enonce": "Que dire de l'équation 2x + 3 = 2x + 5 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 3,
+          "explication": "On obtient 3 = 5, impossible.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle a pour solution x = 1",
+            "Tout réel est solution",
+            "Elle n'a aucune solution",
+            "Elle a pour solution x = 0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:022",
+          "enonce": "Quelle est la solution de (2x − 1)/3 = (x + 4)/2 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 3,
+          "explication": "2(2x − 1) = 3(x + 4) : 4x − 2 = 3x + 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "−14",
+            "7",
+            "14"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:023",
+          "enonce": "Quelles équations ont pour solution x = 2 ? Coche toutes les réponses exactes.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On teste x = 2 dans chaque équation.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "2x = 1",
+            "x − 2 = 2",
+            "3x = 6",
+            "x + 5 = 7",
+            "4x − 1 = 7"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:024",
+          "enonce": "Parmi ces équations, lesquelles sont équivalentes à 2x − 6 = 0 ? Coche toutes les réponses exactes.",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "Toutes celles qui ont pour solution 3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x = −3",
+            "2x = −6",
+            "2x = 6",
+            "x − 3 = 0",
+            "4x = 12"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:025",
+          "enonce": "L'équation 4x = 0 a pour solution x = 0.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "x = 0/4 = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:026",
+          "enonce": "Pour résoudre −x = 5, on obtient x = 5.",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "On multiplie par −1 : x = −5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:027",
+          "enonce": "L'équation 3(x + 1) = 3x + 3 n'a aucune solution.",
+          "notion": "Équations du premier degré",
+          "difficulte": 3,
+          "explication": "Elle donne 0 = 0 : tout réel est solution.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:028",
+          "enonce": "Résous 4x + 3 = 23. Donne la valeur de x.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "4x = 20, donc x = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5",
+            "x = 5",
+            "x=5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:029",
+          "enonce": "Résous 2x − 9 = 5x + 6. Donne la valeur de x.",
+          "notion": "Équations du premier degré",
+          "difficulte": 2,
+          "explication": "−3x = 15, donc x = −5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "-5",
+            "−5",
+            "x = -5",
+            "x = −5",
+            "x=-5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:030",
+          "enonce": "Que dit la propriété du produit nul ?",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "A × B = 0 équivaut à A = 0 ou B = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un produit est nul si et seulement si l'un de ses facteurs est nul",
+            "Une somme est nulle si l'un de ses termes est nul",
+            "Un produit est nul si tous ses facteurs sont positifs",
+            "Un produit n'est jamais nul"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:031",
+          "enonce": "Résous (x − 3)(x + 2) = 0.",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "x − 3 = 0 ou x + 2 = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3 et 2",
+            "3 et −2",
+            "3 et 2",
+            "6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:032",
+          "enonce": "Quel est l'ensemble des solutions de (x − 3)(2x + 5) = 0 ?",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "2x + 5 = 0 donne x = −5/2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{5/2 ; 3}",
+            "{−5 ; 3}",
+            "{−5/2 ; 3}",
+            "{3}"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:033",
+          "enonce": "Avant d'appliquer le produit nul à x² = 5x, que faut-il faire ?",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "Diviser par x ferait perdre la solution 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Diviser par x",
+            "Prendre la racine carrée",
+            "Développer x²",
+            "Tout passer dans un membre et factoriser : x(x − 5) = 0"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:034",
+          "enonce": "Pour quelles valeurs de x l'expression x² − 16 est-elle nulle ?",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "(x − 4)(x + 4) = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−4 et 4",
+            "4 seulement",
+            "16",
+            "−16 et 16"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:035",
+          "enonce": "Quelles sont les solutions de (x + 1)² = 9 ?",
+          "notion": "Équations produit nul",
+          "difficulte": 3,
+          "explication": "(x + 1 − 3)(x + 1 + 3) = 0, soit (x − 2)(x + 4) = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2 seulement",
+            "−4 et 2",
+            "−2 et 4",
+            "8"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:036",
+          "enonce": "Trouve l'ensemble des solutions de x(x − 2) = 3x en te ramenant à un produit nul.",
+          "notion": "Équations produit nul",
+          "difficulte": 3,
+          "explication": "x(x − 2) − 3x = 0, soit x(x − 5) = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{5}",
+            "{0 ; 2}",
+            "{0 ; 5}",
+            "{2 ; 3}"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:037",
+          "enonce": "Le produit x(x + 7) est nul pour quelles valeurs de x ? Coche toutes les réponses exactes.",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "x = 0 ou x + 7 = 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−7",
+            "1",
+            "−1",
+            "7",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:038",
+          "enonce": "Quelles équations ont 2 parmi leurs solutions ? Coche toutes les réponses exactes.",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "On teste x = 2 : un facteur doit s'annuler.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² + 4 = 0",
+            "(x + 2)(x − 5) = 0",
+            "x² − 4 = 0",
+            "(x − 2)(x + 5) = 0",
+            "x(x − 2) = 0"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:039",
+          "enonce": "Quelles équations ont exactement deux solutions ? Coche toutes les réponses exactes.",
+          "notion": "Équations produit nul",
+          "difficulte": 3,
+          "explication": "(x − 1)² = 0 et (x − 2)² = 0 n'ont qu'une solution ; x² + 1 = 0 n'en a pas.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(x − 1)² = 0",
+            "x² − 2x = 0",
+            "(3x − 1)(x + 4) = 0",
+            "x² + 1 = 0",
+            "(x − 2)(x − 2) = 0"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:040",
+          "enonce": "Si a × b = 0, alors a = 0 ou b = 0.",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "C'est la propriété du produit nul.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:041",
+          "enonce": "Pour résoudre x² = 3x, on peut diviser les deux membres par x et obtenir x = 3 comme seule solution.",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "On perd la solution 0 : x(x − 3) = 0 donne S = {0 ; 3}.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:042",
+          "enonce": "Si (x − 1)(x + 1) = 3, alors x − 1 = 3 ou x + 1 = 3.",
+          "notion": "Équations produit nul",
+          "difficulte": 3,
+          "explication": "La propriété ne vaut que pour un produit égal à 0 : ici x² = 4, donc x = 2 ou x = −2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:043",
+          "enonce": "L'équation (x − 6)(3x + 9) = 0 a une solution négative. Laquelle ?",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "3x + 9 = 0 donne x = −3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "-3",
+            "−3",
+            "x = -3",
+            "x = −3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:044",
+          "enonce": "Combien de solutions a l'équation x² = 25 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "a = 25 > 0 : deux solutions opposées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une : 5",
+            "Aucune",
+            "Une infinité",
+            "Deux : −5 et 5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:045",
+          "enonce": "Quelles sont les solutions de x² = 7 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "x² = a avec a > 0 donne ±√a.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−√7 et √7",
+            "√7 seulement",
+            "3,5 et −3,5",
+            "49"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:046",
+          "enonce": "Combien de solutions réelles a x² = 0 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "Seul 0 a pour carré 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux",
+            "Une seule : 0",
+            "Aucune",
+            "Une infinité"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:047",
+          "enonce": "Que dire de l'équation x² = −3 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "Un carré est toujours positif ou nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle a pour solutions −√3 et √3",
+            "Elle a pour solution −√3",
+            "Elle n'a aucune solution réelle",
+            "Elle a pour solution 3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:048",
+          "enonce": "Quel est l'ensemble des solutions de 2x² = 18 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "x² = 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{3}",
+            "{−9 ; 9}",
+            "{9}",
+            "{−3 ; 3}"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:049",
+          "enonce": "Donne les solutions de x² − 2 = 0, en valeurs exactes.",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "x² = 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−√2 et √2",
+            "2 et −2",
+            "√2 seulement",
+            "1 et −1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:050",
+          "enonce": "Quelles sont les solutions de 4x² = 1 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 3,
+          "explication": "x² = 1/4 et √(1/4) = 1/2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/4 seulement",
+            "−1/2 et 1/2",
+            "−2 et 2",
+            "−1/4 et 1/4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:051",
+          "enonce": "Un carré a une aire de 50 cm². Quelle est la longueur exacte de son côté ?",
+          "notion": "Équations x² = a",
+          "difficulte": 3,
+          "explication": "c² = 50 et c > 0, donc c = √50 = 5√2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "25 cm",
+            "−5√2 cm",
+            "5√2 cm",
+            "√25 cm"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:052",
+          "enonce": "Pour quelles valeurs de a l'équation x² = a a-t-elle deux solutions ? Coche toutes les réponses exactes.",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "Il faut a > 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "a = 4",
+            "a = 0",
+            "a = 0,5",
+            "a = −1",
+            "a = 10"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:053",
+          "enonce": "Quelles équations n'ont aucune solution réelle ? Coche toutes les réponses exactes.",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "x² + 5 = 0 équivaut à x² = −5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² = −1",
+            "x² = 1",
+            "x² + 5 = 0",
+            "x² − 5 = 0",
+            "x² = 0"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:054",
+          "enonce": "L'équation x² = 9 équivaut à x = 3.",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "On oublierait la solution −3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:055",
+          "enonce": "L'équation x² = 0,49 a pour solutions −0,7 et 0,7.",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "0,7² = 0,49.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:056",
+          "enonce": "Donne la solution positive de x² = 121.",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "11² = 121.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "11",
+            "x = 11"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:057",
+          "enonce": "Si a < b, que peut-on dire de a + 5 et b + 5 ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Ajouter un même nombre conserve l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a + 5 > b + 5",
+            "a + 5 = b + 5",
+            "On ne peut rien dire",
+            "a + 5 < b + 5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:058",
+          "enonce": "Que devient l'inégalité 2 < 5 quand on multiplie ses deux membres par −3 ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Multiplier par un négatif change le sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−6 > −15",
+            "−6 < −15",
+            "6 < 15",
+            "−6 = −15"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:059",
+          "enonce": "Si a < b et c > 0, que peut-on dire de ac et bc ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Multiplier par un positif conserve l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ac > bc",
+            "ac < bc",
+            "ac = bc",
+            "On ne peut rien dire"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:060",
+          "enonce": "Si 1 ⩽ x ⩽ 4, quel encadrement a-t-on pour 3x − 2 ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "On multiplie par 3 (3 ⩽ 3x ⩽ 12), puis on soustrait 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 ⩽ 3x − 2 ⩽ 12",
+            "−1 ⩽ 3x − 2 ⩽ 2",
+            "1 ⩽ 3x − 2 ⩽ 10",
+            "1 ⩽ 3x − 2 ⩽ 12"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:061",
+          "enonce": "En partant de 1 ⩽ x ⩽ 4, comment encadrer l'opposé −x ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "Multiplier par −1 inverse l'ordre ; on écrit l'encadrement du plus petit au plus grand.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1 ⩽ −x ⩽ −4",
+            "1 ⩽ −x ⩽ 4",
+            "−4 ⩽ −x ⩽ 1",
+            "−4 ⩽ −x ⩽ −1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:062",
+          "enonce": "Si 2 < a < 3 et 5 < b < 7, quel encadrement a-t-on pour a + b ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "On additionne les inégalités de même sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7 < a + b < 10",
+            "7 < a + b < 9",
+            "3 < a + b < 4",
+            "10 < a + b < 21"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:063",
+          "enonce": "Quel lien le cours fait-il entre les règles sur les inégalités et les fonctions affines x ↦ cx ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "Multiplier par c revient à appliquer x ↦ cx.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les fonctions affines sont toujours croissantes",
+            "Une fonction croissante (c > 0) conserve l'ordre, une décroissante (c < 0) l'inverse",
+            "Il n'y a aucun lien",
+            "Une fonction décroissante conserve l'ordre"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:064",
+          "enonce": "Avec les mêmes encadrements 2 < a < 3 et 5 < b < 7, comment encadrer la différence a − b ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 3,
+          "explication": "−7 < −b < −5, puis on additionne avec 2 < a < 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3 < a − b < −4",
+            "−3 < a − b < −2",
+            "−5 < a − b < −2",
+            "−5 < a − b < −4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:065",
+          "enonce": "Si −2 ⩽ x ⩽ 1, quel encadrement a-t-on pour 5 − 2x ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 3,
+          "explication": "−2 ⩽ −2x ⩽ 4, puis 3 ⩽ 5 − 2x ⩽ 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 ⩽ 5 − 2x ⩽ 7",
+            "9 ⩽ 5 − 2x ⩽ 3",
+            "3 ⩽ 5 − 2x ⩽ 7",
+            "3 ⩽ 5 − 2x ⩽ 9"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:066",
+          "enonce": "Si x < y, quelles inégalités sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Multiplier par un négatif inverse l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3x < 3y",
+            "x − 4 < y − 4",
+            "−2x < −2y",
+            "x + 1 > y + 1",
+            "−x < −y"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:067",
+          "enonce": "Quelles opérations changent le sens d'une inégalité ? Coche toutes les réponses exactes.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "Seules la multiplication et la division par un négatif changent le sens.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Soustraire 10",
+            "Diviser par −5",
+            "Multiplier par 0,5",
+            "Ajouter −3",
+            "Multiplier par −2"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:068",
+          "enonce": "Si 3 ⩽ x ⩽ 5, quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 3,
+          "explication": "−3 ⩽ −x ⩽ −5 est mal ordonné ; 3x est entre 9 et 15.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−5 ⩽ −x ⩽ −3",
+            "6 ⩽ 2x ⩽ 10",
+            "−3 ⩽ −x ⩽ −5",
+            "9 ⩽ 3x ⩽ 25",
+            "1 ⩽ x − 2 ⩽ 3"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:069",
+          "enonce": "Multiplier les deux membres d'une inégalité par un nombre négatif change son sens.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Exemple : 2 < 5 donne −6 > −15.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:070",
+          "enonce": "On peut soustraire membre à membre deux inégalités de même sens : si a < b et c < d, alors a − c < b − d.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "Contre-exemple : 0 < 1 et 0 < 10 donnent 0 et −9 : 0 > −9.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:071",
+          "enonce": "Si a < b et c < d, alors a + c < b + d.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 2,
+          "explication": "On peut additionner deux inégalités de même sens.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:072",
+          "enonce": "Si x < 3, alors x² < 9.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 3,
+          "explication": "Contre-exemple : x = −4 donne x² = 16.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:073",
+          "enonce": "Si 2 ⩽ x ⩽ 6, quelle est la plus grande valeur possible de 10 − x ? Réponds par un nombre.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 3,
+          "explication": "−6 ⩽ −x ⩽ −2, donc 4 ⩽ 10 − x ⩽ 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:074",
+          "enonce": "Pour comparer A et B, on calcule A − B et on trouve un nombre positif. Que conclure ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 1,
+          "explication": "A − B > 0 signifie A > B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A > B",
+            "A < B",
+            "A = B",
+            "On ne peut rien conclure"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:075",
+          "enonce": "Quel est le signe de x² + 1 pour tout réel x ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 1,
+          "explication": "x² ⩾ 0, donc x² + 1 ⩾ 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Négatif",
+            "Strictement positif",
+            "Nul pour x = 0",
+            "Il dépend de x"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:076",
+          "enonce": "Le cours compare (x + 1)² et 2x. Quelle différence calcule-t-il ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "x² + 2x + 1 − 2x = x² + 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(x + 1)² − 2x = x² − 1",
+            "(x + 1)² − 2x = 1",
+            "(x + 1)² − 2x = x² + 1",
+            "(x + 1)² − 2x = x² + 2x + 1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:077",
+          "enonce": "Lequel est le plus grand : 2√3 ou 3√2 ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "On compare les carrés de deux nombres positifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2√3, car 2 < 3",
+            "Ils sont égaux",
+            "2√3, car 12 > 18",
+            "3√2, car 18 > 12"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:078",
+          "enonce": "Pour deux nombres strictement positifs, A/B = 0,8. Que conclure ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "Un quotient inférieur à 1 signifie A < B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A < B",
+            "A > B",
+            "A = B",
+            "A − B = 0,8"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:079",
+          "enonce": "Comment le cours compare-t-il 2³⁰ et 3²⁰ ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 3,
+          "explication": "2³⁰/3²⁰ = (2³/3²)¹⁰ = (8/9)¹⁰ < 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il calcule les deux nombres à la calculatrice",
+            "Il écrit leur quotient (8/9)¹⁰, inférieur à 1",
+            "Il compare 30 et 20",
+            "Il compare 2 et 3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:080",
+          "enonce": "Pour a et b positifs, à quoi équivaut a < b ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 3,
+          "explication": "Deux positifs sont rangés dans le même ordre que leurs carrés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a² > b²",
+            "√a > √b",
+            "a² < b²",
+            "−a < −b"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:081",
+          "enonce": "Quelles méthodes permettent de comparer deux nombres A et B ? Coche toutes les réponses exactes.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 1,
+          "explication": "Ce sont les deux méthodes du cours.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Pour A et B positifs, comparer A/B à 1",
+            "Étudier le signe de A − B",
+            "Comparer seulement leurs premiers chiffres",
+            "Calculer A + B",
+            "Comparer A × B à 1"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:082",
+          "enonce": "Quelles comparaisons sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "√10 ≈ 3,16 ; √2 ≈ 1,41 ; 0,9² = 0,81 < 0,9.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(−2)² > −4",
+            "√2 > 1,5",
+            "1/3 > 0,33",
+            "0,9² > 0,9",
+            "√10 < 3,2"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:083",
+          "enonce": "Si A − B est négatif, alors A est plus petit que B.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 1,
+          "explication": "A − B < 0 signifie A < B.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:084",
+          "enonce": "Pour tout réel x, x² ⩾ x.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "Contre-exemple : x = 0,5 donne 0,25 < 0,5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:085",
+          "enonce": "Pour tout réel x, (x + 1)² > 2x.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 3,
+          "explication": "La différence vaut x² + 1 > 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:086",
+          "enonce": "On calcule A − B = (x − 2)² + 3. Quelle est la plus petite valeur possible de A − B ? Réponds par un nombre.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "(x − 2)² ⩾ 0, avec égalité pour x = 2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:087",
+          "enonce": "Quel est l'ensemble des solutions de 3x − 4 < 11 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "3x < 15, donc x < 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]5 ; +∞[",
+            "]−∞ ; 5]",
+            "{5}",
+            "]−∞ ; 5["
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:088",
+          "enonce": "Quelle est la règle supplémentaire pour résoudre une inéquation, par rapport à une équation ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "Par exemple −2x > 4 donne x < −2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Diviser par un nombre négatif change le sens de l'inégalité",
+            "On ne peut pas ajouter un nombre aux deux membres",
+            "On ne peut pas diviser",
+            "Il faut toujours mettre au carré"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:089",
+          "enonce": "Quelles sont les solutions de x + 3 ⩾ 5 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "On soustrait 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x ⩽ 2",
+            "x ⩾ 2",
+            "x ⩾ 8",
+            "x = 2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:090",
+          "enonce": "Quel est l'ensemble des solutions de 2 − 5x ⩾ 12 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "−5x ⩾ 10, puis on divise par −5 en changeant le sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−2 ; +∞[",
+            "]−∞ ; 2]",
+            "]−∞ ; −2]",
+            "]−2 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:091",
+          "enonce": "Quel est l'ensemble des solutions de 4x + 1 > x − 8 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "3x > −9, donc x > −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; −3[",
+            "]3 ; +∞[",
+            "[−3 ; +∞[",
+            "]−3 ; +∞["
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:092",
+          "enonce": "Comment résout-on −x < 7 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "On multiplie par −1 et on change le sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x > −7",
+            "x < −7",
+            "x < 7",
+            "x > 7"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:093",
+          "enonce": "Dans la représentation de ]−3 ; +∞[, que signifie le crochet tourné vers l'extérieur en −3 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "L'inégalité est stricte : −3 est exclu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3 est solution",
+            "−3 n'est pas solution",
+            "L'intervalle s'arrête avant 0",
+            "Il n'y a pas de solution"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:094",
+          "enonce": "Quel est l'ensemble des solutions de 3(x − 1) ⩽ 5x + 7 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 3,
+          "explication": "3x − 3 ⩽ 5x + 7 donne −2x ⩽ 10, soit x ⩾ −5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; −5]",
+            "[5 ; +∞[",
+            "[−5 ; +∞[",
+            "]−5 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:095",
+          "enonce": "Quel est le plus grand entier solution de 7 − 3x > 1 ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 3,
+          "explication": "−3x > −6 donne x < 2 ; 2 est exclu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2",
+            "0",
+            "−2",
+            "1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:096",
+          "enonce": "Repère les valeurs de x pour lesquelles 2x − 1 dépasse strictement 5. Coche toutes les réponses exactes.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "2x > 6, donc x > 3 : 3 est exclu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10",
+            "3",
+            "0",
+            "3,5",
+            "4"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:097",
+          "enonce": "Quelles inéquations ont pour ensemble de solutions ]−∞ ; 2[ ? Coche toutes les réponses exactes.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "−3x < −6 donne x > 2 ; x − 2 > 0 donne x > 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x − 2 > 0",
+            "x + 4 < 6",
+            "−3x < −6",
+            "−x > −2",
+            "3x < 6"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:098",
+          "enonce": "Pour l'inéquation −4x + 2 ⩽ 10, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 3,
+          "explication": "−4x ⩽ 8 donne x ⩾ −2 : S = [−2 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "S = ]−2 ; +∞[",
+            "−3 est solution",
+            "Les solutions sont les x ⩾ −2",
+            "Les solutions sont les x ⩽ −2",
+            "−2 est solution"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:099",
+          "enonce": "L'inéquation x > 4 a une infinité de solutions.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "Tous les réels de ]4 ; +∞[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:100",
+          "enonce": "En divisant les deux membres de −2x < 6 par −2, on obtient x < −3.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "On change le sens : x > −3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:101",
+          "enonce": "L'inéquation 5x + 2 ⩽ 5x − 1 n'a aucune solution.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 3,
+          "explication": "Elle donne 2 ⩽ −1, impossible.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:102",
+          "enonce": "Quel est le plus petit entier solution de 3x + 2 > 14 ? Réponds par un nombre.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 2,
+          "explication": "3x > 12 donne x > 4 ; 4 est exclu.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:103",
+          "enonce": "L'ensemble des solutions de −2x + 3 ⩾ x − 9 est ]−∞ ; a]. Donne a.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 3,
+          "explication": "−3x ⩾ −12, donc x ⩽ 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:104",
+          "enonce": "Quelle est la première étape pour modéliser un problème par une équation ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "On précise aussi son unité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Choisir l'inconnue et dire ce qu'elle représente",
+            "Résoudre l'équation",
+            "Dessiner une droite graduée",
+            "Interpréter le résultat"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:105",
+          "enonce": "Formule A : 15 € par séance. Quel est le coût de n séances ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "On paie 15 € pour chacune des n séances.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15 + n euros",
+            "15n euros",
+            "n/15 euros",
+            "15 euros"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:106",
+          "enonce": "Formule B : abonnement de 60 € puis 9 € par séance. Quelle inéquation traduit « B est moins chère que A (15 € par séance) » ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "Coût de B : 60 + 9n ; coût de A : 15n.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "60 + 9n > 15n",
+            "60n + 9 < 15n",
+            "60 + 9n < 15n",
+            "9n < 15n + 60"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:107",
+          "enonce": "Dans l'exemple des deux formules, à partir de combien de séances la formule B est-elle moins chère ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "n > 10 ; pour n = 10 les deux coûtent 150 €.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "6",
+            "60",
+            "11"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:108",
+          "enonce": "Le périmètre d'un rectangle vaut 56 cm et sa longueur dépasse sa largeur de 6 cm. Quelle équation vérifie la largeur ℓ ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "Périmètre = 2 × (longueur + largeur).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2(ℓ + ℓ + 6) = 56",
+            "ℓ + ℓ + 6 = 56",
+            "ℓ(ℓ + 6) = 56",
+            "2ℓ + 6 = 56"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:109",
+          "enonce": "Pourquoi faut-il interpréter le résultat d'une résolution dans le contexte ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "C'est la dernière étape de la modélisation.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour vérifier les calculs de la calculatrice",
+            "Une solution peut être impossible dans la réalité (durée négative, nombre non entier…)",
+            "Parce que l'équation est toujours fausse",
+            "Ce n'est pas nécessaire"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:110",
+          "enonce": "Une entreprise produit des objets pour 3 € pièce avec 1 200 € de frais fixes, et les vend 8 € pièce. À partir de combien d'objets vendus fait-elle un bénéfice ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "8n > 1 200 + 3n donne n > 240 : il faut au moins 241 objets.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "240",
+            "150",
+            "241",
+            "400"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:111",
+          "enonce": "Paul a 3 ans de plus que Léa, et la somme de leurs âges vaut 31. Quel est l'âge de Léa ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "x + x + 3 = 31 donne x = 14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "17 ans",
+            "15,5 ans",
+            "28 ans",
+            "14 ans"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:112",
+          "enonce": "Un taxi facture 4 € de prise en charge et 1,50 € par kilomètre. Avec 25 €, quelle distance maximale peut-on parcourir ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "4 + 1,5d ⩽ 25 donne d ⩽ 14.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "14 km",
+            "16,7 km",
+            "15 km",
+            "21 km"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:113",
+          "enonce": "Quelles étapes font partie de la modélisation d'un problème ? Coche toutes les réponses exactes.",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "Inconnue, mise en équation, résolution, interprétation.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Choisir l'inconnue",
+            "Arrondir à l'unité dans tous les cas",
+            "Recopier l'énoncé",
+            "Interpréter la solution",
+            "Traduire l'énoncé par une équation"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:114",
+          "enonce": "Une place de cinéma coûte 9 € ; une carte à 20 € donne des places à 6 €. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "20 + 6n < 9n donne n > 20/3 : la carte est rentable à partir de 7 places.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Avec carte, 5 places coûtent 30 €",
+            "Pour 5 places, sans carte : 45 €",
+            "Pour 5 places, avec carte : 50 €",
+            "La carte est rentable dès 5 places",
+            "La carte est rentable dès 2 places"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:115",
+          "enonce": "Le prix d'un forfait téléphone est 12 € par mois plus 0,10 € par SMS au-delà de 100 SMS. Pour n > 100 SMS, quelles expressions donnent le prix mensuel ? Coche toutes les réponses exactes.",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "12 + 0,10n − 10 = 0,10n + 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,10n + 2",
+            "12 + 0,10(n − 100)",
+            "12 + 0,10n",
+            "0,10(n − 12)",
+            "12n + 0,10"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:116",
+          "enonce": "Dans un problème, une longueur trouvée négative doit être rejetée.",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "Une longueur est positive : il faut interpréter le résultat.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:117",
+          "enonce": "Pour 10 séances, les formules A (15 € par séance) et B (60 € plus 9 € par séance) coûtent le même prix.",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "15 × 10 = 150 et 60 + 9 × 10 = 150.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:118",
+          "enonce": "Si l'inéquation donne n > 6,5 pour un nombre de personnes, la plus petite solution acceptable est 6.",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "n doit être un entier supérieur à 6,5 : c'est 7.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:119",
+          "enonce": "Le triple d'un nombre augmenté de 4 vaut 19. Quel est ce nombre ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "3x + 4 = 19 donne x = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:120",
+          "enonce": "Le périmètre d'un rectangle vaut 56 cm et sa longueur dépasse sa largeur de 6 cm. Quelle est sa longueur en cm ? Réponds par un nombre.",
+          "notion": "Modéliser un problème",
+          "difficulte": 3,
+          "explication": "4ℓ + 12 = 56 donne ℓ = 11 cm, et la longueur vaut 17 cm.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "17"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:121",
+          "enonce": "Quel nombre positif a pour carré 64 ?",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "8 × 8 = 64.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "32",
+            "8",
+            "−8",
+            "6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:122",
+          "enonce": "Si a > b, que peut-on dire de a − 2 et b − 2 ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Soustraire un même nombre conserve l'ordre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "a − 2 < b − 2",
+            "a − 2 = b − 2",
+            "a − 2 > b − 2",
+            "a − 2 > b + 2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:123",
+          "enonce": "Pour quelle valeur de x le facteur 2x − 8 est-il nul ?",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "2x = 8, donc x = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "8",
+            "−4",
+            "2",
+            "4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:124",
+          "enonce": "Pour comparer 7/9 et 0,8, que vaut 7/9 − 0,8 environ ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 1,
+          "explication": "7/9 ≈ 0,778.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−0,02, donc 7/9 < 0,8",
+            "0,02, donc 7/9 > 0,8",
+            "0, donc ils sont égaux",
+            "−0,8"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:125",
+          "enonce": "Les solutions de x ⩽ 3 s'écrivent ]−∞ ; 3].",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "3 est inclus.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:126",
+          "enonce": "L'équation x² = −16 a pour solution −4.",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "(−4)² = 16, pas −16 : pas de solution réelle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:127",
+          "enonce": "L'équation (x − 5)(x + 5) = 0 a pour solutions 5 et −5.",
+          "notion": "Équations produit nul",
+          "difficulte": 1,
+          "explication": "Un des facteurs doit être nul.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:128",
+          "enonce": "Modéliser un problème, c'est le traduire en langage mathématique.",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "Par une équation, une inéquation, une fonction…",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch5:banque:129",
+          "enonce": "Parmi ces réels, lesquels, élevés au carré, donnent 2 ? Coche toutes les réponses exactes.",
+          "notion": "Équations x² = a",
+          "difficulte": 1,
+          "explication": "(±√2)² = 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4",
+            "2",
+            "−√2",
+            "1",
+            "√2"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:130",
+          "enonce": "Pour quels réels l'expression x − 5 est-elle négative ou nulle ? Coche toutes les réponses exactes.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "x ⩽ 5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−3",
+            "5",
+            "6",
+            "5,1",
+            "0"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:131",
+          "enonce": "Quelle valeur de x rend vraie l'égalité x + 12 = 20 ?",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On soustrait 12 aux deux membres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "32",
+            "8",
+            "−8",
+            "12"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:132",
+          "enonce": "Comment note-t-on l'ensemble vide ?",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "{0} contient un élément, 0 ; l'ensemble vide n'en contient aucun.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{0}",
+            "ℝ",
+            "∅",
+            "0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:133",
+          "enonce": "Pour résoudre x − 4 < 1, que fait-on ?",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "x < 5 : ajouter un nombre conserve le sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On divise par −4",
+            "On change le sens de l'inégalité",
+            "On multiplie par 4",
+            "On ajoute 4 aux deux membres"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:134",
+          "enonce": "Pour quelle valeur de a l'équation x² = a a-t-elle une seule solution ?",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "x² = 0 n'a que la solution 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0",
+            "1",
+            "−1",
+            "Pour toutes les valeurs de a"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:135",
+          "enonce": "On compare 3/4 et 2/3 avec leur quotient. Que trouve-t-on ?",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "(3/4) × (3/2) = 9/8, supérieur à 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(3/4)/(2/3) = 1/2 < 1, donc 3/4 < 2/3",
+            "(3/4)/(2/3) = 9/8 > 1, donc 3/4 > 2/3",
+            "(3/4)/(2/3) = 1, donc ils sont égaux",
+            "(3/4)/(2/3) = 9/8 < 1, donc 3/4 < 2/3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:136",
+          "enonce": "Un nombre augmenté de 30 % donne 52. Quelle équation traduit cette phrase ?",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "Augmenter de 30 %, c'est multiplier par 1,3 ; x = 40.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x + 30 = 52",
+            "0,3x = 52",
+            "1,3x = 52",
+            "x + 1,3 = 52"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:137",
+          "enonce": "L'équation x + 5 = 5 a pour solution x = 5.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On soustrait 5 : x = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:138",
+          "enonce": "L'ensemble des solutions de x > 1 est [1 ; +∞[.",
+          "notion": "Inéquations du premier degré",
+          "difficulte": 1,
+          "explication": "1 est exclu : ]1 ; +∞[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:139",
+          "enonce": "Le nombre 2 est solution de x² + x = 5.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 2,
+          "explication": "4 + 2 = 6 ≠ 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:140",
+          "enonce": "Lesquelles de ces équations ont pour solution x = 0 ? Coche toutes les réponses exactes.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On remplace x par 0 et on vérifie l'égalité.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x − 1 = 0",
+            "x + 3 = 3",
+            "5x = 0",
+            "2x = 2",
+            "x + 3 = 0"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:141",
+          "enonce": "On sait que x ⩾ 2. Qu'en déduit-on ? Coche toutes les réponses exactes.",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "Ajouter 1 ou multiplier par 4 conserve le sens ; multiplier par −1 donne −x ⩽ −2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−x ⩾ −2",
+            "x/2 ⩽ 1",
+            "4x ⩾ 8",
+            "x − 2 ⩽ 0",
+            "x + 1 ⩾ 3"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:142",
+          "enonce": "Quelles notations décrivent correctement l'ensemble des solutions de x² = 1 ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble des solutions",
+          "difficulte": 1,
+          "explication": "Deux solutions, −1 et 1 ; l'ordre dans les accolades n'a pas d'importance. [−1 ; 1] contient une infinité de nombres.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "{1 ; −1}",
+            "[−1 ; 1]",
+            "{−1 ; 1}",
+            "{1}",
+            "]−1 ; 1["
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:143",
+          "enonce": "Un taxi facture 4 € de prise en charge et 1,50 € par kilomètre. Quels prix sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Modéliser un problème",
+          "difficulte": 1,
+          "explication": "Prix : 4 + 1,5d ; pour 20 km, 34 € ; même sans rouler, on paie 4 €.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "20 km : 30 €",
+            "10 km : 15 €",
+            "0 km : 0 €",
+            "2 km : 7 €",
+            "10 km : 19 €"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:144",
+          "enonce": "Les nombres −3 et 3 sont les deux solutions de certaines de ces équations. Lesquelles ? Coche toutes les réponses exactes.",
+          "notion": "Équations x² = a",
+          "difficulte": 2,
+          "explication": "Toutes se ramènent à x² = 9, sauf x² = 3 et x² = −9.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² = −9",
+            "2x² = 18",
+            "x² = 3",
+            "x² − 9 = 0",
+            "x² = 9"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:145",
+          "enonce": "Pour quels réels x a-t-on x² < x ? Coche toutes les réponses exactes.",
+          "notion": "Comparer deux nombres",
+          "difficulte": 2,
+          "explication": "0,25 < 0,5 et 0,81 < 0,9 ; pour 2, 1 et −1, on a x² ⩾ x.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,5",
+            "0,9",
+            "−1",
+            "2",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:146",
+          "enonce": "Quelles équations se résolvent avec la propriété du produit nul après factorisation ? Coche toutes les réponses exactes.",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "x(x − 3) = 0 et (x − 5)(x + 5) = 0 ; x² + 1 et x² + 4 ne se factorisent pas ainsi ; 3x + 2 = 5 est du premier degré.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x² + 4 = 0",
+            "x² − 3x = 0",
+            "3x + 2 = 5",
+            "x² + 1 = 0",
+            "x² − 25 = 0"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch5:banque:147",
+          "enonce": "Résous 2x = 14. Donne la valeur de x.",
+          "notion": "Équations du premier degré",
+          "difficulte": 1,
+          "explication": "On divise par 2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7",
+            "x = 7",
+            "x=7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:148",
+          "enonce": "Si x < 3, alors x + 4 < a. Quelle est la valeur de a ?",
+          "notion": "Opérations sur les inégalités",
+          "difficulte": 1,
+          "explication": "On ajoute 4 aux deux membres.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:149",
+          "enonce": "Donne la solution non nulle de x² = 6x.",
+          "notion": "Équations produit nul",
+          "difficulte": 2,
+          "explication": "x² − 6x = 0, soit x(x − 6) = 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6",
+            "x = 6",
+            "x=6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch5:banque:150",
+          "enonce": "Avec 1200 € de frais fixes, un coût de 3 € par objet et un prix de vente de 8 €, quel est le bénéfice pour 300 objets vendus, en euros ? Réponds par un nombre.",
+          "notion": "Modéliser un problème",
+          "difficulte": 2,
+          "explication": "8 × 300 − (1200 + 3 × 300) = 2400 − 2100 = 300.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "300"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
