@@ -12615,6 +12615,2528 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch6",
+      "numero": 6,
+      "titre": "Vecteurs du plan et problèmes de géométrie",
+      "titre_court": "Vecteurs",
+      "duree": "4 semaines",
+      "resume": "Translations et vecteurs, égalité, somme et relation de Chasles, produit par un réel, coordonnées et norme, distance et milieu, colinéarité et déterminant, projeté orthogonal, trigonométrie et problèmes de géométrie.",
+      "chapeau": "Un vecteur décrit un déplacement : une direction, un sens et une longueur. Cet outil, très utilisé en physique pour représenter des forces ou des vitesses, permet aussi de démontrer en géométrie, par exemple que trois points sont alignés ou que deux droites sont parallèles.",
+      "objectifs": [
+        "associer un vecteur à une translation, reconnaître deux vecteurs égaux ;",
+        "construire la somme de deux vecteurs et utiliser la relation de Chasles ;",
+        "calculer les coordonnées d'un vecteur, d'une somme, d'un produit par un réel, et la norme d'un vecteur ;",
+        "calculer une distance et les coordonnées d'un milieu dans un repère orthonormé ;",
+        "utiliser le déterminant pour étudier la colinéarité, l'alignement et le parallélisme ;",
+        "construire un projeté orthogonal et utiliser cosinus, sinus et tangente pour résoudre des problèmes."
+      ],
+      "sections": [
+        {
+          "id": "translations-vecteurs",
+          "titre": "Translations et vecteurs",
+          "html": "\n<p>Une <strong>translation</strong> fait glisser toute la figure, sans la tourner ni la déformer : chaque point se déplace dans la même direction, dans le même sens et de la même longueur.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>La translation qui transforme A en B est associée au <strong>vecteur</strong> AB⃗. Ce vecteur est caractérisé par :</p><ul>\n<li>sa <strong>direction</strong> : celle de la droite (AB) ;</li>\n<li>son <strong>sens</strong> : de A vers B ;</li>\n<li>sa <strong>norme</strong> (ou longueur) : la longueur AB, notée ‖AB⃗‖.</li></ul></div>\n<p><strong>Notation.</strong> Dans ce cours, la flèche des vecteurs est placée sur la dernière lettre : AB⃗ se lit « vecteur AB ». Un vecteur peut aussi être désigné par une seule lettre : u⃗, v⃗.</p>\n<h3>Vecteurs égaux</h3>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Deux vecteurs sont <strong>égaux</strong> s'ils ont même direction, même sens et même norme. Si la translation de vecteur u⃗ transforme M en M', on écrit MM'⃗ = u⃗.</p></div>\n<div class=\"def\"><b class=\"t\">Propriété</b><p>AB⃗ = DC⃗ si et seulement si ABCD est un parallélogramme (éventuellement aplati).</p></div>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"Parallélogramme ABCD : les vecteurs AB et DC sont égaux\"><defs><marker id=\"pointe\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#4338ca\"/></marker></defs>\n<polygon points=\"40,130 200,130 270,40 110,40\" fill=\"#4338ca\" fill-opacity=\"0.08\" stroke=\"currentColor\" stroke-dasharray=\"4 3\"/>\n<line x1=\"40\" y1=\"130\" x2=\"196\" y2=\"130\" stroke=\"#4338ca\" stroke-width=\"2.5\" marker-end=\"url(#pointe)\"/>\n<line x1=\"110\" y1=\"40\" x2=\"266\" y2=\"40\" stroke=\"#4338ca\" stroke-width=\"2.5\" marker-end=\"url(#pointe)\"/>\n<text x=\"30\" y=\"150\" font-size=\"14\">A</text><text x=\"200\" y=\"150\" font-size=\"14\">B</text><text x=\"275\" y=\"35\" font-size=\"14\">C</text><text x=\"100\" y=\"32\" font-size=\"14\">D</text>\n</svg></div><figcaption>ABCD est un parallélogramme : AB⃗ = DC⃗.</figcaption></figure>\n<p>Attention à l'ordre des lettres : dans le parallélogramme ABCD, AB⃗ = DC⃗, mais AB⃗ ≠ CD⃗ (sens opposés).</p>\n<p>Le vecteur AA⃗ est le <strong>vecteur nul</strong>, noté 0⃗ : sa norme est nulle. Le vecteur BA⃗ est l'<strong>opposé</strong> de AB⃗ : même direction, même norme, sens contraire ; on note BA⃗ = −AB⃗.</p>\n<p>Le point I est le milieu de [AB] si et seulement si AI⃗ = IB⃗.</p>\n"
+        },
+        {
+          "id": "somme-chasles",
+          "titre": "Somme de vecteurs et relation de Chasles",
+          "html": "\n<p>Enchaîner la translation de vecteur u⃗ puis celle de vecteur v⃗ revient à faire une seule translation : celle de vecteur <strong>u⃗ + v⃗</strong>.</p>\n<div class=\"def\"><b class=\"t\">Relation de Chasles</b><p>Pour tous points A, B et C : AB⃗ + BC⃗ = AC⃗.</p></div>\n<p>Pour construire u⃗ + v⃗, on place v⃗ « au bout » de u⃗ : on trace u⃗ = AB⃗ à partir d'un point A, puis v⃗ = BC⃗ à partir de B ; la somme est AC⃗.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 320 180\" role=\"img\" aria-label=\"Relation de Chasles : AB plus BC égale AC\"><defs><marker id=\"pointe\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 z\" fill=\"#4338ca\"/></marker></defs>\n<line x1=\"40\" y1=\"150\" x2=\"176\" y2=\"70\" stroke=\"#4338ca\" stroke-width=\"2.5\" marker-end=\"url(#pointe)\"/>\n<line x1=\"180\" y1=\"68\" x2=\"276\" y2=\"128\" stroke=\"#4338ca\" stroke-width=\"2.5\" marker-end=\"url(#pointe)\"/>\n<line x1=\"40\" y1=\"150\" x2=\"276\" y2=\"132\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"6 4\" marker-end=\"url(#pointe)\"/>\n<text x=\"28\" y=\"165\" font-size=\"14\">A</text><text x=\"176\" y=\"58\" font-size=\"14\">B</text><text x=\"285\" y=\"138\" font-size=\"14\">C</text>\n<text x=\"95\" y=\"100\" font-size=\"13\">u⃗</text><text x=\"235\" y=\"88\" font-size=\"13\">v⃗</text><text x=\"150\" y=\"160\" font-size=\"13\">u⃗ + v⃗</text>\n</svg></div><figcaption>AB⃗ + BC⃗ = AC⃗.</figcaption></figure>\n<p>Autre construction : si u⃗ = AB⃗ et v⃗ = AD⃗ ont la même origine, u⃗ + v⃗ = AC⃗, où ABCD est un parallélogramme (<strong>règle du parallélogramme</strong>, utilisée en physique pour additionner des forces).</p>\n<p>Exemples : AB⃗ + BA⃗ = AA⃗ = 0⃗ ; MN⃗ + NP⃗ + PQ⃗ = MQ⃗. La différence se ramène à une somme : u⃗ − v⃗ = u⃗ + (−v⃗). Ainsi AB⃗ − AC⃗ = AB⃗ + CA⃗ = CA⃗ + AB⃗ = CB⃗.</p>\n"
+        },
+        {
+          "id": "produit-reel",
+          "titre": "Produit d'un vecteur par un réel",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Soit u⃗ un vecteur non nul et k un réel non nul. Le vecteur k u⃗ a :</p><ul>\n<li>la même direction que u⃗ ;</li>\n<li>le même sens que u⃗ si k &gt; 0, le sens contraire si k &lt; 0 ;</li>\n<li>pour norme |k| × ‖u⃗‖.</li></ul><p>Si k = 0 ou u⃗ = 0⃗, alors k u⃗ = 0⃗.</p></div>\n<p>Exemples : 2u⃗ a la même direction et le même sens que u⃗, et une norme double ; −u⃗ est l'opposé de u⃗ ; (1/2)u⃗ a une norme deux fois plus petite.</p>\n<p>Si I est le milieu de [AB], alors AB⃗ = 2AI⃗ et AI⃗ = (1/2)AB⃗.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Deux vecteurs u⃗ et v⃗ sont <strong>colinéaires</strong> s'il existe un réel k tel que v⃗ = k u⃗ (ou u⃗ = k v⃗). Deux vecteurs non nuls colinéaires ont la même direction. Le vecteur nul est colinéaire à tout vecteur.</p></div>\n<p>Les règles de calcul ressemblent à celles des nombres : k(u⃗ + v⃗) = k u⃗ + k v⃗ ; (k + k')u⃗ = k u⃗ + k' u⃗.</p>\n"
+        },
+        {
+          "id": "coordonnees",
+          "titre": "Coordonnées d'un vecteur",
+          "html": "\n<p>On munit le plan d'un repère orthonormé (O ; i⃗, j⃗) : i⃗ et j⃗ ont pour norme 1 et des directions perpendiculaires ; on dit que (i⃗, j⃗) est une <strong>base orthonormée</strong>.</p>\n<div class=\"def\"><b class=\"t\">Définition</b><p>Tout vecteur u⃗ s'écrit de façon unique u⃗ = x i⃗ + y j⃗. Les réels x et y sont les <strong>coordonnées</strong> de u⃗ ; on note u⃗(x ; y).</p></div>\n<div class=\"def\"><b class=\"t\">Propriétés</b><ul>\n<li>Pour A(x<sub>A</sub> ; y<sub>A</sub>) et B(x<sub>B</sub> ; y<sub>B</sub>) : AB⃗(x<sub>B</sub> − x<sub>A</sub> ; y<sub>B</sub> − y<sub>A</sub>).</li>\n<li>Si u⃗(x ; y) et v⃗(x' ; y'), alors u⃗ + v⃗(x + x' ; y + y') et k u⃗(kx ; ky).</li>\n<li>Deux vecteurs sont égaux si et seulement s'ils ont les mêmes coordonnées.</li>\n<li>Norme : ‖u⃗‖ = √(x<sup>2</sup> + y<sup>2</sup>) (théorème de Pythagore).</li></ul></div>\n<p>Exemple : A(1 ; 2) et B(4 ; −2). AB⃗(4 − 1 ; −2 − 2), soit AB⃗(3 ; −4), et ‖AB⃗‖ = √(9 + 16) = 5.</p>\n<p>Pour lire les coordonnées d'un vecteur sur un quadrillage, on compte le déplacement horizontal (x, positif vers la droite) puis vertical (y, positif vers le haut).</p>\n<p>Exemple : trouver D tel que ABCD soit un parallélogramme, avec C(6 ; 3). On veut AD⃗ = BC⃗. BC⃗(2 ; 5), donc x<sub>D</sub> − 1 = 2 et y<sub>D</sub> − 2 = 5 : D(3 ; 7).</p>\n"
+        },
+        {
+          "id": "distance-milieu",
+          "titre": "Distance et milieu",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriétés</b><p>Dans un repère orthonormé, pour A(x<sub>A</sub> ; y<sub>A</sub>) et B(x<sub>B</sub> ; y<sub>B</sub>) :</p><ul>\n<li>la distance AB vaut AB = √((x<sub>B</sub> − x<sub>A</sub>)<sup>2</sup> + (y<sub>B</sub> − y<sub>A</sub>)<sup>2</sup>) ;</li>\n<li>le milieu I de [AB] a pour coordonnées ((x<sub>A</sub> + x<sub>B</sub>)/2 ; (y<sub>A</sub> + y<sub>B</sub>)/2).</li></ul></div>\n<p>Exemple : A(−1 ; 3) et B(5 ; −5). AB = √(6<sup>2</sup> + (−8)<sup>2</sup>) = √100 = 10 ; le milieu est I(2 ; −1).</p>\n<p>Applications :</p>\n<ul>\n<li>un triangle est isocèle si deux de ses côtés ont la même longueur ;</li>\n<li>un triangle ABC est rectangle en A si BC<sup>2</sup> = AB<sup>2</sup> + AC<sup>2</sup> (réciproque du théorème de Pythagore) ;</li>\n<li>un quadrilatère est un parallélogramme si ses diagonales ont le même milieu ;</li>\n<li>un point M est sur le cercle de centre Ω et de rayon r si ΩM = r.</li>\n</ul>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>La formule de la distance n'est valable que dans un repère <strong>orthonormé</strong> (elle repose sur le théorème de Pythagore). Celle du milieu est valable dans tout repère.</p></div>\n"
+        },
+        {
+          "id": "colinearite",
+          "titre": "Colinéarité et déterminant",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Le <strong>déterminant</strong> des vecteurs u⃗(x ; y) et v⃗(x' ; y') dans une base orthonormée est le nombre det(u⃗, v⃗) = xy' − x'y.</p></div>\n<div class=\"def\"><b class=\"t\">Propriété</b><p>Deux vecteurs sont colinéaires si et seulement si leur déterminant est nul.</p></div>\n<div class=\"def\"><b class=\"t\">Démonstration</b><p>Si v⃗ = k u⃗, alors x' = kx et y' = ky, et xy' − x'y = x(ky) − (kx)y = 0.</p><p>Réciproquement, supposons xy' − x'y = 0. Si u⃗ = 0⃗, il est colinéaire à v⃗. Sinon, x ou y n'est pas nul ; disons x ≠ 0, et posons k = x'/x. Alors x' = kx, et y' = x'y/x = ky (car xy' = x'y). Donc v⃗ = k u⃗. Le cas y ≠ 0 est identique.</p></div>\n<p>Exemple : u⃗(2 ; −3) et v⃗(−6 ; 9) : det = 2 × 9 − (−6) × (−3) = 18 − 18 = 0, ils sont colinéaires (v⃗ = −3u⃗). Avec w⃗(4 ; 5) : det(u⃗, w⃗) = 10 + 12 = 22 ≠ 0, ils ne sont pas colinéaires.</p>\n<h3>Applications</h3>\n<ul>\n<li><strong>Alignement</strong> : les points A, B, C sont alignés si et seulement si AB⃗ et AC⃗ sont colinéaires.</li>\n<li><strong>Parallélisme</strong> : les droites (AB) et (CD) sont parallèles si et seulement si AB⃗ et CD⃗ sont colinéaires.</li>\n</ul>\n<p>Exemple : A(1 ; 1), B(3 ; 4), C(7 ; 10). AB⃗(2 ; 3), AC⃗(6 ; 9) ; det = 2 × 9 − 6 × 3 = 0 : les points sont alignés.</p>\n"
+        },
+        {
+          "id": "projete",
+          "titre": "Projeté orthogonal",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Le <strong>projeté orthogonal</strong> d'un point M sur une droite Δ est le point H de Δ tel que la droite (MH) soit perpendiculaire à Δ. Si M est sur Δ, son projeté est M lui-même.</p></div>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 320 170\" role=\"img\" aria-label=\"Projeté orthogonal H de M sur la droite delta, et un autre point N de la droite\">\n<line x1=\"10\" y1=\"140\" x2=\"310\" y2=\"140\" stroke=\"currentColor\" stroke-width=\"1.5\"/>\n<line x1=\"130\" y1=\"30\" x2=\"130\" y2=\"140\" stroke=\"#4338ca\" stroke-width=\"2\"/>\n<line x1=\"130\" y1=\"30\" x2=\"240\" y2=\"140\" stroke=\"currentColor\" stroke-dasharray=\"5 4\"/>\n<polyline points=\"130,128 142,128 142,140\" fill=\"none\" stroke=\"currentColor\"/>\n<circle cx=\"130\" cy=\"30\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"130\" cy=\"140\" r=\"3.5\" fill=\"#4338ca\"/><circle cx=\"240\" cy=\"140\" r=\"3.5\" fill=\"currentColor\"/>\n<text x=\"138\" y=\"30\" font-size=\"14\">M</text><text x=\"118\" y=\"160\" font-size=\"14\">H</text><text x=\"236\" y=\"160\" font-size=\"14\">N</text><text x=\"290\" y=\"132\" font-size=\"14\">Δ</text>\n</svg></div><figcaption>H est le projeté orthogonal de M sur Δ ; MN &gt; MH.</figcaption></figure>\n<div class=\"def\"><b class=\"t\">Propriété et démonstration</b><p>Le projeté orthogonal H de M sur Δ est le point de Δ le plus proche de M.</p><p>Soit N un point de Δ distinct de H. Le triangle MHN est rectangle en H, donc MN<sup>2</sup> = MH<sup>2</sup> + HN<sup>2</sup> (théorème de Pythagore). Comme HN &gt; 0, MN<sup>2</sup> &gt; MH<sup>2</sup>, donc MN &gt; MH.</p></div>\n<p>La longueur MH est appelée <strong>distance du point M à la droite Δ</strong>. Dans un triangle, le pied de la hauteur issue d'un sommet est le projeté orthogonal de ce sommet sur le côté opposé : l'aire du triangle vaut (base × hauteur)/2.</p>\n"
+        },
+        {
+          "id": "trigonometrie",
+          "titre": "Trigonométrie et problèmes de géométrie",
+          "html": "\n<p>Dans un triangle ABC rectangle en C, pour l'angle aigu α de sommet A :</p>\n<div class=\"def\"><b class=\"t\">Rappels</b><p>cos α = côté adjacent / hypoténuse = AC/AB ; sin α = côté opposé / hypoténuse = BC/AB ; tan α = côté opposé / côté adjacent = BC/AC.</p></div>\n<div class=\"def\"><b class=\"t\">Propriété et démonstration</b><p>Pour tout angle aigu α d'un triangle rectangle : cos<sup>2</sup> α + sin<sup>2</sup> α = 1.</p><p>cos<sup>2</sup> α + sin<sup>2</sup> α = AC<sup>2</sup>/AB<sup>2</sup> + BC<sup>2</sup>/AB<sup>2</sup> = (AC<sup>2</sup> + BC<sup>2</sup>)/AB<sup>2</sup> = AB<sup>2</sup>/AB<sup>2</sup> = 1, d'après le théorème de Pythagore.</p></div>\n<p>Exemple : si cos α = 0,6, alors sin<sup>2</sup> α = 1 − 0,36 = 0,64 et sin α = 0,8 (un sinus d'angle aigu est positif).</p>\n<p>Le cosinus et le sinus d'un angle aigu sont compris entre 0 et 1 : le côté adjacent et le côté opposé sont plus courts que l'hypoténuse. Valeurs à connaître : cos 60° = sin 30° = 1/2 ; cos 30° = sin 60° = √3/2 ; cos 45° = sin 45° = √2/2.</p>\n<h3>Résoudre un problème</h3>\n<p>Pour calculer une longueur, un angle, une aire ou un volume, on cherche dans la figure un triangle rectangle, des parallèles (théorème de Thalès), un milieu, puis on choisit l'outil : Pythagore, trigonométrie, vecteurs, coordonnées.</p>\n<p>Exemple : une échelle de 5 m est posée contre un mur et fait un angle de 70° avec le sol. Elle atteint la hauteur h = 5 × sin 70° ≈ 4,7 m, et son pied est à 5 × cos 70° ≈ 1,7 m du mur.</p>\n<p>Rappels d'aires et de volumes : aire d'un disque πr<sup>2</sup> ; aire d'un triangle (base × hauteur)/2 ; volume d'un pavé abc ; d'un cylindre πr<sup>2</sup>h ; d'une pyramide ou d'un cône (aire de la base × hauteur)/3 ; d'une boule (4/3)πr<sup>3</sup>.</p>\n<p><strong>Optimisation</strong> : on cherche la valeur d'une variable qui rend une grandeur la plus grande ou la plus petite possible. Exemple : parmi les rectangles de périmètre 20 cm, de largeur x, l'aire vaut x(10 − x) = 25 − (x − 5)<sup>2</sup> ; elle est maximale pour x = 5 : le carré de côté 5 cm, d'aire 25 cm<sup>2</sup>.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Le vecteur AB⃗ est associé à la translation qui transforme A en B : direction, sens, norme AB. AB⃗ = DC⃗ si et seulement si ABCD est un parallélogramme.</li>\n<li>Relation de Chasles : AB⃗ + BC⃗ = AC⃗.</li>\n<li>k u⃗ : même direction que u⃗, même sens si k &gt; 0, sens contraire si k &lt; 0, norme |k| ‖u⃗‖. u⃗ et v⃗ sont colinéaires si v⃗ = k u⃗.</li>\n<li>Repère orthonormé : AB⃗(x<sub>B</sub> − x<sub>A</sub> ; y<sub>B</sub> − y<sub>A</sub>) ; ‖u⃗‖ = √(x<sup>2</sup> + y<sup>2</sup>) ; milieu ((x<sub>A</sub> + x<sub>B</sub>)/2 ; (y<sub>A</sub> + y<sub>B</sub>)/2).</li>\n<li>det(u⃗, v⃗) = xy' − x'y ; u⃗ et v⃗ colinéaires ⇔ det = 0. Alignement : AB⃗ et AC⃗ colinéaires ; parallélisme : AB⃗ et CD⃗ colinéaires.</li>\n<li>Le projeté orthogonal de M sur Δ est le point de Δ le plus proche de M.</li>\n<li>cos<sup>2</sup> α + sin<sup>2</sup> α = 1 ; cos = adjacent/hypoténuse, sin = opposé/hypoténuse, tan = opposé/adjacent.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch6:banque:001",
+          "enonce": "Quelles caractéristiques définissent un vecteur non nul ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "Le vecteur AB⃗ a la direction de (AB), le sens de A vers B et la norme AB.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une direction, un sens et une norme",
+            "Une origine seulement",
+            "Une longueur seulement",
+            "Un angle et une aire"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:002",
+          "enonce": "La translation qui transforme A en B est associée à quel vecteur ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "Le vecteur va du point de départ A au point d'arrivée B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "BA⃗",
+            "AB⃗",
+            "AA⃗",
+            "0⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:003",
+          "enonce": "Comment se note la norme du vecteur AB⃗ ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "La norme d'un vecteur est sa longueur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "|AB⃗|², égale à AB²",
+            "(AB), la droite",
+            "‖AB⃗‖, égale à la longueur AB",
+            "[AB], le segment"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:004",
+          "enonce": "Quel est le vecteur opposé de AB⃗ ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 2,
+          "explication": "BA⃗ a la même direction et la même norme, mais le sens contraire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AB⃗",
+            "0⃗",
+            "2AB⃗",
+            "BA⃗"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:005",
+          "enonce": "Que vaut le vecteur MM⃗ ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 2,
+          "explication": "Partir de M pour arriver en M : déplacement nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le vecteur nul 0⃗",
+            "Un vecteur de norme 1",
+            "Le vecteur opposé de M",
+            "Il n'existe pas"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:006",
+          "enonce": "Les vecteurs AB⃗ et BA⃗ ont-ils la même direction ?",
+          "notion": "Translations et vecteurs",
+          "difficulte": 2,
+          "explication": "Ils sont portés par la même droite (AB).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, ils sont perpendiculaires",
+            "Oui, mais des sens contraires",
+            "Oui, et le même sens",
+            "Non, et des normes différentes"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:007",
+          "enonce": "Que conserve une translation ? Coche toutes les réponses exactes.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "Une translation fait glisser la figure sans la déformer.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'orientation de chaque point vers l'origine",
+            "Les angles",
+            "La position des points",
+            "Les longueurs",
+            "La forme des figures"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:008",
+          "enonce": "Quelles affirmations sur le vecteur nul 0⃗ sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 2,
+          "explication": "AB⃗ + BA⃗ = 0⃗, pas AB⃗ + AB⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AB⃗ + AB⃗ = 0⃗",
+            "Sa norme vaut 1",
+            "Il a une direction précise",
+            "AA⃗ = 0⃗",
+            "Sa norme vaut 0"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:009",
+          "enonce": "Un vecteur non nul a une direction, un sens et une norme.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "Ce sont ses trois caractéristiques.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:010",
+          "enonce": "Les vecteurs AB⃗ et BA⃗ sont égaux.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 2,
+          "explication": "Ils ont des sens contraires : BA⃗ = −AB⃗.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:011",
+          "enonce": "La norme d'un vecteur peut être négative.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 3,
+          "explication": "C'est une longueur : elle est positive ou nulle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:012",
+          "enonce": "Avec A et B tels que AB = 7 cm, quelle est la norme du vecteur BA⃗, en cm ? Réponds par un nombre.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "‖BA⃗‖ = BA = AB.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:013",
+          "enonce": "Quand deux vecteurs sont-ils égaux ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 1,
+          "explication": "Les trois caractéristiques doivent être les mêmes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Quand ils ont la même origine",
+            "Quand ils ont la même norme",
+            "Quand ils ont même direction, même sens et même norme",
+            "Quand ils sont sur la même droite"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:014",
+          "enonce": "Si ABCD est un parallélogramme, quelle égalité est vraie ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 1,
+          "explication": "Attention à l'ordre des lettres : AB⃗ et DC⃗ ont le même sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AB⃗ = CD⃗",
+            "AB⃗ = AD⃗",
+            "AB⃗ = BC⃗",
+            "AB⃗ = DC⃗"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:015",
+          "enonce": "Si AB⃗ = DC⃗, quelle est la nature du quadrilatère ABCD ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "C'est la propriété du cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un parallélogramme, éventuellement aplati",
+            "Un trapèze quelconque",
+            "Un losange",
+            "Un rectangle"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:016",
+          "enonce": "Le point I est le milieu de [AB]. Quelle égalité de vecteurs est vraie ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "I est à mi-chemin de A et B, dans le même sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AI⃗ = BI⃗",
+            "AI⃗ = IB⃗",
+            "IA⃗ = IB⃗",
+            "AI⃗ = AB⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:017",
+          "enonce": "Dans le parallélogramme ABCD, quel vecteur est égal à AD⃗ ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "AD⃗ et BC⃗ sont les deux côtés parallèles, de même sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "CB⃗",
+            "DA⃗",
+            "BC⃗",
+            "CD⃗"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:018",
+          "enonce": "Si AB⃗ = CD⃗, quel quadrilatère est un parallélogramme ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 3,
+          "explication": "AB⃗ = CD⃗ s'écrit AB⃗ = CD⃗ avec, dans l'ordre, A, B, D, C : ABDC.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ABCD",
+            "ACBD",
+            "ADBC",
+            "ABDC"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:019",
+          "enonce": "ABCD est un parallélogramme. Quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 1,
+          "explication": "Les côtés opposés donnent des vecteurs égaux, dans le bon sens.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AB⃗ = AD⃗",
+            "AC⃗ = BD⃗",
+            "AB⃗ = CD⃗",
+            "AD⃗ = BC⃗",
+            "AB⃗ = DC⃗"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:020",
+          "enonce": "Quelles propriétés suffisent pour affirmer que ABCD est un parallélogramme ? Coche toutes les réponses exactes.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "AB = CD ne donne pas le sens ; AB⃗ = CD⃗ donne le parallélogramme ABDC.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AB = CD",
+            "AB⃗ = CD⃗",
+            "(AB) et (CD) sont sécantes",
+            "AB⃗ = DC⃗",
+            "Les diagonales [AC] et [BD] ont le même milieu"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:021",
+          "enonce": "Le point M est le milieu de [PQ]. Quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 3,
+          "explication": "MP⃗ et MQ⃗ sont opposés.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "MP⃗ = MQ⃗",
+            "PM⃗ = QM⃗",
+            "MP⃗ = −MQ⃗",
+            "PM⃗ = MQ⃗",
+            "PQ⃗ = 2PM⃗"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:022",
+          "enonce": "Deux vecteurs de même norme sont toujours égaux.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 1,
+          "explication": "Ils peuvent avoir des directions ou des sens différents.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:023",
+          "enonce": "Si ABCD est un parallélogramme, alors AB⃗ = CD⃗.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "AB⃗ = DC⃗ ; CD⃗ est l'opposé.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:024",
+          "enonce": "Deux vecteurs égaux peuvent avoir des origines différentes.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 3,
+          "explication": "Exemple : AB⃗ = DC⃗ dans un parallélogramme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:025",
+          "enonce": "Que dit la relation de Chasles ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "On enchaîne les déplacements de A à B puis de B à C.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AB⃗ + BC⃗ = AC⃗",
+            "AB⃗ + BC⃗ = BA⃗",
+            "AB⃗ + AC⃗ = BC⃗",
+            "AB⃗ × BC⃗ = AC⃗"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:026",
+          "enonce": "Que vaut AB⃗ + BA⃗ ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "Aller de A à B puis revenir en A : déplacement nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2AB⃗",
+            "0⃗",
+            "AB⃗",
+            "BA⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:027",
+          "enonce": "Enchaîner la translation de vecteur u⃗ puis celle de vecteur v⃗ revient à faire la translation de quel vecteur ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "C'est la définition de la somme.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "u⃗ − v⃗",
+            "v⃗ − u⃗",
+            "u⃗ + v⃗",
+            "2u⃗"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:028",
+          "enonce": "Que vaut MN⃗ + NP⃗ + PQ⃗ ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "Chasles appliquée deux fois.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "MP⃗",
+            "NQ⃗",
+            "QM⃗",
+            "MQ⃗"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:029",
+          "enonce": "Pour construire u⃗ + v⃗ « bout à bout », où place-t-on l'origine de v⃗ ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "On trace u⃗ = AB⃗ puis v⃗ = BC⃗ : la somme est AC⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "À l'extrémité de u⃗",
+            "À l'origine de u⃗",
+            "Au milieu de u⃗",
+            "N'importe où sur la feuille"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:030",
+          "enonce": "Si u⃗ = AB⃗ et v⃗ = AD⃗ ont la même origine, comment obtient-on u⃗ + v⃗ ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "C'est la règle du parallélogramme.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par BD⃗",
+            "Par AC⃗, où ABCD est un parallélogramme",
+            "Par DB⃗",
+            "Par AB⃗ + AB⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:031",
+          "enonce": "Quelle écriture simplifie AB⃗ − AC⃗ ?",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 3,
+          "explication": "AB⃗ − AC⃗ = AB⃗ + CA⃗ = CA⃗ + AB⃗ = CB⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "BC⃗",
+            "AB⃗ + AC⃗",
+            "CB⃗",
+            "0⃗"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:032",
+          "enonce": "Quelles égalités sont des applications de la relation de Chasles ? Coche toutes les réponses exactes.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "L'extrémité du premier vecteur doit être l'origine du second.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "PQ⃗ + PR⃗ = QR⃗",
+            "PQ⃗ + QR⃗ = PR⃗",
+            "AB⃗ + CD⃗ = AD⃗",
+            "AM⃗ + MB⃗ = AB⃗",
+            "AM⃗ + MB⃗ = MA⃗"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:033",
+          "enonce": "Quelles expressions sont égales à AC⃗ ? Coche toutes les réponses exactes.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "Chasles avec n'importe quel point intermédiaire ; CA⃗ est l'opposé.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "CA⃗",
+            "AD⃗ + DC⃗",
+            "AB⃗ + CB⃗",
+            "AB⃗ + BC⃗",
+            "AE⃗ + EC⃗"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:034",
+          "enonce": "Quelles expressions valent le vecteur nul ? Coche toutes les réponses exactes.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 3,
+          "explication": "AB⃗ − BA⃗ = AB⃗ + AB⃗ = 2AB⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AB⃗ + BC⃗",
+            "AB⃗ + AB⃗",
+            "AB⃗ + BC⃗ + CA⃗",
+            "AB⃗ − BA⃗",
+            "AB⃗ + BA⃗"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:035",
+          "enonce": "Pour tous points A, B, C, on a AB⃗ + BC⃗ = AC⃗.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "C'est la relation de Chasles.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:036",
+          "enonce": "Pour tous points A, B, C, on a AB + BC = AC (avec des longueurs).",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "C'est faux sauf si B est sur le segment [AC] ; la relation de Chasles concerne les vecteurs.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:037",
+          "enonce": "On a u⃗ = AB⃗ et v⃗ = BC⃗ avec A, B, C alignés dans cet ordre, AB = 3 et BC = 4. Quelle est la norme de u⃗ + v⃗ ? Réponds par un nombre.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 2,
+          "explication": "u⃗ + v⃗ = AC⃗ et AC = 3 + 4 = 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:038",
+          "enonce": "Par rapport à u⃗, quelle est la norme de 2u⃗ ?",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "‖2u⃗‖ = 2‖u⃗‖.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La moitié de celle de u⃗",
+            "La même",
+            "Le carré de celle de u⃗",
+            "Le double de celle de u⃗"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:039",
+          "enonce": "Quel est le sens de −3u⃗ par rapport à u⃗ ?",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "Un coefficient négatif inverse le sens.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le sens contraire",
+            "Le même sens",
+            "Une direction perpendiculaire",
+            "Aucun sens"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:040",
+          "enonce": "Si I est le milieu de [AB], quelle égalité est vraie ?",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "AB⃗ = AI⃗ + IB⃗ = 2AI⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AI⃗ = 2AB⃗",
+            "AB⃗ = 2AI⃗",
+            "AB⃗ = IA⃗",
+            "AI⃗ = −IB⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:041",
+          "enonce": "Que signifie « u⃗ et v⃗ sont colinéaires » ?",
+          "notion": "Produit par un réel",
+          "difficulte": 2,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Ils ont la même norme",
+            "Ils sont perpendiculaires",
+            "Il existe un réel k tel que v⃗ = k u⃗ (ou u⃗ = k v⃗)",
+            "Ils ont la même origine"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:042",
+          "enonce": "Quelle est la norme de −(1/2)u⃗ si ‖u⃗‖ = 6 ?",
+          "notion": "Produit par un réel",
+          "difficulte": 2,
+          "explication": "|−1/2| × 6 = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3",
+            "12",
+            "6",
+            "3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:043",
+          "enonce": "Comment développer 3(u⃗ + v⃗) ?",
+          "notion": "Produit par un réel",
+          "difficulte": 2,
+          "explication": "k(u⃗ + v⃗) = k u⃗ + k v⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3u⃗ + 3v⃗",
+            "3u⃗ + v⃗",
+            "u⃗ + 3v⃗",
+            "9u⃗v⃗"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:044",
+          "enonce": "Quel vecteur est égal à 2u⃗ + 3u⃗ − u⃗ ?",
+          "notion": "Produit par un réel",
+          "difficulte": 3,
+          "explication": "(2 + 3 − 1)u⃗ = 4u⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6u⃗",
+            "4u⃗",
+            "5u⃗",
+            "u⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:045",
+          "enonce": "Quels vecteurs ont le même sens que u⃗ (u⃗ non nul) ? Coche toutes les réponses exactes.",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "Coefficient positif : même sens.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−u⃗",
+            "2u⃗",
+            "0,5u⃗",
+            "−3u⃗",
+            "10u⃗"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:046",
+          "enonce": "Parmi ces vecteurs, lesquels s'écrivent k u⃗ avec k réel ? Coche toutes les réponses exactes.",
+          "notion": "Produit par un réel",
+          "difficulte": 2,
+          "explication": "Un vecteur de la forme k u⃗ est colinéaire à u⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "u⃗/3",
+            "−4u⃗",
+            "0⃗",
+            "u⃗ + v⃗ avec v⃗ non colinéaire à u⃗",
+            "un vecteur perpendiculaire à u⃗ non nul"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:047",
+          "enonce": "Avec ‖u⃗‖ = 4, quelles normes sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Produit par un réel",
+          "difficulte": 3,
+          "explication": "La norme de k u⃗ est |k| × 4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "‖−2u⃗‖ = 8",
+            "‖0,25u⃗‖ = 1",
+            "‖u⃗/2‖ = 8",
+            "‖3u⃗‖ = 12",
+            "‖−u⃗‖ = −4"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:048",
+          "enonce": "Les vecteurs u⃗ et −u⃗ ont la même norme.",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "|−1| × ‖u⃗‖ = ‖u⃗‖.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:049",
+          "enonce": "Le vecteur 3u⃗ a une direction différente de celle de u⃗.",
+          "notion": "Produit par un réel",
+          "difficulte": 2,
+          "explication": "Un multiple de u⃗ a la même direction.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:050",
+          "enonce": "Si v⃗ = −2u⃗, alors u⃗ et v⃗ sont colinéaires.",
+          "notion": "Produit par un réel",
+          "difficulte": 3,
+          "explication": "Il existe k = −2 tel que v⃗ = k u⃗.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:051",
+          "enonce": "Si ‖u⃗‖ = 5, quelle est la norme de 3u⃗ ? Réponds par un nombre.",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "3 × 5 = 15.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "15"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:052",
+          "enonce": "On a AB⃗ = k AI⃗, où I est le milieu de [AB]. Donne k.",
+          "notion": "Produit par un réel",
+          "difficulte": 3,
+          "explication": "AB⃗ = 2AI⃗.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:053",
+          "enonce": "Quelles sont les coordonnées de AB⃗ pour A(1 ; 2) et B(4 ; −2) ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "x_B − x_A = 3 et y_B − y_A = −4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(5 ; 0)",
+            "(−3 ; 4)",
+            "(3 ; −4)",
+            "(4 ; −4)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:054",
+          "enonce": "Pour obtenir les coordonnées de AB⃗, que calcule-t-on ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "AB⃗(x_B − x_A ; y_B − y_A).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Coordonnées de A moins coordonnées de B",
+            "La somme des coordonnées de A et B",
+            "Le produit des coordonnées",
+            "Coordonnées de B moins coordonnées de A"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:055",
+          "enonce": "Avec u⃗(2 ; 5) et v⃗(1 ; −3), quelles sont les coordonnées de u⃗ + v⃗ ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "On additionne les abscisses, puis les ordonnées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(3 ; 2)",
+            "(1 ; 8)",
+            "(2 ; −15)",
+            "(3 ; 8)"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:056",
+          "enonce": "Avec u⃗(−2 ; 3), quelles sont les coordonnées de 4u⃗ ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "On multiplie chaque coordonnée par 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(2 ; 7)",
+            "(−8 ; 12)",
+            "(−8 ; 3)",
+            "(−6 ; 12)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:057",
+          "enonce": "Quelle est la norme du vecteur u⃗(3 ; −4) dans un repère orthonormé ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "√(9 + 16) = √25 = 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "−1",
+            "5",
+            "25"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:058",
+          "enonce": "Le vecteur u⃗ s'écrit 3i⃗ − 2j⃗. Quelles sont ses coordonnées ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "u⃗ = x i⃗ + y j⃗ donne u⃗(x ; y).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(−2 ; 3)",
+            "(3 ; 2)",
+            "(1 ; 0)",
+            "(3 ; −2)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:059",
+          "enonce": "Sur un quadrillage, un vecteur va de 4 carreaux vers la gauche et 1 vers le haut. Quelles sont ses coordonnées ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "Vers la gauche : x négatif ; vers le haut : y positif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(−4 ; 1)",
+            "(4 ; 1)",
+            "(1 ; −4)",
+            "(−4 ; −1)"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:060",
+          "enonce": "Avec A(1 ; 2), B(3 ; 7) et C(6 ; 3), quel point D rend ABCD parallélogramme ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 3,
+          "explication": "AD⃗ = BC⃗(3 ; −4) : D(1 + 3 ; 2 − 4).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "D(8 ; 8)",
+            "D(4 ; −2)",
+            "D(3 ; 7)",
+            "D(−2 ; 4)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:061",
+          "enonce": "On place A(2 ; 1) et B(5 ; 1). Que peut-on affirmer ? Coche toutes les réponses exactes.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "BA⃗(−3 ; 0).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "BA⃗(3 ; 0)",
+            "AB = 9",
+            "AB⃗(7 ; 2)",
+            "AB = 3",
+            "AB⃗(3 ; 0)"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:062",
+          "enonce": "Lesquels de ces vecteurs ont pour norme 5 ? Coche toutes les réponses exactes.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "√13 et √17 ne valent pas 5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(−3 ; 4)",
+            "(0 ; −5)",
+            "(5 ; 0)",
+            "(2 ; 3)",
+            "(1 ; 4)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:063",
+          "enonce": "Avec u⃗(4 ; −6), quels vecteurs sont égaux à (1/2)u⃗ ? Coche toutes les réponses exactes.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 3,
+          "explication": "(1/2)u⃗(2 ; −3) ; u⃗ − (2 ; −3) donne aussi (2 ; −3).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(2 ; 3)",
+            "(−2 ; 3)",
+            "(2 ; −3)",
+            "(8 ; −12)",
+            "u⃗ − (2 ; −3)"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:064",
+          "enonce": "Deux vecteurs égaux ont les mêmes coordonnées.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "C'est une propriété du cours.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:065",
+          "enonce": "Les coordonnées de BA⃗ sont les opposées de celles de AB⃗.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "BA⃗ = −AB⃗.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:066",
+          "enonce": "La norme de u⃗(x ; y) vaut x + y.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 3,
+          "explication": "‖u⃗‖ = √(x² + y²).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:067",
+          "enonce": "Pour A(−1 ; 4) et B(2 ; 0), quelle est l'abscisse du vecteur AB⃗ ? Réponds par un nombre.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "2 − (−1) = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:068",
+          "enonce": "Quelle est la norme du vecteur u⃗(6 ; 8) ? Réponds par un nombre.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 3,
+          "explication": "√(36 + 64) = √100 = 10.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:069",
+          "enonce": "Quelles sont les coordonnées du milieu de [AB] pour A(−1 ; 3) et B(5 ; −5) ?",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "((−1 + 5)/2 ; (3 − 5)/2).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(3 ; −1)",
+            "(6 ; −8)",
+            "(2 ; −1)",
+            "(2 ; 4)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:070",
+          "enonce": "Quelle formule donne la distance AB dans un repère orthonormé ?",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "C'est le théorème de Pythagore.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(x_B − x_A) + (y_B − y_A)",
+            "√(x_B² + y_B²)",
+            "(x_A + x_B)/2",
+            "√((x_B − x_A)² + (y_B − y_A)²)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:071",
+          "enonce": "Pour A(−1 ; 3) et B(5 ; −5), que vaut la distance AB ?",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "√(6² + 8²) = √100.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "14",
+            "√28",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:072",
+          "enonce": "Le milieu de [AB] est I(2 ; 1) et A(0 ; 4). Quelles sont les coordonnées de B ?",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "x_B = 2 × 2 − 0 et y_B = 2 × 1 − 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(1 ; 2,5)",
+            "(4 ; −2)",
+            "(2 ; −3)",
+            "(−2 ; 7)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:073",
+          "enonce": "Comment prouver qu'un quadrilatère ABCD est un parallélogramme avec des coordonnées ?",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "Les diagonales d'un parallélogramme se coupent en leur milieu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Montrer que AB = BC",
+            "Montrer que AC = BD",
+            "Montrer que [AC] et [BD] ont le même milieu",
+            "Montrer que A et C ont la même abscisse"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:074",
+          "enonce": "Pour quel type de repère la formule de la distance est-elle valable ?",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "Elle repose sur le théorème de Pythagore.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Tout repère",
+            "Un repère dont l'origine est A",
+            "Aucun",
+            "Un repère orthonormé"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:075",
+          "enonce": "Avec A(0 ; 0), B(4 ; 0) et C(0 ; 3), le triangle ABC est :",
+          "notion": "Distance et milieu",
+          "difficulte": 3,
+          "explication": "AB = 4, AC = 3, BC = 5 et 5² = 4² + 3².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "rectangle en A",
+            "isocèle en A",
+            "équilatéral",
+            "rectangle en B"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:076",
+          "enonce": "Pour A(2 ; 6) et B(4 ; 0), quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "AB² = 4 + 36 = 40.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AB = 8",
+            "AB = √40",
+            "Le milieu de [AB] est (6 ; 6)",
+            "AB = 40",
+            "Le milieu de [AB] est (3 ; 3)"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:077",
+          "enonce": "Avec A(1 ; 1), B(5 ; 1) et C(3 ; 4), quelles longueurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "Le triangle est isocèle en C.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AC = √13",
+            "AC = 5",
+            "AB = 4",
+            "BC = 3",
+            "BC = √13"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:078",
+          "enonce": "Le triangle ABC a pour côtés AB = √20, AC = √5 et BC = 5. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Distance et milieu",
+          "difficulte": 3,
+          "explication": "20 + 5 = 25 : réciproque du théorème de Pythagore.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "ABC est rectangle en A",
+            "ABC est rectangle en B",
+            "AB + AC = BC",
+            "ABC est isocèle",
+            "AB² + AC² = BC²"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:079",
+          "enonce": "Le milieu de [AB] a pour abscisse (x_A + x_B)/2.",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "C'est la moyenne des abscisses.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:080",
+          "enonce": "La formule du milieu n'est valable que dans un repère orthonormé.",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "Elle est valable dans tout repère ; c'est la formule de la distance qui demande un repère orthonormé.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:081",
+          "enonce": "Si [AC] et [BD] ont le même milieu, alors ABCD est un parallélogramme.",
+          "notion": "Distance et milieu",
+          "difficulte": 3,
+          "explication": "Les diagonales se coupent en leur milieu.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:082",
+          "enonce": "Quelle est l'ordonnée du milieu de [AB] pour A(3 ; 7) et B(5 ; −1) ? Réponds par un nombre.",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "(7 + (−1))/2 = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:083",
+          "enonce": "Quelle est la distance entre A(1 ; 2) et B(7 ; 10) ? Réponds par un nombre.",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "√(36 + 64) = 10.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:084",
+          "enonce": "Comment se calcule det(u⃗, v⃗) pour u⃗(x ; y) et v⃗(x' ; y') ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "C'est la définition du déterminant.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "xx' + yy'",
+            "xy' − x'y",
+            "xy + x'y'",
+            "xx' − yy'"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:085",
+          "enonce": "Que signifie det(u⃗, v⃗) = 0 ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "C'est le critère de colinéarité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "u⃗ et v⃗ sont perpendiculaires",
+            "u⃗ et v⃗ ont la même norme",
+            "u⃗ et v⃗ sont colinéaires",
+            "u⃗ est le vecteur nul"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:086",
+          "enonce": "Que vaut det(u⃗, v⃗) pour u⃗(2 ; −3) et v⃗(−6 ; 9) ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "2 × 9 − (−6) × (−3) = 18 − 18.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "36",
+            "−36",
+            "12",
+            "0"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:087",
+          "enonce": "Que vaut det(u⃗, w⃗) pour u⃗(2 ; −3) et w⃗(4 ; 5) ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "2 × 5 − 4 × (−3) = 10 + 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "22",
+            "−2",
+            "0",
+            "−22"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:088",
+          "enonce": "Comment montrer que A, B, C sont alignés ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "Deux vecteurs colinéaires de même origine A sont portés par la même droite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Montrer que AB = AC",
+            "Montrer que AB⃗ et AC⃗ sont colinéaires",
+            "Montrer que AB⃗ = AC⃗",
+            "Montrer que ABC est rectangle"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:089",
+          "enonce": "Comment montrer que les droites (AB) et (CD) sont parallèles ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "Les droites sont parallèles si leurs vecteurs directeurs sont colinéaires.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Montrer que AB = CD",
+            "Montrer que AC⃗ = BD⃗ est faux",
+            "Montrer que det(AB⃗, CD⃗) = 0",
+            "Montrer que det(AB⃗, CD⃗) = 1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:090",
+          "enonce": "Pour quelle valeur de m les vecteurs u⃗(2 ; 3) et v⃗(m ; 9) sont-ils colinéaires ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 3,
+          "explication": "2 × 9 − 3m = 0, donc m = 6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "13,5",
+            "−6",
+            "6"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:091",
+          "enonce": "Dans la démonstration du critère, si v⃗ = k u⃗, pourquoi xy' − x'y = 0 ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 3,
+          "explication": "On remplace x' et y' par kx et ky.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car x' = kx et y' = ky, donc x(ky) − (kx)y = 0",
+            "Car x = y",
+            "Car k = 0",
+            "Car les vecteurs sont perpendiculaires"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:092",
+          "enonce": "Les points A(1 ; 1), B(3 ; 4) et C(7 ; 10) sont-ils alignés ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 3,
+          "explication": "AB⃗(2 ; 3), AC⃗(6 ; 9) : 18 − 18 = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, car AB ≠ AC",
+            "Oui, car det(AB⃗, AC⃗) = 0",
+            "Non, car det(AB⃗, AC⃗) = 6",
+            "Oui, car leurs abscisses sont impaires"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:093",
+          "enonce": "Quels vecteurs sont colinéaires à u⃗(1 ; 2) ? Coche toutes les réponses exactes.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "Ce sont les multiples de u⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(0,5 ; 1)",
+            "(2 ; 4)",
+            "(−3 ; −6)",
+            "(1 ; −2)",
+            "(2 ; 1)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:094",
+          "enonce": "Quelles paires de vecteurs ont un déterminant nul ? Coche toutes les réponses exactes.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "4 × 3 − 2 × 6 = 0 ; 1 × 5 − (−5)(−1) = 0 ; le vecteur nul.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(1 ; −1) et (−5 ; 5)",
+            "(3 ; 0) et (0 ; 3)",
+            "(4 ; 6) et (2 ; 3)",
+            "(1 ; 2) et (2 ; 1)",
+            "(0 ; 0) et (3 ; 7)"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:095",
+          "enonce": "Avec A(0 ; 2), B(2 ; 3), C(6 ; 5) et D(1 ; 0), quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 3,
+          "explication": "AB⃗(2 ; 1), AC⃗(6 ; 3) : det = 0 ; CD⃗(−5 ; −5) n'est pas colinéaire à AB⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "det(AB⃗, AC⃗) = 2",
+            "A, B et C sont alignés",
+            "AB⃗ et AC⃗ sont colinéaires",
+            "A, B et D sont alignés",
+            "(AB) et (CD) sont parallèles"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:096",
+          "enonce": "Deux vecteurs colinéaires non nuls ont la même direction.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "L'un est un multiple de l'autre.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:097",
+          "enonce": "Le déterminant de u⃗(3 ; 1) et v⃗(1 ; 3) est nul.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "3 × 3 − 1 × 1 = 8.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:098",
+          "enonce": "Si det(u⃗, v⃗) ≠ 0, alors u⃗ et v⃗ ne sont pas colinéaires.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 3,
+          "explication": "C'est la contraposée du critère.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:099",
+          "enonce": "Calcule le déterminant de u⃗(5 ; 2) et v⃗(3 ; 4). Réponds par un nombre.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "5 × 4 − 3 × 2 = 20 − 6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "14"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:100",
+          "enonce": "Qu'est-ce que le projeté orthogonal d'un point M sur une droite Δ ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le milieu de M et d'un point de Δ",
+            "Le point de Δ le plus éloigné de M",
+            "Le point H de Δ tel que (MH) soit perpendiculaire à Δ",
+            "Le symétrique de M par rapport à Δ"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:101",
+          "enonce": "Si M est sur la droite Δ, quel est son projeté orthogonal sur Δ ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "M est déjà sur Δ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Aucun point",
+            "Le point de Δ le plus loin de M",
+            "L'origine du repère",
+            "M lui-même"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:102",
+          "enonce": "Quelle propriété du projeté orthogonal H de M sur Δ est démontrée dans le cours ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 2,
+          "explication": "On le démontre avec le théorème de Pythagore.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "H est le point de Δ le plus proche de M",
+            "H est le milieu de [MΔ]",
+            "MH est toujours égal à 1",
+            "H est le point de Δ le plus éloigné de M"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:103",
+          "enonce": "Quel théorème sert à démontrer que MH < MN pour tout point N de Δ distinct de H ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 2,
+          "explication": "MN² = MH² + HN².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le théorème de Thalès",
+            "Le théorème de Pythagore",
+            "La relation de Chasles",
+            "La formule du milieu"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:104",
+          "enonce": "Comment appelle-t-on la longueur MH, où H est le projeté orthogonal de M sur Δ ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 2,
+          "explication": "C'est la plus courte distance de M aux points de Δ.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La norme de Δ",
+            "Le rayon de Δ",
+            "La distance du point M à la droite Δ",
+            "L'abscisse de M"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:105",
+          "enonce": "Dans un triangle ABC, comment appelle-t-on le projeté orthogonal de A sur (BC) ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 3,
+          "explication": "La hauteur issue de A est perpendiculaire à (BC).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le milieu de [BC]",
+            "Le centre du cercle circonscrit",
+            "Le point d'intersection des médianes",
+            "Le pied de la hauteur issue de A"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:106",
+          "enonce": "Le projeté orthogonal de M sur Δ est H, avec MH = 3. Pour un point N de Δ tel que HN = 4, que vaut MN ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 3,
+          "explication": "MN² = 9 + 16 = 25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "7",
+            "1",
+            "√7"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:107",
+          "enonce": "H est le projeté orthogonal de M sur Δ, avec M hors de Δ. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "H est sur Δ, au pied de la perpendiculaire.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "H est le milieu de [MN] pour tout N de Δ",
+            "H = M",
+            "(MH) est perpendiculaire à Δ",
+            "MH est la plus grande distance de M à Δ",
+            "H appartient à Δ"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:108",
+          "enonce": "H est le projeté orthogonal de M sur Δ et N est un autre point de Δ. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 2,
+          "explication": "C'est la démonstration du cours.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "MN = MH",
+            "MN² = MH² + HN²",
+            "Le triangle MHN est rectangle en H",
+            "MN > MH",
+            "MN < MH"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:109",
+          "enonce": "Le projeté orthogonal d'un point sur une droite appartient à cette droite.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "Par définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:110",
+          "enonce": "La distance d'un point M à une droite Δ est la longueur MH, où H est le projeté orthogonal de M sur Δ.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 2,
+          "explication": "C'est la plus petite distance entre M et un point de Δ.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:111",
+          "enonce": "Si N est un point de Δ distinct du projeté H de M, on peut avoir MN < MH.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 3,
+          "explication": "MN² = MH² + HN² > MH².",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:112",
+          "enonce": "M est à 6 cm de son projeté H sur Δ. Un point N de Δ est à 8 cm de H. Quelle est la distance MN en cm ? Réponds par un nombre.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 3,
+          "explication": "MN² = 36 + 64 = 100.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:113",
+          "enonce": "Dans un triangle rectangle, que vaut le cosinus d'un angle aigu ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "C'est la définition du cosinus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Côté opposé / hypoténuse",
+            "Côté adjacent / hypoténuse",
+            "Côté opposé / côté adjacent",
+            "Hypoténuse / côté adjacent"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:114",
+          "enonce": "Que vaut cos² α + sin² α pour un angle aigu α d'un triangle rectangle ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "C'est la relation démontrée dans le cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0",
+            "2",
+            "1",
+            "Il dépend de α"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:115",
+          "enonce": "Quelle est la valeur exacte de cos 60° ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "Valeur à connaître.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√3/2",
+            "√2/2",
+            "1",
+            "1/2"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:116",
+          "enonce": "Si cos α = 0,6 pour un angle aigu α, que vaut sin α ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "sin² α = 1 − 0,36 = 0,64 et sin α > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,8",
+            "0,4",
+            "0,64",
+            "1,6"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:117",
+          "enonce": "Une échelle de 5 m fait un angle de 70° avec le sol. Quelle expression donne la hauteur atteinte sur le mur ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "La hauteur est le côté opposé à l'angle de 70°.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5 × cos 70°",
+            "5 × sin 70°",
+            "5/sin 70°",
+            "5 × tan 70°"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:118",
+          "enonce": "Quel théorème est utilisé dans la démonstration de cos² α + sin² α = 1 ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "AC² + BC² = AB².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le théorème de Thalès",
+            "La relation de Chasles",
+            "Le théorème de Pythagore",
+            "Le critère de colinéarité"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:119",
+          "enonce": "Quel est le volume d'un cylindre de rayon 3 cm et de hauteur 10 cm ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "π × 3² × 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "30π cm³",
+            "60π cm³",
+            "900π cm³",
+            "90π cm³"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:120",
+          "enonce": "Parmi les rectangles de périmètre 20 cm, lequel a la plus grande aire ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 3,
+          "explication": "Aire = 25 − (x − 5)², maximale pour x = 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le carré de côté 5 cm",
+            "Le rectangle de 9 cm sur 1 cm",
+            "Le rectangle de 8 cm sur 2 cm",
+            "Tous ont la même aire"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:121",
+          "enonce": "Dans un triangle ABC rectangle en C, AB = 10 et l'angle en A mesure 30°. Que vaut BC ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 3,
+          "explication": "BC = AB × sin 30° = 10 × 1/2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5√3",
+            "5",
+            "10√3",
+            "20"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:122",
+          "enonce": "Si sin α = √3/2 pour un angle aigu α, que vaut cos α ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 3,
+          "explication": "cos² α = 1 − 3/4 = 1/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√3/2",
+            "√2/2",
+            "1/2",
+            "3/4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:123",
+          "enonce": "Quelles égalités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "sin 60° = cos 30° = √3/2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "sin 60° = 1/2",
+            "cos 30° = 1/2",
+            "sin 30° = 1/2",
+            "cos 45° = √2/2",
+            "cos 60° = 1/2"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:124",
+          "enonce": "Pour un angle aigu α d'un triangle rectangle, quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "tan α = sin α / cos α ; cos α + sin α = 1 est faux : α = 45° donne √2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0 < cos α < 1",
+            "tan α = cos α / sin α",
+            "sin α > 1",
+            "cos α + sin α = 1",
+            "sin² α = 1 − cos² α"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:125",
+          "enonce": "Le sinus d'un angle aigu d'un triangle rectangle est toujours inférieur à 1.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "Le côté opposé est plus court que l'hypoténuse.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:126",
+          "enonce": "L'aire d'un triangle est égale à base × hauteur.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "Il faut diviser par 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:127",
+          "enonce": "Pour tout angle aigu α, cos α + sin α = 1.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 3,
+          "explication": "Contre-exemple : α = 45°, √2/2 + √2/2 = √2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:128",
+          "enonce": "Dans un triangle rectangle, l'hypoténuse mesure 13 cm et un côté 5 cm. Combien mesure le troisième côté, en cm ? Réponds par un nombre.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "13² − 5² = 169 − 25 = 144.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:129",
+          "enonce": "Quelles sont les coordonnées du vecteur i⃗ dans la base (i⃗, j⃗) ?",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "i⃗ = 1 × i⃗ + 0 × j⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(0 ; 1)",
+            "(1 ; 1)",
+            "(0 ; 0)",
+            "(1 ; 0)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:130",
+          "enonce": "Quelle est la distance entre O(0 ; 0) et A(0 ; 7) ?",
+          "notion": "Distance et milieu",
+          "difficulte": 1,
+          "explication": "√(0² + 7²) = 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "0",
+            "49",
+            "√7"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:131",
+          "enonce": "Comment s'appelle le nombre xy' − x'y associé à deux vecteurs ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "det(u⃗, v⃗).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La norme",
+            "Le déterminant",
+            "Le milieu",
+            "Le coefficient directeur"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:132",
+          "enonce": "Quel angle forment (MH) et Δ, si H est le projeté orthogonal de M sur Δ et M n'est pas sur Δ ?",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "Projeté orthogonal : perpendiculaire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un angle de 45°",
+            "Un angle plat",
+            "Un angle droit",
+            "Un angle nul"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:133",
+          "enonce": "Dans un triangle rectangle, que vaut la tangente d'un angle aigu ?",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 1,
+          "explication": "tan = opposé/adjacent.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Côté adjacent / côté opposé",
+            "Côté opposé / hypoténuse",
+            "Hypoténuse / côté opposé",
+            "Côté opposé / côté adjacent"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:134",
+          "enonce": "Le vecteur 0,5u⃗ a la même direction que u⃗.",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "C'est un multiple de u⃗.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch6:banque:135",
+          "enonce": "Les vecteurs (1 ; 0) et (0 ; 1) sont colinéaires.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 1,
+          "explication": "Leur déterminant vaut 1 × 1 − 0 × 0 = 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:136",
+          "enonce": "Avec u⃗(2 ; 3) et v⃗(4 ; −1), quelle est l'ordonnée de u⃗ + v⃗ ? Réponds par un nombre.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "3 + (−1) = 2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:137",
+          "enonce": "Lesquelles de ces écritures sont égales à AB⃗ ? Coche toutes les réponses exactes.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "Chasles avec un point intermédiaire C ou M.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "AC⃗ + BC⃗",
+            "AC⃗ + CB⃗",
+            "CA⃗ + CB⃗",
+            "BA⃗",
+            "AM⃗ + MB⃗"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:138",
+          "enonce": "Quels éléments sont associés au vecteur AB⃗ ? Coche toutes les réponses exactes.",
+          "notion": "Translations et vecteurs",
+          "difficulte": 1,
+          "explication": "Direction, sens et norme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La longueur AB",
+            "Le sens de A vers B",
+            "Le sens de B vers A",
+            "Le milieu de [AB] uniquement",
+            "La direction de la droite (AB)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:139",
+          "enonce": "ABCD est un parallélogramme. Avec quel vecteur le vecteur DC⃗ coïncide-t-il ?",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 1,
+          "explication": "Côtés opposés, même sens : AB⃗ = DC⃗.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "AB⃗",
+            "CD⃗",
+            "BA⃗",
+            "AC⃗"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:140",
+          "enonce": "Comment note-t-on l'opposé du vecteur u⃗ ?",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "−u⃗ = (−1)u⃗ : même direction, même norme, sens contraire.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/u⃗",
+            "−u⃗",
+            "u⃗²",
+            "0⃗"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:141",
+          "enonce": "Quel est le milieu du segment [AB] avec A(−4 ; 0) et B(0 ; 6) ?",
+          "notion": "Distance et milieu",
+          "difficulte": 2,
+          "explication": "((−4 + 0)/2 ; (0 + 6)/2).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(−4 ; 6)",
+            "(2 ; 3)",
+            "(−2 ; 3)",
+            "(−2 ; −3)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:142",
+          "enonce": "En additionnant deux vecteurs de même origine A, on obtient toujours BC⃗ : AB⃗ + AC⃗ = BC⃗.",
+          "notion": "Somme et relation de Chasles",
+          "difficulte": 1,
+          "explication": "Chasles s'applique quand l'extrémité du premier vecteur est l'origine du second : AB⃗ + BC⃗ = AC⃗.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:143",
+          "enonce": "Le vecteur u⃗(3 ; 4) a pour norme 7.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 2,
+          "explication": "√(9 + 16) = √25 = 5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:144",
+          "enonce": "Avec A(0 ; 0) et B(2 ; 5), quelles écritures sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Coordonnées d'un vecteur",
+          "difficulte": 1,
+          "explication": "AB⃗(x_B − x_A ; y_B − y_A) et BA⃗ = −AB⃗.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "BA⃗(−2 ; −5)",
+            "BA⃗(2 ; 5)",
+            "AB⃗(5 ; 2)",
+            "AB⃗(−2 ; −5)",
+            "AB⃗(2 ; 5)"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:145",
+          "enonce": "Dans un repère orthonormé, quels sont les projetés orthogonaux de M(3 ; 5) sur les axes ? Coche toutes les réponses exactes.",
+          "notion": "Projeté orthogonal",
+          "difficulte": 1,
+          "explication": "On garde l'abscisse pour l'axe des abscisses, l'ordonnée pour l'axe des ordonnées.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(0 ; 5) sur l'axe des ordonnées",
+            "(3 ; 0) sur l'axe des abscisses",
+            "(5 ; 0) sur l'axe des abscisses",
+            "(0 ; 3) sur l'axe des ordonnées",
+            "(0 ; 0) sur les deux axes"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:146",
+          "enonce": "Pour quelles valeurs de m les vecteurs (m ; 2) et (8 ; m) sont-ils colinéaires ? Coche toutes les réponses exactes.",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "m × m − 8 × 2 = 0, donc m² = 16.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "8",
+            "4",
+            "16",
+            "2",
+            "−4"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:147",
+          "enonce": "On sait que AB⃗ = BC⃗. Quelles affirmations en découlent ? Coche toutes les réponses exactes.",
+          "notion": "Vecteurs égaux et parallélogramme",
+          "difficulte": 2,
+          "explication": "AC⃗ = AB⃗ + BC⃗ = 2AB⃗ : B est à mi-chemin de A et C.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "A est le milieu de [BC]",
+            "B est le milieu de [AC]",
+            "A, B et C ne sont pas alignés",
+            "AB⃗ = CB⃗",
+            "AC⃗ = 2AB⃗"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch6:banque:148",
+          "enonce": "Un vecteur u⃗ mesure 9 unités. Quelle est la longueur de son opposé ? Réponds par un nombre.",
+          "notion": "Produit par un réel",
+          "difficulte": 1,
+          "explication": "Un vecteur et son opposé ont la même norme.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "9"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:149",
+          "enonce": "Pour quelle valeur de m les vecteurs (3 ; m) et (6 ; 10) sont-ils colinéaires ?",
+          "notion": "Colinéarité et déterminant",
+          "difficulte": 2,
+          "explication": "3 × 10 − 6m = 0, donc m = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5",
+            "m = 5",
+            "m=5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch6:banque:150",
+          "enonce": "Dans un triangle ABC rectangle en C, AB = 8 cm et l'angle en A mesure 60°. Combien mesure AC, en cm ? Réponds par un nombre.",
+          "notion": "Trigonométrie et problèmes",
+          "difficulte": 2,
+          "explication": "AC = AB × cos 60° = 8 × 1/2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
