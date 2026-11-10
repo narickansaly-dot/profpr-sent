@@ -334,10 +334,11 @@ Détails :
 ### Le script
 
 ```bash
-npm run import:contenu -- <fichier.json> [--publier] [--distant]
+npm run import:contenu -- <fichier.json> [--publier] [--garder-statuts] [--distant]
 ```
 
 - Sans `--publier`, le cours et les nouveaux chapitres restent en **brouillon** : tu les publies ensuite depuis `/admin`. Avec `--publier`, ils sont publiés. Un cours ou un chapitre déjà publié le reste.
+- Avec `--garder-statuts`, une question déjà `valide` ou `brouillon` en base **garde ce statut** même si le fichier la déclare `a_relire` (ou sans statut) : c'est le mode à utiliser pour réimporter un fichier de travail sans perdre les validations de l'enseignant. Son contenu (énoncé, explication, notion, difficulté) est tout de même mis à jour. Si la **structure** change (type, propositions, bonnes réponses, réponses acceptées, marge), la base crée comme d'habitude une nouvelle version : celle d'une question `valide` repart en `a_relire` pour être relue à nouveau, celle d'un `brouillon` reste `brouillon`. Le script affiche alors une ligne `statuts_conserves: N` : le nombre de questions que le fichier déclare non validées et qui sont `valide` en base après l'import. L'éditeur n'est pas concerné.
 - Le script utilise la clé `service_role` de `.env.local` et refuse toute base qui n'est pas locale. `--distant` l'autorise volontairement.
 - Rien n'est écrit si le fichier est invalide : le script affiche toutes les erreurs, avec leur chemin (« Chapitre 2, question 5, bonnes réponses : … »).
 - Le bilan compte les questions **créées**, **modifiées**, **nouvelles versions**, **inchangées**, **archivées** et **supprimées**, et liste les chapitres présents en base mais absents du fichier (laissés tels quels).
@@ -353,3 +354,59 @@ Un import est **rejouable** : réimporter le même fichier ne crée rien et lais
 1. Choisis le fichier JSON, coche « Publier le cours et les nouveaux chapitres » si besoin, puis clique sur « Vérifier ».
 2. Lis le résumé : titre, nombre de chapitres, questions par statut, et si le cours existe déjà. Si le fichier est invalide, la liste des erreurs s'affiche et rien n'est écrit.
 3. Clique sur « Importer » : le bilan s'affiche (créées, modifiées, nouvelles versions, inchangées, archivées, supprimées).
+
+## 7. Banques de questions
+
+Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans le fichier du cours (`bph.json`, ou `stss.json` avec `--cours stss`), qui reste la seule source de vérité du cours.
+
+### Le fichier de travail
+
+`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS) :
+
+```jsonc
+{
+  "chapitre": 1,
+  "notions": ["Organites", "Tissus", "Homéostasie"],
+  "questions": [
+    { "source": "bph:ch1:banque:001", "type": "qcm_unique", "enonce": "…", "propositions": ["…", "…", "…", "…"],
+      "bonnes_reponses": [2], "difficulte": 1, "explication": "…", "notion": "Tissus" }
+  ]
+}
+```
+
+- `notions` : la liste fermée du chapitre (5 à 12 intitulés de 40 caractères au plus, sans doublon). Chaque question en choisit une.
+- `questions` : le même format que dans `bph.json` (les indices commencent à 0 ; `vrai_faux` utilise `bonne_reponse` ; `reponse_courte` utilise `reponses_acceptees`). Pas de champ `statut` : la fusion l'impose à `a_relire`.
+- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130` (BPH) ou de `stss:chN:banque:001` à `stss:chN:banque:150` (STSS).
+
+### Les trois commandes
+
+```bash
+npm run banque:texte -- N [--cours stss]       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
+npm run banque:verifier -- N [--cours stss]    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
+npm run banque:fusionner -- N [--cours stss]   # ajoute les questions au chapitre N du cours
+```
+
+Sans `--cours`, c'est `bph`. Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
+
+- `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. `bph.json` est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
+- Script ponctuel : `npx tsx scripts/typo-anciennes-questions.ts` a remplacé les espaces avant « ? : ; ! » par des espaces insécables dans l'énoncé et l'explication des anciennes questions (`quiz`, `bis`), sans toucher aux propositions ; le rejouer est sans effet.
+- Après la fusion, importe le cours avec `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts` (partie 6).
+
+### Les règles contrôlées
+
+`banque:verifier` signale toutes ces erreurs en une fois :
+
+1. chaque question passe le validateur d'import ;
+2. les sources sont uniques ;
+3. les sources respectent `<préfixe>:chN:banque:NNN` (`bph` ou `stss`), avec le bon numéro de chapitre ;
+4. types répartis en 65 `qcm_unique`, 26 `qcm_multiple`, 26 `vrai_faux` et 13 `reponse_courte` (BPH ; 75 / 30 / 30 / 15 pour STSS), à plus ou moins 3 près ;
+5. difficultés réparties en 52 (niveau 1), 52 (niveau 2) et 26 (niveau 3) (BPH ; 60 / 60 / 30 pour STSS), à plus ou moins 3 près ;
+6. une explication non vide ;
+7. une notion présente dans la liste du fichier ;
+8. aucune proposition du type « Toutes les réponses ci-dessus », « Toutes ces réponses », « Aucune de ces réponses », « Toutes les propositions » (sans égard à la casse ni aux accents) ;
+9. un `qcm_multiple` a 2 ou 3 bonnes réponses, et son énoncé contient « Coche toutes les réponses exactes. » ;
+10. aucune position ne porte plus de 40 % des bonnes réponses des `qcm_unique` ;
+11. la bonne réponse n'est la plus longue que dans moins de 40 % des `qcm_unique` ;
+12. deux énoncés (entre eux, ou avec une question existante du chapitre) ne sont pas trop proches : similarité de 0,8 au plus (trigrammes de caractères, accents et ponctuation ignorés) ;
+13. les `vrai_faux` ont au plus 60 % de vrais, et au plus 60 % de faux ;
+14. une espace insécable (et non une espace normale) avant « : ; ! ? » dans l'énoncé, les propositions et l'explication.

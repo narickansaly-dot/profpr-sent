@@ -1,13 +1,13 @@
 import Link from 'next/link';
-import { deconnecter } from '@/app/(auth)/actions';
+import { BoutonDeconnexion } from '@/components/BoutonDeconnexion';
 
 // « attente » : demande enseignant en cours de vérification, aucune page n'est encore accessible.
 type Role = 'eleve' | 'parent' | 'enseignant' | 'admin_contenu' | 'attente';
 
 const LIENS: Record<Role, { href: string; libelle: string }[]> = {
   attente: [],
-  eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/classes', libelle: 'Mes classes' }],
-  parent: [{ href: '/', libelle: 'Mes cours' }],
+  eleve: [{ href: '/', libelle: 'Mes cours' }, { href: '/calendrier', libelle: 'Calendrier' }, { href: '/classes', libelle: 'Mes classes' }, { href: '/rappels', libelle: 'Rappels' }],
+  parent: [{ href: '/parent', libelle: 'Mes enfants' }],
   enseignant: [{ href: '/enseignant', libelle: 'Mes classes' }, { href: '/cours', libelle: 'Cours' }, { href: '/enseignant/signalements', libelle: 'Signalements' }],
   admin_contenu: [
     { href: '/admin', libelle: 'Contenu' }, { href: '/admin/import', libelle: 'Import' },
@@ -15,22 +15,26 @@ const LIENS: Record<Role, { href: string; libelle: string }[]> = {
   ],
 };
 
-export function EnTete({ prenom, role }: { prenom: string | null; role: Role }) {
+export function EnTete({ prenom, role, rappelsNonLus = 0 }: { prenom: string | null; role: Role; rappelsNonLus?: number }) {
   return (
     <header className="en-tete">
       <Link href="/" className="logo">App lycée</Link>
       {LIENS[role].length > 0 && (
         <nav aria-label="Navigation principale">
-          {LIENS[role].map((l) => <Link key={l.href} href={l.href}>{l.libelle}</Link>)}
+          {LIENS[role].map((l) => (
+            <Link key={l.href} href={l.href}>
+              {l.libelle}
+              {l.href === '/rappels' && rappelsNonLus > 0 && (
+                <>
+                  <span className="pastille-rappels" aria-hidden="true">{rappelsNonLus}</span>
+                  <span className="sr-only"> ({rappelsNonLus === 1 ? '1 non lu' : `${rappelsNonLus} non lus`})</span>
+                </>
+              )}
+            </Link>
+          ))}
         </nav>
       )}
-      <form action={deconnecter}>
-        <button type="submit" className="bouton bouton-secondaire bouton-compte">
-          <span className="nom-compte">{prenom ?? 'Mon compte'}</span>
-          <span aria-hidden="true">·</span>
-          <span>Se déconnecter</span>
-        </button>
-      </form>
+      <BoutonDeconnexion prenom={prenom} />
     </header>
   );
 }

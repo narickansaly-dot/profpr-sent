@@ -18,7 +18,8 @@ export default async function PageTentative({ params, searchParams }: { params: 
     notFound();
   }
   if (t.statut !== 'en_cours') redirect(`/tentative/${id}/resultat`);
-  const titre = t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre}` : `Quiz · ${t.chapitre?.titre}`;
+  const titre = t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre}`
+    : t.chapitre ? `Quiz · ${t.chapitre.titre}` : `Révision générale · ${t.cours?.titre}`;
   return (
     <div style={{ '--couleur-cours': t.cours?.couleur } as React.CSSProperties}>
       <h1 className="titre-tentative">{titre}</h1>

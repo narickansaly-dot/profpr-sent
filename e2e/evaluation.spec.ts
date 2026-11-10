@@ -28,7 +28,7 @@ test('l’évaluation se débloque, se chronomètre et apparaît dans les notes 
   // Trois réponses, puis rechargement : la reprise tombe sur la question 4 et le chrono ne remonte pas.
   for (let i = 0; i < 3; i++) await repondreJusteQuestion(page, i, bonnes.length, bonnes[i]);
   await page.reload();
-  await expect(page.getByText('Question 4 / 40', { exact: true })).toBeVisible();
+  await expect(page.locator('.lecteur-position').filter({ hasText: /^Question 4\D+40$/ })).toBeVisible();
   for (let i = 1; i <= 3; i++) await expect(page.getByRole('button', { name: `Question ${i}, répondue` })).toBeVisible();
   await expect(page.getByRole('timer')).toBeVisible();
   expect(await minutesRestantes()).toBeLessThanOrEqual(auDepart);

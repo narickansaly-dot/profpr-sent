@@ -17,5 +17,5 @@ export async function traiterDemande(_: EtatDemande, form: FormData): Promise<Et
   if (error) return { erreur: messageErreur(error.message) };
   revalidatePath('/admin/enseignants');
   // La carte traitée disparaît de la liste : la confirmation s'affiche dans la région de statut de la page.
-  redirect(`/admin/enseignants?traite=${r.data.decision === 'accepter' ? 'accepte' : 'refuse'}`);
+  redirect(`/admin/enseignants?traite=${r.data.decision === 'accepter' ? 'accepte' : 'refuse'}&n=${Date.now()}`);
 }

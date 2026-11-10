@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { connecter, connecterAvecGoogle } from '../actions';
 import { cheminSuiteSur } from '@/lib/routes';
+import { ViderCachePages } from '@/components/ViderCachePages';
 import { FormulaireIdentifiants } from '../FormulaireIdentifiants';
 
 export const metadata = { title: 'Connexion' };
@@ -10,7 +11,8 @@ export default async function PageConnexion({ searchParams }: { searchParams: Pr
   const suite = cheminSuiteSur(suiteBrute) ?? undefined;
   const parametre = suite ? `?suite=${encodeURIComponent(suite)}` : '';
   return (
-    <main className="page-auth">
+    <main id="contenu" tabIndex={-1} className="page-auth">
+      <ViderCachePages />
       <h1>Te revoilà !</h1>
       {erreur === 'google' && <p role="alert" className="message-erreur">La connexion avec Google a échoué. Réessaie.</p>}
       {erreur === 'confirmation' && <p role="alert" className="message-erreur">Le lien de confirmation n’est plus valide. Réessaie de t’inscrire ou de te connecter.</p>}

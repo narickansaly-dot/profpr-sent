@@ -7,10 +7,12 @@ import { creerClientServeur } from '@/lib/supabase/server';
 import { messageErreur } from '@/lib/erreurs';
 import { exigerAdmin } from '@/lib/admin/garde';
 import { versDonneesQuestion } from '@/lib/contenu/donnees-question';
+import { lireSelection, messageLot } from '@/lib/admin/relecture';
 import { lireSaisieQuestion, type ErreurSaisie, type SaisieQuestion } from '@/lib/contenu/schema-question-editeur';
 
 export type EtatQuestion = Partial<ErreurSaisie>;
 export type EtatStatut = { erreur?: string };
+export type EtatLot = { message?: string; erreur?: string };
 
 const uuid = z.string().uuid();
 const saisie = z.object({
@@ -65,4 +67,18 @@ export async function supprimerQuestion(_: EtatStatut, form: FormData): Promise<
   if (error) return { erreur: messageErreur(error.message) };
   revalidatePath('/admin', 'layout');
   redirect(`/admin/chapitres/${chapitre.data}/questions?supprimee=1`);
+}
+
+/** Valide ou repasse en brouillon les questions cochées dans le mode relecture (un seul appel SQL, tout ou rien). */
+export async function changerStatutSelection(_: EtatLot, form: FormData): Promise<EtatLot> {
+  await exigerAdmin();
+  const chapitre = uuid.safeParse(form.get('chapitre'));
+  const sel = lireSelection(form);
+  if (!sel.ok) return { erreur: sel.erreur };
+  if (!chapitre.success) return { erreur: messageErreur(undefined) };
+  const supabase = await creerClientServeur();
+  const { data, error } = await supabase.rpc('changer_statut_questions', { p_questions: sel.ids, p_statut: sel.statut });
+  if (error) return { erreur: messageErreur(error.message) };
+  revalidatePath(`/admin/chapitres/${chapitre.data}/questions`);
+  return { message: messageLot(data ?? sel.ids.length, sel.statut) };
 }

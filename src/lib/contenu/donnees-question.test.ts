@@ -48,3 +48,17 @@ describe('versDonneesCours', () => {
     expect(r.chapitres[0].questions).toHaveLength(1);
   });
 });
+
+describe('versDonneesCours avec garderStatuts', () => {
+  const coursMinimal = schemaCoursImport.parse({
+    slug: 'exemple', filiere: 'ST2S', niveau: '1re', matiere: 'Exemple', titre: 'Exemple', couleur: '#112233',
+    chapitres: [{ slug: 'ch1', numero: 1, titre: 'Chapitre', sections: [],
+      questions: [{ source: 'x:1', enonce: 'Q ?', type: 'vrai_faux', bonne_reponse: true }] }],
+  });
+  it('ajoute garder_statut aux questions seulement si demandé', () => {
+    const sans = versDonneesCours(coursMinimal);
+    const avec = versDonneesCours(coursMinimal, { garderStatuts: true });
+    expect(sans.chapitres[0].questions[0]).not.toHaveProperty('garder_statut');
+    expect(avec.chapitres[0].questions[0]).toMatchObject({ garder_statut: true });
+  });
+});

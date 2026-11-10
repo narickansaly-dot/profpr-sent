@@ -89,7 +89,7 @@ export async function progressionDuCours(coursId: string, chapitreIds: string[])
   const maintenant = new Date();
   // mes_echeances renvoie une ligne par classe liée ; ouverture et limite sont null quand la classe n'a pas
   // d'échéance. Les types générés les donnent à tort comme non nulles : on corrige ici, en un seul endroit.
-  const echeancesClasses = (echeances ?? []) as { classe_nom: string; cours_id: string; ouverture: string | null; limite: string | null }[];
+  const echeancesClasses = (echeances ?? []) as { classe_nom: string; cours_id: string; ouverture: string | null; limite: string | null; quittee: boolean }[];
   const parChapitre = new Map((chapitres ?? []).map((p) => [p.chapitre_id, p]));
   const nbValides = chapitreIds.filter((id) => parChapitre.get(id)?.valide).length;
   return {

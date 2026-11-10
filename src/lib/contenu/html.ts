@@ -95,6 +95,7 @@ const ATTRIBUTS_AUTORISES: sanitizeHtml.IOptions['allowedAttributes'] = {
   img: [...COMMUNS, 'src', 'alt', 'width', 'height', { name: 'loading', values: ['lazy', 'eager'] }],
   td: [...COMMUNS, 'rowspan', 'colspan'],
   th: [...COMMUNS, 'rowspan', 'colspan', { name: 'scope', values: ['col', 'row'] }],
+  div: [...COMMUNS, { name: 'tabindex', values: ['0'] }],
   label: [...COMMUNS, 'for'],
   output: [...COMMUNS, 'for', { name: 'aria-live', values: ['polite', 'assertive', 'off'] }],
   input: ['id', 'class', 'style', 'min', 'max', 'step', 'value', 'inputmode',
@@ -129,6 +130,9 @@ export function nettoyerHtml(html: string): string {
           if (v) sortie[cle] = v;
           else delete sortie[cle];
         }
+        // Un tableau ou un schéma qui défile à l'horizontale doit pouvoir être parcouru au clavier (WCAG 2.1.1).
+        delete sortie.tabindex;
+        if (tagName === 'div' && /(^|\s)(tbl|scroll)(\s|$)/.test(sortie.class ?? '')) sortie.tabindex = '0';
         if (tagName === 'a') {
           if (sortie.target !== '_blank') delete sortie.target;
           if (sortie.href !== undefined && sortie.target === '_blank') sortie.rel = 'noopener noreferrer';

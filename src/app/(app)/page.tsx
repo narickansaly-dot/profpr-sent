@@ -1,10 +1,15 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+import { lireMonAcces } from '@/lib/acces/requetes';
+import { coursOuvert, doitChoisirCours } from '@/lib/acces/etat';
 import { lireProfil } from '@/lib/supabase/utilisateur';
 import { listerCoursDuProfil } from '@/lib/contenu/requetes';
 import { lireTableauDeBord } from '@/lib/quiz/requetes';
 import { formaterNote } from '@/lib/quiz/reponse';
 import { CarteCours } from '@/components/CarteCours';
+import { plansAReorganiser } from '@/lib/calendrier/requetes';
+import { BanniereReorganiser } from '@/components/calendrier/BanniereReorganiser';
+import { ProchainsEvenements } from '@/components/calendrier/ProchainsEvenements';
 import { FormulaireQuiz } from '@/components/FormulaireQuiz';
 
 export const metadata = { title: 'Tableau de bord' };
@@ -13,13 +18,17 @@ const jour = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', t
 export default async function Accueil() {
   const profil = await lireProfil();
   if (profil?.role === 'enseignant') redirect('/enseignant');
+  if (profil?.role === 'parent') redirect('/parent');
   if (profil?.role === 'admin_contenu') redirect('/cours');
-  const [cours, { tdb, erreur: erreurTdb }] = await Promise.all([
+  const acces = profil?.role === 'eleve' ? await lireMonAcces() : null;
+  if (acces?.consentementRequis) redirect('/consentement');
+  const [cours, { tdb, erreur: erreurTdb }, aReorganiser] = await Promise.all([
     listerCoursDuProfil(),
     lireTableauDeBord().then(
       (tdb) => ({ tdb, erreur: false }),
       () => ({ tdb: null, erreur: true }),
     ),
+    profil?.role === 'eleve' ? plansAReorganiser() : Promise.resolve([]),
   ]);
   const examens = (tdb?.examens ?? []).filter((e) => e.cours);
   return (
@@ -31,6 +40,10 @@ export default async function Accueil() {
         )}
       </header>
 
+      {aReorganiser.map((p) => (
+        <BanniereReorganiser key={p.plan_id} planId={p.plan_id} examenId={p.examen_id} examenTitre={p.examen_titre} />
+      ))}
+
       {erreurTdb && (
         <p className="vide">Ton tableau de bord n’a pas pu se charger entièrement. Recharge la page dans un instant.</p>
       )}
@@ -38,11 +51,14 @@ export default async function Accueil() {
       <section aria-labelledby="titre-cours">
         <h2 id="titre-cours">Mes cours</h2>
         {cours.length === 0
-          ? <p className="carte">Les cours de ta filière arrivent bientôt. Reviens vite !</p>
+          ? <p className="carte">Les cours de ta filière arrivent bientôt. Reviens vite&nbsp;!</p>
           : <div className="grille-cours">{cours.map((c) => (
-              <CarteCours key={c.id} {...c} nbValides={tdb?.validesParCours.get(c.id) ?? 0} />
+              <CarteCours key={c.id} {...c} nbValides={tdb?.validesParCours.get(c.id) ?? 0}
+                verrouille={acces ? !coursOuvert(acces, c.id) : false} proposerChoix={acces ? doitChoisirCours(acces) : false} />
             ))}</div>}
       </section>
+
+      {profil?.role === 'eleve' && <ProchainsEvenements />}
 
       <section aria-labelledby="titre-examens">
         <h2 id="titre-examens">Mes notes d’examen</h2>
@@ -70,7 +86,7 @@ export default async function Accueil() {
             {tdb.derniers.map((t) => (
               <li key={t.id} className="carte ligne-tdb">
                 <Link href={`/tentative/${t.id}/resultat`}>
-                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre ?? 'cours'}` : t.chapitre?.titre ?? t.cours?.titre ?? 'Quiz'}
+                  {t.type === 'evaluation_cours' ? `Évaluation · ${t.cours?.titre ?? 'cours'}` : t.chapitre?.titre ?? `Révision générale · ${t.cours?.titre ?? 'cours'}`}
                 </Link>
                 <strong className={t.reussie ? 'note-reussie' : 'note-ratee'}>{formaterNote(Number(t.note ?? 0))}</strong>
                 <span>{t.fin ? jour.format(new Date(t.fin)) : ''}</span>
