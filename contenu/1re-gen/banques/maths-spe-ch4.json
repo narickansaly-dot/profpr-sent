@@ -700,7 +700,7 @@
         "f est dérivable en 2",
         "f′(2) = 3",
         "f′(2) = 3 − h",
-        "f(2) = 3",
+        "f′(2) = 2",
         "Le taux de variation de f entre 2 et 3 vaut 2"
       ],
       "bonnes_reponses": [
@@ -709,7 +709,7 @@
         4
       ],
       "difficulte": 2,
-      "explication": "3 − h se rapproche de 3, donc f′(2) = 3 ; f′(2) est un nombre qui ne dépend pas de h. Avec h = 1, le taux vaut 2. On ne connaît pas f(2).",
+      "explication": "3 − h se rapproche de 3, donc f′(2) = 3 (et non 2) ; f′(2) est un nombre qui ne dépend pas de h. Avec h = 1, le taux de variation entre 2 et 3 vaut 2.",
       "notion": "Nombre dérivé par le calcul"
     },
     {
@@ -2318,7 +2318,7 @@
       "enonce": "Dans le programme secantes, on écrit n = round((b - a) / h) puis for k in range(n). Coche toutes les réponses exactes.",
       "propositions": [
         "n est le nombre de sécantes calculées",
-        "round évite qu'une valeur comme 9.999999999999998 fausse le nombre de tours",
+        "round renvoie 10 même si (b - a) / h vaut 9.999999999999998 à cause des arrondis des flottants",
         "range(n) exige un nombre entier n",
         "n est le pas de la subdivision",
         "n vaut toujours 10"
