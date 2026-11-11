@@ -2,421 +2,159 @@
 
 ## Référence
 
-- **Texte** : arrêté du 17 janvier 2019, « Programme d'enseignement de mathématiques de la classe de seconde générale et technologique », NOR : MENE1901631A. Entrée en vigueur à la rentrée scolaire 2019.
-- **Bulletin officiel** : Bulletin officiel spécial n° 1 du 22 janvier 2019.
-- **Page du BO** (non consultable automatiquement, réponse HTTP 403) : https://www.education.gouv.fr/bo/19/Special1/MENE1901631A.htm
-- **URL de l'annexe lue (PDF, 16 pages, 410 341 octets)** : https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/95/7/spe631_annexe_1062957.pdf
-- **Copie de contrôle** (même document, 16 pages) : https://www.snes.edu/IMG/pdf/maths_annexe_2egt_bo.pdf
-- **Date de récupération** : 10 novembre 2026. Texte extrait avec PDFKit ; les formules dessinées comme images dans le PDF (racines carrées, fractions, flèches de vecteurs) ont été rétablies d'après leur contexte et signalées par « (formule rétablie) ».
+- **Texte en vigueur** : arrêté du 26 février 2026 relatif au programme d'enseignement de mathématiques de la classe de seconde générale et technologique, NOR : **MENE2602914A**, JO du 27 mars 2026. Article 1 : « L'annexe de l'arrêté du 17 janvier 2019 susvisé est remplacée par l'annexe du présent arrêté. » Article 2 : application « à la rentrée de l'année scolaire 2026-2027 ».
+- **Bulletin officiel** : Bulletin officiel n° 14 du 2 avril 2026.
+- **Page du BO** : https://www.education.gouv.fr/bo/2026/Hebdo14/MENE2602914A
+- **Annexe lue (PDF, 13 pages)** : lien « Annexe – Programme d'enseignement de mathématiques de la classe de seconde générale et technologique » de la page du BO (fichier `…-515402.pdf` sur education.gouv.fr). Texte extrait avec pdf.js dans le navigateur, le 11 novembre 2026.
+- **Légifrance** : https://www.legifrance.gouv.fr/loda/id/JORFTEXT000053723219
+- **Texte remplacé** : annexe de l'arrêté du 17 janvier 2019 (NOR MENE1901631A, BO spécial n° 1 du 22 janvier 2019). Elle a servi à la première version de ce dossier ; les écarts sont listés à la fin.
 
-Le texte ci-dessous reprend fidèlement l'annexe pour la structure, les contenus, les capacités attendues, les démonstrations et les exemples d'algorithme. Ajouts, qui ne figurent pas dans le texte officiel : les codes entre crochets (`[N…]` pour les contenus, `[C…]` pour les capacités attendues, `[D…]` pour les démonstrations, `[A…]` pour les exemples d'algorithme), qui servent à la table de correspondance du plan. Chaque puce « Contenus » du texte officiel donne un code `[N…]`, sans redécoupage. Les approfondissements possibles sont cités sans code : ils ne sont pas obligatoires.
+Le texte ci-dessous reprend l'annexe de 2026 pour la structure, les contenus, les capacités attendues, les démonstrations et les exemples d'algorithme. Ajouts qui ne figurent pas dans le texte officiel : les codes entre crochets (`[N…]` contenus, `[C…]` capacités, `[D…]` démonstrations, `[A…]` algorithmes, `[Au…]` automatismes), qui servent au plan. Les approfondissements possibles sont cités sans code.
 
 ## Préambule (résumé)
 
-### Intentions majeures
-
-La classe de seconde consolide le socle commun et prépare la transition du collège au lycée. L'enseignement des mathématiques vise à :
-
-- consolider les acquis du collège et une culture mathématique de base, développer le goût des mathématiques ;
-- préparer au choix de l'orientation (spécialité mathématiques en voie générale, série en voie technologique) ;
-- assurer les bases mathématiques nécessaires à toutes les poursuites d'études au lycée.
-
-### Six compétences mathématiques
-
-- **chercher**, expérimenter, en particulier à l'aide d'outils logiciels ;
-- **modéliser**, faire une simulation, valider ou invalider un modèle ;
-- **représenter**, choisir un cadre (numérique, algébrique, géométrique…), changer de registre ;
-- **raisonner**, démontrer, trouver des résultats partiels et les mettre en perspective ;
-- **calculer**, appliquer des techniques et mettre en œuvre des algorithmes ;
-- **communiquer** un résultat par oral ou par écrit, expliquer une démarche.
-
-La résolution de problèmes est le cadre privilégié ; elle s'appuie sur des **automatismes** installés par des activités rituelles, notamment de calcul mental ou réfléchi, numérique ou littéral (« questions flash »).
-
-### Autres points du préambule
-
-- Diversité des activités (questions flash, exercices d'application, problèmes, travaux écrits hors du temps scolaire).
-- Utilisation de logiciels (calculatrice, tableur, géométrie dynamique, calcul formel, Python) par le professeur, par les élèves en classe et hors de la classe.
-- Évaluation variée, en lien avec les six compétences ; place de l'oral (argumentation) ; trace écrite structurée qui distingue conjecture, définition, propriété admise ou démontrée, démonstration, théorème ; travail personnel régulier.
-- Lignes directrices : bienveillance et exigence, travail sur l'erreur, équilibre entre recherche, échanges, cours, exemples, exercices et rituels.
-
-### Organisation du programme
-
-Cinq grandes parties : « Nombres et calculs », « Géométrie », « Fonctions », « Statistiques et probabilités », « Algorithmique et programmation », plus « Vocabulaire ensembliste et logique », transversal. **Ce découpage n'est pas un plan de cours.** Le programme identifie des démonstrations exemplaires, propose des approfondissements non obligatoires et des repères d'histoire des mathématiques.
-
-Horaire : l'annexe ne le donne pas (il est fixé par l'arrêté sur l'organisation de la classe de seconde) ; le plan retient 4 heures par semaine, sur 32 semaines.
+- **Intentions** : consolider les acquis du collège et une culture mathématique de base, quel que soit le sexe ou l'origine sociale de l'élève ; préparer au choix de l'orientation ; assurer les bases nécessaires à toutes les poursuites d'études.
+- **Six compétences** : chercher, modéliser, représenter, raisonner, calculer, communiquer. La résolution de problèmes est le cadre privilégié ; elle s'appuie sur des automatismes, installés par des activités rituelles.
+- **Autres points** : diversité des activités (dont « questions flash ») ; logiciels ; évaluation à visée formative ; oral et argumentation ; trace écrite qui distingue conjecture, définition, propriété, démonstration, théorème ; travail personnel avec retour individualisé ; les professeurs précisent le cadre d'usage des outils d'intelligence artificielle.
+- **Organisation** : quatre parties thématiques (« Nombres et calculs, algèbre », « Géométrie », « Fonctions », « Statistiques et probabilités ») et trois parties transversales (« Vocabulaire ensembliste et logique », « Algorithmique et programmation », « Automatismes »). « Cette organisation n'est cependant pas un plan de cours » ; enseignement en spirale. Les parties transversales « ne donnent pas lieu à des séquences de cours spécifiques mais font cependant l'objet d'un enseignement explicite ». Les notions du collège ne font pas l'objet de chapitres de révision.
+- **Horaire** : non fixé par l'annexe ; le plan retient 4 heures par semaine sur 32 semaines.
 
 ---
 
-## Partie 1 : Nombres et calculs
+## Parties transversales
 
-Objectifs (texte officiel, résumé) : approfondir la connaissance des ensembles de nombres ; développer le calcul numérique et algébrique ; travailler sur les inégalités ; résoudre des problèmes modélisés par des équations ou inéquations se ramenant au premier degré. Automatismes à réactiver : formes décimales exactes de 1/2, 1/4, 3/4 et des fractions k/5 pour k dans {1, 2, 3, 4} (formule rétablie), formes arrondies de 1/3 et 2/3 (formule rétablie).
+### Vocabulaire ensembliste et logique
 
-Histoire : la crise des irrationnels chez les Grecs ; « nombres réels » et « nombres de la calculatrice » ; textes de Diophante, Euclide, Al-Khwarizmi, Fibonacci, Viète, Fermat, Descartes.
+- [N1] Élément, sous-ensemble, ensemble vide, appartenance, inclusion, réunion, intersection, complémentaire ; symboles ∅, ∈, ⊂, ∩, ∪, {…} ; notation des ensembles de nombres et des intervalles ; couple et produit cartésien de deux ensembles ; complémentaire noté Ā ou E \ A ; Card(A) pour le cardinal d'un ensemble fini.
+- [C1] Reconnaître une proposition mathématique, utiliser des variables pour écrire des propositions.
+- [C2] Lire et écrire des propositions avec « et », « ou ».
+- [C3] Formuler la négation de propositions simples (sans implication ni quantificateurs).
+- [C4] Mobiliser un contre-exemple pour montrer qu'une proposition est fausse.
+- [C5] Formuler une implication, une équivalence, et les mobiliser dans un raisonnement simple.
+- [C6] Formuler la réciproque d'une implication, **la contraposée**.
+- [C7] Lire et écrire des propositions avec quantification universelle ou existentielle (∀ et ∃ hors programme).
+- [C8] Produire des raisonnements par disjonction des cas et par l'absurde.
 
-### 1.1 Manipuler les nombres réels
+### Algorithmique et programmation (Python)
 
-> La notion d'intervalle, présentée comme ensemble de nombres vérifiant des inégalités, est nouvelle. La notation de la valeur absolue est introduite pour exprimer la distance entre deux nombres réels et caractériser les intervalles de centre donné. Toute autre utilisation est hors programme.
+Variables et instructions élémentaires — contenus : [N2] variables de type entier, booléen, flottant, chaîne de caractères ; [N3] affectation (← en langage naturel) ; [N4] séquence d'instructions ; [N5] instruction conditionnelle ; [N6] boucle bornée (for), boucle non bornée (while).
+Capacités : [C9] choisir ou déterminer le type d'une variable ; [C10] écrire une affectation, une séquence, une instruction conditionnelle ; [C11] écrire une formule combinant des variables ; [C12] programmer une boucle bornée, une boucle non bornée ; [C13] lire, comprendre, modifier ou compléter un programme plus complexe.
 
-Contenus :
+Notion de fonction — contenus : [N7] fonctions à un ou plusieurs arguments ; [N8] fonction renvoyant un nombre aléatoire, série statistique obtenue par répétition de ses appels.
+Capacités : [C14] écrire, lire, modifier, compléter des fonctions ; appeler une fonction ; [C15] lire et comprendre une fonction renvoyant une moyenne, un écart type (aucune connaissance sur les listes n'est exigée) ; [C16] écrire des fonctions renvoyant le résultat d'une expérience aléatoire, d'une répétition d'expériences indépendantes.
 
-- [N1] Ensemble ℝ des nombres réels, droite numérique.
-- [N2] Intervalles de ℝ. Notations +∞ et −∞ (formule rétablie).
-- [N3] Notation |a|. Distance entre deux nombres réels.
-- [N4] Représentation de l'intervalle [a − r ; a + r] puis caractérisation par la condition |x − a| ⩽ r.
-- [N5] Ensemble 𝔻 des nombres décimaux. Encadrement décimal d'un nombre réel à 10⁻ⁿ près.
-- [N6] Ensemble ℚ des nombres rationnels. Nombres irrationnels ; exemples fournis par la géométrie, par exemple √2 et π.
+### Automatismes (nouvelle partie du programme)
 
-Capacités attendues :
+Entraînement régulier, privilégiant l'activité mentale, tout au long de l'année ; pas de chapitre spécifique.
 
-- [C1] Associer à chaque point de la droite graduée un unique nombre réel et réciproquement.
-- [C2] Représenter un intervalle de la droite numérique. Déterminer si un nombre réel appartient à un intervalle donné.
-- [C3] Donner un encadrement, d'amplitude donnée, d'un nombre réel par des décimaux.
-- [C4] Dans le cadre de la résolution de problèmes, arrondir en donnant le nombre de chiffres significatifs adapté à la situation étudiée.
-
-Démonstrations :
-
-- [D1] Le nombre rationnel 1/3 n'est pas décimal (formule rétablie).
-- [D2] Le nombre réel √2 est irrationnel (formule rétablie).
-
-Exemple d'algorithme :
-
-- [A1] Déterminer par balayage un encadrement de √2 d'amplitude inférieure ou égale à 10⁻ⁿ (formule rétablie).
-
-Approfondissements possibles : développement décimal illimité d'un nombre réel ; périodicité du développement décimal des rationnels.
-
-### 1.2 Utiliser les notions de multiple, diviseur et de nombre premier
-
-Contenus :
-
-- [N7] Notations ℕ et ℤ.
-- [N8] Définition des notions de multiple, de diviseur, de nombre pair, de nombre impair.
-
-Capacités attendues :
-
-- [C5] Modéliser et résoudre des problèmes mobilisant les notions de multiple, de diviseur, de nombre pair, de nombre impair, de nombre premier.
-- [C6] Présenter les résultats fractionnaires sous forme irréductible.
-
-Démonstrations :
-
-- [D3] Pour une valeur numérique de a, la somme de deux multiples de a est multiple de a.
-- [D4] Le carré d'un nombre impair est impair.
-
-Exemples d'algorithme :
-
-- [A2] Déterminer si un entier naturel a est multiple d'un entier naturel b.
-- [A3] Pour des entiers a et b donnés, déterminer le plus grand multiple de a inférieur ou égal à b.
-- [A4] Déterminer si un entier naturel est premier.
-
-### 1.3 Utiliser le calcul littéral
-
-Contenus :
-
-- [N9] Règles de calcul sur les puissances entières relatives, sur les racines carrées. Relation √(a²) = |a| (formule rétablie).
-- [N10] Identités a² − b² = (a − b)(a + b), (a + b)² = a² + 2ab + b² et (a − b)² = a² − 2ab + b², à savoir utiliser dans les deux sens.
-- [N11] Exemples simples de calcul sur des expressions algébriques, en particulier sur des expressions fractionnaires.
-- [N12] Somme d'inégalités. Produit d'une inégalité par un réel positif, négatif, en liaison avec le sens de variation d'une fonction affine.
-- [N13] Ensemble des solutions d'une équation, d'une inéquation.
-
-Capacités attendues :
-
-- [C7] Effectuer des calculs numériques ou littéraux mettant en jeu des puissances, des racines carrées, des écritures fractionnaires.
-- [C8] Sur des cas simples de relations entre variables (par exemple U = RI, d = vt, S = πr², V = abc, V = πr²h), exprimer une variable en fonction des autres. Cas d'une relation du premier degré ax + by = c.
-- [C9] Choisir la forme la plus adaptée (factorisée, développée réduite) d'une expression en vue de la résolution d'un problème.
-- [C10] Comparer deux quantités en utilisant leur différence, ou leur quotient dans le cas positif.
-- [C11] Modéliser un problème par une inéquation.
-- [C12] Résoudre une inéquation du premier degré.
-
-Démonstrations :
-
-- [D5] Quels que soient les réels positifs a et b, on a √(ab) = √a × √b (formule rétablie).
-- [D6] Si a et b sont des réels strictement positifs, √(a + b) < √a + √b (formule rétablie).
-- [D7] Pour a et b réels positifs, illustration géométrique de l'égalité (a + b)² = a² + 2ab + b².
-
-Exemple d'algorithme :
-
-- [A5] Déterminer la première puissance d'un nombre positif donné supérieure ou inférieure à une valeur donnée.
-
-Approfondissements possibles : développement de (a + b + c)² et de (a + b)³ ; inégalité entre moyennes géométrique et arithmétique.
+- [Au1] Calcul numérique et algébrique : comparer deux nombres (différence ; quotient s'ils sont strictement positifs) ; fractions simples ; puissances ; passer d'une écriture à une autre (décimale, fractionnaire, pourcentage) ; ordre de grandeur ; vraisemblance d'un résultat ; conversions d'unités ; règles de calcul littéral élémentaire (−(a + b) = −a − b, a/b ÷ c/d = ad/(bc)…) ; développer, factoriser, réduire : identités (a + b)², (a − b)², (a + b)(a − b), factorisation de ax² + bx ; résoudre x² = a, ax + b = cx + d, a/x = b, une inéquation du premier degré ; isoler une variable ; application numérique d'une formule.
+- [Au2] Proportions et pourcentages : proportion sous différentes formes ; partie connaissant le tout et inversement.
+- [Au3] Évolutions : passer de « augmenter de 5 % » à « multiplier par 1,05 ».
+- [Au4] Fonctions et représentations : images et antécédents graphiques ; équation de courbe ; reconnaître fonctions linéaires et affines et leur droite.
+- [Au5] Géométrie : droite graduée, coordonnées dans un repère orthogonal ; périmètres, aires, volumes usuels ; Pythagore, Thalès ; cosinus, sinus, tangente dans le triangle rectangle.
+- [Au6] Statistiques : lire des graphiques usuels ; moyenne, médiane, quartiles (données brutes, regroupées, graphiques) ; boîtes à moustaches.
+- [Au7] Probabilités : une probabilité est entre 0 et 1 ; événement contraire ; somme des probabilités des issues ; P(A) = Card(A)/Card(Ω) en cas d'équiprobabilité.
 
 ---
 
-## Partie 2 : Géométrie
+## Nombres et calculs, algèbre
 
-Objectifs (résumé) : consolider les configurations du collège ; introduire les vecteurs du plan comme outil, notamment pour la physique ; poursuivre la géométrie repérée et introduire la notion d'ensemble de points décrit par une équation (équations de droites). Le plan est muni d'un repère orthonormé. Cadre : géométrie plane ; des activités peuvent mobiliser la géométrie dans l'espace du collège.
+Objectifs : approfondir les ensembles de nombres, développer le calcul, travailler les inégalités, résoudre des problèmes modélisés par des équations ou inéquations se ramenant au premier degré.
 
-Histoire : rôle central de la géométrie grecque dans la naissance de la démonstration ; Descartes et la géométrie repérée.
+### Arithmétique
 
-### 2.1 Manipuler les vecteurs du plan
+- [N9] Notations ℕ et ℤ.
+- [N10] Multiple, diviseur, nombre pair, nombre impair : a est multiple de b s'il existe un entier k tel que a = kb.
+- [C17] Modéliser et résoudre des problèmes mobilisant multiple, diviseur, nombre pair, nombre impair.
+- [C18] Présenter les fractions sous forme irréductible.
+- [D1] La somme de deux multiples de a est multiple de a. [D2] Le carré d'un nombre impair est impair.
+- [A1] Déterminer si un entier naturel a est multiple de b. [A2] Plus grand multiple de a inférieur ou égal à b.
 
-> On s'appuie sur la translation (cycle 4) pour introduire la notion de vecteur. […] La relation u⃗ = x i⃗ + y j⃗ est mise en évidence. La relation de Chasles est introduite pour illustrer l'addition des vecteurs, mais ne fait pas l'objet d'un travail spécifique.
+### Nombres réels
 
-Contenus :
+- [N11] Ensemble ℝ, droite numérique. [N12] Intervalles, représentation, notations [a, +∞[, ]−∞, a], [a, b]…
+- [N13] |a| distance de a à 0 ; distance entre deux réels. [N14] Inéquation |x − a| ⩽ r, intervalle [a − r, a + r].
+- [N15] Ensemble 𝔻, encadrement décimal à 10⁻ⁿ près. [N16] Ensemble ℚ ; irrationnels (√2, π).
+- [C19] Lire et placer un réel sur une droite graduée. [C20] Représenter un intervalle, tester l'appartenance. [C21] Encadrer avec une amplitude donnée. [C22] Arrondir avec un nombre de chiffres significatifs adapté.
+- [D3] 1/3 n'est pas décimal. [D4] √2 est irrationnel.
+- [A3] Encadrer √2 par balayage.
 
-- [N14] Vecteur associé à la translation qui transforme M en M'. Direction, sens et norme.
-- [N15] Égalité de deux vecteurs. Notation u⃗. Vecteur nul.
-- [N16] Somme de deux vecteurs en lien avec l'enchaînement des translations. Relation de Chasles.
-- [N17] Base orthonormée. Coordonnées d'un vecteur. Expression de la norme d'un vecteur.
-- [N18] Expression des coordonnées de AB⃗ en fonction de celles de A et de B (formule rétablie).
-- [N19] Produit d'un vecteur par un nombre réel. Colinéarité de deux vecteurs.
-- [N20] Déterminant de deux vecteurs dans une base orthonormée, critère de colinéarité. Application à l'alignement, au parallélisme.
+### Algèbre
 
-Capacités attendues :
+- [N17] Puissances entières relatives, racines carrées ; √(a²) = |a|.
+- [N18] Calcul sur des expressions algébriques, notamment fractionnaires.
+- [N19] Somme d'inégalités ; produit par un réel positif, négatif (lien avec le sens de variation d'une fonction affine).
+- [N20] Comparaison additive (différence), multiplicative (rapport, pour des nombres strictement positifs).
+- [N21] Solutions de ax + b = 0 et de ax + b > 0.
+- [N22] Équation produit nul A(x)B(x) = 0.
+- [N23] Signe de A(x)B(x) et de A(x)/B(x), en liaison avec les fonctions.
+- [N24] Équation quotient A(x)/B(x) = k, en lien avec l'ensemble de définition.
+- [C23] Calculs avec puissances, racines carrées, écritures fractionnaires. [C24] Exprimer une variable en fonction des autres (U = RI, d = vt, S = πr², V = abc, V = πr²h, ax + by = c). [C25] Choisir la forme adaptée. [C26] Comparer par différence ou rapport, interpréter en variation additive ou multiplicative. [C27] Modéliser par une inéquation. [C28] Résoudre ax = b, a + x = b, ax + b = cx + d, les inéquations correspondantes, x² = a.
+- [D5] √(ab) = √a × √b pour a, b positifs.
+- [A4] Première puissance d'un nombre positif supérieure ou inférieure à une valeur donnée.
 
-- [C13] Représenter géométriquement des vecteurs.
-- [C14] Construire géométriquement la somme de deux vecteurs.
-- [C15] Représenter un vecteur dont on connaît les coordonnées. Lire les coordonnées d'un vecteur.
-- [C16] Calculer les coordonnées d'une somme de vecteurs, d'un produit d'un vecteur par un nombre réel.
-- [C17] Calculer la distance entre deux points. Calculer les coordonnées du milieu d'un segment.
-- [C18] Caractériser alignement et parallélisme par la colinéarité de vecteurs.
-- [C19] Résoudre des problèmes en utilisant la représentation la plus adaptée des vecteurs.
+## Géométrie
 
-Démonstration :
+Repère orthogonal (orthonormé pour les distances et le déterminant). Les vecteurs ont été découverts au cycle 4 (translation, somme, Chasles en 3e).
 
-- [D8] Deux vecteurs sont colinéaires si et seulement si leur déterminant est nul.
+### Vecteurs et problèmes de géométrie
 
-Approfondissement possible : définition vectorielle des homothéties.
+- [N25] Égalité de vecteurs, notation u⃗, vecteur nul. [N26] Représentants d'un vecteur. [N27] Produit par un réel, colinéarité. [N28] Combinaison de deux vecteurs non colinéaires. [N29] Base orthonormée, coordonnées, norme. [N30] Coordonnées de AB⃗. [N31] Déterminant, critère de colinéarité, alignement, parallélisme. [N32] Caractérisation vectorielle du milieu.
+- [C29] Représenter une somme à partir de représentants de même origine. [C30] Représenter et lire des coordonnées. [C31] Coordonnées d'une somme, d'un produit par un réel. [C32] Distance entre deux points, milieu. [C33] Alignement et parallélisme par la colinéarité. [C34] Problèmes avec la représentation adaptée. [C35] Problèmes avec des méthodes diverses (vectorielles, repérées, géométriques).
+- [D6] Colinéarité de deux vecteurs non nuls : nullité du déterminant ; proportionnalité des coordonnées.
 
-### 2.2 Résoudre des problèmes de géométrie
+### Droites du plan
 
-Contenus :
+- [N33] Vecteur directeur. [N34] Équation cartésienne, équation réduite. [N35] Pente.
+- [C36] Équation à partir de deux points, d'un point et d'un vecteur directeur, d'un point et de la pente. [C37] Pente ou vecteur directeur à partir d'une équation ou d'un graphique. [C38] Tracer une droite. [C39] Alignement de trois points. [C40] Droites parallèles ou sécantes. [C41] Point d'intersection de deux droites sécantes données par leur équation réduite.
+- [D7] Forme générale d'une équation de droite par le déterminant.
+- [A5] Alignement de trois points. [A6] Équation de la droite passant par deux points.
 
-- [N21] Projeté orthogonal d'un point sur une droite.
+## Fonctions
 
-Capacités attendues :
+### Représentation algébrique et graphique des fonctions
 
-- [C20] Résoudre des problèmes de géométrie plane sur des figures simples ou complexes (triangles, quadrilatères, cercles).
-- [C21] Calculer des longueurs, des angles, des aires et des volumes.
-- [C22] Traiter de problèmes d'optimisation.
+- [N36] Fonction définie sur un intervalle ou une réunion finie d'intervalles. [N37] Ensemble de définition. [N38] Courbe d'équation y = f(x). [N39] Signe d'une fonction affine et des fonctions de référence. [N40] Tableau de signes d'un produit ou d'un quotient.
+- [C42] Exploiter l'équation d'une courbe. [C43] Modéliser par des fonctions. [C44] Fonctions **valeur absolue**, carré, inverse : définitions et courbes. [C45] Résoudre f(x) = k, f(x) < k (graphique, algébrique, logiciel). [C46] Résoudre f(x) = 0, f(x) > 0 avec un tableau de signes (produit ou quotient). [C47] Résoudre f(x) = g(x), f(x) < g(x) graphiquement ou avec un outil numérique. [C48] Pour les fonctions affines, valeur absolue, carré, inverse, racine carrée et cube, résoudre f(x) = k, f(x) < k.
 
-Démonstrations :
+### Variations et extremums d'une fonction
 
-- [D9] Le projeté orthogonal du point M sur une droite Δ est le point de la droite Δ le plus proche du point M.
-- [D10] Relation trigonométrique cos²(α) + sin²(α) = 1 dans un triangle rectangle.
+- [N41] Croissance, décroissance, monotonie ; tableau de variations. [N42] Maximum, minimum. [N43] f(x) = mx + p : m taux d'accroissement, p ordonnée à l'origine. [N44] Variations d'une fonction affine selon le signe de m.
+- [C49] Relier courbe et tableau de variations. [C50] Extremums graphiques. [C51] Logiciel, calculatrice ou Python pour décrire des variations. [C52] Fonction affine : sens de variation, signe, droite. [C53] Problèmes d'optimisation. [C54] Valeur absolue, carré : signe et variations. [C55] Comparer f(a) et f(b) pour une fonction de référence.
+- [D8] Variations des fonctions affines. [D9] Position relative de y = x et y = x² pour x ⩾ 0. [D10] Variations des fonctions carré, inverse.
+- [A7] Approximation d'un extremum (balayage, dichotomie). [A8] Longueur approchée d'une portion de courbe.
 
-Approfondissements possibles : concours des hauteurs ; aire d'un triangle ½ ab sin C (formule rétablie) ; formule d'Al-Kashi ; centre du cercle circonscrit.
+## Statistiques et probabilités
 
-### 2.3 Représenter et caractériser les droites du plan
+### Information chiffrée et statistique descriptive
 
-> Au cycle 4, les élèves ont rencontré les équations de droite pour représenter les fonctions affines. En seconde, ils étendent l'étude à la forme générale des équations de droite. Dans cette section, le plan est muni d'un repère orthonormé.
+- [N45] Pourcentage de pourcentage. [N46] Variation absolue V2 − V1, coefficient multiplicateur V2/V1, variation relative (V2 − V1)/V1. [N47] Évolutions successives et réciproques. [N48] Linéarité de la moyenne. [N49] Écart type. [N50] Influence de l'ajout ou de la suppression d'une valeur sur la moyenne et la médiane. [N51] Séries regroupées en classes de même amplitude : histogramme, polygone des fréquences cumulées ; moyenne pondérée par les centres des classes ; classe médiane et estimation de la médiane.
+- [C56] Effectifs, proportions, pourcentages. [C57] Pourcentages de pourcentages. [C58] Valeurs successives et taux d'évolution. [C59] Taux global, taux réciproque. [C60] Séries en classes : moyenne, classe médiane, estimation de la médiane. [C61] Comparer deux séries avec des couples d'indicateurs (moyenne–écart type, médiane–écart interquartile) ou des graphiques.
 
-Contenus :
+### Croisement de deux variables qualitatives (nouveau)
 
-- [N22] Vecteur directeur d'une droite.
-- [N23] Équation de droite : équation cartésienne, équation réduite.
-- [N24] Pente (ou coefficient directeur) d'une droite non parallèle à l'axe des ordonnées.
+- [N52] Tableau croisé d'effectifs. [N53] Fréquence conditionnelle, fréquence marginale.
+- [C62] Calculer des fréquences conditionnelles et marginales. [C63] Compléter un tableau croisé.
+- [A9] Filtrer des individus selon un critère (ET, OU, NON). [A10] Dresser un tableau croisé et calculer des fréquences.
 
-Capacités attendues :
+### Probabilités
 
-- [C23] Déterminer une équation de droite à partir de deux points, un point et un vecteur directeur ou un point et la pente.
-- [C24] Déterminer la pente ou un vecteur directeur d'une droite donnée par une équation ou une représentation graphique.
-- [C25] Tracer une droite connaissant son équation cartésienne ou réduite.
-- [C26] Établir que trois points sont alignés ou non.
-- [C27] Déterminer si deux droites sont parallèles ou sécantes.
-- [C28] Résoudre un système de deux équations linéaires à deux inconnues, déterminer le point d'intersection de deux droites sécantes.
-
-Démonstration :
-
-- [D11] En utilisant le déterminant, établir la forme générale d'une équation de droite.
-
-Exemples d'algorithme :
-
-- [A6] Étudier l'alignement de trois points dans le plan.
-- [A7] Déterminer une équation de droite passant par deux points donnés.
-
-Approfondissements possibles : ensemble des points équidistants d'un point et de l'axe des abscisses ; parties du plan décrites par des inégalités sur les coordonnées.
-
----
-
-## Partie 3 : Fonctions
-
-Objectifs (résumé) : consolider la notion de fonction comme dépendance d'une variable par rapport à une autre ; exploiter les registres algébrique et graphique ; étendre la panoplie des fonctions de référence ; étudier variations et extremums. Fonctions définies sur un intervalle de ℝ ; exemples possibles de fonctions définies sur ℕ (notation u(n)) ; variable t pour les phénomènes dépendant du temps. Les propriétés (parité, monotonie sur un intervalle…) sont d'abord découvertes sur les fonctions de référence ; leur formalisation est l'occasion d'un travail sur les quantificateurs.
-
-Histoire : lente élaboration de la notion de fonction, de l'Antiquité à Dirichlet ; Newton, Leibniz, Euler.
-
-### 3.1 Se constituer un répertoire de fonctions de référence
-
-Contenus :
-
-- [N25] Fonctions carré, inverse, racine carrée, cube : définitions et courbes représentatives.
-
-Capacités attendues :
-
-- [C29] Pour deux nombres a et b donnés et une fonction de référence f, comparer f(a) et f(b) numériquement ou graphiquement.
-- [C30] Pour les fonctions affines, carré, inverse, racine carrée et cube, résoudre graphiquement ou algébriquement une équation ou une inéquation du type f(x) = k, f(x) < k.
-
-Démonstration :
-
-- [D12] Étudier la position relative des courbes d'équation y = x, y = x², y = x³, pour x ⩾ 0.
-
-### 3.2 Représenter algébriquement et graphiquement les fonctions
-
-Contenus :
-
-- [N26] Fonction à valeurs réelles définie sur un intervalle ou une réunion finie d'intervalles de ℝ.
-- [N27] Courbe représentative : la courbe d'équation y = f(x) est l'ensemble des points du plan dont les coordonnées (x, y) vérifient y = f(x).
-- [N28] Fonction paire, impaire. Traduction géométrique.
-
-Capacités attendues :
-
-- [C31] Exploiter l'équation y = f(x) d'une courbe : appartenance, calcul de coordonnées.
-- [C32] Modéliser par des fonctions des situations issues des mathématiques, des autres disciplines.
-- [C33] Résoudre une équation ou une inéquation du type f(x) = k, f(x) < k, en choisissant une méthode adaptée : graphique, algébrique, logicielle.
-- [C34] Résoudre une équation, une inéquation produit ou quotient, à l'aide d'un tableau de signes.
-- [C35] Résoudre, graphiquement ou à l'aide d'un outil numérique, une équation ou inéquation du type f(x) = g(x), f(x) < g(x).
-
-Approfondissement possible : étudier la parité d'une fonction dans des cas simples.
-
-### 3.3 Étudier les variations et les extremums d'une fonction
-
-Contenus :
-
-- [N29] Croissance, décroissance, monotonie d'une fonction définie sur un intervalle. Tableau de variations.
-- [N30] Maximum, minimum d'une fonction sur un intervalle.
-- [N31] Pour une fonction affine, interprétation du coefficient directeur comme taux d'accroissement, variations selon son signe.
-- [N32] Variations des fonctions carré, inverse, racine carrée, cube.
-
-Capacités attendues :
-
-- [C36] Relier représentation graphique et tableau de variations.
-- [C37] Déterminer graphiquement les extremums d'une fonction sur un intervalle.
-- [C38] Exploiter un logiciel de géométrie dynamique ou de calcul formel, la calculatrice ou Python pour décrire les variations d'une fonction donnée par une formule.
-- [C39] Relier sens de variation, signe et droite représentative d'une fonction affine.
-
-Démonstration :
-
-- [D13] Variations des fonctions carré, inverse, racine carrée.
-
-Exemples d'algorithme :
-
-- [A8] Pour une fonction dont le tableau de variations est donné, algorithmes d'approximation numérique d'un extremum (balayage, dichotomie).
-- [A9] Algorithme de calcul approché de longueur d'une portion de courbe représentative de fonction.
-
-Approfondissement possible : relier les courbes des fonctions racine carrée et carré sur ℝ+.
+- [N54] Loi des grands nombres (version vulgarisée). [N55] Probabilité conditionnelle P_A(B), A de probabilité non nulle (nouveau). [N56] Arbres de probabilité (nouveau).
+- [C64] Observer la loi des grands nombres par simulation. [C65] Construire un arbre pondéré ou un tableau ; passer de la langue naturelle au registre symbolique. [C66] Calculer des probabilités conditionnelles à partir d'un tableau croisé ou d'un arbre. [C67] Interpréter les pondérations des branches. [C68] Lien entre la définition et la multiplication le long d'un chemin. [C69] Distinguer P_A(B) et P_B(A) (faux positifs). La formule des probabilités totales n'est pas un attendu.
 
 ---
 
-## Partie 4 : Statistiques et probabilités
+## Changements par rapport au programme de 2019
 
-Objectifs (résumé) : consolider l'information chiffrée par l'étude de situations multiplicatives (proportion de proportion, évolutions successives ou réciproques) ; distinguer un pourcentage qui exprime une proportion d'un pourcentage qui exprime une évolution ; introduire moyenne pondérée, écart interquartile et écart type ; formaliser la loi de probabilité dans le cas fini avec le langage des ensembles ; une loi de probabilité est une hypothèse du modèle et ne se démontre pas ; distinguer nettement le modèle probabiliste et la situation réelle.
-
-Histoire : problème des partis (chevalier de Méré), correspondance de Pascal et Fermat, Huygens ; problème du duc de Toscane ; Leibniz.
-
-### 4.1 Utiliser l'information chiffrée et statistique descriptive
-
-Contenus :
-
-- [N33] Proportion, pourcentage d'une sous-population dans une population.
-- [N34] Ensembles de référence inclus les uns dans les autres : pourcentage de pourcentage.
-- [N35] Évolution : variation absolue, variation relative.
-- [N36] Évolutions successives, évolution réciproque : relation sur les coefficients multiplicateurs (produit, inverse).
-- [N37] Indicateurs de tendance centrale d'une série statistique : moyenne pondérée.
-- [N38] Linéarité de la moyenne.
-- [N39] Indicateurs de dispersion : écart interquartile, écart type.
-
-Capacités attendues :
-
-- [C40] Exploiter la relation entre effectifs, proportions et pourcentages.
-- [C41] Traiter des situations simples mettant en jeu des pourcentages de pourcentages.
-- [C42] Exploiter la relation entre deux valeurs successives et leur taux d'évolution.
-- [C43] Calculer le taux d'évolution global à partir des taux d'évolution successifs. Calculer un taux d'évolution réciproque.
-- [C44] Décrire verbalement les différences entre deux séries statistiques, en s'appuyant sur des indicateurs ou sur des représentations graphiques données.
-- [C45] Pour des données réelles ou issues d'une simulation, lire et comprendre une fonction écrite en Python renvoyant la moyenne m, l'écart type s, et la proportion d'éléments appartenant à [m − 2s, m + 2s].
-
-### 4.2 Modéliser le hasard, calculer des probabilités
-
-L'ensemble des issues est fini.
-
-Contenus :
-
-- [N40] Ensemble (univers) des issues. Événements. Réunion, intersection, complémentaire.
-- [N41] Loi (distribution) de probabilité. Probabilité d'un événement : somme des probabilités des issues.
-- [N42] Relation P(A ∪ B) + P(A ∩ B) = P(A) + P(B).
-- [N43] Dénombrement à l'aide de tableaux et d'arbres.
-
-Capacités attendues :
-
-- [C46] Utiliser des modèles théoriques de référence (dé, pièce équilibrée, tirage au sort avec équiprobabilité dans une population) en comprenant que les probabilités sont définies a priori.
-- [C47] Construire un modèle à partir de fréquences observées, en distinguant nettement modèle et réalité.
-- [C48] Calculer des probabilités dans des cas simples : expérience aléatoire à deux ou trois épreuves.
-
-### 4.3 Échantillonnage
-
-> En liaison avec la partie « Algorithmique et programmation », on définit la notion d'échantillon. L'objectif est de faire percevoir, sous une forme expérimentale, la loi des grands nombres, la fluctuation d'échantillonnage et le principe de l'estimation d'une probabilité par une fréquence observée sur un échantillon.
-
-Contenus :
-
-- [N44] Échantillon aléatoire de taille n pour une expérience à deux issues.
-- [N45] Version vulgarisée de la loi des grands nombres : « Lorsque n est grand, sauf exception, la fréquence observée est proche de la probabilité. »
-- [N46] Principe de l'estimation d'une probabilité, ou d'une proportion dans une population, par une fréquence observée sur un échantillon.
-
-Capacités attendues :
-
-- [C49] Lire et comprendre une fonction Python renvoyant le nombre ou la fréquence de succès dans un échantillon de taille n pour une expérience aléatoire à deux issues.
-- [C50] Observer la loi des grands nombres à l'aide d'une simulation sur Python ou tableur.
-- [C51] Simuler N échantillons de taille n d'une expérience aléatoire à deux issues. Si p est la probabilité d'une issue et f sa fréquence observée dans un échantillon, calculer la proportion des cas où l'écart entre p et f est inférieur ou égal à 1/√n (formule rétablie).
-
----
-
-## Partie 5 : Algorithmique et programmation
-
-> Une consolidation des acquis du cycle 4 est proposée autour de deux idées essentielles : la notion de fonction ; la programmation comme production d'un texte dans un langage informatique.
-
-Les élèves s'exercent à décrire des algorithmes en langage naturel ou en Python, à en réaliser quelques-uns, à interpréter, compléter ou modifier des algorithmes plus complexes. Le langage choisi est **Python**. Les problèmes traités sont en relation avec les autres parties du programme et avec les autres disciplines ; exigence d'exactitude, de rigueur, de vérification.
-
-### 5.1 Utiliser les variables et les instructions élémentaires
-
-Contenus :
-
-- [N47] Variables informatiques de type entier, booléen, flottant, chaîne de caractères.
-- [N48] Affectation (notée ← en langage naturel).
-- [N49] Séquence d'instructions.
-- [N50] Instruction conditionnelle.
-- [N51] Boucle bornée (for), boucle non bornée (while).
-
-Capacités attendues :
-
-- [C52] Choisir ou déterminer le type d'une variable (entier, flottant ou chaîne de caractères).
-- [C53] Concevoir et écrire une instruction d'affectation, une séquence d'instructions, une instruction conditionnelle.
-- [C54] Écrire une formule permettant un calcul combinant des variables.
-- [C55] Programmer, dans des cas simples, une boucle bornée, une boucle non bornée.
-- [C56] Dans des cas plus complexes : lire, comprendre, modifier ou compléter un algorithme ou un programme.
-
-### 5.2 Notion de fonction
-
-Contenus :
-
-- [N52] Fonctions à un ou plusieurs arguments.
-- [N53] Fonction renvoyant un nombre aléatoire. Série statistique obtenue par la répétition de l'appel d'une telle fonction.
-
-Capacités attendues :
-
-- [C57] Écrire des fonctions simples ; lire, comprendre, modifier, compléter des fonctions plus complexes. Appeler une fonction.
-- [C58] Lire et comprendre une fonction renvoyant une moyenne, un écart type. Aucune connaissance sur les listes n'est exigée.
-- [C59] Écrire des fonctions renvoyant le résultat numérique d'une expérience aléatoire, d'une répétition d'expériences aléatoires indépendantes.
-
----
-
-## Vocabulaire ensembliste et logique (transversal)
-
-> L'apprentissage des notations mathématiques et de la logique est transversal à tous les chapitres du programme.
-
-- [N54] Élément d'un ensemble, sous-ensemble, appartenance et inclusion, réunion, intersection et complémentaire ; symboles ∈, ⊂, ∩, ∪ ; notation des ensembles de nombres et des intervalles. Notion de couple. Complémentaire d'un sous-ensemble A de E : notation Ā ou E \ A.
-
-Les élèves apprennent en situation à :
-
-- [C60] reconnaître ce qu'est une proposition mathématique, utiliser des variables pour écrire des propositions mathématiques ;
-- [C61] lire et écrire des propositions contenant les connecteurs « et », « ou » ;
-- [C62] formuler la négation de propositions simples (sans implication ni quantificateurs) ;
-- [C63] mobiliser un contre-exemple pour montrer qu'une proposition est fausse ;
-- [C64] formuler une implication, une équivalence logique, et les mobiliser dans un raisonnement simple ;
-- [C65] formuler la réciproque d'une implication ;
-- [C66] lire et écrire des propositions contenant une quantification universelle ou existentielle (les symboles ∀ et ∃ sont hors programme).
-
-Par ailleurs, les élèves produisent des raisonnements par disjonction des cas et par l'absurde ([C67], code ajouté).
-
-## Bilan des codes
-
-- Contenus : [N1] à [N54] (54).
-- Capacités attendues : [C1] à [C67] (67, dont [C60] à [C67] pour la logique).
-- Démonstrations : [D1] à [D13] (13).
-- Exemples d'algorithme : [A1] à [A9] (9).
+| Thème | 2019 | 2026 |
+| --- | --- | --- |
+| Organisation | Cinq parties | Quatre parties thématiques + trois transversales, dont les **automatismes** (nouvelle partie) |
+| Logique | Réciproque | Réciproque **et contraposée** ; ensemble vide, {…}, produit cartésien, Card(A) |
+| Arithmétique | Nombres premiers, algorithme de primalité | **Nombres premiers retirés** des contenus et capacités |
+| Algèbre | Démonstrations √(a + b) < √a + √b et illustration de (a + b)² ; identités dans les contenus | Ces deux démonstrations disparaissent ; identités dans les automatismes ; **équation quotient**, signe de produits et quotients, comparaison multiplicative ajoutés |
+| Vecteurs | Translation, somme, Chasles introduits en 2de | Supposés vus au cycle 4 ; ajout des représentants, de la combinaison de deux vecteurs non colinéaires et de la caractérisation vectorielle du milieu |
+| Problèmes de géométrie | Projeté orthogonal, démonstration de cos² + sin² = 1 | **Projeté orthogonal retiré** ; trigonométrie dans les automatismes |
+| Droites | Systèmes 2 × 2 | **Systèmes retirés** ; seulement l'intersection de deux droites données par leur équation réduite |
+| Fonctions | Carré, inverse, racine, cube ; parité | **Valeur absolue** ajoutée ; ensemble de définition, signe, tableaux de signes, optimisation ; **parité retirée** ; démonstrations : affines, carré, inverse, y = x / y = x² |
+| Statistiques | Moyenne pondérée, écart interquartile, écart type | Séries **regroupées en classes**, histogramme, effet d'une valeur ajoutée ; **croisement de deux variables qualitatives** (nouveau) |
+| Probabilités | Univers, loi, P(A ∪ B), échantillonnage (écart ⩽ 1/√n) | **Probabilités conditionnelles et arbres** (nouveau) ; loi des grands nombres ; l'intervalle 1/√n n'est plus mentionné ; les bases passent aux automatismes |
