@@ -22713,6 +22713,2519 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch10",
+      "numero": 10,
+      "titre": "Information chiffrée, statistiques et tableaux croisés",
+      "titre_court": "Statistiques",
+      "duree": "3 semaines",
+      "resume": "Proportions et pourcentages de pourcentages, variations absolue et relative, coefficient multiplicateur, évolutions successives et réciproques, moyenne et écart type, séries regroupées en classes, comparaison de séries, tableaux croisés et fréquences conditionnelles.",
+      "chapeau": "Les médias parlent sans cesse de pourcentages : part des jeunes dans une population, hausse des prix, baisse du chômage. Ce chapitre apprend à les calculer et à les interpréter sans se tromper, à résumer une série de données, puis à croiser deux caractères dans un tableau.",
+      "objectifs": [
+        "calculer une proportion, une partie connaissant le tout, un pourcentage de pourcentage ;",
+        "calculer une variation absolue, un coefficient multiplicateur et un taux d'évolution ;",
+        "enchaîner des évolutions et calculer une évolution réciproque ;",
+        "calculer et interpréter une moyenne, un écart type, et l'effet d'une valeur ajoutée ou supprimée ;",
+        "traiter une série regroupée en classes : moyenne, classe médiane, histogramme ;",
+        "lire et compléter un tableau croisé, calculer des fréquences marginales et conditionnelles."
+      ],
+      "sections": [
+        {
+          "id": "proportions",
+          "titre": "Proportions et pourcentages de pourcentages",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Si une sous-population A de n<sub>A</sub> individus fait partie d'une population E de n<sub>E</sub> individus, la <strong>proportion</strong> de A dans E est p = n<sub>A</sub>/n<sub>E</sub>. C'est un nombre entre 0 et 1, que l'on écrit en fraction, en décimal ou en pourcentage.</p></div>\n<p>Exemple : 180 élèves sur 600 sont externes : p = 180/600 = 0,3 = 30 %. Inversement, n<sub>A</sub> = p × n<sub>E</sub> (la partie connaissant le tout) et n<sub>E</sub> = n<sub>A</sub>/p (le tout connaissant la partie).</p>\n<div class=\"def\"><b class=\"t\">Propriété (pourcentage de pourcentage)</b><p>Si A ⊂ B ⊂ E, la proportion de A dans E est le produit de la proportion de A dans B par celle de B dans E : p = p<sub>1</sub> × p<sub>2</sub>.</p></div>\n<p>Exemple : 40 % des élèves d'un lycée sont en seconde, et 25 % des élèves de seconde font du latin. Les latinistes de seconde représentent 0,25 × 0,40 = 0,10, soit 10 % des élèves du lycée.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Un pourcentage peut exprimer une <strong>proportion</strong> (« 30 % des élèves ») ou une <strong>évolution</strong> (« les prix ont augmenté de 30 % »). Il faut toujours savoir de quel ensemble de référence on parle.</p></div>\n"
+        },
+        {
+          "id": "evolutions",
+          "titre": "Évolutions et coefficient multiplicateur",
+          "html": "\n<p>Une grandeur passe d'une valeur V<sub>1</sub> à une valeur V<sub>2</sub> (V<sub>1</sub> ≠ 0).</p>\n<div class=\"def\"><b class=\"t\">Définitions</b><ul>\n<li>La <strong>variation absolue</strong> (variation additive) est V<sub>2</sub> − V<sub>1</sub>.</li>\n<li>Le <strong>coefficient multiplicateur</strong> (variation multiplicative) est CM = V<sub>2</sub>/V<sub>1</sub>.</li>\n<li>La <strong>variation relative</strong>, ou <strong>taux d'évolution</strong>, est t = (V<sub>2</sub> − V<sub>1</sub>)/V<sub>1</sub>.</li></ul></div>\n<p>On a CM = 1 + t. Augmenter de 5 %, c'est multiplier par 1,05 ; diminuer de 5 %, c'est multiplier par 0,95. Un CM supérieur à 1 traduit une hausse, un CM entre 0 et 1 une baisse.</p>\n<p>Exemple : un prix passe de 80 € à 92 €. Variation absolue : +12 € ; CM = 92/80 = 1,15 ; taux t = 0,15, soit une hausse de 15 %.</p>\n<p>Exemple : un article à 60 € baisse de 20 % : nouveau prix 60 × 0,8 = 48 €. Et si un prix vaut 63 € après une hausse de 5 %, le prix de départ était 63/1,05 = 60 €.</p>\n"
+        },
+        {
+          "id": "successives",
+          "titre": "Évolutions successives et réciproques",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriétés</b><ul>\n<li>Pour des évolutions successives, le coefficient multiplicateur global est le <strong>produit</strong> des coefficients : CM = CM<sub>1</sub> × CM<sub>2</sub>.</li>\n<li>L'évolution réciproque, qui ramène V<sub>2</sub> à V<sub>1</sub>, a pour coefficient l'<strong>inverse</strong> : 1/CM.</li></ul></div>\n<p>Exemple : une hausse de 10 % suivie d'une baisse de 10 % donne CM = 1,1 × 0,9 = 0,99 : c'est une baisse de 1 %, pas un retour au prix de départ.</p>\n<p>Deux hausses successives de 20 % : CM = 1,2 × 1,2 = 1,44, soit une hausse globale de 44 % (et non 40 %).</p>\n<p>Après une hausse de 25 % (CM = 1,25), pour revenir à la valeur initiale, il faut multiplier par 1/1,25 = 0,8 : une baisse de 20 %.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>Les taux ne s'additionnent pas : ce sont les coefficients multiplicateurs qui se multiplient.</p></div>\n"
+        },
+        {
+          "id": "moyenne-ecart-type",
+          "titre": "Moyenne et écart type",
+          "html": "\n<p>Pour une série de valeurs x<sub>1</sub>, …, x<sub>p</sub> d'effectifs n<sub>1</sub>, …, n<sub>p</sub> (effectif total N), la <strong>moyenne</strong> est x̄ = (n<sub>1</sub>x<sub>1</sub> + … + n<sub>p</sub>x<sub>p</sub>)/N.</p>\n<div class=\"def\"><b class=\"t\">Linéarité de la moyenne</b><p>Si l'on transforme chaque valeur x en ax + b, la moyenne devient a x̄ + b. Exemple : des notes de moyenne 11 augmentées de 2 points ont pour moyenne 13 ; multipliées par 1,5, elles ont pour moyenne 16,5.</p></div>\n<p><strong>Effet d'une valeur ajoutée ou supprimée</strong> : la moyenne de 4 notes est 12 (total 48). Avec une cinquième note de 17, le total vaut 65 et la moyenne 13. La moyenne est sensible aux valeurs extrêmes ; la <strong>médiane</strong>, valeur qui partage la série ordonnée en deux moitiés, l'est beaucoup moins.</p>\n<div class=\"def\"><b class=\"t\">Écart type</b><p>L'<strong>écart type</strong> s mesure la dispersion des valeurs autour de la moyenne : s est la racine carrée de la moyenne des carrés des écarts à la moyenne. Plus s est grand, plus les valeurs sont dispersées.</p></div>\n<p>Exemple : 8, 10, 12 a pour moyenne 10 ; les écarts sont −2, 0, 2 ; la moyenne de leurs carrés vaut 8/3, donc s = √(8/3) ≈ 1,63. La série 10, 10, 10 a un écart type nul.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">def moyenne(serie):<br>    return sum(serie) / len(serie)<br><br>def ecart_type(serie):<br>    m = moyenne(serie)<br>    s = 0<br>    for x in serie:<br>        s = s + (x - m) ** 2<br>    return (s / len(serie)) ** 0.5</div>\n<p>On lit ces fonctions sans connaître les listes : serie contient les valeurs, sum les additionne, len les compte. ecart_type([8, 10, 12]) renvoie environ 1.63.</p>\n"
+        },
+        {
+          "id": "classes",
+          "titre": "Séries regroupées en classes",
+          "html": "\n<p>Quand les données sont nombreuses et continues (tailles, durées…), on les regroupe en <strong>classes</strong> de même amplitude, par exemple [150 ; 160[, [160 ; 170[…</p>\n<ul>\n<li>On les représente par un <strong>histogramme</strong> : des rectangles accolés, de base la classe et de hauteur proportionnelle à l'effectif (classes de même amplitude).</li>\n<li>On calcule une <strong>moyenne pondérée</strong> en remplaçant chaque classe par son centre (en supposant les valeurs réparties uniformément dans chaque classe), ou à partir de la moyenne connue de chaque classe.</li>\n<li>La <strong>classe médiane</strong> est celle qui contient la valeur du milieu ; on la trouve avec les effectifs cumulés croissants. On peut estimer la médiane en supposant la répartition uniforme dans cette classe ; le polygone des fréquences cumulées aide à la lire.</li>\n</ul>\n<div class=\"tbl\"><table>\n<thead><tr><th>Taille (cm)</th><th>[150 ; 160[</th><th>[160 ; 170[</th><th>[170 ; 180[</th><th>[180 ; 190[</th></tr></thead>\n<tbody><tr><td>Effectif</td><td>4</td><td>10</td><td>12</td><td>4</td></tr>\n<tr><td>Effectif cumulé</td><td>4</td><td>14</td><td>26</td><td>30</td></tr></tbody></table></div>\n<p>Moyenne estimée : (4 × 155 + 10 × 165 + 12 × 175 + 4 × 185)/30 = 5 110/30 ≈ 170,3 cm. L'effectif total est 30 : la médiane est entre la 15<sup>e</sup> et la 16<sup>e</sup> valeur, dans la classe [170 ; 180[. Comme 14 valeurs sont inférieures à 170, et que la classe en contient 12, on estime la médiane à 170 + 10 × 1,5/12 ≈ 171,3 cm.</p>\n"
+        },
+        {
+          "id": "comparer-series",
+          "titre": "Comparer deux séries",
+          "html": "\n<p>Pour comparer deux séries, on utilise des <strong>couples d'indicateurs</strong> :</p>\n<ul>\n<li>la moyenne avec l'écart type ;</li>\n<li>la médiane avec l'<strong>écart interquartile</strong> Q<sub>3</sub> − Q<sub>1</sub> (Q<sub>1</sub> et Q<sub>3</sub> sont les premier et troisième quartiles : au moins un quart des valeurs est inférieur ou égal à Q<sub>1</sub>, au moins trois quarts à Q<sub>3</sub>).</li>\n</ul>\n<p>Exemple : deux classes ont la même moyenne, 11, mais des écarts types de 1,5 et de 4 : les notes de la seconde classe sont bien plus dispersées. Une <strong>boîte à moustaches</strong> représente le minimum, Q<sub>1</sub>, la médiane, Q<sub>3</sub> et le maximum, et permet de comparer d'un coup d'œil.</p>\n<p>Une simulation peut produire une série : pour beaucoup de séries « en cloche », environ 95 % des valeurs sont dans l'intervalle [x̄ − 2s ; x̄ + 2s].</p>\n"
+        },
+        {
+          "id": "tableaux-croises",
+          "titre": "Tableaux croisés et fréquences conditionnelles",
+          "html": "\n<p>On étudie deux caractères <strong>qualitatifs</strong> sur les mêmes individus, par exemple le niveau de classe et la pratique d'un sport. On range les effectifs dans un <strong>tableau croisé</strong>.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th></th><th>Sport</th><th>Pas de sport</th><th>Total</th></tr></thead>\n<tbody>\n<tr><td>Seconde</td><td>120</td><td>80</td><td>200</td></tr>\n<tr><td>Première</td><td>90</td><td>110</td><td>200</td></tr>\n<tr><td>Total</td><td>210</td><td>190</td><td>400</td></tr></tbody></table></div>\n<ul>\n<li>La <strong>fréquence marginale</strong> d'un caractère se lit sur la ligne ou la colonne des totaux : 210/400 = 52,5 % des élèves font du sport.</li>\n<li>La <strong>fréquence conditionnelle</strong> rapporte un effectif à un sous-groupe : parmi les élèves de seconde, 120/200 = 60 % font du sport ; parmi les sportifs, 120/210 ≈ 57 % sont en seconde.</li>\n</ul>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>« La part des sportifs parmi les élèves de seconde » (120/200) et « la part des élèves de seconde parmi les sportifs » (120/210) ne sont pas la même fréquence : on ne divise pas par le même total.</p></div>\n<p>Pour compléter un tableau croisé, on utilise les totaux (somme d'une ligne, d'une colonne) ou une fréquence conditionnelle connue.</p>\n<p>Avec Python, on peut filtrer un fichier d'individus : compter ceux qui sont en seconde <strong>et</strong> sportifs (and), en seconde <strong>ou</strong> sportifs (or), ou non sportifs (not), puis remplir le tableau.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Proportion : p = n<sub>A</sub>/n<sub>E</sub> ; partie = p × tout. Pourcentage de pourcentage : on multiplie les proportions.</li>\n<li>De V<sub>1</sub> à V<sub>2</sub> : variation absolue V<sub>2</sub> − V<sub>1</sub>, coefficient multiplicateur V<sub>2</sub>/V<sub>1</sub>, taux t = (V<sub>2</sub> − V<sub>1</sub>)/V<sub>1</sub>, CM = 1 + t.</li>\n<li>Évolutions successives : on multiplie les CM ; évolution réciproque : CM inverse. Les taux ne s'additionnent pas.</li>\n<li>Linéarité : la moyenne de ax + b vaut a x̄ + b. L'écart type mesure la dispersion autour de la moyenne.</li>\n<li>Séries en classes : histogramme, moyenne avec les centres, classe médiane avec les effectifs cumulés.</li>\n<li>Comparer : moyenne–écart type, médiane–écart interquartile.</li>\n<li>Tableau croisé : fréquence marginale (total), fréquence conditionnelle (rapportée à un sous-groupe) ; attention au total de référence.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch10:banque:001",
+          "enonce": "180 élèves sur 600 sont externes. Quelle est la proportion d'externes ?",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "180/600 = 0,3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "30 %",
+            "18 %",
+            "60 %",
+            "3 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:002",
+          "enonce": "Comment s'écrit 0,45 en pourcentage ?",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "0,45 = 45/100.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4,5 %",
+            "45 %",
+            "0,45 %",
+            "450 %"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:003",
+          "enonce": "Dans un lycée de 1 200 élèves, 15 % sont demi-pensionnaires. Combien sont-ils ?",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "0,15 × 1 200 = 180.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "150",
+            "120",
+            "180",
+            "800"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:004",
+          "enonce": "36 élèves représentent 12 % d'un lycée. Combien le lycée compte-t-il d'élèves ?",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "Tout = partie / proportion = 36/0,12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "432",
+            "48",
+            "3 000",
+            "300"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:005",
+          "enonce": "Quelle écriture fractionnaire correspond à 75 % ?",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "75/100 = 3/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3/4",
+            "7/5",
+            "1/75",
+            "3/5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:006",
+          "enonce": "Dans la phrase « 30 % des élèves sont externes », le pourcentage exprime :",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "On compare une partie à un tout, sans évolution dans le temps.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "une évolution",
+            "une proportion",
+            "une moyenne",
+            "un écart type"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:007",
+          "enonce": "Dans une classe de 28 élèves, 4 sur 7 sont des filles. Combien y a-t-il de garçons ?",
+          "notion": "Proportions",
+          "difficulte": 3,
+          "explication": "Filles : 28 × 4/7 = 16 ; garçons : 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "16",
+            "4",
+            "12",
+            "21"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:008",
+          "enonce": "Quelles écritures représentent la même proportion que 1/5 ? Coche toutes les réponses exactes.",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "1/5 = 0,2 = 20 %.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5 %",
+            "0,2",
+            "0,5",
+            "20 %",
+            "15 %"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:009",
+          "enonce": "Quels pourcentages expriment une proportion (et non une évolution) ? Coche toutes les réponses exactes.",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "Une évolution compare deux valeurs dans le temps.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "« Le prix a augmenté de 10 % »",
+            "« 52 % des Français sont des femmes »",
+            "« 10 % des élèves sont gauchers »",
+            "« Le loyer a pris 2 % »",
+            "« Les ventes ont baissé de 3 % »"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:010",
+          "enonce": "Une proportion est toujours comprise entre 0 et 1.",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "C'est une partie rapportée au tout.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:011",
+          "enonce": "Si 25 % d'une population vaut 50 personnes, la population compte 200 personnes.",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "50/0,25 = 200.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:012",
+          "enonce": "Combien font 20 % de 350 ? Réponds par un nombre.",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "0,2 × 350 = 70.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "70"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:013",
+          "enonce": "Écris la proportion 3/8 sous forme décimale.",
+          "notion": "Proportions",
+          "difficulte": 2,
+          "explication": "3/8 = 0,375 = 37,5 %.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,375",
+            "0.375"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:014",
+          "enonce": "40 % des élèves sont en seconde et 25 % des élèves de seconde font du latin. Quelle part des élèves du lycée sont latinistes de seconde ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 1,
+          "explication": "0,25 × 0,40 = 0,10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "65 %",
+            "15 %",
+            "1 %",
+            "10 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:015",
+          "enonce": "Que fait-on des proportions quand les ensembles sont inclus les uns dans les autres (A ⊂ B ⊂ E) ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "p = p₁ × p₂.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On les multiplie",
+            "On les additionne",
+            "On les soustrait",
+            "On les divise"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:016",
+          "enonce": "60 % des salariés d'une entreprise sont des cadres, dont 30 % travaillent à distance. Quelle part des salariés sont des cadres en travail à distance ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "0,6 × 0,3 = 0,18.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "90 %",
+            "18 %",
+            "30 %",
+            "50 %"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:017",
+          "enonce": "Dans une ville, 20 % des habitants ont moins de 18 ans, et la moitié d'entre eux sont au lycée ou au collège. Sur 50 000 habitants, combien de collégiens ou lycéens ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 3,
+          "explication": "50 000 × 0,2 × 0,5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10 000",
+            "25 000",
+            "5 000",
+            "2 000"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:018",
+          "enonce": "Les latinistes de seconde sont 10 % du lycée et les secondes 40 % du lycée. Quelle part des secondes font du latin ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 3,
+          "explication": "0,10/0,40 = 0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4 %",
+            "50 %",
+            "30 %",
+            "25 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:019",
+          "enonce": "70 % des clients d'un magasin sont des femmes, et 20 % de ces femmes ont une carte de fidélité. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "0,7 × 0,2 = 0,14 ; on ne connaît pas les hommes avec carte.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "50 % des clients sont des femmes avec carte",
+            "14 % des clients sont des femmes avec carte",
+            "90 % des clients ont une carte",
+            "20 % des clients ont une carte",
+            "80 % des clientes n'ont pas de carte"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:020",
+          "enonce": "Pour calculer une proportion de proportion, on multiplie les deux proportions.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 1,
+          "explication": "C'est la propriété du cours.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:021",
+          "enonce": "50 % de 50 % donne 100 %.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "0,5 × 0,5 = 0,25 = 25 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:022",
+          "enonce": "Quel pourcentage obtient-on en prenant 50 % de 40 % ? Réponds par un nombre (sans le signe %).",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "0,5 × 0,4 = 0,2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "20"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:023",
+          "enonce": "Par quel nombre multiplie-t-on un prix qui augmente de 5 % ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "CM = 1 + 0,05.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,05",
+            "0,05",
+            "1,5",
+            "0,95"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:024",
+          "enonce": "Par quel nombre multiplie-t-on un prix qui baisse de 20 % ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "CM = 1 − 0,2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,2",
+            "0,8",
+            "1,2",
+            "−0,2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:025",
+          "enonce": "Un prix passe de 80 € à 92 €. Quelle est la variation absolue ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "92 − 80 = 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "+15 %",
+            "1,15",
+            "+12 €",
+            "92 €"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:026",
+          "enonce": "Un prix passe de 80 € à 92 €. Quel est le taux d'évolution ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "(92 − 80)/80 = 0,15.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "+12 %",
+            "+12 €",
+            "+1,15 %",
+            "+15 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:027",
+          "enonce": "Un article à 60 € baisse de 20 %. Quel est son nouveau prix ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "60 × 0,8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "48 €",
+            "40 €",
+            "12 €",
+            "72 €"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:028",
+          "enonce": "Un prix vaut 63 € après une hausse de 5 %. Quel était le prix de départ ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "63/1,05 = 60.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "59,85 €",
+            "60 €",
+            "58 €",
+            "66,15 €"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:029",
+          "enonce": "Quelle relation lie le coefficient multiplicateur CM et le taux t ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "Exemple : t = 0,05 donne CM = 1,05.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "CM = t",
+            "CM = 1 − t",
+            "CM = 1 + t",
+            "CM = t/100"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:030",
+          "enonce": "Une population passe de 2 500 à 2 300 habitants. Quel est le taux d'évolution ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 3,
+          "explication": "(2 300 − 2 500)/2 500 = −0,08.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−200 %",
+            "+8 %",
+            "−0,92 %",
+            "−8 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:031",
+          "enonce": "Un coefficient multiplicateur vaut 0,73. À quelle évolution correspond-il ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 3,
+          "explication": "t = 0,73 − 1 = −0,27.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une baisse de 27 %",
+            "Une hausse de 73 %",
+            "Une baisse de 73 %",
+            "Une hausse de 27 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:032",
+          "enonce": "Quels coefficients multiplicateurs traduisent une hausse ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "Un CM supérieur à 1 traduit une hausse.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,98",
+            "0,5",
+            "1,5",
+            "2",
+            "1,02"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:033",
+          "enonce": "Un loyer passe de 500 € à 550 €. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "550/500 = 1,1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La variation absolue est de 50 €",
+            "Le coefficient multiplicateur vaut 1,1",
+            "Le taux d'évolution est de 10 %",
+            "Le coefficient multiplicateur vaut 0,1",
+            "Le taux d'évolution est de 50 %"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:034",
+          "enonce": "Diminuer une quantité de 5 % revient à la multiplier par 0,95.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "1 − 0,05 = 0,95.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:035",
+          "enonce": "Un coefficient multiplicateur de 0,9 correspond à une hausse de 90 %.",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "C'est une baisse de 10 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:036",
+          "enonce": "Un prix de 50 € augmente de 10 %. Quel est le nouveau prix en euros ? Réponds par un nombre.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "50 × 1,1.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "55"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:037",
+          "enonce": "Un salaire passe de 1600 € à 1680 €. Quel est le taux d'évolution en pourcentage ? Réponds par un nombre (sans le signe %).",
+          "notion": "Évolutions et taux",
+          "difficulte": 3,
+          "explication": "80/1600 = 0,05.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:038",
+          "enonce": "Pour enchaîner deux évolutions, que fait-on des coefficients multiplicateurs ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "CM global = CM₁ × CM₂.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On les additionne",
+            "On les multiplie",
+            "On les soustrait",
+            "On garde le plus grand"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:039",
+          "enonce": "Une hausse de 10 % puis une baisse de 10 % donnent globalement :",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "1,1 × 0,9 = 0,99.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "aucune évolution",
+            "une hausse de 1 %",
+            "une baisse de 1 %",
+            "une baisse de 10 %"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:040",
+          "enonce": "Deux hausses successives de 20 % équivalent à une hausse de :",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1,2 × 1,2 = 1,44.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "40 %",
+            "20 %",
+            "4 %",
+            "44 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:041",
+          "enonce": "Après une hausse de 25 %, quelle baisse ramène à la valeur initiale ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1/1,25 = 0,8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20 %",
+            "25 %",
+            "75 %",
+            "80 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:042",
+          "enonce": "Quel est le coefficient multiplicateur de l'évolution réciproque d'un CM de 1,6 ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1/1,6 = 0,625.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,4",
+            "0,625",
+            "−1,6",
+            "1,6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:043",
+          "enonce": "Un prix baisse de 30 % puis augmente de 30 %. Quelle est l'évolution globale ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 3,
+          "explication": "0,7 × 1,3 = 0,91.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Aucune évolution",
+            "Une hausse de 9 %",
+            "Une baisse de 9 %",
+            "Une baisse de 60 %"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:044",
+          "enonce": "Une action perd 50 %. De combien doit-elle augmenter pour retrouver sa valeur ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 3,
+          "explication": "1/0,5 = 2, soit une hausse de 100 %.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "50 %",
+            "200 %",
+            "150 %",
+            "100 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:045",
+          "enonce": "Trois hausses successives de 10 % donnent un coefficient global de :",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 3,
+          "explication": "1,1³ = 1,331.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,331",
+            "1,3",
+            "1,03",
+            "3,3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:046",
+          "enonce": "Quelles affirmations sur les évolutions successives sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "1,1 × 0,9 = 0,99 ≠ 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "On additionne toujours les taux",
+            "Les taux ne s'additionnent pas",
+            "Une hausse puis une baisse de même taux s'annulent",
+            "On multiplie les coefficients multiplicateurs",
+            "Le CM global est la somme des CM"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:047",
+          "enonce": "Un prix augmente de 20 % puis baisse de 20 %. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1,2 × 0,8 = 0,96.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le CM global vaut 1",
+            "Le CM global vaut 0,96",
+            "Le prix revient à sa valeur initiale",
+            "Le prix augmente de 4 % au total",
+            "Le prix baisse de 4 % au total"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:048",
+          "enonce": "Deux hausses successives de 10 % font une hausse globale de 20 %.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "1,1 × 1,1 = 1,21 : hausse de 21 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:049",
+          "enonce": "L'évolution réciproque d'une baisse de 20 % est une hausse de 25 %.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1/0,8 = 1,25.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:050",
+          "enonce": "Une hausse de t % suivie d'une baisse de t % (t > 0) donne toujours une baisse globale.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 3,
+          "explication": "(1 + t)(1 − t) = 1 − t² < 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:051",
+          "enonce": "Un prix augmente de 50 % puis baisse de 50 %. Quel pourcentage du prix initial obtient-on ? Réponds par un nombre (sans le signe %).",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1,5 × 0,5 = 0,75.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "75"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:052",
+          "enonce": "Quelle est la moyenne de 8, 12 et 13 ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "(8 + 12 + 13)/3 = 33/3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12",
+            "11",
+            "33",
+            "10"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:053",
+          "enonce": "Des notes de moyenne 11 sont toutes augmentées de 2 points. Quelle est la nouvelle moyenne ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "Linéarité : x̄ + 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "11",
+            "22",
+            "13",
+            "12"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:054",
+          "enonce": "Des notes de moyenne 11 sont toutes multipliées par 1,5. Quelle est la nouvelle moyenne ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "1,5 × 11.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12,5",
+            "11",
+            "15",
+            "16,5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:055",
+          "enonce": "La moyenne de 4 notes vaut 12. On ajoute une note de 17. Quelle est la nouvelle moyenne ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "(48 + 17)/5 = 13.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "13",
+            "14,5",
+            "12",
+            "29"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:056",
+          "enonce": "Quel indicateur est le moins sensible à une valeur extrême ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "Elle ne dépend que de l'ordre des valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La moyenne",
+            "La médiane",
+            "L'étendue",
+            "Le maximum"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:057",
+          "enonce": "Une série vaut 2 (3 fois) et 5 (1 fois). Quelle est sa moyenne ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "(3 × 2 + 1 × 5)/4 = 11/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3,5",
+            "3",
+            "2,75",
+            "7"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:058",
+          "enonce": "La moyenne de 5 nombres vaut 10. On retire le nombre 18. Quelle est la moyenne des 4 restants ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 3,
+          "explication": "(50 − 18)/4 = 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "9",
+            "12",
+            "8"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:059",
+          "enonce": "Des températures ont une moyenne de 20 °C. Quelle est leur moyenne en degrés Fahrenheit (F = 1,8C + 32) ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 3,
+          "explication": "1,8 × 20 + 32 = 68, par linéarité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "68 °F",
+            "36 °F",
+            "52 °F",
+            "20 °F"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:060",
+          "enonce": "Quelles séries ont pour moyenne 10 ? Coche toutes les réponses exactes.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "On divise la somme par l'effectif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "8, 9, 13",
+            "0, 10",
+            "10, 20",
+            "5, 15",
+            "10, 10, 10"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:061",
+          "enonce": "On ajoute une très grande valeur à une série. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "La moyenne est sensible aux valeurs extrêmes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La médiane change peu",
+            "La médiane augmente beaucoup",
+            "La moyenne ne change pas",
+            "L'effectif total diminue",
+            "La moyenne augmente"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:062",
+          "enonce": "Si l'on ajoute 3 à toutes les valeurs d'une série, la moyenne augmente de 3.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "Linéarité de la moyenne.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:063",
+          "enonce": "La moyenne d'une série est toujours l'une de ses valeurs.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "Exemple : 1 et 2 ont pour moyenne 1,5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:064",
+          "enonce": "Les notes 9, 14, 11 et 18 ont quelle moyenne ? Réponds par un nombre.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 2,
+          "explication": "52/4 = 13.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "13"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:065",
+          "enonce": "Que mesure l'écart type d'une série ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 1,
+          "explication": "Plus il est grand, plus les valeurs sont dispersées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La valeur la plus fréquente",
+            "La dispersion des valeurs autour de la moyenne",
+            "La valeur du milieu",
+            "L'effectif total"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:066",
+          "enonce": "Quel est l'écart type de la série 10, 10, 10 ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 1,
+          "explication": "Aucune valeur ne s'écarte de la moyenne.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "3",
+            "0",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:067",
+          "enonce": "Deux classes ont la même moyenne 11, avec des écarts types 1,5 et 4. Que conclure ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "L'écart type mesure la dispersion.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La seconde classe a de meilleures notes",
+            "Les deux séries sont identiques",
+            "La première classe a plus d'élèves",
+            "Les notes de la seconde classe sont plus dispersées"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:068",
+          "enonce": "Avec quel indicateur de position associe-t-on l'écart type ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Couple moyenne–écart type.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La moyenne",
+            "La médiane",
+            "Le premier quartile",
+            "Le maximum"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:069",
+          "enonce": "Avec quel indicateur de dispersion associe-t-on la médiane ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Couple médiane–écart interquartile.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'écart type",
+            "L'écart interquartile",
+            "La moyenne",
+            "L'effectif"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:070",
+          "enonce": "Pour la série 8, 10, 12, quelle est la moyenne des carrés des écarts à la moyenne ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 3,
+          "explication": "Écarts −2, 0, 2 ; carrés 4, 0, 4 ; moyenne 8/3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "0",
+            "8/3",
+            "8"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:071",
+          "enonce": "Dans la fonction ecart_type du cours, que renvoie (s / len(serie)) ** 0.5 ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 3,
+          "explication": "** 0.5 calcule une racine carrée.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La moyenne",
+            "La somme des écarts",
+            "Le carré de la moyenne",
+            "La racine carrée de la moyenne des carrés des écarts"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:072",
+          "enonce": "Pour une série « en cloche », quelle part des valeurs se trouve environ dans [x̄ − 2s ; x̄ + 2s] ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 3,
+          "explication": "Ordre de grandeur cité dans le cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "95 %",
+            "50 %",
+            "68 %",
+            "100 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:073",
+          "enonce": "Quelles affirmations sur l'écart type sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 1,
+          "explication": "C'est une racine carrée d'une moyenne de carrés.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il peut être négatif",
+            "Il est toujours égal à la moyenne",
+            "Il est nul si toutes les valeurs sont égales",
+            "Il est positif ou nul",
+            "Il mesure la valeur centrale"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:074",
+          "enonce": "Quels couples d'indicateurs servent à comparer deux séries ? Coche toutes les réponses exactes.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Ce sont les deux couples du programme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Moyenne et effectif",
+            "Écart type et effectif",
+            "Maximum et médiane uniquement",
+            "Moyenne et écart type",
+            "Médiane et écart interquartile"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:075",
+          "enonce": "Plus l'écart type est grand, plus les valeurs sont dispersées.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 1,
+          "explication": "C'est son interprétation.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:076",
+          "enonce": "Deux séries de même moyenne ont forcément le même écart type.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Exemple : 10, 10 et 0, 20.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:077",
+          "enonce": "Si l'on ajoute 5 à toutes les valeurs d'une série, son écart type augmente de 5.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 3,
+          "explication": "Les écarts à la moyenne ne changent pas : l'écart type est le même.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:078",
+          "enonce": "Une série a Q1 = 9 et Q3 = 15. Quel est son écart interquartile ? Réponds par un nombre.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Q3 − Q1 = 6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:079",
+          "enonce": "Comment représente-t-on une série regroupée en classes de même amplitude ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "Des rectangles accolés.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par un diagramme circulaire uniquement",
+            "Par un histogramme",
+            "Par une droite",
+            "Par un tableau de variations"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:080",
+          "enonce": "Quel est le centre de la classe [160 ; 170[ ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "(160 + 170)/2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "160",
+            "170",
+            "165",
+            "10"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:081",
+          "enonce": "Pour estimer la moyenne d'une série en classes, par quoi remplace-t-on chaque classe ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "On suppose les valeurs réparties uniformément.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par sa borne inférieure",
+            "Par son amplitude",
+            "Par son effectif cumulé",
+            "Par son centre"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:082",
+          "enonce": "Dans le tableau des tailles du cours, quelle est la classe médiane ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "La 15ᵉ et la 16ᵉ valeur sont dans [170 ; 180[ (effectif cumulé 14 puis 26).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[170 ; 180[",
+            "[160 ; 170[",
+            "[150 ; 160[",
+            "[180 ; 190["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:083",
+          "enonce": "Dans le tableau des tailles du cours, combien d'élèves mesurent moins de 170 cm ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "Effectif cumulé : 4 + 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "14",
+            "26",
+            "12"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:084",
+          "enonce": "Dans le tableau des tailles, quelle est la moyenne estimée avec les centres des classes ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 3,
+          "explication": "5 110/30 ≈ 170,3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "170 cm exactement",
+            "Environ 165 cm",
+            "Environ 170,3 cm",
+            "Environ 175 cm"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:085",
+          "enonce": "Comment détermine-t-on la classe médiane ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 3,
+          "explication": "On cherche la classe qui contient la valeur du milieu.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Avec la classe de plus grand effectif",
+            "Avec la classe du milieu du tableau",
+            "Avec l'histogramme seul, sans calcul",
+            "Avec les effectifs cumulés croissants"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:086",
+          "enonce": "Quelles affirmations sur un histogramme à classes de même amplitude sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "Classes contiguës, même amplitude.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La hauteur est proportionnelle à l'effectif",
+            "La largeur varie selon l'effectif",
+            "Les rectangles sont accolés",
+            "Les rectangles sont séparés par des espaces",
+            "Il représente une évolution dans le temps"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:087",
+          "enonce": "Une classe [10 ; 20[ a un effectif 6, une classe [20 ; 30[ un effectif 4. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "(6 × 15 + 4 × 25)/10 = 19 ; la 5ᵉ et la 6ᵉ valeur sont dans [10 ; 20[.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le centre de [10 ; 20[ est 10",
+            "L'effectif total est 10",
+            "La classe médiane est [20 ; 30[",
+            "La moyenne estimée vaut 19",
+            "La moyenne estimée vaut 20"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:088",
+          "enonce": "Le centre de la classe [0 ; 10[ est 5.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "(0 + 10)/2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:089",
+          "enonce": "La moyenne calculée avec les centres des classes est toujours exacte.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "C'est une estimation, en supposant une répartition uniforme.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:090",
+          "enonce": "Quel est le centre de la classe [40 ; 60[ ? Réponds par un nombre.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "(40 + 60)/2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "50"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:091",
+          "enonce": "Qu'est-ce qu'un tableau croisé d'effectifs ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Lignes : un caractère ; colonnes : l'autre.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un tableau qui répartit des individus selon deux caractères",
+            "Un tableau de variations",
+            "Une liste de valeurs triées",
+            "Un histogramme"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:092",
+          "enonce": "Dans le tableau croisé du cours, combien d'élèves font du sport ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Total de la colonne « Sport ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "120",
+            "210",
+            "90",
+            "400"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:093",
+          "enonce": "Dans le tableau du cours, quelle est la fréquence marginale des sportifs ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "210/400.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "60 %",
+            "57 %",
+            "52,5 %",
+            "30 %"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:094",
+          "enonce": "Dans un tableau croisé, comment obtient-on le total d'une ligne ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "Les totaux servent à compléter le tableau.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En multipliant les effectifs",
+            "En prenant le plus grand effectif",
+            "En divisant par l'effectif total",
+            "En additionnant les effectifs de la ligne"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:095",
+          "enonce": "Un tableau croisé : 50 filles dont 30 internes, 70 garçons dont 35 internes. Combien d'internes au total ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "30 + 35.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "65",
+            "80",
+            "35",
+            "120"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:096",
+          "enonce": "Sur 300 personnes, 180 ont un vélo ; parmi elles, 60 ont aussi une voiture. Combien ont un vélo mais pas de voiture ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "180 − 60.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "240",
+            "120",
+            "60",
+            "180"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:097",
+          "enonce": "Dans un filtre Python sur un fichier d'élèves, quelle condition sélectionne les élèves de seconde qui font du sport ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "Les deux conditions à la fois : and ; le test d'égalité s'écrit ==.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "niveau == \"2de\" or sport == \"oui\"",
+            "not niveau == \"2de\"",
+            "niveau == \"2de\" and sport == \"oui\"",
+            "niveau = \"2de\" and sport = \"oui\""
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:098",
+          "enonce": "Quels caractères sont qualitatifs ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Un caractère qualitatif n'est pas mesuré par un nombre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le degré de satisfaction",
+            "La profession",
+            "Le niveau de classe",
+            "Le nombre de frères et sœurs",
+            "La taille en cm"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:099",
+          "enonce": "Avec le tableau du cours (400 élèves), quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "On lit les cases et les totaux.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "120 élèves de première font du sport",
+            "Il y a 210 élèves en seconde",
+            "200 élèves sont en seconde",
+            "190 élèves ne font pas de sport",
+            "110 élèves de première ne font pas de sport"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:100",
+          "enonce": "Dans un tableau croisé, l'effectif total est la somme de tous les effectifs des cases intérieures.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "120 + 80 + 90 + 110 = 400.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:101",
+          "enonce": "La condition « en seconde ou sportif » sélectionne moins d'élèves que « en seconde et sportif ».",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "C'est l'inverse : « ou » sélectionne au moins autant d'élèves.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:102",
+          "enonce": "Dans le tableau du cours, combien d'élèves de première font du sport ? Réponds par un nombre.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Case Première–Sport.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "90"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:103",
+          "enonce": "Dans le tableau du cours, quelle part des élèves de seconde font du sport ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 1,
+          "explication": "120/200.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "52,5 %",
+            "57 %",
+            "30 %",
+            "60 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:104",
+          "enonce": "Dans le tableau du cours, quelle part des sportifs sont en seconde ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "120/210 ≈ 0,571.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Environ 57 %",
+            "60 %",
+            "30 %",
+            "52,5 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:105",
+          "enonce": "Quelle différence y a-t-il entre « la part des sportifs parmi les secondes » et « la part des secondes parmi les sportifs » ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "On ne divise pas par le même effectif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Aucune, c'est la même fréquence",
+            "Le total de référence n'est pas le même (200 ou 210)",
+            "La première est toujours plus grande",
+            "La seconde est une fréquence marginale"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:106",
+          "enonce": "Une fréquence conditionnelle rapporte un effectif :",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "Exemple : parmi les élèves de seconde.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "à l'effectif total seulement",
+            "à la moyenne",
+            "à l'effectif d'un sous-groupe",
+            "à l'écart type"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:107",
+          "enonce": "Parmi 250 fumeurs, 40 % ont fait une maladie respiratoire. Combien de fumeurs malades ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 3,
+          "explication": "0,4 × 250.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "40",
+            "150",
+            "250",
+            "100"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:108",
+          "enonce": "Dans le tableau du cours, quelle part des élèves de première ne font pas de sport ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 3,
+          "explication": "110/200.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "55 %",
+            "27,5 %",
+            "47,5 %",
+            "45 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:109",
+          "enonce": "On sait que 60 % des 200 secondes font du sport et que 210 élèves font du sport au total. Combien de premières font du sport ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 3,
+          "explication": "Secondes sportifs : 120 ; 210 − 120 = 90.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "120",
+            "90",
+            "84",
+            "150"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:110",
+          "enonce": "Avec le tableau du cours, quelles fréquences sont des fréquences conditionnelles ? Coche toutes les réponses exactes.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 1,
+          "explication": "Elles rapportent à un sous-groupe, pas à l'effectif total.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "90/210, part des premières parmi les sportifs",
+            "400/400",
+            "120/200, part des sportifs parmi les secondes",
+            "210/400, part des sportifs",
+            "200/400, part des secondes"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:111",
+          "enonce": "Sur 120 internes, 45 sont en seconde. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "45/120 = 0,375 ; il manque l'effectif des secondes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "75 internes ne sont pas en seconde",
+            "120 est le nombre d'élèves de seconde",
+            "45 % des internes sont en seconde",
+            "On connaît la part des internes parmi les secondes",
+            "37,5 % des internes sont en seconde"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:112",
+          "enonce": "La part des sportifs parmi les secondes et la part des secondes parmi les sportifs sont toujours égales.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 1,
+          "explication": "Les totaux de référence diffèrent.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:113",
+          "enonce": "Une fréquence conditionnelle est comprise entre 0 et 1.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "C'est une proportion dans un sous-groupe.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:114",
+          "enonce": "Si 60 % des secondes font du sport, alors 60 % des sportifs sont en seconde.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 3,
+          "explication": "Dans le cours : 60 % contre environ 57 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:115",
+          "enonce": "Dans le tableau du cours, quelle part des élèves de seconde ne font pas de sport, en pourcentage ? Réponds par un nombre (sans le signe %).",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "80/200.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "40"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:116",
+          "enonce": "Une baisse de 100 % d'une quantité positive donne :",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "CM = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La moitié",
+            "Le double",
+            "0",
+            "Une valeur négative"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:117",
+          "enonce": "Que contient la ligne « effectif cumulé » d'un tableau ?",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "On additionne au fur et à mesure.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'effectif de chaque classe seul",
+            "Le centre de chaque classe",
+            "La moyenne de chaque classe",
+            "Le nombre de valeurs dans la classe et les classes précédentes"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:118",
+          "enonce": "Dans « parmi les élèves de seconde, 60 % font du sport », quel est le groupe de référence ?",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 1,
+          "explication": "C'est le groupe après « parmi ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les élèves de seconde",
+            "Les sportifs",
+            "Tous les élèves du lycée",
+            "Les élèves de première"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:119",
+          "enonce": "Combien font 10 % de 10 % ?",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 1,
+          "explication": "0,1 × 0,1 = 0,01.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20 %",
+            "1 %",
+            "100 %",
+            "0,1 %"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:120",
+          "enonce": "Quelle série est la plus dispersée ?",
+          "notion": "Écart type et dispersion",
+          "difficulte": 1,
+          "explication": "Ses valeurs s'écartent le plus de la moyenne 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "9, 10, 11",
+            "10, 10, 10",
+            "0, 10, 20",
+            "8, 10, 12"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:121",
+          "enonce": "Une série regroupée en classes perd une partie de l'information sur les valeurs.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "On ne connaît plus les valeurs exactes dans chaque classe.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:122",
+          "enonce": "Une fréquence marginale se lit sur les totaux d'un tableau croisé.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Exemple : 210/400.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:123",
+          "enonce": "Pour revenir à la valeur de départ après une évolution de CM 1,25, on multiplie par 0,8.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "1/1,25 = 0,8.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:124",
+          "enonce": "Quelles égalités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 1,
+          "explication": "On multiplie les proportions.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "20 % de 20 % = 40 %",
+            "100 % de 30 % = 130 %",
+            "50 % de 20 % = 10 %",
+            "10 % de 50 % = 5 %",
+            "50 % de 20 % = 70 %"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:125",
+          "enonce": "Quels enchaînements donnent une hausse globale ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 1,
+          "explication": "1,21 et 1,35 > 1 ; 0,99, 0,96 et 0,75 < 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−50 % puis +50 %",
+            "+10 % puis −10 %",
+            "+50 % puis −10 %",
+            "−20 % puis +20 %",
+            "+10 % puis +10 %"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:126",
+          "enonce": "La moyenne d'une série vaut 15. On ajoute 4 à chaque valeur. Quelle est la nouvelle moyenne ? Réponds par un nombre.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "Linéarité de la moyenne.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "19"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:127",
+          "enonce": "Quel pourcentage correspond à la fraction 1/4 ?",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "1/4 = 0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4 %",
+            "14 %",
+            "40 %",
+            "25 %"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:128",
+          "enonce": "Un abonnement passe de 40 € à 30 €. De quel pourcentage a-t-il baissé ?",
+          "notion": "Évolutions et taux",
+          "difficulte": 2,
+          "explication": "(30 − 40)/40 = −0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "25 %",
+            "10 %",
+            "33 %",
+            "75 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:129",
+          "enonce": "Un prix augmente de 20 %. Après une remise, il revient exactement au prix initial. Quel est le taux de la remise, arrondi au dixième ?",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 3,
+          "explication": "1/1,2 ≈ 0,833 : baisse d'environ 16,7 %.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20 %",
+            "16,7 %",
+            "80 %",
+            "83,3 %"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:130",
+          "enonce": "Une classe de 20 élèves a une moyenne de 12 et une autre de 30 élèves une moyenne de 10. Quelle est la moyenne des 50 élèves ?",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 3,
+          "explication": "(20 × 12 + 30 × 10)/50 = 540/50.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "11",
+            "22",
+            "10,8",
+            "10,5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:131",
+          "enonce": "Augmenter un prix de 100 % revient à le doubler.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "CM = 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch10:banque:132",
+          "enonce": "20 % de 50 vaut 20.",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "0,2 × 50 = 10.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:133",
+          "enonce": "La médiane d'une série est toujours égale à sa moyenne.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "Exemple : 1, 2, 9 a pour médiane 2 et pour moyenne 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:134",
+          "enonce": "Si 30 % des élèves sont internes et 50 % des internes sont en seconde, alors 80 % des élèves sont des internes de seconde.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 2,
+          "explication": "0,3 × 0,5 = 0,15 : 15 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:135",
+          "enonce": "Dans une série en classes, la classe médiane est toujours celle qui a le plus grand effectif.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 2,
+          "explication": "On la trouve avec les effectifs cumulés, pas avec le plus grand effectif.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:136",
+          "enonce": "Une hausse de 10 % d'un prix, puis une hausse de 10 € sur le nouveau prix, donnent une hausse globale de 20 %.",
+          "notion": "Évolutions et taux",
+          "difficulte": 3,
+          "explication": "On ne peut pas additionner un taux et une variation absolue : pour 50 €, on obtient 65 €, soit +30 %.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:137",
+          "enonce": "Quelles phrases décrivent une multiplication par 0,9 ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "0,9 = 1 − 0,1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une diminution d'un dixième",
+            "Une hausse de 9 %",
+            "Une baisse de 90 %",
+            "Une hausse de 90 %",
+            "Une baisse de 10 %"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:138",
+          "enonce": "Quels indicateurs décrivent la position (le centre) d'une série ? Coche toutes les réponses exactes.",
+          "notion": "Moyenne et linéarité",
+          "difficulte": 1,
+          "explication": "Les trois derniers mesurent la dispersion.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "La médiane",
+            "L'écart type",
+            "L'écart interquartile",
+            "La moyenne",
+            "L'étendue"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:139",
+          "enonce": "Pour la série en classes [0 ; 10[, [10 ; 20[, [20 ; 30[, quels centres sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 1,
+          "explication": "Le centre est la moyenne des deux bornes.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10",
+            "15",
+            "25",
+            "5",
+            "20"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:140",
+          "enonce": "Quels éléments trouve-t-on dans un tableau croisé d'effectifs ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Les totaux permettent de le compléter.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une courbe",
+            "Des flèches de variation",
+            "Des coefficients multiplicateurs",
+            "Des effectifs dans les cases",
+            "Des totaux par ligne et par colonne"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:141",
+          "enonce": "Dans une classe de 30 élèves, 12 sont demi-pensionnaires. Quelles écritures donnent leur proportion ? Coche toutes les réponses exactes.",
+          "notion": "Proportions",
+          "difficulte": 1,
+          "explication": "12/30 = 2/5 = 0,4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "12/30",
+            "12 %",
+            "30/12",
+            "40 %",
+            "0,4"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:142",
+          "enonce": "Quelles séries ont un écart type nul ? Coche toutes les réponses exactes.",
+          "notion": "Écart type et dispersion",
+          "difficulte": 2,
+          "explication": "Il faut que toutes les valeurs soient égales.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "7, 7, 7",
+            "−1, 1",
+            "5, 5, 6",
+            "0, 0",
+            "1, 2, 3"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:143",
+          "enonce": "Sur 80 garçons, 20 sont gauchers ; sur 70 filles, 14 sont gauchères. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Fréquences conditionnelles",
+          "difficulte": 2,
+          "explication": "20/80 et 14/70 ; 34 gauchers sur 150 élèves, soit environ 22,7 %.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "34 % des élèves sont gauchers",
+            "34 élèves sont gauchers",
+            "25 % des garçons sont gauchers",
+            "20 % des filles sont gauchères",
+            "25 % des gauchers sont des garçons"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:144",
+          "enonce": "Quels coefficients globaux sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1,2 × 1,05 = 1,26 ; 0,9 × 0,9 = 0,81 ; 1,5 × 0,5 = 0,75.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "+50 % puis −50 % : 1",
+            "−10 % puis −10 % : 0,81",
+            "+20 % puis +5 % : 1,25",
+            "+20 % puis +5 % : 1,26",
+            "−10 % puis −10 % : 0,8"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:145",
+          "enonce": "Sur 500 clients, 300 ont acheté en ligne ; parmi eux, 120 sont des femmes. Il y a 260 femmes au total. Quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "300 − 120 = 180 ; 260 − 120 = 140 ; hommes hors ligne : 240 − 180 = 60.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "120 hommes n'ont pas acheté en ligne",
+            "180 hommes ont acheté en ligne",
+            "240 hommes ont acheté en ligne",
+            "260 femmes ont acheté en ligne",
+            "140 femmes n'ont pas acheté en ligne"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:146",
+          "enonce": "Une série a 10 valeurs dans [0 ; 5[, 30 dans [5 ; 10[ et 10 dans [10 ; 15[. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 3,
+          "explication": "Effectif 50 ; cumulés 10 puis 40 ; (10 × 2,5 + 30 × 7,5 + 10 × 12,5)/50 = 7,5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'effectif total est 30",
+            "La moyenne estimée vaut 5",
+            "La classe médiane est [0 ; 5[",
+            "La moyenne estimée vaut 7,5",
+            "La classe médiane est [5 ; 10["
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:147",
+          "enonce": "Dans un pays, 48 % des habitants sont des hommes ; 25 % des hommes et 20 % des femmes ont plus de 60 ans. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Pourcentage de pourcentage",
+          "difficulte": 3,
+          "explication": "0,48 × 0,25 = 0,12 ; 0,52 × 0,2 = 0,104 ; au total 22,4 %.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "25 % des habitants sont des hommes de plus de 60 ans",
+            "12 % des habitants sont des hommes de plus de 60 ans",
+            "45 % des habitants ont plus de 60 ans",
+            "10,4 % des habitants sont des femmes de plus de 60 ans",
+            "20 % des habitants sont des femmes"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch10:banque:148",
+          "enonce": "Par quel nombre multiplie-t-on une quantité pour la diminuer de 30 % ? Réponds par un nombre.",
+          "notion": "Évolutions et taux",
+          "difficulte": 1,
+          "explication": "1 − 0,3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,7",
+            "0.7"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:149",
+          "enonce": "Un prix augmente de 10 % deux fois de suite. Quel est le coefficient multiplicateur global ? Réponds par un nombre.",
+          "notion": "Évolutions successives et réciproques",
+          "difficulte": 2,
+          "explication": "1,1 × 1,1.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1,21",
+            "1.21"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch10:banque:150",
+          "enonce": "Deux classes : [0 ; 4[ d'effectif 3 et [4 ; 8[ d'effectif 1. Quelle est la moyenne estimée avec les centres ? Réponds par un nombre.",
+          "notion": "Séries regroupées en classes",
+          "difficulte": 3,
+          "explication": "(3 × 2 + 1 × 6)/4 = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
