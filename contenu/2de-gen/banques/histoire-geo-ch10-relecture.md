@@ -11,7 +11,7 @@ Banque : `histoire-geo-ch10.json`, 150 questions au statut `a_relire` après fus
   - présence des réponses courtes dans le texte du chapitre ;
   - similarité entre les énoncés.
 - Corrections faites pendant la relecture :
-  - vingt-six QCM dont la bonne réponse était la plus longue : le biais passe de 61 % à 35 % ;
+  - vingt-six QCM dont la bonne réponse était la plus longue : le biais passe de 61 % à 36 % ;
   - une difficulté a été rééquilibrée.
 
 ## Points de doute (à trancher par l'enseignant)
