@@ -475,7 +475,7 @@
     {
       "source": "nsi-1re:ch3:banque:028",
       "type": "qcm_unique",
-      "enonce": "Combien de bits faut-il pour stocker une valeur booléenne ?",
+      "enonce": "Combien de bits faut-il au minimum pour stocker une valeur booléenne ?",
       "difficulte": 1,
       "explication": "Deux valeurs possibles : un seul bit suffit.",
       "notion": "Valeurs booléennes",
@@ -1189,9 +1189,9 @@
     {
       "source": "nsi-1re:ch3:banque:070",
       "type": "qcm_unique",
-      "enonce": "Combien d'additionneurs complets chaîne-t-on, au minimum, pour additionner deux nombres de 8 bits en tenant compte de toutes les retenues ?",
+      "enonce": "On additionne deux nombres de 8 bits en plaçant un additionneur (demi ou complet) par rang. Combien d'additionneurs faut-il ?",
       "difficulte": 3,
-      "explication": "Un additionneur par rang ; la dernière retenue sortante donne le 9e bit du résultat.",
+      "explication": "Un additionneur par rang (le rang 0 peut être un demi-additionneur) ; la dernière retenue sortante donne le 9e bit du résultat.",
       "notion": "Additionneurs",
       "propositions": [
         "16",
@@ -1787,7 +1787,7 @@
       "explication": "1011 + 0110 = 10001 (11 + 6 = 17). Rang 0 : 1 + 0 = 1 ; rang 1 : 1 + 1 = 10.",
       "notion": "Additionneurs",
       "propositions": [
-        "Le rang 0 produit une somme 1 et une retenue 0",
+        "Le rang 0 (bit de poids faible) produit une somme 1 et une retenue 0",
         "Le résultat final est 1101",
         "Le rang 1 produit une somme 0 et une retenue 1",
         "Le rang 0 produit une retenue 1"
@@ -2202,7 +2202,9 @@
       "explication": "Le contraire de « et » fait apparaître « ou ».",
       "notion": "Lois et De Morgan",
       "reponses_acceptees": [
-        "or"
+        "or",
+        "ou",
+        "∨"
       ]
     },
     {
@@ -2259,7 +2261,8 @@
       "explication": "11 + 6 = 17 = 10001₂.",
       "notion": "Additionneurs",
       "reponses_acceptees": [
-        "10001"
+        "10001",
+        "0b10001"
       ]
     },
     {
