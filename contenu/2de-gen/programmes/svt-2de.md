@@ -8,6 +8,7 @@
 - **Page du BO** (non consultable automatiquement, réponse HTTP 403) : https://www.education.gouv.fr/bo/19/Special1/MENE1901647A.htm
 - **Copie de l'annexe effectivement lue (PDF, 16 pages)** : https://www.snes.edu/wp-content/uploads/svt_annexe_2e_bo.pdf. C'est une copie hébergée par un syndicat ; le texte porte la mention de copyright du ministère. À rapprocher de l'annexe du BO si on veut une source de première main.
 - **Date de récupération** : 10 novembre 2026.
+- **Vérification de la version en vigueur (11 novembre 2026)** : recherche d'un arrêté plus récent pour la SVT de seconde générale et technologique (2024 à 2026). Aucun texte n'a été trouvé : contrairement aux langues vivantes (nouveau programme de seconde à la rentrée 2025) et aux mathématiques (nouveau programme de seconde publié au BO n° 14 du 2 avril 2026), le programme de SVT de 2019 reste celui applicable en 2026-2027. Cette vérification s'appuie sur une recherche web (pages du ministère, de Planet-Terre et d'académies) ; la liste complète des BO n'a pas été parcourue. À confirmer sur education.gouv.fr si besoin.
 
 Le texte ci-dessous reprend fidèlement l'annexe pour la structure, les connaissances, les notions fondamentales, les objectifs, les capacités et les précisions (limites). Les codes `[N…]` (notions fondamentales) et `[C…]` (capacités) ne figurent pas dans le texte officiel : ils sont ajoutés ici pour le plan des chapitres (`svt-2de-plan.md`).
 
