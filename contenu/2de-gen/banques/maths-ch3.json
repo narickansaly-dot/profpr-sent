@@ -1,0 +1,2313 @@
+{
+  "chapitre": 3,
+  "notions": [
+    "Algorithmes et programmes",
+    "Variables et types",
+    "Affectation et séquence",
+    "Opérations en Python",
+    "Instruction conditionnelle",
+    "Boucle bornée for",
+    "Boucle non bornée while",
+    "Fonctions",
+    "Hasard et simulation"
+  ],
+  "questions": [
+    {
+      "source": "maths-2de:ch3:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un algorithme ?",
+      "difficulte": 1,
+      "explication": "Un programme traduit ensuite l'algorithme dans un langage comme Python.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "Une suite finie d'instructions qui résout un problème",
+        "Un langage de programmation",
+        "Un ordinateur",
+        "Un nombre aléatoire"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quel langage de programmation le programme de seconde utilise-t-il ?",
+      "difficulte": 1,
+      "explication": "Le programme officiel choisit Python, langage concis et très répandu.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "Scratch",
+        "Python",
+        "Le tableur uniquement",
+        "Le langage machine"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:003",
+      "type": "qcm_unique",
+      "enonce": "En langage naturel, comment note-t-on l'affectation de la valeur 5 à la variable a ?",
+      "difficulte": 1,
+      "explication": "La flèche ← se lit « reçoit » ; en Python, on écrit a = 5.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "a = = 5",
+        "5 → a ?",
+        "a ← 5",
+        "a ⩽ 5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Quelle ligne Python traduit « r ← reste de la division de a par b » ?",
+      "difficulte": 2,
+      "explication": "% donne le reste ; // donne le quotient entier.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "r = a / b",
+        "r = a // b",
+        "r == a % b",
+        "r = a % b"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:005",
+      "type": "qcm_unique",
+      "enonce": "En Python, que représentent les espaces placés en début de ligne après un if ?",
+      "difficulte": 2,
+      "explication": "L'indentation fait partie de la syntaxe de Python.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "Ils indiquent les instructions qui dépendent du if",
+        "Rien, ils sont ignorés",
+        "Un commentaire",
+        "La fin du programme"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:006",
+      "type": "qcm_unique",
+      "enonce": "On veut traduire « Tant que x ⩽ 100, x ← 2x ». Quelle écriture Python convient ?",
+      "difficulte": 3,
+      "explication": "« Tant que » se traduit par while ; on affecte le résultat à x.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "for x <= 100: x = 2 * x",
+        "while x <= 100: x = 2 * x",
+        "if x <= 100: x = 2x",
+        "while x <= 100: 2 * x = x"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:007",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les algorithmes sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un algorithme est une suite finie d'instructions, écrite en langage naturel ou dans un langage.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "Un programme ne contient jamais de boucle",
+        "Un programme est un algorithme écrit dans un langage de programmation",
+        "Un algorithme peut s'écrire en langage naturel",
+        "Un algorithme ne peut s'écrire qu'en Python",
+        "Un algorithme contient une infinité d'instructions"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:008",
+      "type": "vrai_faux",
+      "enonce": "Une méthode pour poser une division est un exemple d'algorithme.",
+      "difficulte": 1,
+      "explication": "C'est une suite d'instructions qui résout un problème.",
+      "notion": "Algorithmes et programmes",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:009",
+      "type": "vrai_faux",
+      "enonce": "En Python, l'indentation (les espaces en début de ligne) n'a aucune importance.",
+      "difficulte": 2,
+      "explication": "Elle délimite les blocs d'instructions d'un if, d'une boucle ou d'une fonction.",
+      "notion": "Algorithmes et programmes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de la valeur 7 en Python ?",
+      "difficulte": 1,
+      "explication": "7 est un entier.",
+      "notion": "Variables et types",
+      "propositions": [
+        "float (flottant)",
+        "str (chaîne)",
+        "int (entier)",
+        "bool (booléen)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Comment Python classe-t-il un nombre écrit 3.5 ?",
+      "difficulte": 1,
+      "explication": "Un nombre écrit avec un point décimal est un flottant.",
+      "notion": "Variables et types",
+      "propositions": [
+        "int (entier)",
+        "str (chaîne)",
+        "bool (booléen)",
+        "float (flottant)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de \"12\", écrit entre guillemets ?",
+      "difficulte": 1,
+      "explication": "Les guillemets font de 12 un texte.",
+      "notion": "Variables et types",
+      "propositions": [
+        "str (chaîne de caractères)",
+        "int (entier)",
+        "float (flottant)",
+        "bool (booléen)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les deux seules valeurs d'un booléen ?",
+      "difficulte": 1,
+      "explication": "Un booléen vaut True (vrai) ou False (faux).",
+      "notion": "Variables et types",
+      "propositions": [
+        "0 et 1 uniquement",
+        "True et False",
+        "oui et non",
+        "+ et −"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type du résultat de 7 / 2 ?",
+      "difficulte": 2,
+      "explication": "La division / donne toujours un flottant.",
+      "notion": "Variables et types",
+      "propositions": [
+        "int, car 7 et 2 sont entiers",
+        "str",
+        "float, car 7 / 2 vaut 3.5",
+        "bool"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:015",
+      "type": "qcm_unique",
+      "enonce": "La division 8 / 2 tombe juste. De quel type est pourtant son résultat ?",
+      "difficulte": 2,
+      "explication": "Même quand la division tombe juste, / renvoie un flottant.",
+      "notion": "Variables et types",
+      "propositions": [
+        "int : 8 / 2 vaut 4",
+        "str : 8 / 2 vaut \"4\"",
+        "bool : 8 / 2 vaut True",
+        "float : 8 / 2 vaut 4.0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de la valeur de 5 > 3 ?",
+      "difficulte": 2,
+      "explication": "Une comparaison vaut True ou False.",
+      "notion": "Variables et types",
+      "propositions": [
+        "bool",
+        "int",
+        "float",
+        "str"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:017",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces valeurs sont des flottants en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "2 est un entier ; \"3.14\" est une chaîne.",
+      "notion": "Variables et types",
+      "propositions": [
+        "3.14",
+        "2.0",
+        "−0.25",
+        "\"3.14\"",
+        "2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:018",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces valeurs sont des chaînes de caractères ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Tout ce qui est entre guillemets est une chaîne, même des chiffres.",
+      "notion": "Variables et types",
+      "propositions": [
+        "42",
+        "True",
+        "\"42\"",
+        "\"bonjour\"",
+        "\"True\""
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:019",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions ont pour valeur un entier (int) ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "// et ** entre entiers donnent des entiers ; int() convertit en entier ; / et float() donnent des flottants.",
+      "notion": "Variables et types",
+      "propositions": [
+        "17 / 5",
+        "int(\"12\")",
+        "2 ** 3",
+        "17 // 5",
+        "float(3)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:020",
+      "type": "vrai_faux",
+      "enonce": "En Python, la virgule décimale s'écrit avec un point.",
+      "difficulte": 1,
+      "explication": "On écrit 3.5, pas 3,5.",
+      "notion": "Variables et types",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:021",
+      "type": "vrai_faux",
+      "enonce": "Les valeurs 12 et \"12\" ont le même type.",
+      "difficulte": 2,
+      "explication": "12 est un int, \"12\" est un str.",
+      "notion": "Variables et types",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:022",
+      "type": "vrai_faux",
+      "enonce": "type(2.0) renvoie int, car 2.0 est un nombre entier.",
+      "difficulte": 3,
+      "explication": "2.0 est écrit avec un point : c'est un flottant (float).",
+      "notion": "Variables et types",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:023",
+      "type": "reponse_courte",
+      "enonce": "Écris le nom Python du type des nombres à virgule.",
+      "difficulte": 2,
+      "explication": "Les nombres à virgule sont des flottants : float.",
+      "notion": "Variables et types",
+      "reponses_acceptees": [
+        "float"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'instruction Python a = 5 ?",
+      "difficulte": 1,
+      "explication": "= est l'affectation ; le test d'égalité s'écrit ==.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "Elle teste si a est égal à 5",
+        "Elle donne la valeur 5 à la variable a",
+        "Elle affiche 5",
+        "Elle compare a et 5"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Après l'exécution de n = 4 puis n = n + 1, que vaut n ?",
+      "difficulte": 1,
+      "explication": "n + 1 est calculé avec l'ancienne valeur 4, puis rangé dans n.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "4",
+        "1",
+        "5",
+        "n + 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:026",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = 2, puis x = 3 * x, puis x = x − 1. Que vaut x à la fin ?",
+      "difficulte": 1,
+      "explication": "x vaut 2, puis 6, puis 5.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "6",
+        "2",
+        "1",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:027",
+      "type": "qcm_unique",
+      "enonce": "On exécute a = 3, b = 5, a = a + b, b = a − b. Que valent a et b ?",
+      "difficulte": 2,
+      "explication": "C'est le tableau de suivi du cours : a devient 8, puis b = 8 − 5 = 3.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "a = 8 et b = 3",
+        "a = 8 et b = 5",
+        "a = 3 et b = 5",
+        "a = 5 et b = 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:028",
+      "type": "qcm_unique",
+      "enonce": "On exécute a = 1, b = 2, puis a = b, puis b = a. Que valent a et b ?",
+      "difficulte": 2,
+      "explication": "Après a = b, a vaut 2 ; b = a donne encore 2 : l'ancienne valeur de a est perdue.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "a = 2 et b = 1",
+        "a = 2 et b = 2",
+        "a = 1 et b = 2",
+        "a = 1 et b = 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Pour échanger les valeurs de a et b, quelle séquence convient ?",
+      "difficulte": 3,
+      "explication": "Une variable auxiliaire c garde l'ancienne valeur de a.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "a = b, puis b = a",
+        "b = a, puis a = b",
+        "c = a, puis a = b, puis b = c",
+        "a = a + b"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "On exécute x = 7, puis y = x + 1, puis x = 2. Quelles affirmations sont vraies à la fin ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "y a été calculé quand x valait 7 ; changer x ensuite ne change pas y.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "y vaut 8",
+        "x vaut 7",
+        "y vaut 3",
+        "x vaut 2",
+        "y vaut x + 1, donc 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces instructions sont des affectations Python correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "À gauche du signe =, il faut un nom de variable.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "x = y",
+        "a + b = c",
+        "moyenne = (a + b) / 2",
+        "total = total + 1",
+        "5 = n"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:032",
+      "type": "vrai_faux",
+      "enonce": "L'instruction n = n + 1 augmente de 1 la valeur de n.",
+      "difficulte": 1,
+      "explication": "On calcule n + 1, puis on range le résultat dans n.",
+      "notion": "Affectation et séquence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:033",
+      "type": "vrai_faux",
+      "enonce": "En Python, a = b et b = a sont deux instructions qui ont le même effet.",
+      "difficulte": 2,
+      "explication": "a = b donne à a la valeur de b ; b = a fait l'inverse.",
+      "notion": "Affectation et séquence",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Les instructions d'un programme s'exécutent dans l'ordre, de haut en bas, sauf dans les boucles et les tests.",
+      "difficulte": 2,
+      "explication": "C'est la séquence d'instructions.",
+      "notion": "Affectation et séquence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:035",
+      "type": "reponse_courte",
+      "enonce": "On exécute a = 4, puis a = a * a, puis a = a − 6. Que vaut a ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "a vaut 4, puis 16, puis 10.",
+      "notion": "Affectation et séquence",
+      "reponses_acceptees": [
+        "10"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:036",
+      "type": "reponse_courte",
+      "enonce": "On exécute p = 1, puis p = 3 * p quatre fois de suite. Que vaut p ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "p vaut 3, 9, 27, puis 81 = 3⁴.",
+      "notion": "Affectation et séquence",
+      "reponses_acceptees": [
+        "81"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 17 % 5 en Python ?",
+      "difficulte": 1,
+      "explication": "17 = 5 × 3 + 2 : le reste est 2.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "3",
+        "3.4",
+        "85",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel quotient entier donne l'opération 17 // 5 ?",
+      "difficulte": 1,
+      "explication": "// donne le quotient entier de la division euclidienne.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "3",
+        "2",
+        "3.4",
+        "12"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 2 ** 3 en Python ?",
+      "difficulte": 1,
+      "explication": "** est la puissance : 2³ = 8.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "6",
+        "8",
+        "5",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Que vaut \"3\" + \"4\" en Python ?",
+      "difficulte": 2,
+      "explication": "Avec des chaînes, + colle les textes.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "7",
+        "\"7\"",
+        "\"34\"",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression permet de tester si un entier n est pair ?",
+      "difficulte": 2,
+      "explication": "n est pair quand le reste de sa division par 2 est nul.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "n / 2 == 0",
+        "n // 2 == 1",
+        "n % 2 == 1",
+        "n % 2 == 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie int(\"12\") + 3 ?",
+      "difficulte": 2,
+      "explication": "int(\"12\") vaut l'entier 12.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "15",
+        "\"123\"",
+        "\"15\"",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Comment écrire 5² en Python ?",
+      "difficulte": 2,
+      "explication": "La puissance s'écrit **.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "5 ^ 2",
+        "5 ** 2",
+        "5 * 2",
+        "5²"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions valent 3 en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "10 // 3 = 3 ; 15 % 4 = 3 ; 27 // 9 = 3 ; 10 % 3 = 1 ; 2 ** 3 = 8.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "27 // 9",
+        "15 % 4",
+        "10 % 3",
+        "10 // 3",
+        "2 ** 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Pour un entier n, quelles conditions sont vraies exactement quand n est un multiple de 3 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le reste est nul, ou le quotient entier multiplié par 3 redonne n.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "(n // 3) * 3 == n",
+        "n % 3 == 1",
+        "n // 3 == 0",
+        "n % 3 == 0",
+        "n / 3 == 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces expressions valent un flottant (float) ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "/ donne toujours un flottant, comme un calcul avec un flottant ; // et ** entre entiers donnent des entiers.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "4 ** 2",
+        "float(\"4\")",
+        "2.5 * 2",
+        "6 / 3",
+        "6 // 3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:047",
+      "type": "vrai_faux",
+      "enonce": "En Python, 2 ** 3 et 2 * 3 ont la même valeur.",
+      "difficulte": 1,
+      "explication": "2 ** 3 = 8 et 2 * 3 = 6.",
+      "notion": "Opérations en Python",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:048",
+      "type": "vrai_faux",
+      "enonce": "En Python, 20 % 6 vaut 2.",
+      "difficulte": 2,
+      "explication": "20 = 6 × 3 + 2.",
+      "notion": "Opérations en Python",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:049",
+      "type": "vrai_faux",
+      "enonce": "En Python, 3 + 4 et \"3\" + \"4\" donnent le même résultat.",
+      "difficulte": 3,
+      "explication": "3 + 4 vaut 7 ; \"3\" + \"4\" vaut la chaîne \"34\".",
+      "notion": "Opérations en Python",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Que vaut 23 % 7 en Python ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "23 = 7 × 3 + 2.",
+      "notion": "Opérations en Python",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:051",
+      "type": "reponse_courte",
+      "enonce": "Calcule le quotient entier 100 // 7. Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "100 = 7 × 14 + 2.",
+      "notion": "Opérations en Python",
+      "reponses_acceptees": [
+        "14"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit le test « a est égal à b » en Python ?",
+      "difficulte": 1,
+      "explication": "Deux signes = pour tester l'égalité.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "a = b",
+        "a := b",
+        "a == b",
+        "a equal b"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit « a est différent de b » en Python ?",
+      "difficulte": 1,
+      "explication": "!= signifie « différent de ».",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "a <> b",
+        "a =/ b",
+        "not a = b",
+        "a != b"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Par quel signe se termine la ligne d'un if en Python ?",
+      "difficulte": 1,
+      "explication": "if condition: puis les instructions indentées.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "Deux-points",
+        "Un point-virgule",
+        "Un point",
+        "Rien"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Avec note = 13 dans le programme des mentions du cours, quelle valeur reçoit mention ?",
+      "difficulte": 2,
+      "explication": "13 >= 16 et 13 >= 14 sont faux, 13 >= 12 est vrai.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "\"bien\"",
+        "\"assez bien\"",
+        "\"aucune\"",
+        "\"très bien\""
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Si la note vaut 16, quelle mention le programme du cours attribue-t-il ?",
+      "difficulte": 2,
+      "explication": "Le premier test vrai est note >= 16 ; les elif suivants ne sont pas examinés.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "\"bien\"",
+        "\"assez bien\"",
+        "\"très bien\"",
+        "Les trois mentions successivement"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que signifie elif en Python ?",
+      "difficulte": 2,
+      "explication": "elif enchaîne un nouveau test quand les précédents sont faux.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "« et »",
+        "« fin du si »",
+        "« répéter »",
+        "« sinon si »"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Comment écrire en Python la condition 0 ⩽ x < 10 ?",
+      "difficulte": 2,
+      "explication": "Les deux conditions doivent être vraies : and.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "x >= 0 and x < 10",
+        "x >= 0 or x < 10",
+        "x => 0 and x < 10",
+        "x > 0 and x <= 10"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:059",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = −3, puis : if x > 0: y = x, else: y = −x. Que vaut y ?",
+      "difficulte": 3,
+      "explication": "x > 0 est faux : y = −x = 3. Ce programme calcule la valeur absolue.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "−3",
+        "3",
+        "0",
+        "x"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quelle condition est vraie exactement quand n est pair ou multiple de 5 ?",
+      "difficulte": 3,
+      "explication": "« ou » se traduit par or ; « and » demanderait les deux à la fois.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "n % 2 == 0 and n % 5 == 0",
+        "n % 10 == 0",
+        "n % 2 == 0 or n % 5 == 0",
+        "n % 2 == 5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Quels opérateurs de comparaison existent en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On écrit <= et >=, le signe < ou > en premier ; « différent » s'écrit !=.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "<=",
+        "=<",
+        "<>",
+        "!=",
+        ">="
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Pour x = 4, quelles conditions valent True ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "4 est pair et compris entre 3 et 5 ; x != 4 et x > 4 sont faux.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "x % 2 == 0",
+        "x == 4 or x == 7",
+        "x != 4",
+        "x > 4",
+        "x > 3 and x < 5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Pour quelles valeurs de a le test a > 2 and a <= 6 est-il vrai ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "a doit être strictement supérieur à 2 et inférieur ou égal à 6.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "2",
+        "7",
+        "3",
+        "−5",
+        "6"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:064",
+      "type": "vrai_faux",
+      "enonce": "Dans une instruction conditionnelle, la partie else est obligatoire.",
+      "difficulte": 1,
+      "explication": "else est facultatif : sans lui, on ne fait rien quand la condition est fausse.",
+      "notion": "Instruction conditionnelle",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:065",
+      "type": "vrai_faux",
+      "enonce": "Une condition comme x > 3 vaut True ou False.",
+      "difficulte": 2,
+      "explication": "C'est un booléen.",
+      "notion": "Instruction conditionnelle",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Dans if … elif … else, plusieurs blocs peuvent être exécutés lors d'un même passage.",
+      "difficulte": 3,
+      "explication": "Seul le premier bloc dont la condition est vraie est exécuté (ou else si aucune ne l'est).",
+      "notion": "Instruction conditionnelle",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:067",
+      "type": "reponse_courte",
+      "enonce": "On exécute n = 7, puis : if n % 2 == 0: r = n // 2, else: r = 3 * n + 1. Que vaut r ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "7 est impair : r = 3 × 7 + 1 = 22.",
+      "notion": "Instruction conditionnelle",
+      "reponses_acceptees": [
+        "22"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Combien de fois la boucle for i in range(5) est-elle exécutée ?",
+      "difficulte": 1,
+      "explication": "range(5) parcourt 0, 1, 2, 3, 4.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "4",
+        "6",
+        "0",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Quelles valeurs prend i dans for i in range(4) ?",
+      "difficulte": 1,
+      "explication": "range(n) commence à 0 et s'arrête avant n.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "0, 1, 2, 3",
+        "1, 2, 3, 4",
+        "0, 1, 2, 3, 4",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Quelles valeurs prend k dans for k in range(1, 6) ?",
+      "difficulte": 1,
+      "explication": "range(a, b) va de a à b − 1.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "1, 2, 3, 4, 5, 6",
+        "1, 2, 3, 4, 5",
+        "0, 1, 2, 3, 4, 5",
+        "2, 3, 4, 5, 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Quelles valeurs parcourt range(0, 10, 3) ?",
+      "difficulte": 2,
+      "explication": "On avance de 3 en 3 en s'arrêtant avant 10.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "0, 3, 6",
+        "3, 6, 9",
+        "0, 3, 6, 9",
+        "0, 3, 6, 9, 12"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme du cours qui calcule 1 + 2 + … + 100, pourquoi écrit-on range(1, 101) ?",
+      "difficulte": 2,
+      "explication": "La borne de droite est exclue.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "Pour faire 101 tours de boucle",
+        "Parce que range(100) donnerait une erreur",
+        "Pour commencer à 0",
+        "Pour que k prenne les valeurs de 1 à 100"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Quand on calcule une somme avec une boucle, que faut-il faire avant la boucle ?",
+      "difficulte": 2,
+      "explication": "L'accumulateur doit partir d'une valeur connue, 0 pour une somme.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "Initialiser l'accumulateur, par exemple s = 0",
+        "Afficher le résultat",
+        "Écrire return",
+        "Mettre s = 1 dans tous les cas"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:074",
+      "type": "qcm_unique",
+      "enonce": "On exécute p = 1, puis for i in range(1, 5): p = p * i. Que vaut p ?",
+      "difficulte": 3,
+      "explication": "p = 1 × 1 × 2 × 3 × 4 = 24.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "120",
+        "24",
+        "10",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Que vaut s après s = 0, puis for i in range(4): s = s + i ?",
+      "difficulte": 3,
+      "explication": "s = 0 + 1 + 2 + 3 = 6 : i ne prend pas la valeur 4.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "10",
+        "4",
+        "6",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Quelle boucle calcule la somme des entiers pairs de 2 à 20 dans s (avec s = 0 au départ) ?",
+      "difficulte": 3,
+      "explication": "range(2, 21, 2) donne 2, 4, …, 20 ; avec 20 comme borne, 20 serait exclu.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "for k in range(2, 20, 2): s = s + k",
+        "for k in range(20): s = s + 2",
+        "for k in range(2, 21): s = s + k",
+        "for k in range(2, 21, 2): s = s + k"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Quelles boucles s'exécutent exactement 3 fois ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Elles parcourent 0, 1, 2 ; 1, 2, 3 ; 0, 2, 4.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "for i in range(0, 6, 2):",
+        "for i in range(1, 3):",
+        "for i in range(4):",
+        "for i in range(3):",
+        "for i in range(1, 4):"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces valeurs, lesquelles sont prises par i dans for i in range(2, 12, 3) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "range(2, 12, 3) donne 2, 5, 8, 11.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "2",
+        "5",
+        "3",
+        "12",
+        "11"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "On exécute c = 0, puis for i in range(10): if i % 3 == 0: c = c + 1. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "i va de 0 à 9 (10 tours) ; 0, 3, 6 et 9 sont des multiples de 3.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "c vaut 3 à la fin",
+        "c vaut 4 à la fin",
+        "la boucle tourne 9 fois",
+        "i prend la valeur 10",
+        "i prend la valeur 9"
+      ],
+      "bonnes_reponses": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:080",
+      "type": "vrai_faux",
+      "enonce": "La boucle for i in range(10) s'exécute 10 fois.",
+      "difficulte": 1,
+      "explication": "i prend les valeurs 0 à 9.",
+      "notion": "Boucle bornée for",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:081",
+      "type": "vrai_faux",
+      "enonce": "Dans range(1, 5), la valeur 5 est prise.",
+      "difficulte": 2,
+      "explication": "La borne de droite est exclue : 1, 2, 3, 4.",
+      "notion": "Boucle bornée for",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:082",
+      "type": "vrai_faux",
+      "enonce": "Avec s = 0 puis for k in range(1, 101): s = s + k, le programme calcule 5050.",
+      "difficulte": 3,
+      "explication": "1 + 2 + … + 100 = 100 × 101 / 2 = 5050.",
+      "notion": "Boucle bornée for",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:083",
+      "type": "reponse_courte",
+      "enonce": "Combien de fois la boucle for i in range(3, 15) s'exécute-t-elle ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "i va de 3 à 14 : 14 − 3 + 1 = 12 valeurs.",
+      "notion": "Boucle bornée for",
+      "reponses_acceptees": [
+        "12"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:084",
+      "type": "reponse_courte",
+      "enonce": "Que vaut s après s = 0, puis for k in range(1, 6): s = s + k * k ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "1 + 4 + 9 + 16 + 25 = 55.",
+      "notion": "Boucle bornée for",
+      "reponses_acceptees": [
+        "55"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Que fait une boucle while condition: … ?",
+      "difficulte": 1,
+      "explication": "On sort de la boucle quand la condition devient fausse.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "Elle répète les instructions tant que la condition est vraie",
+        "Elle répète les instructions un nombre fixé de fois",
+        "Elle exécute les instructions une seule fois",
+        "Elle s'arrête dès que la condition est vraie"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Quand utilise-t-on plutôt une boucle while qu'une boucle for ?",
+      "difficulte": 1,
+      "explication": "Exemple : chercher la première puissance de 2 qui dépasse 1000.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "Quand on connaît exactement le nombre de répétitions",
+        "Quand on ne connaît pas à l'avance le nombre de répétitions",
+        "Uniquement pour afficher un texte",
+        "Jamais, elles sont interdites"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme du cours sur les puissances de 2, que vaut n à la fin ?",
+      "difficulte": 2,
+      "explication": "2¹⁰ = 1024 est la première puissance de 2 supérieure à 1000.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "9",
+        "11",
+        "10",
+        "1024"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il si la condition d'une boucle while reste toujours vraie ?",
+      "difficulte": 2,
+      "explication": "Les instructions doivent finir par rendre la condition fausse.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "La boucle s'exécute une fois",
+        "Python corrige la condition",
+        "La boucle s'arrête au bout de 100 tours",
+        "La boucle ne s'arrête jamais"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:089",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = 1, puis while x < 50: x = 3 * x. Que vaut x à la fin ?",
+      "difficulte": 2,
+      "explication": "x vaut 3, 9, 27, 81 ; 81 < 50 est faux : on s'arrête.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "81",
+        "27",
+        "50",
+        "243"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:090",
+      "type": "qcm_unique",
+      "enonce": "On exécute n = 0, s = 0, puis while s < 20: n = n + 1, s = s + n. Que vaut n à la fin ?",
+      "difficulte": 3,
+      "explication": "s vaut 1, 3, 6, 10, 15, 21 : la condition devient fausse quand n = 6.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "5",
+        "6",
+        "20",
+        "21"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme de balayage de √2 avec un pas de 0.01, pourquoi la condition est-elle (x + pas) ** 2 <= 2 ?",
+      "difficulte": 3,
+      "explication": "x reste ainsi le plus grand nombre de la grille dont le carré ne dépasse pas 2.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "Pour que x dépasse √2",
+        "Pour calculer √2 exactement",
+        "On n'avance que si le nombre suivant a encore un carré inférieur ou égal à 2",
+        "Parce que x doit être un entier"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la boucle while sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Si la condition est fausse dès le début, le bloc n'est jamais exécuté.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "Elle s'arrête quand la condition devient vraie",
+        "Elle utilise toujours range",
+        "Elle tourne toujours au moins deux fois",
+        "La condition est testée avant chaque tour",
+        "On peut ne faire aucun tour si la condition est fausse au départ"
+      ],
+      "bonnes_reponses": [
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "On exécute a = 100, puis while a > 10: a = a // 2. Quelles valeurs a prend-elle successivement ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "a prend les valeurs 50, 25, 12 puis 6 (12 > 10 est encore vrai) ; elle ne vaut jamais 10 ni 3.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "3",
+        "50",
+        "10",
+        "6",
+        "25"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces boucles s'arrêtent (avec x = 1 au départ) ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "x + 2 ne prend que des valeurs impaires, x ne fait qu'augmenter, x * 1 ne change pas x.",
+      "notion": "Boucle non bornée while",
+      "propositions": [
+        "while x < 5: x = x * 1",
+        "while x != 10: x = x + 2",
+        "while x != 64: x = 2 * x",
+        "while x > 0: x = x + 1",
+        "while x < 100: x = x + 10"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:095",
+      "type": "vrai_faux",
+      "enonce": "Une boucle while peut s'exécuter zéro fois.",
+      "difficulte": 1,
+      "explication": "Si la condition est fausse dès le départ, le bloc n'est pas exécuté.",
+      "notion": "Boucle non bornée while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:096",
+      "type": "vrai_faux",
+      "enonce": "La boucle while x < 10: x = x − 1, avec x = 0 au départ, finit par s'arrêter.",
+      "difficulte": 2,
+      "explication": "x diminue : il reste toujours inférieur à 10, la boucle ne s'arrête jamais.",
+      "notion": "Boucle non bornée while",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Toute boucle for peut être remplacée par une boucle while.",
+      "difficulte": 3,
+      "explication": "On gère soi-même un compteur : i = 0, while i < n: … i = i + 1.",
+      "notion": "Boucle non bornée while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:098",
+      "type": "reponse_courte",
+      "enonce": "On exécute u = 1, n = 0, puis while u < 1000: u = 10 * u, n = n + 1. Que vaut n ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "u vaut 10, 100, 1000 ; 1000 < 1000 est faux.",
+      "notion": "Boucle non bornée while",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Par quel mot commence la définition d'une fonction en Python ?",
+      "difficulte": 1,
+      "explication": "def nom(arguments):",
+      "notion": "Fonctions",
+      "propositions": [
+        "function",
+        "return",
+        "for",
+        "def"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Quel mot permet à une fonction de renvoyer un résultat ?",
+      "difficulte": 1,
+      "explication": "return renvoie la valeur au programme qui appelle la fonction.",
+      "notion": "Fonctions",
+      "propositions": [
+        "return",
+        "print",
+        "def",
+        "input"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie aire_rectangle(4, 2.5), avec la fonction du cours ?",
+      "difficulte": 1,
+      "explication": "longueur × largeur = 4 × 2.5 = 10.0.",
+      "notion": "Fonctions",
+      "propositions": [
+        "6.5",
+        "10.0",
+        "8",
+        "4 × 2.5"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie est_multiple(91, 7), avec la fonction du cours ?",
+      "difficulte": 2,
+      "explication": "91 % 7 vaut 0, donc 91 % 7 == 0 vaut True.",
+      "notion": "Fonctions",
+      "propositions": [
+        "False",
+        "13",
+        "True",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie plus_grand_multiple(7, 100), avec la fonction du cours ?",
+      "difficulte": 2,
+      "explication": "7 × (100 // 7) = 7 × 14 = 98.",
+      "notion": "Fonctions",
+      "propositions": [
+        "14",
+        "100",
+        "105",
+        "98"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie est_premier(221), avec la fonction du cours ?",
+      "difficulte": 2,
+      "explication": "221 % 13 vaut 0 : la fonction renvoie False dès qu'elle trouve ce diviseur.",
+      "notion": "Fonctions",
+      "propositions": [
+        "False",
+        "True",
+        "13",
+        "17"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la différence entre print et return dans une fonction ?",
+      "difficulte": 2,
+      "explication": "Seul return permet de réutiliser le résultat dans un calcul.",
+      "notion": "Fonctions",
+      "propositions": [
+        "Il n'y en a aucune",
+        "print affiche, return renvoie la valeur au programme appelant",
+        "return affiche, print renvoie",
+        "print arrête la fonction"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:106",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(x): return x ** 2 − 3 * x. Que renvoie f(5) ?",
+      "difficulte": 3,
+      "explication": "5² − 3 × 5 = 25 − 15 = 10.",
+      "notion": "Fonctions",
+      "propositions": [
+        "−5",
+        "25",
+        "10",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Dans est_premier, pourquoi la boucle s'arrête-t-elle quand d * d > n ?",
+      "difficulte": 3,
+      "explication": "C'est la propriété du chapitre 2 : on ne teste que les d tels que d² ⩽ n.",
+      "notion": "Fonctions",
+      "propositions": [
+        "Parce que d devient négatif",
+        "Parce que n est forcément pair",
+        "Pour gagner de la mémoire",
+        "Un éventuel diviseur aurait déjà été trouvé parmi les d tels que d² ⩽ n"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Quelles lignes sont des débuts corrects de définition de fonction ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Il faut def, un nom, des parenthèses et les deux-points.",
+      "notion": "Fonctions",
+      "propositions": [
+        "def somme(a, b):",
+        "def carre(x):",
+        "def (x):",
+        "function carre(x):",
+        "def carre(x)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Avec def h(x): return 2 * x + 1, quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "h(1) = 3 et h(2) = 5.",
+      "notion": "Fonctions",
+      "propositions": [
+        "h(1) vaut 2",
+        "h(3) vaut 7",
+        "h(−1) vaut −1",
+        "h(0) vaut 1",
+        "h(2) vaut 4"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur return sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "est_premier contient plusieurs return ; le premier exécuté termine la fonction.",
+      "notion": "Fonctions",
+      "propositions": [
+        "return affiche la valeur à l'écran",
+        "Une fonction ne peut contenir qu'un seul return",
+        "La valeur renvoyée peut servir dans un calcul",
+        "return se place obligatoirement sur la première ligne",
+        "Après return, la fonction s'arrête"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Une fonction Python peut avoir plusieurs arguments.",
+      "difficulte": 1,
+      "explication": "Exemple : aire_rectangle(longueur, largeur).",
+      "notion": "Fonctions",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Pour appeler la fonction carre avec la valeur 3, on écrit def carre(3).",
+      "difficulte": 2,
+      "explication": "def sert à définir ; on appelle avec carre(3).",
+      "notion": "Fonctions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:113",
+      "type": "vrai_faux",
+      "enonce": "est_premier(1) renvoie True avec la fonction du cours.",
+      "difficulte": 3,
+      "explication": "Le premier test, n < 2, renvoie False : 1 n'est pas premier.",
+      "notion": "Fonctions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:114",
+      "type": "reponse_courte",
+      "enonce": "On définit def f(x): return 3 * x − 4. Que renvoie f(5) ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "3 × 5 − 4 = 11.",
+      "notion": "Fonctions",
+      "reponses_acceptees": [
+        "11"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie randint(1, 6) ?",
+      "difficulte": 1,
+      "explication": "randint(a, b) inclut a et b : il simule un dé.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "Un entier au hasard entre 1 et 6, bornes comprises",
+        "Un entier au hasard entre 1 et 5",
+        "Un flottant entre 1 et 6",
+        "Toujours 6"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Dans quel intervalle se trouve le nombre renvoyé par random() ?",
+      "difficulte": 1,
+      "explication": "random() renvoie un flottant de [0 ; 1[.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "[0 ; 1]",
+        "[0 ; 1[",
+        "[1 ; 6]",
+        "]0 ; 10["
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction permet d'utiliser randint dans un programme ?",
+      "difficulte": 1,
+      "explication": "On importe la fonction depuis le module random.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "import randint from random",
+        "def randint():",
+        "from random import randint",
+        "use random"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction simule le lancer d'une pièce (0 pour pile, 1 pour face) ?",
+      "difficulte": 2,
+      "explication": "randint(0, 1) renvoie 0 ou 1.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "randint(1, 2, 3)",
+        "random(0, 1)",
+        "randint(0, 2)",
+        "randint(0, 1)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:119",
+      "type": "qcm_unique",
+      "enonce": "On exécute nombre_de_six(600) (fonction du cours). Quel résultat est le plus vraisemblable ?",
+      "difficulte": 2,
+      "explication": "En moyenne, un lancer sur six donne 6, mais le résultat fluctue.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "Un nombre proche de 100, qui change à chaque exécution",
+        "Exactement 100 à chaque fois",
+        "Exactement 600",
+        "Toujours 6"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Avec la fonction succes(p) du cours, que renvoie succes(1) ?",
+      "difficulte": 2,
+      "explication": "random() < 1 est toujours vrai, car random() est dans [0 ; 1[.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "0, à coup sûr",
+        "1, à coup sûr",
+        "1 ou 0 avec la même probabilité",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction renvoie 1 avec une probabilité 0,3 et 0 sinon ?",
+      "difficulte": 3,
+      "explication": "random() < 0.3 est vrai pour 30 % des valeurs de [0 ; 1[.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "def f(): return randint(0, 3)",
+        "def f(): return random() * 0.3",
+        "def f(): return 1 if random() < 0.3 else 0",
+        "def f(): return 0.3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi deux exécutions de nombre_de_six(600) donnent-elles en général des résultats différents ?",
+      "difficulte": 3,
+      "explication": "Une série de simulations est une série statistique qui varie.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "Le programme contient une erreur",
+        "Python arrondit différemment",
+        "La fonction randint change de bornes",
+        "Chaque lancer est tiré au hasard : c'est la fluctuation"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Quelles valeurs randint(1, 4) peut-il renvoyer ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les entiers de 1 à 4, bornes comprises.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "1",
+        "5",
+        "3",
+        "0",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces flottants, lesquels peuvent sortir d'un appel à random() ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "random() est dans [0 ; 1[ : 1.0 est exclu.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "0.0",
+        "0.999",
+        "2.5",
+        "0.5",
+        "1.0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "On veut simuler un tirage où « succès » a une probabilité 1/4. Quels tests conviennent ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "randint(0, 4) a 5 valeurs ; random() < 4 est toujours vrai ; randint(1, 4) <= 2 a une probabilité 1/2.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "randint(1, 4) == 1",
+        "random() < 0.25",
+        "random() < 4",
+        "randint(0, 4) == 0",
+        "randint(1, 4) <= 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:126",
+      "type": "vrai_faux",
+      "enonce": "randint(1, 6) peut renvoyer 6.",
+      "difficulte": 1,
+      "explication": "Les deux bornes sont comprises.",
+      "notion": "Hasard et simulation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:127",
+      "type": "vrai_faux",
+      "enonce": "random() peut renvoyer exactement 1.",
+      "difficulte": 2,
+      "explication": "random() renvoie un nombre de [0 ; 1[ : 1 est exclu.",
+      "notion": "Hasard et simulation",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Répéter l'appel d'une fonction aléatoire produit une série statistique.",
+      "difficulte": 3,
+      "explication": "Les résultats successifs forment une série, étudiée au chapitre 10.",
+      "notion": "Hasard et simulation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:129",
+      "type": "reponse_courte",
+      "enonce": "Combien de valeurs différentes randint(5, 12) peut-il renvoyer ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "5, 6, …, 12 : 12 − 5 + 1 = 8 valeurs.",
+      "notion": "Hasard et simulation",
+      "reponses_acceptees": [
+        "8"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:130",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur est un booléen ?",
+      "difficulte": 1,
+      "explication": "False sans guillemets est un booléen ; entre guillemets, c'est une chaîne.",
+      "notion": "Variables et types",
+      "propositions": [
+        "False",
+        "\"False\"",
+        "0.0",
+        "\"vrai\""
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 4 > 7 en Python ?",
+      "difficulte": 1,
+      "explication": "4 n'est pas supérieur à 7.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "True",
+        "False",
+        "4",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Combien de valeurs parcourt range(0) ?",
+      "difficulte": 1,
+      "explication": "range(0) est vide : la boucle ne tourne pas.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "Une",
+        "Zéro et un",
+        "Aucune",
+        "Une infinité"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:133",
+      "type": "qcm_unique",
+      "enonce": "On définit def moyenne(a, b): return (a + b) / 2. Que renvoie moyenne(7, 12) ?",
+      "difficulte": 2,
+      "explication": "(7 + 12) / 2 = 19 / 2 = 9.5.",
+      "notion": "Fonctions",
+      "propositions": [
+        "9",
+        "19",
+        "9.0",
+        "9.5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quel est le quotient entier de 47 par 6 en Python, c'est-à-dire 47 // 6 ?",
+      "difficulte": 2,
+      "explication": "47 = 6 × 7 + 5.",
+      "notion": "Opérations en Python",
+      "propositions": [
+        "7",
+        "5",
+        "7.83",
+        "8"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Quel symbole Python sert à l'affectation ?",
+      "difficulte": 1,
+      "explication": "← est la notation du langage naturel ; en Python, on écrit =.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "==",
+        "=",
+        "←",
+        ":"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:136",
+      "type": "vrai_faux",
+      "enonce": "En Python, x == 3 teste si x vaut 3.",
+      "difficulte": 1,
+      "explication": "== est le test d'égalité.",
+      "notion": "Instruction conditionnelle",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:137",
+      "type": "vrai_faux",
+      "enonce": "Dans une fonction, return affiche le résultat à l'écran.",
+      "difficulte": 1,
+      "explication": "return renvoie la valeur ; c'est print qui affiche.",
+      "notion": "Fonctions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:138",
+      "type": "vrai_faux",
+      "enonce": "La valeur True est une chaîne de caractères.",
+      "difficulte": 1,
+      "explication": "True (sans guillemets) est un booléen.",
+      "notion": "Variables et types",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch3:banque:139",
+      "type": "vrai_faux",
+      "enonce": "while signifie « tant que ».",
+      "difficulte": 1,
+      "explication": "La boucle se répète tant que la condition est vraie.",
+      "notion": "Boucle non bornée while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch3:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Combien de fois la boucle for i in range(7) tourne-t-elle ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "i prend les valeurs 0 à 6.",
+      "notion": "Boucle bornée for",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Que vaut 3 ** 2 en Python ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "3² = 9.",
+      "notion": "Opérations en Python",
+      "reponses_acceptees": [
+        "9"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Après x = 5, puis x = x + 3, quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "x reçoit 5 + 3 = 8.",
+      "notion": "Affectation et séquence",
+      "propositions": [
+        "x vaut 5",
+        "l'ancienne valeur 5 est perdue",
+        "x vaut 8",
+        "x vaut 53",
+        "x vaut x + 3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Que vaut la condition 15 % 4 == 3 or 15 < 10 ?",
+      "difficulte": 2,
+      "explication": "15 % 4 vaut 3 : la première partie est vraie, donc la condition avec or est vraie.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "False",
+        "3",
+        "True",
+        "15"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Quelles traductions du langage naturel vers Python sont correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "« Tant que » se traduit par while, « afficher » par print, et la variable affectée est à gauche du signe =.",
+      "notion": "Algorithmes et programmes",
+      "propositions": [
+        "a ← a + 1 devient a + 1 = a",
+        "Si x > 0 devient if x > 0:",
+        "Afficher s devient return s",
+        "Tant que n < 5 devient for n < 5:",
+        "a ← 3 devient a = 3"
+      ],
+      "bonnes_reponses": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces range contiennent la valeur 4 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "range(4) et range(1, 4) s'arrêtent avant 4.",
+      "notion": "Boucle bornée for",
+      "propositions": [
+        "range(0, 10, 2)",
+        "range(4)",
+        "range(4, 8)",
+        "range(1, 4)",
+        "range(5)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Pour quels nombres x la condition x >= 10 est-elle vraie ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": ">= signifie « supérieur ou égal » : 10 convient.",
+      "notion": "Instruction conditionnelle",
+      "propositions": [
+        "12.5",
+        "100",
+        "−10",
+        "10",
+        "9.99"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "On définit def f(n): return n % 3. Quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "f renvoie le reste de la division par 3 : 7 = 3 × 2 + 1, 9 = 3 × 3, 11 = 3 × 3 + 2, 3 = 3 × 1 + 0, 4 = 3 × 1 + 1.",
+      "notion": "Fonctions",
+      "propositions": [
+        "f(4) vaut 0",
+        "f(7) vaut 1",
+        "f(11) vaut 2",
+        "f(3) vaut 1",
+        "f(9) vaut 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:148",
+      "type": "qcm_multiple",
+      "enonce": "Quels appels peuvent simuler le lancer d'un dé à six faces ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "randint(1, 7) et randint(0, 6) ont 7 valeurs ; random() * 6 donne un flottant.",
+      "notion": "Hasard et simulation",
+      "propositions": [
+        "random() * 6",
+        "randint(0, 6)",
+        "randint(0, 5) + 1",
+        "randint(1, 6)",
+        "randint(1, 7)"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:149",
+      "type": "reponse_courte",
+      "enonce": "On exécute x = 2, puis while x < 100: x = x * x. Que vaut x à la sortie de la boucle ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "x vaut 4, 16, puis 256 ; 256 < 100 est faux.",
+      "notion": "Boucle non bornée while",
+      "reponses_acceptees": [
+        "256"
+      ]
+    },
+    {
+      "source": "maths-2de:ch3:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Avec la fonction plus_grand_multiple du cours, que renvoie plus_grand_multiple(6, 50) ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "6 × (50 // 6) = 6 × 8 = 48.",
+      "notion": "Fonctions",
+      "reponses_acceptees": [
+        "48"
+      ]
+    }
+  ]
+}
