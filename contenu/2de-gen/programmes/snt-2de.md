@@ -2,14 +2,13 @@
 
 ## Référence
 
-- **Texte** : arrêté du 17 janvier 2019 fixant le programme d'enseignement de sciences numériques et technologie de la classe de seconde générale et technologique, publié au **Bulletin officiel spécial n° 1 du 22 janvier 2019**. Entrée en vigueur à la rentrée scolaire 2019.
+- **Texte** : arrêté du 17 janvier 2019 fixant le programme d'enseignement de sciences numériques et technologie de la classe de seconde générale et technologique, **NOR : MENE1901641A**, J.O. du 20 janvier 2019, publié au **Bulletin officiel spécial n° 1 du 22 janvier 2019** (https://www.education.gouv.fr/bo/19/Special1/MENE1901641A.htm). Entrée en vigueur à la rentrée scolaire 2019.
 - **Horaire** : 1 h 30 hebdomadaire (enseignement commun de seconde).
-- **Sources tentées le 10 novembre 2026** (aucune n'a pu être lue automatiquement) :
-  - page du BO : https://www.education.gouv.fr/bo/19/Special1/MENE1901633A.htm (HTTP 403) ;
-  - pages Eduscol « Sciences numériques et technologie » (HTTP 403 après redirection vers eduscol.education.gouv.fr) ;
-  - PDF du BO spécial complet : http://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/06/0/SP1_MEN_22_1_2019_10H40_1064060.pdf (plus de 10 Mo, trop gros pour l'outil de lecture).
+- **Programme applicable en 2026-2027** : c'est toujours celui de 2019. Aucun nouveau programme de SNT n'a été publié au BO à la date du 11 novembre 2026. Le ministre a saisi le Conseil supérieur des programmes le 20 juillet 2026 pour une révision complète, avec l'intégration de l'intelligence artificielle. D'après la page du CSP du 9 septembre 2026 (https://www.education.gouv.fr/le-conseil-superieur-des-programmes/revision-du-programme-de-sciences-numeriques-et-technologie-snt-de-seconde-505738, lue à travers des résultats de recherche car elle répond 403), le nouveau programme s'appliquera à la **rentrée 2027**, avec un horaire de 2 heures. Ce cours sera donc à revoir pour 2027-2028.
+- **Texte lu** : l'annexe officielle (« Programme de sciences numériques et technologie de seconde générale et technologique », copie du SNES : https://www.snes.edu/IMG/pdf/snt_annexe_2e_bo.pdf), extraite le 11 novembre 2026. L'extraction est lacunaire : il manque des fragments de phrases.
+- **Sources inaccessibles** : la page du BO et Eduscol (HTTP 403), ainsi que le PDF du BO spécial complet (plus de 10 Mo).
 
-> **Avertissement.** Contrairement au résumé du programme de STSS, ce document **n'a pas été recopié depuis le texte officiel** : il est reconstitué à partir de la connaissance du programme, dans sa structure (sept thèmes, contenus et capacités attendues, programmation transversale). Les intitulés des contenus et des capacités suivent le texte officiel d'aussi près que possible, mais **leur formulation exacte, les repères historiques et le NOR sont à vérifier** contre le BO avant validation. Point à trancher n° 1 du bilan.
+> **Avertissement.** Ce résumé a été reconstitué de mémoire le 10 novembre 2026, puis confronté le 11 novembre 2026 à l'annexe officielle. La structure (préambule, notions transversales de programmation en Python 3, sept thématiques) et les capacités attendues lisibles dans l'extraction concordent. Les repères historiques ont été corrigés d'après le texte officiel, avec la mention des écarts du cours. La formulation mot à mot des tableaux reste à relire sur le PDF.
 
 Les codes entre crochets (`[T…]` pour les thèmes, `[C…]` pour les capacités) ne figurent pas dans le texte officiel : ils servent à la table de correspondance du plan (`snt-2de-plan.md`).
 
@@ -54,7 +53,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Internet est un réseau de réseaux mondial, qui permet d'échanger des données entre des machines de toutes sortes grâce à des protocoles communs. Le Web n'est qu'une des applications d'Internet, au même titre que le courrier électronique ou l'échange de fichiers.
 
-**Repères historiques** : 1969, ARPANET relie les premiers ordinateurs ; 1974, Vinton Cerf et Robert Kahn publient le protocole TCP/IP ; 1983, ARPANET adopte TCP/IP ; 1984, création du DNS ; années 1990, ouverture au grand public et développement des fournisseurs d'accès.
+**Repères historiques** (texte officiel) : dès les années 1950, mise en réseau d'ordinateurs ; réseaux généraux indépendants des constructeurs : ArpaNet aux États-Unis (1970) et Cyclades en France (1971) ; internet naît en 1983. *Le cours donne 1969 pour ARPANET (premier lien, octobre 1969) : écart à trancher.*
 
 **Données et informations** : les données circulent découpées en paquets, chacun muni des adresses de l'expéditeur et du destinataire. **Algorithmes et programmes** : routage des paquets, protocoles de transmission. **Machines** : routeurs, serveurs, terminaux, liens physiques (fibre, cuivre, radio). **Impacts** : explosion du volume de données échangées, consommation d'énergie, neutralité du Net, usages pair-à-pair licites et illicites.
 
@@ -71,7 +70,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Le Web (toile ou réseau) désigne un système donnant accès à un ensemble de données (page, image, son, vidéo) reliées par des liens hypertextes et accessibles sur le réseau Internet.
 
-**Repères historiques** : 1965, Ted Nelson invente le terme « hypertexte » ; 1989, Tim Berners-Lee propose au CERN un système de documents liés, qui deviendra le Web ; 1993, le navigateur Mosaic et la mise du Web dans le domaine public ; 1994, création du W3C ; 1998, création du moteur de recherche Google.
+**Repères historiques** (texte officiel, extraction lacunaire) : 1965, invention de l'hypertexte par Ted Nelson ; 1989, naissance du Web au CERN par Tim Berners-Lee ; 1993 (fragment illisible) ; 1995, technologies pour les sites interactifs (JavaScript) ; 2001, standardisation des pages grâce au DOM ; 2010, accès au Web depuis les mobiles. *Le cours cite aussi le W3C (1994) et Google (1998), absents des repères officiels.*
 
 **Données et informations** : pages écrites en HTML et mises en forme par CSS, identifiées par des URL. **Algorithmes et programmes** : navigateurs, serveurs, moteurs de recherche (indexation, classement des pages). **Machines** : clients et serveurs. **Impacts** : accès universel à l'information, enjeux de la publication, traces et cookies, droit d'auteur.
 
@@ -93,7 +92,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Les réseaux sociaux sont des applications basées sur les technologies du Web qui offrent un service de mise en relation d'internautes pour développer des communautés d'intérêts.
 
-**Repères historiques** : 1967, expérience de Stanley Milgram sur le « petit monde » ; 1995, Classmates ; 2003, LinkedIn ; 2004, Facebook ; 2006, Twitter ; 2010, Instagram ; 2011, Snapchat ; 2016, TikTok (Douyin).
+**Repères historiques** (texte officiel, extraction lacunaire) : 1995 ; 2003 ; 2004 ; 2006 ; 2009, lancement de WhatsApp ; 2010 ; 2011, Snapchat ; 2018, environ 3,2 milliards d'utilisateurs de réseaux sociaux. L'expérience de Milgram (1967) est citée dans les impacts. *Le cours omet WhatsApp (2009) et ajoute TikTok (2016).*
 
 **Données et informations** : profils, liens d'abonnement ou d'amitié, publications, réactions. **Algorithmes et programmes** : modélisation par des graphes, algorithmes de recommandation et de sélection des contenus. **Machines** : centres de données des plateformes. **Impacts** : identité numérique, e-réputation, bulles de filtres, modèle économique fondé sur la publicité ciblée, cyberviolence.
 
@@ -112,7 +111,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Les données constituent la matière première de toute activité numérique. Afin de permettre leur réutilisation, il est nécessaire de les conserver de manière persistante. Les structurer correctement garantit que l'on puisse les exploiter facilement pour produire de l'information.
 
-**Repères historiques** : 1725, Basile Bouchon commande un métier à tisser par un ruban perforé, idée reprise par Jacquard en 1801 ; 1890, Herman Hollerith traite le recensement américain avec des cartes perforées ; 1956, premier disque dur (IBM) ; 1970, Edgar F. Codd propose le modèle relationnel ; 1979, premier tableur grand public (VisiCalc) ; 2011, lancement du portail français de données ouvertes data.gouv.fr.
+**Repères historiques** (texte officiel, extraction lacunaire) : 1930 (fragment illisible) ; 1956, invention du disque dur ; 1970, modèle relationnel (E. F. Codd) ; 1979, premier tableur ; 2009, Open Government Initiative (données ouvertes aux États-Unis) ; 2013 (fragment illisible). *Le cours ajoute Bouchon (1725), Jacquard (1801), Hollerith (1890) et data.gouv.fr (2011), mais ne cite pas l'Open Government Initiative.*
 
 **Données et informations** : tables (collections d'objets), descripteurs et valeurs, formats (CSV, vCard, JSON…), métadonnées. **Algorithmes et programmes** : recherche, filtre, tri, calcul, croisement de tables. **Machines** : supports de stockage, centres de données (cloud). **Impacts** : données personnelles, RGPD, données ouvertes, consommation énergétique des centres de données.
 
@@ -130,7 +129,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** La cartographie est essentielle pour beaucoup d'activités. Les technologies de géolocalisation par satellites, associées aux cartes numériques, ont rendu possibles des services de navigation et de mobilité utilisés chaque jour.
 
-**Repères historiques** : 1959, l'algorithme de Dijkstra calcule un plus court chemin dans un graphe ; 1973, lancement du programme GPS par l'armée américaine ; 1995, GPS pleinement opérationnel ; 2000, fin de la dégradation volontaire du signal civil ; 2004, création d'OpenStreetMap ; 2005, Google Maps ; 2006, Géoportail ; 2016, premiers services du système européen Galileo.
+**Repères historiques** (texte officiel) : numérisation systématique des cartes à la fin du XXe siècle ; GPS conçu par l'armée américaine dans les années 1960, premier satellite lancé en 1978 ; Galileo « en cours de déploiement » ; OpenStreetMap cité comme projet collaboratif. *Les autres dates du cours (1959, 1973, 1995, 2000, 2004, 2005, 2006, 2016) sont des ajouts.*
 
 **Données et informations** : coordonnées géographiques (latitude, longitude), couches de carte, trames NMEA. **Algorithmes et programmes** : calcul de position par trilatération, calcul d'itinéraire sur un graphe. **Machines** : satellites, récepteurs, serveurs de cartes. **Impacts** : nouveaux services de mobilité, suivi des déplacements, confidentialité de la position.
 
@@ -148,7 +147,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Embarquer l'informatique dans les objets a beaucoup d'avantages : simplifier leur fonctionnement, leur donner plus de possibilités d'usage et de sûreté, et leur permettre d'intégrer de nouvelles possibilités matérielles. Avec la connexion à Internet, ces objets deviennent des objets connectés.
 
-**Repères historiques** : 1967, ordinateur de guidage des missions Apollo ; 1971, premier microprocesseur (Intel 4004) ; 1978, premier système d'antiblocage des roues (ABS) à commande électronique en série ; 2007, premier smartphone à écran tactile multipoint grand public ; années 2010, essor des objets connectés.
+**Repères historiques** (texte officiel, extraction lacunaire) : 1967 (fragment illisible, probablement l'ordinateur de guidage d'Apollo) ; 1971, premier processeur produit par Intel ; 1984, Airbus A320, premier avion équipé de commandes électriques informatisées ; 1998, Météor, métro sans conducteur (ligne 14 à Paris) ; 1999, expression « internet des objets » (Kevin Ashton) ; 2007, arrivée du smartphone. *Le cours omet l'A320, Météor et 1999, et ajoute l'ABS (1978).*
 
 **Données et informations** : mesures des capteurs, ordres envoyés aux actionneurs. **Algorithmes et programmes** : boucle « lire les capteurs, décider, agir ». **Machines** : microcontrôleurs, cartes programmables, capteurs, actionneurs. **Impacts** : sûreté des systèmes, vie privée, sécurité des objets connectés, consommation d'énergie.
 
@@ -164,7 +163,7 @@ La programmation n'est pas un thème à part : elle est mise en œuvre dans les 
 
 **Introduction.** Les technologies de la photographie argentique ont eu une évolution très lente, liée aux progrès de l'optique, de la mécanique et de la chimie. Le numérique a bouleversé la prise de vue : l'image est captée par un capteur, puis construite et traitée par des algorithmes.
 
-**Repères historiques** : 1826, Nicéphore Niépce réalise la première photographie connue ; 1839, présentation du daguerréotype ; 1957, première image numérisée (Russell Kirsch) ; 1969, invention du capteur CCD (Willard Boyle et George Smith) ; 1975, premier appareil photo numérique (Steven Sasson, Kodak) ; 2000, premiers téléphones équipés d'un appareil photo ; années 2010, le smartphone devient le principal appareil photo.
+**Repères historiques** (texte officiel, extraction lacunaire) : 1826, première photographie ; 1900, photographie en couleurs ; après la Seconde Guerre mondiale, généralisation du format 24 × 36 ; 1969, premiers capteurs CCD ; 1975, premier appareil numérique ; 2007, arrivée du smartphone. *Le cours omet 1900 et le 24 × 36, et ajoute 1839, 1957 et 2000.*
 
 **Données et informations** : pixels, composantes rouge, verte et bleue, profondeur de couleur, métadonnées EXIF. **Algorithmes et programmes** : dématriçage, balance des blancs, compression, filtres. **Machines** : capteurs, processeurs d'image. **Impacts** : explosion du nombre de photos, partage, retouche, géolocalisation des images, droit à l'image.
 
