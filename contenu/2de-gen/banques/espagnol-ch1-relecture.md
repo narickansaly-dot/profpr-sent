@@ -37,3 +37,7 @@ Contrôle `verifierBanque` (configuration : préfixe `espagnol`, 150 questions) 
 3. **Tranches d'âge** : le chiffre « vers 30 ans » pour le départ du foyer est arrondi dans le cours ; il varie selon les années et les sources (autour de 30 ans selon Eurostat).
 4. **Accent tonique** : deux questions (« juventud », « hablan ») portent sur les règles d'accentuation présentées dans la section « Para hablar » ; elles sont cotées 3.
 5. **Possessif de vouvoiement** : la question « Señora, ¿cómo se llama ___ nieto? » suppose que l'élève a retenu que *usted* entraîne *su*.
+
+## Mise à jour : programme de 2025
+
+Le chapitre 1 correspond à l'axe 2 (« Vivre entre générations ») du programme de 2025. La banque est inchangée. Le cours a gagné un tableau de vocabulaire (*los bisabuelos, los ancianos, respetar, la convivencia, la solidaridad, pedir permiso, pedir perdón*) et un encadré sur les diminutifs en *-ito*. **Aucune question ne porte encore sur ces ajouts** ; à compléter si tu veux que la banque couvre toute la liste A2+ de l'axe.

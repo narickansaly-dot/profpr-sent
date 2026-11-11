@@ -1,26 +1,29 @@
-# Validation de la banque du chapitre 6 d'espagnol : « La creación y las artes »
+# Validation de la banque du chapitre 6 d'espagnol : « Desafíos y transiciones »
 
-Rapport produit le 10 novembre 2026. Contrôles : `verifierBanque` (les 14 règles de `npm run banque:verifier`, partie 7 du guide des auteurs), avec la configuration du cours d'espagnol : préfixe `espagnol`, 150 questions, quotas 75 / 30 / 30 / 15 pour les types et 60 / 60 / 30 pour les difficultés, à plus ou moins 3 près.
+Rapport produit le 11 novembre 2026. Contrôles : `verifierBanque` (les 14 règles de `npm run banque:verifier`, partie 7 du guide des auteurs), avec la configuration du cours d'espagnol : préfixe `espagnol`, 150 questions, quotas 75 / 30 / 30 / 15 pour les types et 60 / 60 / 30 pour les difficultés, à plus ou moins 3 près.
 
 - Résultat : **Banque du chapitre 6 conforme : 150 questions.**
 - Fusion dans `espagnol.json` : 150 questions au statut `a_relire` dans le chapitre 6. La fusion est rejouable : relancée, elle n'ajoute rien.
-- Types : 75 qcm_unique, 30 qcm_multiple, 30 vrai/faux (16 vrais, 14 faux), 15 réponses courtes.
+- Types : 75 qcm_unique, 30 qcm_multiple, 30 vrai/faux (15 vrais, 15 faux), 15 réponses courtes.
 - Difficultés : 60 / 60 / 30.
-- Position de la bonne réponse des qcm_unique (1 à 4) : 19 / 18 / 19 / 19 ; bonne réponse la plus longue : 26 sur 75 (35 %, moins de 40 % exigé).
-- Texte du chapitre (sortie de `texteChapitre`) : 8 509 octets.
+- Position de la bonne réponse des qcm_unique (1 à 4) : 19 / 18 / 19 / 19 ; bonne réponse la plus longue : 23 sur 75 (31 %, moins de 40 % exigé).
+- Texte du chapitre (sortie de `texteChapitre`) : 14 050 octets.
 
 ## Notions
 
 | Notion | Questions |
 | --- | --- |
-| Vocabulaire : peinture et description | 19 |
-| Vocabulaire : musique, danse, lettres | 15 |
-| Grammaire : l'imparfait | 25 |
-| Grammaire : imparfait ou passé simple | 19 |
-| Grammaire : pronoms relatifs | 18 |
-| Compréhension de l'écrit | 21 |
-| Culture : artistes hispaniques | 23 |
-| S'exprimer : présenter une œuvre | 10 |
+| Vocabulaire : l'environnement | 12 |
+| Vocabulaire : nature et gestes | 10 |
+| Grammaire : former le subjonctif | 19 |
+| Grammaire : emplois du subjonctif | 15 |
+| Grammaire : défense et conseil | 13 |
+| Compréhension de l'écrit | 17 |
+| Culture : défis du monde hispanique | 20 |
+| S'exprimer : conseiller, débattre | 7 |
+| Grammaire : le futur | 16 |
+| Grammaire : l'obligation | 10 |
+| Vocabulaire : défis et transitions | 11 |
 
 ## Réponses courtes et variantes acceptées
 
@@ -28,20 +31,20 @@ La correction ignore la casse, les accents (et le tilde du ñ), la ponctuation d
 
 | Source | Énoncé | Réponses acceptées |
 | --- | --- | --- |
-| 018 | Traduis « le tableau » (une peinture) en espagnol, avec l'article. | el cuadro ; cuadro ; la pintura ; pintura |
-| 019 | Traduis « l'autoportrait » en espagnol (avec l'article). | el autorretrato ; autorretrato |
-| 033 | Traduis « danser » en espagnol. | bailar |
-| 034 | Traduis « le roman » en espagnol (avec l'article). | la novela ; novela |
-| 057 | Écris l'imparfait de « mirar » avec « yo ». | miraba ; yo miraba |
-| 058 | Écris l'imparfait de « ser » avec « nosotros ». | éramos ; nosotros éramos ; nosotras éramos |
-| 059 | Écris l'imparfait de « vivir » avec « ellos ». | vivían ; ellos vivían ; ellas vivían |
-| 077 | Mets le verbe au temps qui convient : « Ayer ___ el Guernica. » (yo, ver) | vi ; yo vi |
-| 078 | Mets le verbe au temps qui convient : « De niña, ___ mucho. » (yo, dibujar) | dibujaba ; yo dibujaba |
-| 095 | Complète d'un mot : « Málaga es la ciudad ___ nació Picasso. » | donde ; en que ; en la que |
-| 096 | Complète d'un mot : « Es una canción ___ me encanta. » | que |
-| 117 | Notice : « Guernica (1937). » En quelle année Picasso a-t-il peint Guernica ? Réponds en chiffres. | 1937 |
-| 139 | Qui a écrit « Don Quijote de la Mancha » ? Donne son nom de famille. | Cervantes ; Miguel de Cervantes ; Cervantès |
-| 140 | Quel architecte a conçu la Sagrada Familia ? Donne son nom de famille. | Gaudí ; Antoni Gaudí ; Antonio Gaudí |
-| 150 | Traduis « à l'arrière-plan » en espagnol. | al fondo ; en el fondo |
+| 012 | Traduis « la pollution » en espagnol (avec l'article). | la contaminación ; contaminación |
+| 022 | Traduis « recycler » en espagnol. | reciclar |
+| 040 | Écris le subjonctif présent de « hablar » avec « yo ». | hable ; yo hable ; que hable ; que yo hable |
+| 041 | Écris le subjonctif présent de « proteger » avec « tú ». | protejas ; tú protejas ; que protejas |
+| 056 | Complète d'un mot : « Ojalá ___ menos plástico. » (haber) | haya |
+| 068 | Traduis « Ne jette pas » (tú, tirar). | no tires |
+| 069 | Écris la défense de « haz » (hacer, tú). | no hagas |
+| 086 | L'article vient d'un journal lycéen de Bogotá, qui parle de « nosotros, desde Bogotá ». Dans quel pays se trouve cette ville ? | Colombia ; Colombie ; en Colombia |
+| 105 | Traduis « je suis pour » (opinion) en espagnol. | estoy a favor ; yo estoy a favor |
+| 119 | Conjugue « trabajar » au futur avec « yo ». | trabajaré ; yo trabajaré |
+| 120 | Écris le futur de « tener » avec « ellos ». | tendrán ; ellos tendrán ; ellas tendrán |
+| 121 | Écris le futur de « vivir » avec « tú ». | vivirás ; tú vivirás |
+| 131 | Traduis « Il faut travailler » en espagnol. | hay que trabajar |
+| 142 | Traduis « le défi » en espagnol (avec l'article). | el desafío ; desafío |
+| 150 | Comment s'appelle la ville du Pays basque élue Capitale verte européenne en 2012 ? | Vitoria ; Vitoria-Gasteiz ; Gasteiz |
 
 Relecture détaillée et points de doute : `banques/espagnol-ch6-relecture.md`.

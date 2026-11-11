@@ -1,35 +1,38 @@
 # Relecture de la banque du chapitre 2 d'espagnol contre le cours
 
-J'ai relu les 150 questions de `espagnol-ch2.json` contre le texte du chapitre 2 (« El mundo del trabajo »), une par une. **Cette relecture a été faite par l'auteur de la banque, pas par un relecteur indépendant** : toutes les questions restent `a_relire`. Les critères sont ceux du chapitre 1 (voir `espagnol-ch1-relecture.md`).
+J'ai relu les 150 questions de `espagnol-ch2.json` contre le texte du chapitre 2 (« La imagen de uno mismo y los demás »), une par une. **Cette relecture a été faite par l'auteur de la banque, pas par un relecteur indépendant** : toutes les questions restent `a_relire`. Les critères sont ceux du chapitre 1 (voir `espagnol-ch1-relecture.md`).
 
 ## Corrections faites pendant la relecture
 
-| Source ou question | Problème | Décision |
+| Question | Problème | Décision |
 | --- | --- | --- |
-| « Comment dit-on « le vendeur » (dans un magasin) ? » | Deux distracteurs défendables : « el vendedor de coches » et « el tendero de mercado » désignent aussi des vendeurs. | Remplacés par « el despacho », « el dependido », « el deportista ». |
-| « Que signifie « el oficio » ? » | Le distracteur « l'office religieux » est un sens réel de *oficio* (*oficio religioso*). | Remplacé par « la cuisine ». |
-| « Quelle est la terminaison du futur pour « nosotros » ? » | Le distracteur « -remos ajouté au radical » décrit aussi une façon juste de voir la forme (*trabaja-remos*). | Remplacé par « -ábamos ». |
-| « Quelles formes correspondent à « nosotros » au futur ? » | Un distracteur était la bonne réponse « haremos » suivie d'un point d'interrogation. | Remplacé par « harimos ». |
-| Deux qcm_multiple « Quelles phrases sont correctes ? » | Énoncés identiques (similarité 1,00). | Reformulés selon leur point de grammaire (obligation ; article devant le métier). |
-| 22 questions | Premier jet trop chargé en difficulté 2 (80). | Rappels simples repassés en difficulté 1. |
+| « Quels mots désignent des vêtements ? » | Un distracteur « las gafas de sol ? » portait un point d'interrogation et pouvait passer pour juste (accessoire porté). | Remplacé par « el semáforo ». |
+| Question sur « Ne te moque pas de lui » | Énoncé confus : on demandait un pronom à partir d'une phrase française qui n'en donnait pas la structure. | Remplacée par « ¿___ gusta mi foto? » (à toi) : réponse *te*. |
+| Deux qcm_multiple sur *ser* et *estar* | Énoncés trop proches (similarité 0,84). | Le premier est reformulé. |
+| Vrai/faux | 19 vrais sur 30, au-dessus du plafond de 60 %. | Deux affirmations vraies réécrites en affirmations fausses (*gustar* devant un infinitif, *llevar* et les vêtements). |
+| 20 questions | Premier jet trop chargé en difficulté 2 (80). | Rappels simples passés en difficulté 1. |
 
 ## Réponses courtes et accents
 
-Même règle qu'au chapitre 1 : les accents, la casse et ¿ ¡ sont ignorés par la correction. Variantes prévues : avec et sans article, avec et sans pronom sujet (masculin et féminin au pluriel), « el médico » et « la médica », « el paro » et « el desempleo », « el currículum », « el currículo », « el curriculum vitae » et « el CV », « 26 » et « veintiséis ».
+Les accents sont ignorés à la correction. Variantes prévues : avec et sans article ; « estoy listo » et « estoy lista », avec et sans *yo* ; « me interesa mucho », « eso me interesa mucho » et « a mí me interesa mucho » ; « en mi opinión », « a mi parecer » et « para mí » ; « México », « Mexique » et « en México ».
 
 ## Répartition
 
 - Types : 75 / 30 / 30 (17 vrais, 13 faux) / 15.
-- Difficultés : 60 / 58 / 32.
-- Bonne réponse la plus longue : 27 qcm_unique sur 75 (36 %).
-- Notions (8) : métiers (17), études et emploi (19), futur simple (28), obligation (19), souhaits et projets (16), compréhension de l'écrit (22), culture (18), s'exprimer (11).
+- Difficultés : 60 / 60 / 30.
+- Bonne réponse la plus longue : 28 qcm_unique sur 75 (37 %).
+- Notions (8) : physique et caractère (19), vêtements et réseaux (17), *ser* et *estar* (24), *gustar* et semblables (21), pronoms compléments (21), compréhension de l'écrit (21), culture (16), s'exprimer (11).
 
 Contrôle `verifierBanque` (préfixe `espagnol`, 150 questions) : « Banque du chapitre 2 conforme : 150 questions. »
 
 ## Points de doute pour l'enseignant
 
-1. **« Me gustaría » est un conditionnel** : le chapitre l'enseigne comme une formule figée (le conditionnel n'est pas au programme du chapitre). Les questions ne demandent pas de le conjuguer, sauf le choix du pronom (*me, te, le, nos*).
-2. **Futur proche avec *ir a*** : il est rattaché à la notion « futur simple » pour ne pas multiplier les notions.
-3. **Horaires espagnols et sieste** : ce sont des généralités du cours, sans chiffre officiel. La question sur la sieste reprend le mot « cliché » du cours.
-4. **Chômage des jeunes** : le cours dit « l'un des plus élevés de l'Union européenne » sans chiffre, car le taux varie d'une année à l'autre ; à mettre à jour avec un chiffre récent si tu veux en parler en classe.
-5. **« Hice un estadio »** (distracteur) mélange *estadio* (le stade) et le français « stage » : c'est voulu, c'est une erreur fréquente.
+1. **Le gérondif** apparaît ici avec *estar* (« Estoy mirando »), comme dans le tableau *ser* / *estar* du cours. Sa formation complète n'est enseignée qu'au chapitre 5 ; la question n'utilise qu'un verbe régulier en -ar.
+2. **COI *le*** : la question « Quel pronom remplace « a mi hermana » comme COI ? » attend *le*. Le *laísmo* (« la dije ») existe dans certaines régions d'Espagne, mais il n'est pas normé.
+3. **Mode rapide** : un qcm_unique et un qcm_multiple portent sur les mêmes critiques (environnement, conditions de travail). Ils sont gardés parce que leur forme diffère ; à dédoublonner si tu veux.
+4. **Marques de mode** : le cours ne nomme aucune marque, pour ne pas faire de publicité. Les questions restent générales.
+5. **« Embarazada »** est cotée 3 : c'est un faux ami connu, mais il piège souvent.
+
+## Mise à jour : programme de 2025
+
+Ce chapitre était le chapitre 4 de l'ancien plan. Il correspond à l'axe 1 (« Représentation de soi et rapport à autrui ») du programme de 2025. La banque est inchangée, mais renumérotée (sources `espagnol:ch2:banque:NNN`). Le cours a gagné un tableau de vocabulaire « Identidad y lengua » et un repère culturel « La lengua como identidad » (langues co-officielles d'Espagne, espagnol aux États-Unis). **Aucune question ne porte encore sur ces ajouts.**

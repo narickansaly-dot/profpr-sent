@@ -1,13 +1,13 @@
 # Validation de la banque du chapitre 1 d'espagnol : « Vivir entre generaciones »
 
-Rapport produit le 10 novembre 2026. Contrôles : `verifierBanque` (les 14 règles de `npm run banque:verifier`, partie 7 du guide des auteurs), avec la configuration du cours d'espagnol : préfixe `espagnol`, 150 questions, quotas 75 / 30 / 30 / 15 pour les types et 60 / 60 / 30 pour les difficultés, à plus ou moins 3 près.
+Rapport produit le 11 novembre 2026. Contrôles : `verifierBanque` (les 14 règles de `npm run banque:verifier`, partie 7 du guide des auteurs), avec la configuration du cours d'espagnol : préfixe `espagnol`, 150 questions, quotas 75 / 30 / 30 / 15 pour les types et 60 / 60 / 30 pour les difficultés, à plus ou moins 3 près.
 
 - Résultat : **Banque du chapitre 1 conforme : 150 questions.**
 - Fusion dans `espagnol.json` : 150 questions au statut `a_relire` dans le chapitre 1. La fusion est rejouable : relancée, elle n'ajoute rien.
 - Types : 75 qcm_unique, 30 qcm_multiple, 30 vrai/faux (16 vrais, 14 faux), 15 réponses courtes.
 - Difficultés : 60 / 58 / 32.
 - Position de la bonne réponse des qcm_unique (1 à 4) : 19 / 18 / 19 / 19 ; bonne réponse la plus longue : 25 sur 75 (33 %, moins de 40 % exigé).
-- Texte du chapitre (sortie de `texteChapitre`) : 11 750 octets.
+- Texte du chapitre (sortie de `texteChapitre`) : 12 564 octets.
 
 ## Notions
 

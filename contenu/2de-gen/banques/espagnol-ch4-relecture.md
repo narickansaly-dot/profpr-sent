@@ -1,34 +1,36 @@
 # Relecture de la banque du chapitre 4 d'espagnol contre le cours
 
-J'ai relu les 150 questions de `espagnol-ch4.json` contre le texte du chapitre 4 (« La imagen de uno mismo y los demás »), une par une. **Cette relecture a été faite par l'auteur de la banque, pas par un relecteur indépendant** : toutes les questions restent `a_relire`. Les critères sont ceux du chapitre 1 (voir `espagnol-ch1-relecture.md`).
+Chapitre 4 : « Crear y recrear », axe 5 du programme de 2025. **Cette relecture a été faite par l'auteur de la banque, pas par un relecteur indépendant** : toutes les questions restent `a_relire`. Les critères sont ceux du chapitre 1 (voir `espagnol-ch1-relecture.md`).
+
+## Origine des questions
+
+- **Ancienne banque « La creación y las artes »** : peinture et description, musique et lettres, imparfait, imparfait ou passé simple, relatifs, compréhension (visite au Prado), culture (Velázquez, Goya, Picasso, Kahlo, Gaudí, flamenco, tango, Cervantes). Ces sections sont reprises telles quelles dans le chapitre. Les corrections de la première relecture sont conservées (*cuadro* sans le sens de « carré », *cuyo* à la place de « quien que »…).
+- **Ancienne banque « Deporte y sociedad »** : 26 questions sur le passé simple, réguliers et irréguliers. La section de grammaire correspondante a été déplacée dans ce chapitre. Les phrases de ces questions parlent de sport ; elles sont complètes par elles-mêmes et ne renvoient à aucun texte du cours.
+- **17 questions nouvelles** : vocabulaire de la création et de la mode (*diseñador, boceto, traje, leyenda, transformar*…), la série de Picasso sur *Las Meninas* (1957, 58 tableaux, Museu Picasso de Barcelone), Balenciaga, La Llorona.
+- Des questions des deux anciennes banques ont été écartées pour respecter les quotas.
 
 ## Corrections faites pendant la relecture
 
 | Question | Problème | Décision |
 | --- | --- | --- |
-| « Quels mots désignent des vêtements ? » | Un distracteur « las gafas de sol ? » portait un point d'interrogation et pouvait passer pour juste (accessoire porté). | Remplacé par « el semáforo ». |
-| Question sur « Ne te moque pas de lui » | Énoncé confus : on demandait un pronom à partir d'une phrase française qui n'en donnait pas la structure. | Remplacée par « ¿___ gusta mi foto? » (à toi) : réponse *te*. |
-| Deux qcm_multiple sur *ser* et *estar* | Énoncés trop proches (similarité 0,84). | Le premier est reformulé. |
-| Vrai/faux | 19 vrais sur 30, au-dessus du plafond de 60 %. | Deux affirmations vraies réécrites en affirmations fausses (*gustar* devant un infinitif, *llevar* et les vêtements). |
-| 20 questions | Premier jet trop chargé en difficulté 2 (80). | Rappels simples passés en difficulté 1. |
+| « Quels mots appartiennent au vocabulaire de la mode ? » | Trop proche de la question sur le vocabulaire de la peinture (similarité 0,87). | Reformulée : « Pour parler de mode et de création de vêtements, quels mots choisis-tu ? » |
+| Même question | Un distracteur portait un point d'interrogation (« el lienzo de pintor ? »). | Remplacé par « el museo ». |
 
 ## Réponses courtes et accents
 
-Les accents sont ignorés à la correction. Variantes prévues : avec et sans article ; « estoy listo » et « estoy lista », avec et sans *yo* ; « me interesa mucho », « eso me interesa mucho » et « a mí me interesa mucho » ; « en mi opinión », « a mi parecer » et « para mí » ; « México », « Mexique » et « en México ».
+Les accents sont ignorés à la correction. Variantes : « 58 » et « cincuenta y ocho » ; noms propres avec ou sans prénom ; avec et sans pronom pour les formes verbales.
 
 ## Répartition
 
-- Types : 75 / 30 / 30 (17 vrais, 13 faux) / 15.
-- Difficultés : 60 / 60 / 30.
-- Bonne réponse la plus longue : 28 qcm_unique sur 75 (37 %).
-- Notions (8) : physique et caractère (19), vêtements et réseaux (17), *ser* et *estar* (24), *gustar* et semblables (21), pronoms compléments (21), compréhension de l'écrit (21), culture (16), s'exprimer (11).
+- Types : 75 / 30 / 30 (15 vrais, 15 faux) / 15. Difficultés : 60 / 59 / 31.
+- Bonne réponse la plus longue : 27 qcm_unique sur 75 (36 %).
+- Notions (10) : peinture et description (11), créer, mode, musique (16), imparfait (14), imparfait ou passé simple (17), relatifs (15), compréhension (17), culture (27), s'exprimer (7), passé simple régulier (13), passé simple irrégulier (13).
 
 Contrôle `verifierBanque` (préfixe `espagnol`, 150 questions) : « Banque du chapitre 4 conforme : 150 questions. »
 
 ## Points de doute pour l'enseignant
 
-1. **Le gérondif** apparaît ici avec *estar* (« Estoy mirando »), comme dans le tableau *ser* / *estar* du cours. Sa formation complète n'est enseignée qu'au chapitre 8 ; la question n'utilise qu'un verbe régulier en -ar.
-2. **COI *le*** : la question « Quel pronom remplace « a mi hermana » comme COI ? » attend *le*. Le *laísmo* (« la dije ») existe dans certaines régions d'Espagne, mais il n'est pas normé.
-3. **Mode rapide** : un qcm_unique et un qcm_multiple portent sur les mêmes critiques (environnement, conditions de travail). Ils sont gardés parce que leur forme diffère ; à dédoublonner si tu veux.
-4. **Marques de mode** : le cours ne nomme aucune marque, pour ne pas faire de publicité. Les questions restent générales.
-5. **« Embarazada »** est cotée 3 : c'est un faux ami connu, mais il piège souvent.
+1. **Contexte sportif** des questions sur le passé simple : il ne correspond plus au thème du chapitre. Les phrases restent justes et autonomes ; à remplacer par des phrases sur l'art si tu préfères un chapitre homogène.
+2. **Série de Picasso** : 58 toiles peintes en 1957, conservées au Museu Picasso de Barcelone. Je l'ai écrit de mémoire ; une vérification rapide est conseillée.
+3. **Balenciaga** (1895-1972, né à Getaria) et **La Llorona** (légende mexicaine) : données stables, écrites de mémoire.
+4. Les points de doute de la première relecture restent valables : *quien* entre virgules, « Ayer visitaba el Prado », Frida Kahlo « enferma ».
