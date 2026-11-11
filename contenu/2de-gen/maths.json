@@ -20191,6 +20191,2528 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch9",
+      "numero": 9,
+      "titre": "Variations, extremums et optimisation",
+      "titre_court": "Variations",
+      "duree": "3 semaines",
+      "resume": "Fonctions croissantes, décroissantes, monotones, tableau de variations, maximum et minimum, variations des fonctions affines, carré, inverse et valeur absolue, comparaison d'images, optimisation, approximation d'un extremum par balayage et dichotomie.",
+      "chapeau": "Quand une grandeur augmente-t-elle, quand diminue-t-elle, et quelle est sa plus grande valeur ? Le sens de variation d'une fonction répond à ces questions. Il permet de comparer des nombres sans les calculer et de résoudre des problèmes d'optimisation : la plus grande aire, le plus petit coût.",
+      "objectifs": [
+        "définir une fonction croissante, décroissante, monotone sur un intervalle ;",
+        "relier la courbe d'une fonction et son tableau de variations ;",
+        "déterminer graphiquement le maximum et le minimum d'une fonction sur un intervalle ;",
+        "relier le coefficient directeur, le sens de variation et le signe d'une fonction affine ;",
+        "connaître et démontrer les variations des fonctions carré et inverse, et connaître celles de la valeur absolue ;",
+        "comparer des images, traiter un problème d'optimisation, approcher un extremum par balayage ou dichotomie."
+      ],
+      "sections": [
+        {
+          "id": "sens-variation",
+          "titre": "Sens de variation",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définitions</b><p>Soit f une fonction définie sur un intervalle I.</p><ul>\n<li>f est <strong>croissante</strong> sur I si, pour tous réels a et b de I, a &lt; b entraîne f(a) ⩽ f(b) : les images sont rangées dans le même ordre que les nombres.</li>\n<li>f est <strong>décroissante</strong> sur I si, pour tous a et b de I, a &lt; b entraîne f(a) ⩾ f(b) : l'ordre est inversé.</li>\n<li>f est <strong>monotone</strong> sur I si elle est croissante sur I, ou décroissante sur I.</li></ul></div>\n<p>Avec des inégalités strictes (f(a) &lt; f(b)), on parle de fonction <strong>strictement</strong> croissante. Graphiquement, une fonction croissante a une courbe qui « monte » quand on la parcourt de gauche à droite ; une fonction constante est à la fois croissante et décroissante.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>La définition porte sur <em>tous</em> les couples a &lt; b de l'intervalle : vérifier sur deux valeurs ne suffit pas. Un seul couple qui ne marche pas suffit en revanche à prouver qu'une fonction n'est pas croissante (contre-exemple).</p></div>\n"
+        },
+        {
+          "id": "tableau-variations",
+          "titre": "Tableau de variations",
+          "html": "\n<p>Un <strong>tableau de variations</strong> résume le sens de variation d'une fonction : une flèche montante ↗ sur les intervalles où elle est croissante, une flèche descendante ↘ où elle est décroissante, avec les valeurs aux bornes.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>x</th><th>−2</th><th></th><th>1</th><th></th><th>4</th></tr></thead>\n<tbody><tr><td>variations de f</td><td>3</td><td>↘</td><td>−1</td><td>↗</td><td>5</td></tr></tbody></table></div>\n<p>Ce tableau se lit : f est définie sur [−2 ; 4] ; elle est décroissante sur [−2 ; 1], de f(−2) = 3 à f(1) = −1, puis croissante sur [1 ; 4], jusqu'à f(4) = 5.</p>\n<p>On en déduit des informations sans formule : par exemple, pour tout x de [−2 ; 4], f(x) ⩾ −1 ; et l'équation f(x) = 0 a exactement deux solutions, une dans ]−2 ; 1[ et une dans ]1 ; 4[, car f passe de 3 à −1 puis de −1 à 5 sans « sauter » (on admet que les courbes étudiées sont tracées d'un seul trait).</p>\n<p>Pour dresser le tableau à partir d'une courbe, on repère les points où la courbe change de sens et on lit leurs coordonnées.</p>\n"
+        },
+        {
+          "id": "extremums",
+          "titre": "Maximum et minimum",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définitions</b><p>Soit f définie sur I et a un réel de I.</p><ul>\n<li>f(a) est le <strong>maximum</strong> de f sur I si, pour tout x de I, f(x) ⩽ f(a) ; il est atteint en x = a.</li>\n<li>f(a) est le <strong>minimum</strong> de f sur I si, pour tout x de I, f(x) ⩾ f(a).</li></ul><p>Maximum et minimum sont des <strong>extremums</strong>.</p></div>\n<p>Dans le tableau précédent, le minimum de f sur [−2 ; 4] vaut −1, atteint en x = 1 ; le maximum vaut 5, atteint en 4 (on compare f(−2) = 3 et f(4) = 5).</p>\n<p>Un extremum dépend de l'intervalle : sur [−2 ; 1], le maximum de la même fonction est 3, atteint en −2.</p>\n<p>Exemple algébrique : g(x) = (x − 3)<sup>2</sup> + 2. Comme (x − 3)<sup>2</sup> ⩾ 0, g(x) ⩾ 2 pour tout x, et g(3) = 2 : le minimum de g sur ℝ vaut 2, atteint en 3.</p>\n"
+        },
+        {
+          "id": "affines",
+          "titre": "Variations des fonctions affines",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriété</b><p>La fonction affine f(x) = mx + p est strictement croissante sur ℝ si m &gt; 0, strictement décroissante si m &lt; 0, constante si m = 0.</p></div>\n<div class=\"def\"><b class=\"t\">Démonstration</b><p>Soit a &lt; b. f(b) − f(a) = (mb + p) − (ma + p) = m(b − a). Comme b − a &gt; 0, f(b) − f(a) est du signe de m : si m &gt; 0, f(a) &lt; f(b) ; si m &lt; 0, f(a) &gt; f(b).</p></div>\n<p>Le coefficient m est le <strong>taux d'accroissement</strong> : quand x augmente de 1, f(x) augmente de m ; p est l'ordonnée à l'origine. Exemple : un forfait de taxi f(x) = 1,5x + 4 (x en km) augmente de 1,50 € par kilomètre.</p>\n<p>Sens de variation, signe et droite sont liés : si m &gt; 0, la droite monte et f(x) est négatif puis positif, en s'annulant en −p/m ; si m &lt; 0, la droite descend et f(x) est positif puis négatif.</p>\n"
+        },
+        {
+          "id": "reference",
+          "titre": "Variations des fonctions carré, inverse et valeur absolue",
+          "html": "\n<div class=\"def\"><b class=\"t\">Propriété</b><ul>\n<li>La fonction carré est décroissante sur ]−∞ ; 0] et croissante sur [0 ; +∞[ ; son minimum sur ℝ vaut 0, atteint en 0.</li>\n<li>La fonction inverse est décroissante sur ]−∞ ; 0[ et décroissante sur ]0 ; +∞[.</li>\n<li>La fonction valeur absolue est décroissante sur ]−∞ ; 0] et croissante sur [0 ; +∞[ ; son minimum vaut 0, en 0.</li></ul></div>\n<div class=\"def\"><b class=\"t\">Démonstration (fonction carré sur [0 ; +∞[)</b><p>Soit 0 ⩽ a &lt; b. b<sup>2</sup> − a<sup>2</sup> = (b − a)(b + a). Or b − a &gt; 0 et b + a &gt; 0, donc b<sup>2</sup> − a<sup>2</sup> &gt; 0 : a<sup>2</sup> &lt; b<sup>2</sup>. Sur ]−∞ ; 0], a &lt; b ⩽ 0 donne b + a &lt; 0, d'où b<sup>2</sup> &lt; a<sup>2</sup> : la fonction est décroissante.</p></div>\n<div class=\"def\"><b class=\"t\">Démonstration (fonction inverse sur ]0 ; +∞[)</b><p>Soit 0 &lt; a &lt; b. 1/b − 1/a = (a − b)/(ab). Le numérateur a − b est négatif, le dénominateur ab positif : 1/b &lt; 1/a. La fonction est décroissante. Le raisonnement est le même sur ]−∞ ; 0[ (ab est encore positif).</p></div>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>On ne dit pas que la fonction inverse est décroissante sur ℝ \\ {0} : −1 &lt; 1 et pourtant 1/(−1) = −1 &lt; 1 = 1/1.</p></div>\n<h3>Position de y = x et y = x² pour x ⩾ 0</h3>\n<p>x<sup>2</sup> − x = x(x − 1). Pour 0 ⩽ x ⩽ 1, ce produit est négatif ou nul : x<sup>2</sup> ⩽ x, la parabole est sous la droite. Pour x ⩾ 1, il est positif : x<sup>2</sup> ⩾ x. Par exemple 0,5<sup>2</sup> = 0,25 &lt; 0,5, mais 3<sup>2</sup> = 9 &gt; 3.</p>\n"
+        },
+        {
+          "id": "comparer",
+          "titre": "Comparer des images",
+          "html": "\n<p>Sur un intervalle où une fonction est monotone, on compare les images sans les calculer :</p>\n<ul>\n<li>la fonction carré est croissante sur [0 ; +∞[ et 2,3 &lt; 2,4, donc 2,3<sup>2</sup> &lt; 2,4<sup>2</sup> ;</li>\n<li>elle est décroissante sur ]−∞ ; 0] et −5 &lt; −4, donc (−5)<sup>2</sup> &gt; (−4)<sup>2</sup> ;</li>\n<li>la fonction inverse est décroissante sur ]0 ; +∞[ et 3 &lt; π, donc 1/3 &gt; 1/π.</li>\n</ul>\n<p>Si les deux nombres ne sont pas dans un même intervalle de monotonie, on raisonne autrement : (−3)<sup>2</sup> et 2<sup>2</sup> se comparent en remarquant que (−3)<sup>2</sup> = 3<sup>2</sup> et 3 &gt; 2.</p>\n<p>Encadrer : si 1 ⩽ x ⩽ 3, alors 1 ⩽ x<sup>2</sup> ⩽ 9 (carré croissante sur [0 ; +∞[) et 1/3 ⩽ 1/x ⩽ 1 (inverse décroissante sur ]0 ; +∞[).</p>\n"
+        },
+        {
+          "id": "optimisation",
+          "titre": "Optimisation et algorithmes",
+          "html": "\n<p>Un problème d'<strong>optimisation</strong> cherche la valeur d'une variable qui rend une grandeur maximale ou minimale. On exprime la grandeur par une fonction, on cherche son extremum (tableau de variations, forme adaptée, graphique ou calcul), puis on interprète.</p>\n<p><strong>Exemple</strong> : on dispose de 40 m de clôture pour fermer un enclos rectangulaire. Avec une largeur x, la longueur vaut 20 − x et l'aire A(x) = x(20 − x) = 100 − (x − 10)<sup>2</sup>, pour x ∈ ]0 ; 20[. L'aire est maximale pour x = 10 : un carré de 10 m de côté, d'aire 100 m<sup>2</sup>.</p>\n<h3>Approcher un extremum par balayage</h3>\n<p>Si l'on sait qu'une fonction croît puis décroît sur [a ; b], on calcule f(x) pour des valeurs de x espacées d'un pas, et on garde la plus grande image.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">def balayage(f, a, b, pas):<br>    x_max = a<br>    x = a<br>    while x &lt;= b:<br>        if f(x) &gt; f(x_max):<br>            x_max = x<br>        x = x + pas<br>    return x_max</div>\n<h3>Approcher par dichotomie</h3>\n<p>La <strong>dichotomie</strong> coupe l'intervalle en deux à chaque étape. Pour une fonction croissante puis décroissante sur [a ; b], on compare les images de deux points voisins du milieu m : si f(m) &lt; f(m + 0,001), le maximum est à droite et on remplace a par m ; sinon on remplace b par m. On recommence tant que b − a dépasse la précision voulue. Chaque étape divise l'amplitude par 2 : 10 étapes la divisent par 1024.</p>\n<h3>Longueur approchée d'une courbe</h3>\n<p>Pour estimer la longueur de la courbe de f entre a et b, on la remplace par une ligne brisée : on découpe [a ; b] en n morceaux, on relie les points de la courbe correspondants et on additionne les longueurs des segments, calculées avec la formule de la distance (chapitre 6). Plus n est grand, meilleure est l'approximation.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>f croissante sur I : a &lt; b entraîne f(a) ⩽ f(b) ; décroissante : f(a) ⩾ f(b) ; monotone : l'un ou l'autre.</li>\n<li>Le tableau de variations résume le sens de variation avec des flèches et les valeurs aux bornes.</li>\n<li>Maximum : f(x) ⩽ f(a) pour tout x de I ; minimum : f(x) ⩾ f(a). Un extremum dépend de l'intervalle.</li>\n<li>f(x) = mx + p : croissante si m &gt; 0, décroissante si m &lt; 0 ; m est le taux d'accroissement.</li>\n<li>Carré et valeur absolue : décroissantes sur ]−∞ ; 0], croissantes sur [0 ; +∞[, minimum 0. Inverse : décroissante sur ]−∞ ; 0[ et sur ]0 ; +∞[ (pas sur ℝ \\ {0}).</li>\n<li>Pour 0 ⩽ x ⩽ 1, x<sup>2</sup> ⩽ x ; pour x ⩾ 1, x<sup>2</sup> ⩾ x.</li>\n<li>Optimisation : modéliser par une fonction, chercher son extremum, interpréter. Balayage et dichotomie approchent un extremum.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch9:banque:001",
+          "enonce": "Que signifie « f est croissante sur I » ?",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "Les images sont rangées dans le même ordre que les nombres.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour tous a < b de I, f(a) ⩽ f(b)",
+            "Pour tous a < b de I, f(a) ⩾ f(b)",
+            "f(x) est positif sur I",
+            "f(0) est le plus petit nombre"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:002",
+          "enonce": "Comment traduire par des inégalités qu'une fonction f décroît sur I ?",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "L'ordre des images est inversé.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour tous a < b de I, f(a) ⩽ f(b)",
+            "Pour tous a < b de I, f(a) ⩾ f(b)",
+            "f(x) est négatif sur I",
+            "f s'annule sur I"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:003",
+          "enonce": "Comment se comporte la courbe d'une fonction croissante quand on la parcourt de gauche à droite ?",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "Lecture graphique de la croissance.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle descend",
+            "Elle reste au-dessus de l'axe des abscisses",
+            "Elle monte",
+            "Elle passe par l'origine"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:004",
+          "enonce": "Que signifie « f est monotone sur I » ?",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "Monotone : un seul sens de variation sur I.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f est constante sur I",
+            "f change de sens sur I",
+            "f est positive sur I",
+            "f est croissante sur I, ou décroissante sur I"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:005",
+          "enonce": "On sait que f(1) = 2 et f(3) = 5. Peut-on conclure que f est croissante sur [1 ; 3] ?",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "La définition porte sur tous les couples a < b.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Non, deux valeurs ne suffisent pas",
+            "Oui, car 2 < 5",
+            "Oui, car 1 < 3",
+            "Non, car f(3) > f(1) prouve qu'elle décroît"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:006",
+          "enonce": "On sait que f(0) = 4 et f(2) = 1. Que peut-on affirmer ?",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "0 < 2 et f(0) > f(2) : c'est un contre-exemple à la croissance.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f est décroissante sur [0 ; 2]",
+            "f n'est pas croissante sur [0 ; 2]",
+            "f est croissante sur [0 ; 2]",
+            "f est constante"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:007",
+          "enonce": "Une fonction constante sur I est :",
+          "notion": "Sens de variation",
+          "difficulte": 3,
+          "explication": "f(a) = f(b) vérifie f(a) ⩽ f(b) et f(a) ⩾ f(b).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ni croissante ni décroissante",
+            "seulement croissante",
+            "à la fois croissante et décroissante sur I",
+            "strictement croissante"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:008",
+          "enonce": "Quelle phrase traduit « f est strictement décroissante sur I » ?",
+          "notion": "Sens de variation",
+          "difficulte": 3,
+          "explication": "« Strictement » : inégalité stricte entre les images.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour tous a < b de I, f(a) ⩾ f(b)",
+            "Il existe a < b avec f(a) > f(b)",
+            "f(a) > 0 pour tout a",
+            "Pour tous a < b de I, f(a) > f(b)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:009",
+          "enonce": "Quelles fonctions sont croissantes sur ℝ ? Coche toutes les réponses exactes.",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "Fonctions affines de coefficient positif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ 0,1x − 7",
+            "x ↦ −x",
+            "x ↦ 5 − 3x",
+            "x ↦ 2x + 1",
+            "x ↦ x"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:010",
+          "enonce": "f est croissante sur [0 ; 10]. Quelles affirmations sont forcément vraies ? Coche toutes les réponses exactes.",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "Croissante ne dit rien du signe.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(0) ⩽ f(10)",
+            "f(5) ⩽ f(5,5)",
+            "f(2) ⩽ f(7)",
+            "f(7) ⩽ f(2)",
+            "f(x) ⩾ 0 sur [0 ; 10]"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:011",
+          "enonce": "Si f est décroissante sur I et a < b dans I, alors f(a) ⩾ f(b).",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:012",
+          "enonce": "Une fonction croissante sur I est forcément positive sur I.",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "Contre-exemple : x ↦ x est croissante sur [−5 ; −1] et négative.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:013",
+          "enonce": "Pour montrer qu'une fonction n'est pas croissante sur I, un seul couple a < b avec f(a) > f(b) suffit.",
+          "notion": "Sens de variation",
+          "difficulte": 3,
+          "explication": "C'est un contre-exemple.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:014",
+          "enonce": "f est croissante sur [0 ; 5], avec f(0) = −2 et f(5) = 8. Quelle est la plus grande valeur possible de f(3) ? Réponds par un nombre.",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "f(3) ⩽ f(5) = 8.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "8"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:015",
+          "enonce": "Dans un tableau de variations, que signifie la flèche ↗ ?",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "Flèche montante : croissante.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La fonction est croissante sur l'intervalle",
+            "La fonction est positive",
+            "La fonction est décroissante",
+            "La fonction s'annule"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:016",
+          "enonce": "D'après le tableau du cours, sur quel intervalle f est-elle décroissante ?",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "La flèche ↘ va de −2 à 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[1 ; 4]",
+            "[−2 ; 1]",
+            "[−2 ; 4]",
+            "[−1 ; 3]"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:017",
+          "enonce": "D'après le tableau du cours, que vaut f(4) ?",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "On lit la valeur au bout de la flèche, en x = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "−1",
+            "5",
+            "3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:018",
+          "enonce": "D'après le tableau du cours, combien de solutions a l'équation f(x) = 0 sur [−2 ; 4] ?",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "f passe de 3 à −1 puis de −1 à 5 : elle croise 0 deux fois.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une",
+            "Aucune",
+            "Trois",
+            "Deux"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:019",
+          "enonce": "D'après le tableau du cours, que peut-on dire de f(x) pour tout x de [−2 ; 4] ?",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "−1 est la plus petite valeur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(x) ⩾ −1",
+            "f(x) ⩽ 3",
+            "f(x) ⩾ 0",
+            "f(x) ⩽ −1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:020",
+          "enonce": "Comment dresser un tableau de variations à partir d'une courbe ?",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "Les changements de sens donnent les colonnes du tableau.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Lire seulement les points d'intersection avec l'axe des abscisses",
+            "Repérer où la courbe change de sens et lire les coordonnées de ces points",
+            "Calculer f(0)",
+            "Tracer la tangente en chaque point"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:021",
+          "enonce": "D'après le tableau du cours, combien de solutions a f(x) = 4 sur [−2 ; 4] ?",
+          "notion": "Tableau de variations",
+          "difficulte": 3,
+          "explication": "Sur [−2 ; 1], f reste ⩽ 3 ; sur [1 ; 4], elle passe de −1 à 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux",
+            "Aucune",
+            "Une, dans ]1 ; 4[",
+            "Une, dans ]−2 ; 1["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:022",
+          "enonce": "D'après le tableau du cours, comment comparer f(2) et f(3) ?",
+          "notion": "Tableau de variations",
+          "difficulte": 3,
+          "explication": "2 < 3 dans un intervalle de croissance.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(2) > f(3)",
+            "f(2) = f(3)",
+            "On ne peut pas les comparer",
+            "f(2) < f(3), car f est croissante sur [1 ; 4]"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:023",
+          "enonce": "D'après le tableau du cours, quelles valeurs sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "On lit les valeurs aux bornes des flèches.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(−2) = −1",
+            "f(1) = 4",
+            "f(−2) = 3",
+            "f(4) = 5",
+            "f(1) = −1"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:024",
+          "enonce": "Une fonction g a pour tableau : croissante sur [0 ; 3] de 1 à 6, décroissante sur [3 ; 8] de 6 à 2. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "g(0) = 1 < 2 ; et g décroît sur [3 ; 8] donc g(4) > g(7).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "g(4) < g(7)",
+            "g(3) = 6",
+            "g(1) < g(2)",
+            "g(x) ⩾ 2 sur [0 ; 8]",
+            "g(x) ⩽ 6 sur [0 ; 8]"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:025",
+          "enonce": "Avec le tableau de g (croissante de 1 à 6 sur [0 ; 3], puis décroissante de 6 à 2 sur [3 ; 8]), combien de solutions ont ces équations ? Coche toutes les réponses exactes.",
+          "notion": "Tableau de variations",
+          "difficulte": 3,
+          "explication": "4 est atteint une fois sur chaque intervalle ; 1,5 seulement à la montée ; 7 et 0 jamais ; 6 une fois.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "g(x) = 6 : deux solutions",
+            "g(x) = 4 : deux solutions",
+            "g(x) = 7 : une solution",
+            "g(x) = 1,5 : une solution",
+            "g(x) = 0 : une solution"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:026",
+          "enonce": "Un tableau de variations indique les intervalles où la fonction est croissante ou décroissante.",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "C'est son rôle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:027",
+          "enonce": "Dans le tableau du cours, f est croissante sur [−2 ; 4].",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "Elle décroît sur [−2 ; 1].",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:028",
+          "enonce": "D'après le tableau du cours, l'équation f(x) = −2 a une solution.",
+          "notion": "Tableau de variations",
+          "difficulte": 3,
+          "explication": "f(x) ⩾ −1 sur [−2 ; 4].",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:029",
+          "enonce": "D'après le tableau du cours, en quelle valeur de x f change-t-elle de sens de variation ? Réponds par un nombre.",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "Elle décroît jusqu'à 1 puis croît.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:030",
+          "enonce": "Que signifie « f(a) est le maximum de f sur I » ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "Aucune image ne dépasse f(a).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Pour tout x de I, f(x) ⩽ f(a)",
+            "Pour tout x de I, f(x) ⩾ f(a)",
+            "f(a) = 0",
+            "a est le plus grand nombre de I"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:031",
+          "enonce": "D'après le tableau du cours, quel est le minimum de f sur [−2 ; 4] ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "La plus petite valeur du tableau est −1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2, atteint en 3",
+            "−1, atteint en 1",
+            "1, atteint en −1",
+            "3, atteint en −2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:032",
+          "enonce": "Comment appelle-t-on un maximum ou un minimum ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "Les extremums.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une borne",
+            "Un antécédent",
+            "Un extremum",
+            "Une variation"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:033",
+          "enonce": "Quelle est la plus grande valeur prise par f sur tout son intervalle de définition, d'après le tableau du cours ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "On compare f(−2) = 3 et f(4) = 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3, atteint en −2",
+            "4, atteint en 5",
+            "−1, atteint en 1",
+            "5, atteint en 4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:034",
+          "enonce": "Si l'on se limite à [−2 ; 1], quelle valeur maximale f atteint-elle (tableau du cours) ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "Sur [−2 ; 1], f décroît de 3 à −1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3, atteint en −2",
+            "5",
+            "−1",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:035",
+          "enonce": "Quel est le minimum de g(x) = (x − 3)² + 2 sur ℝ ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "(x − 3)² ⩾ 0, et g(3) = 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3, atteint en 2",
+            "2, atteint en 3",
+            "0, atteint en 3",
+            "−2, atteint en −3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:036",
+          "enonce": "Quel est le maximum de h(x) = 5 − (x + 1)² sur ℝ ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 3,
+          "explication": "−(x + 1)² ⩽ 0, avec égalité pour x = −1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5, atteint en 1",
+            "4, atteint en 0",
+            "5, atteint en −1",
+            "−1, atteint en 5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:037",
+          "enonce": "Quel est le minimum de x ↦ 2x + 1 sur [−3 ; 4] ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 3,
+          "explication": "Fonction croissante : le minimum est au début de l'intervalle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1, atteint en 0",
+            "9, atteint en 4",
+            "Il n'y en a pas",
+            "−5, atteint en −3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:038",
+          "enonce": "Quelles affirmations sur les extremums sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "x ↦ x n'a pas de maximum sur ℝ.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le minimum est toujours négatif",
+            "Un maximum est une valeur de f",
+            "Un extremum dépend de l'intervalle considéré",
+            "Le maximum est toujours atteint en 0",
+            "Une fonction a toujours un maximum sur ℝ"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:039",
+          "enonce": "Pour g(x) = (x − 3)² + 2, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "g(0) = 11 ; g n'a pas de maximum sur ℝ.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "g(x) ⩾ 2 pour tout réel x",
+            "g(0) = 2",
+            "g a un maximum sur ℝ",
+            "g(3) = 2",
+            "g(x) ⩽ 2 pour tout réel x"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:040",
+          "enonce": "Le minimum d'une fonction sur un intervalle est la plus petite de ses valeurs sur cet intervalle.",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:041",
+          "enonce": "Si f(x) ⩽ 7 pour tout x de I, alors 7 est le maximum de f sur I.",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "Il faut aussi que 7 soit atteint : f(a) = 7 pour un a de I.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:042",
+          "enonce": "La fonction carré a un maximum sur ℝ.",
+          "notion": "Maximum et minimum",
+          "difficulte": 3,
+          "explication": "x² devient aussi grand qu'on veut.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:043",
+          "enonce": "Quel est le minimum de f(x) = (x + 4)² − 6 sur ℝ ? Réponds par un nombre.",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "Le carré est nul pour x = −4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "-6",
+            "−6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:044",
+          "enonce": "Quel est le sens de variation de f(x) = −3x + 2 sur ℝ ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "m = −3 < 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Décroissante",
+            "Croissante",
+            "Constante",
+            "Croissante puis décroissante"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:045",
+          "enonce": "Quand m > 0, la fonction x ↦ mx + p est :",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "C'est la propriété du cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "strictement décroissante sur ℝ",
+            "strictement croissante sur ℝ",
+            "constante",
+            "positive sur ℝ"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:046",
+          "enonce": "Dans f(x) = 1,5x + 4 (prix d'un taxi pour x km), que représente 1,5 ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "m est le taux d'accroissement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le prix de départ",
+            "Le prix total",
+            "L'augmentation du prix par kilomètre",
+            "La distance"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:047",
+          "enonce": "Dans la démonstration du cours, que vaut f(b) − f(a) pour f(x) = mx + p ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "Les p s'éliminent.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "m(a − b)",
+            "mb + p",
+            "b − a",
+            "m(b − a)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:048",
+          "enonce": "Pourquoi f(b) − f(a) = m(b − a) est-il du signe de m quand a < b ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "Un produit par un positif garde le signe.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce que b − a est strictement positif",
+            "Parce que m est positif",
+            "Parce que a et b sont positifs",
+            "Parce que p = 0"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:049",
+          "enonce": "Une fonction affine décroissante s'annule en 2. Quel est son signe sur ]2 ; +∞[ ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "Elle est positive avant 2, négative après.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Positif",
+            "Négatif",
+            "Nul",
+            "Il dépend de p"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:050",
+          "enonce": "f est affine, f(0) = 7 et f est décroissante. Quelle expression peut convenir ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 3,
+          "explication": "p = 7 et m < 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(x) = 2x + 7",
+            "f(x) = 7x",
+            "f(x) = −2x + 7",
+            "f(x) = −2x − 7"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:051",
+          "enonce": "f(x) = mx + p vérifie f(3) < f(5). Que peut-on dire de m ?",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 3,
+          "explication": "f(5) − f(3) = 2m > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "m < 0",
+            "m = 0",
+            "On ne peut rien dire",
+            "m > 0"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:052",
+          "enonce": "Parmi ces fonctions affines, lesquelles diminuent quand x augmente ? Coche toutes les réponses exactes.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "Coefficient de x strictement négatif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ −x + 1",
+            "x ↦ 3x − 4",
+            "x ↦ −0,5x",
+            "x ↦ 2",
+            "x ↦ 4 − 2x"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:053",
+          "enonce": "Pour f(x) = 2x − 8, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "m = 2 > 0, racine 4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f est décroissante",
+            "f(x) < 0 pour x < 4",
+            "f est croissante sur ℝ",
+            "f(x) > 0 pour x < 4",
+            "f s'annule en 4"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:054",
+          "enonce": "La fonction x ↦ 5 − 4x est décroissante sur ℝ.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "m = −4 < 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:055",
+          "enonce": "Une fonction affine croissante est positive sur ℝ.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "Elle est négative avant sa racine.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:056",
+          "enonce": "Si f est affine et f(1) = f(4), alors f est constante.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 3,
+          "explication": "m = (f(4) − f(1))/3 = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:057",
+          "enonce": "f est affine, f(2) = 5 et f(6) = 17. Quel est son taux d'accroissement m ? Réponds par un nombre.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "m = (17 − 5)/(6 − 2) = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:058",
+          "enonce": "Sur quel intervalle la fonction carré est-elle croissante ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "Elle décroît puis croît.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[0 ; +∞[",
+            "]−∞ ; 0]",
+            "ℝ",
+            "[−1 ; 1]"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:059",
+          "enonce": "Quel est le minimum de la fonction carré sur ℝ ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "x² ⩾ 0 et 0² = 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1, atteint en 1",
+            "0, atteint en 0",
+            "−1",
+            "Il n'y en a pas"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:060",
+          "enonce": "Quel est le sens de variation de la valeur absolue sur ]−∞ ; 0] ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "|x| = −x sur cet intervalle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Croissante",
+            "Constante",
+            "Décroissante",
+            "Croissante puis décroissante"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:061",
+          "enonce": "Dans la démonstration pour la fonction carré, quelle factorisation utilise-t-on ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "Identité remarquable.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "b² − a² = (b − a)²",
+            "b² + a² = (b + a)²",
+            "b² − a² = b − a",
+            "b² − a² = (b − a)(b + a)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:062",
+          "enonce": "Pour 0 ⩽ a < b, pourquoi b² − a² est-il positif ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "Produit de deux positifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "b − a > 0 et b + a > 0",
+            "b − a < 0 et b + a < 0",
+            "a et b sont égaux",
+            "a² est négatif"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:063",
+          "enonce": "Pour a < b ⩽ 0, quel est le signe de b + a ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 3,
+          "explication": "Deux nombres négatifs, dont un strictement.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Positif",
+            "Négatif",
+            "Nul",
+            "Il dépend de a"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:064",
+          "enonce": "Quel est le minimum de x ↦ |x − 2| sur ℝ ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 3,
+          "explication": "Une distance est nulle seulement en 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2, atteint en 0",
+            "−2",
+            "0, atteint en 2",
+            "Il n'y en a pas"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:065",
+          "enonce": "Quelles affirmations sur la fonction carré sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "Tableau : ↘ puis ↗, minimum 0 en 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle est décroissante sur ]−∞ ; 0]",
+            "Son minimum vaut 0",
+            "Elle est croissante sur [0 ; +∞[",
+            "Elle a un maximum en 0",
+            "Elle est croissante sur ℝ"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:066",
+          "enonce": "Quelles fonctions ont le même tableau de variations que la fonction carré (décroissante puis croissante, minimum 0 en 0) ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "|x| et 2x² décroissent sur ]−∞ ; 0] et croissent sur [0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ |x|",
+            "x ↦ 1/x",
+            "x ↦ −x²",
+            "x ↦ 2x²",
+            "x ↦ x³"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:067",
+          "enonce": "La fonction valeur absolue est croissante sur [0 ; +∞[.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "|x| = x sur cet intervalle.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:068",
+          "enonce": "La fonction carré est croissante sur ℝ.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "Elle est décroissante sur ]−∞ ; 0].",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:069",
+          "enonce": "Si −3 < a < −1, alors 1 < a² < 9.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 3,
+          "explication": "La fonction carré est décroissante sur ]−∞ ; 0] : l'ordre s'inverse.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:070",
+          "enonce": "En quelle valeur de x la fonction carré atteint-elle son minimum ? Réponds par un nombre.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "0² = 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:071",
+          "enonce": "Quel est le sens de variation de la fonction inverse sur ]0 ; +∞[ ?",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "Plus x est grand, plus 1/x est petit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Croissante",
+            "Constante",
+            "Décroissante puis croissante",
+            "Décroissante"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:072",
+          "enonce": "Sur quels intervalles la fonction inverse est-elle décroissante ?",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "Elle n'est pas définie en 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Sur ]−∞ ; 0[ et sur ]0 ; +∞[",
+            "Sur ℝ",
+            "Sur [0 ; +∞[",
+            "Seulement sur ]0 ; +∞["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:073",
+          "enonce": "Pour 0 < a < b, quelle égalité utilise la démonstration ?",
+          "notion": "Fonction inverse",
+          "difficulte": 2,
+          "explication": "Réduction au même dénominateur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/b − 1/a = (b − a)/(ab)",
+            "1/b − 1/a = (a − b)/(ab)",
+            "1/b − 1/a = 1/(b − a)",
+            "1/b − 1/a = ab"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:074",
+          "enonce": "Pour 0 < a < b, quel est le signe de (a − b)/(ab) ?",
+          "notion": "Fonction inverse",
+          "difficulte": 2,
+          "explication": "a − b < 0 et ab > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Positif",
+            "Nul",
+            "Négatif",
+            "Il dépend de a"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:075",
+          "enonce": "Pourquoi ne dit-on pas que la fonction inverse est décroissante sur ℝ \\ {0} ?",
+          "notion": "Fonction inverse",
+          "difficulte": 3,
+          "explication": "Un contre-exemple suffit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car elle est croissante sur ]−∞ ; 0[",
+            "Car elle n'est pas définie en 1",
+            "Car 1/x est toujours positif",
+            "Car −1 < 1 alors que 1/(−1) < 1/1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:076",
+          "enonce": "Si 2 ⩽ x ⩽ 5, quel encadrement a-t-on pour 1/x ?",
+          "notion": "Fonction inverse",
+          "difficulte": 3,
+          "explication": "La fonction inverse décroît sur ]0 ; +∞[ : l'ordre s'inverse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,2 ⩽ 1/x ⩽ 0,5",
+            "0,5 ⩽ 1/x ⩽ 0,2",
+            "2 ⩽ 1/x ⩽ 5",
+            "−0,5 ⩽ 1/x ⩽ −0,2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:077",
+          "enonce": "Qu'est-il juste d'affirmer sur x ↦ 1/x ? Coche toutes les réponses exactes.",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "Pas de minimum : 1/x se rapproche de 0 sans l'atteindre.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle a un minimum sur ]0 ; +∞[",
+            "Elle est décroissante sur ]0 ; +∞[",
+            "Elle n'est pas définie en 0",
+            "Elle est décroissante sur ℝ",
+            "Elle est croissante sur ]−∞ ; 0["
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:078",
+          "enonce": "Lesquelles de ces inégalités entre inverses sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Fonction inverse",
+          "difficulte": 2,
+          "explication": "Sur chaque intervalle, la fonction inverse est décroissante.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1/10 > 1/9",
+            "1/3 > 1/4",
+            "1/0,5 > 1/2",
+            "1/(−2) < 1/(−3)",
+            "1/(−1) > 1/(−2)"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:079",
+          "enonce": "Si 0 < a < b, alors 1/a > 1/b.",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "La fonction inverse est décroissante sur ]0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:080",
+          "enonce": "La fonction inverse est croissante sur ]−∞ ; 0[.",
+          "notion": "Fonction inverse",
+          "difficulte": 2,
+          "explication": "Elle y est décroissante.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:081",
+          "enonce": "Si 4 ⩽ x ⩽ 10, quelle est la plus grande valeur possible de 1/x ? Réponds par un nombre décimal.",
+          "notion": "Fonction inverse",
+          "difficulte": 3,
+          "explication": "1/x est maximal pour x = 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,25",
+            "0.25"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:082",
+          "enonce": "Comment comparer 2,3² et 2,4² sans les calculer ?",
+          "notion": "Comparer des images",
+          "difficulte": 1,
+          "explication": "Même ordre que les nombres positifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2,3 < 2,4 donne toujours 2,3² > 2,4²",
+            "La fonction carré est croissante sur [0 ; +∞[, donc 2,3² < 2,4²",
+            "On ne peut pas sans calculatrice",
+            "La fonction inverse est décroissante"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:083",
+          "enonce": "Comment se comparent (−5)² et (−4)² ?",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "L'ordre s'inverse pour les négatifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(−5)² < (−4)², car −5 < −4",
+            "Ils sont égaux",
+            "(−5)² > (−4)², car le carré est décroissant sur ]−∞ ; 0]",
+            "On ne peut pas les comparer"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:084",
+          "enonce": "Comment se comparent 1/3 et 1/π ?",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "3 < π et la fonction inverse décroît sur ]0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/3 < 1/π",
+            "Ils sont égaux",
+            "On ne peut pas comparer",
+            "1/3 > 1/π"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:085",
+          "enonce": "Si 1 ⩽ x ⩽ 3, quel encadrement a-t-on pour x² ?",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "La fonction carré est croissante sur [0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1 ⩽ x² ⩽ 9",
+            "1 ⩽ x² ⩽ 3",
+            "2 ⩽ x² ⩽ 6",
+            "9 ⩽ x² ⩽ 1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:086",
+          "enonce": "Comment comparer (−3)² et 2² ?",
+          "notion": "Comparer des images",
+          "difficulte": 3,
+          "explication": "Les deux nombres ne sont pas dans le même intervalle de monotonie.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3 < 2, donc (−3)² < 2²",
+            "(−3)² = 3² et 3 > 2, donc (−3)² > 2²",
+            "Le carré est croissant sur ℝ",
+            "Ils sont égaux"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:087",
+          "enonce": "Pour 0 < x < 1, comment se comparent x et x² ?",
+          "notion": "Comparer des images",
+          "difficulte": 3,
+          "explication": "x² − x = x(x − 1) < 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x² > x",
+            "x² = x",
+            "x² < x",
+            "On ne peut rien dire"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:088",
+          "enonce": "Pour x pris entre −2 et 3, entre quelles valeurs le carré x² est-il compris ?",
+          "notion": "Comparer des images",
+          "difficulte": 3,
+          "explication": "x² vaut 0 en 0, au plus 4 sur [−2 ; 0] et au plus 9 sur [0 ; 3].",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4 ⩽ x² ⩽ 9",
+            "−4 ⩽ x² ⩽ 9",
+            "0 ⩽ x² ⩽ 4",
+            "0 ⩽ x² ⩽ 9"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:089",
+          "enonce": "Quelles comparaisons sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Comparer des images",
+          "difficulte": 1,
+          "explication": "Pour x ⩾ 1, x² ⩾ x ; entre 0 et 1, x² ⩽ x.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1,5² < 1,6²",
+            "0,9² > 0,9",
+            "3² > 3",
+            "(−2)² < (−1)²",
+            "0,5² < 0,5"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:090",
+          "enonce": "Pour quelles valeurs de x a-t-on x² ⩽ x ? Coche toutes les réponses exactes.",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "x(x − 1) ⩽ 0 pour 0 ⩽ x ⩽ 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,3",
+            "−1",
+            "2",
+            "0",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:091",
+          "enonce": "Pour x ⩾ 1, on a x² ⩾ x.",
+          "notion": "Comparer des images",
+          "difficulte": 1,
+          "explication": "x² − x = x(x − 1) ⩾ 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:092",
+          "enonce": "Pour tous réels a < b, on a a² < b².",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "Contre-exemple : −3 < 1 mais 9 > 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:093",
+          "enonce": "Pour 0 ⩽ x ⩽ 1, la parabole y = x² est au-dessous de la droite y = x.",
+          "notion": "Comparer des images",
+          "difficulte": 3,
+          "explication": "x² ⩽ x sur [0 ; 1].",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:094",
+          "enonce": "Si 2 ⩽ x ⩽ 7, quelle est la plus grande valeur possible de x² ? Réponds par un nombre.",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "La fonction carré est croissante sur [0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "49"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:095",
+          "enonce": "Que cherche un problème d'optimisation ?",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "Plus grande aire, plus petit coût…",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La valeur qui rend une grandeur maximale ou minimale",
+            "La solution d'une équation du premier degré",
+            "Le signe d'une fonction",
+            "L'ensemble de définition"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:096",
+          "enonce": "Avec 40 m de clôture et une largeur x, quelle est la longueur de l'enclos rectangulaire ?",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "2x + 2L = 40 donne L = 20 − x.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "40 − x",
+            "20 − x",
+            "40 − 2x",
+            "x − 20"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:097",
+          "enonce": "Quelle est l'aire maximale d'un enclos rectangulaire fermé par 40 m de clôture ?",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "A(x) = 100 − (x − 10)², maximale pour x = 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "400 m²",
+            "200 m²",
+            "100 m²",
+            "40 m²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:098",
+          "enonce": "Pourquoi l'écriture A(x) = 100 − (x − 10)² montre-t-elle que A(x) ⩽ 100 ?",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "On retire un carré positif à 100.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Car x ⩽ 10",
+            "Car 100 est positif",
+            "Car A(0) = 0",
+            "Car (x − 10)² ⩾ 0"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:099",
+          "enonce": "Dans le problème de l'enclos, pour quelle largeur l'aire est-elle maximale ?",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "Le carré annule (x − 10)².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10 m",
+            "20 m",
+            "5 m",
+            "40 m"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:100",
+          "enonce": "Le bénéfice d'une entreprise vaut B(q) = −q² + 60q − 500 (en euros, q objets). Pour quelle quantité est-il maximal ?",
+          "notion": "Optimisation",
+          "difficulte": 3,
+          "explication": "B(q) = 400 − (q − 30)².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "60",
+            "30",
+            "500",
+            "10"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:101",
+          "enonce": "Avec B(q) = −q² + 60q − 500 = 400 − (q − 30)², quel est le bénéfice maximal ?",
+          "notion": "Optimisation",
+          "difficulte": 3,
+          "explication": "Atteint pour q = 30.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "500 €",
+            "30 €",
+            "400 €",
+            "900 €"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:102",
+          "enonce": "Quelles étapes font partie de la résolution d'un problème d'optimisation ? Coche toutes les réponses exactes.",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "Modéliser, chercher l'extremum, interpréter.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Interpréter le résultat",
+            "Exprimer la grandeur par une fonction",
+            "Chercher son extremum",
+            "Tracer un tableau de signes obligatoirement",
+            "Calculer seulement f(0)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:103",
+          "enonce": "Pour l'enclos de 40 m de clôture, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "Largeur et longueur strictement positives ; carré de côté 10.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "A(x) = x(40 − x)",
+            "L'aire maximale vaut 400 m²",
+            "A(x) = x(20 − x)",
+            "Le meilleur enclos est un carré",
+            "x doit être dans ]0 ; 20["
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:104",
+          "enonce": "Parmi les rectangles de même périmètre, le carré a la plus grande aire.",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "C'est ce que montre l'exemple de l'enclos.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:105",
+          "enonce": "Dans un problème d'optimisation, la variable peut prendre n'importe quelle valeur réelle.",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "Le contexte impose souvent un intervalle (longueurs positives…).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:106",
+          "enonce": "On veut maximiser A(x) = 36 − (x − 4)². Pour quelle valeur de x l'aire est-elle maximale ? Réponds par un nombre.",
+          "notion": "Optimisation",
+          "difficulte": 3,
+          "explication": "Le carré est nul pour x = 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:107",
+          "enonce": "Que fait l'algorithme de balayage pour un maximum ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 1,
+          "explication": "On parcourt l'intervalle pas à pas.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Il coupe l'intervalle en deux à chaque étape",
+            "Il calcule la dérivée",
+            "Il trace la courbe",
+            "Il calcule f(x) avec un pas régulier et garde la plus grande image"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:108",
+          "enonce": "Que fait la dichotomie à chaque étape ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 1,
+          "explication": "Dicho- : en deux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle coupe l'intervalle de recherche en deux",
+            "Elle double l'intervalle",
+            "Elle calcule toutes les images",
+            "Elle arrondit le résultat"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:109",
+          "enonce": "Par combien la dichotomie divise-t-elle l'amplitude de l'intervalle en 10 étapes ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "2¹⁰ = 1024.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "10",
+            "1024",
+            "20",
+            "100"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:110",
+          "enonce": "Dans la fonction balayage du cours, que renvoie-t-on ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "On renvoie x_max.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La plus grande image",
+            "Le pas",
+            "La valeur de x qui donne la plus grande image trouvée",
+            "La borne b"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:111",
+          "enonce": "Pour approcher la longueur d'une portion de courbe, par quoi la remplace-t-on ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "On additionne les longueurs des segments.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Par un cercle",
+            "Par sa tangente",
+            "Par l'axe des abscisses",
+            "Par une ligne brisée de segments"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:112",
+          "enonce": "Dans la dichotomie pour un maximum, si f(m) < f(m + 0,001), que fait-on ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 3,
+          "explication": "La fonction monte encore en m.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On remplace a par m : le maximum est à droite",
+            "On remplace b par m",
+            "On s'arrête",
+            "On double le pas"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:113",
+          "enonce": "Pour approcher la longueur d'une courbe par une ligne brisée, que se passe-t-il si on augmente le nombre n de segments ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 3,
+          "explication": "Les segments épousent mieux la courbe.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'approximation devient moins bonne",
+            "L'approximation devient meilleure",
+            "La longueur double",
+            "Rien ne change"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:114",
+          "enonce": "Quels algorithmes approchent un extremum ? Coche toutes les réponses exactes.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 1,
+          "explication": "Ce sont les deux méthodes du programme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le produit nul",
+            "Le balayage",
+            "La relation de Chasles",
+            "La dichotomie",
+            "Le tableau de signes"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:115",
+          "enonce": "Pour balayer [0 ; 2] avec un pas de 0,5, quelles valeurs de x sont testées ? Coche toutes les réponses exactes.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "0 ; 0,5 ; 1 ; 1,5 ; 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0",
+            "2,5",
+            "1,5",
+            "2",
+            "0,25"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:116",
+          "enonce": "Avec un pas plus petit, le balayage donne en général une meilleure approximation.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 1,
+          "explication": "On teste plus de valeurs.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:117",
+          "enonce": "La dichotomie donne toujours la valeur exacte de l'extremum.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "Elle donne une valeur approchée, avec la précision voulue.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:118",
+          "enonce": "Avec un balayage de [0 ; 5] et un pas de 0,5, combien de valeurs de x teste-t-on ? Réponds par un nombre.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 2,
+          "explication": "0 ; 0,5 ; … ; 5 : 11 valeurs.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "11"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:119",
+          "enonce": "Une flèche ↘ apparaît entre deux colonnes d'un tableau de variations. Que traduit-elle ?",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "Flèche descendante.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La fonction est négative",
+            "La fonction est croissante",
+            "La fonction est décroissante",
+            "La fonction s'annule"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:120",
+          "enonce": "Quelle image a le nombre 4 par la fonction inverse ?",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "1/4 = 0,25.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "−4",
+            "16",
+            "0,25"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:121",
+          "enonce": "Dans le problème de l'enclos, quelle est la forme de l'enclos d'aire maximale ?",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "Largeur 10 m, longueur 10 m.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un carré",
+            "Un rectangle très allongé",
+            "Un triangle",
+            "Un cercle"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:122",
+          "enonce": "Pour comparer f(a) et f(b) sans calcul, de quoi a-t-on besoin ?",
+          "notion": "Comparer des images",
+          "difficulte": 1,
+          "explication": "Monotonie sur l'intervalle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "De la valeur de f(0)",
+            "Du sens de variation de f sur un intervalle contenant a et b",
+            "Du signe de f",
+            "De l'ensemble de définition seulement"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:123",
+          "enonce": "Une fonction peut atteindre son maximum en plusieurs valeurs de x.",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "Exemple : une fonction constante.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:124",
+          "enonce": "La fonction inverse est définie en 0.",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "1/0 n'existe pas.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:125",
+          "enonce": "Un tableau de variations permet de trouver le nombre de solutions de f(x) = k.",
+          "notion": "Tableau de variations",
+          "difficulte": 2,
+          "explication": "On regarde combien de fois k est atteint.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch9:banque:126",
+          "enonce": "Quelles valeurs sont des images par la fonction inverse ? Coche toutes les réponses exactes.",
+          "notion": "Fonction inverse",
+          "difficulte": 1,
+          "explication": "1/0 n'existe pas ; 1/5 = 0,2 ; 1/(−1) = −1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1/5 = 5",
+            "1/2 = 0,5",
+            "1/0 = 0",
+            "1/(−1) = 1",
+            "1/(−4) = −0,25"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:127",
+          "enonce": "Pour f(x) = x² sur [1 ; 3], quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "Carré croissante sur [1 ; 3].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le minimum vaut 1",
+            "Le maximum vaut 9",
+            "Le maximum est atteint en 1",
+            "Le minimum vaut 0",
+            "Le maximum vaut 3"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:128",
+          "enonce": "Quel est le taux d'accroissement de f(x) = 6x − 1 ? Réponds par un nombre.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "C'est le coefficient m.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:129",
+          "enonce": "D'après le tableau du cours, que vaut f(−2) ? Réponds par un nombre.",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "Valeur lue en x = −2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:130",
+          "enonce": "Quelle fonction est décroissante sur [0 ; +∞[ ?",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "Fonction affine de coefficient −1 ; les trois autres sont croissantes sur [0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x ↦ x²",
+            "x ↦ 2x",
+            "x ↦ 5 − x",
+            "x ↦ |x|"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:131",
+          "enonce": "Sur [0 ; 5], quel est le maximum de x ↦ 2x ?",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "Fonction croissante : maximum en 5, 2 × 5 = 10.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5",
+            "0",
+            "2",
+            "10"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:132",
+          "enonce": "Quel est le sens de variation de x ↦ x² sur [−3 ; −1] ?",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "[−3 ; −1] est inclus dans ]−∞ ; 0].",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Décroissante",
+            "Croissante",
+            "Constante",
+            "Croissante puis décroissante"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:133",
+          "enonce": "Un rectangle a un périmètre de 12 cm. Quelle aire maximale peut-il avoir ?",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "Le carré de côté 3 cm : A(x) = x(6 − x) = 9 − (x − 3)².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "36 cm²",
+            "9 cm²",
+            "12 cm²",
+            "6 cm²"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:134",
+          "enonce": "On balaie [0 ; 1] avec un pas de 0,1 pour f(x) = x(1 − x). Quelle valeur de x renvoie le balayage ?",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 3,
+          "explication": "f(0,5) = 0,25 est la plus grande image ; f(0,4) = f(0,6) = 0,24.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "0,1",
+            "0,5",
+            "0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:135",
+          "enonce": "La courbe d'une fonction croissante descend quand on la parcourt de gauche à droite.",
+          "notion": "Sens de variation",
+          "difficulte": 1,
+          "explication": "Elle monte.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:136",
+          "enonce": "La fonction x ↦ 3x − 2 est décroissante sur ℝ.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 1,
+          "explication": "m = 3 > 0 : elle est croissante.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:137",
+          "enonce": "Le minimum de x ↦ x² sur [2 ; 5] vaut 0.",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "Sur [2 ; 5], la fonction carré est croissante : le minimum vaut 4.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:138",
+          "enonce": "Quelles informations un tableau de variations donne-t-il ? Coche toutes les réponses exactes.",
+          "notion": "Tableau de variations",
+          "difficulte": 1,
+          "explication": "Il résume le sens de variation.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les intervalles où f croît",
+            "Des valeurs de f aux bornes",
+            "La formule de f",
+            "L'aire sous la courbe",
+            "Les intervalles où f décroît"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:139",
+          "enonce": "Sur quels intervalles la fonction valeur absolue est-elle croissante ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 1,
+          "explication": "Elle est croissante sur [0 ; +∞[ et sur tout intervalle inclus.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "[1 ; 5]",
+            "ℝ",
+            "[−3 ; −1]",
+            "[0 ; +∞[",
+            "]−∞ ; 0]"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:140",
+          "enonce": "Lesquelles de ces grandeurs peuvent faire l'objet d'un problème d'optimisation ? Coche toutes les réponses exactes.",
+          "notion": "Optimisation",
+          "difficulte": 1,
+          "explication": "Une grandeur numérique qu'on veut rendre maximale ou minimale.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le bénéfice d'une entreprise",
+            "Le coût de production",
+            "La couleur d'une courbe",
+            "L'aire d'un enclos",
+            "Le nom d'une fonction"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:141",
+          "enonce": "Pour une précision de 0,01 par balayage sur [0 ; 1], quels pas conviennent ? Coche toutes les réponses exactes.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 1,
+          "explication": "Le pas doit être au plus 0,01.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "0,005",
+            "1",
+            "0,1",
+            "0,5",
+            "0,01"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:142",
+          "enonce": "On sait que f est décroissante sur [−5 ; 5]. Quelles affirmations sont forcément vraies ? Coche toutes les réponses exactes.",
+          "notion": "Sens de variation",
+          "difficulte": 2,
+          "explication": "L'ordre des images est inversé ; le signe reste inconnu.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(−5) ⩾ f(5)",
+            "f(1) ⩾ f(0)",
+            "f(0) ⩾ f(1)",
+            "f(x) ⩽ 0 sur [−5 ; 5]",
+            "f(−5) = 5"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:143",
+          "enonce": "h est croissante sur [0 ; 2] puis décroissante sur [2 ; 6], avec h(0) = 1, h(2) = 7, h(6) = 3. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Maximum et minimum",
+          "difficulte": 2,
+          "explication": "On compare h(0) = 1 et h(6) = 3 pour le minimum.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Le minimum de h sur [0 ; 6] vaut 1",
+            "Le maximum est atteint en 6",
+            "Le minimum de h sur [0 ; 6] vaut 3",
+            "Le minimum de h sur [2 ; 6] vaut 3",
+            "Le maximum de h sur [0 ; 6] vaut 7"
+          ],
+          "bonnes_reponses": [
+            0,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:144",
+          "enonce": "La fonction affine x ↦ −x + 5 : que sait-on de son sens de variation et de son signe ? Coche toutes les réponses exactes.",
+          "notion": "Variations des fonctions affines",
+          "difficulte": 2,
+          "explication": "m = −1 < 0, racine 5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(x) > 0 pour x < 5",
+            "f est croissante",
+            "f est décroissante",
+            "f(x) > 0 pour x > 5",
+            "f s'annule en −5"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:145",
+          "enonce": "Quelles comparaisons découlent de la croissance de la fonction carré sur [0 ; +∞[ ? Coche toutes les réponses exactes.",
+          "notion": "Comparer des images",
+          "difficulte": 2,
+          "explication": "Pour des positifs, les carrés sont rangés comme les nombres.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1,4² < 1,5²",
+            "0,1² < 0,2²",
+            "0,3² > 0,4²",
+            "7² < 6²",
+            "π² < 4²"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:146",
+          "enonce": "Si 0,5 ⩽ x ⩽ 2, quelles valeurs 1/x peut-il prendre ? Coche toutes les réponses exactes.",
+          "notion": "Fonction inverse",
+          "difficulte": 2,
+          "explication": "1/x est compris entre 1/2 et 1/0,5 = 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4",
+            "2",
+            "0,25",
+            "1",
+            "0,5"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch9:banque:147",
+          "enonce": "Quel est le maximum de x ↦ −x² + 3 sur ℝ ? Réponds par un nombre.",
+          "notion": "Maximum et minimum",
+          "difficulte": 1,
+          "explication": "−x² ⩽ 0, avec égalité en 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:148",
+          "enonce": "Si 3 ⩽ x ⩽ 5, quelle est la plus petite valeur possible de x² ? Réponds par un nombre.",
+          "notion": "Fonctions carré et valeur absolue",
+          "difficulte": 2,
+          "explication": "La fonction carré est croissante sur [0 ; +∞[.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "9"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:149",
+          "enonce": "Un rectangle a un périmètre de 24 cm. Quelle largeur, en cm, donne la plus grande aire ? Réponds par un nombre.",
+          "notion": "Optimisation",
+          "difficulte": 2,
+          "explication": "A(x) = x(12 − x) = 36 − (x − 6)².",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch9:banque:150",
+          "enonce": "Combien d'étapes de dichotomie faut-il au minimum pour diviser l'amplitude d'un intervalle par plus de 1000 ? Réponds par un nombre.",
+          "notion": "Balayage et dichotomie",
+          "difficulte": 3,
+          "explication": "2⁹ = 512 < 1000 < 1024 = 2¹⁰.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "10"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
