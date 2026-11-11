@@ -9,7 +9,7 @@ Banque : `histoire-geo-ch5.json`, 150 questions au statut `a_relire` après fusi
 - Corrections faites pendant la relecture :
   - deux réponses courtes qui doublaient des QCM (Bossuet, édit de Fontainebleau), remplacées par des questions sur le dixième et sur les dragonnades ;
   - deux énoncés trop proches sur les académies ;
-  - dix QCM dont la bonne réponse était la plus longue (biais ramené de 45 % à 33 %) ;
+  - dix QCM dont la bonne réponse était la plus longue (biais ramené de 45 % à 35 %) ;
   - un distracteur inventé (« Le Brun de Venise »), remplacé par Le Brun, peintre de Versailles.
 
 ## Points de doute (à trancher par l'enseignant)
