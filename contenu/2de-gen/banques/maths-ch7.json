@@ -1,0 +1,2321 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Vecteur directeur",
+    "Équation cartésienne",
+    "Équation réduite",
+    "Pente",
+    "Tracer et lire une droite",
+    "Alignement",
+    "Droites parallèles ou sécantes",
+    "Intersection par le calcul",
+    "Point d'intersection"
+  ],
+  "questions": [
+    {
+      "source": "maths-2de:ch7:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un vecteur directeur d'une droite d ?",
+      "difficulte": 1,
+      "explication": "C'est la définition du cours.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "Un vecteur non nul qui a la direction de d",
+        "Un vecteur de norme 1 perpendiculaire à d",
+        "Le vecteur nul",
+        "Un point de d"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Si A et B sont deux points distincts de la droite d, quel vecteur dirige d ?",
+      "difficulte": 1,
+      "explication": "AB⃗ a la direction de la droite (AB).",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "Le vecteur nul",
+        "AB⃗",
+        "Le milieu de [AB]",
+        "Un vecteur perpendiculaire à AB⃗"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Le vecteur u⃗(2 ; 3) dirige la droite d. Lequel de ces vecteurs dirige aussi d ?",
+      "difficulte": 2,
+      "explication": "(−4 ; −6) = −2u⃗ est colinéaire à u⃗ et non nul.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(3 ; 2)",
+        "(2 ; −3)",
+        "(−4 ; −6)",
+        "(0 ; 0)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Quel vecteur dirige la droite d'équation ax + by + c = 0 ?",
+      "difficulte": 2,
+      "explication": "C'est la propriété du cours.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(a ; b)",
+        "(b ; c)",
+        "(a ; c)",
+        "(−b ; a)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quel est un vecteur directeur de la droite d'équation 3x − 5y + 1 = 0 ?",
+      "difficulte": 2,
+      "explication": "(−b ; a) = (5 ; 3).",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(5 ; 3)",
+        "(3 ; −5)",
+        "(−5 ; 3)",
+        "(1 ; 3)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quel vecteur dirige la droite d'équation réduite y = 4x − 7 ?",
+      "difficulte": 2,
+      "explication": "(1 ; m) avec m = 4.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(4 ; 1)",
+        "(1 ; 4)",
+        "(−7 ; 4)",
+        "(1 ; −7)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:007",
+      "type": "qcm_multiple",
+      "enonce": "La droite d passe par A(1 ; 0) et B(3 ; 4). Quels vecteurs dirigent d ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "AB⃗(2 ; 4) et ses multiples non nuls.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(−2 ; −4)",
+        "(0 ; 0)",
+        "(4 ; 2)",
+        "(1 ; 2)",
+        "(2 ; 4)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Quels vecteurs dirigent la droite d'équation x + 2y − 3 = 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "(−b ; a) = (−2 ; 1) et ses multiples non nuls.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(2 ; 1)",
+        "(1 ; 2)",
+        "(4 ; −2)",
+        "(−2 ; 1)",
+        "(2 ; −1)"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:009",
+      "type": "vrai_faux",
+      "enonce": "Le vecteur nul peut être un vecteur directeur d'une droite.",
+      "difficulte": 1,
+      "explication": "Un vecteur directeur est non nul.",
+      "notion": "Vecteur directeur",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:010",
+      "type": "vrai_faux",
+      "enonce": "Si u⃗ dirige d, alors −3u⃗ dirige aussi d.",
+      "difficulte": 2,
+      "explication": "−3u⃗ est non nul et colinéaire à u⃗.",
+      "notion": "Vecteur directeur",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:011",
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation y = 5 a pour vecteur directeur (0 ; 1).",
+      "difficulte": 3,
+      "explication": "C'est une droite horizontale : elle est dirigée par (1 ; 0).",
+      "notion": "Vecteur directeur",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:012",
+      "type": "reponse_courte",
+      "enonce": "La droite y = mx + p est dirigée par (1 ; −3). Donne m.",
+      "difficulte": 2,
+      "explication": "Le vecteur (1 ; m) dirige la droite.",
+      "notion": "Vecteur directeur",
+      "reponses_acceptees": [
+        "-3",
+        "−3",
+        "m = -3",
+        "m = −3"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme d'une équation cartésienne de droite ?",
+      "difficulte": 1,
+      "explication": "C'est la forme générale.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "y = ax²",
+        "x + y = 1 uniquement",
+        "ax + by + c = 0, avec a et b non tous nuls",
+        "ax + by + c = 0, avec a = b = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Le point A(2 ; 1) appartient-il à la droite d'équation x + 3y − 5 = 0 ?",
+      "difficulte": 1,
+      "explication": "On remplace x et y par les coordonnées de A.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "Non, car 2 + 1 ≠ 5",
+        "Non, car 2 × 1 ≠ 5",
+        "On ne peut pas savoir",
+        "Oui, car 2 + 3 − 5 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation cartésienne de la droite passant par A(1 ; 2) et B(4 ; 3) ?",
+      "difficulte": 2,
+      "explication": "C'est l'exemple du cours ; vérification : 1 − 6 + 5 = 0 et 4 − 9 + 5 = 0.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "x − 3y + 5 = 0",
+        "3x − y − 1 = 0",
+        "x + 3y − 7 = 0",
+        "x − 3y − 5 = 0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Pour M(x ; y), A et un vecteur directeur u⃗, quelle condition traduit « M est sur la droite » ?",
+      "difficulte": 2,
+      "explication": "AM⃗ doit être colinéaire à u⃗.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "AM⃗ = u⃗",
+        "det(AM⃗, u⃗) = 0",
+        "AM = ‖u⃗‖",
+        "det(AM⃗, u⃗) = 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Les équations x − 3y + 5 = 0 et 2x − 6y + 10 = 0 décrivent-elles la même droite ?",
+      "difficulte": 2,
+      "explication": "Une droite a une infinité d'équations cartésiennes.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "Non, les coefficients sont différents",
+        "Non, elles sont parallèles distinctes",
+        "Oui, la seconde est la première multipliée par 2",
+        "Oui, mais seulement pour x = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation cartésienne de la droite passant par A(0 ; 1) et de vecteur directeur u⃗(2 ; 1) ?",
+      "difficulte": 2,
+      "explication": "det(AM⃗, u⃗) = x × 1 − 2(y − 1) = x − 2y + 2.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "2x + y − 1 = 0",
+        "x + 2y − 2 = 0",
+        "x − 2y − 2 = 0",
+        "x − 2y + 2 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quel point appartient à la droite d'équation 2x − y + 3 = 0 ?",
+      "difficulte": 3,
+      "explication": "2 × (−1) − 1 + 3 = 0.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "(−1 ; 1)",
+        "(1 ; 1)",
+        "(0 ; −3)",
+        "(2 ; 1)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de k le point (k ; 2) est-il sur la droite 3x + 2y − 10 = 0 ?",
+      "difficulte": 3,
+      "explication": "3k + 4 − 10 = 0 donne k = 2.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "−2",
+        "2",
+        "10/3",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:021",
+      "type": "qcm_multiple",
+      "enonce": "Quels points appartiennent à la droite d'équation x + y − 4 = 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La somme des coordonnées doit valoir 4.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "(2 ; 3)",
+        "(−1 ; 5)",
+        "(1 ; 3)",
+        "(4 ; 0)",
+        "(0 ; −4)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:022",
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations décrivent la même droite que 2x − 4y + 6 = 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "On multiplie ou divise tous les coefficients par un même nombre non nul.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "x − 2y + 6 = 0",
+        "−x + 2y − 3 = 0",
+        "2x + 4y + 6 = 0",
+        "x − 2y + 3 = 0",
+        "x − 4y + 3 = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:023",
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations sont des équations cartésiennes de droites ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "x² n'est pas du premier degré ; a = b = 0 ne donne pas une droite.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "x² + y = 1",
+        "3x − 1 = 0",
+        "x − y = 0",
+        "0x + 0y + 5 = 0",
+        "y + 2 = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:024",
+      "type": "vrai_faux",
+      "enonce": "Une droite a une seule équation cartésienne.",
+      "difficulte": 1,
+      "explication": "On peut multiplier une équation par tout réel non nul.",
+      "notion": "Équation cartésienne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:025",
+      "type": "vrai_faux",
+      "enonce": "Le point O(0 ; 0) appartient à la droite d'équation 5x − 2y = 0.",
+      "difficulte": 2,
+      "explication": "5 × 0 − 2 × 0 = 0.",
+      "notion": "Équation cartésienne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:026",
+      "type": "vrai_faux",
+      "enonce": "L'équation x = 3 est une équation cartésienne de droite.",
+      "difficulte": 3,
+      "explication": "C'est 1x + 0y − 3 = 0, avec a = 1 non nul.",
+      "notion": "Équation cartésienne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:027",
+      "type": "reponse_courte",
+      "enonce": "La droite d'équation 2x + y + c = 0 passe par A(1 ; 3). Donne c.",
+      "difficulte": 2,
+      "explication": "2 + 3 + c = 0.",
+      "notion": "Équation cartésienne",
+      "reponses_acceptees": [
+        "-5",
+        "−5",
+        "c = -5",
+        "c = −5"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Dans l'équation réduite y = mx + p, comment s'appelle p ?",
+      "difficulte": 1,
+      "explication": "La droite coupe l'axe des ordonnées en (0 ; p).",
+      "notion": "Équation réduite",
+      "propositions": [
+        "La pente",
+        "L'abscisse à l'origine",
+        "L'ordonnée à l'origine",
+        "Le vecteur directeur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle droite n'a pas d'équation réduite de la forme y = mx + p ?",
+      "difficulte": 1,
+      "explication": "Une droite verticale a une équation x = c.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "Une droite horizontale",
+        "Une droite passant par l'origine",
+        "Une droite de pente négative",
+        "Une droite parallèle à l'axe des ordonnées"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:030",
+      "type": "qcm_unique",
+      "enonce": "En quel point la droite y = 3x − 1 coupe-t-elle l'axe des ordonnées ?",
+      "difficulte": 1,
+      "explication": "Pour x = 0, y = −1.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "(0 ; −1)",
+        "(−1 ; 0)",
+        "(0 ; 3)",
+        "(3 ; −1)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation réduite de la droite 2x + 3y − 6 = 0 ?",
+      "difficulte": 2,
+      "explication": "3y = −2x + 6, puis on divise par 3.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = 2x − 6",
+        "y = −(2/3)x + 2",
+        "y = (2/3)x + 2",
+        "y = −2x + 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation réduite de la droite passant par A(1 ; 2) et B(3 ; 8) ?",
+      "difficulte": 2,
+      "explication": "m = 6/2 = 3 et 2 = 3 + p.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = 3x + 2",
+        "y = 2x + 4",
+        "y = 3x − 1",
+        "y = 6x − 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation réduite de la droite de pente −2 passant par A(3 ; 1) ?",
+      "difficulte": 2,
+      "explication": "1 = −6 + p, donc p = 7.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = −2x + 1",
+        "y = −2x − 5",
+        "y = 3x − 2",
+        "y = −2x + 7"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la droite passant par A(2 ; 5) et B(2 ; −1) ?",
+      "difficulte": 3,
+      "explication": "A et B ont la même abscisse : droite verticale.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "x = 2",
+        "y = 2",
+        "y = 2x + 1",
+        "Elle n'a pas d'équation"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation réduite de la droite x − 2y + 4 = 0 ?",
+      "difficulte": 3,
+      "explication": "2y = x + 4.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = 2x + 4",
+        "y = 0,5x + 2",
+        "y = −0,5x − 2",
+        "y = x + 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:036",
+      "type": "qcm_multiple",
+      "enonce": "Pour la droite y = −x + 4, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "m = −1, p = 4 ; (4 ; 0) est sur la droite, pas (4 ; 4).",
+      "notion": "Équation réduite",
+      "propositions": [
+        "Elle passe par (4 ; 4)",
+        "Sa pente vaut 4",
+        "Elle passe par (0 ; 4)",
+        "Elle est verticale",
+        "Sa pente vaut −1"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:037",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites passent par l'origine du repère ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "L'origine (0 ; 0) vérifie l'équation.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = −x",
+        "y = x + 1",
+        "y = 5x",
+        "x = 2",
+        "2x − 3y = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:038",
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations décrivent la droite passant par (0 ; 3) et (6 ; 0) ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "m = (0 − 3)/(6 − 0) = −0,5.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "x + 2y − 6 = 0",
+        "y = −2x + 6",
+        "y = −0,5x + 3",
+        "x + y = 9",
+        "y = 2x + 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:039",
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation y = 7 est horizontale.",
+      "difficulte": 1,
+      "explication": "Sa pente est nulle.",
+      "notion": "Équation réduite",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:040",
+      "type": "vrai_faux",
+      "enonce": "Toute droite a une équation réduite de la forme y = mx + p.",
+      "difficulte": 2,
+      "explication": "Les droites parallèles à l'axe des ordonnées ont une équation x = c.",
+      "notion": "Équation réduite",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:041",
+      "type": "vrai_faux",
+      "enonce": "Les équations y = 2x + 1 et 2x − y + 1 = 0 décrivent la même droite.",
+      "difficulte": 3,
+      "explication": "En isolant y : y = 2x + 1.",
+      "notion": "Équation réduite",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:042",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'ordonnée à l'origine de la droite y = 4x − 9 ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "p = −9.",
+      "notion": "Équation réduite",
+      "reponses_acceptees": [
+        "-9",
+        "−9"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:043",
+      "type": "reponse_courte",
+      "enonce": "La droite de pente 2 passe par A(4 ; 5). Quelle est son ordonnée à l'origine ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "5 = 8 + p, donc p = −3.",
+      "notion": "Équation réduite",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Quelle formule donne la pente de (AB), avec x_A ≠ x_B ?",
+      "difficulte": 1,
+      "explication": "Variation des ordonnées sur variation des abscisses.",
+      "notion": "Pente",
+      "propositions": [
+        "(x_B − x_A)/(y_B − y_A)",
+        "(y_B + y_A)/(x_B + x_A)",
+        "(y_B − y_A)/(x_B − x_A)",
+        "y_B − y_A"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la pente de la droite y = −4x + 1 ?",
+      "difficulte": 1,
+      "explication": "C'est le coefficient de x.",
+      "notion": "Pente",
+      "propositions": [
+        "1",
+        "4",
+        "−1/4",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Une droite de pente positive :",
+      "difficulte": 1,
+      "explication": "Quand x augmente de 1, y augmente de m > 0.",
+      "notion": "Pente",
+      "propositions": [
+        "monte quand on va vers la droite",
+        "descend quand on va vers la droite",
+        "est horizontale",
+        "est verticale"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la pente de la droite passant par A(−1 ; 4) et B(3 ; −4) ?",
+      "difficulte": 2,
+      "explication": "(−4 − 4)/(3 + 1) = −8/4.",
+      "notion": "Pente",
+      "propositions": [
+        "2",
+        "−2",
+        "−1/2",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Sur la droite y = 3x + 2, de combien varie y quand x augmente de 1 ?",
+      "difficulte": 2,
+      "explication": "C'est le sens de la pente.",
+      "notion": "Pente",
+      "propositions": [
+        "Il augmente de 2",
+        "Il diminue de 3",
+        "Il augmente de 3",
+        "Il augmente de 5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la pente d'une droite horizontale ?",
+      "difficulte": 2,
+      "explication": "y ne change pas quand x varie.",
+      "notion": "Pente",
+      "propositions": [
+        "1",
+        "Elle n'existe pas",
+        "−1",
+        "0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, une droite passe par (0 ; 2) et descend de 3 quand on avance de 2. Quelle est sa pente ?",
+      "difficulte": 3,
+      "explication": "m = −3/2.",
+      "notion": "Pente",
+      "propositions": [
+        "−1,5",
+        "1,5",
+        "−2/3",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Une droite passe par A(2 ; 1) et a pour pente 0,5. Quel point est aussi sur cette droite ?",
+      "difficulte": 3,
+      "explication": "Avancer de 4 fait monter de 4 × 0,5 = 2.",
+      "notion": "Pente",
+      "propositions": [
+        "(4 ; 1,5)",
+        "(6 ; 3)",
+        "(3 ; 3)",
+        "(0 ; 1)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites ont une pente négative ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le coefficient de x doit être négatif.",
+      "notion": "Pente",
+      "propositions": [
+        "y = 2x − 5",
+        "y = −x",
+        "y = 3 − 0,5x",
+        "y = 4",
+        "y = −2x + 5"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:053",
+      "type": "qcm_multiple",
+      "enonce": "Quels couples de points définissent une droite de pente 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "On calcule (y_B − y_A)/(x_B − x_A).",
+      "notion": "Pente",
+      "propositions": [
+        "(1 ; 2) et (2 ; 1)",
+        "(−1 ; −5) et (1 ; −1)",
+        "(2 ; 0) et (4 ; 4)",
+        "(0 ; 0) et (2 ; 1)",
+        "(0 ; 1) et (1 ; 3)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Une droite parallèle à l'axe des ordonnées n'a pas de pente.",
+      "difficulte": 1,
+      "explication": "Son équation est x = c : on ne peut pas diviser par x_B − x_A = 0.",
+      "notion": "Pente",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:055",
+      "type": "vrai_faux",
+      "enonce": "La pente de la droite passant par (1 ; 1) et (3 ; 7) vaut 2.",
+      "difficulte": 2,
+      "explication": "(7 − 1)/(3 − 1) = 3.",
+      "notion": "Pente",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:056",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la pente de la droite passant par A(0 ; 1) et B(2 ; 5) ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "(5 − 1)/(2 − 0) = 2.",
+      "notion": "Pente",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Combien de points suffit-il de placer pour tracer une droite ?",
+      "difficulte": 1,
+      "explication": "Deux points distincts déterminent une droite.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "Un",
+        "Trois",
+        "Deux",
+        "Dix"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Pour tracer y = 2x − 1, quel couple de points convient ?",
+      "difficulte": 1,
+      "explication": "Pour x = 0, y = −1 ; pour x = 2, y = 3.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "(0 ; 2) et (1 ; −1)",
+        "(−1 ; 0) et (2 ; 1)",
+        "(0 ; 1) et (2 ; 3)",
+        "(0 ; −1) et (2 ; 3)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Où la droite 3x + 2y − 6 = 0 coupe-t-elle l'axe des abscisses ?",
+      "difficulte": 2,
+      "explication": "On pose y = 0 : 3x = 6.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "En (2 ; 0)",
+        "En (0 ; 3)",
+        "En (3 ; 0)",
+        "En (0 ; 2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Où la droite 3x + 2y − 6 = 0 coupe-t-elle l'axe des ordonnées ?",
+      "difficulte": 2,
+      "explication": "On pose x = 0 : 2y = 6.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "En (2 ; 0)",
+        "En (0 ; 3)",
+        "En (0 ; −3)",
+        "En (0 ; 6)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, une droite coupe l'axe des ordonnées en 4 et descend de 1 quand x augmente de 1. Quelle est son équation ?",
+      "difficulte": 2,
+      "explication": "p = 4 et m = −1.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "y = x + 4",
+        "y = 4x − 1",
+        "y = −x + 4",
+        "y = −4x + 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie alignes(1, 1, 3, 4, 7, 10) avec la fonction Python du cours ?",
+      "difficulte": 3,
+      "explication": "(3 − 1)(10 − 1) − (7 − 1)(4 − 1) = 18 − 18 = 0.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "False",
+        "0",
+        "6",
+        "True"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie equation(1, 2, 4, 3) avec la fonction Python du cours ?",
+      "difficulte": 3,
+      "explication": "a = 1, b = −3, c = −1 + 6 = 5.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "(1, -3, 5)",
+        "(3, 1, -5)",
+        "(1, 3, 5)",
+        "(-1, 3, 5)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "Quels points sont sur la droite d'équation y = 2x − 1 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On vérifie y = 2x − 1.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "(−1 ; 1)",
+        "(1 ; 1)",
+        "(0 ; −1)",
+        "(3 ; 5)",
+        "(1 ; 2)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Pour la droite x − 2y + 4 = 0, quels points d'intersection avec les axes sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "y = 0 donne x = −4 ; x = 0 donne y = 2.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "(0 ; 2)",
+        "(0 ; 4)",
+        "(−4 ; 0)",
+        "(0 ; −2)",
+        "(4 ; 0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Pour tracer une droite d'équation y = mx + p, on peut partir du point (0 ; p).",
+      "difficulte": 1,
+      "explication": "C'est le point d'intersection avec l'axe des ordonnées.",
+      "notion": "Tracer et lire une droite",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:067",
+      "type": "vrai_faux",
+      "enonce": "La droite y = −2x + 3 passe par le point (1 ; 1).",
+      "difficulte": 2,
+      "explication": "−2 + 3 = 1.",
+      "notion": "Tracer et lire une droite",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:068",
+      "type": "reponse_courte",
+      "enonce": "En quelle abscisse la droite y = 2x − 8 coupe-t-elle l'axe des abscisses ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "2x − 8 = 0 donne x = 4.",
+      "notion": "Tracer et lire une droite",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Comment montrer que trois points A, B, C sont alignés avec des vecteurs ?",
+      "difficulte": 1,
+      "explication": "C'est la caractérisation de l'alignement.",
+      "notion": "Alignement",
+      "propositions": [
+        "Montrer que AB = AC",
+        "Montrer que AB⃗ et AC⃗ sont colinéaires",
+        "Montrer que ABC est isocèle",
+        "Montrer que AB⃗ + AC⃗ = 0⃗"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Les points A(0 ; 1), B(1 ; 3) et C(3 ; 7) sont-ils alignés ?",
+      "difficulte": 2,
+      "explication": "7 = 2 × 3 + 1.",
+      "notion": "Alignement",
+      "propositions": [
+        "Non, car AB ≠ BC",
+        "Non, car les abscisses sont différentes",
+        "Oui, car C vérifie l'équation y = 2x + 1 de (AB)",
+        "Oui, car ils sont tous au-dessus de l'axe"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Les points A(1 ; 2), B(3 ; 5) et C(5 ; 9) sont-ils alignés ?",
+      "difficulte": 2,
+      "explication": "AB⃗(2 ; 3), AC⃗(4 ; 7) : 2 × 7 − 4 × 3 = 2.",
+      "notion": "Alignement",
+      "propositions": [
+        "Oui, car det(AB⃗, AC⃗) = 0",
+        "Oui, car leurs abscisses sont impaires",
+        "Non, car AC = 2AB",
+        "Non, car det(AB⃗, AC⃗) = 2 ≠ 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de y le point C(4 ; y) est-il aligné avec A(0 ; 1) et B(2 ; 2) ?",
+      "difficulte": 3,
+      "explication": "(AB) : y = 0,5x + 1 ; pour x = 4, y = 3.",
+      "notion": "Alignement",
+      "propositions": [
+        "3",
+        "4",
+        "2,5",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Comment tester l'alignement avec des pentes, si x_A, x_B et x_C sont différents ?",
+      "difficulte": 3,
+      "explication": "Deux droites de même pente passant par A sont confondues.",
+      "notion": "Alignement",
+      "propositions": [
+        "Vérifier que les pentes sont opposées",
+        "Vérifier que les pentes de (AB) et (AC) sont égales",
+        "Vérifier que le produit des pentes vaut −1",
+        "Comparer les ordonnées à l'origine seulement"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:074",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces points sont alignés avec A(0 ; 0) et B(1 ; 2) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Ils sont sur la droite y = 2x.",
+      "notion": "Alignement",
+      "propositions": [
+        "(0,5 ; 1)",
+        "(1 ; 1)",
+        "(−1 ; −2)",
+        "(2 ; 1)",
+        "(2 ; 4)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "Avec A(1 ; 1), B(2 ; 3) et C(4 ; 7), quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "AB⃗(1 ; 2), AC⃗(3 ; 6) = 3AB⃗.",
+      "notion": "Alignement",
+      "propositions": [
+        "det(AB⃗, AC⃗) = 6",
+        "AC⃗ = 3AB⃗",
+        "A, B et C sont alignés",
+        "La pente de (AB) vaut 2",
+        "La pente de (AC) vaut 3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:076",
+      "type": "vrai_faux",
+      "enonce": "Trois points sont alignés si l'un d'eux appartient à la droite passant par les deux autres.",
+      "difficulte": 1,
+      "explication": "C'est la définition de l'alignement.",
+      "notion": "Alignement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:077",
+      "type": "vrai_faux",
+      "enonce": "Les points (0 ; 0), (1 ; 1) et (2 ; 3) sont alignés.",
+      "difficulte": 3,
+      "explication": "Les pentes de (0;0)-(1;1) et (0;0)-(2;3) valent 1 et 1,5.",
+      "notion": "Alignement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 3x + 1 et y = 3x − 4 sont :",
+      "difficulte": 1,
+      "explication": "Même pente 3, ordonnées à l'origine différentes.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "sécantes",
+        "confondues",
+        "parallèles",
+        "perpendiculaires"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Deux droites de pentes différentes sont :",
+      "difficulte": 1,
+      "explication": "Leurs vecteurs directeurs (1 ; m) et (1 ; m') ne sont pas colinéaires.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "parallèles",
+        "confondues",
+        "verticales",
+        "sécantes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Les droites 2x − y + 1 = 0 et 4x − 2y + 7 = 0 sont :",
+      "difficulte": 2,
+      "explication": "2 × (−2) − 4 × (−1) = 0, et les équations ne sont pas proportionnelles.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "parallèles",
+        "sécantes",
+        "confondues",
+        "perpendiculaires"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Quelle condition caractérise le parallélisme de ax + by + c = 0 et a'x + b'y + c' = 0 ?",
+      "difficulte": 2,
+      "explication": "Les vecteurs (−b ; a) et (−b' ; a') sont colinéaires.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "aa' + bb' = 0",
+        "ab' − a'b = 0",
+        "c = c'",
+        "a = b'"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Quelle droite est parallèle à y = −2x + 5 et passe par l'origine ?",
+      "difficulte": 2,
+      "explication": "Même pente, p = 0.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "y = 2x",
+        "y = −2x + 5",
+        "y = −2x",
+        "y = 5x"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de m les droites y = mx + 1 et 3x − y + 2 = 0 sont-elles parallèles ?",
+      "difficulte": 3,
+      "explication": "La seconde s'écrit y = 3x + 2.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "−3",
+        "1/3",
+        "2",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Les droites x + 2y − 4 = 0 et 2x + 4y − 8 = 0 sont :",
+      "difficulte": 3,
+      "explication": "La seconde équation est la première multipliée par 2.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "confondues",
+        "parallèles distinctes",
+        "sécantes",
+        "perpendiculaires"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites sont parallèles à y = 4x − 1 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Même pente 4.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "y = −x + 4",
+        "y = x/4",
+        "y = 4x",
+        "y = −4x − 1",
+        "y = 4x + 3"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites sont sécantes avec y = x ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "x − y + 1 = 0 s'écrit y = x + 1 : même pente.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "y = x + 3",
+        "x − y + 1 = 0",
+        "x = 5",
+        "y = 2x + 1",
+        "y = −x"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations décrivent une droite parallèle à 3x − 2y + 1 = 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Pente 1,5 ; 6 × (−2) − 3 × (−4) = 0.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "3x + 2y = 0",
+        "y = 1,5x − 7",
+        "6x − 4y + 5 = 0",
+        "y = −1,5x",
+        "2x − 3y + 1 = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Deux droites de même pente sont parallèles.",
+      "difficulte": 1,
+      "explication": "Leurs vecteurs directeurs (1 ; m) sont égaux.",
+      "notion": "Droites parallèles ou sécantes",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Deux droites parallèles ont toujours la même ordonnée à l'origine.",
+      "difficulte": 2,
+      "explication": "Seules des droites confondues ont aussi le même p.",
+      "notion": "Droites parallèles ou sécantes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:090",
+      "type": "vrai_faux",
+      "enonce": "Deux droites sécantes ont exactement un point commun.",
+      "difficulte": 3,
+      "explication": "C'est la définition de sécantes.",
+      "notion": "Droites parallèles ou sécantes",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:091",
+      "type": "reponse_courte",
+      "enonce": "Pour quelle valeur de a les droites ax + 2y − 1 = 0 et 3x + 6y + 4 = 0 sont-elles parallèles ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "a × 6 − 3 × 2 = 0, donc a = 1.",
+      "notion": "Droites parallèles ou sécantes",
+      "reponses_acceptees": [
+        "1"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Pour trouver le point d'intersection de y = 2x − 1 et y = −x + 5, quelle équation résout-on ?",
+      "difficulte": 1,
+      "explication": "Au point commun, les deux ordonnées sont égales.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "2x − 1 = 0",
+        "2x − 1 = −x + 5",
+        "−x + 5 = 0",
+        "2x = −x"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Quel est le point d'intersection des droites y = 2x − 1 et y = −x + 5 ?",
+      "difficulte": 2,
+      "explication": "3x = 6, x = 2, y = 3.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(3 ; 2)",
+        "(−2 ; 3)",
+        "(2 ; 3)",
+        "(2 ; −1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Où la droite y = x + 1 rencontre-t-elle la droite horizontale y = 3 ?",
+      "difficulte": 2,
+      "explication": "x + 1 = 3 donne x = 2.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(3 ; 4)",
+        "(1 ; 3)",
+        "(3 ; 3)",
+        "(2 ; 3)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Quel est le point d'intersection de la droite y = 3x − 6 avec l'axe des abscisses ?",
+      "difficulte": 2,
+      "explication": "y = 0 : 3x = 6.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(2 ; 0)",
+        "(0 ; −6)",
+        "(−2 ; 0)",
+        "(6 ; 0)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Quel est le point d'intersection des droites x + y = 4 et 2x − y = 5 ?",
+      "difficulte": 3,
+      "explication": "En additionnant : 3x = 9.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(1 ; 3)",
+        "(3 ; 1)",
+        "(2 ; 2)",
+        "(4 ; 0)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 2x + 3 et x = −1 se coupent en :",
+      "difficulte": 3,
+      "explication": "Pour x = −1, y = −2 + 3 = 1.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(1 ; −1)",
+        "(−1 ; 5)",
+        "(−1 ; 1)",
+        "(0 ; 3)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Le point (1 ; 2) est commun à quelles droites ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On vérifie chaque équation avec x = 1 et y = 2.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "y = x + 1",
+        "y = 3x",
+        "x = 2",
+        "x + y = 3",
+        "y = 2x"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Quelles paires de droites se coupent au point (0 ; 4) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les deux équations doivent être vérifiées en (0 ; 4).",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "y = 2x + 4 et y = 2x + 1",
+        "y = x + 4 et y = −2x + 4",
+        "y = 4x et y = 4",
+        "y = x + 4 et y = x − 4",
+        "y = 3x + 4 et x = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:100",
+      "type": "vrai_faux",
+      "enonce": "Deux droites parallèles distinctes n'ont pas de point d'intersection.",
+      "difficulte": 2,
+      "explication": "Elles ne se coupent jamais.",
+      "notion": "Point d'intersection",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:101",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'abscisse du point d'intersection de y = 4x − 3 et y = x + 6 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "3x = 9.",
+      "notion": "Point d'intersection",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Sur la droite d'équation x − y = 0, abscisse et ordonnée sont égales. Quel point en fait partie ?",
+      "difficulte": 1,
+      "explication": "x = y.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "(3 ; −3)",
+        "(0 ; 1)",
+        "(2 ; 0)",
+        "(3 ; 3)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on deux droites qui ont un seul point commun ?",
+      "difficulte": 1,
+      "explication": "Elles se coupent en un point.",
+      "notion": "Droites parallèles ou sécantes",
+      "propositions": [
+        "Sécantes",
+        "Parallèles",
+        "Confondues",
+        "Colinéaires"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Quel vecteur dirige l'axe des abscisses ?",
+      "difficulte": 1,
+      "explication": "C'est le vecteur i⃗.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(0 ; 1)",
+        "(1 ; 0)",
+        "(1 ; 1)",
+        "(0 ; 0)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Si C appartient à la droite (AB), les points A, B, C sont :",
+      "difficulte": 1,
+      "explication": "C'est la définition de l'alignement.",
+      "notion": "Alignement",
+      "propositions": [
+        "sur un même cercle",
+        "les sommets d'un triangle",
+        "alignés",
+        "équidistants"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:106",
+      "type": "vrai_faux",
+      "enonce": "La pente de la droite y = 5 − 2x vaut 5.",
+      "difficulte": 1,
+      "explication": "Le coefficient de x vaut −2.",
+      "notion": "Pente",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Les droites y = x et y = −x se coupent à l'origine.",
+      "difficulte": 1,
+      "explication": "x = −x donne x = 0, et y = 0.",
+      "notion": "Point d'intersection",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Le point (1 ; 1) appartient à la droite d'équation 3x + 2y − 4 = 0.",
+      "difficulte": 2,
+      "explication": "3 + 2 − 4 = 1 ≠ 0.",
+      "notion": "Équation cartésienne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces points sont sur la droite verticale x = 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "L'abscisse doit valoir 2.",
+      "notion": "Alignement",
+      "propositions": [
+        "(2 ; −5)",
+        "(0 ; 2)",
+        "(5 ; 2)",
+        "(2 ; 0)",
+        "(2 ; 7)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites sont horizontales ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Une droite horizontale a une équation y = p.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = 3",
+        "x = 3",
+        "y = −1",
+        "y = 3x",
+        "y = x"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:111",
+      "type": "qcm_unique",
+      "enonce": "La première bissectrice a pour équation y = x. Que vaut son coefficient directeur ?",
+      "difficulte": 1,
+      "explication": "y = 1 × x + 0.",
+      "notion": "Pente",
+      "propositions": [
+        "0",
+        "−1",
+        "Elle n'existe pas",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation réduite d'une droite de pente 2 et d'ordonnée à l'origine −3 ?",
+      "difficulte": 1,
+      "explication": "y = mx + p avec m = 2 et p = −3.",
+      "notion": "Équation réduite",
+      "propositions": [
+        "y = 2x − 3",
+        "y = −3x + 2",
+        "y = 2x + 3",
+        "x = 2y − 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Quel point est commun à toutes les droites d'équation y = mx ?",
+      "difficulte": 1,
+      "explication": "Pour x = 0, y = 0 quelle que soit la pente m.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "(1 ; 1)",
+        "L'origine (0 ; 0)",
+        "(0 ; 1)",
+        "Aucun"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'ordonnée du point de la droite y = 3x + 2 d'abscisse 1 ?",
+      "difficulte": 1,
+      "explication": "3 × 1 + 2 = 5.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "3",
+        "2",
+        "5",
+        "6"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:115",
+      "type": "qcm_unique",
+      "enonce": "A(0 ; 1), B(2 ; 5) et C(3 ; 7) sont alignés. Quelle est la pente commune de (AB) et (AC) ?",
+      "difficulte": 2,
+      "explication": "(5 − 1)/2 = 2 et (7 − 1)/3 = 2.",
+      "notion": "Alignement",
+      "propositions": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:116",
+      "type": "vrai_faux",
+      "enonce": "La droite y = 2x + 3 passe par l'origine.",
+      "difficulte": 1,
+      "explication": "Pour x = 0, y = 3 ≠ 0.",
+      "notion": "Équation réduite",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Les droites y = x + 1 et y = 2x + 1 sont parallèles.",
+      "difficulte": 1,
+      "explication": "Pentes 1 et 2 : elles sont sécantes en (0 ; 1).",
+      "notion": "Droites parallèles ou sécantes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Une droite de pente négative monte quand on va vers la droite.",
+      "difficulte": 1,
+      "explication": "Elle descend : y diminue quand x augmente.",
+      "notion": "Pente",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Les points (0 ; 1), (1 ; 2) et (2 ; 4) sont alignés.",
+      "difficulte": 2,
+      "explication": "Les pentes valent 1 puis 1,5.",
+      "notion": "Alignement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:120",
+      "type": "qcm_multiple",
+      "enonce": "Repère les points dont les coordonnées satisfont 2x + y − 6 = 0. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On remplace x et y : 2x + y doit valoir 6.",
+      "notion": "Équation cartésienne",
+      "propositions": [
+        "(6 ; 0)",
+        "(3 ; 0)",
+        "(1 ; 4)",
+        "(0 ; 6)",
+        "(2 ; 1)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:121",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites montent quand on va vers la droite ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Il faut une pente strictement positive.",
+      "notion": "Pente",
+      "propositions": [
+        "y = −5x",
+        "y = 4",
+        "y = x",
+        "y = 3x − 2",
+        "y = −x + 1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:122",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites passent par le point (2 ; 0) ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On vérifie chaque équation avec x = 2 et y = 0.",
+      "notion": "Point d'intersection",
+      "propositions": [
+        "y = x − 2",
+        "y = x + 2",
+        "x = 2",
+        "y = 2",
+        "y = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Quels vecteurs dirigent la droite y = 2x + 5 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "(1 ; m) = (1 ; 2) et ses multiples non nuls.",
+      "notion": "Vecteur directeur",
+      "propositions": [
+        "(2 ; 4)",
+        "(1 ; 2)",
+        "(2 ; 1)",
+        "(1 ; 5)",
+        "(0 ; 0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Où la droite y = −x + 3 coupe-t-elle les deux axes du repère ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "x = 0 donne y = 3 ; y = 0 donne x = 3.",
+      "notion": "Tracer et lire une droite",
+      "propositions": [
+        "(1 ; 0)",
+        "(−3 ; 0)",
+        "(0 ; 3)",
+        "(0 ; −3)",
+        "(3 ; 0)"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:125",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la pente de la droite y = 7x + 2 ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "C'est le coefficient de x.",
+      "notion": "Pente",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:126",
+      "type": "reponse_courte",
+      "enonce": "La droite y = 5x + 8 coupe l'axe des ordonnées en (0 ; b). Donne b.",
+      "difficulte": 1,
+      "explication": "Pour x = 0, y = 8.",
+      "notion": "Tracer et lire une droite",
+      "reponses_acceptees": [
+        "8"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:127",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'ordonnée du point d'intersection des droites y = 2x et y = x + 3 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "2x = x + 3 donne x = 3, puis y = 6.",
+      "notion": "Point d'intersection",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:128",
+      "type": "reponse_courte",
+      "enonce": "La droite d'équation ax + y − 4 = 0 passe par (2 ; 0). Donne a.",
+      "difficulte": 2,
+      "explication": "2a − 4 = 0.",
+      "notion": "Équation cartésienne",
+      "reponses_acceptees": [
+        "2",
+        "a = 2"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:129",
+      "type": "qcm_unique",
+      "enonce": "Que vérifient les coordonnées du point d'intersection de deux droites ?",
+      "difficulte": 1,
+      "explication": "Le point est sur les deux droites.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Les deux équations à la fois",
+        "Seulement la première équation",
+        "Aucune des deux",
+        "L'équation y = x"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:130",
+      "type": "qcm_unique",
+      "enonce": "Après avoir trouvé l'abscisse x du point commun, comment obtient-on son ordonnée ?",
+      "difficulte": 1,
+      "explication": "Puis on vérifie avec l'autre équation.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "En recopiant x",
+        "En remplaçant x dans l'une des équations réduites",
+        "En calculant x²",
+        "En lisant la pente"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 3x + 1 et y = 3x − 2 ont-elles un point commun ?",
+      "difficulte": 1,
+      "explication": "Même pente, ordonnées à l'origine différentes.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Oui, en (0 ; 1)",
+        "Oui, en (1 ; 4)",
+        "Non, elles sont parallèles distinctes",
+        "Elles sont confondues"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Offre A : 20 € par mois plus 0,10 € par minute ; offre B : 35 € par mois. À partir de combien de minutes l'offre B est-elle moins chère ?",
+      "difficulte": 2,
+      "explication": "0,1x + 20 = 35 donne x = 150.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Au-delà de 15 minutes",
+        "Au-delà de 350 minutes",
+        "Jamais",
+        "Au-delà de 150 minutes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Quelle équation donne l'abscisse du point commun aux droites y = 4x − 3 et y = −2x + 9 ?",
+      "difficulte": 2,
+      "explication": "On égalise les ordonnées.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "4x − 3 = −2x + 9",
+        "4x − 3 = 0",
+        "4x = −2x",
+        "−3 = 9"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 4x − 3 et y = −2x + 9 se rencontrent en quel point ?",
+      "difficulte": 2,
+      "explication": "6x = 12, x = 2, y = 8 − 3 = 5.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "(5 ; 2)",
+        "(2 ; 5)",
+        "(2 ; 11)",
+        "(−2 ; 5)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 0,5x + 1 et y = −0,5x + 3 se croisent en quel point ?",
+      "difficulte": 2,
+      "explication": "x = 2, y = 0,5 × 2 + 1 = 2.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "(1 ; 1,5)",
+        "(2 ; 3)",
+        "(2 ; 2)",
+        "(4 ; 1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Un cycliste part du kilomètre 0 à 20 km/h ; un piéton part du kilomètre 9 à 5 km/h dans le même sens. Leurs positions sont y = 20t et y = 5t + 9. Quand le cycliste rattrape-t-il le piéton ?",
+      "difficulte": 2,
+      "explication": "20t = 5t + 9 donne t = 0,6.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Au bout de 9 h",
+        "Au bout de 1,8 h",
+        "Jamais",
+        "Au bout de 0,6 h"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = 2x + 1 et y = 2x + 1 : combien de points communs ont-elles ?",
+      "difficulte": 3,
+      "explication": "C'est la même droite.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Une infinité : elles sont confondues",
+        "Un seul",
+        "Aucun",
+        "Deux"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Les droites y = −x + 7 et y = (1/2)x + 1 se coupent en quel point ?",
+      "difficulte": 3,
+      "explication": "−x + 7 = 0,5x + 1 donne 1,5x = 6, x = 4.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "(3 ; 4)",
+        "(4 ; 3)",
+        "(6 ; 1)",
+        "(2 ; 5)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de p la droite y = 3x + p passe-t-elle par le point commun aux droites y = x et y = −x + 4 ?",
+      "difficulte": 3,
+      "explication": "Le point commun est (2 ; 2) ; 2 = 6 + p.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "4",
+        "2",
+        "−4",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:140",
+      "type": "qcm_multiple",
+      "enonce": "Quelles étapes servent à trouver le point d'intersection de deux droites données par leurs équations réduites ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "C'est la méthode du cours.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Additionner les pentes",
+        "Résoudre pour trouver x",
+        "Multiplier les ordonnées à l'origine",
+        "Égaliser les deux expressions de y",
+        "Calculer y avec une des équations"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Les droites y = x + 2 et y = −x + 6 : quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "x + 2 = −x + 6 donne x = 2, y = 4.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Elles sont parallèles",
+        "Elles sont sécantes",
+        "Elles se coupent en (2 ; 4)",
+        "Elles se coupent en (0 ; 2)",
+        "Elles se coupent en (4 ; 2)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Une salle loue à 100 € plus 5 € par personne, une autre à 10 € par personne. Avec y le prix et n le nombre de personnes, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "100 + 5n = 10n donne n = 20, pour 200 €.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "Les prix sont égaux pour 20 personnes",
+        "Les prix sont égaux pour 10 personnes",
+        "Au-delà de 20 personnes, la première salle est moins chère",
+        "Pour 20 personnes, chacune coûte 100 €",
+        "La seconde salle est toujours moins chère"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Pour quelles droites le point (1 ; 3) est-il le point d'intersection avec y = 2x + 1 ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Il faut passer par (1 ; 3) avec une pente différente de 2 ; y = 2x + 3 est parallèle.",
+      "notion": "Intersection par le calcul",
+      "propositions": [
+        "y = x + 3",
+        "y = −x + 4",
+        "y = 2x + 3",
+        "y = 3x + 1",
+        "y = 3"
+      ],
+      "bonnes_reponses": [
+        1,
+        4
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:144",
+      "type": "vrai_faux",
+      "enonce": "Deux droites de pentes différentes ont exactement un point commun.",
+      "difficulte": 1,
+      "explication": "Elles sont sécantes.",
+      "notion": "Intersection par le calcul",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Deux droites de même pente 5, d'ordonnées à l'origine 0 et 1, ont un point commun en O.",
+      "difficulte": 1,
+      "explication": "Même pente : elles sont parallèles, sans point commun.",
+      "notion": "Intersection par le calcul",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Les droites y = x + 1 et y = −x + 3 se coupent au point (1 ; 2).",
+      "difficulte": 2,
+      "explication": "1 + 1 = 2 et −1 + 3 = 2.",
+      "notion": "Intersection par le calcul",
+      "bonne_reponse": true
+    },
+    {
+      "source": "maths-2de:ch7:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Pour trouver le point commun à deux droites, il suffit de vérifier qu'un point est sur la première droite.",
+      "difficulte": 2,
+      "explication": "Il doit vérifier les deux équations.",
+      "notion": "Intersection par le calcul",
+      "bonne_reponse": false
+    },
+    {
+      "source": "maths-2de:ch7:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Les droites y = x et y = 6 se coupent en un point. Quelle est son abscisse ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "x = 6.",
+      "notion": "Intersection par le calcul",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'ordonnée du point commun aux droites y = 3x − 4 et y = x + 2 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "3x − 4 = x + 2 donne x = 3, puis y = 5.",
+      "notion": "Intersection par le calcul",
+      "reponses_acceptees": [
+        "5"
+      ]
+    },
+    {
+      "source": "maths-2de:ch7:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Offre A : 12 € plus 2 € par séance ; offre B : 5 € par séance. Pour combien de séances les deux offres coûtent-elles le même prix ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "12 + 2n = 5n donne n = 4.",
+      "notion": "Intersection par le calcul",
+      "reponses_acceptees": [
+        "4"
+      ]
+    }
+  ]
+}

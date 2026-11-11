@@ -1,0 +1,2280 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Systèmes embarqués",
+    "Objets connectés",
+    "Repères historiques",
+    "Capteurs",
+    "Actionneurs",
+    "Microcontrôleur et chaînes",
+    "Algorithme de contrôle",
+    "Seuils et hystérésis",
+    "Programmation sur micro:bit",
+    "Interface homme-machine",
+    "Enjeux des objets connectés"
+  ],
+  "questions": [
+    {
+      "source": "snt:ch7:banque:001",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Qu'est-ce qu'un système informatique embarqué ?",
+      "propositions": [
+        "Un système informatique intégré dans un objet pour une tâche précise",
+        "Un réseau social réservé aux voyageurs et aux pilotes",
+        "Un ordinateur portable que l'on emporte en voyage dans un sac à dos",
+        "Un logiciel installé sur un serveur d'un centre de données"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Il commande le fonctionnement de l'objet."
+    },
+    {
+      "source": "snt:ch7:banque:002",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Lequel de ces objets contient un système embarqué ?",
+      "propositions": [
+        "Un livre papier",
+        "Une paire de ciseaux",
+        "Une machine à laver",
+        "Une chaise en bois"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Elle choisit seule la durée et la température de son cycle."
+    },
+    {
+      "source": "snt:ch7:banque:003",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Objets connectés",
+      "enonce": "Qu'est-ce qu'un objet connecté ?",
+      "propositions": [
+        "Un objet vendu uniquement sur un site de commerce en ligne",
+        "Un objet branché sur une prise électrique, sans aucun programme à l'intérieur",
+        "Un câble qui relie un ordinateur à une imprimante",
+        "Un objet embarqué qui échange des données avec d'autres appareils ou Internet"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Montre, enceinte, thermostat pilotable…"
+    },
+    {
+      "source": "snt:ch7:banque:004",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Objets connectés",
+      "enonce": "Comment appelle-t-on l'ensemble des objets connectés qui échangent des données ?",
+      "propositions": [
+        "Le réseau pair-à-pair",
+        "L'Internet des objets",
+        "Le Web sémantique",
+        "Le nuage de points"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Plusieurs dizaines de milliards d'objets."
+    },
+    {
+      "source": "snt:ch7:banque:005",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Repères historiques",
+      "enonce": "Quel est le nom du premier microprocesseur, commercialisé par Intel en 1971 ?",
+      "propositions": [
+        "Le micro:bit",
+        "Le Pentium",
+        "L'Apollo",
+        "Le 4004"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Un processeur complet sur une seule puce."
+    },
+    {
+      "source": "snt:ch7:banque:006",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Repères historiques",
+      "enonce": "Pour quelles missions spatiales l'un des premiers systèmes embarqués a-t-il été conçu ?",
+      "propositions": [
+        "Les missions Ariane",
+        "Les missions Rosetta",
+        "Les missions Apollo",
+        "Les missions Galileo"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Il a aidé les astronautes à aller sur la Lune."
+    },
+    {
+      "source": "snt:ch7:banque:007",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Que fait un capteur ?",
+      "propositions": [
+        "Il stocke le programme dans sa mémoire interne",
+        "Il mesure une grandeur physique et la transforme en donnée",
+        "Il affiche les résultats sur un écran pour que l'utilisateur les lise",
+        "Il produit un mouvement à partir d'un ordre du programme"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Température, lumière, distance…"
+    },
+    {
+      "source": "snt:ch7:banque:008",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Quel capteur mesure la lumière ?",
+      "propositions": [
+        "Une photorésistance",
+        "Un capteur à ultrasons",
+        "Un accéléromètre",
+        "Un thermomètre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Sa résistance varie avec la lumière."
+    },
+    {
+      "source": "snt:ch7:banque:009",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Quel capteur mesure une distance sans contact ?",
+      "propositions": [
+        "Un capteur à ultrasons",
+        "Une photorésistance",
+        "Un bouton poussoir",
+        "Un thermomètre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Utilisé par les radars de recul."
+    },
+    {
+      "source": "snt:ch7:banque:010",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Quel capteur détecte les mouvements et les chocs ?",
+      "propositions": [
+        "Un haut-parleur",
+        "Une DEL",
+        "Un accéléromètre",
+        "Une électrovanne"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Il équipe les téléphones et la micro:bit."
+    },
+    {
+      "source": "snt:ch7:banque:011",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Que fait un actionneur ?",
+      "propositions": [
+        "Il enregistre les données envoyées par les capteurs",
+        "Il calcule les décisions à la place du programme",
+        "Il mesure la température de la pièce en continu",
+        "Il agit sur le monde physique à partir d'un ordre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Mouvement, lumière, son, chaleur."
+    },
+    {
+      "source": "snt:ch7:banque:012",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Lequel de ces éléments est un actionneur ?",
+      "propositions": [
+        "Un thermomètre",
+        "Un moteur",
+        "Un microphone",
+        "Une photorésistance"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Les trois autres sont des capteurs."
+    },
+    {
+      "source": "snt:ch7:banque:013",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Quel actionneur ouvre ou ferme l'arrivée d'eau d'une machine à laver ?",
+      "propositions": [
+        "Une électrovanne",
+        "Un thermomètre",
+        "Une photorésistance",
+        "Un accéléromètre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Elle est commandée électriquement."
+    },
+    {
+      "source": "snt:ch7:banque:014",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Qu'est-ce qu'un microcontrôleur ?",
+      "propositions": [
+        "Un écran tactile de petite taille",
+        "Un câble très fin qui relie directement les capteurs aux actionneurs",
+        "Un capteur très précis qui mesure les microbes",
+        "Un petit ordinateur sur une seule puce qui exécute le programme"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Processeur, mémoire et entrées-sorties."
+    },
+    {
+      "source": "snt:ch7:banque:015",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Que contient la chaîne d'information d'un système ?",
+      "propositions": [
+        "Alimenter, transmettre et convertir l'énergie",
+        "Chauffer, refroidir et ventiler la pièce",
+        "Acquérir, traiter et communiquer les données",
+        "Fabriquer, emballer et vendre les objets"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "La chaîne d'énergie alimente les actionneurs."
+    },
+    {
+      "source": "snt:ch7:banque:016",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Quelles sont les trois étapes répétées par l'algorithme de contrôle ?",
+      "propositions": [
+        "Écrire, effacer, recommencer",
+        "Lire, décider, agir",
+        "Acheter, installer, jeter",
+        "Allumer, attendre, éteindre"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Dans une boucle sans fin."
+    },
+    {
+      "source": "snt:ch7:banque:017",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Pourquoi le programme d'un système embarqué tourne-t-il dans une boucle infinie ?",
+      "propositions": [
+        "Il doit surveiller et commander l'objet tant qu'il est allumé",
+        "Parce que Python n'a pas de boucle bornée",
+        "C'est une erreur de programmation fréquente, mais sans aucun danger pour l'objet",
+        "Pour consommer le plus d'électricité possible"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Cette fois, la boucle infinie est voulue."
+    },
+    {
+      "source": "snt:ch7:banque:018",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Comment appelle-t-on la température souhaitée qu'un thermostat cherche à maintenir ?",
+      "propositions": [
+        "L'hystérésis",
+        "La consigne",
+        "L'actionneur",
+        "Le capteur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Par exemple 19 °C."
+    },
+    {
+      "source": "snt:ch7:banque:019",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Comment appelle-t-on l'écart volontaire entre le seuil d'allumage et le seuil d'extinction ?",
+      "propositions": [
+        "La consigne",
+        "La latence",
+        "L'hystérésis",
+        "La redondance"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Il évite les allumages trop fréquents."
+    },
+    {
+      "source": "snt:ch7:banque:020",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Que fait sleep(2000) sur une micro:bit ?",
+      "propositions": [
+        "Il affiche 2000 sur l'écran",
+        "Il attend 2000 secondes",
+        "Il éteint la carte définitivement",
+        "Il attend 2 secondes"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "sleep attend un nombre de millisecondes."
+    },
+    {
+      "source": "snt:ch7:banque:021",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Quelle fonction de la micro:bit renvoie la température ?",
+      "propositions": [
+        "display.scroll()",
+        "button_a.was_pressed()",
+        "sleep()",
+        "temperature()"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "display.scroll affiche, sleep attend."
+    },
+    {
+      "source": "snt:ch7:banque:022",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Que fait display.scroll(t) sur une micro:bit ?",
+      "propositions": [
+        "Il fait défiler la valeur de t sur l'écran de DEL",
+        "Il mesure la température et la range dans t",
+        "Il allume la broche numéro t de la carte",
+        "Il attend t millisecondes avant de continuer"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "C'est une sortie de l'IHM."
+    },
+    {
+      "source": "snt:ch7:banque:023",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Combien de DEL compte l'écran de la micro:bit ?",
+      "propositions": [
+        "2",
+        "8",
+        "25",
+        "100"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Une grille de 5 × 5."
+    },
+    {
+      "source": "snt:ch7:banque:024",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Interface homme-machine",
+      "enonce": "Que signifie le sigle IHM ?",
+      "propositions": [
+        "Information hors mémoire",
+        "Interface homme-machine",
+        "Indice de hauteur maximale",
+        "Internet haute mobilité"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "L'ensemble des moyens de communication entre l'utilisateur et le système."
+    },
+    {
+      "source": "snt:ch7:banque:025",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Interface homme-machine",
+      "enonce": "Lequel de ces éléments fait partie de l'IHM d'une machine à laver ?",
+      "propositions": [
+        "La résistance qui chauffe l'eau",
+        "L'électrovanne qui laisse entrer l'eau",
+        "Les boutons et l'écran du panneau avant",
+        "Le moteur qui fait tourner le tambour"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Les trois autres sont des actionneurs."
+    },
+    {
+      "source": "snt:ch7:banque:026",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Quel geste protège une caméra connectée contre le piratage ?",
+      "propositions": [
+        "Lui donner un nom original",
+        "La débrancher chaque matin",
+        "La placer près d'une fenêtre",
+        "Changer le mot de passe d'usine"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Et installer les mises à jour."
+    },
+    {
+      "source": "snt:ch7:banque:027",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Que signifie la sûreté d'un système embarqué ?",
+      "propositions": [
+        "Il doit être connecté à Internet en permanence",
+        "Il ne doit pas tomber en panne de façon dangereuse",
+        "Il doit afficher beaucoup d'informations à l'écran",
+        "Il doit être le moins cher possible à fabriquer"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Un frein ou un pacemaker ne doivent pas faillir."
+    },
+    {
+      "source": "snt:ch7:banque:028",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Laquelle de ces données un bracelet de sport connecté collecte-t-il ?",
+      "propositions": [
+        "Le rythme cardiaque",
+        "La liste des sites visités",
+        "Le contenu des courriels",
+        "Le mot de passe de la box"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Aussi le sommeil, les pas…"
+    },
+    {
+      "source": "snt:ch7:banque:029",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Quel système embarqué évite le blocage des roues lors d'un freinage ?",
+      "propositions": [
+        "Le DNS",
+        "L'ABS",
+        "Le GPS",
+        "L'IHM"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Il relâche puis reprend le freinage de la roue."
+    },
+    {
+      "source": "snt:ch7:banque:030",
+      "type": "qcm_unique",
+      "difficulte": 1,
+      "notion": "Objets connectés",
+      "enonce": "Lequel de ces objets est un objet connecté ?",
+      "propositions": [
+        "Un radiateur en fonte sans électronique",
+        "Une horloge mécanique à remontoir",
+        "Une lampe de poche à piles",
+        "Un thermostat pilotable depuis un téléphone"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Il échange des données par Internet."
+    },
+    {
+      "source": "snt:ch7:banque:031",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Systèmes embarqués",
+      "enonce": "Quel avantage apporte l'informatique embarquée dans une machine à laver ?",
+      "propositions": [
+        "Adapter la durée et la température au linge, ce qui économise l'énergie",
+        "Rendre la machine plus lourde, donc beaucoup plus stable pendant l'essorage",
+        "Empêcher toute panne mécanique du moteur",
+        "Supprimer le besoin d'eau pour le lavage"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Aussi programmer un départ différé."
+    },
+    {
+      "source": "snt:ch7:banque:032",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Systèmes embarqués",
+      "enonce": "Pourquoi l'utilisateur ne voit-il souvent pas le système embarqué de son objet ?",
+      "propositions": [
+        "Il est caché par la loi pour des raisons de sécurité",
+        "Il est installé dans un centre de données situé à l'étranger, loin de l'objet",
+        "Il est intégré à l'intérieur et commande l'objet sans intervention",
+        "Il ne fonctionne que la nuit, quand l'objet est éteint"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Il fait partie de l'objet."
+    },
+    {
+      "source": "snt:ch7:banque:033",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Objets connectés",
+      "enonce": "Qu'est-ce qui distingue un objet connecté d'un simple système embarqué ?",
+      "propositions": [
+        "Le module de communication qui échange des données",
+        "La présence d'actionneurs",
+        "La présence de capteurs",
+        "La présence d'un microcontrôleur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Wi-Fi, Bluetooth, réseau mobile…"
+    },
+    {
+      "source": "snt:ch7:banque:034",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Repères historiques",
+      "enonce": "Quel ordre chronologique est exact ?",
+      "propositions": [
+        "Intel 4004, guidage d'Apollo, ABS électronique",
+        "Guidage d'Apollo, Intel 4004, ABS électronique",
+        "Guidage d'Apollo, ABS électronique, Intel 4004",
+        "ABS électronique, Intel 4004, guidage d'Apollo"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "1967, 1971, 1978."
+    },
+    {
+      "source": "snt:ch7:banque:035",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Repères historiques",
+      "enonce": "Quelles cartes programmables pour l'enseignement sont citées dans le cours ?",
+      "propositions": [
+        "Galileo et GPS",
+        "Intel 4004 et Pentium",
+        "Apollo et ABS",
+        "Arduino et micro:bit"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Arduino en 2005, micro:bit en 2016."
+    },
+    {
+      "source": "snt:ch7:banque:036",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Capteurs",
+      "enonce": "Dans un radar de recul, quel est le capteur ?",
+      "propositions": [
+        "Le buzzer",
+        "L'écran du tableau de bord",
+        "Les capteurs à ultrasons",
+        "Le moteur du véhicule"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Le buzzer et l'écran sont des actionneurs."
+    },
+    {
+      "source": "snt:ch7:banque:037",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Capteurs",
+      "enonce": "Dans le freinage ABS, que mesurent les capteurs ?",
+      "propositions": [
+        "La distance des obstacles",
+        "La vitesse de chaque roue",
+        "Le niveau de carburant",
+        "La température du moteur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Une roue qui ralentit trop vite va se bloquer."
+    },
+    {
+      "source": "snt:ch7:banque:038",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Capteurs",
+      "enonce": "Quelle plage de valeurs renvoie display.read_light_level() sur une micro:bit ?",
+      "propositions": [
+        "De 0 (très sombre) à 255 (très clair)",
+        "De 0 à 1 seulement",
+        "De 0 (très clair) à 100 (très sombre)",
+        "De -50 à 50 degrés"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "C'est une mesure de la lumière ambiante."
+    },
+    {
+      "source": "snt:ch7:banque:039",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Actionneurs",
+      "enonce": "Dans une machine à laver, quel actionneur chauffe l'eau ?",
+      "propositions": [
+        "Le capteur de niveau d'eau",
+        "Le thermomètre",
+        "L'électrovanne",
+        "La résistance chauffante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Elle convertit l'énergie électrique en chaleur."
+    },
+    {
+      "source": "snt:ch7:banque:040",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Actionneurs",
+      "enonce": "Que fait l'instruction pin0.write_digital(1) ?",
+      "propositions": [
+        "Elle lit la valeur du capteur de lumière branché sur la broche 0 de la carte",
+        "Elle attend une seconde avant de continuer",
+        "Elle met la broche 0 à l'état 1, ce qui peut allumer une DEL",
+        "Elle affiche 1 sur l'écran de la carte"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "C'est une commande d'actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:041",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Que contient la chaîne d'énergie ?",
+      "propositions": [
+        "Acquérir les mesures des capteurs, puis les traiter dans le programme du système",
+        "Stocker les données dans le nuage",
+        "Alimenter, transmettre et convertir l'énergie pour les actionneurs",
+        "Afficher les informations pour l'utilisateur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "La chaîne d'information traite les données."
+    },
+    {
+      "source": "snt:ch7:banque:042",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Quel élément du schéma de la figure 1 exécute le programme ?",
+      "propositions": [
+        "Le microcontrôleur",
+        "Les capteurs",
+        "Les actionneurs",
+        "L'IHM"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Il reçoit les données des capteurs et envoie les ordres."
+    },
+    {
+      "source": "snt:ch7:banque:043",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans l'éclairage automatique d'un couloir, quand la lampe s'allume-t-elle ?",
+      "propositions": [
+        "Dès qu'une personne passe, même en plein jour",
+        "Quand une présence est détectée et qu'il fait sombre",
+        "Dès qu'il fait sombre, même sans personne",
+        "Toutes les heures, pendant une minute"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Deux conditions sont combinées."
+    },
+    {
+      "source": "snt:ch7:banque:044",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans un radar de recul, que se passe-t-il quand l'obstacle se rapproche ?",
+      "propositions": [
+        "Le moteur accélère",
+        "Les roues se bloquent",
+        "Les bips s'arrêtent complètement",
+        "Les bips deviennent plus rapprochés"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "La décision dépend de la distance mesurée."
+    },
+    {
+      "source": "snt:ch7:banque:045",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans une porte automatique, quelle est l'action déclenchée par la détection d'une personne ?",
+      "propositions": [
+        "La porte se verrouille",
+        "Un message est envoyé au propriétaire",
+        "Le détecteur s'éteint",
+        "Le moteur ouvre la porte"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Le moteur est l'actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:046",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Que se passerait-il avec un thermostat à un seul seuil de 19 °C ?",
+      "propositions": [
+        "Le chauffage s'allumerait et s'éteindrait sans arrêt autour de 19 °C",
+        "La température monterait sans limite",
+        "Le chauffage ne s'allumerait jamais",
+        "Le thermostat ne pourrait pas lire la température"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "D'où l'usure du chauffage."
+    },
+    {
+      "source": "snt:ch7:banque:047",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec les seuils 18,5 °C et 19,5 °C du cours, que fait le thermostat à 19 °C ?",
+      "propositions": [
+        "Il s'arrête de mesurer",
+        "Il garde l'état précédent du chauffage",
+        "Il éteint forcément le chauffage",
+        "Il allume forcément le chauffage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Entre les deux seuils, rien ne change."
+    },
+    {
+      "source": "snt:ch7:banque:048",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans le programme de la DEL du cours, que se passe-t-il quand la lumière mesurée vaut 30 ?",
+      "propositions": [
+        "Le programme s'arrête",
+        "La DEL s'éteint",
+        "La DEL s'allume",
+        "L'écran affiche 30"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "30 < 50 : la broche passe à 1."
+    },
+    {
+      "source": "snt:ch7:banque:049",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Que fait while True dans un programme de micro:bit ?",
+      "propositions": [
+        "Il répète le bloc une seule fois",
+        "Il vérifie que la carte est allumée",
+        "Il attend que l'on appuie sur un bouton",
+        "Il répète le bloc sans fin"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "La condition True est toujours vraie."
+    },
+    {
+      "source": "snt:ch7:banque:050",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans le programme d'acquisition du cours, à quelle fréquence la température est-elle affichée ?",
+      "propositions": [
+        "Seulement quand on appuie sur A",
+        "Environ toutes les deux secondes",
+        "Toutes les millisecondes",
+        "Une seule fois au démarrage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "sleep(2000) attend 2 secondes entre deux mesures."
+    },
+    {
+      "source": "snt:ch7:banque:051",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Dans le programme d'IHM du cours, que fait un appui sur le bouton B ?",
+      "propositions": [
+        "Il remet la consigne à 19",
+        "Il éteint l'écran de la carte",
+        "Il augmente la consigne d'un degré",
+        "Il baisse la consigne d'un degré"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "A baisse, B augmente."
+    },
+    {
+      "source": "snt:ch7:banque:052",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Dans l'IHM du cours, quel élément sert de sortie ?",
+      "propositions": [
+        "L'écran de DEL",
+        "Le bouton B",
+        "Le capteur de température",
+        "Le bouton A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Il affiche la consigne choisie."
+    },
+    {
+      "source": "snt:ch7:banque:053",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Qu'est-ce qui rend une IHM accessible aux personnes en situation de handicap ?",
+      "propositions": [
+        "Des sons et des vibrations en plus des voyants lumineux",
+        "Des messages uniquement en anglais technique",
+        "Un écran sans aucun contraste pour éviter l'éblouissement",
+        "Des boutons très petits pour gagner de la place"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Texte lisible, plusieurs canaux d'information."
+    },
+    {
+      "source": "snt:ch7:banque:054",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Comment un thermostat connecté peut-il recevoir les ordres d'un téléphone ?",
+      "propositions": [
+        "Par une trame NMEA envoyée par satellite",
+        "Par Wi-Fi ou par Bluetooth, depuis une application",
+        "Par un câble USB branché en permanence",
+        "Par un courrier papier envoyé au fabricant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "L'application de téléphone sert d'IHM."
+    },
+    {
+      "source": "snt:ch7:banque:055",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Comment des objets connectés piratés peuvent-ils servir à attaquer des sites Web ?",
+      "propositions": [
+        "Les objets piratés coupent les câbles sous-marins",
+        "Chaque objet efface entièrement le site en le visitant une seule fois par jour",
+        "Les objets piratés changent le nom de domaine du site",
+        "Des milliers d'objets piratés envoient ensemble des requêtes au même site"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Le site est submergé."
+    },
+    {
+      "source": "snt:ch7:banque:056",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Que peut révéler un compteur électrique communicant ?",
+      "propositions": [
+        "Le contenu des conversations",
+        "Les notes des enfants",
+        "Les heures de présence au domicile",
+        "Le mot de passe de la box"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "La consommation varie avec la présence."
+    },
+    {
+      "source": "snt:ch7:banque:057",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Pourquoi un objet connecté qui n'est plus mis à jour pose-t-il problème ?",
+      "propositions": [
+        "Il devient vulnérable ou inutilisable, puis finit en déchet",
+        "Il devient plus rapide",
+        "Il consomme moins d'énergie qu'avant",
+        "Il ne collecte plus aucune donnée"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Les failles ne sont plus corrigées."
+    },
+    {
+      "source": "snt:ch7:banque:058",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Comment sont garantis la sûreté d'un frein ou d'un pacemaker ?",
+      "propositions": [
+        "Par une connexion permanente à Internet",
+        "Par un écran tactile de grande taille",
+        "Par des mises à jour quotidiennes automatiques",
+        "Par des tests très longs et des systèmes de secours"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Parfois aussi par des vérifications mathématiques."
+    },
+    {
+      "source": "snt:ch7:banque:059",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Objets connectés",
+      "enonce": "Lequel de ces services repose sur des objets connectés ?",
+      "propositions": [
+        "Le calcul mental",
+        "La lecture d'un roman papier",
+        "Le suivi médical à distance",
+        "Une partie d'échecs sur un plateau en bois"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Aussi l'agriculture de précision, l'éclairage adaptatif…"
+    },
+    {
+      "source": "snt:ch7:banque:060",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Systèmes embarqués",
+      "enonce": "Dans une voiture récente, combien d'ordinateurs embarqués trouve-t-on environ ?",
+      "propositions": [
+        "Plusieurs milliers",
+        "Des dizaines",
+        "Un seul",
+        "Aucun"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Moteur, freins, airbags, tableau de bord…"
+    },
+    {
+      "source": "snt:ch7:banque:061",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours, la température passe de 19,8 à 19,2 °C. Le chauffage était éteint. Que fait-il ?",
+      "propositions": [
+        "Il s'allume puis s'éteint",
+        "Il s'arrête de mesurer",
+        "Il reste éteint",
+        "Il s'allume"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "19,2 n'est pas inférieur à 18,5 : rien ne change."
+    },
+    {
+      "source": "snt:ch7:banque:062",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours, la température descend à 18,3 °C, puis remonte à 19,2 °C. Dans quel état est le chauffage à 19,2 °C ?",
+      "propositions": [
+        "Il clignote",
+        "Allumé",
+        "En panne",
+        "Éteint"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Il s'est allumé à 18,3 °C et ne s'éteindra qu'au-dessus de 19,5 °C."
+    },
+    {
+      "source": "snt:ch7:banque:063",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans le programme de la DEL du cours, on remplace 50 par 100. Quel est l'effet ?",
+      "propositions": [
+        "La DEL s'allume seulement en plein soleil",
+        "Le programme mesure deux fois plus vite",
+        "La DEL ne s'allume plus jamais",
+        "La DEL s'allume dans des conditions un peu plus claires"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Le seuil d'obscurité est relevé."
+    },
+    {
+      "source": "snt:ch7:banque:064",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans l'IHM du cours, la consigne vaut 19. On appuie deux fois sur A, puis une fois sur B. Quelle consigne est affichée ?",
+      "propositions": [
+        "18",
+        "20",
+        "17",
+        "19"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "19 - 1 - 1 + 1 = 18."
+    },
+    {
+      "source": "snt:ch7:banque:065",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Le programme de la DEL n'a pas d'instruction sleep. Quel est le principal effet ?",
+      "propositions": [
+        "La boucle tourne le plus vite possible, sans pause entre deux mesures",
+        "La lumière n'est mesurée qu'une fois",
+        "Le programme ne démarre pas",
+        "La DEL ne s'allume jamais"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "sleep(100) laisse 0,1 s entre deux mesures."
+    },
+    {
+      "source": "snt:ch7:banque:066",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Combien de mesures de température par minute fait le programme d'acquisition du cours, environ ?",
+      "propositions": [
+        "120",
+        "30",
+        "60",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Une mesure toutes les 2 secondes, en négligeant la durée du défilement."
+    },
+    {
+      "source": "snt:ch7:banque:067",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans l'ABS, pourquoi le système relâche-t-il le frein d'une roue ?",
+      "propositions": [
+        "Pour économiser les plaquettes de frein",
+        "Pour que le conducteur sente une vibration agréable dans la pédale de frein",
+        "Pour qu'elle ne se bloque pas et que la voiture reste dirigeable",
+        "Pour accélérer la voiture dans les virages"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Une roue bloquée glisse et ne dirige plus."
+    },
+    {
+      "source": "snt:ch7:banque:068",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Pour un arrosage automatique, quelle association capteur, décision et actionneur est cohérente ?",
+      "propositions": [
+        "Microphone ; s'il pleut ; afficher l'heure",
+        "Capteur de lumière ; s'il fait jour ; allumer la DEL",
+        "Accéléromètre ; si le sol bouge ; arrêter le moteur",
+        "Capteur d'humidité du sol ; si le sol est sec ; ouvrir l'électrovanne"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "On mesure ce qui compte pour la décision."
+    },
+    {
+      "source": "snt:ch7:banque:069",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Capteurs",
+      "enonce": "Un robot doit s'arrêter avant un mur. Quel capteur choisir ?",
+      "propositions": [
+        "Un thermomètre",
+        "Un capteur à ultrasons",
+        "Une photorésistance",
+        "Un microphone"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Il mesure la distance à l'obstacle."
+    },
+    {
+      "source": "snt:ch7:banque:070",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Quel est le rôle de l'IHM dans le schéma de la figure 1 ?",
+      "propositions": [
+        "Échanger avec le microcontrôleur pour régler et suivre le système",
+        "Fournir l'énergie aux actionneurs",
+        "Remplacer le programme du microcontrôleur",
+        "Mesurer directement les grandeurs physiques à la place de tous les capteurs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Elle relie l'utilisateur au système."
+    },
+    {
+      "source": "snt:ch7:banque:071",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Une enceinte avec assistant vocal pose surtout un problème de…",
+      "propositions": [
+        "Géolocalisation, car elle utilise les satellites",
+        "Sûreté, car elle peut provoquer un accident de voiture",
+        "Débit, car elle ralentit la fibre optique",
+        "Vie privée, car elle peut capter des conversations"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Les données sont souvent envoyées au fabricant."
+    },
+    {
+      "source": "snt:ch7:banque:072",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Quel est le meilleur moyen de limiter l'impact environnemental de ses objets connectés ?",
+      "propositions": [
+        "Les connecter à plusieurs réseaux à la fois",
+        "Les remplacer chaque année par un modèle plus récent",
+        "Les garder longtemps et se demander si la connexion est utile",
+        "Les laisser allumés en permanence pour éviter l'usure"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "La fabrication utilise des métaux rares."
+    },
+    {
+      "source": "snt:ch7:banque:073",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Objets connectés",
+      "enonce": "Pourquoi un objet connecté à faible consommation utilise-t-il souvent un réseau spécialisé plutôt que le Wi-Fi ?",
+      "propositions": [
+        "Parce que la loi interdit le Wi-Fi pour tous les objets vendus en Europe",
+        "Pour aller plus vite que la fibre optique",
+        "Pour économiser sa batterie et communiquer loin avec peu de données",
+        "Pour pouvoir afficher des vidéos"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Il envoie peu de données, rarement."
+    },
+    {
+      "source": "snt:ch7:banque:074",
+      "type": "qcm_unique",
+      "difficulte": 2,
+      "notion": "Systèmes embarqués",
+      "enonce": "Pourquoi l'informatique embarquée améliore-t-elle la sûreté d'une voiture ?",
+      "propositions": [
+        "Elle supprime le besoin de freins",
+        "Elle remplace toujours le conducteur",
+        "Elle rend la voiture plus lourde",
+        "Elle réagit plus vite et plus finement que le conducteur, comme l'ABS"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Plusieurs actions par seconde."
+    },
+    {
+      "source": "snt:ch7:banque:075",
+      "type": "qcm_unique",
+      "difficulte": 3,
+      "notion": "Actionneurs",
+      "enonce": "Dans le thermostat du cours, que commande pin1.write_digital(1 if chauffage else 0) ?",
+      "propositions": [
+        "La mise en marche ou l'arrêt du chauffage selon la variable chauffage",
+        "La lecture de la température par le capteur intégré de la carte micro:bit",
+        "L'affichage de la consigne",
+        "L'attente d'une seconde"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "La broche 1 pilote l'actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:076",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Quels éléments sont des capteurs ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un moteur",
+        "Un thermomètre",
+        "Un accéléromètre",
+        "Un buzzer"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Moteur et buzzer sont des actionneurs."
+    },
+    {
+      "source": "snt:ch7:banque:077",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Lesquels de ces composants agissent sur le monde physique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une photorésistance",
+        "Une DEL",
+        "Un haut-parleur",
+        "Un capteur à ultrasons"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Les deux derniers sont des capteurs."
+    },
+    {
+      "source": "snt:ch7:banque:078",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Quels objets contiennent un système embarqué ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un marteau",
+        "Un four à micro-ondes",
+        "Un ascenseur",
+        "Une règle graduée"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Aussi la voiture, le drone…"
+    },
+    {
+      "source": "snt:ch7:banque:079",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Objets connectés",
+      "enonce": "Quels objets sont des objets connectés ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une sonnette avec caméra",
+        "Un vélo sans assistance",
+        "Une montre de sport qui envoie ses données au téléphone",
+        "Une cafetière sans électronique"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "Ils échangent des données."
+    },
+    {
+      "source": "snt:ch7:banque:080",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Que contient un microcontrôleur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un processeur",
+        "De la mémoire",
+        "Un moteur électrique",
+        "Une électrovanne"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "Et des entrées-sorties."
+    },
+    {
+      "source": "snt:ch7:banque:081",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Quelles étapes l'algorithme de contrôle répète-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Changer de microcontrôleur",
+        "Réécrire son propre programme",
+        "Lire les capteurs",
+        "Agir sur les actionneurs"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "explication": "Lire, décider, agir."
+    },
+    {
+      "source": "snt:ch7:banque:082",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Quelles fonctions de la micro:bit servent à acquérir des données ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "pin0.write_digital(1)",
+        "temperature()",
+        "display.read_light_level()",
+        "display.scroll(t)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Les deux autres commandent une sortie."
+    },
+    {
+      "source": "snt:ch7:banque:083",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Interface homme-machine",
+      "enonce": "Quels éléments peuvent faire partie d'une IHM ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un capteur de niveau d'eau",
+        "Des voyants lumineux",
+        "Une résistance chauffante",
+        "Un écran tactile"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "explication": "Les deux autres sont actionneur et capteur."
+    },
+    {
+      "source": "snt:ch7:banque:084",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Quels sont des enjeux des objets connectés cités dans le cours ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La sécurité",
+        "La couleur des boîtiers",
+        "La vie privée",
+        "Le nombre de boutons"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "Aussi la sûreté et l'énergie."
+    },
+    {
+      "source": "snt:ch7:banque:085",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Repères historiques",
+      "enonce": "Quelles dates sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2016 : premier microprocesseur",
+        "1967 : premier smartphone",
+        "1978 : ABS électronique en série",
+        "1971 : premier microprocesseur"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "explication": "Le premier smartphone tactile grand public date de 2007."
+    },
+    {
+      "source": "snt:ch7:banque:086",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Quels capteurs la micro:bit possède-t-elle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un capteur à ultrasons",
+        "Un capteur d'humidité du sol",
+        "Un capteur de lumière",
+        "Un accéléromètre"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "explication": "Aussi la température, la boussole et les boutons."
+    },
+    {
+      "source": "snt:ch7:banque:087",
+      "type": "qcm_multiple",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Quelles mesures renforcent la sécurité d'un objet connecté ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Garder le mot de passe d'usine",
+        "Installer les mises à jour",
+        "Désactiver les mises à jour",
+        "Changer le mot de passe par défaut"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "explication": "Les mises à jour corrigent les failles."
+    },
+    {
+      "source": "snt:ch7:banque:088",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans une machine à laver, quelles décisions prend le programme ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Remplir jusqu'au niveau voulu",
+        "Ouvrir la porte pendant l'essorage",
+        "Choisir la marque de lessive",
+        "Chauffer jusqu'à la consigne"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "Il adapte aussi la durée."
+    },
+    {
+      "source": "snt:ch7:banque:089",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours (seuils 18,5 et 19,5 °C), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "À 18 °C, le chauffage est allumé",
+        "À 19 °C, le chauffage est forcément allumé",
+        "À 20 °C, le chauffage est éteint",
+        "Le chauffage change d'état à chaque mesure"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "Entre les seuils, il garde son état."
+    },
+    {
+      "source": "snt:ch7:banque:090",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans le programme de la DEL du cours, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La DEL est branchée sur la broche 0",
+        "La DEL s'allume quand il fait très clair",
+        "Le programme s'arrête après une mesure",
+        "50 est un seuil"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "La boucle while True ne s'arrête pas."
+    },
+    {
+      "source": "snt:ch7:banque:091",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Quelles instructions provoquent une attente d'une seconde ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "sleep(60)",
+        "sleep(1000)",
+        "sleep(500) suivie de sleep(500)",
+        "sleep(1)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "sleep compte en millisecondes."
+    },
+    {
+      "source": "snt:ch7:banque:092",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Actionneurs",
+      "enonce": "Dans le tableau des systèmes courants, quels actionneurs équipent une machine à laver ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le capteur de poids du linge",
+        "Le moteur",
+        "L'électrovanne",
+        "Le capteur de niveau d'eau"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Et la résistance chauffante."
+    },
+    {
+      "source": "snt:ch7:banque:093",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Le programme d'IHM du cours utilise les boutons et l'écran : que peut-on en dire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le bouton A augmente la consigne",
+        "L'écran de DEL est une sortie",
+        "La consigne de départ vaut 20",
+        "Les boutons A et B sont des entrées"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "explication": "A baisse ; la consigne de départ vaut 19."
+    },
+    {
+      "source": "snt:ch7:banque:094",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Objets connectés",
+      "enonce": "Quels moyens de communication un objet connecté peut-il utiliser ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le Wi-Fi",
+        "Un fichier CSV imprimé",
+        "Le Bluetooth",
+        "Une trame NMEA écrite à la main"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "Aussi le réseau mobile et des réseaux spécialisés."
+    },
+    {
+      "source": "snt:ch7:banque:095",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Quelles données personnelles des objets connectés peuvent collecter ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La couleur des murs du salon",
+        "Les heures de présence au domicile",
+        "Le sommeil",
+        "La date de construction de l'immeuble"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Elles sont souvent envoyées au fabricant."
+    },
+    {
+      "source": "snt:ch7:banque:096",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Quelles affirmations sur les chaînes d'information et d'énergie sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La chaîne d'information traite les données",
+        "La chaîne d'énergie exécute le programme",
+        "La chaîne d'information convertit l'énergie",
+        "La chaîne d'énergie alimente les actionneurs"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "Deux chaînes complémentaires."
+    },
+    {
+      "source": "snt:ch7:banque:097",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Systèmes embarqués",
+      "enonce": "Quels sont des avantages de l'informatique embarquée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Réduire la consommation",
+        "Supprimer tout besoin d'électricité",
+        "Rendre les objets incassables",
+        "Offrir de nouveaux usages"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "Aussi simplifier et améliorer la sûreté."
+    },
+    {
+      "source": "snt:ch7:banque:098",
+      "type": "qcm_multiple",
+      "difficulte": 2,
+      "notion": "Repères historiques",
+      "enonce": "Quelles affirmations sur l'histoire de l'informatique embarquée sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'ordinateur de guidage d'Apollo est l'un des premiers systèmes embarqués",
+        "La micro:bit a servi aux missions Apollo",
+        "L'Internet des objets se développe dans les années 2010",
+        "Le microprocesseur a été inventé en 2007"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "micro:bit : 2016."
+    },
+    {
+      "source": "snt:ch7:banque:099",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Seuils et hystérésis",
+      "enonce": "La température suit 19,0 ; 18,4 ; 18,9 ; 19,6 °C. Le chauffage était éteint au départ. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il s'allume à 18,4 °C",
+        "Il reste allumé à 18,9 °C",
+        "Il s'éteint à 18,9 °C",
+        "Il est allumé à 19,6 °C"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "Il s'éteint au-dessus de 19,5 °C."
+    },
+    {
+      "source": "snt:ch7:banque:100",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Pour un éclairage de couloir, quelles conditions faut-il combiner pour allumer la lampe ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il fait sombre",
+        "Une présence est détectée",
+        "La porte d'entrée est fermée",
+        "Il est midi"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "Les deux conditions doivent être vraies."
+    },
+    {
+      "source": "snt:ch7:banque:101",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "On veut que la DEL s'allume quand on appuie sur A et s'éteigne quand on appuie sur B. Quels éléments faut-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Lire temperature()",
+        "Commander pin0.write_digital(1) ou pin0.write_digital(0)",
+        "Utiliser display.read_light_level()",
+        "Tester button_a.was_pressed() et button_b.was_pressed()"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "explication": "Entrées : boutons ; sortie : broche de la DEL."
+    },
+    {
+      "source": "snt:ch7:banque:102",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Capteurs",
+      "enonce": "Pour un radar de recul, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les ultrasons freinent la voiture",
+        "Le buzzer informe le conducteur",
+        "Les ultrasons mesurent la distance à l'obstacle",
+        "Le buzzer mesure la distance"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Capteur, puis actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:103",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Une famille installe une caméra connectée. Quelles précautions sont adaptées ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Refuser toutes les mises à jour",
+        "Vérifier quelles données sont envoyées au fabricant",
+        "Changer le mot de passe d'usine",
+        "Laisser le compte sans mot de passe pour l'utiliser facilement"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "explication": "Sécurité et vie privée."
+    },
+    {
+      "source": "snt:ch7:banque:104",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Interface homme-machine",
+      "enonce": "Quelles qualités rendent une IHM efficace ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est simple et claire",
+        "Elle cache l'état du système pour éviter de distraire",
+        "Elle utilise des icônes que seul le fabricant comprend",
+        "Elle donne l'information par plusieurs moyens (son, lumière, texte)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "Rapide à comprendre et accessible."
+    },
+    {
+      "source": "snt:ch7:banque:105",
+      "type": "qcm_multiple",
+      "difficulte": 3,
+      "notion": "Objets connectés",
+      "enonce": "Quels services l'Internet des objets rend-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'agriculture de précision",
+        "L'éclairage public adapté à la présence de passants",
+        "La disparition des données personnelles",
+        "La suppression de toute consommation d'énergie"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "Mais il consomme de l'énergie et collecte des données."
+    },
+    {
+      "source": "snt:ch7:banque:106",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Un capteur transforme une grandeur physique en donnée numérique.",
+      "bonne_reponse": true,
+      "explication": "Température, lumière, distance…"
+    },
+    {
+      "source": "snt:ch7:banque:107",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Un moteur est un capteur.",
+      "bonne_reponse": false,
+      "explication": "C'est un actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:108",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Un système embarqué est conçu pour une tâche précise.",
+      "bonne_reponse": true,
+      "explication": "Il commande l'objet dans lequel il est intégré."
+    },
+    {
+      "source": "snt:ch7:banque:109",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Objets connectés",
+      "enonce": "Tout système embarqué est un objet connecté.",
+      "bonne_reponse": false,
+      "explication": "Il faut en plus qu'il échange des données."
+    },
+    {
+      "source": "snt:ch7:banque:110",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Un microcontrôleur réunit processeur, mémoire et entrées-sorties sur une seule puce.",
+      "bonne_reponse": true,
+      "explication": "C'est un petit ordinateur."
+    },
+    {
+      "source": "snt:ch7:banque:111",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Algorithme de contrôle",
+      "enonce": "L'algorithme de contrôle d'un système embarqué s'exécute une seule fois au démarrage.",
+      "bonne_reponse": false,
+      "explication": "Il tourne en boucle tant que l'objet est allumé."
+    },
+    {
+      "source": "snt:ch7:banque:112",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "sleep(1000) attend une seconde.",
+      "bonne_reponse": true,
+      "explication": "1000 millisecondes."
+    },
+    {
+      "source": "snt:ch7:banque:113",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "L'écran de la micro:bit compte 100 DEL.",
+      "bonne_reponse": false,
+      "explication": "25 DEL, en grille de 5 × 5."
+    },
+    {
+      "source": "snt:ch7:banque:114",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Interface homme-machine",
+      "enonce": "L'IHM permet à l'utilisateur de régler et de suivre le système.",
+      "bonne_reponse": true,
+      "explication": "Entrées et sorties."
+    },
+    {
+      "source": "snt:ch7:banque:115",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Garder le mot de passe d'usine d'une caméra connectée est sans risque.",
+      "bonne_reponse": false,
+      "explication": "Elle peut être piratée."
+    },
+    {
+      "source": "snt:ch7:banque:116",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Repères historiques",
+      "enonce": "Le 4004 d'Intel est considéré comme le premier microprocesseur.",
+      "bonne_reponse": true,
+      "explication": "1971."
+    },
+    {
+      "source": "snt:ch7:banque:117",
+      "type": "vrai_faux",
+      "difficulte": 1,
+      "notion": "Seuils et hystérésis",
+      "enonce": "La consigne d'un thermostat est la température qu'il cherche à maintenir.",
+      "bonne_reponse": true,
+      "explication": "Par exemple 19 °C."
+    },
+    {
+      "source": "snt:ch7:banque:118",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "L'hystérésis consiste à utiliser un seul seuil pour allumer et éteindre.",
+      "bonne_reponse": false,
+      "explication": "Elle utilise deux seuils."
+    },
+    {
+      "source": "snt:ch7:banque:119",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours, le chauffage s'éteint quand la température dépasse 19,5 °C.",
+      "bonne_reponse": true,
+      "explication": "Seuil haut."
+    },
+    {
+      "source": "snt:ch7:banque:120",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "display.read_light_level() renvoie une valeur entre 0 et 255.",
+      "bonne_reponse": true,
+      "explication": "0 : très sombre ; 255 : très clair."
+    },
+    {
+      "source": "snt:ch7:banque:121",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans le programme de la DEL du cours, la DEL s'allume quand la lumière vaut 200.",
+      "bonne_reponse": false,
+      "explication": "200 > 50 : il fait clair, la DEL s'éteint."
+    },
+    {
+      "source": "snt:ch7:banque:122",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans l'ABS, les capteurs mesurent la vitesse de chaque roue.",
+      "bonne_reponse": true,
+      "explication": "Pour détecter un blocage."
+    },
+    {
+      "source": "snt:ch7:banque:123",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Actionneurs",
+      "enonce": "pin0.write_digital(0) peut éteindre une DEL branchée sur la broche 0.",
+      "bonne_reponse": true,
+      "explication": "La broche passe à l'état 0."
+    },
+    {
+      "source": "snt:ch7:banque:124",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Interface homme-machine",
+      "enonce": "Une application de téléphone ne peut pas servir d'IHM à un objet connecté.",
+      "bonne_reponse": false,
+      "explication": "Elle envoie les ordres par Wi-Fi ou Bluetooth."
+    },
+    {
+      "source": "snt:ch7:banque:125",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Les données d'un objet connecté restent toujours dans l'objet.",
+      "bonne_reponse": false,
+      "explication": "Elles sont souvent envoyées aux serveurs du fabricant."
+    },
+    {
+      "source": "snt:ch7:banque:126",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Des objets connectés piratés peuvent servir ensemble à attaquer des sites Web.",
+      "bonne_reponse": true,
+      "explication": "Des milliers d'objets envoient des requêtes au même site."
+    },
+    {
+      "source": "snt:ch7:banque:127",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "La chaîne d'énergie exécute le programme du système.",
+      "bonne_reponse": false,
+      "explication": "C'est le microcontrôleur, dans la chaîne d'information."
+    },
+    {
+      "source": "snt:ch7:banque:128",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Objets connectés",
+      "enonce": "Un objet connecté possède un module de communication.",
+      "bonne_reponse": true,
+      "explication": "Wi-Fi, Bluetooth, réseau mobile…"
+    },
+    {
+      "source": "snt:ch7:banque:129",
+      "type": "vrai_faux",
+      "difficulte": 2,
+      "notion": "Repères historiques",
+      "enonce": "Le premier smartphone grand public à écran tactile multipoint date de 2007.",
+      "bonne_reponse": true,
+      "explication": "Repère du cours."
+    },
+    {
+      "source": "snt:ch7:banque:130",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours, à 19 °C, le chauffage peut être allumé ou éteint selon son état précédent.",
+      "bonne_reponse": true,
+      "explication": "Entre les seuils, il garde son état."
+    },
+    {
+      "source": "snt:ch7:banque:131",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans l'IHM du cours, après trois appuis sur B, la consigne vaut 21.",
+      "bonne_reponse": false,
+      "explication": "19 + 3 = 22."
+    },
+    {
+      "source": "snt:ch7:banque:132",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Dans un système embarqué, une boucle infinie est toujours une erreur de programmation.",
+      "bonne_reponse": false,
+      "explication": "Ici elle est voulue : le système surveille en permanence."
+    },
+    {
+      "source": "snt:ch7:banque:133",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Capteurs",
+      "enonce": "Une photorésistance permet de mesurer une distance.",
+      "bonne_reponse": false,
+      "explication": "Elle mesure la lumière ; on utilise des ultrasons pour une distance."
+    },
+    {
+      "source": "snt:ch7:banque:134",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Enjeux des objets connectés",
+      "enonce": "Les systèmes embarqués critiques peuvent être vérifiés par des méthodes mathématiques.",
+      "bonne_reponse": true,
+      "explication": "En plus des tests."
+    },
+    {
+      "source": "snt:ch7:banque:135",
+      "type": "vrai_faux",
+      "difficulte": 3,
+      "notion": "Actionneurs",
+      "enonce": "Une résistance chauffante convertit l'énergie électrique en chaleur.",
+      "bonne_reponse": true,
+      "explication": "C'est un actionneur."
+    },
+    {
+      "source": "snt:ch7:banque:136",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Interface homme-machine",
+      "enonce": "Quel est le sigle de l'interface homme-machine ?",
+      "reponses_acceptees": [
+        "IHM"
+      ],
+      "explication": "Interface homme-machine."
+    },
+    {
+      "source": "snt:ch7:banque:137",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Actionneurs",
+      "enonce": "Comment appelle-t-on l'élément qui agit sur le monde physique à partir d'un ordre ?",
+      "reponses_acceptees": [
+        "actionneur",
+        "un actionneur",
+        "l'actionneur"
+      ],
+      "explication": "Moteur, DEL, buzzer…"
+    },
+    {
+      "source": "snt:ch7:banque:138",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Capteurs",
+      "enonce": "Comment appelle-t-on l'élément qui mesure une grandeur physique ?",
+      "reponses_acceptees": [
+        "capteur",
+        "un capteur",
+        "le capteur"
+      ],
+      "explication": "Thermomètre, photorésistance…"
+    },
+    {
+      "source": "snt:ch7:banque:139",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Combien de millisecondes faut-il passer à sleep pour attendre 3 secondes ?",
+      "reponses_acceptees": [
+        "3000"
+      ],
+      "explication": "1 s = 1000 ms."
+    },
+    {
+      "source": "snt:ch7:banque:140",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Repères historiques",
+      "enonce": "En quelle année Intel a-t-il commercialisé le premier microprocesseur ?",
+      "reponses_acceptees": [
+        "1971"
+      ],
+      "explication": "Le 4004."
+    },
+    {
+      "source": "snt:ch7:banque:141",
+      "type": "reponse_courte",
+      "difficulte": 1,
+      "notion": "Systèmes embarqués",
+      "enonce": "Quel est le sigle du système de freinage qui empêche les roues de se bloquer ?",
+      "reponses_acceptees": [
+        "ABS"
+      ],
+      "explication": "Antiblocage des roues."
+    },
+    {
+      "source": "snt:ch7:banque:142",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Comment appelle-t-on l'écart volontaire entre deux seuils d'un thermostat ?",
+      "reponses_acceptees": [
+        "hystérésis",
+        "l'hystérésis",
+        "hysteresis"
+      ],
+      "explication": "Il évite les allumages trop fréquents."
+    },
+    {
+      "source": "snt:ch7:banque:143",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Quelle est la plus grande valeur que peut renvoyer display.read_light_level() ?",
+      "reponses_acceptees": [
+        "255"
+      ],
+      "explication": "De 0 à 255."
+    },
+    {
+      "source": "snt:ch7:banque:144",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "L'écran de la micro:bit est une grille de 5 lignes et 5 colonnes : combien de DEL contient-il ?",
+      "reponses_acceptees": [
+        "25"
+      ],
+      "explication": "5 × 5."
+    },
+    {
+      "source": "snt:ch7:banque:145",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Microcontrôleur et chaînes",
+      "enonce": "Comment appelle-t-on le petit ordinateur sur une seule puce qui exécute le programme d'un objet ?",
+      "reponses_acceptees": [
+        "microcontrôleur",
+        "un microcontrôleur",
+        "le microcontrôleur",
+        "microcontroleur"
+      ],
+      "explication": "Processeur, mémoire, entrées-sorties."
+    },
+    {
+      "source": "snt:ch7:banque:146",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Objets connectés",
+      "enonce": "Quelle expression désigne l'ensemble des objets connectés ? (trois mots)",
+      "reponses_acceptees": [
+        "Internet des objets",
+        "l'Internet des objets",
+        "internet des objets"
+      ],
+      "explication": "Plusieurs dizaines de milliards d'objets."
+    },
+    {
+      "source": "snt:ch7:banque:147",
+      "type": "reponse_courte",
+      "difficulte": 2,
+      "notion": "Algorithme de contrôle",
+      "enonce": "Quel est le deuxième des trois mots qui résument l'algorithme de contrôle : lire, …, agir ?",
+      "reponses_acceptees": [
+        "décider"
+      ],
+      "explication": "Lire, décider, agir."
+    },
+    {
+      "source": "snt:ch7:banque:148",
+      "type": "reponse_courte",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Dans l'IHM du cours, la consigne vaut 19. Après quatre appuis sur A et un appui sur B, que vaut-elle ?",
+      "reponses_acceptees": [
+        "16"
+      ],
+      "explication": "19 - 4 + 1 = 16."
+    },
+    {
+      "source": "snt:ch7:banque:149",
+      "type": "reponse_courte",
+      "difficulte": 3,
+      "notion": "Seuils et hystérésis",
+      "enonce": "Avec le thermostat du cours, au-dessous de quelle température en °C le chauffage s'allume-t-il ? Écris le nombre seul.",
+      "reponses_acceptees": [
+        "18,5",
+        "18.5"
+      ],
+      "explication": "Seuil bas."
+    },
+    {
+      "source": "snt:ch7:banque:150",
+      "type": "reponse_courte",
+      "difficulte": 3,
+      "notion": "Programmation sur micro:bit",
+      "enonce": "Combien de mesures fait en une minute un programme qui mesure puis exécute sleep(5000), en négligeant la durée de la mesure ?",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "explication": "60 / 5 = 12."
+    }
+  ]
+}

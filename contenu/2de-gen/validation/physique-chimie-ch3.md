@@ -1,0 +1,34 @@
+# Validation de physique-chimie (2de), chapitre 3 : « De l'atome au tableau périodique »
+
+Rapport produit par script le 11 novembre 2026, sur `contenu/2de-gen/physique-chimie.json` après fusion de la banque. Les scripts `banque:*` du dépôt ne connaissent que les cours de 1re ST2S ; les contrôles ont été lancés avec un script hors dépôt qui appelle les mêmes fonctions (`analyserImport`, `verifierBanque`, `fusionnerBanque`, `nettoyerHtml`, `versDonneesCours`) avec les quotas de 150 questions (voir `physique-chimie.md`).
+
+## Cours
+
+- 6 sections, 21995 caractères de HTML, 7 objectifs, durée « 3 semaines ».
+- Validateur d'import : valide. Typographie (U+00A0, pas d'entité `&nbsp;`, pas de figure) : conforme. Nettoyage HTML : rien n'est retiré.
+- Relecture indépendante : 6 corrections, détaillées dans `banques/physique-chimie-ch3-cours-relecture.md`.
+
+## Banque de questions
+
+- Vérificateur (17 règles, quotas 75 / 30 / 30 / 15 et 60 / 60 / 30, ± 3) : « Banque du chapitre 3 conforme : 150 questions. »
+- Types : 74 `qcm_unique`, 30 `qcm_multiple` (15 à 2 bonnes réponses, 15 à 3), 31 `vrai_faux` (15 vrais, 16 faux), 15 `reponse_courte` (dont 2 avec une marge).
+- Difficultés : 60 / 60 / 30 (niveaux 1 / 2 / 3).
+- Bonne réponse des `qcm_unique` en position 1 à 4 : 19 / 19 / 18 / 18 ; strictement la plus longue dans 8 cas sur 74 (11 %).
+- Statut : les 150 questions sont `a_relire` : aucune n'est tirée dans un quiz avant la validation de l'enseignant.
+- Relecture contre le cours : 139 gardées, 11 corrigées, 0 remplacées (`banques/physique-chimie-ch3-relecture.md`, qui liste aussi les points de doute).
+
+Notions (11) :
+
+| Notion | Questions |
+| --- | --- |
+| Espèce chimique et entité | 11 |
+| Atome, molécule, ion | 16 |
+| Composition de l'atome | 16 |
+| Charges et masses des particules | 11 |
+| Écriture scientifique | 8 |
+| Tailles et masses | 16 |
+| Élément chimique | 15 |
+| Configuration électronique | 14 |
+| Électrons de valence | 11 |
+| Tableau périodique | 16 |
+| Familles chimiques | 16 |
