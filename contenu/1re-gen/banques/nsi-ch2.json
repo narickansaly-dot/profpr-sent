@@ -1,0 +1,2277 @@
+{
+  "chapitre": 2,
+  "notions": [
+    "Signe et valeur absolue",
+    "Complément à 2",
+    "Intervalles et dépassement",
+    "Nombres à virgule en binaire",
+    "Nombres flottants",
+    "ASCII et ISO-8859-1",
+    "Unicode et UTF-8",
+    "Python : ord, chr, encode, decode",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch2:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode permet d'obtenir l'écriture en complément à 2 d'un entier négatif à partir de sa valeur absolue écrite sur n bits ?",
+      "difficulte": 1,
+      "explication": "On écrit |x| sur n bits, on inverse les bits, puis on ajoute 1.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "Ajouter 1 puis inverser tous les bits",
+        "Inverser tous les bits puis ajouter 1",
+        "Écrire la valeur absolue de droite à gauche",
+        "Inverser seulement le bit de poids fort"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:002",
+      "type": "qcm_unique",
+      "enonce": "En complément à 2, que vaut le bit de poids fort d'un entier strictement négatif ?",
+      "difficulte": 1,
+      "explication": "Le bit de poids fort vaut 1 pour tous les négatifs et 0 pour les positifs ou nuls.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "Il dépend de la valeur absolue",
+        "Il n'existe pas",
+        "1",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Sur un octet signé, comment la machine stocke-t-elle l'entier moins un ?",
+      "difficulte": 1,
+      "explication": "256 − 1 = 255 = 1111 1111.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "1111 1111",
+        "1000 0001",
+        "1111 1110",
+        "0000 0001"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Un octet signé contient 0000 0101. Quelle valeur représente-t-il ?",
+      "difficulte": 1,
+      "explication": "Le bit de poids fort vaut 0 : c'est un positif, écrit normalement.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−5",
+        "251",
+        "−123",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quel est le plus grand entier représentable en complément à 2 sur 8 bits ?",
+      "difficulte": 1,
+      "explication": "Sur n bits : de −2ⁿ⁻¹ à 2ⁿ⁻¹ − 1, soit de −128 à 127.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "127",
+        "256",
+        "128",
+        "255"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur négative minimale peut stocker un octet signé ?",
+      "difficulte": 1,
+      "explication": "1000 0000 représente −128.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "0",
+        "−127",
+        "−128",
+        "−255"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Dans la représentation « signe et valeur absolue », quel est l'un de ses défauts ?",
+      "difficulte": 1,
+      "explication": "0000 0000 et 1000 0000 représentent tous deux 0, et l'addition ordinaire donne des résultats faux.",
+      "notion": "Signe et valeur absolue",
+      "propositions": [
+        "Elle ne fonctionne que pour les nombres pairs",
+        "Les nombres positifs ne peuvent pas être écrits",
+        "Elle demande deux octets par nombre",
+        "Le nombre 0 a deux écritures"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Dans la représentation « signe et valeur absolue » sur 8 bits, comment s'écrit −5 ?",
+      "difficulte": 1,
+      "explication": "Bit de signe 1, puis 5 écrit sur les 7 autres bits ; 1111 1011 est l'écriture en complément à 2.",
+      "notion": "Signe et valeur absolue",
+      "propositions": [
+        "1111 1011",
+        "1000 0101",
+        "0000 0101",
+        "1111 1010"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel est le poids du premier chiffre après la virgule en base 2 ?",
+      "difficulte": 1,
+      "explication": "Il vaut 2⁻¹ = 0,5.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,2",
+        "2",
+        "0,1",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit un demi en base 2 ?",
+      "difficulte": 1,
+      "explication": "0,5 = 2⁻¹ : un 1 au premier rang après la virgule.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,1",
+        "0,101",
+        "0,01",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Convertis en base 10 le nombre binaire à virgule 0,11₂.",
+      "difficulte": 1,
+      "explication": "0,5 + 0,25 = 0,75.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,11",
+        "0,3",
+        "0,75",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un nombre flottant ?",
+      "difficulte": 1,
+      "explication": "Le flottant ressemble à l'écriture scientifique, en base 2, sur un nombre fixe de bits.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "Un nombre dont les chiffres sont stockés dans une chaîne",
+        "La représentation approchée d'un réel par un signe, une mantisse et un exposant",
+        "Un entier dont la taille varie au cours du programme",
+        "Un nombre écrit en hexadécimal"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie l'expression Python 0.1 + 0.2 == 0.3 ?",
+      "difficulte": 1,
+      "explication": "0.1 + 0.2 vaut 0.30000000000000004 : les arrondis ne se compensent pas.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "True",
+        "False",
+        "0.3",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Comment faut-il comparer deux flottants a et b en Python ?",
+      "difficulte": 1,
+      "explication": "Les flottants sont arrondis : on compare leur écart à une tolérance, par exemple 1e-9.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "Tester si abs(a - b) est inférieur à une petite tolérance",
+        "Tester si int(a) == int(b)",
+        "Tester a == b",
+        "Comparer len(str(a)) et len(str(b))"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quel type de valeur donne la division 6 / 2 en Python ?",
+      "difficulte": 1,
+      "explication": "L'opérateur / renvoie toujours un flottant ; // donne le quotient entier.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "Un booléen",
+        "Une chaîne, '3'",
+        "Un flottant, 3.0",
+        "Un entier, 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Combien de caractères le code ASCII définit-il ?",
+      "difficulte": 1,
+      "explication": "ASCII code 128 caractères, de 0 à 127, sur 7 bits.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "256",
+        "26",
+        "Plus de 150 000",
+        "128"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Sur combien de bits le code ASCII est-il défini ?",
+      "difficulte": 1,
+      "explication": "2⁷ = 128 codes ; on le range en pratique dans un octet.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "4",
+        "16",
+        "8",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quel est le code ASCII de la lettre A majuscule ?",
+      "difficulte": 1,
+      "explication": "'A' = 65 ; 'a' = 97.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "97",
+        "41",
+        "65",
+        "1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces caractères ne fait pas partie du code ASCII ?",
+      "difficulte": 1,
+      "explication": "ASCII ne contient aucune lettre accentuée.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "é",
+        "e",
+        "?",
+        "7"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Que fait Unicode ?",
+      "difficulte": 1,
+      "explication": "Unicode attribue un point de code à chaque caractère (plus de 150 000).",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "Il remplace les lettres par des nombres en base 10 pour l'affichage",
+        "Il attribue un numéro unique à chaque caractère de toutes les écritures",
+        "Il ne code que les caractères de l'alphabet latin",
+        "Il code chaque caractère sur exactement 8 bits"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Comment note-t-on le point de code Unicode de la lettre é ?",
+      "difficulte": 1,
+      "explication": "On note U+ suivi du numéro en hexadécimal : E9₁₆ = 233.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "&233",
+        "U+00E9",
+        "0b233",
+        "#E9U"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quelle manière d'encoder les points de code Unicode domine sur les pages Web ?",
+      "difficulte": 1,
+      "explication": "Plus de 98 % des pages Web sont encodées en UTF-8.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "ASCII",
+        "Base64",
+        "UTF-8",
+        "ISO-8859-1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie ord('a') en Python ?",
+      "difficulte": 1,
+      "explication": "ord donne le point de code : 'a' = 97.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "97",
+        "65",
+        "'a'",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie chr(66) en Python ?",
+      "difficulte": 1,
+      "explication": "chr est l'inverse de ord : 66 correspond à 'B'.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "'b'",
+        "66",
+        "'A'",
+        "'B'"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode transforme une chaîne de caractères en une suite d'octets selon un encodage ?",
+      "difficulte": 1,
+      "explication": "'é'.encode('utf-8') donne b'\\xc3\\xa9' ; decode fait l'inverse.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "encode",
+        "decode",
+        "ord",
+        "split"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:026",
+      "type": "qcm_unique",
+      "enonce": "En quelle année le code ASCII a-t-il été publié ?",
+      "difficulte": 1,
+      "explication": "ASCII est publié en 1963 ; Unicode date de 1991.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "1936",
+        "1991",
+        "1963",
+        "2008"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Quelle norme fixe depuis 1985 la représentation des flottants dans presque tous les processeurs ?",
+      "difficulte": 1,
+      "explication": "IEEE 754 définit les flottants (signe, exposant, mantisse).",
+      "notion": "Repères historiques",
+      "propositions": [
+        "UTF-8",
+        "ISO-8859-1",
+        "TCP/IP",
+        "IEEE 754"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il en Python quand on calcule 127 + 1 ?",
+      "difficulte": 1,
+      "explication": "Les entiers Python ont une taille arbitraire ; le dépassement concerne les entiers de taille fixe (C, Java…).",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "On obtient 0",
+        "On obtient 128 : les entiers Python n'ont pas de taille fixe",
+        "On obtient −128 à cause d'un dépassement",
+        "On obtient une erreur de dépassement"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:029",
+      "type": "qcm_unique",
+      "enonce": "En complément à 2 sur 8 bits, combien d'écritures le nombre 0 possède-t-il ?",
+      "difficulte": 1,
+      "explication": "0000 0000 est la seule écriture de 0 : c'est un avantage sur « signe et valeur absolue ».",
+      "notion": "Complément à 2",
+      "propositions": [
+        "Huit",
+        "Aucune",
+        "Deux",
+        "Une seule"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets UTF-8 utilise-t-il pour une lettre ASCII comme A ?",
+      "difficulte": 1,
+      "explication": "Les 128 caractères ASCII gardent leur code sur un seul octet en UTF-8.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "2",
+        "1",
+        "4",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Quel mot de 8 bits représente −5 en complément à 2 ?",
+      "difficulte": 2,
+      "explication": "5 = 0000 0101, inversé : 1111 1010, plus 1 : 1111 1011.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "1111 1011",
+        "0000 0101",
+        "1111 1010",
+        "1000 0101"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:032",
+      "type": "qcm_unique",
+      "enonce": "On inverse les bits de 0000 1010 puis on ajoute 1. Quel mot obtient-on ?",
+      "difficulte": 2,
+      "explication": "10 = 0000 1010 ; inversé 1111 0101 ; plus 1 : 1111 0110 (= 246 = 256 − 10).",
+      "notion": "Complément à 2",
+      "propositions": [
+        "1111 0101",
+        "1000 1010",
+        "1111 0110",
+        "0000 1010"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Pour lire 1111 1110, on inverse les bits et on ajoute 1. Quel entier signé ce mot représente-t-il ?",
+      "difficulte": 2,
+      "explication": "Inverser donne 0000 0001, plus 1 : 0000 0010 = 2, donc −2.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "254",
+        "−2",
+        "−1",
+        "−126"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:034",
+      "type": "qcm_unique",
+      "enonce": "En donnant au bit de poids fort le poids −128, que vaut le mot 1111 0000 ?",
+      "difficulte": 2,
+      "explication": "−128 + 64 + 32 + 16 = −16.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−16",
+        "−112",
+        "240",
+        "−15"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Un registre de 8 bits signé affiche 1000 0001. Quelle valeur contient-il ?",
+      "difficulte": 2,
+      "explication": "−128 + 1 = −127.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−1",
+        "129",
+        "−126",
+        "−127"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Sur 8 bits, un entier négatif x est représenté par l'écriture binaire de quel nombre ?",
+      "difficulte": 2,
+      "explication": "En complément à 2 sur n bits, x < 0 est représenté par 2ⁿ + x : 256 + x sur 8 bits.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−x",
+        "256 − x",
+        "256 + x",
+        "128 + x"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Le mot 1111 1111 vaut 255 pour un entier sans signe. Que vaut-il en complément à 2 sur 8 bits ?",
+      "difficulte": 2,
+      "explication": "255 − 256 = −1.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "127",
+        "−127",
+        "−1",
+        "−255"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel intervalle d'entiers peut-on représenter en complément à 2 sur 16 bits ?",
+      "difficulte": 2,
+      "explication": "De −2¹⁵ à 2¹⁵ − 1.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "De −65536 à 65535",
+        "De −32767 à 32767",
+        "De 0 à 65535",
+        "De −32768 à 32767"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Combien d'entiers différents peut-on représenter en complément à 2 sur 8 bits ?",
+      "difficulte": 2,
+      "explication": "2⁸ = 256 entiers, de −128 à 127.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "128",
+        "256",
+        "127",
+        "255"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Sur 8 bits en complément à 2, quel résultat donne le calcul 127 + 1 ?",
+      "difficulte": 2,
+      "explication": "0111 1111 + 1 = 1000 0000, lu comme −128 : c'est un dépassement.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "−128",
+        "0",
+        "128",
+        "127"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les machines utilisent-elles le complément à 2 plutôt que « signe et valeur absolue » ?",
+      "difficulte": 2,
+      "explication": "Avec le complément à 2, le même circuit additionne et soustrait ; 0 a une seule écriture.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "Il utilise moins de bits pour les nombres négatifs",
+        "Il évite tout dépassement de capacité",
+        "Il permet de représenter plus de nombres positifs",
+        "L'addition binaire ordinaire y donne directement le bon résultat"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Sur 8 bits, on additionne 0000 0111 (7) et 1111 1011 (−5) en ignorant la retenue qui sort. Quel mot obtient-on ?",
+      "difficulte": 2,
+      "explication": "7 + 251 = 258 ; sur 8 bits il reste 258 − 256 = 2.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "1 0000 0010",
+        "0000 1100",
+        "0000 0010",
+        "1111 1110"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Par multiplications successives par 2, que donne la conversion de un quart en binaire ?",
+      "difficulte": 2,
+      "explication": "0,25 = 2⁻² : 0,01₂.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,001",
+        "0,01",
+        "0,25",
+        "0,11"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:044",
+      "type": "qcm_unique",
+      "enonce": "On écrit séparément la partie entière et la partie décimale de 5,25 en base 2. Quel résultat obtient-on ?",
+      "difficulte": 2,
+      "explication": "5 = 101₂ et 0,25 = 0,01₂.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "101,01",
+        "110,01",
+        "101,1",
+        "101,25"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi 0,1 ne peut-il pas être représenté exactement par un flottant ?",
+      "difficulte": 2,
+      "explication": "0,1 = 0,000110011…₂ : le motif se répète sans fin et doit être arrondi.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "Son écriture en base 2 est infinie",
+        "Il n'a pas de point de code",
+        "Il est négatif en complément à 2",
+        "Il est trop petit pour la mantisse"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quel calcul donne le premier chiffre binaire après la virgule de 0,375 ?",
+      "difficulte": 2,
+      "explication": "On multiplie par 2 ; la partie entière (0) est le bit.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,375 × 10 = 3,75, donc le chiffre est 3",
+        "0,375 × 2 = 0,75, donc le chiffre est 7",
+        "0,375 ÷ 2 = 0,1875, donc le chiffre est 1",
+        "0,375 × 2 = 0,75, donc le chiffre est 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces nombres a une écriture binaire finie ?",
+      "difficulte": 2,
+      "explication": "0,375 = 3/8 = 0,011₂ ; les autres ont une écriture binaire infinie.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,2",
+        "0,1",
+        "0,375",
+        "1/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie 0.25 + 0.5 == 0.75 en Python ?",
+      "difficulte": 2,
+      "explication": "0,25, 0,5 et 0,75 sont exactement représentables en binaire : le calcul est exact.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "0.75",
+        "True",
+        "Une erreur",
+        "False"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 0.1 + 0.2 affiché par Python ?",
+      "difficulte": 2,
+      "explication": "La somme des arrondis de 0,1 et 0,2 n'est pas l'arrondi de 0,3.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "0.30000000000000000",
+        "0.3",
+        "0.30000000000000004",
+        "0.2999999999999"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction de la bibliothèque math teste si deux flottants sont presque égaux ?",
+      "difficulte": 2,
+      "explication": "math.isclose(a, b) compare avec une tolérance relative.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "math.floor",
+        "math.round",
+        "math.equal",
+        "math.isclose"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie int(3.9) en Python ?",
+      "difficulte": 2,
+      "explication": "int tronque la partie après la virgule.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "4",
+        "3",
+        "3.9",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi la boucle x = 0 ; while x != 1.0 : x = x + 0.1 risque-t-elle de ne jamais s'arrêter ?",
+      "difficulte": 2,
+      "explication": "Les arrondis s'accumulent : x ne vaut jamais exactement 1.0 et la condition reste vraie.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "Après dix ajouts, x vaut 0.9999999999999999 et non 1.0",
+        "Parce que x devient négatif à cause d'un dépassement",
+        "Parce que 0.1 est un entier en Python",
+        "Parce que la boucle while ne s'applique pas aux flottants"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'intérêt principal de l'encodage ISO-8859-1 par rapport à ASCII ?",
+      "difficulte": 2,
+      "explication": "Il utilise le 8e bit pour 128 caractères de plus (é, ç, ñ…).",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "Il code tous les alphabets du monde",
+        "Il utilise moins de bits que ASCII",
+        "Il code les emojis",
+        "Il ajoute les lettres accentuées des langues d'Europe de l'Ouest"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Quel est le code ASCII du chiffre 0 ?",
+      "difficulte": 2,
+      "explication": "'0' = 48 (30 en hexadécimal) ; le code 0 est un caractère de contrôle.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "65",
+        "0",
+        "48",
+        "30"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la limite principale des normes ISO-8859 ?",
+      "difficulte": 2,
+      "explication": "Un même octet n'est pas le même caractère en ISO-8859-1 et en ISO-8859-5 : on ne peut pas mélanger les alphabets.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "Les codes de 128 à 255 changent de sens d'une variante à l'autre",
+        "Elles ne contiennent pas les chiffres",
+        "Elles ne permettent pas d'écrire l'anglais",
+        "Elles demandent 4 octets par caractère"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets UTF-8 utilise-t-il pour coder le caractère é ?",
+      "difficulte": 2,
+      "explication": "é est codé C3 A9 en UTF-8.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi dit-on que UTF-8 est compatible avec ASCII ?",
+      "difficulte": 2,
+      "explication": "Les codes 0 à 127 sont identiques et tiennent sur un octet.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "UTF-8 code tous les caractères sur 7 bits",
+        "ASCII et UTF-8 utilisent tous deux 4 octets par caractère",
+        "Un texte ASCII est aussi un texte UTF-8 valide, octet pour octet",
+        "UTF-8 ne code que les 128 caractères ASCII"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie len('été'.encode('utf-8')) en Python ?",
+      "difficulte": 2,
+      "explication": "Chaque é prend 2 octets et t en prend 1 : 2 + 1 + 2 = 5.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "6",
+        "3",
+        "4",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie 'é'.encode('latin-1') en Python ?",
+      "difficulte": 2,
+      "explication": "En ISO-8859-1 (latin-1), é est l'octet E9.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "233",
+        "b'\\xe9'",
+        "b'\\xc3\\xa9'",
+        "'é'"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel événement est dû en 1996 à la conversion d'un flottant en un entier de 16 bits trop petit ?",
+      "difficulte": 2,
+      "explication": "La conversion d'une valeur trop grande a provoqué une erreur et la destruction du lanceur.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "L'échec du premier vol d'Ariane 5",
+        "L'invention d'Unicode",
+        "La panne mondiale d'internet",
+        "Le bogue de l'an 2000"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Calcule 256 − 100 en binaire pour obtenir la représentation signée de moins cent sur un octet.",
+      "difficulte": 3,
+      "explication": "256 − 100 = 156 = 1001 1100.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "1110 0100",
+        "0110 0100",
+        "1001 1100",
+        "1001 1011"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur décimale signée porte l'octet 1001 0000 ?",
+      "difficulte": 3,
+      "explication": "−128 + 16 = −112.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−16",
+        "−112",
+        "−111",
+        "144"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Quel est le complément à 2 sur 8 bits de −37, écrit en hexadécimal ?",
+      "difficulte": 3,
+      "explication": "256 − 37 = 219 = DB₁₆ (1101 1011).",
+      "notion": "Complément à 2",
+      "propositions": [
+        "DB",
+        "25",
+        "A5",
+        "DA"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Sur 16 bits en complément à 2, comment s'écrit −1 en hexadécimal ?",
+      "difficulte": 3,
+      "explication": "2¹⁶ − 1 = 65535 = FFFF₁₆.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "FFFE",
+        "0001",
+        "8001",
+        "FFFF"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Sur 8 bits en complément à 2, quel mot donne le calcul −128 − 1 ?",
+      "difficulte": 3,
+      "explication": "−129 sort de l'intervalle : 1000 0000 + 1111 1111 = 1 0111 1111 ; on garde 0111 1111 = 127.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "1000 0001, lu comme −127",
+        "0111 1111, lu comme 127",
+        "1111 1111, lu comme −1",
+        "1000 0000, lu comme −128"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Combien d'entiers strictement positifs peut-on représenter en complément à 2 sur 8 bits ?",
+      "difficulte": 3,
+      "explication": "De 1 à 127 : il y a un négatif de plus que de positifs (−128).",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "128",
+        "255",
+        "256",
+        "127"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:067",
+      "type": "qcm_unique",
+      "enonce": "On calcule 100 + 50 sur 8 bits en complément à 2. Quel entier est représenté par le résultat ?",
+      "difficulte": 3,
+      "explication": "150 > 127 : le mot 1001 0110 est lu comme 150 − 256 = −106.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "−106",
+        "−22",
+        "106",
+        "150"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'écriture binaire de 6,125 ?",
+      "difficulte": 3,
+      "explication": "6 = 110₂ et 0,125 = 2⁻³ = 0,001₂.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "110,01",
+        "101,001",
+        "110,001",
+        "110,125"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Additionne les poids 0,5, 0,25 et 0,0625 utilisés par 0,1101₂ : quelle valeur décimale trouves-tu ?",
+      "difficulte": 3,
+      "explication": "0,5 + 0,25 + 0,0625 = 0,8125.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,875",
+        "0,75",
+        "0,1101",
+        "0,8125"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie l'expression Python 1e16 + 1 == 1e16 ?",
+      "difficulte": 3,
+      "explication": "Avec environ 16 chiffres significatifs, ajouter 1 à 10¹⁶ ne change pas le flottant.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "False",
+        "1e16",
+        "True",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie sum([0.1] * 10) == 1.0 en Python ?",
+      "difficulte": 3,
+      "explication": "La somme de dix arrondis de 0,1 vaut 0.9999999999999999.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "False",
+        "True",
+        "Une erreur",
+        "1.0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Un fichier encodé en UTF-8 contient « été ». On l'ouvre en le lisant comme du ISO-8859-1. Qu'affiche-t-on ?",
+      "difficulte": 3,
+      "explication": "Chaque é (octets C3 A9) est lu comme deux caractères Latin-1 : Ã et ©.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "ETE",
+        "Ã©tÃ©",
+        "été",
+        "?t?"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets occupe le symbole € (U+20AC) encodé en UTF-8 ?",
+      "difficulte": 3,
+      "explication": "Les points de code de U+0800 à U+FFFF prennent 3 octets en UTF-8 (E2 82 AC).",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "4",
+        "3",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie b'\\xc3\\xa9'.decode('latin-1') en Python ?",
+      "difficulte": 3,
+      "explication": "On lit en Latin-1 deux octets qui forment é en UTF-8 : on obtient deux caractères.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "Une erreur de décodage",
+        "'e'",
+        "'Ã©'",
+        "'é'"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie chr(ord('a') - 32) en Python ?",
+      "difficulte": 3,
+      "explication": "ord('a') = 97 ; 97 − 32 = 65 = 'A'.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "'a'",
+        "65",
+        "'@'",
+        "'A'"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Que peut-on dire du codage des relatifs par complément à 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le bit de poids fort vaut 1 pour les négatifs, mais les autres bits ne sont pas la valeur absolue (−1 = 1111 1111).",
+      "notion": "Complément à 2",
+      "propositions": [
+        "Il ne permet pas de représenter de nombres positifs",
+        "Le nombre 0 a une seule écriture",
+        "Les autres bits donnent la valeur absolue",
+        "Le bit de poids fort indique le signe"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces entiers, lesquels sont représentables en complément à 2 sur 8 bits ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "L'intervalle va de −128 à 127.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "128",
+        "127",
+        "0",
+        "−128"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres, lesquels ont une écriture binaire finie ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "0,5 = 0,1₂ et 0,75 = 0,11₂ ; 0,1 et 1/3 ont une écriture binaire infinie.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,75",
+        "1/3",
+        "0,5",
+        "0,1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les flottants, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les flottants sont arrondis ; on les compare avec une tolérance.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "Ils s'écrivent sans exposant",
+        "Ce sont des valeurs approchées des réels",
+        "Il faut éviter de tester leur égalité avec ==",
+        "Ils sont toujours exacts en Python"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces caractères, lesquels font partie du code ASCII ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "ASCII contient les lettres non accentuées, les chiffres et la ponctuation.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "5",
+        "A",
+        "?",
+        "ç"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Quelles caractéristiques du code ASCII sont correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "ASCII : 128 caractères sur 7 bits, sans accents.",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "Il code les idéogrammes chinois",
+        "Il code 128 caractères",
+        "Il contient les lettres accentuées françaises",
+        "Il utilise 7 bits par caractère"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Unicode : quelles phrases le décrivent correctement ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "UTF-8 encode ces points de code sur 1 à 4 octets.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "Il couvre les écritures du monde entier",
+        "Il code chaque caractère sur un seul octet",
+        "Chaque caractère a un numéro unique appelé point de code",
+        "Il ne contient que l'alphabet latin"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions donnent l'entier soixante-cinq ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "chr(65) vaut 'A' (une chaîne) et ord('a') vaut 97.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "ord('a')",
+        "ord('A')",
+        "0x41",
+        "chr(65)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Comparaisons de flottants : lesquelles s'évaluent à vrai en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "0,5 est exact ; 0.1 * 3 vaut 0.30000000000000004.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "0.1 * 3 == 0.3",
+        "abs((0.1 + 0.2) - 0.3) < 1e-9",
+        "0.5 + 0.5 == 1.0",
+        "0.1 + 0.2 == 0.3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces défauts, lesquels concernent la représentation « signe et valeur absolue » ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "0000 0101 + 1000 0101 donne 1000 1010 (−10) au lieu de 0.",
+      "notion": "Signe et valeur absolue",
+      "propositions": [
+        "L'addition binaire ordinaire donne des résultats faux",
+        "Elle est incompatible avec le binaire",
+        "Elle ne peut pas représenter −1",
+        "Zéro a deux écritures"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations entre une norme et sa date, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "IEEE 754 date de 1985 et UTF-8 de 1992.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "UTF-8, 1936",
+        "Unicode, 1991",
+        "IEEE 754, 2008",
+        "ASCII, 1963"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces encodages, lesquels permettent d'écrire la lettre é ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "ASCII n'a pas d'accents ; ISO-8859-1 et UTF-8 contiennent é.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "UTF-8",
+        "Un code sur 4 bits",
+        "ISO-8859-1",
+        "ASCII"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces mots de 8 bits, lesquels représentent un entier négatif en complément à 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Seuls les mots dont le bit de poids fort vaut 1 sont négatifs.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "0000 0001",
+        "1000 0000",
+        "0111 1111",
+        "1111 1111"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures en complément à 2 sur 8 bits, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "−2 s'écrit 1111 1110 et −127 s'écrit 1000 0001.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "−127 s'écrit 1111 1111",
+        "−1 s'écrit 1111 1111",
+        "−128 s'écrit 1000 0000",
+        "−2 s'écrit 1000 0010"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces intervalles, lesquels sont exacts pour le complément à 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Sur n bits : de −2ⁿ⁻¹ à 2ⁿ⁻¹ − 1.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "Sur 16 bits : de −32768 à 32767",
+        "Sur 16 bits : de −65535 à 65535",
+        "Sur 8 bits : de −127 à 128",
+        "Sur 8 bits : de −128 à 127"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Sur 8 bits en complément à 2, parmi ces calculs, lesquels provoquent un dépassement ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "150 et 128 sortent de l'intervalle ; −50 et −128 y restent.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "−64 − 64",
+        "−100 + 50",
+        "127 + 1",
+        "100 + 50"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces conversions de binaires à virgule sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "0,1₂ = 0,5 et 0,11₂ = 0,75.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "10,1₂ = 2,5",
+        "0,11₂ = 0,11",
+        "0,01₂ = 0,25",
+        "0,1₂ = 0,1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations, lesquelles sont exactes en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "/ renvoie un flottant (6 / 2 vaut 3.0) ; 7 % 2 vaut 1.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "7 // 2 vaut 3",
+        "7 % 2 vaut 3.5",
+        "6 / 2 vaut l'entier 3",
+        "7 / 2 vaut 3.5"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces flottants, lesquels sont exactement représentables en binaire ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "0,25 = 1/4 et 0,625 = 5/8 ; 0,1 et 0,3 ont une écriture binaire infinie.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "0.3",
+        "0.1",
+        "0.25",
+        "0.625"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres d'octets, lesquels sont des longueurs possibles d'un caractère en UTF-8 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "UTF-8 utilise de 1 à 4 octets par caractère.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "8",
+        "4",
+        "3",
+        "1"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "é prend 2 octets en UTF-8 et 1 en Latin-1.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "len('café'.encode('latin-1')) vaut 5",
+        "len('café'.encode('utf-8')) vaut 5",
+        "len('café'.encode('utf-8')) vaut 4",
+        "len('café') vaut 4"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur ISO-8859-1, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "ISO-8859-1 couvre l'Europe de l'Ouest ; le cyrillique est dans une autre variante (ISO-8859-5).",
+      "notion": "ASCII et ISO-8859-1",
+      "propositions": [
+        "Il code les alphabets cyrillique et grec",
+        "Il code chaque caractère sur un octet",
+        "Il remplace complètement Unicode",
+        "Ses 128 premiers codes sont ceux d'ASCII"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Un texte s'affiche « Ã© » au lieu de « é ». Parmi ces explications, lesquelles sont plausibles ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les deux octets UTF-8 de é sont lus comme deux caractères Latin-1.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "Le caractère é n'existe pas dans Unicode",
+        "Le fichier est en ASCII pur",
+        "Un fichier UTF-8 a été lu comme du ISO-8859-1",
+        "Le logiciel ne connaît pas l'encodage réel du fichier"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces événements, lesquels sont liés à la représentation des nombres en machine ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Ariane 5 : conversion vers 16 bits ; YouTube : compteur sur 32 bits signés proche de 2 147 483 647.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "L'échec du premier vol d'Ariane 5 en 1996",
+        "L'invention du Web en 1989",
+        "La création d'ARPANET en 1969",
+        "L'agrandissement du compteur de vues de YouTube en 2014"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces mots de 8 bits en complément à 2, lesquels représentent un entier compris entre −20 et −10 ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "1110 1100 = −20, 1111 0110 = −10, 1001 0110 = −106, 1110 0000 = −32.",
+      "notion": "Complément à 2",
+      "propositions": [
+        "1001 0110",
+        "1110 1100",
+        "1110 0000",
+        "1111 0110"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "On code des relatifs sur n bits par complément à 2. Quels énoncés sont toujours vrais ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "De −2ⁿ⁻¹ à 2ⁿ⁻¹ − 1 : 2ⁿ⁻¹ négatifs, 2ⁿ⁻¹ − 1 positifs et zéro.",
+      "notion": "Intervalles et dépassement",
+      "propositions": [
+        "On représente 2ⁿ entiers",
+        "Le plus grand entier est 2ⁿ − 1",
+        "Il y a un entier négatif de plus que d'entiers strictement positifs",
+        "Le plus petit entier est −2ⁿ⁻¹ + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Vérifie ces écritures binaires de nombres décimaux : lesquelles sont correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "0,0001₂ = 0,0625 ; 2,75 = 10,11₂.",
+      "notion": "Nombres à virgule en binaire",
+      "propositions": [
+        "0,375 = 0,011₂",
+        "2,75 = 10,101₂",
+        "6,125 = 110,001₂",
+        "0,1 = 0,0001₂"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Pièges des arrondis : quelles expressions Python renvoient True ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "0.1 + 0.2 vaut 0.30000000000000004, légèrement plus que 0.3 ; la somme de dix 0.1 vaut 0.9999999999999999.",
+      "notion": "Nombres flottants",
+      "propositions": [
+        "0.1 + 0.2 < 0.3",
+        "1e16 + 1 == 1e16",
+        "sum([0.1] * 10) == 1.0",
+        "0.1 + 0.2 > 0.3"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "On exécute t = 'aé€'.encode('utf-8'). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "a : 1 octet (97), é : 2 octets, € : 3 octets ; le décodage rend 'aé€'.",
+      "notion": "Python : ord, chr, encode, decode",
+      "propositions": [
+        "t.decode('utf-8') vaut 'ae€'",
+        "len(t) vaut 3",
+        "len(t) vaut 6",
+        "t commence par l'octet 97"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Octets et caractères : quelles phrases sont correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "En UTF-8, é s'encode C3 A9 ; un octet ≥ 128 isolé n'est pas valide.",
+      "notion": "Unicode et UTF-8",
+      "propositions": [
+        "U+00E9 s'encode E9 en UTF-8",
+        "Le même octet E9 représente é en ISO-8859-1",
+        "Tout texte ISO-8859-1 est un texte UTF-8 valide",
+        "L'octet E9 seul n'est pas un texte UTF-8 valide"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:106",
+      "type": "vrai_faux",
+      "enonce": "En complément à 2, le bit de poids fort d'un entier négatif vaut 1.",
+      "difficulte": 1,
+      "explication": "C'est le cas pour tous les négatifs.",
+      "notion": "Complément à 2",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Le code ASCII comprend 128 caractères.",
+      "difficulte": 1,
+      "explication": "Codes de 0 à 127, sur 7 bits.",
+      "notion": "ASCII et ISO-8859-1",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:108",
+      "type": "vrai_faux",
+      "enonce": "En Python, 0.1 + 0.2 == 0.3 renvoie False.",
+      "difficulte": 1,
+      "explication": "0.1 + 0.2 vaut 0.30000000000000004.",
+      "notion": "Nombres flottants",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:109",
+      "type": "vrai_faux",
+      "enonce": "UTF-8 code certains caractères sur plusieurs octets.",
+      "difficulte": 1,
+      "explication": "De 1 à 4 octets selon le caractère.",
+      "notion": "Unicode et UTF-8",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:110",
+      "type": "vrai_faux",
+      "enonce": "En Python, ord('A') renvoie 65.",
+      "difficulte": 1,
+      "explication": "Le point de code de A est 65.",
+      "notion": "Python : ord, chr, encode, decode",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:111",
+      "type": "vrai_faux",
+      "enonce": "0,5 s'écrit 0,1 en base 2.",
+      "difficulte": 1,
+      "explication": "0,5 = 2⁻¹.",
+      "notion": "Nombres à virgule en binaire",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:112",
+      "type": "vrai_faux",
+      "enonce": "En complément à 2 sur 8 bits, 1111 1011 représente −5.",
+      "difficulte": 2,
+      "explication": "−128 + 64 + 32 + 16 + 8 + 2 + 1 = −5.",
+      "notion": "Complément à 2",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Sur 16 bits, le complément à 2 permet de représenter 32767 mais pas 32768.",
+      "difficulte": 2,
+      "explication": "L'intervalle est de −32768 à 32767.",
+      "notion": "Intervalles et dépassement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Le nombre 0,1 a une écriture infinie en base 2.",
+      "difficulte": 2,
+      "explication": "0,1 = 0,000110011…₂ : le motif 0011 se répète.",
+      "notion": "Nombres à virgule en binaire",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Un texte écrit uniquement avec des caractères ASCII est aussi un texte UTF-8 valide.",
+      "difficulte": 2,
+      "explication": "UTF-8 garde les codes ASCII sur un octet.",
+      "notion": "Unicode et UTF-8",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:116",
+      "type": "vrai_faux",
+      "enonce": "En Python, 0.25 + 0.5 == 0.75 renvoie True.",
+      "difficulte": 2,
+      "explication": "Ces trois nombres sont exactement représentables en binaire.",
+      "notion": "Nombres flottants",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Dans la représentation « signe et valeur absolue », le nombre 0 possède deux écritures.",
+      "difficulte": 2,
+      "explication": "+0 (0000 0000) et −0 (1000 0000).",
+      "notion": "Signe et valeur absolue",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Sur 8 bits en complément à 2, le calcul 100 + 50 donne un mot qui représente −106.",
+      "difficulte": 3,
+      "explication": "150 − 256 = −106 : c'est un dépassement.",
+      "notion": "Intervalles et dépassement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:119",
+      "type": "vrai_faux",
+      "enonce": "En Python, len('été'.encode('utf-8')) vaut 5.",
+      "difficulte": 3,
+      "explication": "2 + 1 + 2 octets.",
+      "notion": "Python : ord, chr, encode, decode",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Sur 8 bits, le complément à 2 de −37 s'écrit DB en hexadécimal.",
+      "difficulte": 3,
+      "explication": "256 − 37 = 219 = DB₁₆.",
+      "notion": "Complément à 2",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch2:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Le code ASCII contient les lettres accentuées comme é et è.",
+      "difficulte": 1,
+      "explication": "ASCII n'a aucune lettre accentuée ; il faut ISO-8859-1 ou Unicode.",
+      "notion": "ASCII et ISO-8859-1",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:122",
+      "type": "vrai_faux",
+      "enonce": "En complément à 2, le nombre 0 possède deux écritures.",
+      "difficulte": 1,
+      "explication": "Une seule : 0000…0. C'est le cas de « signe et valeur absolue » qui en a deux.",
+      "notion": "Complément à 2",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Sur 8 bits en complément à 2, on peut représenter le nombre 200.",
+      "difficulte": 1,
+      "explication": "Le plus grand est 127.",
+      "notion": "Intervalles et dépassement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Les nombres flottants représentent toujours exactement les nombres décimaux.",
+      "difficulte": 1,
+      "explication": "Beaucoup sont arrondis, comme 0,1.",
+      "notion": "Nombres flottants",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Unicode code chaque caractère sur un seul octet.",
+      "difficulte": 1,
+      "explication": "Unicode numérote plus de 150 000 caractères ; UTF-8 utilise 1 à 4 octets.",
+      "notion": "Unicode et UTF-8",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:126",
+      "type": "vrai_faux",
+      "enonce": "En Python, chr(97) renvoie 'A'.",
+      "difficulte": 1,
+      "explication": "chr(97) renvoie 'a' ; 'A' a le code 65.",
+      "notion": "Python : ord, chr, encode, decode",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Pour écrire −6 en complément à 2, il suffit de mettre à 1 le bit de poids fort de l'écriture de 6.",
+      "difficulte": 2,
+      "explication": "Cela donne « signe et valeur absolue » (1000 0110) ; en complément à 2, −6 = 1111 1010.",
+      "notion": "Complément à 2",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Sur 8 bits en complément à 2, le plus petit entier représentable est −127.",
+      "difficulte": 2,
+      "explication": "C'est −128 (1000 0000).",
+      "notion": "Intervalles et dépassement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:129",
+      "type": "vrai_faux",
+      "enonce": "0,1 en base 2 vaut 0,1 en base 10.",
+      "difficulte": 2,
+      "explication": "0,1₂ = 0,5.",
+      "notion": "Nombres à virgule en binaire",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Il est recommandé de tester l'égalité de deux flottants avec l'opérateur ==.",
+      "difficulte": 2,
+      "explication": "Il faut comparer leur écart à une tolérance.",
+      "notion": "Nombres flottants",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:131",
+      "type": "vrai_faux",
+      "enonce": "En ISO-8859-1, chaque caractère occupe deux octets.",
+      "difficulte": 2,
+      "explication": "Un seul octet, 256 caractères possibles.",
+      "notion": "ASCII et ISO-8859-1",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:132",
+      "type": "vrai_faux",
+      "enonce": "En UTF-8, la lettre é occupe un seul octet.",
+      "difficulte": 2,
+      "explication": "Elle occupe deux octets : C3 A9.",
+      "notion": "Unicode et UTF-8",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:133",
+      "type": "vrai_faux",
+      "enonce": "En Python, 2 ** 63 + 1 provoque un dépassement de capacité.",
+      "difficulte": 3,
+      "explication": "Les entiers Python ont une taille arbitraire : le calcul est exact.",
+      "notion": "Intervalles et dépassement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:134",
+      "type": "vrai_faux",
+      "enonce": "En Python, sum([0.1] * 10) == 1.0 renvoie True.",
+      "difficulte": 3,
+      "explication": "La somme vaut 0.9999999999999999.",
+      "notion": "Nombres flottants",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:135",
+      "type": "vrai_faux",
+      "enonce": "En complément à 2 sur 8 bits, le mot 1001 0000 représente −16.",
+      "difficulte": 3,
+      "explication": "−128 + 16 = −112 ; −16 s'écrit 1111 0000.",
+      "notion": "Complément à 2",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch2:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Combien de caractères compte le code ASCII ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "Codes de 0 à 127.",
+      "notion": "ASCII et ISO-8859-1",
+      "reponses_acceptees": [
+        "128"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quel est le plus grand entier représentable en complément à 2 sur 8 bits ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "2⁷ − 1 = 127.",
+      "notion": "Intervalles et dépassement",
+      "reponses_acceptees": [
+        "127"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Que renvoie ord('B') en Python ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "'A' = 65, donc 'B' = 66.",
+      "notion": "Python : ord, chr, encode, decode",
+      "reponses_acceptees": [
+        "66"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Donne le sigle (lettres, tiret et chiffre) de l'encodage qui code un caractère Unicode sur 1 à 4 octets.",
+      "difficulte": 1,
+      "explication": "UTF-8 est utilisé par plus de 98 % des pages Web.",
+      "notion": "Unicode et UTF-8",
+      "reponses_acceptees": [
+        "UTF-8",
+        "UTF8",
+        "utf 8"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Écris 0,5 en base 2.",
+      "difficulte": 1,
+      "explication": "0,5 = 2⁻¹.",
+      "notion": "Nombres à virgule en binaire",
+      "reponses_acceptees": [
+        "0,1",
+        "0.1"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Donne la borne inférieure de l'intervalle des entiers signés sur un octet. Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "−2⁷ = −128.",
+      "notion": "Intervalles et dépassement",
+      "reponses_acceptees": [
+        "-128",
+        "−128"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Écris −2 en complément à 2 sur 8 bits (huit chiffres, sans espace).",
+      "difficulte": 2,
+      "explication": "2 = 0000 0010 ; inversé : 1111 1101 ; plus 1 : 1111 1110.",
+      "notion": "Complément à 2",
+      "reponses_acceptees": [
+        "11111110"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Quel entier représente le mot 1110 0000 en complément à 2 sur 8 bits ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "−128 + 64 + 32 = −32.",
+      "notion": "Complément à 2",
+      "reponses_acceptees": [
+        "-32",
+        "−32"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Écris 0,625 en base 2.",
+      "difficulte": 2,
+      "explication": "0,5 + 0,125 = 0,625.",
+      "notion": "Nombres à virgule en binaire",
+      "reponses_acceptees": [
+        "0,101",
+        "0.101"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Combien d'octets occupe la lettre é encodée en UTF-8 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "C3 A9.",
+      "notion": "Unicode et UTF-8",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Combien d'entiers différents peut-on représenter en complément à 2 sur 16 bits ? Réponds par un nombre, sans espace.",
+      "difficulte": 2,
+      "explication": "2¹⁶ = 65536.",
+      "notion": "Intervalles et dépassement",
+      "reponses_acceptees": [
+        "65536"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quelle fonction du module math teste si deux flottants sont presque égaux ? Donne son nom sans parenthèses.",
+      "difficulte": 2,
+      "explication": "math.isclose(a, b).",
+      "notion": "Nombres flottants",
+      "reponses_acceptees": [
+        "isclose",
+        "math.isclose"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Quels huit bits (sans espace) représentent moins cent dans un octet signé ?",
+      "difficulte": 3,
+      "explication": "256 − 100 = 156 = 1001 1100.",
+      "notion": "Complément à 2",
+      "reponses_acceptees": [
+        "10011100"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Que vaut 0,1101₂ en décimal ? Réponds par un nombre décimal.",
+      "difficulte": 3,
+      "explication": "0,5 + 0,25 + 0,0625 = 0,8125.",
+      "notion": "Nombres à virgule en binaire",
+      "reponses_acceptees": [
+        "0,8125",
+        "0.8125"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch2:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Que renvoie len('aé€'.encode('utf-8')) en Python ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "1 + 2 + 3 octets.",
+      "notion": "Python : ord, chr, encode, decode",
+      "reponses_acceptees": [
+        "6"
+      ]
+    }
+  ]
+}
