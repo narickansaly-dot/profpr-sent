@@ -17667,6 +17667,2530 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch8",
+      "numero": 8,
+      "titre": "Fonctions : représentations, fonctions de référence et signe",
+      "titre_court": "Fonctions",
+      "duree": "4 semaines",
+      "resume": "Notion de fonction, ensemble de définition, courbe représentative, fonctions affines, fonctions carré, inverse, racine carrée, cube et valeur absolue, résolutions graphiques et algébriques, signe et tableaux de signes, équations quotient.",
+      "chapeau": "Une fonction traduit la dépendance d'une grandeur par rapport à une autre : la distance parcourue en fonction du temps, le prix en fonction de la quantité. Ce chapitre apprend à lire et à exploiter une fonction donnée par une formule, une courbe ou un tableau, et constitue un répertoire de fonctions de référence.",
+      "objectifs": [
+        "calculer une image, chercher un antécédent, déterminer un ensemble de définition ;",
+        "exploiter l'équation y = f(x) d'une courbe : appartenance d'un point, calcul de coordonnées ;",
+        "connaître les fonctions affines, carré, inverse, racine carrée, cube et valeur absolue, et leurs courbes ;",
+        "résoudre graphiquement ou algébriquement f(x) = k, f(x) < k, f(x) = g(x) ;",
+        "étudier le signe d'une fonction affine et dresser un tableau de signes d'un produit ou d'un quotient ;",
+        "résoudre une équation quotient A(x)/B(x) = k en tenant compte des valeurs interdites."
+      ],
+      "sections": [
+        {
+          "id": "notion-fonction",
+          "titre": "Notion de fonction et ensemble de définition",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une <strong>fonction</strong> f définie sur un ensemble D associe à chaque réel x de D un <strong>unique</strong> réel, noté f(x) : c'est l'<strong>image</strong> de x. Si f(a) = b, on dit que a est <strong>un antécédent</strong> de b. On note f : x ↦ f(x).</p></div>\n<p>Exemple : f(x) = x<sup>2</sup> − 3. L'image de 2 est f(2) = 1. Les antécédents de 6 sont les solutions de x<sup>2</sup> − 3 = 6, soit x<sup>2</sup> = 9 : −3 et 3. Un nombre a une seule image, mais il peut avoir zéro, un ou plusieurs antécédents.</p>\n<p>Une fonction peut être donnée par une formule, une courbe, un tableau de valeurs ou un programme de calcul. Quand la variable est un temps, on la note souvent t ; quand elle est un entier, on peut noter u(n).</p>\n<h3>Ensemble de définition</h3>\n<p>L'<strong>ensemble de définition</strong> D<sub>f</sub> est l'ensemble des réels x pour lesquels on peut calculer f(x). Il peut être imposé par le contexte (une longueur est positive) ou par la formule :</p>\n<ul>\n<li>on ne divise pas par 0 : f(x) = 1/(x − 2) est définie sur ℝ \\ {2}, c'est-à-dire ]−∞ ; 2[ ∪ ]2 ; +∞[ ;</li>\n<li>on ne prend la racine carrée que d'un nombre positif : g(x) = √(x − 1) est définie sur [1 ; +∞[.</li>\n</ul>\n"
+        },
+        {
+          "id": "courbe",
+          "titre": "Courbe représentative",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Dans un repère, la <strong>courbe représentative</strong> de f est l'ensemble des points M(x ; y) tels que x ∈ D<sub>f</sub> et y = f(x). On dit que la courbe a pour équation y = f(x).</p></div>\n<ul>\n<li>Le point A(a ; b) est sur la courbe si et seulement si b = f(a). Avec f(x) = x<sup>2</sup> − 3 : A(2 ; 1) est sur la courbe, B(1 ; 1) non, car f(1) = −2.</li>\n<li>Pour <strong>lire une image</strong> f(a) : on part de a sur l'axe des abscisses, on monte (ou descend) jusqu'à la courbe et on lit l'ordonnée.</li>\n<li>Pour <strong>lire les antécédents</strong> de b : on trace la droite horizontale y = b et on lit les abscisses des points d'intersection avec la courbe.</li>\n</ul>\n<p>Une lecture graphique donne des valeurs approchées ; un calcul donne des valeurs exactes.</p>\n"
+        },
+        {
+          "id": "affines",
+          "titre": "Fonctions affines",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Une fonction <strong>affine</strong> est définie sur ℝ par f(x) = mx + p. Sa courbe est une droite, de pente m et d'ordonnée à l'origine p (chapitre 7). Si p = 0, la fonction est <strong>linéaire</strong> (droite passant par l'origine) ; si m = 0, elle est <strong>constante</strong>.</p></div>\n<p>Pour deux réels distincts x<sub>1</sub> et x<sub>2</sub>, m = (f(x<sub>2</sub>) − f(x<sub>1</sub>))/(x<sub>2</sub> − x<sub>1</sub>) : les accroissements de f(x) sont proportionnels aux accroissements de x.</p>\n<p>Exemple : f affine avec f(1) = 5 et f(3) = 9. m = (9 − 5)/(3 − 1) = 2, puis 5 = 2 + p, donc f(x) = 2x + 3.</p>\n<h3>Signe d'une fonction affine</h3>\n<p>Pour m ≠ 0, f(x) = mx + p s'annule en x = −p/m. Si m &gt; 0, f(x) est négatif avant ce nombre et positif après ; si m &lt; 0, c'est l'inverse.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>x</th><th>−∞</th><th></th><th>−p/m</th><th></th><th>+∞</th></tr></thead>\n<tbody><tr><td>signe de mx + p (m &gt; 0)</td><td></td><td>−</td><td>0</td><td>+</td><td></td></tr>\n<tr><td>signe de mx + p (m &lt; 0)</td><td></td><td>+</td><td>0</td><td>−</td><td></td></tr></tbody></table></div>\n<p>Exemple : 2x − 6 s'annule en 3 ; il est négatif sur ]−∞ ; 3[ et positif sur ]3 ; +∞[. Et −x + 4 est positif sur ]−∞ ; 4[, négatif sur ]4 ; +∞[.</p>\n"
+        },
+        {
+          "id": "reference",
+          "titre": "Fonctions carré, inverse, racine carrée et cube",
+          "html": "\n<div class=\"tbl\"><table>\n<thead><tr><th>Fonction</th><th>Formule</th><th>Définie sur</th><th>Signe</th></tr></thead>\n<tbody>\n<tr><td>carré</td><td>x ↦ x<sup>2</sup></td><td>ℝ</td><td>toujours positif ou nul</td></tr>\n<tr><td>inverse</td><td>x ↦ 1/x</td><td>ℝ \\ {0}</td><td>du signe de x</td></tr>\n<tr><td>racine carrée</td><td>x ↦ √x</td><td>[0 ; +∞[</td><td>positif ou nul</td></tr>\n<tr><td>cube</td><td>x ↦ x<sup>3</sup></td><td>ℝ</td><td>du signe de x</td></tr>\n</tbody></table></div>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 260 200\" role=\"img\" aria-label=\"Parabole, courbe de la fonction carré\">\n<line x1=\"10\" y1=\"120\" x2=\"250\" y2=\"120\" stroke=\"currentColor\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"195\" stroke=\"currentColor\"/>\n<text x=\"243\" y=\"135\" font-size=\"12\">x</text><text x=\"136\" y=\"20\" font-size=\"12\">y</text>\n<line x1=\"150\" y1=\"116\" x2=\"150\" y2=\"124\" stroke=\"currentColor\"/><text x=\"147\" y=\"136\" font-size=\"11\">1</text>\n<line x1=\"126\" y1=\"100\" x2=\"134\" y2=\"100\" stroke=\"currentColor\"/><text x=\"117\" y=\"104\" font-size=\"11\">1</text>\n<path d=\"M70,-60 Q130,300 190,-60\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2.5\"/>\n</svg></div><figcaption>La courbe de la fonction carré est une parabole, symétrique par rapport à l'axe des ordonnées.</figcaption></figure><figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 260 200\" role=\"img\" aria-label=\"Hyperbole, courbe de la fonction inverse, en deux branches\">\n<line x1=\"10\" y1=\"120\" x2=\"250\" y2=\"120\" stroke=\"currentColor\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"195\" stroke=\"currentColor\"/>\n<text x=\"243\" y=\"135\" font-size=\"12\">x</text><text x=\"136\" y=\"20\" font-size=\"12\">y</text>\n<line x1=\"150\" y1=\"116\" x2=\"150\" y2=\"124\" stroke=\"currentColor\"/><text x=\"147\" y=\"136\" font-size=\"11\">1</text>\n<line x1=\"126\" y1=\"100\" x2=\"134\" y2=\"100\" stroke=\"currentColor\"/><text x=\"117\" y=\"104\" font-size=\"11\">1</text>\n<path d=\"M135,20 Q140,95 250,115 M125,220 Q120,145 10,125\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2.5\"/>\n</svg></div><figcaption>La courbe de la fonction inverse (hyperbole) a deux branches, de part et d'autre de 0.</figcaption></figure>\n<p>La courbe de la fonction racine carrée part de l'origine et monte de plus en plus lentement ; celle de la fonction cube passe par l'origine et monte toujours, en traversant l'axe des abscisses.</p>\n<p>Points remarquables : 0<sup>2</sup> = 0, 1<sup>2</sup> = 1, (−2)<sup>2</sup> = 4 ; 1/2 = 0,5, 1/(−1) = −1 ; √4 = 2, √9 = 3 ; 2<sup>3</sup> = 8, (−2)<sup>3</sup> = −8.</p>\n<h3>Résoudre f(x) = k</h3>\n<ul>\n<li>x<sup>2</sup> = k : deux solutions ±√k si k &gt; 0, une (0) si k = 0, aucune si k &lt; 0.</li>\n<li>1/x = k (k ≠ 0) : une solution, x = 1/k ; 1/x = 0 n'a pas de solution.</li>\n<li>√x = k : une solution x = k<sup>2</sup> si k ⩾ 0, aucune si k &lt; 0.</li>\n<li>x<sup>3</sup> = k : toujours une seule solution (x<sup>3</sup> = 8 donne x = 2 ; x<sup>3</sup> = −27 donne x = −3).</li>\n</ul>\n<h3>Résoudre f(x) &lt; k graphiquement</h3>\n<p>On cherche les abscisses des points de la courbe situés strictement <strong>sous</strong> la droite y = k. Exemple : x<sup>2</sup> &lt; 4 a pour solutions ]−2 ; 2[ ; x<sup>2</sup> ⩾ 4 a pour solutions ]−∞ ; −2] ∪ [2 ; +∞[.</p>\n"
+        },
+        {
+          "id": "valeur-absolue",
+          "titre": "La fonction valeur absolue",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>La fonction <strong>valeur absolue</strong> est définie sur ℝ par f(x) = |x| : |x| = x si x ⩾ 0, et |x| = −x si x &lt; 0.</p></div>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 260 200\" role=\"img\" aria-label=\"Courbe de la fonction valeur absolue, en forme de V\">\n<line x1=\"10\" y1=\"120\" x2=\"250\" y2=\"120\" stroke=\"currentColor\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"195\" stroke=\"currentColor\"/>\n<text x=\"243\" y=\"135\" font-size=\"12\">x</text><text x=\"136\" y=\"20\" font-size=\"12\">y</text>\n<line x1=\"150\" y1=\"116\" x2=\"150\" y2=\"124\" stroke=\"currentColor\"/><text x=\"147\" y=\"136\" font-size=\"11\">1</text>\n<line x1=\"126\" y1=\"100\" x2=\"134\" y2=\"100\" stroke=\"currentColor\"/><text x=\"117\" y=\"104\" font-size=\"11\">1</text>\n<path d=\"M30,20 L130,120 L230,20\" fill=\"none\" stroke=\"#4338ca\" stroke-width=\"2.5\"/>\n</svg></div><figcaption>La courbe de x ↦ |x| est formée de deux demi-droites, en forme de V ; elle est symétrique par rapport à l'axe des ordonnées.</figcaption></figure>\n<p>Sur [0 ; +∞[, la courbe est celle de y = x ; sur ]−∞ ; 0], celle de y = −x. La fonction est toujours positive ou nulle et ne s'annule qu'en 0.</p>\n<p>|x| = 3 a deux solutions, −3 et 3 ; |x| = −1 n'en a aucune ; |x| ⩽ 2 a pour solutions [−2 ; 2] ; |x| &gt; 2 a pour solutions ]−∞ ; −2[ ∪ ]2 ; +∞[. Plus généralement (chapitre 1), |x − a| ⩽ r équivaut à x ∈ [a − r ; a + r].</p>\n"
+        },
+        {
+          "id": "resolutions",
+          "titre": "Résolutions graphiques : f(x) = g(x), f(x) < g(x)",
+          "html": "\n<p>Les solutions de f(x) = g(x) sont les abscisses des points d'intersection des courbes de f et de g. Les solutions de f(x) &lt; g(x) sont les abscisses des points où la courbe de f est strictement <strong>au-dessous</strong> de celle de g.</p>\n<p>Exemple : avec f(x) = x<sup>2</sup> et g(x) = x + 2, les courbes se coupent en x = −1 et x = 2 (on vérifie : 1 = 1 et 4 = 4). La parabole est sous la droite entre les deux : x<sup>2</sup> &lt; x + 2 a pour solutions ]−1 ; 2[.</p>\n<p>Une calculatrice ou un logiciel donnent des valeurs approchées des solutions ; pour une valeur exacte, on calcule. Ici, x<sup>2</sup> = x + 2 équivaut à x<sup>2</sup> − x − 2 = 0, soit (x + 1)(x − 2) = 0.</p>\n<h3>Modéliser</h3>\n<p>Un rectangle a un périmètre de 20 cm ; si sa largeur vaut x, sa longueur vaut 10 − x et son aire A(x) = x(10 − x), définie pour x ∈ ]0 ; 10[. Une balle lâchée de 20 m est, au temps t (en s), à la hauteur h(t) = 20 − 4,9t<sup>2</sup> ; elle touche le sol quand h(t) = 0, vers t ≈ 2,02 s.</p>\n"
+        },
+        {
+          "id": "tableaux-signes",
+          "titre": "Tableaux de signes et équations quotient",
+          "html": "\n<p>Pour étudier le signe d'un <strong>produit</strong> ou d'un <strong>quotient</strong> de facteurs affines, on dresse un <strong>tableau de signes</strong> : une ligne par facteur, puis la ligne du résultat avec la <strong>règle des signes</strong>.</p>\n<p>Exemple : signe de (x − 1)(x + 3). x − 1 s'annule en 1, x + 3 en −3.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th>x</th><th>−∞</th><th></th><th>−3</th><th></th><th>1</th><th></th><th>+∞</th></tr></thead>\n<tbody>\n<tr><td>x − 1</td><td></td><td>−</td><td>|</td><td>−</td><td>0</td><td>+</td><td></td></tr>\n<tr><td>x + 3</td><td></td><td>−</td><td>0</td><td>+</td><td>|</td><td>+</td><td></td></tr>\n<tr><td>(x − 1)(x + 3)</td><td></td><td>+</td><td>0</td><td>−</td><td>0</td><td>+</td><td></td></tr>\n</tbody></table></div>\n<p>Donc (x − 1)(x + 3) &lt; 0 a pour solutions ]−3 ; 1[, et (x − 1)(x + 3) ⩾ 0 a pour solutions ]−∞ ; −3] ∪ [1 ; +∞[.</p>\n<p>Pour un quotient (2x − 4)/(x + 1), même tableau, mais la valeur −1 qui annule le dénominateur est <strong>interdite</strong> : on la marque d'une double barre ‖. (2x − 4)/(x + 1) ⩽ 0 a pour solutions ]−1 ; 2].</p>\n<h3>Équations quotient</h3>\n<p>Pour résoudre A(x)/B(x) = k : on cherche d'abord les valeurs interdites (B(x) = 0), puis on se ramène à un produit nul ou au premier degré. Exemple : (x + 5)/(x − 1) = 3, avec x ≠ 1. Alors x + 5 = 3(x − 1), soit 2x = 8, x = 4, qui n'est pas interdit. S = {4}.</p>\n<p>Un quotient est nul si et seulement si son numérateur est nul <strong>et</strong> son dénominateur non nul : (x − 2)/(x + 2) = 0 donne x = 2 ; mais (x − 2)/(x − 2) = 0 n'a aucune solution.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>Une fonction associe à chaque x de D<sub>f</sub> une unique image f(x) ; un nombre peut avoir 0, 1 ou plusieurs antécédents. On exclut de D<sub>f</sub> les valeurs qui annulent un dénominateur ou rendent négatif un nombre sous une racine.</li>\n<li>M(a ; b) est sur la courbe de f si et seulement si b = f(a).</li>\n<li>Fonction affine f(x) = mx + p : droite ; elle s'annule en −p/m et change de signe en ce point (signe de m à droite).</li>\n<li>Carré (parabole), inverse (hyperbole, D = ℝ \\ {0}), racine carrée (D = [0 ; +∞[), cube, valeur absolue (courbe en V, toujours positive).</li>\n<li>f(x) = g(x) : abscisses des points d'intersection ; f(x) &lt; g(x) : courbe de f au-dessous de celle de g.</li>\n<li>Tableau de signes : une ligne par facteur, règle des signes ; valeur interdite marquée ‖ pour un quotient. A(x)/B(x) = 0 ⇔ A(x) = 0 et B(x) ≠ 0.</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch8:banque:001",
+          "enonce": "Avec f(x) = x² − 3, quelle est l'image de 2 ?",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "f(2) = 4 − 3 = 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "−1",
+            "7",
+            "4"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:002",
+          "enonce": "Combien d'images un nombre de l'ensemble de définition a-t-il par une fonction ?",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "C'est la définition d'une fonction.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux",
+            "Une seule",
+            "Aucune",
+            "Autant que d'antécédents"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:003",
+          "enonce": "Si f(5) = 12, que peut-on dire ?",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "L'image de 5 est 12, et 5 est un antécédent de 12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "12 est un antécédent de 5",
+            "5 est l'image de 12",
+            "5 est un antécédent de 12",
+            "f(12) = 5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:004",
+          "enonce": "Avec f(x) = x² − 3, quels sont les antécédents de 6 ?",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "x² − 3 = 6 donne x² = 9.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 seulement",
+            "33",
+            "√3",
+            "−3 et 3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:005",
+          "enonce": "Avec g(x) = 2x + 1, quel est l'antécédent de 9 ?",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "2x + 1 = 9 donne x = 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4",
+            "19",
+            "5",
+            "−4"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:006",
+          "enonce": "Avec h(x) = x², combien d'antécédents le nombre −4 a-t-il ?",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "Un carré n'est jamais négatif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un : −2",
+            "Aucun",
+            "Deux : −2 et 2",
+            "Un : 16"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:007",
+          "enonce": "Avec f(x) = (x − 1)², quel nombre a exactement un antécédent ?",
+          "notion": "Image et antécédent",
+          "difficulte": 3,
+          "explication": "(x − 1)² = 0 seulement pour x = 1 ; 1 et 4 en ont deux, −1 aucun.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "4",
+            "0",
+            "−1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:008",
+          "enonce": "Le programme : « choisir un nombre, le multiplier par 3, soustraire 5 » définit quelle fonction ?",
+          "notion": "Image et antécédent",
+          "difficulte": 3,
+          "explication": "On multiplie d'abord, puis on soustrait.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x ↦ 3(x − 5)",
+            "x ↦ 5 − 3x",
+            "x ↦ x/3 − 5",
+            "x ↦ 3x − 5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:009",
+          "enonce": "Avec f(x) = 3x − 2, quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "f(−1) = −5 et f(3) = 7.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(2) = 4",
+            "f(0) = −2",
+            "f(1) = 1",
+            "f(−1) = −1",
+            "f(3) = 9"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:010",
+          "enonce": "Quels nombres sont des antécédents de 4 par f(x) = x² ? Coche toutes les réponses exactes.",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "x² = 4 donne x = 2 ou x = −2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−2",
+            "4",
+            "16",
+            "√2",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:011",
+          "enonce": "Un nombre peut avoir plusieurs images par une même fonction.",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "Il a une unique image.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:012",
+          "enonce": "Un nombre peut avoir plusieurs antécédents par une même fonction.",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "Exemple : 9 a deux antécédents par x ↦ x², −3 et 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:013",
+          "enonce": "Avec f(x) = 5x + 2, calcule f(3). Réponds par un nombre.",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "5 × 3 + 2 = 17.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "17"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:014",
+          "enonce": "Avec f(x) = 4x − 7, quel est l'antécédent de 13 ? Réponds par un nombre.",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "4x − 7 = 13 donne x = 5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:015",
+          "enonce": "Sur quel ensemble la fonction x ↦ 1/(x − 2) est-elle définie ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "On ne divise pas par 0 : x − 2 ≠ 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℝ \\ {2}",
+            "ℝ",
+            "[2 ; +∞[",
+            "ℝ \\ {−2}"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:016",
+          "enonce": "Sur quel ensemble la fonction racine carrée est-elle définie ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "On prend la racine d'un nombre positif ou nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℝ",
+            "[0 ; +∞[",
+            "]0 ; +∞[",
+            "]−∞ ; 0]"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:017",
+          "enonce": "Quel est l'ensemble de définition de g(x) = √(x − 1) ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "x − 1 ⩾ 0 donne x ⩾ 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]1 ; +∞[",
+            "[0 ; +∞[",
+            "[1 ; +∞[",
+            "ℝ"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:018",
+          "enonce": "Quel est l'ensemble de définition de h(x) = 3/(2x + 6) ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "2x + 6 = 0 pour x = −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℝ \\ {3}",
+            "ℝ \\ {6}",
+            "]−3 ; +∞[",
+            "ℝ \\ {−3}"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:019",
+          "enonce": "Dans le problème du rectangle de périmètre 20 cm et de largeur x, pour quels x l'aire A(x) = x(10 − x) a-t-elle un sens ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "La largeur et la longueur 10 − x doivent être strictement positives.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x ∈ ]0 ; 10[",
+            "x ∈ ℝ",
+            "x ∈ [0 ; 20]",
+            "x ∈ ]0 ; 20["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:020",
+          "enonce": "Quel est l'ensemble de définition de k(x) = 1/(x² − 9) ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 3,
+          "explication": "x² − 9 = 0 pour x = 3 ou x = −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "ℝ \\ {9}",
+            "ℝ \\ {−3 ; 3}",
+            "ℝ \\ {3}",
+            "]−3 ; 3["
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:021",
+          "enonce": "Quel est l'ensemble de définition de f(x) = √(4 − x) ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 3,
+          "explication": "4 − x ⩾ 0 donne x ⩽ 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[4 ; +∞[",
+            "]−∞ ; 4[",
+            "]−∞ ; 4]",
+            "[−4 ; 4]"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:022",
+          "enonce": "Quelles fonctions sont définies sur ℝ tout entier ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "1/x n'est pas définie en 0 ; √x seulement pour x ⩾ 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ 1/x",
+            "x ↦ |x|",
+            "x ↦ 2x − 1",
+            "x ↦ x²",
+            "x ↦ √x"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:023",
+          "enonce": "Quelles valeurs sont exclues de l'ensemble de définition de x ↦ 5/(x(x + 4)) ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "Le dénominateur s'annule pour x = 0 et x = −4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5",
+            "−5",
+            "−4",
+            "4",
+            "0"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:024",
+          "enonce": "La fonction inverse est définie en 0.",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "On ne peut pas calculer 1/0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:025",
+          "enonce": "La fonction x ↦ √(x + 2) est définie en −2.",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "√0 = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:026",
+          "enonce": "La fonction x ↦ 1/(x² + 1) est définie sur ℝ.",
+          "notion": "Ensemble de définition",
+          "difficulte": 3,
+          "explication": "x² + 1 ⩾ 1 ne s'annule jamais.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:027",
+          "enonce": "Quelle valeur de x est interdite pour f(x) = (x + 1)/(3x − 12) ? Réponds par un nombre.",
+          "notion": "Ensemble de définition",
+          "difficulte": 2,
+          "explication": "3x − 12 = 0 pour x = 4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:028",
+          "enonce": "Quand le point A(a ; b) appartient-il à la courbe de f ?",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "La courbe a pour équation y = f(x).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Quand a = f(b)",
+            "Quand a = b",
+            "Quand f(a) = 0",
+            "Quand b = f(a)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:029",
+          "enonce": "Pour lire l'image de a sur une courbe, que fait-on ?",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "L'image se lit sur l'axe des ordonnées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "On part de a sur l'axe des abscisses et on lit l'ordonnée du point de la courbe",
+            "On part de a sur l'axe des ordonnées",
+            "On lit la pente de la courbe",
+            "On cherche où la courbe coupe l'axe des abscisses"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:030",
+          "enonce": "Pour lire les antécédents de b, quelle droite trace-t-on ?",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "On lit les abscisses des points d'intersection.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La droite verticale x = b",
+            "La droite horizontale y = b",
+            "La droite y = x",
+            "L'axe des abscisses"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:031",
+          "enonce": "Avec f(x) = x² − 3, quel point appartient à la courbe ?",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "f(2) = 1 ; f(1) = −2 ; f(3) = 6 ; f(0) = −3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "(1 ; 1)",
+            "(3 ; 3)",
+            "(2 ; 1)",
+            "(0 ; 3)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:032",
+          "enonce": "Le point (a ; 7) est sur la courbe de f(x) = 2x + 1. Que vaut a ?",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "2a + 1 = 7.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "15",
+            "4",
+            "7",
+            "3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:033",
+          "enonce": "Pourquoi une lecture graphique ne donne-t-elle en général qu'une valeur approchée ?",
+          "notion": "Courbe représentative",
+          "difficulte": 3,
+          "explication": "Un calcul donne la valeur exacte.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La précision du tracé et de la lecture est limitée",
+            "Les courbes sont toujours fausses",
+            "Les fonctions n'ont pas de valeur exacte",
+            "Le repère n'a pas d'unité"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:034",
+          "enonce": "La courbe de f coupe l'axe des abscisses aux points d'abscisses −1 et 4. Que peut-on dire ?",
+          "notion": "Courbe représentative",
+          "difficulte": 3,
+          "explication": "Un point de l'axe des abscisses a une ordonnée nulle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(0) = −1 et f(0) = 4",
+            "−1 et 4 sont les solutions de f(x) = 0",
+            "f(−1) = 4",
+            "f n'est pas définie en −1 et 4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:035",
+          "enonce": "Quels points sont sur la courbe de f(x) = x + 4 ? Coche toutes les réponses exactes.",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "On vérifie y = x + 4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(2 ; 2)",
+            "(0 ; 4)",
+            "(1 ; 5)",
+            "(−4 ; 0)",
+            "(4 ; 0)"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:036",
+          "enonce": "La courbe de f passe par (−2 ; 3) et (1 ; 0). Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "Le point (a ; b) traduit f(a) = b.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(0) = 1",
+            "f(−2) = 3",
+            "f(3) = −2",
+            "3 est un antécédent de −2",
+            "1 est un antécédent de 0"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:037",
+          "enonce": "La courbe de f a pour équation y = f(x).",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:038",
+          "enonce": "Le point (1 ; 1) appartient à la courbe de x ↦ 1/x.",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "1/1 = 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:039",
+          "enonce": "Le point (3 ; b) est sur la courbe de f(x) = x² − 2x. Donne b.",
+          "notion": "Courbe représentative",
+          "difficulte": 2,
+          "explication": "9 − 6 = 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:040",
+          "enonce": "Quelle est la forme d'une fonction affine ?",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "Sa courbe est une droite.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(x) = x²",
+            "f(x) = 1/x",
+            "f(x) = mx + p",
+            "f(x) = mx²"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:041",
+          "enonce": "Comment appelle-t-on une fonction affine dont p = 0 ?",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "Sa droite passe par l'origine.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une fonction constante",
+            "Une fonction carré",
+            "Une fonction inverse",
+            "Une fonction linéaire"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:042",
+          "enonce": "En quelle valeur la fonction f(x) = 2x − 6 s'annule-t-elle ?",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "2x − 6 = 0 donne x = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "−3",
+            "6",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:043",
+          "enonce": "f est affine avec f(1) = 5 et f(3) = 9. Quelle est son expression ?",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "m = 4/2 = 2, puis p = 5 − 2 = 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "f(x) = 4x + 1",
+            "f(x) = 2x + 3",
+            "f(x) = 2x + 5",
+            "f(x) = x + 4"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:044",
+          "enonce": "Sur quel intervalle 2x − 6 est-il strictement positif ?",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "m = 2 > 0 : positif après 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; 3[",
+            "]−∞ ; −3[",
+            "]3 ; +∞[",
+            "]6 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:045",
+          "enonce": "Sur quel intervalle −x + 4 est-il positif ou nul ?",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "m = −1 < 0 : positif avant 4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[4 ; +∞[",
+            "]−∞ ; −4]",
+            "[−4 ; +∞[",
+            "]−∞ ; 4]"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:046",
+          "enonce": "Quel est le signe de mx + p à droite de −p/m quand m < 0 ?",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "Si m < 0, la fonction est positive puis négative.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Négatif",
+            "Positif",
+            "Nul",
+            "Il dépend de p"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:047",
+          "enonce": "Avec f affine, f(−2) = 7 et f(2) = −1, que vaut f(0) ?",
+          "notion": "Fonctions affines",
+          "difficulte": 3,
+          "explication": "m = −8/4 = −2 et p = f(0) : 7 = 4 + p.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2",
+            "3",
+            "6",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:048",
+          "enonce": "Pour une fonction affine, l'accroissement de f(x) entre x₁ et x₂ est proportionnel à :",
+          "notion": "Fonctions affines",
+          "difficulte": 3,
+          "explication": "f(x₂) − f(x₁) = m(x₂ − x₁).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x₂ + x₁",
+            "x₂ × x₁",
+            "x₂ − x₁, avec m comme coefficient",
+            "f(x₁)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:049",
+          "enonce": "Quelles fonctions sont affines ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "Une constante est affine avec m = 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ 5",
+            "x ↦ 3x − 1",
+            "x ↦ 1/x",
+            "x ↦ x² + 1",
+            "x ↦ −x"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:050",
+          "enonce": "Pour f(x) = −3x + 6, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "−3x + 6 = 0 donne x = 2, et m < 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(x) > 0 pour x > 2",
+            "f s'annule en −2",
+            "f est linéaire",
+            "f(x) > 0 pour x < 2",
+            "f s'annule en 2"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:051",
+          "enonce": "Quelles fonctions affines sont négatives sur ]−∞ ; 1[ et positives sur ]1 ; +∞[ ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions affines",
+          "difficulte": 3,
+          "explication": "Il faut une racine 1 et une pente positive.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ 1 − x",
+            "x ↦ x + 1",
+            "x ↦ x − 1",
+            "x ↦ −2x + 2",
+            "x ↦ 2x − 2"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:052",
+          "enonce": "La courbe d'une fonction affine est une droite.",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "C'est une propriété du cours.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:053",
+          "enonce": "La fonction x ↦ 5x + 10 est positive sur ]−2 ; +∞[.",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "Elle s'annule en −2 et m = 5 > 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:054",
+          "enonce": "La fonction x ↦ x² + 1 est affine.",
+          "notion": "Fonctions affines",
+          "difficulte": 3,
+          "explication": "Elle contient x² : ce n'est pas mx + p.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:055",
+          "enonce": "En quelle valeur la fonction f(x) = 4x + 10 s'annule-t-elle ? Réponds par un nombre.",
+          "notion": "Fonctions affines",
+          "difficulte": 2,
+          "explication": "4x = −10.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "-2,5",
+            "−2,5",
+            "-2.5",
+            "−2.5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:056",
+          "enonce": "Comment s'appelle la courbe de la fonction carré ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "Elle est symétrique par rapport à l'axe des ordonnées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une hyperbole",
+            "Une droite",
+            "Un cercle",
+            "Une parabole"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:057",
+          "enonce": "Comment s'appelle la courbe de la fonction inverse ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "Elle a deux branches.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une hyperbole",
+            "Une parabole",
+            "Une droite",
+            "Une demi-droite"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:058",
+          "enonce": "Quelle est l'image de −2 par la fonction cube ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "(−2)³ = −8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "8",
+            "−8",
+            "−6",
+            "6"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:059",
+          "enonce": "L'équation 1/x = 4 : combien de solutions, et laquelle ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "x = 1/k.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Deux",
+            "Aucune",
+            "Une : x = 1/4",
+            "Une : x = 4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:060",
+          "enonce": "Quel nombre a pour racine carrée 5 ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "x = 5².",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "√5",
+            "2,5",
+            "−25",
+            "25"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:061",
+          "enonce": "Quelle est la solution de x³ = −27 ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "(−3)³ = −27 : la fonction cube prend toutes les valeurs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−3",
+            "3",
+            "−9",
+            "Aucune"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:062",
+          "enonce": "Pour quels x le carré x² reste-t-il strictement inférieur à 4 ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "La parabole est sous la droite y = 4 entre −2 et 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; 2[",
+            "]−2 ; 2[",
+            "]−4 ; 4[",
+            "]−∞ ; −2[ ∪ ]2 ; +∞["
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:063",
+          "enonce": "Résous l'inéquation x² ⩾ 9 en lisant la parabole.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 3,
+          "explication": "La parabole est au-dessus de la droite y = 9 en dehors de ]−3 ; 3[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[3 ; +∞[",
+            "[−3 ; 3]",
+            "]−∞ ; −3] ∪ [3 ; +∞[",
+            "]−∞ ; −9] ∪ [9 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:064",
+          "enonce": "Quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "(−3)² = 9 et 1/2 = 0,5.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1/2 = 2",
+            "√9 = 3",
+            "2³ = 8",
+            "1/(−1) = −1",
+            "(−3)² = −9"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:065",
+          "enonce": "Quelles fonctions sont toujours positives ou nulles sur leur ensemble de définition ? Coche toutes les réponses exactes.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "Le cube et l'inverse sont du signe de x.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ x²",
+            "x ↦ 2x",
+            "x ↦ √x",
+            "x ↦ x³",
+            "x ↦ 1/x"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:066",
+          "enonce": "Quelles équations ont exactement une solution réelle ? Coche toutes les réponses exactes.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 3,
+          "explication": "x² = 5 en a deux ; √x = −1 aucune.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x³ = 5",
+            "√x = 2",
+            "√x = −1",
+            "1/x = −3",
+            "x² = 5"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:067",
+          "enonce": "La fonction carré est définie sur ℝ.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "On peut élever tout réel au carré.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:068",
+          "enonce": "L'équation √x = −2 a pour solution 4.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 2,
+          "explication": "√4 = 2 ≠ −2 : une racine carrée n'est jamais négative.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:069",
+          "enonce": "L'équation 1/x = 0 a une solution.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 3,
+          "explication": "1/x n'est jamais nul.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:070",
+          "enonce": "Calcule l'image de 7 par la fonction carré. Réponds par un nombre.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "7² = 49.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "49"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:071",
+          "enonce": "Quelle est la solution de l'équation x³ = 64 ? Réponds par un nombre.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 3,
+          "explication": "4³ = 64.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:072",
+          "enonce": "Quelle est la forme de la courbe de x ↦ |x| ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "y = x pour x ⩾ 0, y = −x pour x < 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une parabole",
+            "Une hyperbole",
+            "Une droite unique",
+            "Un V formé de deux demi-droites"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:073",
+          "enonce": "Que vaut |x| pour x < 0 ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "Par exemple |−3| = 3 = −(−3).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−x",
+            "x",
+            "0",
+            "x²"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:074",
+          "enonce": "Quelles sont les solutions de |x| = 3 ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "Les deux nombres à distance 3 de 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3 seulement",
+            "−3 et 3",
+            "Aucune",
+            "0 et 3"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:075",
+          "enonce": "Quels réels ont une valeur absolue inférieure ou égale à 2 ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "Distance à 0 inférieure ou égale à 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; 2]",
+            "[0 ; 2]",
+            "[−2 ; 2]",
+            "]−2 ; 2["
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:076",
+          "enonce": "Les réels dont la distance à 0 dépasse strictement 2 forment quel ensemble ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "Distance à 0 strictement supérieure à 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]2 ; +∞[",
+            "]−2 ; 2[",
+            "[−2 ; 2]",
+            "]−∞ ; −2[ ∪ ]2 ; +∞["
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:077",
+          "enonce": "Sur l'intervalle [0 ; +∞[, la courbe de x ↦ |x| est confondue avec celle de :",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 3,
+          "explication": "|x| = x pour x ⩾ 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "x ↦ x",
+            "x ↦ −x",
+            "x ↦ x²",
+            "x ↦ 1/x"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:078",
+          "enonce": "Traduis |x − 1| ⩽ 3 par un intervalle.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 3,
+          "explication": "Centre 1, rayon 3.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[1 ; 4]",
+            "[−2 ; 4]",
+            "[−3 ; 3]",
+            "]−2 ; 4["
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:079",
+          "enonce": "Quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "La valeur absolue est la distance à 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "|0| = 0",
+            "|−1| = 0",
+            "|−4| = 4",
+            "|2,5| = 2,5",
+            "|−4| = −4"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:080",
+          "enonce": "Quelles affirmations sur la fonction valeur absolue sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "|−x| = |x| : symétrie.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Sa courbe est symétrique par rapport à l'axe des ordonnées",
+            "Elle est définie sur ℝ",
+            "Sa courbe est une parabole",
+            "Elle ne s'annule qu'en 0",
+            "Elle prend des valeurs négatives"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:081",
+          "enonce": "La fonction valeur absolue est toujours positive ou nulle.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "C'est une distance.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:082",
+          "enonce": "Les nombres x tels que |x| < 5 sont ceux de [−5 ; 5].",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "L'inégalité est stricte : ]−5 ; 5[.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:083",
+          "enonce": "Combien de solutions a l'équation |x| = 7 ? Réponds par un nombre.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 2,
+          "explication": "−7 et 7.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:084",
+          "enonce": "Que représentent les solutions de f(x) = g(x) sur un graphique ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 1,
+          "explication": "Au point commun, f(x) et g(x) sont égaux.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les ordonnées des points d'intersection",
+            "Les points où les courbes coupent l'axe des abscisses",
+            "Les abscisses des points d'intersection des deux courbes",
+            "La distance entre les courbes"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:085",
+          "enonce": "Comment lit-on les solutions de f(x) < g(x) ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 1,
+          "explication": "f(x) < g(x) : la courbe de f est plus basse.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Abscisses des points où la courbe de f est au-dessus de celle de g",
+            "Ordonnées des points de la courbe de f",
+            "Points d'intersection uniquement",
+            "Abscisses des points où la courbe de f est sous celle de g"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:086",
+          "enonce": "Avec f(x) = x² et g(x) = x + 2, en quelles abscisses les courbes se coupent-elles ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "x² − x − 2 = (x + 1)(x − 2).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1 et 2",
+            "1 et −2",
+            "0 et 2",
+            "−2 et 2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:087",
+          "enonce": "Avec f(x) = x² et g(x) = x + 2, quel est l'ensemble des solutions de x² < x + 2 ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "La parabole est sous la droite entre les points d'intersection.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−∞ ; −1[ ∪ ]2 ; +∞[",
+            "]−1 ; 2[",
+            "[−1 ; 2]",
+            "]2 ; +∞["
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:088",
+          "enonce": "Une balle lâchée de 20 m est à la hauteur h(t) = 20 − 4,9t² au temps t. Quelle équation donne l'instant où elle touche le sol ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "Au sol, la hauteur est nulle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "20 − 4,9t = 0",
+            "h(0) = 20",
+            "20 − 4,9t² = 0",
+            "4,9t² = 0"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:089",
+          "enonce": "Pour h(t) = 20 − 4,9t², à quel instant (arrondi au centième) la balle touche-t-elle le sol ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 3,
+          "explication": "t² = 20/4,9 ≈ 4,08, donc t ≈ 2,02.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "4,08 s",
+            "4,90 s",
+            "1,42 s",
+            "2,02 s"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:090",
+          "enonce": "Que donne un logiciel de géométrie pour résoudre f(x) = g(x) ?",
+          "notion": "Résolutions graphiques",
+          "difficulte": 3,
+          "explication": "Le calcul algébrique donne les valeurs exactes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En général des valeurs approchées des solutions",
+            "Toujours des valeurs exactes",
+            "Une démonstration",
+            "Rien d'utile"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:091",
+          "enonce": "Quelles méthodes permettent de résoudre f(x) = k ? Coche toutes les réponses exactes.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 1,
+          "explication": "Ce sont les trois méthodes du programme.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une lecture graphique",
+            "Un logiciel ou une calculatrice",
+            "Le calcul de f(k)",
+            "Une lecture du tableau de signes seul",
+            "Un calcul algébrique"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:092",
+          "enonce": "Les courbes de f et g se coupent en x = 1 et x = 5, et f est au-dessus de g entre les deux. Quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "Entre 1 et 5, f est au-dessus ; au-delà, en dessous (sans autre intersection).",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "f(1) = g(1)",
+            "f(x) < g(x) pour x > 5",
+            "f(3) > g(3)",
+            "f(0) = g(0)",
+            "f(x) < g(x) pour x entre 1 et 5"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:093",
+          "enonce": "Si les courbes de f et g ne se coupent pas, l'équation f(x) = g(x) n'a pas de solution.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "Aucun point commun, donc aucune solution.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:094",
+          "enonce": "Graphiquement, les solutions de f(x) > 0 sont les abscisses des points de la courbe situés sous l'axe des abscisses.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 3,
+          "explication": "Elles correspondent aux points au-dessus de l'axe.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:095",
+          "enonce": "Les droites y = 2x et y = x + 3 se coupent en un point. Quelle est son abscisse ? Réponds par un nombre.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 2,
+          "explication": "2x = x + 3.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:096",
+          "enonce": "Dans un tableau de signes d'un produit, comment trouve-t-on le signe de la dernière ligne ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "Moins par moins donne plus, etc.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En additionnant les signes",
+            "Avec la règle des signes, colonne par colonne",
+            "En recopiant la première ligne",
+            "En calculant f(0)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:097",
+          "enonce": "En quelles valeurs le produit (x − 1)(x + 3) s'annule-t-il ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "Produit nul : un des facteurs est nul.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−1 et 3",
+            "1 et 3",
+            "1 et −3",
+            "3 seulement"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:098",
+          "enonce": "Quel est le signe de (x − 1)(x + 3) pour x compris entre −3 et 1 ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "x − 1 < 0 et x + 3 > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Positif",
+            "Nul",
+            "Il change plusieurs fois",
+            "Négatif"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:099",
+          "enonce": "Quel est l'ensemble des solutions de (x − 1)(x + 3) < 0 ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "C'est la zone où le produit est négatif.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "]−3 ; 1[",
+            "]−∞ ; −3[ ∪ ]1 ; +∞[",
+            "[−3 ; 1]",
+            "]1 ; +∞["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:100",
+          "enonce": "Dans le tableau de signes d'un quotient, que signifie la double barre ‖ ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "Le quotient n'est pas défini en cette valeur.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un zéro du numérateur",
+            "Une valeur interdite, qui annule le dénominateur",
+            "Un changement de signe obligatoire",
+            "La fin du tableau"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:101",
+          "enonce": "Quel est le signe de (x + 2)² ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "Un carré est positif ou nul ; il s'annule en −2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Négatif pour x < −2",
+            "Toujours strictement positif",
+            "Positif ou nul pour tout x",
+            "Négatif pour tout x"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:102",
+          "enonce": "Quel est l'ensemble des solutions de (2x − 4)/(x + 1) ⩽ 0 ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "−1 est interdit ; 2 annule le numérateur et convient.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−1 ; 2]",
+            "]−∞ ; −1[ ∪ [2 ; +∞[",
+            "]−1 ; 2[",
+            "]−1 ; 2]"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:103",
+          "enonce": "À l'aide d'un tableau de signes, résous (3 − x)(x + 2) ⩾ 0.",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "3 − x est positif avant 3, x + 2 après −2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "[−2 ; 3]",
+            "]−∞ ; −2] ∪ [3 ; +∞[",
+            "]−2 ; 3[",
+            "[3 ; +∞["
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:104",
+          "enonce": "Pour résoudre x² > 3x, quelle transformation permet d'utiliser un tableau de signes ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "Diviser par x, de signe inconnu, est interdit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Diviser par x : x > 3",
+            "x² − 3x > 0, soit x(x − 3) > 0",
+            "Prendre la racine : x > √3x",
+            "x > 3x"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:105",
+          "enonce": "Pour x = 5, quels produits sont strictement positifs ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "On remplace x par 5 : 32, 9, 6, −6 et 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(x − 5)(x + 2)",
+            "(x − 6)(x + 1)",
+            "(x + 1)(x − 4)",
+            "(x − 1)(x + 3)",
+            "(x − 2)²"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:106",
+          "enonce": "Quelles valeurs de x vérifient (x − 2)(x + 5) > 0 ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "Le produit est positif en dehors de [−5 ; 2].",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "10",
+            "−5",
+            "−6",
+            "0",
+            "3"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:107",
+          "enonce": "Pour le quotient (x + 4)/(x − 1), quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "Tableau de signes avec −4 et 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il est positif sur ]−4 ; 1[",
+            "Il est négatif sur ]−4 ; 1[",
+            "Il est nul pour x = 1",
+            "Il est nul pour x = −4",
+            "1 est une valeur interdite"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:108",
+          "enonce": "Un produit de deux facteurs négatifs est positif.",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "Règle des signes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:109",
+          "enonce": "Le quotient (x − 3)/(x + 1) est défini pour x = −1.",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "x = −1 annule le dénominateur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:110",
+          "enonce": "Pour résoudre x(x − 3) > 0, on peut diviser par x et écrire x − 3 > 0.",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "x peut être négatif : on perdrait les solutions x < 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:111",
+          "enonce": "Combien d'entiers vérifient (x − 1)(x + 3) < 0 ? Réponds par un nombre.",
+          "notion": "Tableaux de signes",
+          "difficulte": 3,
+          "explication": "Les solutions sont ]−3 ; 1[ : −2, −1 et 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "3"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:112",
+          "enonce": "Quelle est la première étape pour résoudre A(x)/B(x) = k ?",
+          "notion": "Équations quotient",
+          "difficulte": 1,
+          "explication": "On les exclut des solutions.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Multiplier par 0",
+            "Développer A(x)",
+            "Chercher les valeurs interdites, qui annulent B(x)",
+            "Calculer A(k)"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:113",
+          "enonce": "Quelle est la solution de (x + 5)/(x − 1) = 3 ?",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "x + 5 = 3x − 3, donc x = 4, qui n'est pas interdit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "−4",
+            "2",
+            "4"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:114",
+          "enonce": "Quand un quotient A(x)/B(x) est-il nul ?",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "Le numérateur doit être nul, le dénominateur non.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Quand A(x) = 0 et B(x) ≠ 0",
+            "Quand B(x) = 0",
+            "Quand A(x) = B(x)",
+            "Jamais"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:115",
+          "enonce": "Quelle est la solution de (x − 2)/(x + 2) = 0 ?",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "x − 2 = 0 et x + 2 ≠ 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2",
+            "2",
+            "2 et −2",
+            "Aucune"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:116",
+          "enonce": "Combien de solutions a l'équation (x − 2)/(x − 2) = 0 ?",
+          "notion": "Équations quotient",
+          "difficulte": 3,
+          "explication": "2 annule le numérateur mais est interdit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Une : 2",
+            "Une infinité",
+            "Aucune",
+            "Deux"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:117",
+          "enonce": "Quelle est la solution de 6/(x + 1) = 2 ?",
+          "notion": "Équations quotient",
+          "difficulte": 3,
+          "explication": "6 = 2(x + 1), x = 2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3",
+            "−1",
+            "4",
+            "2"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:118",
+          "enonce": "Quelles sont les solutions de (x² − 4)/(x − 2) = 0 ?",
+          "notion": "Équations quotient",
+          "difficulte": 3,
+          "explication": "x² − 4 = 0 donne ±2, mais 2 est interdit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "−2 seulement",
+            "2 et −2",
+            "2 seulement",
+            "Aucune"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:119",
+          "enonce": "Pour l'équation (2x + 1)/(x − 3) = 1, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "2x + 1 = x − 3 donne x = −4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "3 est une valeur interdite",
+            "La solution est −4",
+            "La solution est 3",
+            "La solution est 4",
+            "Il n'y a pas de solution"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:120",
+          "enonce": "L'équation 1/(x − 5) = 0 a pour solution 5.",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "5 est interdit et un quotient de numérateur 1 n'est jamais nul.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:121",
+          "enonce": "Pour x ≠ 0, l'équation 3/x = 6 a pour solution 0,5.",
+          "notion": "Équations quotient",
+          "difficulte": 3,
+          "explication": "3 = 6x donne x = 0,5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:122",
+          "enonce": "Résous (x + 3)/(x − 1) = 2. Donne la valeur de x.",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "x + 3 = 2x − 2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5",
+            "x = 5",
+            "x=5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:123",
+          "enonce": "Sur quel axe lit-on l'image d'un nombre ?",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "L'image est l'ordonnée du point de la courbe.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'axe des abscisses",
+            "L'axe des ordonnées",
+            "La droite y = x",
+            "Aucun axe"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:124",
+          "enonce": "Quelle fonction de référence est définie seulement pour x ⩾ 0 ?",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "√x n'existe que pour x ⩾ 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le carré",
+            "Le cube",
+            "La racine carrée",
+            "La valeur absolue"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:125",
+          "enonce": "Quel est le signe de x + 3 pour x > −3 ?",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "x + 3 s'annule en −3 et m = 1 > 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Négatif",
+            "Nul",
+            "Il dépend de x",
+            "Positif"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:126",
+          "enonce": "Que vaut |−6| ?",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "Distance de −6 à 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "6",
+            "−6",
+            "0",
+            "36"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:127",
+          "enonce": "Pour g(x) = 1/x, quelle valeur de x est interdite ?",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "On ne divise pas par 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "0",
+            "−1",
+            "Aucune"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:128",
+          "enonce": "Quelle est la pente de la droite qui représente f(x) = −2x + 7 ?",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "m = −2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "7",
+            "2",
+            "−2",
+            "−7"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:129",
+          "enonce": "La courbe de la fonction inverse passe par le point (2 ; 0,5).",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "1/2 = 0,5.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:130",
+          "enonce": "Une valeur interdite peut être solution d'une équation quotient.",
+          "notion": "Équations quotient",
+          "difficulte": 1,
+          "explication": "Le quotient n'est pas défini en cette valeur.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:131",
+          "enonce": "Les solutions de f(x) = 3 sont les abscisses des points de la courbe d'ordonnée 3.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 1,
+          "explication": "On trace la droite y = 3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:132",
+          "enonce": "Avec f(x) = x², l'image de −3 est −9.",
+          "notion": "Image et antécédent",
+          "difficulte": 2,
+          "explication": "(−3)² = 9.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:133",
+          "enonce": "Le produit (x − 4)(x − 4) est négatif pour x < 4.",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "C'est un carré : il est positif ou nul.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:134",
+          "enonce": "Quels facteurs s'annulent en x = 2 ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux de signes",
+          "difficulte": 1,
+          "explication": "On remplace x par 2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "2x",
+            "x − 2",
+            "x + 2",
+            "6 − 3x",
+            "2x − 4"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:135",
+          "enonce": "Quelles valeurs sont interdites dans l'équation 4/(x − 3) + 1/x = 2 ? Coche toutes les réponses exactes.",
+          "notion": "Équations quotient",
+          "difficulte": 1,
+          "explication": "Les dénominateurs x − 3 et x s'annulent en 3 et 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "4",
+            "3",
+            "2",
+            "−3",
+            "0"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:136",
+          "enonce": "Que vaut |−12| ? Réponds par un nombre.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "Distance de −12 à 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "12"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:137",
+          "enonce": "La fonction √(x − 6) est définie sur [a ; +∞[. Donne a.",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "x − 6 ⩾ 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:138",
+          "enonce": "La fonction x ↦ 3x est linéaire.",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "Elle s'écrit mx + p avec p = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch8:banque:139",
+          "enonce": "Le point (0 ; 2) appartient à la courbe de f(x) = x² + 1.",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "f(0) = 1 ≠ 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:140",
+          "enonce": "Pour tout réel x, |x| = x.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "Contre-exemple : |−2| = 2.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:141",
+          "enonce": "Avec g(x) = x² + 1, quelles images sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Image et antécédent",
+          "difficulte": 1,
+          "explication": "g(−1) = 1 + 1 = 2 et g(3) = 10.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "g(−1) = 2",
+            "g(2) = 5",
+            "g(3) = 7",
+            "g(0) = 1",
+            "g(−1) = 0"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:142",
+          "enonce": "Quels points sont sur la parabole d'équation y = x² ? Coche toutes les réponses exactes.",
+          "notion": "Carré, inverse, racine, cube",
+          "difficulte": 1,
+          "explication": "On vérifie y = x² : (−2)² = 4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(0 ; 0)",
+            "(4 ; 2)",
+            "(2 ; 4)",
+            "(−2 ; 4)",
+            "(−2 ; −4)"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:143",
+          "enonce": "Quels nombres ont une valeur absolue égale à 5 ? Coche toutes les réponses exactes.",
+          "notion": "Fonction valeur absolue",
+          "difficulte": 1,
+          "explication": "Les deux nombres à distance 5 de 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "5",
+            "0",
+            "25",
+            "−25",
+            "−5"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:144",
+          "enonce": "Quelles fonctions sont linéaires ? Coche toutes les réponses exactes.",
+          "notion": "Fonctions affines",
+          "difficulte": 1,
+          "explication": "Une fonction linéaire s'écrit mx.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "x ↦ x²",
+            "x ↦ −0,5x",
+            "x ↦ 4x",
+            "x ↦ 4x + 1",
+            "x ↦ 3"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:145",
+          "enonce": "Quels nombres appartiennent à l'ensemble de définition de x ↦ √x ? Coche toutes les réponses exactes.",
+          "notion": "Ensemble de définition",
+          "difficulte": 1,
+          "explication": "Il faut x ⩾ 0.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−4",
+            "0",
+            "−1",
+            "4",
+            "0,5"
+          ],
+          "bonnes_reponses": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:146",
+          "enonce": "Pour résoudre f(x) = 0 graphiquement, que regarde-t-on ? Coche toutes les réponses exactes.",
+          "notion": "Résolutions graphiques",
+          "difficulte": 1,
+          "explication": "f(x) = 0 : points d'ordonnée nulle ; on lit leurs abscisses.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les points où la courbe coupe l'axe des abscisses",
+            "Les points où la courbe coupe l'axe des ordonnées",
+            "Le point le plus haut de la courbe",
+            "Les abscisses de ces points",
+            "Les ordonnées de ces points"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:147",
+          "enonce": "Quelles équations ont 3 pour valeur interdite ? Coche toutes les réponses exactes.",
+          "notion": "Équations quotient",
+          "difficulte": 2,
+          "explication": "Il faut un dénominateur qui s'annule en 3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "(x + 3)/(x + 1) = 0",
+            "x/(2x − 6) = 1",
+            "(x − 3)/x = 1",
+            "3/x = 1",
+            "1/(x − 3) = 2"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:148",
+          "enonce": "Sur quels intervalles x(x − 4) est-il strictement positif ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "Le produit s'annule en 0 et 4 et il est positif à l'extérieur.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "[0 ; 4]",
+            "]0 ; 4[",
+            "]−∞ ; 0[",
+            "]−4 ; 0[",
+            "]4 ; +∞["
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch8:banque:149",
+          "enonce": "Le point (2 ; y) est sur la courbe de f(x) = 3x − 1. Donne y.",
+          "notion": "Courbe représentative",
+          "difficulte": 1,
+          "explication": "f(2) = 6 − 1.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch8:banque:150",
+          "enonce": "En quelle valeur positive le produit (x + 4)(x − 7) s'annule-t-il ? Réponds par un nombre.",
+          "notion": "Tableaux de signes",
+          "difficulte": 2,
+          "explication": "x − 7 = 0.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "7"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
