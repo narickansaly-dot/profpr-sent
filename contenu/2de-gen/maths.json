@@ -25226,6 +25226,2522 @@
           "marge_relative": false
         }
       ]
+    },
+    {
+      "slug": "ch11",
+      "numero": 11,
+      "titre": "Probabilités et probabilités conditionnelles",
+      "titre_court": "Probabilités",
+      "duree": "3 semaines",
+      "resume": "Rappels sur les probabilités, modèle et réalité, loi des grands nombres et simulation, probabilité conditionnelle, tableaux croisés, arbres pondérés, faux positifs et inversion des conditionnements.",
+      "chapeau": "Un test de dépistage positif signifie-t-il que l'on est malade ? Pas forcément : tout dépend de ce que l'on sait déjà. Les probabilités conditionnelles mesurent une probabilité quand on dispose d'une information. Ce chapitre les introduit, avec deux outils : les tableaux croisés et les arbres pondérés.",
+      "objectifs": [
+        "calculer la probabilité d'un événement, de son contraire, en situation d'équiprobabilité ;",
+        "distinguer le modèle probabiliste et la réalité, et observer la loi des grands nombres par simulation ;",
+        "calculer une probabilité conditionnelle P_A(B) à partir d'un tableau croisé ;",
+        "construire et lire un arbre pondéré, et multiplier les probabilités le long d'un chemin ;",
+        "distinguer P_A(B) et P_B(A), par exemple pour les faux positifs d'un test."
+      ],
+      "sections": [
+        {
+          "id": "rappels",
+          "titre": "Rappels : expérience aléatoire et probabilité",
+          "html": "\n<p>Une <strong>expérience aléatoire</strong> a plusieurs résultats possibles, les <strong>issues</strong>, sans que l'on sache lequel se produira. L'ensemble des issues est l'<strong>univers</strong>, noté Ω. Un <strong>événement</strong> est un ensemble d'issues.</p>\n<ul>\n<li>Une probabilité est un nombre entre 0 et 1. La probabilité d'un événement est la somme des probabilités des issues qui le composent.</li>\n<li>L'<strong>événement contraire</strong> de A, noté Ā, est formé des issues qui ne sont pas dans A : P(Ā) = 1 − P(A).</li>\n<li>En situation d'<strong>équiprobabilité</strong> (toutes les issues ont la même probabilité) : P(A) = Card(A)/Card(Ω), le nombre d'issues favorables divisé par le nombre d'issues.</li>\n<li>A ∩ B : « A et B » ; A ∪ B : « A ou B ». On a P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Deux événements sans issue commune (A ∩ B = ∅) sont dits <strong>incompatibles</strong> : alors P(A ∪ B) = P(A) + P(B).</li>\n</ul>\n<p>Exemple : on lance un dé équilibré à six faces. A : « obtenir un nombre pair », P(A) = 3/6 = 1/2 ; B : « obtenir au moins 5 », P(B) = 2/6 = 1/3 ; A ∩ B = {6}, de probabilité 1/6 ; P(Ā) = 1/2.</p>\n"
+        },
+        {
+          "id": "modele-realite",
+          "titre": "Modèle, réalité et loi des grands nombres",
+          "html": "\n<p>Une loi de probabilité est une <strong>hypothèse du modèle</strong> choisi : elle ne se démontre pas. Pour un dé « équilibré », on suppose l'équiprobabilité. Pour une punaise lancée, on construit un modèle à partir des fréquences observées.</p>\n<div class=\"def\"><b class=\"t\">Loi des grands nombres (version vulgarisée)</b><p>« Lorsque n est grand, sauf exception, la fréquence observée est proche de la probabilité. »</p></div>\n<p>Sur 10 lancers d'une pièce, on peut obtenir 7 « pile » (fréquence 0,7) ; sur 10 000 lancers, la fréquence sera très probablement proche de 0,5. Les fréquences d'échantillons de même taille varient : c'est la <strong>fluctuation d'échantillonnage</strong>, d'autant plus faible que la taille est grande.</p>\n<div class=\"code\" style=\"border:1px solid #94a3b8;padding:8px;margin:8px 0\">from random import random<br><br>def frequence_succes(n, p):<br>    succes = 0<br>    for i in range(n):<br>        if random() &lt; p:<br>            succes = succes + 1<br>    return succes / n</div>\n<p>frequence_succes(100, 0.3) renvoie une fréquence qui varie d'un appel à l'autre ; frequence_succes(100000, 0.3) renvoie presque toujours un nombre très proche de 0,3.</p>\n<div class=\"warn\"><b class=\"t\">Attention</b><p>La loi des grands nombres ne dit pas que le hasard « compense » : après 5 « pile » de suite, la probabilité d'obtenir « face » au lancer suivant reste 1/2.</p></div>\n"
+        },
+        {
+          "id": "conditionnelle",
+          "titre": "Probabilité conditionnelle",
+          "html": "\n<div class=\"def\"><b class=\"t\">Définition</b><p>Soit A un événement de probabilité non nulle. La <strong>probabilité de B sachant A</strong>, notée P<sub>A</sub>(B), est la probabilité que B soit réalisé quand on sait que A l'est : P<sub>A</sub>(B) = P(A ∩ B)/P(A).</p></div>\n<p>Savoir que A est réalisé, c'est restreindre l'univers à A. Exemple avec le dé : sachant que le résultat est pair (A), quelle est la probabilité d'obtenir au moins 5 (B) ? Parmi 2, 4, 6, une seule issue convient : P<sub>A</sub>(B) = 1/3. Avec la formule : P(A ∩ B)/P(A) = (1/6)/(1/2) = 1/3.</p>\n<p>On en déduit la <strong>formule du produit</strong> : P(A ∩ B) = P(A) × P<sub>A</sub>(B).</p>\n<p>Formulations : « la probabilité qu'un élève fasse du sport <strong>sachant</strong> qu'il est en seconde », « <strong>parmi</strong> les élèves de seconde, la probabilité de faire du sport », « la probabilité qu'un élève de seconde fasse du sport » désignent toutes P<sub>S</sub>(Sport).</p>\n"
+        },
+        {
+          "id": "tableaux",
+          "titre": "Probabilités conditionnelles et tableaux croisés",
+          "html": "\n<p>Quand on tire au sort un individu dans une population (équiprobabilité), les probabilités se lisent dans un tableau croisé d'effectifs : P(A) = Card(A)/Card(Ω) et P<sub>B</sub>(A) = Card(A ∩ B)/Card(B).</p>\n<p>Reprenons le tableau du chapitre 10 : 400 élèves, 200 en seconde (S), dont 120 sportifs ; 210 sportifs (T) au total. On tire un élève au hasard.</p>\n<ul>\n<li>P(T) = 210/400 = 0,525 ;</li>\n<li>P(S ∩ T) = 120/400 = 0,3 ;</li>\n<li>P<sub>S</sub>(T) = 120/200 = 0,6 (parmi les secondes) ;</li>\n<li>P<sub>T</sub>(S) = 120/210 ≈ 0,571 (parmi les sportifs).</li>\n</ul>\n<p>Une probabilité conditionnelle correspond à une fréquence conditionnelle : on divise par l'effectif du groupe « sachant ».</p>\n"
+        },
+        {
+          "id": "arbres",
+          "titre": "Arbres pondérés",
+          "html": "\n<p>Un <strong>arbre pondéré</strong> représente une expérience en plusieurs étapes. Chaque branche porte une probabilité ; au second niveau, ce sont des probabilités conditionnelles.</p>\n<figure class=\"fig\"><div class=\"scroll\"><svg viewBox=\"0 0 340 200\" role=\"img\" aria-label=\"Arbre pondéré : A avec 0,3 puis B sachant A 0,8 ; non A avec 0,7 puis B sachant non A 0,1\">\n<line x1=\"20\" y1=\"100\" x2=\"130\" y2=\"50\" stroke=\"currentColor\"/><line x1=\"20\" y1=\"100\" x2=\"130\" y2=\"150\" stroke=\"currentColor\"/>\n<line x1=\"150\" y1=\"50\" x2=\"260\" y2=\"25\" stroke=\"currentColor\"/><line x1=\"150\" y1=\"50\" x2=\"260\" y2=\"75\" stroke=\"currentColor\"/>\n<line x1=\"150\" y1=\"150\" x2=\"260\" y2=\"125\" stroke=\"currentColor\"/><line x1=\"150\" y1=\"150\" x2=\"260\" y2=\"175\" stroke=\"currentColor\"/>\n<text x=\"136\" y=\"55\" font-size=\"14\">A</text><text x=\"136\" y=\"155\" font-size=\"14\">Ā</text>\n<text x=\"266\" y=\"30\" font-size=\"14\">B</text><text x=\"266\" y=\"80\" font-size=\"14\">B̄</text><text x=\"266\" y=\"130\" font-size=\"14\">B</text><text x=\"266\" y=\"180\" font-size=\"14\">B̄</text>\n<text x=\"60\" y=\"65\" font-size=\"12\" fill=\"#4338ca\">0,3</text><text x=\"60\" y=\"145\" font-size=\"12\" fill=\"#4338ca\">0,7</text>\n<text x=\"195\" y=\"30\" font-size=\"12\" fill=\"#4338ca\">0,8</text><text x=\"195\" y=\"75\" font-size=\"12\" fill=\"#4338ca\">0,2</text>\n<text x=\"195\" y=\"130\" font-size=\"12\" fill=\"#4338ca\">0,1</text><text x=\"195\" y=\"178\" font-size=\"12\" fill=\"#4338ca\">0,9</text>\n</svg></div><figcaption>Arbre pondéré : sur chaque branche du second niveau, une probabilité conditionnelle.</figcaption></figure>\n<p>Règles :</p>\n<ul>\n<li>La somme des probabilités des branches issues d'un même nœud vaut 1 : 0,3 + 0,7 = 1 ; 0,8 + 0,2 = 1.</li>\n<li>La probabilité d'un <strong>chemin</strong> est le <strong>produit</strong> des probabilités de ses branches : P(A ∩ B) = P(A) × P<sub>A</sub>(B) = 0,3 × 0,8 = 0,24.</li>\n<li>La probabilité d'un événement s'obtient en additionnant les probabilités des chemins qui y mènent : P(B) = 0,24 + 0,7 × 0,1 = 0,31.</li>\n</ul>\n<p>Exemple : une urne contient 3 boules rouges et 2 vertes. On tire une boule, on ne la remet pas, on en tire une seconde. P(R<sub>1</sub>) = 3/5, puis P<sub>R1</sub>(R<sub>2</sub>) = 2/4. P(deux rouges) = 3/5 × 2/4 = 6/20 = 0,3.</p>\n"
+        },
+        {
+          "id": "faux-positifs",
+          "titre": "Tests diagnostiques : faux positifs et inversion",
+          "html": "\n<p>Un test de dépistage peut se tromper. On note M « être malade » et T « avoir un test positif ».</p>\n<ul>\n<li>La <strong>sensibilité</strong> est P<sub>M</sub>(T) : la probabilité qu'un malade soit détecté.</li>\n<li>La <strong>spécificité</strong> est P<sub>M̄</sub>(T̄) : la probabilité qu'une personne saine ait un test négatif.</li>\n<li>Un <strong>faux positif</strong> est une personne saine au test positif ; un <strong>faux négatif</strong>, une personne malade au test négatif.</li>\n</ul>\n<p><strong>Exemple</strong> : une maladie touche 1 % d'une population de 10 000 personnes. Le test a une sensibilité de 99 % et une spécificité de 95 %.</p>\n<div class=\"tbl\"><table>\n<thead><tr><th></th><th>Test positif</th><th>Test négatif</th><th>Total</th></tr></thead>\n<tbody>\n<tr><td>Malades</td><td>99</td><td>1</td><td>100</td></tr>\n<tr><td>Non malades</td><td>495</td><td>9 405</td><td>9 900</td></tr>\n<tr><td>Total</td><td>594</td><td>9 406</td><td>10 000</td></tr></tbody></table></div>\n<p>Parmi les 594 personnes positives, seules 99 sont malades : P<sub>T</sub>(M) = 99/594 ≈ 0,17. Un test positif ne signifie donc pas « malade à 99 % » : il ne faut pas confondre P<sub>M</sub>(T) = 0,99 et P<sub>T</sub>(M) ≈ 0,17. C'est l'<strong>inversion des conditionnements</strong>.</p>\n"
+        }
+      ],
+      "a_retenir": "<ul>\n<li>P(Ā) = 1 − P(A) ; en équiprobabilité, P(A) = Card(A)/Card(Ω) ; P(A ∪ B) = P(A) + P(B) − P(A ∩ B).</li>\n<li>Une loi de probabilité est une hypothèse du modèle. Loi des grands nombres : pour n grand, la fréquence observée est proche de la probabilité.</li>\n<li>P<sub>A</sub>(B) = P(A ∩ B)/P(A) (P(A) ≠ 0) ; P(A ∩ B) = P(A) × P<sub>A</sub>(B).</li>\n<li>Avec un tableau croisé : P<sub>B</sub>(A) = Card(A ∩ B)/Card(B).</li>\n<li>Arbre pondéré : branches d'un même nœud de somme 1 ; probabilité d'un chemin = produit des branches ; probabilité d'un événement = somme des chemins.</li>\n<li>Ne pas confondre P<sub>A</sub>(B) et P<sub>B</sub>(A) (faux positifs).</li>\n</ul>",
+      "questions": [
+        {
+          "source": "maths-2de:ch11:banque:001",
+          "enonce": "Entre quelles valeurs une probabilité est-elle comprise ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "C'est la définition.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Entre 0 et 1",
+            "Entre −1 et 1",
+            "Entre 0 et 100",
+            "Entre 1 et 6"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:002",
+          "enonce": "Comment appelle-t-on l'ensemble de toutes les issues d'une expérience aléatoire ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "On le note Ω.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un événement",
+            "L'univers",
+            "Une fréquence",
+            "Un échantillon"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:003",
+          "enonce": "Avec un dé à six faces, quelles issues composent l'événement « obtenir au moins 5 » ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "« Au moins 5 » : 5 ou plus.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5 seulement",
+            "1, 2, 3, 4",
+            "5 et 6",
+            "6 seulement"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:004",
+          "enonce": "Que signifie l'événement A ∩ B ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "Intersection : « et ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "A ou B est réalisé",
+            "A n'est pas réalisé",
+            "A est réalisé sans B",
+            "A et B sont réalisés tous les deux"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:005",
+          "enonce": "Avec un dé, A : « pair » et B : « au moins 5 ». Quel est l'événement A ∩ B ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "6 est le seul nombre pair au moins égal à 5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "{6}",
+            "{5 ; 6}",
+            "{2 ; 4 ; 5 ; 6}",
+            "∅"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:006",
+          "enonce": "Quelle est la probabilité d'un événement en fonction de ses issues ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "C'est la règle du cours.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le produit des probabilités des issues",
+            "La somme des probabilités des issues qui le composent",
+            "Le nombre d'issues",
+            "La plus grande probabilité d'issue"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:007",
+          "enonce": "P(A) = 0,5, P(B) = 0,4 et P(A ∩ B) = 0,1. Que vaut P(A ∪ B) ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 3,
+          "explication": "0,5 + 0,4 − 0,1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,9",
+            "1",
+            "0,8",
+            "0,2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:008",
+          "enonce": "Avec un dé, A : « pair » et B : « au moins 5 ». Que vaut P(A ∪ B) ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 3,
+          "explication": "A ∪ B = {2 ; 4 ; 5 ; 6}.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "5/6",
+            "1/2",
+            "1/6",
+            "2/3"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:009",
+          "enonce": "Quels nombres peuvent être des probabilités ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "Une probabilité est entre 0 et 1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "1,2",
+            "0,75",
+            "0",
+            "−0,3",
+            "1"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:010",
+          "enonce": "Avec un dé équilibré, quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "P(au moins 1) = 1 ; P(1 ou 2) = 2/6.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(obtenir 6) = 1/6",
+            "P(obtenir 7) = 1/6",
+            "P(obtenir 1 ou 2) = 1/6",
+            "P(obtenir au moins 1) = 5/6",
+            "P(obtenir un nombre pair) = 1/2"
+          ],
+          "bonnes_reponses": [
+            0,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:011",
+          "enonce": "Un événement impossible a une probabilité égale à 0.",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "Aucune issue ne le réalise.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:012",
+          "enonce": "P(A ∪ B) est toujours égal à P(A) + P(B).",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "Il faut retirer P(A ∩ B) quand A et B ont des issues communes.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:013",
+          "enonce": "P(A) = 0,3, P(B) = 0,5 et P(A ∩ B) = 0,2. Calcule P(A ∪ B). Réponds par un nombre.",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "0,3 + 0,5 − 0,2.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,6",
+            "0.6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:014",
+          "enonce": "Si P(A) = 0,35, que vaut P(Ā) ?",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "P(Ā) = 1 − P(A).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,65",
+            "0,35",
+            "−0,35",
+            "1,35"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:015",
+          "enonce": "Quel est l'événement contraire de « obtenir un nombre pair » avec un dé ?",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "Les issues qui ne sont pas dans A.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Obtenir 6",
+            "Obtenir un nombre impair",
+            "Obtenir un nombre premier",
+            "Ne rien obtenir"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:016",
+          "enonce": "La probabilité qu'il pleuve demain est 0,12. Quelle est la probabilité qu'il ne pleuve pas ?",
+          "notion": "Événement contraire",
+          "difficulte": 2,
+          "explication": "1 − 0,12.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,12",
+            "0,98",
+            "0,88",
+            "8,8"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:017",
+          "enonce": "On lance deux pièces. Quel est le contraire de « obtenir au moins un pile » ?",
+          "notion": "Événement contraire",
+          "difficulte": 2,
+          "explication": "« Au moins un » a pour contraire « aucun ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Obtenir deux piles",
+            "Obtenir exactement un pile",
+            "Obtenir au moins un face",
+            "N'obtenir aucun pile"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:018",
+          "enonce": "On lance deux pièces équilibrées. Quelle est la probabilité d'obtenir au moins un pile ?",
+          "notion": "Événement contraire",
+          "difficulte": 3,
+          "explication": "1 − P(aucun pile) = 1 − 1/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3/4",
+            "1/2",
+            "1/4",
+            "1"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:019",
+          "enonce": "Quelles égalités sont toujours vraies ? Coche toutes les réponses exactes.",
+          "notion": "Événement contraire",
+          "difficulte": 2,
+          "explication": "A et Ā se partagent l'univers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(Ā) = 1 − P(A)",
+            "P(Ā) = −P(A)",
+            "P(A) + P(Ā) = 1",
+            "P(Ā) = P(A)",
+            "P(A) × P(Ā) = 1"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:020",
+          "enonce": "Si P(A) = 1, alors P(Ā) = 0.",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "1 − 1 = 0.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:021",
+          "enonce": "Le contraire de « obtenir au moins 5 » avec un dé est « obtenir au plus 5 ».",
+          "notion": "Événement contraire",
+          "difficulte": 3,
+          "explication": "C'est « obtenir au plus 4 » (strictement moins de 5).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:022",
+          "enonce": "P(A) = 0,4. Calcule P(Ā). Réponds par un nombre.",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "1 − 0,4.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,6",
+            "0.6"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:023",
+          "enonce": "En situation d'équiprobabilité, comment calcule-t-on P(A) ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Issues favorables sur issues possibles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Card(Ω)/Card(A)",
+            "Card(A)/Card(Ω)",
+            "Card(A) × Card(Ω)",
+            "1 − Card(A)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:024",
+          "enonce": "On tire une carte au hasard dans un jeu de 32 cartes. Quelle est la probabilité de tirer un as ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "4 as sur 32 cartes.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/32",
+            "1/4",
+            "4/32 = 1/8",
+            "4/52"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:025",
+          "enonce": "Une urne contient 3 boules rouges et 2 vertes. On tire une boule. Quelle est la probabilité qu'elle soit verte ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 2,
+          "explication": "2 vertes sur 5 boules.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "2/3",
+            "1/2",
+            "3/5",
+            "2/5"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:026",
+          "enonce": "Dans quelle situation peut-on supposer l'équiprobabilité ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 2,
+          "explication": "« Équilibré » est une hypothèse d'équiprobabilité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Le lancer d'un dé équilibré",
+            "Le lancer d'une punaise",
+            "Le temps qu'il fera demain",
+            "Le résultat d'un match"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:027",
+          "enonce": "On lance deux dés équilibrés. Quelle est la probabilité que la somme fasse 7 ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 3,
+          "explication": "6 couples sur 36 : (1;6), (2;5), …, (6;1).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/12",
+            "1/6",
+            "7/36",
+            "1/11"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:028",
+          "enonce": "On lance deux dés. Pourquoi les sommes de 2 à 12 ne sont-elles pas équiprobables ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 3,
+          "explication": "Un tableau à double entrée montre 36 couples équiprobables.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce que les dés sont truqués",
+            "Parce que 12 est pair",
+            "Elles ne sont pas obtenues par le même nombre de couples",
+            "Elles le sont"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:029",
+          "enonce": "Un sac contient 4 jetons rouges, 5 bleus et 1 vert. Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "10 jetons au total.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(rouge) = 0,4",
+            "P(bleu) = 0,5",
+            "P(vert) = 1/9",
+            "P(vert) = 0,1",
+            "P(rouge) = 4/9"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:030",
+          "enonce": "On lance deux pièces équilibrées. Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Équiprobabilité",
+          "difficulte": 3,
+          "explication": "Issues équiprobables : PP, PF, FP, FF.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(deux piles) = 1/3",
+            "P(un pile et un face) = 1/3",
+            "P(un pile et un face) = 1/2",
+            "P(deux piles) = 1/4",
+            "P(deux faces) = 1/2"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:031",
+          "enonce": "Avec une pièce équilibrée, la probabilité d'obtenir face vaut 1/2.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Deux issues équiprobables.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:032",
+          "enonce": "Une loi de probabilité se démontre par l'expérience.",
+          "notion": "Équiprobabilité",
+          "difficulte": 2,
+          "explication": "C'est une hypothèse du modèle ; l'expérience peut seulement la rendre plausible.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:033",
+          "enonce": "Dans une classe de 25 élèves, 10 ont un chat. On tire un élève au hasard. Quelle est la probabilité qu'il ait un chat ? Réponds par un nombre décimal.",
+          "notion": "Équiprobabilité",
+          "difficulte": 2,
+          "explication": "10/25.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,4",
+            "0.4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:034",
+          "enonce": "Que dit la loi des grands nombres (version vulgarisée) ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "C'est l'énoncé du programme.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La fréquence est toujours égale à la probabilité",
+            "Après une série de piles, face devient plus probable",
+            "La probabilité change avec n",
+            "Pour n grand, sauf exception, la fréquence observée est proche de la probabilité"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:035",
+          "enonce": "Comment appelle-t-on la variation des fréquences d'un échantillon à l'autre ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "Les fréquences varient selon l'échantillon.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La fluctuation d'échantillonnage",
+            "La loi des grands nombres",
+            "L'équiprobabilité",
+            "Le conditionnement"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:036",
+          "enonce": "Une pièce équilibrée a donné 5 « pile » de suite. Quelle est la probabilité d'obtenir « face » au lancer suivant ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "Les lancers sont indépendants : le hasard ne « compense » pas.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Plus de 1/2",
+            "1/2",
+            "Moins de 1/2",
+            "1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:037",
+          "enonce": "Comment estimer la probabilité qu'une punaise retombe pointe en l'air ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "On construit un modèle à partir des fréquences observées.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En supposant l'équiprobabilité",
+            "Elle vaut forcément 1/2",
+            "En la lançant un grand nombre de fois et en calculant la fréquence",
+            "On ne peut pas l'estimer"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:038",
+          "enonce": "Que renvoie la fonction frequence_succes(n, p) du cours ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "succes / n.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La probabilité p exacte",
+            "Le nombre n",
+            "Toujours 0,5",
+            "La fréquence de succès sur n répétitions d'une expérience de probabilité p"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:039",
+          "enonce": "Quand la taille n des échantillons augmente, que devient la fluctuation des fréquences ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 3,
+          "explication": "Les fréquences se resserrent autour de la probabilité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Elle diminue",
+            "Elle augmente",
+            "Elle ne change pas",
+            "Elle disparaît dès n = 10"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:040",
+          "enonce": "Dans frequence_succes, pourquoi le test random() < p simule-t-il un succès de probabilité p ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 3,
+          "explication": "random() est uniforme sur [0 ; 1[.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "random() vaut toujours p",
+            "random() tombe dans [0 ; p[ avec une probabilité p",
+            "p est un entier",
+            "random() renvoie 0 ou 1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:041",
+          "enonce": "On lance 10 fois une pièce équilibrée. Quels résultats sont possibles ? Coche toutes les réponses exactes.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "Sur 10 lancers, entre 0 et 10 piles ; la fréquence fluctue.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "−1 pile",
+            "5 piles",
+            "8 piles",
+            "12 piles",
+            "3 piles"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:042",
+          "enonce": "Quelles affirmations sur la loi des grands nombres sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "« Sauf exception » : elle ne garantit rien pour un petit nombre de lancers.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle garantit une fréquence exacte",
+            "Elle modifie la probabilité",
+            "Elle relie fréquence et probabilité",
+            "Elle concerne des répétitions nombreuses",
+            "Elle s'applique à 3 lancers"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:043",
+          "enonce": "Sur 10 000 lancers d'une pièce équilibrée, la fréquence de pile est en général proche de 0,5.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "C'est la loi des grands nombres.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:044",
+          "enonce": "Sur 10 lancers d'une pièce équilibrée, on obtient toujours exactement 5 piles.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "La fréquence fluctue sur de petits échantillons.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:045",
+          "enonce": "Deux appels de frequence_succes(100, 0.3) renvoient en général deux valeurs différentes.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 3,
+          "explication": "C'est la fluctuation d'échantillonnage.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:046",
+          "enonce": "Sur 200 lancers d'une punaise, elle est retombée 74 fois pointe en l'air. Quelle est la fréquence observée ? Réponds par un nombre décimal.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "74/200.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,37",
+            "0.37"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:047",
+          "enonce": "Comment se lit P_A(B) ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "B est l'événement étudié, A l'information connue.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Probabilité de A sachant B",
+            "Probabilité de A et B",
+            "Probabilité de B sachant A",
+            "Probabilité de A ou B"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:048",
+          "enonce": "Quelle formule définit P_A(B), pour P(A) ≠ 0 ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "On divise par la probabilité de l'événement « sachant ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "P(A ∩ B)/P(B)",
+            "P(A) × P(B)",
+            "P(A) + P(B)",
+            "P(A ∩ B)/P(A)"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:049",
+          "enonce": "Avec un dé, sachant que le résultat est pair, quelle est la probabilité qu'il soit au moins 5 ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "Parmi 2, 4, 6, seul 6 convient.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/3",
+            "1/6",
+            "1/2",
+            "2/3"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:050",
+          "enonce": "Quelle formule donne P(A ∩ B) à l'aide d'une probabilité conditionnelle ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "Formule du produit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "P(A) + P_A(B)",
+            "P(A) × P_A(B)",
+            "P_A(B)/P(A)",
+            "P(B) − P_A(B)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:051",
+          "enonce": "On sait que P(A) = 0,4 et que A et B se réalisent ensemble avec une probabilité 0,1. Quelle est la probabilité de B sachant A ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "0,1/0,4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,04",
+            "0,5",
+            "0,25",
+            "4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:052",
+          "enonce": "Quelle phrase désigne P_S(T), avec S « être en seconde » et T « faire du sport » ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "On sait que l'élève est en seconde.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La probabilité qu'un sportif soit en seconde",
+            "La probabilité d'être en seconde et sportif",
+            "La probabilité de faire du sport",
+            "La probabilité qu'un élève de seconde fasse du sport"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:053",
+          "enonce": "P(A) = 0,6 et P_A(B) = 0,5. Que vaut P(A ∩ B) ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 3,
+          "explication": "0,6 × 0,5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,3",
+            "1,1",
+            "0,1",
+            "0,83"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:054",
+          "enonce": "Pourquoi P_A(B) n'est-il défini que si P(A) ≠ 0 ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 3,
+          "explication": "On ne divise pas par 0.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce que B doit être impossible",
+            "On divise par P(A)",
+            "Parce que P(B) doit valoir 1",
+            "Il est toujours défini"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:055",
+          "enonce": "Quelles formulations désignent la probabilité de B sachant A ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "L'événement « sachant » est en indice.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(A ∩ B)",
+            "« la probabilité de B quand on sait que A est réalisé »",
+            "P_B(A)",
+            "P_A(B)",
+            "« la probabilité de A sachant B »"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:056",
+          "enonce": "On tire une carte dans un jeu de 32 cartes (8 cœurs, 4 rois dont un roi de cœur). Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 3,
+          "explication": "1 roi parmi 8 cœurs ; 1 cœur parmi 4 rois.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_cœur(roi) = 1/4",
+            "P(roi) = 1/8",
+            "P_roi(cœur) = 1/4",
+            "P_cœur(roi) = 1/8",
+            "P_roi(cœur) = 1/8"
+          ],
+          "bonnes_reponses": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:057",
+          "enonce": "Savoir que A est réalisé revient à restreindre l'univers à A.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "C'est le sens de « sachant A ».",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:058",
+          "enonce": "On a toujours P_A(B) = P(B).",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "Avec un dé, A : « pair » et B : « obtenir 6 » : P(B) = 1/6 mais P_A(B) = 1/3.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:059",
+          "enonce": "Si P(A) = 0,5 et P(A ∩ B) = 0,5, alors P_A(B) = 1.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 3,
+          "explication": "0,5/0,5 = 1 : sachant A, B est certain.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:060",
+          "enonce": "Sachant que A est réalisé, avec P(A) = 0,5 et une probabilité 0,2 pour « A et B », que vaut la probabilité de B ? Réponds par un nombre.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "0,2/0,5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,4",
+            "0.4"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:061",
+          "enonce": "On tire un élève au hasard parmi les 400 du tableau du chapitre 10. Quelle est la probabilité qu'il fasse du sport ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "210/400.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,6",
+            "0,3",
+            "0,525",
+            "0,57"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:062",
+          "enonce": "Avec le même tableau, quelle est P_S(T), la probabilité de faire du sport sachant que l'élève est en seconde ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "120/200.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,3",
+            "0,525",
+            "0,571",
+            "0,6"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:063",
+          "enonce": "Avec le même tableau, quelle est P(S ∩ T), la probabilité d'être en seconde et sportif ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "120/400.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,3",
+            "0,6",
+            "0,525",
+            "0,5"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:064",
+          "enonce": "Quelle formule donne P_B(A) à partir d'un tableau d'effectifs, en cas d'équiprobabilité ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "On divise par l'effectif du groupe « sachant ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Card(A ∩ B)/Card(A)",
+            "Card(A ∩ B)/Card(B)",
+            "Card(B)/Card(Ω)",
+            "Card(A)/Card(B)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:065",
+          "enonce": "Avec le même tableau, quelle est P_T(S), la probabilité d'être en seconde sachant qu'on fait du sport ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "120/210.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,6",
+            "0,5",
+            "Environ 0,571",
+            "0,3"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:066",
+          "enonce": "Sur 300 personnes, 120 portent des lunettes, dont 45 sont des enfants ; il y a 100 enfants. On tire un enfant au hasard. Quelle est la probabilité qu'il porte des lunettes ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "45/100.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,375",
+            "0,15",
+            "0,4",
+            "0,45"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:067",
+          "enonce": "À quoi correspond une probabilité conditionnelle lue dans un tableau croisé, en cas de tirage au sort ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "Lien statistiques–probabilités.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "À une variation absolue",
+            "À un effectif divisé par l'effectif d'un sous-groupe",
+            "À une fréquence conditionnelle",
+            "À une moyenne",
+            "À un effectif total"
+          ],
+          "bonnes_reponses": [
+            1,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:068",
+          "enonce": "Sur 80 garçons, 20 sont gauchers ; sur 70 filles, 14 sont gauchères. On tire un élève au hasard. Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "34 gauchers sur 150 ; 20/80 ; 14/70 = 0,2.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_gaucher(garçon) = 0,25",
+            "P(gaucher) = 34/150",
+            "P_fille(gaucher) = 14/150",
+            "P_garçon(gaucher) = 0,25",
+            "P(gaucher) = 0,25"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:069",
+          "enonce": "Dans un tirage au sort équiprobable, une probabilité se calcule comme une proportion d'effectifs.",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "P(A) = Card(A)/Card(Ω).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:070",
+          "enonce": "Dans le tableau du chapitre 10, P_S(T) et P_T(S) sont égales.",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "0,6 contre environ 0,571.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:071",
+          "enonce": "Sur 500 clients, 200 ont une carte de fidélité ; parmi ceux-ci, 50 ont acheté en promotion. On tire un client avec carte. Probabilité qu'il ait acheté en promotion ? Réponds par un nombre décimal.",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "50/200.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,25",
+            "0.25"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:072",
+          "enonce": "Que vaut la somme des probabilités des branches issues d'un même nœud ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "Les branches couvrent toutes les possibilités.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "0",
+            "Elle dépend de l'arbre",
+            "2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:073",
+          "enonce": "Dans l'arbre du cours, que représente la probabilité 0,8 sur la branche de A vers B ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "Au second niveau, ce sont des probabilités conditionnelles.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "P(A ∩ B)",
+            "P_A(B)",
+            "P(B)",
+            "P(A)"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:074",
+          "enonce": "Comment calcule-t-on la probabilité d'un chemin dans un arbre ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "P(A ∩ B) = P(A) × P_A(B).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "En les additionnant",
+            "En gardant la dernière",
+            "En multipliant les probabilités des branches",
+            "En les soustrayant"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:075",
+          "enonce": "Dans l'arbre du cours, que vaut P(A ∩ B) ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "0,3 × 0,8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1,1",
+            "0,8",
+            "0,3",
+            "0,24"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:076",
+          "enonce": "Dans l'arbre du cours, quelle probabilité porte la branche de Ā vers B̄ ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "1 − 0,1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,9",
+            "0,1",
+            "0,7",
+            "0,2"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:077",
+          "enonce": "Dans l'arbre du cours, quelle est la probabilité du chemin passant par Ā puis par B ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "0,7 × 0,1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,7",
+            "0,07",
+            "0,1",
+            "0,8"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:078",
+          "enonce": "Une urne contient 3 boules rouges et 2 vertes ; on tire deux boules sans remise. Quelle est P(deux rouges) ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "3/5 × 2/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,36",
+            "0,6",
+            "0,3",
+            "0,5"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:079",
+          "enonce": "En additionnant deux chemins de l'arbre du cours, quelle probabilité obtient-on pour l'événement B ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 3,
+          "explication": "0,24 + 0,07 : on additionne les chemins qui mènent à B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,9",
+            "0,24",
+            "0,8",
+            "0,31"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:080",
+          "enonce": "Sans remise, avec 3 rouges et 2 vertes, quelle est la probabilité de tirer une rouge puis une verte ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 3,
+          "explication": "3/5 × 2/4.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,3",
+            "0,24",
+            "0,4",
+            "0,6"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:081",
+          "enonce": "Avec remise, avec 3 rouges et 2 vertes, quelle est la probabilité de tirer deux vertes ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 3,
+          "explication": "2/5 × 2/5.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,1",
+            "0,16",
+            "0,4",
+            "0,2"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:082",
+          "enonce": "Quelles règles s'appliquent à un arbre pondéré ? Coche toutes les réponses exactes.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "Ce sont les règles du cours.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "On additionne le long d'un chemin",
+            "Les branches d'un nœud ont une somme de 0",
+            "Les branches d'un même nœud ont une somme de 1",
+            "Toutes les branches portent 0,5",
+            "On multiplie le long d'un chemin"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:083",
+          "enonce": "Dans l'arbre du cours, quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "0,3 × 0,2 = 0,06 ; P_Ā(B) = 0,1.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_Ā(B) = 0,9",
+            "P(A ∩ B̄) = 0,5",
+            "P(Ā) = 0,7",
+            "P_A(B̄) = 0,2",
+            "P(A ∩ B̄) = 0,06"
+          ],
+          "bonnes_reponses": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:084",
+          "enonce": "Pour une expérience à deux étapes représentée par un arbre, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Arbres pondérés",
+          "difficulte": 3,
+          "explication": "Les chemins se partagent l'univers ; multiplier par un nombre ⩽ 1 ne fait pas augmenter.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Une probabilité de chemin est inférieure ou égale à chaque probabilité de ses branches",
+            "Les probabilités des chemins sont toujours égales",
+            "On ne peut pas faire d'arbre sans équiprobabilité",
+            "La somme des probabilités de tous les chemins vaut 1",
+            "La somme des probabilités de tous les chemins vaut 2"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:085",
+          "enonce": "Au second niveau d'un arbre pondéré, les branches portent des probabilités conditionnelles.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "Elles dépendent de la branche du premier niveau.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:086",
+          "enonce": "Dans un tirage sans remise, la composition de l'urne change après le premier tirage.",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "Les probabilités du second niveau changent.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:087",
+          "enonce": "Pour obtenir P(B) dans un arbre à deux niveaux, on multiplie les probabilités de toutes les branches qui finissent par B.",
+          "notion": "Arbres pondérés",
+          "difficulte": 3,
+          "explication": "On additionne les probabilités des chemins qui mènent à B.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:088",
+          "enonce": "Dans un arbre, P(A) = 0,4 et P_A(B) = 0,5. Calcule la probabilité du chemin A puis B. Réponds par un nombre.",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "0,4 × 0,5.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,2",
+            "0.2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:089",
+          "enonce": "Comment appelle-t-on une personne saine dont le test est positif ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Le test se trompe dans le sens « positif ».",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un faux négatif",
+            "Un vrai positif",
+            "Un faux positif",
+            "Un vrai négatif"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:090",
+          "enonce": "Comment appelle-t-on une personne malade dont le test est négatif ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Le test ne détecte pas la maladie.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Un faux positif",
+            "Un vrai négatif",
+            "Un vrai positif",
+            "Un faux négatif"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:091",
+          "enonce": "Que mesure la sensibilité d'un test ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "Capacité à détecter les malades.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "P_M(T), la probabilité qu'un malade ait un test positif",
+            "P_T(M), la probabilité qu'un positif soit malade",
+            "P(M), la proportion de malades",
+            "P(T), la proportion de positifs"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:092",
+          "enonce": "Que mesure la spécificité d'un test ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "P sachant M̄ de T̄.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La probabilité qu'un malade ait un test positif",
+            "La probabilité qu'une personne saine ait un test négatif",
+            "La proportion de malades",
+            "Le nombre de faux positifs"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:093",
+          "enonce": "Dans l'exemple du cours, combien de personnes ont un test positif ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "99 malades et 495 non malades.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "99",
+            "495",
+            "594",
+            "100"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:094",
+          "enonce": "Dans l'exemple du cours, quelle est la probabilité d'être malade sachant que le test est positif ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 3,
+          "explication": "99/594.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,99",
+            "0,95",
+            "0,01",
+            "Environ 0,17"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:095",
+          "enonce": "Pourquoi, dans l'exemple du cours, un test positif ne signifie-t-il pas « malade à 99 % » ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 3,
+          "explication": "C'est l'inversion des conditionnements.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Parce qu'on confondrait P_M(T) et P_T(M) ; la maladie est rare et les faux positifs nombreux",
+            "Parce que le test est inutile",
+            "Parce que 99 % est une fréquence",
+            "Parce que la sensibilité vaut 1 %"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:096",
+          "enonce": "Dans l'exemple du cours, combien y a-t-il de faux positifs ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 3,
+          "explication": "Non malades au test positif : 5 % de 9 900.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "99",
+            "495",
+            "1",
+            "9 405"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:097",
+          "enonce": "Quelles personnes sont mal classées par un test ? Coche toutes les réponses exactes.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Le test se trompe pour elles.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Les vrais négatifs",
+            "Tous les malades",
+            "Les faux positifs",
+            "Les faux négatifs",
+            "Les vrais positifs"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:098",
+          "enonce": "Dans l'exemple du cours (10 000 personnes, 1 % de malades), quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "Sensibilité 99 % : 99 sur 100 ; 1 faux négatif.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Il y a 99 faux positifs",
+            "Le test donne 594 faux négatifs",
+            "100 personnes sont malades",
+            "99 malades ont un test positif",
+            "9 900 personnes ont un test positif"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:099",
+          "enonce": "Avec M « malade » et T « test positif », quelles écritures sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 3,
+          "explication": "Il ne faut pas inverser les conditionnements.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Probabilité d'être malade si le test est positif : P_T(M)",
+            "Sensibilité : P_M(T)",
+            "Spécificité : P_M(T)",
+            "P_M(T) = P_T(M) toujours",
+            "Sensibilité : P_T(M)"
+          ],
+          "bonnes_reponses": [
+            0,
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:100",
+          "enonce": "Un faux négatif est une personne malade dont le test est négatif.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Le test ne l'a pas détectée.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:101",
+          "enonce": "Pour un test très sensible, P_T(M) est forcément proche de 1.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "Dans l'exemple, la sensibilité vaut 0,99 mais P_T(M) ≈ 0,17.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:102",
+          "enonce": "Plus une maladie est rare, plus la part des faux positifs parmi les tests positifs risque d'être grande.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 3,
+          "explication": "Les non-malades sont nombreux : même un petit taux d'erreur donne beaucoup de faux positifs.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:103",
+          "enonce": "Dans l'exemple du cours, combien de malades ont un test négatif ? Réponds par un nombre.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "100 − 99.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:104",
+          "enonce": "Quelle est la probabilité d'obtenir 3 avec un dé équilibré à six faces ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Une issue sur six.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/3",
+            "3/6",
+            "1/6",
+            "1/2"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:105",
+          "enonce": "Dans P_A(B), quel événement est supposé réalisé ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "A est en indice : on le sait réalisé.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "B",
+            "A et B",
+            "Ni A ni B",
+            "A"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:106",
+          "enonce": "On tire une personne au hasard dans un groupe de 50, dont 20 fument. Quelle est la probabilité qu'elle fume ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "20/50.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,4",
+            "0,2",
+            "0,6",
+            "20"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:107",
+          "enonce": "Une loi de probabilité pour un dé « équilibré » est :",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "On choisit ce modèle.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "une démonstration",
+            "une hypothèse du modèle",
+            "une observation obligatoire",
+            "toujours fausse"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:108",
+          "enonce": "Dans un arbre pondéré, la probabilité d'un chemin est le produit des probabilités de ses branches.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "Formule du produit.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:109",
+          "enonce": "En cas d'équiprobabilité, P(A) = nombre d'issues favorables / nombre d'issues possibles.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Card(A)/Card(Ω).",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:110",
+          "enonce": "Si P(A) = 0,3, alors P(Ā) = 0,3.",
+          "notion": "Événement contraire",
+          "difficulte": 2,
+          "explication": "P(Ā) = 0,7.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:111",
+          "enonce": "On lance un dé : obtenir 7 est un événement impossible.",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "7 n'est pas une issue.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": true
+        },
+        {
+          "source": "maths-2de:ch11:banque:112",
+          "enonce": "Avec un dé, quelles paires d'événements sont contraires ? Coche toutes les réponses exactes.",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "Deux événements contraires se partagent l'univers sans issue commune.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "« 1 » et « 6 »",
+            "« au moins 3 » et « au plus 3 »",
+            "« 6 » et « au plus 5 »",
+            "« pair » et « impair »",
+            "« pair » et « au moins 5 »"
+          ],
+          "bonnes_reponses": [
+            2,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:113",
+          "enonce": "Quels termes décrivent la qualité d'un test de dépistage ? Coche toutes les réponses exactes.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Ce sont les deux termes du cours.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "L'écart type",
+            "La médiane",
+            "Le coefficient multiplicateur",
+            "La spécificité",
+            "La sensibilité"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:114",
+          "enonce": "Avec un dé équilibré, quelle est la probabilité d'obtenir un nombre pair ? Réponds par un nombre décimal.",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "3/6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,5",
+            "0.5"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:115",
+          "enonce": "Les deux branches issues d'un nœud portent 0,35 et x. Que vaut x ? Réponds par un nombre.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "La somme vaut 1.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,65",
+            "0.65"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:116",
+          "enonce": "On lance une pièce. Combien d'issues l'univers contient-il ?",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "Pile et face.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1",
+            "4",
+            "2",
+            "6"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:117",
+          "enonce": "Quelle est la probabilité de ne pas obtenir 6 avec un dé équilibré ?",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "1 − 1/6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/6",
+            "1/2",
+            "6/5",
+            "5/6"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:118",
+          "enonce": "Une roue a 8 secteurs égaux, dont 3 rouges. Quelle est la probabilité de tomber sur un secteur rouge ?",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "3 secteurs sur 8.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "3/8",
+            "3/5",
+            "1/3",
+            "5/8"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:119",
+          "enonce": "Dans un arbre, une branche porte 0,2 et l'autre branche du même nœud est inconnue. Que vaut-elle ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "La somme vaut 1.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,2",
+            "0,8",
+            "1,2",
+            "0,02"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:120",
+          "enonce": "Dans un tableau croisé, par quel effectif divise-t-on pour calculer une probabilité « sachant B » ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 1,
+          "explication": "On se restreint au groupe B.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "L'effectif total",
+            "L'effectif de A",
+            "L'effectif de B",
+            "L'effectif de A ∩ B"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:121",
+          "enonce": "Un test positif chez une personne malade est :",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 1,
+          "explication": "Le test a raison.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "un faux positif",
+            "un faux négatif",
+            "un vrai négatif",
+            "un vrai positif"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:122",
+          "enonce": "Une pièce donne 520 piles sur 1 000 lancers. Que peut-on dire ?",
+          "notion": "Loi des grands nombres",
+          "difficulte": 2,
+          "explication": "La fréquence fluctue autour de la probabilité.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "La fréquence 0,52 est proche de 0,5 : rien n'indique que la pièce est truquée",
+            "La pièce est forcément truquée",
+            "La probabilité de pile vaut 0,52",
+            "Le prochain lancer sera face"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:123",
+          "enonce": "Dans un lycée, 30 % des élèves sont internes et 40 % des internes sont en seconde. Quelle est la probabilité qu'un élève tiré au hasard soit un interne de seconde ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "0,3 × 0,4 : formule du produit.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,7",
+            "0,12",
+            "0,4",
+            "0,1"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:124",
+          "enonce": "On lance deux fois une pièce équilibrée. Quelle est la probabilité d'obtenir pile puis pile ?",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "1/2 × 1/2.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "1/2",
+            "1/3",
+            "1/4",
+            "1"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:125",
+          "enonce": "Sur 200 personnes, 80 sont vaccinées ; parmi elles, 8 ont été malades. On tire une personne vaccinée. Quelle est la probabilité qu'elle ait été malade ?",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "8/80.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,04",
+            "0,08",
+            "0,4",
+            "0,1"
+          ],
+          "bonnes_reponses": [
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:126",
+          "enonce": "Deux événements sans issue commune sont dits :",
+          "notion": "Probabilité et événements",
+          "difficulte": 2,
+          "explication": "A ∩ B = ∅ ; alors P(A ∪ B) = P(A) + P(B).",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "incompatibles",
+            "contraires forcément",
+            "conditionnels",
+            "équiprobables"
+          ],
+          "bonnes_reponses": [
+            0
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:127",
+          "enonce": "Dans l'exemple du cours, que représente le nombre 9 405 ?",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "Ce sont les vrais négatifs.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "Les malades au test positif",
+            "Les personnes non malades au test négatif",
+            "Les faux positifs",
+            "Les faux négatifs"
+          ],
+          "bonnes_reponses": [
+            1
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:128",
+          "enonce": "P(A) = 0,25 et P_A(B) = 0,6. Que vaut P(A ∩ B) ?",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 3,
+          "explication": "0,25 × 0,6.",
+          "statut": "a_relire",
+          "type": "qcm_unique",
+          "propositions": [
+            "0,85",
+            "0,35",
+            "0,15",
+            "2,4"
+          ],
+          "bonnes_reponses": [
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:129",
+          "enonce": "Dans un arbre pondéré, on additionne les probabilités des branches le long d'un chemin.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "On les multiplie.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:130",
+          "enonce": "Avec un dé équilibré, obtenir 6 est plus probable qu'obtenir 1.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Toutes les faces ont la probabilité 1/6.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:131",
+          "enonce": "Une probabilité peut valoir 1,5.",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "Une probabilité est entre 0 et 1.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:132",
+          "enonce": "P_A(B) se calcule en divisant P(A ∩ B) par P(B).",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "On divise par P(A), l'événement « sachant ».",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:133",
+          "enonce": "La sensibilité d'un test est la probabilité qu'une personne au test positif soit malade.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "C'est P_M(T) : la probabilité qu'un malade ait un test positif.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:134",
+          "enonce": "La loi des grands nombres garantit qu'après 1 000 lancers d'une pièce équilibrée, on a exactement 500 piles.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 3,
+          "explication": "Elle dit seulement que la fréquence est proche de 0,5, sauf exception.",
+          "statut": "a_relire",
+          "type": "vrai_faux",
+          "bonne_reponse": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:135",
+          "enonce": "Avec un dé, quels ensembles sont des événements ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité et événements",
+          "difficulte": 1,
+          "explication": "Un événement est un ensemble d'issues possibles.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "{5 ; 6}",
+            "{7}",
+            "{2 ; 4 ; 6}",
+            "{0 ; 1}",
+            "{1}"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:136",
+          "enonce": "Quelles expériences sont modélisées par l'équiprobabilité ? Coche toutes les réponses exactes.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "Les hypothèses « équilibré » ou « au hasard » donnent l'équiprobabilité.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Lancer une pièce équilibrée",
+            "Le score d'un match",
+            "Tirer au hasard un élève dans une classe",
+            "Lancer une punaise",
+            "Prévoir la météo"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:137",
+          "enonce": "Quels mots signalent souvent une probabilité conditionnelle dans un énoncé ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 1,
+          "explication": "Ils indiquent l'information connue.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "« au moins »",
+            "« sachant que »",
+            "« au plus »",
+            "« et »",
+            "« parmi les »"
+          ],
+          "bonnes_reponses": [
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:138",
+          "enonce": "Dans l'arbre du cours, quelles probabilités de chemins sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Arbres pondérés",
+          "difficulte": 1,
+          "explication": "0,3 × 0,8 ; 0,7 × 0,9 ; 0,3 × 0,2 = 0,06 ; 0,7 × 0,1 = 0,07.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Ā puis B̄ : 0,63",
+            "A puis B : 1,1",
+            "A puis B̄ : 0,2",
+            "A puis B : 0,24",
+            "Ā puis B : 0,1"
+          ],
+          "bonnes_reponses": [
+            0,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:139",
+          "enonce": "Quelles affirmations sur la simulation d'une expérience sont exactes ? Coche toutes les réponses exactes.",
+          "notion": "Loi des grands nombres",
+          "difficulte": 1,
+          "explication": "On observe la loi des grands nombres.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Elle donne toujours la probabilité exacte",
+            "Elle remplace toute hypothèse de modèle",
+            "Elle n'utilise pas le hasard",
+            "Elle permet d'observer la stabilisation des fréquences",
+            "Elle peut se faire en Python ou au tableur"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:140",
+          "enonce": "Sur 150 élèves, 90 aiment le cinéma, dont 54 sont des filles ; il y a 80 filles. On tire un élève au hasard. Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 2,
+          "explication": "90/150 ; 54/90 ; 54/80 ; 54/150 = 0,36.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_fille(cinéma) = 0,675",
+            "P(fille ∩ cinéma) = 0,54",
+            "P_cinéma(fille) = 0,6",
+            "P_fille(cinéma) = 0,6",
+            "P(cinéma) = 0,6"
+          ],
+          "bonnes_reponses": [
+            0,
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:141",
+          "enonce": "On tire deux boules sans remise dans une urne de 2 rouges et 2 noires. Quelles probabilités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "Après une rouge, il reste 1 rouge sur 3 boules : 1/2 × 1/3.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(rouge au 1ᵉʳ tirage) = 1/2",
+            "P(deux rouges) = 1/6",
+            "P(deux rouges) = 1/4",
+            "P(rouge au 2ᵈ sachant rouge au 1ᵉʳ) = 1/2",
+            "P(rouge au 2ᵈ sachant rouge au 1ᵉʳ) = 1/3"
+          ],
+          "bonnes_reponses": [
+            0,
+            1,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:142",
+          "enonce": "On lance deux dés. Quelles égalités sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Événement contraire",
+          "difficulte": 2,
+          "explication": "Aucun 6 : 5 × 5 = 25 couples sur 36 ; au moins un 6 : 11/36.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P(au moins un 6) = 2/6",
+            "P(au moins un 6) = 1 − P(aucun 6)",
+            "P(au moins un 6) = P(deux 6)",
+            "P(aucun 6) = 25/36",
+            "P(aucun 6) = 5/6"
+          ],
+          "bonnes_reponses": [
+            1,
+            3
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:143",
+          "enonce": "Un test a une spécificité de 90 %. Sur 1 000 personnes saines testées, quelles affirmations sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "Spécificité : P(négatif sachant sain) = 0,9.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "Environ 100 sont des faux positifs",
+            "Environ 900 sont des faux positifs",
+            "Environ 900 ont un test négatif",
+            "Environ 10 sont des faux positifs",
+            "Toutes ont un test négatif"
+          ],
+          "bonnes_reponses": [
+            0,
+            2
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:144",
+          "enonce": "P(A) = 0,5, P(B) = 0,4 et P(A ∩ B) = 0,2. Quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "0,2/0,5 et 0,2/0,4.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_B(A) = 0,4",
+            "P_A(B) = 0,8",
+            "P_A(B) = 0,4",
+            "P_A(B) = 0,2",
+            "P_B(A) = 0,5"
+          ],
+          "bonnes_reponses": [
+            2,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:145",
+          "enonce": "Dans un tableau croisé complet, quelles affirmations sont toujours vraies ? Coche toutes les réponses exactes.",
+          "notion": "Tableaux croisés",
+          "difficulte": 3,
+          "explication": "Ce sont des effectifs, pas des probabilités.",
+          "statut": "a_relire",
+          "type": "qcm_multiple",
+          "propositions": [
+            "P_A(B) = P_B(A) pour tous événements",
+            "Toutes les cases ont le même effectif",
+            "Le total d'une colonne vaut 1",
+            "La somme des cases d'une ligne égale le total de la ligne",
+            "La somme des totaux des lignes égale l'effectif total"
+          ],
+          "bonnes_reponses": [
+            3,
+            4
+          ]
+        },
+        {
+          "source": "maths-2de:ch11:banque:146",
+          "enonce": "Un sac contient 2 jetons gagnants sur 10. Quelle est la probabilité de tirer un jeton gagnant ? Réponds par un nombre décimal.",
+          "notion": "Équiprobabilité",
+          "difficulte": 1,
+          "explication": "2/10.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,2",
+            "0.2"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:147",
+          "enonce": "La probabilité de gagner à un jeu est 0,15. Quelle est la probabilité de perdre ? Réponds par un nombre.",
+          "notion": "Événement contraire",
+          "difficulte": 1,
+          "explication": "1 − 0,15.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,85",
+            "0.85"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:148",
+          "enonce": "On lance deux fois un dé équilibré. Quelle est la probabilité d'obtenir deux fois 6 ? Écris-la sous forme d'une fraction a/b.",
+          "notion": "Arbres pondérés",
+          "difficulte": 2,
+          "explication": "1/6 × 1/6.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "1/36"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:149",
+          "enonce": "Dans un club, 60 % des membres jouent au tennis et 25 % des tennismen sont débutants. Quelle est la probabilité qu'un membre tiré au hasard soit un tennisman débutant ? Réponds par un nombre.",
+          "notion": "Probabilité conditionnelle",
+          "difficulte": 2,
+          "explication": "0,6 × 0,25.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "0,15",
+            "0.15"
+          ],
+          "marge_relative": false
+        },
+        {
+          "source": "maths-2de:ch11:banque:150",
+          "enonce": "Dans l'exemple du cours, combien de personnes ont un test négatif ? Réponds par un nombre sans espace.",
+          "notion": "Faux positifs et inversion",
+          "difficulte": 2,
+          "explication": "1 + 9405.",
+          "statut": "a_relire",
+          "type": "reponse_courte",
+          "reponses_acceptees": [
+            "9406"
+          ],
+          "marge_relative": false
+        }
+      ]
     }
   ]
 }
