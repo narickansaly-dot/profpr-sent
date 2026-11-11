@@ -38,7 +38,7 @@ Date : 11 novembre 2026. Branche : `claude/contenu-2de-svt-be7093` (commits loca
 | 12 | Le microbiote humain et la santé | 2 sem. | 6 | 150 |
 | | **Total** | **32 sem.** | **71** | **1800** |
 
-Chaque chapitre a un résumé, un chapeau, des objectifs, des sections en HTML autorisé (encadrés `.def` et `.warn`, tableaux `.tbl`, 11 figures SVG `.fig`) et une zone « Je retiens ». Chaque banque compte 75 qcm_unique, 30 qcm_multiple, 30 vrai/faux et 15 réponses courtes, avec 60 / 60 / 30 questions de difficulté 1 / 2 / 3.
+Chaque chapitre a un résumé, un chapeau, des objectifs, des sections en HTML autorisé (encadrés `.def` et `.warn`, tableaux `.tbl`, 9 figures SVG `.fig`) et une zone « Je retiens ». Chaque banque compte 75 qcm_unique, 30 qcm_multiple, 30 vrai/faux et 15 réponses courtes, avec 60 / 60 / 30 questions de difficulté 1 / 2 / 3.
 
 ## Validation
 
