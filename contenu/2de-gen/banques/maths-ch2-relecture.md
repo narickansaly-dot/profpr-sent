@@ -33,3 +33,12 @@ Relecture des 150 questions de `maths-ch2.json` contre le texte du chapitre « M
 
 - La propriété « tout entier n ⩾ 2 se décompose de façon unique » est présentée comme admise.
 - L'algorithme `est_premier` est écrit en langage naturel ; il est programmé en Python au chapitre 3.
+
+## Mise à jour d'après le programme de 2026
+
+Le programme de 2026 (arrêté du 26 février 2026) retire les nombres premiers des contenus de seconde et ajoute la contraposée.
+
+- Les 15 questions de la notion « Décomposition en facteurs premiers » ont été retirées et remplacées par 15 questions sur la **contraposée** (même répartition de types et de difficultés). La section du cours sur la décomposition est supprimée ; la contraposée est ajoutée à la section « Propositions, implication et réciproque ».
+- Les nombres premiers sont gardés comme **rappels du collège** (section renommée « Nombres premiers (rappels du collège) », 21 questions) : ils servent d'exercices sur les diviseurs et d'exemples Python au chapitre 3. **Point à trancher** : les retirer aussi, ou les garder.
+- La méthode de simplification des fractions n'utilise plus la décomposition, mais les critères de divisibilité.
+- Les sources ont été renumérotées (rien n'avait encore été importé en base).

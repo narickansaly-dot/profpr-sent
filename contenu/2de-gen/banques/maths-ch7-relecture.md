@@ -26,3 +26,11 @@ Relecture des 150 questions de `maths-ch7.json` contre le texte du chapitre « D
 
 - Les fonctions Python `alignes` et `equation` réalisent les exemples d'algorithme [A6] et [A7].
 - Le système est affiché sur deux lignes avec `<br>` (pas d'accolade : aucun moyen de la dessiner proprement avec le HTML autorisé).
+
+## Mise à jour d'après le programme de 2026
+
+Le programme de 2026 retire la résolution des systèmes de deux équations à deux inconnues ; il demande seulement le point d'intersection de deux droites sécantes données par leur équation réduite.
+
+- Section « Systèmes de deux équations à deux inconnues » remplacée par « Point d'intersection de deux droites » (égalité des ordonnées), avec une mention « pour aller plus loin » des systèmes. Chapitre renommé « Droites du plan ».
+- Les 22 questions de la notion « Systèmes linéaires » ont été remplacées par 22 questions « Intersection par le calcul » (problèmes de tarifs, de rattrapage, droites parallèles ou confondues), avec la même répartition.
+- Reste dans la notion « Point d'intersection » une question avec des équations cartésiennes (x + y = 4 et 2x − y = 5), à la limite du nouveau programme : **point à trancher**.

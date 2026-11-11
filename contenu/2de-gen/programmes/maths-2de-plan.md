@@ -49,7 +49,7 @@ Plan déduit du programme en vigueur, résumé dans `maths-2de.md` : arrêté du
 
 | Chapitre | Contenu retiré du programme | Décision |
 | --- | --- | --- |
-| 2 | Nombres premiers, décomposition, algorithme de primalité | Sections et questions retirées, remplacées par la contraposée et des problèmes de multiples |
+| 2 | Nombres premiers, décomposition, algorithme de primalité | Décomposition retirée et remplacée par la contraposée (15 questions) ; nombres premiers gardés comme rappels du collège (point à trancher) |
 | 4 | Démonstrations √(a + b) < √a + √b et illustration de (a + b)² | Gardées dans le cours sous « Pour aller plus loin » (justes et utiles), questions associées conservées |
 | 6 | Projeté orthogonal ; démonstration de cos² + sin² = 1 | Retirés ; remplacés par représentants, combinaison de vecteurs, caractérisation vectorielle du milieu |
 | 7 | Systèmes de deux équations à deux inconnues | Section remplacée par « Point d'intersection de deux droites » (équations réduites) |
@@ -59,3 +59,4 @@ Plan déduit du programme en vigueur, résumé dans `maths-2de.md` : arrêté du
 1. Chapitre 3 dédié à Python, alors que le programme demande un enseignement transversal.
 2. Pas de chapitre « Automatismes » : faut-il une page d'entraînement dédiée dans l'application ?
 3. Ordre des chapitres et durées.
+4. Nombres premiers gardés au chapitre 2 comme rappels du collège (21 questions) : les garder ou les retirer.

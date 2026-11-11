@@ -28,3 +28,11 @@ Relecture des 150 questions de `maths-ch6.json` contre le texte du chapitre « V
 
 - Trois figures SVG : parallélogramme, relation de Chasles, projeté orthogonal ; les flèches utilisent un marqueur SVG (`marker`) interne, autorisé par la liste blanche.
 - La démonstration du critère de colinéarité traite le cas u⃗ = 0⃗ et le cas x ≠ 0 ; le cas y ≠ 0 est signalé comme identique.
+
+## Mise à jour d'après le programme de 2026
+
+Le programme de 2026 retire le projeté orthogonal et la démonstration de cos² α + sin² α = 1 ; il ajoute les représentants d'un vecteur, la combinaison de deux vecteurs non colinéaires, la caractérisation vectorielle du milieu et la caractérisation de la colinéarité par la proportionnalité des coordonnées. La trigonométrie dans le triangle rectangle passe dans les automatismes.
+
+- Section « Projeté orthogonal » remplacée par « Représentants, combinaisons et milieu » ; démonstration de cos² + sin² = 1 retirée ; proportionnalité des coordonnées ajoutée à la section sur le déterminant.
+- 15 questions sur le projeté orthogonal et 3 questions sur cos² + sin² = 1 remplacées par 15 questions « Représentants et combinaisons » et 3 questions de trigonométrie (même répartition).
+- Les translations restent présentées en première section comme rappel du cycle 4.
