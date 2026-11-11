@@ -24,7 +24,14 @@ Chaque chapitre compte 5 ou 6 sections et 150 questions, soit 1 200 questions au
 
 ## Points à trancher
 
-1. **Programme non vérifié** : le BO et Eduscol étaient inaccessibles (erreurs 403 et 404, PDF de plus de 10 Mo). Le résumé `snt-2de.md` est reconstitué de mémoire ; il est à vérifier contre le texte officiel.
+1. **Programme en vigueur** : pour 2026-2027, c'est l'arrêté du 17 janvier 2019 (NOR MENE1901641A, BO spécial n° 1 du 22 janvier 2019). Aucun nouveau programme de SNT n'a été publié. Une révision est engagée (saisine du CSP le 20 juillet 2026) pour la **rentrée 2027**, avec l'intégration de l'IA et un horaire porté à 2 h : **le cours sera à refaire pour 2027-2028**. Le résumé `snt-2de.md` a été confronté à l'annexe officielle (copie du SNES, extraction lacunaire). Il n'y a pas de changement de programme pour cette année.
+   **Écarts du cours avec les repères historiques officiels** (cours non modifié, à trancher) :
+   - ch. 2 : ARPANET daté de 1969 dans le cours, de 1970 dans le programme (les questions s'appuient sur 1969) ;
+   - ch. 4 : WhatsApp (2009) absent ;
+   - ch. 5 : l'Open Government Initiative (2009) absente ; Bouchon, Jacquard, Hollerith et data.gouv.fr ajoutés ;
+   - ch. 7 : l'Airbus A320 (1984), Météor (1998) et l'expression « internet des objets » (1999) absents ;
+   - ch. 8 : la couleur (1900) et le format 24 × 36 absents.
+   Les capacités attendues lisibles concordent avec le cours.
 2. **Code sans `pre` ni `code`** : le HTML autorisé ne les accepte pas. Le code est affiché dans un `div class="def code"`, sans police à chasse fixe. Proposition (changement de code, non fait) : ajouter `pre` et `code` à `src/lib/contenu/html.ts` et un style `.code` dans `src/styles/chapitre.css`.
 3. **Scripts `banque:*` limités à BPH et STSS** (`src/lib/contenu/banque/cours.ts`, chemin `contenu/1re-st2s/` codé en dur). La validation a appelé directement les mêmes fonctions. Il faudrait ajouter une entrée `snt` et rendre le dossier configurable.
 4. **Chapitre 1 consacré à Python** : ce choix de découpage est à valider.
