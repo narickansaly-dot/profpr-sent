@@ -25,6 +25,10 @@ Banque : `histoire-geo-ch2.json`, 150 questions au statut `a_relire` après fusi
 | ch2:banque:135 | « Les chiffres arabes ont été inventés par les Arabes » est faux selon le cours (origine indienne). Les élèves peuvent hésiter, car les Arabes les ont transformés et transmis. | Garder : l'explication précise l'origine indienne et la transmission. |
 | ch2:banque:065 | La croisade comme « pèlerinage armé » : définition du cours. | Garder. |
 
+## Reprise du 11 novembre 2026
+
+Un contrôle supplémentaire a été ajouté : la similarité entre l'énoncé de chaque réponse courte et celui des autres questions (seuil 0,5, ou 0,35 si la réponse est la même). Il a conduit aux corrections suivantes : huit réponses courtes qui posaient la même question qu'un QCM (Urbain II, Vézelay, doge, ducat, Bagdad, Saladin, Tolède, Édesse), remplacées. Quatre énoncés de QCM ont été dépouillés de la date qui donnait la réponse d'une réponse courte.
+
 ## Contrôles
 
 - `verifierBanque` : conforme, 150 questions.

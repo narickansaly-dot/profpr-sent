@@ -22,6 +22,10 @@ Banque : `histoire-geo-ch5.json`, 150 questions au statut `a_relire` après fusi
 | ch5:banque:128 | Louis XIV limite le droit de remontrance en 1673 : date exacte, mais détail fin pour une 2de. | Garder ou rejeter selon le niveau d'exigence. |
 | ch5:banque:063, 131 | Le cours affirme que les articles sur la langue sont « toujours en vigueur » : c'est exact (articles 110 et 111), et c'est un fait souvent évoqué. | Garder. |
 
+## Reprise du 11 novembre 2026
+
+Un contrôle supplémentaire a été ajouté : la similarité entre l'énoncé de chaque réponse courte et celui des autres questions (seuil 0,5, ou 0,35 si la réponse est la même). Il a conduit aux corrections suivantes : une réponse courte qui doublait un QCM (droit de remontrance), remplacée par une question sur les Bonnets rouges.
+
 ## Contrôles
 
 - `verifierBanque` : conforme, 150 questions.

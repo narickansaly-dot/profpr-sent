@@ -26,6 +26,10 @@ Banque : `histoire-geo-ch3.json`, 150 questions au statut `a_relire` après fusi
 | ch3:banque:048, 125 | Les Lois nouvelles (1542) interdisent l'esclavage des Amérindiens et limitent l'encomienda ; leur application a été très partielle. | Garder. |
 | ch3:banque:036 | « Selon une explication classique » : la question reprend une thèse que le cours nuance (question 061). | Garder les deux : elles se complètent. |
 
+## Reprise du 11 novembre 2026
+
+Un contrôle supplémentaire a été ajouté : la similarité entre l'énoncé de chaque réponse courte et celui des autres questions (seuil 0,5, ou 0,35 si la réponse est la même). Il a conduit aux corrections suivantes : quatre réponses courtes qui posaient la même question qu'un QCM (Potosí, Brésil, Tordesillas, Séville), remplacées. Deux énoncés de QCM ont été dépouillés de leur date.
+
 ## Contrôles
 
 - `verifierBanque` : conforme, 150 questions.

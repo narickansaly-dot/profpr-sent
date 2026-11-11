@@ -22,6 +22,10 @@ Banque : `histoire-geo-ch4.json`, 150 questions au statut `a_relire` après fusi
 | ch4:banque:026 | Le nom de « protestants » vient de la protestation des princes luthériens à la diète de Spire (1529) : le cours ne donne que la date. | Garder. |
 | Questions sur Copernic | Copernic est cité ici (1543) et au chapitre 7 (Galilée) : les banques des deux chapitres posent des questions voisines. | Vérifier qu'elles ne tombent pas dans la même évaluation. |
 
+## Reprise du 11 novembre 2026
+
+Un contrôle supplémentaire a été ajouté : la similarité entre l'énoncé de chaque réponse courte et celui des autres questions (seuil 0,5, ou 0,35 si la réponse est la même). Il a conduit aux corrections suivantes : quatre réponses courtes qui posaient la même question qu'un QCM (Gutenberg, Genève, Trente, perspective), remplacées. Trois énoncés de QCM ont été dépouillés de leur date. Le vrai/faux 124 (traduction de Luther) a été inversé, car il donnait la réponse d'une réponse courte.
+
 ## Contrôles
 
 - `verifierBanque` : conforme, 150 questions.

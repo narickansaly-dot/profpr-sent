@@ -21,6 +21,10 @@ Banque : `histoire-geo-ch1.json`, 150 questions au statut `a_relire` après fusi
 | ch1:banque:087 | « L'anglais » est un distracteur : l'anglais a beaucoup emprunté au latin, mais ce n'est pas une langue romane. | Garder ; l'explication dit que le français, l'italien et l'espagnol viennent du latin. |
 | Introduction | La périodisation (introduction du programme, 2 heures) est évaluée dans ce chapitre : 20 questions environ. | Vérifier que cela convient à la progression de l'enseignant. |
 
+## Reprise du 11 novembre 2026
+
+Un contrôle supplémentaire a été ajouté : la similarité entre l'énoncé de chaque réponse courte et celui des autres questions (seuil 0,5, ou 0,35 si la réponse est la même). Il a conduit aux corrections suivantes : deux réponses courtes qui doublaient des QCM (476, arianisme), remplacées par des questions sur la Pnyx et la tétrarchie.
+
 ## Contrôles
 
 - `verifierBanque` : conforme, 150 questions.
