@@ -7,6 +7,16 @@
 - **PDF lu** (copie de l'annexe 1 portant la mention « © Ministère de l'Éducation nationale et de la Jeunesse », 16 pages, 313 901 octets) : https://www.snes.edu/IMG/pdf/hist-geog_annexe-1_2e_bo.pdf
 - **Date de récupération** : 10 novembre 2026. Le texte a été extrait du PDF avec PDFKit (macOS), puis lu en entier.
 
+### Programme applicable en 2026-2027 (vérification du 11 novembre 2026)
+
+- **Arrêté en vigueur** : arrêté du 17 janvier 2019 fixant le programme d'enseignement commun d'histoire-géographie de la classe de seconde générale et technologique, publié au JO du 20 janvier 2019 et au BO spécial n° 1 du 22 janvier 2019. Il est entré en vigueur à la rentrée 2019.
+- **Aucun nouveau programme de seconde n'a été trouvé** pour 2025-2026 ou 2026-2027.
+- **Textes récents qui ne concernent pas la seconde générale** :
+  - l'arrêté du 22 avril 2026 (BO n° 22 du 28 mai 2026) fixe les nouveaux programmes d'histoire-géographie des cycles 2 et 3 (école, 6e) ;
+  - une note de service d'avril 2026 adapte les programmes de première et de terminale ;
+  - des textes de 2020 adaptent le programme aux outre-mer (BO n° 30 du 23 juillet 2020) et aux sections internationales (BO n° 49 du 24 décembre 2020).
+- **Limite de la vérification** : Légifrance n'a pas pu être consulté directement. L'absence de modification repose sur les pages du BO et sur une source d'éditeur. Elle est à confirmer par l'enseignant sur la version consolidée de l'arrêté (Légifrance, onglet « Versions »).
+
 Le texte ci-dessous résume fidèlement l'annexe 1 : les intitulés, les durées, les objectifs et les points de passage reprennent les mots du texte officiel. Les codes entre crochets ne figurent pas dans le texte officiel : `[H…]` désigne les chapitres d'histoire, `[G…]` les questions de géographie, `[P…]` les points de passage et d'ouverture, `[C…]` les capacités. Ils servent à la table de correspondance du plan (`histoire-geo-2de-plan.md`).
 
 ## Préambule (résumé)
