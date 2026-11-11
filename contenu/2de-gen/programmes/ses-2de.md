@@ -9,6 +9,7 @@
 - **Annexe (programme)** : <https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/05/3/spe638_annexe_1063053.pdf>
 - **Entrée en vigueur** : rentrée scolaire 2019. L'arrêté remplace le programme du 8 avril 2010, abrogé par l'arrêté NOR MENE1901601A.
 - **Licence** : contenus du site education.gouv.fr sous licence Etalab 2.0.
+- **Programme applicable en 2026-2027** : vérifié le 11 novembre 2026. Aucun nouveau programme de SES de seconde n'a été publié au BO depuis 2019. Le livret d'accueil SES de l'académie de Grenoble mis à jour pour la rentrée 2026 cite toujours, pour la seconde, l'« arrêté du 17-1-2019 - J.O. du 20-1-2019 (NOR MENE1901638A) ». Le document « arrete_ses_com_2e » diffusé par le SNES est le projet de ce même arrêté (entrée en vigueur prévue à la rentrée 2019), pas un nouveau texte. Seul le programme de terminale a été allégé depuis, ce qui ne concerne pas ce cours.
 - **Récupération** : annexe téléchargée sur le site du ministère le 10 novembre 2026. Les objectifs d'apprentissage ci-dessous sont **recopiés mot pour mot**. Seul le préambule est résumé.
 
 Les codes entre crochets (`[I1]`, `[E3]`…) ne figurent pas dans le texte officiel. Ils sont ajoutés pour que le plan (`ses-2de-plan.md`) renvoie à chaque objectif sans ambiguïté.
