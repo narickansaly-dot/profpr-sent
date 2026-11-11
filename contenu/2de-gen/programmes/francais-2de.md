@@ -8,6 +8,7 @@
 - **URL du BO spécial complet (PDF, 967 pages)**, seule source lue : http://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/06/0/SP1_MEN_22_1_2019_10H40_1064060.pdf
 - **Sources non consultables automatiquement** : l'ancienne URL de l'annexe seule (`…/26/8/spe577_annexe_1062268.pdf`, réponse HTTP 404) et les pages d'Éduscol et du BO (réponse HTTP 403).
 - **Date de récupération** : 10 novembre 2026.
+- **Texte en vigueur pour 2026-2027** : vérifié le 11 novembre 2026. Aucun nouveau programme de français de seconde n'a été publié : les nouveaux textes de seconde concernent les mathématiques (arrêté du 26 février 2026, BO n° 14 du 2 avril 2026), les langues vivantes étrangères (arrêté du 5 mai 2025, en seconde depuis la rentrée 2025) et les langues vivantes régionales (BO n° 21 du 21 mai 2026). Une source secondaire signale une modification de 2020 portant sur la partie « langue » ; son texte n'a pas pu être lu ici (sites officiels inaccessibles aux accès automatisés) : **à vérifier sur Légifrance** (point à trancher du bilan).
 
 Le texte ci-dessous reprend fidèlement l'annexe 1 pour la structure, les objets d'étude, les corpus, les points de langue et les exercices. Les citations entre guillemets sont mot pour mot. Ajouts qui ne figurent pas dans le texte officiel : les codes entre crochets (`[O…]` pour les objets d'étude, `[L…]` pour la langue, `[X…]` pour les exercices), qui servent à la table de correspondance du plan.
 
