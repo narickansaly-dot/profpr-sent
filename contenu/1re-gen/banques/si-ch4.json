@@ -173,7 +173,7 @@
         "Un vérin pneumatique",
         "Une LED",
         "Un engrenage",
-        "Une batterie qui se décharge dans un variateur"
+        "Un hacheur"
       ],
       "bonnes_reponses": [
         0,
@@ -181,7 +181,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "Le moteur (électrique → mécanique), le vérin (pneumatique → mécanique) et la LED (électrique → lumineuse) convertissent. L'engrenage transmet une énergie qui reste mécanique ; la batterie alimente.",
+      "explication": "Le moteur (électrique → mécanique), le vérin (pneumatique → mécanique) et la LED (électrique → lumineuse) convertissent. L'engrenage transmet une énergie qui reste mécanique ; le hacheur dose une énergie qui reste électrique.",
       "notion": "Fonctions de la chaîne de puissance"
     },
     {
@@ -375,7 +375,7 @@
     {
       "source": "si-1re:ch4:banque:024",
       "type": "qcm_unique",
-      "enonce": "Une batterie de tension à vide 48 V et de résistance interne 0,1 Ω débite 30 A. De combien (écart relatif) sa tension s'écarte-t-elle de celle du modèle parfait ?",
+      "enonce": "Une batterie de tension à vide 48 V et de résistance interne 0,1 Ω débite 30 A. Quel est l'écart relatif entre sa tension et celle du modèle parfait, rapporté à la tension à vide ?",
       "propositions": [
         "3 %",
         "6,25 %",
@@ -632,8 +632,8 @@
       "type": "qcm_unique",
       "enonce": "Quel est le principal atout d'un supercondensateur par rapport à une batterie lithium-ion ?",
       "propositions": [
-        "Il fournit une très forte puissance et supporte un très grand nombre de cycles",
-        "Il stocke plus d'énergie par kilogramme",
+        "Il fournit une forte puissance et supporte de très nombreux cycles",
+        "Il stocke plus d'énergie par kilogramme qu'une batterie",
         "Il convertit l'énergie électrique en énergie mécanique",
         "Il impose un courant constant à la charge"
       ],
@@ -911,7 +911,7 @@
         "Le hacheur produit une tension continue parfaitement constante",
         "L'interrupteur du hacheur reste fermé en permanence",
         "La batterie fournit une tension alternative",
-        "Le découpage est si rapide que l'inertie et l'inductance du moteur lissent les créneaux"
+        "L'inertie et l'inductance du moteur lissent les créneaux rapides"
       ],
       "bonnes_reponses": [
         3
@@ -1217,7 +1217,7 @@
         2
       ],
       "difficulte": 2,
-      "explication": "Les relations correctes sont E = K·Ω et C = K·I ; les propositions 4 et 5 échangent I et Ω.",
+      "explication": "Les relations correctes sont U = E + R·I, P(em) = E·I = C·Ω, P(J) = R·I², ainsi que E = K·Ω et C = K·I ; les propositions « E = K·I » et « C = K·Ω » échangent I et Ω.",
       "notion": "Moteur à courant continu"
     },
     {
@@ -2074,8 +2074,8 @@
       "type": "qcm_unique",
       "enonce": "Que signifie qu'un composant de la chaîne de puissance est réversible ?",
       "propositions": [
-        "Il peut transmettre la puissance dans les deux sens",
-        "Il ne fonctionne que dans un sens",
+        "Il transmet la puissance dans les deux sens",
+        "Il ne fonctionne que dans un seul sens",
         "Il inverse le sens de rotation",
         "Il stocke l'énergie"
       ],
