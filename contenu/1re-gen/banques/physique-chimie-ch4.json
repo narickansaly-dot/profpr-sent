@@ -1,0 +1,2342 @@
+{
+  "chapitre": 4,
+  "notions": [
+    "Évolution d'un système chimique",
+    "Avancement et tableau d'avancement",
+    "Avancement maximal et réactif limitant",
+    "Composition de l'état final",
+    "Mélange stœchiométrique",
+    "Transformation totale ou non totale",
+    "Bilan de matière avec Python",
+    "Quantités initiales d'un bilan"
+  ],
+  "questions": [
+    {
+      "source": "physique-chimie-1re:ch4:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Au cours d'une transformation chimique, comment évolue la quantité de matière d'un réactif ?",
+      "propositions": [
+        "Elle diminue",
+        "Elle augmente jusqu'à l'état final",
+        "Elle reste constante pendant toute la transformation",
+        "Elle augmente, puis elle diminue"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un réactif est consommé : sa quantité diminue (n = nᵢ − a·x). Elle n'augmente jamais (c'est le cas d'un produit) et ne reste constante que pour une espèce spectatrice.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une espèce spectatrice ?",
+      "propositions": [
+        "Un réactif entièrement consommé à la fin de la transformation",
+        "Une espèce présente qui ne figure pas dans l'équation",
+        "Un produit formé en très petite quantité au cours de la réaction",
+        "Le réactif introduit en excès dans le mélange initial"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une espèce spectatrice est présente dans le système mais ne participe pas à la réaction : elle n'apparaît pas dans l'équation et sa quantité ne change pas. Un réactif épuisé est le réactif limitant ; un réactif en excès participe à la réaction ; un produit figure dans l'équation.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:003",
+      "type": "vrai_faux",
+      "enonce": "Au cours d'une transformation chimique, la quantité de matière d'un produit augmente.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un produit est formé : sa quantité vaut nᵢ + c·x et augmente avec l'avancement.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:004",
+      "type": "vrai_faux",
+      "enonce": "Les ions spectateurs d'une solution sont consommés au cours de la transformation : leur quantité de matière diminue.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Les ions spectateurs ne participent pas à la réaction : ils ne figurent pas dans l'équation et leur quantité reste constante.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Pour la combustion CH₄ + 2 O₂ → CO₂ + 2 H₂O, quelle quantité de dioxygène a disparu lorsque 0,30 mol de méthane a réagi ?",
+      "propositions": [
+        "0,30 mol",
+        "0,15 mol",
+        "0,60 mol",
+        "0,90 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les quantités consommées sont proportionnelles aux coefficients : 2 mol de O₂ pour 1 mol de CH₄. n(O₂) consommé = 2 × 0,30 = 0,60 mol. 0,30 mol oublie le coefficient 2 ; 0,15 mol divise au lieu de multiplier ; 0,90 mol utilise un coefficient 3.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Lors de la synthèse de l'ammoniac, N₂ + 3 H₂ → 2 NH₃, 1,2 mol de dihydrogène a été consommée. Quelle quantité d'ammoniac s'est formée ?",
+      "propositions": [
+        "1,2 mol",
+        "2,4 mol",
+        "0,40 mol",
+        "0,80 mol"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Il se forme 2 mol de NH₃ quand 3 mol de H₂ disparaissent : n(NH₃) = 1,2 × 2/3 = 0,80 mol (avancement x = 1,2/3 = 0,40 mol, puis 2x). 1,2 mol oublie les coefficients ; 2,4 mol multiplie par 2 sans diviser par 3 ; 0,40 mol est l'avancement, pas la quantité d'ammoniac.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:007",
+      "type": "qcm_multiple",
+      "enonce": "Lors d'une transformation chimique dans un système fermé, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les réactifs sont consommés",
+        "Les produits sont formés",
+        "Les espèces spectatrices sont consommées",
+        "La masse totale du système diminue",
+        "Les quantités varient en proportion des coefficients stœchiométriques"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "Les réactifs sont consommés et les produits formés, en proportion des coefficients de l'équation. Les espèces spectatrices ne réagissent pas, et la masse totale d'un système fermé se conserve (les atomes sont conservés).",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:008",
+      "type": "vrai_faux",
+      "enonce": "Les coefficients de l'équation d'une réaction indiquent les quantités de matière de réactifs introduites dans le système.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Les coefficients donnent les proportions dans lesquelles les réactifs réagissent et les produits se forment, pas les quantités introduites, qui peuvent être quelconques.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Dans l'équation 2 H₂ + O₂ → 2 H₂O, comment appelle-t-on le nombre 2 placé devant H₂ ?",
+      "propositions": [
+        "Un coefficient stœchiométrique",
+        "Le nombre d'atomes d'hydrogène dans une molécule",
+        "La quantité de dihydrogène introduite, en mol",
+        "L'indice qui donne la composition de la molécule"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre placé devant une formule est un coefficient stœchiométrique : il fixe les proportions de la réaction. Le nombre d'atomes est donné par l'indice dans la formule (le 2 de H₂), et la quantité introduite n'apparaît pas dans l'équation.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:010",
+      "type": "qcm_unique",
+      "enonce": "On plonge du zinc dans de l'acide chlorhydrique (ions H⁺ et Cl⁻). L'équation est Zn + 2 H⁺ → Zn²⁺ + H₂. Comment évolue la quantité d'ions chlorure ?",
+      "propositions": [
+        "Elle diminue comme celle des ions H⁺",
+        "Elle reste constante",
+        "Elle augmente comme celle des ions Zn²⁺",
+        "Elle diminue deux fois plus vite que celle du zinc"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les ions Cl⁻ ne figurent pas dans l'équation : ce sont des ions spectateurs, leur quantité ne change pas. Seuls Zn et H⁺ sont consommés, seuls Zn²⁺ et H₂ sont formés.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:011",
+      "type": "vrai_faux",
+      "enonce": "Pour la réaction Fe + Cu²⁺ → Fe²⁺ + Cu, à chaque instant la quantité de fer consommée est égale à la quantité de cuivre formée.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Les coefficients de Fe et de Cu valent 1 : à l'avancement x, il a disparu x mol de fer et il s'est formé x mol de cuivre.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 H₂ + O₂ → 2 H₂O, la quantité de dioxygène a diminué de 0,15 mol entre deux instants. Comment a varié la quantité de dihydrogène ?",
+      "propositions": [
+        "Elle a diminué de 0,15 mol",
+        "Elle a diminué de 0,075 mol",
+        "Elle a diminué de 0,30 mol",
+        "Elle a augmenté de 0,30 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le dihydrogène réagit deux fois plus que le dioxygène (coefficients 2 et 1) : sa quantité diminue de 2 × 0,15 = 0,30 mol. Un réactif ne peut pas augmenter ; 0,15 mol oublie le coefficient ; 0,075 mol divise au lieu de multiplier.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:013",
+      "type": "vrai_faux",
+      "enonce": "À l'état final d'une transformation, il peut rester des réactifs dans le système.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un réactif en excès reste à l'état final ; dans une transformation non totale, tous les réactifs restent présents.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:014",
+      "type": "qcm_multiple",
+      "enonce": "Pour CH₄ + 2 O₂ → CO₂ + 2 H₂O, 0,10 mol de méthane a réagi. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,20 mol de dioxygène a disparu",
+        "0,10 mol de dioxyde de carbone s'est formée",
+        "0,10 mol d'eau s'est formée",
+        "0,20 mol d'eau s'est formée",
+        "0,050 mol de dioxygène a disparu"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'avancement vaut x = 0,10 mol (coefficient 1 pour CH₄). O₂ disparu : 2x = 0,20 mol ; CO₂ formé : x = 0,10 mol ; H₂O formée : 2x = 0,20 mol. 0,10 mol d'eau oublie le coefficient 2 ; 0,050 mol divise au lieu de multiplier.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Que décrit l'état initial d'un système chimique ?",
+      "propositions": [
+        "Les espèces présentes et leurs quantités lorsque la transformation s'arrête",
+        "Uniquement les produits qui vont se former au cours de la réaction",
+        "Les coefficients stœchiométriques de l'équation ajustée de la réaction",
+        "Les espèces présentes et leurs quantités avant la transformation"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'état initial décrit le système avant la transformation : nature et quantité de chaque espèce (x = 0). L'état à l'arrêt est l'état final ; les produits ne sont souvent pas présents au départ ; les coefficients appartiennent à l'équation, pas à l'état du système.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Pour la combustion du butane, 2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O, il s'est formé 0,40 mol de dioxyde de carbone. Quelle quantité de butane a réagi ?",
+      "propositions": [
+        "0,10 mol",
+        "0,20 mol",
+        "1,6 mol",
+        "0,40 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Avancement : 8x = 0,40 mol, donc x = 0,050 mol. Butane consommé : 2x = 0,10 mol (rapport 2/8). 0,20 mol divise par 2 seulement ; 1,6 mol inverse le rapport (× 8/2) ; 0,40 mol oublie les coefficients.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:017",
+      "type": "reponse_courte",
+      "enonce": "Pour 2 SO₂ + O₂ → 2 SO₃, lorsque 0,050 mol de dioxygène a réagi, quelle quantité de trioxyde de soufre s'est formée ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "0,10",
+        "0,1"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "L'avancement vaut x = 0,050 mol (coefficient 1 pour O₂). SO₃ formé : 2x = 2 × 0,050 = 0,10 mol.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:018",
+      "type": "vrai_faux",
+      "enonce": "Pour 4 NH₃ + 5 O₂ → 4 NO + 6 H₂O, lorsque 0,60 mol d'eau s'est formée, il a été consommé 0,50 mol de dioxygène.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "6x = 0,60 mol donne x = 0,10 mol ; le dioxygène consommé vaut 5x = 0,50 mol. L'affirmation est exacte.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Dans un système fermé, comment évolue la masse totale au cours d'une transformation chimique ?",
+      "propositions": [
+        "Elle diminue, car des réactifs disparaissent",
+        "Elle se conserve",
+        "Elle augmente, car des produits se forment",
+        "Elle varie selon la nature du réactif limitant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les atomes se conservent lors d'une transformation chimique (rappel de seconde) : la masse totale d'un système fermé est constante. La masse perdue par les réactifs est exactement celle gagnée par les produits.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:020",
+      "type": "qcm_unique",
+      "enonce": "La décomposition de l'eau oxygénée s'écrit 2 H₂O₂ → 2 H₂O + O₂. Il s'est formé 0,15 mol de dioxygène. Quelle quantité de peroxyde d'hydrogène s'est décomposée ?",
+      "propositions": [
+        "0,15 mol",
+        "0,075 mol",
+        "0,30 mol",
+        "0,45 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "x = n(O₂) = 0,15 mol (coefficient 1). H₂O₂ décomposé : 2x = 0,30 mol. 0,15 mol oublie le coefficient 2 ; 0,075 mol divise par 2 au lieu de multiplier ; 0,45 mol utilise un coefficient 3.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:021",
+      "type": "qcm_multiple",
+      "enonce": "Au cours d'une transformation chimique, quelles espèces voient leur quantité de matière diminuer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le réactif limitant",
+        "Le réactif en excès",
+        "Les produits",
+        "Les espèces spectatrices"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Tous les réactifs sont consommés, limitant comme en excès : leur quantité diminue (le réactif en excès n'est simplement pas épuisé). Les produits augmentent ; les espèces spectatrices restent constantes.",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:022",
+      "type": "qcm_multiple",
+      "enonce": "On plonge du zinc dans l'acide chlorhydrique : Zn + 2 H⁺ → Zn²⁺ + H₂. Quelles quantités de matière augmentent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "n(Zn²⁺)",
+        "n(H₂)",
+        "n(Cl⁻)",
+        "n(H⁺)",
+        "n(Zn)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les produits Zn²⁺ et H₂ sont formés : leur quantité augmente. Zn et H⁺ sont des réactifs (ils diminuent) ; Cl⁻ est spectateur (constant).",
+      "notion": "Évolution d'un système chimique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité de l'avancement d'une réaction ?",
+      "propositions": [
+        "Le gramme (g)",
+        "Le mol·L⁻¹",
+        "Il n'a pas d'unité",
+        "La mole (mol)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'avancement x est une quantité de matière : il s'exprime en mol. Ce n'est ni une masse (g), ni une concentration (mol·L⁻¹) ; c'est le taux d'avancement final xf/xₘₐₓ qui est sans unité.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur de l'avancement dans la ligne « état initial » d'un tableau d'avancement ?",
+      "propositions": [
+        "0 mol",
+        "1 mol",
+        "L'avancement maximal",
+        "La quantité du réactif limitant"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "À l'état initial, aucune réaction n'a encore eu lieu : x = 0 mol. L'avancement maximal correspond à la fin d'une transformation totale ; 1 mol n'a pas de raison d'être.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 Al + 3 S → Al₂S₃, quelle expression donne la quantité de soufre quand l'avancement vaut x ?",
+      "propositions": [
+        "nᵢ(S) − x",
+        "nᵢ(S) − 3x",
+        "nᵢ(S) − 2x",
+        "nᵢ(S) + 3x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le soufre est un réactif de coefficient 3 : n(S) = nᵢ(S) − 3x. nᵢ(S) − x oublie le coefficient ; 2 est le coefficient de l'aluminium ; le signe + est celui d'un produit.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Pour C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O, sans eau au départ, quelle est la quantité d'eau quand l'avancement vaut x ?",
+      "propositions": [
+        "x",
+        "nᵢ(H₂O) − 4x",
+        "4x",
+        "x/4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'eau est un produit de coefficient 4 et nᵢ(H₂O) = 0 : n(H₂O) = 4x. x oublie le coefficient ; le signe − est celui d'un réactif ; x/4 inverse le coefficient.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:027",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau d'avancement, on peut écrire les masses des réactifs en g à la place des quantités de matière.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le tableau d'avancement ne contient que des quantités de matière, en mol : les masses ne sont pas proportionnelles aux coefficients. On convertit d'abord avec n = m/M.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:028",
+      "type": "vrai_faux",
+      "enonce": "L'avancement est toujours égal à la quantité de matière consommée d'un réactif, quel que soit ce réactif.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La quantité consommée d'un réactif de coefficient a vaut a·x : elle n'est égale à x que si a = 1.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 CO + O₂ → 2 CO₂, on part de 3,0 mol de monoxyde de carbone et de 2,0 mol de dioxygène. Quelle quantité de monoxyde de carbone reste-t-il quand x = 0,80 mol ?",
+      "propositions": [
+        "2,2 mol",
+        "1,6 mol",
+        "1,2 mol",
+        "1,4 mol"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "n(CO) = 3,0 − 2x = 3,0 − 2 × 0,80 = 1,4 mol. 2,2 mol oublie le coefficient 2 (3,0 − 0,80) ; 1,6 mol est la quantité de CO consommée ; 1,2 mol est la quantité de dioxygène restante (2,0 − 0,80).",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:030",
+      "type": "reponse_courte",
+      "enonce": "Pour N₂ + 3 H₂ → 2 NH₃, on part de 2,0 mol de diazote et de 5,0 mol de dihydrogène, sans ammoniac. Quelle quantité de dihydrogène reste-t-il pour un avancement de 0,50 mol ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "3,5"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "n(H₂) = 5,0 − 3x = 5,0 − 3 × 0,50 = 3,5 mol.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Pour Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂, on part de 1,0 mol d'oxyde de fer et de 4,0 mol de monoxyde de carbone, sans produit. Quelles expressions de la ligne « en cours » sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "n(Fe₂O₃) = 1,0 − x",
+        "n(CO) = 4,0 − 3x",
+        "n(Fe) = 2x",
+        "n(CO₂) = x",
+        "n(CO) = 4,0 − x"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On retranche coefficient × x pour un réactif et on ajoute coefficient × x pour un produit : Fe₂O₃ : 1,0 − x ; CO : 4,0 − 3x ; Fe : 2x ; CO₂ : 3x. n(CO₂) = x et n(CO) = 4,0 − x oublient le coefficient 3.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Dans la ligne « en cours » d'un tableau d'avancement, quel signe précède le terme en x dans la colonne d'un produit ?",
+      "propositions": [
+        "Le signe +",
+        "Le signe −",
+        "Aucun, car la quantité d'un produit ne dépend pas de x",
+        "Il dépend de la quantité initiale du produit"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un produit se forme : sa quantité augmente avec l'avancement, n = nᵢ + c·x. Le signe − est celui des réactifs ; le signe ne dépend pas de la quantité initiale.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau d'avancement, la quantité de matière d'un réactif est une fonction affine décroissante de l'avancement.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "n(A) = nᵢ(A) − a·x : c'est une fonction affine de x, de coefficient directeur −a négatif, donc décroissante.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 H₂S + SO₂ → 3 S + 2 H₂O, on part de 0,60 mol de sulfure d'hydrogène et de 0,40 mol de dioxyde de soufre. On mesure 0,30 mol d'eau formée. Quelle quantité de dioxyde de soufre reste-t-il ?",
+      "propositions": [
+        "0,10 mol",
+        "0,25 mol",
+        "0,30 mol",
+        "0,40 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Eau formée : 2x = 0,30 mol, donc x = 0,15 mol. n(SO₂) = 0,40 − x = 0,25 mol. 0,10 mol retranche la quantité d'eau au lieu de x ; 0,30 mol est ce qui reste de H₂S (0,60 − 2 × 0,15) ; 0,40 mol oublie que SO₂ réagit.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Pour 4 Fe + 3 O₂ → 2 Fe₂O₃, quelle quantité d'oxyde de fer s'est formée lorsque l'avancement vaut 0,15 mol ?",
+      "propositions": [
+        "0,15 mol",
+        "0,075 mol",
+        "0,30 mol",
+        "0,60 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "n(Fe₂O₃) = 2x = 2 × 0,15 = 0,30 mol. 0,15 mol oublie le coefficient ; 0,075 mol divise par 2 ; 0,60 mol utilise le coefficient 4 du fer.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Pour la combustion de l'éthanol, C₂H₆O + 3 O₂ → 2 CO₂ + 3 H₂O, il a été consommé 0,90 mol de dioxygène. Quelle est la valeur de l'avancement ?",
+      "propositions": [
+        "0,90 mol",
+        "2,7 mol",
+        "0,45 mol",
+        "0,30 mol"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "O₂ consommé : 3x = 0,90 mol, donc x = 0,30 mol. 0,90 mol confond avancement et quantité consommée ; 2,7 mol multiplie par 3 ; 0,45 mol divise par 2 (coefficient de CO₂).",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:037",
+      "type": "reponse_courte",
+      "enonce": "Combustion du propane : C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. On part de 0,50 mol de propane et de 3,0 mol de dioxygène. Lorsqu'il reste 1,5 mol de dioxygène, quelle quantité d'eau s'est formée ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "1,2"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 3,
+      "explication": "Dioxygène consommé : 3,0 − 1,5 = 1,5 mol = 5x, donc x = 0,30 mol. Eau formée : 4x = 4 × 0,30 = 1,2 mol.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:038",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations sont nécessaires pour établir un tableau d'avancement ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'équation ajustée de la réaction",
+        "Les quantités de matière initiales",
+        "La couleur des espèces chimiques",
+        "La durée de la transformation"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La première ligne du tableau est l'équation ajustée (coefficients) et la ligne « état initial » contient les quantités initiales. La couleur et la durée n'interviennent pas dans un bilan de matière.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:039",
+      "type": "vrai_faux",
+      "enonce": "Pour 2 NO + O₂ → 2 NO₂, en partant de 1,0 mol de monoxyde d'azote et de 1,0 mol de dioxygène, les quantités de NO et de O₂ sont égales quand x = 0,25 mol.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Pour x = 0,25 mol : n(NO) = 1,0 − 2 × 0,25 = 0,50 mol et n(O₂) = 1,0 − 0,25 = 0,75 mol. Elles sont différentes (elles ne sont égales que pour x = 0).",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Que contient la ligne « état initial » d'un tableau d'avancement ?",
+      "propositions": [
+        "Les quantités introduites, pour x = 0",
+        "Les quantités restant à la fin de la transformation",
+        "Les masses molaires des espèces de l'équation",
+        "Les expressions des quantités en fonction de x"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La ligne « état initial » donne les quantités de matière introduites, avant toute réaction (x = 0). Les quantités restantes sont dans la ligne « état final », les expressions en x dans la ligne « en cours » ; les masses molaires ne figurent pas dans le tableau.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 KClO₃ → 2 KCl + 3 O₂, sans dioxygène au départ, quelle est la quantité de dioxygène quand l'avancement vaut x ?",
+      "propositions": [
+        "x",
+        "3x",
+        "3x/2",
+        "nᵢ(O₂) − 3x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le dioxygène est un produit de coefficient 3, absent au départ : n(O₂) = 3x. x oublie le coefficient ; 3x/2 divise inutilement par le coefficient de KClO₃ ; le signe − est celui d'un réactif.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Pour CH₄ + 2 O₂ → CO₂ + 2 H₂O, il reste à un instant 0,70 mol de méthane sur 1,00 mol introduite. Quelle quantité d'eau s'est formée ?",
+      "propositions": [
+        "0,30 mol",
+        "1,4 mol",
+        "0,60 mol",
+        "0,70 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Méthane consommé : 1,00 − 0,70 = 0,30 mol = x. Eau formée : 2x = 0,60 mol. 0,30 mol oublie le coefficient 2 ; 1,4 mol part de la quantité restante (2 × 0,70) au lieu de la quantité consommée ; 0,70 mol est le méthane restant.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:043",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 C₈H₁₈ + 25 O₂ → 16 CO₂ + 18 H₂O, l'avancement vaut 0,10 mol. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,20 mol d'octane a été consommée",
+        "2,5 mol de dioxygène a été consommée",
+        "1,6 mol de CO₂ s'est formée",
+        "0,10 mol d'octane a été consommée",
+        "18 mol d'eau s'est formée"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Quantités = coefficient × x : octane 2 × 0,10 = 0,20 mol ; O₂ 25 × 0,10 = 2,5 mol ; CO₂ 16 × 0,10 = 1,6 mol ; eau 18 × 0,10 = 1,8 mol. 0,10 mol d'octane oublie le coefficient 2 ; 18 mol d'eau oublie de multiplier par x.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur l'avancement d'une réaction sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il s'exprime en mol",
+        "Il est nul à l'état initial",
+        "Il peut prendre une valeur négative",
+        "Il vaut toujours 1 mol à l'état final"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'avancement est une quantité de matière (mol), nulle à l'état initial, qui augmente au cours de la transformation : il n'est jamais négatif. Sa valeur finale dépend des quantités initiales, elle n'est pas fixée à 1 mol.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 Fe³⁺ + 2 I⁻ → 2 Fe²⁺ + I₂, on part de 3,0 mmol d'ions Fe³⁺ et de 4,0 mmol d'ions I⁻, sans produit. Quelles quantités sont exactes pour un avancement de 1,0 mmol ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "n(Fe³⁺) = 1,0 mmol",
+        "n(I⁻) = 2,0 mmol",
+        "n(I₂) = 2,0 mmol",
+        "n(Fe²⁺) = 2,0 mmol",
+        "n(I⁻) = 3,0 mmol"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Pour x = 1,0 mmol : n(Fe³⁺) = 3,0 − 2 × 1,0 = 1,0 mmol ; n(I⁻) = 4,0 − 2 × 1,0 = 2,0 mmol ; n(Fe²⁺) = 2 × 1,0 = 2,0 mmol ; n(I₂) = 1,0 mmol (coefficient 1). n(I₂) = 2,0 mmol applique un coefficient 2 ; n(I⁻) = 3,0 mmol oublie le coefficient 2.",
+      "notion": "Avancement et tableau d'avancement"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on réactif limitant ?",
+      "propositions": [
+        "Le réactif introduit avec la plus petite masse",
+        "Le réactif qui a le plus petit coefficient stœchiométrique",
+        "Le réactif qui reste en plus grande quantité à la fin",
+        "Le réactif entièrement consommé en premier"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le réactif limitant est celui qui est épuisé le premier : il arrête la transformation. Ni sa masse, ni son coefficient seuls ne permettent de le désigner ; le réactif qui reste à la fin est en excès.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Comment définit-on l'avancement maximal ?",
+      "propositions": [
+        "La valeur de x qui épuise le premier réactif",
+        "La valeur de x pour laquelle tous les produits ont disparu",
+        "La plus grande quantité de matière initiale parmi les réactifs",
+        "La somme des quantités initiales de tous les réactifs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "xₘₐₓ est la plus grande valeur possible de x : celle pour laquelle un réactif (le limitant) est entièrement consommé. Les produits ne disparaissent pas ; xₘₐₓ ne se lit pas directement dans les quantités initiales, il faut diviser par les coefficients.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:048",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on le réactif entièrement consommé qui arrête une transformation totale ? Réponds en deux mots.",
+      "reponses_acceptees": [
+        "réactif limitant",
+        "le réactif limitant",
+        "limitant",
+        "reactif limitant"
+      ],
+      "difficulte": 1,
+      "explication": "C'est le réactif limitant : son épuisement fixe l'avancement maximal. Les autres réactifs sont en excès.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Pour Fe + S → FeS, on mélange 0,20 mol de fer et 0,15 mol de soufre. Quel est l'avancement maximal ?",
+      "propositions": [
+        "0,20 mol",
+        "0,15 mol",
+        "0,35 mol",
+        "0,050 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Hypothèses : fer limitant, x₁ = 0,20/1 = 0,20 mol ; soufre limitant, x₂ = 0,15/1 = 0,15 mol. xₘₐₓ = 0,15 mol (la plus petite). 0,20 mol rendrait n(S) négatif ; 0,35 mol additionne les quantités ; 0,050 mol est le fer restant.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 Mg + O₂ → 2 MgO, on part de 0,50 mol de magnésium et de 0,20 mol de dioxygène. Quel est le réactif limitant ?",
+      "propositions": [
+        "Le magnésium",
+        "Aucun, le mélange est stœchiométrique",
+        "Le dioxygène",
+        "L'oxyde de magnésium"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Rapports nᵢ/coefficient : Mg 0,50/2 = 0,25 mol ; O₂ 0,20/1 = 0,20 mol. Le plus petit est celui du dioxygène : il est limitant (xₘₐₓ = 0,20 mol). Les rapports sont différents, donc le mélange n'est pas stœchiométrique ; MgO est un produit.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Un ruban de magnésium (0,50 mol) brûle dans un flacon contenant 0,30 mol de dioxygène, selon 2 Mg + O₂ → 2 MgO. Quelle conclusion est exacte ?",
+      "propositions": [
+        "Le dioxygène est limitant car sa quantité est la plus petite",
+        "Les deux réactifs sont épuisés en même temps",
+        "Le magnésium est en excès de 0,20 mol à la fin",
+        "Le magnésium est limitant malgré son abondance"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Rapports : Mg 0,50/2 = 0,25 mol ; O₂ 0,30/1 = 0,30 mol. Le magnésium donne le plus petit rapport : il est limitant (xₘₐₓ = 0,25 mol), et il reste 0,30 − 0,25 = 0,05 mol de dioxygène. Comparer les quantités sans diviser par les coefficients est l'erreur classique.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 Al + 6 H⁺ → 2 Al³⁺ + 3 H₂, on part de 0,10 mol d'aluminium et de 0,24 mol d'ions H⁺ ; la transformation est totale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les ions H⁺ sont limitants",
+        "L'avancement maximal vaut 0,040 mol",
+        "L'avancement maximal vaut 0,050 mol",
+        "L'aluminium est limitant car il est le moins abondant",
+        "Il reste 0,020 mol d'aluminium"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Rapports : Al 0,10/2 = 0,050 mol ; H⁺ 0,24/6 = 0,040 mol. Les ions H⁺ sont limitants et xₘₐₓ = 0,040 mol. Il reste 0,10 − 2 × 0,040 = 0,020 mol d'aluminium. 0,050 mol rendrait n(H⁺) négatif ; l'aluminium n'est pas limitant malgré sa plus petite quantité.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Le réactif limitant est toujours celui dont la quantité de matière initiale est la plus petite.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Il faut comparer les rapports nᵢ/coefficient : un réactif peu abondant mais de petit coefficient peut être en excès (par exemple 0,30 mol de O₂ face à 0,50 mol de Mg pour 2 Mg + O₂).",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:054",
+      "type": "vrai_faux",
+      "enonce": "À la fin d'une transformation totale, le réactif limitant a été entièrement consommé.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour une transformation totale, xf = xₘₐₓ : la quantité du réactif limitant est nulle à l'état final.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Pour N₂ + 3 H₂ → 2 NH₃, on part de 1,0 mol de diazote et de 2,4 mol de dihydrogène. Quel est l'avancement maximal ?",
+      "propositions": [
+        "0,80 mol",
+        "1,0 mol",
+        "2,4 mol",
+        "1,6 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Rapports : N₂ 1,0/1 = 1,0 mol ; H₂ 2,4/3 = 0,80 mol. xₘₐₓ = 0,80 mol, le dihydrogène est limitant. 1,0 mol rendrait n(H₂) négatif ; 2,4 mol oublie de diviser par 3 ; 1,6 mol est la quantité d'ammoniac formée (2xₘₐₓ).",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Selon le critère rapide du cours, comment repère-t-on le réactif limitant ?",
+      "propositions": [
+        "Plus petite quantité initiale nᵢ, sans tenir compte des coefficients",
+        "Plus petit rapport nᵢ/coefficient",
+        "Plus grand rapport nᵢ/coefficient parmi les réactifs",
+        "Plus petit coefficient stœchiométrique dans l'équation"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le réactif limitant est celui dont le rapport nᵢ/coefficient est le plus petit, et xₘₐₓ est égal à ce rapport. Les quantités seules ou les coefficients seuls ne suffisent pas ; le plus grand rapport correspond à un réactif en excès.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:057",
+      "type": "reponse_courte",
+      "enonce": "Pour 2 H₂ + O₂ → 2 H₂O, on mélange 0,36 mol de dihydrogène et 0,20 mol de dioxygène. Quel est l'avancement maximal ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "0,18"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "Rapports : H₂ 0,36/2 = 0,18 mol ; O₂ 0,20/1 = 0,20 mol. xₘₐₓ = 0,18 mol (dihydrogène limitant).",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 C₂H₆ + 7 O₂ → 4 CO₂ + 6 H₂O, on part de 0,40 mol d'éthane et de 1,2 mol de dioxygène. Quel est l'avancement maximal ?",
+      "propositions": [
+        "0,20 mol",
+        "0,40 mol",
+        "0,17 mol",
+        "1,2 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Hypothèse éthane limitant : 0,40 − 2x₁ = 0, x₁ = 0,20 mol. Hypothèse dioxygène limitant : 1,2 − 7x₂ = 0, x₂ = 1,2/7 = 0,171 mol. xₘₐₓ = 0,17 mol (2 chiffres significatifs), le dioxygène est limitant. 0,20 mol rendrait n(O₂) négatif ; 0,40 et 1,2 mol oublient de diviser par les coefficients.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:059",
+      "type": "vrai_faux",
+      "enonce": "Lorsque la méthode des hypothèses donne deux valeurs différentes, retenir la plus grande pour xₘₐₓ conduirait à une quantité négative pour l'un des réactifs.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La plus grande valeur dépasse l'avancement qui épuise l'autre réactif : sa quantité nᵢ − a·x deviendrait négative, ce qui est impossible. On retient donc la plus petite.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique des quantités de matière en fonction de l'avancement, à quoi correspond l'abscisse du point où la droite d'un réactif coupe l'axe horizontal ?",
+      "propositions": [
+        "À la quantité initiale de ce réactif",
+        "À la quantité de produit formée à l'état final",
+        "Au coefficient stœchiométrique de ce réactif",
+        "À l'avancement qui épuiserait ce réactif"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La droite n = nᵢ − a·x coupe l'axe pour n = 0, c'est-à-dire x = nᵢ/a : l'avancement qui épuiserait ce réactif. La quantité initiale se lit à l'ordonnée à l'origine ; le coefficient est l'opposé de la pente.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Pour CH₄ + 2 O₂ → CO₂ + 2 H₂O, dans quels mélanges le méthane est-il le réactif limitant ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1,0 mol de CH₄ et 3,0 mol de O₂",
+        "1,0 mol de CH₄ et 1,5 mol de O₂",
+        "0,20 mol de CH₄ et 0,50 mol de O₂",
+        "0,50 mol de CH₄ et 0,80 mol de O₂",
+        "2,0 mol de CH₄ et 4,0 mol de O₂"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "On compare nᵢ(CH₄)/1 et nᵢ(O₂)/2 : 1,0 < 1,5 (CH₄ limitant) ; 1,0 > 0,75 (O₂ limitant) ; 0,20 < 0,25 (CH₄ limitant) ; 0,50 > 0,40 (O₂ limitant) ; 2,0 = 2,0 (mélange stœchiométrique : les deux sont épuisés, aucun n'est seul limitant).",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il lorsque l'avancement atteint sa valeur maximale lors d'une transformation totale ?",
+      "propositions": [
+        "Le réactif limitant est épuisé",
+        "Les produits commencent à se décomposer",
+        "Les quantités de tous les réactifs deviennent égales",
+        "Les réactifs en excès sont aussi entièrement consommés"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Pour x = xₘₐₓ, la quantité du réactif limitant devient nulle et la transformation s'arrête. Les réactifs en excès restent (sauf mélange stœchiométrique) ; il n'y a aucune raison que leurs quantités soient égales.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:063",
+      "type": "vrai_faux",
+      "enonce": "Pour 3 Fe + 2 O₂ → Fe₃O₄, avec 0,90 mol de fer et 0,50 mol de dioxygène, le fer est le réactif limitant.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Rapports : Fe 0,90/3 = 0,30 mol ; O₂ 0,50/2 = 0,25 mol. Le dioxygène donne le plus petit rapport : c'est lui le réactif limitant (xₘₐₓ = 0,25 mol).",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On chauffe 5,58 g de fer (M = 55,8 g·mol⁻¹) avec 4,00 g de soufre (M = 32,1 g·mol⁻¹) : Fe + S → FeS. Quel est le résultat ?",
+      "propositions": [
+        "Soufre limitant, xₘₐₓ = 0,125 mol",
+        "Fer limitant, xₘₐₓ = 0,100 mol",
+        "Soufre limitant, xₘₐₓ = 4,00 mol",
+        "Fer limitant, xₘₐₓ = 5,58 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "n(Fe) = 5,58/55,8 = 0,100 mol ; n(S) = 4,00/32,1 = 0,125 mol. Coefficients 1 : le fer donne le plus petit rapport, il est limitant et xₘₐₓ = 0,100 mol. Les propositions en g confondent masse et quantité de matière ; le soufre est en excès.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Que signifie l'expression « réactif en excès » ?",
+      "propositions": [
+        "Il est consommé en premier au cours de la réaction",
+        "Il est introduit en quantité trop faible pour réagir",
+        "Il en reste à la fin de la transformation",
+        "Il ne participe pas à la réaction : il est spectateur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un réactif en excès n'est pas entièrement consommé : il en reste à l'état final. Celui consommé en premier est le limitant ; un réactif en excès participe bien à la réaction, contrairement à une espèce spectatrice.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pour Cu²⁺ + 2 HO⁻ → Cu(OH)₂, on mélange 2,0 mmol d'ions cuivre(II) et 3,0 mmol d'ions hydroxyde. Quel est le réactif limitant ?",
+      "propositions": [
+        "Les ions cuivre(II) Cu²⁺",
+        "Aucun, le mélange est stœchiométrique",
+        "Le précipité d'hydroxyde de cuivre(II)",
+        "Les ions hydroxyde HO⁻"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Rapports : Cu²⁺ 2,0/1 = 2,0 mmol ; HO⁻ 3,0/2 = 1,5 mmol. Les ions hydroxyde donnent le plus petit rapport : ils sont limitants (xₘₐₓ = 1,5 mmol). Les rapports diffèrent, le mélange n'est pas stœchiométrique ; le précipité est un produit.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Aluminothermie : Fe₂O₃ + 2 Al → Al₂O₃ + 2 Fe. On mélange 16,0 g d'oxyde de fer (M = 159,6 g·mol⁻¹) et 2,70 g d'aluminium (M = 27,0 g·mol⁻¹). Quel est le résultat ?",
+      "propositions": [
+        "xₘₐₓ = 0,0500 mol, aluminium limitant",
+        "xₘₐₓ = 0,100 mol, oxyde de fer limitant",
+        "xₘₐₓ = 0,100 mol, aluminium limitant",
+        "xₘₐₓ = 0,0500 mol, oxyde de fer limitant"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "n(Fe₂O₃) = 16,0/159,6 = 0,100 mol ; n(Al) = 2,70/27,0 = 0,100 mol. Rapports : Fe₂O₃ 0,100/1 = 0,100 mol ; Al 0,100/2 = 0,0500 mol. L'aluminium est limitant et xₘₐₓ = 0,0500 mol. Les propositions à 0,100 mol oublient de diviser par le coefficient 2 de l'aluminium.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Pour Fe + 2 H⁺ → Fe²⁺ + H₂, on part de 0,10 mol de fer et de 0,30 mol d'ions H⁺ ; la transformation est totale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le fer est le réactif limitant",
+        "L'avancement maximal vaut 0,10 mol",
+        "Il reste 0,10 mol d'ions H⁺",
+        "L'avancement maximal vaut 0,15 mol",
+        "Il reste 0,20 mol d'ions H⁺"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Rapports : Fe 0,10/1 = 0,10 mol ; H⁺ 0,30/2 = 0,15 mol. Le fer est limitant, xₘₐₓ = 0,10 mol, et il reste 0,30 − 2 × 0,10 = 0,10 mol d'ions H⁺. 0,15 mol rendrait n(Fe) négatif ; 0,20 mol oublie le coefficient 2.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le réactif limitant sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il est entièrement consommé dans une transformation totale",
+        "Il fixe la valeur de l'avancement maximal",
+        "C'est toujours le réactif de plus petite masse",
+        "C'est toujours le réactif de plus petit coefficient"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le réactif limitant est épuisé à la fin d'une transformation totale et xₘₐₓ = nᵢ/coefficient pour ce réactif. Ni la masse ni le coefficient ne suffisent à le désigner : il faut comparer les rapports nᵢ/coefficient.",
+      "notion": "Avancement maximal et réactif limitant"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Pour Fe + S → FeS, on chauffe 0,30 mol de fer avec 0,12 mol de soufre ; la transformation est totale. Quelle est la composition de l'état final ?",
+      "propositions": [
+        "0 mol de fer, 0,18 mol de soufre, 0,30 mol de FeS",
+        "0,18 mol de fer, 0 mol de soufre, 0,12 mol de FeS",
+        "0,18 mol de fer, 0 mol de soufre, 0,42 mol de FeS",
+        "0,18 mol de fer, 0 mol de soufre, 0,24 mol de FeS"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "xₘₐₓ = min(0,30 ; 0,12) = 0,12 mol, le soufre est limitant. État final : n(Fe) = 0,30 − 0,12 = 0,18 mol ; n(S) = 0 ; n(FeS) = 0,12 mol. 0,42 mol additionne les réactifs ; 0,24 mol double sans raison ; la première proposition fait du fer le limitant.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:071",
+      "type": "reponse_courte",
+      "enonce": "Pour 2 H₂ + O₂ → 2 H₂O, on fait réagir 0,50 mol de dihydrogène avec 0,50 mol de dioxygène ; la transformation est totale. Quelle quantité de dioxygène reste-t-il ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "0,25"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "Rapports : H₂ 0,50/2 = 0,25 mol ; O₂ 0,50/1 = 0,50 mol. xₘₐₓ = 0,25 mol, H₂ limitant. n(O₂) restant = 0,50 − 0,25 = 0,25 mol.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:072",
+      "type": "qcm_unique",
+      "enonce": "On plonge 0,050 mol de zinc dans 100 mL d'une solution d'ions Cu²⁺ à 0,20 mol·L⁻¹ : Zn + Cu²⁺ → Zn²⁺ + Cu, transformation totale. Quelle quantité de cuivre se forme ?",
+      "propositions": [
+        "0,050 mol",
+        "0,030 mol",
+        "0,020 mol",
+        "20 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "nᵢ(Cu²⁺) = C × V = 0,20 × 0,100 = 0,020 mol. Rapports : Zn 0,050 ; Cu²⁺ 0,020 : les ions Cu²⁺ sont limitants, xₘₐₓ = 0,020 mol et n(Cu) = 0,020 mol. 0,050 mol fait du zinc le limitant ; 0,030 mol est le zinc restant ; 20 mol oublie de convertir 100 mL en L.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:073",
+      "type": "qcm_unique",
+      "enonce": "On brûle 2,4 g de carbone (M = 12,0 g·mol⁻¹) dans 0,10 mol de dioxygène : C + O₂ → CO₂, transformation totale. Quelle masse de carbone reste-t-il ?",
+      "propositions": [
+        "0,10 g",
+        "2,4 g",
+        "4,4 g",
+        "1,2 g"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "nᵢ(C) = 2,4/12,0 = 0,20 mol. Rapports : C 0,20 ; O₂ 0,10 : le dioxygène est limitant, xₘₐₓ = 0,10 mol. n(C) restant = 0,20 − 0,10 = 0,10 mol, soit m = 0,10 × 12,0 = 1,2 g. 0,10 g confond mol et g ; 2,4 g oublie que le carbone réagit ; 4,4 g est la masse de CO₂ formé (0,10 × 44,0).",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:074",
+      "type": "qcm_unique",
+      "enonce": "On fait réagir 0,243 g de magnésium (M = 24,3 g·mol⁻¹) avec un excès d'acide chlorhydrique : Mg + 2 H⁺ → Mg²⁺ + H₂, transformation totale. Quel volume de dihydrogène se forme (Vₘ = 24,0 L·mol⁻¹) ?",
+      "propositions": [
+        "240 mL",
+        "480 mL",
+        "120 mL",
+        "5,8 mL"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "nᵢ(Mg) = 0,243/24,3 = 0,0100 mol ; l'acide est en excès, le magnésium est limitant : xₘₐₓ = 0,0100 mol et n(H₂) = 0,0100 mol. V = n × Vₘ = 0,0100 × 24,0 = 0,240 L = 240 mL. 480 mL multiplie par le coefficient 2 de H⁺ ; 120 mL divise par 2 ; 5,8 mL multiplie la masse par Vₘ.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 Al + 3 Cl₂ → 2 AlCl₃, on part de 0,40 mol d'aluminium et de 0,45 mol de dichlore ; la transformation est totale. Quelles affirmations sur l'état final sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il reste 0,10 mol d'aluminium",
+        "Il s'est formé 0,30 mol de AlCl₃",
+        "Il reste 0,05 mol de dichlore",
+        "Il s'est formé 0,15 mol de AlCl₃",
+        "Le dichlore est entièrement consommé"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Rapports : Al 0,40/2 = 0,20 mol ; Cl₂ 0,45/3 = 0,15 mol. Le dichlore est limitant, xₘₐₓ = 0,15 mol. État final : Al 0,40 − 2 × 0,15 = 0,10 mol ; Cl₂ 0 ; AlCl₃ 2 × 0,15 = 0,30 mol. 0,15 mol de AlCl₃ oublie le coefficient 2 ; il ne reste pas de dichlore.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:076",
+      "type": "vrai_faux",
+      "enonce": "Pour une transformation totale, on obtient la composition de l'état final en remplaçant x par xₘₐₓ dans la ligne « en cours » du tableau d'avancement.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Une transformation totale s'arrête à xf = xₘₐₓ : il suffit de remplacer x par xₘₐₓ dans les expressions de la ligne « en cours ».",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:077",
+      "type": "qcm_unique",
+      "enonce": "À l'état final d'une transformation totale, quelle est la quantité de matière du réactif limitant ?",
+      "propositions": [
+        "L'avancement maximal",
+        "0 mol",
+        "La moitié de sa quantité initiale",
+        "La quantité du réactif en excès"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le réactif limitant est entièrement consommé : sa quantité finale est nulle. L'avancement maximal est la quantité « par unité d'équation » qui a réagi, pas ce qui reste.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:078",
+      "type": "reponse_courte",
+      "enonce": "Combustion de l'éthanol : C₂H₆O + 3 O₂ → 2 CO₂ + 3 H₂O. On brûle 4,6 g d'éthanol dans un excès de dioxygène ; la transformation est totale. Masses molaires : H 1,0 ; C 12,0 ; O 16,0 g·mol⁻¹. Quelle masse d'eau se forme ? Réponds en g, par un nombre seul.",
+      "reponses_acceptees": [
+        "5,4"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 3,
+      "explication": "M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹ ; nᵢ = 4,6/46,0 = 0,10 mol = xₘₐₓ (éthanol limitant). n(H₂O) = 3 × 0,10 = 0,30 mol ; M(H₂O) = 18,0 g·mol⁻¹ ; m = 0,30 × 18,0 = 5,4 g.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:079",
+      "type": "qcm_unique",
+      "enonce": "On mélange 20,0 mL de solution d'ions argent à 0,10 mol·L⁻¹ et 30,0 mL de solution d'ions chlorure à 0,10 mol·L⁻¹ : Ag⁺ + Cl⁻ → AgCl, transformation totale. Quelle quantité de précipité se forme ?",
+      "propositions": [
+        "3,0 mmol",
+        "5,0 mmol",
+        "2,0 mmol",
+        "1,0 mmol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "nᵢ(Ag⁺) = 0,10 × 20,0 = 2,0 mmol ; nᵢ(Cl⁻) = 0,10 × 30,0 = 3,0 mmol. Coefficients 1 : Ag⁺ est limitant, xₘₐₓ = 2,0 mmol = n(AgCl). 3,0 mmol fait de Cl⁻ le limitant ; 5,0 mmol additionne ; 1,0 mmol est la quantité de Cl⁻ restant.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:080",
+      "type": "qcm_unique",
+      "enonce": "On mélange 40,0 mL de solution d'ions Ba²⁺ à 0,050 mol·L⁻¹ et 10,0 mL de solution d'ions SO₄²⁻ à 0,10 mol·L⁻¹ : Ba²⁺ + SO₄²⁻ → BaSO₄ (solide), transformation totale. Quelle est la concentration des ions Ba²⁺ restant dans le mélange ?",
+      "propositions": [
+        "0,025 mol·L⁻¹",
+        "0,050 mol·L⁻¹",
+        "0,040 mol·L⁻¹",
+        "0,020 mol·L⁻¹"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "nᵢ(Ba²⁺) = 0,050 × 40,0 = 2,0 mmol ; nᵢ(SO₄²⁻) = 0,10 × 10,0 = 1,0 mmol : SO₄²⁻ est limitant, xₘₐₓ = 1,0 mmol. Il reste 2,0 − 1,0 = 1,0 mmol de Ba²⁺ dans 40,0 + 10,0 = 50,0 mL : C = 1,0/50,0 = 0,020 mol·L⁻¹. 0,025 divise par 40,0 mL au lieu du volume total ; 0,050 est la concentration initiale ; 0,040 oublie la réaction (2,0/50,0).",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:081",
+      "type": "vrai_faux",
+      "enonce": "Après une transformation totale, le réactif en excès est encore présent dans le système.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Seul le réactif limitant est épuisé ; un réactif en excès n'est que partiellement consommé et il en reste à l'état final.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 Na + Cl₂ → 2 NaCl, on fait réagir 0,400 mol de sodium et 0,150 mol de dichlore ; la transformation est totale. Quelle masse de chlorure de sodium se forme (M(NaCl) = 58,4 g·mol⁻¹) ?",
+      "propositions": [
+        "17,5 g",
+        "8,76 g",
+        "23,4 g",
+        "11,7 g"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Rapports : Na 0,400/2 = 0,200 mol ; Cl₂ 0,150/1 = 0,150 mol. Cl₂ est limitant, xₘₐₓ = 0,150 mol, n(NaCl) = 2 × 0,150 = 0,300 mol, m = 0,300 × 58,4 = 17,5 g. 8,76 g oublie le coefficient 2 ; 23,4 g fait du sodium le limitant ; 11,7 g utilise 0,200 mol.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Pour une transformation totale, quelles affirmations sur l'état final sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le réactif limitant a disparu",
+        "L'avancement final est égal à l'avancement maximal",
+        "Tous les réactifs ont disparu, quel que soit le mélange initial",
+        "Les espèces spectatrices ont disparu"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Transformation totale : xf = xₘₐₓ et le réactif limitant est épuisé. Les réactifs en excès restent (sauf mélange stœchiométrique), et les espèces spectatrices ne réagissent pas.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:084",
+      "type": "vrai_faux",
+      "enonce": "On fait réagir 0,10 mol de zinc avec 0,10 mol d'ions H⁺ selon Zn + 2 H⁺ → Zn²⁺ + H₂ (transformation totale) : il se forme 0,10 mol de dihydrogène.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Rapports : Zn 0,10/1 = 0,10 mol ; H⁺ 0,10/2 = 0,050 mol. Les ions H⁺ sont limitants, xₘₐₓ = 0,050 mol : il se forme seulement 0,050 mol de dihydrogène.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:085",
+      "type": "reponse_courte",
+      "enonce": "Détartrage : CaCO₃ + 2 H⁺ → Ca²⁺ + CO₂ + H₂O. On attaque 0,020 mol de calcaire par 0,10 mol d'ions H⁺ ; la transformation est totale. Quel volume de dioxyde de carbone se forme (Vₘ = 24,0 L·mol⁻¹) ? Réponds en mL, par un nombre seul sans espace.",
+      "reponses_acceptees": [
+        "480"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "Rapports : CaCO₃ 0,020/1 = 0,020 mol ; H⁺ 0,10/2 = 0,050 mol. Le calcaire est limitant, xₘₐₓ = 0,020 mol = n(CO₂). V = 0,020 × 24,0 = 0,48 L = 480 mL.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:086",
+      "type": "qcm_unique",
+      "enonce": "On brûle 0,25 mol de soufre dans 0,40 mol de dioxygène : S + O₂ → SO₂, transformation totale. Quelle quantité de dioxygène reste-t-il ?",
+      "propositions": [
+        "0 mol",
+        "0,15 mol",
+        "0,25 mol",
+        "0,65 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Coefficients 1 : le soufre (0,25 mol) est limitant, xₘₐₓ = 0,25 mol. n(O₂) restant = 0,40 − 0,25 = 0,15 mol. 0 mol ferait du dioxygène le limitant ; 0,25 mol est la quantité de SO₂ formée ; 0,65 mol additionne au lieu de soustraire.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:087",
+      "type": "qcm_unique",
+      "enonce": "On plonge 1,12 g de fer (M = 55,8 g·mol⁻¹) dans 50,0 mL d'une solution d'ions Cu²⁺ à 0,500 mol·L⁻¹ : Fe + Cu²⁺ → Fe²⁺ + Cu, transformation totale. Quelle masse de cuivre se dépose (M(Cu) = 63,5 g·mol⁻¹) ?",
+      "propositions": [
+        "1,59 g",
+        "1,12 g",
+        "1,27 g",
+        "0,318 g"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "nᵢ(Fe) = 1,12/55,8 = 0,0201 mol ; nᵢ(Cu²⁺) = 0,500 × 0,0500 = 0,0250 mol. Le fer est limitant, xₘₐₓ = 0,0201 mol ; m(Cu) = 0,0201 × 63,5 = 1,27 g. 1,59 g fait de Cu²⁺ le limitant ; 1,12 g suppose une conservation de la masse de métal ; 0,318 g correspond aux ions Cu²⁺ restants.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Combustion du propane : C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. On part de 0,10 mol de propane et de 0,60 mol de dioxygène ; la transformation est totale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il reste 0,10 mol de dioxygène",
+        "Il se forme 0,30 mol de CO₂",
+        "Il se forme 0,40 mol d'eau",
+        "Il reste 0,50 mol de dioxygène",
+        "Le dioxygène est le réactif limitant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Rapports : C₃H₈ 0,10/1 = 0,10 mol ; O₂ 0,60/5 = 0,12 mol. Le propane est limitant, xₘₐₓ = 0,10 mol. O₂ restant : 0,60 − 5 × 0,10 = 0,10 mol ; CO₂ : 3 × 0,10 = 0,30 mol ; H₂O : 4 × 0,10 = 0,40 mol. 0,50 mol oublie le coefficient 5.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 H₂S + 3 O₂ → 2 SO₂ + 2 H₂O, on part de 0,40 mol de sulfure d'hydrogène et de 0,45 mol de dioxygène ; la transformation est totale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'avancement maximal vaut 0,15 mol",
+        "Il reste 0,10 mol de H₂S",
+        "Il se forme 0,30 mol de SO₂",
+        "Il reste 0,05 mol de dioxygène",
+        "Il se forme 0,40 mol d'eau"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Rapports : H₂S 0,40/2 = 0,20 mol ; O₂ 0,45/3 = 0,15 mol. O₂ est limitant, xₘₐₓ = 0,15 mol. H₂S restant : 0,40 − 0,30 = 0,10 mol ; SO₂ : 0,30 mol ; H₂O : 0,30 mol ; O₂ : 0. Il ne reste donc pas de dioxygène, et il ne se forme pas 0,40 mol d'eau.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:090",
+      "type": "reponse_courte",
+      "enonce": "On attaque 0,981 g de zinc (M = 65,4 g·mol⁻¹) par un excès d'ions H⁺ : Zn + 2 H⁺ → Zn²⁺ + H₂, transformation totale. Quel volume de dihydrogène recueille-t-on (Vₘ = 24,0 L·mol⁻¹) ? Réponds en mL, par un nombre seul sans espace.",
+      "reponses_acceptees": [
+        "360"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "nᵢ(Zn) = 0,981/65,4 = 0,0150 mol ; le zinc est limitant (acide en excès) : n(H₂) = xₘₐₓ = 0,0150 mol. V = 0,0150 × 24,0 = 0,360 L = 360 mL.",
+      "notion": "Composition de l'état final"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Quand dit-on que des réactifs sont introduits dans les proportions stœchiométriques ?",
+      "propositions": [
+        "Quand leurs quantités initiales sont égales, en mol",
+        "Quand leurs masses initiales sont égales, en g",
+        "Quand un seul réactif reste en excès à la fin",
+        "Quand les rapports nᵢ/coefficient sont égaux"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Proportions stœchiométriques : nᵢ(A)/a = nᵢ(B)/b. Des quantités égales ne conviennent que si les coefficients sont égaux ; des masses égales n'ont pas de sens chimique ; dans un mélange stœchiométrique, aucun réactif n'est en excès.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:092",
+      "type": "vrai_faux",
+      "enonce": "Dans un mélange stœchiométrique, tous les réactifs sont épuisés à la fin d'une transformation totale.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Les rapports nᵢ/coefficient sont égaux : la même valeur xₘₐₓ épuise tous les réactifs en même temps.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:093",
+      "type": "vrai_faux",
+      "enonce": "Pour 2 H₂ + O₂ → 2 H₂O, un mélange de 1,0 mol de dihydrogène et de 1,0 mol de dioxygène est stœchiométrique.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Rapports : H₂ 1,0/2 = 0,50 mol ; O₂ 1,0/1 = 1,0 mol : ils diffèrent. Il faudrait 2,0 mol de H₂ pour 1,0 mol de O₂.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Quelle quantité de dioxygène faut-il pour brûler exactement 0,20 mol d'éthanol, selon C₂H₆O + 3 O₂ → 2 CO₂ + 3 H₂O ?",
+      "propositions": [
+        "0,60 mol",
+        "0,20 mol",
+        "0,067 mol",
+        "0,40 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Proportions stœchiométriques : n(O₂)/3 = 0,20/1, donc n(O₂) = 3 × 0,20 = 0,60 mol. 0,20 mol oublie le coefficient ; 0,067 mol divise par 3 ; 0,40 mol utilise le coefficient 2 de CO₂.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:095",
+      "type": "reponse_courte",
+      "enonce": "Combustion du butane : 2 C₄H₁₀ + 13 O₂ → 8 CO₂ + 10 H₂O. Quelle quantité de dioxygène faut-il pour brûler exactement 0,10 mol de butane ? Réponds en mol, par un nombre seul.",
+      "reponses_acceptees": [
+        "0,65"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "Mélange stœchiométrique : n(O₂)/13 = n(C₄H₁₀)/2, donc n(O₂) = 13 × 0,10/2 = 0,65 mol.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Pour N₂ + 3 H₂ → 2 NH₃, quels mélanges sont stœchiométriques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1,0 mol de N₂ et 3,0 mol de H₂",
+        "0,50 mol de N₂ et 1,5 mol de H₂",
+        "2,0 mol de N₂ et 2,0 mol de H₂",
+        "3,0 mol de N₂ et 1,0 mol de H₂",
+        "0,20 mol de N₂ et 0,40 mol de H₂"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Il faut nᵢ(H₂) = 3 × nᵢ(N₂) : c'est le cas de 1,0 et 3,0 mol, et de 0,50 et 1,5 mol. Les autres rapports H₂/N₂ valent 1 ; 1/3 et 2 : ce ne sont pas des mélanges stœchiométriques.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Pour Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂, quelle masse d'oxyde de fer (M = 159,6 g·mol⁻¹) réagit exactement avec 0,60 mol de monoxyde de carbone ?",
+      "propositions": [
+        "95,8 g",
+        "31,9 g",
+        "47,9 g",
+        "63,8 g"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Proportions stœchiométriques : n(Fe₂O₃) = 0,60/3 = 0,20 mol ; m = 0,20 × 159,6 = 31,9 g. 95,8 g oublie de diviser par 3 (0,60 mol) ; 47,9 g utilise 0,30 mol (division par 2) ; 63,8 g utilise 0,40 mol.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Pour un mélange stœchiométrique, les deux hypothèses de la méthode de détermination de xₘₐₓ donnent la même valeur.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Les deux hypothèses donnent nᵢ(A)/a et nᵢ(B)/b, qui sont égaux dans un mélange stœchiométrique.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 Al + 3 S → Al₂S₃, on dispose de 0,30 mol de soufre. Quelle quantité d'aluminium faut-il pour obtenir un mélange stœchiométrique ?",
+      "propositions": [
+        "0,45 mol",
+        "0,30 mol",
+        "0,20 mol",
+        "0,10 mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "nᵢ(Al)/2 = nᵢ(S)/3, donc nᵢ(Al) = 2 × 0,30/3 = 0,20 mol. 0,45 mol inverse le rapport (3/2) ; 0,30 mol oublie les coefficients ; 0,10 mol divise par 3 sans multiplier par 2.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Quel volume de dioxygène faut-il pour brûler exactement 1,2 L de méthane selon CH₄ + 2 O₂ → CO₂ + 2 H₂O, les deux gaz étant mesurés dans les mêmes conditions ?",
+      "propositions": [
+        "1,2 L",
+        "0,60 L",
+        "4,8 L",
+        "2,4 L"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Dans les mêmes conditions, n = V/Vₘ avec le même Vₘ : les volumes sont proportionnels aux quantités. n(O₂) = 2 n(CH₄), donc V(O₂) = 2 × 1,2 = 2,4 L. 1,2 L oublie le coefficient 2 ; 0,60 L divise par 2 ; 4,8 L multiplie par 4.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 SO₂ + O₂ → 2 SO₃, on fait réagir 0,40 mol de dioxyde de soufre et 0,20 mol de dioxygène ; la transformation est totale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le mélange est stœchiométrique",
+        "L'avancement maximal vaut 0,20 mol",
+        "Il reste 0,20 mol de SO₂",
+        "Il se forme 0,40 mol de SO₃",
+        "Le dioxygène est en excès"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Rapports : SO₂ 0,40/2 = 0,20 mol ; O₂ 0,20/1 = 0,20 mol : mélange stœchiométrique, xₘₐₓ = 0,20 mol. État final : SO₂ 0,40 − 2 × 0,20 = 0 ; O₂ 0 ; SO₃ 2 × 0,20 = 0,40 mol. Aucun réactif ne reste : il n'y a ni SO₂ restant ni dioxygène en excès.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:102",
+      "type": "vrai_faux",
+      "enonce": "Pour 5 Fe²⁺ + MnO₄⁻ + 8 H⁺ → 5 Fe³⁺ + Mn²⁺ + 4 H₂O, avec les ions H⁺ en excès, 5,0 mmol d'ions Fe²⁺ et 1,0 mmol d'ions MnO₄⁻ sont dans les proportions stœchiométriques.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Rapports : Fe²⁺ 5,0/5 = 1,0 mmol ; MnO₄⁻ 1,0/1 = 1,0 mmol. Ils sont égaux : les deux ions sont dans les proportions stœchiométriques.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Un élève affirme : « Un mélange stœchiométrique contient la même quantité de chaque réactif. » Que penser de cette affirmation ?",
+      "propositions": [
+        "Elle est fausse, sauf si les coefficients sont égaux",
+        "Elle est vraie pour toutes les réactions chimiques",
+        "Elle est vraie seulement si les réactifs sont des gaz",
+        "Elle est fausse : il faut des masses égales de réactifs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La condition est nᵢ(A)/a = nᵢ(B)/b : les quantités ne sont égales que si a = b. Par exemple, pour 2 H₂ + O₂, il faut deux fois plus de H₂. L'état physique n'y change rien, et des masses égales ne sont pas la condition.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 H₂ + O₂ → 2 H₂O, lequel de ces mélanges est stœchiométrique ?",
+      "propositions": [
+        "0,60 mol de H₂ et 0,60 mol de O₂",
+        "0,60 mol de H₂ et 0,30 mol de O₂",
+        "0,30 mol de H₂ et 0,60 mol de O₂",
+        "0,60 mol de H₂ et 1,2 mol de O₂"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Il faut nᵢ(H₂)/2 = nᵢ(O₂)/1 : 0,60/2 = 0,30 = 0,30/1. Dans les autres mélanges, le dioxygène est en excès (rapports 0,30 et 0,60 ; 0,15 et 0,60 ; 0,30 et 1,2).",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quelle masse de magnésium (M = 24,3 g·mol⁻¹) réagit exactement avec 0,48 L de dioxygène (Vₘ = 24,0 L·mol⁻¹), selon 2 Mg + O₂ → 2 MgO ?",
+      "propositions": [
+        "0,49 g",
+        "1,9 g",
+        "0,97 g",
+        "12 g"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "n(O₂) = 0,48/24,0 = 0,020 mol ; proportions stœchiométriques : n(Mg) = 2 × 0,020 = 0,040 mol ; m = 0,040 × 24,3 = 0,97 g. 0,49 g oublie le coefficient 2 ; 1,9 g multiplie par 4 ; 12 g multiplie le volume par la masse molaire.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:106",
+      "type": "qcm_multiple",
+      "enonce": "Pour 2 Al + 3 Cu²⁺ → 2 Al³⁺ + 3 Cu, quels mélanges sont stœchiométriques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,20 mol d'Al et 0,30 mol de Cu²⁺",
+        "0,10 mol d'Al et 0,15 mol de Cu²⁺",
+        "0,30 mol d'Al et 0,20 mol de Cu²⁺",
+        "0,20 mol d'Al et 0,20 mol de Cu²⁺"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Il faut nᵢ(Al)/2 = nᵢ(Cu²⁺)/3 : 0,10 = 0,10 et 0,050 = 0,050 pour les deux premiers. 0,30 et 0,20 inverse le rapport (0,15 ≠ 0,067) ; 0,20 et 0,20 donne 0,10 ≠ 0,067.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:107",
+      "type": "qcm_multiple",
+      "enonce": "Après une transformation totale à partir d'un mélange stœchiométrique, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il ne reste aucun réactif",
+        "Les rapports nᵢ/coefficient des réactifs étaient égaux",
+        "Les quantités initiales des réactifs étaient forcément égales",
+        "Les quantités finales des produits sont nulles"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans un mélange stœchiométrique, les rapports nᵢ/coefficient sont égaux et tous les réactifs sont épuisés. Les quantités initiales ne sont égales que si les coefficients le sont ; les produits, eux, ont été formés.",
+      "notion": "Mélange stœchiométrique"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Quand dit-on qu'une transformation chimique est totale ?",
+      "propositions": [
+        "Quand l'avancement final est inférieur à l'avancement maximal",
+        "Quand tous les produits ont été entièrement consommés",
+        "Quand l'avancement maximal est égal à zéro mole",
+        "Quand l'avancement final égale l'avancement maximal"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une transformation est totale si xf = xₘₐₓ : le réactif limitant est épuisé. Si xf < xₘₐₓ, elle est non totale ; les produits ne sont pas consommés ; xₘₐₓ = 0 signifierait qu'un réactif manque dès le départ.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Pour une transformation non totale, l'avancement final est inférieur à l'avancement maximal.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition : la transformation s'arrête avant l'épuisement du réactif limitant, donc xf < xₘₐₓ.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:110",
+      "type": "vrai_faux",
+      "enonce": "À la fin d'une transformation non totale, le réactif limitant a entièrement disparu.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Pour une transformation non totale, xf < xₘₐₓ : il reste du réactif limitant, comme de tous les autres réactifs.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Pour A + B → C + D (coefficients 1), l'avancement maximal vaut 0,50 mol. À l'état final, on mesure 0,35 mol de C, absent au départ. Quelle conclusion est exacte ?",
+      "propositions": [
+        "Non totale, avancement final 0,35 mol",
+        "Totale, avancement final 0,50 mol",
+        "Non totale, avancement final 0,15 mol",
+        "Totale, avancement final 0,35 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "nf(C) = 1 × xf, donc xf = 0,35 mol < xₘₐₓ = 0,50 mol : la transformation est non totale. 0,50 mol suppose à tort qu'elle est totale ; 0,15 mol est la différence xₘₐₓ − xf ; une transformation avec xf < xₘₐₓ n'est pas totale.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:112",
+      "type": "reponse_courte",
+      "enonce": "Acide éthanoïque + éthanol → éthanoate d'éthyle + eau (tous les coefficients valent 1). On part de 0,40 mol d'acide et de 0,40 mol d'éthanol ; à l'état final, on mesure 0,26 mol d'ester. Quel est le taux d'avancement final xf/xₘₐₓ ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,65"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "xₘₐₓ = 0,40 mol (mélange stœchiométrique) ; xf = nf(ester) = 0,26 mol. Taux d'avancement final : 0,26/0,40 = 0,65 (soit 65 %).",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Pour N₂ + 3 H₂ → 2 NH₃, on part de 1,0 mol de diazote et de 3,0 mol de dihydrogène. À l'état final, il reste 2,4 mol de dihydrogène. Quels sont l'avancement final et la nature de la transformation ?",
+      "propositions": [
+        "0,60 mol ; non totale",
+        "0,20 mol ; non totale",
+        "1,0 mol ; totale",
+        "0,80 mol ; non totale"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "nf(H₂) = 3,0 − 3xf = 2,4, donc xf = 0,60/3 = 0,20 mol. xₘₐₓ = 1,0 mol (mélange stœchiométrique). xf < xₘₐₓ : transformation non totale. 0,60 mol est le dihydrogène consommé (oubli du coefficient) ; 0,80 mol est la quantité de N₂ restante.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Une transformation s'arrête alors que son avancement final est plus petit que son avancement maximal. Que peut-on en dire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Tous les réactifs sont présents à l'état final",
+        "La transformation est non totale",
+        "Le taux d'avancement final est inférieur à 1",
+        "On obtient l'état final en remplaçant x par xₘₐₓ"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Si xf < xₘₐₓ, la transformation est non totale par définition ; xf/xₘₐₓ < 1 et aucun réactif n'est épuisé. On ne peut pas utiliser xₘₐₓ pour l'état final : il faut une mesure pour connaître xf.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Comment détermine-t-on l'avancement final d'une transformation ?",
+      "propositions": [
+        "En prenant toujours la plus petite valeur de nᵢ/coefficient",
+        "En additionnant les quantités initiales des réactifs",
+        "À partir d'une mesure sur l'état final",
+        "En lisant les coefficients stœchiométriques de l'équation"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "xf se déduit de l'état final observé ou mesuré (quantité d'un produit, d'un réactif restant, volume de gaz…). La plus petite valeur de nᵢ/coefficient donne xₘₐₓ, qui n'est égal à xf que pour une transformation totale.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Le taux d'avancement final xf/xₘₐₓ s'exprime en mol.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "C'est le rapport de deux quantités de matière : il est sans unité (et compris entre 0 et 1).",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 NO₂ → N₂O₄, on part de 0,10 mol de dioxyde d'azote seul. À l'état final, il reste 0,040 mol de NO₂. Que vaut le taux d'avancement final ?",
+      "propositions": [
+        "0,40",
+        "0,30",
+        "1,2",
+        "0,60"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "xₘₐₓ = 0,10/2 = 0,050 mol. xf = (0,10 − 0,040)/2 = 0,030 mol. Taux : 0,030/0,050 = 0,60. 0,40 compare la quantité restante à la quantité initiale ; 0,30 divise xf par 0,10 mol ; 1,2 oublie le coefficient 2 (0,060/0,050), et un taux ne dépasse jamais 1.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:118",
+      "type": "reponse_courte",
+      "enonce": "On fait réagir 0,0300 mol de magnésium avec 0,0500 mol d'ions H⁺ : Mg + 2 H⁺ → Mg²⁺ + H₂. On recueille 0,600 L de dihydrogène (Vₘ = 24,0 L·mol⁻¹). Quel est l'avancement final ? Réponds en mmol, par un nombre seul.",
+      "reponses_acceptees": [
+        "25",
+        "25,0"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 3,
+      "explication": "nf(H₂) = 0,600/24,0 = 0,0250 mol = xf, soit 25,0 mmol. Pour comparaison : xₘₐₓ = min(0,0300/1 ; 0,0500/2) = 0,0250 mol, donc xf = xₘₐₓ : la transformation est totale.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:119",
+      "type": "vrai_faux",
+      "enonce": "On introduit 1,0 × 10⁻³ mol d'acide éthanoïque dans un grand volume d'eau : CH₃COOH + H₂O → CH₃COO⁻ + H₃O⁺, l'eau étant en excès. À l'état final, il s'est formé 4,0 × 10⁻⁵ mol d'ions H₃O⁺ : la transformation est totale.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "xₘₐₓ = 1,0 × 10⁻³ mol (acide limitant) ; xf = nf(H₃O⁺) = 4,0 × 10⁻⁵ mol. xf < xₘₐₓ (taux 0,040) : la transformation est non totale.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on le rapport, sans unité, de l'avancement final à l'avancement maximal ? Réponds par un groupe nominal.",
+      "reponses_acceptees": [
+        "taux d'avancement final",
+        "le taux d'avancement final",
+        "taux d'avancement",
+        "le taux d'avancement",
+        "taux d avancement final"
+      ],
+      "difficulte": 1,
+      "explication": "Le rapport xf/xₘₐₓ est le taux d'avancement final : il vaut 1 pour une transformation totale et il est inférieur à 1 pour une transformation non totale.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Le taux d'avancement final d'une transformation vaut 1. Que peut-on conclure ?",
+      "propositions": [
+        "La transformation est totale",
+        "La transformation n'a pas eu lieu",
+        "Tous les réactifs restent présents à l'état final",
+        "L'avancement final vaut 1 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "xf/xₘₐₓ = 1 signifie xf = xₘₐₓ : la transformation est totale. Un taux nul correspondrait à l'absence de réaction ; tous les réactifs restent seulement si le taux est inférieur à 1 ; le taux est sans unité et ne donne pas la valeur de xf.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:122",
+      "type": "qcm_multiple",
+      "enonce": "Acide + alcool → ester + eau (coefficients 1). On part de 2,0 mol d'acide et de 3,0 mol d'alcool ; à l'état final, on mesure 1,6 mol d'ester. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'avancement maximal vaut 2,0 mol",
+        "La transformation est non totale",
+        "Il reste 1,4 mol d'alcool",
+        "Il ne reste plus d'acide",
+        "Le taux d'avancement final vaut 0,53"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "xₘₐₓ = min(2,0 ; 3,0) = 2,0 mol (acide limitant). xf = 1,6 mol < 2,0 mol : non totale (taux 1,6/2,0 = 0,80). Il reste 2,0 − 1,6 = 0,4 mol d'acide et 3,0 − 1,6 = 1,4 mol d'alcool. 0,53 divise par 3,0 mol au lieu de xₘₐₓ.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Pour une transformation de taux d'avancement final 0,40, l'avancement maximal vaut 0,50 mol. Que vaut l'avancement final ?",
+      "propositions": [
+        "1,25 mol",
+        "0,20 mol",
+        "0,10 mol",
+        "0,40 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "xf = taux × xₘₐₓ = 0,40 × 0,50 = 0,20 mol. 1,25 mol divise au lieu de multiplier (et dépasserait xₘₐₓ) ; 0,10 mol est xₘₐₓ − 0,40 ; 0,40 mol confond le taux, sans unité, et l'avancement.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Quelle grandeur compare-t-on à l'avancement maximal pour savoir si une transformation est totale ?",
+      "propositions": [
+        "La quantité initiale du réactif en excès",
+        "La masse totale du système à l'état final",
+        "L'avancement final",
+        "Le coefficient stœchiométrique du réactif limitant"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On compare xf, déduit de l'état final, à xₘₐₓ, calculé à partir de l'état initial : égalité pour une transformation totale, xf < xₘₐₓ sinon. Les autres grandeurs ne permettent pas cette comparaison.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Quelles mesures sur l'état final permettent de déterminer l'avancement final ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La quantité d'un produit formé",
+        "La quantité restante d'un réactif",
+        "Le volume d'un gaz produit",
+        "Les coefficients de l'équation seuls",
+        "La quantité initiale du réactif limitant seule"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "xf se calcule avec la ligne « en cours » et une donnée de l'état final : nf(C) = c·xf, nf(A) = nᵢ(A) − a·xf, ou n = V/Vₘ pour un gaz. Les coefficients ou une quantité initiale, seuls, ne décrivent pas l'état final.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Pour A + 2 B → 2 C, on part de 0,10 mol de A et de 0,30 mol de B, sans C. À l'état final, on mesure 0,12 mol de C. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'avancement final vaut 0,060 mol",
+        "La transformation est non totale",
+        "Il reste 0,18 mol de B",
+        "L'avancement final vaut 0,12 mol",
+        "Il ne reste plus de A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "nf(C) = 2xf = 0,12 mol, donc xf = 0,060 mol. xₘₐₓ = min(0,10/1 ; 0,30/2) = 0,10 mol : xf < xₘₐₓ, non totale. nf(B) = 0,30 − 2 × 0,060 = 0,18 mol ; nf(A) = 0,10 − 0,060 = 0,04 mol (A n'a pas disparu). 0,12 mol oublie le coefficient 2 de C.",
+      "notion": "Transformation totale ou non totale"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Dans un programme Python de bilan de matière à deux réactifs A et B, quelle instruction donne l'avancement maximal ?",
+      "propositions": [
+        "xmax = max(nA0 / a, nB0 / b)",
+        "xmax = min(nA0 * a, nB0 * b)",
+        "xmax = min(nA0, nB0)",
+        "xmax = min(nA0 / a, nB0 / b)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "xₘₐₓ est la plus petite valeur de nᵢ/coefficient : min(nA0 / a, nB0 / b). max donnerait une quantité négative pour un réactif ; il faut diviser par les coefficients, pas multiplier ni les ignorer.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Un programme contient les lignes nA0 = 0.30, nB0 = 0.50, a = 1, b = 2 et xmax = min(nA0 / a, nB0 / b). Quelle valeur prend xmax ?",
+      "propositions": [
+        "0.25",
+        "0.3",
+        "0.5",
+        "0.15"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "nA0 / a = 0.30 et nB0 / b = 0.25 ; le minimum vaut 0.25 (B limitant). 0.3 et 0.5 ne tiennent pas compte de la division de nB0 par 2 ou prennent le mauvais minimum ; 0.15 divise nA0 par 2.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:129",
+      "type": "vrai_faux",
+      "enonce": "En Python, un nombre décimal s'écrit avec un point, par exemple 0.40.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Python utilise le point comme séparateur décimal ; 0,40 serait lu comme deux nombres, 0 et 40.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Dans le programme de bilan de matière du cours, on peut entrer directement les masses des réactifs, en g, à la place des quantités de matière.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le programme compare des rapports nᵢ/coefficient : les données doivent être des quantités de matière en mol, sinon le résultat est faux.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme de bilan de matière du cours, à quoi sert le test if xA < xB … elif … else ?",
+      "propositions": [
+        "À calculer la masse de chaque produit formé",
+        "À désigner le réactif limitant",
+        "À vérifier que l'équation est bien ajustée",
+        "À convertir les volumes de gaz en quantités"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le test compare les deux rapports nᵢ/coefficient pour désigner le réactif limitant, ou signaler un mélange stœchiométrique si ils sont égaux. Le programme ne calcule pas de masse, ne vérifie pas l'équation et ne convertit pas de volume.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "On utilise le programme du cours (xA = nA0 / a ; xB = nB0 / b ; xmax = min(xA, xB) ; test if/elif/else sur xA et xB ; nA = nA0 − a·xmax ; nB = nB0 − b·xmax ; nC = c·xmax) avec nA0 = 0.60, nB0 = 0.30, a = 2, b = 1, c = 2. Quels résultats affiche-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "xmax vaut 0.3",
+        "Le programme signale un mélange stœchiométrique",
+        "nC vaut 0.6",
+        "nA vaut 0.3",
+        "A est désigné comme réactif limitant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "xA = 0.60/2 = 0.30 et xB = 0.30/1 = 0.30 : égaux, donc xmax = 0.3 et la branche else signale un mélange stœchiométrique. nA = 0.60 − 2 × 0.30 = 0 ; nB = 0 ; nC = 2 × 0.30 = 0.6. Ni A ni B n'est désigné seul comme limitant.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Une boucle while augmente x par pas de 0,001 mol tant que les quantités de tous les réactifs restent positives ou nulles. Que représente la dernière valeur de x acceptée ?",
+      "propositions": [
+        "La valeur exacte de l'avancement final mesuré",
+        "La quantité initiale du réactif en excès",
+        "Une valeur approchée de xₘₐₓ",
+        "La quantité de produit formée à l'état final"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La boucle s'arrête quand un réactif deviendrait négatif : la dernière valeur acceptée approche xₘₐₓ, à un pas près. Elle ne vient d'aucune mesure (ce n'est pas xf mesuré) ; la quantité de produit vaut coefficient × xₘₐₓ, et la quantité du réactif en excès n'intervient pas directement.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:134",
+      "type": "vrai_faux",
+      "enonce": "La précision de la valeur de xₘₐₓ obtenue par une boucle à pas constant dépend du pas choisi.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La boucle avance par sauts égaux au pas : la valeur obtenue approche xₘₐₓ à un pas près. Un pas plus petit donne une meilleure précision.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Dans la ligne nB = nB0 - b * xmax d'un programme de bilan de matière, que représente nB ?",
+      "propositions": [
+        "La quantité initiale de B",
+        "L'avancement maximal de la réaction",
+        "La quantité de B qui a été consommée",
+        "La quantité finale de B"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "nB0 est la quantité initiale ; b * xmax la quantité consommée ; la différence nB est la quantité finale de B (ligne « état final » du tableau, pour une transformation totale).",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Le programme du cours est lancé avec nA0 = 0.50, nB0 = 0.90, a = 1, b = 3 et c = 2 (réaction A + 3 B → 2 C). Quelle valeur de nC, en mol, affiche-t-il ? Réponds par un nombre seul.",
+      "reponses_acceptees": [
+        "0.6",
+        "0,6",
+        "0,60"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "xA = 0.50/1 = 0.50 ; xB = 0.90/3 = 0.30 ; xmax = 0.30 (B limitant) ; nC = c × xmax = 2 × 0.30 = 0.6 mol.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Une élève adapte le programme à 2 H₂ + O₂ → 2 H₂O, avec nA0 = 0.80 (H₂) et nB0 = 0.50 (O₂), mais écrit xA = nA0 en oubliant de diviser par a = 2. Quelle est la conséquence ?",
+      "propositions": [
+        "Il affiche 0.5 au lieu de 0.4",
+        "Il affiche 0.4, la bonne valeur",
+        "Il affiche 0.8 au lieu de 0.4",
+        "Il affiche 0.25 au lieu de 0.5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Valeur correcte : min(0.80/2 ; 0.50/1) = 0.40 (H₂ limitant). Avec l'erreur, xA = 0.80 et xmax = min(0.80 ; 0.50) = 0.5 : le programme affiche 0.5 et désigne à tort O₂ comme limitant.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:138",
+      "type": "vrai_faux",
+      "enonce": "Pour l'équation 2 A + B → C, avec nA0 = 0.10 et nB0 = 0.10, le programme du cours désigne B comme réactif limitant.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "xA = 0.10/2 = 0.05 et xB = 0.10/1 = 0.10 : xA < xB, donc le programme désigne A comme réactif limitant (xmax = 0.05).",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme du cours, que représente la variable xA = nA0 / a ?",
+      "propositions": [
+        "La quantité de A restant à la fin",
+        "L'avancement qui épuiserait A",
+        "La quantité de A consommée au total",
+        "La masse de A introduite au départ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "nA0 / a est l'avancement pour lequel nA0 − a·x = 0 : celui qui épuiserait A (hypothèse « A limitant »). La quantité restante est nA ; la quantité consommée est a·xmax ; le programme ne manipule pas de masse.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:140",
+      "type": "qcm_multiple",
+      "enonce": "Dans le programme de bilan de matière du cours, quelles lignes correspondent à la ligne « état final » du tableau d'avancement ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "nA = nA0 - a * xmax",
+        "nC = c * xmax",
+        "xmax = min(xA, xB)",
+        "xA = nA0 / a"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La ligne « état final » donne les quantités pour x = xmax : nA = nA0 − a·xmax et nC = c·xmax. Les lignes xA = nA0 / a et xmax = min(xA, xB) servent à déterminer xmax (méthode des hypothèses).",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Pour adapter le programme du cours à une réaction A + B → C + D, quelles modifications sont nécessaires ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Ajouter une ligne nD = d * xmax",
+        "Entrer la valeur du coefficient d",
+        "Remplacer min par max",
+        "Entrer les quantités initiales en grammes"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Il faut une ligne de calcul par espèce : ajouter le coefficient d et nD = d * xmax. xmax reste le minimum des rapports, et les données restent des quantités de matière en mol.",
+      "notion": "Bilan de matière avec Python"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation donne la quantité de matière de soluté à partir de la concentration C et du volume V de solution ?",
+      "propositions": [
+        "n = C / V",
+        "n = V / C",
+        "n = C × V",
+        "n = C × V × M"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Par définition C = n/V, donc n = C × V (C en mol·L⁻¹, V en L, n en mol). Les autres relations ne sont pas homogènes à une quantité de matière.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la quantité de matière contenue dans 6,4 g de dioxygène O₂ (M(O) = 16,0 g·mol⁻¹) ?",
+      "propositions": [
+        "0,40 mol",
+        "0,10 mol",
+        "2,0 × 10² mol",
+        "0,20 mol"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "M(O₂) = 2 × 16,0 = 32,0 g·mol⁻¹ ; n = m/M = 6,4/32,0 = 0,20 mol. 0,40 mol utilise M(O) au lieu de M(O₂) ; 0,10 mol divise par 64 ; 2,0 × 10² mol multiplie m par M.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Quelle quantité de matière de dihydrogène contient un volume de 0,60 L, à 20 °C et sous 1,013 × 10⁵ Pa (Vₘ = 24,0 L·mol⁻¹) ?",
+      "propositions": [
+        "0,025 mol",
+        "14 mol",
+        "40 mol",
+        "0,25 mol"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "n = V/Vₘ = 0,60/24,0 = 0,025 mol. 14 mol multiplie V par Vₘ ; 40 mol inverse la relation ; 0,25 mol est une erreur de puissance de 10.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Quelle quantité de soluté contiennent 25,0 mL d'une solution de concentration 0,200 mol·L⁻¹ ? Réponds en mmol, par un nombre seul.",
+      "reponses_acceptees": [
+        "5",
+        "5,0",
+        "5,00"
+      ],
+      "marge": 0.02,
+      "marge_relative": true,
+      "difficulte": 2,
+      "explication": "n = C × V = 0,200 × 25,0 × 10⁻³ = 5,00 × 10⁻³ mol = 5,00 mmol.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:146",
+      "type": "qcm_unique",
+      "enonce": "On plonge 2,43 g de magnésium (M = 24,3 g·mol⁻¹) dans 50,0 mL d'acide chlorhydrique de concentration en ions H⁺ égale à 2,00 mol·L⁻¹ : Mg + 2 H⁺ → Mg²⁺ + H₂. Quel est le bilan de l'étape « avancement maximal » ?",
+      "propositions": [
+        "Mélange stœchiométrique, xₘₐₓ = 0,100 mol",
+        "Ions H⁺ limitants, xₘₐₓ = 0,0500 mol",
+        "Magnésium limitant, xₘₐₓ = 0,100 mol",
+        "Ions H⁺ limitants, xₘₐₓ = 0,100 mol"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "nᵢ(Mg) = 2,43/24,3 = 0,100 mol ; nᵢ(H⁺) = 2,00 × 0,0500 = 0,100 mol. Rapports : Mg 0,100/1 = 0,100 mol ; H⁺ 0,100/2 = 0,0500 mol. Les ions H⁺ sont limitants et xₘₐₓ = 0,0500 mol. Des quantités égales ne font pas un mélange stœchiométrique ici (coefficients 1 et 2) ; les propositions à 0,100 mol oublient de diviser par le coefficient 2.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Quelles relations permettent de calculer une quantité de matière initiale avant d'établir un tableau d'avancement ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "n = m / M",
+        "n = C × V",
+        "n = V / Vₘ, pour un gaz",
+        "n = M / m",
+        "n = Vₘ / V, pour un gaz"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "n = m/M (solide ou liquide), n = C × V (soluté) et n = V/Vₘ (gaz) sont les relations du chapitre 2. Les formes inversées M/m et Vₘ/V ne sont pas homogènes à une quantité de matière.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:148",
+      "type": "vrai_faux",
+      "enonce": "À 20 °C et sous 1,013 × 10⁵ Pa (Vₘ = 24,0 L·mol⁻¹), 0,50 mol de gaz occupe un volume de 24 L.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "V = n × Vₘ = 0,50 × 24,0 = 12 L. 24 L est le volume d'une mole, pas de 0,50 mol.",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:149",
+      "type": "qcm_unique",
+      "enonce": "Quelle quantité d'ions H⁺ contiennent 40,0 mL d'acide chlorhydrique de concentration en ions H⁺ égale à 0,250 mol·L⁻¹ ?",
+      "propositions": [
+        "10,0 mol",
+        "0,160 mol",
+        "1,00 × 10⁻² mol",
+        "1,00 × 10⁻³ mol"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "n = C × V = 0,250 × 0,0400 = 1,00 × 10⁻² mol. 10,0 mol oublie de convertir les mL en L ; 0,160 mol calcule V/C ; 1,00 × 10⁻³ mol est une erreur de conversion (0,00400 L).",
+      "notion": "Quantités initiales d'un bilan"
+    },
+    {
+      "source": "physique-chimie-1re:ch4:banque:150",
+      "type": "qcm_multiple",
+      "enonce": "On fait réagir 2,3 g de sodium (M = 23,0 g·mol⁻¹) avec 1,2 L de dichlore (Vₘ = 24,0 L·mol⁻¹) : 2 Na + Cl₂ → 2 NaCl. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La quantité initiale de sodium vaut 0,10 mol",
+        "La quantité initiale de dichlore vaut 0,050 mol",
+        "Le mélange est stœchiométrique",
+        "Le sodium est le réactif limitant",
+        "La quantité initiale de dichlore vaut 29 mol"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "n(Na) = 2,3/23,0 = 0,10 mol ; n(Cl₂) = 1,2/24,0 = 0,050 mol. Rapports : 0,10/2 = 0,050 et 0,050/1 = 0,050 : mélange stœchiométrique, aucun réactif n'est seul limitant. 29 mol multiplie V par Vₘ.",
+      "notion": "Quantités initiales d'un bilan"
+    }
+  ]
+}
