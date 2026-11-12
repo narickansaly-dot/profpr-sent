@@ -33,6 +33,11 @@ Accord initial : **150/150** (aucun écart). Dix remarques sur des questions où
 - La bonne réponse des qcm_unique est la plus longue dans 16 cas sur 75.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 9 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 6 questions modifiées (`ch9-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 6/6**. Il confirme le calcul de la 127 (densité ≈ 3,1 < 3,25) ; les variantes demandées pour la 149 étaient déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Les calculs reposent sur des valeurs choisies dans le cours : loi e ≈ 10 √t (le coefficient varie de 7 à 10 selon les manuels) et densités 2,9 (croûte), 3,3 (manteau lithosphérique) et 3,25 (asthénosphère). Les questions le rappellent dans l'énoncé quand le calcul en dépend.

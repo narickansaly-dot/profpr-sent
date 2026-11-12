@@ -35,6 +35,11 @@ Accord initial : 150/150 (aucun écart, aucune question sans réponse). Le relec
 - Biais de longueur : la bonne réponse est la plus longue dans 3 qcm_unique sur 75. Positions des bonnes réponses : 21 / 18 / 20 / 16.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 8 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 7 questions modifiées (`ch8-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 7/7**. Ses remarques (138 : valeurs de la fourchette ; 141 : tiret ou signe moins) portaient sur des cas déjà acceptés (marge de 500 autour de 5500 ; variantes « -2 » et « −2 »). Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les six questions modifiées passeront la seconde vérification prévue.

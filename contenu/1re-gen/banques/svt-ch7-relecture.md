@@ -31,6 +31,11 @@ Accord initial : 150/150 (aucun écart, aucune question sans réponse). Six rema
 - Biais de longueur : la bonne réponse est la plus longue dans 15 qcm_unique sur 75 ; positions des bonnes réponses 20 / 20 / 19 / 16.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 7 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 3 questions modifiées (`ch7-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 3/3**. Il confirme le calcul de la 147 (71 % de 510 = 362,1). Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les trois questions modifiées ont désormais une réponse incontestable d'après le texte du chapitre.
