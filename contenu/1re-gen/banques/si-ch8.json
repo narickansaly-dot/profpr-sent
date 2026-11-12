@@ -1,0 +1,2320 @@
+{
+  "chapitre": 8,
+  "notions": [
+    "Chaîne d'information",
+    "Capteurs, détecteurs et signaux",
+    "Caractéristiques d'un capteur",
+    "Binaire, hexadécimal, bits et octets",
+    "Conversion analogique-numérique",
+    "Variables, types et conditions",
+    "Boucles et fonctions",
+    "Comportements séquentiel et événementiel",
+    "Diagramme d'états-transitions"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch8:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les trois fonctions de la chaîne d'information ?",
+      "propositions": [
+        "Acquérir, traiter, communiquer",
+        "Alimenter, convertir, transmettre",
+        "Mesurer, distribuer, agir",
+        "Acquérir, moduler, agir"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La chaîne d'information acquiert les informations, les traite et communique les résultats. Alimenter, convertir, transmettre, moduler et agir sont des fonctions de la chaîne de puissance.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction de la chaîne d'information le microcontrôleur d'une carte Arduino réalise-t-il ?",
+      "propositions": [
+        "Acquérir",
+        "Traiter",
+        "Communiquer",
+        "Convertir"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le microcontrôleur mémorise, calcule, compare et décide selon son programme : c'est la fonction traiter.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Dans un portail motorisé, la cellule photoélectrique qui repère un obstacle réalise la fonction…",
+      "propositions": [
+        "traiter",
+        "communiquer",
+        "acquérir",
+        "agir"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La cellule prélève une information sur l'environnement (présence d'un obstacle) et la transforme en signal électrique : elle acquiert.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:004",
+      "type": "qcm_unique",
+      "enonce": "L'écran du guidon d'une trottinette électrique, qui affiche la vitesse et la charge restante, relève de quelle fonction ?",
+      "propositions": [
+        "Acquérir",
+        "Traiter",
+        "Alimenter",
+        "Communiquer"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'écran transmet des informations à l'utilisateur : c'est la fonction communiquer de la chaîne d'information.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ordre de grandeur de la puissance des signaux qui circulent dans la chaîne d'information ?",
+      "propositions": [
+        "Quelques milliwatts",
+        "Quelques kilowatts",
+        "Quelques mégawatts",
+        "Quelques centaines de watts"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La chaîne d'information travaille avec des signaux de très faible puissance, quelques milliwatts ; c'est la chaîne de puissance qui manipule l'énergie mettant le produit en mouvement.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Le module Wi-Fi d'une station météo connectée envoie les mesures vers un smartphone. Quelle fonction réalise-t-il ?",
+      "propositions": [
+        "Acquérir",
+        "Communiquer",
+        "Traiter",
+        "Alimenter"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Transmettre des données à un autre système est le rôle de la fonction communiquer (module Wi-Fi ou Bluetooth).",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Dans un microcontrôleur, où sont conservés le programme, les réglages et les dernières mesures ?",
+      "propositions": [
+        "Dans le capteur, qui garde l'historique de ses mesures",
+        "Dans le variateur de la chaîne de puissance",
+        "Dans la mémoire du microcontrôleur (fonction traiter)",
+        "Dans le voyant de la fonction communiquer"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La fonction traiter comprend la mémorisation : programme, réglages et dernières mesures sont stockés dans la mémoire du microcontrôleur.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Sur le schéma des chaînes d'un portail motorisé, une flèche en pointillés part du bloc « agir » (le vantail) et revient vers le bloc « acquérir ». Que représente-t-elle ?",
+      "propositions": [
+        "Le courant électrique qui revient du moteur vers la batterie",
+        "L'énergie mécanique récupérée quand le vantail ralentit",
+        "Les ordres de marche envoyés par la carte au moteur",
+        "Le retour d'information sur l'effet réellement produit"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Les capteurs (fin de course, cellule) renseignent la chaîne d'information sur l'effet produit, ici la position du vantail. Sans ce retour, la commande travaillerait « à l'aveugle ».",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Dans une trottinette électrique, laquelle de ces associations entre un constituant et sa fonction est correcte ?",
+      "propositions": [
+        "Capteurs à effet Hall du moteur → acquérir",
+        "Contrôleur qui calcule le courant → communiquer",
+        "Écran du guidon → traiter",
+        "Poignée d'accélérateur → traiter"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les capteurs à effet Hall mesurent la position du rotor : ils acquièrent. Le contrôleur traite, l'écran communique et la poignée d'accélérateur est un capteur de position (acquérir).",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces constituants réalisent la fonction « acquérir » ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un détecteur de fin de course",
+        "Un bouton poussoir",
+        "Un récepteur de télécommande",
+        "Un microcontrôleur",
+        "Un buzzer"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Détecteur, bouton et récepteur de télécommande prélèvent une information ou une consigne. Le microcontrôleur traite ; le buzzer communique.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces constituants d'un portail motorisé appartiennent à la chaîne de puissance ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le moteur",
+        "Le réducteur",
+        "Le vantail",
+        "La cellule photoélectrique",
+        "La carte électronique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le moteur convertit, le réducteur transmet et le vantail agit : ce sont des constituants de la chaîne de puissance. La cellule acquiert et la carte traite : chaîne d'information.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Une station météo connectée comporte une sonde de température, une carte micro:bit qui calcule la moyenne des mesures de la journée et un module Bluetooth qui envoie cette moyenne à une tablette. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La sonde réalise la fonction acquérir",
+        "Le calcul de la moyenne relève de la fonction traiter",
+        "Le module Bluetooth réalise la fonction communiquer",
+        "La carte micro:bit réalise la fonction convertir de la chaîne de puissance",
+        "La tablette réalise la fonction acquérir de la station"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Sonde : acquérir ; calcul : traiter ; envoi des données : communiquer. La carte ne convertit pas d'énergie, et la tablette est un autre système qui reçoit les données.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Un capteur appartient à la chaîne d'information.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Le capteur acquiert une information : il fait partie de la chaîne d'information, à la différence des actionneurs.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Un moteur électrique fait partie de la chaîne d'information, puisqu'il reçoit des ordres du microcontrôleur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le moteur convertit l'énergie électrique en énergie mécanique : il appartient à la chaîne de puissance, même s'il reçoit des ordres (par l'intermédiaire du variateur).",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:015",
+      "type": "vrai_faux",
+      "enonce": "La chaîne d'information envoie ses ordres à la chaîne de puissance, par exemple à un variateur ou à un relais.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La fonction communiquer transmet les ordres vers les sorties : variateur, relais, contacteur.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Même sans aucun capteur de position, la carte d'un portail motorisé peut savoir que le vantail est arrivé en butée.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Sans retour d'information par un capteur (fin de course), la commande travaille « à l'aveugle » : elle ne peut pas connaître l'effet réellement produit.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:017",
+      "type": "reponse_courte",
+      "enonce": "Dans la chaîne d'information, quelle fonction consiste à mémoriser, calculer, comparer et décider ? Réponds par un verbe à l'infinitif.",
+      "reponses_acceptees": [
+        "traiter",
+        "la fonction traiter",
+        "traitement",
+        "le traitement"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la fonction traiter, assurée par un microcontrôleur, un automate ou un ordinateur.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch8:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on un capteur dont le signal de sortie ne prend que deux états, 0 ou 1 ?",
+      "propositions": [
+        "Un codeur absolu",
+        "Un détecteur",
+        "Un convertisseur",
+        "Un actionneur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un capteur à sortie logique (tout ou rien) s'appelle un détecteur : il répond par oui ou par non.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quel capteur détecte la coupure d'un faisceau infrarouge devant un portail motorisé ?",
+      "propositions": [
+        "Le détecteur de proximité inductif",
+        "La thermistance CTN",
+        "La cellule photoélectrique",
+        "La jauge de déformation"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La barrière (ou cellule) photoélectrique détecte la coupure d'un faisceau infrarouge. Le détecteur inductif repère une pièce métallique proche, la CTN mesure une température, la jauge une déformation.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Comment varie la résistance d'une thermistance CTN quand la température augmente ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle reste constante",
+        "Elle devient nulle",
+        "Elle diminue"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "CTN signifie coefficient de température négatif : la résistance diminue quand la température augmente.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Sur un compteur de vélo, quel détecteur se ferme à chaque passage d'un aimant fixé sur un rayon ?",
+      "propositions": [
+        "Un interrupteur à lame souple (ILS)",
+        "Un détecteur de présence infrarouge passif",
+        "Une photorésistance",
+        "Une jauge de déformation"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'ILS se ferme à l'approche d'un aimant, sans contact : c'est le capteur de vitesse classique des vélos.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Le capteur à ultrasons d'un robot reçoit l'écho 11,7 ms après l'émission. La vitesse du son vaut 340 m/s. À quelle distance se trouve l'obstacle ?",
+      "propositions": [
+        "Environ 3,98 m",
+        "Environ 1,99 m",
+        "Environ 1 989 m",
+        "Environ 1,99 km"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le son fait l'aller-retour : d = v × t / 2 = 340 × 0,0117 / 2 ≈ 1,99 m. 3,98 m oublie la division par 2 ; 1 989 m oublie de convertir les millisecondes en secondes.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Un codeur incrémental fournit 200 impulsions par tour. Quelle est sa résolution angulaire ?",
+      "propositions": [
+        "0,56°",
+        "200°",
+        "1,8°",
+        "3,6°"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Résolution = 360° / N = 360 / 200 = 1,8°. 0,56° correspond au calcul inversé 200 / 360 ; 3,6° à 720 / 200.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un bras robotisé porte un codeur de 1 024 impulsions par tour. En 0,2 s, le microcontrôleur compte 2 048 impulsions. Quelle est la vitesse de rotation ?",
+      "propositions": [
+        "10 tr/min",
+        "120 tr/min",
+        "2 tr/min",
+        "600 tr/min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Nombre de tours : 2 048 / 1 024 = 2 tours en 0,2 s, soit 2 / 0,2 = 10 tr/s, donc 10 × 60 = 600 tr/min. 10 tr/min confond tr/s et tr/min ; 120 tr/min oublie de diviser par 0,2 s.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Quel capteur transforme l'angle du joystick d'un fauteuil roulant électrique en tension ?",
+      "propositions": [
+        "Un potentiomètre",
+        "Une thermistance",
+        "Un ILS",
+        "Une barrière photoélectrique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le potentiomètre donne une tension proportionnelle à un angle : c'est le principe du joystick et de la poignée d'accélérateur.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Quel avantage un codeur absolu présente-t-il par rapport à un codeur incrémental ?",
+      "propositions": [
+        "Il produit plus d'impulsions par tour",
+        "Il connaît l'angle dès la mise sous tension",
+        "Il mesure aussi la température du moteur",
+        "Il fonctionne sans aucune alimentation électrique"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le codeur absolu délivre un code binaire différent pour chaque position : pas besoin de compter depuis une position de référence.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces capteurs délivrent un signal logique (tout ou rien) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un détecteur de fin de course",
+        "Un détecteur infrarouge passif (PIR)",
+        "Un interrupteur à lame souple",
+        "Une thermistance CTN dans un pont diviseur",
+        "Un potentiomètre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Fin de course, PIR et ILS sont des détecteurs : leur sortie vaut 0 ou 1. La CTN et le potentiomètre donnent une tension qui varie de façon continue (signal analogique).",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces capteurs fournissent un signal analogique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une photorésistance placée dans un pont diviseur",
+        "Un potentiomètre",
+        "Une jauge de déformation",
+        "Un détecteur de fin de course",
+        "Un capteur numérique relié par un bus"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Photorésistance, potentiomètre et jauge donnent un signal qui varie de façon continue avec la grandeur. Le fin de course est logique ; le capteur relié par un bus transmet un nombre (numérique).",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Le capteur d'humidité d'une station météo connectée transmet directement un nombre codé en binaire par un bus. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son signal de sortie est numérique",
+        "Il contient déjà un convertisseur",
+        "Il délivre un signal logique tout ou rien",
+        "Sa sortie est une tension proportionnelle à l'humidité"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Un capteur numérique contient son propre convertisseur et transmet un nombre par une liaison série ou un bus.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Un codeur incrémental de 250 impulsions par tour est fixé sur l'arbre d'un moteur. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa résolution vaut 1,44°",
+        "625 impulsions correspondent à 2,5 tours",
+        "Il connaît l'angle dès la mise sous tension",
+        "Il fournit un signal analogique continu"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Résolution : 360 / 250 = 1,44° ; 625 / 250 = 2,5 tours. Le codeur incrémental doit compter depuis une référence et fournit un train d'impulsions, pas un signal continu.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Une jauge de déformation permet de mesurer une force, par exemple l'effort exercé sur le pédalier d'un vélo à assistance électrique.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La jauge mesure une petite déformation, donc une force : elle équipe le capteur de couple du pédalier et les balances.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:032",
+      "type": "vrai_faux",
+      "enonce": "Un détecteur infrarouge passif (PIR) émet un faisceau infrarouge et attend qu'il revienne.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le PIR est passif : il n'émet rien et réagit au rayonnement thermique d'une personne en mouvement.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Pour un capteur à ultrasons, la distance vaut d = v × t, où t est la durée de l'aller-retour de l'écho.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le son parcourt deux fois la distance : 2 × d = v × t, donc d = v × t / 2.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:034",
+      "type": "reponse_courte",
+      "enonce": "Un drone mesure sa hauteur avec un capteur à ultrasons. L'écho revient au bout de 4 ms ; la vitesse du son vaut 340 m/s. Quelle est la hauteur, en centimètres ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "68"
+      ],
+      "difficulte": 2,
+      "explication": "d = v × t / 2 = 340 × 0,004 / 2 = 0,68 m = 68 cm.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:035",
+      "type": "reponse_courte",
+      "enonce": "Un codeur de 400 impulsions par tour compte 3 000 impulsions en 1,5 s. Quelle est la vitesse de rotation de l'arbre, en tr/min ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "300"
+      ],
+      "difficulte": 3,
+      "explication": "3 000 / 400 = 7,5 tours en 1,5 s, soit 7,5 / 1,5 = 5 tr/s, donc 5 × 60 = 300 tr/min.",
+      "notion": "Capteurs, détecteurs et signaux"
+    },
+    {
+      "source": "si-1re:ch8:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on l'intervalle des valeurs de la grandeur qu'un capteur peut mesurer correctement ?",
+      "propositions": [
+        "La sensibilité",
+        "La résolution",
+        "L'étendue de mesure",
+        "Le temps de réponse du capteur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'étendue de mesure est la plage mesurable, par exemple de −20 °C à 60 °C.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la définition de la sensibilité S d'un capteur ?",
+      "propositions": [
+        "La plus petite variation que la chaîne distingue",
+        "La plage de valeurs mesurables",
+        "La durée de stabilisation de la sortie",
+        "Le rapport Δ(sortie) / Δ(entrée)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "S = Δ(sortie) / Δ(entrée), par exemple en V/°C. La plus petite variation distinguée est la résolution ; la plage mesurable est l'étendue de mesure.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la plus petite variation de la grandeur mesurée que la chaîne d'acquisition peut distinguer ?",
+      "propositions": [
+        "La résolution",
+        "La sensibilité",
+        "L'étendue de mesure",
+        "La pleine échelle"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "C'est la définition de la résolution. Elle dépend du capteur mais aussi du convertisseur analogique-numérique.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de température linéaire délivre 0,5 V à 0 °C et 3,0 V à 50 °C. Quelle est sa sensibilité ?",
+      "propositions": [
+        "0,06 V/°C",
+        "0,05 V/°C",
+        "20 V/°C",
+        "2,5 V/°C"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "S = (3,0 − 0,5) / (50 − 0) = 2,5 / 50 = 0,05 V/°C. 0,06 V/°C oublie la tension à 0 °C ; 20 V/°C est l'inverse ; 2,5 V/°C oublie de diviser par l'écart de température.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Un capteur linéaire de station météo délivre 0 V à −20 °C et 4 V à 60 °C. Il affiche U = 1,5 V. Quelle est la température ?",
+      "propositions": [
+        "30 °C",
+        "50 °C",
+        "10 °C",
+        "−50 °C"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "S = 4 / 80 = 0,05 V/°C ; θ = −20 + 1,5 / 0,05 = −20 + 30 = 10 °C. 30 °C oublie le décalage de −20 °C ; 50 °C et −50 °C sont des erreurs de signe.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de température a une sortie proportionnelle à la température en degrés Celsius, avec une sensibilité de 10 mV/°C. Que délivre-t-il à 37 °C ?",
+      "propositions": [
+        "3,7 V",
+        "37 V",
+        "0,037 V",
+        "0,37 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "U = 37 × 10 = 370 mV = 0,37 V.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:042",
+      "type": "qcm_unique",
+      "enonce": "En quoi consiste l'étalonnage d'un capteur ?",
+      "propositions": [
+        "Relever sa sortie pour des valeurs connues de la grandeur",
+        "Le remplacer dès qu'il est usé",
+        "Augmenter sa sensibilité en le chauffant",
+        "Le placer dans un pont diviseur pour qu'il devienne linéaire"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Étalonner, c'est relever la sortie du capteur pour des valeurs connues de la grandeur (avec un thermomètre de référence, par exemple) et construire une table de correspondance.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de sensibilité 20 mV/°C est relié à un CAN de 10 bits de pleine échelle 5 V. Quelle est la résolution en température de cette chaîne de mesure ?",
+      "propositions": [
+        "Environ 4,1 °C",
+        "Environ 0,24 °C",
+        "Environ 0,098 °C",
+        "Environ 0,0049 °C"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "q = 5 / 1 024 ≈ 4,88 mV ; résolution = 4,88 / 20 ≈ 0,24 °C. 4,1 °C est le rapport inversé ; 0,098 °C correspond à un capteur de 50 mV/°C ; 0,0049 est le quantum en volts.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Le capteur de température d'une station météo est linéaire : il délivre 0 V à −20 °C et 4 V à 60 °C. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa sensibilité vaut 0,05 V/°C",
+        "Il délivre 2 V à 20 °C",
+        "Il délivre 0 V à 0 °C",
+        "Il peut mesurer correctement 75 °C",
+        "Sa sensibilité est la même sur toute l'étendue de mesure"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "S = 4 / 80 = 0,05 V/°C ; à 20 °C : 0,05 × 40 = 2 V ; à 0 °C : 0,05 × 20 = 1 V. 75 °C est hors de l'étendue de mesure. Un capteur linéaire a une sensibilité constante.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces critères servent à choisir un capteur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'étendue de mesure",
+        "Le temps de réponse",
+        "La nature de la sortie, compatible avec le microcontrôleur",
+        "La couleur des fils de la carte",
+        "Le nombre de lignes du programme"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le cours cite l'étendue de mesure, la sensibilité, le temps de réponse, la nature de la sortie, la consommation, l'encombrement, la robustesse et le coût.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "Une thermistance CTN surveille la température de la batterie d'une trottinette. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa caractéristique n'est pas une droite",
+        "Le programme peut utiliser une table d'étalonnage",
+        "Sa résistance augmente quand la température monte",
+        "Sa sensibilité est la même à toutes les températures"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La CTN n'est pas linéaire (sa résistance varie plus vite à basse température) : le programme utilise une table d'étalonnage ou une formule du constructeur. Sa résistance diminue quand la température augmente.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:047",
+      "type": "vrai_faux",
+      "enonce": "La sensibilité et la résolution d'un capteur sont deux noms pour la même grandeur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "La sensibilité est un rapport Δ(sortie) / Δ(entrée) ; la résolution est la plus petite variation distinguée. Ce sont deux notions différentes.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Pour un capteur linéaire, la relation θ = θmin + (U − Umin) / S permet de retrouver la grandeur mesurée à partir de la tension.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est la méthode du cours : on isole θ dans U = Umin + S × (θ − θmin).",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Une sonde de température a en général un temps de réponse plus long qu'un détecteur de fin de course.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Quelques millisecondes pour un détecteur, plusieurs secondes pour une sonde de température.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Un capteur de température linéaire passe de 0,2 V à 1,0 V quand la température passe de 10 °C à 50 °C. Quelle est sa sensibilité, en mV/°C ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "20"
+      ],
+      "difficulte": 2,
+      "explication": "S = (1,0 − 0,2) / (50 − 10) = 0,8 / 40 = 0,02 V/°C = 20 mV/°C.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:051",
+      "type": "reponse_courte",
+      "enonce": "Un capteur linéaire délivre 0 V à −20 °C et 4 V à 60 °C. Il délivre 3,1 V. Quelle est la température, en °C ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "42"
+      ],
+      "difficulte": 3,
+      "explication": "S = 4 / 80 = 0,05 V/°C ; θ = −20 + 3,1 / 0,05 = −20 + 62 = 42 °C.",
+      "notion": "Caractéristiques d'un capteur"
+    },
+    {
+      "source": "si-1re:ch8:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits contient un octet ?",
+      "propositions": [
+        "4",
+        "10",
+        "8",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits ; un groupe de 4 bits s'appelle un quartet.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Combien de valeurs différentes peut-on écrire avec 4 bits ?",
+      "propositions": [
+        "4",
+        "8",
+        "15",
+        "16"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Avec n bits, on écrit 2ⁿ valeurs : 2⁴ = 16, de 0 à 15. 15 est le plus grand nombre, pas le nombre de valeurs.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Que vaut en décimal l'octet 0100 0110 ?",
+      "propositions": [
+        "70",
+        "98",
+        "38",
+        "134"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les bits à 1 ont pour poids 64, 4 et 2 : 64 + 4 + 2 = 70. 98 correspond à une lecture de gauche à droite inversée (0110 0010).",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit le nombre 13 en binaire sur 4 bits ?",
+      "propositions": [
+        "1011",
+        "1101",
+        "1110",
+        "0111"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "13 = 8 + 4 + 1 : bits de poids 8, 4 et 1 à 1, bit de poids 2 à 0, soit 1101. 1011 vaut 11 (lecture inversée).",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit l'octet 1010 1111 en hexadécimal ?",
+      "propositions": [
+        "0xFA",
+        "0xBF",
+        "0xAF",
+        "0xAE"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Quartet de gauche 1010 = A ; quartet de droite 1111 = F : 0xAF. 0xFA inverse les deux quartets.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que vaut le nombre hexadécimal 0x2C en décimal ?",
+      "propositions": [
+        "194",
+        "212",
+        "32",
+        "44"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0x2C = 2 × 16 + 12 = 44. 194 inverse les chiffres (12 × 16 + 2) ; 212 colle 2 et 12 ; 32 oublie le chiffre C.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Un ruban de LED reçoit la couleur 0x00FF40 (un octet par couleur, dans l'ordre rouge, vert, bleu). Quel est le niveau de la composante bleue ?",
+      "propositions": [
+        "64",
+        "40",
+        "255",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Le dernier octet, 0x40, code le bleu : 4 × 16 + 0 = 64. 40 oublie la conversion depuis la base 16 ; 255 est le vert (0xFF) et 0 le rouge.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets un kilooctet (ko) contient-il ?",
+      "propositions": [
+        "1 024",
+        "1 000",
+        "8 000",
+        "100"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le préfixe kilo vaut 1 000 : 1 ko = 1 000 octets. C'est le kibioctet (Kio) qui vaut 1 024 octets.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Un bras robotisé peut occuper 100 positions différentes, repérées chacune par un numéro. Combien de bits faut-il au minimum pour coder ce numéro ?",
+      "propositions": [
+        "100",
+        "6",
+        "7",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Il faut 2ⁿ ⩾ 100 : 2⁶ = 64 ne suffit pas, 2⁷ = 128 suffit. Il faut donc 7 bits.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces écritures sont égales au nombre décimal 255 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0xFF",
+        "1111 1111 en binaire",
+        "2⁸ − 1",
+        "2⁸",
+        "0x100"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "255 est le plus grand nombre d'un octet : 1111 1111 = 0xFF = 2⁸ − 1. 2⁸ = 256 = 0x100.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "À propos du bit de poids fort (MSB) d'un octet : Coche toutes les réponses exactes.",
+      "propositions": [
+        "C'est le bit de gauche",
+        "Son poids vaut 128",
+        "C'est le bit de droite",
+        "Son poids vaut 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le bit de poids fort est à gauche ; dans un octet, son poids vaut 2⁷ = 128. Le bit de droite est le bit de poids faible (LSB), de poids 1.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0x10 = 16",
+        "1000 en binaire = 8",
+        "0xA = 10",
+        "0x10 = 10",
+        "101 en binaire = 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0x10 = 1 × 16 + 0 = 16 ; 1000 en binaire = 8 ; A vaut 10. 101 en binaire = 4 + 1 = 5.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "À propos de l'écriture hexadécimale : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle utilise seize chiffres, de 0 à F",
+        "Un octet s'écrit avec deux chiffres hexadécimaux",
+        "Le chiffre F vaut 15",
+        "Le chiffre G vaut 16",
+        "Un chiffre hexadécimal code 8 bits"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Base 16 : chiffres 0 à 9 puis A à F (F = 15). Un chiffre hexadécimal code un quartet de 4 bits, donc un octet s'écrit avec deux chiffres. Il n'y a pas de chiffre G.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:065",
+      "type": "vrai_faux",
+      "enonce": "Un chiffre hexadécimal code exactement 4 bits.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "On regroupe les bits par quartets : chaque quartet (16 valeurs) s'écrit avec un chiffre de 0 à F.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Avec 10 bits, on peut écrire tous les nombres entiers de 0 à 1 024.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "10 bits donnent 2¹⁰ = 1 024 valeurs, de 0 à 1 023 : 1 024 n'est pas représentable.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:067",
+      "type": "vrai_faux",
+      "enonce": "Puisque 1 octet vaut 8 bits, une donnée de 16 octets occupe 128 bits.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "16 × 8 = 128 bits.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:068",
+      "type": "reponse_courte",
+      "enonce": "Convertis l'octet 1001 0110 en décimal. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "150"
+      ],
+      "difficulte": 2,
+      "explication": "Bits à 1 : poids 128, 16, 4 et 2. N = 128 + 16 + 4 + 2 = 150.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:069",
+      "type": "reponse_courte",
+      "enonce": "Quel nombre décimal correspond au nombre hexadécimal 0xB4 ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "180"
+      ],
+      "difficulte": 2,
+      "explication": "B vaut 11 : 0xB4 = 11 × 16 + 4 = 176 + 4 = 180.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:070",
+      "type": "reponse_courte",
+      "enonce": "Écris le nombre décimal 227 en binaire sur 8 bits. Donne le nombre seul, sans unité. Écris les 8 chiffres sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "11100011"
+      ],
+      "difficulte": 3,
+      "explication": "227 − 128 = 99 ; 99 − 64 = 35 ; 35 − 32 = 3 ; 3 − 2 = 1 ; 1 − 1 = 0. Bits de poids 128, 64, 32, 2 et 1 à 1 : 1110 0011.",
+      "notion": "Binaire, hexadécimal, bits et octets"
+    },
+    {
+      "source": "si-1re:ch8:banque:071",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert un convertisseur analogique-numérique (CAN) ?",
+      "propositions": [
+        "À transformer un nombre binaire en tension variable",
+        "À amplifier le signal du capteur",
+        "À mesurer directement une température",
+        "À transformer une tension en nombre entier"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le CAN transforme la tension continue d'un capteur analogique en un nombre entier que le microcontrôleur peut traiter.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Quel est le quantum d'un CAN de 8 bits de pleine échelle 5 V ?",
+      "propositions": [
+        "Environ 19,5 mV",
+        "Environ 625 mV",
+        "Environ 4,88 mV",
+        "Environ 1 280 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "q = PE / 2ⁿ = 5 / 256 ≈ 0,0195 V ≈ 19,5 mV. 625 mV vient de 5 / 8 (n au lieu de 2ⁿ) ; 4,88 mV est le quantum d'un CAN 10 bits ; 1 280 V vient de 5 × 256.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Le CAN de 10 bits et de pleine échelle 5 V d'une carte Arduino reçoit une tension de 2,5 V. Quel nombre fournit-il ?",
+      "propositions": [
+        "511",
+        "512",
+        "250",
+        "1 024"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "q = 5 / 1 024 ; N = partie entière de 2,5 / q = 2,5 × 1 024 / 5 = 512. 511 vient d'une division par 1 023 au lieu de 1 024.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Un programme lit N = 300 sur un CAN de 10 bits de pleine échelle 5 V. Quelle tension le capteur délivre-t-il, à un quantum près ?",
+      "propositions": [
+        "Environ 60 V",
+        "Environ 0,29 V",
+        "Environ 1,46 V",
+        "Environ 3,54 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "U ≈ N × q = 300 × 5 / 1 024 ≈ 1,46 V. 60 V vient de 300 / 5 ; 0,29 V de 300 / 1 024 (pleine échelle oubliée).",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de 10 mV/°C est relié à un CAN de 12 bits de pleine échelle 5 V. Quelle est la résolution en température de la chaîne ?",
+      "propositions": [
+        "Environ 8,2 °C",
+        "Environ 0,49 °C",
+        "Environ 1,2 °C",
+        "Environ 0,12 °C"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "q = 5 / 4 096 ≈ 1,22 mV ; résolution = 1,22 / 10 ≈ 0,12 °C. 8,2 °C est le rapport inversé ; 0,49 °C correspond à un CAN 10 bits ; 1,2 °C oublie de diviser par la sensibilité.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Un CAN de 10 bits de pleine échelle 5 V reçoit par erreur une tension de 6 V. Quelle valeur lit le programme ?",
+      "propositions": [
+        "1 023",
+        "1 228",
+        "1 024",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La tension dépasse la pleine échelle : la mesure est saturée à la valeur maximale 2¹⁰ − 1 = 1 023. Un CAN 10 bits ne peut pas fournir 1 024 ni 1 228.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Un CAN échantillonne la tension d'un capteur à la fréquence de 50 Hz. Quelle est la période d'échantillonnage ?",
+      "propositions": [
+        "50 ms",
+        "20 ms",
+        "0,5 s",
+        "2 ms"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Te = 1 / fe = 1 / 50 = 0,02 s = 20 ms.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Une station météo utilise un capteur de 50 mV/°C et un CAN de pleine échelle 5 V. On veut distinguer au moins 0,1 °C. Quel est le nombre de bits minimal du CAN ?",
+      "propositions": [
+        "8 bits",
+        "12 bits",
+        "10 bits",
+        "5 bits"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "0,1 °C correspond à 0,1 × 50 = 5 mV : il faut q ⩽ 5 mV. 8 bits : q ≈ 19,5 mV, trop grand ; 10 bits : q ≈ 4,88 mV, suffisant. 12 bits conviendrait aussi, mais n'est pas le minimum.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Comment s'appelle l'information perdue parce que toutes les tensions d'une même « marche » donnent le même nombre N ?",
+      "propositions": [
+        "La saturation du convertisseur",
+        "La fréquence d'échantillonnage",
+        "La sensibilité du capteur",
+        "L'erreur de quantification"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Toutes les tensions comprises dans un même quantum donnent le même N : l'écart perdu s'appelle l'erreur de quantification.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Une carte Arduino Uno possède un CAN de 10 bits de pleine échelle 5 V. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il fournit des nombres de 0 à 1 023",
+        "Son quantum vaut environ 4,88 mV",
+        "Une tension de 1,8 V donne N = 368",
+        "Une tension de 5,5 V donne N = 1 126",
+        "Il fournit des nombres de 1 à 1 024"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "2¹⁰ = 1 024 valeurs, de 0 à 1 023 ; q = 5 / 1 024 ≈ 4,88 mV ; 1,8 / 0,004 883 ≈ 368,6 donne N = 368. Au-delà de 5 V, la mesure sature à 1 023.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "On remplace un CAN par un autre CAN de même pleine échelle, mais avec davantage de bits. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le quantum diminue",
+        "Le nombre de valeurs possibles augmente",
+        "Les marches de la caractéristique sont plus fines",
+        "La pleine échelle augmente",
+        "La sensibilité du capteur augmente"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "q = PE / 2ⁿ diminue quand n augmente : plus de valeurs, marches plus fines. La pleine échelle et la sensibilité du capteur ne dépendent pas du nombre de bits.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Un CAN de 3 bits a une pleine échelle de 8 V. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une tension de 5,4 V donne N = 5",
+        "N = 7 s'écrit 111 en binaire",
+        "Il fournit 8 valeurs possibles",
+        "Une tension de 3,9 V donne N = 4",
+        "Son quantum vaut 8 / 3 V"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "q = 8 / 2³ = 1 V. 5,4 V donne N = 5 et 3,9 V donne N = 3 (partie entière). 2³ = 8 valeurs, de 000 à 111 (7).",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:083",
+      "type": "vrai_faux",
+      "enonce": "Un CAN de 12 bits fournit 4 096 valeurs différentes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "2¹² = 4 096 valeurs, de 0 à 4 095.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:084",
+      "type": "vrai_faux",
+      "enonce": "Une température extérieure doit être échantillonnée des centaines de fois par seconde pour être correctement suivie.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Une température extérieure varie lentement : une mesure par minute suffit. Ce sont les grandeurs rapides, comme l'inclinaison d'un drone, qu'il faut échantillonner des centaines de fois par seconde.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:085",
+      "type": "vrai_faux",
+      "enonce": "Une tension supérieure à la pleine échelle donne toujours la valeur maximale 2ⁿ − 1 : la mesure est saturée.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est la saturation ; une tension trop forte peut même détruire l'entrée du microcontrôleur.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:086",
+      "type": "reponse_courte",
+      "enonce": "Un CAN de 10 bits de pleine échelle 5 V reçoit une tension de 3,0 V. Quel nombre N fournit-il ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "614"
+      ],
+      "difficulte": 2,
+      "explication": "q = 5 / 1 024 ≈ 0,004 883 V ; 3,0 / q = 3,0 × 1 024 / 5 = 614,4 ; N = partie entière = 614.",
+      "notion": "Conversion analogique-numérique"
+    },
+    {
+      "source": "si-1re:ch8:banque:087",
+      "type": "reponse_courte",
+      "enonce": "Une carte micro:bit possède un CAN de 12 bits de pleine échelle 3,3 V. Quel est son quantum, en mV, arrondi au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,81"
+      ],
+      "difficulte": 3,
+      "explication": "q = 3,3 / 2¹² = 3,3 / 4 096 ≈ 0,000 806 V ≈ 0,81 mV.",
+      "notion": "Conversion analogique-numérique",
+      "marge": 0.01,
+      "marge_relative": false
+    },
+    {
+      "source": "si-1re:ch8:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Quel type Python correspond aux valeurs True et False ?",
+      "propositions": [
+        "bool",
+        "int",
+        "float",
+        "str"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "True et False sont des booléens (type bool), comme l'état d'un détecteur.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction Python affecte la valeur 21,5 à la variable temperature ?",
+      "propositions": [
+        "temperature == 21.5",
+        "temperature = 21.5",
+        "temperature = 21,5",
+        "21.5 = temperature"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'affectation utilise = et Python écrit les nombres à virgule avec un point. == sert à comparer.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:090",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = 4, puis x = x + 3. Que vaut x ensuite ?",
+      "propositions": [
+        "4",
+        "3",
+        "7",
+        "Rien : l'égalité x = x + 3 est impossible"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "x = x + 3 n'est pas une équation : Python calcule 4 + 3 = 7 et range le résultat dans x.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type Python de la valeur \"ouvert\" ?",
+      "propositions": [
+        "bool (booléen, vrai ou faux)",
+        "int (nombre entier)",
+        "float (nombre à virgule)",
+        "str (chaîne de caractères)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Une valeur écrite entre guillemets est une chaîne de caractères (str).",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:092",
+      "type": "qcm_unique",
+      "enonce": "On exécute : t = 28, puis if t > 30: print(\"chaud\") / elif t > 20: print(\"doux\") / else: print(\"froid\"). Qu'affiche le programme ?",
+      "propositions": [
+        "doux",
+        "chaud",
+        "froid",
+        "doux puis froid"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "28 > 30 est faux ; 28 > 20 est vrai : le bloc elif s'exécute et affiche doux. Les blocs suivants sont ignorés.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Quel opérateur Python teste si deux valeurs sont égales ?",
+      "propositions": [
+        "=",
+        "==",
+        "<=",
+        "+="
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "== compare ; = affecte une valeur à une variable.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Une perceuse ne démarre que si moteur = carter_ferme and bouton_marche est vrai. On a carter_ferme = False et bouton_marche = True. Que vaut moteur ?",
+      "propositions": [
+        "True",
+        "1",
+        "False",
+        "Une erreur, car on ne combine pas deux booléens"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "and (ET) n'est vrai que si les deux conditions sont vraies : False and True vaut False. Le carter ouvert empêche le démarrage.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Un drone en atterrissage mesure d = 0,45 m. Le programme exécute : si d > 0,30 alors réduire_poussée() sinon couper_moteurs() fin si. Quelle fonction est appelée ?",
+      "propositions": [
+        "couper_moteurs()",
+        "Les deux, l'une après l'autre",
+        "Aucune des deux fonctions",
+        "réduire_poussée()"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0,45 > 0,30 est vrai : seul le bloc « alors » s'exécute, donc réduire_poussée().",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces valeurs Python sont de type float ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "21.5",
+        "0.05",
+        "12",
+        "True",
+        "\"3.3\""
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "21.5 et 0.05 sont des flottants. 12 est un entier (int), True un booléen et \"3.3\", entre guillemets, une chaîne de caractères.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces lignes Python sont des affectations ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "n = 368",
+        "etat = \"ouvert\"",
+        "if n == 368:",
+        "print(n)",
+        "n == 368"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Une affectation range une valeur dans une variable avec =. if n == 368: est une condition, print(n) un appel de fonction, n == 368 une comparaison.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la structure conditionnelle (si … alors … sinon) : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle exécute un bloc ou un autre selon qu'une condition est vraie ou fausse",
+        "En Python, le bloc conditionné est repéré par son indentation",
+        "Elle répète un bloc tant qu'une condition reste vraie",
+        "En Python, la ligne if se termine par deux-points",
+        "Elle s'écrit while en Python"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La condition choisit le bloc à exécuter ; en Python, la ligne if se termine par deux-points et le bloc est indenté. Répéter tant qu'une condition est vraie, c'est la boucle while.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:099",
+      "type": "vrai_faux",
+      "enonce": "En Python, l'instruction x = x + 1 est une équation sans solution.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "C'est une affectation : Python calcule x + 1 et range le résultat dans x.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:100",
+      "type": "vrai_faux",
+      "enonce": "En Python, on écrit les nombres décimaux avec un point : 21.5 et non 21,5.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Python utilise le point décimal ; la virgule y sépare des valeurs.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:101",
+      "type": "vrai_faux",
+      "enonce": "Un pseudo-code dépend du langage de programmation choisi.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le pseudo-code décrit l'algorithme en français structuré, indépendamment du langage.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:102",
+      "type": "reponse_courte",
+      "enonce": "On exécute dans l'ordre : a = 5, b = 3, a = a * b, puis b = a - b. Que vaut b à la fin ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 2,
+      "explication": "a = 5 × 3 = 15, puis b = 15 − 3 = 12.",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:103",
+      "type": "reponse_courte",
+      "enonce": "Quel mot-clé Python désigne le type des nombres entiers ?",
+      "reponses_acceptees": [
+        "int"
+      ],
+      "difficulte": 1,
+      "explication": "Le type entier se nomme int (par exemple N = 368).",
+      "notion": "Variables, types et conditions"
+    },
+    {
+      "source": "si-1re:ch8:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Quelle structure utilise-t-on quand on connaît à l'avance le nombre de répétitions, par exemple pour lire 24 mesures ?",
+      "propositions": [
+        "Une boucle bornée (for)",
+        "Une boucle non bornée (while)",
+        "Une condition (if)",
+        "Une fonction (def)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Quand le nombre de tours est connu, on utilise une boucle bornée : for i in range(24).",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quels entiers l'instruction range(5) produit-elle ?",
+      "propositions": [
+        "1, 2, 3, 4, 5",
+        "0, 1, 2, 3, 4",
+        "0, 1, 2, 3, 4, 5",
+        "5 seulement"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "range(5) produit cinq entiers en partant de 0 : 0, 1, 2, 3 et 4. 5 n'en fait pas partie.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Une boucle commence par for k in range(3, 7):. Quelles valeurs la variable k prend-elle successivement ?",
+      "propositions": [
+        "3, 4, 5, 6, 7",
+        "4, 5, 6, 7",
+        "3, 4, 5, 6",
+        "0, 1, 2, 3, 4, 5, 6"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "range(a, b) part de a et s'arrête avant b : 3, 4, 5 et 6.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:107",
+      "type": "qcm_unique",
+      "enonce": "On exécute s = 0, puis for i in range(4): s = s + i. Que vaut s à la fin ?",
+      "propositions": [
+        "10",
+        "4",
+        "3",
+        "6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "i prend les valeurs 0, 1, 2 et 3 : s = 0 + 1 + 2 + 3 = 6. 10 correspondrait à i allant de 1 à 4.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Quel mot-clé Python permet à une fonction de renvoyer son résultat ?",
+      "propositions": [
+        "return",
+        "print",
+        "def",
+        "while"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "def déclare la fonction, return renvoie le résultat. print affiche seulement une valeur à l'écran.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:109",
+      "type": "qcm_unique",
+      "enonce": "La fonction def temperature(n): u = n * 5 / 1024 ; return -20 + u / 0.05 convertit la mesure d'un CAN en °C. Que renvoie temperature(512) ?",
+      "propositions": [
+        "50",
+        "30",
+        "−17,5",
+        "2,5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "u = 512 × 5 / 1 024 = 2,5 ; résultat : −20 + 2,5 / 0,05 = −20 + 50 = 30. 50 oublie le −20 ; 2,5 est la tension u ; −17,5 oublie de diviser par 0,05.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:110",
+      "type": "qcm_unique",
+      "enonce": "On exécute n = 1, puis while n < 50: n = n * 2. Que vaut n à la sortie de la boucle ?",
+      "propositions": [
+        "32",
+        "50",
+        "64",
+        "128"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "n prend les valeurs 1, 2, 4, 8, 16, 32, puis 64 ; 64 < 50 est faux, la boucle s'arrête avec n = 64. À 32, la condition est encore vraie, d'où un tour de plus.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces lignes Python commencent une boucle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "for i in range(10):",
+        "while presence:",
+        "if presence:",
+        "def lire():",
+        "else:"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "for et while sont les deux boucles. if et else forment une condition, def déclare une fonction.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Quel est l'intérêt d'écrire une fonction, par exemple pour convertir une mesure en température ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Écrire le calcul une seule fois et l'appeler autant de fois que nécessaire",
+        "L'appeler avec des paramètres différents",
+        "Rendre le programme plus lisible",
+        "Augmenter la résolution du CAN",
+        "Remplacer le capteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une fonction évite de réécrire le même calcul et s'appelle avec des paramètres différents ; elle ne change rien au matériel.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:113",
+      "type": "qcm_multiple",
+      "enonce": "On exécute : mesures = [10.0, 12.0, 14.0, 16.0], somme = 0, for t in mesures: somme = somme + t, puis moyenne = somme / len(mesures) et print(moyenne). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La boucle tourne 4 fois",
+        "somme vaut 52 à la fin de la boucle",
+        "Le programme affiche 13.0",
+        "Le programme affiche 52",
+        "len(mesures) vaut 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La liste contient 4 valeurs, donc 4 tours ; somme = 10 + 12 + 14 + 16 = 52 ; moyenne = 52 / 4 = 13.0.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la boucle non bornée : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle s'écrit while en Python",
+        "Elle convient pour attendre que le drone soit assez près du sol",
+        "On connaît toujours à l'avance son nombre de tours",
+        "Elle s'écrit for i in range(n) en Python"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La boucle while répète tant qu'une condition est vraie, sans savoir combien de fois : c'est le cas de l'attente d'un atterrissage.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:115",
+      "type": "vrai_faux",
+      "enonce": "La boucle while répète un bloc tant qu'une condition est vraie.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la boucle non bornée : tant que condition faire … fin tant que.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:116",
+      "type": "vrai_faux",
+      "enonce": "La boucle for i in range(10) exécute son bloc 11 fois.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "range(10) produit 0, 1, …, 9 : dix valeurs, donc 10 tours.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Dans une boucle non bornée, la condition doit pouvoir devenir fausse, sinon la boucle ne s'arrête jamais.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est pourquoi le drone relit la distance dans sa boucle : sans nouvelle lecture, la condition ne changerait pas (boucle infinie involontaire).",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:118",
+      "type": "vrai_faux",
+      "enonce": "En Python, le bloc répété par une boucle est délimité par des accolades.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "En Python, le bloc est repéré par son indentation (4 espaces), et la ligne qui l'annonce se termine par deux-points.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:119",
+      "type": "reponse_courte",
+      "enonce": "On exécute s = 0, puis for k in range(1, 6): s = s + k. Que vaut s à la fin ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "15"
+      ],
+      "difficulte": 2,
+      "explication": "k prend les valeurs 1, 2, 3, 4 et 5 : s = 1 + 2 + 3 + 4 + 5 = 15.",
+      "notion": "Boucles et fonctions"
+    },
+    {
+      "source": "si-1re:ch8:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un comportement combinatoire ?",
+      "propositions": [
+        "Les sorties dépendent aussi de ce qui s'est passé avant",
+        "Le système attend des événements pour agir",
+        "Le système mémorise plusieurs états successifs",
+        "Les sorties dépendent seulement des entrées présentes"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Dans un système combinatoire, l'état des sorties dépend uniquement de l'état présent des entrées, sans mémoire.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la façon dont un microcontrôleur lit régulièrement ses entrées dans une boucle infinie ?",
+      "propositions": [
+        "La scrutation",
+        "L'échantillonnage du CAN",
+        "L'interruption",
+        "L'initialisation"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Lire les entrées, décider, commander les sorties, et recommencer sans cesse : c'est la scrutation.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:122",
+      "type": "qcm_unique",
+      "enonce": "En programmation événementielle, qu'appelle-t-on un gestionnaire d'événement ?",
+      "propositions": [
+        "Le capteur qui détecte l'événement",
+        "La fonction exécutée quand un événement se produit",
+        "La boucle qui lit toutes les entrées en permanence",
+        "Le microcontrôleur tout entier"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "À chaque événement (appui, front, fin de temporisation, message) est associée une fonction : le gestionnaire d'événement.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Une lampe à détecteur a une temporisation de 20 s, relancée à chaque détection. Le détecteur vaut 1 de 2 s à 4 s, puis de 10 s à 12 s. À quel instant la lampe s'éteint-elle ?",
+      "propositions": [
+        "24 s",
+        "22 s",
+        "32 s",
+        "30 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La temporisation repart à la fin de la dernière détection, à 12 s : extinction à 12 + 20 = 32 s. 24 s oublie la seconde détection ; 30 s part du début de la seconde détection.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Une lampe à détecteur a une temporisation de 15 s, relancée à chaque détection. Le détecteur vaut 1 de 3 s à 6 s, puis de 9 s à 10 s. Pendant combien de temps la lampe reste-t-elle allumée ?",
+      "propositions": [
+        "25 s",
+        "15 s",
+        "18 s",
+        "22 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Allumage à 3 s ; la dernière détection finit à 10 s, donc extinction à 10 + 15 = 25 s. Durée : 25 − 3 = 22 s. 25 s est l'instant d'extinction ; 18 s oublie la seconde détection.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Quelle partie du programme d'un microcontrôleur n'est exécutée qu'une seule fois, à la mise sous tension ?",
+      "propositions": [
+        "L'initialisation",
+        "La boucle infinie",
+        "Le gestionnaire d'interruption",
+        "La scrutation"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'initialisation règle les broches en entrée ou en sortie et l'état de départ ; la boucle infinie recommence ensuite sans cesse.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi compte-t-on souvent les impulsions d'un codeur avec une interruption ?",
+      "propositions": [
+        "Pour augmenter la résolution angulaire du codeur",
+        "Pour n'en manquer aucune, même très rapide",
+        "Pour convertir les impulsions en tension",
+        "Pour économiser la mémoire du programme"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Un front sur une broche suspend la boucle principale pour exécuter immédiatement une fonction : aucune impulsion n'est manquée.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces éléments est un état, et non un événement ?",
+      "propositions": [
+        "Front montant du détecteur",
+        "Arrivée d'un message",
+        "Moteur en marche",
+        "Fin d'une temporisation de 30 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un événement est instantané (front, message, échéance) ; un état dure, comme « moteur en marche ».",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces éléments sont des événements ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un appui sur un bouton",
+        "Le front montant d'un capteur",
+        "La fin d'une temporisation",
+        "Lampe allumée",
+        "Moteur en marche"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Appui, front et échéance d'une durée sont instantanés : ce sont des événements. « Lampe allumée » et « moteur en marche » durent : ce sont des états.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Un microcontrôleur exécute initialiser(), puis while True: presence = lire_detecteur() ; if presence: allumer_lampe() ; else: eteindre_lampe(). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il a un comportement combinatoire",
+        "La lampe suit exactement le détecteur",
+        "Il réalise une temporisation de la lampe",
+        "Il ne lit le détecteur qu'une seule fois"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La lampe ne dépend que de la valeur présente du détecteur : comportement combinatoire, sans temporisation. La lecture se répète à chaque tour de la boucle infinie.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Dans une cage d'escalier, un télérupteur allume la lumière si elle était éteinte et l'éteint si elle était allumée, pour le même appui sur le même bouton. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son comportement est séquentiel",
+        "Il doit mémoriser son état",
+        "Connaître l'entrée suffit pour prévoir la sortie",
+        "Son comportement est combinatoire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La même entrée produit deux sorties différentes selon l'histoire : le système est séquentiel et doit mémoriser son état.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Un système à comportement séquentiel doit mémoriser une information : son état.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Ses sorties dépendent de son histoire : il garde en mémoire son état.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:132",
+      "type": "vrai_faux",
+      "enonce": "En programmation événementielle, le programme exécute une suite figée d'instructions sans jamais attendre.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Au contraire, il attend des événements et exécute pour chacun la fonction associée.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Sur un chronogramme, si l'entrée a la même valeur à deux instants mais que la sortie diffère, le comportement est séquentiel.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La sortie ne dépend pas seulement de l'entrée présente : elle dépend de l'histoire. C'est la lecture faite sur la lampe temporisée.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Un tour de la boucle principale d'un microcontrôleur dure en général plusieurs minutes.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Un tour dure souvent moins d'une milliseconde : le système semble réagir instantanément.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Une lampe de couloir a une temporisation de 30 s, relancée à chaque détection. La dernière détection se termine à t = 47 s. À quel instant la lampe s'éteint-elle, en secondes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "77"
+      ],
+      "difficulte": 2,
+      "explication": "Extinction 30 s après la fin de la dernière détection : 47 + 30 = 77 s.",
+      "notion": "Comportements séquentiel et événementiel"
+    },
+    {
+      "source": "si-1re:ch8:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme d'états-transitions, comment représente-t-on l'état initial ?",
+      "propositions": [
+        "Par un rectangle à coins arrondis",
+        "Par un disque noir cerclé",
+        "Par une flèche en pointillés",
+        "Par un disque noir"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'état initial est un disque noir ; le disque noir cerclé est l'état final ; les états sont des rectangles à coins arrondis.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme générale de l'étiquette d'une transition ?",
+      "propositions": [
+        "événement [condition de garde] / action",
+        "action [événement] / condition de garde",
+        "[action] événement / condition de garde",
+        "condition de garde / événement [action]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'étiquette s'écrit événement [garde] / action ; chaque partie est facultative.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Que signifie l'événement after(30 s) sur une transition ?",
+      "propositions": [
+        "Une action qui dure 30 s",
+        "Un événement temporel : 30 s après l'entrée dans l'état",
+        "Une condition de garde qui devient vraie au bout de 30 s",
+        "Un état qui dure toujours exactement 30 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "after(durée) est un événement temporel : il se produit quand la durée indiquée s'est écoulée depuis l'entrée dans l'état source.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Un portail est dans l'état Ouvert. La transition vers Fermeture est étiquetée after(30 s) [cellule libre] / allumer feu. Au bout de 30 s, la cellule est coupée. Que se passe-t-il ?",
+      "propositions": [
+        "Le portail passe en Fermeture",
+        "Le portail passe en Ouverture",
+        "Le portail reste dans l'état Ouvert",
+        "Le portail passe dans l'état Fermé"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "L'événement se produit, mais la garde [cellule libre] est fausse : la transition n'est pas franchie et le portail reste ouvert.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:140",
+      "type": "qcm_unique",
+      "enonce": "À quelles conditions une transition est-elle franchie ?",
+      "propositions": [
+        "Événement produit, même si l'état source est inactif",
+        "Garde vraie, sans attendre d'événement",
+        "État cible déjà actif et garde fausse",
+        "État source actif, événement produit et garde vraie"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Les trois conditions doivent être réunies : l'état source est actif, l'événement se produit et la garde est vraie.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Dans l'état Allumée d'une lampe à détecteur, une nouvelle présence relance la temporisation. Comment le représente-t-on ?",
+      "propositions": [
+        "Par une transition de l'état Allumée vers lui-même",
+        "Par un nouvel état initial",
+        "Par une condition de garde ajoutée sur la transition vers Éteinte",
+        "Par un état final"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une transition qui part d'un état et y revient relance la temporisation : l'état est quitté puis réactivé.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Un feu de passage piéton a trois états : voitures au vert, voitures à l'orange, voitures au rouge (piétons au vert). Transitions : appui piéton (vert → orange), after(3 s) (orange → rouge), after(15 s) (rouge → vert). Un piéton appuie à t = 0 s. Quand les voitures repassent-elles au vert ?",
+      "propositions": [
+        "À t = 15 s",
+        "À t = 18 s",
+        "À t = 3 s",
+        "À t = 12 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Orange de 0 à 3 s, puis rouge pendant 15 s : retour au vert à 3 + 15 = 18 s. 15 s oublie la phase orange.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Dans l'état Ouverture d'un portail, on lit « do / moteur sens 1 ». Que signifie cette inscription ?",
+      "propositions": [
+        "Le moteur tourne dans le sens 1 au seul moment du franchissement",
+        "Le moteur tourne dès que le portail est fermé",
+        "Le moteur tourne dans le sens 1 tant que cet état est actif",
+        "Le moteur s'arrête à l'entrée dans l'état"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "do / activité désigne ce que fait le système tant que l'état est actif ; entry et exit désignent des actions à l'entrée et à la sortie.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments trouve-t-on dans un diagramme d'états-transitions ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Des états",
+        "Des transitions",
+        "Un état initial",
+        "Des blocs de la chaîne de puissance",
+        "Des liaisons mécaniques"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le diagramme d'états-transitions comporte des états, des transitions, un état initial (et parfois un état final).",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "La transition Éteinte → Allumée d'une lampe à détecteur est étiquetée présence [luminosité < seuil]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "présence est l'événement",
+        "luminosité < seuil est la condition de garde",
+        "La lampe ne s'allume pas en plein jour",
+        "luminosité < seuil est une action",
+        "La transition est franchie dès que la luminosité baisse, sans présence"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'événement est la détection de présence ; la garde entre crochets empêche l'allumage en plein jour. Sans événement, la transition n'est pas franchie.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "On traduit un diagramme d'états-transitions en programme. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une variable mémorise l'état actif",
+        "Une boucle infinie contient le test de l'état actif",
+        "Pour chaque transition sortante, on teste l'événement et la garde",
+        "On écrit une boucle for par état, avec un nombre de tours fixé"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Schéma du cours : variable d'état, boucle infinie, test de l'état actif puis de chaque transition sortante ; si elle est franchie, action puis changement de la variable d'état.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Dans un diagramme d'états-transitions simple, un seul état est actif à la fois.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Quand une transition est franchie, l'état source devient inactif et l'état cible actif.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Sur une transition, la condition de garde s'écrit après la barre oblique.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La garde s'écrit entre crochets ; c'est l'action qui suit la barre oblique.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Le diagramme d'états-transitions décrit l'architecture matérielle d'un système : ses blocs et leurs liaisons.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Il décrit le comportement séquentiel (états et transitions), pas la structure matérielle.",
+      "notion": "Diagramme d'états-transitions"
+    },
+    {
+      "source": "si-1re:ch8:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on la condition booléenne écrite entre crochets sur une transition ?",
+      "reponses_acceptees": [
+        "condition de garde",
+        "la condition de garde",
+        "une condition de garde",
+        "garde",
+        "la garde",
+        "une garde",
+        "conditions de garde",
+        "gardes"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la condition de garde : elle doit être vraie au moment de l'événement pour que la transition soit franchie.",
+      "notion": "Diagramme d'états-transitions"
+    }
+  ]
+}
