@@ -61,6 +61,6 @@ npm run import:contenu -- contenu/1re-gen/espagnol.json
 5. **Coquille du programme** : « la contesta » (lexique de l'axe 3) ; le cours emploie *la protesta*.
 6. **Les notions** des banques contiennent une espace ordinaire avant les deux-points (« Vocabulaire : … »), comme celles des cours de 2de ; la règle des espaces insécables ne s'applique qu'à l'énoncé, aux propositions et à l'explication.
 
-## Scripts à adapter (non modifiés)
+## Scripts de banque
 
-Comme pour les cours de 2de : `npm run banque:texte|verifier|fusionner` n'acceptent que `--cours bph|stss` et lisent les banques dans `contenu/1re-st2s/banques/`. Il faudrait ajouter `espagnol-1re` à `COURS_BANQUE` (`src/lib/contenu/banque/cours.ts`, `fichier: 'contenu/1re-gen/espagnol.json'`, `prefixe: 'espagnol'`, `total: 150`) et dériver le dossier des banques du fichier du cours. Les contrôles ont été lancés avec les mêmes fonctions (`verifierBanque`, `fusionnerBanque`, `serialiserCours`, `texteChapitre`, `analyserImport`, `nettoyerHtml`, `versDonneesCours`) depuis un script hors dépôt. Attention : le préfixe `espagnol` est le même que celui du cours de 2de ; les sources sont distinctes par fichier de cours, mais un script commun devra distinguer les deux cours par leur clé, pas par le préfixe.
+Les scripts `npm run banque:texte|verifier|fusionner` acceptent désormais le chemin du cours : pour ce cours, `--cours 1re-gen/espagnol` (fichiers de travail lus dans `contenu/1re-gen/banques/`, sources `espagnol:chN:banque:NNN`, 150 questions par chapitre). Les six banques passent `npm run banque:verifier -- N --cours 1re-gen/espagnol`. Le cours de 2de se désigne de même par `--cours 2de-gen/espagnol` : le chemin distingue les deux cours qui partagent le préfixe `espagnol`.

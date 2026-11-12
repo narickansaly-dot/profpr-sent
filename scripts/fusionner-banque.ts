@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { schemaQuestionImport, type CoursImport } from '../src/lib/contenu/format-import';
-import { lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
+import { cheminBanque, lireCoursArgument, optionCours, type ConfigCours } from '../src/lib/contenu/banque/cours';
 import { analyserImport } from '../src/lib/contenu/lire-import';
 import { schemaFichierBanque } from '../src/lib/contenu/banque/format';
 import { fusionnerBanque, serialiserCours } from '../src/lib/contenu/banque/fusionner';
@@ -21,10 +21,11 @@ try {
   echouer(e instanceof Error ? e.message : String(e));
 }
 const COURS = config.fichier;
+if (!existsSync(COURS)) echouer(`Cours introuvable : ${COURS}`);
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:fusionner -- N [--cours stss]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:fusionner -- N [--cours stss | --cours 1re-gen/espagnol]');
 
-const chemin = `contenu/1re-st2s/banques/${config.nom}-ch${numero}.json`;
+const chemin = cheminBanque(config, numero);
 let brutBanque: unknown;
 try {
   brutBanque = JSON.parse(readFileSync(chemin, 'utf8'));
@@ -45,7 +46,7 @@ const existantes = lu.cours.chapitres.find((c) => c.numero === numero)?.question
 const erreurs = verifierBanque(fichier.data, existantes, config);
 if (erreurs.length > 0) {
   for (const e of erreurs) console.error(`  ${e}`);
-  echouer(`Fusion refusée : la banque du chapitre ${numero} n’est pas conforme (npm run banque:verifier -- ${numero}${config.nom === 'bph' ? '' : ` --cours ${config.nom}`}).`);
+  echouer(`Fusion refusée : la banque du chapitre ${numero} n’est pas conforme (npm run banque:verifier -- ${numero}${optionCours(config)}).`);
 }
 
 try {
