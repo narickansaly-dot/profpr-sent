@@ -1206,7 +1206,7 @@
     {
       "source": "nsi-1re:ch5:banque:071",
       "type": "qcm_unique",
-      "enonce": "On exécute m = None ; for k, v in {\"x\": 5, \"y\": 9, \"z\": 2}.items(): if m is None or v > d[m]: m = k, avec d le même dictionnaire. Que vaut m à la fin ?",
+      "enonce": "Avec d = {\"x\": 5, \"y\": 9, \"z\": 2}, on exécute m = \"x\" puis for k in d: if d[k] > d[m]: m = k. Que vaut m à la fin ?",
       "difficulte": 3,
       "explication": "On garde la clé de la plus grande valeur.",
       "notion": "Itérer : keys, values, items",
@@ -2058,9 +2058,9 @@
     {
       "source": "nsi-1re:ch5:banque:131",
       "type": "vrai_faux",
-      "enonce": "Une fonction Python ne peut renvoyer qu'une seule valeur, il est donc impossible de renvoyer un minimum et un maximum.",
+      "enonce": "Pour renvoyer à la fois un minimum et un maximum, une fonction Python doit exécuter deux instructions return.",
       "difficulte": 2,
-      "explication": "Elle peut renvoyer le p-uplet (mini, maxi).",
+      "explication": "Un seul return suffit : return mini, maxi renvoie le p-uplet (mini, maxi) ; une fonction s'arrête au premier return exécuté.",
       "notion": "Fonctions renvoyant un p-uplet",
       "bonne_reponse": false
     },
@@ -2130,7 +2130,8 @@
       "explication": "On lit la valeur associée à la clé \"lait\".",
       "notion": "Dictionnaires",
       "reponses_acceptees": [
-        "0.9"
+        "0.9",
+        "0,9"
       ]
     },
     {
@@ -2142,7 +2143,8 @@
       "notion": "Tableaux : indices et modification",
       "reponses_acceptees": [
         "append",
-        ".append"
+        ".append",
+        "append()"
       ]
     },
     {
@@ -2154,7 +2156,8 @@
       "notion": "Itérer : keys, values, items",
       "reponses_acceptees": [
         "keys",
-        ".keys"
+        ".keys",
+        "keys()"
       ]
     },
     {

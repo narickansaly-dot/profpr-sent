@@ -1,0 +1,2271 @@
+{
+  "chapitre": 6,
+  "notions": [
+    "Tables, enregistrements, descripteurs",
+    "Fichiers CSV",
+    "Import et conversion des types",
+    "Recherche et sélection",
+    "Projection et agrégats",
+    "Doublons et cohérence",
+    "Tri selon une colonne",
+    "Fusion de tables",
+    "Données ouvertes"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch6:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Dans une table de données, comment appelle-t-on une ligne ?",
+      "difficulte": 1,
+      "explication": "Chaque ligne décrit un objet (un élève, une ville…).",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Un descripteur de la table",
+        "Un enregistrement",
+        "Un domaine",
+        "Un séparateur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Dans une table de données, comment appelle-t-on l'intitulé d'une colonne, comme nom ou moyenne ?",
+      "difficulte": 1,
+      "explication": "On dit aussi attribut ou champ.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Un enregistrement",
+        "Un fichier",
+        "Un indice",
+        "Un descripteur"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on le domaine de valeurs d'un descripteur ?",
+      "difficulte": 1,
+      "explication": "Par exemple, les nombres de 0 à 20 pour une moyenne.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "L'ensemble des valeurs permises pour ce descripteur",
+        "Le nom du fichier qui contient la table",
+        "La valeur la plus fréquente de la colonne",
+        "Le nombre de lignes de la table"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:004",
+      "type": "qcm_unique",
+      "enonce": "En Python, comment représente-t-on habituellement une table dans ce chapitre ?",
+      "difficulte": 1,
+      "explication": "Chaque dictionnaire est un enregistrement (p-uplet nommé).",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Par un nombre flottant",
+        "Par une chaîne de caractères",
+        "Par une liste de dictionnaires ayant les mêmes clés",
+        "Par un seul dictionnaire contenant toutes les valeurs"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le sigle CSV ?",
+      "difficulte": 1,
+      "explication": "C'est un format texte de tables.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Code Source Visible",
+        "Comma-separated values, valeurs séparées par des virgules",
+        "Comma Standard Version",
+        "Computer Science Values"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un fichier CSV ?",
+      "difficulte": 1,
+      "explication": "On peut l'ouvrir avec un éditeur de texte ou un tableur.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Une image compressée",
+        "Une base de données protégée par un mot de passe",
+        "Un fichier texte où chaque ligne est un enregistrement et les valeurs sont séparées par un séparateur",
+        "Un programme Python compilé"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Que contient en général la première ligne d'un fichier CSV ?",
+      "difficulte": 1,
+      "explication": "Les lignes suivantes sont les enregistrements.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Les noms des descripteurs",
+        "La date de création",
+        "Le nombre d'enregistrements",
+        "Le mot de passe du fichier"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les fichiers CSV français utilisent-ils souvent le point-virgule comme séparateur ?",
+      "difficulte": 1,
+      "explication": "14,5 contient une virgule : on sépare les valeurs par ;.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Parce que la virgule est interdite dans les fichiers texte",
+        "Parce que Python n'accepte que le point-virgule",
+        "Parce que le point-virgule prend moins de place",
+        "Parce que la virgule y sert de séparateur décimal"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel module Python permet de lire facilement un fichier CSV ?",
+      "difficulte": 1,
+      "explication": "csv.reader et csv.DictReader.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "random",
+        "csv",
+        "turtle",
+        "math"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type des valeurs lues dans un fichier CSV avec le module csv ?",
+      "difficulte": 1,
+      "explication": "Il faut convertir avec int ou float pour calculer.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Des chaînes de caractères",
+        "Des nombres entiers ou décimaux selon la colonne",
+        "Des booléens",
+        "Des flottants"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction convertit la chaîne \"14.5\" en nombre à virgule ?",
+      "difficulte": 1,
+      "explication": "float(\"14.5\") vaut 14.5.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "number",
+        "int",
+        "str",
+        "float"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie csv.DictReader pour chaque ligne du fichier ?",
+      "difficulte": 1,
+      "explication": "Les clés viennent de la première ligne.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Le nombre de colonnes",
+        "Un p-uplet de nombres",
+        "Un dictionnaire dont les clés sont les descripteurs",
+        "Un entier"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'expression [e for e in eleves if e[\"classe\"] == \"1G2\"] ?",
+      "difficulte": 1,
+      "explication": "C'est une sélection par compréhension.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "Elle sélectionne les élèves de la classe 1G2",
+        "Elle compte les classes",
+        "Elle trie les élèves par classe",
+        "Elle supprime les élèves de 1G2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Quels opérateurs permettent d'écrire un critère de recherche combinant plusieurs conditions ?",
+      "difficulte": 1,
+      "explication": "Ce sont les opérateurs booléens (logique propositionnelle).",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "sorted et len",
+        "+, - et *",
+        "import et from",
+        "and, or et not"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on l'opération qui ne garde que certaines colonnes d'une table ?",
+      "difficulte": 1,
+      "explication": "Par exemple, ne garder que les prénoms.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "Une jointure de tables",
+        "Un tri",
+        "Une projection",
+        "Un doublon"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Que calcule len(eleves) quand eleves est une table ?",
+      "difficulte": 1,
+      "explication": "Chaque élément de la liste est un enregistrement.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "La taille du fichier en octets",
+        "Le nombre d'enregistrements",
+        "La moyenne de la classe",
+        "Le nombre de descripteurs"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un doublon dans une table ?",
+      "difficulte": 1,
+      "explication": "Il provient souvent d'une saisie répétée.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Une colonne de nombres",
+        "Un descripteur dont toutes les cases sont vides",
+        "Une table triée deux fois",
+        "Un enregistrement présent deux fois"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces valeurs de moyenne sur 20 est incohérente ?",
+      "difficulte": 1,
+      "explication": "Elle sort du domaine de valeurs [0 ; 20].",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "23",
+        "12.5",
+        "20",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quel descripteur est le plus adapté pour identifier chaque élève de manière unique ?",
+      "difficulte": 1,
+      "explication": "Deux élèves peuvent avoir le même nom, la même classe ou la même année.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Le nom de famille",
+        "La classe",
+        "Un numéro d'élève attribué à chacun",
+        "L'année de naissance"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction Python renvoie une nouvelle liste triée ?",
+      "difficulte": 1,
+      "explication": "sorted(t) ne modifie pas t ; t.sort() trie en place.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "trier_liste",
+        "sorted",
+        "order",
+        "sort"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:021",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert le paramètre reverse=True de sorted ?",
+      "difficulte": 1,
+      "explication": "Par défaut, le tri est croissant.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "À supprimer les doublons",
+        "À inverser les colonnes de la table",
+        "À trier dans l'ordre décroissant",
+        "À trier deux fois"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:022",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert le paramètre key de sorted pour trier une table ?",
+      "difficulte": 1,
+      "explication": "Par exemple key=moyenne, avec def moyenne(e): return e[\"moyenne\"].",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "À indiquer le nombre de lignes à trier",
+        "À indiquer la valeur de chaque enregistrement qui sert à le comparer",
+        "À choisir le séparateur du fichier CSV",
+        "À donner le mot de passe du fichier"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'opération table1 + table2 sur deux listes d'enregistrements ?",
+      "difficulte": 1,
+      "explication": "Les listes sont concaténées.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Elle met bout à bout les enregistrements des deux tables",
+        "Elle provoque toujours une erreur",
+        "Elle garde les enregistrements communs",
+        "Elle additionne les valeurs numériques des deux tables"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la fusion de deux tables ligne à ligne grâce à un descripteur commun ?",
+      "difficulte": 1,
+      "explication": "On complète chaque ligne de la première table par les informations de la seconde.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Un tri stable",
+        "Une concaténation",
+        "Une projection",
+        "Une jointure"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Que sont les données ouvertes (open data) ?",
+      "difficulte": 1,
+      "explication": "Elles sont souvent publiées au format CSV.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "Des données qu'on ne peut pas lire avec un programme",
+        "Des fichiers protégés par un mot de passe",
+        "Des données publiées librement et réutilisables par tous",
+        "Des données personnelles volées"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Quel site public français recense des données ouvertes ?",
+      "difficulte": 1,
+      "explication": "data.gouv.fr est la plateforme française des données publiques.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "wikipedia.org",
+        "python.org",
+        "w3.org",
+        "data.gouv.fr"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Avec eleves[2][\"prenom\"], qu'obtient-on ?",
+      "difficulte": 1,
+      "explication": "L'indice 2 désigne le troisième élément.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Le prénom du deuxième enregistrement de la table",
+        "Le prénom du troisième enregistrement",
+        "Le deuxième prénom de chaque élève",
+        "Le nombre de prénoms"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Quel autre format proche du CSV utilise une tabulation comme séparateur ?",
+      "difficulte": 1,
+      "explication": "On parle aussi de TSV.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Le fichier texte tabulé",
+        "Le fichier HTML d'une page Web",
+        "Le fichier MP3",
+        "Le fichier PNG"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Que vaut int(\"2009\") ?",
+      "difficulte": 1,
+      "explication": "int convertit une chaîne qui représente un entier.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Une erreur",
+        "2009",
+        "\"2009\"",
+        "2009.0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Quelle notion, étudiée en terminale, prolonge le traitement de données en tables ?",
+      "difficulte": 1,
+      "explication": "Un SGBD et le langage SQL traitent de grandes tables.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "Les bases de données",
+        "Les encodages de caractères",
+        "Les portes logiques",
+        "Les nombres flottants"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Que vaut l'expression \"9.8\" < \"14.5\" en Python ?",
+      "difficulte": 2,
+      "explication": "Les chaînes se comparent caractère par caractère : \"9\" vient après \"1\".",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Une erreur",
+        "True",
+        "9.8",
+        "False"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Que vaut float(\"9.8\") < float(\"14.5\") ?",
+      "difficulte": 2,
+      "explication": "Après conversion, on compare des nombres.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "\"9.8\"",
+        "False",
+        "True",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Une ligne CSV vaut \"Martin;Lina;1G2\". Que donne \"Martin;Lina;1G2\".split(\";\") ?",
+      "difficulte": 2,
+      "explication": "split découpe la chaîne au séparateur.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "[\"Martin;Lina;1G2\"]",
+        "(\"Martin\", \"Lina\")",
+        "\"Martin Lina 1G2\"",
+        "[\"Martin\", \"Lina\", \"1G2\"]"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:034",
+      "type": "qcm_unique",
+      "enonce": "On lit un CSV dont la colonne moyenne contient \"14,5\". Que provoque float(\"14,5\") ?",
+      "difficulte": 2,
+      "explication": "Il faut d'abord remplacer la virgule : \"14,5\".replace(\",\", \".\").",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "La valeur 14",
+        "La valeur 145",
+        "Une erreur ValueError, car Python attend un point décimal",
+        "La valeur 14.5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quelle option de csv.DictReader permet de lire un fichier dont le séparateur est le point-virgule ?",
+      "difficulte": 2,
+      "explication": "Par défaut, le séparateur est la virgule.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "sep=\",\"",
+        "delimiter=\";\"",
+        "reverse=True",
+        "key=\";\""
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Avec eleves = [{\"prenom\": \"Lina\", \"moyenne\": 14.5}, {\"prenom\": \"Tom\", \"moyenne\": 11.0}, {\"prenom\": \"Inès\", \"moyenne\": 16.2}], que vaut [e[\"prenom\"] for e in eleves if e[\"moyenne\"] > 12] ?",
+      "difficulte": 2,
+      "explication": "On garde les prénoms des élèves dont la moyenne dépasse 12.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "[\"Lina\", \"Inès\"]",
+        "[\"Tom\"]",
+        "[14.5, 16.2]",
+        "[\"Lina\", \"Tom\", \"Inès\"]"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Quel critère sélectionne les élèves nés en 2009 dont la moyenne est d'au moins 12 ?",
+      "difficulte": 2,
+      "explication": "Les deux conditions doivent être vraies, et « au moins » inclut 12.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "e[\"naissance\"] == 2009 and e[\"moyenne\"] > 12",
+        "not e[\"naissance\"] == 2009",
+        "e[\"naissance\"] == 2009 and e[\"moyenne\"] >= 12",
+        "e[\"naissance\"] == 2009 or e[\"moyenne\"] >= 12"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel critère sélectionne les élèves qui ne sont ni en 1G1 ni en 1G2 ?",
+      "difficulte": 2,
+      "explication": "« ni … ni » est la négation d'un ou ; la deuxième proposition est toujours vraie.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "not e[\"classe\"] == \"1G1\" or e[\"classe\"] == \"1G2\"",
+        "not (e[\"classe\"] == \"1G1\" or e[\"classe\"] == \"1G2\")",
+        "e[\"classe\"] != \"1G1\" or e[\"classe\"] != \"1G2\"",
+        "e[\"classe\"] == \"1G1\" and e[\"classe\"] == \"1G2\""
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Dans une table de n enregistrements, combien de lignes une recherche par sélection examine-t-elle ?",
+      "difficulte": 2,
+      "explication": "On teste le critère sur chaque ligne : le coût est proportionnel à n.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "Seulement les lignes qui vérifient le critère",
+        "Seulement la première",
+        "La moitié des lignes",
+        "Toutes les n lignes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Avec la table eleves, que calcule sum([e[\"moyenne\"] for e in eleves]) / len(eleves) ?",
+      "difficulte": 2,
+      "explication": "Somme des valeurs divisée par leur nombre.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "La moyenne des moyennes des élèves",
+        "Le nombre d'élèves",
+        "La meilleure moyenne obtenue dans la table",
+        "La somme des numéros d'élèves"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Que vaut max([e[\"moyenne\"] for e in eleves]) avec des moyennes 14.5, 11.0, 16.2 et 9.8 ?",
+      "difficulte": 2,
+      "explication": "max renvoie la plus grande valeur.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "9.8",
+        "51.5",
+        "14.5",
+        "16.2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Que donne [e[\"prenom\"] for e in eleves] ?",
+      "difficulte": 2,
+      "explication": "C'est une projection sur le descripteur prenom.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "Le premier prénom de la table",
+        "Le nombre de prénoms différents de la table",
+        "La liste des prénoms de tous les élèves",
+        "Les élèves triés par prénom"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces enregistrements est incohérent dans une table d'élèves de première en 2026 ?",
+      "difficulte": 2,
+      "explication": "Une année de naissance de 2090 est impossible.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "{\"nom\": \"Lefèvre\", \"naissance\": 2010, \"moyenne\": 0}",
+        "{\"nom\": \"Petit\", \"naissance\": 2090, \"moyenne\": 9.8}",
+        "{\"nom\": \"Petit\", \"naissance\": 2009, \"moyenne\": 9.8}",
+        "{\"nom\": \"Roux\", \"naissance\": 2008, \"moyenne\": 20}"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression sélectionne les enregistrements dont la moyenne est hors du domaine [0 ; 20] ?",
+      "difficulte": 2,
+      "explication": "On garde ceux qui ne sont pas dans le domaine.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "[e for e in t if not (0 <= e[\"moyenne\"] <= 20)]",
+        "[e for e in t if e[\"moyenne\"] > 0 and e[\"moyenne\"] < 20]",
+        "[e for e in t if 0 <= e[\"moyenne\"] <= 20]",
+        "[e for e in t if e[\"moyenne\"] == 20]"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le nom de famille n'est-il pas un bon identifiant unique d'élève ?",
+      "difficulte": 2,
+      "explication": "Un identifiant doit être différent pour chaque enregistrement.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Deux élèves peuvent avoir le même nom",
+        "Un nom ne peut pas être stocké dans un CSV",
+        "Un nom contient trop de lettres",
+        "Les noms changent chaque année"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression teste si la liste de numéros t contient au moins un doublon ?",
+      "difficulte": 2,
+      "explication": "set(t) supprime les doublons : si la longueur change, il y en avait.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "t == sorted(t)",
+        "len(t) == len(set(t))",
+        "len(t) != len(set(t))",
+        "len(t) > 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:047",
+      "type": "qcm_unique",
+      "enonce": "On définit def moyenne(e): return e[\"moyenne\"]. Que fait sorted(eleves, key=moyenne, reverse=True) ?",
+      "difficulte": 2,
+      "explication": "Tri décroissant selon la moyenne, dans une nouvelle liste.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Elle renvoie les élèves du moins bon au meilleur",
+        "Elle renvoie les élèves du meilleur au moins bon",
+        "Elle trie les élèves par prénom",
+        "Elle modifie la table eleves"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Après r = sorted(t), que devient la liste t ?",
+      "difficulte": 2,
+      "explication": "sorted crée une nouvelle liste ; t.sort() modifierait t.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Elle est vidée",
+        "Elle est inversée",
+        "Elle est triée elle aussi",
+        "Elle n'est pas modifiée"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Que vaut sorted([\"Zoé\", \"anna\", \"Bob\"]) ?",
+      "difficulte": 2,
+      "explication": "Les majuscules ont des codes plus petits que les minuscules.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "[\"anna\", \"Zoé\", \"Bob\"]",
+        "[\"Zoé\", \"Bob\", \"anna\"]",
+        "[\"Bob\", \"Zoé\", \"anna\"]",
+        "[\"anna\", \"Bob\", \"Zoé\"]"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Que signifie que le tri de Python est stable ?",
+      "difficulte": 2,
+      "explication": "Cela permet de trier sur plusieurs colonnes successivement.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Le tri prend toujours le même temps",
+        "Deux éléments de même clé gardent leur ordre de départ",
+        "Le tri ne fonctionne qu'une fois",
+        "Le tri ne modifie jamais la liste"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Quelle écriture équivaut à key=moyenne, où moyenne renvoie e[\"moyenne\"] ?",
+      "difficulte": 2,
+      "explication": "lambda définit une fonction anonyme en une ligne.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "key=lambda e: e[\"moyenne\"]",
+        "key=moyenne()",
+        "key=\"moyenne\"",
+        "key=e[\"moyenne\"]"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Pour fusionner les élèves et les classes sur le descripteur classe, que faut-il vérifier ?",
+      "difficulte": 2,
+      "explication": "Si l'une écrit « 1G2 » et l'autre « 1re G2 », rien ne correspond.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Que les deux fichiers ont le même nom",
+        "Que les deux tables sont triées par ordre alphabétique",
+        "Que les deux tables ont le même nombre de lignes",
+        "Que le descripteur commun a le même domaine de valeurs dans les deux tables"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Lors d'une jointure des élèves avec la table des classes, que devient un élève dont la classe est absente de la table des classes ?",
+      "difficulte": 2,
+      "explication": "Aucune ligne de classes ne lui correspond.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Il n'apparaît pas dans la table fusionnée",
+        "Il apparaît deux fois",
+        "Il apparaît avec une classe choisie au hasard parmi les autres",
+        "Il provoque une erreur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Avant de mettre bout à bout deux tables d'élèves de deux lycées, que faut-il vérifier ?",
+      "difficulte": 2,
+      "explication": "Même nom de colonne, même unité, même format.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Qu'elles ont exactement le même nombre d'élèves",
+        "Qu'elles sont toutes deux triées par moyenne",
+        "Qu'elles ne contiennent que des nombres",
+        "Qu'elles ont les mêmes descripteurs avec les mêmes formats"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Une jointure par double boucle compare chaque ligne d'une table de 100 lignes à chaque ligne d'une table de 50 lignes. Combien de comparaisons fait-elle ?",
+      "difficulte": 2,
+      "explication": "100 × 50 = 5000.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "50",
+        "150",
+        "5000",
+        "100"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Dans une table représentée par une liste de listes, eleves[2][1] vaut \"Inès\". Quel inconvénient a cette représentation ?",
+      "difficulte": 2,
+      "explication": "Les dictionnaires nomment les colonnes et rendent le code plus lisible.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Elle ne peut pas contenir plus de deux lignes",
+        "Il faut se souvenir que l'indice 1 correspond au prénom",
+        "Elle ne permet pas de stocker des chaînes",
+        "Elle est impossible à parcourir"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Combien d'enregistrements contient un fichier CSV de 51 lignes dont la première contient les descripteurs ?",
+      "difficulte": 2,
+      "explication": "La ligne d'en-tête n'est pas un enregistrement.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "50",
+        "1",
+        "52",
+        "51"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi faut-il connaître l'encodage d'un fichier CSV avant de le lire ?",
+      "difficulte": 2,
+      "explication": "Un fichier Latin-1 lu en UTF-8 donne des caractères erronés.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Pour connaître le séparateur décimal",
+        "Pour que les caractères accentués soient correctement décodés",
+        "Pour savoir s'il est trié",
+        "Pour connaître le nombre de colonnes"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Quelle suite d'étapes convient pour exploiter un fichier de données ouvertes ?",
+      "difficulte": 2,
+      "explication": "On ne peut pas calculer avant d'avoir importé et converti.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "Trier, puis importer, puis convertir",
+        "Fusionner avant de lire le fichier",
+        "Rechercher avant d'importer le fichier",
+        "Importer, convertir les types, vérifier la cohérence, puis rechercher et trier"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de la valeur renvoyée par [e for e in eleves if e[\"moyenne\"] > 20] si aucune moyenne ne dépasse 20 ?",
+      "difficulte": 2,
+      "explication": "La compréhension renvoie toujours une liste, éventuellement vide.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "False",
+        "Une erreur IndexError ou KeyError",
+        "Une liste vide",
+        "None"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:061",
+      "type": "qcm_unique",
+      "enonce": "On lit \"14,5\" dans un CSV français. Quelle expression donne le flottant 14.5 ?",
+      "difficulte": 3,
+      "explication": "On remplace la virgule décimale par un point avant de convertir.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "float(\"14,5\".split(\",\"))",
+        "float(\"14,5\".replace(\",\", \".\"))",
+        "float(\"14,5\")",
+        "int(\"14,5\")"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Avec t = [{\"v\": 3}, {\"v\": 8}, {\"v\": 5}], que vaut len([e for e in t if e[\"v\"] > 4 or e[\"v\"] < 2]) ?",
+      "difficulte": 3,
+      "explication": "8 et 5 dépassent 4 ; aucune valeur n'est inférieure à 2.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "1",
+        "3",
+        "2",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Une table d'élèves est d'abord triée par prénom, puis le résultat est trié par classe avec sorted. Comment sont rangés les élèves d'une même classe ?",
+      "difficulte": 3,
+      "explication": "Le second tri conserve l'ordre du premier entre éléments de même classe.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Dans l'ordre du fichier d'origine",
+        "Dans un ordre aléatoire",
+        "Par ordre inverse des prénoms",
+        "Par prénom, grâce à la stabilité du tri"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Avec t = [(\"Lina\", 14), (\"Tom\", 11), (\"Inès\", 16)], que vaut sorted(t, key=lambda e: e[1])[0][0] ?",
+      "difficulte": 3,
+      "explication": "Le tri par note met (\"Tom\", 11) en premier ; [0][0] donne le prénom.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "\"Tom\"",
+        "\"Lina\"",
+        "\"Inès\"",
+        "11"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Comment trier une table par moyenne décroissante, puis, à moyenne égale, par nom croissant, avec deux appels à sorted ?",
+      "difficulte": 3,
+      "explication": "On commence par le critère le moins important ; la stabilité garde l'ordre des noms.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "C'est impossible avec sorted",
+        "Trier d'abord par nom, puis trier le résultat par moyenne avec reverse=True",
+        "Trier d'abord par moyenne, puis trier le résultat par nom",
+        "Trier par nom avec reverse=True, puis par moyenne"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:066",
+      "type": "qcm_unique",
+      "enonce": "La fonction doublons du cours renvoie les valeurs présentes plusieurs fois. Que renvoie doublons(t, \"num\") si les numéros sont 4, 7, 4, 2, 7, 4 ?",
+      "difficulte": 3,
+      "explication": "4 et 7 apparaissent plusieurs fois ; chacun n'est listé qu'une fois.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "[2]",
+        "[4, 7, 4]",
+        "[4, 7]",
+        "[4]"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Une table de capteurs contient la température \"N/A\" dans certaines lignes. Que provoque float(e[\"temp\"]) sur ces lignes ?",
+      "difficulte": 3,
+      "explication": "\"N/A\" ne représente pas un nombre : il faut filtrer ces lignes avant la conversion.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Une erreur ValueError",
+        "La valeur 0.0",
+        "La valeur None",
+        "La valeur NaN sans erreur, dans tous les cas"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:068",
+      "type": "qcm_unique",
+      "enonce": "La table A a 30 lignes, la table B a 20 lignes et elles ont 5 enregistrements en commun. Combien de lignes contient A + B après suppression des doublons ?",
+      "difficulte": 3,
+      "explication": "30 + 20 − 5 = 45.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "55",
+        "25",
+        "50",
+        "45"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:069",
+      "type": "qcm_unique",
+      "enonce": "On joint 4 élèves avec une table de 3 classes ; chaque élève a une classe présente une seule fois dans cette table. Combien de lignes contient le résultat ?",
+      "difficulte": 3,
+      "explication": "Une ligne par élève, complétée par sa classe.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "12",
+        "7",
+        "4",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Dans la jointure du cours, pourquoi écrit-on ligne = dict(e) au lieu de ligne = e ?",
+      "difficulte": 3,
+      "explication": "ligne = e créerait un alias : ajouter des champs modifierait la table d'origine.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Pour ne pas modifier l'enregistrement de la table eleves",
+        "Parce que e n'est pas un dictionnaire",
+        "Pour trier l'enregistrement",
+        "Pour convertir les nombres en chaînes"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Avec des moyennes 14.5, 11.0, 16.2 et 9.8, que vaut len([m for m in moyennes if m >= sum(moyennes) / len(moyennes)]) ?",
+      "difficulte": 3,
+      "explication": "La moyenne vaut 12.875 ; 14.5 et 16.2 sont au-dessus.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "1",
+        "4",
+        "3",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Avec eleves une table, que renvoie [e[\"nom\"] for e in eleves if e[\"classe\"] == \"1G2\"][0] si aucun élève n'est en 1G2 ?",
+      "difficulte": 3,
+      "explication": "La liste est vide : l'indice 0 n'existe pas.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "None",
+        "Une erreur IndexError",
+        "False",
+        "Une chaîne vide, car aucun nom ne correspond"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Une valeur CSV contient une virgule, comme « Paris, France », dans un fichier séparé par des virgules. Comment le format CSV l'écrit-il en général ?",
+      "difficulte": 3,
+      "explication": "Les guillemets protègent le séparateur ; le module csv les gère.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "C'est impossible en CSV",
+        "Entre guillemets : \"Paris, France\"",
+        "En supprimant la virgule",
+        "En la plaçant dans une autre ligne"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Dans une table de communes, quel test de cohérence peut révéler une erreur de saisie dans le code postal ?",
+      "difficulte": 3,
+      "explication": "Un code postal français a 5 chiffres : c'est son domaine de valeurs.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Vérifier qu'il commence par une majuscule",
+        "Vérifier qu'il est supérieur à la population",
+        "Vérifier qu'il est formé de 5 chiffres",
+        "Vérifier qu'il est pair"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Une table a 12 descripteurs et 300 enregistrements. Combien de valeurs contient-elle ?",
+      "difficulte": 3,
+      "explication": "12 × 300 = 3600.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "25",
+        "312",
+        "300",
+        "3600"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces termes, lesquels désignent une colonne d'une table ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un enregistrement est une ligne.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Enregistrement",
+        "Attribut",
+        "Ligne",
+        "Descripteur"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on du format CSV ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un tableur ou un éditeur de texte l'ouvrent aussi.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "La première ligne contient souvent les descripteurs",
+        "Il ne peut contenir que des nombres",
+        "C'est un format texte",
+        "Il ne s'ouvre qu'avec Python"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces caractères, lesquels sont couramment utilisés comme séparateurs dans les fichiers CSV ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On rencontre aussi la tabulation.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Le point-virgule",
+        "Le chiffre 0",
+        "La virgule",
+        "La lettre e"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles convertissent une chaîne en nombre ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "str convertit en chaîne ; len donne une longueur.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "str",
+        "int",
+        "len",
+        "float"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces opérateurs, lesquels servent à combiner des critères de recherche ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "sorted sert à trier.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "sorted",
+        "and",
+        "not",
+        "or"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces moyennes sur 20, lesquelles sont incohérentes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le domaine est [0 ; 20].",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "19.5",
+        "-2",
+        "0",
+        "21"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Quel est le comportement par défaut de la fonction sorted ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Avec key, on trie une liste de dictionnaires.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Elle modifie la liste d'origine",
+        "Elle renvoie une nouvelle liste",
+        "Elle trie par ordre croissant par défaut",
+        "Elle ne peut pas trier des dictionnaires, même avec key"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces opérations, lesquelles fusionnent deux tables ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le tri et la projection ne combinent pas deux tables.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Supprimer une colonne d'une table",
+        "Mettre bout à bout deux tables de même structure",
+        "Trier une table par moyenne",
+        "Joindre deux tables sur un descripteur commun"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces données, lesquelles sont typiquement publiées en données ouvertes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les données personnelles ne sont pas publiées.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "Les mots de passe des usagers",
+        "Les résultats des élections",
+        "Les notes individuelles nominatives des élèves",
+        "La qualité de l'air dans les villes"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles calculent un agrégat sur une colonne de nombres ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "sum et max résument une colonne par une valeur.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "sorted",
+        "sum",
+        "max",
+        "split"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur une table représentée par une liste de dictionnaires, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Après conversion, les valeurs peuvent être des nombres.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "propositions": [
+        "Chaque dictionnaire est une colonne",
+        "Chaque dictionnaire est un enregistrement",
+        "Les clés des dictionnaires sont les descripteurs",
+        "Les valeurs sont toujours des chaînes"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le module csv, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les valeurs lues restent des chaînes.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "Il ne lit que les fichiers séparés par des tabulations",
+        "On peut choisir le séparateur avec delimiter",
+        "csv.DictReader lit chaque ligne comme un dictionnaire",
+        "Il convertit automatiquement les nombres"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [{\"n\": \"A\", \"x\": 5}, {\"n\": \"B\", \"x\": 12}, {\"n\": \"C\", \"x\": 8}], parmi ces expressions, lesquelles valent [\"B\", \"C\"] ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "e[\"x\"] > 8 ne garde que B ; la dernière donne des nombres.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "[e[\"n\"] for e in t if not e[\"x\"] < 8]",
+        "[e[\"n\"] for e in t if e[\"x\"] > 6]",
+        "[e[\"x\"] for e in t if e[\"x\"] > 6]",
+        "[e[\"n\"] for e in t if e[\"x\"] > 8]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles valent True ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les chaînes se comparent caractère par caractère : \"1\" < \"9\".",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "int(\"10\") < int(\"9\")",
+        "\"9\" < \"10\"",
+        "\"10\" < \"9\"",
+        "9 < 10"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [{\"p\": \"Tom\", \"m\": 11}, {\"p\": \"Lina\", \"m\": 14}], parmi ces expressions, lesquelles placent Lina en premier ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Lina a la meilleure moyenne et vient avant Tom dans l'alphabet.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "sorted(t, key=lambda e: e[\"p\"])",
+        "sorted(t, key=lambda e: e[\"m\"], reverse=True)",
+        "sorted(t, key=lambda e: e[\"p\"], reverse=True)",
+        "sorted(t, key=lambda e: e[\"m\"])"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces vérifications, lesquelles sont des tests de cohérence d'une table d'élèves ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Calculer et trier n'est pas vérifier.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Vérifier que chaque classe existe dans la liste des classes du lycée",
+        "Calculer la moyenne de la classe",
+        "Trier les élèves par nom",
+        "Vérifier que chaque moyenne est entre 0 et 20"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces situations, lesquelles empêchent une jointure correcte sur le descripteur classe ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La comparaison des chaînes est exacte et sensible à la casse.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Une table écrit « 1G2 » et l'autre « 1re G2 »",
+        "Une table écrit « 1g2 » et l'autre « 1G2 »",
+        "Les deux tables ont un nombre de lignes différent",
+        "Les deux tables sont triées différemment"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Avec des moyennes [14.5, 11.0, 16.2, 9.8], parmi ces valeurs, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La somme vaut 51.5 et il y a 4 valeurs.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "max vaut 16.2",
+        "sum vaut 50.5",
+        "min vaut 9.8",
+        "len vaut 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Le fichier contient les lignes « nom;age », « Lina;16 » et « Tom;17 ». Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La première ligne est l'en-tête ; les valeurs lues sont des chaînes.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "Le fichier contient 2 enregistrements",
+        "Le fichier contient 3 enregistrements",
+        "Le séparateur est le point-virgule",
+        "Le descripteur age contient des flottants après lecture avec csv"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Avec numeros = [12, 5, 12, 8], parmi ces expressions, lesquelles révèlent un doublon ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "12 est présent deux fois.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "numeros.count(12) > 1",
+        "len(numeros) != len(set(numeros))",
+        "5 in numeros",
+        "len(numeros) == 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le tri d'une table, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "sorted renvoie une nouvelle liste ; le tri de Python est stable.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "Trier des chaînes place les majuscules avant les minuscules",
+        "Le tri de Python est instable",
+        "sorted(t) renvoie None",
+        "t.sort(key=f) trie la liste t en place"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les données réelles contiennent souvent des erreurs.",
+      "notion": "Données ouvertes",
+      "propositions": [
+        "Les données ouvertes sont souvent publiées au format CSV",
+        "On ne peut pas traiter les données ouvertes avec Python",
+        "Les données ouvertes ne contiennent jamais d'erreur",
+        "Il faut souvent vérifier la cohérence des données ouvertes avant de les utiliser"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [{\"v\": 4}, {\"v\": 9}, {\"v\": 15}], parmi ces critères, lesquels sélectionnent exactement l'enregistrement de valeur 9 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Avec or, toutes les lignes sont retenues ; not e[\"v\"] == 9 garde les deux autres.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "not e[\"v\"] == 9",
+        "e[\"v\"] > 5 or e[\"v\"] < 10",
+        "e[\"v\"] > 5 and e[\"v\"] < 10",
+        "e[\"v\"] == 9"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "La ligne d'en-tête d'un CSV est « ville;pop;dep ». Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "L'en-tête donne les descripteurs ; les valeurs lues sont des chaînes.",
+      "notion": "Fichiers CSV",
+      "propositions": [
+        "La table a trois descripteurs",
+        "pop contiendra des entiers après lecture avec csv.DictReader",
+        "ville est le nom d'un descripteur",
+        "La table a trois enregistrements"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [{\"a\": 1, \"b\": 0}, {\"a\": 0, \"b\": 1}, {\"a\": 1, \"b\": 1}], parmi ces expressions, lesquelles valent 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le troisième critère garde une ligne, le quatrième aussi.",
+      "notion": "Recherche et sélection",
+      "propositions": [
+        "len([e for e in t if e[\"a\"] == 0 or e[\"b\"] == 0])",
+        "len([e for e in t if e[\"a\"] == 1 and e[\"b\"] == 1])",
+        "len([e for e in t if e[\"a\"] == 1])",
+        "len([e for e in t if not e[\"b\"] == 1])"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "La table A contient les numéros 1, 2, 3 et la table B les numéros 2, 3, 4. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Seuls 2 et 3 sont communs ; la concaténation garde les doublons.",
+      "notion": "Fusion de tables",
+      "propositions": [
+        "Une jointure sur le numéro donne 2 lignes",
+        "Mettre A et B bout à bout donne 6 lignes avant suppression des doublons",
+        "Mettre A et B bout à bout donne 4 lignes",
+        "Une jointure sur le numéro donne 6 lignes"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [(\"b\", 2), (\"a\", 2), (\"c\", 1)], parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le tri est stable : (\"b\", 2) reste avant (\"a\", 2) ; sorted(t) compare d'abord les lettres.",
+      "notion": "Tri selon une colonne",
+      "propositions": [
+        "sorted(t) vaut [(\"a\", 2), (\"b\", 2), (\"c\", 1)]",
+        "sorted(t, key=lambda e: e[1]) modifie t",
+        "sorted(t, key=lambda e: e[1]) vaut [(\"c\", 1), (\"a\", 2), (\"b\", 2)]",
+        "sorted(t, key=lambda e: e[1]) vaut [(\"c\", 1), (\"b\", 2), (\"a\", 2)]"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces conversions, lesquelles provoquent une erreur ValueError ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "int refuse une chaîne avec un point, float refuse la virgule ; int tolère les espaces aux bords.",
+      "notion": "Import et conversion des types",
+      "propositions": [
+        "float(\"14,5\")",
+        "float(\"14.5\")",
+        "int(\"14.5\")",
+        "int(\" 12 \")"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Une table de relevés contient des températures en °C entre −10 et 40, sauf une ligne à 104. Parmi ces explications, lesquelles sont plausibles ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "104 °F valent 40 °C ; un doublon répéterait une ligne existante.",
+      "notion": "Doublons et cohérence",
+      "propositions": [
+        "Une erreur de saisie",
+        "Une température normale en France",
+        "Une valeur saisie en degrés Fahrenheit",
+        "Un doublon"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [{\"c\": \"1G1\", \"m\": 12}, {\"c\": \"1G2\", \"m\": 15}, {\"c\": \"1G1\", \"m\": 8}], parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "(12 + 8) / 2 = 10 ; le maximum est 15.",
+      "notion": "Projection et agrégats",
+      "propositions": [
+        "len([e for e in t if e[\"c\"] == \"1G1\"]) vaut 2",
+        "La moyenne des m de la classe 1G1 vaut 10",
+        "La moyenne des m de la classe 1G1 vaut 11.67",
+        "max([e[\"m\"] for e in t]) vaut 12"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Dans une table, chaque ligne est un enregistrement.",
+      "difficulte": 1,
+      "explication": "Les colonnes sont les descripteurs.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Un fichier CSV est un fichier texte.",
+      "difficulte": 1,
+      "explication": "On peut l'ouvrir avec un éditeur de texte.",
+      "notion": "Fichiers CSV",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Les valeurs lues dans un fichier CSV avec le module csv sont des chaînes de caractères.",
+      "difficulte": 1,
+      "explication": "Il faut les convertir pour calculer.",
+      "notion": "Import et conversion des types",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:109",
+      "type": "vrai_faux",
+      "enonce": "sorted renvoie une nouvelle liste triée sans modifier la liste d'origine.",
+      "difficulte": 1,
+      "explication": "t.sort() trie en place.",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Le site data.gouv.fr publie des données ouvertes.",
+      "difficulte": 1,
+      "explication": "C'est la plateforme française des données publiques.",
+      "notion": "Données ouvertes",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Une moyenne de 25 sur 20 est une valeur incohérente.",
+      "difficulte": 1,
+      "explication": "Elle sort du domaine [0 ; 20].",
+      "notion": "Doublons et cohérence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:112",
+      "type": "vrai_faux",
+      "enonce": "En Python, \"9.8\" < \"14.5\" vaut False.",
+      "difficulte": 2,
+      "explication": "Comparaison de chaînes : \"9\" > \"1\".",
+      "notion": "Import et conversion des types",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Le paramètre reverse=True de sorted donne un tri décroissant.",
+      "difficulte": 2,
+      "explication": "Par défaut, le tri est croissant.",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Pour joindre deux tables, le descripteur commun doit avoir le même domaine de valeurs dans les deux tables.",
+      "difficulte": 2,
+      "explication": "Sinon les valeurs ne correspondent pas.",
+      "notion": "Fusion de tables",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Une sélection par compréhension sur une table de n lignes examine les n lignes.",
+      "difficulte": 2,
+      "explication": "Son coût est proportionnel à n.",
+      "notion": "Recherche et sélection",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Dans un fichier CSV de 101 lignes avec une ligne d'en-tête, il y a 100 enregistrements.",
+      "difficulte": 2,
+      "explication": "L'en-tête n'est pas un enregistrement.",
+      "notion": "Fichiers CSV",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:117",
+      "type": "vrai_faux",
+      "enonce": "len(t) != len(set(t)) vaut True quand la liste t contient au moins un doublon.",
+      "difficulte": 2,
+      "explication": "set supprime les doublons.",
+      "notion": "Doublons et cohérence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Grâce à la stabilité du tri, trier par prénom puis par classe range les élèves d'une même classe par prénom.",
+      "difficulte": 3,
+      "explication": "Le second tri conserve l'ordre du premier entre éléments égaux.",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:119",
+      "type": "vrai_faux",
+      "enonce": "En Python, int(\" 12 \") vaut 12.",
+      "difficulte": 3,
+      "explication": "int ignore les espaces aux bords.",
+      "notion": "Import et conversion des types",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Joindre 4 élèves avec une table de classes où chaque classe apparaît une fois donne au plus 4 lignes.",
+      "difficulte": 3,
+      "explication": "Chaque élève correspond à au plus une classe.",
+      "notion": "Fusion de tables",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch6:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Dans une table, chaque colonne est un enregistrement.",
+      "difficulte": 1,
+      "explication": "Chaque colonne est un descripteur.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Un fichier CSV ne peut contenir que des nombres.",
+      "difficulte": 1,
+      "explication": "Il contient du texte quelconque.",
+      "notion": "Fichiers CSV",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:123",
+      "type": "vrai_faux",
+      "enonce": "sorted modifie la liste qu'on lui donne.",
+      "difficulte": 1,
+      "explication": "Elle renvoie une nouvelle liste.",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Le nom de famille est un bon identifiant unique pour les élèves d'un lycée.",
+      "difficulte": 1,
+      "explication": "Deux élèves peuvent porter le même nom.",
+      "notion": "Doublons et cohérence",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Les données ouvertes sont des données personnelles réservées à leur propriétaire.",
+      "difficulte": 1,
+      "explication": "Elles sont publiques et réutilisables.",
+      "notion": "Données ouvertes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Le module csv convertit automatiquement les nombres d'un fichier en int ou en float.",
+      "difficulte": 1,
+      "explication": "Les valeurs restent des chaînes.",
+      "notion": "Import et conversion des types",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:127",
+      "type": "vrai_faux",
+      "enonce": "En Python, float(\"14,5\") vaut 14.5.",
+      "difficulte": 2,
+      "explication": "ValueError : il faut un point décimal.",
+      "notion": "Import et conversion des types",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Le critère e[\"classe\"] != \"1G1\" or e[\"classe\"] != \"1G2\" sélectionne les élèves qui ne sont ni en 1G1 ni en 1G2.",
+      "difficulte": 2,
+      "explication": "Ce critère est toujours vrai ; il faut and (ou not (… or …)).",
+      "notion": "Recherche et sélection",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Mettre bout à bout deux tables supprime automatiquement les doublons.",
+      "difficulte": 2,
+      "explication": "Les doublons restent : il faut les rechercher.",
+      "notion": "Fusion de tables",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:130",
+      "type": "vrai_faux",
+      "enonce": "En Python, sorted([\"anna\", \"Bob\"]) vaut [\"anna\", \"Bob\"].",
+      "difficulte": 2,
+      "explication": "Les majuscules passent avant : [\"Bob\", \"anna\"].",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:131",
+      "type": "vrai_faux",
+      "enonce": "max([14.5, 11.0, 16.2]) vaut 14.5.",
+      "difficulte": 2,
+      "explication": "Il vaut 16.2.",
+      "notion": "Projection et agrégats",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:132",
+      "type": "vrai_faux",
+      "enonce": "La première ligne d'un fichier CSV compte toujours parmi les enregistrements.",
+      "difficulte": 2,
+      "explication": "Elle contient en général les descripteurs.",
+      "notion": "Fichiers CSV",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Une jointure par double boucle entre une table de 200 lignes et une table de 100 lignes fait 300 comparaisons.",
+      "difficulte": 3,
+      "explication": "Elle en fait 200 × 100 = 20000.",
+      "notion": "Fusion de tables",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Le tri de Python peut échanger l'ordre de deux éléments qui ont la même clé.",
+      "difficulte": 3,
+      "explication": "Il est stable : l'ordre de départ est conservé.",
+      "notion": "Tri selon une colonne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:135",
+      "type": "vrai_faux",
+      "enonce": "float(\"N/A\") vaut 0.0 en Python.",
+      "difficulte": 3,
+      "explication": "ValueError : il faut filtrer ces valeurs.",
+      "notion": "Doublons et cohérence",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch6:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Que signifie la lettre V du sigle CSV (en anglais) ?",
+      "difficulte": 1,
+      "explication": "Comma-separated values.",
+      "notion": "Fichiers CSV",
+      "reponses_acceptees": [
+        "values",
+        "value"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quel module Python lit les fichiers CSV ? Donne son nom.",
+      "difficulte": 1,
+      "explication": "import csv.",
+      "notion": "Import et conversion des types",
+      "reponses_acceptees": [
+        "csv"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quelle fonction Python renvoie une nouvelle liste triée ? Donne son nom sans parenthèses.",
+      "difficulte": 1,
+      "explication": "sorted(t, key=…, reverse=…).",
+      "notion": "Tri selon une colonne",
+      "reponses_acceptees": [
+        "sorted"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on une ligne d'une table ?",
+      "difficulte": 1,
+      "explication": "Les colonnes sont les descripteurs.",
+      "notion": "Tables, enregistrements, descripteurs",
+      "reponses_acceptees": [
+        "enregistrement",
+        "un enregistrement"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Que vaut float(\"2.5\") * 2 ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "2.5 × 2 = 5.0.",
+      "notion": "Import et conversion des types",
+      "reponses_acceptees": [
+        "5"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de domaine du site français des données publiques ouvertes ?",
+      "difficulte": 1,
+      "explication": "On y trouve de nombreux fichiers CSV.",
+      "notion": "Données ouvertes",
+      "reponses_acceptees": [
+        "data.gouv.fr"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Avec des moyennes 14.5, 11.0, 16.2 et 9.8, combien d'élèves ont au moins 11 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "14.5, 11.0 et 16.2.",
+      "notion": "Recherche et sélection",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Que vaut la moyenne des valeurs 14.5, 11.0, 16.2 et 9.8 ? Réponds par un nombre décimal.",
+      "difficulte": 2,
+      "explication": "51.5 / 4 = 12.875.",
+      "notion": "Projection et agrégats",
+      "reponses_acceptees": [
+        "12.875"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:144",
+      "type": "reponse_courte",
+      "enonce": "La table A a 120 lignes et la table B 80 lignes, sans enregistrement commun. Combien de lignes contient A + B ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "On met les lignes bout à bout.",
+      "notion": "Fusion de tables",
+      "reponses_acceptees": [
+        "200"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Avec t = [3, 7, 3, 9, 7, 3], que vaut len(set(t)) ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "Les valeurs distinctes sont 3, 7 et 9.",
+      "notion": "Doublons et cohérence",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Quel nom de paramètre de sorted permet d'obtenir un ordre décroissant ?",
+      "difficulte": 2,
+      "explication": "sorted(t, reverse=True).",
+      "notion": "Tri selon une colonne",
+      "reponses_acceptees": [
+        "reverse",
+        "reverse=True"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel nom de paramètre de csv.DictReader indique le séparateur ?",
+      "difficulte": 2,
+      "explication": "csv.DictReader(f, delimiter=\";\").",
+      "notion": "Fichiers CSV",
+      "reponses_acceptees": [
+        "delimiter",
+        "delimiter=\";\""
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Combien de comparaisons fait une jointure par double boucle entre une table de 250 lignes et une table de 40 lignes ? Réponds par un nombre, sans espace.",
+      "difficulte": 3,
+      "explication": "250 × 40 = 10000.",
+      "notion": "Fusion de tables",
+      "reponses_acceptees": [
+        "10000"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Avec t = [(\"Lina\", 14), (\"Tom\", 11), (\"Inès\", 16)], quel prénom donne sorted(t, key=lambda e: e[1], reverse=True)[1][0] ?",
+      "difficulte": 3,
+      "explication": "Ordre décroissant : Inès (16), Lina (14), Tom (11).",
+      "notion": "Tri selon une colonne",
+      "reponses_acceptees": [
+        "Lina"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch6:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Les tables A (30 lignes) et B (25 lignes) ont 10 enregistrements en commun. Combien de lignes reste-t-il après les avoir mises bout à bout et avoir supprimé les doublons ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "30 + 25 − 10 = 45.",
+      "notion": "Fusion de tables",
+      "reponses_acceptees": [
+        "45"
+      ]
+    }
+  ]
+}
