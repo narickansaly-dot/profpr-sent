@@ -32,6 +32,11 @@ Accord initial : **150/150** (aucun écart). Neuf remarques sur des questions o�
 - La bonne réponse des qcm_unique est la plus longue dans 13 cas sur 75.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 12 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 3 questions modifiées ou revérifiées (`ch12-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 3/3**. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Les chiffres demandés sont ceux du cours (un million d'espèces menacées selon l'IPBES 2019, environ 60 % de maladies infectieuses transmises par des animaux, 235 à 577 milliards de dollars pour la pollinisation, 33 000 milliards de dollars en 1997) ; les calculs (8,5 ; 7 ; 3000 ; rapport 4) donnent toutes leurs données dans l'énoncé.

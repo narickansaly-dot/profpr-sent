@@ -38,6 +38,11 @@ Taux d'accord initial : 150/150 (aucun écart). Quatorze remarques ont été tra
 - Biais de longueur : la bonne réponse est la plus longue dans 20 qcm_unique sur 75.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 14 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 9 questions modifiées (`ch14-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 9/9**. Il confirme les calculs de la 090 (15 mm est intermédiaire, 6 mm = diamètre du disque, donc aucune inhibition) et de la 131 (10 résistantes) ; les variantes de la 149 étaient déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les questions modifiées ont une réponse unique, écrite dans le chapitre ou calculable à partir de lui. Point à signaler à l'enseignant : les chiffres de santé publique (environ 400 000 cas et 150 000 décès de cancer par an en France ; décès dus à l'antibiorésistance estimés pour 2015 et 2019 ; part des SARM) sont des ordres de grandeur datés, à actualiser.

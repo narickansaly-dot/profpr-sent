@@ -32,6 +32,11 @@ Taux d'accord initial : 150/150 (aucun écart). Six remarques ont été traitée
 - Position de la bonne réponse des qcm_unique : 18 / 17 / 21 / 19.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 11 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 4 questions modifiées (`ch11-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 4/4**. Il jugeait encore discutable la proposition « chaque chevreuil qui broute tire un bénéfice » présentée comme une conséquence de l'abondance : la 090 porte maintenant sur l'interaction elle-même (énoncé « Quelles affirmations sur cette interaction sont exactes ? », propositions et explication reprises, réponses inchangées en position : 1re et 3e), en accord avec le tableau des interactions du chapitre (herbivorie : + / −).
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les trois questions modifiées ont une réponse unique, écrite dans le chapitre (complété pour la 018).

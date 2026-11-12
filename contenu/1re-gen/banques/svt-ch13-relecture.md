@@ -36,6 +36,11 @@ Taux d'accord initial : 150/150 (aucun écart). Onze remarques ont été traité
 - Position de la bonne réponse des qcm_unique : 19 / 19 / 19 / 18.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 13 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 7 questions modifiées (`ch13-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 7/7**. Ses remarques (variantes de 137) portaient sur des variantes déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les questions modifiées ont une réponse unique, écrite dans le chapitre.

@@ -32,6 +32,11 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Huit
 - Biais de longueur : la bonne réponse des qcm_unique est la plus longue dans 17 cas sur 75 ; positions des bonnes réponses 19 / 19 / 19 / 18.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 10 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 8 questions modifiées (`ch10-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 8/8**. Ses remarques (137 « coin mantellique », 150 « serpentinite ») portaient sur des variantes déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse après arbitrage. Les valeurs numériques (densités, seuil de 25 à 30 Ma, solidus à 100 km, épaisseurs crustales) sont celles du cours et cohérentes avec le chapitre 9.
