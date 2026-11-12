@@ -20,7 +20,7 @@ try {
 const COURS = config.fichier;
 if (!existsSync(COURS)) echouer(`Cours introuvable : ${COURS}`);
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss | --cours 1re-gen/espagnol]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss | --cours 1re-gen/espagnol [--prefixe espagnol-1re]]');
 
 const lu = analyserImport(readFileSync(COURS, 'utf8'));
 if ('erreurs' in lu) {

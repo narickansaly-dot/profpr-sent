@@ -36,6 +36,15 @@ describe('configuration des cours', () => {
     expect(optionCours(COURS_BANQUE.bph)).toBe('');
     expect(optionCours(configPourChemin('1re-gen/espagnol'))).toBe(' --cours 1re-gen/espagnol');
   });
+  it('lit --prefixe pour distinguer deux cours de même nom', () => {
+    const c = lireCoursArgument(['3', '--cours', '1re-gen/espagnol', '--prefixe', 'espagnol-1re']);
+    expect(c.prefixe).toBe('espagnol-1re');
+    expect(cheminBanque(c, 3)).toBe('contenu/1re-gen/banques/espagnol-ch3.json');
+    expect(optionCours(c)).toBe(' --cours 1re-gen/espagnol --prefixe espagnol-1re');
+    expect(() => lireCoursArgument(['3', '--prefixe', 'x'])).toThrow('--prefixe s’emploie avec --cours <chemin>');
+    expect(() => lireCoursArgument(['3', '--cours', 'stss', '--prefixe', 'x'])).toThrow('--prefixe s’emploie avec --cours <chemin>');
+    expect(() => lireCoursArgument(['3', '--cours', '1re-gen/espagnol', '--prefixe', 'Esp:'])).toThrow('--prefixe attend');
+  });
   it('décrit les deux cours', () => {
     expect(COURS_BANQUE.bph).toEqual({ nom: 'bph', fichier: 'contenu/1re-st2s/bph.json', banques: 'contenu/1re-st2s/banques', prefixe: 'bph', total: 130 });
     expect(COURS_BANQUE.stss).toEqual({ nom: 'stss', fichier: 'contenu/1re-st2s/stss.json', banques: 'contenu/1re-st2s/banques', prefixe: 'stss', total: 150 });

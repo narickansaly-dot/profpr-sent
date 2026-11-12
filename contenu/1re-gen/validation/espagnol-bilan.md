@@ -63,8 +63,17 @@ npm run import:contenu -- contenu/1re-gen/espagnol.json
 
 ## Scripts de banque
 
-Les scripts `npm run banque:texte|verifier|fusionner` acceptent désormais le chemin du cours : pour ce cours, `--cours 1re-gen/espagnol` (fichiers de travail lus dans `contenu/1re-gen/banques/`, sources `espagnol:chN:banque:NNN`, 150 questions par chapitre). Les six banques passent `npm run banque:verifier -- N --cours 1re-gen/espagnol`. Le cours de 2de se désigne de même par `--cours 2de-gen/espagnol` : le chemin distingue les deux cours qui partagent le préfixe `espagnol`.
+Les scripts `npm run banque:texte|verifier|fusionner` acceptent désormais le chemin du cours. Pour ce cours :
+
+```bash
+npm run banque:verifier -- N --cours 1re-gen/espagnol --prefixe espagnol-1re
+```
+
+Fichiers de travail lus dans `contenu/1re-gen/banques/espagnol-chN.json`, sources `espagnol-1re:chN:banque:NNN`, 150 questions par chapitre.
+
+**Pourquoi `--prefixe espagnol-1re`** : la colonne `question.source` est unique dans **toute la base**. Le cours d'espagnol de 2de, déjà en ligne, utilise les sources `espagnol:chN:banque:NNN` ; le premier import en ligne de ce cours a donc été refusé (« Cette source est déjà utilisée dans un autre chapitre »), sans rien écrire. Les 900 sources de ce cours ont été renommées en `espagnol-1re:…` (seul le préfixe change). **Le même conflit attend tous les cours de 1re dont la matière existe en 2de** (anglais, EMC, français, histoire-géographie, maths, physique-chimie, SES, SVT) : il faut leur donner un préfixe propre (par exemple `<matiere>-1re`).
 
 ## Import dans l'application
 
-Le 12 novembre 2026, le cours a été importé et publié dans la base locale (`npm run import:contenu -- contenu/1re-gen/espagnol.json --publier`, avec le `.env.local` du dépôt principal) : 6 chapitres publiés, 900 questions, toutes `valide`.
+- **Base locale** (12 novembre 2026) : `npm run import:contenu -- contenu/1re-gen/espagnol.json --publier`, avec le `.env.local` du dépôt principal ; après le renommage des sources, les 900 anciennes questions (jamais tirées) ont été supprimées et 900 recréées.
+- **Base en ligne** (12 novembre 2026, avec l'accord de l'utilisateur) : même commande avec `--distant` et `.env.distant`. Cours `espagnol-1re-gen` publié (GEN, 1re), 6 chapitres publiés, 900 questions `valide`. Il est visible pour un élève de voie générale en 1re ; le compte en ligne existant (admin, profil ST2S 1re) le voit dans `/admin`.

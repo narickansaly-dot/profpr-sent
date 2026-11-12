@@ -389,8 +389,10 @@ npm run banque:fusionner -- N [--cours <cours>]   # ajoute les questions au chap
 `<cours>` vaut `bph` (par défaut), `stss`, ou le **chemin du cours** sous `contenu/`, avec ou sans `contenu/` et `.json` : `--cours 1re-gen/espagnol` ou `--cours contenu/1re-gen/espagnol.json`. Pour un cours désigné par son chemin `contenu/<dossier>/<matiere>.json` :
 
 - les fichiers de travail sont dans `contenu/<dossier>/banques/` et s'appellent `<matiere>-chN.json` ;
-- les sources s'écrivent `<matiere>:chN:banque:NNN` ;
+- les sources s'écrivent `<matiere>:chN:banque:NNN` ; ajoute `--prefixe <p>` pour un autre préfixe (sources `<p>:chN:banque:NNN`) ;
 - chaque chapitre compte 150 nouvelles questions, avec les mêmes quotas que STSS.
+
+**Les sources sont uniques dans toute la base**, pas seulement dans le fichier : deux cours ne peuvent pas employer la même source, sinon l'import est refusé (« Cette source est déjà utilisée dans un autre chapitre »). Les cours de 2de utilisent `<matiere>:` ; les cours de 1re de même nom prennent un préfixe distinct, par exemple `--cours 1re-gen/espagnol --prefixe espagnol-1re`.
 
 Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
 

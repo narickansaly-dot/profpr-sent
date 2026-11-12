@@ -4,7 +4,8 @@ export type TypeQuestion = 'qcm_unique' | 'qcm_multiple' | 'vrai_faux' | 'repons
 /**
  * Configuration d'un cours pour les scripts de banque.
  * `nom` : ce qu'on passe à `--cours` (et qu'on affiche) ; `fichier` : le JSON du cours ; `banques` : le dossier des fichiers
- * de travail ; `prefixe` : le début des sources et du nom des fichiers de travail (`<prefixe>-chN.json`) ; `total` : questions par chapitre.
+ * de travail (`<matiere>-chN.json`, `<matiere>` étant le nom du fichier du cours) ; `prefixe` : le début des sources
+ * (`<prefixe>:chN:banque:NNN`), qui doivent être uniques dans toute la base ; `total` : questions par chapitre.
  */
 export type ConfigCours = { nom: string; fichier: string; banques: string; prefixe: string; total: number };
 
@@ -32,14 +33,17 @@ export function configPourChemin(chemin: string): ConfigCours {
   return { nom, fichier: `${dossier}/${prefixe}.json`, banques: `${dossier}/banques`, prefixe, total: TOTAL_PAR_DEFAUT };
 }
 
-/** Chemin du fichier de travail du chapitre `numero`. */
+/** Chemin du fichier de travail du chapitre `numero` : `<banques>/<matiere>-chN.json`. */
 export function cheminBanque(config: ConfigCours, numero: number): string {
-  return `${config.banques}/${config.prefixe}-ch${numero}.json`;
+  const matiere = config.fichier.split('/').pop()!.replace(/\.json$/, '');
+  return `${config.banques}/${matiere}-ch${numero}.json`;
 }
 
-/** L'option `--cours` à répéter dans un message (vide pour BPH, le cours par défaut). */
+/** Les options `--cours` et `--prefixe` à répéter dans un message (vide pour BPH, le cours par défaut). */
 export function optionCours(config: ConfigCours): string {
-  return config.nom === 'bph' ? '' : ` --cours ${config.nom}`;
+  if (config.nom === 'bph') return '';
+  const matiere = config.fichier.split('/').pop()!.replace(/\.json$/, '');
+  return ` --cours ${config.nom}${config.prefixe === matiere ? '' : ` --prefixe ${config.prefixe}`}`;
 }
 
 /** Arrondit chaque part, puis ajuste la plus grande pour que la somme fasse `total`. */
@@ -59,12 +63,26 @@ export function quotasPour(total: number): { types: Record<TypeQuestion, number>
   return { types, difficultes: { 1: d['1'], 2: d['2'], 3: d['3'] } };
 }
 
-/** Lit `--cours <nom ou chemin>` dans les arguments ; `bph` par défaut. */
+/**
+ * Lit `--cours <nom ou chemin>` dans les arguments ; `bph` par défaut.
+ * `--prefixe <p>` remplace le préfixe des sources d'un cours désigné par son chemin (par défaut, le nom du fichier) :
+ * il sert quand deux cours ont le même nom de fichier, comme `2de-gen/espagnol` et `1re-gen/espagnol` (`--prefixe espagnol-1re`).
+ */
 export function lireCoursArgument(argv: string[]): ConfigCours {
   const i = argv.indexOf('--cours');
-  if (i === -1) return COURS_BANQUE.bph;
+  const j = argv.indexOf('--prefixe');
+  const prefixe = j === -1 ? undefined : argv[j + 1];
+  if (j !== -1 && (prefixe === undefined || !/^[a-z0-9-]+$/.test(prefixe))) throw new Error('--prefixe attend des minuscules, chiffres ou tirets (par exemple espagnol-1re)');
+  if (i === -1) {
+    if (prefixe !== undefined) throw new Error('--prefixe s’emploie avec --cours <chemin>');
+    return COURS_BANQUE.bph;
+  }
   const nom = argv[i + 1];
   if (nom === undefined || nom.startsWith('--')) throw new Error('--cours attend un nom (bph, stss) ou un chemin (1re-gen/espagnol)');
-  if (nom === 'bph' || nom === 'stss') return COURS_BANQUE[nom];
-  return configPourChemin(nom);
+  if (nom === 'bph' || nom === 'stss') {
+    if (prefixe !== undefined) throw new Error('--prefixe s’emploie avec --cours <chemin>');
+    return COURS_BANQUE[nom];
+  }
+  const config = configPourChemin(nom);
+  return prefixe === undefined ? config : { ...config, prefixe };
 }

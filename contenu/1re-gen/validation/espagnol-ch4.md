@@ -10,7 +10,7 @@ Contrôles lancés le 12 novembre 2026 avec les fonctions du dépôt (`verifierB
 
 ## Banque
 
-- `verifierBanque` : conforme, 150 questions (sources `espagnol:ch4:banque:001` à `150`).
+- `verifierBanque` : conforme, 150 questions (sources `espagnol-1re:ch4:banque:001` à `150`).
 - Types : 75 QCM à réponse unique, 30 QCM à plusieurs réponses, 30 vrai/faux (15 vrais, 15 faux), 15 réponses courtes.
 - Difficultés : 60 / 59 / 31 (niveaux 1 / 2 / 3).
 - Position de la bonne réponse des QCM à réponse unique : 18 / 19 / 19 / 19 ; bonne réponse la plus longue dans 20 QCM sur 75.

@@ -21,7 +21,7 @@ try {
 const COURS = config.fichier;
 if (!existsSync(COURS)) echouer(`Cours introuvable : ${COURS}`);
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N [--cours stss | --cours 1re-gen/espagnol]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N [--cours stss | --cours 1re-gen/espagnol [--prefixe espagnol-1re]]');
 
 const chemin = cheminBanque(config, numero);
 let brut: unknown;
