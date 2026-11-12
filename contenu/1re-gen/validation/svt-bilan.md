@@ -49,7 +49,7 @@ Chaque chapitre a un résumé, un chapeau, des objectifs, des sections en HTML d
 - Couleur `#15803d` : contraste **5,02:1** avec le blanc (minimum 4,5:1).
 - `nettoyerHtml` ne retire rien, sur les 16 chapitres.
 - Les 16 banques sont conformes à `verifierBanque` dans leur version finale ; elles ont été fusionnées par `fusionnerBanque` ; l'import à blanc (`versDonneesCours`) construit la charge utile d'`importer_cours` (2,34 Mo). **L'import réel en base n'a pas été fait** (pas de `.env.local` ni de base locale dans le worktree).
-- Les scripts npm `banque:*` ne connaissent que `bph` et `stss` : les contrôles ont été faits avec les mêmes fonctions, appelées par un pilote hors dépôt (celui de la session de 2de, copie dans le dossier de notes partagé `svt-outils/`). **Script à faire évoluer** (non modifié) : ajouter les cours de 1re générale à `COURS_BANQUE` (`src/lib/contenu/banque/cours.ts`) et dériver le dossier des banques du chemin du cours.
+- Les contrôles ont d'abord été faits avec les mêmes fonctions, appelées par un pilote hors dépôt (les scripts npm `banque:*` ne connaissaient que `bph` et `stss`). **Les scripts ont ensuite évolué** (commit séparé) : `--cours` accepte le chemin d'un cours, par exemple `npm run banque:verifier -- N --cours contenu/1re-gen/svt.json` ; le préfixe vient du nom du fichier et les banques sont lues dans `banques/` à côté du cours. Les 16 banques passent `banque:verifier` ainsi, et `banque:fusionner` rejoué n'ajoute rien (150 questions déjà présentes).
 
 ## Méthode de vérification des quiz
 
