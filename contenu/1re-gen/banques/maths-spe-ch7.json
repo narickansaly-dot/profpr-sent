@@ -1,0 +1,2308 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Définition de exp et dérivée",
+    "Propriétés algébriques",
+    "Nombre e et notation eˣ",
+    "Signe, variations et courbe",
+    "Équations et inéquations",
+    "Fonctions t ↦ e^(kt)",
+    "Suites géométriques et modèles",
+    "Méthode d'Euler et approximation de e"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch7:banque:001",
+      "type": "qcm_unique",
+      "enonce": "La fonction exponentielle est l'unique fonction f dérivable sur ℝ qui vérifie deux conditions. Lesquelles ?",
+      "propositions": [
+        "f′ = f et f(0) = 1",
+        "f′ = −f et f(0) = 1",
+        "f′ = 1 et f(0) = 1",
+        "f′ = f et f(1) = 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Par définition, exp est l'unique fonction dérivable sur ℝ égale à sa dérivée et qui vaut 1 en 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Que vaut exp(0) ?",
+      "propositions": [
+        "0",
+        "e",
+        "1",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La définition impose exp(0) = 1. Le nombre e est exp(1)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de la fonction f définie sur ℝ par f(x) = exp(x) ?",
+      "propositions": [
+        "f′(x) = x × exp(x − 1)",
+        "f′(x) = exp(x)",
+        "f′(x) = exp(1)",
+        "f′(x) = x × exp(x)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La fonction exponentielle est égale à sa dérivée : exp′ = exp. Ce n'est pas une puissance xⁿ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:004",
+      "type": "qcm_unique",
+      "enonce": "On considère f(x) = 5exp(x) sur ℝ. Que vaut f′(x) ?",
+      "propositions": [
+        "5",
+        "exp(x)",
+        "5x × exp(x)",
+        "5exp(x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La dérivée de k × u est k × u′ ; ici u′ = exp, donc f′(x) = 5exp(x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x² + exp(x). Quelle est l'expression de f′(x) ?",
+      "propositions": [
+        "2x + x × exp(x − 1)",
+        "2x",
+        "2x × exp(x)",
+        "2x + exp(x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Dérivée d'une somme : (x²)′ = 2x et exp′ = exp."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de la fonction x ↦ exp(−x) ?",
+      "propositions": [
+        "x ↦ exp(−x)",
+        "x ↦ −exp(−x)",
+        "x ↦ −exp(x)",
+        "x ↦ 1/exp(x)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La dérivée de x ↦ f(ax + b) est x ↦ a f′(ax + b) ; avec a = −1 : −exp(−x). (1/exp(x) est exp(−x) elle-même.)"
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Pour tout réel x, que vaut le produit exp(x) × exp(−x) ?",
+      "propositions": [
+        "0",
+        "exp(−x²)",
+        "1",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "On démontre que φ(x) = exp(x) × exp(−x) a une dérivée nulle, donc φ est constante, égale à φ(0) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Pour démontrer une propriété de exp, on dérive φ(x) = exp(x) × exp(−x). Quelle est l'expression de φ′(x) ?",
+      "propositions": [
+        "0",
+        "1",
+        "2exp(x)exp(−x)",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "φ′(x) = exp(x)exp(−x) + exp(x) × (−exp(−x)) = 0 : les deux termes se compensent."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:009",
+      "type": "qcm_unique",
+      "enonce": "La fonction f est dérivable sur ℝ et g(x) = f(3x − 2). Quelle est l'expression de g′(x) ?",
+      "propositions": [
+        "3f′(3x − 2)",
+        "f′(3x − 2)",
+        "3f′(x) − 2",
+        "(3x − 2)f′(3x − 2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Pour g(x) = f(ax + b), g′(x) = a f′(ax + b) ; ici a = 3 et b = −2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quel argument permet d'affirmer que la fonction exponentielle ne s'annule jamais sur ℝ ?",
+      "propositions": [
+        "exp(0) = 1",
+        "exp est dérivable sur ℝ",
+        "Pour tout réel x, exp(x) × exp(−x) = 1",
+        "exp′ = exp"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Si exp(x) valait 0, le produit exp(x) × exp(−x) vaudrait 0 et non 1. Les autres faits seuls ne suffisent pas."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "On pose f(x) = 3exp(x) pour tout réel x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′ = f",
+        "f(0) = 3",
+        "f est la fonction exponentielle",
+        "f(0) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "f′(x) = 3exp(x) = f(x), mais f(0) = 3 ≠ 1 : f n'est pas exp, la condition f(0) = 1 n'est pas remplie."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces propriétés, lesquelles font partie de la définition de la fonction exponentielle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est égale à sa dérivée",
+        "Elle vaut 1 en 0",
+        "Elle vaut 0 en 1",
+        "Sa dérivée vaut 1 en tout point",
+        "Elle est dérivable sur ℝ"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "exp est l'unique fonction dérivable sur ℝ avec exp′ = exp et exp(0) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions ont pour dérivée la fonction x ↦ exp(x) sur ℝ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ 2exp(x)",
+        "x ↦ x × exp(x)",
+        "x ↦ exp(x)",
+        "x ↦ exp(x) + 7"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La dérivée d'une constante est nulle, donc exp(x) + 7 a aussi pour dérivée exp(x). (2exp)′ = 2exp et (x exp(x))′ = (x + 1)exp(x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:014",
+      "type": "qcm_multiple",
+      "enonce": "Soit g la fonction définie sur ℝ par g(x) = exp(x) − x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "g′(x) = exp(x)",
+        "g(0) = 1",
+        "g′(x) = exp(x) − 1",
+        "g′(0) = 0",
+        "g(0) = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Définition de exp et dérivée",
+      "explication": "g′(x) = exp(x) − 1, donc g′(0) = 1 − 1 = 0 ; g(0) = exp(0) − 0 = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:015",
+      "type": "vrai_faux",
+      "enonce": "La fonction exponentielle est dérivable sur ℝ et égale à sa propre dérivée.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "C'est la définition : exp′ = exp sur ℝ, avec exp(0) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:016",
+      "type": "vrai_faux",
+      "enonce": "La fonction nulle satisfait toutes les conditions de la définition de la fonction exponentielle.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "La fonction nulle vérifie f′ = f, mais f(0) = 0 ≠ 1 : la seconde condition n'est pas remplie."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Si f est dérivable sur ℝ, la dérivée de x ↦ f(2x + 5) est x ↦ 2f′(2x + 5).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Pour g(x) = f(ax + b), on a g′(x) = a f′(ax + b) ; ici a = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:018",
+      "type": "vrai_faux",
+      "enonce": "Il existe au moins un réel x tel que exp(x) = 0.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Définition de exp et dérivée",
+      "explication": "Pour tout x, exp(x) × exp(−x) = 1, donc exp(x) ≠ 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = 4x − exp(x). Calcule f′(0). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 2,
+      "notion": "Définition de exp et dérivée",
+      "explication": "f′(x) = 4 − exp(x), donc f′(0) = 4 − 1 = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Pour tous réels x et y, à quoi est égal exp(x + y) ?",
+      "propositions": [
+        "exp(x) + exp(y)",
+        "exp(x) × exp(y)",
+        "exp(xy)",
+        "exp(x) × exp(−y)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "Relation fonctionnelle : l'exponentielle transforme une somme en produit."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Pour tout réel x, exp(−x) est égal à :",
+      "propositions": [
+        "−exp(x)",
+        "exp(1/x)",
+        "1 − exp(x)",
+        "1/exp(x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(x) × exp(−x) = 1, donc exp(−x) est l'inverse de exp(x). Il est positif, donc différent de −exp(x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Simplifier l'expression exp(5x) × exp(−2x).",
+      "propositions": [
+        "exp(−10x²)",
+        "exp(7x)",
+        "exp(−10x)",
+        "exp(3x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "On ajoute les arguments : 5x + (−2x) = 3x."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Écrire exp(x + 3)/exp(x − 1) sous la forme d'une seule exponentielle.",
+      "propositions": [
+        "exp(2)",
+        "exp(4)",
+        "exp(2x + 2)",
+        "exp(−4)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "On soustrait tout l'argument du dénominateur : (x + 3) − (x − 1) = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Pour tout réel x, à quelle expression est égal (exp(x))³ ?",
+      "propositions": [
+        "exp(x³)",
+        "3exp(x)",
+        "exp(3x)",
+        "exp(x + 3)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(nx) = (exp(x))ⁿ avec n = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Que donne la simplification de exp(2x) × exp(1 − x)/exp(x + 1) ?",
+      "propositions": [
+        "1",
+        "exp(2x)",
+        "exp(2)",
+        "exp(2x + 2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "Argument : 2x + (1 − x) − (x + 1) = 0, et exp(0) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Quelle est une factorisation correcte de exp(2x) + 3exp(x) ?",
+      "propositions": [
+        "exp(x)(exp(x) + 3)",
+        "exp(2x)(1 + 3exp(x))",
+        "exp(x)(exp(2x) + 3)",
+        "4exp(3x)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(2x) = exp(x) × exp(x), d'où exp(2x) + 3exp(x) = exp(x)(exp(x) + 3)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Pour tout réel x, développer (exp(x) + exp(−x))².",
+      "propositions": [
+        "exp(2x) + exp(−2x)",
+        "exp(x²) + 2 + exp(−x²)",
+        "exp(2x) + 2 + exp(−2x)",
+        "exp(2x) + 1 + exp(−2x)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés algébriques",
+      "explication": "(a + b)² = a² + 2ab + b² avec a² = exp(2x), b² = exp(−2x) et ab = exp(x)exp(−x) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Pour tout réel x, à quoi est égal le produit (exp(x) − 1)(exp(x) + 1) ?",
+      "propositions": [
+        "exp(x²) − 1",
+        "exp(2x) − 1",
+        "exp(2x) − 2exp(x) + 1",
+        "2exp(x) − 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "Identité (a − b)(a + b) = a² − b², et (exp(x))² = exp(2x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces égalités est vraie pour tous réels x et y ?",
+      "propositions": [
+        "exp(x − y) = exp(x) − exp(y)",
+        "exp(x − y) = exp(x) × exp(−y) − 1",
+        "exp(x − y) = −exp(y − x)",
+        "exp(x − y) = exp(x)/exp(y)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "x = (x − y) + y donne exp(x) = exp(x − y) × exp(y), puis on divise par exp(y) ≠ 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Pour tout réel x, quelles expressions sont égales à exp(4x) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "exp(2x) + exp(2x)",
+        "(exp(x))⁴",
+        "exp(x) × exp(3x)",
+        "(exp(2x))²",
+        "4exp(x)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "(exp(x))⁴ = exp(4x), exp(x)exp(3x) = exp(4x), (exp(2x))² = exp(4x) ; mais exp(2x) + exp(2x) = 2exp(2x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont vraies pour tout réel x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "exp(x) × exp(−x) = 0",
+        "1/exp(−x) = exp(x)",
+        "exp(−x) = −exp(x)",
+        "exp(x)/exp(−x) = exp(2x)"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(x)/exp(−x) = exp(x − (−x)) = exp(2x) ; 1/exp(−x) = exp(x) ; exp(x)exp(−x) = 1 ; exp(−x) > 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Pour tout réel x, quelles expressions valent toujours 1 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "exp(x) − exp(x − 1)",
+        "exp(x²)/(exp(x))²",
+        "exp(x + 2) × exp(−x − 2)",
+        "exp(3x)/(exp(x))³"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(x + 2 − x − 2) = exp(0) = 1 ; (exp(x))³ = exp(3x). En revanche exp(x²)/exp(2x) = exp(x² − 2x), pas toujours 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures sont égales au produit exp(2) × exp(3) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "exp(2) + exp(3)",
+        "exp(5)",
+        "exp(6)",
+        "exp(10)/exp(5)"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(2)exp(3) = exp(2 + 3) = exp(5), et exp(10)/exp(5) = exp(10 − 5) = exp(5)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Pour tous réels a et b, exp(a + b) = exp(a) + exp(b).",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "C'est un produit : exp(a + b) = exp(a) × exp(b). Avec a = b = 0, la somme donnerait 1 = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:035",
+      "type": "vrai_faux",
+      "enonce": "L'inverse du nombre exp(3) est exp(−3).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(3) × exp(−3) = exp(0) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel x, exp(2x) = 2exp(x).",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(2x) = (exp(x))². Par exemple en 0 : exp(0) = 1 alors que 2exp(0) = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:037",
+      "type": "vrai_faux",
+      "enonce": "On peut factoriser exp(2x) − exp(x) sous la forme exp(x)(exp(x) − 1), quel que soit le réel x.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(x) × exp(x) = exp(2x), donc en développant exp(x)(exp(x) − 1) on retrouve exp(2x) − exp(x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:038",
+      "type": "reponse_courte",
+      "enonce": "On sait que exp(a) = 3. Que vaut exp(2a) ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(2a) = (exp(a))² = 3² = 9."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:039",
+      "type": "reponse_courte",
+      "enonce": "On sait que exp(c) = 2. Calcule exp(3c) − exp(−c) et donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "7,5",
+        "7.5",
+        "15/2"
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés algébriques",
+      "explication": "exp(3c) = 2³ = 8 et exp(−c) = 1/2 = 0,5 ; 8 − 0,5 = 7,5."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Comment le nombre e est-il défini ?",
+      "propositions": [
+        "e = exp(0)",
+        "e est la solution de exp(x) = 0",
+        "e = 2,718 exactement",
+        "e = exp(1)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e est l'image de 1 par la fonction exponentielle ; e ≈ 2,718 n'est qu'une valeur approchée."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur approchée de e à 10⁻³ près ?",
+      "propositions": [
+        "3,142",
+        "2,718",
+        "1,4142",
+        "2,817"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e ≈ 2,718 28. Attention : 3,142 est π et 1,414 est √2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit le nombre e⁻² sous forme de quotient ?",
+      "propositions": [
+        "−e²",
+        "−1/e²",
+        "1/e²",
+        "1/(2e)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e⁻ˣ = 1/eˣ ; un exposant négatif ne rend pas le nombre négatif."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Simplifier le produit e³ × e⁴.",
+      "propositions": [
+        "e⁷",
+        "e¹²",
+        "2e⁷",
+        "e⁻¹"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e^(x+y) = eˣ × eʸ : on additionne les exposants, 3 + 4 = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:044",
+      "type": "qcm_unique",
+      "enonce": "À quelle expression se simplifie (e^(2x))³/e^(4x) ?",
+      "propositions": [
+        "e^(2x)",
+        "eˣ",
+        "e^(10x)",
+        "e^(3x/2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "(e^(2x))³ = e^(6x), puis e^(6x)/e^(4x) = e^(6x − 4x) = e^(2x)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur exacte de e^(1/2) ?",
+      "propositions": [
+        "e/2",
+        "1/(2e)",
+        "√e",
+        "1/e²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "(e^(1/2))² = e¹ = e et e^(1/2) > 0, donc e^(1/2) = √e ≈ 1,649."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x eˣ sur ℝ. Quelle est f′(x) ?",
+      "propositions": [
+        "eˣ",
+        "(x + 1)eˣ",
+        "(x − 1)eˣ",
+        "x eˣ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "Dérivée d'un produit : f′(x) = 1 × eˣ + x × eˣ = (x + 1)eˣ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:047",
+      "type": "qcm_unique",
+      "enonce": "On définit f sur ]0 ; +∞[ par f(x) = eˣ/x. Quelle est f′(x) ?",
+      "propositions": [
+        "eˣ",
+        "(1 − x)eˣ/x²",
+        "(x + 1)eˣ/x²",
+        "(x − 1)eˣ/x²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "Quotient : f′(x) = (eˣ × x − eˣ × 1)/x² = (x − 1)eˣ/x²."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = (x² − 2x + 2)eˣ. Quelle est l'expression factorisée de f′(x) ?",
+      "propositions": [
+        "(2x − 2)eˣ",
+        "(x² − 4x + 4)eˣ",
+        "(x² + 2)eˣ",
+        "x² eˣ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "f′(x) = (2x − 2)eˣ + (x² − 2x + 2)eˣ = (x² − 2x + 2 + 2x − 2)eˣ = x² eˣ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures désignent le nombre e⁻¹ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1/e",
+        "exp(−1)",
+        "−e",
+        "e − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e⁻¹ = exp(−1) = 1/e ≈ 0,368, nombre positif."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles valent e^(x+2) quel que soit le réel x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "eˣ + e²",
+        "e^(x+3)/e",
+        "2eˣ",
+        "e² × eˣ"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e^(x+2) = eˣ × e² ; et e^(x+3)/e = e^(x+3−1) = e^(x+2)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "Soit g(x) = 3eˣ + x pour tout réel x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "g′(x) = 3eˣ + 1",
+        "g(0) = 3",
+        "g′(0) = 4",
+        "g(1) = 3e",
+        "g′(x) = 3eˣ"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "g′(x) = 3eˣ + 1, g′(0) = 4 ; g(0) = 3 × 1 + 0 = 3 ; g(1) = 3e + 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres, lesquels sont strictement supérieurs à 2 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "√e",
+        "e² − e",
+        "e⁻¹ + 1",
+        "e^(0,8)",
+        "e"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e ≈ 2,718 ; √e ≈ 1,649 ; e² − e ≈ 4,67 ; e⁻¹ + 1 ≈ 1,368 ; e^(0,8) ≈ 2,226."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Le nombre e est compris entre 2 et 3.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e ≈ 2,718."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Le nombre e vaut exactement 2,718.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "2,718 est une valeur approchée ; e ≈ 2,718 28… n'est pas un nombre décimal."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:055",
+      "type": "vrai_faux",
+      "enonce": "Pour tout entier relatif n, exp(n) = eⁿ.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "exp(n × 1) = (exp(1))ⁿ = eⁿ : c'est ce qui justifie la notation eˣ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:056",
+      "type": "vrai_faux",
+      "enonce": "La fonction x ↦ eˣ a pour dérivée x ↦ x e^(x−1).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "La variable est dans l'exposant : (eˣ)′ = eˣ. La formule de xⁿ ne s'applique pas."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:057",
+      "type": "reponse_courte",
+      "enonce": "Donne la valeur de e² arrondie au dixième.",
+      "reponses_acceptees": [
+        "7,4",
+        "7.4"
+      ],
+      "marge": 0.05,
+      "difficulte": 1,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "e² ≈ 7,389, soit 7,4 au dixième."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:058",
+      "type": "reponse_courte",
+      "enonce": "On pose f(x) = (2x + 1)eˣ. Quel est le coefficient directeur de la tangente à sa courbe au point d'abscisse 0 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 2,
+      "notion": "Nombre e et notation eˣ",
+      "explication": "f′(x) = 2eˣ + (2x + 1)eˣ = (2x + 3)eˣ, donc f′(0) = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Quel est le signe de eˣ selon les valeurs du réel x ?",
+      "propositions": [
+        "positif si x ⩾ 0, négatif si x < 0",
+        "strictement positif pour tout réel x",
+        "nul en 0, strictement positif ailleurs",
+        "négatif si x < 1, positif si x > 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "eˣ = (e^(x/2))² ⩾ 0 et eˣ ≠ 0, donc eˣ > 0 pour tout x."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel est le sens de variation de la fonction exponentielle sur ℝ ?",
+      "propositions": [
+        "strictement décroissante",
+        "décroissante puis croissante",
+        "strictement croissante",
+        "constante"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "Sa dérivée est exp elle-même, strictement positive sur ℝ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la tangente à la courbe de exp au point d'abscisse 0 ?",
+      "propositions": [
+        "y = x + 1",
+        "y = x",
+        "y = ex",
+        "y = x + e"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "y = exp′(0)(x − 0) + exp(0) = x + 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Par quel point passe obligatoirement la courbe de la fonction exponentielle ?",
+      "propositions": [
+        "(0 ; 1)",
+        "(0 ; 0)",
+        "(1 ; 0)",
+        "(1 ; 2,7)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "exp(0) = 1. Elle passe aussi par (1 ; e)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:063",
+      "type": "qcm_unique",
+      "enonce": "La droite tangente à la courbe de exp en son point (1 ; e) a pour équation :",
+      "propositions": [
+        "y = x + 1",
+        "y = ex + e",
+        "y = ex",
+        "y = x + e − 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "y = e(x − 1) + e = ex : cette tangente passe par l'origine."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Comment se situe la courbe de la fonction exponentielle par rapport à l'axe des abscisses ?",
+      "propositions": [
+        "en dessous pour x < 0",
+        "toujours strictement au-dessus",
+        "elle le coupe à l'origine",
+        "elle le coupe au point d'abscisse −1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "eˣ > 0 pour tout x : la courbe se rapproche de l'axe vers la gauche sans jamais l'atteindre."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = (x − 1)eˣ. Sur quel intervalle f est-elle croissante ?",
+      "propositions": [
+        "[1 ; +∞[",
+        "]−∞ ; 0]",
+        "[−1 ; +∞[",
+        "[0 ; +∞["
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "f′(x) = eˣ + (x − 1)eˣ = x eˣ, du signe de x puisque eˣ > 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pour h proche de 0, quelle approximation de e^h donne la tangente en 0 ?",
+      "propositions": [
+        "e^h ≈ h",
+        "e^h ≈ 1",
+        "e^h ≈ e × h",
+        "e^h ≈ 1 + h"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "Approximation affine : exp(0 + h) ≈ exp(0) + h exp′(0) = 1 + h."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:067",
+      "type": "qcm_unique",
+      "enonce": "La fonction g définie sur ℝ par g(x) = (x − 2)eˣ admet un minimum. Lequel ?",
+      "propositions": [
+        "0, atteint en x = 2",
+        "−e, atteint en x = 1",
+        "−2, atteint en x = 0",
+        "−1, atteint en x = 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Signe, variations et courbe",
+      "explication": "g′(x) = (x − 1)eˣ : négatif avant 1, positif après ; g(1) = (1 − 2)e = −e."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Pour établir que eˣ ⩾ x + 1 pour tout réel x, on étudie φ(x) = eˣ − x − 1. Quel est le minimum de φ ?",
+      "propositions": [
+        "1, atteint en 0",
+        "−1, atteint en 1",
+        "0, atteint en 0",
+        "e − 2, atteint en 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Signe, variations et courbe",
+      "explication": "φ′(x) = eˣ − 1 change de signe en 0 (négatif avant, positif après) ; φ(0) = 1 − 0 − 1 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Que peut-on affirmer sur la fonction exponentielle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est strictement positive sur ℝ",
+        "Elle est strictement croissante sur ℝ",
+        "Sa courbe coupe l'axe des abscisses",
+        "Elle est décroissante sur ]−∞ ; 0]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "eˣ > 0 et exp′ = exp > 0 : exp est strictement croissante sur tout ℝ, et sa courbe ne coupe pas l'axe des abscisses."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "En utilisant le sens de variation de exp, indique les inégalités vraies. Coche toutes les réponses exactes.",
+      "propositions": [
+        "e^(0,5) > e^(0,4)",
+        "e^(−1) > e⁰",
+        "e² < e^(1,9)",
+        "e^(−3) < e^(−2)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "exp est strictement croissante : eᵃ < eᵇ ⇔ a < b."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "On considère f(x) = x eˣ sur ℝ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(x) > 0 pour tout réel x",
+        "f′(x) = (x + 1)eˣ",
+        "f est décroissante sur ]−∞ ; −1]",
+        "f admet un minimum égal à −1/e",
+        "f est croissante sur ℝ"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Signe, variations et courbe",
+      "explication": "f′(x) = (x + 1)eˣ, du signe de x + 1 : f décroît puis croît, minimum f(−1) = −e⁻¹ = −1/e. f(x) < 0 pour x < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:072",
+      "type": "qcm_multiple",
+      "enonce": "Quels points appartiennent à la courbe de la fonction exponentielle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(2 ; 2e)",
+        "(0 ; 1)",
+        "(1 ; e)",
+        "(−1 ; −e)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "e⁰ = 1 et e¹ = e ; e⁻¹ = 1/e > 0 et e² ≠ 2e."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:073",
+      "type": "vrai_faux",
+      "enonce": "La courbe de la fonction exponentielle coupe l'axe des abscisses en un point.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "eˣ > 0 pour tout x : la courbe reste strictement au-dessus de l'axe."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Si a < b, alors eᵃ < eᵇ.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Signe, variations et courbe",
+      "explication": "La fonction exponentielle est strictement croissante sur ℝ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel x, eˣ ⩾ x + 1.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "φ(x) = eˣ − x − 1 a pour minimum φ(0) = 0 : la courbe est au-dessus de sa tangente en 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:076",
+      "type": "vrai_faux",
+      "enonce": "La tangente à la courbe de exp a le même coefficient directeur en tout point.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "Au point d'abscisse a, le coefficient directeur est e^a, qui augmente avec a."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:077",
+      "type": "reponse_courte",
+      "enonce": "Donne le coefficient directeur de la tangente à la courbe de la fonction exponentielle au point d'abscisse 2, arrondi au centième.",
+      "reponses_acceptees": [
+        "7,39",
+        "7.39"
+      ],
+      "marge": 0.005,
+      "difficulte": 2,
+      "notion": "Signe, variations et courbe",
+      "explication": "Il vaut exp′(2) = e² ≈ 7,389, soit 7,39."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:078",
+      "type": "reponse_courte",
+      "enonce": "La fonction h définie par h(x) = (x² − 3)eˣ admet un minimum local en un réel a > 0. Quelle est la valeur de a ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 3,
+      "notion": "Signe, variations et courbe",
+      "explication": "h′(x) = (x² + 2x − 3)eˣ = (x + 3)(x − 1)eˣ : négatif sur ]−3 ; 1[, positif après 1, d'où un minimum local en 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Résoudre dans ℝ l'équation eˣ = 1.",
+      "propositions": [
+        "x = 0",
+        "x = 1",
+        "x = e",
+        "aucune solution"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "eˣ = e⁰ ⇔ x = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de e^(2x) = e⁶ ?",
+      "propositions": [
+        "{3}",
+        "{4}",
+        "{6}",
+        "{12}"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "e^a = e^b ⇔ a = b : 2x = 6, donc x = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Combien de solutions réelles possède l'équation eˣ = −3 ?",
+      "propositions": [
+        "une seule, négative",
+        "deux",
+        "aucune",
+        "une seule, égale à −3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "eˣ > 0 pour tout x : il ne peut pas valoir −3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la solution de e^(3x − 1) = e^(x + 5) ?",
+      "propositions": [
+        "x = 2",
+        "x = 3",
+        "x = 1,5",
+        "x = −3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "3x − 1 = x + 5 ⇔ 2x = 6 ⇔ x = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Donne l'ensemble des solutions de l'inéquation e^(2x) < e^(x+1).",
+      "propositions": [
+        "]1 ; +∞[",
+        "]−∞ ; −1[",
+        "]−∞ ; 1]",
+        "]−∞ ; 1["
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "exp strictement croissante : 2x < x + 1 ⇔ x < 1 (inégalité stricte, 1 exclu)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Pour quelles valeurs de x a-t-on eˣ ⩾ 1 ?",
+      "propositions": [
+        "[1 ; +∞[",
+        "]−∞ ; 0]",
+        "]0 ; +∞[",
+        "[0 ; +∞["
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "eˣ ⩾ e⁰ ⇔ x ⩾ 0 ; 0 est inclus car e⁰ = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Quelle condition sur x équivaut à e^(−x) > e² ?",
+      "propositions": [
+        "x > −2",
+        "x < −2",
+        "x > 2",
+        "x < 2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "−x > 2 ⇔ x < −2 (on change le sens en multipliant par −1)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les solutions de l'équation e^(x²) = e^(5x − 6) ?",
+      "propositions": [
+        "x = −2 ou x = −3",
+        "x = 6/5",
+        "x = 2 ou x = 3",
+        "aucune solution"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Équations et inéquations",
+      "explication": "x² = 5x − 6 ⇔ x² − 5x + 6 = 0 ⇔ (x − 2)(x − 3) = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de e^(x²) ⩽ eˣ ?",
+      "propositions": [
+        "[0 ; 1]",
+        "]−∞ ; 1]",
+        "[1 ; +∞[",
+        "]−∞ ; 0] ∪ [1 ; +∞["
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Équations et inéquations",
+      "explication": "x² ⩽ x ⇔ x(x − 1) ⩽ 0 ⇔ 0 ⩽ x ⩽ 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations n'ont aucune solution réelle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "eˣ = −1",
+        "e^(2x) = 1",
+        "eˣ = 0,5",
+        "eˣ + 2 = 0",
+        "eˣ = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "eˣ > 0, donc eˣ ne vaut ni 0, ni −1, ni −2. e^(2x) = 1 a pour solution 0 ; eˣ = 0,5 a une solution négative (lecture graphique)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sont équivalentes à l'inéquation e^(2x + 1) > e^(x − 3) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x > −4",
+        "x < −4",
+        "x > 4",
+        "2x + 1 > x − 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "eᵃ > eᵇ ⇔ a > b : 2x + 1 > x − 3 ⇔ x > −4."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "On veut résoudre e^(2x) − (e + 1)eˣ + e = 0 en posant X = eˣ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les solutions en x sont 1 et e",
+        "L'équation n'a pas de solution",
+        "X vérifie X² − (e + 1)X + e = 0",
+        "Les solutions en X sont 1 et e",
+        "Les solutions en x sont 0 et 1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Équations et inéquations",
+      "explication": "e^(2x) = X² ; X² − (e + 1)X + e = (X − 1)(X − e). eˣ = 1 ⇔ x = 0 et eˣ = e ⇔ x = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces réels, lesquels vérifient eˣ < 1 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x = 0,5",
+        "x = −2",
+        "x = −0,1",
+        "x = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "eˣ < e⁰ ⇔ x < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:092",
+      "type": "vrai_faux",
+      "enonce": "Pour tous réels a et b, l'égalité eᵃ = eᵇ équivaut à a = b.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "Conséquence de la stricte croissance de exp."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:093",
+      "type": "vrai_faux",
+      "enonce": "L'inéquation e^(−x) < 1 a pour ensemble de solutions ]−∞ ; 0[.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "e^(−x) < e⁰ ⇔ −x < 0 ⇔ x > 0 : l'ensemble est ]0 ; +∞[."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:094",
+      "type": "vrai_faux",
+      "enonce": "L'équation eˣ = 5 n'a aucune solution réelle, puisque 5 ne s'écrit pas simplement comme une puissance de e.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Équations et inéquations",
+      "explication": "exp prend toutes les valeurs strictement positives : l'équation a une solution, environ 1,61, qu'on trouve graphiquement ou par balayage (e^(1,6) ≈ 4,95 et e^(1,61) ≈ 5,003)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:095",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la solution de l'équation e^(4x) = e^(x + 9) ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "notion": "Équations et inéquations",
+      "explication": "4x = x + 9 ⇔ 3x = 9 ⇔ x = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:096",
+      "type": "reponse_courte",
+      "enonce": "Combien l'équation e^(x² − 1) = 1 admet-elle de solutions réelles ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 2,
+      "notion": "Équations et inéquations",
+      "explication": "e^(x² − 1) = e⁰ ⇔ x² = 1 ⇔ x = 1 ou x = −1 : deux solutions."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:097",
+      "type": "reponse_courte",
+      "enonce": "Par balayage à la calculatrice, on cherche la solution de eˣ = 3. Donne-la arrondie au dixième.",
+      "reponses_acceptees": [
+        "1,1",
+        "1.1"
+      ],
+      "marge": 0.05,
+      "difficulte": 3,
+      "notion": "Équations et inéquations",
+      "explication": "e^(1,05) ≈ 2,86 et e^(1,15) ≈ 3,16 : la solution (≈ 1,099) s'arrondit à 1,1."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de la fonction t ↦ e^(3t) ?",
+      "propositions": [
+        "t ↦ 3e^(3t)",
+        "t ↦ e^(3t)",
+        "t ↦ 3t e^(3t − 1)",
+        "t ↦ 3eᵗ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "(e^(at))′ = a e^(at) avec a = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Soit g(t) = e^(−2t). Laquelle de ces expressions est g′(t) ?",
+      "propositions": [
+        "2e^(−2t)",
+        "e^(−2t)",
+        "−2e^(−2t)",
+        "−2e^(−2t − 1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Avec a = −2 : g′(t) = −2e^(−2t). Il ne faut pas oublier le facteur a."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Pour k > 0, quel est le sens de variation de t ↦ e^(−kt) sur ℝ ?",
+      "propositions": [
+        "strictement croissante",
+        "strictement décroissante",
+        "croissante puis décroissante",
+        "constante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Sa dérivée −k e^(−kt) est strictement négative."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur prend en t = 0 toute fonction de la forme t ↦ e^(kt) ?",
+      "propositions": [
+        "k",
+        "0",
+        "eᵏ",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "e^(k × 0) = e⁰ = 1 : toutes ces courbes passent par (0 ; 1)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:102",
+      "type": "qcm_unique",
+      "enonce": "On pose f(t) = 5e^(0,2t). Que vaut f′(t) ?",
+      "propositions": [
+        "5e^(0,2t)",
+        "0,2e^(0,2t)",
+        "t e^(0,2t)",
+        "e^(0,2t)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(t) = 5 × 0,2 × e^(0,2t) = e^(0,2t)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Quelle transformation géométrique envoie la courbe de t ↦ e^(2t) sur celle de t ↦ e^(−2t) ?",
+      "propositions": [
+        "la symétrie par rapport à l'axe des abscisses",
+        "la symétrie par rapport à l'axe des ordonnées",
+        "la symétrie de centre O",
+        "la translation de vecteur (0 ; −2)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "e^(−2t) = e^(2 × (−t)) : on remplace t par −t, ce qui correspond à la symétrie d'axe (Oy)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la tangente en 0 à la courbe de t ↦ e^(4t) ?",
+      "propositions": [
+        "1",
+        "e⁴",
+        "4",
+        "4e"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(t) = 4e^(4t), donc f′(0) = 4 × e⁰ = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces fonctions a le plus grand nombre dérivé en t = 0 ?",
+      "propositions": [
+        "t ↦ e^(3t)",
+        "t ↦ eᵗ",
+        "t ↦ e^(0,5t)",
+        "t ↦ e^(−3t)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Le nombre dérivé en 0 de t ↦ e^(kt) vaut k : 3, 1, 0,5 et −3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x e^(−x) sur ℝ. Quel est le maximum de f ?",
+      "propositions": [
+        "1/e, atteint en x = 1",
+        "e, atteint en x = 1",
+        "0, atteint en x = 0",
+        "1, atteint en x = 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(x) = (1 − x)e^(−x), positif avant 1 et négatif après ; f(1) = e⁻¹ = 1/e ≈ 0,368."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Soit f(t) = (t + 1)e^(−2t). Quelle est l'expression de f′(t) ?",
+      "propositions": [
+        "−2e^(−2t)",
+        "(−2t + 1)e^(−2t)",
+        "(−2t − 1)e^(−2t)",
+        "(2t + 3)e^(−2t)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(t) = 1 × e^(−2t) + (t + 1)(−2e^(−2t)) = (1 − 2t − 2)e^(−2t) = (−2t − 1)e^(−2t)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Soit k > 0, f(t) = e^(kt) et g(t) = e^(−kt). Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(0) = g(0) = 1",
+        "f(t) × g(t) = 1 pour tout réel t",
+        "g est croissante sur ℝ",
+        "g prend des valeurs négatives pour t > 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "e⁰ = 1 ; e^(kt) × e^(−kt) = e⁰ = 1 ; g′(t) = −k e^(−kt) < 0 et g(t) > 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions sont strictement décroissantes sur ℝ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "t ↦ 2e^(−t)",
+        "t ↦ −e^(−t)",
+        "t ↦ e^(0,1t)",
+        "t ↦ −e^(2t)",
+        "t ↦ e^(−0,3t)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Dérivées : −0,3e^(−0,3t) < 0 ; −2e^(−t) < 0 ; e^(−t) > 0 ; 0,1e^(0,1t) > 0 ; −2e^(2t) < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "On considère f(t) = 100e^(−0,5t) pour t ⩾ 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f est décroissante sur [0 ; +∞[",
+        "f(t) devient négatif pour t assez grand",
+        "f′(t) = −50e^(−0,5t)",
+        "f(2) = 100/e"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(t) = 100 × (−0,5)e^(−0,5t) < 0 ; f(2) = 100e⁻¹ ; f(t) reste strictement positif."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles valent 1 en t = 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "t ↦ e^(t+1)",
+        "t ↦ e^(5t)",
+        "t ↦ e^(−t)",
+        "t ↦ 2eᵗ"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "e^(5 × 0) = e^(−0) = 1 ; mais 2e⁰ = 2 et e^(0+1) = e."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel a, la dérivée de t ↦ e^(at) est t ↦ a e^(at).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "C'est la dérivée de t ↦ f(at + b) avec f = exp et b = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Pour k > 0, la fonction t ↦ e^(−kt) prend des valeurs négatives quand t devient grand.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Une exponentielle est toujours strictement positive : e^(−kt) se rapproche de 0 sans devenir négative."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Si 0 < k < k′, alors pour tout t > 0, e^(kt) < e^(k′t).",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "Pour t > 0, kt < k′t, et exp est strictement croissante."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Pour f(t) = e^(2t), on a f′(t) = 2f(t) : la vitesse de variation de f est donc constante.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "La vitesse f′(t) = 2e^(2t) est proportionnelle à f(t), elle n'est pas constante : elle augmente avec t."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:116",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la valeur du nombre dérivé en 0 de la fonction t ↦ e^(−3t) ? Donne un entier relatif.",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 1,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "f′(t) = −3e^(−3t), donc f′(0) = −3."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:117",
+      "type": "reponse_courte",
+      "enonce": "Un écart de température vaut D(t) = 60e^(−0,1t) °C après t minutes. Donne D(10) arrondi au dixième.",
+      "reponses_acceptees": [
+        "22,1",
+        "22.1"
+      ],
+      "marge": 0.05,
+      "difficulte": 2,
+      "notion": "Fonctions t ↦ e^(kt)",
+      "explication": "D(10) = 60e⁻¹ ≈ 22,07, soit 22,1 °C."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:118",
+      "type": "qcm_unique",
+      "enonce": "La suite définie par uₙ = e^(2n) est géométrique. Quelle est sa raison ?",
+      "propositions": [
+        "2",
+        "e²",
+        "e",
+        "2e"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et modèles",
+      "explication": "uₙ₊₁ = e^(2n + 2) = uₙ × e² : raison e²."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 1 000 € est placé à 3 % par an, à intérêts composés. Quelle expression donne le capital au bout de n années ?",
+      "propositions": [
+        "1000 + 30n",
+        "1000 × 0,03ⁿ",
+        "1000 × 1,3ⁿ",
+        "1000 × 1,03ⁿ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et modèles",
+      "explication": "Chaque année le capital est multiplié par 1 + 3/100 = 1,03 : suite géométrique."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Une substance a une demi-vie de 8 jours. Quelle fraction de la quantité initiale reste-t-il après 16 jours ?",
+      "propositions": [
+        "la moitié",
+        "rien",
+        "un huitième",
+        "un quart"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et modèles",
+      "explication": "16 jours = 2 demi-vies : la quantité est divisée par 2 deux fois, il reste 1/4."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de a la suite (e^(na)) est-elle strictement décroissante ?",
+      "propositions": [
+        "a = 0",
+        "a = −0,5",
+        "a = 0,5",
+        "a = 2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "La raison e^a est comprise entre 0 et 1 seulement si a < 0. Pour a = 0 la suite est constante."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Le nombre de noyaux d'un échantillon radioactif est N(t) = N₀e^(−λt). Quelle égalité caractérise la demi-vie T ?",
+      "propositions": [
+        "e^(−λT) = 2",
+        "λT = 1/2",
+        "e^(−λT) = 1/2",
+        "e^(−λT) = N₀/2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "N(T) = N₀/2 ⇔ N₀e^(−λT) = N₀/2 ⇔ e^(−λT) = 1/2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Une quantité suit N(t) = 800e^(−0,2t). Comment s'exprime N(t + 5) en fonction de N(t) ?",
+      "propositions": [
+        "N(t) × e⁻¹",
+        "N(t) − e⁻¹",
+        "N(t) × e^(−0,2)",
+        "N(t) × e⁻⁵"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "N(t + 5) = 800e^(−0,2t) × e^(−0,2 × 5) = N(t) × e⁻¹."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Les valeurs aux entiers de f(t) = 3e^(0,5t) forment la suite uₙ = f(n). Quelle est sa nature ?",
+      "propositions": [
+        "géométrique de raison e^(0,5) et de premier terme 3",
+        "arithmétique de raison 0,5",
+        "géométrique de raison 0,5 et de premier terme 3",
+        "géométrique de raison 3 et de premier terme e^(0,5)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "uₙ = 3(e^(0,5))ⁿ : u₀ = 3 et uₙ₊₁ = uₙ × e^(0,5)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Au bout de 3 demi-vies, quel pourcentage des noyaux initiaux s'est désintégré ?",
+      "propositions": [
+        "12,5 %",
+        "75 %",
+        "87,5 %",
+        "100 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "Il reste (1/2)³ = 1/8 = 12,5 % des noyaux, donc 87,5 % se sont désintégrés."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Une population suit P(t) = P₀e^(0,05t), t en années. Par quel coefficient est-elle multipliée chaque année ?",
+      "propositions": [
+        "1,05 exactement",
+        "e^(0,05) ≈ 1,051",
+        "0,05",
+        "e^(0,05t)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Suites géométriques et modèles",
+      "explication": "P(t + 1) = P(t) × e^(0,05), et e^(0,05) ≈ 1,0513 : un peu plus que 1,05."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:127",
+      "type": "qcm_multiple",
+      "enonce": "Quelles suites sont géométriques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "uₙ = e^(3n)",
+        "vₙ = 5e^(−n)",
+        "wₙ = eⁿ + 1",
+        "tₙ = e × n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "e^(3n) = (e³)ⁿ et 5e^(−n) = 5(e⁻¹)ⁿ sont géométriques ; eⁿ + 1 ne l'est pas (rapports non constants) et e × n est arithmétique."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Un échantillon compte 1 000 noyaux à l'instant 0, et sa demi-vie vaut 10 ans. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il reste 500 noyaux après 10 ans",
+        "Il reste 250 noyaux après 20 ans",
+        "Il ne reste aucun noyau après 20 ans",
+        "Il reste 125 noyaux après 30 ans",
+        "Il reste 750 noyaux après 5 ans"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "On divise par 2 à chaque demi-vie : 500, 250, 125. Après 5 ans, il reste 1000 × (1/2)^(1/2) ≈ 707 noyaux, pas 750."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Un capital est modélisé par C(t) = 2000e^(0,04t) (t en années). Coche toutes les réponses exactes.",
+      "propositions": [
+        "C′(t) = 0,04 C(t)",
+        "C(25) = 2000e",
+        "C augmente de 80 € chaque année",
+        "C(1) = 2080",
+        "C(0) = 2000"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Suites géométriques et modèles",
+      "explication": "C′(t) = 2000 × 0,04e^(0,04t) = 0,04C(t) ; C(25) = 2000e¹ ; C(1) = 2000e^(0,04) ≈ 2081,62 ; la hausse annuelle n'est pas constante."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel a, la suite (e^(na)) est géométrique de raison e^a.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Suites géométriques et modèles",
+      "explication": "e^((n+1)a) = e^(na) × e^a."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:131",
+      "type": "vrai_faux",
+      "enonce": "En décroissance radioactive, le même nombre de noyaux se désintègre chaque année.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "C'est la même proportion qui se désintègre, pas le même nombre : le nombre de désintégrations diminue avec N."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:132",
+      "type": "vrai_faux",
+      "enonce": "La demi-vie d'un échantillon radioactif ne dépend pas du nombre initial de noyaux.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Suites géométriques et modèles",
+      "explication": "Elle est définie par e^(−λT) = 1/2, qui ne fait pas intervenir N₀."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Avec le modèle C(t) = 1000e^(0,03t), le capital augmente exactement de 3 % par an.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Suites géométriques et modèles",
+      "explication": "Le coefficient annuel est e^(0,03) ≈ 1,0305 : l'augmentation est d'environ 3,05 %."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:134",
+      "type": "reponse_courte",
+      "enonce": "On dépose 500 € sur un livret rémunéré à 2 % par an, à intérêts composés. De combien d'euros dispose-t-on après 15 ans ? Arrondis à l'unité.",
+      "reponses_acceptees": [
+        "673"
+      ],
+      "marge": 0.5,
+      "difficulte": 2,
+      "notion": "Suites géométriques et modèles",
+      "explication": "500 × 1,02¹⁵ ≈ 672,93, soit 673 €."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:135",
+      "type": "reponse_courte",
+      "enonce": "La quantité d'un médicament dans le sang est Q(t) = 20e^(−0,3t) mg, t en heures. Par balayage, à quel instant la quantité vaut-elle 10 mg ? Arrondis au dixième d'heure.",
+      "reponses_acceptees": [
+        "2,3",
+        "2.3"
+      ],
+      "marge": 0.05,
+      "difficulte": 3,
+      "notion": "Suites géométriques et modèles",
+      "explication": "On cherche e^(−0,3t) = 0,5 : Q(2,25) ≈ 10,18 et Q(2,35) ≈ 9,88, donc t ≈ 2,31 h, soit 2,3 h."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Méthode d'Euler pour f′ = f, f(0) = 1, avec un pas h : comment passe-t-on de yₖ à yₖ₊₁ ?",
+      "propositions": [
+        "yₖ₊₁ = yₖ + h",
+        "yₖ₊₁ = h × yₖ",
+        "yₖ₊₁ = yₖ + 1",
+        "yₖ₊₁ = (1 + h)yₖ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "yₖ₊₁ = yₖ + h f′(xₖ) ≈ yₖ + h yₖ = (1 + h)yₖ."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Sur quelle approximation repose la méthode d'Euler ?",
+      "propositions": [
+        "f(x + h) ≈ f(x) + h",
+        "f(x + h) ≈ h f′(x)",
+        "f(x + h) ≈ f(x) × f′(h)",
+        "f(x + h) ≈ f(x) + h f′(x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "On remplace la courbe par sa tangente sur un petit intervalle de longueur h."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Que vaut (1 + 1/n)ⁿ pour n = 1 ?",
+      "propositions": [
+        "1",
+        "2",
+        "e",
+        "1,5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "(1 + 1)¹ = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:139",
+      "type": "qcm_unique",
+      "enonce": "On applique la méthode d'Euler à l'exponentielle avec le pas h = 0,1. Que vaut y₂ ?",
+      "propositions": [
+        "1,2",
+        "1,1",
+        "1,21",
+        "1,221"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "y₁ = 1,1 × 1 = 1,1 ; y₂ = 1,1 × 1,1 = 1,21."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Vers quel nombre se rapproche (1 + 1/n)ⁿ quand n devient très grand ?",
+      "propositions": [
+        "e",
+        "1",
+        "2",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "C'est la méthode d'Euler avec h = 1/n jusqu'à x = 1 : elle approche e¹ = e ≈ 2,718."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:141",
+      "type": "qcm_unique",
+      "enonce": "En Python, quelle instruction ajoute à la liste Y le terme suivant de la méthode d'Euler (pas h) pour l'exponentielle ?",
+      "propositions": [
+        "Y.append(Y[-1] + h * Y[-1])",
+        "Y.append(Y[-1] + h)",
+        "Y.append(h * Y[-1])",
+        "Y = Y[-1] + h * Y[-1]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "Le nouveau terme est yₖ + h yₖ, calculé à partir du dernier élément Y[-1], puis ajouté à la liste avec append."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Avec un pas h = 0,25, quelle valeur approchée de e¹ la méthode d'Euler fournit-elle ?",
+      "propositions": [
+        "1 + 4 × 0,25 = 2",
+        "0,25⁴ ≈ 0,004",
+        "1,25⁴ ≈ 2,441",
+        "1,25³ ≈ 1,953"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "Il faut 4 pas pour aller de 0 à 1, chacun multipliant par 1 + 0,25 : y₄ = 1,25⁴ ≈ 2,441."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les nombres (1 + 1/n)ⁿ sont-ils tous inférieurs ou égaux à e ?",
+      "propositions": [
+        "car la suite ((1 + 1/n)ⁿ) est décroissante",
+        "car e^(1/n) ⩾ 1 + 1/n, d'après l'inégalité eˣ ⩾ x + 1",
+        "car (1 + 1/n)ⁿ se rapproche de 1",
+        "car 1 + 1/n est négatif"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "e^(1/n) ⩾ 1 + 1/n > 0, donc en élevant à la puissance n : e ⩾ (1 + 1/n)ⁿ. La suite est en fait croissante."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "La méthode d'Euler de pas h pour f′ = f, f(0) = 1 fournit des valeurs yₖ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "yₖ est une valeur approchée de e^(kh)",
+        "yₖ est la valeur exacte de e^(kh)",
+        "(yₖ) est arithmétique de raison h",
+        "(yₖ) est une suite géométrique de raison 1 + h",
+        "yₖ = (1 + h)ᵏ"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "yₖ₊₁ = (1 + h)yₖ et y₀ = 1, donc yₖ = (1 + h)ᵏ ≈ e^(kh) (au point xₖ = kh), sans égalité exacte."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "On calcule (1 + 1/n)ⁿ pour plusieurs valeurs de n. Coche toutes les réponses exactes.",
+      "propositions": [
+        "pour n = 2, on obtient 2,25",
+        "pour n = 10, on obtient environ 2,594",
+        "pour n = 1 000, on obtient exactement e",
+        "pour n = 100, on obtient 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "1,5² = 2,25 ; 1,1¹⁰ ≈ 2,5937 ; 1,01¹⁰⁰ ≈ 2,7048 ; on n'obtient jamais exactement e."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "On exécute en Python L = [(1 + 1/n)**n for n in [1, 2, 4]]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les valeurs de L décroissent",
+        "L contient 3 nombres",
+        "L[0] vaut 2.0",
+        "L[2] vaut 2.44140625",
+        "L[1] vaut 2.5"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "L = [2.0, 2.25, 2.44140625] : trois valeurs croissantes ; L[1] = 1,5² = 2,25."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:147",
+      "type": "vrai_faux",
+      "enonce": "La méthode d'Euler remplace, sur chaque petit intervalle, la courbe par un segment de tangente.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "Elle utilise f(x + h) ≈ f(x) + h f′(x), approximation par la tangente."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:148",
+      "type": "vrai_faux",
+      "enonce": "En général, plus le pas h est petit, plus la méthode d'Euler donne des valeurs proches de la vraie fonction.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "Avec un petit pas, l'approximation par la tangente est meilleure sur chaque intervalle : par exemple 1,1¹⁰ ≈ 2,594 et 1,01¹⁰⁰ ≈ 2,705 approchent de mieux en mieux e ≈ 2,718 (au prix de plus de calculs)."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Avec n = 1 000, (1 + 1/n)ⁿ donne e avec au moins six décimales exactes.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "(1,001)¹⁰⁰⁰ ≈ 2,7169 alors que e ≈ 2,7183 : seules deux décimales sont exactes ; la convergence est lente."
+    },
+    {
+      "source": "maths-spe-1re:ch7:banque:150",
+      "type": "reponse_courte",
+      "enonce": "On applique la méthode d'Euler à l'exponentielle avec un pas de 0,5. Quelle valeur approchée de e¹ obtient-on en deux pas ? Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "2,25",
+        "2.25",
+        "9/4"
+      ],
+      "difficulte": 2,
+      "notion": "Méthode d'Euler et approximation de e",
+      "explication": "y₁ = 1,5 et y₂ = 1,5 × 1,5 = 2,25."
+    }
+  ]
+}
