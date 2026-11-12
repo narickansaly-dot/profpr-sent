@@ -52,6 +52,19 @@ Il reste des liens de vocabulaire : un mot technique (fourche, œil, hybride, se
 - La bonne réponse des qcm_unique est la plus longue dans 9 cas sur 74 ; positions des bonnes réponses : 19 / 18 / 19 / 18.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 2 conforme : 150 questions. »
 
+## Seconde vérification indépendante
+
+Les 67 questions modifiées (`ch2-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 67/67**. Suite à ses remarques :
+
+| Source | Remarque | Décision |
+|---|---|---|
+| svt:ch2:banque:055 | « découverte » impropre pour un modèle | Énoncé : « Quel travail publié en 1953… » |
+| svt:ch2:banque:078 | Faux à la génération 0 (aucun ADN hybride) | Énoncé : « À partir de la première génération… » |
+| svt:ch2:banque:079 | « intermédiaire » (densité) pourrait être tapé | Variantes « intermédiaire », « ADN intermédiaire » ajoutées |
+| svt:ch2:banque:100 | « brin modèle » est un synonyme courant | Variantes « modèle », « brin modèle » ajoutées |
+| svt:ch2:banque:124 | « Les cellules de la peau d'une même personne » discutable comme clone | Proposition remplacée : « Les cellules issues des divisions successives d'une même cellule de peau » |
+| 017, 025, 031, 062, 080, 099, 142 | variantes ou distracteurs faciles | Variantes déjà présentes ; distracteurs gardés (justes et sans ambiguïté) |
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : le relecteur était d'accord sur les 150 questions, ses remarques ont été appliquées, et les questions réécrites ou remplacées s'appuient sur des affirmations explicites du chapitre. Les 67 questions modifiées (liste dans `ch2-modifiees.txt`) passeront par la seconde vérification prévue.

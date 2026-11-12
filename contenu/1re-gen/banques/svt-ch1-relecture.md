@@ -46,6 +46,10 @@ Accord initial : **144/150** ; 6 écarts, tous sur des vrai/faux consécutifs (1
 - La bonne réponse des qcm_unique est la plus longue dans 18 cas sur 75.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 1 conforme : 150 questions. »
 
+## Seconde vérification indépendante
+
+Les 18 questions modifiées ou contestées lors de la relecture (`ch1-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 18/18**. Ses remarques (variantes de 138, 141 et 145) portaient sur des variantes déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse : les six écarts sont des erreurs du relecteur sur des affirmations écrites telles quelles dans le chapitre, et les remarques ont conduit à corriger ou à confirmer les questions concernées. Les questions modifiées (liste dans `ch1-modifiees.txt`) passeront par la seconde vérification prévue.

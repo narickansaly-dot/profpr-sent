@@ -40,6 +40,10 @@ Remarque sur la position des bonnes réponses : dans le fichier, les bonnes rép
 - Biais de longueur : la bonne réponse des qcm_unique est strictement la plus longue dans 10 cas sur 75 (12 en comptant les égalités).
 - Contrôle (`verifierBanque`) : « Banque du chapitre 3 conforme : 150 questions. »
 
+## Seconde vérification indépendante
+
+Les 4 questions modifiées (`ch3-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 4/4**, sans remarque.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Les questions sur des séquences (codons) donnent dans leur énoncé les correspondances codon / acide aminé nécessaires, car le texte des figures SVG n'est pas lu par le relecteur. Les données de l'expérience des levures sont des valeurs indicatives d'une expérience de classe, comme le précise le chapitre.
