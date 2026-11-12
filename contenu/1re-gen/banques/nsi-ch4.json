@@ -1128,7 +1128,7 @@
       "propositions": [
         "c vaut 0 et rien ne se passe",
         "c vaut 1",
-        "Une erreur UnboundLocalError, car c est considérée comme locale avant d'être définie",
+        "Une erreur (UnboundLocalError) : c est locale à ajoute et lue avant d'avoir reçu une valeur",
         "Une erreur SyntaxError"
       ],
       "bonnes_reponses": [
@@ -1172,15 +1172,15 @@
     {
       "source": "nsi-1re:ch4:banque:069",
       "type": "qcm_unique",
-      "enonce": "Une fonction est_pair(n) est écrite return n % 2 == 1. Lequel de ces tests révèle l'erreur ?",
+      "enonce": "Une fonction est_pair(n) est écrite return n % 2 == 1. Lequel de ces tests est lui-même correct (il énonce le bon résultat attendu) et révèle l'erreur ?",
       "difficulte": 3,
-      "explication": "est_pair(4) renvoie False : le test échoue et montre l'erreur. Le test sur 3 est lui-même faux.",
+      "explication": "est_pair(4) doit valoir True ; la fonction renvoie False, le test échoue et montre l'erreur. Les trois autres tests énoncent un résultat faux.",
       "notion": "Jeux de tests et erreurs",
       "propositions": [
-        "assert est_pair(5) == False, qui échoue lui aussi",
+        "assert est_pair(4) == False",
         "assert est_pair(3) == True",
         "assert est_pair(4) == True",
-        "Aucun test ne peut la révéler"
+        "assert est_pair(5) == True"
       ],
       "bonnes_reponses": [
         2
@@ -1582,7 +1582,7 @@
     {
       "source": "nsi-1re:ch4:banque:092",
       "type": "qcm_multiple",
-      "enonce": "Parmi ces tests de la fonction valeur_absolue(x), lesquels sont des cas limites utiles ? Coche toutes les réponses exactes.",
+      "enonce": "Parmi ces tests de la fonction valeur_absolue(x), lesquels testent des cas particuliers utiles (zéro, valeurs négatives) ? Coche toutes les réponses exactes.",
       "difficulte": 2,
       "explication": "0 et les négatifs sont les cas qui risquent de révéler une erreur.",
       "notion": "Jeux de tests et erreurs",
@@ -1785,7 +1785,7 @@
       "explication": "range(n) s'arrête à n − 1 : somme(3) vaut 3 et somme(1) vaut 0. L'erreur est dans la borne.",
       "notion": "Jeux de tests et erreurs",
       "propositions": [
-        "assert somme(1) == 0, qui teste un résultat faux",
+        "assert somme(0) >= 0",
         "assert somme(1) == 1",
         "assert somme(0) == 0",
         "assert somme(3) == 6"
@@ -2164,7 +2164,8 @@
       "explication": "Ada Lovelace (1815-1852).",
       "notion": "Repères historiques",
       "reponses_acceptees": [
-        "Ada"
+        "Ada",
+        "Augusta Ada"
       ]
     },
     {
@@ -2209,7 +2210,8 @@
       "notion": "Bibliothèques",
       "reponses_acceptees": [
         "randint",
-        "random.randint"
+        "random.randint",
+        "randint()"
       ]
     },
     {
@@ -2222,7 +2224,8 @@
       "reponses_acceptees": [
         "docstring",
         "une docstring",
-        "chaîne de documentation"
+        "chaîne de documentation",
+        "doc string"
       ]
     },
     {
@@ -2261,12 +2264,12 @@
     {
       "source": "nsi-1re:ch4:banque:150",
       "type": "reponse_courte",
-      "enonce": "On définit def f(n): return n if n < 10 else f(n // 10 + n % 10). Que vaut f(987) ? Réponds par un nombre.",
+      "enonce": "On définit def f(n): s = 0 ; while n > 0: s = s + n % 10 ; n = n // 10 ; puis return s après la boucle. Que vaut f(987) ? Réponds par un nombre.",
       "difficulte": 3,
-      "explication": "987 donne 98 + 7 = 105, puis 10 + 5 = 15, puis 1 + 5 = 6.",
+      "explication": "La boucle additionne les chiffres : 7 + 8 + 9 = 24.",
       "notion": "Fonctions et return",
       "reponses_acceptees": [
-        "6"
+        "24"
       ]
     }
   ]
