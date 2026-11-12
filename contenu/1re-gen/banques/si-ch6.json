@@ -69,8 +69,8 @@
       "enonce": "Parmi ces pièces d'un vélo à assistance électrique, laquelle ne doit pas être modélisée comme un solide indéformable ?",
       "propositions": [
         "Le ressort de la fourche suspendue",
-        "Le carter du moteur",
-        "Le cadre en aluminium",
+        "Le carter en aluminium du moteur électrique",
+        "Le cadre en aluminium du vélo",
         "Le pédalier en acier"
       ],
       "bonnes_reponses": [
@@ -102,7 +102,7 @@
       "type": "qcm_unique",
       "enonce": "Un portail battant est motorisé par un bras articulé : motoréducteur vissé sur le pilier, bras moteur, bras secondaire articulé au bout du bras moteur, vantail portant la patte qui reçoit le bras secondaire. Combien de classes d'équivalence compte le modèle ?",
       "propositions": [
-        "6",
+        "10, une par pièce",
         "5",
         "4",
         "3"
@@ -153,7 +153,7 @@
       "type": "qcm_unique",
       "enonce": "Le bras en acier d'un portail fléchit de 0,3 mm quand le vent pousse le vantail, qui tourne de 90° à l'ouverture. Pourquoi peut-on modéliser ce bras comme un solide indéformable pour étudier le mouvement ?",
       "propositions": [
-        "L'acier est un matériau qui ne se déforme jamais",
+        "L'acier est un matériau qui ne se déforme jamais, même sous un effort important",
         "Le vent ne s'exerce que lorsque le portail est fermé",
         "Sa déformation est très petite devant les déplacements étudiés",
         "Un solide en rotation ne peut pas se déformer"
@@ -296,7 +296,7 @@
         "2",
         "3",
         "4",
-        "6"
+        "6, comme dans l'espace"
       ],
       "bonnes_reponses": [
         1
@@ -327,7 +327,7 @@
       "type": "qcm_unique",
       "enonce": "Un tiroir ne peut que coulisser dans son meuble. Quel est le degré de liaison entre le tiroir et le meuble ?",
       "propositions": [
-        "1",
+        "1, comme son nombre de ddl",
         "5",
         "0",
         "6"
@@ -335,7 +335,7 @@
       "bonnes_reponses": [
         1
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Le tiroir a 1 ddl (Tx). Degré de liaison = 6 − 1 = 5 mouvements supprimés. Le 1 est le nombre de ddl, pas le degré de liaison.",
       "notion": "Degrés de liberté"
     },
@@ -364,12 +364,12 @@
         "3",
         "1",
         "0",
-        "6"
+        "6, comme son nombre de ddl"
       ],
       "bonnes_reponses": [
         2
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Le drone en vol est libre : il a 6 ddl, donc le degré de liaison vaut 6 − 6 = 0. Aucun mouvement n'est supprimé.",
       "notion": "Degrés de liberté"
     },
@@ -378,7 +378,7 @@
       "type": "qcm_unique",
       "enonce": "Que désigne le degré de liaison d'une liaison mécanique ?",
       "propositions": [
-        "Le nombre de mouvements élémentaires qu'elle autorise",
+        "Le nombre de mouvements élémentaires qu'elle laisse possibles",
         "Le nombre de mouvements élémentaires qu'elle supprime",
         "Le nombre de pièces qu'elle relie",
         "L'angle maximal de rotation qu'elle permet"
@@ -541,7 +541,7 @@
       "propositions": [
         "Un pivot",
         "Une glissière",
-        "Un appui plan",
+        "Un appui plan sur le fond",
         "Une rotule"
       ],
       "bonnes_reponses": [
@@ -573,7 +573,7 @@
       "type": "qcm_unique",
       "enonce": "Combien de degrés de liberté laisse une liaison pivot glissant ?",
       "propositions": [
-        "4",
+        "4, comme la linéaire annulaire",
         "1",
         "2",
         "3"
@@ -632,7 +632,7 @@
       "bonnes_reponses": [
         1
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Trois rotations possibles autour d'un centre fixe, aucune translation : c'est une rotule (liaison sphérique) à 3 ddl.",
       "notion": "Liaisons usuelles"
     },
@@ -675,7 +675,7 @@
       "type": "qcm_unique",
       "enonce": "La vis d'un vérin électrique a un pas de 5 mm. Le moteur la fait tourner de 120 tours. De combien la tige du vérin sort-elle ?",
       "propositions": [
-        "24 mm",
+        "0,024 m",
         "6 m",
         "0,06 m",
         "0,6 m"
@@ -728,7 +728,7 @@
     {
       "source": "si-1re:ch6:banque:046",
       "type": "qcm_multiple",
-      "enonce": "Quelles liaisons laissent exactement 3 degrés de liberté ? Coche toutes les réponses exactes.",
+      "enonce": "On cherche les liaisons qui autorisent trois mouvements élémentaires indépendants, ni plus ni moins. Lesquelles conviennent ? Coche toutes les réponses exactes.",
       "propositions": [
         "La ponctuelle",
         "L'appui plan",
@@ -865,7 +865,7 @@
       "bonnes_reponses": [
         1
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Le piston coulisse dans le cylindre sans tourner : c'est une glissière de direction x. Les trois autres liaisons (en A, B, C) sont des pivots.",
       "notion": "Graphe des liaisons et schéma"
     },
@@ -875,7 +875,7 @@
       "enonce": "Un mécanisme comporte C = 4 classes d'équivalence et L = 4 liaisons, son graphe étant connexe. Combien de boucles indépendantes possède-t-il ?",
       "propositions": [
         "2",
-        "8",
+        "8, soit L + C",
         "0",
         "1"
       ],
@@ -1074,7 +1074,7 @@
       "type": "qcm_unique",
       "enonce": "Dans quel cas peut-on étudier un mécanisme par une modélisation plane ?",
       "propositions": [
-        "Quand il ne comporte qu'une seule liaison",
+        "Quand il ne comporte qu'une seule liaison avec le bâti fixe",
         "Quand ses mouvements sont contenus dans un plan",
         "Quand toutes ses pièces sont plates",
         "Quand son poids est négligeable"
@@ -1133,7 +1133,7 @@
       "bonnes_reponses": [
         1
       ],
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "L'appui plan de normale y permet Tx, Tz et Ry ; dans le plan (x, y), il ne reste que Tx : c'est une glissière de direction x.",
       "notion": "Hypothèses et modélisation plane"
     },
@@ -1150,7 +1150,7 @@
       "bonnes_reponses": [
         3
       ],
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "Dans le plan, il reste Tx et Rz : c'est une ponctuelle (contact) de normale y, à 2 ddl.",
       "notion": "Hypothèses et modélisation plane"
     },
@@ -1259,7 +1259,7 @@
       "type": "vrai_faux",
       "enonce": "Si les résultats d'un modèle s'écartent trop des mesures, il faut abandonner une hypothèse et enrichir le modèle.",
       "bonne_reponse": true,
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Vrai : c'est la démarche de validation d'un modèle.",
       "notion": "Hypothèses et modélisation plane"
     },
@@ -1349,7 +1349,7 @@
       "enonce": "Un drone de prise de vue a une masse de 2,5 kg. Quelle est l'intensité de son poids ? On prend g = 9,81 N/kg.",
       "propositions": [
         "0,25 N",
-        "245 N",
+        "245,25 N",
         "2,5 N",
         "24,5 N"
       ],
@@ -1373,7 +1373,7 @@
       "bonnes_reponses": [
         2
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "La masse (en kg) est propre à l'objet et ne change pas ; le poids P = m × g dépend de g, il est environ six fois plus faible.",
       "notion": "Forces, poids et pression"
     },
@@ -1400,14 +1400,14 @@
       "enonce": "Un câble tire sur la lisse d'une barrière avec une force de 300 N inclinée de 30° au-dessus de l'horizontale x. Que vaut la composante horizontale Fx ?",
       "propositions": [
         "150 N",
-        "346 N",
+        "346,4 N",
         "300 N",
         "260 N"
       ],
       "bonnes_reponses": [
         3
       ],
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "Fx = F × cos 30° = 300 × 0,866 ≈ 260 N. 150 N est la composante verticale Fy = 300 × sin 30°.",
       "notion": "Forces, poids et pression"
     },
@@ -1530,7 +1530,7 @@
       ],
       "marge": 1,
       "marge_relative": false,
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "P = (80 + 70) × 9,81 = 150 × 9,81 = 1 471,5 N, soit 1 472 N arrondi à l'unité.",
       "notion": "Forces, poids et pression"
     },
@@ -1626,7 +1626,7 @@
       "bonnes_reponses": [
         3
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "Par convention, le moment est positif si la force tend à faire tourner autour de A dans le sens trigonométrique (inverse des aiguilles d'une montre).",
       "notion": "Moment d'une force et couple"
     },
@@ -1873,7 +1873,7 @@
       "type": "qcm_unique",
       "enonce": "Dans un problème plan (x, y), quelles composantes d'un torseur d'action mécanique restent à déterminer ?",
       "propositions": [
-        "Z, L et M",
+        "Z, L, M et N",
         "X, Y et Z",
         "L, M et N",
         "X, Y et N"
@@ -1893,12 +1893,12 @@
         "4",
         "1",
         "5",
-        "6"
+        "6, comme l'encastrement"
       ],
       "bonnes_reponses": [
         2
       ],
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "Le pivot a 1 ddl ; il transmet une action selon les 5 mouvements interdits : X, Y, Z ; M, N (L = 0). 6 − 1 = 5 inconnues.",
       "notion": "Torseurs et actions transmissibles"
     },
@@ -2061,7 +2061,7 @@
       "reponses_acceptees": [
         "3"
       ],
-      "difficulte": 2,
+      "difficulte": 3,
       "explication": "L'appui plan de normale z a 3 ddl (Tx, Ty, Rz) ; il transmet Z ; L, M, soit 6 − 3 = 3 inconnues.",
       "notion": "Torseurs et actions transmissibles"
     },
@@ -2140,13 +2140,13 @@
       "propositions": [
         "Toujours sur le bâti",
         "Sur deux solides différents",
-        "Sur le solide le plus lourd",
+        "Sur le solide le plus lourd des deux",
         "Sur le même solide"
       ],
       "bonnes_reponses": [
         1
       ],
-      "difficulte": 2,
+      "difficulte": 1,
       "explication": "F⃗1→2 s'exerce sur 2 et F⃗2→1 s'exerce sur 1 : deux solides différents. C'est pourquoi elles ne s'annulent jamais l'une l'autre.",
       "notion": "Graphe des actions et réciprocité"
     },
