@@ -42,6 +42,11 @@ Questions modifiées : 011, 065, 074, 125, 126, 143, 145, 147, 150.
 - Biais de longueur : la bonne réponse est la plus longue dans 20 qcm_unique sur 75.
 - Contrôle `verifierBanque` : « Banque du chapitre 6 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 9 questions modifiées (`ch6-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 9/9**. Suite à ses remarques, la 143 accepte aussi la faute fréquente « Fisher » ; les autres variantes demandées (145) étaient déjà acceptées.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Points de vigilance pour l'enseignant : l'effet de la température et du pH (FA) est hors exigibles selon le programme [P6] et figure ici à titre d'exemple ; les valeurs de pH optimal (pepsine 2, amylase salivaire 7, trypsine 8) sont des valeurs de manuel arrondies.

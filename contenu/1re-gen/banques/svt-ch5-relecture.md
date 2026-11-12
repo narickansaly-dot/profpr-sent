@@ -44,6 +44,11 @@ Les 7 écarts viennent d'un décalage du relecteur, pas d'une erreur de la banqu
 - Biais de longueur : la bonne réponse est la plus longue dans 19 `qcm_unique` sur 75 en comptant les égalités (nombres de même longueur, comme « 64 » et « 12 »), et dans 5 sur 75 en ne comptant que les cas où elle est strictement la plus longue.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 5 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 17 questions modifiées ou contestées (`ch5-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 17/17**. Ses remarques (variantes de 137, 145, 146) portaient sur des variantes déjà acceptées ; la 128 (code binaire) est jugée peu utile en SVT mais juste : gardée.
+
 ## Questions laissées à relire
 
 Aucune question ne reste réellement douteuse : les écarts venaient d'un décalage du relecteur, et chaque remarque a été corrigée ou justifiée ci-dessus.

@@ -40,6 +40,11 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Le r
 - Section « Des traces de sélection naturelle » : la peste noire est datée « 1347-1352, au XIVe siècle ».
 - Contrôle `cours` relancé : le nettoyage HTML ne retire rien.
 
+
+## Seconde vérification indépendante
+
+Les 8 questions modifiées (`ch4-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses et avec le texte complété du chapitre : **accord 8/8**. Ses remarques portaient sur des variantes déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse après arbitrage.
