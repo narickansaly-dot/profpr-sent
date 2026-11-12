@@ -1,0 +1,1177 @@
+{
+  "chapitre": 5,
+  "notions": [
+    "Vocabulaire et conventions",
+    "Lois de Kirchhoff",
+    "Loi d'Ohm et associations de résistors",
+    "Pont diviseur de tension",
+    "Puissance, énergie et effet Joule",
+    "Condensateur et bobine",
+    "Diode, transistor et interrupteur parfait",
+    "Signaux périodiques et réseau électrique"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch5:banque:001",
+      "type": "qcm_unique",
+      "enonce": "En sciences de l'ingénieur, quelle grandeur électrique joue le rôle de grandeur flux ?",
+      "propositions": [
+        "L'intensité du courant",
+        "La tension",
+        "La résistance",
+        "La puissance"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité, en ampères, mesure le débit de charges : c'est la grandeur flux. La tension est la grandeur effort, et leur produit est la puissance.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on un nœud dans un circuit électrique ?",
+      "propositions": [
+        "Un point relié à exactement deux fils",
+        "Un point relié à au moins trois fils",
+        "Un chemin fermé formé de branches",
+        "Une portion de circuit entre deux dipôles"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un nœud est un point du circuit où se rejoignent au moins trois fils. Un chemin fermé est une maille ; la portion entre deux nœuds est une branche.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:003",
+      "type": "qcm_unique",
+      "enonce": "En convention récepteur, comment sont orientées la flèche de tension et la flèche de courant d'un dipôle ?",
+      "propositions": [
+        "Dans le même sens",
+        "Perpendiculairement l'une à l'autre",
+        "En sens opposés",
+        "Toutes deux vers la masse du circuit"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Convention récepteur : la flèche de U et la flèche de I sont de sens opposés. En convention générateur, elles sont de même sens.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Pour indiquer une tension U_AB sur un schéma, vers quel point la flèche de tension doit-elle pointer ?",
+      "propositions": [
+        "Vers le point B",
+        "Vers la masse du circuit",
+        "Vers la borne − du générateur",
+        "Vers le point A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La flèche de U_AB = V_A − V_B pointe vers le point dont on donne le potentiel en premier, ici A.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Une batterie alimente un résistor R1 placé en série avec un ensemble de deux résistors R2 et R3 montés en parallèle. Combien ce circuit compte-t-il de nœuds ?",
+      "propositions": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Seuls les deux points où R2 et R3 se séparent et se rejoignent sont reliés à au moins trois fils : il y a 2 nœuds.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans un montage, le point A est au potentiel V_A = 9 V et le point B au potentiel V_B = 3 V. Que vaut la tension U_AB ?",
+      "propositions": [
+        "−6 V",
+        "6 V",
+        "12 V",
+        "3 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "U_AB = V_A − V_B = 9 − 3 = 6 V. La valeur −6 V correspondrait à U_BA, et 12 V à une somme au lieu d'une différence.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Un ampèremètre placé dans une branche d'un circuit indique 0,8 A. Où peut-on le déplacer sans changer son indication ?",
+      "propositions": [
+        "Dans n'importe quelle autre branche",
+        "Aux bornes d'un dipôle de cette branche",
+        "En un autre point de la même branche",
+        "Sur le fil de masse, quel qu'il soit"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Tous les dipôles d'une branche sont parcourus par le même courant : l'ampèremètre, toujours en série, indique 0,8 A partout dans cette branche.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:008",
+      "type": "qcm_unique",
+      "enonce": "La masse d'un circuit est à 0 V et le point A est au potentiel 12 V. La tension aux bornes d'un résistor placé entre A et B vaut U_AB = 4,5 V. Quel est le potentiel du point B ?",
+      "propositions": [
+        "16,5 V",
+        "4,5 V",
+        "−7,5 V",
+        "7,5 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "U_AB = V_A − V_B, donc V_B = V_A − U_AB = 12 − 4,5 = 7,5 V. Ajouter les deux valeurs (16,5 V) revient à inverser le sens de la tension.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Lors d'une mesure de tension aux bornes d'une lampe de vélo, comment faut-il brancher le voltmètre ?",
+      "propositions": [
+        "En dérivation, aux bornes de la lampe",
+        "En série avec la lampe",
+        "À la place de la lampe",
+        "En série, juste après la batterie"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un voltmètre se branche toujours en dérivation, entre les deux points dont on veut la différence de potentiel ; c'est l'ampèremètre qui se branche en série.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'une branche d'un circuit électrique. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle relie deux nœuds consécutifs.",
+        "Tous ses dipôles sont parcourus par le même courant.",
+        "Elle forme un chemin fermé.",
+        "Elle contient obligatoirement un générateur."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une branche est la portion de circuit comprise entre deux nœuds consécutifs ; ses dipôles sont en série, donc parcourus par le même courant. Le chemin fermé est une maille, et une branche peut ne contenir qu'un résistor.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces choix d'orientation, lesquels correspondent à l'usage habituel ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Batterie en convention générateur",
+        "Résistor en convention récepteur",
+        "Moteur en convention générateur",
+        "Lampe en convention générateur",
+        "DEL en convention récepteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "On oriente habituellement les sources (batterie, alimentation) en convention générateur et tous les autres dipôles (résistor, lampe, moteur, DEL) en convention récepteur.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Voici des descriptions de symboles de schéma électrique. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Moteur : cercle contenant la lettre M",
+        "Résistor : rectangle",
+        "Condensateur : deux traits parallèles",
+        "Diode : cercle contenant la lettre D",
+        "Interrupteur : deux traits parallèles"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le moteur est un cercle contenant M, le résistor un rectangle, le condensateur deux traits parallèles. La diode est un triangle pointant vers une barre, et l'interrupteur un trait incliné entre deux bornes.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "Une batterie alimente un résistor R1 en série avec trois résistors R2, R3 et R4, tous les trois montés en parallèle entre deux nœuds N et M. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le circuit compte 2 nœuds.",
+        "Le circuit compte 4 branches.",
+        "R2, R3 et R4 ont la même tension à leurs bornes.",
+        "Le circuit ne compte que 2 mailles."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Nœuds : N et M. Branches : « batterie et R1 », R2, R3, R4, soit 4. R2, R3 et R4 sont en parallèle entre N et M, donc ont la même tension. Il y a bien plus de 2 mailles : chaque paire de branches en forme une, soit 6.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:014",
+      "type": "qcm_multiple",
+      "enonce": "À propos des appareils de mesure. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un voltmètre se branche en dérivation.",
+        "Un ampèremètre se branche en série.",
+        "Un ampèremètre se branche en dérivation.",
+        "Un voltmètre se branche en série avec le dipôle étudié."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le voltmètre mesure une différence de potentiel entre deux points : il se branche en dérivation. L'ampèremètre doit être traversé par le courant : il se branche en série.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Un ampèremètre se branche en dérivation aux bornes du dipôle dont on veut connaître le courant.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : l'ampèremètre doit être traversé par le courant, il se branche en série. C'est le voltmètre qui se branche en dérivation.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:016",
+      "type": "vrai_faux",
+      "enonce": "La masse est le point de référence d'un circuit, dont le potentiel est pris égal à 0 V.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : on choisit un point de référence, la masse, de potentiel 0 V ; les autres potentiels sont donnés par rapport à elle.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Si le calcul d'une intensité fléchée donne −0,3 A, le courant réel circule dans le sens opposé à la flèche choisie.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : le sens des flèches est choisi librement ; une valeur négative signifie simplement que la grandeur réelle est dans l'autre sens.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:018",
+      "type": "vrai_faux",
+      "enonce": "Si deux dipôles ont la même tension à leurs bornes, ils sont forcément montés en parallèle.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : des dipôles en parallèle ont la même tension, mais la réciproque est fausse. Deux résistors identiques en série ont aussi la même tension, sans être en parallèle.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Une batterie alimente un résistor R1, lui-même en série avec deux résistors R2 et R3 branchés en parallèle. Combien de mailles ce circuit possède-t-il ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "3",
+        "trois"
+      ],
+      "difficulte": 2,
+      "explication": "Les mailles sont : batterie, R1, R2 ; batterie, R1, R3 ; R2, R3. Il y en a 3.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:020",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on un composant électrique qui possède deux bornes ?",
+      "reponses_acceptees": [
+        "dipôle",
+        "un dipôle",
+        "dipole",
+        "un dipole",
+        "le dipôle",
+        "dipôles"
+      ],
+      "difficulte": 1,
+      "explication": "Un dipôle est un composant à deux bornes : pile, résistor, lampe, diode, moteur…",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Que dit la loi des nœuds ?",
+      "propositions": [
+        "La somme des tensions d'une maille est nulle",
+        "Les courants qui arrivent ont pour somme celle des courants qui repartent",
+        "La tension est proportionnelle à l'intensité",
+        "Toutes les branches reliées au nœud ont le même courant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Loi des nœuds : en un nœud, la somme des intensités des courants qui arrivent est égale à la somme des intensités des courants qui repartent. Les charges ne s'accumulent pas.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Dans des dipôles branchés en série, que peut-on dire de l'intensité du courant ?",
+      "propositions": [
+        "Elle est plus forte près de la borne +",
+        "Elle se partage entre les dipôles",
+        "Elle est la même dans tous les dipôles",
+        "Elle est nulle dans le dernier dipôle"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Des dipôles en série forment une branche : ils sont parcourus par le même courant (conséquence de la loi des nœuds).",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 36 V alimente un contrôleur de moteur et un phare montés en parallèle. Quelle est la tension aux bornes du phare ?",
+      "propositions": [
+        "18 V",
+        "72 V",
+        "12 V",
+        "36 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Des dipôles en parallèle ont la même tension à leurs bornes (loi des mailles) : le phare est sous 36 V, comme le contrôleur.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:024",
+      "type": "qcm_unique",
+      "enonce": "En un nœud arrivent deux courants de 2,5 A et 0,7 A ; repartent un courant de 1,8 A et un courant I. Que vaut I ?",
+      "propositions": [
+        "1,4 A",
+        "5,0 A",
+        "3,2 A",
+        "1,1 A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : 2,5 + 0,7 = 1,8 + I, donc I = 3,2 − 1,8 = 1,4 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 24 V alimente le moteur d'un portail par l'intermédiaire de câbles. La tension aux bornes du moteur vaut 23,2 V. Quelle tension perdent les câbles au total ?",
+      "propositions": [
+        "47,2 V",
+        "0,8 V",
+        "23,2 V",
+        "1,0 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles : 24 = U_câbles + 23,2, donc U_câbles = 24 − 23,2 = 0,8 V.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Une batterie débite 10 A. Le moteur en reçoit 9,5 A et le reste se partage également entre deux lampes identiques montées en parallèle. Quelle est l'intensité dans chaque lampe ?",
+      "propositions": [
+        "0,5 A",
+        "4,75 A",
+        "0,25 A",
+        "9,75 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : les lampes reçoivent ensemble 10 − 9,5 = 0,5 A ; identiques et en parallèle, elles se le partagent : 0,5 / 2 = 0,25 A chacune.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Une maille est parcourue dans le sens horaire. On y rencontre E = 12 V (flèche dans le sens du parcours), U1 = 3 V (flèche en sens contraire), U2 (flèche dans le sens du parcours) et U3 = 5 V (flèche en sens contraire). Que vaut U2 ?",
+      "propositions": [
+        "4 V",
+        "20 V",
+        "−20 V",
+        "−4 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Loi des mailles : E − U1 + U2 − U3 = 0, soit 12 − 3 + U2 − 5 = 0, donc U2 = −4 V. La tension réelle est orientée dans l'autre sens.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Une source E = 9 V alimente R1 en série avec R2 et R3 montés en parallèle. On mesure U1 = 3 V aux bornes de R1, I2 = 0,2 A dans R2 et I3 = 0,1 A dans R3. Que valent U3 et le courant I1 dans R1 ?",
+      "propositions": [
+        "U3 = 6 V et I1 = 0,3 A",
+        "U3 = 3 V et I1 = 0,3 A",
+        "U3 = 6 V et I1 = 0,1 A",
+        "U3 = 9 V et I1 = 0,2 A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Maille : U2 = E − U1 = 9 − 3 = 6 V, et U3 = U2 = 6 V (parallèle). Nœud : I1 = I2 + I3 = 0,2 + 0,1 = 0,3 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle propriété physique la loi des nœuds traduit-elle ?",
+      "propositions": [
+        "L'énergie mécanique se conserve",
+        "Les charges ne s'accumulent pas en un nœud",
+        "La tension se partage entre dipôles",
+        "Les fils dissipent de la chaleur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Tout ce qui entre dans un nœud en ressort : la loi des nœuds traduit la conservation de la charge électrique.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer toutes les grandeurs d'un circuit, que faut-il ajouter aux lois de Kirchhoff ?",
+      "propositions": [
+        "Rien : elles suffisent toujours",
+        "Le théorème de superposition",
+        "Les lois de comportement des composants",
+        "La valeur de la fréquence du réseau"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les lois de Kirchhoff ne dépendent pas des composants ; il faut leur ajouter les lois de comportement (par exemple U = R × I) pour résoudre le circuit.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Une source E alimente R1, parcouru par I1, en série avec R2 et R3 montés en parallèle, parcourus par I2 et I3. U1, U2, U3 sont les tensions aux bornes des résistors. Coche toutes les réponses exactes.",
+      "propositions": [
+        "I1 = I2 + I3",
+        "E = U1 + U2",
+        "U2 = U3",
+        "I2 = I3 dans tous les cas",
+        "E = U1 + U2 + U3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Nœud : I1 = I2 + I3. Maille E, R1, R2 : E = U1 + U2. Maille R2, R3 : U2 = U3. I2 = I3 seulement si R2 = R3 ; et E = U1 + U2 + U3 ajoute deux fois la même tension.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la loi des mailles. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme algébrique des tensions le long d'une maille est nulle.",
+        "Une tension fléchée dans le sens du parcours compte positivement.",
+        "Elle ne s'applique qu'aux circuits formés uniquement de résistors.",
+        "Son énoncé change selon les composants de la maille."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le long d'une maille, la somme algébrique des tensions est nulle, en comptant positivement les flèches dans le sens du parcours. Comme toutes les lois de Kirchhoff, elle ne dépend pas des composants.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "À propos des dipôles en série et en parallèle. Coche toutes les réponses exactes.",
+      "propositions": [
+        "En série, les dipôles sont parcourus par le même courant.",
+        "En parallèle, les dipôles ont la même tension.",
+        "En série, la tension totale est la somme des tensions.",
+        "En parallèle, les courants sont toujours égaux."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "En série : même courant, tensions qui s'additionnent. En parallèle : même tension ; les courants, eux, s'additionnent et ne sont égaux que si les dipôles sont identiques.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Dans une branche, tous les dipôles sont parcourus par le même courant.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : une branche relie deux nœuds consécutifs ; ses dipôles sont en série et la loi des nœuds impose le même courant partout.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Les lois de Kirchhoff changent selon la nature des composants du circuit.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : les lois des nœuds et des mailles ne dépendent pas des composants. Ce sont les lois de comportement qui décrivent chaque composant.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Quand on applique la loi des mailles, une tension dont la flèche est dans le sens du parcours se compte négativement.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : c'est l'inverse. Une tension dont la flèche est dans le sens du parcours compte positivement ; elle compte négativement si sa flèche est opposée au parcours.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Dans un circuit à plusieurs sources ne contenant que des composants linéaires comme des résistors, on peut calculer l'effet de chaque source seule puis additionner les résultats.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : c'est le théorème de superposition, présenté en ouverture (il sera utilisé en terminale). Les autres sources de tension sont alors remplacées par des fils.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:038",
+      "type": "reponse_courte",
+      "enonce": "En un nœud arrive un courant I1 = 3,2 A ; en repartent un courant I2 = 1,5 A et un courant I3. Que vaut I3, en ampères ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1,7"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : I1 = I2 + I3, donc I3 = 3,2 − 1,5 = 1,7 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:039",
+      "type": "reponse_courte",
+      "enonce": "Une batterie de 48 V alimente en série un fusible, un câble et le contrôleur d'un vélo. Le fusible a 0,1 V à ses bornes et le câble 0,6 V. Quelle est la tension aux bornes du contrôleur, en volts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "47,3"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles (additivité en série) : 48 = 0,1 + 0,6 + U, donc U = 48 − 0,7 = 47,3 V.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation traduit la loi d'Ohm pour un résistor en convention récepteur ?",
+      "propositions": [
+        "U = R / I",
+        "I = R × U",
+        "P = U × I",
+        "U = R × I"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La loi d'Ohm s'écrit U = R × I : la tension est proportionnelle à l'intensité, R étant la résistance en ohms.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime une résistance électrique ?",
+      "propositions": [
+        "L'ohm (Ω)",
+        "L'ampère (A)",
+        "Le farad (F)",
+        "Le henry (H)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La résistance s'exprime en ohms (Ω). Le farad est l'unité de capacité, le henry celle d'inductance.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Un résistor de 220 Ω est traversé par un courant de 50 mA. Quelle est la tension à ses bornes ?",
+      "propositions": [
+        "4,4 V",
+        "11 V",
+        "11 000 V",
+        "0,23 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On convertit : 50 mA = 0,050 A. U = R × I = 220 × 0,050 = 11 V. Oublier la conversion donne 11 000 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Sous une tension de 12 V, un résistor est traversé par 25 mA. Quelle est sa résistance ?",
+      "propositions": [
+        "0,48 Ω",
+        "300 Ω",
+        "480 Ω",
+        "2,1 Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "R = U / I = 12 / 0,025 = 480 Ω. Sans convertir les milliampères, on obtiendrait 0,48 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la résistance équivalente de deux résistors de 47 Ω et 33 Ω montés en série ?",
+      "propositions": [
+        "19,4 Ω",
+        "14 Ω",
+        "1 551 Ω",
+        "80 Ω"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "En série, les résistances s'additionnent : 47 + 33 = 80 Ω. La valeur 19,4 Ω correspond au montage en parallèle.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Deux résistors de 60 Ω et 30 Ω sont montés en parallèle. Quelle est la résistance équivalente ?",
+      "propositions": [
+        "20 Ω",
+        "90 Ω",
+        "45 Ω",
+        "30 Ω"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "En parallèle : R_éq = (60 × 30) / (60 + 30) = 1 800 / 90 = 20 Ω, plus petite que la plus petite des deux résistances.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Deux résistors de 100 Ω sont branchés l'un à la suite de l'autre, en série. Quelle résistance équivalente obtient-on ?",
+      "propositions": [
+        "50 Ω",
+        "200 Ω",
+        "100 Ω",
+        "10 000 Ω"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "En série, R_éq = R1 + R2 = 100 + 100 = 200 Ω. La valeur 50 Ω serait celle du montage en parallèle.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Trois résistors identiques de 120 Ω sont montés en parallèle sous une tension de 12 V. Quelle intensité débite la source ?",
+      "propositions": [
+        "0,033 A",
+        "0,10 A",
+        "0,30 A",
+        "3,0 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Trois résistors identiques en parallèle : R_éq = 120 / 3 = 40 Ω. I = U / R_éq = 12 / 40 = 0,30 A. La valeur 0,10 A n'est que le courant dans un seul résistor.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Un résistor de 100 Ω est en série avec deux résistors de 200 Ω montés en parallèle entre eux. L'ensemble est sous 20 V. Quelle est la tension aux bornes du résistor de 100 Ω ?",
+      "propositions": [
+        "4 V",
+        "20 V",
+        "5 V",
+        "10 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Les deux 200 Ω en parallèle équivalent à 100 Ω ; R_éq = 100 + 100 = 200 Ω. I = 20 / 200 = 0,1 A, d'où U = 100 × 0,1 = 10 V. Mettre les trois en série donnerait 4 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'un résistor qui suit la loi d'Ohm. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa caractéristique U = f(I) est une droite passant par l'origine.",
+        "Sa résistance vaut R = U / I.",
+        "Si la tension double, l'intensité double.",
+        "La résistance d'un fil de connexion est en général très grande."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I : la caractéristique est une droite par l'origine, R = U / I, et U et I sont proportionnels. Un fil de connexion a au contraire une résistance très faible, souvent négligée.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "On dispose de deux résistors de 10 Ω et de 40 Ω. Coche toutes les réponses exactes.",
+      "propositions": [
+        "En série, ils équivalent à 50 Ω.",
+        "En parallèle, ils équivalent à 8 Ω.",
+        "En parallèle, ils équivalent à 25 Ω.",
+        "En série, ils équivalent à 400 Ω."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Série : 10 + 40 = 50 Ω. Parallèle : (10 × 40) / (10 + 40) = 400 / 50 = 8 Ω. 25 Ω est la moyenne, 400 Ω le produit.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "On dispose de quatre résistors identiques de 100 Ω. Quels montages ont une résistance équivalente de 100 Ω ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Deux en série, en parallèle avec deux autres en série",
+        "Les quatre en parallèle",
+        "Deux en parallèle, en série avec deux autres en parallèle",
+        "Les quatre en série"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "200 Ω en parallèle avec 200 Ω donnent 100 Ω ; 50 Ω en série avec 50 Ω donnent 100 Ω. Les quatre en parallèle donnent 25 Ω, les quatre en série 400 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Voici des conversions d'unités. Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 MΩ = 10⁶ Ω",
+        "1 kΩ = 1 000 Ω",
+        "1 mA = 0,1 A",
+        "22 mA = 0,022 A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Méga = 10⁶, kilo = 10³, milli = 10⁻³. Donc 1 mA = 0,001 A et 22 mA = 0,022 A.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:053",
+      "type": "qcm_multiple",
+      "enonce": "On monte deux résistors de 10 Ω et 1 kΩ en parallèle. Que peut-on dire de la résistance équivalente ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est inférieure à 10 Ω.",
+        "Elle est proche de 10 Ω.",
+        "Elle est supérieure à 1 kΩ.",
+        "Elle vaut 505 Ω."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En parallèle, R_éq est plus petite que la plus petite des résistances : (10 × 1 000) / 1 010 ≈ 9,9 Ω, juste en dessous de 10 Ω. 505 Ω est une moyenne, sans signification ici.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:054",
+      "type": "vrai_faux",
+      "enonce": "En série, la résistance équivalente est la somme des résistances.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : R_éq = R1 + R2 + … ; elle est plus grande que chacune des résistances.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:055",
+      "type": "vrai_faux",
+      "enonce": "Deux résistors identiques de 1 kΩ montés en parallèle équivalent à un résistor de 2 kΩ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : deux résistors identiques R en parallèle équivalent à R / 2, soit 500 Ω. C'est en série qu'on obtiendrait 2 kΩ.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:056",
+      "type": "vrai_faux",
+      "enonce": "Si l'on double la tension aux bornes d'un résistor, l'intensité qui le traverse est divisée par deux.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : I = U / R, donc l'intensité est proportionnelle à la tension : elle double aussi.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:057",
+      "type": "reponse_courte",
+      "enonce": "Un résistor de 470 Ω est parcouru par un courant de 20 mA. Quelle tension, en volts, mesure-t-on à ses bornes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "9,4"
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I = 470 × 0,020 = 9,4 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:058",
+      "type": "reponse_courte",
+      "enonce": "Deux résistors montés en parallèle ont une résistance équivalente de 12 Ω. L'un d'eux vaut 20 Ω. Quelle est la résistance de l'autre, en ohms ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "30"
+      ],
+      "difficulte": 3,
+      "explication": "1 / R_éq = 1 / R1 + 1 / R2, donc 1 / R2 = 1 / 12 − 1 / 20 = 5 / 60 − 3 / 60 = 2 / 60, d'où R2 = 30 Ω. Vérification : (20 × 30) / 50 = 12 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'expression de la tension de sortie U2 d'un pont diviseur à vide, alimenté sous E, U2 étant prise aux bornes de R2 ?",
+      "propositions": [
+        "U2 = E × R2 / (R1 + R2)",
+        "U2 = E × R1 / (R1 + R2)",
+        "U2 = E × (R1 + R2) / R2",
+        "U2 = E × R2 / R1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "R1 et R2 sont en série, parcourus par I = E / (R1 + R2) ; U2 = R2 × I = E × R2 / (R1 + R2).",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Un pont diviseur à vide est alimenté sous 12 V avec R1 = R2 = 10 kΩ. Quelle est la tension de sortie ?",
+      "propositions": [
+        "12 V",
+        "6 V",
+        "24 V",
+        "3 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "U2 = 12 × 10 / (10 + 10) = 6 V : avec deux résistances égales, la tension est divisée par deux.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Un pont diviseur à vide est alimenté sous 5,0 V, avec R1 = 3 kΩ et R2 = 2 kΩ. Que vaut la tension aux bornes de R2 ?",
+      "propositions": [
+        "3,0 V",
+        "3,3 V",
+        "2,0 V",
+        "12,5 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U2 = 5,0 × 2 / (3 + 2) = 2,0 V. La valeur 3,0 V est la tension aux bornes de R1 ; 3,3 V vient de l'erreur E × R2 / R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi choisit-on des résistances de l'ordre de 100 kΩ pour le pont diviseur qui surveille la batterie d'une trottinette ?",
+      "propositions": [
+        "Pour que U2 soit égale à la tension de la batterie",
+        "Pour chauffer la batterie par temps froid",
+        "Pour augmenter le courant envoyé au moteur",
+        "Pour que le pont décharge très peu la batterie"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le courant du pont vaut I = E / (R1 + R2) : avec de grandes résistances, il est de l'ordre du dixième de milliampère et la batterie se décharge à peine.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 48 V doit être surveillée par un microcontrôleur dont l'entrée accepte au plus 3,3 V. On utilise un pont diviseur à vide avec R2 = 10 kΩ. Parmi ces valeurs de R1, laquelle donne une tension de sortie inférieure à 3,3 V ?",
+      "propositions": [
+        "150 kΩ",
+        "100 kΩ",
+        "47 kΩ",
+        "22 kΩ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "U2 = 48 × 10 / (R1 + 10). Avec 150 kΩ : 480 / 160 = 3,0 V, acceptable. Avec 100 kΩ : 4,4 V ; 47 kΩ : 8,4 V ; 22 kΩ : 15 V, trop élevées.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Un pont diviseur formé de R1 = 100 kΩ et R2 = 20 kΩ est alimenté sous 24 V, sans rien brancher sur la sortie. Quel courant traverse les deux résistors ?",
+      "propositions": [
+        "0,24 mA",
+        "0,2 mA",
+        "1,2 mA",
+        "0,2 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "I = E / (R1 + R2) = 24 / 120 000 = 0,000 2 A = 0,2 mA. La valeur 0,24 mA oublie R2, 1,2 mA oublie R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Dans un lampadaire, une photorésistance détecte la tombée de la nuit. Comment varie sa résistance quand la lumière augmente ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle reste constante",
+        "Elle diminue",
+        "Elle devient infinie"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La résistance d'une photorésistance diminue quand la lumière augmente ; placée dans un pont diviseur, elle fait varier la tension de sortie avec l'éclairement.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Quel composant résistif place-t-on dans un pont diviseur pour mesurer la température d'une station météo ?",
+      "propositions": [
+        "Une photorésistance",
+        "Un condensateur",
+        "Une diode",
+        "Une thermistance"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La résistance d'une thermistance varie avec la température : dans un pont diviseur, elle donne une tension qui dépend de la température.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:067",
+      "type": "qcm_unique",
+      "enonce": "On branche sur la sortie d'un pont diviseur une charge qui consomme un courant important. Comment évolue la tension de sortie ?",
+      "propositions": [
+        "Elle baisse",
+        "Elle augmente",
+        "Elle ne change pas",
+        "Elle devient égale à E"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La formule du pont diviseur suppose un courant de sortie négligeable. Si la charge consomme beaucoup, U2 baisse.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:068",
+      "type": "qcm_unique",
+      "enonce": "On veut obtenir 2,5 V à vide à partir d'une source de 10 V, avec un pont diviseur dont R2 vaut 1 kΩ. Quelle valeur faut-il donner à R1 ?",
+      "propositions": [
+        "4 kΩ",
+        "3 kΩ",
+        "0,33 kΩ",
+        "2,5 kΩ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "U2 / E = R2 / (R1 + R2) = 2,5 / 10 = 0,25, donc R1 + R2 = 1 / 0,25 = 4 kΩ et R1 = 4 − 1 = 3 kΩ. 4 kΩ est la résistance totale, pas R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Un pont diviseur à vide est alimenté sous 9 V, avec deux résistances R1 et R2 égales. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tension de sortie vaut 4,5 V.",
+        "R1 et R2 sont parcourus par le même courant.",
+        "Les tensions aux bornes de R1 et de R2 sont égales.",
+        "La tension de sortie vaut 9 V."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "À vide, R1 et R2 sont en série : même courant, et avec R1 = R2, même tension. Chacune reçoit la moitié de 9 V, soit 4,5 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Un pont diviseur à vide est alimenté sous 12 V, avec R1 = 8 kΩ et R2 = 4 kΩ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "U2 = 4 V",
+        "U1 = 8 V",
+        "Le courant vaut 1 mA.",
+        "Le courant vaut 1,5 mA.",
+        "U2 = 6 V"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "I = 12 / (8 000 + 4 000) = 0,001 A = 1 mA. U2 = 4 000 × 0,001 = 4 V et U1 = 8 000 × 0,001 = 8 V ; on vérifie U1 + U2 = 12 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:071",
+      "type": "vrai_faux",
+      "enonce": "Un pont diviseur de tension peut fournir une tension de sortie supérieure à sa tension d'alimentation.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : U2 = E × R2 / (R1 + R2), et R2 / (R1 + R2) est inférieur à 1 : la sortie est une fraction de E.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Lorsque R1 = R2, la tension de sortie d'un pont diviseur à vide vaut la moitié de la tension d'alimentation.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : U2 = E × R / (R + R) = E / 2.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Dans un pont diviseur à vide, augmenter R2 sans changer R1 ni E fait augmenter la tension de sortie U2.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : U2 = E × R2 / (R1 + R2) ; la fraction R2 / (R1 + R2) augmente quand R2 augmente. Par exemple 1/2 pour R2 = R1, 2/3 pour R2 = 2 R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:074",
+      "type": "vrai_faux",
+      "enonce": "La formule du pont diviseur reste exacte même quand la charge branchée sur la sortie consomme un courant important.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : la formule n'est valable que si le courant de sortie est négligeable devant celui qui traverse R1 et R2 ; sinon la tension de sortie baisse.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:075",
+      "type": "reponse_courte",
+      "enonce": "Une batterie chargée à 42 V alimente un pont diviseur à vide avec R1 = 120 kΩ et R2 = 10 kΩ. Quelle est la tension de sortie aux bornes de R2, en volts, arrondie au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "3,23"
+      ],
+      "marge": 0.01,
+      "marge_relative": false,
+      "difficulte": 2,
+      "explication": "U2 = 42 × 10 / (120 + 10) = 420 / 130 ≈ 3,23 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:076",
+      "type": "reponse_courte",
+      "enonce": "Dans une station météo, un pont diviseur à vide est alimenté sous 5 V : R1 = 10 kΩ, et R2 est une thermistance qui vaut 5 kΩ à 40 °C. Quelle est la tension de sortie aux bornes de la thermistance à 40 °C, en volts, arrondie au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1,67"
+      ],
+      "marge": 0.01,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "U2 = 5 × 5 / (10 + 5) = 25 / 15 ≈ 1,67 V.",
+      "notion": "Pont diviseur de tension"
+    }
+  ]
+}
