@@ -14,7 +14,7 @@ Contrôles lancés le 12 novembre 2026 avec les fonctions du dépôt (`verifierB
 - Types : 75 QCM à réponse unique, 30 QCM à plusieurs réponses, 30 vrai/faux (18 vrais, 12 faux), 15 réponses courtes.
 - Difficultés : 60 / 60 / 30 (niveaux 1 / 2 / 3).
 - Position de la bonne réponse des QCM à réponse unique : 18 / 19 / 19 / 19 ; bonne réponse la plus longue dans 21 QCM sur 75.
-- Statuts : a_relire 2, valide 148.
+- Statuts : valide 150.
 
 ## Relecture indépendante
 

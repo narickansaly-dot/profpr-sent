@@ -44,17 +44,17 @@ npm run import:contenu -- contenu/1re-gen/espagnol.json
 | 3 | 150 | 75 / 30 / 30 / 15 | 60 / 60 / 30 | 0 | 4 | 150 `valide` |
 | 4 | 150 | 75 / 30 / 30 / 15 | 60 / 59 / 31 | 0 | 6 | 150 `valide` |
 | 5 | 150 | 75 / 30 / 30 / 15 | 60 / 60 / 30 | 0 | 6 | 150 `valide` |
-| 6 | 150 | 75 / 30 / 30 / 15 | 60 / 60 / 30 | 0 | 15 | 148 `valide`, 2 `a_relire` |
-| **Total** | **900** | | | **0** | **49** | **898 `valide`, 2 `a_relire`** |
+| 6 | 150 | 75 / 30 / 30 / 15 | 60 / 60 / 30 | 0 | 16 | 150 `valide` |
+| **Total** | **900** | | | **0** | **50** | **900 `valide`** |
 
-- **Méthode de relecture** : pour chaque banque, un sous-agent indépendant a lu le texte du chapitre, puis résolu les 150 questions présentées **sans les réponses** ; ses réponses ont été comparées automatiquement aux réponses attendues. Aucun écart sur 900 questions. Ses commentaires (ambiguïtés, distracteurs défendables, variantes de réponses courtes, français mêlé aux propositions espagnoles) ont conduit à 49 corrections, détaillées dans `banques/espagnol-chN-relecture.md`.
-- **Statut** : comme pour BPH et STSS (commits 67d1671 et 90bd11c), les questions relues et retenues sont `valide` ; seules les deux questions réellement discutables restent `a_relire`.
+- **Méthode de relecture** : pour chaque banque, un sous-agent indépendant a lu le texte du chapitre, puis résolu les 150 questions présentées **sans les réponses** ; ses réponses ont été comparées automatiquement aux réponses attendues. Aucun écart sur 900 questions. Ses commentaires (ambiguïtés, distracteurs défendables, variantes de réponses courtes, français mêlé aux propositions espagnoles) ont conduit à 50 corrections, détaillées dans `banques/espagnol-chN-relecture.md`.
+- **Statut** : comme pour BPH et STSS (commits 67d1671 et 90bd11c), les questions relues et retenues sont `valide` ; les deux questions d'abord laissées `a_relire` (ch. 6, 038 et 114, sur des tournures admises en Amérique latine) ont été rendues non ambiguës puis validées le 12 novembre 2026.
 - Avant chaque relecture, `verifierBanque` a imposé : répartition des types et difficultés, énoncés pas trop proches (une trentaine reformulés au total), équilibre des vrai/faux (une vingtaine réécrits à la forme fausse), position et longueur des bonnes réponses, espaces insécables.
 - **Réponses courtes** : aucune réponse numérique avec séparateur de milliers, aucune marge (la seule réponse numérique est l'année 1906, exacte). Les accents et la casse sont ignorés par la correction ; les variantes utiles (avec ou sans article, graphies latino-américaines, apostrophe droite et typographique) sont listées. Détail par chapitre : `validation/espagnol-chN.md`.
 
 ## Points à trancher
 
-1. **Questions laissées `a_relire`** (chapitre 6) : **038** (*El concierto es en la plaza* : *ser* pour situer un événement ; *está* s'entend aussi) et **114** (phrase emphatique « *fue en Cuzco donde…* » contre « *fue en Cuzco que…* », courant en Amérique latine). La règle enseignée est la norme d'Espagne.
+1. **Norme d'Espagne** : le cours enseigne *ser* pour situer un événement et « *fue en… donde / cuando* » pour la mise en relief ; l'usage latino-américain admet aussi *estar* et « *fue en… que* ». Les questions 038 et 114 du chapitre 6 ont été réécrites pour ne plus compter ces formes comme fausses.
 2. **Les six axes sont traités**, alors que le programme en demande cinq : l'enseignant peut ne pas publier un chapitre (sauf le 6, obligatoire).
 3. **Points B1+ présents dans le cours** (signalés « B1+ ») et touchés par quelques questions : subjonctif imparfait des irréguliers (*tuviera*), *me gustaría que*, *aunque* + subjonctif, hypothèse dans le passé (*si hubiera llovido*). À retirer des quiz si l'on veut s'en tenir strictement au B1.
 4. **Repères factuels à vérifier avec le manuel** : chiffres arrondis ou datés (« plus de 60 millions » d'hispaniques aux États-Unis, longueur de 8 500 km de la cordillère reprise du programme, frontière Mexique–États-Unis « plus de 3 000 km », disparition du glacier de Chacaltaya « vers 2009 »).
@@ -64,3 +64,7 @@ npm run import:contenu -- contenu/1re-gen/espagnol.json
 ## Scripts de banque
 
 Les scripts `npm run banque:texte|verifier|fusionner` acceptent désormais le chemin du cours : pour ce cours, `--cours 1re-gen/espagnol` (fichiers de travail lus dans `contenu/1re-gen/banques/`, sources `espagnol:chN:banque:NNN`, 150 questions par chapitre). Les six banques passent `npm run banque:verifier -- N --cours 1re-gen/espagnol`. Le cours de 2de se désigne de même par `--cours 2de-gen/espagnol` : le chemin distingue les deux cours qui partagent le préfixe `espagnol`.
+
+## Import dans l'application
+
+Le 12 novembre 2026, le cours a été importé et publié dans la base locale (`npm run import:contenu -- contenu/1re-gen/espagnol.json --publier`, avec le `.env.local` du dépôt principal) : 6 chapitres publiés, 900 questions, toutes `valide`.
