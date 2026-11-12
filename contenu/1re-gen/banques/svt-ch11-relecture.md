@@ -35,7 +35,7 @@ Taux d'accord initial : 150/150 (aucun écart). Six remarques ont été traitée
 
 ## Seconde vérification indépendante
 
-Les 4 questions modifiées (`ch11-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 4/4**. Il jugeait encore discutable la proposition « chaque chevreuil qui broute tire un bénéfice » présentée comme une conséquence de l'abondance : la 090 porte maintenant sur l'interaction elle-même (énoncé « Quelles affirmations sur cette interaction sont exactes ? », propositions et explication reprises, réponses inchangées en position : 1re et 3e), en accord avec le tableau des interactions du chapitre (herbivorie : + / −).
+Les 4 questions modifiées (`ch11-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 4/4**. Il jugeait encore discutable la proposition « chaque chevreuil qui broute tire un bénéfice » présentée comme une conséquence de l'abondance : la 090 porte maintenant sur l'interaction elle-même (énoncé « Quelles affirmations sur cette interaction sont exactes ? », propositions et explication reprises, réponses inchangées en position : 1re et 3e), en accord avec le tableau des interactions du chapitre (herbivorie : + / −). Cette nouvelle version a été vérifiée à son tour par un troisième relecteur indépendant : accord 1/1 (la proposition « moins de jeunes hêtres atteignent l'âge adulte » se déduit de l'effet − de l'herbivorie sur la plante).
 
 ## Questions laissées à relire
 

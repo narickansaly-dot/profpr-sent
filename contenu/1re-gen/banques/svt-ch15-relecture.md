@@ -33,6 +33,11 @@ Accord initial : 150/150. Aucun écart ; 8 remarques sur des questions où le re
 - Biais de longueur : la bonne réponse est la plus longue dans 3 qcm_unique sur 75 (et la plus courte dans 21).
 - Contrôle `verifierBanque` : « Banque du chapitre 15 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 3 questions modifiées (`ch15-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 3/3**. Ses remarques (variantes de 143 et 146) portaient sur des variantes déjà acceptées. Aucune modification.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Les données des calculs (pourcentages de phagocytose, nombres de leucocytes) sont des exemples construits pour l'exercice, présentés comme tels.

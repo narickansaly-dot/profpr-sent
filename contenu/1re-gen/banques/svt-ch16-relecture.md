@@ -33,6 +33,11 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Le r
 - La bonne réponse des qcm_unique est la plus longue (ex æquo compris) dans 21 cas sur 75.
 - Contrôle (`verifierBanque`) : « Banque du chapitre 16 conforme : 150 questions. »
 
+
+## Seconde vérification indépendante
+
+Les 10 questions modifiées (`ch16-modifiees.txt`) ont été résolues à nouveau par un second relecteur indépendant, sans les réponses : **accord 10/10**. Il confirme les données sur la vaccination en France (11 vaccinations obligatoires pour les enfants nés depuis le 1er janvier 2018 ; rappels à 25, 45 et 65 ans). Suite à ses remarques : la 092 est reformulée (« n'a plus aucune protection », au lieu de « n'est forcément plus protégée », qui se lisait comme « n'est plus forcément protégée ») ; la réponse reste « faux ». La 054, très facile parce que l'énoncé définit le sérum, est gardée (difficulté 1). Les variantes de la 100 étaient déjà acceptées.
+
 ## Questions laissées à relire
 
 Aucune question ne reste douteuse. Points à vérifier pour l'enseignant, sans incidence sur les réponses : les nombres de segments V, D, J (valeurs arrondies, annoncées comme telles dans le cours) et la part de cancers du sein HER2+ (15 à 20 %).
