@@ -168,7 +168,7 @@
     {
       "source": "svt:ch14:banque:010",
       "type": "qcm_unique",
-      "enonce": "Les cellules d'une tumeur sont toutes :",
+      "enonce": "Les cellules d'une tumeur maligne (un cancer) sont toutes :",
       "propositions": [
         "issues de cellules de plusieurs organes regroupées au même endroit",
         "issues de cellules germinales qui ont migré dans un organe adulte",
@@ -179,7 +179,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "Une tumeur est formée d'une lignée de cellules qui descendent toutes d'une même cellule ayant accumulé des mutations somatiques : c'est un clone.",
+      "explication": "Un cancer est dû à la prolifération incontrôlée d'une lignée de cellules toutes issues d'une même cellule qui a accumulé des mutations somatiques : ces cellules forment un clone. Elles ne viennent ni d'autres organes, ni de cellules germinales, ni de cellules saines transformées par contact.",
       "notion": "Mutations somatiques"
     },
     {
@@ -417,7 +417,7 @@
         0
       ],
       "difficulte": 3,
-      "explication": "Il faut comparer pour le même effectif : 2 mutants pour 10⁶ cellules font 20 mutants pour 10⁷ cellules. Le rapport vaut 80 / 20 = 4 : le taux de mutation est multiplié par 4.",
+      "explication": "Piège : les deux fréquences ne sont pas données pour le même nombre de cellules (10⁶ et 10⁷). Il faut d'abord les ramener au même effectif : 2 mutants pour 10⁶ cellules font 2 × 10 = 20 mutants pour 10⁷ cellules. Le rapport vaut alors 80 / 20 = 4 : le taux de mutation est multiplié par 4 (et non par 40, ce qu'on obtient en comparant directement 80 et 2).",
       "notion": "Agents mutagènes"
     },
     {
@@ -1572,7 +1572,7 @@
         2
       ],
       "difficulte": 3,
-      "explication": "P (11 mm) et R (6 mm, soit le diamètre du disque : aucune zone) sont en dessous de 15 mm : résistante. S (15 mm) n'est pas en dessous de 15 mm, ni à 20 mm : intermédiaire. Q (31 mm) : sensible.",
+      "explication": "On compare chaque zone aux deux valeurs critiques. P (11 mm) et R (6 mm, le diamètre du disque : aucune zone) sont en dessous de 15 mm : résistante. Piège : S mesure exactement 15 mm ; la règle « résistante » ne vaut qu'en dessous de 15 mm, donc S n'est pas résistante, et comme 15 mm est inférieur à 20 mm, elle n'est pas sensible : intermédiaire. Q (31 mm, au moins 20 mm) : sensible.",
       "notion": "Antibiogramme"
     },
     {
@@ -2094,7 +2094,7 @@
       "enonce": "Une population de 10⁹ bactéries contient un mutant résistant pour 10⁸ bactéries ; si l'antibiotique élimine toutes les sensibles, il reste environ 100 bactéries résistantes.",
       "bonne_reponse": false,
       "difficulte": 3,
-      "explication": "Faux. Nombre de résistantes = 10⁹ × 10⁻⁸ = 10, et non 100. Ces 10 bactéries, sans compétiteurs, pourront ensuite se multiplier.",
+      "explication": "Faux. Un mutant pour 10⁸ bactéries correspond à un taux de 10⁻⁸ ; nombre de résistantes = 10⁹ × 10⁻⁸ = 10⁹ / 10⁸ = 10¹ = 10, et non 100 (piège sur l'exposant). Ces 10 bactéries, sans compétiteurs, pourront ensuite se multiplier.",
       "notion": "Sélection des résistants"
     },
     {
@@ -2195,7 +2195,9 @@
         "le benzopyrène",
         "benzopyrene",
         "benzo(a)pyrène",
-        "benzo[a]pyrène"
+        "benzo[a]pyrène",
+        "benzo[a]pyrene",
+        "benzo(a)pyrene"
       ],
       "difficulte": 2,
       "explication": "La fumée de tabac contient des dizaines de substances cancérogènes, comme le benzopyrène, un agent mutagène chimique.",
@@ -2239,7 +2241,9 @@
         "autoclave",
         "l'autoclave",
         "un autoclave",
-        "l autoclave"
+        "l autoclave",
+        "autoclaves",
+        "des autoclaves"
       ],
       "difficulte": 1,
       "explication": "Après l'expérience, tout le matériel est détruit par la chaleur dans un autoclave, car il contient des bactéries potentiellement dangereuses.",
@@ -2305,7 +2309,7 @@
         "soixante-quatre"
       ],
       "difficulte": 3,
-      "explication": "2 h = 120 min, soit 120 / 20 = 6 générations. Le nombre double à chaque génération : 2⁶ = 64 bactéries.",
+      "explication": "2 h = 120 min, soit 120 / 20 = 6 générations. Le nombre de bactéries double à chaque génération : 1 → 2 → 4 → 8 → 16 → 32 → 64, soit 2⁶ = 64 bactéries (même raisonnement que 2³⁰ ≈ 10⁹ pour 30 générations).",
       "notion": "Sélection des résistants"
     },
     {
@@ -2315,8 +2319,11 @@
       "reponses_acceptees": [
         "Une seule santé",
         "une seule sante",
+        "seule santé",
+        "la seule santé",
+        "« Une seule santé »",
         "One Health",
-        "« Une seule santé »"
+        "one health"
       ],
       "difficulte": 1,
       "explication": "L'approche « Une seule santé » rappelle que les bactéries résistantes et leurs gènes circulent entre les humains, les animaux et l'environnement.",
@@ -2327,7 +2334,8 @@
       "type": "reponse_courte",
       "enonce": "Selon une estimation pour 2015, combien de décès par an l'antibiorésistance cause-t-elle directement en France ? Écris le nombre sans espace.",
       "reponses_acceptees": [
-        "5500"
+        "5500",
+        "environ 5500"
       ],
       "marge": 500,
       "difficulte": 2,
