@@ -357,11 +357,11 @@ Un import est **rejouable** : réimporter le même fichier ne crée rien et lais
 
 ## 7. Banques de questions
 
-Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans le fichier du cours (`bph.json`, ou `stss.json` avec `--cours stss`), qui reste la seule source de vérité du cours.
+Les banques de questions d'un chapitre se produisent dans un **fichier de travail**, contrôlé par script, puis fusionné dans le fichier du cours (`bph.json` par défaut, `stss.json` avec `--cours stss`, ou tout autre cours désigné par son chemin, par exemple `--cours contenu/1re-gen/svt.json`), qui reste la seule source de vérité du cours.
 
 ### Le fichier de travail
 
-`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS) :
+`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS). Pour un cours désigné par son chemin, le fichier de travail est dans le dossier `banques/` voisin du cours et porte le nom du fichier du cours : `contenu/1re-gen/svt.json` → `contenu/1re-gen/banques/svt-chN.json`.
 
 ```jsonc
 {
@@ -376,7 +376,7 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 
 - `notions` : la liste fermée du chapitre (5 à 12 intitulés de 40 caractères au plus, sans doublon). Chaque question en choisit une.
 - `questions` : le même format que dans `bph.json` (les indices commencent à 0 ; `vrai_faux` utilise `bonne_reponse` ; `reponse_courte` utilise `reponses_acceptees`). Pas de champ `statut` : la fusion l'impose à `a_relire`.
-- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130` (BPH) ou de `stss:chN:banque:001` à `stss:chN:banque:150` (STSS).
+- Les sources vont de `bph:chN:banque:001` à `bph:chN:banque:130` (BPH), de `stss:chN:banque:001` à `stss:chN:banque:150` (STSS) ; pour un cours désigné par son chemin, le préfixe est le nom du fichier (`svt:chN:banque:001` à `svt:chN:banque:150`).
 
 ### Les trois commandes
 
@@ -384,11 +384,12 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 npm run banque:texte -- N [--cours stss]       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
 npm run banque:verifier -- N [--cours stss]    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
 npm run banque:fusionner -- N [--cours stss]   # ajoute les questions au chapitre N du cours
+npm run banque:verifier -- N --cours contenu/1re-gen/svt.json   # même chose pour un autre cours, désigné par son chemin
 ```
 
-Sans `--cours`, c'est `bph`. Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
+Sans `--cours`, c'est `bph`. `--cours` accepte `bph`, `stss`, ou le chemin d'un cours (`contenu/<dossier>/<nom>.json`, nom en minuscules, chiffres et tirets). Le cours STSS et les cours désignés par leur chemin comptent 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
 
-- `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. `bph.json` est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
+- `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. Le fichier du cours est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
 - Script ponctuel : `npx tsx scripts/typo-anciennes-questions.ts` a remplacé les espaces avant « ? : ; ! » par des espaces insécables dans l'énoncé et l'explication des anciennes questions (`quiz`, `bis`), sans toucher aux propositions ; le rejouer est sans effet.
 - Après la fusion, importe le cours avec `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts` (partie 6).
 

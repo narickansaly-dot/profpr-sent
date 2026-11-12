@@ -19,7 +19,7 @@ try {
 }
 const COURS = config.fichier;
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss | --cours contenu/<niveau>/<cours>.json]');
 
 const lu = analyserImport(readFileSync(COURS, 'utf8'));
 if ('erreurs' in lu) {
