@@ -116,7 +116,7 @@ Il faudrait ajouter les cours de 1re générale à `COURS_BANQUE` (préfixe `ens
 
 ## Points à trancher par l'enseignant
 
-1. **Plan non validé avant rédaction.** Le cours compte 13 chapitres, un par sous-partie, soit environ 34 semaines pour 2 h par semaine : c'est beaucoup. Regroupements possibles : 11 avec 12 (son et numérisation), 9 avec 8 ou 10 (âge de la Terre). Le programme impose au moins trois thèmes et laisse l'ordre libre.
+1. **Plan non validé avant rédaction.** Le cours compte 13 chapitres, un par sous-partie, soit 35 semaines selon les durées indiquées, pour 2 h par semaine : c'est beaucoup. Regroupements possibles : 11 avec 12 (son et numérisation), 9 avec 8 ou 10 (âge de la Terre). Le programme impose au moins trois thèmes et laisse l'ordre libre.
 2. **Longueur des chapitres.** La cible était de 22 000 caractères de HTML hors figures. Cinq chapitres la dépassent nettement :
    - ch. 1 : 31 000 ;
    - ch. 4 : 26 200 ;
