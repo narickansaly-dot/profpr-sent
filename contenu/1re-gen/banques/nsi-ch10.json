@@ -1,0 +1,2279 @@
+{
+  "chapitre": 10,
+  "notions": [
+    "Modèle de von Neumann",
+    "Constituants du processeur",
+    "Cycle et langage machine",
+    "Multicœur et parallélisme",
+    "Rôle du système d'exploitation",
+    "Logiciels libres et propriétaires",
+    "Ligne de commande",
+    "Chemins et arborescence",
+    "Droits et permissions",
+    "Capteurs, actionneurs et IHM",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch10:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'idée centrale du modèle de von Neumann ?",
+      "difficulte": 1,
+      "explication": "On parle d'ordinateur à programme enregistré.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Chaque donnée a son propre processeur",
+        "Le programme est câblé une fois pour toutes dans la machine",
+        "La mémoire ne contient que des nombres décimaux",
+        "Le programme est rangé dans la même mémoire que les données"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quel constituant du processeur effectue les calculs et les comparaisons ?",
+      "difficulte": 1,
+      "explication": "L'unité de commande pilote, l'UAL calcule.",
+      "notion": "Constituants du processeur",
+      "propositions": [
+        "L'unité arithmétique et logique (UAL)",
+        "L'unité de commande, qui pilote tout le processeur",
+        "Le bus",
+        "Le disque dur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel constituant du processeur lit et décode les instructions ?",
+      "difficulte": 1,
+      "explication": "Elle pilote l'exécution des instructions.",
+      "notion": "Constituants du processeur",
+      "propositions": [
+        "Le clavier",
+        "L'UAL",
+        "L'unité de commande",
+        "La mémoire vive, où sont rangées les instructions"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on les petites mémoires très rapides situées dans le processeur ?",
+      "difficulte": 1,
+      "explication": "R0, R1… et le compteur de programme sont des registres.",
+      "notion": "Constituants du processeur",
+      "propositions": [
+        "Les périphériques",
+        "Les registres",
+        "Les pilotes",
+        "Les bus"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:005",
+      "type": "qcm_unique",
+      "enonce": "À quoi servent les bus dans un ordinateur ?",
+      "difficulte": 1,
+      "explication": "Ce sont des ensembles de fils.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "À transporter les données, les adresses et les commandes entre les constituants",
+        "À afficher les images",
+        "À stocker les fichiers quand l'ordinateur est éteint et sans alimentation",
+        "À refroidir le processeur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Que contient la mémoire vive (RAM) pendant l'exécution d'un programme ?",
+      "difficulte": 1,
+      "explication": "C'est le principe du programme enregistré.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Rien, elle sert seulement au démarrage",
+        "Seulement le système d'exploitation",
+        "Le programme et ses données",
+        "Seulement les images"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Que devient le contenu de la mémoire vive quand on coupe le courant ?",
+      "difficulte": 1,
+      "explication": "Les fichiers sont conservés sur le disque, pas en RAM.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Il est copié automatiquement sur internet",
+        "Il est perdu",
+        "Il est imprimé",
+        "Il est conservé indéfiniment"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les trois étapes du cycle d'exécution d'une instruction ?",
+      "difficulte": 1,
+      "explication": "Le cycle se répète des milliards de fois par seconde.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Entrée, calcul, impression",
+        "Lecture, écriture, effacement",
+        "Compilation, test et publication du programme sur internet",
+        "Chargement, décodage, exécution"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Que contient le compteur de programme (ou compteur ordinal) ?",
+      "difficulte": 1,
+      "explication": "Il avance à chaque instruction, sauf en cas de saut.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Le nombre d'instructions déjà exécutées depuis le démarrage de la machine",
+        "L'heure de l'ordinateur",
+        "L'adresse de la prochaine instruction à exécuter",
+        "Le résultat du dernier calcul"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la langue des instructions binaires directement exécutées par le processeur ?",
+      "difficulte": 1,
+      "explication": "L'assembleur en donne une écriture lisible.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Le langage SQL",
+        "Le langage Python, compilé en interne",
+        "Le langage HTML",
+        "Le langage machine"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'instruction ADD R2, R0, R1 du langage simplifié du cours ?",
+      "difficulte": 1,
+      "explication": "Le premier registre reçoit le résultat.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "R2 reçoit R0 + R1",
+        "Elle ajoute 2 à R0",
+        "R0 reçoit R1 + R2",
+        "Elle copie R2 en mémoire"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un processeur multicœur ?",
+      "difficulte": 1,
+      "explication": "Chaque cœur peut exécuter des instructions.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "Un processeur relié à plusieurs écrans",
+        "Un processeur qui contient plusieurs unités de calcul travaillant en parallèle",
+        "Un processeur qui a plusieurs mémoires vives et plusieurs disques durs",
+        "Un processeur qui fonctionne sans horloge"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un système d'exploitation ?",
+      "difficulte": 1,
+      "explication": "Windows, macOS, Linux, Android sont des systèmes d'exploitation.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Un tableur",
+        "Le câble d'alimentation",
+        "Le logiciel qui gère les ressources de la machine et sert d'intermédiaire avec les programmes",
+        "Le processeur principal de l'ordinateur, qui exécute toutes les instructions des programmes"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces logiciels est un système d'exploitation ?",
+      "difficulte": 1,
+      "explication": "Firefox est un navigateur, Python un langage.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Python",
+        "Firefox",
+        "LibreOffice",
+        "Linux"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un logiciel libre ?",
+      "difficulte": 1,
+      "explication": "Son code source est accessible.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Un logiciel que chacun peut utiliser, étudier, modifier et redistribuer",
+        "Un logiciel forcément gratuit et sans code source",
+        "Un logiciel qui fonctionne sans système d'exploitation, directement sur le matériel",
+        "Un logiciel réservé aux entreprises"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces systèmes d'exploitation est propriétaire ?",
+      "difficulte": 1,
+      "explication": "Debian et Ubuntu sont des distributions GNU/Linux libres.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Debian",
+        "Windows",
+        "Ubuntu",
+        "Linux"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Dans un terminal, on veut savoir dans quel dossier on se trouve. Que tape-t-on ?",
+      "difficulte": 1,
+      "explication": "print working directory.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "cd",
+        "pwd",
+        "cat",
+        "ls"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande liste le contenu d'un répertoire ?",
+      "difficulte": 1,
+      "explication": "ls -l affiche aussi les droits.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "ls",
+        "mkdir",
+        "rm",
+        "pwd"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande permet de changer de répertoire ?",
+      "difficulte": 1,
+      "explication": "change directory.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "cp",
+        "mv",
+        "chmod",
+        "cd"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande crée un nouveau répertoire ?",
+      "difficulte": 1,
+      "explication": "make directory.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "rm",
+        "touch",
+        "mkdir",
+        "cd"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande supprime un fichier ?",
+      "difficulte": 1,
+      "explication": "remove, sans corbeille.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "rm",
+        "mv",
+        "ls",
+        "cp"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande affiche le contenu d'un fichier texte ?",
+      "difficulte": 1,
+      "explication": "cat notes.txt affiche le fichier.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "chmod",
+        "cd",
+        "cat",
+        "pwd"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit la racine de l'arborescence des fichiers sous Linux ?",
+      "difficulte": 1,
+      "explication": "Tous les chemins absolus commencent par /.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "~",
+        "/",
+        "..",
+        "C:"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que désigne .. dans un chemin ?",
+      "difficulte": 1,
+      "explication": "cd .. remonte d'un niveau.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "Le répertoire personnel",
+        "Le répertoire courant",
+        "La racine",
+        "Le répertoire parent"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Dans -r--------, que permet la lettre r ?",
+      "difficulte": 1,
+      "explication": "r pour read.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Le droit de le supprimer définitivement du disque",
+        "Le droit de l'exécuter",
+        "Le droit de lire le fichier",
+        "Le droit de le renommer"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le droit x sur un fichier ?",
+      "difficulte": 1,
+      "explication": "x pour execute.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Le droit de le modifier et de l'enregistrer",
+        "Le droit de l'exécuter comme un programme",
+        "Le droit de le lire",
+        "Le droit de le copier"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:027",
+      "type": "qcm_unique",
+      "enonce": "On veut rendre un script exécutable. Quelle commande utilise-t-on ?",
+      "difficulte": 1,
+      "explication": "change mode.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "pwd",
+        "chown",
+        "ls",
+        "chmod"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un capteur ?",
+      "difficulte": 1,
+      "explication": "Exemples : thermomètre, capteur de lumière, accéléromètre.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Un composant qui mesure une grandeur physique et la convertit en donnée numérique",
+        "Un programme qui capture l'écran",
+        "Un câble réseau",
+        "Un composant qui agit sur le monde physique"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un actionneur ?",
+      "difficulte": 1,
+      "explication": "Exemples : moteur, LED, haut-parleur.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Un composant qui mesure une température et l'affiche à l'écran",
+        "Un fichier exécutable",
+        "Un registre du processeur",
+        "Un composant qui agit sur le monde physique à partir d'une commande"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Qui décrit en 1945 l'architecture à programme enregistré qui porte son nom ?",
+      "difficulte": 1,
+      "explication": "Turing avait décrit la machine universelle en 1936.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Linus Torvalds",
+        "Alan Turing",
+        "John von Neumann",
+        "Charles Babbage"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:031",
+      "type": "qcm_unique",
+      "enonce": "La case 20 contient 12 et la case 21 contient 30. Que contient la case 22 après LOAD R0, 20 ; LOAD R1, 21 ; ADD R2, R0, R1 ; STORE R2, 22 ; HALT ?",
+      "difficulte": 2,
+      "explication": "R0 = 12, R1 = 30, R2 = 42, rangé en case 22.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "42",
+        "30",
+        "12",
+        "18"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Que vaut R1 après MOV R1, #5 puis ADD R1, R1, R1 ?",
+      "difficulte": 2,
+      "explication": "R1 reçoit 5 + 5.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "25",
+        "10",
+        "6",
+        "5"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Que vaut R2 après MOV R0, #9 ; MOV R1, #4 ; SUB R2, R0, R1 ?",
+      "difficulte": 2,
+      "explication": "R2 = R0 − R1 = 9 − 4.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "-5",
+        "4",
+        "5",
+        "13"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:034",
+      "type": "qcm_unique",
+      "enonce": "À quelle instruction Python correspond la séquence LOAD R0, 20 ; LOAD R1, 21 ; ADD R2, R0, R1 ; STORE R2, 22, si a, b et c sont rangées aux cases 20, 21 et 22 ?",
+      "difficulte": 2,
+      "explication": "On lit a et b, on additionne, on range dans c.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "a = b + c",
+        "c = a + b",
+        "c = a * b",
+        "b = a + c"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quel type d'instruction du langage machine permet de réaliser les boucles et les conditionnelles ?",
+      "difficulte": 2,
+      "explication": "Un saut change l'instruction suivante.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Les additions, comme ADD",
+        "L'arrêt, HALT",
+        "Les chargements, comme LOAD",
+        "Les sauts, comme JUMP et JUMPZ"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'instruction JUMPZ R0, 7 quand R0 vaut 3 ?",
+      "difficulte": 2,
+      "explication": "Le saut n'a lieu que si R0 vaut 0.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Elle ne saute pas : on passe à l'instruction suivante",
+        "Elle saute à l'adresse 7",
+        "Elle met R0 à 0",
+        "Elle arrête le programme"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce que l'assembleur ?",
+      "difficulte": 2,
+      "explication": "Chaque instruction assembleur correspond à un mot binaire.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Un système d'exploitation",
+        "Une écriture lisible des instructions du langage machine, avec des noms comme ADD ou LOAD",
+        "Un langage de description de pages Web",
+        "Le nom du bus principal"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Que traduit un compilateur ?",
+      "difficulte": 2,
+      "explication": "C est compilé ; Python est interprété.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "Un texte français en anglais",
+        "Un fichier en image",
+        "Un langage machine en HTML",
+        "Un programme écrit dans un langage de haut niveau en langage machine"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'avantage d'un ordinateur à programme enregistré ?",
+      "difficulte": 2,
+      "explication": "Les premiers calculateurs comme l'ENIAC se programmaient par câblage.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Il n'a pas besoin de mémoire",
+        "Il ne peut pas tomber en panne, car il n'a aucune pièce mobile",
+        "On change de tâche en chargeant un autre programme, sans recâbler la machine",
+        "Il calcule sans électricité"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le disque dur ou le SSD est-il considéré comme un périphérique ?",
+      "difficulte": 2,
+      "explication": "Il conserve les fichiers sans alimentation mais est plus lent que la RAM.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Il est relié au processeur par les entrées-sorties et sert au stockage durable",
+        "Parce qu'il est toujours externe à l'ordinateur et branché par un câble USB",
+        "Parce qu'il contient le processeur",
+        "Parce qu'il remplace la mémoire vive"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:041",
+      "type": "qcm_unique",
+      "enonce": "De quels circuits l'UAL est-elle faite ?",
+      "difficulte": 2,
+      "explication": "On y trouve par exemple des additionneurs (chapitre 3).",
+      "notion": "Constituants du processeur",
+      "propositions": [
+        "De disques magnétiques",
+        "De circuits combinatoires réalisant des fonctions booléennes",
+        "De câbles réseau",
+        "De capteurs de température"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les fabricants multiplient-ils les cœurs au lieu d'augmenter la fréquence ?",
+      "difficulte": 2,
+      "explication": "Depuis le milieu des années 2000, la fréquence stagne.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "Parce que la fréquence est limitée par la loi",
+        "Parce que les cœurs ne consomment aucune énergie",
+        "Au-delà d'une certaine fréquence, le processeur chauffe trop",
+        "Parce que les programmes ne peuvent plus être compilés"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Un calcul tourne en 8 s sur un cœur. Combien de temps prend-il sur 4 cœurs s'il ne peut pas être découpé en parties indépendantes ?",
+      "difficulte": 2,
+      "explication": "Un seul cœur peut alors travailler.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "32 s",
+        "4 s",
+        "2 s",
+        "Environ 8 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Comment le système d'exploitation donne-t-il l'impression que plusieurs programmes s'exécutent en même temps sur un seul cœur ?",
+      "difficulte": 2,
+      "explication": "Chaque programme reçoit à tour de rôle un peu de temps de calcul.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Il fait alterner très rapidement les programmes sur le processeur",
+        "Il augmente la taille de l'écran",
+        "Il arrête tous les programmes sauf un",
+        "Il copie les programmes dans plusieurs ordinateurs reliés par le réseau local"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quel est le rôle d'un pilote (driver) ?",
+      "difficulte": 2,
+      "explication": "Chaque périphérique a son pilote.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Protéger le réseau des virus",
+        "Traduire un programme Python en C",
+        "Permettre au système d'exploitation de commander un périphérique",
+        "Diriger le ventilateur du processeur uniquement"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le système d'exploitation empêche-t-il un programme d'écrire dans la mémoire d'un autre ?",
+      "difficulte": 2,
+      "explication": "La gestion de la mémoire isole les processus.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Pour accélérer l'affichage",
+        "Pour économiser de l'électricité",
+        "Parce que la mémoire ne peut contenir qu'un programme",
+        "Pour qu'une erreur ou un programme malveillant ne perturbe pas les autres programmes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Un logiciel gratuit est-il forcément libre ?",
+      "difficulte": 2,
+      "explication": "Libre et gratuit sont deux notions différentes.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Oui, s'il fonctionne sous Linux",
+        "Non, il peut être gratuit sans que son code source soit accessible",
+        "Non, un logiciel libre est toujours payant",
+        "Oui, toujours"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Depuis /home/lina, quel chemin relatif désigne le fichier /home/lina/nsi/tp1.py ?",
+      "difficulte": 2,
+      "explication": "Un chemin relatif part du répertoire courant, sans / au début.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "nsi/tp1.py",
+        "/nsi/tp1.py",
+        "home/lina/nsi/tp1.py",
+        "../nsi/tp1.py"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:049",
+      "type": "qcm_unique",
+      "enonce": "On est dans /home/lina/nsi. Où se trouve-t-on après cd .. ?",
+      "difficulte": 2,
+      "explication": ".. désigne le répertoire parent.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "/home/lina/nsi/..",
+        "/home",
+        "/",
+        "/home/lina"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces chemins est absolu ?",
+      "difficulte": 2,
+      "explication": "Un chemin absolu commence à la racine /.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "./plage.jpg",
+        "../photos/plage.jpg",
+        "/home/tom/photos/plage.jpg",
+        "photos/plage.jpg"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Que fait la commande mv b.py projet/ ?",
+      "difficulte": 2,
+      "explication": "mv déplace ou renomme.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "Elle déplace b.py dans le répertoire projet",
+        "Elle copie b.py dans projet",
+        "Elle crée le répertoire projet puis y range une copie de b.py",
+        "Elle supprime b.py"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Que fait la commande cp a.py b.py ?",
+      "difficulte": 2,
+      "explication": "cp copie ; mv renommerait.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "Elle renomme a.py en b.py",
+        "Elle crée b.py, une copie de a.py",
+        "Elle compare a.py et b.py",
+        "Elle supprime a.py"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi faut-il être prudent avec la commande rm ?",
+      "difficulte": 2,
+      "explication": "On vérifie avec pwd où l'on se trouve avant de supprimer.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "Elle supprime définitivement, sans corbeille",
+        "Elle change les droits de tous les fichiers du répertoire personnel",
+        "Elle redémarre l'ordinateur",
+        "Elle envoie les fichiers sur internet"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Dans -rwxr-x--- affiché par ls -l, quels droits a le groupe ?",
+      "difficulte": 2,
+      "explication": "Le deuxième triplet r-x concerne le groupe.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Lire, écrire et exécuter",
+        "Lire et exécuter",
+        "Aucun droit",
+        "Écrire seulement"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Quels droits correspondent à l'écriture octale 644 ?",
+      "difficulte": 2,
+      "explication": "6 = 4 + 2 (rw-), 4 = r--.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "r--r--r--",
+        "rw-rw-r--",
+        "rwxr--r--",
+        "rw-r--r--"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Quelle écriture octale correspond aux droits rwxr-xr-x ?",
+      "difficulte": 2,
+      "explication": "7 = rwx, 5 = r-x.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "644",
+        "751",
+        "755",
+        "777"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que fait chmod u+x script.sh ?",
+      "difficulte": 2,
+      "explication": "u désigne le propriétaire (user), + ajoute, x exécution.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Elle supprime script.sh",
+        "Elle donne à tous les utilisateurs tous les droits",
+        "Elle retire le droit d'exécution au propriétaire",
+        "Elle donne au propriétaire le droit d'exécuter script.sh"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Sur un répertoire, que permet le droit x ?",
+      "difficulte": 2,
+      "explication": "Sur un répertoire, x permet de le traverser.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "D'y entrer avec cd",
+        "D'exécuter tous les fichiers qu'il contient",
+        "De le copier",
+        "De supprimer le répertoire"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme micro:bit du cours, quel est le capteur utilisé ?",
+      "difficulte": 2,
+      "explication": "temperature() lit le capteur ; l'écran est un actionneur.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "L'écran de LED",
+        "Le haut-parleur",
+        "Le capteur de température",
+        "Le bouton A"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces composants est un actionneur ?",
+      "difficulte": 2,
+      "explication": "Il agit sur le monde physique.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Un capteur de lumière",
+        "Un moteur",
+        "Un thermomètre",
+        "Un microphone"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:061",
+      "type": "qcm_unique",
+      "enonce": "La case 10 contient 7. Que contient la case 11 après LOAD R0, 10 ; ADD R1, R0, R0 ; ADD R1, R1, R0 ; STORE R1, 11 ; HALT ?",
+      "difficulte": 3,
+      "explication": "R1 = 7 + 7 = 14, puis 14 + 7 = 21.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "7",
+        "49",
+        "14",
+        "21"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:062",
+      "type": "qcm_unique",
+      "enonce": "On exécute MOV R0, #3 (adresse 0) ; MOV R1, #0 (adresse 1) ; ADD R1, R1, R0 (adresse 2) ; SUB R0, R0, #1… Dans ce langage simplifié, SUB n'accepte que des registres. Quelle écriture est correcte pour retirer 1 à R0 ?",
+      "difficulte": 3,
+      "explication": "Le tableau du cours ne donne SUB qu'avec des registres ; on met 1 dans un registre.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "JUMP R0, 1",
+        "MOV R2, #1 puis SUB R0, R0, R2",
+        "SUB R0, R0, 1",
+        "R0 = R0 - 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:063",
+      "type": "qcm_unique",
+      "enonce": "On exécute : MOV R0, #3 ; MOV R1, #0 ; MOV R2, #1 ; puis à l'adresse 3 : JUMPZ R0, 7 ; ADD R1, R1, R0 ; SUB R0, R0, R2 ; JUMP 3 ; et à l'adresse 7 : HALT. Que vaut R1 à la fin ?",
+      "difficulte": 3,
+      "explication": "La boucle ajoute 3, puis 2, puis 1 à R1 avant que R0 vaille 0.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "6",
+        "3",
+        "7",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme précédent (boucle de l'adresse 3 à 6), combien de fois l'instruction JUMPZ R0, 7 est-elle exécutée ?",
+      "difficulte": 3,
+      "explication": "Pour R0 = 3, 2, 1 (pas de saut) puis R0 = 0 (saut vers HALT).",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "7",
+        "3",
+        "4",
+        "1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Un programme comporte une partie de 2 s qu'on ne peut pas découper et une partie de 8 s parfaitement découpable. Combien de temps prend-il environ sur 4 cœurs ?",
+      "difficulte": 3,
+      "explication": "2 s + 8 s / 4 = 4 s.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "10 s",
+        "2,5 s",
+        "2 s",
+        "4 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande donne les droits rw-r----- au fichier notes.txt ?",
+      "difficulte": 3,
+      "explication": "rw- = 6, r-- = 4, --- = 0.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "chmod 644 notes.txt",
+        "chmod 640 notes.txt",
+        "chmod 604 notes.txt",
+        "chmod 460 notes.txt"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Un fichier a les droits -rw-r--r--. Après chmod g+w,o-r, quels sont ses droits ?",
+      "difficulte": 3,
+      "explication": "Le groupe gagne w, les autres perdent r.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "-rw-r--r--",
+        "-rw-rw-r--",
+        "-rw-rw----",
+        "-rwxrw----"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Le répertoire projet a les droits drw-r--r-- pour son propriétaire lina. Que se passe-t-il quand lina tape cd projet ?",
+      "difficulte": 3,
+      "explication": "Sur un répertoire, x est nécessaire pour y entrer.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Elle est refusée : il lui manque le droit x sur le répertoire",
+        "Ses droits sont modifiés automatiquement",
+        "Elle entre dans le répertoire",
+        "Le répertoire est supprimé"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:069",
+      "type": "qcm_unique",
+      "enonce": "On est dans /home/lina/nsi/tp. Quel chemin relatif désigne /home/lina/photos/a.jpg ?",
+      "difficulte": 3,
+      "explication": "On remonte deux fois (tp, puis nsi) pour arriver dans /home/lina.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "../photos/a.jpg",
+        "photos/a.jpg",
+        "../../photos/a.jpg",
+        "/photos/a.jpg"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:070",
+      "type": "qcm_unique",
+      "enonce": "On tape successivement cd /home, cd lina, cd nsi, cd .. puis pwd. Qu'affiche pwd ?",
+      "difficulte": 3,
+      "explication": "Le dernier cd .. remonte de nsi à lina.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "/home/lina",
+        "/home",
+        "/",
+        "/home/lina/nsi"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Après mkdir a ; cd a ; touch f.txt ; cd .. ; rm a/f.txt, que contient le répertoire a ?",
+      "difficulte": 3,
+      "explication": "f.txt a été créé puis supprimé ; rm ne supprime pas le répertoire.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "Un répertoire f.txt",
+        "Rien, il est vide",
+        "Le répertoire a n'existe plus",
+        "Le fichier f.txt"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi exécuter un programme inconnu avec un compte ordinaire plutôt qu'avec le compte root limite les risques ?",
+      "difficulte": 3,
+      "explication": "Les droits limitent les dégâts d'un programme malveillant.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Le programme s'exécute plus vite",
+        "Le compte root ne peut pas exécuter de programme",
+        "Le programme ne peut alors pas utiliser le réseau",
+        "Le programme n'a que les droits de l'utilisateur et ne peut pas modifier les fichiers du système"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans le programme micro:bit du cours, que fait la carte quand le capteur mesure 25 °C ?",
+      "difficulte": 3,
+      "explication": "La condition t > 25 est fausse pour 25 : on exécute le else.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Elle affiche le visage triste",
+        "Elle affiche le visage content",
+        "Elle s'arrête",
+        "Elle n'affiche rien"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Quel premier microprocesseur, commercialisé en 1971, contenait environ 2 300 transistors ?",
+      "difficulte": 3,
+      "explication": "Les processeurs actuels en contiennent des milliards.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Le Manchester Baby",
+        "L'ENIAC",
+        "L'IBM 360",
+        "L'Intel 4004"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Qui a lancé en 1983 le projet GNU de système d'exploitation libre ?",
+      "difficulte": 3,
+      "explication": "Torvalds a créé le noyau Linux en 1991.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Richard Stallman",
+        "Bill Gates",
+        "Steve Jobs",
+        "Linus Torvalds"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels font partie du modèle de von Neumann ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le navigateur est un logiciel.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Une mémoire contenant programme et données",
+        "Une unité arithmétique et logique",
+        "Un navigateur Web",
+        "Des entrées-sorties"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces constituants, lesquels font partie du processeur ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le processeur contient aussi les registres.",
+      "notion": "Constituants du processeur",
+      "propositions": [
+        "Le disque dur",
+        "Le clavier",
+        "L'unité de commande",
+        "L'UAL"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces instructions du langage simplifié du cours, lesquelles lisent ou écrivent en mémoire ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "ADD travaille sur des registres.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "STORE",
+        "HALT",
+        "ADD",
+        "LOAD"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces tâches, lesquelles sont assurées par le système d'exploitation ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Il gère les ressources de la machine.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Partager le processeur entre les programmes",
+        "Gérer les fichiers",
+        "Gérer les droits des utilisateurs",
+        "Écrire les devoirs de l'élève"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces systèmes d'exploitation, lesquels sont libres ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ce sont des distributions GNU/Linux.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Windows",
+        "macOS",
+        "Debian",
+        "Ubuntu"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces commandes, lesquelles modifient le contenu du disque ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "pwd et ls ne font qu'afficher.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "mkdir",
+        "ls",
+        "pwd",
+        "rm"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces chemins, lesquels sont absolus ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un chemin absolu commence par /.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "/home/lina",
+        "/etc/hosts",
+        "nsi/tp1.py",
+        "../photos"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces lettres, lesquelles désignent des droits sous Linux ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Lecture, écriture, exécution.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "x",
+        "r",
+        "z",
+        "w"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces composants, lesquels sont des capteurs ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La LED et le moteur sont des actionneurs.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Un accéléromètre",
+        "Une LED",
+        "Un moteur",
+        "Un thermomètre électronique"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces périphériques, lesquels sont des périphériques d'entrée ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "L'imprimante et le haut-parleur sont des sorties.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Le clavier",
+        "Le haut-parleur",
+        "Le microphone",
+        "L'imprimante"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Von Neumann décrit son architecture en 1945.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Linux, Linus Torvalds, 1991",
+        "Linux, Bill Gates, 1975",
+        "Unix, John von Neumann, 1945",
+        "Unix, Thompson et Ritchie, 1969"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Que permettent plusieurs cœurs ou plusieurs processeurs ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un monoprocesseur alterne entre les programmes.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "Un serveur peut contenir plusieurs processeurs",
+        "Un processeur multicœur peut exécuter plusieurs instructions en même temps",
+        "Un ordinateur monoprocesseur ne peut exécuter qu'un seul programme dans la journée",
+        "Un processeur multicœur n'a pas besoin de mémoire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "On exécute MOV R0, #6 ; MOV R1, #2 ; ADD R2, R0, R1 ; SUB R3, R0, R1. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "R0 et R1 ne sont pas modifiés.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "R2 vaut 8",
+        "R3 vaut 4",
+        "R2 vaut 4",
+        "R0 vaut 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Mémoire vive et adresses : quelles phrases sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le programme est en mémoire, comme les données.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Le programme est rangé dans le processeur et non en mémoire",
+        "La mémoire vive est plus rapide que le disque",
+        "Les cases de la mémoire sont repérées par leur adresse",
+        "La mémoire vive garde ses données sans alimentation"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Un fichier a les droits -rwxr-x--x. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "rwx pour le propriétaire, r-x pour le groupe, --x pour les autres (751).",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Les autres peuvent le lire",
+        "Les autres peuvent l'exécuter",
+        "Le propriétaire peut le modifier",
+        "Le groupe peut le modifier"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces correspondances entre écriture octale et droits, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "755 = rwxr-xr-x et 600 = rw-------.",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "664 : rw-rw-r--",
+        "700 : rwx------",
+        "755 : rwxrwxr-x",
+        "600 : rw-rw----"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "On est dans /home/tom. Parmi ces commandes, lesquelles affichent quelque chose sans rien modifier ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "rm et mkdir modifient le disque.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "pwd",
+        "mkdir test",
+        "ls -l",
+        "rm notes.txt"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Le terminal est placé dans /home/lina/nsi. Quelles écritures mènent au fichier /home/lina/nsi/tp1.py ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "nsi/tp1.py désignerait /home/lina/nsi/nsi/tp1.py.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "/tp1.py",
+        "nsi/tp1.py",
+        "tp1.py",
+        "/home/lina/nsi/tp1.py"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le système d'exploitation, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Android et iOS sont des systèmes d'exploitation.",
+      "notion": "Rôle du système d'exploitation",
+      "propositions": [
+        "Il isole la mémoire de chaque programme",
+        "Il est inutile sur un téléphone",
+        "Il commande les périphériques grâce à des pilotes",
+        "Il est contenu dans l'UAL"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Logiciel libre, gratuit, propriétaire : quelles phrases sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Libre ne veut pas dire gratuit.",
+      "notion": "Logiciels libres et propriétaires",
+      "propositions": [
+        "Un logiciel propriétaire peut être modifié librement par tous",
+        "Un logiciel gratuit est forcément libre",
+        "Un logiciel libre peut être vendu",
+        "Le code source d'un logiciel libre est accessible"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Un robot suit une ligne noire et s'arrête devant un obstacle. Parmi ces composants, lesquels sont des actionneurs ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les capteurs mesurent, les actionneurs agissent.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "Le buzzer qui sonne à l'arrêt",
+        "Le capteur de distance",
+        "Les moteurs des roues",
+        "Le capteur de ligne"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Quel gain peut-on attendre du parallélisme ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le gain dépend de la part du calcul qui peut être parallélisée.",
+      "notion": "Multicœur et parallélisme",
+      "propositions": [
+        "Un GPU contient de très nombreux petits cœurs",
+        "4 cœurs divisent toujours le temps de calcul par 4",
+        "Un processeur multicœur a une fréquence 4 fois plus grande",
+        "Un calcul découpable en 4 parties indépendantes peut aller jusqu'à environ 4 fois plus vite sur 4 cœurs"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces commandes, lesquelles changent le nom ou l'emplacement d'un fichier existant ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "mv déplace ou renomme ; cp crée une copie et laisse l'original.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "cat a.txt",
+        "mv a.txt archives/",
+        "cp a.txt b.txt",
+        "mv a.txt b.txt"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces instructions du langage simplifié du cours, lesquelles peuvent modifier le registre R1 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "STORE copie R1 en mémoire sans le modifier ; JUMP change seulement l'instruction suivante.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "LOAD R1, 30",
+        "STORE R1, 30",
+        "JUMP 4",
+        "MOV R1, #5"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "On exécute : MOV R0, #3 ; MOV R1, #0 ; MOV R2, #1 ; adresse 3 : JUMPZ R0, 7 ; ADD R1, R1, R0 ; SUB R0, R0, R2 ; JUMP 3 ; adresse 7 : HALT. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "R1 reçoit 3 + 2 + 1 ; R0 diminue jusqu'à 0, puis JUMPZ mène à HALT.",
+      "notion": "Cycle et langage machine",
+      "propositions": [
+        "À la fin, R0 vaut 0",
+        "À la fin, R1 vaut 6",
+        "À la fin, R1 vaut 3",
+        "Le programme ne s'arrête jamais"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Le fichier rapport.txt appartient à lina (groupe profs) avec les droits -rw-r-----. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "rw- pour lina, r-- pour le groupe, --- pour les autres (640).",
+      "notion": "Droits et permissions",
+      "propositions": [
+        "Un élève qui n'est pas dans le groupe profs ne peut pas le lire",
+        "Un membre du groupe profs peut le modifier",
+        "Un membre du groupe profs peut lire le fichier",
+        "Tout le monde peut le lire"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "On est dans /home/lina/nsi/tp. Parmi ces chemins, lesquels désignent /home/lina/notes.txt ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "../notes.txt désignerait /home/lina/nsi/notes.txt.",
+      "notion": "Chemins et arborescence",
+      "propositions": [
+        "../notes.txt",
+        "/home/lina/notes.txt",
+        "~/nsi/notes.txt",
+        "../../notes.txt"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "On tape mkdir projet ; cd projet ; touch a.py ; cp a.py b.py ; mv b.py c.py ; ls. Parmi ces fichiers, lesquels sont affichés ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "b.py a été renommé en c.py ; on est dans projet.",
+      "notion": "Ligne de commande",
+      "propositions": [
+        "c.py",
+        "projet",
+        "a.py",
+        "b.py"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Le cahier des charges d'une carte dit : « un appui sur A allume la LED, un appui sur B l'éteint ». Parmi ces éléments, lesquels font partie de l'IHM ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "L'IHM est ce que l'utilisateur manipule ou voit.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "propositions": [
+        "La mémoire vive",
+        "Le bouton A",
+        "La LED",
+        "Le processeur de la carte"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur l'histoire des machines, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le premier microprocesseur, l'Intel 4004, date de 1971.",
+      "notion": "Modèle de von Neumann",
+      "propositions": [
+        "Turing a construit l'ENIAC",
+        "Le premier microprocesseur date de 1936",
+        "En 1948, la machine de Manchester exécute un programme enregistré en mémoire",
+        "L'ENIAC se programmait en modifiant des câblages"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Dans le modèle de von Neumann, le programme et les données sont rangés dans la même mémoire.",
+      "difficulte": 1,
+      "explication": "C'est le principe du programme enregistré.",
+      "notion": "Modèle de von Neumann",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:107",
+      "type": "vrai_faux",
+      "enonce": "L'UAL effectue les calculs du processeur.",
+      "difficulte": 1,
+      "explication": "Unité arithmétique et logique.",
+      "notion": "Constituants du processeur",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:108",
+      "type": "vrai_faux",
+      "enonce": "La commande pwd affiche le répertoire courant.",
+      "difficulte": 1,
+      "explication": "print working directory.",
+      "notion": "Ligne de commande",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Le droit w permet de modifier un fichier.",
+      "difficulte": 1,
+      "explication": "w pour write.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Un moteur est un actionneur.",
+      "difficulte": 1,
+      "explication": "Il agit sur le monde physique.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Linux est un système d'exploitation libre.",
+      "difficulte": 1,
+      "explication": "Son code source est accessible et modifiable.",
+      "notion": "Logiciels libres et propriétaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Après MOV R0, #9 ; MOV R1, #4 ; SUB R2, R0, R1, R2 vaut 5.",
+      "difficulte": 2,
+      "explication": "9 − 4 = 5.",
+      "notion": "Cycle et langage machine",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Les droits rwxr-xr-x s'écrivent 755 en octal.",
+      "difficulte": 2,
+      "explication": "7 = 4 + 2 + 1, 5 = 4 + 1.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Depuis /home/lina, le chemin relatif nsi/tp1.py désigne /home/lina/nsi/tp1.py.",
+      "difficulte": 2,
+      "explication": "On part du répertoire courant.",
+      "notion": "Chemins et arborescence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Chaque processus dispose de sa propre zone de mémoire, protégée des autres par le système.",
+      "difficulte": 2,
+      "explication": "Il isole les processus.",
+      "notion": "Rôle du système d'exploitation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Un calcul impossible à découper ne va pas plus vite sur 4 cœurs que sur un seul.",
+      "difficulte": 2,
+      "explication": "Un seul cœur peut y travailler.",
+      "notion": "Multicœur et parallélisme",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Le compteur de programme contient l'adresse de la prochaine instruction à exécuter.",
+      "difficulte": 2,
+      "explication": "C'est un registre du processeur.",
+      "notion": "Cycle et langage machine",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Le programme MOV R0, #3 ; MOV R1, #0 ; MOV R2, #1 ; (adresse 3) JUMPZ R0, 7 ; ADD R1, R1, R0 ; SUB R0, R0, R2 ; JUMP 3 ; (adresse 7) HALT se termine avec R1 égal à 6.",
+      "difficulte": 3,
+      "explication": "3 + 2 + 1 = 6.",
+      "notion": "Cycle et langage machine",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Après chmod 640 notes.txt, les autres utilisateurs ne peuvent pas lire notes.txt.",
+      "difficulte": 3,
+      "explication": "0 = aucun droit pour les autres.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Depuis /home/lina/nsi/tp, le chemin ../../photos désigne /home/lina/photos.",
+      "difficulte": 3,
+      "explication": "Deux remontées mènent à /home/lina.",
+      "notion": "Chemins et arborescence",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch10:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Dans le modèle de von Neumann, le programme est câblé dans le processeur et ne peut pas être changé.",
+      "difficulte": 1,
+      "explication": "Il est rangé en mémoire et peut être remplacé.",
+      "notion": "Modèle de von Neumann",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:122",
+      "type": "vrai_faux",
+      "enonce": "L'unité de commande effectue les additions.",
+      "difficulte": 1,
+      "explication": "C'est l'UAL ; l'unité de commande lit et décode les instructions.",
+      "notion": "Constituants du processeur",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:123",
+      "type": "vrai_faux",
+      "enonce": "La commande rm place les fichiers supprimés dans une corbeille.",
+      "difficulte": 1,
+      "explication": "La suppression est définitive.",
+      "notion": "Ligne de commande",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Un logiciel libre est forcément gratuit.",
+      "difficulte": 1,
+      "explication": "Il peut être vendu ; libre concerne les droits d'usage et le code source.",
+      "notion": "Logiciels libres et propriétaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Un capteur de température est un actionneur.",
+      "difficulte": 1,
+      "explication": "C'est un capteur : il mesure.",
+      "notion": "Capteurs, actionneurs et IHM",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:126",
+      "type": "vrai_faux",
+      "enonce": "La mémoire vive conserve ses données quand on éteint l'ordinateur.",
+      "difficulte": 1,
+      "explication": "Elle s'efface ; le disque conserve les fichiers.",
+      "notion": "Modèle de von Neumann",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Les droits rw-r--r-- s'écrivent 755 en octal.",
+      "difficulte": 2,
+      "explication": "Ils s'écrivent 644.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Après MOV R1, #5 puis ADD R1, R1, R1, R1 vaut 5.",
+      "difficulte": 2,
+      "explication": "R1 vaut 10.",
+      "notion": "Cycle et langage machine",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Un chemin relatif commence toujours par /.",
+      "difficulte": 2,
+      "explication": "C'est un chemin absolu qui commence par /.",
+      "notion": "Chemins et arborescence",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Un processeur à 4 cœurs divise toujours le temps de calcul par 4.",
+      "difficulte": 2,
+      "explication": "Seulement pour les parties découpables en tâches indépendantes.",
+      "notion": "Multicœur et parallélisme",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Un pilote (driver) est un composant du processeur.",
+      "difficulte": 2,
+      "explication": "C'est un logiciel qui permet au système de commander un périphérique.",
+      "notion": "Rôle du système d'exploitation",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Sur un répertoire, le droit x permet d'exécuter tous les fichiers qu'il contient.",
+      "difficulte": 2,
+      "explication": "Il permet d'entrer dans le répertoire.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Dans le programme MOV R0, #3 ; MOV R1, #0 ; MOV R2, #1 ; (adresse 3) JUMPZ R0, 7 ; ADD R1, R1, R0 ; SUB R0, R0, R2 ; JUMP 3 ; (adresse 7) HALT, l'instruction JUMPZ est exécutée 3 fois.",
+      "difficulte": 3,
+      "explication": "Elle est exécutée 4 fois : pour R0 = 3, 2, 1 et 0.",
+      "notion": "Cycle et langage machine",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Après chmod g+w,o-r sur un fichier -rw-r--r--, ses droits sont -rw-rw-r--.",
+      "difficulte": 3,
+      "explication": "Les autres perdent la lecture : -rw-rw----.",
+      "notion": "Droits et permissions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Un programme avec 2 s non découpables et 8 s découpables prend 2,5 s sur 4 cœurs.",
+      "difficulte": 3,
+      "explication": "2 s + 8 s / 4 = 4 s.",
+      "notion": "Multicœur et parallélisme",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch10:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Quelle commande Linux affiche le répertoire courant ?",
+      "difficulte": 1,
+      "explication": "print working directory.",
+      "notion": "Ligne de commande",
+      "reponses_acceptees": [
+        "pwd"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quelle commande Linux crée un répertoire ?",
+      "difficulte": 1,
+      "explication": "make directory.",
+      "notion": "Ligne de commande",
+      "reponses_acceptees": [
+        "mkdir"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quelle commande Linux modifie les droits d'un fichier ?",
+      "difficulte": 1,
+      "explication": "change mode.",
+      "notion": "Droits et permissions",
+      "reponses_acceptees": [
+        "chmod"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quel est le sigle de l'unité arithmétique et logique ?",
+      "difficulte": 1,
+      "explication": "En anglais ALU.",
+      "notion": "Constituants du processeur",
+      "reponses_acceptees": [
+        "UAL",
+        "ALU"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Quel caractère désigne la racine de l'arborescence sous Linux ?",
+      "difficulte": 1,
+      "explication": "Les chemins absolus commencent par /.",
+      "notion": "Chemins et arborescence",
+      "reponses_acceptees": [
+        "/"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de famille du mathématicien qui a décrit en 1945 l'architecture à programme enregistré ?",
+      "difficulte": 1,
+      "explication": "John von Neumann.",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "von Neumann",
+        "Neumann",
+        "John von Neumann"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Traduis en octal les droits rw-r--r--. Réponds par trois chiffres.",
+      "difficulte": 2,
+      "explication": "6 = rw-, 4 = r--.",
+      "notion": "Droits et permissions",
+      "reponses_acceptees": [
+        "644"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:143",
+      "type": "reponse_courte",
+      "enonce": "La case 20 contient 15 et la case 21 contient 4. Que contient la case 22 après LOAD R0, 20 ; LOAD R1, 21 ; SUB R2, R0, R1 ; STORE R2, 22 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "15 − 4 = 11.",
+      "notion": "Cycle et langage machine",
+      "reponses_acceptees": [
+        "11"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:144",
+      "type": "reponse_courte",
+      "enonce": "On est dans /home/lina/nsi. Qu'affiche pwd après cd .. ?",
+      "difficulte": 2,
+      "explication": "On remonte d'un niveau.",
+      "notion": "Chemins et arborescence",
+      "reponses_acceptees": [
+        "/home/lina",
+        "/home/lina/"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Quelle écriture octale correspond aux droits rwxr-x--- ? Réponds par trois chiffres.",
+      "difficulte": 2,
+      "explication": "7 = rwx, 5 = r-x, 0 = ---.",
+      "notion": "Droits et permissions",
+      "reponses_acceptees": [
+        "750"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Quel est le prénom du créateur du noyau Linux ?",
+      "difficulte": 2,
+      "explication": "Linus Torvalds, en 1991.",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "Linus",
+        "Linus Torvalds"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on le registre qui contient l'adresse de la prochaine instruction ?",
+      "difficulte": 2,
+      "explication": "Il avance à chaque instruction.",
+      "notion": "Cycle et langage machine",
+      "reponses_acceptees": [
+        "compteur de programme",
+        "compteur ordinal",
+        "le compteur de programme",
+        "le compteur ordinal"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:148",
+      "type": "reponse_courte",
+      "enonce": "La case 10 contient 7. Que contient la case 11 après LOAD R0, 10 ; ADD R1, R0, R0 ; ADD R1, R1, R1 ; STORE R1, 11 ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "7 + 7 = 14, puis 14 + 14 = 28.",
+      "notion": "Cycle et langage machine",
+      "reponses_acceptees": [
+        "28"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Écris les droits (neuf caractères) obtenus avec chmod 751.",
+      "difficulte": 3,
+      "explication": "7 = rwx, 5 = r-x, 1 = --x.",
+      "notion": "Droits et permissions",
+      "reponses_acceptees": [
+        "rwxr-x--x"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch10:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Un programme a 4 s non découpables et 12 s découpables. Combien de secondes prend-il environ sur 3 cœurs ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "4 + 12 / 3 = 8.",
+      "notion": "Multicœur et parallélisme",
+      "reponses_acceptees": [
+        "8"
+      ]
+    }
+  ]
+}

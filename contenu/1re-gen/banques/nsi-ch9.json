@@ -1122,7 +1122,7 @@
     {
       "source": "nsi-1re:ch9:banque:066",
       "type": "qcm_unique",
-      "enonce": "Un utilisateur se connecte, puis visite trois autres pages du site. Combien de fois son navigateur envoie-t-il le cookie de session au serveur pendant ces trois visites ?",
+      "enonce": "Un utilisateur se connecte, puis visite trois autres pages du site, qui ne contiennent ni image ni autre ressource. Combien de fois son navigateur envoie-t-il le cookie de session au serveur pendant ces trois visites ?",
       "difficulte": 3,
       "explication": "Le cookie est joint à chaque requête vers le site.",
       "notion": "Cookies",
@@ -1190,7 +1190,7 @@
     {
       "source": "nsi-1re:ch9:banque:070",
       "type": "qcm_unique",
-      "enonce": "Une page contient un fichier CSS, deux scripts et trois images. Combien de requêtes HTTP le navigateur envoie-t-il au minimum pour l'afficher entièrement, sans cache ?",
+      "enonce": "Une page contient un fichier CSS, deux fichiers de script externes et trois images. Combien de requêtes HTTP le navigateur envoie-t-il au minimum pour l'afficher entièrement, sans cache ?",
       "difficulte": 3,
       "explication": "1 pour le HTML, puis 1 + 2 + 3 pour les ressources.",
       "notion": "Requêtes et réponses HTTP",
@@ -1729,13 +1729,13 @@
       "type": "qcm_multiple",
       "enonce": "Un espion écoute un Wi-Fi public pendant qu'un utilisateur navigue en HTTPS. Que peut-il apprendre ? Coche toutes les réponses exactes.",
       "difficulte": 3,
-      "explication": "Avec HTTPS, l'URL complète (paramètres compris) et les cookies sont chiffrés.",
+      "explication": "Avec HTTPS, le contenu (URL complète, paramètres, cookies, pages) est chiffré ; le serveur contacté, le moment et le volume des échanges restent visibles.",
       "notion": "HTTPS et chiffrement",
       "propositions": [
-        "Un espion voit encore quel serveur est contacté",
-        "Un espion peut lire les paramètres envoyés en GET",
-        "Un espion ne peut pas lire les paramètres envoyés en POST",
-        "Un espion peut lire les cookies de session"
+        "Le nom du serveur contacté",
+        "Les paramètres envoyés en GET",
+        "Le moment et la quantité des données échangées",
+        "Le contenu des cookies de session"
       ],
       "bonnes_reponses": [
         0,
@@ -2215,7 +2215,9 @@
       "reponses_acceptees": [
         "cookie",
         "un cookie",
-        "témoin de connexion"
+        "témoin de connexion",
+        "cookies",
+        "cookie de session"
       ]
     },
     {
@@ -2245,7 +2247,7 @@
     {
       "source": "nsi-1re:ch9:banque:148",
       "type": "reponse_courte",
-      "enonce": "Une page contient deux feuilles CSS, un script et quatre images. Combien de requêtes HTTP faut-il au minimum pour l'afficher entièrement, sans cache ? Réponds par un nombre.",
+      "enonce": "Une page contient deux feuilles CSS, un fichier de script externe et quatre images. Combien de requêtes HTTP faut-il au minimum pour l'afficher entièrement, sans cache ? Réponds par un nombre.",
       "difficulte": 3,
       "explication": "1 (HTML) + 2 + 1 + 4.",
       "notion": "Requêtes et réponses HTTP",
@@ -2256,12 +2258,13 @@
     {
       "source": "nsi-1re:ch9:banque:149",
       "type": "reponse_courte",
-      "enonce": "Quelle URL complète envoie un formulaire GET d'action /calc avec les champs a = 3 et b = 4 (dans cet ordre) ? Écris-la sans espace.",
+      "enonce": "Un formulaire GET a pour action /calc et deux champs, a = 3 et b = 4 (dans cet ordre). Écris le chemin suivi des paramètres, sans nom de serveur ni espace.",
       "difficulte": 3,
       "explication": "Un ?, puis a=3 et b=4 séparés par &.",
       "notion": "GET et POST",
       "reponses_acceptees": [
-        "/calc?a=3&b=4"
+        "/calc?a=3&b=4",
+        "calc?a=3&b=4"
       ]
     },
     {
