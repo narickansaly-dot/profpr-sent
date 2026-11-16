@@ -68,7 +68,7 @@ Plan déduit du programme officiel résumé dans `anglais-1re.md` (arrêté du 5
 - **Objets d'étude retenus** : l'art, les artistes et le pouvoir (portraits officiels, de la reine Élisabeth Ire aux Obama) ; l'art comme vecteur de résistance ou de reconnaissance ; s'engager dans la presse : caricatures et photojournalisme.
 - **Sections** :
   1. `portraits` : *Painting power* (portrait de l'Armada, portraits officiels des Obama, mécénat public du *Federal Art Project*).
-  2. `resistance` : *Art as resistance and recognition* (Jacob Lawrence, Norman Rockwell, *Strange Fruit*, Faith Ringgold).
+  2. `resistance` : *Art as resistance and recognition* (Jacob Lawrence, *Strange Fruit*, Norman Rockwell, restitution des bronzes du Bénin).
   3. `press` : *Cartoons and photojournalism* (Hogarth, Gillray, *Punch*, Dorothea Lange, Gordon Parks, Peter Magubane).
   4. `vocabulary` : représentations du pouvoir ; art et engagement.
   5. `reported-speech` : le discours rapporté (*say, tell, ask*, concordance des temps).
