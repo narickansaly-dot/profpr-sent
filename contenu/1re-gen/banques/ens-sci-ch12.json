@@ -163,7 +163,7 @@
         1
       ],
       "difficulte": 2,
-      "explication": "fe > 2 × fmax = 2 × 4 = 8 kHz. C'est le choix du téléphone (8 kHz) pour une voix limitée à 4 kHz.",
+      "explication": "fe > 2 × fmax = 2 × 4 = 8 kHz : il faut donc une fréquence d'échantillonnage strictement supérieure à 8 kHz. C'est pour cela que le téléphone, échantillonné à 8 kHz, ne reproduit la voix que jusqu'à environ 3,4 kHz.",
       "notion": "Échantillonnage"
     },
     {
@@ -517,7 +517,7 @@
     {
       "source": "ens-sci:ch12:banque:030",
       "type": "qcm_multiple",
-      "enonce": "Quelles grandeurs interviennent dans le calcul de la taille d'un fichier audio non compressé ? Coche toutes les réponses exactes.",
+      "enonce": "En plus de la durée, quelles grandeurs interviennent dans le calcul de la taille d'un fichier audio non compressé ? Coche toutes les réponses exactes.",
       "propositions": [
         "La fréquence d'échantillonnage",
         "Le nombre de bits par échantillon",
@@ -531,7 +531,7 @@
         2
       ],
       "difficulte": 2,
-      "explication": "Taille = fe × n × nombre de voies × durée. Ni la fréquence du son ni son volume n'interviennent : un morceau doux ou fort de même durée a la même taille.",
+      "explication": "Taille = fe × n × nombre de voies × durée : en plus de la durée, il faut la fréquence d'échantillonnage, le nombre de bits et le nombre de voies. Ni la fréquence du son ni son volume n'interviennent : un morceau doux ou fort de même durée a la même taille.",
       "notion": "Taille d'un fichier audio"
     },
     {
@@ -549,7 +549,7 @@
         1
       ],
       "difficulte": 2,
-      "explication": "Le téléphone utilise 8 kHz, 8 bits, mono : la voix reste compréhensible avec les fréquences inférieures à 4 kHz, et il y a peu de données à transmettre.",
+      "explication": "Le téléphone utilise 8 kHz, 8 bits, mono : la voix reste compréhensible avec les fréquences inférieures à environ 3,4 kHz, et il y a peu de données à transmettre.",
       "notion": "Choix des paramètres"
     },
     {
@@ -739,7 +739,10 @@
         "44 100",
         "44 100 Hz",
         "44,1 kHz",
-        "44.1 kHz"
+        "44.1 kHz",
+        "44100Hz",
+        "44,1kHz",
+        "44.1kHz"
       ],
       "difficulte": 2,
       "explication": "Le CD échantillonne à 44,1 kHz, soit 44 100 Hz.",
@@ -769,7 +772,9 @@
         "un octet",
         "l'octet",
         "octets",
-        "byte"
+        "byte",
+        "bytes",
+        "un byte"
       ],
       "difficulte": 1,
       "explication": "Un octet (en anglais byte) est un groupe de 8 bits.",
@@ -782,7 +787,8 @@
       "reponses_acceptees": [
         "CAN",
         "C.A.N.",
-        "C.A.N"
+        "C.A.N",
+        "ADC"
       ],
       "difficulte": 2,
       "explication": "CAN : convertisseur analogique-numérique. Le CNA fait la conversion inverse à la lecture.",
@@ -998,7 +1004,7 @@
       "enonce": "Pourquoi le téléphone se contente-t-il d'un échantillonnage à 8 kHz ?",
       "propositions": [
         "L'oreille humaine n'entend aucun son au-delà de 4 kHz",
-        "La voix reste compréhensible avec les fréquences sous 4 kHz",
+        "La voix reste compréhensible sous 3,4 kHz environ",
         "Un échantillonnage plus rapide serait techniquement impossible",
         "Une voix humaine ne dépasse jamais la fréquence de 1 kHz"
       ],
@@ -1006,7 +1012,7 @@
         1
       ],
       "difficulte": 2,
-      "explication": "Avec fe = 8 kHz, on reproduit les fréquences jusqu'à 4 kHz : la voix reste compréhensible (un peu « métallique ») et il y a peu de données à transmettre. L'oreille entend pourtant jusqu'à 20 kHz environ.",
+      "explication": "Avec fe = 8 kHz, on reproduit les fréquences jusqu'à un peu moins de 4 kHz (environ 3,4 kHz en pratique) : la voix reste compréhensible (un peu « métallique ») et il y a peu de données à transmettre. L'oreille entend pourtant jusqu'à 20 kHz environ.",
       "notion": "Choix des paramètres"
     },
     {
@@ -1386,7 +1392,7 @@
       "propositions": [
         "On prélève 48 000 échantillons par seconde",
         "La période d'échantillonnage vaut environ 20,8 microsecondes",
-        "Les fréquences jusqu'à 24 kHz peuvent être reproduites",
+        "Les fréquences jusqu'à un peu moins de 24 kHz peuvent être reproduites",
         "Les fréquences jusqu'à 96 kHz peuvent être reproduites"
       ],
       "bonnes_reponses": [
@@ -1395,7 +1401,7 @@
         2
       ],
       "difficulte": 3,
-      "explication": "fe = 48 000 Hz ; Te = 1 / 48 000 ≈ 2,08 × 10⁻⁵ s ≈ 20,8 µs. D'après le critère de Shannon, la fréquence maximale reproduite est fe / 2 = 24 kHz, pas 96 kHz.",
+      "explication": "fe = 48 000 Hz ; Te = 1 / 48 000 ≈ 2,08 × 10⁻⁵ s ≈ 20,8 µs. D'après le critère de Shannon (fe > 2 × fmax), on reproduit les fréquences jusqu'à un peu moins de fe / 2 = 24 kHz, et non jusqu'à 96 kHz.",
       "notion": "Échantillonnage"
     },
     {
@@ -1504,15 +1510,15 @@
     {
       "source": "ens-sci:ch12:banque:097",
       "type": "reponse_courte",
-      "enonce": "Un MP3 de 3 min a un débit de 256 kbit/s. Quelle est sa taille, en Mo ?",
+      "enonce": "Un MP3 de 3 min a un débit de 256 kbit/s. Quelle est sa taille, en Mo ? Donne le résultat au centième près.",
       "reponses_acceptees": [
         "5,76",
         "5.76"
       ],
       "difficulte": 3,
-      "explication": "Taille = 256 000 × 180 = 46 080 000 bits ; ÷ 8 = 5 760 000 o = 5,76 Mo.",
+      "explication": "Taille = 256 000 × 180 = 46 080 000 bits ; ÷ 8 = 5 760 000 o = 5,76 Mo (5,8 Mo arrondi au dixième est aussi accepté).",
       "notion": "Taux de compression et débit",
-      "marge": 0.01
+      "marge": 0.05
     },
     {
       "source": "ens-sci:ch12:banque:098",
@@ -1521,7 +1527,10 @@
       "reponses_acceptees": [
         "40",
         "40 %",
-        "40%"
+        "40%",
+        "40 %",
+        "40,0",
+        "40 pour cent"
       ],
       "difficulte": 2,
       "explication": "τ = (20 − 12) / 20 = 8 / 20 = 0,40 = 40 %.",
@@ -1547,7 +1556,9 @@
       "reponses_acceptees": [
         "30",
         "30 kHz",
-        "30kHz"
+        "30kHz",
+        "30 000 Hz",
+        "30000 Hz"
       ],
       "difficulte": 3,
       "explication": "fe > 2 × fmax = 2 × 15 = 30 kHz.",
@@ -1788,7 +1799,7 @@
         0
       ],
       "difficulte": 3,
-      "explication": "Le critère de Shannon impose fe > 2 × 15 = 30 kHz. À 22,05 kHz, les aigus au-delà de 11,025 kHz sont perdus ou remplacés par des sons graves (repliement). Le fichier serait plus petit qu'à 44,1 kHz, et le bruit de quantification dépend du nombre de bits.",
+      "explication": "Le critère de Shannon impose fe > 2 × 15 = 30 kHz. À 22,05 kHz, seules les fréquences jusqu'à un peu moins de 11 kHz sont reproduites : les aigus au-delà sont perdus ou remplacés par des sons graves (repliement). Le fichier serait plus petit qu'à 44,1 kHz, et le bruit de quantification dépend du nombre de bits.",
       "notion": "Échantillonnage"
     },
     {
@@ -2060,15 +2071,17 @@
       "propositions": [
         "Une fréquence d'échantillonnage de 8 kHz",
         "Un enregistrement en mono",
+        "Une quantification sur 8 bits",
         "Une quantification sur 24 bits",
         "Une fréquence d'échantillonnage de 96 kHz"
       ],
       "bonnes_reponses": [
         0,
-        1
+        1,
+        2
       ],
       "difficulte": 2,
-      "explication": "La voix reste compréhensible jusqu'à 4 kHz : 8 kHz, 8 bits, mono suffisent et limitent les données. 24 bits et 96 kHz sont des choix de studio.",
+      "explication": "La voix reste compréhensible jusqu'à environ 3,4 kHz : 8 kHz, 8 bits, mono suffisent et limitent les données. 24 bits et 96 kHz sont des choix de studio.",
       "notion": "Choix des paramètres"
     },
     {
@@ -2129,12 +2142,12 @@
     {
       "source": "ens-sci:ch12:banque:134",
       "type": "qcm_multiple",
-      "enonce": "Quels éléments de la chaîne du son numérique travaillent avec des signaux analogiques ? Coche toutes les réponses exactes.",
+      "enonce": "Dans la chaîne du son numérique, quels signaux sont analogiques ? Coche toutes les réponses exactes.",
       "propositions": [
-        "Le microphone",
-        "Le haut-parleur",
-        "L'entrée du convertisseur analogique-numérique",
-        "Le fichier stocké en mémoire"
+        "La tension fournie par le microphone",
+        "La tension envoyée au haut-parleur",
+        "La vibration de l'air captée par le microphone",
+        "Les nombres stockés dans le fichier"
       ],
       "bonnes_reponses": [
         0,
@@ -2142,7 +2155,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "Le son n'est numérique qu'entre les deux convertisseurs : le microphone, l'entrée du CAN et le haut-parleur travaillent avec des tensions analogiques ; le fichier stocké est numérique.",
+      "explication": "Le son (vibration de l'air) varie de façon continue, comme la tension du microphone et celle envoyée au haut-parleur : ce sont des signaux analogiques. Le son n'est numérique qu'entre les deux convertisseurs, sous forme de nombres binaires stockés dans le fichier.",
       "notion": "Analogique et numérique"
     },
     {
@@ -2151,16 +2164,17 @@
       "enonce": "Un studio veut archiver ses enregistrements sans rien perdre, tout en gagnant de la place. Quels choix conviennent ? Coche toutes les réponses exactes.",
       "propositions": [
         "Le format FLAC",
-        "Une archive ZIP du fichier WAV",
+        "Une compression sans perte",
         "Un MP3 à 320 kbit/s",
-        "Un AAC à débit élevé"
+        "Un AAC à débit élevé",
+        "Le fichier WAV laissé tel quel"
       ],
       "bonnes_reponses": [
         0,
         1
       ],
       "difficulte": 3,
-      "explication": "Seules les compressions sans perte (FLAC, ZIP) permettent de retrouver exactement l'original. MP3 et AAC, même à débit élevé, sont avec perte.",
+      "explication": "Seule une compression sans perte, comme FLAC, permet de retrouver exactement l'original tout en gagnant de la place. MP3 et AAC, même à débit élevé, sont avec perte ; le WAV non compressé ne fait gagner aucune place.",
       "notion": "Compression avec ou sans perte"
     },
     {
@@ -2262,7 +2276,8 @@
         "un échantillon",
         "l'échantillon",
         "échantillons",
-        "les échantillons"
+        "les échantillons",
+        "echantillon"
       ],
       "difficulte": 1,
       "explication": "Chaque valeur relevée à un instant d'échantillonnage est un échantillon.",
@@ -2313,7 +2328,9 @@
       "enonce": "Combien de mégaoctets transitent pendant 30 min d'écoute en ligne à 320 kbit/s ?",
       "reponses_acceptees": [
         "72",
-        "72 Mo"
+        "72 Mo",
+        "72Mo",
+        "72 mégaoctets"
       ],
       "difficulte": 2,
       "explication": "320 000 × 1 800 = 576 000 000 bits ; ÷ 8 = 72 000 000 o = 72 Mo (la moitié des 144 Mo d'une heure).",
