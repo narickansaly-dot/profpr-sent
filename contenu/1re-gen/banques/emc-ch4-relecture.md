@@ -64,3 +64,17 @@ Sortie du vérificateur (`verifier 4`) : « Banque du chapitre 4 conforme : 150
 ## Questions encore douteuses
 
 Aucune.
+
+## Mise à jour après vérification des faits du cours
+
+Le texte du cours a été corrigé après une vérification des faits. Questions mises en cohérence :
+
+| Source | Changement |
+|---|---|
+| emc:ch4:banque:035 | La question porte sur le monument (statue du pape surmontée d'une croix) et non plus sur « la croix » ; bonne réponse « Il a été déplacé sur un terrain privé » ; explication : vendu au diocèse en 2018 et déplacé sur un terrain privé. |
+| emc:ch4:banque:089 | Proposition « La croix a été déplacée sur un terrain privé » devenue « Le monument a été déplacé sur un terrain privé » (toujours exacte) ; explication mise à jour (vente au diocèse en 2018). |
+| emc:ch4:banque:121 | Vrai/faux gardé vrai ; explication : le monument a été vendu au diocèse en 2018 et déplacé sur un terrain privé. |
+| emc:ch4:banque:142 | Énoncé : la statue « a dû quitter une place publique » (au lieu de « la croix a dû être déplacée ») ; explication mise à jour. Réponses acceptées inchangées. |
+| emc:ch4:banque:090 | Examinée : sans lien avec le déplacement du monument de Ploërmel, toujours exacte. Gardée. |
+
+`verifier 4` après mise à jour : « Banque du chapitre 4 conforme : 150 questions. »

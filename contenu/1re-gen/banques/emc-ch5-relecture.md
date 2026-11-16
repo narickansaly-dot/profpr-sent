@@ -52,3 +52,33 @@ Répartition après relecture : types 75 / 30 / 30 / 15 (vrai/faux : 15 vrais, 1
 ## Questions encore douteuses
 
 Aucune.
+
+## Mise à jour après vérification des faits du cours
+
+Le texte du cours a été corrigé après une vérification des faits. Questions mises en cohérence :
+
+| Source | Changement |
+|---|---|
+| emc:ch5:banque:012 | Énoncé : « Avant les lois Defferre de 1982 » (au lieu de « Avant la décentralisation ») ; explication : préfets depuis 1800, départements créés en 1790. |
+| emc:ch5:banque:034 | Énoncé : date de la révision qui ouvre l'« acte II » ; explication : révision du 28 mars 2003 complétée par la loi du 13 août 2004. Bonne réponse inchangée. |
+| emc:ch5:banque:035 | Examinée : le droit à l'expérimentation vient bien de la révision de 2003 ; le distracteur « création des métropoles » reste faux. Gardée. |
+| emc:ch5:banque:036 | Explication : les nouveaux transferts viennent de la loi du 13 août 2004, qui fait partie de l'acte II. |
+| emc:ch5:banque:037 | Bonne réponse « En 2014 » devenue « En 2010 » (création des métropoles) ; explication : généralisation et Métropole de Lyon en 2014. |
+| emc:ch5:banque:048 | Énoncé : « formation professionnelle des demandeurs d'emploi » (l'apprentissage est retiré) ; explication mise à jour. |
+| emc:ch5:banque:049 | Distracteurs « L'apprentissage » et « L'orientation » remplacés par « La formation des demandeurs d'emploi » et « L'information sur l'orientation » ; explication mise à jour. |
+| emc:ch5:banque:055 | La spécialité législative n'est plus attribuée à toutes les COM : énoncé limité à la Polynésie française et à Wallis-et-Futuna ; bonne réponse « Seules les lois qui le prévoient s'y appliquent » ; explication : identité législative de principe à Saint-Pierre-et-Miquelon, Saint-Barthélemy et Saint-Martin. |
+| emc:ch5:banque:058 | Explication : ajout de l'accord de Bougival (2025). |
+| emc:ch5:banque:067 | Explication : compétences des régions mises à jour (sans l'apprentissage). |
+| emc:ch5:banque:087 | Explication : métropoles créées en 2010, généralisées en 2014. |
+| emc:ch5:banque:088 | La bonne réponse « nouveaux transferts, comme les routes » vient de la loi de 2004 : l'énoncé porte désormais sur l'« acte II » (révision de 2003 et loi de 2004) ; bonnes réponses inchangées ; explication mise à jour. |
+| emc:ch5:banque:089 | Bonne réponse « La création des métropoles » devenue « La généralisation des métropoles » ; explication : créées en 2010, Métropole de Lyon en 2014. |
+| emc:ch5:banque:093 | Bonne réponse « L'apprentissage » remplacée par « La formation des demandeurs d'emploi » ; explication mise à jour. |
+| emc:ch5:banque:117 | Explication : l'acte II correspond à la révision de 2003 et à la loi de 2004. |
+| emc:ch5:banque:122 | Vrai/faux gardé faux ; explication : l'acte II correspond à la révision de 2003 et à la loi du 13 août 2004. |
+| emc:ch5:banque:126 | Vrai/faux gardé vrai : « L'orientation » devient « L'information sur l'orientation » ; explication mise à jour. |
+| emc:ch5:banque:129 | Vrai/faux gardé faux ; explication : accord de Bougival (juillet 2025), contesté, qui suppose une révision de la Constitution. |
+| emc:ch5:banque:136 | Explication : ajout de la note sur les territoires sans assemblée départementale propre. |
+| emc:ch5:banque:137 | Explication : les départements (1790) n'ont été placés sous l'autorité d'un préfet qu'en 1800. Réponse inchangée (1790). |
+| emc:ch5:banque:141 | Explication : ajout de la note sur les territoires sans assemblée régionale propre. |
+
+`verifier 5` après mise à jour : « Banque du chapitre 5 conforme : 150 questions. »

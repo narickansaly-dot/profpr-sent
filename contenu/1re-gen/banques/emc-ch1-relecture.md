@@ -45,3 +45,17 @@ Répartition après relecture : types 75 / 30 / 30 / 15 (vrai/faux : 15 vrais, 1
 ## Questions encore douteuses
 
 Aucune.
+
+## Mise à jour après vérification des faits du cours
+
+Le texte du cours a été corrigé après une vérification des faits. Questions mises en cohérence :
+
+| Source | Changement |
+|---|---|
+| emc:ch1:banque:057 | Énoncé : « en 2023 » devient « en 2024 » ; explication : 15,4 % en 2024 (niveau le plus élevé depuis 1996). Bonne réponse inchangée (environ 15 %). |
+| emc:ch1:banque:058 | « Près d'un enfant sur cinq » devient « Plus d'un enfant sur cinq » (bonne réponse et explication) ; distracteur « Près d'un enfant sur cinquante » devenu « Moins d'un enfant sur cinquante ». |
+| emc:ch1:banque:062 | Explication : ajout du chiffre de 2024 (1 337 euros). Bonne réponse inchangée (environ 1 300 euros). |
+| emc:ch1:banque:130 | Vrai/faux gardé vrai : « en 2023 » devient « en 2024 » ; explication mise à jour (15,4 % en 2024). |
+| emc:ch1:banque:146 | Explication : « en 2023 » remplacé par « 15,4 % en 2024 ». |
+
+`verifier 1` après mise à jour : « Banque du chapitre 1 conforme : 150 questions. »
