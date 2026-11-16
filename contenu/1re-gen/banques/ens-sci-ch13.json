@@ -236,7 +236,8 @@
       "type": "reponse_courte",
       "enonce": "La limite supérieure du domaine audible humain vaut 20 kHz. Exprime-la en Hz (écris le nombre sans espace).",
       "reponses_acceptees": [
-        "20000"
+        "20000",
+        "20000 Hz"
       ],
       "difficulte": 2,
       "explication": "1 kHz = 1 000 Hz, donc 20 kHz = 20 × 1 000 = 20 000 Hz.",
@@ -435,18 +436,18 @@
     {
       "source": "ens-sci:ch13:banque:029",
       "type": "qcm_unique",
-      "enonce": "Le tympan d'une personne a une surface utile de 60 mm² et sa fenêtre ovale une surface de 3 mm². En ne tenant compte que des surfaces, par combien la pression est-elle multipliée ?",
+      "enonce": "Le tympan d'une personne a une surface utile de 54 mm² et sa fenêtre ovale une surface de 3 mm². En ne tenant compte que des surfaces, par combien la pression est-elle multipliée ?",
       "propositions": [
-        "Par 180",
-        "Par 57",
+        "Par 162",
+        "Par 51",
         "Par 3",
-        "Par 20"
+        "Par 18"
       ],
       "bonnes_reponses": [
         3
       ],
       "difficulte": 3,
-      "explication": "La même force agit sur une surface plus petite ; p = F / S, donc la pression est multipliée par le rapport des surfaces : 60 / 3 = 20.",
+      "explication": "La même force agit sur une surface plus petite ; p = F / S, donc la pression est multipliée par le rapport des surfaces : 54 / 3 = 18. (Le facteur d'environ 20 du cours vient d'autres données, 55 et 3,2 mm², et ajoute le levier des osselets.)",
       "notion": "Oreille externe et moyenne"
     },
     {
@@ -459,7 +460,7 @@
       "marge": 1,
       "marge_relative": false,
       "difficulte": 3,
-      "explication": "Rapport des surfaces : 55 / 3,2 ≈ 17,2. Avec le levier : 17,2 × 1,3 ≈ 22. La pression est multipliée par environ 22, soit de l'ordre de 20.",
+      "explication": "Rapport des surfaces : 55 / 3,2 ≈ 17,2. Avec le levier : 17,2 × 1,3 ≈ 22,3, soit 22 à l'unité (de l'ordre de 20, comme l'indique le cours). Arrondir d'abord 17 × 1,3 donne aussi 22.",
       "notion": "Oreille externe et moyenne"
     },
     {
@@ -529,7 +530,7 @@
         1
       ],
       "difficulte": 2,
-      "explication": "Le conduit auditif et l'oreille moyenne contiennent de l'air. L'oreille interne (cochlée et canaux semi-circulaires) contient un liquide.",
+      "explication": "Le cours le précise : le conduit auditif et l'oreille moyenne contiennent de l'air, l'oreille interne (cochlée et canaux semi-circulaires) un liquide.",
       "notion": "Oreille externe et moyenne"
     },
     {
@@ -716,7 +717,7 @@
     {
       "source": "ens-sci:ch13:banque:048",
       "type": "qcm_unique",
-      "enonce": "D'après la figure de la cochlée déroulée, quelle région vibre le plus pour un son de 200 Hz ?",
+      "enonce": "D'après les repères de fréquence du cours sur la cochlée déroulée, quelle région vibre le plus pour un son de 200 Hz ?",
       "propositions": [
         "Une région au premier tiers depuis la base",
         "Une région proche de la base",
@@ -727,7 +728,7 @@
         3
       ],
       "difficulte": 3,
-      "explication": "Sur la figure, 200 Hz est placé vers 85 % de la longueur, près du sommet (20 Hz) ; le premier tiers correspond à 4 000 Hz et la base à 20 000 Hz.",
+      "explication": "Repères du cours : 20 000 Hz à la base, 4 000 Hz vers le premier tiers, 1 000 Hz vers 60 %, 200 Hz près du sommet, 20 Hz au sommet. Un son grave comme 200 Hz fait vibrer une région proche du sommet.",
       "notion": "Cochlée et cellules ciliées"
     },
     {
@@ -952,7 +953,10 @@
         "plasticité cérébrale",
         "la plasticité cérébrale",
         "plasticite cerebrale",
-        "plasticité"
+        "plasticité",
+        "la plasticité",
+        "plasticité neuronale",
+        "plasticité du cerveau"
       ],
       "difficulte": 1,
       "explication": "Les connexions entre neurones se renforcent avec l'expérience : c'est la plasticité cérébrale.",
@@ -1118,7 +1122,10 @@
         "IRM f",
         "IRM fonctionnelle",
         "l'IRM fonctionnelle",
-        "IRMF"
+        "l’IRM fonctionnelle",
+        "IRMF",
+        "l'IRMf",
+        "fMRI"
       ],
       "difficulte": 2,
       "explication": "L'IRM fonctionnelle (IRMf) détecte l'afflux de sang oxygéné dans les zones plus actives.",
@@ -1181,7 +1188,9 @@
       "type": "reponse_courte",
       "enonce": "D'après le repère de prévention, quelle est la durée d'écoute maximale conseillée à 92 dB ? Réponds en minutes.",
       "reponses_acceptees": [
-        "30"
+        "30",
+        "30 min",
+        "30 minutes"
       ],
       "difficulte": 2,
       "explication": "92 − 80 = 12 dB, soit 12 / 3 = 4 paliers : 8 h / 2⁴ = 8 h / 16 = 0,5 h = 30 min.",
@@ -1384,14 +1393,16 @@
     {
       "source": "ens-sci:ch13:banque:092",
       "type": "reponse_courte",
-      "enonce": "Un concert diffuse 101 dB. D'après le repère de prévention, quelle est la durée maximale conseillée ? Réponds en minutes, arrondi à l'unité.",
+      "enonce": "Un concert diffuse 101 dB. D'après le repère de prévention, quelle est la durée maximale conseillée ? Réponds en minutes, par un nombre (valeur exacte ou arrondie à l'unité).",
       "reponses_acceptees": [
-        "4"
+        "3,75",
+        "4",
+        "3.75"
       ],
-      "marge": 0.5,
+      "marge": 0.3,
       "marge_relative": false,
       "difficulte": 3,
-      "explication": "101 − 80 = 21 dB, soit 7 paliers : 8 h / 2⁷ = 480 min / 128 = 3,75 min, soit environ 4 min.",
+      "explication": "101 − 80 = 21 dB, soit 7 paliers : 8 h / 2⁷ = 480 min / 128 = 3,75 min (3 min 45 s), soit environ 4 min.",
       "notion": "Niveau, durée et risque auditif"
     },
     {
@@ -1715,7 +1726,8 @@
         "un audiogramme",
         "l'audiogramme",
         "l’audiogramme",
-        "audiogrammes"
+        "audiogrammes",
+        "l audiogramme"
       ],
       "difficulte": 1,
       "explication": "C'est l'audiogramme, obtenu en faisant écouter des sons purs de fréquences différentes.",
@@ -1901,7 +1913,7 @@
     {
       "source": "ens-sci:ch13:banque:126",
       "type": "qcm_multiple",
-      "enonce": "Quelles mesures réduisent le bruit sur le trajet du son, entre la source et l'auditeur ? Coche toutes les réponses exactes.",
+      "enonce": "D'après le classement du cours (source, trajet, auditeur), quelles mesures agissent sur le trajet du son ? Coche toutes les réponses exactes.",
       "propositions": [
         "Un double vitrage",
         "Un limiteur de volume sur la sono",
@@ -1915,7 +1927,7 @@
         4
       ],
       "difficulte": 1,
-      "explication": "Mur antibruit, double vitrage et matériaux absorbants agissent sur le trajet. Le limiteur agit à la source, les bouchons chez l'auditeur.",
+      "explication": "Le cours classe murs antibruit, matériaux absorbants et double vitrage dans les mesures sur le trajet. Le limiteur de volume agit à la source, les bouchons chez l'auditeur.",
       "notion": "Protections et réglementation"
     },
     {
@@ -2083,10 +2095,10 @@
     {
       "source": "ens-sci:ch13:banque:137",
       "type": "vrai_faux",
-      "enonce": "Un appareil auditif n'est utile que si la cochlée fonctionne encore en partie.",
+      "enonce": "Pour qu'un appareil auditif soit utile, la cochlée doit fonctionner, au moins en partie.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "L'appareil auditif amplifie le son : il faut que la cochlée fonctionne encore en partie pour que ce son soit traduit en message nerveux.",
+      "explication": "L'appareil auditif amplifie le son : il faut que la cochlée fonctionne, au moins en partie, pour que ce son soit traduit en message nerveux. C'est le cas dans une surdité de transmission comme dans une surdité de perception partielle.",
       "notion": "Aides auditives et épidémiologie"
     },
     {
@@ -2115,7 +2127,10 @@
         "un cornet acoustique",
         "le cornet acoustique",
         "cornets acoustiques",
-        "cornet"
+        "cornet",
+        "le cornet",
+        "un cornet",
+        "cornets"
       ],
       "difficulte": 1,
       "explication": "Le cornet acoustique, utilisé du XVIIe au XIXe siècle, recueille et concentre le son.",
@@ -2180,7 +2195,9 @@
       "type": "reponse_courte",
       "enonce": "Dans l'enquête fictive du cours, 81 des 300 lycéens qui écoutent plus de 3 h par jour au casque ont des acouphènes fréquents. Quelle proportion cela représente-t-il ? Réponds en %, par un nombre.",
       "reponses_acceptees": [
-        "27"
+        "27",
+        "27 %",
+        "27%"
       ],
       "marge": 0.5,
       "marge_relative": false,
