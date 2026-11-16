@@ -26,7 +26,7 @@
 ## Contrôles automatiques
 
 - `verifierBanque` (préfixe `nsi-1re`, 150 questions) : conforme. Types 75 / 30 / 30 (15 vrais, 15 faux) / 15 ; difficultés 60 / 60 / 30 ; positions 19 / 19 / 18 / 19 ; bonne réponse strictement la plus longue dans 27 QCM sur 75 (après allongement de quinze distracteurs).
-- Les énoncés et propositions contiennent des balises écrites comme du texte (« <button> ») : elles doivent s'afficher telles quelles (point à vérifier à l'écran, voir le bilan).
+- Les énoncés et propositions contiennent des balises écrites comme du texte (« <button> ») : les énoncés sont affichés par React comme du texte (`LecteurTentative.tsx`, `ListeCorrection.tsx`), donc tels quels.
 
 ## Points restants
 
