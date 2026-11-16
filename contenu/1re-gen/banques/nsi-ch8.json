@@ -806,7 +806,7 @@
         "16",
         "4.0",
         "0",
-        "4"
+        "2.0"
       ],
       "bonnes_reponses": [
         1
@@ -1087,13 +1087,13 @@
     {
       "source": "nsi-1re:ch8:banque:064",
       "type": "qcm_unique",
-      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €). Quelle valeur obtient le glouton par rapport valeur/masse ?",
+      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle valeur obtient le glouton par rapport valeur/masse ?",
       "difficulte": 3,
-      "explication": "Rapports : X 2, Z 2, Y 1,75. On prend X (5 kg) ; Z (8 kg) et Y (9 kg) ne rentrent plus.",
+      "explication": "Rapports : X 2, Y 1,75, Z ≈ 1,67. On prend X (5 kg) ; Y (9 kg) et Z (8 kg) ne rentrent plus.",
       "notion": "Problème du sac à dos",
       "propositions": [
-        "13 €",
-        "16 €",
+        "12 €",
+        "15 €",
         "10 €",
         "17 €"
       ],
@@ -1104,15 +1104,15 @@
     {
       "source": "nsi-1re:ch8:banque:065",
       "type": "qcm_unique",
-      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €). Quelle est la valeur optimale ?",
+      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle est la valeur optimale ?",
       "difficulte": 3,
-      "explication": "Y + Z pèse 7 kg et vaut 13 €.",
+      "explication": "Y + Z pèse 7 kg et vaut 12 €.",
       "notion": "Problème du sac à dos",
       "propositions": [
         "10 €, avec X",
-        "13 €, avec Y et Z",
-        "23 €, avec les trois objets",
-        "16 €, avec X et Z"
+        "12 €, avec Y et Z",
+        "22 €, avec les trois objets",
+        "15 €, avec X et Z"
       ],
       "bonnes_reponses": [
         1
@@ -1725,15 +1725,15 @@
     {
       "source": "nsi-1re:ch8:banque:100",
       "type": "qcm_multiple",
-      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
       "difficulte": 3,
-      "explication": "X seul (10 €) pour le glouton ; Y + Z (13 €) est optimal ; X + Z pèse 8 kg.",
+      "explication": "X seul (10 €) pour le glouton ; Y + Z (12 €) est optimal ; X + Z pèse 8 kg.",
       "notion": "Problème du sac à dos",
       "propositions": [
-        "Le glouton par rapport valeur/masse obtient 13 €",
-        "La valeur optimale est 16 €",
+        "Le glouton par rapport valeur/masse obtient 12 €",
+        "La valeur optimale est 15 €",
         "Le glouton par rapport valeur/masse obtient 10 €",
-        "La valeur optimale est 13 €"
+        "La valeur optimale est 12 €"
       ],
       "bonnes_reponses": [
         2,
@@ -1950,7 +1950,7 @@
     {
       "source": "nsi-1re:ch8:banque:119",
       "type": "vrai_faux",
-      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €), la valeur optimale est 13 €.",
+      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €), la valeur optimale est 12 €.",
       "difficulte": 3,
       "explication": "Y + Z.",
       "notion": "Problème du sac à dos",
@@ -2076,7 +2076,7 @@
     {
       "source": "nsi-1re:ch8:banque:133",
       "type": "vrai_faux",
-      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €), le glouton par rapport valeur/masse obtient 13 €.",
+      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €), le glouton par rapport valeur/masse obtient 12 €.",
       "difficulte": 3,
       "explication": "Il prend X (rapport 2) puis ne peut plus rien ajouter : 10 €.",
       "notion": "Problème du sac à dos",
@@ -2131,7 +2131,8 @@
       "notion": "Méthode gloutonne",
       "reponses_acceptees": [
         "glouton",
-        "gloutons"
+        "gloutons",
+        "gloutonne"
       ]
     },
     {
@@ -2237,7 +2238,7 @@
     {
       "source": "nsi-1re:ch8:banque:148",
       "type": "reponse_courte",
-      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 6 €). Quelle valeur, en euros, obtient le glouton par rapport valeur/masse ? Réponds par un nombre.",
+      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle valeur, en euros, obtient le glouton par rapport valeur/masse ? Réponds par un nombre.",
       "difficulte": 3,
       "explication": "Il prend X et ne peut plus ajouter ni Z ni Y.",
       "notion": "Problème du sac à dos",

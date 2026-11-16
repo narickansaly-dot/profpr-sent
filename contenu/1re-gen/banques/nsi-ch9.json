@@ -1,0 +1,2279 @@
+{
+  "chapitre": 9,
+  "notions": [
+    "Composants graphiques",
+    "Événements et gestionnaires",
+    "HTML et JavaScript",
+    "Requêtes et réponses HTTP",
+    "Pages statiques et dynamiques",
+    "Client ou serveur",
+    "Cookies",
+    "Formulaires",
+    "GET et POST",
+    "HTTPS et chiffrement",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch9:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quelle balise HTML crée un bouton ?",
+      "difficulte": 1,
+      "explication": "<button> crée un bouton cliquable.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "<h1>",
+        "<img>",
+        "<button>",
+        "<p>"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quel composant permet à l'utilisateur de saisir un texte court ?",
+      "difficulte": 1,
+      "explication": "Le champ de texte reçoit la saisie de l'utilisateur.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "Un paragraphe <p>",
+        "Une image <img>",
+        "Un lien <a>",
+        "Un champ <input type=\"text\">"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel composant permet de choisir une seule option parmi plusieurs présentées côte à côte ?",
+      "difficulte": 1,
+      "explication": "Les cases à cocher permettent plusieurs choix.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "Des boutons radio",
+        "Un lien",
+        "Des cases à cocher",
+        "Un champ de texte"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un événement dans une page Web ?",
+      "difficulte": 1,
+      "explication": "Le navigateur peut exécuter une fonction en réponse.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "Un fichier CSS",
+        "Une action détectée par le navigateur, comme un clic ou une touche pressée",
+        "Une erreur du serveur",
+        "Une page qui s'affiche en retard parce que le serveur est surchargé de requêtes"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quel événement correspond à un clic de souris ?",
+      "difficulte": 1,
+      "explication": "mouseover correspond au survol.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "load",
+        "keydown",
+        "mouseover",
+        "click"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quel événement se produit quand la souris passe au-dessus d'un élément ?",
+      "difficulte": 1,
+      "explication": "Il permet par exemple d'afficher une info-bulle.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "change",
+        "mouseover",
+        "click",
+        "submit"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la fonction exécutée quand un événement se produit ?",
+      "difficulte": 1,
+      "explication": "On l'associe à un composant et à un type d'événement.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "Une balise HTML placée dans l'en-tête de la page",
+        "Un cookie",
+        "Un gestionnaire d'événement",
+        "Un serveur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quel langage décrit la structure et le contenu d'une page Web ?",
+      "difficulte": 1,
+      "explication": "CSS décrit la mise en forme, JavaScript le comportement.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "HTML",
+        "JavaScript",
+        "SQL",
+        "Python"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel langage est exécuté par le navigateur pour rendre une page interactive ?",
+      "difficulte": 1,
+      "explication": "PHP s'exécute sur le serveur.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "HTML",
+        "PHP",
+        "CSS",
+        "JavaScript"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quel langage décrit la mise en forme d'une page Web (couleurs, polices) ?",
+      "difficulte": 1,
+      "explication": "HTML décrit la structure, CSS la présentation.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "CSS",
+        "JavaScript",
+        "HTTP",
+        "HTML"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Quel protocole permet au navigateur de demander une page à un serveur ?",
+      "difficulte": 1,
+      "explication": "HyperText Transfer Protocol.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "CSS",
+        "HTML",
+        "HTTP",
+        "SQL"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Dans une architecture client-serveur sur le Web, quel est le rôle du navigateur ?",
+      "difficulte": 1,
+      "explication": "Le serveur répond aux requêtes.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "Il est le serveur : il stocke les sites",
+        "Il est le client : il envoie des requêtes et affiche les réponses",
+        "Il remplace le réseau",
+        "Il stocke les sites et répond aux requêtes envoyées par les autres ordinateurs du réseau"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Quel code d'état HTTP signifie que la ressource demandée est introuvable ?",
+      "difficulte": 1,
+      "explication": "200 signifie que tout va bien.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "200",
+        "500",
+        "404",
+        "301"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Quel code d'état HTTP signifie que la requête a réussi ?",
+      "difficulte": 1,
+      "explication": "200 OK.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "200",
+        "403",
+        "500",
+        "404"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une page Web statique ?",
+      "difficulte": 1,
+      "explication": "Une page dynamique est produite à la demande.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Une page qui ne contient aucune image",
+        "Une page sans lien",
+        "Une page fabriquée par un programme à chaque requête",
+        "Un fichier envoyé tel quel par le serveur, identique pour tous"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une page Web dynamique ?",
+      "difficulte": 1,
+      "explication": "Par exemple, les résultats d'une recherche.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Une page stockée sur le disque du client et mise à jour automatiquement chaque jour",
+        "Une page fabriquée par un programme du serveur au moment de la requête",
+        "Une page qui contient des animations",
+        "Une page qui change de couleur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Où s'exécute un programme PHP qui produit une page dynamique ?",
+      "difficulte": 1,
+      "explication": "Le client ne reçoit que le HTML produit.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Dans la carte réseau",
+        "Sur le serveur",
+        "Sur un autre client",
+        "Dans le navigateur du client"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Où s'exécute le code JavaScript d'une page Web ?",
+      "difficulte": 1,
+      "explication": "Il est envoyé au client avec la page.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Dans la base de données",
+        "Sur le serveur uniquement, avant l'envoi de la page au client",
+        "Dans le navigateur, côté client",
+        "Dans le routeur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un cookie ?",
+      "difficulte": 1,
+      "explication": "Il permet au serveur de reconnaître un visiteur.",
+      "notion": "Cookies",
+      "propositions": [
+        "Un petit programme exécuté sur le serveur à chaque connexion d'un utilisateur au site",
+        "Une page Web en cache",
+        "Un virus qui infecte le navigateur",
+        "Une petite donnée mémorisée par le navigateur et renvoyée au serveur à chaque requête"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Qui envoie un cookie la première fois, pour qu'il soit mémorisé par le navigateur ?",
+      "difficulte": 1,
+      "explication": "Avec l'en-tête Set-Cookie.",
+      "notion": "Cookies",
+      "propositions": [
+        "Le serveur, dans sa réponse",
+        "Le fournisseur d'accès",
+        "Le routeur du réseau",
+        "Le navigateur, de lui-même, dès l'ouverture de la page"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quelle balise HTML regroupe les champs d'un formulaire ?",
+      "difficulte": 1,
+      "explication": "Ses attributs action et method indiquent où et comment envoyer les données.",
+      "notion": "Formulaires",
+      "propositions": [
+        "<div>",
+        "<table>",
+        "<body>",
+        "<form>"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Dans <form action=\"/envoi\" method=\"post\">, quel attribut désigne la destination des données ?",
+      "difficulte": 1,
+      "explication": "method indique GET ou POST.",
+      "notion": "Formulaires",
+      "propositions": [
+        "method",
+        "action",
+        "name",
+        "href"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Quel attribut d'un champ de formulaire donne le nom du paramètre envoyé au serveur ?",
+      "difficulte": 1,
+      "explication": "Le serveur reçoit des couples name=valeur.",
+      "notion": "Formulaires",
+      "propositions": [
+        "id",
+        "type",
+        "name",
+        "value"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Un formulaire est envoyé en GET. À quel endroit de la requête trouve-t-on les valeurs saisies ?",
+      "difficulte": 1,
+      "explication": "Par exemple /recherche?q=tri.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Dans l'URL, après un point d'interrogation",
+        "Dans le fichier CSS",
+        "Dans un cookie",
+        "Dans le corps de la requête"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Avec la méthode POST, où sont placés les paramètres d'un formulaire ?",
+      "difficulte": 1,
+      "explication": "Ils n'apparaissent pas dans la barre d'adresse.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Dans le titre de la page affichée dans l'onglet du navigateur",
+        "Dans l'URL",
+        "Dans le nom du serveur",
+        "Dans le corps de la requête"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le S de HTTPS ?",
+      "difficulte": 1,
+      "explication": "HTTP sécurisé par TLS.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Secure, car les échanges sont chiffrés",
+        "Server, car le serveur répond",
+        "Simple, car le protocole est simplifié",
+        "Static, car les pages sont statiques"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Que garantit HTTPS pendant le transfert des données ?",
+      "difficulte": 1,
+      "explication": "HTTPS protège le trajet, pas l'honnêteté du site.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Que la page s'affiche plus vite",
+        "Que le site n'utilise aucun cookie et ne garde aucune donnée sur ses visiteurs",
+        "Qu'elles sont chiffrées et ne peuvent pas être lues par un espion du réseau",
+        "Que le site est honnête"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Qui a inventé le Web au CERN entre 1989 et 1991 ?",
+      "difficulte": 1,
+      "explication": "Il a créé HTML, HTTP et les URL.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Brendan Eich",
+        "Tim Berners-Lee",
+        "Linus Torvalds",
+        "Vinton Cerf"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Qui a créé le langage JavaScript en 1995 ?",
+      "difficulte": 1,
+      "explication": "Pour le navigateur Netscape.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Tim Berners-Lee",
+        "Guido van Rossum",
+        "Bill Gates",
+        "Brendan Eich"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Quelle balise HTML crée une liste déroulante ?",
+      "difficulte": 1,
+      "explication": "Les choix sont des balises <option>.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "<select>",
+        "<list>",
+        "<input type=\"text\">",
+        "<ul>"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Dans la page du cours, que fait la ligne document.getElementById(\"bouton\").addEventListener(\"click\", ajouter) ?",
+      "difficulte": 2,
+      "explication": "ajouter sera exécutée à chaque clic.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Elle crée un nouveau bouton",
+        "Elle associe la fonction ajouter au clic sur le bouton",
+        "Elle supprime le bouton",
+        "Elle clique automatiquement sur le bouton dès le chargement de la page"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Dans la page du cours, le compteur affiche 3. Que contient-il après deux nouveaux clics ?",
+      "difficulte": 2,
+      "explication": "Chaque clic exécute n = n + 1.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Comment modifier la page du cours pour que le compteur augmente de 2 à chaque clic ?",
+      "difficulte": 2,
+      "explication": "Le comportement est défini dans la fonction.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Remplacer n = n + 1 par n = n + 2 dans la fonction ajouter",
+        "Ajouter un second bouton",
+        "Remplacer let n = 0 par let n = 2",
+        "Remplacer \"click\" par \"dblclick\""
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Dans la page du cours, que se passe-t-il si on remplace \"click\" par \"mouseover\" ?",
+      "difficulte": 2,
+      "explication": "Le gestionnaire réagit alors au survol.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Le bouton disparaît",
+        "Le compteur ne change plus jamais, car mouseover n'est pas un événement valide",
+        "Le compteur augmente de 2",
+        "Le compteur augmente quand la souris passe sur le bouton"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Que fait document.getElementById(\"compteur\") en JavaScript ?",
+      "difficulte": 2,
+      "explication": "On peut ensuite modifier son texte avec textContent.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Il envoie une requête au serveur pour télécharger un nouveau compteur",
+        "Il crée un compteur",
+        "Il retrouve l'élément de la page dont l'identifiant est compteur",
+        "Il lit un cookie"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Dans une page, que décrit la ligne <button id=\"ok\">Valider</button> ?",
+      "difficulte": 2,
+      "explication": "Le comportement est programmé à part, par exemple en JavaScript.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Une requête HTTP",
+        "Un composant graphique, sans son comportement",
+        "Le comportement du bouton lors d'un clic",
+        "Un cookie"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi parle-t-on de programmation événementielle pour une page Web ?",
+      "difficulte": 2,
+      "explication": "L'ordre d'exécution dépend des actions de l'utilisateur.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "Le programme s'exécute une seule fois du début à la fin",
+        "Le programme est exécuté uniquement par le serveur",
+        "Le programme attend des actions de l'utilisateur et exécute la fonction associée à chacune",
+        "Le programme ne fonctionne que pendant certains événements sportifs"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel événement se produit quand on valide un formulaire ?",
+      "difficulte": 2,
+      "explication": "On peut par exemple vérifier les champs avant l'envoi.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "mouseover",
+        "keydown",
+        "load",
+        "submit"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Quel événement se produit quand la page a fini de se charger ?",
+      "difficulte": 2,
+      "explication": "Utile pour lancer un script après l'affichage.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "load",
+        "submit",
+        "click",
+        "change"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Dans la requête GET /cours/nsi.html HTTP/1.1, que désigne /cours/nsi.html ?",
+      "difficulte": 2,
+      "explication": "Le serveur est indiqué par l'en-tête Host.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "Le code d'état",
+        "La ressource demandée sur le serveur",
+        "Le nom du navigateur",
+        "L'adresse IP du client qui envoie la requête au serveur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Que fait le navigateur après avoir reçu le HTML d'une page qui contient des images ?",
+      "difficulte": 2,
+      "explication": "Chaque ressource (image, CSS, script) fait l'objet d'une requête.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "Il demande à l'utilisateur de télécharger les images",
+        "Il affiche la page sans images",
+        "Il envoie de nouvelles requêtes pour obtenir chaque image",
+        "Il redemande toute la page"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quel code d'état HTTP signale une erreur interne du serveur ?",
+      "difficulte": 2,
+      "explication": "Les codes 5xx signalent des erreurs du serveur.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "500",
+        "301",
+        "200",
+        "404"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Dans quel ordre se déroule l'affichage d'une page dynamique ?",
+      "difficulte": 2,
+      "explication": "Le JavaScript ne s'exécute qu'une fois la page reçue.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Affichage, requête, programme du serveur",
+        "Exécution du JavaScript, requête, programme du serveur, affichage",
+        "Programme du serveur, requête du client, affichage",
+        "Requête du client, exécution du programme du serveur, réponse, affichage et JavaScript sur le client"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Peut-on voir le code PHP d'une page dynamique avec « Afficher le code source » du navigateur ?",
+      "difficulte": 2,
+      "explication": "Le code du serveur n'est jamais envoyé au client.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Oui, mais seulement en HTTPS",
+        "Non, on ne voit que le HTML produit par ce code",
+        "Oui, il est toujours visible",
+        "Seulement si la page contient un formulaire envoyé avec la méthode GET"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le serveur doit-il revérifier les données d'un formulaire déjà vérifiées en JavaScript ?",
+      "difficulte": 2,
+      "explication": "On ne fait pas confiance à ce qui vient du client.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Parce que le JavaScript s'exécute chez le client, qui peut le modifier ou le contourner",
+        "Parce que le serveur ne reçoit pas les données",
+        "Parce que HTTPS efface les vérifications",
+        "Parce que le JavaScript ne fonctionne jamais"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces exemples est une page dynamique ?",
+      "difficulte": 2,
+      "explication": "Elle est fabriquée selon la requête.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Un fichier CSS",
+        "Un fichier HTML de mentions légales identique pour tous",
+        "La page des résultats d'un moteur de recherche",
+        "Une image PNG"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Avec quels langages écrit-on couramment le programme du serveur qui fabrique une page dynamique ?",
+      "difficulte": 2,
+      "explication": "HTML et CSS ne sont pas des langages de programmation.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "HTML ou CSS",
+        "CSS ou SQL uniquement",
+        "Le langage machine du client",
+        "PHP ou Python"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les sites utilisent-ils des cookies ?",
+      "difficulte": 2,
+      "explication": "Le cookie permet de reconnaître un visiteur (panier, connexion).",
+      "notion": "Cookies",
+      "propositions": [
+        "Pour accélérer le réseau",
+        "Parce que HTTP ne garde pas de mémoire d'une requête à l'autre",
+        "Pour remplacer les formulaires",
+        "Parce que HTTP chiffre trop les données et que le serveur ne peut plus les lire"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi faut-il protéger un cookie de session ?",
+      "difficulte": 2,
+      "explication": "D'où l'usage de HTTPS et de l'option Secure.",
+      "notion": "Cookies",
+      "propositions": [
+        "Qui le vole peut se faire passer pour l'utilisateur connecté",
+        "Parce qu'il ralentit le navigateur",
+        "Parce qu'il empêche le chiffrement",
+        "Parce qu'il contient le code source du site"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Que demande le RGPD au sujet des cookies non indispensables, comme ceux de pistage publicitaire ?",
+      "difficulte": 2,
+      "explication": "D'où les bandeaux de consentement.",
+      "notion": "Cookies",
+      "propositions": [
+        "Leur suppression systématique chaque jour",
+        "Leur envoi en POST",
+        "Leur chiffrement par le navigateur",
+        "Le consentement de l'utilisateur"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Avec method=\"get\", quelle URL est envoyée pour le formulaire du cours si on saisit tri ?",
+      "difficulte": 2,
+      "explication": "Le paramètre q=tri est ajouté après le point d'interrogation.",
+      "notion": "GET et POST",
+      "propositions": [
+        "/q=tri?recherche",
+        "/recherche?q=tri",
+        "/recherche",
+        "/recherche/tri"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Dans l'URL /meteo?ville=Lyon&jours=3, combien de paramètres sont transmis ?",
+      "difficulte": 2,
+      "explication": "ville et jours, séparés par &.",
+      "notion": "GET et POST",
+      "propositions": [
+        "0",
+        "3",
+        "2",
+        "1"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode convient pour envoyer un mot de passe de connexion ?",
+      "difficulte": 2,
+      "explication": "Et il faut en plus HTTPS pour le chiffrer.",
+      "notion": "GET et POST",
+      "propositions": [
+        "POST, pour qu'il n'apparaisse pas dans l'URL ni dans l'historique",
+        "GET, pour qu'il soit visible et vérifiable",
+        "Aucune, un mot de passe ne peut pas être envoyé",
+        "GET, parce qu'il est plus rapide"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode convient pour une page de résultats de recherche qu'on veut pouvoir partager ou mettre en favori ?",
+      "difficulte": 2,
+      "explication": "Les paramètres sont dans l'URL, qu'on peut copier.",
+      "notion": "GET et POST",
+      "propositions": [
+        "POST",
+        "Un cookie",
+        "GET",
+        "Aucune"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode convient pour envoyer un fichier volumineux au serveur ?",
+      "difficulte": 2,
+      "explication": "La longueur d'une URL est limitée.",
+      "notion": "GET et POST",
+      "propositions": [
+        "GET",
+        "Un cookie",
+        "Un événement mouseover",
+        "POST"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un formulaire de connexion utilise POST sur une page en HTTP simple. Que peut faire un espion sur le même réseau Wi-Fi ?",
+      "difficulte": 2,
+      "explication": "POST n'est pas un chiffrement ; seul HTTPS chiffre.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Rien, car le mot de passe est dans un cookie",
+        "Lire le mot de passe, car il circule en clair",
+        "Seulement voir l'adresse du site",
+        "Rien, car POST chiffre les données"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:057",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert le certificat présenté par un serveur HTTPS ?",
+      "difficulte": 2,
+      "explication": "Il protège contre les faux sites qui se feraient passer pour le vrai.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "À compresser les pages",
+        "À stocker les cookies",
+        "À choisir entre GET et POST",
+        "À prouver l'identité du serveur"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Un site affiché en HTTPS est-il forcément honnête ?",
+      "difficulte": 2,
+      "explication": "HTTPS protège le transport des données, pas les intentions du site.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Non, un site frauduleux peut aussi utiliser HTTPS",
+        "Non, car HTTPS n'est jamais fiable",
+        "Oui, si le cadenas est vert",
+        "Oui, le certificat le garantit"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Dans <label for=\"q\">Mot-clé :</label>, à quoi sert l'attribut for ?",
+      "difficulte": 2,
+      "explication": "Cliquer sur l'étiquette place le curseur dans le champ.",
+      "notion": "Formulaires",
+      "propositions": [
+        "À répéter le champ dans une boucle",
+        "À relier l'étiquette au champ dont l'identifiant est q",
+        "À envoyer le formulaire",
+        "À choisir la méthode d'envoi"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel protocole, ancêtre de TLS, apparaît en 1995 pour sécuriser les échanges Web ?",
+      "difficulte": 2,
+      "explication": "SSL a été conçu par Netscape ; TLS lui succède.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "SMTP",
+        "ARPANET",
+        "SSL",
+        "FTP"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Quelle URL est envoyée par un formulaire GET d'action /resa avec les champs nom (Lina) et nb (2) ?",
+      "difficulte": 3,
+      "explication": "Un seul ?, puis des couples nom=valeur séparés par &.",
+      "notion": "GET et POST",
+      "propositions": [
+        "/resa?nom=Lina&nb=2",
+        "/resa?nom=Lina?nb=2",
+        "/resa/nom/Lina/nb/2",
+        "/resa&nom=Lina&nb=2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi une suppression de compte ne devrait-elle pas se faire avec une simple URL en GET ?",
+      "difficulte": 3,
+      "explication": "Les actions qui modifient des données utilisent POST.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Parce que GET chiffre les données",
+        "Une URL peut être ouverte par erreur, partagée ou préchargée, et déclencher l'action",
+        "Parce qu'une URL ne peut pas contenir de chiffres",
+        "Parce que GET est plus lent que POST"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Le paramètre q vaut tri rapide. Comment apparaît-il dans l'URL d'un formulaire GET ?",
+      "difficulte": 3,
+      "explication": "L'espace est codée par + (ou %20) ; & séparerait deux paramètres.",
+      "notion": "GET et POST",
+      "propositions": [
+        "q=(tri rapide)",
+        "q=tri rapide",
+        "q=tri+rapide",
+        "q=tri&rapide"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Une page affiche l'heure du serveur, produite en PHP, et l'heure du client, écrite par un script JavaScript. Laquelle est calculée en premier ?",
+      "difficulte": 3,
+      "explication": "Le programme du serveur s'exécute avant que le client reçoive la page.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "On ne peut pas savoir",
+        "Les deux en même temps",
+        "L'heure du client, calculée avant la requête",
+        "L'heure du serveur, calculée avant l'envoi de la page"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Un site vérifie en JavaScript qu'un prix saisi est positif, mais pas sur le serveur. Que peut faire un utilisateur malveillant ?",
+      "difficulte": 3,
+      "explication": "Il peut contourner le JavaScript, qui s'exécute chez lui.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Rien, la vérification JavaScript suffit",
+        "Envoyer directement au serveur une requête avec un prix négatif",
+        "Modifier le code PHP du serveur depuis son navigateur",
+        "Lire les cookies des autres utilisateurs"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Un utilisateur se connecte, puis visite trois autres pages du site. Combien de fois son navigateur envoie-t-il le cookie de session au serveur pendant ces trois visites ?",
+      "difficulte": 3,
+      "explication": "Le cookie est joint à chaque requête vers le site.",
+      "notion": "Cookies",
+      "propositions": [
+        "0",
+        "1",
+        "4",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un cookie de session porte-t-il souvent l'option Secure ?",
+      "difficulte": 3,
+      "explication": "Il ne circule alors jamais en clair.",
+      "notion": "Cookies",
+      "propositions": [
+        "Pour n'être envoyé que sur des connexions HTTPS",
+        "Pour être chiffré dans la mémoire du navigateur",
+        "Pour être lisible par tous les sites",
+        "Pour être envoyé avec la méthode POST"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Avec <button onclick=\"ajouter()\">, où est indiqué le gestionnaire d'événement ?",
+      "difficulte": 3,
+      "explication": "C'est une écriture plus ancienne que addEventListener.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Dans le fichier CSS",
+        "Dans un cookie",
+        "Directement dans l'attribut HTML du bouton",
+        "Dans la réponse du serveur"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:069",
+      "type": "qcm_unique",
+      "enonce": "On veut qu'un bouton affiche « Merci » dans le paragraphe d'identifiant msg quand on le survole. Quelle instruction mettre dans le gestionnaire associé à mouseover ?",
+      "difficulte": 3,
+      "explication": "On retrouve l'élément par son identifiant et on change son texte.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "document.getElementById(\"msg\").textContent = \"Merci\"",
+        "print(\"Merci\")",
+        "document.getElementById(\"Merci\").textContent = \"msg\"",
+        "msg = \"Merci\""
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Une page contient un fichier CSS, deux scripts et trois images. Combien de requêtes HTTP le navigateur envoie-t-il au minimum pour l'afficher entièrement, sans cache ?",
+      "difficulte": 3,
+      "explication": "1 pour le HTML, puis 1 + 2 + 3 pour les ressources.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "1",
+        "3",
+        "6",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Sur un Wi-Fi public, quelles données un espion du réseau peut-il encore connaître avec HTTPS ?",
+      "difficulte": 3,
+      "explication": "Le contenu est chiffré ; le serveur contacté reste visible.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Les mots de passe envoyés en POST",
+        "Le contenu des cookies de session",
+        "Le nom du site visité, mais pas le contenu des pages ni des formulaires",
+        "Le contenu des formulaires"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi une page dynamique peut-elle être différente pour deux visiteurs au même moment ?",
+      "difficulte": 3,
+      "explication": "Chaque requête est traitée par un programme.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Les pages statiques sont aléatoires",
+        "Le programme du serveur la fabrique selon la requête, par exemple selon le cookie de connexion",
+        "Le CSS change selon le visiteur",
+        "Le réseau modifie la page en route"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Un formulaire contient <input type=\"text\" name=\"ville\"> sans attribut name sur un second champ. Que se passe-t-il pour ce second champ à l'envoi ?",
+      "difficulte": 3,
+      "explication": "Seuls les champs qui ont un name sont transmis.",
+      "notion": "Formulaires",
+      "propositions": [
+        "Il est envoyé avec le nom ville",
+        "Sa valeur n'est pas envoyée au serveur",
+        "Le formulaire ne peut pas être envoyé",
+        "Sa valeur est envoyée dans un cookie"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Quelle différence y a-t-il entre les événements input et change sur un champ de texte ?",
+      "difficulte": 3,
+      "explication": "input permet par exemple une recherche au fil de la frappe.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "input se produit à chaque modification, change quand on quitte le champ après l'avoir modifié",
+        "input se produit au chargement, change au clic",
+        "change se produit à chaque touche, input jamais",
+        "Ils sont identiques"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Quelle entreprise a introduit les cookies et le protocole SSL au milieu des années 1990 ?",
+      "difficulte": 3,
+      "explication": "Le navigateur Netscape Navigator dominait alors le Web.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Apple",
+        "Facebook",
+        "Google",
+        "Netscape"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels sont des composants graphiques d'une page Web ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un cookie est une donnée mémorisée, pas un composant visible.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "Une case à cocher",
+        "Une liste déroulante",
+        "Un bouton",
+        "Un cookie"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces noms, lesquels sont des événements gérés par les navigateurs ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "getElementById est une méthode, textContent une propriété.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "click",
+        "getElementById",
+        "textContent",
+        "mouseover"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces langages, lesquels sont interprétés par le navigateur pour afficher une page ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "PHP s'exécute sur le serveur.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "PHP"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces codes d'état HTTP, lesquels signalent une erreur ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les codes 2xx signalent un succès.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "200",
+        "404",
+        "500",
+        "201"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces actions, lesquelles se déroulent sur le serveur ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le client affiche et exécute le JavaScript.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Exécuter un programme PHP qui produit une page",
+        "Exécuter le JavaScript de la page",
+        "Interroger une base de données pour une page dynamique",
+        "Afficher la page à l'écran"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Où vit un cookie et à qui est-il renvoyé ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ce sont des données, pas des programmes.",
+      "notion": "Cookies",
+      "propositions": [
+        "Ils sont visibles dans le code HTML de la page",
+        "Ils sont renvoyés au serveur qui les a créés",
+        "Ils sont exécutés comme des programmes",
+        "Ils sont mémorisés par le navigateur"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces attributs, lesquels se placent sur la balise <form> ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "href est pour les liens, src pour les images.",
+      "notion": "Formulaires",
+      "propositions": [
+        "action",
+        "method",
+        "src",
+        "href"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la méthode GET, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "GET ne chiffre rien et la longueur de l'URL est limitée.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Elle permet d'envoyer des fichiers volumineux",
+        "Les paramètres apparaissent dans l'historique du navigateur",
+        "Les paramètres sont chiffrés",
+        "Les paramètres sont dans l'URL"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces données, lesquelles doivent être transmises en HTTPS ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ce sont des données confidentielles.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Un cookie de session",
+        "Aucune, HTTP suffit toujours",
+        "Un mot de passe",
+        "Un numéro de carte bancaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces pages, lesquelles sont en général dynamiques ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Elles dépendent de l'utilisateur et du moment.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Un fichier PDF de règlement intérieur",
+        "La page de son compte sur un site de vente",
+        "Le fil d'actualité d'un réseau social",
+        "Une image de logo"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces inventions, lesquelles sont dues à Tim Berners-Lee ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "JavaScript vient de Brendan Eich, les cookies de Netscape.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "HTTP",
+        "HTML",
+        "Les cookies",
+        "JavaScript"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces balises, lesquelles créent un champ de saisie ou de choix dans un formulaire ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "h1 et p affichent du texte.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "<p>",
+        "<input type=\"checkbox\">",
+        "<input type=\"text\">",
+        "<h1>"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Dans la page du cours, parmi ces modifications, lesquelles changent le comportement du bouton sans changer son apparence ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le comportement est dans le JavaScript ; le texte et le CSS changent l'apparence.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Remplacer le texte Clique-moi par Appuie",
+        "Remplacer \"click\" par \"dblclick\"",
+        "Ajouter une couleur de fond en CSS",
+        "Remplacer n = n + 1 par n = n + 10"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur une page dynamique, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le client ne reçoit que le résultat du programme du serveur.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Son JavaScript s'exécute sur le serveur",
+        "Son JavaScript est visible par le client",
+        "Son code serveur n'est pas visible par le client",
+        "Son code serveur est envoyé au navigateur"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces situations, lesquelles justifient l'usage de POST ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "POST pour les données confidentielles ou qui modifient le serveur ; GET pour consulter.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Envoyer un mot de passe",
+        "Filtrer des produits par couleur",
+        "Ajouter un message sur un forum",
+        "Afficher la page 2 d'une liste de résultats"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Dans l'URL /recherche?q=nsi&page=2, parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les paramètres dans l'URL sont ceux d'une requête GET.",
+      "notion": "GET et POST",
+      "propositions": [
+        "Le paramètre q vaut nsi",
+        "Les paramètres sont dans le corps de la requête",
+        "Le paramètre page vaut nsi",
+        "La requête a été faite avec la méthode GET"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Que fait le protocole sécurisé utilisé par les sites bancaires ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "HTTPS protège le transport ; il ne juge pas le site.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Il rend inutile la méthode POST",
+        "Il garantit que le site est honnête",
+        "Il permet de vérifier l'identité du serveur grâce à un certificat",
+        "Il chiffre les échanges entre le client et le serveur"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces usages, lesquels sont des usages courants des cookies ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le chiffrement relève de HTTPS.",
+      "notion": "Cookies",
+      "propositions": [
+        "Afficher les images d'une page",
+        "Garder un utilisateur connecté",
+        "Chiffrer les mots de passe",
+        "Mémoriser le contenu d'un panier"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces informations, lesquelles figurent dans une réponse HTTP ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le code serveur n'est jamais envoyé.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "Le contenu de la ressource, par exemple du HTML",
+        "Le mot de passe du serveur",
+        "Le code PHP qui a produit la page",
+        "Un code d'état comme 200"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces événements, lesquels peuvent être produits par le clavier ou la saisie de texte ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "mouseover vient de la souris, load du chargement de la page.",
+      "notion": "Événements et gestionnaires",
+      "propositions": [
+        "input",
+        "mouseover",
+        "keydown",
+        "load"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Le formulaire <form action=\"/inscription\" method=\"post\"> contient des champs name=\"pseudo\" et name=\"age\". Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "POST place les paramètres dans le corps, sans les chiffrer.",
+      "notion": "Formulaires",
+      "propositions": [
+        "Les données sont envoyées à /inscription",
+        "Le serveur reçoit les paramètres pseudo et age",
+        "Les données sont chiffrées grâce à POST",
+        "Les paramètres apparaissent dans l'URL"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Quelles différences y a-t-il entre pages statiques et dynamiques ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Une page statique peut contenir du JavaScript exécuté chez le client.",
+      "notion": "Pages statiques et dynamiques",
+      "propositions": [
+        "Une page dynamique peut interroger une base de données",
+        "Une page statique ne peut pas contenir de JavaScript",
+        "Une page statique est la même pour tous les visiteurs",
+        "Une page dynamique est forcément écrite en JavaScript"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Une page est produite par un programme Python sur le serveur et contient un script JavaScript. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le serveur produit la page, puis le client l'affiche et exécute le script.",
+      "notion": "Client ou serveur",
+      "propositions": [
+        "Le navigateur reçoit le code Python",
+        "Le programme Python s'exécute avant le JavaScript",
+        "Le JavaScript peut réagir aux clics sans nouvelle requête",
+        "Le JavaScript s'exécute avant la requête"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur GET et POST, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Seul HTTPS chiffre.",
+      "notion": "GET et POST",
+      "propositions": [
+        "POST suffit à protéger un mot de passe sans HTTPS",
+        "POST ne chiffre pas les données",
+        "Un mot de passe envoyé en POST sur HTTP circule en clair",
+        "GET chiffre les paramètres placés dans l'URL"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Un espion écoute un Wi-Fi public pendant qu'un utilisateur navigue en HTTPS. Que peut-il apprendre ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Avec HTTPS, l'URL complète (paramètres compris) et les cookies sont chiffrés.",
+      "notion": "HTTPS et chiffrement",
+      "propositions": [
+        "Un espion voit encore quel serveur est contacté",
+        "Un espion peut lire les paramètres envoyés en GET",
+        "Un espion ne peut pas lire les paramètres envoyés en POST",
+        "Un espion peut lire les cookies de session"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Un cookie est créé par le site boutique.example. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Un cookie est associé au site qui l'a créé.",
+      "notion": "Cookies",
+      "propositions": [
+        "Il est envoyé à tous les sites visités",
+        "Il est stocké sur le serveur du fournisseur d'accès",
+        "Il n'est pas envoyé à un autre site, comme banque.example",
+        "Il est renvoyé aux requêtes vers boutique.example"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Une page contient <span id=\"total\">0</span> et un bouton dont le gestionnaire exécute t = t + 5 puis document.getElementById(\"total\").textContent = t, avec t initialisé à 0. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le JavaScript met à jour la page localement.",
+      "notion": "HTML et JavaScript",
+      "propositions": [
+        "Le calcul se fait dans le navigateur, sans requête au serveur",
+        "Après 3 clics, la page affiche 15",
+        "Après 3 clics, la page affiche 5",
+        "Chaque clic recharge la page depuis le serveur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces composants, lesquels permettent à l'utilisateur de choisir parmi des options proposées ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les paragraphes et titres affichent du texte sans choix possible.",
+      "notion": "Composants graphiques",
+      "propositions": [
+        "Des boutons radio",
+        "Un paragraphe <p>",
+        "Une liste déroulante <select>",
+        "Un titre <h2>"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels figurent dans une requête HTTP envoyée par le navigateur ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le code d'état figure dans la réponse ; le code PHP reste sur le serveur.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "La méthode, par exemple GET",
+        "Le code PHP de la page",
+        "Le code d'état 200",
+        "La ressource demandée, par exemple /index.html"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Comment fonctionne un échange HTTP entre client et serveur ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "C'est le client qui envoie les requêtes ; les cookies pallient l'absence de mémoire.",
+      "notion": "Requêtes et réponses HTTP",
+      "propositions": [
+        "Le client doit attendre que le serveur lui envoie une page sans l'avoir demandée",
+        "Le serveur répond par un code d'état",
+        "Chaque requête est indépendante des précédentes",
+        "Le serveur garde automatiquement en mémoire chaque visiteur"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:106",
+      "type": "vrai_faux",
+      "enonce": "HTML décrit la structure d'une page, et JavaScript son comportement.",
+      "difficulte": 1,
+      "explication": "CSS décrit la mise en forme.",
+      "notion": "HTML et JavaScript",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:107",
+      "type": "vrai_faux",
+      "enonce": "click et mouseover sont des événements.",
+      "difficulte": 1,
+      "explication": "Le premier correspond à un clic, le second au survol.",
+      "notion": "Événements et gestionnaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Avec la méthode GET, les paramètres d'un formulaire apparaissent dans l'URL.",
+      "difficulte": 1,
+      "explication": "Après le point d'interrogation.",
+      "notion": "GET et POST",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:109",
+      "type": "vrai_faux",
+      "enonce": "HTTPS chiffre les échanges entre le navigateur et le serveur.",
+      "difficulte": 1,
+      "explication": "Grâce au protocole TLS.",
+      "notion": "HTTPS et chiffrement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Un cookie est mémorisé par le navigateur.",
+      "difficulte": 1,
+      "explication": "Il est renvoyé au serveur à chaque requête.",
+      "notion": "Cookies",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Le code d'état 404 signifie que la ressource demandée est introuvable.",
+      "difficulte": 1,
+      "explication": "200 signifie que tout va bien.",
+      "notion": "Requêtes et réponses HTTP",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Le code PHP d'une page dynamique n'est jamais envoyé au navigateur.",
+      "difficulte": 2,
+      "explication": "Le client ne reçoit que le HTML produit.",
+      "notion": "Client ou serveur",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:113",
+      "type": "vrai_faux",
+      "enonce": "POST est préférable à GET pour envoyer un mot de passe.",
+      "difficulte": 2,
+      "explication": "Le mot de passe n'apparaît pas dans l'URL ni dans l'historique.",
+      "notion": "GET et POST",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Dans la page du cours, remplacer \"click\" par \"mouseover\" fait réagir le bouton au survol.",
+      "difficulte": 2,
+      "explication": "Le gestionnaire est associé à un autre événement.",
+      "notion": "HTML et JavaScript",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Le protocole HTTP ne garde pas de mémoire d'une requête à l'autre.",
+      "difficulte": 2,
+      "explication": "D'où l'usage des cookies.",
+      "notion": "Cookies",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Une page dynamique est fabriquée par un programme du serveur au moment de la requête.",
+      "difficulte": 2,
+      "explication": "Elle peut dépendre de l'utilisateur.",
+      "notion": "Pages statiques et dynamiques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Dans l'URL /meteo?ville=Lyon&jours=3, le paramètre jours vaut 3.",
+      "difficulte": 2,
+      "explication": "Les paramètres sont séparés par &.",
+      "notion": "GET et POST",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Une vérification faite uniquement en JavaScript peut être contournée par un utilisateur.",
+      "difficulte": 3,
+      "explication": "Le JavaScript s'exécute chez lui.",
+      "notion": "Client ou serveur",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Pour afficher une page avec un fichier CSS et deux images, le navigateur envoie au moins 4 requêtes.",
+      "difficulte": 3,
+      "explication": "Une pour le HTML et une par ressource.",
+      "notion": "Requêtes et réponses HTTP",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Avec HTTPS, les paramètres d'une URL envoyée en GET sont chiffrés pendant le transport.",
+      "difficulte": 3,
+      "explication": "Toute la requête est chiffrée ; seul le nom du serveur reste visible.",
+      "notion": "HTTPS et chiffrement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch9:banque:121",
+      "type": "vrai_faux",
+      "enonce": "HTML est un langage de programmation qui gère les clics.",
+      "difficulte": 1,
+      "explication": "HTML décrit la structure ; le comportement est programmé en JavaScript.",
+      "notion": "HTML et JavaScript",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Le JavaScript d'une page s'exécute sur le serveur.",
+      "difficulte": 1,
+      "explication": "Il s'exécute dans le navigateur.",
+      "notion": "Client ou serveur",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Avec la méthode POST, les paramètres apparaissent dans la barre d'adresse.",
+      "difficulte": 1,
+      "explication": "Ils sont dans le corps de la requête.",
+      "notion": "GET et POST",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Le code d'état 200 signifie que la page est introuvable.",
+      "difficulte": 1,
+      "explication": "200 signifie OK ; 404, introuvable.",
+      "notion": "Requêtes et réponses HTTP",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Un cookie est un programme exécuté par le navigateur.",
+      "difficulte": 1,
+      "explication": "C'est une donnée (nom et valeur).",
+      "notion": "Cookies",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:126",
+      "type": "vrai_faux",
+      "enonce": "JavaScript a été inventé par Tim Berners-Lee.",
+      "difficulte": 1,
+      "explication": "Par Brendan Eich, en 1995.",
+      "notion": "Repères historiques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:127",
+      "type": "vrai_faux",
+      "enonce": "La méthode POST chiffre les données envoyées.",
+      "difficulte": 2,
+      "explication": "Seul HTTPS chiffre ; POST les place dans le corps de la requête.",
+      "notion": "GET et POST",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Un site en HTTPS est forcément un site honnête.",
+      "difficulte": 2,
+      "explication": "Un site frauduleux peut aussi avoir un certificat.",
+      "notion": "HTTPS et chiffrement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:129",
+      "type": "vrai_faux",
+      "enonce": "On peut lire le code Python d'une page dynamique avec « Afficher le code source ».",
+      "difficulte": 2,
+      "explication": "On ne voit que le HTML produit.",
+      "notion": "Client ou serveur",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Une page dynamique est une page qui contient des animations.",
+      "difficulte": 2,
+      "explication": "Elle est fabriquée par un programme du serveur.",
+      "notion": "Pages statiques et dynamiques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:131",
+      "type": "vrai_faux",
+      "enonce": "L'attribut method d'un formulaire indique l'adresse du programme qui traite les données.",
+      "difficulte": 2,
+      "explication": "C'est action ; method indique GET ou POST.",
+      "notion": "Formulaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Dans la page du cours, le compteur est mis à jour en rechargeant la page depuis le serveur.",
+      "difficulte": 2,
+      "explication": "Le JavaScript modifie la page dans le navigateur.",
+      "notion": "HTML et JavaScript",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Dans une URL GET, les paramètres sont séparés par des points d'interrogation.",
+      "difficulte": 3,
+      "explication": "Un seul ? sépare la ressource des paramètres, qui sont séparés par &.",
+      "notion": "GET et POST",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Un cookie créé par un site est envoyé à tous les sites que l'on visite ensuite.",
+      "difficulte": 3,
+      "explication": "Il n'est renvoyé qu'au site qui l'a créé.",
+      "notion": "Cookies",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Avec HTTPS, un espion du réseau ne peut même pas savoir quel serveur est contacté.",
+      "difficulte": 3,
+      "explication": "Le nom ou l'adresse du serveur restent visibles ; le contenu est chiffré.",
+      "notion": "HTTPS et chiffrement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch9:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Quel est le sigle du protocole utilisé par le navigateur pour demander une page Web ?",
+      "difficulte": 1,
+      "explication": "HyperText Transfer Protocol (HTTPS en version chiffrée).",
+      "notion": "Requêtes et réponses HTTP",
+      "reponses_acceptees": [
+        "HTTP",
+        "HTTPS"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quel code d'état HTTP signifie « ressource introuvable » ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "Erreur bien connue des internautes.",
+      "notion": "Requêtes et réponses HTTP",
+      "reponses_acceptees": [
+        "404"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom (en anglais) de l'événement déclenché par un clic de souris ?",
+      "difficulte": 1,
+      "explication": "addEventListener(\"click\", f).",
+      "notion": "Événements et gestionnaires",
+      "reponses_acceptees": [
+        "click",
+        "onclick"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quel langage, exécuté par le navigateur, programme le comportement d'une page Web ?",
+      "difficulte": 1,
+      "explication": "Créé en 1995.",
+      "notion": "HTML et JavaScript",
+      "reponses_acceptees": [
+        "JavaScript",
+        "JS",
+        "Javascript"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Quelle méthode HTTP place les paramètres d'un formulaire dans l'URL ?",
+      "difficulte": 1,
+      "explication": "POST les place dans le corps.",
+      "notion": "GET et POST",
+      "reponses_acceptees": [
+        "GET"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le sigle du protocole Web sécurisé par chiffrement ?",
+      "difficulte": 1,
+      "explication": "HTTP + TLS.",
+      "notion": "HTTPS et chiffrement",
+      "reponses_acceptees": [
+        "HTTPS"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Combien de paramètres l'URL /resa?nom=Lina&nb=2&jour=lundi transmet-elle ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "nom, nb et jour.",
+      "notion": "GET et POST",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Dans l'URL /recherche?q=nsi&page=2, quelle est la valeur du paramètre q ?",
+      "difficulte": 2,
+      "explication": "q=nsi.",
+      "notion": "GET et POST",
+      "reponses_acceptees": [
+        "nsi"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Quel attribut de la balise form indique l'adresse du programme qui traite les données ?",
+      "difficulte": 2,
+      "explication": "method indique la méthode.",
+      "notion": "Formulaires",
+      "reponses_acceptees": [
+        "action"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on la petite donnée qu'un serveur fait mémoriser au navigateur pour le reconnaître ?",
+      "difficulte": 2,
+      "explication": "Elle est renvoyée à chaque requête.",
+      "notion": "Cookies",
+      "reponses_acceptees": [
+        "cookie",
+        "un cookie",
+        "témoin de connexion"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Dans la page du cours, le compteur affiche 0. Combien affiche-t-il après 7 clics ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "Chaque clic ajoute 1.",
+      "notion": "HTML et JavaScript",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de famille de l'inventeur du Web ?",
+      "difficulte": 2,
+      "explication": "Tim Berners-Lee, au CERN.",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "Berners-Lee",
+        "Berners Lee",
+        "Tim Berners-Lee"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Une page contient deux feuilles CSS, un script et quatre images. Combien de requêtes HTTP faut-il au minimum pour l'afficher entièrement, sans cache ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "1 (HTML) + 2 + 1 + 4.",
+      "notion": "Requêtes et réponses HTTP",
+      "reponses_acceptees": [
+        "8"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Quelle URL complète envoie un formulaire GET d'action /calc avec les champs a = 3 et b = 4 (dans cet ordre) ? Écris-la sans espace.",
+      "difficulte": 3,
+      "explication": "Un ?, puis a=3 et b=4 séparés par &.",
+      "notion": "GET et POST",
+      "reponses_acceptees": [
+        "/calc?a=3&b=4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch9:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Le gestionnaire d'un bouton exécute t = t * 2, avec t initialisé à 1. Que vaut t après 5 clics ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "2⁵ = 32.",
+      "notion": "HTML et JavaScript",
+      "reponses_acceptees": [
+        "32"
+      ]
+    }
+  ]
+}
