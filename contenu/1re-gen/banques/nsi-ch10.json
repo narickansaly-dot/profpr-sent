@@ -1054,9 +1054,9 @@
     {
       "source": "nsi-1re:ch10:banque:062",
       "type": "qcm_unique",
-      "enonce": "On exécute MOV R0, #3 (adresse 0) ; MOV R1, #0 (adresse 1) ; ADD R1, R1, R0 (adresse 2) ; SUB R0, R0, #1… Dans ce langage simplifié, SUB n'accepte que des registres. Quelle écriture est correcte pour retirer 1 à R0 ?",
+      "enonce": "Dans le langage simplifié du cours, ADD et SUB ne travaillent que sur des registres et seul MOV accepte une valeur constante (#…). Quelle séquence retire 1 à R0 ?",
       "difficulte": 3,
-      "explication": "Le tableau du cours ne donne SUB qu'avec des registres ; on met 1 dans un registre.",
+      "explication": "On place d'abord la constante 1 dans un registre, puis on soustrait les registres.",
       "notion": "Cycle et langage machine",
       "propositions": [
         "JUMP R0, 1",
@@ -1553,7 +1553,7 @@
       "notion": "Droits et permissions",
       "propositions": [
         "Les autres peuvent le lire",
-        "Les autres peuvent l'exécuter",
+        "Les autres ont le droit x sur ce fichier",
         "Le propriétaire peut le modifier",
         "Le groupe peut le modifier"
       ],
@@ -1673,7 +1673,7 @@
     {
       "source": "nsi-1re:ch10:banque:097",
       "type": "qcm_multiple",
-      "enonce": "Quel gain peut-on attendre du parallélisme ? Coche toutes les réponses exactes.",
+      "enonce": "Que sait-on du calcul parallèle sur plusieurs cœurs ? Coche toutes les réponses exactes.",
       "difficulte": 2,
       "explication": "Le gain dépend de la part du calcul qui peut être parallélisée.",
       "notion": "Multicœur et parallélisme",
@@ -2239,7 +2239,9 @@
         "compteur de programme",
         "compteur ordinal",
         "le compteur de programme",
-        "le compteur ordinal"
+        "le compteur ordinal",
+        "CO",
+        "PC"
       ]
     },
     {
@@ -2261,7 +2263,8 @@
       "explication": "7 = rwx, 5 = r-x, 1 = --x.",
       "notion": "Droits et permissions",
       "reponses_acceptees": [
-        "rwxr-x--x"
+        "rwxr-x--x",
+        "-rwxr-x--x"
       ]
     },
     {
@@ -2272,7 +2275,8 @@
       "explication": "4 + 12 / 3 = 8.",
       "notion": "Multicœur et parallélisme",
       "reponses_acceptees": [
-        "8"
+        "8",
+        "8 s"
       ]
     }
   ]
