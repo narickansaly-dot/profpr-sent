@@ -1,0 +1,2375 @@
+{
+  "chapitre": 13,
+  "notions": [
+    "Proportions et répartition",
+    "Taux de variation et CM",
+    "Taux de variation cumulé",
+    "Indices simples et synthétiques",
+    "Moyennes simple et pondérée",
+    "La médiane",
+    "Valeur nominale et valeur réelle",
+    "Tableaux et séries chronologiques",
+    "Pente et déplacement d'une courbe"
+  ],
+  "questions": [
+    {
+      "source": "ses:ch13:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un club sportif de 2 400 adhérents compte 660 adhérents de moins de 18 ans. Quelle est la part des moins de 18 ans parmi les adhérents ?",
+      "propositions": [
+        "27,5 %",
+        "72,5 %",
+        "2,75 %",
+        "66 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Proportion = partie ÷ ensemble × 100 = 660 ÷ 2 400 × 100 = 27,5 %. 72,5 % est la part des autres adhérents.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : dans une commune, 18 % des habitants ont plus de 75 ans. Quelle phrase de lecture est correcte ?",
+      "propositions": [
+        "La commune compte exactement 18 habitants âgés de plus de 75 ans",
+        "Le nombre d'habitants de plus de 75 ans a augmenté de 18 % dans la commune",
+        "Sur 100 habitants de la commune, 18 ont plus de 75 ans",
+        "Les plus de 75 ans représentent 18 % de toute la population du pays"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une proportion de 18 % se lit : sur 100 habitants de la commune (l'ensemble), 18 ont plus de 75 ans (la partie).",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : une ville compte 12 500 habitants, dont 8 % sont étudiants. Combien d'étudiants y vivent ?",
+      "propositions": [
+        "10 000",
+        "1 562",
+        "1 000",
+        "800"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Partie = ensemble × proportion ÷ 100 = 12 500 × 8 ÷ 100 = 1 000 étudiants.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le budget d'un ménage se répartit en logement (42 %), alimentation (35 %) et autres dépenses. Quelle est la part des autres dépenses ?",
+      "propositions": [
+        "33 %",
+        "7 %",
+        "23 %",
+        "77 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les pourcentages de répartition d'un même ensemble totalisent 100 % : 100 − 42 − 35 = 23 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : une entreprise compte 300 cadres sur 1 200 salariés en 2024, puis toujours 300 cadres mais 1 000 salariés en 2026. Que s'est-il passé ?",
+      "propositions": [
+        "La part des cadres a baissé de 25 % à 20 % parce que l'entreprise a perdu des salariés",
+        "La part des cadres est passée de 25 % à 30 % sans que leur nombre change",
+        "La part des cadres est restée à 25 %, puisque leur nombre n'a pas du tout changé",
+        "Le nombre de cadres a augmenté de 5 % puisque leur part dans l'effectif a augmenté"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "300 ÷ 1 200 = 25 % puis 300 ÷ 1 000 = 30 % : si l'ensemble diminue, une partie stable voit sa part monter. Il faut se demander « part de quoi ? ».",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : dans une entreprise, 40 % des salariés sont des femmes, et 25 % de ces femmes sont cadres. Quelle part de l'ensemble des salariés les femmes cadres représentent-elles ?",
+      "propositions": [
+        "15 %",
+        "10 %",
+        "65 %",
+        "25 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "25 % des 40 % : 0,25 × 0,40 = 0,10, soit 10 % de l'ensemble. 25 % est une part des femmes, pas de l'ensemble des salariés.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:007",
+      "type": "qcm_multiple",
+      "enonce": "Un élève prépare une fiche sur les pourcentages de répartition. Que peut-il y écrire sans erreur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les pourcentages de répartition d'un même ensemble totalisent 100 %",
+        "Les parts des catégories d'un ensemble totalisent toujours plus de 100 %",
+        "Proportion (en %) = partie ÷ ensemble × 100",
+        "On obtient une proportion en divisant l'ensemble par la partie"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une proportion se calcule en divisant la partie par l'ensemble, et les pourcentages de répartition d'un même ensemble totalisent 100 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un magasin réalise 500 000 € de chiffre d'affaires : 240 000 € au rayon alimentation, 180 000 € au rayon textile et 80 000 € au rayon jardin. Quelles parts du chiffre d'affaires sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Textile : 36 %",
+        "Jardin : 8 %",
+        "Textile : 18 %",
+        "Alimentation : 48 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "240 000 ÷ 500 000 = 48 % ; 180 000 ÷ 500 000 = 36 % ; 80 000 ÷ 500 000 = 16 %. Les trois parts totalisent 100 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Par quels graphiques le cours propose-t-il de représenter une répartition ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une courbe d'offre avec la quantité en abscisse",
+        "Une courbe de demande avec le prix en ordonnée",
+        "Un diagramme circulaire",
+        "Un diagramme en barres"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On représente une répartition par un diagramme circulaire (un disque partagé en secteurs) ou par un diagramme en barres.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:010",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : dans un lycée de 800 élèves, 200 sont internes. La part des internes est donc de 25 %.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "200 ÷ 800 × 100 = 25 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:011",
+      "type": "vrai_faux",
+      "enonce": "Si la part des ouvriers dans l'emploi d'une région baisse, le nombre d'ouvriers de cette région baisse forcément.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Une part dépend aussi de l'ensemble : si l'emploi total augmente plus vite, la part des ouvriers peut baisser alors que leur nombre augmente.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : une famille dépense 450 € en alimentation sur un budget mensuel de 1 800 €. L'alimentation représente un quart de son budget.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "450 ÷ 1 800 × 100 = 25 %, soit un quart du budget.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:013",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un ménage consacre 630 € de son revenu mensuel de 1 800 € à son loyer. Quelle part de son revenu le loyer représente-t-il ? (en %)",
+      "reponses_acceptees": [
+        "35",
+        "35 %",
+        "35%"
+      ],
+      "difficulte": 1,
+      "explication": "Proportion = 630 ÷ 1 800 × 100 = 35 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:014",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : 1 870 des 5 300 salariés d'une entreprise travaillent à temps partiel. Quelle est la part des salariés à temps partiel ? (en %, arrondi au dixième)",
+      "reponses_acceptees": [
+        "35,3",
+        "35.3",
+        "35,30",
+        "35,28",
+        "35,3 %",
+        "35,3%",
+        "35,30 %",
+        "35,30%",
+        "35,28 %",
+        "35,28%"
+      ],
+      "marge": 0.05,
+      "difficulte": 2,
+      "explication": "Proportion = 1 870 ÷ 5 300 × 100 ≈ 35,3 %.",
+      "notion": "Proportions et répartition"
+    },
+    {
+      "source": "ses:ch13:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le prix d'un casque audio passe de 80 € à 92 €. Quel est son taux de variation ?",
+      "propositions": [
+        "+12 %",
+        "+115 %",
+        "+13 %",
+        "+15 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Taux de variation = (92 − 80) ÷ 80 × 100 = 12 ÷ 80 × 100 = +15 %. On divise par la valeur de départ (80), pas par 92.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : la fréquentation d'un musée passe de 1 250 à 1 400 visiteurs par jour. Quel est son taux de variation ?",
+      "propositions": [
+        "+1,12 %",
+        "+10,7 %",
+        "+12 %",
+        "+150 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(1 400 − 1 250) ÷ 1 250 × 100 = 150 ÷ 1 250 × 100 = +12 %. 10,7 % résulterait d'une division par la valeur d'arrivée.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un vendeur augmente de 15 % le prix d'une lampe qui coûtait 60 €. Quel est le nouveau prix ?",
+      "propositions": [
+        "51 €",
+        "60,15 €",
+        "75 €",
+        "69 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Nouveau prix = 60 × CM = 60 × 1,15 = 69 €.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quel coefficient multiplicateur correspond à une hausse de 7 % ?",
+      "propositions": [
+        "7",
+        "1,07",
+        "1,7",
+        "0,07"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "CM = 1 + taux ÷ 100 = 1 + 7 ÷ 100 = 1,07.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quel coefficient multiplicateur correspond à une baisse de 12 % ?",
+      "propositions": [
+        "0,88",
+        "1,88",
+        "1,12",
+        "0,12"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une baisse de 12 % correspond à un CM de 1 − 0,12 = 0,88.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : entre deux années, le coefficient multiplicateur du nombre d'abonnés d'un journal vaut 0,95. Comment a évolué ce nombre ?",
+      "propositions": [
+        "Il a baissé de 5 %",
+        "Il a baissé de 95 %",
+        "Il a augmenté de 95 %",
+        "Il a baissé de 0,05 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Taux = (CM − 1) × 100 = (0,95 − 1) × 100 = −5 %. Un CM inférieur à 1 signale une baisse.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : en dix ans, les ventes d'une marque de vélos électriques ont été multipliées par 2,5. Quel est leur taux de variation ?",
+      "propositions": [
+        "+2,5 %",
+        "+250 %",
+        "+150 %",
+        "+25 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taux = (CM − 1) × 100 = (2,5 − 1) × 100 = +150 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : après une hausse de 25 %, le loyer mensuel d'un local commercial vaut 450 €. Quel était le loyer avant la hausse ?",
+      "propositions": [
+        "425 €",
+        "337,50 €",
+        "360 €",
+        "562,50 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Valeur de départ = valeur d'arrivée ÷ CM = 450 ÷ 1,25 = 360 €. Retirer 25 % de 450 € (337,50 €) est une erreur : la base est le loyer de départ.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le prix d'une console augmente de 60 %. De quel pourcentage doit-il ensuite baisser pour revenir à son niveau initial ?",
+      "propositions": [
+        "−60 %",
+        "−62,5 %",
+        "−37,5 %",
+        "−40 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Il faut un CM de 1 ÷ 1,6 = 0,625, soit une baisse de 37,5 %. La seconde variation porte sur une valeur de départ plus élevée.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le salaire d'Inès passe de 1 600 € à 1 720 €. Quel est le coefficient multiplicateur de cette évolution ?",
+      "propositions": [
+        "1,12",
+        "120",
+        "0,93",
+        "1,075"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "CM = valeur d'arrivée ÷ valeur de départ = 1 720 ÷ 1 600 = 1,075, soit une hausse de 7,5 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Que mesure un taux de variation ?",
+      "propositions": [
+        "Le poids d'une partie dans un ensemble, exprimé en pourcentage de cet ensemble",
+        "L'écart entre la valeur d'arrivée et la valeur de départ, exprimé dans l'unité de la grandeur",
+        "La valeur d'une grandeur à une date, rapportée à sa valeur à une date de référence fixée à 100",
+        "L'évolution d'une grandeur entre deux dates, en pourcentage de sa valeur de départ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le taux de variation mesure l'évolution d'une grandeur entre deux dates, en pourcentage de sa valeur de départ.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : le chiffre d'affaires d'une boutique passe de 400 000 € à 460 000 €. Quelles écritures décrivent correctement cette évolution ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un taux de variation de +60 %",
+        "Un taux de variation de +15 %",
+        "Un coefficient multiplicateur de 0,15",
+        "Un coefficient multiplicateur de 1,15"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Taux = 60 000 ÷ 400 000 × 100 = +15 % ; CM = 460 000 ÷ 400 000 = 1,15.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces coefficients multiplicateurs traduisent une baisse ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,5",
+        "2",
+        "1,05",
+        "0,92"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un CM inférieur à 1 signale une baisse (0,92 : −8 % ; 0,5 : −50 %) ; un CM supérieur à 1, une hausse.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : la population d'une commune passe de 20 000 à 17 000 habitants. Que peut-on dire de cette évolution ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son taux de variation est de −15 %",
+        "La commune a perdu 3 000 habitants",
+        "Son coefficient multiplicateur est de 0,85",
+        "Son coefficient multiplicateur est de 1,15"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(17 000 − 20 000) ÷ 20 000 × 100 = −15 % ; CM = 17 000 ÷ 20 000 = 0,85 ; la variation absolue est de −3 000 habitants.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:029",
+      "type": "vrai_faux",
+      "enonce": "Un coefficient multiplicateur de 2 signifie que la valeur a doublé.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un CM de 2 signifie que la valeur a doublé, soit une hausse de 100 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Quand une valeur triple, son taux de variation est de +300 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Tripler correspond à un CM de 3, soit un taux de (3 − 1) × 100 = +200 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : un prix passe de 50 € à 40 €, puis revient à 50 €. La baisse et la hausse ont le même taux, 20 %, en valeur absolue.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "La baisse est de (40 − 50) ÷ 50 = −20 %, mais la hausse est de (50 − 40) ÷ 40 = +25 % : la valeur de départ n'est plus la même.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:032",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : le nombre d'adhérents d'une association passe de 250 à 215. Quel est le taux de variation, en % (nombre négatif en cas de baisse) ?",
+      "reponses_acceptees": [
+        "-14",
+        "-14 %",
+        "-14%",
+        "−14",
+        "−14 %",
+        "−14%",
+        "- 14",
+        "- 14 %",
+        "- 14%"
+      ],
+      "difficulte": 1,
+      "explication": "(215 − 250) ÷ 250 × 100 = −35 ÷ 250 × 100 = −14 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:033",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : soldé à −20 %, un pull coûte 64 €. Quel était son prix avant les soldes ? (en euros)",
+      "reponses_acceptees": [
+        "80",
+        "80 €",
+        "80€"
+      ],
+      "difficulte": 1,
+      "explication": "Prix de départ = 64 ÷ 0,8 = 80 €. On divise par le CM d'une baisse de 20 % (0,8).",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:034",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : la production d'un atelier passe de 320 à 260 pièces par jour. Quel est son taux de variation ? (en %, arrondi au dixième, nombre négatif en cas de baisse)",
+      "reponses_acceptees": [
+        "-18,8",
+        "-18.8",
+        "-18,75",
+        "-18,80",
+        "-18,8 %",
+        "-18,8%",
+        "−18,8",
+        "−18,8 %",
+        "−18,8%",
+        "- 18,8",
+        "- 18,8 %",
+        "- 18,8%",
+        "-18,75 %",
+        "-18,75%",
+        "−18,75",
+        "−18,75 %",
+        "−18,75%",
+        "- 18,75",
+        "- 18,75 %",
+        "- 18,75%"
+      ],
+      "marge": 0.05,
+      "difficulte": 3,
+      "explication": "(260 − 320) ÷ 320 × 100 = −60 ÷ 320 × 100 = −18,75 ≈ −18,8 %.",
+      "notion": "Taux de variation et CM"
+    },
+    {
+      "source": "ses:ch13:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le prix d'un ticket de bus augmente de 10 % une année, puis de nouveau de 10 % l'année suivante. Quelle est la hausse totale ?",
+      "propositions": [
+        "+21 %",
+        "+1,21 %",
+        "+20 %",
+        "+12,1 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "CM global = 1,1 × 1,1 = 1,21, soit +21 %. On ne peut pas additionner les taux (+20 %).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un produit voit son prix augmenter de 20 %, puis baisser de 20 %. Quel est le taux de variation global ?",
+      "propositions": [
+        "0 %",
+        "−4 %",
+        "+4 %",
+        "−20 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 1,2 × 0,8 = 0,96, soit −4 % : on ne revient pas au point de départ, car la baisse porte sur un prix plus élevé.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un loyer augmente de 25 % en cinq ans, puis baisse de 10 % sur les trois années suivantes. Quelle est son évolution globale ?",
+      "propositions": [
+        "+12,5 %",
+        "+12 %",
+        "+35 %",
+        "+15 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 1,25 × 0,9 = 1,125, soit +12,5 % (et non 25 − 10 = 15 %).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : les ventes d'une entreprise progressent de 8 % une année, puis reculent de 5 % l'année suivante. Quel est leur taux de variation sur les deux ans ?",
+      "propositions": [
+        "+3 %",
+        "+13 %",
+        "+2,6 %",
+        "+2,4 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 1,08 × 0,95 = 1,026, soit +2,6 %.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un manteau coûte 500 €. Son prix augmente de 10 %, puis le nouveau prix baisse de 10 %. Combien coûte-t-il finalement ?",
+      "propositions": [
+        "495 €",
+        "505 €",
+        "490 €",
+        "500 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "500 × 1,1 × 0,9 = 500 × 0,99 = 495 € : la baisse de 10 % porte sur 550 €, une base plus élevée.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le cours d'une matière première augmente de 10 % deux années de suite, puis baisse de 20 % la troisième année. Quel est le taux de variation sur trois ans ?",
+      "propositions": [
+        "−2 %",
+        "−3,2 %",
+        "0 %",
+        "+3,2 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "CM global = 1,1 × 1,1 × 0,8 = 0,968, soit −3,2 %. Additionner les taux (10 + 10 − 20 = 0 %) est une erreur.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Comment calcule-t-on le taux de variation cumulé de deux variations successives ?",
+      "propositions": [
+        "On calcule la moyenne des deux taux de variation, puis on la multiplie par deux",
+        "On multiplie les deux taux de variation entre eux, puis on divise le résultat par 100",
+        "On additionne les deux taux de variation, car ils portent sur la même valeur de départ",
+        "On multiplie les coefficients multiplicateurs, puis on retranche 1 et on multiplie par 100"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les variations successives se cumulent en multipliant les CM ; taux cumulé = (CM global − 1) × 100.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:042",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un loyer augmente de 15 % une année, puis baisse de 10 % l'année suivante. Quelles écritures sont justes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "CM global = 1,15 × 0,9 = 1,035",
+        "Le loyer a augmenté de 5 % sur les deux ans",
+        "CM global = 1,15 + 0,9 = 2,05",
+        "Le loyer a augmenté de 3,5 % sur les deux ans"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 1,15 × 0,9 = 1,035, soit +3,5 %, et non 15 − 10 = 5 %.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:043",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces enchaînements de variations, lesquels aboutissent à une baisse globale ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une hausse de 10 % puis une baisse de 5 %",
+        "Une hausse de 20 % puis une baisse de 20 %",
+        "Une hausse de 50 % puis une baisse de 50 %",
+        "Une baisse de 20 % puis une hausse de 25 %"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "1,5 × 0,5 = 0,75 (−25 %) ; 1,2 × 0,8 = 0,96 (−4 %) ; 1,1 × 0,95 = 1,045 (+4,5 %) ; 0,8 × 1,25 = 1 (retour au départ).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Pourquoi ne peut-on pas additionner deux taux de variation successifs ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Parce que les variations successives se cumulent en multipliant les CM",
+        "Parce que le second taux s'applique à une valeur de départ différente",
+        "Parce qu'un taux de variation négatif ne peut pas s'additionner",
+        "Parce qu'un taux de variation ne peut jamais dépasser 100 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La seconde variation porte sur la valeur obtenue après la première : on multiplie les CM au lieu d'additionner les taux.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un prix de 200 € augmente de 20 %, puis de 5 %. Que peut-on écrire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il atteint 250 €",
+        "Sa hausse totale est de 25 %",
+        "Sa hausse totale est de 26 %",
+        "Il atteint 252 €"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "200 × 1,2 × 1,05 = 252 € ; CM global = 1,26, soit +26 % (et non +25 %).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:046",
+      "type": "vrai_faux",
+      "enonce": "Une baisse de 50 % suivie d'une hausse de 100 % ramène une valeur à son niveau de départ.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "CM global = 0,5 × 2 = 1 : la valeur retrouve son niveau de départ.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Deux hausses successives de 20 % représentent une hausse totale de 40 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "CM global = 1,2 × 1,2 = 1,44, soit +44 % : on ne peut pas additionner les taux.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Une hausse de 30 % suivie d'une baisse de 30 % ramène une valeur à son niveau initial.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "CM global = 1,3 × 0,7 = 0,91, soit −9 % : on ne revient pas au point de départ.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : un prix augmente de 10 % puis encore de 5 %. Son coefficient multiplicateur global est de 1,155.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "CM global = 1,1 × 1,05 = 1,155, soit +15,5 %.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : le nombre de clients d'une agence baisse de 10 % une année, puis encore de 10 % l'année suivante. Quel est le taux de variation sur les deux ans ? (en %, nombre négatif en cas de baisse)",
+      "reponses_acceptees": [
+        "-19",
+        "-19 %",
+        "-19%",
+        "−19",
+        "−19 %",
+        "−19%",
+        "- 19",
+        "- 19 %",
+        "- 19%"
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 0,9 × 0,9 = 0,81, soit −19 % (et non −20 %).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:051",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un salaire augmente de 5 % une année, puis de 4 % l'année suivante. Quelle est la hausse totale ? (en %, arrondi au dixième)",
+      "reponses_acceptees": [
+        "9,2",
+        "9.2",
+        "9,20",
+        "9,2 %",
+        "9,2%",
+        "9,20 %",
+        "9,20%"
+      ],
+      "marge": 0.05,
+      "difficulte": 2,
+      "explication": "CM global = 1,05 × 1,04 = 1,092, soit +9,2 %.",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:052",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un loyer augmente de 2 % par an pendant trois ans. Quelle est la hausse totale sur les trois ans ? (en %, arrondi au dixième)",
+      "reponses_acceptees": [
+        "6,1",
+        "6.1",
+        "6,10",
+        "6,12",
+        "6,1 %",
+        "6,1%",
+        "6,10 %",
+        "6,10%",
+        "6,12 %",
+        "6,12%"
+      ],
+      "marge": 0.05,
+      "difficulte": 3,
+      "explication": "CM global = 1,02 × 1,02 × 1,02 ≈ 1,0612, soit environ +6,1 % (et non 6 %).",
+      "notion": "Taux de variation cumulé"
+    },
+    {
+      "source": "ses:ch13:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le prix d'un abonnement passe de 60 € en 2020 à 75 € en 2026. Quel est son indice en 2026, base 100 en 2020 ?",
+      "propositions": [
+        "80",
+        "125",
+        "115",
+        "135"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Indice = valeur de 2026 ÷ valeur de 2020 × 100 = 75 ÷ 60 × 100 = 125.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : l'indice du prix d'un bien vaut 112 en 2026 (base 100 en 2018). Comment le lire ?",
+      "propositions": [
+        "Entre 2018 et 2026, le prix du bien a augmenté de 112 %",
+        "En 2026, le prix est supérieur de 12 % à celui de 2018",
+        "Le prix du bien a augmenté de 12 % chaque année depuis 2018",
+        "En 2026, le bien coûte exactement 112 euros"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Indice − 100 = taux de variation depuis la base : 112 − 100 = +12 % entre 2018 et 2026.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : l'indice des ventes d'une enseigne (base 100 en 2015) passe de 120 en 2022 à 135 en 2026. Comment décrire l'évolution entre 2022 et 2026 ?",
+      "propositions": [
+        "Une hausse de 15 points d'indice, soit +15 %",
+        "Une hausse de 35 points d'indice, soit +35 %",
+        "Une hausse de 15 points d'indice, soit +11,1 %",
+        "Une hausse de 15 points d'indice, soit +12,5 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'indice gagne 135 − 120 = 15 points, mais le taux de variation est (135 − 120) ÷ 120 × 100 = +12,5 % : la date de départ n'est pas la base.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : une région comptait 3 000 exploitations agricoles en 2010 (base 100) et 2 400 en 2026. Quel est l'indice en 2026 ?",
+      "propositions": [
+        "80",
+        "120",
+        "125",
+        "−20"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Indice = 2 400 ÷ 3 000 × 100 = 80, soit une baisse de 20 % depuis 2010.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : l'indice de la production d'une usine passe de 80 à 100 (base 100 en 2015). Quel est le taux de variation de la production sur cette période ?",
+      "propositions": [
+        "+25 %",
+        "0 %",
+        "+20 %",
+        "+80 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "(100 − 80) ÷ 80 × 100 = +25 %. L'écart de 20 points n'est un pourcentage que s'il est calculé par rapport à la base.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : base 100 en 2015, l'indice du prix du pain vaut 130 en 2026 et celui des loyers 118. Que peut-on en conclure ?",
+      "propositions": [
+        "En 2026, le pain coûte 130 € et le loyer moyen coûte 118 €",
+        "En 2026, une baguette de pain coûte plus cher qu'un loyer mensuel",
+        "Depuis 2015, les loyers ont baissé alors que le prix du pain a augmenté",
+        "Depuis 2015, le prix du pain a davantage augmenté que les loyers"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Les indices comparent des évolutions depuis la base (+30 % contre +18 %), pas des niveaux de prix.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : l'IPC vaut 118 en 2026 (base 100 en 2015). Que signifie ce nombre ?",
+      "propositions": [
+        "Les prix à la consommation ont augmenté de 18 % chaque année",
+        "Les prix à la consommation ont augmenté de 18 % entre 2015 et 2026",
+        "Le prix moyen d'un produit acheté par les ménages est de 118 euros",
+        "Les prix à la consommation ont augmenté de 118 % depuis 2015"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Indice − 100 = taux de variation depuis la base : 118 − 100 = +18 % de 2015 à 2026.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : une grandeur vaut 50 en 2020, 60 en 2023 et 72 en 2026. Quel est son indice en 2026, base 100 en 2020 ?",
+      "propositions": [
+        "172",
+        "144",
+        "122",
+        "140"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Indice = 72 ÷ 50 × 100 = 144. Additionner deux hausses de 20 % (140) est une erreur : 1,2 × 1,2 = 1,44.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Dans l'indice des prix à la consommation de l'Insee, pourquoi le loyer pèse-t-il plus que les timbres ?",
+      "propositions": [
+        "Parce qu'il représente une part plus grande des dépenses des ménages",
+        "Parce que tous les ménages paient un loyer chaque jour de l'année",
+        "Parce que l'Insee ne relève pas le prix des timbres dans ses enquêtes",
+        "Parce que son prix augmente toujours plus vite que celui des timbres"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Dans l'IPC, chaque produit pèse selon sa part dans les dépenses des ménages : le loyer pèse plus que les timbres.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Quelles grandeurs l'indice de développement humain (IDH) combine-t-il ?",
+      "propositions": [
+        "La population, la superficie et la production agricole du pays",
+        "Le PIB, le taux de chômage et le taux d'inflation du pays",
+        "L'espérance de vie, l'éducation et le revenu par habitant",
+        "Le prix du logement, de l'alimentation et des transports"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'IDH des Nations unies est un indice synthétique qui combine l'espérance de vie, l'éducation et le revenu par habitant.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : le chiffre d'affaires d'une entreprise vaut 250 000 € en 2020 (base 100) et 300 000 € en 2026. Que peut-on écrire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'indice du chiffre d'affaires vaut 120 en 2026",
+        "L'indice du chiffre d'affaires vaut 83,3 en 2026",
+        "Le chiffre d'affaires a augmenté de 120 % depuis 2020",
+        "Le chiffre d'affaires a augmenté de 20 % depuis 2020"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Indice = 300 000 ÷ 250 000 × 100 = 120 ; 120 − 100 = +20 % depuis la base.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces indicateurs sont des indices synthétiques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'indice de développement humain (IDH)",
+        "L'indice des prix à la consommation (IPC)",
+        "L'indice du prix du pain seul, base 100 en 2015",
+        "L'indice du chiffre d'affaires d'une seule entreprise"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un indice synthétique résume plusieurs grandeurs pondérées : l'IPC (prix de milliers de produits) et l'IDH (espérance de vie, éducation, revenu).",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : base 100 en 2015, le prix de l'électricité a pour indice 140 en 2022 et 154 en 2026. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "De 2022 à 2026, le prix a augmenté de 10 %",
+        "De 2022 à 2026, l'indice a gagné 14 points",
+        "De 2015 à 2026, le prix a augmenté de 54 %",
+        "De 2022 à 2026, le prix a augmenté de 14 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "154 − 100 = +54 % depuis la base ; de 2022 à 2026, 154 − 140 = 14 points, mais (154 − 140) ÷ 140 × 100 = +10 %.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Un indice de 200 signifie que la valeur a doublé depuis l'année de base.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Indice 200 : la valeur vaut 2 fois celle de la base, soit +100 %.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:067",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : quand un indice passe de 110 à 121, la grandeur qu'il mesure augmente de 11 %.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "121 − 110 = 11 points, mais le taux est (121 − 110) ÷ 110 × 100 = +10 %.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:068",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : un indice de 94 (base 100 en 2020) indique une baisse de 6 % depuis 2020.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Indice − 100 = 94 − 100 = −6 % depuis la base.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:069",
+      "type": "vrai_faux",
+      "enonce": "L'indice des prix à la consommation suit l'évolution du prix d'un seul produit de référence.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "L'IPC est un indice synthétique : il combine l'évolution des prix de milliers de produits, chacun pondéré selon sa part dans les dépenses des ménages.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:070",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : l'indice d'une grandeur passe de 150 à 165 (base 100 en 2010). Quel est son taux de variation entre ces deux dates ? (en %)",
+      "reponses_acceptees": [
+        "10",
+        "10 %",
+        "10%"
+      ],
+      "difficulte": 3,
+      "explication": "(165 − 150) ÷ 150 × 100 = +10 %. L'écart de 15 points n'est pas un pourcentage.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:071",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : une entreprise réalisait un chiffre d'affaires de 40 000 € en 2018 (base 100). Son indice vaut 135 en 2026. Quel est son chiffre d'affaires en 2026 ? (en euros, écris le nombre sans espace)",
+      "reponses_acceptees": [
+        "54000",
+        "54000 €",
+        "54000€",
+        "54 000",
+        "54 000 €",
+        "54 000€"
+      ],
+      "difficulte": 2,
+      "explication": "Valeur 2026 = valeur de base × indice ÷ 100 = 40 000 × 135 ÷ 100 = 54 000 €.",
+      "notion": "Indices simples et synthétiques"
+    },
+    {
+      "source": "ses:ch13:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un élève obtient 9, 14, 11, 16 et 10 à cinq devoirs de même coefficient. Quelle est sa moyenne ?",
+      "propositions": [
+        "60",
+        "12",
+        "12,5",
+        "11"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Moyenne = somme des valeurs ÷ nombre de valeurs = 60 ÷ 5 = 12.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : dans une PME, 30 salariés gagnent 1 800 € et 20 gagnent 2 400 €. Quel est le salaire moyen, calculé comme une moyenne pondérée par les effectifs ?",
+      "propositions": [
+        "2 160 €",
+        "2 100 €",
+        "2 040 €",
+        "4 200 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(30 × 1 800 + 20 × 2 400) ÷ 50 = 102 000 ÷ 50 = 2 040 €, et non (1 800 + 2 400) ÷ 2 = 2 100 €.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un primeur vend 200 kg de pommes à 3 € le kg et 100 kg de cerises à 6 € le kg. Quel est le prix moyen d'un kg vendu (moyenne pondérée par les quantités) ?",
+      "propositions": [
+        "4,50 €",
+        "9 €",
+        "5 €",
+        "4 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(200 × 3 + 100 × 6) ÷ 300 = 1 200 ÷ 300 = 4 €. La moyenne simple des deux prix (4,50 €) ignore les quantités.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : Lina a obtenu 10, 12 et 14 à trois devoirs de même coefficient. Quelle note doit-elle avoir au quatrième pour que sa moyenne simple atteigne 13 ?",
+      "propositions": [
+        "15",
+        "13",
+        "17",
+        "16"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Il faut une somme de 13 × 4 = 52 ; elle a déjà 36, donc 52 − 36 = 16.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : 60 % des salariés d'une entreprise gagnent 2 000 € et 40 % gagnent 3 000 €. Quel est le salaire moyen (moyenne pondérée par ces parts) ?",
+      "propositions": [
+        "2 600 €",
+        "2 500 €",
+        "5 000 €",
+        "2 400 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(60 × 2 000 + 40 × 3 000) ÷ 100 = 240 000 ÷ 100 = 2 400 €.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : une classe de 28 élèves a 11 de moyenne, une autre de 32 élèves a 14 de moyenne. Quelle est la moyenne des 60 élèves (moyenne pondérée par les effectifs) ?",
+      "propositions": [
+        "12,6",
+        "25",
+        "12,5",
+        "12,4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "(28 × 11 + 32 × 14) ÷ 60 = (308 + 448) ÷ 60 = 756 ÷ 60 = 12,6. La classe la plus nombreuse pèse davantage.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Quand faut-il calculer une moyenne pondérée plutôt qu'une moyenne simple ?",
+      "propositions": [
+        "Quand on veut écarter l'effet des valeurs extrêmes de la série",
+        "Quand toutes les valeurs de la série sont égales entre elles",
+        "Quand les valeurs n'ont pas toutes le même poids",
+        "Quand la série contient un nombre pair de valeurs"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Quand les valeurs n'ont pas toutes le même poids, on multiplie chaque valeur par son coefficient : c'est une moyenne pondérée.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : Hugo a 13 coefficient 4 et 9 coefficient 2. Quelle est sa moyenne pondérée, arrondie au dixième ?",
+      "propositions": [
+        "10,3",
+        "22",
+        "11,7",
+        "11"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(13 × 4 + 9 × 2) ÷ (4 + 2) = (52 + 18) ÷ 6 = 70 ÷ 6 ≈ 11,7. La moyenne simple (11) ignore les coefficients.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : Zoé a 8 coefficient 1, 14 coefficient 2 et 11 coefficient 3. Que peut-on écrire à propos de sa moyenne pondérée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa moyenne pondérée vaut 11,5",
+        "La somme des coefficients vaut 6",
+        "Sa moyenne pondérée vaut 11",
+        "La somme des produits valeur × coefficient vaut 33"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(8 × 1 + 14 × 2 + 11 × 3) ÷ (1 + 2 + 3) = (8 + 28 + 33) ÷ 6 = 69 ÷ 6 = 11,5. 11 est la moyenne simple.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Quelles étapes sont nécessaires pour calculer une moyenne pondérée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Diviser la somme des produits par la somme des coefficients",
+        "Multiplier chaque valeur par son coefficient",
+        "Retenir la valeur située au milieu de la série",
+        "Classer les valeurs par ordre croissant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Moyenne pondérée = somme des (valeur × coefficient) ÷ somme des coefficients. Classer les valeurs et garder celle du milieu sert à trouver la médiane.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : une entreprise emploie 45 ouvriers payés 1 900 € et 5 cadres payés 5 900 €. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le salaire moyen (moyenne pondérée par les effectifs) est de 2 300 €",
+        "La moitié des salariés de l'entreprise gagne plus de 2 300 €",
+        "Le salaire moyen (moyenne pondérée par les effectifs) est de 3 900 €",
+        "La moyenne simple des deux salaires (3 900 €) surestime le salaire moyen"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "(45 × 1 900 + 5 × 5 900) ÷ 50 = 115 000 ÷ 50 = 2 300 €. 45 salariés sur 50 gagnent 1 900 € : la moitié ne gagne donc pas plus de 2 300 €.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:083",
+      "type": "vrai_faux",
+      "enonce": "La moyenne simple de 6, 10 et 14 vaut 10.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "(6 + 10 + 14) ÷ 3 = 30 ÷ 3 = 10.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:084",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : 9 salariés gagnent 1 500 € et 1 salarié gagne 4 500 €. Leur salaire moyen, moyenne pondérée par les effectifs, vaut 3 000 €.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "(9 × 1 500 + 1 × 4 500) ÷ 10 = 18 000 ÷ 10 = 1 800 €. 3 000 € est la moyenne non pondérée des deux salaires.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:085",
+      "type": "vrai_faux",
+      "enonce": "Dans une moyenne pondérée, on divise la somme des produits valeur × coefficient par le nombre de valeurs.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On divise par la somme des coefficients, et non par le nombre de valeurs.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:086",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : quatre salariés gagnent 1 200 €, 1 500 €, 1 800 € et 2 100 €. Quelle est leur moyenne simple ? (en euros, écris le nombre sans espace)",
+      "reponses_acceptees": [
+        "1650",
+        "1650 €",
+        "1650€",
+        "1 650",
+        "1 650 €",
+        "1 650€"
+      ],
+      "difficulte": 1,
+      "explication": "(1 200 + 1 500 + 1 800 + 2 100) ÷ 4 = 6 600 ÷ 4 = 1 650 €.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:087",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un élève a 14 coefficient 2, 10 coefficient 3 et 16 coefficient 1. Quelle est sa moyenne pondérée ? (arrondie au dixième)",
+      "reponses_acceptees": [
+        "12,3",
+        "12.3",
+        "12,30",
+        "12,33"
+      ],
+      "marge": 0.05,
+      "difficulte": 2,
+      "explication": "(14 × 2 + 10 × 3 + 16 × 1) ÷ 6 = (28 + 30 + 16) ÷ 6 = 74 ÷ 6 ≈ 12,3.",
+      "notion": "Moyennes simple et pondérée"
+    },
+    {
+      "source": "ses:ch13:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : sept commerces emploient 3, 8, 5, 12, 9, 6 et 20 salariés. Quel est le nombre médian de salariés ?",
+      "propositions": [
+        "9",
+        "8",
+        "12",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Classées : 3, 5, 6, 8, 9, 12, 20 ; la valeur du milieu (la 4e) est 8. 9 est la moyenne (63 ÷ 7) ; 12 est la valeur du milieu de la liste non classée.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : cinq salaires mensuels valent 1 500, 1 700, 1 900, 2 000 et 7 900 €. Quelles sont leur médiane et leur moyenne ?",
+      "propositions": [
+        "Médiane 2 000 € et moyenne 3 000 €",
+        "Médiane 1 900 € et moyenne 1 900 €",
+        "Médiane 3 000 € et moyenne 1 900 €",
+        "Médiane 1 900 € et moyenne 3 000 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Médiane : la valeur du milieu, 1 900 € ; moyenne : 15 000 ÷ 5 = 3 000 €, tirée vers le haut par le salaire de 7 900 €.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:090",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : quatre élèves ont obtenu 10, 12, 15 et 19. Quelle est la note médiane ?",
+      "propositions": [
+        "14",
+        "13,5",
+        "27",
+        "12"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Avec un nombre pair de valeurs, la médiane est la moyenne des deux valeurs du milieu : (12 + 15) ÷ 2 = 13,5. 14 est la moyenne.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : dans la série 1 500, 1 700, 1 900, 2 000 et 7 900 €, le plus haut salaire passe de 7 900 € à 12 000 €. Que deviennent la médiane et la moyenne ?",
+      "propositions": [
+        "La médiane augmente, la moyenne ne change pas",
+        "La médiane ne change pas, la moyenne augmente",
+        "La médiane et la moyenne restent toutes deux identiques",
+        "La médiane et la moyenne augmentent du même montant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La valeur du milieu reste 1 900 € ; la moyenne, sensible aux valeurs extrêmes, passe de 3 000 € à 3 820 €.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le revenu médian des habitants d'une ville est de 1 900 € par mois. Comment le lire ?",
+      "propositions": [
+        "En moyenne, chaque habitant de la ville gagne 1 900 € par mois",
+        "La moitié des habitants gagne moins de 1 900 €, l'autre moitié plus",
+        "Tous les habitants de cette ville gagnent environ 1 900 € par mois",
+        "1 900 € est le revenu le plus fréquent parmi les habitants de la ville"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La médiane partage la population en deux groupes de même effectif : la moitié gagne moins, l'autre moitié plus.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi utilise-t-on souvent la médiane plutôt que la moyenne pour décrire les revenus ?",
+      "propositions": [
+        "Parce qu'elle se calcule plus facilement, sans avoir besoin de classer les revenus",
+        "Parce qu'elle tient compte de chaque revenu pondéré par le nombre de personnes concernées",
+        "Parce qu'elle est toujours supérieure à la moyenne et valorise donc mieux les revenus",
+        "Parce qu'elle est peu sensible aux valeurs extrêmes, et que les revenus sont très inégalement répartis"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La moyenne est sensible aux valeurs extrêmes, la médiane beaucoup moins : on la préfère pour des revenus très inégalement répartis.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : les temps de trajet de six salariés sont de 35, 12, 50, 20, 28 et 90 minutes. Quel est le temps de trajet médian ?",
+      "propositions": [
+        "28 minutes",
+        "39,2 minutes",
+        "31,5 minutes",
+        "35 minutes"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Classées : 12, 20, 28, 35, 50, 90 ; médiane = (28 + 35) ÷ 2 = 31,5 min. 39,2 est la moyenne (235 ÷ 6) ; 35 vient de la liste non classée.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : cinq loyers mensuels valent 450, 520, 600, 640 et 2 290 €. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La moyenne de ces loyers vaut 900 €",
+        "La moyenne est ici inférieure à la médiane",
+        "La médiane de ces loyers vaut 900 €",
+        "La médiane de ces loyers vaut 600 €"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Médiane : valeur du milieu, 600 € ; moyenne : 4 500 ÷ 5 = 900 €, tirée vers le haut par le loyer de 2 290 €.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Qu'est-ce qui caractérise la médiane ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est toujours égale à la moyenne de la série",
+        "Elle résiste mieux aux valeurs extrêmes que la moyenne",
+        "Elle se détermine sans classer les valeurs",
+        "Elle partage une population classée en deux groupes de même effectif"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La médiane partage la population classée par ordre croissant en deux moitiés et résiste aux valeurs extrêmes.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : six salaires valent 1 400, 1 600, 1 800, 2 000, 2 200 et 9 000 €. Que peut-on dire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La moyenne vaut 3 000 €",
+        "La médiane vaut 1 900 €",
+        "Cinq salariés sur six gagnent moins que la moyenne",
+        "La médiane vaut 1 800 €"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Nombre pair : médiane = (1 800 + 2 000) ÷ 2 = 1 900 € ; moyenne = 18 000 ÷ 6 = 3 000 €, que seul le salaire de 9 000 € dépasse.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Avec un nombre impair de valeurs classées par ordre croissant, la médiane est la valeur située au milieu.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Avec cinq salaires classés, par exemple, la médiane est la troisième valeur, celle du milieu.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:099",
+      "type": "vrai_faux",
+      "enonce": "La médiane est plus sensible aux valeurs extrêmes que la moyenne.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "C'est l'inverse : la moyenne est sensible aux valeurs extrêmes, la médiane beaucoup moins.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:100",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : la médiane de la série 4, 7, 9 et 30 vaut 8.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Nombre pair de valeurs : médiane = (7 + 9) ÷ 2 = 8.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:101",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : six salariés gagnent 1 300, 1 500, 1 900, 2 200, 2 600 et 3 000 €. Quel est le salaire médian ? (en euros, écris le nombre sans espace)",
+      "reponses_acceptees": [
+        "2050",
+        "2050 €",
+        "2050€",
+        "2 050",
+        "2 050 €",
+        "2 050€"
+      ],
+      "difficulte": 2,
+      "explication": "Nombre pair de valeurs : médiane = (1 900 + 2 200) ÷ 2 = 2 050 €.",
+      "notion": "La médiane"
+    },
+    {
+      "source": "ses:ch13:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un salaire vaut 2 400 € en 2026, et l'indice des prix vaut 120 (base 100 en 2015). Combien vaut-il en euros de 2015 ?",
+      "propositions": [
+        "1 920 €",
+        "2 880 €",
+        "2 280 €",
+        "2 000 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Valeur réelle = valeur nominale ÷ indice des prix × 100 = 2 400 ÷ 120 × 100 = 2 000 €.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une valeur nominale ?",
+      "propositions": [
+        "Une valeur exprimée en euros courants, ceux de l'époque",
+        "Une valeur corrigée de l'évolution des prix depuis la base",
+        "Une valeur qui mesure ce qu'une somme permet réellement d'acheter",
+        "Une valeur exprimée en euros constants d'une année de base"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une valeur nominale est exprimée en euros courants ; la valeur réelle (en euros constants) tient compte de l'évolution des prix.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un salaire augmente de 5 % alors que les prix augmentent de 2 %. Comment évolue environ le pouvoir d'achat de ce salaire ?",
+      "propositions": [
+        "Il augmente d'environ 3 %",
+        "Il baisse d'environ 3 %",
+        "Il augmente d'environ 7 %",
+        "Il augmente d'environ 2,5 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Taux de variation réel ≈ taux nominal − taux d'inflation = 5 − 2 = +3 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un prêt est accordé au taux d'intérêt nominal de 2 % alors que l'inflation est de 5 %. Quel est environ le taux d'intérêt réel ?",
+      "propositions": [
+        "+7 %",
+        "+3 %",
+        "+0,4 %",
+        "−3 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Taux d'intérêt réel ≈ taux nominal − taux d'inflation = 2 − 5 = −3 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un salaire nominal augmente de 6 % et les prix de 2 %. Quel est le taux de variation exact du pouvoir d'achat, arrondi au dixième ?",
+      "propositions": [
+        "+8,1 %",
+        "+3,0 %",
+        "+4,0 %",
+        "+3,9 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Calcul exact : 1,06 ÷ 1,02 ≈ 1,0392, soit +3,9 %. L'approximation 6 − 2 = 4 % surestime légèrement le résultat.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un salarié gagnait 2 000 € en 2015 (indice des prix 100) et gagne 2 300 € en 2026 (indice des prix 115). Comment a évolué le pouvoir d'achat de son salaire ?",
+      "propositions": [
+        "Il a augmenté de 15 %",
+        "Il n'a pas changé",
+        "Il a baissé de 15 %",
+        "Il a augmenté de 300 €"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "En euros de 2015, le salaire de 2026 vaut 2 300 ÷ 115 × 100 = 2 000 € : il permet d'acheter autant qu'en 2015.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : l'indice des prix vaut 125 en 2026 (base 100 en 2015). Quelle somme faut-il en 2026 pour acheter autant que 1 600 € en 2015 ?",
+      "propositions": [
+        "1 725 €",
+        "1 600 €",
+        "2 000 €",
+        "1 280 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Valeur nominale = valeur réelle × indice ÷ 100 = 1 600 × 125 ÷ 100 = 2 000 € ; on retrouve 2 000 ÷ 125 × 100 = 1 600 €.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un épargnant place son argent sur un livret à 1 % par an, alors que l'inflation est de 3 %. Que se passe-t-il pour lui ?",
+      "propositions": [
+        "Il ne perd rien, puisque son capital augmente chaque année",
+        "Il gagne environ 1 % de pouvoir d'achat par an",
+        "Il perd environ 2 % de pouvoir d'achat par an",
+        "Il gagne environ 4 % de pouvoir d'achat par an"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taux d'intérêt réel ≈ 1 − 3 = −2 % : l'épargnant perd du pouvoir d'achat, même si son épargne augmente en euros courants.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Pour comparer un salaire de 2005 et un salaire de 2026, pourquoi faut-il raisonner en valeur réelle ?",
+      "propositions": [
+        "Parce que les salaires en euros courants ne sont publiés qu'une année sur deux",
+        "Parce que les prix ont changé : un même euro n'achète pas les mêmes quantités",
+        "Parce que les salaires nominaux ne tiennent pas compte des cotisations sociales",
+        "Parce que la valeur réelle d'un salaire est toujours supérieure à sa valeur nominale"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La valeur réelle tient compte de l'évolution des prix : elle mesure ce que la somme permet réellement d'acheter.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : l'inflation est de 4 %. Dans quels cas le pouvoir d'achat d'un salarié progresse-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son salaire augmente de 6 %",
+        "Son salaire augmente de 4 %",
+        "Son salaire augmente de 5 %",
+        "Son salaire augmente de 2 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Taux réel ≈ nominal − inflation : +2 % et +1 % ; 0 % pour une hausse de 4 % ; −2 % pour une hausse de 2 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions désignent une valeur qui tient compte de l'évolution des prix ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une valeur en euros courants",
+        "Une valeur nominale",
+        "Une valeur en euros constants",
+        "Une valeur réelle"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une valeur réelle, ou en euros constants, tient compte de l'évolution des prix ; la valeur nominale est en euros courants.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:113",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un épargnant place son argent à 3 % par an. Pour quels taux d'inflation son taux d'intérêt réel est-il négatif ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une inflation de 4 %",
+        "Une inflation de 2 %",
+        "Une inflation de 1 %",
+        "Une inflation de 5 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Taux réel ≈ 3 − inflation : −1 % et −2 % pour 4 % et 5 % d'inflation ; +1 % et +2 % pour 2 % et 1 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un salaire passe de 1 800 € en 2015 à 2 160 € en 2026, et l'indice des prix de 100 à 125. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "En euros de 2015, le salaire de 2026 vaut 1 728 €",
+        "Le pouvoir d'achat de ce salaire a augmenté de 20 %",
+        "Le salaire nominal a augmenté de 20 %",
+        "Le pouvoir d'achat de ce salaire a baissé"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "(2 160 − 1 800) ÷ 1 800 = +20 % ; 2 160 ÷ 125 × 100 = 1 728 €, moins que 1 800 € : le pouvoir d'achat a baissé de 4 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : un placement à 4 % quand l'inflation est de 1,5 % rapporte un taux d'intérêt réel d'environ 2,5 %.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Taux d'intérêt réel ≈ 4 − 1,5 = 2,5 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Quand le salaire nominal augmente, le pouvoir d'achat augmente forcément.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Si les prix augmentent plus vite que le salaire nominal, le pouvoir d'achat baisse (salaire +2 %, prix +5 % : environ −3 %).",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : 1 500 € en 2026, avec un indice des prix de 150 (base 100 en 2010), valent 2 250 € de 2010.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Valeur réelle = 1 500 ÷ 150 × 100 = 1 000 € de 2010. Multiplier par l'indice (2 250 €) est une erreur.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Un taux d'intérêt réel négatif signifie que l'épargnant perd du pouvoir d'achat.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Quand l'inflation dépasse le taux nominal, le taux réel est négatif : l'épargne permet d'acheter moins.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:119",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un salaire de 3 000 € en 2026, alors que l'indice des prix vaut 125 (base 100 en 2015). Combien vaut-il en euros de 2015 ? (en euros, écris le nombre sans espace)",
+      "reponses_acceptees": [
+        "2400",
+        "2400 €",
+        "2400€",
+        "2 400",
+        "2 400 €",
+        "2 400€"
+      ],
+      "difficulte": 1,
+      "explication": "Valeur réelle = 3 000 ÷ 125 × 100 = 2 400 € de 2015.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Données fictives : un salaire augmente de 1 % alors que les prix augmentent de 4 %. De combien varie environ le pouvoir d'achat ? (en %, nombre négatif en cas de baisse)",
+      "reponses_acceptees": [
+        "-3",
+        "-3 %",
+        "-3%",
+        "−3",
+        "−3 %",
+        "−3%",
+        "- 3",
+        "- 3 %",
+        "- 3%"
+      ],
+      "difficulte": 1,
+      "explication": "Taux réel ≈ taux nominal − inflation = 1 − 4 = −3 %.",
+      "notion": "Valeur nominale et valeur réelle"
+    },
+    {
+      "source": "ses:ch13:banque:121",
+      "type": "qcm_unique",
+      "enonce": "D'après le tableau du cours sur le mode de transport des salariés, que signifie le nombre 45 (ligne « Centre-ville », colonne « Transports en commun ») ?",
+      "propositions": [
+        "45 % des salariés qui habitent le centre-ville vont travailler en transports en commun",
+        "45 salariés du centre-ville vont travailler en transports en commun chaque matin",
+        "45 % des salariés qui prennent les transports en commun habitent le centre-ville",
+        "45 % de l'ensemble des salariés de la ville habitent le centre-ville"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les totaux sont en ligne : 45 % des salariés qui habitent le centre-ville vont travailler en transports en commun.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Dans le tableau du cours sur le mode de transport, pourquoi ne peut-on pas additionner 30 % (centre-ville) et 75 % (périphérie) dans la colonne « Voiture » ?",
+      "propositions": [
+        "Parce que ces deux pourcentages ne sont pas calculés sur le même ensemble de salariés",
+        "Parce que la somme des deux pourcentages dépasserait 100 %, ce qui est interdit",
+        "Parce qu'il faudrait multiplier les deux pourcentages au lieu de les additionner",
+        "Parce que la colonne « Voiture » est exprimée en effectifs et non en pourcentages"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Chaque ligne est une répartition sur un ensemble différent (salariés du centre, salariés de la périphérie) : 30 + 75 n'a pas de sens.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableau en pourcentages dont la dernière colonne indique 100 pour chaque ligne, que représente chaque ligne ?",
+      "propositions": [
+        "Une répartition qui totalise 100 %",
+        "Une série chronologique de valeurs",
+        "Un indice simple en base 100",
+        "Une moyenne pondérée par les effectifs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Quand les totaux sont en ligne, chaque ligne est une répartition qui fait 100 %.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : dans un lycée, 120 filles sur 200 et 150 garçons sur 200 font du sport en club. Quelle part des élèves sportifs sont des filles ?",
+      "propositions": [
+        "60 %",
+        "55,6 %",
+        "44,4 %",
+        "30 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "L'ensemble est celui des sportifs : 120 ÷ (120 + 150) × 100 = 120 ÷ 270 × 100 ≈ 44,4 %. 60 % est la part des sportives parmi les filles.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Que faut-il repérer en premier pour lire un tableau statistique ?",
+      "propositions": [
+        "La somme de toutes les cases du tableau",
+        "La moyenne de chaque ligne du tableau",
+        "La plus grande valeur du tableau",
+        "Le titre, la source, l'unité et la date"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Il faut d'abord repérer le titre, la source, l'unité et la date, puis faire une phrase de lecture.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Sur le graphique d'une série chronologique, quel est l'effet d'un axe vertical qui ne commence pas à zéro ?",
+      "propositions": [
+        "Il grossit visuellement les variations de la courbe",
+        "Il fait disparaître les variations de la courbe",
+        "Il rend la courbe croissante quelle que soit la série",
+        "Il modifie les valeurs réelles des données représentées"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Attention à l'échelle de l'axe vertical : un axe qui ne commence pas à zéro grossit les variations.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une série chronologique ?",
+      "propositions": [
+        "Le croisement de deux caractères dans un tableau à double entrée",
+        "Une liste de valeurs classées par ordre croissant pour trouver la médiane",
+        "Les valeurs d'une grandeur à des dates successives",
+        "La répartition d'un ensemble entre plusieurs catégories à une date"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une série chronologique présente les valeurs d'une grandeur à des dates successives, avec le temps en abscisse.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : un tableau donne, en % de chaque colonne, la répartition par sexe des salariés. Colonne « Cadres » : hommes 60, femmes 40 ; colonne « Employés » : hommes 25, femmes 75. Que signifie 75 ?",
+      "propositions": [
+        "75 % des employés sont des femmes",
+        "75 % des femmes sont des employées",
+        "75 femmes occupent un emploi d'employée",
+        "75 % de l'ensemble des salariés sont des femmes employées"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les totaux sont en colonne : chaque colonne est une répartition ; 75 % des employés sont des femmes.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:129",
+      "type": "qcm_unique",
+      "enonce": "D'après le tableau du cours sur le mode de transport, quelle comparaison est correcte ?",
+      "propositions": [
+        "La voiture est utilisée par 52,5 % des salariés de la ville, centre et périphérie réunis",
+        "75 % des salariés de la périphérie vont travailler en voiture, contre 30 % de ceux du centre-ville",
+        "Au total, 105 % des salariés de la ville utilisent la voiture pour aller travailler",
+        "Les salariés de la périphérie qui prennent la voiture sont 2,5 fois plus nombreux que ceux du centre-ville"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "On compare les lignes en pourcentages ; sans les effectifs de chaque zone, on ne peut ni comparer des nombres de salariés ni calculer une part pour toute la ville.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : dans un club, 90 des 150 adhérents sont des femmes ; 36 de ces 90 femmes et 24 des 60 hommes ont plus de 50 ans. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "60 % des adhérents de plus de 50 ans sont des femmes",
+        "60 % des adhérents sont des femmes",
+        "40 % des femmes adhérentes ont plus de 50 ans",
+        "24 % des hommes adhérents ont plus de 50 ans"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "90 ÷ 150 = 60 % ; 36 ÷ 90 = 40 % ; 36 ÷ (36 + 24) = 60 % ; 24 ÷ 60 = 40 % des hommes, et non 24 %.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "Que cherche-t-on à repérer dans une série chronologique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La pente de la courbe de demande",
+        "Ses ruptures",
+        "Ses fluctuations",
+        "Sa tendance"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On repère dans une série chronologique la tendance (hausse, baisse, stabilité), les ruptures et les fluctuations.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "Dans le tableau du cours sur le mode de transport des salariés, quelles lectures sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "5 % des salariés qui vont travailler à vélo ou à pied habitent la périphérie",
+        "25 % des salariés du centre-ville vont travailler à vélo ou à pied",
+        "20 % des salariés de la périphérie vont travailler en transports en commun",
+        "45 % de l'ensemble des salariés de la ville prennent les transports en commun"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les pourcentages sont en ligne : chaque case est une part des salariés d'une zone de résidence, pas une part des usagers d'un mode de transport.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : un tableau donne, en % de chaque ligne, le type de contrat des salariés. 18-29 ans : CDI 60, CDD 30, intérim 10 ; 30-49 ans : CDI 88, CDD 9, intérim 3. Quelles lectures sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les 30-49 ans sont plus souvent en CDI que les 18-29 ans",
+        "39 % des salariés sont en CDD, tous âges confondus",
+        "10 % des intérimaires ont entre 18 et 29 ans",
+        "30 % des salariés de 18 à 29 ans sont en CDD"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Totaux en ligne : chaque ligne est la répartition d'une tranche d'âge (88 % de CDI contre 60 %). On ne peut ni additionner 30 + 9 ni lire une part des intérimaires.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau à double entrée, chaque case se lit en combinant la ligne et la colonne.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un tableau à double entrée croise deux caractères : chaque case se lit en combinant la ligne et la colonne.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau dont les totaux sont en ligne, chaque colonne totalise 100 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Quand les totaux sont en ligne, ce sont les lignes qui totalisent 100 % ; les colonnes n'ont pas de raison de le faire.",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:136",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : 40 % des 50 salariés d'une PME sont cadres, contre 10 % des 2 000 salariés d'une grande entreprise. La grande entreprise compte pourtant plus de cadres que la PME.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "PME : 0,40 × 50 = 20 cadres ; grande entreprise : 0,10 × 2 000 = 200 cadres. Une part plus forte ne signifie pas un effectif plus grand : part de quoi ?",
+      "notion": "Tableaux et séries chronologiques"
+    },
+    {
+      "source": "ses:ch13:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : quand le prix d'un bien passe de 4 € à 6 €, la quantité demandée passe de 500 à 440 unités. Quelle est la pente de cette portion de courbe de demande ?",
+      "propositions": [
+        "La quantité baisse de 30 unités par euro",
+        "La quantité baisse de 60 unités par euro",
+        "La quantité baisse de 15 % par euro",
+        "La quantité augmente de 30 unités par euro"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une hausse de 2 € fait baisser la quantité de 60 unités, soit 60 ÷ 2 = 30 unités par euro : la pente est négative.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : quand le prix passe de 10 € à 13 €, la quantité offerte passe de 200 à 260 unités. De combien d'unités l'offre augmente-t-elle par euro ?",
+      "propositions": [
+        "60 unités par euro",
+        "20 unités par euro",
+        "30 unités par euro",
+        "3 unités par euro"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Variation de quantité ÷ variation de prix = 60 ÷ 3 = 20 unités par euro : la pente de l'offre est positive.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Données fictives : le coût total d'une entreprise est de 5 000 € pour 100 unités produites et de 6 200 € pour 140 unités. De combien augmente-t-il, en moyenne, par unité supplémentaire ?",
+      "propositions": [
+        "50 €",
+        "44,30 €",
+        "30 €",
+        "1 200 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "(6 200 − 5 000) ÷ (140 − 100) = 1 200 ÷ 40 = 30 € par unité supplémentaire : le coût total croît avec la quantité produite.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Quel est le signe de la pente d'une courbe de demande ?",
+      "propositions": [
+        "Variable selon le revenu",
+        "Nul",
+        "Positif",
+        "Négatif"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La demande a une pente négative : la quantité demandée baisse quand le prix monte.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Le prix d'un bien augmente et les consommateurs en achètent moins, toutes choses égales par ailleurs. Comment le représente-t-on ?",
+      "propositions": [
+        "Par un déplacement le long de la courbe de demande",
+        "Par une inversion de la pente de la courbe de demande",
+        "Par un déplacement de toute la courbe d'offre vers la droite",
+        "Par un déplacement de toute la courbe de demande vers la gauche"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une variation du prix, la grandeur en ordonnée, se traduit par un déplacement sur la courbe.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Le revenu des ménages augmente, et ils achètent davantage d'un bien à chaque prix. Comment le représente-t-on ?",
+      "propositions": [
+        "Par un déplacement le long de la courbe de demande",
+        "Par une pente devenue négative pour la courbe d'offre",
+        "Par un déplacement de la courbe de demande",
+        "Par un déplacement le long de la courbe d'offre"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le changement d'un autre facteur que le prix (ici le revenu) se traduit par un déplacement de la courbe.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Le coût des matières premières augmente pour tous les producteurs d'un bien. Comment le représente-t-on ?",
+      "propositions": [
+        "Par une pente devenue positive pour la courbe de demande",
+        "Par un déplacement le long de la courbe de demande",
+        "Par un déplacement le long de la courbe d'offre",
+        "Par un déplacement de la courbe d'offre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Les coûts ne sont pas la grandeur en ordonnée : leur hausse est un autre facteur, qui déplace la courbe d'offre.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Sur les graphiques d'offre et de demande du cours, quelle grandeur place-t-on souvent en ordonnée ?",
+      "propositions": [
+        "La quantité",
+        "Le prix",
+        "Le temps",
+        "Le revenu"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "En économie, on place souvent le prix en ordonnée et la quantité en abscisse.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Quels événements provoquent un déplacement de la courbe, et non un déplacement sur la courbe ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une hausse du revenu des ménages, pour la demande",
+        "Une hausse des coûts de production, pour l'offre",
+        "Une baisse du prix du bien lui-même, pour la demande",
+        "Une nouvelle taxe payée par les producteurs, pour l'offre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le changement d'un autre facteur (revenu, coûts, taxe) déplace la courbe ; une variation du prix du bien est un déplacement sur la courbe.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Que nous apprend la pente d'une courbe ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La force avec laquelle une grandeur réagit à l'autre",
+        "La date à laquelle les données ont été relevées",
+        "Le sens dans lequel une grandeur réagit à l'autre",
+        "La part de chaque grandeur dans un ensemble"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La pente indique dans quel sens et avec quelle force une grandeur réagit à l'autre.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Données fictives : quand le prix d'un bien passe de 5 € à 8 €, la quantité demandée passe de 900 à 720 unités. Que peut-on dire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La quantité demandée baisse de 180 unités par euro",
+        "La quantité demandée baisse de 60 unités par euro",
+        "La quantité demandée baisse de 20 %",
+        "C'est un déplacement le long de la courbe de demande"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Pente : −180 ÷ 3 = −60 unités par euro ; taux : −180 ÷ 900 × 100 = −20 % ; le prix varie, donc on se déplace sur la courbe.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:148",
+      "type": "vrai_faux",
+      "enonce": "La courbe d'offre a une pente négative.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "L'offre a une pente positive : la quantité offerte augmente quand le prix monte.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Données fictives : la quantité offerte passe de 300 à 420 unités quand le prix passe de 20 € à 24 €. La pente de cette portion de courbe d'offre est de 30 unités par euro.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "120 unités de plus pour 4 € de plus : 120 ÷ 4 = 30 unités par euro.",
+      "notion": "Pente et déplacement d'une courbe"
+    },
+    {
+      "source": "ses:ch13:banque:150",
+      "type": "vrai_faux",
+      "enonce": "Une baisse du prix d'un bien déplace la courbe de demande de ce bien vers la droite.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Une variation du prix du bien se traduit par un déplacement sur la courbe de demande, pas de la courbe.",
+      "notion": "Pente et déplacement d'une courbe"
+    }
+  ]
+}
