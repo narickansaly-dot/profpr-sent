@@ -1,0 +1,2272 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Recherche d'une occurrence",
+    "Extremum et moyenne",
+    "Coût d'un algorithme",
+    "Tri par sélection",
+    "Tri par insertion",
+    "Invariant et correction",
+    "Variant et terminaison",
+    "Recherche dichotomique",
+    "Comparaison des coûts"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch7:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Que fait un parcours séquentiel d'un tableau ?",
+      "difficulte": 1,
+      "explication": "C'est la base de la recherche d'une occurrence, d'un extremum ou d'une moyenne.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "Il lit les éléments dans un ordre aléatoire",
+        "Il examine les éléments un par un, du premier au dernier",
+        "Il examine seulement l'élément du milieu",
+        "Il trie le tableau avant de le lire"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:002",
+      "type": "qcm_unique",
+      "enonce": "La fonction recherche(t, x) du cours renvoie l'indice de la première occurrence de x, ou -1. Que renvoie recherche([4, 7, 2, 7], 7) ?",
+      "difficulte": 1,
+      "explication": "La première occurrence de 7 est à l'indice 1.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "7",
+        "-1",
+        "3",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie la fonction recherche du cours quand x n'est pas dans le tableau ?",
+      "difficulte": 1,
+      "explication": "-1 ne peut pas être un indice valide d'un parcours de 0 à len(t) − 1.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "len(t)",
+        "None",
+        "-1",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Pour quels types de valeurs la recherche séquentielle d'une occurrence fonctionne-t-elle ?",
+      "difficulte": 1,
+      "explication": "Elle n'utilise que le test d'égalité.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "Pour des valeurs de type quelconque qu'on peut comparer avec ==",
+        "Seulement pour des entiers",
+        "Seulement pour des chaînes de caractères",
+        "Seulement pour des tableaux triés"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction maximum du cours, par quelle valeur initialise-t-on m ?",
+      "difficulte": 1,
+      "explication": "Initialiser à 0 serait faux si tous les nombres étaient négatifs.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "-1",
+        "t[0], le premier élément",
+        "len(t)",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie la fonction moyenne du cours pour t = [8, 12, 10] ?",
+      "difficulte": 1,
+      "explication": "(8 + 12 + 10) / 3 = 10.0 ; / renvoie un flottant.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "10.0",
+        "10",
+        "30",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Que mesure le coût (ou complexité) d'un algorithme ?",
+      "difficulte": 1,
+      "explication": "On compte surtout les comparaisons et les affectations.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Le temps que met le programmeur à écrire et à corriger le programme",
+        "Le nombre de lignes du programme",
+        "La taille du fichier source en octets",
+        "Le nombre d'opérations élémentaires en fonction de la taille des données"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coût d'un parcours séquentiel d'un tableau de n éléments ?",
+      "difficulte": 1,
+      "explication": "Chaque élément est examiné au plus une fois.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Constant, une seule opération",
+        "Quadratique, de l'ordre de n²",
+        "Linéaire, de l'ordre de n",
+        "Logarithmique, de l'ordre de log₂ n"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Pour un algorithme de coût linéaire, que devient environ le temps de calcul quand la taille des données double ?",
+      "difficulte": 1,
+      "explication": "Le nombre d'opérations est proportionnel à n.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Il augmente de 1",
+        "Il ne change pas",
+        "Il est multiplié par 4",
+        "Il double"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quel est le principe du tri par sélection ?",
+      "difficulte": 1,
+      "explication": "On sélectionne le minimum de la partie non triée.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Placer à chaque étape le plus petit élément restant à la bonne position",
+        "Échanger les éléments au hasard jusqu'à ce que le tableau soit trié",
+        "Couper le tableau en deux et chercher au milieu",
+        "Insérer chaque élément à sa place parmi les précédents déjà triés"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Au premier tour du tri par sélection, quel élément est placé à l'indice 0 ?",
+      "difficulte": 1,
+      "explication": "On échange le minimum avec t[0].",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Le dernier élément du tableau",
+        "L'élément du milieu",
+        "Le plus petit élément du tableau",
+        "Le plus grand élément du tableau"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Quel est le principe du tri par insertion ?",
+      "difficulte": 1,
+      "explication": "C'est la méthode du joueur de cartes.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Compter les occurrences de chaque valeur",
+        "Insérer chaque élément à sa place parmi les éléments précédents, déjà triés",
+        "Couper le tableau en deux moitiés",
+        "Chercher le plus petit élément et l'échanger avec le premier"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:013",
+      "type": "qcm_unique",
+      "enonce": "À quelle activité de la vie courante compare-t-on souvent le tri par insertion ?",
+      "difficulte": 1,
+      "explication": "On insère chaque nouvelle carte à sa place.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Lancer un dé plusieurs fois et noter les résultats obtenus",
+        "Chercher un mot dans un dictionnaire",
+        "Additionner des prix",
+        "Ranger les cartes que l'on tient en main"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Que signifie qu'une fonction trie un tableau « en place » ?",
+      "difficulte": 1,
+      "explication": "tri_selection(t) modifie t et ne renvoie rien.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Elle modifie le tableau donné au lieu d'en créer un nouveau",
+        "Elle trie le tableau sur le disque dur",
+        "Elle trie seulement le premier élément",
+        "Elle renvoie une copie triée sans toucher au tableau"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Comment définit-on la notion d'invariant d'une boucle ?",
+      "difficulte": 1,
+      "explication": "Il sert à prouver la correction.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "Une boucle qui ne s'arrête jamais",
+        "Une variable qui ne change jamais de valeur",
+        "Une propriété vraie avant la boucle et qui reste vraie après chaque tour",
+        "Le nombre de tours d'une boucle"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'intérêt de trouver une propriété qui reste vraie à chaque tour d'une boucle ?",
+      "difficulte": 1,
+      "explication": "À la sortie de la boucle, l'invariant donne le résultat voulu.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "À accélérer le programme en supprimant les tours de boucle inutiles",
+        "À prouver la correction d'un algorithme",
+        "À compter les tours de boucle",
+        "À éviter les erreurs de syntaxe"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Quelle définition correspond à la notion de variant ?",
+      "difficulte": 1,
+      "explication": "Il prouve que la boucle s'arrête.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "Une quantité entière positive qui diminue strictement à chaque tour",
+        "Une variable qui change de type à chaque tour",
+        "Une boucle qui change de condition",
+        "Une propriété vraie à chaque tour"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:018",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert un variant de boucle ?",
+      "difficulte": 1,
+      "explication": "Un entier positif ne peut pas diminuer indéfiniment.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "À trier le tableau",
+        "À prouver la terminaison d'une boucle",
+        "À prouver que le résultat est correct",
+        "À mesurer la mémoire utilisée"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Pour quel type de boucle faut-il en particulier justifier la terminaison ?",
+      "difficulte": 1,
+      "explication": "Une boucle for sur un objet fini s'arrête toujours.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "Une boucle for sur un tableau",
+        "Une boucle for sur range(n)",
+        "Une boucle non bornée (while)",
+        "Une instruction if"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle condition le tableau doit-il remplir pour qu'on puisse y faire une recherche dichotomique ?",
+      "difficulte": 1,
+      "explication": "La décision gauche ou droite repose sur l'ordre.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Il doit être sans doublon",
+        "Il doit contenir des entiers positifs",
+        "Il doit avoir une taille paire",
+        "Il doit être trié"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quel est le principe de la recherche dichotomique ?",
+      "difficulte": 1,
+      "explication": "On divise la zone de recherche par deux à chaque tour.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Comparer x au premier et au dernier élément seulement",
+        "Trier le tableau puis lire son premier élément",
+        "Comparer à l'élément du milieu et continuer dans la moitié qui peut contenir x",
+        "Parcourir le tableau du début à la fin"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le mot « dichotomie » ?",
+      "difficulte": 1,
+      "explication": "Du grec dikha, en deux, et tomê, coupure.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Chercher au hasard",
+        "Couper en deux",
+        "Trier deux tableaux",
+        "Compter deux fois"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coût de la recherche dichotomique dans un tableau trié de n éléments ?",
+      "difficulte": 1,
+      "explication": "La zone est divisée par deux à chaque tour.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Linéaire, de l'ordre de n",
+        "Constant, une seule comparaison",
+        "Quadratique, de l'ordre de n²",
+        "Logarithmique, de l'ordre de log₂ n"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coût des tris par sélection et par insertion dans le pire cas ?",
+      "difficulte": 1,
+      "explication": "De l'ordre de n² comparaisons.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Quadratique",
+        "Linéaire",
+        "Logarithmique",
+        "Constant"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces algorithmes est le plus rapide pour chercher une valeur dans un très grand tableau déjà trié ?",
+      "difficulte": 1,
+      "explication": "Son coût est logarithmique.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Le tri par sélection",
+        "La recherche séquentielle",
+        "Le tri par insertion",
+        "La recherche dichotomique"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Que calcule le parcours s = 0 ; for x in t: s = s + x, suivi de s / len(t) ?",
+      "difficulte": 1,
+      "explication": "Somme divisée par le nombre d'éléments.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "L'indice du maximum",
+        "Le nombre d'éléments de t",
+        "La moyenne des éléments de t",
+        "Le plus grand élément de t"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Dans le meilleur cas, combien de comparaisons fait la recherche séquentielle d'une occurrence ?",
+      "difficulte": 1,
+      "explication": "return arrête le parcours dès que x est trouvé.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "Une seule, quand x est le premier élément",
+        "n comparaisons",
+        "n / 2 comparaisons",
+        "Aucune"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Le tri par sélection s'arrête-t-il toujours ?",
+      "difficulte": 1,
+      "explication": "Les boucles for sur range s'arrêtent toujours.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Seulement si le tableau est de taille paire",
+        "Oui, car il n'utilise que des boucles for sur des intervalles finis",
+        "Non, il peut boucler indéfiniment sur certains tableaux",
+        "Seulement si le tableau est déjà trié"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction Python trie un tableau avec un algorithme plus efficace que les tris par sélection et par insertion ?",
+      "difficulte": 1,
+      "explication": "sorted utilise un tri de l'ordre de n log n opérations.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "len",
+        "sorted",
+        "max",
+        "range"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie la fonction dichotomie du cours quand x n'est pas dans le tableau ?",
+      "difficulte": 1,
+      "explication": "La boucle s'arrête quand g > d, puis la fonction renvoie -1.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "0",
+        "None",
+        "L'indice du milieu",
+        "-1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Premier tour (i = 0) du tri par sélection sur [4, 3, 1, 2] : quel tableau obtient-on ?",
+      "difficulte": 2,
+      "explication": "Le minimum 1 (indice 2) est échangé avec 4.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "[1, 4, 3, 2]",
+        "[3, 4, 1, 2]",
+        "[1, 3, 4, 2]",
+        "[1, 2, 3, 4]"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Le tri par sélection a déjà transformé [4, 3, 1, 2] en [1, 3, 4, 2]. Que donne le tour suivant (i = 1) ?",
+      "difficulte": 2,
+      "explication": "Après [1, 3, 4, 2], le minimum de [3, 4, 2] est 2 : on l'échange avec 3.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "[1, 2, 4, 3]",
+        "[1, 3, 4, 2]",
+        "[1, 3, 2, 4]",
+        "[1, 2, 3, 4]"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Le tri par insertion traite d'abord l'élément d'indice 1 de [4, 3, 1, 2]. Que devient le tableau ?",
+      "difficulte": 2,
+      "explication": "3 est inséré avant 4.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "[3, 4, 1, 2]",
+        "[1, 3, 4, 2]",
+        "[3, 1, 4, 2]",
+        "[4, 3, 1, 2]"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Après l'insertion de 3, le tableau vaut [3, 4, 1, 2]. Que devient-il quand on insère l'élément d'indice 2 ?",
+      "difficulte": 2,
+      "explication": "1 est inséré en tête de [3, 4].",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "[1, 2, 3, 4]",
+        "[1, 3, 4, 2]",
+        "[3, 4, 1, 2]",
+        "[3, 1, 4, 2]"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Pour cinq valeurs, quel est le nombre total de comparaisons du tri par sélection ?",
+      "difficulte": 2,
+      "explication": "4 + 3 + 2 + 1 = 10, soit n(n − 1)/2.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "25",
+        "4",
+        "5",
+        "10"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Combien de comparaisons entre éléments fait le tri par sélection sur un tableau de 1 000 éléments ?",
+      "difficulte": 2,
+      "explication": "n(n − 1)/2 = 1000 × 999 / 2.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "10",
+        "1000",
+        "499500",
+        "1000000"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Combien de comparaisons fait le tri par insertion du cours sur un tableau de 5 éléments déjà trié ?",
+      "difficulte": 2,
+      "explication": "Une comparaison par élément à partir du deuxième : n − 1.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "25",
+        "10",
+        "0",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel est le pire cas pour le tri par insertion ?",
+      "difficulte": 2,
+      "explication": "Chaque élément doit remonter jusqu'au début.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Un tableau trié dans l'ordre décroissant",
+        "Un tableau dont tous les éléments sont égaux",
+        "Un tableau de deux éléments",
+        "Un tableau déjà trié dans l'ordre croissant"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coût du tri par insertion sur un tableau déjà trié ?",
+      "difficulte": 2,
+      "explication": "La boucle while s'arrête aussitôt pour chaque élément.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Il ne s'arrête pas",
+        "Linéaire",
+        "Logarithmique",
+        "Quadratique"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Au début du tour i, quelle propriété le tri par sélection garantit-il ?",
+      "difficulte": 2,
+      "explication": "Chaque tour place le minimum restant à la position i.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "t[i] est le plus grand élément du tableau",
+        "t[0], …, t[i − 1] sont triés, sans être forcément les plus petits",
+        "t[0], …, t[i − 1] sont triés et ce sont les i plus petits éléments du tableau",
+        "Le tableau entier est trié"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quel invariant correspond au tri par insertion au début du tour i ?",
+      "difficulte": 2,
+      "explication": "Les i premiers éléments sont rangés, mais un plus petit peut arriver plus tard.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "t[0], …, t[i − 1] sont les i plus petits éléments du tableau",
+        "t[i] est déjà à sa place définitive",
+        "Le tableau entier est trié",
+        "t[0], …, t[i − 1] sont triés"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Pour la dichotomie, quel invariant garantit que l'algorithme ne « rate » pas x ?",
+      "difficulte": 2,
+      "explication": "On n'élimine que des zones où x ne peut pas être, car t est trié.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "g est toujours égal à 0",
+        "d − g est toujours pair",
+        "Si x est dans t, alors il est entre les indices g et d",
+        "t[m] est toujours égal à x"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Quel est un variant de la boucle while de la recherche dichotomique ?",
+      "difficulte": 2,
+      "explication": "À chaque tour sans succès, g augmente ou d diminue.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "g",
+        "d − g",
+        "m",
+        "x"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Dans la boucle while du tri par insertion, quelle quantité est un variant ?",
+      "difficulte": 2,
+      "explication": "j diminue de 1 à chaque tour et la boucle s'arrête au plus tard à j = 0.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "j",
+        "t[j]",
+        "i + j",
+        "x"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:045",
+      "type": "qcm_unique",
+      "enonce": "On exécute n = 100 puis while n > 1: n = n // 2. Quelle quantité est un variant qui prouve la terminaison ?",
+      "difficulte": 2,
+      "explication": "n est un entier positif qui diminue strictement à chaque tour.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "1",
+        "n",
+        "100 − n",
+        "n * 2"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:046",
+      "type": "qcm_unique",
+      "enonce": "On cherche 11 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Quel est l'indice du premier élément examiné ?",
+      "difficulte": 2,
+      "explication": "m = (0 + 7) // 2 = 3, et t[3] vaut 7.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "0",
+        "5",
+        "3",
+        "4"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:047",
+      "type": "qcm_unique",
+      "enonce": "On cherche 11 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Combien de tours de boucle sont nécessaires ?",
+      "difficulte": 2,
+      "explication": "m = 3 (7 < 11, g = 4), puis m = 5 (11 trouvé).",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "6",
+        "3",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Avec t = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90], quel élément la fonction dichotomie examine-t-elle en premier ?",
+      "difficulte": 2,
+      "explication": "m = (0 + 9) // 2 = 4, t[4] = 40.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "40",
+        "0",
+        "50",
+        "45"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction dichotomie, que fait-on si t[m] < x ?",
+      "difficulte": 2,
+      "explication": "Le tableau est trié dans l'ordre croissant.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "On renvoie m",
+        "On renvoie -1",
+        "d = m - 1, car x ne peut être qu'à gauche de m",
+        "g = m + 1, car x ne peut être qu'à droite de m"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Un annuaire trié compte mille noms. Combien de comparaisons la dichotomie fait-elle au plus, environ ?",
+      "difficulte": 2,
+      "explication": "2¹⁰ = 1024 : une dizaine de divisions par deux suffisent.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "500",
+        "10",
+        "1000",
+        "100"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Environ combien de comparaisons la recherche dichotomique fait-elle au plus dans un tableau trié d'un million d'éléments ?",
+      "difficulte": 2,
+      "explication": "2²⁰ ≈ 1 000 000.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "500000",
+        "1000000",
+        "20",
+        "1000"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Un algorithme quadratique trie 1 000 nombres en 1 seconde. Combien de temps lui faut-il environ pour 10 000 nombres ?",
+      "difficulte": 2,
+      "explication": "n est multiplié par 10, donc n² par 100.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "100 secondes",
+        "10 secondes",
+        "1000 secondes",
+        "1 seconde"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Un algorithme linéaire traite 1 000 lignes en 2 millisecondes. Combien de temps lui faut-il environ pour 1 000 000 lignes ?",
+      "difficulte": 2,
+      "explication": "n est multiplié par 1000, le temps aussi : 2000 ms.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "2000 secondes",
+        "20 millisecondes",
+        "2 millisecondes",
+        "2 secondes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi trier un tableau pour ensuite y faire des recherches dichotomiques ?",
+      "difficulte": 2,
+      "explication": "Chaque recherche devient logarithmique.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Parce que le tri est toujours plus rapide que la recherche",
+        "Parce que la dichotomie trie le tableau en même temps",
+        "Le tri coûte cher, mais il est rentable quand on fait beaucoup de recherches dans le même tableau",
+        "Parce que la recherche séquentielle est impossible dans un tableau non trié"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi l'initialisation m = 0 rend-elle fausse la recherche du maximum ?",
+      "difficulte": 2,
+      "explication": "Il faut partir d'un élément du tableau.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "Parce que 0 n'est pas un entier",
+        "Si tous les éléments sont négatifs, la fonction renvoie 0 qui n'est pas dans le tableau",
+        "Parce que la boucle ne s'exécute pas",
+        "Parce que le maximum est toujours le premier élément"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:056",
+      "type": "qcm_unique",
+      "enonce": "On modifie la fonction recherche pour qu'elle renvoie l'indice de la dernière occurrence. Que renvoie-t-elle pour [4, 7, 2, 7] et x = 7 ?",
+      "difficulte": 2,
+      "explication": "La dernière occurrence de 7 est à l'indice 3.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "3",
+        "7",
+        "1",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Combien de comparaisons fait la recherche séquentielle du cours dans un tableau de 50 éléments qui ne contient pas x ?",
+      "difficulte": 2,
+      "explication": "Tous les éléments sont comparés à x.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "50",
+        "6",
+        "1",
+        "25"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Dans le tri par sélection du cours, que contient la variable i_min à la fin de la boucle intérieure ?",
+      "difficulte": 2,
+      "explication": "On échange ensuite t[i] et t[i_min].",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "La valeur du plus petit élément du tableau entier",
+        "Le nombre de comparaisons effectuées",
+        "L'indice du plus grand élément",
+        "L'indice du plus petit élément parmi t[i], …, t[n − 1]"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Dans la condition while j > 0 and t[j - 1] > x du tri par insertion, pourquoi l'ordre des deux tests est-il important ?",
+      "difficulte": 2,
+      "explication": "Sinon t[-1] serait lu et l'élément serait comparé au dernier du tableau.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Parce que and est commutatif en Python",
+        "Quand j vaut 0, t[j - 1] n'est pas évalué grâce à l'évaluation séquentielle de and",
+        "Parce que t[j - 1] est toujours plus petit que x",
+        "L'ordre n'a aucune importance"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il si on applique la recherche dichotomique à un tableau non trié ?",
+      "difficulte": 2,
+      "explication": "Les décisions gauche ou droite deviennent fausses.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Elle déclenche toujours une erreur",
+        "Elle donne toujours le bon résultat, plus lentement",
+        "Elle peut renvoyer -1 alors que x est présent",
+        "Elle trie d'abord le tableau"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:061",
+      "type": "qcm_unique",
+      "enonce": "On applique le tri par sélection du cours à [7, 1, 5, 3, 2]. Quel est le tableau après le deuxième tour (i = 1) ?",
+      "difficulte": 3,
+      "explication": "Tour 0 : [1, 7, 5, 3, 2] ; tour 1 : le minimum 2 est échangé avec 7.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "[1, 3, 5, 7, 2]",
+        "[1, 2, 3, 5, 7]",
+        "[1, 7, 5, 3, 2]",
+        "[1, 2, 5, 3, 7]"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:062",
+      "type": "qcm_unique",
+      "enonce": "On applique le tri par insertion du cours à [7, 1, 5, 3, 2]. Quel est le tableau après le troisième tour (i = 3) ?",
+      "difficulte": 3,
+      "explication": "[1, 7, …], puis [1, 5, 7, …], puis 3 est inséré : [1, 3, 5, 7, 2].",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "[1, 5, 7, 3, 2]",
+        "[1, 2, 3, 5, 7]",
+        "[1, 3, 5, 7, 2]",
+        "[1, 2, 5, 3, 7]"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Combien de comparaisons entre éléments fait le tri par insertion du cours sur [5, 4, 3, 2, 1] ?",
+      "difficulte": 3,
+      "explication": "1 + 2 + 3 + 4 = 10 : c'est le pire cas.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "4",
+        "10",
+        "25",
+        "5"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On cherche 4 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Combien de tours de boucle sont effectués avant de renvoyer -1 ?",
+      "difficulte": 3,
+      "explication": "m = 3 (7), m = 1 (3), m = 2 (5), puis g > d.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "3",
+        "8",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:065",
+      "type": "qcm_unique",
+      "enonce": "On cherche 15 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Quels indices m sont examinés, dans l'ordre ?",
+      "difficulte": 3,
+      "explication": "g avance : m = 3, puis 5, puis 6, puis 7.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "7",
+        "3, 5, 6, 7",
+        "3, 7",
+        "4, 6, 7"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Dans la dichotomie, pourquoi d − g diminue-t-il strictement à chaque tour sans succès ?",
+      "difficulte": 3,
+      "explication": "Une des bornes dépasse m : la zone perd au moins un élément.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "Parce que m est toujours égal à g",
+        "Parce que x change à chaque tour",
+        "Parce que g devient m + 1 ou d devient m − 1, avec g ⩽ m ⩽ d",
+        "Parce que le tableau est raccourci par la fonction"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Que se passerait-il dans la dichotomie si l'on écrivait g = m au lieu de g = m + 1 ?",
+      "difficulte": 3,
+      "explication": "Avec g = d − 1, m vaut g et la zone ne rétrécit plus : d − g n'est plus un variant.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "La boucle pourrait ne jamais s'arrêter, par exemple quand g = d − 1",
+        "Python déclencherait une erreur de syntaxe",
+        "La fonction renverrait toujours -1",
+        "Le résultat serait le même, plus rapidement"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Après le tour i = 2 du tri par sélection appliqué à [9, 4, 7, 1, 5], que sait-on des trois premiers éléments ?",
+      "difficulte": 3,
+      "explication": "Ce sont les trois plus petits éléments, triés.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "Ce sont 1, 4 et 7, dans cet ordre",
+        "On ne peut rien en dire",
+        "Ce sont 9, 4 et 7, triés : 4, 7, 9",
+        "Ce sont 1, 4 et 5, dans cet ordre"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Après le tour i = 2 du tri par insertion appliqué à [9, 4, 7, 1, 5], que valent les trois premiers éléments ?",
+      "difficulte": 3,
+      "explication": "Les trois premiers éléments d'origine sont triés ; 1 et 5 ne sont pas encore traités.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "1, 4 et 7",
+        "1, 4 et 5",
+        "9, 4 et 7",
+        "4, 7 et 9"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Un tri quadratique demande 1 seconde pour 10 000 éléments. Environ combien de temps demande-t-il pour 1 000 000 d'éléments ?",
+      "difficulte": 3,
+      "explication": "n est multiplié par 100, donc le temps par 10 000.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "1 minute",
+        "10 000 secondes, soit près de 3 heures",
+        "1 000 000 de secondes",
+        "100 secondes"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Combien d'opérations fait environ un algorithme en log₂ n pour n = 1 000 000 000 ?",
+      "difficulte": 3,
+      "explication": "2³⁰ ≈ 1,07 × 10⁹.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "1 000 000 000",
+        "9",
+        "30",
+        "1 000 000"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableau trié de 1 000 éléments, quel est le nombre maximal de tours de la boucle de la fonction dichotomie du cours ?",
+      "difficulte": 3,
+      "explication": "Les zones successives ont au plus 1000, 500, 250, 125, 62, 31, 15, 7, 3, 1 éléments : 10 tours.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "10",
+        "11",
+        "500",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Une fonction indice_max(t) renvoie l'indice du maximum en parcourant i de 1 à len(t) − 1 et en gardant i si t[i] > t[im]. Que renvoie-t-elle pour [3, 9, 2, 9] ?",
+      "difficulte": 3,
+      "explication": "Le test strict garde la première occurrence du maximum.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "0",
+        "1",
+        "3",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Combien d'échanges fait le tri par sélection du cours sur un tableau de n éléments ?",
+      "difficulte": 3,
+      "explication": "Un échange par tour de la boucle extérieure.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "n − 1, même si certains échangent un élément avec lui-même",
+        "0 si le tableau est déjà trié",
+        "n²",
+        "n(n − 1)/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:075",
+      "type": "qcm_unique",
+      "enonce": "On doit faire 1 000 recherches dans un tableau non trié de 100 000 éléments. Quelle stratégie fait le moins d'opérations ?",
+      "difficulte": 3,
+      "explication": "Environ 1,7 million (sorted) + 17 000 opérations, contre 100 millions de comparaisons.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Faire 1 000 recherches séquentielles",
+        "Trier avec le tri par sélection avant chaque recherche",
+        "Trier une fois avec sorted, puis faire 1 000 recherches dichotomiques",
+        "Faire 1 000 tris par insertion"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces algorithmes, lesquels ont un coût linéaire ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le tri par sélection est quadratique, la dichotomie logarithmique.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Le calcul d'une moyenne",
+        "La recherche dichotomique",
+        "Le tri par sélection",
+        "La recherche d'une occurrence par parcours séquentiel"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Comment procède le tri par sélection ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "C'est le tri par insertion qui insère.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Il ne fonctionne que sur des tableaux triés",
+        "Il échange ce minimum avec le premier élément non trié",
+        "Il cherche le minimum de la partie non triée",
+        "Il insère chaque élément parmi les précédents"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le tri par insertion, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La fonction modifie le tableau et ne renvoie rien.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Il cherche le maximum du tableau à chaque tour",
+        "Il décale vers la droite les éléments plus grands que celui qu'on insère",
+        "Il trie le tableau en place",
+        "Il renvoie une nouvelle liste triée"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la recherche dichotomique, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Son coût est logarithmique.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Elle examine tous les éléments",
+        "Le tableau doit être trié",
+        "Elle compare x à l'élément du milieu de la zone de recherche",
+        "Elle a un coût quadratique"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces notions, lesquelles servent à prouver un algorithme ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les tests et les mesures ne prouvent pas.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "Le jeu de tests",
+        "L'invariant de boucle",
+        "Le variant de boucle",
+        "Le chronomètre"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces boucles, lesquelles s'arrêtent à coup sûr ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Dans la deuxième, n est un variant ; la troisième augmente n sans fin.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "n = 10 puis while n > 0: n = n - 1",
+        "while True: (sans instruction break ni return)",
+        "for i in range(100):",
+        "n = 10 puis while n > 0: n = n + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces algorithmes, lesquels ont un coût quadratique dans le pire cas ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "De l'ordre de n² comparaisons.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Le tri par sélection",
+        "Le tri par insertion",
+        "La recherche du maximum",
+        "La recherche dichotomique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces initialisations de m pour rechercher le maximum d'un tableau t non vide, lesquelles sont correctes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Il faut partir d'un élément du tableau ; 0 ou −1 peuvent dépasser tous les éléments.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "m = 0",
+        "m = -1",
+        "m = t[0]",
+        "m = t[-1]"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la fonction recherche(t, x) du cours, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Elle fonctionne sur un tableau quelconque.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "Elle renvoie le nombre d'occurrences de x",
+        "Elle renvoie l'indice de la première occurrence de x",
+        "Elle renvoie -1 si x est absent",
+        "Elle exige un tableau trié"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Comment évalue-t-on le coût d'un algorithme ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Pour n grand, n² dépasse largement n.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Un algorithme quadratique est plus rapide qu'un algorithme linéaire pour un grand n",
+        "On compte des opérations élémentaires comme les comparaisons",
+        "Le coût ne dépend jamais de la taille des données",
+        "On étudie souvent le coût dans le pire cas"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces variables, lesquelles apparaissent dans la fonction dichotomie du cours ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "i_min appartient au tri par sélection.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "g, la borne gauche",
+        "m, l'indice du milieu",
+        "d, la borne droite",
+        "i_min, l'indice du minimum"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Quelles propriétés doit avoir un variant ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La correction se prouve avec un invariant.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "Il prouve que le résultat est juste",
+        "Il augmente à chaque tour",
+        "Il diminue strictement à chaque tour de boucle",
+        "C'est une quantité entière positive"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Le tri par sélection est appliqué à [5, 2, 8, 1, 9]. Quels tableaux peuvent apparaître au cours du tri ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "[2, 5, 8, 1, 9] serait une étape du tri par insertion.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "[2, 5, 8, 1, 9]",
+        "[1, 5, 2, 8, 9]",
+        "[1, 2, 8, 5, 9]",
+        "[1, 2, 5, 8, 9]"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces tableaux, lesquels sont l'état de [5, 2, 8, 1, 9] après un tour ou plus du tri par insertion du cours ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "[1, 2, 8, 5, 9] est une étape du tri par sélection.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "[1, 2, 8, 5, 9]",
+        "[1, 2, 5, 8, 9]",
+        "[2, 5, 1, 8, 9]",
+        "[2, 5, 8, 1, 9]"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "On cherche 70 dans [0, 10, 20, 30, 40, 50, 60, 70, 80, 90] avec la fonction dichotomie du cours. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "m = 4 (40 < 70, g = 5), puis m = 7 : trouvé en 2 tours.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Le premier élément examiné est 40",
+        "La fonction fait 4 tours",
+        "Le premier élément examiné est 50",
+        "La fonction renvoie 7"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Ordres de grandeur pour mille données : quelles valeurs sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "2¹⁰ = 1 024.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "n² vaut 1 000 000",
+        "log₂ n vaut environ 500",
+        "log₂ n vaut environ 10",
+        "n² vaut 2 000"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les invariants des tris, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le tri par insertion trie les premiers éléments sans connaître les suivants.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "Pour le tri par insertion, t[0..i − 1] est trié",
+        "Pour le tri par insertion, t[0..i − 1] contient les i plus petits éléments",
+        "Pour le tri par sélection, t[i..n − 1] est trié",
+        "Pour le tri par sélection, t[0..i − 1] contient les i plus petits éléments"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces quantités, lesquelles sont des variants de la boucle n = 64 puis while n > 1: n = n // 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "n − 1 reste positif et diminue ; 64 − n augmente ; 2n − 200 est négatif.",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "2 * n − 200",
+        "n",
+        "n − 1",
+        "64 − n"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces tableaux, lesquels sont des pires cas pour le tri par insertion ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les tableaux décroissants obligent chaque élément à remonter au début.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "[1, 2, 3, 4, 5]",
+        "[9, 7, 4, 2]",
+        "[5, 4, 3, 2, 1]",
+        "[2, 2, 2, 2]"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Sélection ou insertion : quelles comparaisons entre ces deux tris sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le tri par insertion s'adapte à l'ordre initial.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Le tri par insertion fait toujours n(n − 1)/2 comparaisons",
+        "Le tri par insertion fait moins de comparaisons sur un tableau presque trié",
+        "La dichotomie est plus lente que la recherche séquentielle sur un grand tableau trié",
+        "Le tri par sélection fait le même nombre de comparaisons quel que soit le tableau"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces tableaux, lesquels permettent d'utiliser la recherche dichotomique du cours ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le tableau doit être trié dans l'ordre croissant ; les chaînes se comparent aussi.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "[1, 4, 4, 9, 12]",
+        "[10, 8, 6, 4]",
+        "[\"ane\", \"chat\", \"zebre\"]",
+        "[3, 1, 2]"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles ont un coût linéaire dans le pire cas sur un tableau de n éléments ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La dernière fait de l'ordre de n² comparaisons.",
+      "notion": "Recherche d'une occurrence",
+      "propositions": [
+        "Trier le tableau par sélection",
+        "Vérifier si un tableau est trié en comparant les voisins",
+        "Compter les occurrences d'une valeur",
+        "Comparer chaque élément à tous les autres pour trouver des doublons"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Avec t = [4, -2, 7, 1], parmi ces affirmations sur la fonction maximum du cours, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "m n'est remplacé que par une valeur plus grande.",
+      "notion": "Extremum et moyenne",
+      "propositions": [
+        "Elle renvoie 7",
+        "m prend la valeur -2",
+        "Elle renvoie 4",
+        "m prend successivement les valeurs 4 puis 7"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le tri par sélection d'un tableau de n éléments, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Il fait n(n − 1)/2 comparaisons.",
+      "notion": "Tri par sélection",
+      "propositions": [
+        "Le dernier élément est forcément à sa place à la fin",
+        "Il fait n comparaisons au total",
+        "La boucle extérieure fait n tours",
+        "La boucle extérieure fait n − 1 tours"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "On cherche 4 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "m = 3 (7 > 4), m = 1 (3 < 4), m = 2 (5 > 4), puis g > d.",
+      "notion": "Recherche dichotomique",
+      "propositions": [
+        "Les éléments examinés sont 7, 3 puis 5",
+        "La fonction renvoie 2",
+        "La fonction renvoie -1",
+        "Les éléments examinés sont 7, 5 puis 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Le tri par insertion du cours est appliqué à [3, 1, 2]. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Tour 1 : 3 > 1 (décalage) ; tour 2 : 3 > 2 puis 1 > 2 faux.",
+      "notion": "Tri par insertion",
+      "propositions": [
+        "Il fait 3 comparaisons entre éléments",
+        "Après le premier tour, le tableau vaut [1, 3, 2]",
+        "Il fait 1 comparaison",
+        "Après le premier tour, le tableau vaut [1, 2, 3]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "On exécute a = 48 ; b = 18 puis while b != 0: a, b = b, a % b. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "a % b est strictement plus petit que b ; c'est l'algorithme d'Euclide (pgcd = 6).",
+      "notion": "Variant et terminaison",
+      "propositions": [
+        "À la fin, a vaut 6",
+        "b est un variant : c'est un entier positif qui diminue strictement",
+        "À la fin, a vaut 0",
+        "La boucle peut ne jamais s'arrêter"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur des tableaux de 1 000 000 d'éléments, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "n(n − 1)/2 ≈ 5 × 10¹¹.",
+      "notion": "Coût d'un algorithme",
+      "propositions": [
+        "Un parcours séquentiel fait environ 20 comparaisons",
+        "Un tri par sélection fait environ 5 × 10¹¹ comparaisons",
+        "Un tri par sélection fait environ 10⁶ comparaisons",
+        "Une dichotomie fait au plus une vingtaine de comparaisons"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la correction de la dichotomie, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le variant prouve la terminaison, pas la correction.",
+      "notion": "Invariant et correction",
+      "propositions": [
+        "Elle est garantie même si le tableau n'est pas trié",
+        "Elle peut être vérifiée pendant les tests avec des assertions",
+        "Elle repose sur le fait que le tableau est trié",
+        "Elle est prouvée par le variant d − g"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Que devient le temps de calcul quand la taille des données change ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "log₂(2n) = log₂ n + 1.",
+      "notion": "Comparaison des coûts",
+      "propositions": [
+        "Si n est multiplié par 2, une dichotomie fait deux fois plus de tours",
+        "Si n est multiplié par 2, une dichotomie fait environ un tour de plus",
+        "Si n est multiplié par 10, un algorithme quadratique prend environ 100 fois plus de temps",
+        "Si n est multiplié par 10, un algorithme linéaire prend 100 fois plus de temps"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Le coût d'un parcours séquentiel d'un tableau est linéaire.",
+      "difficulte": 1,
+      "explication": "Chaque élément est examiné au plus une fois.",
+      "notion": "Coût d'un algorithme",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:107",
+      "type": "vrai_faux",
+      "enonce": "La recherche dichotomique ne fonctionne que sur un tableau trié.",
+      "difficulte": 1,
+      "explication": "Elle s'appuie sur l'ordre des éléments.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Un variant de boucle sert à prouver qu'une boucle se termine.",
+      "difficulte": 1,
+      "explication": "C'est un entier positif qui diminue strictement.",
+      "notion": "Variant et terminaison",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Un invariant de boucle sert à prouver la correction d'un algorithme.",
+      "difficulte": 1,
+      "explication": "À la sortie, il donne le résultat attendu.",
+      "notion": "Invariant et correction",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Au premier tour du tri par sélection, le plus petit élément est placé en première position.",
+      "difficulte": 1,
+      "explication": "On échange le minimum avec t[0].",
+      "notion": "Tri par sélection",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Le tri par sélection et le tri par insertion ont un coût quadratique dans le pire cas.",
+      "difficulte": 1,
+      "explication": "De l'ordre de n² comparaisons.",
+      "notion": "Comparaison des coûts",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Le tri par sélection fait 10 comparaisons sur un tableau de 5 éléments.",
+      "difficulte": 2,
+      "explication": "4 + 3 + 2 + 1 = 10.",
+      "notion": "Tri par sélection",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Le tri par insertion a un coût linéaire sur un tableau déjà trié.",
+      "difficulte": 2,
+      "explication": "Une comparaison par élément.",
+      "notion": "Tri par insertion",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:114",
+      "type": "vrai_faux",
+      "enonce": "La recherche dichotomique dans un tableau trié d'un million d'éléments fait au plus une vingtaine de comparaisons.",
+      "difficulte": 2,
+      "explication": "2²⁰ ≈ 10⁶.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:115",
+      "type": "vrai_faux",
+      "enonce": "d − g est un variant de la boucle de la recherche dichotomique.",
+      "difficulte": 2,
+      "explication": "Il diminue d'au moins 1 à chaque tour sans succès.",
+      "notion": "Variant et terminaison",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Initialiser m avec t[0] permet de trouver le maximum même si tous les nombres sont négatifs.",
+      "difficulte": 2,
+      "explication": "m part d'un élément du tableau.",
+      "notion": "Extremum et moyenne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Après le tour i = 2 du tri par insertion appliqué à [4, 3, 1, 2], le tableau vaut [1, 3, 4, 2].",
+      "difficulte": 2,
+      "explication": "[3, 4, 1, 2] puis 1 inséré en tête.",
+      "notion": "Tri par insertion",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Le tri par insertion fait 10 comparaisons sur [5, 4, 3, 2, 1].",
+      "difficulte": 3,
+      "explication": "1 + 2 + 3 + 4 = 10.",
+      "notion": "Tri par insertion",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Pour chercher 15 dans [1, 3, 5, 7, 9, 11, 13, 15], la fonction dichotomie du cours fait 4 tours de boucle.",
+      "difficulte": 3,
+      "explication": "m = 3, 5, 6, 7.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Dans la dichotomie, remplacer g = m + 1 par g = m peut créer une boucle infinie.",
+      "difficulte": 3,
+      "explication": "Quand g = d − 1, m = g et la zone ne rétrécit plus.",
+      "notion": "Variant et terminaison",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch7:banque:121",
+      "type": "vrai_faux",
+      "enonce": "La recherche dichotomique fonctionne sur n'importe quel tableau, trié ou non.",
+      "difficulte": 1,
+      "explication": "Le tableau doit être trié.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Le coût de la recherche dichotomique est quadratique.",
+      "difficulte": 1,
+      "explication": "Il est logarithmique.",
+      "notion": "Coût d'un algorithme",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Un variant est une quantité qui augmente à chaque tour de boucle.",
+      "difficulte": 1,
+      "explication": "Il diminue strictement.",
+      "notion": "Variant et terminaison",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Le tri par insertion cherche à chaque tour le plus petit élément restant.",
+      "difficulte": 1,
+      "explication": "C'est le tri par sélection.",
+      "notion": "Tri par insertion",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:125",
+      "type": "vrai_faux",
+      "enonce": "La recherche séquentielle d'une occurrence exige un tableau trié.",
+      "difficulte": 1,
+      "explication": "Elle fonctionne sur un tableau quelconque.",
+      "notion": "Recherche d'une occurrence",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Un jeu de tests réussi prouve qu'un algorithme de tri est correct.",
+      "difficulte": 1,
+      "explication": "Seule une preuve (invariant) le garantit.",
+      "notion": "Invariant et correction",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Le tri par sélection fait moins de comparaisons sur un tableau déjà trié.",
+      "difficulte": 2,
+      "explication": "Il fait toujours n(n − 1)/2 comparaisons.",
+      "notion": "Tri par sélection",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Dans le tri par insertion, au début du tour i, t[0..i − 1] contient toujours les i plus petits éléments du tableau.",
+      "difficulte": 2,
+      "explication": "Ils sont triés, mais un plus petit peut arriver plus tard.",
+      "notion": "Invariant et correction",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Avec t = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90], la fonction dichotomie examine d'abord 50.",
+      "difficulte": 2,
+      "explication": "m = (0 + 9) // 2 = 4 : elle examine 40.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Si la taille des données est multipliée par 10, un algorithme quadratique prend environ 10 fois plus de temps.",
+      "difficulte": 2,
+      "explication": "Environ 100 fois plus.",
+      "notion": "Coût d'un algorithme",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Initialiser le maximum à 0 donne toujours le bon résultat.",
+      "difficulte": 2,
+      "explication": "Faux si tous les éléments sont négatifs.",
+      "notion": "Extremum et moyenne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Après le premier tour du tri par sélection appliqué à [4, 3, 1, 2], le tableau vaut [3, 4, 1, 2].",
+      "difficulte": 2,
+      "explication": "Il vaut [1, 3, 4, 2] ; [3, 4, 1, 2] est l'étape du tri par insertion.",
+      "notion": "Tri par sélection",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Le tri par sélection fait 1 000 000 de comparaisons sur un tableau de 1 000 éléments.",
+      "difficulte": 3,
+      "explication": "Il en fait 1000 × 999 / 2 = 499500.",
+      "notion": "Tri par sélection",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Pour chercher 4 dans [1, 3, 5, 7, 9, 11, 13, 15], la fonction dichotomie examine 7, puis 5, puis 3.",
+      "difficulte": 3,
+      "explication": "Elle examine 7, puis 3, puis 5.",
+      "notion": "Recherche dichotomique",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Le variant d − g prouve que la recherche dichotomique renvoie le bon résultat.",
+      "difficulte": 3,
+      "explication": "Il prouve la terminaison ; la correction vient de l'invariant.",
+      "notion": "Invariant et correction",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch7:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Que renvoie la fonction recherche du cours pour t = [5, 8, 3] et x = 3 ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "3 est à l'indice 2.",
+      "notion": "Recherche d'une occurrence",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Que renvoie la fonction maximum du cours pour t = [-5, -2, -9] ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "Le plus grand des trois nombres négatifs.",
+      "notion": "Extremum et moyenne",
+      "reponses_acceptees": [
+        "-2",
+        "−2"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on une quantité entière positive qui diminue strictement à chaque tour de boucle ?",
+      "difficulte": 1,
+      "explication": "Il prouve la terminaison.",
+      "notion": "Variant et terminaison",
+      "reponses_acceptees": [
+        "variant",
+        "un variant",
+        "variant de boucle"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on une propriété vraie avant une boucle et après chacun de ses tours ?",
+      "difficulte": 1,
+      "explication": "Il prouve la correction.",
+      "notion": "Invariant et correction",
+      "reponses_acceptees": [
+        "invariant",
+        "un invariant",
+        "invariant de boucle"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Que renvoie la fonction moyenne du cours pour t = [4, 6, 11] ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "(4 + 6 + 11) / 3 = 7.0.",
+      "notion": "Extremum et moyenne",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel adjectif désigne le coût de la recherche dichotomique ?",
+      "difficulte": 1,
+      "explication": "De l'ordre de log₂ n.",
+      "notion": "Recherche dichotomique",
+      "reponses_acceptees": [
+        "logarithmique"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Combien de comparaisons fait le tri par sélection sur un tableau de 8 éléments ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "8 × 7 / 2 = 28.",
+      "notion": "Tri par sélection",
+      "reponses_acceptees": [
+        "28"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:143",
+      "type": "reponse_courte",
+      "enonce": "On cherche 11 dans [1, 3, 5, 7, 9, 11, 13, 15] avec la fonction dichotomie du cours. Quel indice renvoie-t-elle ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "11 est à l'indice 5.",
+      "notion": "Recherche dichotomique",
+      "reponses_acceptees": [
+        "5"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Quel adjectif désigne le coût d'un algorithme qui fait de l'ordre de n² opérations ?",
+      "difficulte": 2,
+      "explication": "Le coût des tris par sélection et par insertion dans le pire cas.",
+      "notion": "Coût d'un algorithme",
+      "reponses_acceptees": [
+        "quadratique"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Combien de comparaisons fait le tri par insertion du cours sur un tableau de 10 éléments déjà trié ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "Une comparaison pour chaque élément à partir du deuxième.",
+      "notion": "Tri par insertion",
+      "reponses_acceptees": [
+        "9"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Avec t = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90], quel indice m la fonction dichotomie calcule-t-elle au premier tour ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "(0 + 9) // 2 = 4.",
+      "notion": "Recherche dichotomique",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:147",
+      "type": "reponse_courte",
+      "enonce": "On applique le tri par sélection du cours à [3, 1, 2]. Combien de tours fait sa boucle extérieure ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "n − 1 = 2 tours.",
+      "notion": "Tri par sélection",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Combien de comparaisons entre éléments fait le tri par insertion du cours sur [4, 3, 1, 2] ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "Tour 1 : 1 ; tour 2 : 2 ; tour 3 : 3 (4 > 2, 3 > 2, 1 > 2 faux).",
+      "notion": "Tri par insertion",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Combien de tours de boucle fait au maximum la fonction dichotomie du cours dans un tableau trié de 100 éléments ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "Zones de 100, 50, 25, 12, 6, 3, 1 éléments au plus : 7 tours (2⁶ = 64 < 100 < 128 = 2⁷).",
+      "notion": "Recherche dichotomique",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch7:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Avec a = 48 ; b = 18 puis while b != 0: a, b = b, a % b, que vaut a à la fin ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "48, 18 → 18, 12 → 12, 6 → 6, 0 : le pgcd vaut 6.",
+      "notion": "Variant et terminaison",
+      "reponses_acceptees": [
+        "6"
+      ]
+    }
+  ]
+}
