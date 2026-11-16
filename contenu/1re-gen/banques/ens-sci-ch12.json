@@ -1,0 +1,2323 @@
+{
+  "chapitre": 12,
+  "notions": [
+    "Analogique et numérique",
+    "Échantillonnage",
+    "Quantification",
+    "Unités : bits et octets",
+    "Taille d'un fichier audio",
+    "Choix des paramètres",
+    "Compression avec ou sans perte",
+    "Taux de compression et débit",
+    "Stockage et énergie",
+    "Histoire du son enregistré"
+  ],
+  "questions": [
+    {
+      "source": "ens-sci:ch12:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Comment qualifie-t-on un signal qui varie de façon continue et peut prendre une infinité de valeurs ?",
+      "propositions": [
+        "Numérique",
+        "Analogique",
+        "Échantillonné",
+        "Quantifié"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un signal analogique varie de façon continue ; un signal numérique est une suite finie de nombres binaires, obtenue après quantification.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Que désigne le mot « bit » ?",
+      "propositions": [
+        "Un groupe de 8 chiffres binaires",
+        "Un échantillon du signal sonore",
+        "Un chiffre binaire, 0 ou 1",
+        "Un niveau de la quantification"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Bit vient de l'anglais binary digit : c'est un chiffre binaire, 0 ou 1. Un groupe de 8 bits est un octet.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les deux opérations de la numérisation d'un son ?",
+      "propositions": [
+        "L'échantillonnage et la quantification",
+        "La compression et la décompression",
+        "L'amplification et le filtrage du signal",
+        "L'enregistrement puis la lecture du fichier"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Numériser, c'est discrétiser le signal : l'échantillonnage découpe le temps, la quantification découpe les valeurs.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Quel dispositif transforme la tension analogique fournie par un microphone en nombres binaires ?",
+      "propositions": [
+        "Le convertisseur analogique-numérique",
+        "Le convertisseur numérique-analogique",
+        "Le haut-parleur de l'appareil",
+        "Le microphone lui-même, seul"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le CAN échantillonne et quantifie le signal analogique. Le CNA fait l'opération inverse à la lecture ; le microphone ne fournit qu'une tension analogique.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Que représente la fréquence d'échantillonnage ?",
+      "propositions": [
+        "Le nombre d'échantillons prélevés par seconde",
+        "Le nombre de bits utilisés par échantillon",
+        "La fréquence du son le plus aigu enregistré",
+        "Le nombre de voies utilisées pour l'enregistrement"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "fe est le nombre d'échantillons par seconde, en hertz. Le nombre de bits concerne la quantification.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la fréquence d'échantillonnage du CD audio ?",
+      "propositions": [
+        "8 kHz",
+        "44,1 kHz",
+        "20 kHz",
+        "22,05 kHz"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le CD échantillonne à 44,1 kHz, soit 44 100 mesures par seconde. 8 kHz est la fréquence du téléphone ; 20 kHz est la limite haute de l'audible, et 22,05 kHz la moitié de 44,1 kHz.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation lie la période d'échantillonnage Te et la fréquence d'échantillonnage fe ?",
+      "propositions": [
+        "fe = 2 × Te",
+        "fe = Te / 2",
+        "fe = 1 / Te",
+        "fe = 1 / (2 × Te)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La fréquence d'échantillonnage est l'inverse de la durée entre deux échantillons : fe = 1 / Te.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:008",
+      "type": "qcm_unique",
+      "enonce": "D'après le critère de Shannon, quelle condition la fréquence d'échantillonnage doit-elle vérifier pour un son dont la fréquence la plus haute est fmax ?",
+      "propositions": [
+        "fe > fmax / 2",
+        "fe > 2 × fmax",
+        "fe = fmax",
+        "fe < 2 × fmax"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le critère de Shannon impose une fréquence d'échantillonnage supérieure au double de la plus grande fréquence du son.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Un son contient des fréquences jusqu'à 4 kHz. Quelle fréquence d'échantillonnage le critère de Shannon impose-t-il ?",
+      "propositions": [
+        "Plus de 2 kHz",
+        "Plus de 8 kHz",
+        "Plus de 4 kHz",
+        "Plus de 16 kHz"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "fe > 2 × fmax = 2 × 4 = 8 kHz. C'est le choix du téléphone (8 kHz) pour une voix limitée à 4 kHz.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le CD utilise-t-il une fréquence d'échantillonnage de 44,1 kHz plutôt que 20 kHz ?",
+      "propositions": [
+        "Pour pouvoir enregistrer les infrasons, de fréquence inférieure à 20 Hz",
+        "Pour dépasser le double de 20 kHz, limite haute de l'audible",
+        "Parce qu'à 20 kHz le fichier serait beaucoup trop volumineux",
+        "Pour que chaque échantillon puisse être codé sur 16 bits"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "L'oreille entend jusqu'à environ 20 000 Hz ; le critère de Shannon impose fe > 2 × 20 000 = 40 000 Hz. 44,1 kHz donne une petite marge. À 20 kHz, le fichier serait plus petit, pas plus gros.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Combien de niveaux de quantification offre un codage sur 8 bits ?",
+      "propositions": [
+        "8",
+        "16",
+        "256",
+        "1 024"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Avec n bits, on dispose de 2ⁿ niveaux : 2⁸ = 256. 1 024 niveaux correspondent à 10 bits.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Le CD code chaque échantillon sur 16 bits. Combien de valeurs différentes un échantillon peut-il alors prendre ?",
+      "propositions": [
+        "16 777 216",
+        "256",
+        "1 024",
+        "65 536"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "2¹⁶ = 65 536 niveaux. 16 777 216 correspond à 24 bits, 256 correspond à 8 bits et 1 024 à 10 bits.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'effet d'une augmentation du nombre de bits de quantification ?",
+      "propositions": [
+        "Des échantillons prélevés plus souvent",
+        "Un fichier final plus petit qu'avant le changement",
+        "Des niveaux plus proches, donc moins de bruit",
+        "Une meilleure reproduction des seuls aigus"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Plus de bits donne plus de niveaux, plus rapprochés : l'erreur de quantification et le bruit de fond diminuent. Le fichier grossit ; c'est la fréquence d'échantillonnage qui règle la reproduction des aigus.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:014",
+      "type": "qcm_unique",
+      "enonce": "En passant de 8 à 16 bits par échantillon, par combien est multiplié le nombre de niveaux de quantification ?",
+      "propositions": [
+        "Par 2",
+        "Par 8",
+        "Par 65 536",
+        "Par 256"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "2¹⁶ / 2⁸ = 65 536 / 256 = 256 = 2⁸ : chacun des 8 bits ajoutés double le nombre de niveaux. 65 536 est le nombre total de niveaux sur 16 bits, pas le facteur multiplicatif.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on l'écart entre la valeur réelle d'un échantillon et le niveau retenu ?",
+      "propositions": [
+        "Le repliement du spectre",
+        "La période d'échantillonnage",
+        "Le taux de compression",
+        "L'erreur de quantification"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La quantification arrondit chaque échantillon au niveau le plus proche ; l'écart est l'erreur de quantification, perçue comme un léger bruit de fond.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits contient un octet ?",
+      "propositions": [
+        "2",
+        "10",
+        "8",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Avec la convention de ce cours, combien d'octets vaut 1 ko ?",
+      "propositions": [
+        "1 024 octets",
+        "100 octets",
+        "8 000 octets",
+        "1 000 octets"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le cours utilise les préfixes décimaux : 1 ko = 10³ o = 1 000 octets. 1 024 octets est le kibioctet, non utilisé ici.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Que vaut un kibioctet (Kio) ?",
+      "propositions": [
+        "1 024 octets",
+        "1 000 octets",
+        "1 000 bits",
+        "1 024 bits"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le kibioctet est fondé sur les puissances de 2 : 1 Kio = 2¹⁰ = 1 024 octets. Le cours ne l'utilise pas.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets représente 1 Mo ?",
+      "propositions": [
+        "10⁶ octets",
+        "10³ octets",
+        "10⁹ octets",
+        "8 × 10⁶ octets"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Avec les préfixes décimaux : 1 Mo = 10⁶ octets. 10³ o est 1 ko et 10⁹ o est 1 Go.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle formule donne la taille, en bits, d'un fichier audio non compressé ?",
+      "propositions": [
+        "fe × n × durée / nombre de voies",
+        "fe + n + nombre de voies + durée",
+        "2ⁿ × fe × nombre de voies × durée",
+        "fe × n × nombre de voies × durée"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Chaque seconde, fe échantillons de n bits pour chaque voie : taille = fe × n × nombre de voies × durée (en s). Le nombre de niveaux 2ⁿ n'intervient pas directement.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quel est le débit binaire d'un son de qualité CD, non compressé ?",
+      "propositions": [
+        "44,1 kbit/s",
+        "1 411,2 kbit/s",
+        "705,6 kbit/s",
+        "11 289,6 kbit/s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "44 100 × 16 × 2 = 1 411 200 bit/s = 1 411,2 kbit/s. 705,6 kbit/s correspondrait au mono ; 11 289,6 kbit/s multiplie à tort par 8.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la taille d'un enregistrement de 10 s en qualité CD (44,1 kHz, 16 bits, stéréo) ?",
+      "propositions": [
+        "14,112 Mo",
+        "1,764 Mo",
+        "0,882 Mo",
+        "105,84 Mo"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "44 100 × 16 × 2 × 10 = 14 112 000 bits ; ÷ 8 = 1 764 000 o = 1,764 Mo. 14,112 Mo oublie la division par 8, 0,882 Mo oublie la stéréo.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces formats utilise une compression avec perte ?",
+      "propositions": [
+        "MP3",
+        "WAV",
+        "FLAC",
+        "ZIP"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "MP3 (comme AAC) est une compression avec perte. WAV n'est pas compressé ; FLAC et ZIP sont des compressions sans perte.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Quelle place la vidéo occupe-t-elle dans le trafic sur Internet ?",
+      "propositions": [
+        "Une part négligeable",
+        "Environ un dixième",
+        "La majeure partie",
+        "Moins que la musique"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le cours indique que la vidéo représente la majeure partie du trafic sur Internet ; à durée égale, une vidéo représente beaucoup plus de données qu'un fichier audio.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Qui a inventé le phonographe en 1877 ?",
+      "propositions": [
+        "Claude Shannon",
+        "Emile Berliner",
+        "Harry Nyquist",
+        "Thomas Edison"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Edison invente le phonographe en 1877. Berliner invente le disque plat (gramophone) ; Nyquist et Shannon ont posé les bases de l'échantillonnage.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Quels avantages présente un son numérisé ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il se copie sans perte",
+        "Il se transmet par les réseaux",
+        "Il peut être compressé",
+        "Il est une copie parfaite du signal analogique",
+        "Sa fidélité ne dépend d'aucun paramètre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un son numérique se copie sans perte, se transmet et se compresse. Mais il n'est jamais une copie parfaite du signal analogique, et sa fidélité dépend des paramètres de numérisation.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "On augmente la fréquence d'échantillonnage d'un enregistrement. Quelles conséquences en découlent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le signal numérique suit mieux les variations rapides",
+        "Le fichier est plus gros",
+        "Le nombre de niveaux de quantification augmente",
+        "Le bruit de quantification disparaît"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Des échantillons plus rapprochés suivent mieux les variations rapides (aigus), et la taille est proportionnelle à fe. Le nombre de niveaux dépend du nombre de bits, pas de fe.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la quantification sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Avec n bits, on dispose de 2ⁿ niveaux",
+        "Elle découpe les valeurs du signal",
+        "Elle découpe le temps en intervalles réguliers",
+        "Avec 3 bits, on dispose de 6 niveaux"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La quantification découpe les valeurs en 2ⁿ niveaux ; avec 3 bits, 2³ = 8 niveaux. C'est l'échantillonnage qui découpe le temps.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Avec la convention du cours, quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 octet = 8 bits",
+        "1 Mo = 1 000 ko",
+        "1 Go = 10⁹ octets",
+        "1 ko = 1 024 octets",
+        "1 bit = 8 octets"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "1 o = 8 bits ; 1 Mo = 10⁶ o = 1 000 ko ; 1 Go = 10⁹ o. Dans ce cours, 1 ko vaut 1 000 octets (1 024 octets est le kibioctet).",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Quelles grandeurs interviennent dans le calcul de la taille d'un fichier audio non compressé ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La fréquence d'échantillonnage",
+        "Le nombre de bits par échantillon",
+        "Le nombre de voies",
+        "La fréquence du son enregistré",
+        "Le volume sonore du morceau"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taille = fe × n × nombre de voies × durée. Ni la fréquence du son ni son volume n'interviennent : un morceau doux ou fort de même durée a la même taille.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Quelles caractéristiques sont celles du téléphone fixe classique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Échantillonnage à 8 kHz",
+        "Quantification sur 8 bits",
+        "Enregistrement en stéréo",
+        "Échantillonnage à 44,1 kHz"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le téléphone utilise 8 kHz, 8 bits, mono : la voix reste compréhensible avec les fréquences inférieures à 4 kHz, et il y a peu de données à transmettre.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations une compression avec perte de type MP3 peut-elle éliminer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un son faible masqué par un son fort de fréquence proche",
+        "Les sons trop faibles pour être perçus",
+        "Les fréquences les plus aiguës, mal entendues",
+        "Les fréquences principales de la voix"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La compression avec perte supprime ce à quoi l'oreille est peu sensible : sons masqués (effet de masque), sons trop faibles, fréquences très aiguës. Les fréquences principales de la voix sont bien perçues : les supprimer rendrait le son méconnaissable.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "Quelles habitudes réduisent l'énergie consommée pour écouter de la musique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Télécharger un morceau écouté souvent au lieu de le relancer en streaming",
+        "Préférer le Wi-Fi au réseau mobile",
+        "Lancer un clip vidéo pour n'écouter que la musique",
+        "Changer de téléphone chaque année"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Télécharger évite de retransmettre le morceau à chaque écoute ; le réseau mobile est plus gourmand que le Wi-Fi. Une vidéo représente beaucoup plus de données, et la fabrication des appareils pèse lourd : il faut les garder longtemps.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:034",
+      "type": "qcm_multiple",
+      "enonce": "Quels supports d'enregistrement sont analogiques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le cylindre du phonographe",
+        "La cassette audio",
+        "Le disque vinyle",
+        "Le CD audio",
+        "Le fichier MP3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Cylindre, vinyle et cassette enregistrent un signal continu (sillon gravé, bande aimantée). Le CD (1982) et le MP3 stockent des nombres binaires.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:035",
+      "type": "qcm_multiple",
+      "enonce": "Après compression, un fichier passe de 40 Mo à 10 Mo. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux de compression est de 75 %",
+        "Le fichier compressé est 4 fois plus petit",
+        "Le taux de compression est de 25 %",
+        "Le fichier compressé est 30 fois plus petit"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "τ = (40 − 10) / 40 = 0,75 = 75 %. Quotient : 40 / 10 = 4. 25 % est la part conservée, pas la part supprimée ; 30 est la différence en Mo.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Un signal numérique est une suite finie de nombres.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un signal numérique est une suite finie de nombres écrits en binaire, alors qu'un signal analogique varie de façon continue.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Un son numérisé est toujours de meilleure qualité qu'un enregistrement analogique.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "« Numérique » ne veut pas dire « meilleur » : la fidélité dépend des paramètres de numérisation (fréquence d'échantillonnage, nombre de bits, compression).",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:038",
+      "type": "vrai_faux",
+      "enonce": "La fréquence d'échantillonnage s'exprime en hertz.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est un nombre d'échantillons par seconde, donc une fréquence en hertz (Hz) : 44 100 Hz pour le CD.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:039",
+      "type": "vrai_faux",
+      "enonce": "Si l'on échantillonne trop lentement, des sons graves qui n'existaient pas dans l'original peuvent apparaître.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est le repliement : avec une fréquence d'échantillonnage trop faible, les aigus sont perdus ou remplacés par des sons graves inexistants.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:040",
+      "type": "vrai_faux",
+      "enonce": "Passer de 8 à 16 bits par échantillon double le nombre de niveaux de quantification.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Chaque bit ajouté double le nombre de niveaux : ajouter 8 bits le multiplie par 2⁸ = 256 (de 256 à 65 536 niveaux).",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:041",
+      "type": "vrai_faux",
+      "enonce": "Un octet est un groupe de 10 bits.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:042",
+      "type": "vrai_faux",
+      "enonce": "Pour un même enregistrement non compressé, le fichier stéréo est deux fois plus gros que le fichier mono.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La taille est proportionnelle au nombre de voies : 2 voies en stéréo, 1 en mono.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Une compression sans perte permet de retrouver exactement le fichier d'origine.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est sa définition : FLAC ou ZIP réduisent la taille en exploitant les régularités, sans perdre d'information.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Convertir un fichier MP3 en WAV restitue les informations supprimées lors de la compression.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La compression avec perte est irréversible : le WAV obtenu est plus gros, mais pas de meilleure qualité que le MP3.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:045",
+      "type": "vrai_faux",
+      "enonce": "Le format MP3 a été mis au point dans les années 1960.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le MP3 a été mis au point dans les années 1990 par l'institut Fraunhofer, en Allemagne. Le CD date de 1982.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:046",
+      "type": "reponse_courte",
+      "enonce": "Combien de niveaux de quantification obtient-on avec un codage sur 4 bits ?",
+      "reponses_acceptees": [
+        "16",
+        "16 niveaux"
+      ],
+      "difficulte": 1,
+      "explication": "2⁴ = 2 × 2 × 2 × 2 = 16 niveaux, codés de 0000 à 1111.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:047",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la fréquence d'échantillonnage du CD audio, en Hz ? Écris le nombre sans espace.",
+      "reponses_acceptees": [
+        "44100",
+        "44100 Hz",
+        "44 100",
+        "44 100 Hz",
+        "44,1 kHz",
+        "44.1 kHz"
+      ],
+      "difficulte": 2,
+      "explication": "Le CD échantillonne à 44,1 kHz, soit 44 100 Hz.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:048",
+      "type": "reponse_courte",
+      "enonce": "Calcule la taille, en Mo, d'un enregistrement d'une minute en qualité CD (44,1 kHz, 16 bits, stéréo). Donne le résultat arrondi au dixième.",
+      "reponses_acceptees": [
+        "10,6",
+        "10.6",
+        "10,584",
+        "10.584"
+      ],
+      "difficulte": 3,
+      "explication": "Taille = 44 100 × 16 × 2 × 60 = 84 672 000 bits ; ÷ 8 = 10 584 000 o ≈ 10,6 Mo.",
+      "notion": "Taille d'un fichier audio",
+      "marge": 0.05
+    },
+    {
+      "source": "ens-sci:ch12:banque:049",
+      "type": "reponse_courte",
+      "enonce": "Quel nom donne-t-on à un groupe de 8 bits ?",
+      "reponses_acceptees": [
+        "octet",
+        "un octet",
+        "l'octet",
+        "octets",
+        "byte"
+      ],
+      "difficulte": 1,
+      "explication": "Un octet (en anglais byte) est un groupe de 8 bits.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Quel sigle de trois lettres désigne le convertisseur qui transforme un signal analogique en signal numérique ?",
+      "reponses_acceptees": [
+        "CAN",
+        "C.A.N.",
+        "C.A.N"
+      ],
+      "difficulte": 2,
+      "explication": "CAN : convertisseur analogique-numérique. Le CNA fait la conversion inverse à la lecture.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Quel est le but principal de la compression d'un fichier audio ?",
+      "propositions": [
+        "Réduire sa taille pour le stocker et le transmettre",
+        "Améliorer la qualité du son enregistré au départ",
+        "Augmenter la fréquence d'échantillonnage du son",
+        "Transformer le signal numérique en signal analogique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La compression réduit la taille du fichier pour faciliter son stockage et sa transmission ; elle n'améliore jamais la qualité.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces formats est une compression sans perte ?",
+      "propositions": [
+        "FLAC",
+        "MP3",
+        "AAC",
+        "Ogg Vorbis"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "FLAC est une compression sans perte. MP3, AAC et Ogg Vorbis sont des compressions avec perte.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Sur quoi s'appuient les compressions avec perte propres au son ?",
+      "propositions": [
+        "Sur les propriétés de l'audition humaine",
+        "Sur la seule suppression des répétitions du fichier",
+        "Sur l'augmentation du nombre de bits",
+        "Sur un échantillonnage plus rapide du son"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Elles éliminent ce à quoi l'oreille est peu sensible (modèle psychoacoustique). Repérer les répétitions et régularités est le principe des compressions sans perte.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on le phénomène par lequel un son fort empêche d'entendre un son faible de fréquence proche ?",
+      "propositions": [
+        "L'effet de masque",
+        "Le repliement",
+        "La quantification",
+        "La résonance"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un son faible de fréquence proche d'un son fort n'est pas entendu : c'est l'effet de masque, exploité par le MP3 pour supprimer ces sons.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Avec la définition du cours, comment calcule-t-on le taux de compression τ ?",
+      "propositions": [
+        "taille compressée / taille initiale",
+        "(taille initiale − taille compressée) / taille compressée",
+        "taille initiale × taille compressée / 100",
+        "(taille initiale − taille compressée) / taille initiale"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Dans ce cours, τ est la proportion de la taille initiale supprimée : τ = (taille initiale − taille compressée) / taille initiale. Le quotient taille compressée / taille initiale est la part conservée.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un fichier de 50 Mo est compressé en un fichier de 5 Mo. Quel est le taux de compression, au sens du cours ?",
+      "propositions": [
+        "10 %",
+        "45 %",
+        "90 %",
+        "55 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "τ = (50 − 5) / 50 = 45 / 50 = 0,90 = 90 %. 10 % est la part conservée.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Un morceau passe de 31,752 Mo en WAV à 7,2 Mo en MP3 à 320 kbit/s. Quel est le taux de compression, arrondi à l'unité ?",
+      "propositions": [
+        "77 %",
+        "23 %",
+        "86 %",
+        "91 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "τ = (31,752 − 7,2) / 31,752 = 24,552 / 31,752 ≈ 0,773, soit 77 %. 23 % est la part conservée ; 86 % et 91 % correspondent aux MP3 à 192 et 128 kbit/s.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la taille d'un MP3 de 4 min à 128 kbit/s ?",
+      "propositions": [
+        "30,72 Mo",
+        "2,88 Mo",
+        "3,84 Mo",
+        "0,48 Mo"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taille = débit × durée = 128 000 × 240 = 30 720 000 bits ; ÷ 8 = 3 840 000 o = 3,84 Mo. 30,72 Mo oublie la division par 8 ; 2,88 Mo correspond à 3 min.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:059",
+      "type": "qcm_unique",
+      "enonce": "En quelle unité exprime-t-on habituellement le débit d'un fichier MP3 ?",
+      "propositions": [
+        "kHz (kilohertz)",
+        "kbit/s",
+        "Mo",
+        "dB"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le débit est un nombre de bits par seconde, souvent en kbit/s : 128, 192 ou 320 kbit/s pour un MP3.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:060",
+      "type": "qcm_unique",
+      "enonce": "À format égal, qu'obtient-on en choisissant un débit plus élevé ?",
+      "propositions": [
+        "Une meilleure qualité, avec un fichier plus petit",
+        "Une qualité identique, avec un fichier plus petit",
+        "Une meilleure qualité, avec un fichier plus gros",
+        "Une qualité moindre, avec un fichier plus gros"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "À format égal, plus le débit est élevé, moins on supprime d'information : meilleure qualité, mais taille = débit × durée plus grande.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Le CD a un débit de 1 411,2 kbit/s. Par combien, environ, la taille est-elle divisée en passant à un MP3 à 128 kbit/s ?",
+      "propositions": [
+        "Environ 11",
+        "Environ 3",
+        "Environ 128",
+        "Environ 91"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Pour une même durée, les tailles sont proportionnelles aux débits : 1 411,2 / 128 ≈ 11. 91 est le taux de compression en pourcentage, pas le quotient.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Pour quel usage choisit-on une numérisation à 96 kHz et 24 bits ?",
+      "propositions": [
+        "Le téléphone fixe classique",
+        "La musique gravée sur CD audio",
+        "L'enregistrement en studio",
+        "Les messages vocaux courts"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "En studio, on garde une marge (96 kHz, 24 bits) pour mixer et corriger le son sans dégrader le résultat.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le téléphone se contente-t-il d'un échantillonnage à 8 kHz ?",
+      "propositions": [
+        "L'oreille humaine n'entend aucun son au-delà de 4 kHz",
+        "La voix reste compréhensible avec les fréquences sous 4 kHz",
+        "Un échantillonnage plus rapide serait techniquement impossible",
+        "Une voix humaine ne dépasse jamais la fréquence de 1 kHz"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Avec fe = 8 kHz, on reproduit les fréquences jusqu'à 4 kHz : la voix reste compréhensible (un peu « métallique ») et il y a peu de données à transmettre. L'oreille entend pourtant jusqu'à 20 kHz environ.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On veut enregistrer des cris de chauves-souris qui atteignent 100 kHz. Quelle fréquence d'échantillonnage convient ?",
+      "propositions": [
+        "44,1 kHz",
+        "96 kHz",
+        "250 kHz",
+        "150 kHz"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Il faut fe > 2 × 100 = 200 kHz. Seule 250 kHz convient ; 150 kHz est supérieure à 100 kHz mais inférieure au double.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Que devient la taille d'un fichier non compressé si l'on double la fréquence d'échantillonnage ?",
+      "propositions": [
+        "Elle est divisée par deux",
+        "Elle est multipliée par quatre",
+        "Elle double",
+        "Elle ne change pas"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La taille est proportionnelle à fe : deux fois plus d'échantillons par seconde donnent un fichier deux fois plus gros.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Un enregistrement passe de 16 à 24 bits par échantillon, sans autre changement. Par combien sa taille est-elle multipliée ?",
+      "propositions": [
+        "8",
+        "1,5",
+        "256",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La taille est proportionnelle au nombre de bits : 24 / 16 = 1,5. Le nombre de niveaux, lui, est multiplié par 2⁸ = 256, mais ce n'est pas la taille.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la taille d'un message vocal de 1 min enregistré à 8 kHz, sur 8 bits, en mono ?",
+      "propositions": [
+        "3 840 ko",
+        "60 ko",
+        "480 ko",
+        "960 ko"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "8 000 × 8 × 1 × 60 = 3 840 000 bits ; ÷ 8 = 480 000 o = 480 ko. 3 840 ko oublie la division par 8 ; 960 ko compte deux voies.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la taille d'une minute de son enregistrée à 48 kHz, sur 24 bits, en stéréo ?",
+      "propositions": [
+        "17,28 Mo",
+        "11,52 Mo",
+        "138,24 Mo",
+        "8,64 Mo"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "48 000 × 24 × 2 × 60 = 138 240 000 bits ; ÷ 8 = 17 280 000 o = 17,28 Mo. 11,52 Mo correspond à 16 bits, 8,64 Mo au mono.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Une minute de son CD occupe environ 10,6 Mo. Environ combien occupe un morceau de 5 minutes au même format ?",
+      "propositions": [
+        "Environ 2,1 Mo",
+        "Environ 15,6 Mo",
+        "Environ 106 Mo",
+        "Environ 53 Mo"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La taille est proportionnelle à la durée : 5 × 10,584 ≈ 52,9 Mo, soit environ 53 Mo.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Combien de voies comporte un enregistrement stéréo ?",
+      "propositions": [
+        "2",
+        "1",
+        "4",
+        "16"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Stéréo : 2 voies, une pour l'écouteur gauche et une pour le droit. Mono : 1 voie.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un échantillon ?",
+      "propositions": [
+        "Un court morceau de musique de quelques secondes",
+        "Une valeur du signal relevée à un instant donné",
+        "Un groupe de 8 bits consécutifs",
+        "La durée qui sépare deux mesures du signal"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Échantillonner, c'est relever la valeur du signal à intervalles réguliers ; chaque valeur relevée est un échantillon. La durée entre deux mesures est la période d'échantillonnage.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Quel appareil transforme la vibration de l'air en tension électrique ?",
+      "propositions": [
+        "Le haut-parleur",
+        "Le convertisseur numérique-analogique",
+        "La carte mémoire",
+        "Le microphone"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le microphone fournit une tension analogique qui varie au rythme du son ; le haut-parleur fait l'inverse.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité exprime-t-on habituellement la taille d'un fichier ?",
+      "propositions": [
+        "En hertz",
+        "En octets et leurs multiples",
+        "En bits par seconde de son enregistré",
+        "En décibels"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La taille d'un fichier s'exprime en octets (o) et en multiples : ko, Mo, Go, To. Les bits par seconde mesurent un débit.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi écouter 100 fois un morceau en streaming sollicite-t-il davantage les réseaux que l'écouter 100 fois après l'avoir téléchargé ?",
+      "propositions": [
+        "Le streaming utilise un format sans perte",
+        "Le morceau est transmis à chaque écoute",
+        "Le téléchargement compresse davantage",
+        "Le streaming double la fréquence d'échantillonnage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En streaming, le morceau est transmis 100 fois ; téléchargé, il n'est transmis qu'une fois puis écouté hors ligne.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Qui a mis au point le format MP3 ?",
+      "propositions": [
+        "L'institut Fraunhofer",
+        "Les entreprises Philips et Sony",
+        "Thomas Edison",
+        "Emile Berliner"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le MP3 a été mis au point dans les années 1990 par l'institut Fraunhofer, en Allemagne. Philips et Sony ont lancé le CD en 1982.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la compression avec perte sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est irréversible",
+        "Elle réduit davantage la taille qu'une compression sans perte",
+        "Elle permet de retrouver exactement le fichier initial",
+        "Elle ne concerne que les fichiers vidéo"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Avec perte, les informations supprimées sont perdues définitivement, mais la taille diminue beaucoup plus. MP3 et AAC sont des formats audio.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Quels formats utilisent une compression sans perte ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "FLAC",
+        "ZIP",
+        "MP3",
+        "AAC"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "FLAC (son) et ZIP (tout fichier) sont sans perte ; MP3 et AAC sont avec perte.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Un MP3 a un débit de 192 kbit/s. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il est plus petit qu'un MP3 à 320 kbit/s de même durée",
+        "Il est de meilleure qualité qu'un MP3 à 128 kbit/s du même morceau",
+        "Trois minutes de ce MP3 occupent 4,32 Mo",
+        "C'est un fichier compressé sans perte"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "À format égal, débit plus faible = fichier plus petit et qualité moindre. 192 000 × 180 = 34 560 000 bits = 4 320 000 o = 4,32 Mo. Le MP3 est avec perte.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Un enregistrement non compressé de 2 min est réalisé à 44,1 kHz, sur 16 bits, en stéréo. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il contient 169 344 000 bits",
+        "Il occupe environ 21,2 Mo",
+        "Il occupe environ 169 Mo",
+        "En mono, il occuperait environ 42,3 Mo"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "44 100 × 16 × 2 × 120 = 169 344 000 bits ; ÷ 8 = 21 168 000 o ≈ 21,2 Mo. 169 Mo oublie la division par 8 ; en mono, la taille serait divisée par deux (10,6 Mo).",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Quels choix rendent un fichier audio plus fidèle au son d'origine ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Augmenter la fréquence d'échantillonnage",
+        "Augmenter le nombre de bits par échantillon",
+        "Choisir un MP3 à 320 kbit/s plutôt qu'à 128 kbit/s",
+        "Réduire le nombre de niveaux de quantification"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une fréquence d'échantillonnage plus élevée, une quantification plus fine et un débit de compression plus élevé améliorent la fidélité. Moins de niveaux augmente l'erreur de quantification.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Qu'est-ce qui consomme de l'énergie quand on écoute de la musique en ligne ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les centres de données",
+        "Les réseaux de transmission",
+        "Le téléphone ou l'ordinateur",
+        "Rien, car le numérique est immatériel"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le numérique n'est pas immatériel : il faut alimenter et refroidir les centres de données, faire fonctionner les réseaux et les appareils.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les centres de données sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Ce sont de grands bâtiments remplis de serveurs",
+        "Il faut les alimenter en électricité et les refroidir",
+        "Ils fonctionnent sans consommer d'électricité",
+        "Ils ne stockent que des fichiers texte"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les centres de données stockent notamment les fichiers audio et vidéo écoutés en ligne ; ils consomment de l'électricité pour fonctionner et être refroidis.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Un convertisseur code chaque échantillon sur 10 bits. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il dispose de 1 024 niveaux",
+        "Il dispose de plus de niveaux qu'un codage sur 8 bits",
+        "Il dispose de 20 niveaux",
+        "Il dispose de deux fois plus de niveaux qu'un codage sur 5 bits"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "2¹⁰ = 1 024 niveaux, plus que 2⁸ = 256. Avec 5 bits, 2⁵ = 32 niveaux : 1 024 / 32 = 32, donc 32 fois plus, et non deux fois plus.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Quelles associations entre une date et un événement sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1877 : phonographe d'Edison",
+        "1982 : lancement du CD audio",
+        "1948 : Shannon popularise le mot bit",
+        "1963 : premier fichier MP3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "1877 : phonographe ; 1948 : Shannon et le bit ; 1982 : CD. 1963 est l'année de la cassette audio ; le MP3 date des années 1990.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Un son est échantillonné à 48 kHz. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On prélève 48 000 échantillons par seconde",
+        "La période d'échantillonnage vaut environ 20,8 microsecondes",
+        "Les fréquences jusqu'à 24 kHz peuvent être reproduites",
+        "Les fréquences jusqu'à 96 kHz peuvent être reproduites"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "fe = 48 000 Hz ; Te = 1 / 48 000 ≈ 2,08 × 10⁻⁵ s ≈ 20,8 µs. D'après le critère de Shannon, la fréquence maximale reproduite est fe / 2 = 24 kHz, pas 96 kHz.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:086",
+      "type": "vrai_faux",
+      "enonce": "Le CD audio échantillonne le son 44 100 fois par seconde.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "fe = 44,1 kHz = 44 100 Hz : 44 100 échantillons par seconde.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:087",
+      "type": "vrai_faux",
+      "enonce": "La fréquence d'échantillonnage doit être égale à la fréquence du son enregistré.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elle doit être supérieure au double de la plus haute fréquence du son (critère de Shannon) ; ce sont deux grandeurs différentes.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Le bruit de fond dû à la quantification diminue quand on augmente le nombre de bits.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Plus de bits donne des niveaux plus rapprochés : l'erreur de quantification, perçue comme un bruit de fond, diminue.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Avec la convention du cours, 1 Mo vaut un million d'octets.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "1 Mo = 10⁶ octets = 1 000 000 d'octets.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:090",
+      "type": "vrai_faux",
+      "enonce": "Un fichier de 8 000 bits occupe 8 000 octets.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "1 octet = 8 bits : 8 000 bits = 8 000 / 8 = 1 000 octets = 1 ko.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:091",
+      "type": "vrai_faux",
+      "enonce": "Deux morceaux non compressés de même durée, enregistrés avec les mêmes paramètres, ont la même taille, même si l'un est plus fort que l'autre.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La taille ne dépend que de fe, n, du nombre de voies et de la durée : le volume sonore n'intervient pas.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:092",
+      "type": "vrai_faux",
+      "enonce": "Le MP3 est une compression sans perte.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le MP3 est une compression avec perte : il élimine définitivement des informations peu perçues par l'oreille.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:093",
+      "type": "vrai_faux",
+      "enonce": "Plus le taux de compression, au sens du cours, est grand, plus le fichier compressé est petit.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "τ est la part de la taille initiale supprimée : plus elle est grande, plus il reste peu, donc plus le fichier est petit.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:094",
+      "type": "vrai_faux",
+      "enonce": "Le numérique est immatériel : stocker et échanger des fichiers ne consomme pas d'énergie.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Centres de données, réseaux et appareils consomment de l'électricité, et la fabrication des appareils a aussi un impact important.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:095",
+      "type": "vrai_faux",
+      "enonce": "Pour une simple écoute, un fichier à 192 kHz est nettement plus fidèle à l'oreille qu'un fichier de qualité CD.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Le CD reproduit déjà tout le domaine audible (jusqu'à 20 kHz). Aller au-delà de ce que l'oreille perçoit alourdit le fichier sans améliorer l'écoute.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:096",
+      "type": "reponse_courte",
+      "enonce": "Combien de bits par échantillon faut-il pour disposer de 1 024 niveaux de quantification ?",
+      "reponses_acceptees": [
+        "10",
+        "10 bits",
+        "dix"
+      ],
+      "difficulte": 2,
+      "explication": "2¹⁰ = 1 024 : il faut 10 bits.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:097",
+      "type": "reponse_courte",
+      "enonce": "Un MP3 de 3 min a un débit de 256 kbit/s. Quelle est sa taille, en Mo ?",
+      "reponses_acceptees": [
+        "5,76",
+        "5.76"
+      ],
+      "difficulte": 3,
+      "explication": "Taille = 256 000 × 180 = 46 080 000 bits ; ÷ 8 = 5 760 000 o = 5,76 Mo.",
+      "notion": "Taux de compression et débit",
+      "marge": 0.01
+    },
+    {
+      "source": "ens-sci:ch12:banque:098",
+      "type": "reponse_courte",
+      "enonce": "Après compression, la taille d'un fichier passe de 20 Mo à 12 Mo. Calcule le taux de compression défini dans le cours, en %.",
+      "reponses_acceptees": [
+        "40",
+        "40 %",
+        "40%"
+      ],
+      "difficulte": 2,
+      "explication": "τ = (20 − 12) / 20 = 8 / 20 = 0,40 = 40 %.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:099",
+      "type": "reponse_courte",
+      "enonce": "Quel mot anglais désigne l'écoute de musique en ligne, sans conserver le fichier sur son appareil ?",
+      "reponses_acceptees": [
+        "streaming",
+        "le streaming",
+        "stream"
+      ],
+      "difficulte": 1,
+      "explication": "Le streaming (écoute en ligne) transmet le morceau à chaque écoute, depuis des centres de données.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:100",
+      "type": "reponse_courte",
+      "enonce": "Un son contient des fréquences jusqu'à 15 kHz. D'après le critère de Shannon, quelle valeur, en kHz, la fréquence d'échantillonnage doit-elle dépasser ?",
+      "reponses_acceptees": [
+        "30",
+        "30 kHz",
+        "30kHz"
+      ],
+      "difficulte": 3,
+      "explication": "fe > 2 × fmax = 2 × 15 = 30 kHz.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Quel support numérique grand public Philips et Sony ont-ils lancé en 1982 ?",
+      "propositions": [
+        "La cassette audio",
+        "Le disque vinyle",
+        "Le DVD",
+        "Le CD audio"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le CD audio (1982) est le premier support numérique grand public pour la musique : 44,1 kHz, 16 bits, stéréo.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Quel scientifique a popularisé le mot « bit » en 1948 ?",
+      "propositions": [
+        "Thomas Edison",
+        "Emile Berliner",
+        "Joseph Fourier",
+        "Claude Shannon"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Claude Shannon fonde la théorie de l'information et popularise le mot bit en 1948 ; avec Nyquist, il pose les bases de l'échantillonnage.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:103",
+      "type": "qcm_unique",
+      "enonce": "En quelle année apparaît la cassette audio ?",
+      "propositions": [
+        "1877",
+        "1948",
+        "1982",
+        "1963"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La cassette audio apparaît en 1963 ; 1877 est l'année du phonographe, 1948 celle du bit de Shannon, 1982 celle du CD.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi les archives sonores doivent-elles régulièrement recopier leurs collections ?",
+      "propositions": [
+        "Parce que les supports et les formats deviennent obsolètes",
+        "Parce qu'une copie numérique améliore la qualité du son",
+        "Parce que les fichiers numériques grossissent avec le temps",
+        "Parce que la loi impose de changer de format chaque année"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un enregistrement n'est lisible qu'avec un lecteur, un logiciel qui comprend son format et un support en bon état : il faut migrer vers de nouveaux supports. La copie numérique se fait sans perte, mais n'améliore rien.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la capacité typique d'un DVD ?",
+      "propositions": [
+        "700 ko",
+        "25 Mo",
+        "4,7 To",
+        "4,7 Go"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un DVD contient 4,7 Go, contre environ 700 à 800 Mo pour un CD.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Comment s'appellent les grands bâtiments remplis de serveurs qui stockent les données consultées en ligne ?",
+      "propositions": [
+        "Des cartes mémoire",
+        "Des convertisseurs",
+        "Des centres de données",
+        "Des studios d'enregistrement"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les centres de données (data centers) stockent les fichiers écoutés ou regardés en ligne ; ils consomment de l'électricité pour fonctionner et être refroidis.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Quelle quantité de données transite pendant une heure d'écoute en ligne à 128 kbit/s ?",
+      "propositions": [
+        "144 Mo",
+        "57,6 Mo",
+        "460,8 Mo",
+        "16 ko"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "128 000 × 3 600 = 460 800 000 bits ; ÷ 8 = 57 600 000 o = 57,6 Mo. 460,8 Mo oublie la division par 8 ; 144 Mo correspond à 320 kbit/s.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Un élève écoute de la musique en ligne à 320 kbit/s, 1 h par jour. Quelle quantité de données transite en une semaine ?",
+      "propositions": [
+        "Environ 144 Mo",
+        "Environ 8 Go",
+        "Environ 1 To",
+        "Environ 1 Go"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Une heure à 320 kbit/s : 320 000 × 3 600 / 8 = 144 000 000 o = 144 Mo. En 7 jours : 7 × 144 = 1 008 Mo ≈ 1 Go. 8 Go oublie la division par 8.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:109",
+      "type": "qcm_unique",
+      "enonce": "D'après le cours, quel type de connexion est le plus gourmand en énergie pour écouter de la musique ?",
+      "propositions": [
+        "Le Wi-Fi",
+        "La connexion filaire",
+        "Le réseau mobile",
+        "Ils consomment tous autant"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le cours conseille de préférer une connexion filaire ou le Wi-Fi au réseau mobile, plus gourmand en énergie.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi la millième copie d'un fichier audio est-elle identique à l'original ?",
+      "propositions": [
+        "Le son est échantillonné de nouveau à chaque copie",
+        "Elle recopie exactement les mêmes nombres binaires",
+        "Chaque copie ajoute un souffle qui est corrigé ensuite",
+        "La copie se fait à une fréquence d'échantillonnage plus élevée"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Un fichier numérique est une suite de nombres : la copier, c'est recopier ces nombres à l'identique, sans perte. Chaque copie d'une cassette, au contraire, ajoutait du souffle.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui est perdu lors de la numérisation d'un signal ?",
+      "propositions": [
+        "Uniquement les sons graves contenus dans le signal",
+        "Ce qui se passe entre deux mesures et entre deux niveaux",
+        "Rien du tout, car la copie numérique du signal est parfaite",
+        "Uniquement la stéréo de l'enregistrement d'origine"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "L'échantillonnage ignore le signal entre deux instants de mesure et la quantification arrondit entre deux niveaux : le signal numérique n'est jamais une copie parfaite.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Lors de l'écoute, quel dispositif reconstruit une tension électrique à partir des nombres binaires ?",
+      "propositions": [
+        "Le convertisseur analogique-numérique",
+        "Le microphone",
+        "Le centre de données",
+        "Le convertisseur numérique-analogique"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le CNA reconstruit une tension que le haut-parleur ou l'écouteur transforme en son. Le CAN fait l'opération inverse à l'enregistrement.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Un son est échantillonné à 8 kHz. Quelle est la période d'échantillonnage ?",
+      "propositions": [
+        "8 × 10³ s",
+        "1,25 × 10⁻⁴ s",
+        "1,25 × 10⁻³ s",
+        "1,25 × 10⁻⁵ s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Te = 1 / fe = 1 / 8 000 = 1,25 × 10⁻⁴ s, soit 125 microsecondes.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Un musicien numérise à 22,05 kHz un son de flûte dont les harmoniques montent jusqu'à 15 kHz. Que risque-t-il ?",
+      "propositions": [
+        "Perdre ou déformer les aigus, car 22,05 kHz < 2 × 15 kHz",
+        "Rien, car 22,05 kHz est bien supérieure aux 15 kHz de la flûte",
+        "Obtenir un fichier plus gros qu'à 44,1 kHz",
+        "Un bruit de quantification plus important"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Le critère de Shannon impose fe > 2 × 15 = 30 kHz. À 22,05 kHz, les aigus au-delà de 11,025 kHz sont perdus ou remplacés par des sons graves (repliement). Le fichier serait plus petit qu'à 44,1 kHz, et le bruit de quantification dépend du nombre de bits.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Sur un schéma, les niveaux de quantification sont codés de 000 à 111. Combien y en a-t-il ?",
+      "propositions": [
+        "8",
+        "3",
+        "7",
+        "111"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les codes vont de 000 à 111 sur 3 bits : 2³ = 8 niveaux (000, 001, 010, 011, 100, 101, 110, 111).",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Que fait la quantification à chaque échantillon ?",
+      "propositions": [
+        "Elle le supprime s'il est trop faible pour l'oreille",
+        "Elle le répète pour doubler la durée du son",
+        "Elle le compresse avec perte, au format MP3",
+        "Elle l'arrondit au niveau disponible le plus proche"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La quantification découpe les valeurs en niveaux et arrondit chaque échantillon au niveau le plus proche, codé par un nombre binaire.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Le nombre de bits d'un codage passe de n à n + 1. Comment varie le nombre de niveaux de quantification ?",
+      "propositions": [
+        "Il augmente de 1",
+        "Il augmente de 2",
+        "Il double",
+        "Il est multiplié par n"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "On passe de 2ⁿ à 2ⁿ⁺¹ = 2 × 2ⁿ niveaux : chaque bit supplémentaire double le nombre de niveaux.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 1 Go, avec la convention du cours ?",
+      "propositions": [
+        "10⁶ octets",
+        "10¹² octets",
+        "10⁹ octets",
+        "2¹⁰ octets"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "1 Go = 10⁹ o ; 10⁶ o est 1 Mo, 10¹² o est 1 To, 2¹⁰ o est 1 kibioctet.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un même fichier peut-il afficher des tailles légèrement différentes selon l'ordinateur ?",
+      "propositions": [
+        "Certains logiciels comptent en kibioctets de 1 024 octets",
+        "Le fichier est recompressé automatiquement à chaque nouvelle ouverture",
+        "L'octet ne compte pas le même nombre de bits partout",
+        "La taille dépend du volume sonore choisi à l'écoute"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Certains logiciels utilisent les multiples binaires (1 Kio = 1 024 octets) au lieu des préfixes décimaux (1 ko = 1 000 octets). L'octet vaut toujours 8 bits.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Un CD audio contient 783 Mo de son de qualité CD. Sachant qu'une minute occupe 10,584 Mo, quelle durée de musique contient-il ?",
+      "propositions": [
+        "Environ 7 min",
+        "Environ 80 h",
+        "Environ 592 min",
+        "Environ 74 min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Durée = 783 / 10,584 ≈ 74 min. 592 min reviendrait à multiplier de plus par 8, en confondant bits et octets.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Un enregistrement mono à 44,1 kHz sur 16 bits occupe 882 000 octets. Quelle est sa durée ?",
+      "propositions": [
+        "5 s",
+        "20 s",
+        "80 s",
+        "10 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "882 000 o × 8 = 7 056 000 bits. Durée = 7 056 000 / (44 100 × 16 × 1) = 10 s. 5 s supposerait la stéréo ; 80 s multiplie une fois de trop par 8.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'inconvénient d'une fréquence d'échantillonnage et d'un nombre de bits plus élevés ?",
+      "propositions": [
+        "Un son moins fidèle",
+        "Un fichier plus gros",
+        "Des aigus moins bien reproduits",
+        "Un bruit de fond plus fort"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Ces choix améliorent la fidélité, mais la taille du fichier, proportionnelle à fe et à n, augmente : c'est un compromis.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Que signifie qu'une compression est « irréversible » ?",
+      "propositions": [
+        "Le fichier compressé ne peut plus jamais être copié",
+        "Le fichier compressé ne peut plus être lu",
+        "On ne peut pas retrouver le fichier d'origine",
+        "Le fichier ne peut plus être transmis par Internet"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une compression avec perte élimine définitivement des informations : on ne peut pas reconstituer le fichier d'origine. Le fichier compressé reste lisible, copiable et transmissible.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Comment les supports analogiques enregistraient-ils le son ?",
+      "propositions": [
+        "En stockant de longues suites de 0 et de 1 en binaire",
+        "En gravant un sillon ou en aimantant une bande",
+        "En échantillonnant le signal 44 100 fois par seconde",
+        "En compressant le son au format MP3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Cylindre, vinyle et bande magnétique enregistrent un signal continu, en gravant un sillon ou en aimantant une bande. Les suites binaires et l'échantillonnage concernent le numérique.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi dit-on que le signal fourni par un microphone est « analogique » ?",
+      "propositions": [
+        "Il est formé d'une suite de nombres binaires",
+        "Il est codé sur un nombre fini de niveaux",
+        "Sa tension varie au même rythme que le son",
+        "Il est mesuré seulement à intervalles réguliers"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La tension du microphone varie de façon continue, au même rythme que la pression de l'air : elle est « analogue » au son. Les autres propositions décrivent un signal numérique.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Quelles personnes sont citées dans l'histoire de l'enregistrement et de la numérisation du son ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Thomas Edison",
+        "Claude Shannon",
+        "Harry Nyquist",
+        "Isaac Newton"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Edison (phonographe, 1877), Nyquist et Shannon (bases de l'échantillonnage, 1928-1949). Newton n'intervient pas dans cette histoire.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:127",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les échanges de données audio et vidéo sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Leur quantité croît sans cesse",
+        "Ils entraînent un fort développement des capacités de stockage",
+        "La vidéo représente la majeure partie du trafic sur Internet",
+        "À durée égale, un fichier audio représente plus de données qu'une vidéo"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les échanges croissent et font développer le stockage ; la vidéo domine le trafic, car à durée égale elle représente beaucoup plus de données qu'un fichier audio.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Quelles unités servent à exprimer la taille d'un fichier ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le mégaoctet",
+        "Le kilooctet",
+        "Le kilohertz",
+        "Le kilobit par seconde"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une taille s'exprime en octets et multiples (ko, Mo). Le kilohertz mesure une fréquence, le kilobit par seconde un débit.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Un morceau de 3 min occupe 31,752 Mo en WAV et 4,32 Mo en MP3 à 192 kbit/s. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux de compression vaut environ 86 %",
+        "Le MP3 conserve environ 14 % de la taille initiale",
+        "Le fichier MP3 est environ 7 fois plus petit",
+        "Le taux de compression vaut environ 14 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "τ = (31,752 − 4,32) / 31,752 ≈ 0,864, soit 86 % supprimés et 14 % conservés. Quotient : 31,752 / 4,32 ≈ 7,35. 14 % est la part conservée, pas le taux au sens du cours.",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Pour un message vocal transmis par téléphone, quels choix sont pertinents ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une fréquence d'échantillonnage de 8 kHz",
+        "Un enregistrement en mono",
+        "Une quantification sur 24 bits",
+        "Une fréquence d'échantillonnage de 96 kHz"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La voix reste compréhensible jusqu'à 4 kHz : 8 kHz, 8 bits, mono suffisent et limitent les données. 24 bits et 96 kHz sont des choix de studio.",
+      "notion": "Choix des paramètres"
+    },
+    {
+      "source": "ens-sci:ch12:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "On double la durée d'un enregistrement non compressé et on passe de la stéréo au mono, sans autre changement. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La taille du fichier ne change pas",
+        "Le débit binaire est divisé par deux",
+        "La taille du fichier double",
+        "Le débit binaire ne change pas"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Taille : × 2 (durée) et ÷ 2 (voies), donc inchangée. Débit = fe × n × nombre de voies : divisé par deux.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations comparent correctement un codage sur 16 bits et un codage sur 8 bits ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le codage sur 16 bits offre plus de niveaux",
+        "Le codage sur 16 bits donne un bruit de fond plus faible",
+        "À fréquence d'échantillonnage égale, le fichier sur 16 bits est deux fois plus gros",
+        "Le codage sur 16 bits prélève deux fois plus d'échantillons"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "16 bits : 65 536 niveaux contre 256, quantification plus fine et moins de bruit ; la taille, proportionnelle à n, double. Le nombre d'échantillons dépend de fe, pas de n.",
+      "notion": "Quantification"
+    },
+    {
+      "source": "ens-sci:ch12:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le critère de Shannon sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il relie fréquence d'échantillonnage et fréquence maximale du son",
+        "Il explique le choix de 44,1 kHz pour le CD",
+        "Il impose de coder chaque échantillon sur 16 bits",
+        "Il interdit toute compression du fichier"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "fe > 2 × fmax : pour 20 kHz, il faut plus de 40 kHz, d'où 44,1 kHz. Il ne dit rien du nombre de bits ni de la compression.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:134",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments de la chaîne du son numérique travaillent avec des signaux analogiques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le microphone",
+        "Le haut-parleur",
+        "L'entrée du convertisseur analogique-numérique",
+        "Le fichier stocké en mémoire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le son n'est numérique qu'entre les deux convertisseurs : le microphone, l'entrée du CAN et le haut-parleur travaillent avec des tensions analogiques ; le fichier stocké est numérique.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:135",
+      "type": "qcm_multiple",
+      "enonce": "Un studio veut archiver ses enregistrements sans rien perdre, tout en gagnant de la place. Quels choix conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le format FLAC",
+        "Une archive ZIP du fichier WAV",
+        "Un MP3 à 320 kbit/s",
+        "Un AAC à débit élevé"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Seules les compressions sans perte (FLAC, ZIP) permettent de retrouver exactement l'original. MP3 et AAC, même à débit élevé, sont avec perte.",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:136",
+      "type": "vrai_faux",
+      "enonce": "Le phonographe d'Edison enregistrait le son de façon numérique.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le phonographe (1877) grave la vibration sur un cylindre : c'est un enregistrement analogique.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:137",
+      "type": "vrai_faux",
+      "enonce": "Le CD audio échantillonne à 44,1 kHz et code chaque échantillon sur 16 bits, en stéréo.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Ce sont les paramètres du CD (1982) : 44,1 kHz, 16 bits, 2 voies.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:138",
+      "type": "vrai_faux",
+      "enonce": "À durée égale, une vidéo représente beaucoup plus de données qu'un fichier audio.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est pourquoi la vidéo représente la majeure partie du trafic sur Internet.",
+      "notion": "Stockage et énergie"
+    },
+    {
+      "source": "ens-sci:ch12:banque:139",
+      "type": "vrai_faux",
+      "enonce": "Le haut-parleur reçoit un signal analogique.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Le CNA reconstruit une tension analogique, que le haut-parleur transforme en son : le son n'est numérique qu'entre les deux convertisseurs.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:140",
+      "type": "vrai_faux",
+      "enonce": "Une compression avec perte élimine des informations auxquelles l'oreille est peu sensible.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Elle supprime les sons masqués, trop faibles ou de fréquences mal entendues (modèle psychoacoustique).",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:141",
+      "type": "vrai_faux",
+      "enonce": "Le kibioctet vaut 1 000 octets.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le kibioctet vaut 2¹⁰ = 1 024 octets ; c'est le kilooctet (ko) qui vaut 1 000 octets.",
+      "notion": "Unités : bits et octets"
+    },
+    {
+      "source": "ens-sci:ch12:banque:142",
+      "type": "vrai_faux",
+      "enonce": "Un taux de compression de 75 %, au sens du cours, signifie que le fichier compressé occupe 75 % de la taille initiale.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Le taux est la part supprimée : 75 % supprimés, donc le fichier compressé occupe 25 % de la taille initiale (4 fois moins).",
+      "notion": "Taux de compression et débit"
+    },
+    {
+      "source": "ens-sci:ch12:banque:143",
+      "type": "vrai_faux",
+      "enonce": "Chaque copie d'une cassette audio ajoutait du souffle, alors qu'un fichier numérique se copie sans perte.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La copie numérique recopie les mêmes nombres ; la copie analogique dégradait un peu le signal à chaque fois.",
+      "notion": "Analogique et numérique"
+    },
+    {
+      "source": "ens-sci:ch12:banque:144",
+      "type": "vrai_faux",
+      "enonce": "Les tests d'écoute à l'aveugle montrent qu'un MP3 à fort débit se distingue toujours facilement d'un CD.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Ces tests montrent au contraire qu'un MP3 à fort débit est difficile à distinguer d'un CD ; la différence s'entend mieux à faible débit.",
+      "notion": "Histoire du son enregistré"
+    },
+    {
+      "source": "ens-sci:ch12:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Le critère de Shannon impose une fréquence d'échantillonnage égale à la moitié de la fréquence maximale du son.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Il impose fe > 2 × fmax : plus du double, et non la moitié.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on chaque valeur du signal relevée lors de l'échantillonnage ?",
+      "reponses_acceptees": [
+        "échantillon",
+        "un échantillon",
+        "l'échantillon",
+        "échantillons",
+        "les échantillons"
+      ],
+      "difficulte": 1,
+      "explication": "Chaque valeur relevée à un instant d'échantillonnage est un échantillon.",
+      "notion": "Échantillonnage"
+    },
+    {
+      "source": "ens-sci:ch12:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel format de compression sans perte, désigné par un sigle de 4 lettres, le cours cite-t-il pour le son ?",
+      "reponses_acceptees": [
+        "FLAC",
+        "le FLAC",
+        "F.L.A.C."
+      ],
+      "difficulte": 1,
+      "explication": "FLAC est une compression sans perte pour le son (ZIP est sans perte pour tout type de fichier).",
+      "notion": "Compression avec ou sans perte"
+    },
+    {
+      "source": "ens-sci:ch12:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Quel est le débit binaire, en kbit/s, d'un son à 48 kHz, 16 bits, stéréo ? Écris le nombre sans espace.",
+      "reponses_acceptees": [
+        "1536",
+        "1536 kbit/s",
+        "1 536",
+        "1 536 kbit/s"
+      ],
+      "difficulte": 2,
+      "explication": "Débit = fe × n × nombre de voies = 48 000 × 16 × 2 = 1 536 000 bit/s = 1 536 kbit/s.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la taille, en ko, d'un enregistrement de 10 s à 22,05 kHz, 16 bits, mono ?",
+      "reponses_acceptees": [
+        "441",
+        "441 ko"
+      ],
+      "difficulte": 3,
+      "explication": "22 050 × 16 × 1 × 10 = 3 528 000 bits ; ÷ 8 = 441 000 o = 441 ko.",
+      "notion": "Taille d'un fichier audio"
+    },
+    {
+      "source": "ens-sci:ch12:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Combien de mégaoctets transitent pendant 30 min d'écoute en ligne à 320 kbit/s ?",
+      "reponses_acceptees": [
+        "72",
+        "72 Mo"
+      ],
+      "difficulte": 2,
+      "explication": "320 000 × 1 800 = 576 000 000 bits ; ÷ 8 = 72 000 000 o = 72 Mo (la moitié des 144 Mo d'une heure).",
+      "notion": "Stockage et énergie"
+    }
+  ]
+}
