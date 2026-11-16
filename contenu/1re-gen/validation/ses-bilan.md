@@ -33,7 +33,7 @@ Chaque banque respecte les quotas pour 150 questions (75 / 30 / 30 / 15 par type
 
 ## Relecture et validation des quiz
 
-- **Rédaction** : la banque 1 a été rédigée par la session, les banques 2 à 13 par des sous-agents rédacteurs, puis contrôlées par `verifierBanque`. Les banques 2, 3, 4 et 5 en partie, puis 6 à 13, ont été rédigées par des sous-agents distincts de leurs relecteurs.
+- **Rédaction** : les banques 1 et 2 ont été rédigées par la session elle-même, les banques 3 à 13 par des sous-agents rédacteurs ; toutes ont été contrôlées par `verifierBanque`. Le relecteur de chaque banque est toujours un sous-agent distinct de celui qui l'a rédigée.
 - **Relecture indépendante à l'aveugle de chaque banque** : un sous-agent relecteur reçoit le texte du chapitre et les questions sans réponses ni explications, résout chaque question et refait chaque calcul (souvent avec python3), vérifie les faits cités, signale ambiguïtés, distracteurs défendables et variantes. Ses réponses sont comparées automatiquement aux réponses attendues avec les règles de normalisation et de marge de la base. Détail question par question dans `banques/ses-chN-relecture.md`.
 - **Résultats** : 1 944 réponses identiques sur 1 952 ; 8 écarts, tous examinés et attribués à des erreurs de saisie du relecteur (réponses contraires au texte explicite du cours, sans remarque, souvent sur des vrai/faux consécutifs) : réponses attendues maintenues. 276 remarques, dont une majorité de variantes de réponse courte et de calculs confirmés.
 - **Corrections faites à la suite des relectures** (voir chaque fichier de relecture) :
