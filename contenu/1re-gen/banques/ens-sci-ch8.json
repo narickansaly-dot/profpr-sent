@@ -238,7 +238,7 @@
       "type": "qcm_unique",
       "enonce": "Selon le récit d'Ératosthène, que se passe-t-il à Syène à midi, le jour du solstice d'été ?",
       "propositions": [
-        "Un bâton vertical porte une ombre de 7,2°",
+        "Un bâton vertical porte une ombre très allongée",
         "Le Soleil reste caché sous l'horizon",
         "L'ombre d'un bâton est la plus longue de l'année",
         "Le Soleil éclaire le fond d'un puits"
@@ -309,7 +309,7 @@
         "Ce sont deux angles opposés par le sommet au même point",
         "Ce sont deux angles complémentaires d'un triangle rectangle",
         "Ce sont deux angles inscrits dans un même demi-cercle",
-        "Ce sont des angles alternes-internes (rayons parallèles)"
+        "Ce sont deux angles alternes-internes, donc égaux"
       ],
       "bonnes_reponses": [
         3
@@ -552,7 +552,7 @@
     {
       "source": "ens-sci:ch8:banque:032",
       "type": "qcm_multiple",
-      "enonce": "Quelles raisons rendent incertain le résultat d'Ératosthène exprimé en kilomètres ? Coche toutes les réponses exactes.",
+      "enonce": "Quelles raisons rendent incertain le résultat d'Ératosthène ? Coche toutes les réponses exactes.",
       "propositions": [
         "La distance de 5 000 stades n'était qu'estimée",
         "Syène n'est pas exactement au sud d'Alexandrie",
@@ -613,7 +613,7 @@
       "propositions": [
         "La coque d'un navire lointain est cachée par la mer",
         "On ne voit pas au-delà d'une certaine distance : l'horizon",
-        "Il fait nuit à Tokyo quand il fait jour à Paris",
+        "Des étoiles différentes sont visibles selon la latitude",
         "Le ciel est bleu pendant la journée"
       ],
       "bonnes_reponses": [
@@ -622,7 +622,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "La courbure cache le bas des navires et limite la vue à l'horizon ; le Soleil n'éclaire qu'une moitié du globe, d'où les fuseaux horaires. La couleur du ciel n'a rien à voir avec la forme de la Terre.",
+      "explication": "La courbure cache le bas des navires, limite la vue à l'horizon et change la partie du ciel visible selon la latitude (sur une Terre plate, tout le monde verrait le même ciel). La couleur du ciel n'a rien à voir avec la forme de la Terre.",
       "notion": "Preuves de la rotondité"
     },
     {
@@ -723,7 +723,8 @@
         "gnomon",
         "un gnomon",
         "le gnomon",
-        "gnomons"
+        "gnomons",
+        "gnomon vertical"
       ],
       "difficulte": 1,
       "explication": "Le gnomon est un bâton vertical dont l'ombre permet de mesurer l'inclinaison des rayons du Soleil.",
@@ -761,7 +762,9 @@
       "enonce": "Deux villes d'un même méridien sont distantes de 333 km ; l'angle des rayons solaires avec la verticale y diffère de 3°. Quelle longueur de méridien obtiens-tu, en km ? Donne un nombre entier sans espace.",
       "reponses_acceptees": [
         "39960",
-        "39 960"
+        "39 960",
+        "39960 km",
+        "39 960 km"
       ],
       "marge": 0.01,
       "marge_relative": true,
@@ -776,7 +779,11 @@
       "reponses_acceptees": [
         "Magellan",
         "Fernand de Magellan",
-        "de Magellan"
+        "de Magellan",
+        "Ferdinand Magellan",
+        "Ferdinand de Magellan",
+        "Fernand Magellan",
+        "Fernão de Magalhães"
       ],
       "difficulte": 1,
       "explication": "L'expédition de Magellan part vers l'ouest et revient par l'est : la Terre est ronde.",
@@ -1490,7 +1497,10 @@
       "reponses_acceptees": [
         "triangulation",
         "la triangulation",
-        "une triangulation"
+        "une triangulation",
+        "triangulation plane",
+        "la triangulation plane",
+        "triangulations"
       ],
       "difficulte": 1,
       "explication": "La triangulation mesure une base et les angles d'une chaîne de triangles, puis calcule les autres côtés.",
@@ -1507,7 +1517,7 @@
       "marge": 0.002,
       "marge_relative": true,
       "difficulte": 2,
-      "explication": "R = 40 000 / (2π) ≈ 6 366 km.",
+      "explication": "R = 40 000 / (2π) ≈ 6 366 km. Avec π ≈ 3,14, on trouve 6 369 km, accepté par la marge de 0,2 %.",
       "notion": "Rayon et longueur du méridien"
     },
     {
@@ -1516,7 +1526,11 @@
       "enonce": "Quelle est la distance à l'horizon, en km, pour des yeux situés à 10 m au-dessus de la mer (R = 6 371 km) ? Arrondis au dixième.",
       "reponses_acceptees": [
         "11,3",
-        "11.3"
+        "11.3",
+        "11,3 km",
+        "11.3 km",
+        "11,29",
+        "11.29"
       ],
       "marge": 0.1,
       "marge_relative": false,
@@ -1549,7 +1563,7 @@
       "marge": 0.005,
       "marge_relative": true,
       "difficulte": 3,
-      "explication": "L = 2πR = 2 × 3,1416 × 1 737 ≈ 10 914 km.",
+      "explication": "L = 2πR = 2 × 3,1416 × 1 737 ≈ 10 914 km. Avec π ≈ 3,14, on trouve 10 908 km, accepté par la marge de 0,5 %.",
       "notion": "Rayon et longueur du méridien"
     },
     {
@@ -1813,7 +1827,7 @@
       "enonce": "Qu'est-ce qu'un grand cercle d'une sphère ?",
       "propositions": [
         "Un cercle dont le rayon dépasse 1 000 km",
-        "Tout cercle passant par les deux pôles",
+        "Tout cercle qui passe par le pôle Nord",
         "Un cercle centré sur le centre de la sphère",
         "Le cercle tracé par un parallèle quelconque"
       ],
@@ -1821,7 +1835,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "Un grand cercle est un cercle tracé sur la sphère dont le centre est le centre de la sphère : son rayon est celui de la sphère.",
+      "explication": "Un grand cercle est un cercle tracé sur la sphère dont le centre est le centre de la sphère : son rayon est celui de la sphère. Un cercle qui passe par le pôle Nord n'est pas forcément centré au centre de la Terre (un petit cercle peut passer par ce point).",
       "notion": "Grand cercle et plus court chemin"
     },
     {
@@ -2041,14 +2055,14 @@
         "Elles sont sur le même parallèle",
         "Elles ont la même longitude",
         "Leur écart de longitude vaut 10°",
-        "Elles sont séparées de 1 112 km exactement"
+        "Leur distance le long du parallèle vaut 1 112 km"
       ],
       "bonnes_reponses": [
         0,
         2
       ],
       "difficulte": 3,
-      "explication": "Même latitude (48° N), donc même parallèle ; écart de longitude 12 − 2 = 10°. Sur ce parallèle, 1° de longitude vaut moins que 111 km, donc la distance est inférieure à 1 112 km.",
+      "explication": "Même latitude (48° N), donc même parallèle ; écart de longitude 12 − 2 = 10°. 1 112 km serait la longueur de 10° le long d'un méridien (10 × 111,2 km) ; le parallèle 48° N a un rayon plus petit (R × cos 48°), donc 10° y représentent moins : environ 744 km.",
       "notion": "Latitude, longitude, altitude"
     },
     {
@@ -2260,7 +2274,11 @@
         "orthodromie",
         "l'orthodromie",
         "une orthodromie",
-        "l orthodromie"
+        "l orthodromie",
+        "orthodromies",
+        "arc de grand cercle",
+        "l'arc de grand cercle",
+        "un arc de grand cercle"
       ],
       "difficulte": 1,
       "explication": "L'orthodromie est le plus petit arc du grand cercle qui relie deux points.",
@@ -2274,7 +2292,10 @@
         "Greenwich",
         "le méridien de Greenwich",
         "méridien de Greenwich",
-        "Greenwich (Londres)"
+        "Greenwich (Londres)",
+        "Greenwich près de Londres",
+        "Greenwich, près de Londres",
+        "Greenwich (Royaume-Uni)"
       ],
       "difficulte": 1,
       "explication": "Le méridien de Greenwich, près de Londres, a été choisi comme référence en 1884.",
@@ -2287,7 +2308,8 @@
       "reponses_acceptees": [
         "latitude",
         "la latitude",
-        "une latitude"
+        "une latitude",
+        "latitudes"
       ],
       "difficulte": 1,
       "explication": "La latitude est l'angle entre le plan de l'équateur et la direction du point depuis le centre de la Terre.",
@@ -2318,7 +2340,7 @@
       "marge": 0.01,
       "marge_relative": true,
       "difficulte": 3,
-      "explication": "Rayon du parallèle : r = 6 371 × cos 60° = 3 185,5 km ; longueur = 2π × 3 185,5 ≈ 20 015 km, la moitié de l'équateur.",
+      "explication": "Rayon du parallèle : r = 6 371 × cos 60° = 3 185,5 km ; longueur = 2π × 3 185,5 ≈ 20 015 km, la moitié de l'équateur. Avec π ≈ 3,14, on trouve 20 005 km, accepté par la marge de 1 %.",
       "notion": "Grand cercle et plus court chemin"
     }
   ]
