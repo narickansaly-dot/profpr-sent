@@ -59,3 +59,13 @@ Vérificateur : « Banque du chapitre 2 conforme : 150 questions. »
 ## Questions encore douteuses
 
 Aucune.
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les questions corrigées ou remplacées des chapitres 1 à 6 (141 au total) ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 0 écart. Retouches faites à la suite de ses remarques :
+
+| Source | Changement |
+|---|---|
+| emc:ch2:banque:097 | Ambiguïté de « avant ses 40 ans » (droit de 1965) : la question porte sur l'année 1969. |
+| emc:ch2:banque:124 | Conditions de la loi de 2021 (majeur, cinq ans d'écart) ajoutées à l'énoncé. |
+| emc:ch2:banque:094 | Énoncé élargi à « dans le travail ou dans l'entreprise » pour la loi Copé-Zimmermann. |

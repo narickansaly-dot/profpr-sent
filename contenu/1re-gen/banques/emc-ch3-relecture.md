@@ -53,3 +53,7 @@ Sortie du vérificateur : « Banque du chapitre 3 conforme : 150 questions. »
 
 ## Questions encore douteuses
 
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les questions corrigées ou remplacées des chapitres 1 à 6 (141 au total) ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 0 écart. Remarques sans retouche pour ce chapitre (réponses acceptées vérifiées ou formulation jugée claire).

@@ -70,3 +70,7 @@ Sortie du vérificateur : `Banque du chapitre 6 conforme : 150 questions.`
 | emc:ch6:banque:022 | Le Tchad est « le premier territoire de l'Afrique française » à rallier la France libre (et non Éboué « le premier ») : énoncé et explication repris. |
 | emc:ch6:banque:115 | Explication alignée sur la même formulation. |
 | emc:ch6:banque:050 | Explication : expression forgée par Dolf Sternberger (1979), popularisée par Habermas. |
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les questions corrigées ou remplacées des chapitres 1 à 6 (141 au total) ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 0 écart. Remarques sans retouche pour ce chapitre (réponses acceptées vérifiées ou formulation jugée claire).

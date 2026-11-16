@@ -59,3 +59,11 @@ Le texte du cours a été corrigé après une vérification des faits. Questions
 | emc:ch1:banque:146 | Explication : « en 2023 » remplacé par « 15,4 % en 2024 ». |
 
 `verifier 1` après mise à jour : « Banque du chapitre 1 conforme : 150 questions. »
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les questions corrigées ou remplacées des chapitres 1 à 6 (141 au total) ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 0 écart. Retouches faites à la suite de ses remarques :
+
+| Source | Changement |
+|---|---|
+| emc:ch1:banque:071 | Indice de forme (énoncé reprenant la bonne réponse) : énoncé reformulé, distracteur « lycée » remplacé. |

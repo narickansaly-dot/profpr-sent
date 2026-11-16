@@ -78,3 +78,12 @@ Le texte du cours a été corrigé après une vérification des faits. Questions
 | emc:ch4:banque:090 | Examinée : sans lien avec le déplacement du monument de Ploërmel, toujours exacte. Gardée. |
 
 `verifier 4` après mise à jour : « Banque du chapitre 4 conforme : 150 questions. »
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les questions corrigées ou remplacées des chapitres 1 à 6 (141 au total) ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 0 écart. Retouches faites à la suite de ses remarques :
+
+| Source | Changement |
+|---|---|
+| emc:ch4:banque:054 | Indice de forme : la question porte désormais sur une restriction sans texte (condition « prévue par la loi » certainement absente). |
+| emc:ch4:banque:091 | Énoncé rattaché à l'article 27 et aux exemples d'arbitrage du cours. |
