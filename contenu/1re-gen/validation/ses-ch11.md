@@ -22,7 +22,9 @@ Contrôles automatiques passés le 16/11/2026 sur la branche `claude/contenu-1re
 - Relecture indépendante à l'aveugle : `banques/ses-ch11-relecture.md`. Résultat : **150 réponses identiques sur 150**, 0 écart(s), 28 remarques.
 - Statuts : 150 `valide`, 0 `a_relire`.
 
-## À faire par l'enseignant
+- Relecture indépendante du texte du chapitre : `banques/ses-ch11-cours-relecture.md` (corrections appliquées).
 
-1. Importer sans publier (`npm run import:contenu -- contenu/1re-gen/ses.json`) et lire le chapitre dans l'aperçu admin.
-2. Parcourir la relecture ; les questions `valide` sont tirées dans les quiz dès la publication.
+## Import et publication
+
+- Importé en base locale le 16/11/2026 (`npm run import:contenu -- contenu/1re-gen/ses.json`, sans `--publier`) : questions créées puis réimport sans changement (rejouable). Le cours et ses chapitres sont en **brouillon** : il reste à les publier depuis `/admin` (ou à réimporter avec `--publier`).
+- Les questions `valide` sont tirées dans les quiz dès la publication.
