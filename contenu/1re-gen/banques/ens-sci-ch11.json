@@ -121,7 +121,10 @@
       "enonce": "Quelle est la fréquence, en Hz, d'un signal sinusoïdal de période T = 5,0 ms ?",
       "reponses_acceptees": [
         "200",
-        "200 Hz"
+        "200 Hz",
+        "2,0 × 10²",
+        "2 × 10²",
+        "2,0.10^2"
       ],
       "difficulte": 2,
       "explication": "T = 5,0 ms = 5,0 × 10⁻³ s, donc f = 1 / T = 1 / 0,005 = 200 Hz.",
@@ -701,7 +704,9 @@
         "timbre",
         "le timbre",
         "un timbre",
-        "leur timbre"
+        "leur timbre",
+        "timbres",
+        "les timbres"
       ],
       "difficulte": 1,
       "explication": "C'est le timbre : il dépend des amplitudes relatives des harmoniques.",
@@ -723,14 +728,14 @@
       "propositions": [
         "Le son A, car il a plus de pics graves que B",
         "Le son B, car son fondamental est plus élevé",
-        "Les deux, car ils partagent tous les deux le pic à 600 Hz",
+        "Aucun : ils ont la même hauteur, car ils ont un pic commun à 600 Hz",
         "Aucun des deux ne peut être comparé sans les amplitudes"
       ],
       "bonnes_reponses": [
         1
       ],
       "difficulte": 3,
-      "explication": "La hauteur dépend de la fréquence fondamentale : 200 Hz pour A, 300 Hz pour B. B est plus aigu. Un pic commun ne donne pas la même hauteur.",
+      "explication": "La hauteur dépend de la fréquence fondamentale : 200 Hz pour A, 300 Hz pour B. B est plus aigu. Un pic commun ne donne pas la même hauteur : c'est le premier pic qui compte.",
       "notion": "Hauteur et timbre"
     },
     {
@@ -898,7 +903,8 @@
       "enonce": "Deux enceintes identiques produisent chacune 80 dB au même endroit. Quel est le niveau sonore, en dB, quand elles fonctionnent ensemble ?",
       "reponses_acceptees": [
         "83",
-        "83 dB"
+        "83 dB",
+        "83dB"
       ],
       "difficulte": 2,
       "explication": "Deux sources identiques : l'intensité double, donc le niveau augmente de 3 dB : 80 + 3 = 83 dB.",
@@ -962,7 +968,9 @@
       "reponses_acceptees": [
         "10000",
         "10⁴",
-        "10^4"
+        "10^4",
+        "10 puissance 4",
+        "1e4"
       ],
       "difficulte": 3,
       "explication": "+ 40 dB = 4 paliers de + 10 dB : intensité × 10⁴ = × 10 000.",
@@ -1058,7 +1066,7 @@
       "enonce": "Le niveau sonore d'une salle passe de 70 dB à 80 dB. Coche toutes les réponses exactes.",
       "propositions": [
         "L'intensité sonore est multipliée par 10",
-        "Le niveau atteint le seuil de risque en cas d'exposition prolongée",
+        "Le nouveau niveau est égal au seuil de risque indiqué pour une exposition prolongée (80 dB)",
         "L'intensité sonore augmente de 10 W/m²",
         "L'intensité sonore est multipliée par 80 / 70"
       ],
@@ -1557,7 +1565,9 @@
         "l'octave",
         "une octave",
         "l octave",
-        "l’octave"
+        "l’octave",
+        "octaves",
+        "une octave juste"
       ],
       "difficulte": 1,
       "explication": "Un rapport 2 définit l'octave : la même note à deux hauteurs différentes.",
@@ -1742,13 +1752,15 @@
     {
       "source": "ens-sci:ch11:banque:115",
       "type": "reponse_courte",
-      "enonce": "Une note A a pour fondamental 220 Hz. Le spectre d'une note D a son premier pic à 1760 Hz. De combien d'octaves D est-elle au-dessus de A ?",
+      "enonce": "Une note A a pour fondamental 220 Hz. Le spectre d'une note D a son premier pic à 1760 Hz. De combien d'octaves D est-elle au-dessus de A ? (Réponds par le nombre d'octaves, pas par le rapport des fréquences.)",
       "reponses_acceptees": [
         "3",
-        "trois"
+        "trois",
+        "3 octaves",
+        "trois octaves"
       ],
       "difficulte": 3,
-      "explication": "1 760 / 220 = 8 = 2³ : D est la même note, trois octaves plus haut.",
+      "explication": "1 760 / 220 = 8 = 2³ : le rapport vaut 8, soit 3 octaves (2 × 2 × 2). D est la même note, trois octaves plus haut.",
       "notion": "Intervalles et octave"
     },
     {
@@ -2000,7 +2012,7 @@
     {
       "source": "ens-sci:ch11:banque:132",
       "type": "qcm_multiple",
-      "enonce": "Avec la méthode de Pythagore à partir du do à 264 Hz, quelles notes obtient-on ? Coche toutes les réponses exactes.",
+      "enonce": "On construit une gamme de Pythagore à partir du do à 264 Hz, dans l'octave de 264 Hz à 528 Hz. Quelles notes de cette gamme sont correctement données ? Coche toutes les réponses exactes.",
       "propositions": [
         "Un sol à 396 Hz",
         "Un ré à 297 Hz",
@@ -2014,7 +2026,7 @@
         2
       ],
       "difficulte": 2,
-      "explication": "sol = 264 × 3/2 = 396 ; ré = 396 × 3/2 = 594, ramené dans l'octave : 297 ; la = 297 × 3/2 = 445,5 Hz. 594 Hz dépasse 528 Hz, hors de l'octave ; le fa est à 352 Hz.",
+      "explication": "sol = 264 × 3/2 = 396 ; ré = 396 × 3/2 = 594, ramené dans l'octave : 297 ; la = 297 × 3/2 = 445,5 Hz. 594 Hz est une étape du calcul, mais dépasse 528 Hz : ce n'est pas une note de la gamme dans cette octave. Le fa est à 352 Hz.",
       "notion": "Gammes"
     },
     {
@@ -2047,11 +2059,11 @@
     {
       "source": "ens-sci:ch11:banque:135",
       "type": "qcm_multiple",
-      "enonce": "Pourquoi la gamme de Pythagore pose-t-elle problème pour transposer un morceau ? Coche toutes les réponses exactes.",
+      "enonce": "Quelles affirmations décrivent correctement le défaut de la gamme de Pythagore ? Coche toutes les réponses exactes.",
       "propositions": [
         "Le cycle des quintes ne se referme pas exactement",
         "(3/2)¹² ≈ 129,7 n'est pas égal à 2⁷ = 128",
-        "Une de ses quintes est fausse",
+        "Une de ses quintes est fausse, ce qui gêne la transposition",
         "Ses octaves ne valent pas exactement 2"
       ],
       "bonnes_reponses": [
@@ -2191,7 +2203,7 @@
     {
       "source": "ens-sci:ch11:banque:144",
       "type": "vrai_faux",
-      "enonce": "Pythagore avait constaté que la moitié de la corde du monocorde donne l'octave.",
+      "enonce": "Pythagore et son école avaient constaté que la moitié de la corde du monocorde donne l'octave.",
       "bonne_reponse": true,
       "difficulte": 1,
       "explication": "Sur le monocorde, la moitié de la corde donne l'octave, les 2/3 la quinte, les 3/4 la quarte.",
