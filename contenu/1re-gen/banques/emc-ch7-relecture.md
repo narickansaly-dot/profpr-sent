@@ -40,3 +40,16 @@ Sortie du vérificateur (`verifier 7`) : « Banque du chapitre 7 conforme : 150 
 ## Questions encore douteuses
 
 Aucune.
+
+## Seconde relecture à l'aveugle des questions modifiées
+
+Les 12 questions corrigées ou remplacées ont été relues une seconde fois à l'aveugle par un nouveau sous-agent : 10 accords sans remarque, 0 écart, 2 remarques. 142 : « phishing » était déjà accepté. 131 : le changement de nom de la JDC (loi du 16 août 2026) est un fait récent que le relecteur ne peut pas recouper hors du cours.
+
+## Questions laissées « à relire »
+
+Ces questions reposent sur des faits de 2026 relevés par la vérification factuelle du cours (une seule recherche) et non recoupés : elles restent `a_relire` jusqu'à confirmation par l'enseignant.
+
+- emc:ch7:banque:074 : contenu du service national créé en 2026.
+- emc:ch7:banque:121 : lien entre ce service national et la réserve.
+- emc:ch7:banque:131 : JDC rebaptisée « journée de mobilisation » par la loi du 16 août 2026.
+- emc:ch7:banque:137 : nom d'origine de la JDC, avant ce changement de nom.
