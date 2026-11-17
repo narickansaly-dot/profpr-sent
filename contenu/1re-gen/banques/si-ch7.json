@@ -251,10 +251,10 @@
     {
       "source": "si-1re:ch7:banque:016",
       "type": "vrai_faux",
-      "enonce": "La nacelle d'une grande roue, qui reste horizontale pendant que la roue tourne, est en rotation autour de l'axe de la roue.",
+      "enonce": "Par rapport au châssis d'un fauteuil roulant, la roue est en translation circulaire, puisque ses points décrivent des cercles.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "Faux. La nacelle garde son orientation : c'est une translation circulaire. Seul le bras qui la porte est en rotation autour de l'axe.",
+      "explication": "Faux. La roue change d'orientation et ses points décrivent des cercles centrés sur un même axe fixe, l'axe de la roue : c'est une rotation autour d'un axe fixe. En translation circulaire, le solide garde son orientation et ses points décrivent des cercles de même rayon mais de centres différents.",
       "notion": "Référentiel, trajectoire et mouvements"
     },
     {
@@ -726,10 +726,10 @@
     {
       "source": "si-1re:ch7:banque:046",
       "type": "vrai_faux",
-      "enonce": "Sur un graphe v(t), l'aire comprise entre la courbe et l'axe du temps donne la distance parcourue.",
+      "enonce": "Dans un mouvement rectiligne uniformément varié, le graphe x(t) est une parabole.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai. C'est la méthode de lecture d'un graphe v(t) : l'aire donne la distance, la pente donne l'accélération.",
+      "explication": "Vrai. x(t) = x0 + v0·t + ½·a·t² contient un terme en t² : le graphe x(t) est une parabole, tandis que le graphe v(t) est une droite de pente a.",
       "notion": "Graphe v(t) et vitesse vectorielle"
     },
     {
@@ -968,10 +968,10 @@
     {
       "source": "si-1re:ch7:banque:062",
       "type": "vrai_faux",
-      "enonce": "Un tour complet vaut 360 rad.",
+      "enonce": "L'aiguille des secondes d'une horloge, qui fait un tour par minute, tourne à 1 rad/s.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "Faux. Un tour complet vaut 360° = 2π rad ≈ 6,28 rad.",
+      "explication": "Faux. N = 1 tr/min donne ω = 2π × 1 / 60 ≈ 0,105 rad/s. Un tour par minute n'est pas un radian par seconde : il faut convertir les tours en radians (× 2π) et les minutes en secondes (÷ 60).",
       "notion": "Grandeurs angulaires et conversions"
     },
     {
@@ -1001,7 +1001,9 @@
       ],
       "difficulte": 1,
       "explication": "180° = π rad ≈ 3,14 rad.",
-      "notion": "Grandeurs angulaires et conversions"
+      "notion": "Grandeurs angulaires et conversions",
+      "marge": 0.005,
+      "marge_relative": false
     },
     {
       "source": "si-1re:ch7:banque:066",
@@ -1579,13 +1581,13 @@
         "Un système bielle-manivelle avec son piston guidé",
         "Un pignon qui engrène sur une crémaillère guidée",
         "Un bras robotisé, de la base à la pince",
-        "Un vérin électrique à vis fixé au bâti par ses deux bouts"
+        "Un système vis-écrou dont la vis et l'écrou sont guidés par le bâti"
       ],
       "bonnes_reponses": [
         2
       ],
       "difficulte": 1,
-      "explication": "Le bras robotisé relie en série la base, les bras et la pince, qui n'est pas reliée à la base. Bielle-manivelle, pignon-crémaillère et vérin fixé aux deux bouts forment une boucle qui revient au bâti : ce sont des chaînes fermées.",
+      "explication": "Le bras robotisé relie en série la base, les bras et la pince, qui n'est pas reliée à la base. Bielle-manivelle, pignon-crémaillère et vis-écrou guidé par le bâti forment une boucle qui revient au bâti : ce sont des chaînes fermées.",
       "notion": "Composition des vitesses"
     },
     {
