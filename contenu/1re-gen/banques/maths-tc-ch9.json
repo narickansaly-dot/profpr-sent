@@ -1,0 +1,2307 @@
+{
+  "chapitre": 9,
+  "notions": [
+    "Définition et récurrence",
+    "Terme de rang n",
+    "Taux d'évolution constant",
+    "Sens de variation et représentation",
+    "Modélisation exponentielle",
+    "Linéaire ou exponentiel",
+    "Problèmes de seuil",
+    "Automatismes"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch9:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Une suite u est géométrique de raison q. Quelle relation est vraie pour tout rang n ?",
+      "propositions": [
+        "u(n + 1) = q × u(n)",
+        "u(n + 1) = u(n) + q",
+        "u(n + 1) = q + n",
+        "u(n) = q × n"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Dans une suite géométrique, on passe d'un terme au suivant en multipliant par la raison q : u(n + 1) = q × u(n). Ajouter q donnerait une suite arithmétique.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Les termes 5 ; 15 ; 45 ; 135 sont les premiers termes d'une suite géométrique. Quelle est sa raison ?",
+      "propositions": [
+        "10",
+        "5",
+        "3",
+        "1/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La raison est le quotient de deux termes consécutifs : 15/5 = 3, 45/15 = 3, 135/45 = 3. Le nombre 10 est la différence 15 − 5, qui n'est pas constante.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:003",
+      "type": "qcm_unique",
+      "enonce": "On donne u(0) = 7 et, pour tout n ⩾ 0, u(n + 1) = 2 × u(n). Que vaut u(1) ?",
+      "propositions": [
+        "9",
+        "14",
+        "7",
+        "49"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "u(1) = 2 × u(0) = 2 × 7 = 14. On multiplie par 2 : on n'ajoute pas 2 (ce qui donnerait 9).",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:004",
+      "type": "qcm_unique",
+      "enonce": "On donne u(0) = 50 et u(n + 1) = 1,2 × u(n) pour n ⩾ 0. Que vaut u(2) ?",
+      "propositions": [
+        "60",
+        "70",
+        "120",
+        "72"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "u(1) = 1,2 × 50 = 60, puis u(2) = 1,2 × 60 = 72. Ajouter deux fois 10 (70) oublie que la seconde hausse porte sur 60.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Chaque mois, le stock d'un produit est divisé par 2 : 80 ; 40 ; 20 ; 10 unités. Par quel nombre multiplie-t-on le stock chaque mois ?",
+      "propositions": [
+        "0,5",
+        "2",
+        "−40",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Diviser par 2 revient à multiplier par 0,5 : 40/80 = 0,5 et 20/40 = 0,5. La suite est géométrique de raison 0,5 (−40 est la première différence).",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces listes de nombres, laquelle peut être le début d'une suite géométrique ?",
+      "propositions": [
+        "3 ; 6 ; 9 ; 12",
+        "2 ; 4 ; 8 ; 14",
+        "3 ; 6 ; 12 ; 24",
+        "10 ; 20 ; 30 ; 40"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Pour 3 ; 6 ; 12 ; 24, les quotients valent tous 2. Pour 3 ; 6 ; 9 ; 12 : 6/3 = 2 mais 9/6 = 1,5 (suite arithmétique). Pour 2 ; 4 ; 8 ; 14 : 14/8 = 1,75. Pour 10 ; 20 ; 30 ; 40 : 20/10 = 2 mais 30/20 = 1,5 (suite arithmétique de raison 10).",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique vérifie u(0) = 2, u(1) = 6 et u(2) = 18. Que vaut u(3) ?",
+      "propositions": [
+        "30",
+        "54",
+        "24",
+        "36"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La raison est 6/2 = 3 (et 18/6 = 3). Donc u(3) = 3 × 18 = 54. La valeur 30 viendrait d'un ajout de 12, raisonnement de suite arithmétique.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Dans la relation u(n + 1) = 0,8 × u(n), comment appelle-t-on le nombre 0,8 ?",
+      "propositions": [
+        "Le premier terme",
+        "Le rang du terme",
+        "L'écart entre deux termes",
+        "La raison de la suite"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre par lequel on multiplie un terme pour obtenir le suivant est la raison q. Ici q = 0,8 : la suite est géométrique de raison 0,8.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "La suite u est définie par u(0) = 3 et u(n + 1) = 2 × u(n) pour n ⩾ 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(1) = 6",
+        "u(2) = 12",
+        "u(3) = 18",
+        "u(2) = 7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "u(1) = 2 × 3 = 6 ; u(2) = 2 × 6 = 12 ; u(3) = 2 × 12 = 24 (et non 18). La valeur 7 vient d'un ajout de 2 deux fois.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Parmi les suites suivantes, définies pour n ⩾ 0, repère les suites géométriques. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(0) = 1 et u(n + 1) = 3 × u(n)",
+        "v(0) = 1 et v(n + 1) = v(n) + 3",
+        "w(n) = 5 × 2ⁿ",
+        "t(n) = 2n + 5",
+        "s(n) = 7 × 0,5ⁿ"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "u se multiplie par 3 à chaque rang (raison 3) ; w(n) = 5 × 2ⁿ (raison 2) et s(n) = 7 × 0,5ⁿ (raison 0,5) sont de la forme u(0) × qⁿ. v et t sont arithmétiques : on ajoute 3, ou 2.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Les nombres 4 ; 12 ; 36 ; 108 sont les premiers termes d'une suite u, avec u(0) = 4. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u est géométrique de raison 3",
+        "u est arithmétique de raison 8",
+        "u(4) = 324",
+        "u(1)/u(0) = 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Quotients : 12/4 = 36/12 = 108/36 = 3, donc raison 3. Les différences (8, 24, 72) ne sont pas constantes. u(4) = 3 × 108 = 324 ; u(1)/u(0) = 12/4 = 3.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Une suite géométrique est une suite où l'on ajoute toujours le même nombre pour passer d'un terme au suivant.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : on ajoute toujours le même nombre dans une suite arithmétique. Dans une suite géométrique, on multiplie toujours par le même nombre q.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:013",
+      "type": "vrai_faux",
+      "enonce": "La suite 2 ; 6 ; 18 ; 54 est géométrique de raison 3.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : 6/2 = 3, 18/6 = 3 et 54/18 = 3. Chaque terme est le triple du précédent.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:014",
+      "type": "vrai_faux",
+      "enonce": "La suite 1 ; 2 ; 4 ; 7 ; 11 est géométrique, car chacun de ses termes est plus grand que le précédent.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : 2/1 = 2 et 4/2 = 2, mais 7/4 = 1,75. Les quotients ne sont pas constants. Une suite peut augmenter sans être géométrique.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Si chaque terme d'une suite est le quart du terme précédent, la suite est géométrique de raison 4.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : prendre le quart revient à multiplier par 1/4 = 0,25. La raison est 0,25, pas 4.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:016",
+      "type": "reponse_courte",
+      "enonce": "On donne u(0) = 6 et, pour tout n ⩾ 0, u(n + 1) = 5 × u(n). Calcule u(2). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "150"
+      ],
+      "difficulte": 1,
+      "explication": "u(1) = 5 × 6 = 30, puis u(2) = 5 × 30 = 150.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:017",
+      "type": "reponse_courte",
+      "enonce": "Les nombres 250 ; 50 ; 10 sont trois termes consécutifs d'une suite géométrique. Quelle est sa raison ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.2",
+        "1/5"
+      ],
+      "difficulte": 2,
+      "explication": "Raison = 50/250 = 0,2 (et 10/50 = 0,2) : chaque terme est le cinquième du précédent.",
+      "notion": "Définition et récurrence"
+    },
+    {
+      "source": "maths-tc:ch9:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique a pour premier terme u(0) et pour raison q. Quelle est l'expression de u(n) ?",
+      "propositions": [
+        "u(0) × qⁿ",
+        "u(0) + n × q",
+        "u(0) × q × n",
+        "(u(0) × q)ⁿ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Pour aller de u(0) à u(n), on multiplie n fois par q, donc par qⁿ : u(n) = u(0) × qⁿ. L'expression u(0) + n × q est celle d'une suite arithmétique.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique u a pour premier terme u(1) et pour raison q. Pour tout n ⩾ 1, à quoi est égal u(n) ?",
+      "propositions": [
+        "u(1) × qⁿ",
+        "u(1) + (n − 1) × q",
+        "u(1) × qⁿ⁻¹",
+        "u(1) × qⁿ⁺¹"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "De u(1) à u(n), on multiplie n − 1 fois par q : u(n) = u(1) × qⁿ⁻¹. Par exemple u(2) = u(1) × q¹.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique a pour premier terme u(0) = 5 et pour raison 2. Calcule u(3).",
+      "propositions": [
+        "30",
+        "40",
+        "1000",
+        "11"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "u(3) = 5 × 2³ = 5 × 8 = 40. Calculer 5 × 2 × 3 = 30 oublie la puissance ; (5 × 2)³ = 1 000 multiplie avant d'élever à la puissance.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique est définie pour n ⩾ 1 par u(1) = 4 et une raison égale à 3. Combien vaut u(4) ?",
+      "propositions": [
+        "324",
+        "13",
+        "48",
+        "108"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "u(4) = u(1) × 3⁴⁻¹ = 4 × 3³ = 4 × 27 = 108. Avec l'exposant 4, on obtiendrait 324, ce qui oublie que la suite commence au rang 1.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Pour tout entier n ⩾ 0, on pose v(n) = 64 × 0,5ⁿ. Que vaut v(3) ?",
+      "propositions": [
+        "8",
+        "16",
+        "4",
+        "0,125"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "0,5³ = 0,125, donc v(3) = 64 × 0,125 = 8. Autrement dit, on divise 64 trois fois par 2 : 32, 16, 8.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Un village compte 2 000 habitants en 2020 et sa population est multipliée par 1,1 chaque année. Avec u(0) = 2 000 pour 2020, combien d'habitants compte-t-il en 2022 ?",
+      "propositions": [
+        "2 400",
+        "2 200",
+        "2 420",
+        "2 442"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "2022 correspond au rang 2 : u(2) = 2 000 × 1,1² = 2 000 × 1,21 = 2 420. Le résultat 2 400 ajoute deux fois 200 sans tenir compte de la hausse sur la hausse.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique de raison positive vérifie u(2) = 12 et u(4) = 48. Quelle est sa raison ?",
+      "propositions": [
+        "4",
+        "2",
+        "18",
+        "3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Du rang 2 au rang 4, on multiplie deux fois par q : 48 = 12 × q², donc q² = 4 et q = 2 (car q > 0). La valeur 4 est q², pas q.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique de raison positive vérifie u(0) = 3 et u(2) = 75. Quelle est la valeur de u(1) ?",
+      "propositions": [
+        "39",
+        "25",
+        "36",
+        "15"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "u(2) = u(0) × q², donc 75 = 3 × q², q² = 25 et q = 5. Ainsi u(1) = 3 × 5 = 15. La valeur 39 est la moyenne de 3 et 75, qui conviendrait à une suite arithmétique.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Pour tout n ⩾ 0, on pose w(n) = 10 × 3ⁿ. Quelle est la valeur du terme de rang 0 ?",
+      "propositions": [
+        "10",
+        "0",
+        "30",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "w(0) = 10 × 3⁰ = 10 × 1 = 10, car tout nombre non nul élevé à la puissance 0 vaut 1.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique commence au rang 1 avec u(1) = 1 000, et sa raison vaut 0,1. Calcule u(4).",
+      "propositions": [
+        "0,1",
+        "10",
+        "1",
+        "100"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u(4) = 1 000 × 0,1³ = 1 000 × 0,001 = 1. On divise trois fois par 10 : 100, 10, 1. La valeur 0,1 utilise l'exposant 4 au lieu de 3.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique u de raison 2 vérifie u(5) = 96. Que vaut u(0) ?",
+      "propositions": [
+        "86",
+        "3",
+        "48",
+        "19,2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "u(5) = u(0) × 2⁵ = u(0) × 32, donc u(0) = 96/32 = 3. Retirer 10 (86) ou diviser par 5 (19,2) correspond à de mauvais modèles.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Au tableur, la cellule B2 contient u(0) = 50. Quelle formule écrire en B3, puis recopier vers le bas, pour obtenir la suite géométrique de raison 1,2 ?",
+      "propositions": [
+        "=B2+1,2",
+        "=50+1,2",
+        "=B2^1,2",
+        "=B2*1,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Chaque terme s'obtient en multipliant le précédent par 1,2 : en B3, « =B2*1,2 ». Recopiée, la formule devient « =B3*1,2 », etc. « =B2+1,2 » donnerait une suite arithmétique.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Pour tout n ⩾ 0, on pose v(n) = 3 × 2ⁿ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "v(0) = 3",
+        "v(1) = 6",
+        "v(2) = 36",
+        "v(3) = 24"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "v(0) = 3 × 1 = 3 ; v(1) = 3 × 2 = 6 ; v(2) = 3 × 4 = 12 (et non 6² = 36) ; v(3) = 3 × 8 = 24.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Une suite géométrique a pour premier terme u(1) = 2 et pour raison 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(2) = 10",
+        "u(3) = 50",
+        "u(n) = 2 × 5ⁿ pour n ⩾ 1",
+        "u(n) = 2 × 5ⁿ⁻¹ pour n ⩾ 1",
+        "u(4) = 2 × 5⁴"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le premier terme est u(1), donc u(n) = 2 × 5ⁿ⁻¹. u(2) = 2 × 5 = 10 ; u(3) = 2 × 25 = 50 ; u(4) = 2 × 5³ = 250, et non 2 × 5⁴.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Une suite géométrique u de raison q > 0 vérifie u(1) = 6 et u(3) = 54. Coche toutes les réponses exactes.",
+      "propositions": [
+        "q = 3",
+        "u(0) = 2",
+        "q = 9",
+        "u(2) = 30",
+        "u(4) = 162"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "54 = 6 × q², donc q² = 9 et q = 3 (q > 0). u(0) = 6/3 = 2 ; u(2) = 6 × 3 = 18 (30 serait la moyenne) ; u(4) = 54 × 3 = 162.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite géométrique de premier terme u(0) et de raison q, on a u(n) = u(0) × qⁿ pour tout n ⩾ 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : de u(0) à u(n), on multiplie n fois par q, c'est-à-dire par qⁿ.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Si u(0) = 5 et si la raison vaut 2, alors u(3) = 5 × 2 × 3 = 30.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : u(3) = 5 × 2³ = 5 × 8 = 40. L'exposant 3 n'est pas un facteur 3.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Une suite géométrique de premier terme u(1) = 7 et de raison 2 vérifie u(10) = 7 × 2⁹.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : avec u(1) comme premier terme, u(n) = u(1) × qⁿ⁻¹, donc u(10) = 7 × 2⁹.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Si une suite géométrique vérifie u(3) = 8 et u(6) = 64, alors sa raison vaut 2.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : du rang 3 au rang 6, on multiplie trois fois par q : 64 = 8 × q³, donc q³ = 8 et q = 2.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite géométrique, u(0) × q⁰ vaut 0, puisque q⁰ = 0.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : q⁰ = 1 pour tout q non nul, donc u(0) × q⁰ = u(0). La formule u(n) = u(0) × qⁿ redonne bien u(0) pour n = 0.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:038",
+      "type": "reponse_courte",
+      "enonce": "Une suite est définie pour tout n ⩾ 0 par u(n) = 7 × 2ⁿ. Calcule u(3). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "56"
+      ],
+      "difficulte": 1,
+      "explication": "u(3) = 7 × 2³ = 7 × 8 = 56.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:039",
+      "type": "reponse_courte",
+      "enonce": "La suite v vérifie v(1) = 81 et, pour n ⩾ 1, v(n + 1) = v(n)/3. Calcule v(4). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 2,
+      "explication": "On divise par 3 à chaque rang (raison 1/3) : v(2) = 27, v(3) = 9, v(4) = 3.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:040",
+      "type": "reponse_courte",
+      "enonce": "Une suite géométrique de raison positive vérifie u(0) = 2 et u(2) = 18. Calcule u(5). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "486"
+      ],
+      "difficulte": 3,
+      "explication": "18 = 2 × q², donc q² = 9 et q = 3. Alors u(5) = 2 × 3⁵ = 2 × 243 = 486.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch9:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Une quantité augmente de 5 % chaque année. Par quel nombre est-elle multipliée d'une année à la suivante ?",
+      "propositions": [
+        "1,05",
+        "0,05",
+        "1,5",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Augmenter de 5 %, c'est multiplier par 1 + 5/100 = 1,05 (coefficient multiplicateur). C'est la raison de la suite géométrique.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Un prix baisse de 20 % chaque mois. Quelle est la raison de la suite géométrique qui modélise ce prix ?",
+      "propositions": [
+        "0,2",
+        "−0,2",
+        "0,8",
+        "1,2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Baisser de 20 %, c'est multiplier par 1 − 0,2 = 0,8 : il reste 80 % du prix. La raison est 0,8.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:043",
+      "type": "qcm_unique",
+      "enonce": "La suite u vérifie u(n + 1) = 1,15 × u(n). Quelle évolution la quantité subit-elle à chaque étape ?",
+      "propositions": [
+        "Une hausse de 1,15 %",
+        "Une hausse de 15 %",
+        "Une hausse de 115 %",
+        "Une baisse de 15 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "q = 1,15 = 1 + 0,15 : le taux est t = 0,15, soit une hausse de 15 %.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique a pour raison 0,9. À quelle évolution correspond chaque étape ?",
+      "propositions": [
+        "Une baisse de 90 %",
+        "Une hausse de 90 %",
+        "Une baisse de 0,9 %",
+        "Une baisse de 10 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "q = 0,9 = 1 − 0,1 : on garde 90 % de la quantité, donc on perd 10 % à chaque étape.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:045",
+      "type": "qcm_unique",
+      "enonce": "On place 1 000 € à 5 % par an à intérêts composés. Quel est le capital au bout de 2 ans ?",
+      "propositions": [
+        "1 102,50 €",
+        "1 100 €",
+        "1 050 €",
+        "1 250 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "C(2) = 1 000 × 1,05² = 1 000 × 1,1025 = 1 102,50 €. Le montant 1 100 € correspond à des intérêts simples (50 € par an).",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Une voiture vaut 20 000 € et perd 10 % de sa valeur chaque année. Quelle est sa valeur au bout de 2 ans ?",
+      "propositions": [
+        "16 000 €",
+        "18 000 €",
+        "16 200 €",
+        "14 580 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Raison 0,9 : 20 000 × 0,9² = 20 000 × 0,81 = 16 200 €. Retirer deux fois 2 000 € (16 000 €) oublie que la seconde baisse porte sur 18 000 €.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:047",
+      "type": "qcm_unique",
+      "enonce": "On admet que 1,05¹⁰ ≈ 1,63. Un capital augmente de 5 % par an pendant 10 ans. Quelle est, environ, son évolution globale ?",
+      "propositions": [
+        "+ 50 %",
+        "+ 63 %",
+        "+ 163 %",
+        "+ 5 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le capital est multiplié par 1,05¹⁰ ≈ 1,63 = 1 + 0,63 : la hausse globale est d'environ 63 %, et non 10 × 5 % = 50 %.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Un capital C(0) est placé à intérêts composés au taux annuel t. Quelle expression donne le capital C(n) au bout de n années ?",
+      "propositions": [
+        "C(0) × (1 + n × t)",
+        "C(0) × tⁿ",
+        "C(0) + tⁿ",
+        "C(0) × (1 + t)ⁿ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Chaque année, le capital est multiplié par 1 + t : C(n) est une suite géométrique de raison 1 + t, donc C(n) = C(0) × (1 + t)ⁿ. C(0) × (1 + n × t) correspond aux intérêts simples.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Un loyer de 600 € augmente de 2 % par an. On note L(0) = 600 le loyer de cette année. Quelle formule donne L(n) ?",
+      "propositions": [
+        "L(n) = 600 × 1,02ⁿ",
+        "L(n) = 600 + 2n",
+        "L(n) = 600 × 0,02ⁿ",
+        "L(n) = 600 × 1,2ⁿ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une hausse de 2 % correspond à la raison 1,02 ; avec le premier terme L(0) = 600, L(n) = 600 × 1,02ⁿ. La raison 1,2 correspondrait à + 20 %.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Une chaîne de vidéos perd 25 % de ses abonnés chaque année. Elle part de 4 000 abonnés. Combien lui en reste-t-il au bout de 2 ans ?",
+      "propositions": [
+        "2 000",
+        "3 000",
+        "2 250",
+        "2 500"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Raison 0,75 : 4 000 × 0,75 = 3 000 après un an, puis 3 000 × 0,75 = 2 250. Retirer 50 % d'un coup (2 000) additionne à tort les pourcentages.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "Un salaire augmente de 3 % par an. On note S(0) son montant aujourd'hui et S(n) son montant dans n années. Coche toutes les réponses exactes.",
+      "propositions": [
+        "S(n + 1) = 1,03 × S(n)",
+        "S est une suite géométrique de raison 1,03",
+        "S(n + 1) = S(n) + 0,03",
+        "S est une suite géométrique de raison 1,3",
+        "En 10 ans, le salaire augmente d'exactement 30 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Une hausse de 3 % multiplie par 1,03 : S(n + 1) = 1,03 × S(n), raison 1,03 (1,3 serait + 30 %). En 10 ans, on multiplie par 1,03¹⁰, qui n'est pas 1,30 : les pourcentages ne s'ajoutent pas.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Pour chaque évolution, on indique la raison de la suite géométrique associée. Repère les associations correctes. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Hausse de 8 % : raison 1,08",
+        "Baisse de 30 % : raison 0,7",
+        "Baisse de 5 % : raison 0,5",
+        "Doublement : raison 2",
+        "Hausse de 100 % : raison 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "q = 1 + t : + 8 % donne 1,08 ; − 30 % donne 0,7 ; − 5 % donne 0,95 (et non 0,5) ; doubler, c'est multiplier par 2, soit + 100 % (raison 2, pas 1).",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:053",
+      "type": "qcm_multiple",
+      "enonce": "Une population de 10 000 bactéries diminue de 50 % chaque heure. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La raison vaut 0,5",
+        "Au bout de 2 heures, il en reste 2 500",
+        "Au bout de 2 heures, il n'en reste plus",
+        "Au bout de 3 heures, il en reste 1 250",
+        "La raison vaut −0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Baisser de 50 %, c'est multiplier par 0,5 : 10 000 → 5 000 → 2 500 → 1 250. Deux baisses de 50 % ne font pas − 100 % : il reste 0,5² = 0,25, soit 25 %.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Une hausse constante de 4 % par an se modélise par une suite géométrique de raison 1,04.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : augmenter de 4 % revient à multiplier par 1 + 0,04 = 1,04, chaque année.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:055",
+      "type": "vrai_faux",
+      "enonce": "Une baisse de 20 % par an pendant 5 ans fait disparaître toute la quantité, puisque 5 × 20 % = 100 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : on multiplie 5 fois par 0,8. Il reste 0,8⁵ ≈ 0,33, soit environ 33 % de la quantité. Les pourcentages successifs ne s'ajoutent pas.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:056",
+      "type": "vrai_faux",
+      "enonce": "À intérêts composés, les intérêts de chaque année sont calculés seulement sur le capital de départ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : c'est le cas des intérêts simples. À intérêts composés, les intérêts s'ajoutent au capital et rapportent à leur tour : on multiplie chaque année par 1 + t.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:057",
+      "type": "vrai_faux",
+      "enonce": "Deux hausses successives de 10 % équivalent à une hausse globale de 21 %.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : on multiplie par 1,1 × 1,1 = 1,21 = 1 + 0,21, soit + 21 %.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:058",
+      "type": "reponse_courte",
+      "enonce": "Un prix augmente de 7 % chaque année. Quelle est la raison de la suite géométrique qui modélise ce prix ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "1.07"
+      ],
+      "difficulte": 1,
+      "explication": "q = 1 + 7/100 = 1 + 0,07 = 1,07.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:059",
+      "type": "reponse_courte",
+      "enonce": "On place 500 € à 10 % par an à intérêts composés. Quel est le capital au bout de 2 ans, en euros ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "605"
+      ],
+      "difficulte": 2,
+      "explication": "500 × 1,1 = 550 après un an, puis 550 × 1,1 = 605 €. Autrement dit, 500 × 1,21 = 605.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:060",
+      "type": "reponse_courte",
+      "enonce": "Une quantité est modélisée par une suite géométrique de raison 0,85. De quel pourcentage baisse-t-elle à chaque étape ? Réponds en %, sans le signe %.",
+      "reponses_acceptees": [
+        "15",
+        "15 %",
+        "15%"
+      ],
+      "difficulte": 3,
+      "explication": "q = 0,85 = 1 − 0,15 : le taux vaut t = −0,15, soit une baisse de 15 % à chaque étape.",
+      "notion": "Taux d'évolution constant"
+    },
+    {
+      "source": "maths-tc:ch9:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Pour n ⩾ 0, on pose u(n) = 5 × 1,3ⁿ. Quel est le sens de variation de la suite u ?",
+      "propositions": [
+        "Strictement décroissante",
+        "Strictement croissante",
+        "Constante",
+        "Croissante puis décroissante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "u est géométrique de premier terme 5 > 0 et de raison 1,3 > 1 : elle est strictement croissante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique a un premier terme positif et une raison égale à 0,6. Que peut-on dire de cette suite ?",
+      "propositions": [
+        "Elle est strictement croissante",
+        "Elle est constante",
+        "Elle devient négative à un certain rang",
+        "Elle est strictement décroissante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "0 < 0,6 < 1 : chaque terme vaut 60 % du précédent, donc la suite est strictement décroissante. Elle reste positive, car on multiplie des nombres positifs.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Pour une suite géométrique de premier terme strictement positif et de raison q > 0, quelle condition garantit qu'elle est strictement croissante ?",
+      "propositions": [
+        "q > 1",
+        "q > 0",
+        "0 < q < 1",
+        "q = 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "u(n + 1) − u(n) = (q − 1) × u(n) a le signe de q − 1, car u(n) > 0. La suite est strictement croissante si q > 1.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On place les points (n ; u(n)) d'une suite géométrique de premier terme 1 et de raison 2. Comment sont ces points ?",
+      "propositions": [
+        "Alignés sur une droite qui monte",
+        "Non alignés, ils montent de moins en moins vite",
+        "Non alignés, ils montent de plus en plus vite",
+        "Alignés sur une droite horizontale"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Les valeurs 1, 2, 4, 8, 16 augmentent de 1, puis 2, puis 4, puis 8 : les écarts grandissent. Les points ne sont pas alignés et montent de plus en plus vite.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Les points (n ; v(n)) d'une suite géométrique descendent de moins en moins vite et se rapprochent de l'axe des abscisses. Que peut-on dire de sa raison q ?",
+      "propositions": [
+        "q > 1",
+        "0 < q < 1",
+        "q = 1",
+        "q = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Une suite géométrique positive qui décroît a une raison comprise entre 0 et 1 ; ses termes se rapprochent de 0 sans l'atteindre.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pour n ⩾ 0, on pose u(n) = 3 × 1ⁿ. Quel est le sens de variation de u ?",
+      "propositions": [
+        "Elle est strictement croissante",
+        "Elle est strictement décroissante",
+        "On ne peut pas le savoir",
+        "Elle est constante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "1ⁿ = 1 pour tout n, donc u(n) = 3 pour tout n : la suite est constante (raison q = 1).",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Pour une suite géométrique u de raison q, quelle expression est égale à u(n + 1) − u(n) ?",
+      "propositions": [
+        "(q − 1) × u(n)",
+        "q − 1",
+        "(q + 1) × u(n)",
+        "q × u(n) − 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "u(n + 1) − u(n) = q × u(n) − u(n) = (q − 1) × u(n), en factorisant par u(n). Son signe donne le sens de variation.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Un élève affirme : « la raison 0,5 est positive, donc la suite v(n) = 40 × 0,5ⁿ est croissante ». Quelle est son erreur ?",
+      "propositions": [
+        "La raison de v est 40, pas 0,5",
+        "La suite v n'est pas une suite géométrique",
+        "Il faut comparer la raison à 1, pas à 0",
+        "Il faut regarder le signe de 40"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Pour une suite géométrique positive, c'est la position de q par rapport à 1 qui compte : 0,5 < 1, donc v est décroissante (40, 20, 10…).",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Quatre suites sont définies pour n ⩾ 0. Laquelle est strictement décroissante ?",
+      "propositions": [
+        "a(n) = 0,5 × 3ⁿ",
+        "d(n) = 100 × 0,99ⁿ",
+        "b(n) = 2 × 1,01ⁿ",
+        "c(n) = 0,1 × 2ⁿ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Seule d a une raison inférieure à 1 (0,99). Le premier terme (100, 0,5, 2 ou 0,1) ne décide pas du sens de variation : a, b et c ont une raison plus grande que 1.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Pour n ⩾ 0, on pose u(n) = 8 × 0,75ⁿ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u est strictement décroissante",
+        "u(n) > 0 pour tout n",
+        "u(1) = 6",
+        "Les points (n ; u(n)) sont alignés",
+        "u(n) = 0 à partir d'un certain rang"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Raison 0,75 < 1 et premier terme 8 > 0 : u est strictement décroissante et reste positive (elle ne vaut jamais 0). u(1) = 8 × 0,75 = 6. Les points d'une suite géométrique de raison différente de 1 ne sont pas alignés.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "Repère les suites strictement croissantes, toutes définies pour n ⩾ 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(n) = 2 × 1,5ⁿ",
+        "v(n) = 50 × 0,8ⁿ",
+        "w(n) = 0,01 × 4ⁿ",
+        "t(n) = 6 × 1ⁿ"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u (raison 1,5) et w (raison 4) ont une raison plus grande que 1 et un premier terme positif : elles sont strictement croissantes. v (raison 0,8) décroît, t (raison 1) est constante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:072",
+      "type": "qcm_multiple",
+      "enonce": "Pour tout entier n ⩾ 0, on pose v(n) = 0,5ⁿ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "v(4) = 0,0625",
+        "v est strictement décroissante",
+        "v(n) finit par devenir négatif",
+        "v(n) se rapproche de 0",
+        "v(n + 1) − v(n) = 0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "v est géométrique de premier terme v(0) = 1 et de raison 0,5. v(4) = 0,5⁴ = 0,0625. Raison 0,5 < 1 : v décroît et se rapproche de 0 sans devenir négative. L'écart v(n + 1) − v(n) = −0,5 × v(n) n'est pas constant.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Une suite géométrique de premier terme positif et de raison 1,2 est strictement croissante.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : 1,2 > 1, donc chaque terme est 1,2 fois plus grand que le précédent, qui est positif.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Les points (n ; u(n)) d'une suite géométrique de raison 3 sont alignés.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : par exemple 1, 3, 9, 27 augmentent de 2, puis 6, puis 18. Les écarts ne sont pas constants : les points ne sont pas alignés (ce sont ceux d'une suite arithmétique qui le sont).",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Une suite géométrique de premier terme 100 et de raison 0,5 finit par prendre la valeur 0.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : on divise par 2 à chaque étape (100, 50, 25, 12,5…). Les termes se rapprochent de 0 mais restent strictement positifs.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:076",
+      "type": "vrai_faux",
+      "enonce": "Si u(0) > 0 et si u(n + 1)/u(n) = 0,95 pour tout n, alors la suite u est strictement décroissante.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : u est géométrique de raison 0,95, comprise entre 0 et 1, avec un premier terme positif ; elle perd 5 % à chaque étape.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:077",
+      "type": "vrai_faux",
+      "enonce": "Une suite dont les points (n ; u(n)) ne sont pas alignés est forcément une suite géométrique.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : u(n) = n² (0, 1, 4, 9) a des points non alignés, mais 4/1 = 4 et 9/4 = 2,25 : elle n'est pas géométrique. Il faut vérifier que les quotients sont constants.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:078",
+      "type": "reponse_courte",
+      "enonce": "Une suite géométrique de premier terme positif est constante. Quelle est sa raison ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 2,
+      "explication": "Si la suite est constante, u(n + 1) = u(n), donc q × u(n) = u(n) et q = 1 (car u(n) n'est pas nul).",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch9:banque:079",
+      "type": "qcm_unique",
+      "enonce": "On injecte 20 mg d'un médicament ; chaque heure, l'organisme en élimine 10 %. Quelle quantité reste-t-il au bout d'une heure ?",
+      "propositions": [
+        "10 mg",
+        "2 mg",
+        "19,9 mg",
+        "18 mg"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Il reste 90 % de la dose : 20 × 0,9 = 18 mg. Le résultat 2 mg est la quantité éliminée, pas celle qui reste.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Une dose de 200 mg de médicament diminue de 30 % chaque heure. On note m(0) = 200 et m(n) la quantité, en mg, au bout de n heures. Quelle expression donne m(n) ?",
+      "propositions": [
+        "200 × 0,7ⁿ",
+        "200 × 0,3ⁿ",
+        "200 − 30n",
+        "200 × 1,3ⁿ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Il reste 70 % chaque heure : raison 0,7, donc m(n) = 200 × 0,7ⁿ. La raison 0,3 garderait seulement 30 %, et 200 − 30n retire toujours la même quantité.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Que désigne la demi-vie d'une substance radioactive ?",
+      "propositions": [
+        "La moitié de la durée de vie de la substance",
+        "La durée au bout de laquelle tous les noyaux radioactifs de l'échantillon ont disparu",
+        "La durée au bout de laquelle la moitié des noyaux s'est désintégrée",
+        "La durée au bout de laquelle la quantité a doublé"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Par définition, après une demi-vie, il reste la moitié des noyaux ; après k demi-vies, il en reste 0,5ᵏ fois le nombre de départ. La quantité ne s'annule jamais.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:082",
+      "type": "qcm_unique",
+      "enonce": "L'iode 131 a une demi-vie de 8 jours. Un échantillon en contient 800 mg. Quelle masse d'iode 131 reste-t-il au bout de 24 jours ?",
+      "propositions": [
+        "400 mg",
+        "100 mg",
+        "200 mg",
+        "0 mg"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "24 jours = 3 demi-vies. On divise 3 fois par 2 : 800 → 400 → 200 → 100 mg, soit 800 × 0,5³ = 100 mg.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Le carbone 14 a une demi-vie d'environ 5 700 ans. Quelle fraction du carbone 14 de départ reste-t-il au bout d'environ 11 400 ans ?",
+      "propositions": [
+        "1/2",
+        "0",
+        "1/8",
+        "1/4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "11 400 ans = 2 × 5 700 ans, soit 2 demi-vies. Il reste 0,5² = 0,25, c'est-à-dire 1/4 du carbone 14 de départ.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Dans le triangle de Sierpinski, le nombre de triangles noirs est multiplié par 3 à chaque étape. On part d'un seul triangle noir à l'étape 0. Combien y a-t-il de triangles noirs à l'étape 4 ?",
+      "propositions": [
+        "81",
+        "12",
+        "27",
+        "243"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le nombre de triangles est T(n) = 3ⁿ, donc T(4) = 3⁴ = 81. Le résultat 12 = 3 × 4 confond multiplication et puissance ; 27 = 3³ correspond à l'étape 3.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Dans le triangle de Sierpinski, l'aire noire est multipliée par 3/4 à chaque étape. Au départ, elle vaut 64 cm². Que vaut-elle après 2 étapes ?",
+      "propositions": [
+        "32 cm²",
+        "48 cm²",
+        "36 cm²",
+        "16 cm²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "64 × 3/4 = 48 cm² après une étape, puis 48 × 3/4 = 36 cm². On a bien 64 × (3/4)² = 64 × 9/16 = 36. Retirer deux fois un quart de 64 (32 cm²) est faux.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Le jour 0, 5 personnes connaissent une rumeur, et ce nombre triple chaque jour. Combien de personnes la connaissent le jour 3 ?",
+      "propositions": [
+        "45",
+        "135",
+        "15",
+        "405"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "R(n) = 5 × 3ⁿ, donc R(3) = 5 × 27 = 135 (405 = 5 × 3⁴ correspond au jour 4). On peut aussi tripler pas à pas : 15, 45, 135.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Selon un modèle de Malthus, une population de 8 millions d'habitants double tous les 25 ans. Quelle population ce modèle prévoit-il au bout de 100 ans ?",
+      "propositions": [
+        "32 millions",
+        "64 millions",
+        "800 millions",
+        "128 millions"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "100 ans = 4 périodes de 25 ans, donc 4 doublements : 8 × 2⁴ = 8 × 16 = 128 millions. Le résultat 32 millions multiplie par 4 au lieu de 2⁴.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces phénomènes est le mieux modélisé par une suite géométrique ?",
+      "propositions": [
+        "Un capital placé à 2 % par an à intérêts composés",
+        "Une tirelire qui reçoit 10 € de plus chaque semaine",
+        "Une course de taxi facturée 2 € par kilomètre",
+        "Un loyer fixe de 500 € par mois"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "À intérêts composés, le capital est multiplié par 1,02 chaque année : c'est une suite géométrique. La tirelire et le taxi ajoutent une même quantité (modèle linéaire) ; le loyer fixe est constant.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Un modèle prévoit 4 × 2ⁿ personnes informées d'une rumeur le jour n, dans une ville de 1 000 habitants. Pourquoi ce modèle ne peut-il pas rester valable longtemps ?",
+      "propositions": [
+        "Il donne des nombres décimaux",
+        "La suite est décroissante",
+        "Il dépasse vite la population",
+        "Il donne toujours 4 personnes"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "4 × 2⁸ = 4 × 256 = 1 024 dépasse déjà 1 000 au jour 8 : le modèle annonce plus de personnes informées que d'habitants. Un modèle exponentiel n'est valable que sur une durée limitée.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "On injecte 50 mg d'un médicament ; la quantité restante est multipliée par 0,8 chaque heure. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il en reste 40 mg au bout d'une heure",
+        "L'organisme élimine 20 % de la quantité présente chaque heure",
+        "Il en reste 30 mg au bout de 2 heures",
+        "La quantité finit par être nulle",
+        "Il en reste 32 mg au bout de 2 heures"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "50 × 0,8 = 40 mg, puis 40 × 0,8 = 32 mg (et non 30 mg). Multiplier par 0,8, c'est perdre 20 %. La quantité diminue mais ne devient jamais nulle dans ce modèle.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Un échantillon radioactif contient 1 600 millions de noyaux ; sa demi-vie est de 10 ans. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Après 10 ans, il reste 800 millions de noyaux",
+        "Après 20 ans, il ne reste plus aucun noyau",
+        "Après 30 ans, il reste 200 millions de noyaux",
+        "Après 40 ans, il reste 400 millions de noyaux"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On divise par 2 tous les 10 ans : 1 600 → 800 (10 ans) → 400 (20 ans) → 200 (30 ans) → 100 (40 ans). Il reste toujours des noyaux.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Triangle de Sierpinski : à l'étape 0, un triangle noir d'aire 1. À chaque étape, chaque triangle noir est découpé en 4 triangles égaux et on retire celui du milieu. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le nombre de triangles noirs à l'étape n vaut 3ⁿ",
+        "L'aire noire à l'étape n vaut 0,75ⁿ",
+        "Le nombre de triangles noirs est multiplié par 4 à chaque étape",
+        "L'aire noire à l'étape 2 vaut 0,5",
+        "L'aire noire diminue de 25 % à chaque étape"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Sur 4 triangles, on en garde 3 : le nombre est multiplié par 3 (3ⁿ) et l'aire par 3/4 = 0,75, soit − 25 % par étape. À l'étape 2, l'aire vaut 0,75² = 0,5625, et non 0,5.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Repère les situations qu'une suite géométrique permet de modéliser. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un capital placé à 3 % par an à intérêts composés",
+        "Un nombre de bactéries qui double toutes les heures",
+        "Un abonnement qui coûte 15 € de plus chaque année",
+        "Une quantité de médicament qui diminue de 12 % par heure",
+        "Un niveau d'eau qui monte de 3 mm par an"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Capital (× 1,03), bactéries (× 2) et médicament (× 0,88) sont multipliés par un même nombre : modèles géométriques. L'abonnement et le niveau d'eau augmentent d'une même quantité : modèles linéaires.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Une population de 1 000 insectes augmente de 50 % chaque semaine. On note p(0) = 1 000 et p(n) l'effectif au bout de n semaines. Coche toutes les réponses exactes.",
+      "propositions": [
+        "p(n) = 1 000 × 1,5ⁿ",
+        "p(2) = 2 250",
+        "p(2) = 2 000",
+        "p(n) = 1 000 + 500n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "+ 50 % donne la raison 1,5 : p(n) = 1 000 × 1,5ⁿ et p(2) = 1 000 × 2,25 = 2 250. La formule 1 000 + 500n ajoute toujours 500, ce qui oublie que la hausse porte sur l'effectif atteint.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:095",
+      "type": "vrai_faux",
+      "enonce": "Si une quantité perd 10 % par heure, elle est multipliée chaque heure par 0,9.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : perdre 10 %, c'est garder 90 %, donc multiplier par 1 − 0,1 = 0,9.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:096",
+      "type": "vrai_faux",
+      "enonce": "Au bout de 3 demi-vies, il reste le tiers des noyaux radioactifs de départ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : chaque demi-vie divise par 2, donc après 3 demi-vies il reste 0,5³ = 0,125 = 1/8 des noyaux, et non 1/3.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Une population qui augmente de 2 % par an est modélisée par une suite géométrique de raison 1,02.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : chaque année, la population est multipliée par 1 + 0,02 = 1,02 (modèle de Malthus).",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Dans le triangle de Sierpinski, l'aire noire diminue de 25 % à chaque étape ; au bout de 4 étapes, elle a donc diminué de 4 × 25 % = 100 % et a disparu.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : on multiplie 4 fois par 0,75. Il reste 0,75⁴ ≈ 0,32, soit environ 32 % de l'aire de départ. Les pourcentages successifs ne s'ajoutent pas.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:099",
+      "type": "reponse_courte",
+      "enonce": "On injecte 40 mg d'un médicament ; la quantité présente diminue de 50 % chaque heure. Quelle quantité reste-t-il au bout de 3 heures, en mg ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 2,
+      "explication": "On divise par 2 chaque heure : 40 → 20 → 10 → 5 mg, soit 40 × 0,5³ = 5.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:100",
+      "type": "reponse_courte",
+      "enonce": "Une substance radioactive a une demi-vie de 6 heures. Quel pourcentage de la quantité initiale reste-t-il au bout de 12 heures ? Réponds en %, sans le signe %.",
+      "reponses_acceptees": [
+        "25",
+        "25 %",
+        "25%"
+      ],
+      "difficulte": 3,
+      "explication": "12 heures = 2 demi-vies : il reste 0,5² = 0,25 de la quantité, soit 25 %.",
+      "notion": "Modélisation exponentielle"
+    },
+    {
+      "source": "maths-tc:ch9:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Une quantité augmente de 3 % chaque année. Quel type de croissance décrit cette phrase ?",
+      "propositions": [
+        "Linéaire (suite arithmétique de raison 3)",
+        "Exponentielle (suite géométrique)",
+        "Quadratique (parabole)",
+        "Constante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un pourcentage constant revient à multiplier chaque année par 1,03 : la croissance est exponentielle, modélisée par une suite géométrique.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Une suite vérifie u(n + 1) = u(n) + 3 pour tout n. Quel modèle représente-t-elle ?",
+      "propositions": [
+        "Exponentiel : on multiplie par 3",
+        "Exponentiel de raison 1,03",
+        "Ni linéaire ni exponentiel",
+        "Linéaire : on ajoute 3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On ajoute toujours 3 : c'est une suite arithmétique de raison 3, modèle linéaire. Pour un modèle exponentiel, on multiplierait par un même nombre.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Deux offres partent de 100 € : l'offre A ajoute 20 € par an, l'offre B augmente de 20 % par an. Que vaut l'offre B au bout de 2 ans ?",
+      "propositions": [
+        "144 €",
+        "140 €",
+        "120 €",
+        "240 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "B est multipliée par 1,2 chaque année : 100 × 1,2 = 120, puis 120 × 1,2 = 144 €. L'offre A, elle, vaut 140 €.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Les premiers termes d'une suite sont 10 ; 20 ; 40 ; 80. Que peut-on dire ?",
+      "propositions": [
+        "Différences constantes : la croissance est linéaire",
+        "Les points (n ; u(n)) sont alignés",
+        "Quotients constants : croissance exponentielle",
+        "Différences et quotients sont constants"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les quotients valent tous 2 (20/10 = 40/20 = 80/40), alors que les différences (10, 20, 40) changent : la croissance est exponentielle et les points ne sont pas alignés.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:105",
+      "type": "qcm_unique",
+      "enonce": "On compare u(n) = 1 000 + 100n et v(n) = 10 × 2ⁿ, pour n ⩾ 0. Que se passe-t-il quand n devient grand ?",
+      "propositions": [
+        "u reste toujours au-dessus de v, car u part de beaucoup plus haut",
+        "v finit par dépasser u",
+        "u et v finissent par être égales pour toujours",
+        "v finit par devenir négative"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "v(7) = 10 × 128 = 1 280 < u(7) = 1 700, mais v(8) = 10 × 256 = 2 560 > u(8) = 1 800. Une croissance exponentielle finit toujours par dépasser une croissance linéaire.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:106",
+      "type": "qcm_unique",
+      "enonce": "On admet que 2¹⁰ = 1 024. Une feuille de 0,1 mm d'épaisseur est pliée en deux 10 fois de suite. Quelle est, environ, son épaisseur finale ?",
+      "propositions": [
+        "Environ 2 mm",
+        "Environ 1 cm",
+        "Environ 1 m",
+        "Environ 10 cm"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Chaque pliage double l'épaisseur : 0,1 × 2¹⁰ = 0,1 × 1 024 ≈ 102 mm, soit environ 10 cm. Le résultat 2 mm (0,1 × 2 × 10) oublie que l'on multiplie à chaque pliage.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Deux villes ont 50 000 habitants. La première gagne 1 000 habitants par an, la seconde augmente de 2 % par an. Que peut-on dire au bout d'un an ?",
+      "propositions": [
+        "Elles ont toutes deux 51 000 habitants",
+        "La première a 1 000 habitants de plus",
+        "La seconde a 2 000 habitants de plus que la première",
+        "La seconde a 52 000 habitants"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "2 % de 50 000 = 0,02 × 50 000 = 1 000 : la première année, les deux villes gagnent 1 000 habitants. Ensuite, la seconde gagnera un peu plus chaque année.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Une épargne vaut, pour n = 0, 1, 2 et 3 : 200 € ; 220 € ; 242 € ; 266,20 €. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les différences entre termes consécutifs ne sont pas constantes",
+        "Chaque terme vaut 1,1 fois le précédent",
+        "La croissance est linéaire",
+        "L'épargne augmente de 10 % par an",
+        "On ajoute 20 € chaque année"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Différences : 20, 22, 24,20 (pas constantes, donc pas linéaire). Quotients : 220/200 = 242/220 = 1,1 : on multiplie par 1,1, soit + 10 % par an.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Repère les situations de croissance linéaire. Coche toutes les réponses exactes.",
+      "propositions": [
+        "On verse 15 € par mois sur un compte",
+        "Un prix augmente de 2 % par an",
+        "Le niveau de la mer monte de 3 mm par an",
+        "Une population double tous les 30 ans"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Ajouter 15 € ou 3 mm à chaque étape : croissance linéaire. + 2 % par an (× 1,02) et un doublement (× 2) sont des croissances exponentielles.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "On compare a(n) = 100 + 20n et b(n) = 100 × 1,2ⁿ pour n ⩾ 0. On donne 1,2³ = 1,728. Coche toutes les réponses exactes.",
+      "propositions": [
+        "a(1) = b(1)",
+        "b(3) = 172,8",
+        "a(3) > b(3)",
+        "L'écart b(n) − a(n) augmente de n = 1 à n = 3",
+        "a et b sont toutes deux géométriques"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "a(1) = b(1) = 120. a(3) = 160 et b(3) = 100 × 1,728 = 172,8, donc a(3) < b(3). Écarts : 0 ; 144 − 140 = 4 ; 172,8 − 160 = 12,8 : il augmente. a est arithmétique, pas géométrique.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Repère les affirmations exactes sur les suites arithmétiques et géométriques. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une suite géométrique se reconnaît à ses quotients constants",
+        "Une suite arithmétique se reconnaît à ses différences constantes",
+        "Les points d'une suite géométrique de raison 2 sont alignés",
+        "Une suite arithmétique multiplie chaque terme par sa raison"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Arithmétique : on ajoute r, les différences sont constantes et les points alignés. Géométrique : on multiplie par q, les quotients sont constants et les points ne sont pas alignés (si q ≠ 1).",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:112",
+      "type": "vrai_faux",
+      "enonce": "« Augmenter de 5 € par an » décrit une croissance linéaire, alors qu'« augmenter de 5 % par an » décrit une croissance exponentielle.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : + 5 € ajoute toujours la même quantité (suite arithmétique) ; + 5 % multiplie toujours par 1,05 (suite géométrique).",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Partant toutes deux de 10 000, une quantité qui gagne 1 000 par an restera toujours au-dessus d'une quantité qui gagne 1 % par an.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : au début, 1 % de 10 000 ne fait que 100, mais la quantité exponentielle (× 1,01 par an) finit toujours par dépasser n'importe quelle croissance linéaire, même si cela prend longtemps.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:114",
+      "type": "reponse_courte",
+      "enonce": "Une suite v vérifie v(0) = 100 et v(n + 1) = 1,1 × v(n). De combien v augmente-t-elle entre le rang 1 et le rang 2 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "difficulte": 2,
+      "explication": "v(1) = 110 et v(2) = 1,1 × 110 = 121, donc v(2) − v(1) = 11. L'augmentation (10 puis 11) n'est pas constante : ce n'est pas une croissance linéaire.",
+      "notion": "Linéaire ou exponentiel"
+    },
+    {
+      "source": "maths-tc:ch9:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Un échantillon contient 640 millions de noyaux radioactifs ; à chaque demi-vie, il en reste la moitié. Après combien de demi-vies en reste-t-il, pour la première fois, moins de 50 millions ?",
+      "propositions": [
+        "3",
+        "5",
+        "4",
+        "12"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On divise par 2 : 320 (1 demi-vie), 160 (2), 80 (3), 40 (4). C'est après 4 demi-vies que l'on passe sous 50 millions (80 est encore au-dessus).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 1 000 € est placé à 10 % par an à intérêts composés. On donne 1,1⁷ ≈ 1,95 et 1,1⁸ ≈ 2,14. Au bout de combien d'années le capital dépasse-t-il 2 000 € pour la première fois ?",
+      "propositions": [
+        "7 ans",
+        "8 ans",
+        "10 ans",
+        "9 ans"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "C(7) ≈ 1 000 × 1,95 = 1 950 € < 2 000 € et C(8) ≈ 1 000 × 2,14 = 2 140 € > 2 000 €. Le seuil est franchi au bout de 8 ans. Le résultat 10 ans vient d'un raisonnement à intérêts simples (10 × 10 % = 100 %).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Une colonie de 50 bactéries double toutes les heures. Au bout de combien d'heures dépasse-t-elle 1 000 bactéries pour la première fois ?",
+      "propositions": [
+        "4 heures",
+        "20 heures",
+        "6 heures",
+        "5 heures"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Termes successifs : 100 (1 h), 200 (2 h), 400 (3 h), 800 (4 h), 1 600 (5 h). Le seuil de 1 000 est dépassé au bout de 5 heures. Le résultat 20 vient de 1 000/50, qui ne tient pas compte des doublements.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Une suite u vérifie u(0) = 3 et u(n + 1) = 3 × u(n) pour n ⩾ 0. Quel est le plus petit rang n tel que u(n) > 200 ?",
+      "propositions": [
+        "4",
+        "3",
+        "5",
+        "67"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "u(1) = 9, u(2) = 27, u(3) = 81, u(4) = 243. Le premier terme supérieur à 200 est u(4) : n = 4.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Une voiture vaut 10 000 € et perd 20 % de sa valeur par an. On donne 0,8² = 0,64, 0,8³ = 0,512 et 0,8⁴ = 0,4096. Au bout de combien d'années vaut-elle, pour la première fois, moins de la moitié de son prix ?",
+      "propositions": [
+        "3 ans",
+        "2,5 ans",
+        "4 ans",
+        "5 ans"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Valeurs : 6 400 € (2 ans), 5 120 € (3 ans), 4 096 € (4 ans). La moitié est 5 000 € : 5 120 € est encore au-dessus, donc il faut 4 ans. Le résultat 2,5 ans vient de 50 %/20 %, qui additionne les baisses.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Au tableur, la colonne B contient les termes d'une suite croissante, de u(0) en B2 à u(20) en B22. Comment trouver le premier rang où u(n) dépasse 500 ?",
+      "propositions": [
+        "Repérer la dernière cellule de la colonne qui reste sous 500, puis lire son rang",
+        "Repérer la première cellule qui dépasse 500, puis lire son rang",
+        "Diviser 500 par la raison de la suite",
+        "Lire la valeur de la cellule B22"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On parcourt la colonne de haut en bas : la première cellule dont la valeur dépasse 500 donne le rang cherché. La dernière cellule sous 500 correspond au rang précédent.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Un programme Python part de u = 100 et n = 0. Tant que u < 300, il remplace u par u * 2 et n par n + 1. Il affiche ensuite n. Quel nombre affiche-t-il ?",
+      "propositions": [
+        "3",
+        "400",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Premier tour : u = 200, n = 1 (200 < 300, on continue). Deuxième tour : u = 400, n = 2. Comme 400 ⩾ 300, la boucle s'arrête : le programme affiche 2 (400 est la valeur de u, pas celle de n).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un site compte 2 000 abonnés en 2025, et ce nombre est multiplié par 1,5 chaque année. En quelle année dépasse-t-il 10 000 abonnés pour la première fois ?",
+      "propositions": [
+        "2029",
+        "2028",
+        "2030",
+        "2034"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Termes successifs : 3 000 (2026), 4 500 (2027), 6 750 (2028), 10 125 (2029). Le seuil est franchi en 2029. L'année 2034 correspond à un ajout de 1 000 par an (modèle linéaire).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Une quantité vaut u(0) = 400 et est divisée par 2 à chaque étape. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(3) = 50",
+        "Le premier rang où u(n) < 30 est n = 4",
+        "Le premier rang où u(n) < 30 est n = 3",
+        "u(n) finit par être égal à 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u(1) = 200, u(2) = 100, u(3) = 50, u(4) = 25. u(3) = 50 n'est pas encore sous 30 ; u(4) = 25 l'est : le premier rang est 4. La quantité ne devient jamais nulle.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Un capital de 2 000 € est placé à 5 % par an à intérêts composés. On admet que 1,05¹⁴ ≈ 1,98 et 1,05¹⁵ ≈ 2,08. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Au bout de 14 ans, le capital n'a pas encore doublé",
+        "Le capital dépasse 4 000 € pour la première fois au bout de 15 ans",
+        "Le capital double au bout de 20 ans, car 20 × 5 % = 100 %",
+        "Au bout de 15 ans, le capital vaut environ 4 160 €"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "C(14) ≈ 2 000 × 1,98 = 3 960 € < 4 000 € ; C(15) ≈ 2 000 × 2,08 = 4 160 € > 4 000 €. Le capital double donc au bout de 15 ans, bien avant 20 ans : les intérêts composés rapportent eux-mêmes des intérêts.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Une suite géométrique u a pour premier terme u(1) = 2 et pour raison 3. On cherche le plus petit entier n tel que u(n) > 100. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(4) = 54",
+        "u(5) = 162",
+        "Le plus petit n cherché est 5",
+        "Le plus petit n cherché est 4",
+        "Le plus petit n cherché est 50"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u(n) = 2 × 3ⁿ⁻¹ : u(4) = 2 × 27 = 54 < 100 et u(5) = 2 × 81 = 162 > 100. Le plus petit rang est n = 5.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Pour résoudre un problème de seuil avec une suite géométrique, quelles méthodes vues dans ce chapitre conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Calculer les termes successifs à la main",
+        "Utiliser un tableur et recopier une formule vers le bas",
+        "Écrire une boucle while en Python",
+        "Diviser le seuil par la raison",
+        "Multiplier le seuil par le premier terme"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Dans ce chapitre, on calcule les termes un à un (à la main, au tableur ou avec une boucle while) jusqu'à franchir le seuil. Diviser ou multiplier le seuil par un nombre ne donne pas le rang cherché.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite croissante, si u(5) < 1 000 et u(6) > 1 000, le premier rang où u(n) dépasse 1 000 est 6.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : u(5) est encore sous 1 000 et la suite est croissante, donc u(0), …, u(5) le sont aussi ; u(6) est le premier terme au-dessus.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Une quantité qui baisse de 10 % par an passe sous la moitié de sa valeur au bout de 5 ans, puisque 5 × 10 % = 50 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : on multiplie 5 fois par 0,9, et 0,9⁵ ≈ 0,59. Au bout de 5 ans, il reste environ 59 % de la quantité : elle n'a pas encore été divisée par 2.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:129",
+      "type": "reponse_courte",
+      "enonce": "Une population de 300 insectes triple chaque mois. Au bout de combien de mois dépasse-t-elle 20 000 insectes pour la première fois ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "Termes successifs : 900 (1 mois), 2 700 (2), 8 100 (3), 24 300 (4). Le seuil de 20 000 est franchi au bout de 4 mois.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:130",
+      "type": "reponse_courte",
+      "enonce": "On injecte 160 mg d'un médicament ; la quantité présente est divisée par 2 toutes les 4 heures. Au bout de combien d'heures en reste-t-il, pour la première fois, moins de 15 mg ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "16"
+      ],
+      "difficulte": 3,
+      "explication": "Toutes les 4 heures : 80 mg (4 h), 40 mg (8 h), 20 mg (12 h), 10 mg (16 h). On passe sous 15 mg au bout de 4 demi-vies, soit 4 × 4 = 16 heures.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch9:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Calcule 2⁵.",
+      "propositions": [
+        "10",
+        "25",
+        "32",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "2⁵ = 2 × 2 × 2 × 2 × 2 = 32. Le résultat 10 vient de 2 × 5, et 25 de 5².",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 1,1² ?",
+      "propositions": [
+        "2,2",
+        "1,21",
+        "1,12",
+        "12,1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "1,1² = 1,1 × 1,1 = 1,21. Le résultat 2,2 vient de 1,1 × 2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 0,5³ ?",
+      "propositions": [
+        "1,5",
+        "0,15",
+        "0,25",
+        "0,125"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "0,5³ = 0,5 × 0,5 × 0,5 = 0,25 × 0,5 = 0,125. Le résultat 1,5 vient de 0,5 × 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient multiplicateur associé à une baisse de 15 % ?",
+      "propositions": [
+        "0,85",
+        "1,15",
+        "0,15",
+        "−0,15"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "CM = 1 + t avec t = −0,15 : CM = 1 − 0,15 = 0,85. Le nombre 1,15 correspondrait à une hausse de 15 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 3⁴ ?",
+      "propositions": [
+        "12",
+        "64",
+        "81",
+        "27"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "3⁴ = 3 × 3 × 3 × 3 = 9 × 9 = 81. Le résultat 12 vient de 3 × 4, et 64 de 4³.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Un prix de 80 € augmente de 25 %. Quel est le nouveau prix ?",
+      "propositions": [
+        "105 €",
+        "100 €",
+        "20 €",
+        "85 €"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "80 × 1,25 = 100 €. Autre méthode : 25 % de 80 = 20, et 80 + 20 = 100 €. Le montant 20 € est seulement l'augmentation.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Un article augmente de 20 %, puis baisse de 20 %. Quelle est son évolution globale ?",
+      "propositions": [
+        "Aucune évolution",
+        "Une hausse de 4 %",
+        "Une baisse de 40 %",
+        "Une baisse de 4 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On multiplie par 1,2 puis par 0,8 : 1,2 × 0,8 = 0,96 = 1 − 0,04, soit une baisse de 4 %. Les deux évolutions ne se compensent pas.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 10³ × 10² ?",
+      "propositions": [
+        "100 000",
+        "1 000 000",
+        "10 000",
+        "1 000"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "10³ × 10² = 10³⁺² = 10⁵ = 100 000. Multiplier les exposants (10⁶ = 1 000 000) est une erreur fréquente.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 0,9² ?",
+      "propositions": [
+        "1,8",
+        "0,18",
+        "0,81",
+        "8,1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "0,9² = 0,9 × 0,9 = 0,81. Le résultat 1,8 vient de 0,9 × 2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Combien font 3 % de 600 ?",
+      "propositions": [
+        "180",
+        "18",
+        "200",
+        "1,8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "3 % de 600 = 0,03 × 600 = 18. Le résultat 200 vient de 600/3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Repère les égalités exactes. Coche toutes les réponses exactes.",
+      "propositions": [
+        "2⁴ = 16",
+        "5⁰ = 1",
+        "3² = 6",
+        "0,1² = 0,01",
+        "2³ × 2² = 2⁶"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "2⁴ = 16 ; 5⁰ = 1 (tout nombre non nul à la puissance 0) ; 3² = 9 et non 6 ; 0,1² = 0,01 ; 2³ × 2² = 2⁵ = 32 et non 2⁶ (on ajoute les exposants).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Un prix passe de 50 € à 60 €. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le coefficient multiplicateur vaut 1,2",
+        "Le prix a augmenté de 20 %",
+        "Le prix a augmenté de 10 %",
+        "Le coefficient multiplicateur vaut 0,2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "CM = 60/50 = 1,2 = 1 + 0,2 : hausse de 20 %. La hausse de 10 € n'est pas une hausse de 10 %, car elle porte sur 50 €.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Repère les écritures égales à 0,25. Coche toutes les réponses exactes.",
+      "propositions": [
+        "1/4",
+        "0,5²",
+        "25 %",
+        "0,5 × 2",
+        "1/25"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "1/4 = 0,25 ; 0,5² = 0,5 × 0,5 = 0,25 ; 25 % = 25/100 = 0,25. En revanche 0,5 × 2 = 1 et 1/25 = 0,04.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Repère les calculs dont le résultat est 1 024. Coche toutes les réponses exactes.",
+      "propositions": [
+        "2¹⁰",
+        "4⁵",
+        "32²",
+        "10 × 2",
+        "512 + 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "2¹⁰ = 1 024 ; 4⁵ = (2²)⁵ = 2¹⁰ = 1 024 ; 32² = 32 × 32 = 1 024. En revanche 10 × 2 = 20 et 512 + 2 = 514 (c'est 512 × 2 qui vaut 1 024).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Une quantité baisse de 50 %, puis augmente de 50 %. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est multipliée par 0,5 × 1,5 = 0,75",
+        "Elle baisse globalement de 25 %",
+        "Elle revient à sa valeur de départ",
+        "Elle baisse globalement de 50 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "CM global = 0,5 × 1,5 = 0,75 = 1 − 0,25 : baisse globale de 25 %. La hausse de 50 % porte sur une quantité déjà divisée par 2 : elle ne compense pas la baisse.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Pour tout nombre a non nul, a⁰ = 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : par convention, a⁰ = 1 pour a ≠ 0. Par exemple 7⁰ = 1, ce qui donne u(0) × q⁰ = u(0).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Augmenter un prix de 10 %, c'est le multiplier par 1,1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : le coefficient multiplicateur est 1 + 10/100 = 1 + 0,1 = 1,1.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:148",
+      "type": "vrai_faux",
+      "enonce": "On a 2³ × 2⁴ = 2¹².",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : on ajoute les exposants, 2³ × 2⁴ = 2³⁺⁴ = 2⁷ = 128. On n'obtiendrait 2¹² qu'en multipliant les exposants, ce qui est faux.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Multiplier une quantité par 0,75 revient à la diminuer de 25 %.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : 0,75 = 1 − 0,25, donc le taux d'évolution vaut −0,25, soit une baisse de 25 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch9:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Calcule 1,2². Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "1.44"
+      ],
+      "difficulte": 1,
+      "explication": "1,2² = 1,2 × 1,2 = 1,44.",
+      "notion": "Automatismes"
+    }
+  ]
+}
