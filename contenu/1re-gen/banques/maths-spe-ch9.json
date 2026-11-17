@@ -1,0 +1,2287 @@
+{
+  "chapitre": 9,
+  "notions": [
+    "Rappels : norme, colinéarité, angle",
+    "Produit scalaire et projection",
+    "Formule avec le cosinus",
+    "Propriétés et orthogonalité",
+    "Base orthonormée et coordonnées",
+    "Normes et identités",
+    "Formule d'Al-Kashi",
+    "Cercle de diamètre [AB]",
+    "Choisir une méthode"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch9:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Dans un repère orthonormé, quelle est la norme du vecteur u⃗(3 ; −4) ?",
+      "propositions": [
+        "5",
+        "7",
+        "1",
+        "25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖u⃗‖ = √(3² + (−4)²) = √25 = 5. On n'additionne pas les coordonnées et on n'oublie pas la racine carrée."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:002",
+      "type": "qcm_unique",
+      "enonce": "On sait que ‖u⃗‖ = 3. Que vaut la norme du vecteur −2u⃗ ?",
+      "propositions": [
+        "−6",
+        "6",
+        "3",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖ku⃗‖ = |k| × ‖u⃗‖ = 2 × 3 = 6. Une norme n'est jamais négative."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces vecteurs est colinéaire à u⃗(2 ; −3) ?",
+      "propositions": [
+        "(3 ; −2)",
+        "(4 ; 6)",
+        "(−4 ; 6)",
+        "(−2 ; −3)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "Le déterminant de (2 ; −3) et (−4 ; 6) vaut 2 × 6 − (−4) × (−3) = 0 : on a (−4 ; 6) = −2u⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Deux vecteurs non nuls colinéaires et de sens contraires forment un angle géométrique égal à :",
+      "propositions": [
+        "0°",
+        "90°",
+        "360°",
+        "180°"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "L'angle géométrique est compris entre 0° et 180° ; il vaut 180° pour deux vecteurs colinéaires de sens contraires."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:005",
+      "type": "qcm_unique",
+      "enonce": "ABC est un triangle équilatéral. Quelle est la mesure de l'angle géométrique formé par les vecteurs AB⃗ et BC⃗ ?",
+      "propositions": [
+        "120°",
+        "60°",
+        "30°",
+        "90°"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "On reporte BC⃗ à partir de A : on obtient l'angle extérieur au triangle, 180° − 60° = 120°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:006",
+      "type": "qcm_unique",
+      "enonce": "A et B sont deux points tels que AB = 5. Quelle est la norme du vecteur BA⃗ ?",
+      "propositions": [
+        "−5",
+        "5",
+        "0",
+        "10"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖BA⃗‖ = BA = AB = 5 : BA⃗ = −AB⃗ a la même longueur que AB⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur du réel m les vecteurs u⃗(m ; 4) et v⃗(3 ; 6) sont-ils colinéaires ?",
+      "propositions": [
+        "m = 8",
+        "m = −2",
+        "m = 2",
+        "m = 4,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "Le déterminant m × 6 − 3 × 4 = 6m − 12 doit être nul, donc m = 2 ; alors v⃗ = 1,5u⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Dans un repère orthonormé (O ; i⃗, j⃗), le vecteur u⃗ a pour coordonnées (0 ; −5). Coche toutes les réponses exactes.",
+      "propositions": [
+        "‖u⃗‖ = 5",
+        "‖u⃗‖ = −5",
+        "u⃗ est colinéaire au vecteur j⃗",
+        "u⃗ est unitaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖u⃗‖ = √(0 + 25) = 5 et u⃗ = −5j⃗ : il est colinéaire à j⃗. Sa norme n'est pas 1, il n'est pas unitaire."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Soit u⃗ un vecteur non nul. Quels vecteurs forment avec u⃗ un angle géométrique nul ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2u⃗",
+        "−u⃗",
+        "0,5u⃗",
+        "−3u⃗"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "ku⃗ forme un angle nul avec u⃗ si k > 0 (même sens) et un angle de 180° si k < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "On considère un carré ABCD et ses diagonales. Parmi ces affirmations sur des angles géométriques et des longueurs, lesquelles sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'angle géométrique de AB⃗ et AD⃗ mesure 90°",
+        "L'angle géométrique de AB⃗ et AC⃗ mesure 45°",
+        "L'angle géométrique de AB⃗ et CD⃗ mesure 0°",
+        "‖AC⃗‖ = ‖BD⃗‖"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "Les côtés sont perpendiculaires, la diagonale fait 45° avec un côté et les diagonales ont même longueur. CD⃗ = −AB⃗ : l'angle de AB⃗ et CD⃗ est 180°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:011",
+      "type": "vrai_faux",
+      "enonce": "Le vecteur nul est le seul vecteur dont la norme vaut 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖AB⃗‖ = AB = 0 seulement si A = B, c'est-à-dire si AB⃗ = 0⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:012",
+      "type": "vrai_faux",
+      "enonce": "L'angle géométrique de deux vecteurs non nuls peut mesurer 270°.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "L'angle géométrique est toujours compris entre 0° et 180°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Pour tout vecteur u⃗ et tout réel k, la norme de ku⃗ est égale à k × ‖u⃗‖.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "C'est |k| × ‖u⃗‖ : pour k = −1, on aurait une norme négative si u⃗ ≠ 0⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:014",
+      "type": "reponse_courte",
+      "enonce": "Dans un repère orthonormé, on considère w⃗(5 ; −12). Calcule la longueur ‖w⃗‖. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "13"
+      ],
+      "difficulte": 1,
+      "notion": "Rappels : norme, colinéarité, angle",
+      "explication": "‖w⃗‖ = √(25 + 144) = √169 = 13."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:015",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un carré de côté 3. Que vaut AB⃗ · AC⃗ ?",
+      "propositions": [
+        "9√2",
+        "0",
+        "18",
+        "9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "Le projeté orthogonal de C sur (AB) est B, donc AB⃗ · AC⃗ = AB × AB = 9."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:016",
+      "type": "qcm_unique",
+      "enonce": "On considère un carré ABCD de côté 5. Calcule le produit scalaire AB⃗ · AD⃗.",
+      "propositions": [
+        "0",
+        "25",
+        "5",
+        "−25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "Le projeté de D sur (AB) est A : AB⃗ · AD⃗ = 0, les côtés [AB] et [AD] sont perpendiculaires."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Soit ABCD un carré de côté 2. En projetant C et D sur (AB), on obtient la valeur de AB⃗ · CD⃗. Laquelle ?",
+      "propositions": [
+        "4",
+        "−4",
+        "0",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "C et D se projettent en B et A, donc AB⃗ · CD⃗ = AB⃗ · BA⃗ = −2 × 2 = −4 (vecteurs de sens contraires)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:018",
+      "type": "qcm_unique",
+      "enonce": "H est le projeté orthogonal de C sur la droite (AB), et AH⃗ a le même sens que AB⃗. À quoi est égal AB⃗ · AC⃗ ?",
+      "propositions": [
+        "AB × AC",
+        "AC × AH",
+        "AB × AH",
+        "−AB × AH"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "C'est la définition : on remplace C par son projeté H, et le signe est + car AH⃗ et AB⃗ ont le même sens."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, le pied H de la hauteur issue de C est situé sur la droite (AB), du côté opposé à B par rapport à A. On a AB = 6 et AH = 2. Que vaut AB⃗ · AC⃗ ?",
+      "propositions": [
+        "12",
+        "8",
+        "−8",
+        "−12"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "AH⃗ et AB⃗ sont de sens contraires, donc AB⃗ · AC⃗ = −AB × AH = −6 × 2 = −12."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:020",
+      "type": "qcm_unique",
+      "enonce": "ABC est un triangle équilatéral de côté 4. Quelle est la valeur de AB⃗ · AC⃗ ?",
+      "propositions": [
+        "8",
+        "16",
+        "4",
+        "8√3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "Le pied de la hauteur issue de C est le milieu de [AB] : AB⃗ · AC⃗ = AB × AH = 4 × 2 = 8."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:021",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un rectangle tel que AB = 6 et AD = 4. Que vaut AD⃗ · AC⃗ ?",
+      "propositions": [
+        "36",
+        "16",
+        "24",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "On projette C sur (AD) : on obtient D. Donc AD⃗ · AC⃗ = AD × AD = 16."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Dans un repère orthonormé, A(0 ; 0), B(5 ; 0) et C(−1 ; 4). Le projeté orthogonal de C sur (AB) est H(−1 ; 0). Que vaut AB⃗ · AC⃗ ?",
+      "propositions": [
+        "5",
+        "−1",
+        "−5",
+        "20"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Produit scalaire et projection",
+      "explication": "AH = 1 et AH⃗ est de sens contraire à AB⃗, donc AB⃗ · AC⃗ = −AB × AH = −5 × 1 = −5."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:023",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un rectangle avec AB = 4 et BC = 3. Calcule AB⃗ · DB⃗ en projetant D et B sur la droite (AB).",
+      "propositions": [
+        "−16",
+        "20",
+        "12",
+        "16"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Produit scalaire et projection",
+      "explication": "D se projette en A et B en lui-même : AB⃗ · DB⃗ = AB⃗ · AB⃗ = 16. Le produit AB × DB = 4 × 5 = 20 ne tient pas compte de la projection."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:024",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont deux points distincts, et H est le projeté orthogonal d'un point C sur la droite (AB). Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AC⃗ = AB⃗ · AH⃗",
+        "Si H = A, alors AB⃗ · AC⃗ = 0",
+        "AB⃗ · AC⃗ est toujours positif",
+        "AB⃗ · AC⃗ est un vecteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "Le produit scalaire ne change pas quand on remplace C par son projeté ; il est nul si H = A. C'est un nombre, qui peut être négatif."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "ABCD est un carré de côté 1 et de centre O. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AO⃗ = 0,5",
+        "AB⃗ · BC⃗ = 0",
+        "AB⃗ · DC⃗ = −1",
+        "AB⃗ · CA⃗ = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Produit scalaire et projection",
+      "explication": "O se projette au milieu de [AB] : AB⃗ · AO⃗ = 1 × 0,5. DC⃗ = AB⃗ donne AB⃗ · DC⃗ = 1, et CA⃗ se projette en BA⃗, d'où AB⃗ · CA⃗ = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Dans un triangle ABC, l'angle BAC est obtus. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AC⃗ < 0",
+        "Le projeté de C sur (AB) n'appartient pas à la demi-droite [AB)",
+        "AB⃗ · AC⃗ = AB × AC",
+        "AB⃗ · AC⃗ = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "L'angle étant obtus, le projeté H de C est de l'autre côté de A par rapport à B, et AB⃗ · AC⃗ = −AB × AH < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "ABC est un triangle rectangle en B avec AB = 3 et BC = 4. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AC⃗ = 9",
+        "BA⃗ · BC⃗ = 0",
+        "CA⃗ · CB⃗ = 16",
+        "AB⃗ · AC⃗ = 15",
+        "AC⃗ · BC⃗ = −16"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Produit scalaire et projection",
+      "explication": "C se projette en B sur (AB) : AB⃗ · AC⃗ = 9 ; A se projette en B sur (CB) : CA⃗ · CB⃗ = 16. AC⃗ · BC⃗ = CA⃗ · CB⃗ = 16, pas −16."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:028",
+      "type": "vrai_faux",
+      "enonce": "Si l'angle BAC est droit, alors AB⃗ · AC⃗ = 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "Le projeté de C sur (AB) est alors A lui-même, donc AB⃗ · AC⃗ = AB × 0 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:029",
+      "type": "vrai_faux",
+      "enonce": "Le produit scalaire de deux vecteurs est toujours un nombre positif ou nul.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Produit scalaire et projection",
+      "explication": "Il est négatif quand l'angle des deux vecteurs est obtus, par exemple AB⃗ · BA⃗ = −AB²."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Dans un carré ABCD, le produit scalaire AB⃗ · AC⃗ est égal au carré de la longueur du côté.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "C se projette en B sur (AB), donc AB⃗ · AC⃗ = AB × AB = AB²."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Si H est le projeté orthogonal de C sur (AB), alors on a toujours AB⃗ · AC⃗ = AB × AC.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "C'est ± AB × AH, et non AB × AC : l'égalité avec AB × AC n'a lieu que si C est sur la demi-droite [AB)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:032",
+      "type": "reponse_courte",
+      "enonce": "ABC est un triangle équilatéral de côté 10. En utilisant le projeté orthogonal de C sur la droite (AB), calcule AB⃗ · AC⃗. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "50"
+      ],
+      "difficulte": 2,
+      "notion": "Produit scalaire et projection",
+      "explication": "C se projette au milieu H de [AB], donc AB⃗ · AC⃗ = AB × AH = 10 × 5 = 50."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:033",
+      "type": "reponse_courte",
+      "enonce": "ABCD est un rectangle de longueur AB = 8 et de largeur AD = 5. Combien vaut le produit scalaire AB⃗ · CD⃗ ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-64",
+        "−64"
+      ],
+      "difficulte": 3,
+      "notion": "Produit scalaire et projection",
+      "explication": "CD⃗ = −AB⃗, donc AB⃗ · CD⃗ = −AB² = −64. La largeur n'intervient pas."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:034",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 2, ‖v⃗‖ = 5 et l'angle de u⃗ et v⃗ mesure 60°. Que vaut u⃗ · v⃗ ?",
+      "propositions": [
+        "5",
+        "10",
+        "5√3",
+        "−5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "u⃗ · v⃗ = 2 × 5 × cos 60° = 10 × 1/2 = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Deux vecteurs de normes 4 et 3 forment un angle droit. Quel est leur produit scalaire ?",
+      "propositions": [
+        "12",
+        "0",
+        "7",
+        "1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos 90° = 0, donc le produit scalaire est nul : les vecteurs sont orthogonaux."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:036",
+      "type": "qcm_unique",
+      "enonce": "u⃗ et v⃗ sont colinéaires de sens contraires, avec ‖u⃗‖ = 3 et ‖v⃗‖ = 2. Que vaut u⃗ · v⃗ ?",
+      "propositions": [
+        "6",
+        "0",
+        "−6",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "L'angle vaut 180° et cos 180° = −1, donc u⃗ · v⃗ = 3 × 2 × (−1) = −6."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:037",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 2, ‖v⃗‖ = 3 et l'angle géométrique de u⃗ et v⃗ est 150°. Calcule u⃗ · v⃗.",
+      "propositions": [
+        "3√3",
+        "−3",
+        "3",
+        "−3√3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos 150° = −√3/2, donc u⃗ · v⃗ = 6 × (−√3/2) = −3√3."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:038",
+      "type": "qcm_unique",
+      "enonce": "On sait que ‖u⃗‖ = 4, ‖v⃗‖ = 5 et u⃗ · v⃗ = 10. Quelle est la mesure de l'angle géométrique de u⃗ et v⃗ ?",
+      "propositions": [
+        "60°",
+        "30°",
+        "120°",
+        "45°"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos θ = 10/(4 × 5) = 1/2, et l'angle compris entre 0° et 180° de cosinus 1/2 est 60°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Deux vecteurs ont chacun pour norme 2 et leur produit scalaire vaut −2. Leur angle géométrique mesure :",
+      "propositions": [
+        "60°",
+        "120°",
+        "150°",
+        "135°"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos θ = −2/(2 × 2) = −1/2, d'où θ = 120°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Si u⃗ · v⃗ < 0 pour deux vecteurs non nuls, leur angle géométrique est forcément :",
+      "propositions": [
+        "aigu",
+        "droit",
+        "obtus ou plat",
+        "nul"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "Le signe de u⃗ · v⃗ est celui de cos θ : il est négatif pour 90° < θ ⩽ 180°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:041",
+      "type": "qcm_unique",
+      "enonce": "ABC est un triangle équilatéral de côté 2. Que vaut AB⃗ · BC⃗ ?",
+      "propositions": [
+        "2",
+        "4",
+        "−4",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "L'angle de AB⃗ et BC⃗ est 120° (et non 60°) : AB⃗ · BC⃗ = 2 × 2 × (−1/2) = −2."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:042",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 1, ‖v⃗‖ = √2 et l'angle de u⃗ et v⃗ mesure 3π/4 radians. Que vaut u⃗ · v⃗ ?",
+      "propositions": [
+        "−1",
+        "1",
+        "−√2/2",
+        "√2/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos(3π/4) = −√2/2, donc u⃗ · v⃗ = 1 × √2 × (−√2/2) = −2/2 = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:043",
+      "type": "qcm_multiple",
+      "enonce": "Deux vecteurs non nuls u⃗ et v⃗ forment un angle aigu. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u⃗ · v⃗ > 0",
+        "u⃗ · v⃗ ⩽ ‖u⃗‖ × ‖v⃗‖",
+        "u⃗ · v⃗ = 0",
+        "u⃗ · v⃗ < 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos θ > 0 donne un produit positif, et cos θ ⩽ 1 donne u⃗ · v⃗ ⩽ ‖u⃗‖ × ‖v⃗‖."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "On sait seulement que ‖u⃗‖ = 2 et ‖v⃗‖ = 3. Quelles valeurs le produit scalaire u⃗ · v⃗ peut-il prendre ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "−6",
+        "0",
+        "4,5",
+        "7",
+        "−8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "u⃗ · v⃗ = 6 cos θ est compris entre −6 et 6 ; toutes les valeurs de cet intervalle sont possibles. 7 et −8 sont exclus."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "ABC est un triangle équilatéral de côté 4. Lesquels de ces produits scalaires valent 8 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AC⃗",
+        "BA⃗ · BC⃗",
+        "AB⃗ · BC⃗",
+        "CA⃗ · CB⃗",
+        "AC⃗ · CB⃗"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "Deux vecteurs issus d'un même sommet forment un angle de 60° : 4 × 4 × 1/2 = 8. AB⃗ et BC⃗ (ou AC⃗ et CB⃗) forment un angle de 120° : le produit vaut −8."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "Les vecteurs non nuls u⃗ et v⃗ ont pour angle géométrique θ et vérifient u⃗ · v⃗ = ‖u⃗‖ × ‖v⃗‖. Coche toutes les réponses exactes.",
+      "propositions": [
+        "cos θ = 1",
+        "u⃗ et v⃗ sont colinéaires et de même sens",
+        "u⃗ et v⃗ sont orthogonaux",
+        "θ = 180°"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Formule avec le cosinus",
+      "explication": "On divise par ‖u⃗‖ × ‖v⃗‖ ≠ 0 : cos θ = 1, donc θ = 0° : vecteurs colinéaires de même sens."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Quand deux vecteurs non nuls forment un angle obtus, leur produit scalaire est strictement négatif.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos θ < 0 pour 90° < θ ⩽ 180°, et les normes sont strictement positives."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Il existe deux vecteurs u⃗ et v⃗ tels que ‖u⃗‖ = 1, ‖v⃗‖ = 2 et u⃗ · v⃗ = 3.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Formule avec le cosinus",
+      "explication": "|u⃗ · v⃗| = ‖u⃗‖ × ‖v⃗‖ × |cos θ| ⩽ 2 : la valeur 3 est impossible."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Pour deux vecteurs non nuls d'angle géométrique θ, le produit scalaire est égal au produit des normes multiplié par cos θ.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "C'est la formule u⃗ · v⃗ = ‖u⃗‖ × ‖v⃗‖ × cos θ, conséquence de la définition par projection."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:050",
+      "type": "vrai_faux",
+      "enonce": "Si ‖u⃗‖ = 3, ‖v⃗‖ = 4 et que u⃗ et v⃗ forment un angle de 60°, alors u⃗ · v⃗ = 12.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "u⃗ · v⃗ = 3 × 4 × cos 60° = 6. Le produit des normes, 12, ne tient pas compte de l'angle."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:051",
+      "type": "reponse_courte",
+      "enonce": "Les vecteurs u⃗ et v⃗ ont pour normes 6 et 5 et forment un angle de 60°. Calcule u⃗ · v⃗. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "15"
+      ],
+      "difficulte": 1,
+      "notion": "Formule avec le cosinus",
+      "explication": "u⃗ · v⃗ = 6 × 5 × cos 60° = 30 × 1/2 = 15."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:052",
+      "type": "reponse_courte",
+      "enonce": "On donne ‖u⃗‖ = 2, ‖v⃗‖ = 4 et u⃗ · v⃗ = −4√2. Quelle est la mesure θ en degrés de l'angle géométrique de u⃗ et v⃗ ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "135"
+      ],
+      "difficulte": 3,
+      "notion": "Formule avec le cosinus",
+      "explication": "cos θ = −4√2/8 = −√2/2, donc θ = 135°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Pour tout vecteur u⃗, à quoi est égal le produit scalaire u⃗ · u⃗ ?",
+      "propositions": [
+        "2‖u⃗‖",
+        "‖u⃗‖²",
+        "‖u⃗‖",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "L'angle de u⃗ avec lui-même est nul et cos 0 = 1, donc u⃗ · u⃗ = ‖u⃗‖ × ‖u⃗‖ = ‖u⃗‖²."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:054",
+      "type": "qcm_unique",
+      "enonce": "On sait que u⃗ · v⃗ = 3. Que vaut alors v⃗ · u⃗ ?",
+      "propositions": [
+        "−3",
+        "1/3",
+        "3",
+        "9"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Le produit scalaire est symétrique : v⃗ · u⃗ = u⃗ · v⃗ = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Sachant que u⃗ · v⃗ = 4, calcule (−2u⃗) · v⃗.",
+      "propositions": [
+        "8",
+        "2",
+        "16",
+        "−8"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Par bilinéarité, (−2u⃗) · v⃗ = −2(u⃗ · v⃗) = −8."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:056",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 3, ‖v⃗‖ = 2 et u⃗ · v⃗ = 1. Calcule (u⃗ + v⃗) · (u⃗ − v⃗).",
+      "propositions": [
+        "5",
+        "13",
+        "7",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "En développant, (u⃗ + v⃗) · (u⃗ − v⃗) = ‖u⃗‖² − ‖v⃗‖² = 9 − 4 = 5 ; les termes en u⃗ · v⃗ s'annulent."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:057",
+      "type": "qcm_unique",
+      "enonce": "On donne ‖u⃗‖ = 2, ‖v⃗‖ = 1 et u⃗ · v⃗ = −1. Que vaut (2u⃗ + v⃗) · v⃗ ?",
+      "propositions": [
+        "3",
+        "−1",
+        "1",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "(2u⃗ + v⃗) · v⃗ = 2u⃗ · v⃗ + ‖v⃗‖² = −2 + 1 = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:058",
+      "type": "qcm_unique",
+      "enonce": "u⃗ et v⃗ sont orthogonaux, avec ‖u⃗‖ = 2 et ‖v⃗‖ = 3. Développe et calcule (u⃗ + 2v⃗) · (3u⃗ − v⃗).",
+      "propositions": [
+        "6",
+        "30",
+        "−6",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "On obtient 3‖u⃗‖² − u⃗ · v⃗ + 6v⃗ · u⃗ − 2‖v⃗‖² = 12 + 0 − 18 = −6, car u⃗ · v⃗ = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Le vecteur u⃗ est orthogonal à tous les vecteurs du plan. Que peut-on en déduire ?",
+      "propositions": [
+        "u⃗ est unitaire",
+        "u⃗ est égal à i⃗ + j⃗",
+        "u⃗ est colinéaire à i⃗",
+        "u⃗ est le vecteur nul"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "En particulier u⃗ · u⃗ = ‖u⃗‖² = 0, donc u⃗ = 0⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Deux vecteurs non nuls u⃗ et v⃗ vérifient u⃗ · v⃗ = 0. Que peut-on conclure ?",
+      "propositions": [
+        "u⃗ et v⃗ sont orthogonaux",
+        "u⃗ = 0⃗ ou v⃗ = 0⃗",
+        "u⃗ et v⃗ sont colinéaires",
+        "‖u⃗‖ = ‖v⃗‖"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Un produit scalaire nul caractérise l'orthogonalité ; il n'impose pas qu'un des vecteurs soit nul."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Dans un parallélogramme ABCD, on a AC⃗ · DB⃗ = AB² − AD². Les diagonales sont perpendiculaires si et seulement si ABCD est :",
+      "propositions": [
+        "un rectangle",
+        "un losange",
+        "un trapèze",
+        "un parallélogramme quelconque"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "AC⃗ · DB⃗ = 0 ⇔ AB² = AD² ⇔ AB = AD : deux côtés consécutifs égaux, c'est un losange."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Quelles règles de calcul du produit scalaire sont valables pour tous vecteurs u⃗, v⃗, w⃗ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "u⃗ · (v⃗ + w⃗) = u⃗ · v⃗ + u⃗ · w⃗",
+        "u⃗ · v⃗ = v⃗ · u⃗",
+        "(3u⃗) · v⃗ = 3(u⃗ · v⃗)",
+        "u⃗ · v⃗ = u⃗ · w⃗ entraîne v⃗ = w⃗"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Bilinéarité et symétrie sont toujours vraies. On ne simplifie pas par u⃗ : u⃗ · v⃗ = u⃗ · w⃗ dit seulement que u⃗ est orthogonal à v⃗ − w⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Les vecteurs u⃗ et v⃗ vérifient ‖u⃗‖ = 1, ‖v⃗‖ = 2 et u⃗ · v⃗ = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "(u⃗ + v⃗) · (u⃗ − v⃗) = −3",
+        "(u⃗ + v⃗) · u⃗ = 1",
+        "u⃗ et v⃗ sont orthogonaux",
+        "(2u⃗) · (3v⃗) = 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "1 − 4 = −3 ; ‖u⃗‖² + v⃗ · u⃗ = 1 + 0 = 1 ; et (2u⃗) · (3v⃗) = 6(u⃗ · v⃗) = 0, pas 6."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "Parmi les expressions suivantes, lesquelles sont égales à (u⃗ − v⃗) · (2u⃗ + v⃗) quels que soient u⃗ et v⃗ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2‖u⃗‖² − u⃗ · v⃗ − ‖v⃗‖²",
+        "2‖u⃗‖² − ‖v⃗‖²",
+        "2‖u⃗‖² + 3u⃗ · v⃗ − ‖v⃗‖²",
+        "2u⃗ · u⃗ − v⃗ · u⃗ − v⃗ · v⃗"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "On développe : 2u⃗ · u⃗ + u⃗ · v⃗ − 2v⃗ · u⃗ − v⃗ · v⃗ = 2‖u⃗‖² − u⃗ · v⃗ − ‖v⃗‖² (symétrie)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Soit u⃗ un vecteur non nul et v⃗, w⃗ deux vecteurs tels que u⃗ · v⃗ = u⃗ · w⃗. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u⃗ est orthogonal à v⃗ − w⃗",
+        "v⃗ = w⃗ nécessairement",
+        "u⃗ · (v⃗ − w⃗) = 0",
+        "v⃗ et w⃗ sont nécessairement colinéaires"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Par bilinéarité, u⃗ · (v⃗ − w⃗) = 0 : u⃗ est orthogonal à v⃗ − w⃗. Par exemple, avec u⃗ = i⃗, v⃗ = j⃗ et w⃗ = 2j⃗, on a v⃗ ≠ w⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Le vecteur nul est orthogonal à tout vecteur du plan.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Par définition, le produit scalaire avec le vecteur nul vaut 0 : 0⃗ est orthogonal à tout vecteur."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:067",
+      "type": "vrai_faux",
+      "enonce": "Si le produit scalaire de u⃗ et v⃗ est nul, alors l'un des deux vecteurs est forcément nul.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Deux vecteurs non nuls perpendiculaires, comme i⃗ et j⃗, ont un produit scalaire nul."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:068",
+      "type": "vrai_faux",
+      "enonce": "Le produit de la somme u⃗ + v⃗ par la différence u⃗ − v⃗ vaut toujours ‖u⃗‖² − ‖v⃗‖².",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "On développe : u⃗ · u⃗ − u⃗ · v⃗ + v⃗ · u⃗ − v⃗ · v⃗, et les termes du milieu s'annulent par symétrie."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:069",
+      "type": "vrai_faux",
+      "enonce": "Pour tout vecteur u⃗ et tout réel k, on a (ku⃗) · (ku⃗) = k‖u⃗‖².",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "Par bilinéarité, (ku⃗) · (ku⃗) = k² (u⃗ · u⃗) = k²‖u⃗‖²."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:070",
+      "type": "reponse_courte",
+      "enonce": "On donne ‖u⃗‖ = 3, ‖v⃗‖ = 2 et u⃗ · v⃗ = −1. Développe puis calcule (u⃗ + v⃗) · (2u⃗ − 3v⃗). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "7"
+      ],
+      "difficulte": 2,
+      "notion": "Propriétés et orthogonalité",
+      "explication": "2‖u⃗‖² − 3u⃗ · v⃗ + 2u⃗ · v⃗ − 3‖v⃗‖² = 18 − u⃗ · v⃗ − 12 = 18 + 1 − 12 = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Dans une base orthonormée, u⃗(2 ; 5) et v⃗(3 ; −1). Que vaut u⃗ · v⃗ ?",
+      "propositions": [
+        "11",
+        "6",
+        "1",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · v⃗ = xx′ + yy′ = 2 × 3 + 5 × (−1) = 6 − 5 = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Dans un repère orthonormé, lequel de ces vecteurs est orthogonal à u⃗(2 ; 3) ?",
+      "propositions": [
+        "(3 ; 2)",
+        "(2 ; −3)",
+        "(−2 ; −3)",
+        "(−3 ; 2)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "2 × (−3) + 3 × 2 = 0. Pour les autres : 12, −5 et −13."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans une base orthonormée (i⃗, j⃗), que vaut le produit scalaire i⃗ · j⃗ ?",
+      "propositions": [
+        "0",
+        "1",
+        "−1",
+        "√2/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "Les vecteurs d'une base orthonormée sont orthogonaux : i⃗ · j⃗ = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de m les vecteurs u⃗(m ; 2) et v⃗(3 ; −6) sont-ils orthogonaux dans une base orthonormée ?",
+      "propositions": [
+        "m = −4",
+        "m = 4",
+        "m = 1",
+        "m = −1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "3m − 12 = 0 donne m = 4. La valeur m = −1 rendrait les vecteurs colinéaires, pas orthogonaux."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Dans un repère orthonormé, on place A(1 ; 1), B(3 ; 2) et C(0 ; 3). Le triangle ABC est :",
+      "propositions": [
+        "rectangle en B",
+        "rectangle en C",
+        "rectangle en A",
+        "équilatéral"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "AB⃗(2 ; 1) et AC⃗(−1 ; 2) : AB⃗ · AC⃗ = −2 + 2 = 0, donc l'angle en A est droit."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Quel angle géométrique forment les vecteurs u⃗(1 ; 0) et v⃗(1 ; 1) dans une base orthonormée ?",
+      "propositions": [
+        "90°",
+        "60°",
+        "30°",
+        "45°"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · v⃗ = 1, ‖u⃗‖ = 1, ‖v⃗‖ = √2 : cos θ = 1/√2 = √2/2, donc θ = 45°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Les vecteurs u⃗(1 ; 0) et w⃗(−1 ; 1) sont donnés dans une base orthonormée. Quelle est la mesure de leur angle géométrique ?",
+      "propositions": [
+        "135°",
+        "45°",
+        "120°",
+        "150°"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · w⃗ = −1, ‖w⃗‖ = √2 : cos θ = −√2/2, donc θ = 135° (angle obtus, car le produit est négatif)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Les vecteurs e⃗₁(0,6 ; 0,8) et e⃗₂(−0,8 ; 0,6) forment une base orthonormée. Quelles sont les coordonnées de w⃗(5 ; 0) dans la base (e⃗₁, e⃗₂) ?",
+      "propositions": [
+        "(5 ; 0)",
+        "(3 ; −4)",
+        "(4 ; 3)",
+        "(−4 ; 3)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "Les coordonnées sont w⃗ · e⃗₁ = 5 × 0,6 = 3 et w⃗ · e⃗₂ = 5 × (−0,8) = −4. Vérification : 3e⃗₁ − 4e⃗₂ = (5 ; 0)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Dans une base orthonormée (i⃗, j⃗), on pose u⃗ = 3i⃗ − 2j⃗. Que vaut u⃗ · j⃗ ?",
+      "propositions": [
+        "3",
+        "2",
+        "−2",
+        "1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · j⃗ = 3 i⃗ · j⃗ − 2 j⃗ · j⃗ = 0 − 2 = −2 : c'est l'ordonnée de u⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Pour quelles valeurs de m les vecteurs u⃗(m ; 3) et v⃗(m ; −12) sont-ils orthogonaux (base orthonormée) ?",
+      "propositions": [
+        "m = 6 uniquement",
+        "m = −4 ou m = 4",
+        "aucune valeur",
+        "m = −6 ou m = 6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "m² − 36 = 0 donne m² = 36, soit m = 6 ou m = −6 : il ne faut pas oublier la solution négative."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Dans un repère orthonormé (O ; i⃗, j⃗), on considère u⃗(3 ; 4). Coche toutes les réponses exactes.",
+      "propositions": [
+        "‖u⃗‖ = 5",
+        "u⃗ · u⃗ = 25",
+        "u⃗ est orthogonal à v⃗(4 ; −3)",
+        "u⃗ · i⃗ = 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "‖u⃗‖ = √25 = 5, u⃗ · u⃗ = 9 + 16 = 25, 3 × 4 + 4 × (−3) = 0. Enfin u⃗ · i⃗ = 3, l'abscisse."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Dans une base orthonormée, u⃗(1 ; −2), v⃗(4 ; 2) et w⃗(2 ; 1). Coche toutes les réponses exactes.",
+      "propositions": [
+        "u⃗ et v⃗ sont orthogonaux",
+        "u⃗ et w⃗ sont orthogonaux",
+        "v⃗ · w⃗ = 0",
+        "u⃗ · v⃗ = 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · v⃗ = 4 − 4 = 0 et u⃗ · w⃗ = 2 − 2 = 0. En revanche v⃗ · w⃗ = 8 + 2 = 10 : v⃗ = 2w⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Soit (i⃗, j⃗) une base orthonormée du plan. Coche toutes les réponses exactes.",
+      "propositions": [
+        "i⃗ · i⃗ = 1",
+        "‖i⃗ + j⃗‖ = √2",
+        "(i⃗ + j⃗) · (i⃗ − j⃗) = 0",
+        "‖i⃗ + j⃗‖ = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "i⃗ + j⃗ a pour coordonnées (1 ; 1), de norme √2 ; (1 ; 1) · (1 ; −1) = 1 − 1 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Dans un repère orthonormé, on donne A(0 ; 0), B(4 ; 2) et C(1 ; 3). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le triangle ABC est rectangle en C",
+        "L'angle BAC mesure 45°",
+        "AB⃗ · AC⃗ = 10",
+        "Le triangle ABC est rectangle en A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "CA⃗(−1 ; −3) · CB⃗(3 ; −1) = −3 + 3 = 0. AB⃗ · AC⃗ = 4 + 6 = 10, et cos Â = 10/(√20 × √10) = √2/2."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:085",
+      "type": "vrai_faux",
+      "enonce": "Dans une base orthonormée, les vecteurs u⃗(2 ; −1) et v⃗(1 ; 2) sont orthogonaux.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "2 × 1 + (−1) × 2 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:086",
+      "type": "vrai_faux",
+      "enonce": "La formule u⃗ · v⃗ = xx′ + yy′ est valable dans n'importe quelle base du plan.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "Elle repose sur i⃗ · i⃗ = j⃗ · j⃗ = 1 et i⃗ · j⃗ = 0 : elle n'est valable qu'en base orthonormée."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Dans un repère orthonormé, le vecteur de coordonnées (1 ; 1) est unitaire.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "Sa norme vaut √(1 + 1) = √2, pas 1."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Dans une base orthonormée (i⃗, j⃗), l'abscisse d'un vecteur u⃗ est égale au produit scalaire u⃗ · i⃗.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "Si u⃗ = xi⃗ + yj⃗, alors u⃗ · i⃗ = x × 1 + y × 0 = x."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:089",
+      "type": "reponse_courte",
+      "enonce": "On se place dans une base orthonormée avec u⃗(−3 ; 4) et v⃗(2 ; 5). Calcule u⃗ · v⃗. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "14"
+      ],
+      "difficulte": 1,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "u⃗ · v⃗ = −3 × 2 + 4 × 5 = −6 + 20 = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:090",
+      "type": "reponse_courte",
+      "enonce": "Dans un repère orthonormé, A(1 ; 2), B(3 ; 6) et C(5 ; 0). Donne la valeur de AB⃗ · AC⃗. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "0"
+      ],
+      "difficulte": 2,
+      "notion": "Base orthonormée et coordonnées",
+      "explication": "AB⃗(2 ; 4) et AC⃗(4 ; −2) : 8 − 8 = 0. Le triangle ABC est rectangle en A."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Pour tous vecteurs u⃗ et v⃗, à quoi est égal ‖u⃗ + v⃗‖² ?",
+      "propositions": [
+        "‖u⃗‖² + 2u⃗ · v⃗ + ‖v⃗‖²",
+        "‖u⃗‖² + ‖v⃗‖²",
+        "‖u⃗‖² + u⃗ · v⃗ + ‖v⃗‖²",
+        "(‖u⃗‖ + ‖v⃗‖)²"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Normes et identités",
+      "explication": "(u⃗ + v⃗) · (u⃗ + v⃗) = u⃗ · u⃗ + 2u⃗ · v⃗ + v⃗ · v⃗ par bilinéarité et symétrie."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:092",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 2, ‖v⃗‖ = 3 et u⃗ · v⃗ = 1. Quelle est la norme de u⃗ + v⃗ ?",
+      "propositions": [
+        "5",
+        "√15",
+        "√13",
+        "15"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ + v⃗‖² = 4 + 2 × 1 + 9 = 15, donc ‖u⃗ + v⃗‖ = √15."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:093",
+      "type": "qcm_unique",
+      "enonce": "On sait que ‖u⃗‖ = 4, ‖v⃗‖ = 3 et ‖u⃗ − v⃗‖ = 5. Que vaut u⃗ · v⃗ ?",
+      "propositions": [
+        "12",
+        "6",
+        "0",
+        "−6"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "u⃗ · v⃗ = ½(‖u⃗‖² + ‖v⃗‖² − ‖u⃗ − v⃗‖²) = ½(16 + 9 − 25) = 0 : les vecteurs sont orthogonaux."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, AB = 5, AC = 7 et BC = 6. Calcule AB⃗ · AC⃗ à l'aide des longueurs.",
+      "propositions": [
+        "38",
+        "35",
+        "30",
+        "19"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "AB⃗ · AC⃗ = ½(AB² + AC² − BC²) = ½(25 + 49 − 36) = 19. 30 serait CA⃗ · CB⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces expressions est égale à u⃗ · v⃗ pour tous vecteurs u⃗ et v⃗ ?",
+      "propositions": [
+        "½(‖u⃗ + v⃗‖² − ‖u⃗‖² − ‖v⃗‖²)",
+        "‖u⃗ + v⃗‖² − ‖u⃗‖² − ‖v⃗‖²",
+        "½(‖u⃗‖² + ‖v⃗‖² + ‖u⃗ − v⃗‖²)",
+        "‖u⃗‖ × ‖v⃗‖"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Normes et identités",
+      "explication": "On isole u⃗ · v⃗ dans ‖u⃗ + v⃗‖² = ‖u⃗‖² + 2u⃗ · v⃗ + ‖v⃗‖², sans oublier le facteur ½."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:096",
+      "type": "qcm_unique",
+      "enonce": "u⃗ et v⃗ sont unitaires et u⃗ · v⃗ = 1/2. Que vaut ‖u⃗ − v⃗‖ ?",
+      "propositions": [
+        "0",
+        "1",
+        "√3",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ − v⃗‖² = 1 − 2 × 1/2 + 1 = 1, donc ‖u⃗ − v⃗‖ = 1. (√3 serait ‖u⃗ + v⃗‖.)"
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:097",
+      "type": "qcm_unique",
+      "enonce": "‖u⃗‖ = 3, ‖v⃗‖ = 4 et ‖u⃗ + v⃗‖ = 6. En utilisant l'égalité du parallélogramme, que vaut ‖u⃗ − v⃗‖ ?",
+      "propositions": [
+        "1",
+        "7",
+        "√14",
+        "√2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ − v⃗‖² = 2(‖u⃗‖² + ‖v⃗‖²) − ‖u⃗ + v⃗‖² = 2 × 25 − 36 = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces égalités caractérise l'orthogonalité de u⃗ et v⃗ ?",
+      "propositions": [
+        "‖u⃗ + v⃗‖ = ‖u⃗‖ + ‖v⃗‖",
+        "‖u⃗‖ = ‖v⃗‖",
+        "‖u⃗ − v⃗‖ = 0",
+        "‖u⃗ + v⃗‖² = ‖u⃗‖² + ‖v⃗‖²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ + v⃗‖² − ‖u⃗‖² − ‖v⃗‖² = 2u⃗ · v⃗ : il est nul exactement quand u⃗ · v⃗ = 0 (Pythagore vectoriel)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "On donne ‖u⃗‖ = 3, ‖v⃗‖ = 5 et u⃗ · v⃗ = −2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "‖u⃗ + v⃗‖² = 30",
+        "‖u⃗ − v⃗‖² = 38",
+        "‖u⃗ + v⃗‖² = 34",
+        "‖u⃗ + v⃗‖ = 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ + v⃗‖² = 9 − 4 + 25 = 30 et ‖u⃗ − v⃗‖² = 9 + 4 + 25 = 38. 34 oublie le terme 2u⃗ · v⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités, lesquelles sont vraies quels que soient les vecteurs u⃗ et v⃗ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "‖u⃗ − v⃗‖² = ‖u⃗‖² − 2u⃗ · v⃗ + ‖v⃗‖²",
+        "‖u⃗ + v⃗‖² + ‖u⃗ − v⃗‖² = 2(‖u⃗‖² + ‖v⃗‖²)",
+        "‖u⃗ + v⃗‖ = ‖u⃗‖ + ‖v⃗‖",
+        "‖u⃗ − v⃗‖² = ‖u⃗‖² − ‖v⃗‖²"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Normes et identités",
+      "explication": "La première est un développement, la deuxième s'obtient en ajoutant les deux développements. Les deux autres sont fausses en général (essayer u⃗ = i⃗, v⃗ = j⃗)."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Un triangle ABC a pour côtés AB = 4, AC = 6 et BC = 8. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB⃗ · AC⃗ = −6",
+        "L'angle BAC est obtus",
+        "BA⃗ · BC⃗ = 22",
+        "CA⃗ · CB⃗ = 24"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Normes et identités",
+      "explication": "AB⃗ · AC⃗ = ½(16 + 36 − 64) = −6 < 0 : angle obtus. BA⃗ · BC⃗ = ½(16 + 64 − 36) = 22 et CA⃗ · CB⃗ = ½(36 + 64 − 16) = 42."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:102",
+      "type": "vrai_faux",
+      "enonce": "Le carré de la norme d'une différence se développe ainsi : ‖u⃗ − v⃗‖² = ‖u⃗‖² − 2u⃗ · v⃗ + ‖v⃗‖².",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Normes et identités",
+      "explication": "(u⃗ − v⃗) · (u⃗ − v⃗) = ‖u⃗‖² − u⃗ · v⃗ − v⃗ · u⃗ + ‖v⃗‖² = ‖u⃗‖² − 2u⃗ · v⃗ + ‖v⃗‖²."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:103",
+      "type": "vrai_faux",
+      "enonce": "Si deux vecteurs ont pour normes 3 et 4, alors leur somme a forcément pour norme 7.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ + v⃗‖² = 25 + 2u⃗ · v⃗ dépend de l'angle : par exemple, s'ils sont orthogonaux, ‖u⃗ + v⃗‖ = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Si ‖u⃗ + v⃗‖ = ‖u⃗ − v⃗‖, alors u⃗ et v⃗ sont orthogonaux.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "La différence des carrés vaut ‖u⃗ + v⃗‖² − ‖u⃗ − v⃗‖² = 4u⃗ · v⃗ : elle est nulle, donc u⃗ · v⃗ = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:105",
+      "type": "reponse_courte",
+      "enonce": "Les vecteurs u⃗ et v⃗ vérifient ‖u⃗‖ = 2, ‖v⃗‖ = 3 et ‖u⃗ + v⃗‖ = 4. Calcule u⃗ · v⃗. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "1,5",
+        "1.5",
+        "3/2"
+      ],
+      "difficulte": 2,
+      "notion": "Normes et identités",
+      "explication": "u⃗ · v⃗ = ½(‖u⃗ + v⃗‖² − ‖u⃗‖² − ‖v⃗‖²) = ½(16 − 4 − 9) = 1,5."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:106",
+      "type": "reponse_courte",
+      "enonce": "On sait que ‖u⃗‖ = 5, ‖v⃗‖ = 2 et u⃗ · v⃗ = 3. Que vaut ‖u⃗ − v⃗‖² ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "23"
+      ],
+      "difficulte": 3,
+      "notion": "Normes et identités",
+      "explication": "‖u⃗ − v⃗‖² = 25 − 2 × 3 + 4 = 23."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, quelle est l'écriture correcte de la formule d'Al-Kashi ?",
+      "propositions": [
+        "BC² = AB² + AC² − 2AB × AC × cos Â",
+        "BC² = AB² + AC² + 2AB × AC × cos Â",
+        "BC² = AB² + AC² − AB × AC × cos Â",
+        "BC = AB + AC − 2AB × AC × cos Â"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "Al-Kashi : BC² = AB² + AC² − 2 AB × AC × cos Â, où Â est l'angle compris entre [AB] et [AC]."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, AB = 3, AC = 5 et l'angle Â mesure 60°. Combien mesure BC ?",
+      "propositions": [
+        "7",
+        "√19",
+        "√34",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "BC² = 9 + 25 − 2 × 3 × 5 × 1/2 = 34 − 15 = 19, donc BC = √19. (7 correspond à une erreur de signe.)"
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:109",
+      "type": "qcm_unique",
+      "enonce": "On considère un triangle ABC où AB = 3, AC = 5 et où l'angle en A est de 120°. Quelle est la longueur du côté opposé à A ?",
+      "propositions": [
+        "√19",
+        "√34",
+        "7",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "cos 120° = −1/2 : BC² = 9 + 25 + 15 = 49, d'où BC = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Un triangle ABC vérifie AB = 5, AC = 8 et BC = 7. Quelle est la mesure de l'angle Â ?",
+      "propositions": [
+        "30°",
+        "120°",
+        "45°",
+        "60°"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "cos Â = (AB² + AC² − BC²)/(2 AB × AC) = (25 + 64 − 49)/80 = 1/2, donc Â = 60°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Les côtés d'un triangle mesurent 3, 5 et 7. Combien mesure l'angle opposé au plus grand côté ?",
+      "propositions": [
+        "120°",
+        "60°",
+        "90°",
+        "150°"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "cos = (9 + 25 − 49)/(2 × 3 × 5) = −15/30 = −1/2, donc l'angle mesure 120°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Si l'angle Â est droit, la formule d'Al-Kashi devient :",
+      "propositions": [
+        "le théorème de Thalès",
+        "le théorème de Pythagore",
+        "la loi des sinus",
+        "la relation de Chasles"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "cos 90° = 0 : il reste BC² = AB² + AC², le théorème de Pythagore."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Un triangle a pour côtés 4, 5 et 7. Quelle est la nature de l'angle opposé au côté de longueur 7 ?",
+      "propositions": [
+        "aigu",
+        "droit",
+        "obtus",
+        "plat"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "7² = 49 > 4² + 5² = 41 : le cosinus de cet angle est négatif, l'angle est obtus."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, AB = 4, AC = 6 et cos Â = 1/4. Que vaut BC ?",
+      "propositions": [
+        "8",
+        "√46",
+        "10",
+        "2√10"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "BC² = 16 + 36 − 2 × 4 × 6 × 1/4 = 52 − 12 = 40, donc BC = √40 = 2√10."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Dans un triangle ABC, BC = 6, CA = 4 et AB = 5. Que vaut cos B̂ ?",
+      "propositions": [
+        "3/4",
+        "1/8",
+        "9/16",
+        "−3/4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "Le côté opposé à B est CA : cos B̂ = (BA² + BC² − CA²)/(2 BA × BC) = (25 + 36 − 16)/60 = 45/60 = 3/4."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:116",
+      "type": "qcm_multiple",
+      "enonce": "Dans un triangle ABC, AB = 6, AC = 4 et Â = 60°. Coche toutes les réponses exactes.",
+      "propositions": [
+        "BC² = 28",
+        "BC = 2√7",
+        "AB⃗ · AC⃗ = 12",
+        "BC = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "AB⃗ · AC⃗ = 6 × 4 × 1/2 = 12 et BC² = 36 + 16 − 2 × 12 = 28, donc BC = √28 = 2√7."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:117",
+      "type": "qcm_multiple",
+      "enonce": "Un triangle ABC a pour côtés BC = 13, CA = 7 et AB = 8. Coche toutes les réponses exactes.",
+      "propositions": [
+        "cos Â = −1/2",
+        "Â = 120°",
+        "Le triangle est rectangle",
+        "Â = 60°"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "cos Â = (49 + 64 − 169)/(2 × 7 × 8) = −56/112 = −1/2, donc Â = 120°. 13² ≠ 7² + 8², le triangle n'est pas rectangle en A, et il ne l'est pas non plus ailleurs."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:118",
+      "type": "qcm_multiple",
+      "enonce": "Quelles données permettent de calculer directement la longueur BC avec la formule d'Al-Kashi ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "AB, AC et l'angle Â",
+        "AB, AC et cos Â",
+        "AB et l'angle Â seulement",
+        "AC et l'angle B̂ seulement"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "La formule demande les deux côtés qui encadrent l'angle et le cosinus de cet angle."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:119",
+      "type": "vrai_faux",
+      "enonce": "La formule d'Al-Kashi généralise le théorème de Pythagore à un triangle quelconque.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "Pour Â = 90°, le terme 2 AB × AC × cos Â est nul et l'on retrouve Pythagore."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Dans un triangle dont les côtés mesurent 6, 7 et 10, l'angle opposé au côté 10 est aigu.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "10² = 100 > 6² + 7² = 85 : le cosinus est négatif, l'angle est obtus."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Si AB = AC = 1 et Â = 60° dans un triangle ABC, alors BC = 1.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "BC² = 1 + 1 − 2 × 1/2 = 1 : le triangle est équilatéral."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:122",
+      "type": "reponse_courte",
+      "enonce": "Un triangle ABC vérifie AB = 8, AC = 3 et Â = 60°. Calcule la longueur BC. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "7"
+      ],
+      "difficulte": 2,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "BC² = 64 + 9 − 2 × 8 × 3 × 1/2 = 73 − 24 = 49, donc BC = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:123",
+      "type": "reponse_courte",
+      "enonce": "Un triangle a pour côtés 4, 5 et 6. Donne la mesure, en degrés arrondie à l'unité, de son plus petit angle. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "41"
+      ],
+      "difficulte": 3,
+      "notion": "Formule d'Al-Kashi",
+      "explication": "Le plus petit angle est opposé au plus petit côté : cos = (25 + 36 − 16)/(2 × 5 × 6) = 0,75, d'où un angle d'environ 41,4°, soit 41°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:124",
+      "type": "qcm_unique",
+      "enonce": "I est le milieu du segment [AB]. Pour tout point M du plan, MA⃗ · MB⃗ est égal à :",
+      "propositions": [
+        "MI² + AB²/4",
+        "MI² − AB²/4",
+        "MI² − AB²",
+        "MI − AB/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = (MI⃗ + IA⃗) · (MI⃗ − IA⃗) = MI² − IA², avec IA = AB/2."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:125",
+      "type": "qcm_unique",
+      "enonce": "A et B sont deux points distincts. Quel est l'ensemble des points M tels que MA⃗ · MB⃗ = 0 ?",
+      "propositions": [
+        "la médiatrice de [AB]",
+        "la droite (AB)",
+        "le cercle de diamètre [AB]",
+        "le cercle de centre A passant par B"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = 0 ⇔ MI² = AB²/4 ⇔ MI = AB/2, avec I milieu de [AB] : c'est le cercle de diamètre [AB]."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:126",
+      "type": "qcm_unique",
+      "enonce": "AB = 4 et I est le milieu de [AB]. Quel est l'ensemble des points M vérifiant MA⃗ · MB⃗ = 5 ?",
+      "propositions": [
+        "le cercle de centre I et de rayon √5",
+        "le cercle de centre I et de rayon 9",
+        "l'ensemble vide",
+        "le cercle de centre I et de rayon 3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MI² = 5 + AB²/4 = 5 + 4 = 9, donc MI = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:127",
+      "type": "qcm_unique",
+      "enonce": "On fixe un segment [AB] de longueur 10, de milieu I. Quels points M satisfont MA⃗ · MB⃗ = −25 ?",
+      "propositions": [
+        "le point I seul",
+        "aucun point",
+        "les points du cercle de centre I et de rayon 5",
+        "les points de la médiatrice de [AB]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MI² = −25 + 25 = 0, donc M = I. C'est la plus petite valeur possible de MA⃗ · MB⃗."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Le segment [AB] mesure 2. Combien de points M du plan vérifient l'égalité MA⃗ · MB⃗ = −3 ?",
+      "propositions": [
+        "un seul",
+        "aucun",
+        "deux",
+        "une infinité"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MI² = −3 + 1 = −2 < 0 : c'est impossible, l'ensemble est vide."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:129",
+      "type": "qcm_unique",
+      "enonce": "M est un point du cercle de diamètre [AB], distinct de A et de B. Le triangle AMB est alors :",
+      "propositions": [
+        "rectangle en A",
+        "équilatéral",
+        "rectangle en M",
+        "isocèle en M"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = 0 avec MA⃗ et MB⃗ non nuls : l'angle AMB est droit."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:130",
+      "type": "qcm_unique",
+      "enonce": "AB = 8. Quand M parcourt le plan, quelle est la plus petite valeur prise par MA⃗ · MB⃗ ?",
+      "propositions": [
+        "0",
+        "−64",
+        "−4",
+        "−16"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = MI² − 16 est minimal quand MI = 0, c'est-à-dire en M = I : la valeur minimale est −16."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Le segment [AB] a pour longueur 10 et pour milieu I, et M est tel que MI = 7. Que vaut MA⃗ · MB⃗ ?",
+      "propositions": [
+        "24",
+        "74",
+        "49",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = MI² − AB²/4 = 49 − 25 = 24."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont distincts, I est le milieu de [AB] et M est un point du cercle de diamètre [AB]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "MA⃗ · MB⃗ = 0",
+        "MI = AB/2",
+        "M = I",
+        "MI = AB"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "Le cercle de diamètre [AB] a pour centre I et pour rayon AB/2 : M est à la distance AB/2 de I, donc M ≠ I."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont distincts, I est le milieu de [AB], et M est un point hors de la droite (AB) tel que MI < AB/2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "MA⃗ · MB⃗ < 0",
+        "L'angle AMB est obtus",
+        "MA⃗ · MB⃗ > 0",
+        "M appartient au cercle de diamètre [AB]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = MI² − AB²/4 < 0 : le cosinus de l'angle AMB est négatif, l'angle est obtus. M est à l'intérieur du cercle."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:134",
+      "type": "qcm_multiple",
+      "enonce": "AB = 4 et I est le milieu de [AB]. Quels points vérifient MA⃗ · MB⃗ = 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "le point A",
+        "le point B",
+        "tout point M tel que MI = 2",
+        "le point I",
+        "tout point M tel que MI = 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "C'est le cercle de centre I et de rayon 2, qui passe par A et B. En I, MA⃗ · MB⃗ = −4."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Les points A et B appartiennent à l'ensemble des points M tels que MA⃗ · MB⃗ = 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "Pour M = A, MA⃗ = 0⃗ et le produit est nul ; de même pour M = B."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:136",
+      "type": "vrai_faux",
+      "enonce": "Pour tout point M du plan, le produit scalaire MA⃗ · MB⃗ est positif ou nul.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "Au milieu I de [AB], il vaut −AB²/4 < 0 ; il est négatif pour tout point intérieur au cercle de diamètre [AB]."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:137",
+      "type": "vrai_faux",
+      "enonce": "Si un point M vérifie MA⃗ · MB⃗ = 0, alors M est équidistant de A et de B.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "M est sur le cercle de diamètre [AB] ; le point A lui-même en fait partie, et il n'est pas équidistant de A et B."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:138",
+      "type": "reponse_courte",
+      "enonce": "On note I le milieu d'un segment [AB] de longueur 6. Un point M est situé à la distance 4 de I. Que vaut le produit scalaire MA⃗ · MB⃗ ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "7"
+      ],
+      "difficulte": 2,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MA⃗ · MB⃗ = MI² − AB²/4 = 16 − 9 = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:139",
+      "type": "reponse_courte",
+      "enonce": "AB = 4. L'ensemble des points M tels que MA⃗ · MB⃗ = 12 est un cercle de centre le milieu de [AB]. Quel est son rayon ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 3,
+      "notion": "Cercle de diamètre [AB]",
+      "explication": "MI² = 12 + AB²/4 = 12 + 4 = 16, donc MI = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:140",
+      "type": "qcm_unique",
+      "enonce": "On connaît seulement les longueurs des trois côtés d'un triangle ABC. Quelle formule donne directement AB⃗ · AC⃗ ?",
+      "propositions": [
+        "AB × AC × cos Â",
+        "½(AB² + AC² − BC²)",
+        "xx′ + yy′",
+        "AB × AH"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Choisir une méthode",
+      "explication": "Avec les normes seules, on utilise AB⃗ · AC⃗ = ½(AB² + AC² − BC²). Les autres formules demandent un angle, des coordonnées ou un projeté."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:141",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un carré de côté 4, I est le milieu de [BC] et J celui de [CD]. Que vaut AI⃗ · BJ⃗ ?",
+      "propositions": [
+        "8",
+        "−8",
+        "0",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Choisir une méthode",
+      "explication": "AI⃗ = AB⃗ + ½AD⃗ et BJ⃗ = AD⃗ − ½AB⃗ : le produit vaut 0 − 8 + 8 − 0 = 0. Les droites (AI) et (BJ) sont perpendiculaires."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:142",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un rectangle tel que AB = 4 et AD = 2. Dans le repère orthonormé d'origine A d'axes (AB) et (AD), calcule AC⃗ · BD⃗.",
+      "propositions": [
+        "12",
+        "20",
+        "0",
+        "−12"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Choisir une méthode",
+      "explication": "AC⃗(4 ; 2) et BD⃗(−4 ; 2) : −16 + 4 = −12."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:143",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un rectangle avec AB = 4 et AD = 2. Quelle est, au degré près, la mesure de l'angle aigu formé par les diagonales ?",
+      "propositions": [
+        "53°",
+        "37°",
+        "127°",
+        "63°"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Choisir une méthode",
+      "explication": "cos θ = AC⃗ · BD⃗/(AC × BD) = −12/20 = −0,6 donne θ ≈ 127° ; l'angle aigu entre les diagonales mesure 180° − 127° ≈ 53°."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Pour démontrer que les droites (AB) et (CD) sont perpendiculaires, il suffit d'établir que :",
+      "propositions": [
+        "AB⃗ · CD⃗ = 1",
+        "AB⃗ · CD⃗ = 0",
+        "AB = CD",
+        "AB⃗ et CD⃗ sont colinéaires"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Choisir une méthode",
+      "explication": "Les droites sont perpendiculaires si et seulement si leurs vecteurs directeurs sont orthogonaux, c'est-à-dire de produit scalaire nul."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:145",
+      "type": "qcm_unique",
+      "enonce": "ABCD est un carré et I le milieu de [BC]. Quelle décomposition du vecteur AI⃗ est correcte ?",
+      "propositions": [
+        "AB⃗ + AD⃗",
+        "½AB⃗ + AD⃗",
+        "AB⃗ + ½AD⃗",
+        "AB⃗ − ½AD⃗"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Choisir une méthode",
+      "explication": "AI⃗ = AB⃗ + BI⃗ et BI⃗ = ½BC⃗ = ½AD⃗, car BC⃗ = AD⃗ dans le carré."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Le point O est le centre du carré ABCD, dont les côtés mesurent 2. Quels produits scalaires sont correctement calculés ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "OA⃗ · OB⃗ = 0",
+        "AB⃗ · AO⃗ = 2",
+        "AC⃗ · BD⃗ = 0",
+        "AB⃗ · AC⃗ = 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Choisir une méthode",
+      "explication": "Les diagonales d'un carré sont perpendiculaires ; O se projette au milieu de [AB], d'où AB⃗ · AO⃗ = 2 × 1. Enfin AB⃗ · AC⃗ = AB² = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Dans un triangle ABC, H est le point d'intersection des hauteurs issues de A et de B. Coche toutes les réponses exactes.",
+      "propositions": [
+        "HA⃗ · BC⃗ = 0",
+        "HB⃗ · CA⃗ = 0",
+        "HC⃗ · AB⃗ = 0",
+        "HA = HB = HC"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Choisir une méthode",
+      "explication": "Les deux premières égalités traduisent les hauteurs. Avec la relation MA⃗ · BC⃗ + MB⃗ · CA⃗ + MC⃗ · AB⃗ = 0, on obtient HC⃗ · AB⃗ = 0 : les hauteurs sont concourantes. H n'est pas en général équidistant des sommets."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Connaissant les coordonnées de deux vecteurs dans une base orthonormée, on peut calculer leur produit scalaire sans connaître leur angle.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Choisir une méthode",
+      "explication": "La formule xx′ + yy′ suffit ; on peut même en déduire l'angle ensuite."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Pour calculer AB⃗ · AC⃗ dans un triangle, la connaissance de l'angle Â est indispensable.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Choisir une méthode",
+      "explication": "Les trois longueurs suffisent : AB⃗ · AC⃗ = ½(AB² + AC² − BC²). On peut aussi utiliser des coordonnées ou un projeté."
+    },
+    {
+      "source": "maths-spe-1re:ch9:banque:150",
+      "type": "reponse_courte",
+      "enonce": "ABCD est un carré de côté 6 et I est le milieu du côté [CD]. Calcule AB⃗ · AI⃗. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "18"
+      ],
+      "difficulte": 2,
+      "notion": "Choisir une méthode",
+      "explication": "I se projette sur (AB) au milieu de [AB] : AB⃗ · AI⃗ = 6 × 3 = 18."
+    }
+  ]
+}
