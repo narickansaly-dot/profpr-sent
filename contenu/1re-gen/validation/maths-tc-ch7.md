@@ -20,7 +20,7 @@ Chapitre : « Variation linéaire : suites arithmétiques et fonctions affines 
 ## Relecture indépendante
 
 - Résolution à l'aveugle par un relecteur distinct de l'auteur, calculs refaits par script, comparaison automatique : 150 concordances sur 150 au premier passage.
-- Questions corrigées après relecture : 8 (détail dans le rapport de relecture).
+- Questions corrigées après relecture : 13 (085, 108, 110, 111, 113, 115, 117, 118, 120, 122, 129, 132, 133) ; détail dans le rapport de relecture.
 
 ## Statuts appliqués
 

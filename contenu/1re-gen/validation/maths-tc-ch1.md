@@ -20,7 +20,7 @@ Chapitre : « Pourcentages et taux d'évolution » (8 sections). Banque : `banqu
 ## Relecture indépendante
 
 - Résolution à l'aveugle par un relecteur distinct de l'auteur, calculs refaits par script, comparaison automatique : 150 concordances sur 150 au premier passage.
-- Questions corrigées après relecture : 3 (détail dans le rapport de relecture).
+- Questions corrigées après relecture : 3 (112, 124, 130) ; détail dans le rapport de relecture.
 
 ## Statuts appliqués
 

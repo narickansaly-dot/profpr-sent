@@ -20,7 +20,7 @@ Chapitre : « Lectures graphiques et droites » (7 sections). Banque : `banques/
 ## Relecture indépendante
 
 - Résolution à l'aveugle par un relecteur distinct de l'auteur, calculs refaits par script, comparaison automatique : 150 concordances sur 150 au premier passage.
-- Questions corrigées après relecture : 4 (détail dans le rapport de relecture).
+- Questions corrigées après relecture : 4 (020, 033, 043, 116) ; détail dans le rapport de relecture.
 
 ## Statuts appliqués
 

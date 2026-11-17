@@ -20,7 +20,7 @@ Chapitre : « Calcul algébrique, équations produit nul et signe » (8 sections
 ## Relecture indépendante
 
 - Résolution à l'aveugle par un relecteur distinct de l'auteur, calculs refaits par script, comparaison automatique : 150 concordances sur 150 au premier passage.
-- Questions corrigées après relecture : 7 (détail dans le rapport de relecture).
+- Questions corrigées après relecture : 7 (038, 066, 100, 101, 103, 104, 105) ; détail dans le rapport de relecture.
 
 ## Statuts appliqués
 
