@@ -255,7 +255,7 @@
     {
       "source": "si-1re:ch8:banque:016",
       "type": "vrai_faux",
-      "enonce": "Même sans aucun capteur de position, la carte d'un portail motorisé peut savoir que le vantail est arrivé en butée.",
+      "enonce": "Sans aucun retour d'information des capteurs, la carte d'un portail motorisé peut savoir que le vantail est arrivé en butée.",
       "bonne_reponse": false,
       "difficulte": 2,
       "explication": "Sans retour d'information par un capteur (fin de course), la commande travaille « à l'aveugle » : elle ne peut pas connaître l'effet réellement produit.",
@@ -351,13 +351,13 @@
         "Environ 3,98 m",
         "Environ 1,99 m",
         "Environ 1 989 m",
-        "Environ 1,99 km"
+        "Environ 0,99 m"
       ],
       "bonnes_reponses": [
         1
       ],
       "difficulte": 3,
-      "explication": "Le son fait l'aller-retour : d = v × t / 2 = 340 × 0,0117 / 2 ≈ 1,99 m. 3,98 m oublie la division par 2 ; 1 989 m oublie de convertir les millisecondes en secondes.",
+      "explication": "Le son fait l'aller-retour : d = v × t / 2 = 340 × 0,0117 / 2 ≈ 1,99 m. 3,98 m oublie la division par 2 ; 1 989 m oublie de convertir les millisecondes en secondes ; 0,99 m divise deux fois par 2.",
       "notion": "Capteurs, détecteurs et signaux"
     },
     {
@@ -493,7 +493,7 @@
       "propositions": [
         "Sa résolution vaut 1,44°",
         "625 impulsions correspondent à 2,5 tours",
-        "Il connaît l'angle dès la mise sous tension",
+        "Sa résolution vaut 0,69°",
         "Il fournit un signal analogique continu"
       ],
       "bonnes_reponses": [
@@ -501,7 +501,7 @@
         1
       ],
       "difficulte": 2,
-      "explication": "Résolution : 360 / 250 = 1,44° ; 625 / 250 = 2,5 tours. Le codeur incrémental doit compter depuis une référence et fournit un train d'impulsions, pas un signal continu.",
+      "explication": "Résolution : 360 / 250 = 1,44° ; 0,69° correspond au calcul inversé 250 / 360. 625 / 250 = 2,5 tours. Le codeur incrémental fournit un train d'impulsions, pas un signal continu.",
       "notion": "Capteurs, détecteurs et signaux"
     },
     {
@@ -736,7 +736,7 @@
       "propositions": [
         "Sa caractéristique n'est pas une droite",
         "Le programme peut utiliser une table d'étalonnage",
-        "Sa résistance augmente quand la température monte",
+        "Elle délivre un signal logique tout ou rien",
         "Sa sensibilité est la même à toutes les températures"
       ],
       "bonnes_reponses": [
@@ -744,7 +744,7 @@
         1
       ],
       "difficulte": 3,
-      "explication": "La CTN n'est pas linéaire (sa résistance varie plus vite à basse température) : le programme utilise une table d'étalonnage ou une formule du constructeur. Sa résistance diminue quand la température augmente.",
+      "explication": "La CTN n'est pas linéaire (sa résistance varie plus vite à basse température) : le programme utilise une table d'étalonnage ou une formule du constructeur. Placée dans un pont diviseur, elle fournit une tension qui varie de façon continue : son signal est analogique.",
       "notion": "Caractéristiques d'un capteur"
     },
     {
@@ -1030,19 +1030,19 @@
     {
       "source": "si-1re:ch8:banque:065",
       "type": "vrai_faux",
-      "enonce": "Un chiffre hexadécimal code exactement 4 bits.",
+      "enonce": "Le préfixe 0x signale un nombre écrit en hexadécimal.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "On regroupe les bits par quartets : chaque quartet (16 valeurs) s'écrit avec un chiffre de 0 à F.",
+      "explication": "On signale un nombre hexadécimal par le préfixe 0x (ou le suffixe h) : 0xC8 = 200.",
       "notion": "Binaire, hexadécimal, bits et octets"
     },
     {
       "source": "si-1re:ch8:banque:066",
       "type": "vrai_faux",
-      "enonce": "Avec 10 bits, on peut écrire tous les nombres entiers de 0 à 1 024.",
+      "enonce": "Avec 16 bits, on peut écrire 65 536 nombres différents, de 1 à 65 536.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "10 bits donnent 2¹⁰ = 1 024 valeurs, de 0 à 1 023 : 1 024 n'est pas représentable.",
+      "explication": "2¹⁶ = 65 536 valeurs, mais elles vont de 0 à 65 535 : 65 536 n'est pas représentable sur 16 bits.",
       "notion": "Binaire, hexadécimal, bits et octets"
     },
     {
@@ -1321,10 +1321,10 @@
     {
       "source": "si-1re:ch8:banque:085",
       "type": "vrai_faux",
-      "enonce": "Une tension supérieure à la pleine échelle donne toujours la valeur maximale 2ⁿ − 1 : la mesure est saturée.",
+      "enonce": "Une tension trop forte appliquée à l'entrée analogique peut détruire l'entrée du microcontrôleur.",
       "bonne_reponse": true,
       "difficulte": 2,
-      "explication": "C'est la saturation ; une tension trop forte peut même détruire l'entrée du microcontrôleur.",
+      "explication": "C'est pourquoi il faut vérifier que l'étendue du signal du capteur reste dans la plage du CAN ; au-delà de la pleine échelle, la mesure est de toute façon saturée.",
       "notion": "Conversion analogique-numérique"
     },
     {
@@ -1548,19 +1548,19 @@
     {
       "source": "si-1re:ch8:banque:099",
       "type": "vrai_faux",
-      "enonce": "En Python, l'instruction x = x + 1 est une équation sans solution.",
+      "enonce": "Après l'exécution de x = 5 puis de x = 2, la variable x contient les deux valeurs 5 et 2.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "C'est une affectation : Python calcule x + 1 et range le résultat dans x.",
+      "explication": "Une variable contient une seule valeur : la seconde affectation remplace la première, et x vaut 2.",
       "notion": "Variables, types et conditions"
     },
     {
       "source": "si-1re:ch8:banque:100",
       "type": "vrai_faux",
-      "enonce": "En Python, on écrit les nombres décimaux avec un point : 21.5 et non 21,5.",
+      "enonce": "En pseudo-code, l'affectation de la valeur 21,5 à la variable temperature s'écrit temperature ← 21,5.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Python utilise le point décimal ; la virgule y sépare des valeurs.",
+      "explication": "C'est l'écriture du cours ; en Python, la même affectation s'écrit temperature = 21.5.",
       "notion": "Variables, types et conditions"
     },
     {
@@ -1820,10 +1820,10 @@
     {
       "source": "si-1re:ch8:banque:118",
       "type": "vrai_faux",
-      "enonce": "En Python, le bloc répété par une boucle est délimité par des accolades.",
+      "enonce": "Une boucle while dont la condition est fausse dès le départ exécute quand même son bloc une fois.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "En Python, le bloc est repéré par son indentation (4 espaces), et la ligne qui l'annonce se termine par deux-points.",
+      "explication": "La boucle répète son bloc tant que la condition est vraie : si elle est fausse dès le premier test, le bloc n'est jamais exécuté.",
       "notion": "Boucles et fonctions"
     },
     {
@@ -1961,16 +1961,16 @@
       "type": "qcm_unique",
       "enonce": "Lequel de ces éléments est un état, et non un événement ?",
       "propositions": [
-        "Front montant du détecteur",
+        "Coupure du faisceau de la cellule",
         "Arrivée d'un message",
-        "Moteur en marche",
-        "Fin d'une temporisation de 30 s"
+        "Portail en cours d'ouverture",
+        "Échéance d'une temporisation de 30 s"
       ],
       "bonnes_reponses": [
         2
       ],
       "difficulte": 2,
-      "explication": "Un événement est instantané (front, message, échéance) ; un état dure, comme « moteur en marche ».",
+      "explication": "Un événement est instantané (coupure du faisceau, arrivée d'un message, échéance d'une durée) ; un état dure, comme « portail en cours d'ouverture ».",
       "notion": "Comportements séquentiel et événementiel"
     },
     {
@@ -2032,10 +2032,10 @@
     {
       "source": "si-1re:ch8:banque:131",
       "type": "vrai_faux",
-      "enonce": "Un système à comportement séquentiel doit mémoriser une information : son état.",
+      "enonce": "En Python, les opérateurs logiques ET, OU et NON s'écrivent and, or et not.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Ses sorties dépendent de son histoire : il garde en mémoire son état.",
+      "explication": "Ils servent à exprimer les règles d'un comportement combinatoire, par exemple moteur = carter_ferme and bouton_marche.",
       "notion": "Comportements séquentiel et événementiel"
     },
     {
@@ -2283,10 +2283,10 @@
     {
       "source": "si-1re:ch8:banque:148",
       "type": "vrai_faux",
-      "enonce": "Sur une transition, la condition de garde s'écrit après la barre oblique.",
+      "enonce": "Les inscriptions entry / …, do / … et exit / … s'écrivent sur les flèches des transitions.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "La garde s'écrit entre crochets ; c'est l'action qui suit la barre oblique.",
+      "explication": "Ce sont des activités écrites à l'intérieur d'un état (à l'entrée, tant qu'il est actif, à la sortie) ; une transition porte l'étiquette événement [garde] / action.",
       "notion": "Diagramme d'états-transitions"
     },
     {
