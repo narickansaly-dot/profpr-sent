@@ -551,7 +551,7 @@
       "enonce": "Un fauteuil roulant électrique avance à 1,5 m/s en vainquant une force résistante de 40 N. Quelle puissance mécanique doit-il fournir ?",
       "propositions": [
         "26,7 W",
-        "41,5 W",
+        "6 W",
         "600 W",
         "60 W"
       ],
@@ -559,7 +559,7 @@
         3
       ],
       "difficulte": 2,
-      "explication": "En translation, P = F × v = 40 × 1,5 = 60 W.",
+      "explication": "En translation, P = F × v = 40 × 1,5 = 60 W. 6 W est dix fois trop petit (erreur de virgule), 600 W dix fois trop grand ; 26,7 W vient de la division F / v.",
       "notion": "Puissance, effort et flux"
     },
     {
@@ -585,7 +585,7 @@
       "enonce": "L'arbre d'un moteur de bras robotisé exerce un couple de 0,40 N·m et tourne à 250 rad/s. Quelle puissance mécanique transmet-il ?",
       "propositions": [
         "625 W",
-        "250,4 W",
+        "10 W",
         "1 000 W",
         "100 W"
       ],
@@ -593,7 +593,7 @@
         3
       ],
       "difficulte": 2,
-      "explication": "P = C × ω = 0,40 × 250 = 100 W (le couple et la vitesse angulaire sont déjà en unités SI).",
+      "explication": "P = C × ω = 0,40 × 250 = 100 W (le couple et la vitesse angulaire sont déjà en unités SI). 10 W et 1 000 W viennent d'une erreur de virgule ; 625 W = 250 / 0,40 : on a divisé au lieu de multiplier.",
       "notion": "Puissance, effort et flux"
     },
     {
@@ -1153,7 +1153,7 @@
     {
       "source": "si-1re:ch3:banque:075",
       "type": "reponse_courte",
-      "enonce": "Le capteur d'une station météo connectée consomme 0,5 W pendant 10 s chaque minute, et 0,01 W pendant les 50 s restantes. Quelle est sa puissance moyenne, en milliwatts (mW), arrondie à l'unité ? Donne le nombre seul, sans unité.",
+      "enonce": "Le capteur d'une station météo connectée consomme 0,5 W pendant 10 s chaque minute, et 0,01 W pendant les 50 s restantes. Quelle est sa puissance moyenne, en milliwatts (1 mW = 0,001 W), arrondie à l'unité ? Donne le nombre seul, sans unité.",
       "reponses_acceptees": [
         "92"
       ],
@@ -1469,13 +1469,13 @@
         "225 W",
         "400 W",
         "375 W",
-        "300,75 W"
+        "75 W"
       ],
       "bonnes_reponses": [
         1
       ],
       "difficulte": 2,
-      "explication": "Pa = Pu / η = 300 / 0,75 = 400 W. Multiplier par le rendement (225 W) donnerait une puissance absorbée plus petite que la puissance utile, ce qui est impossible.",
+      "explication": "Pa = Pu / η = 300 / 0,75 = 400 W. Multiplier par le rendement (225 W) donnerait une puissance absorbée plus petite que la puissance utile, ce qui est impossible. 75 W = 300 × 0,25 n'est pas la puissance absorbée (ni même les pertes, qui valent 400 − 300 = 100 W).",
       "notion": "Rendement et pertes"
     },
     {
@@ -1556,7 +1556,7 @@
       "type": "qcm_multiple",
       "enonce": "Un élève trouve un rendement de 1,2 pour un moteur. Coche toutes les réponses exactes.",
       "propositions": [
-        "Le moteur fournit plus de puissance qu'il n'en reçoit",
+        "Le moteur est simplement très performant",
         "Le moteur fonctionne sans perte",
         "Il a sans doute calculé Pa / Pu au lieu de Pu / Pa",
         "Son résultat est forcément faux"
@@ -1566,7 +1566,7 @@
         3
       ],
       "difficulte": 3,
-      "explication": "Un rendement est toujours inférieur à 1 : un rendement supérieur à 1 signale une erreur, le plus souvent un rapport à l'envers. Aucun moteur ne fournit plus qu'il ne reçoit, et aucun n'est sans pertes.",
+      "explication": "Un rendement est toujours inférieur à 1 : un rendement supérieur à 1 signale une erreur, le plus souvent un rapport à l'envers (Pa / Pu au lieu de Pu / Pa). Ce n'est pas le signe d'un moteur très performant : aucun moteur ne fournit plus qu'il ne reçoit, et aucun n'est sans pertes.",
       "notion": "Rendement et pertes"
     },
     {
@@ -1696,13 +1696,13 @@
         "300 W",
         "147 W",
         "280 W",
-        "210,7 W"
+        "63 W"
       ],
       "bonnes_reponses": [
         0
       ],
       "difficulte": 2,
-      "explication": "Pa = Pu / ηglobal = 210 / 0,70 = 300 W. 147 W = 210 × 0,70 : multiplier par le rendement est l'erreur classique.",
+      "explication": "Pa = Pu / ηglobal = 210 / 0,70 = 300 W. 147 W = 210 × 0,70 : multiplier par le rendement est l'erreur classique. 63 W = 210 × 0,30 n'est pas la puissance absorbée (ni même les pertes, qui valent 300 − 210 = 90 W).",
       "notion": "Rendement d'une chaîne"
     },
     {
@@ -1762,7 +1762,7 @@
       "enonce": "Le rendement global d'une chaîne de constituants en série… Coche toutes les réponses exactes.",
       "propositions": [
         "est la somme des rendements des constituants",
-        "est plus petit que le plus petit des rendements",
+        "est inférieur ou égal au plus petit des rendements",
         "peut dépasser 1 si la chaîne est longue",
         "est le produit des rendements des constituants"
       ],
@@ -1771,7 +1771,7 @@
         3
       ],
       "difficulte": 1,
-      "explication": "ηglobal = η₁ × η₂ × … : c'est un produit de nombres inférieurs à 1, donc plus petit que chacun d'eux et jamais supérieur à 1.",
+      "explication": "ηglobal = η₁ × η₂ × … : c'est un produit de nombres compris entre 0 et 1, donc inférieur ou égal à chacun d'eux et jamais supérieur à 1.",
       "notion": "Rendement d'une chaîne"
     },
     {
@@ -1815,10 +1815,10 @@
     {
       "source": "si-1re:ch3:banque:117",
       "type": "vrai_faux",
-      "enonce": "Le rendement global d'une chaîne est toujours plus petit que le plus petit des rendements de ses constituants.",
+      "enonce": "Le rendement global d'une chaîne est toujours inférieur ou égal au plus petit des rendements de ses constituants.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai : c'est un produit de nombres inférieurs à 1, donc plus petit que chacun d'eux.",
+      "explication": "Vrai : c'est un produit de nombres compris entre 0 et 1, donc inférieur ou égal à chacun d'eux (strictement inférieur dès que deux constituants ont des pertes).",
       "notion": "Rendement d'une chaîne"
     },
     {
@@ -2167,14 +2167,14 @@
       "propositions": [
         "30 W",
         "750 W",
-        "150,2 W",
+        "3 000 W",
         "300 W"
       ],
       "bonnes_reponses": [
         0
       ],
       "difficulte": 2,
-      "explication": "Flux mécanique de translation : P = F × v = 150 × 0,20 = 30 W. 750 W = 150 / 0,20 : on a divisé au lieu de multiplier.",
+      "explication": "Flux mécanique de translation : P = F × v = 150 × 0,20 = 30 W. 750 W = 150 / 0,20 : on a divisé au lieu de multiplier. 300 W et 3 000 W sont dix et cent fois trop grands (erreur de virgule sur la vitesse).",
       "notion": "Flux d'énergie sur un ibd"
     },
     {
