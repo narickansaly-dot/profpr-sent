@@ -1,0 +1,2358 @@
+{
+ "chapitre": 14,
+ "notions": [
+  "Énergie cinétique",
+  "Produit scalaire",
+  "Travail d'une force constante",
+  "Théorème de l'énergie cinétique",
+  "Travail du poids et énergie potentielle",
+  "Frottements, forces non conservatives",
+  "Conservation de l'énergie mécanique",
+  "Variation de l'énergie mécanique",
+  "Exploitation de mesures (vidéo, Python)"
+ ],
+ "questions": [
+  {
+   "source": "physique-chimie-1re:ch14:banque:001",
+   "type": "qcm_unique",
+   "enonce": "L'énergie cinétique d'un point matériel de masse m et de vitesse v s'écrit :",
+   "propositions": [
+    "Ec = ½ × m × v²",
+    "Ec = m × v²",
+    "Ec = ½ × m² × v",
+    "Ec = m × g × v"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Le cours donne Ec = ½ × m × v² (J, kg, m·s⁻¹). Les autres expressions oublient le facteur ½, mettent le carré sur la masse au lieu de la vitesse, ou font intervenir g, qui n'a rien à voir avec la vitesse.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:002",
+   "type": "vrai_faux",
+   "enonce": "L'énergie cinétique s'exprime en joules, avec 1 J = 1 kg·m²·s⁻².",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : Ec = ½ m v² a pour unité kg × (m·s⁻¹)² = kg·m²·s⁻², c'est-à-dire le joule.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:003",
+   "type": "qcm_unique",
+   "enonce": "Un cycliste et son vélo, de masse totale 80 kg, roulent à 5,0 m·s⁻¹. Que vaut leur énergie cinétique ?",
+   "propositions": [
+    "2,0 × 10³ J",
+    "1,0 × 10³ J",
+    "2,0 × 10² J",
+    "1,6 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 2,
+   "explication": "Ec = ½ × 80 × 5,0² = 0,5 × 80 × 25 = 1,0 × 10³ J. 2,0 × 10³ J oublie le facteur ½ ; 2,0 × 10² J oublie le carré de la vitesse ; 1,6 × 10⁴ J élève la masse au carré au lieu de la vitesse.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:004",
+   "type": "qcm_unique",
+   "enonce": "Si la vitesse d'un objet est multipliée par 3, son énergie cinétique est :",
+   "propositions": [
+    "multipliée par 3",
+    "multipliée par 6",
+    "multipliée par 9",
+    "multipliée par 1,5"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Ec est proportionnelle au carré de la vitesse : (3)² = 9. Multiplier par 3 suppose Ec proportionnelle à v ; 6 double le facteur au lieu de l'élever au carré ; 1,5 applique le ½ au facteur.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:005",
+   "type": "reponse_courte",
+   "enonce": "Un camion de 12 t roule à 72 km·h⁻¹. Calcule son énergie cinétique, en kJ, arrondie à la centaine.",
+   "reponses_acceptees": [
+    "2400"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "v = 72/3,6 = 20 m·s⁻¹ et m = 12 × 10³ kg. Ec = 0,5 × 12 × 10³ × 20² = 2,4 × 10⁶ J, soit 2400 kJ.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:006",
+   "type": "vrai_faux",
+   "enonce": "L'énergie cinétique d'un objet devient négative quand il recule.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : Ec = ½ m v² fait intervenir le carré de la valeur de la vitesse ; elle est toujours positive, et nulle seulement au repos.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:007",
+   "type": "qcm_unique",
+   "enonce": "Un passager est assis dans un train qui roule. Son énergie cinétique est nulle :",
+   "propositions": [
+    "dans le référentiel terrestre",
+    "dans tous les référentiels",
+    "dans aucun référentiel",
+    "dans le référentiel du train"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 1,
+   "explication": "Ec dépend du référentiel : le passager est immobile par rapport au train, donc Ec = 0 dans ce référentiel. Dans le référentiel terrestre il est en mouvement avec le train, donc Ec > 0 ; il existe donc un référentiel où elle est nulle, mais pas tous.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:008",
+   "type": "qcm_multiple",
+   "enonce": "L'énergie cinétique d'un point matériel : Coche toutes les réponses exactes.",
+   "propositions": [
+    "est proportionnelle à sa masse",
+    "est proportionnelle au carré de sa vitesse",
+    "est nulle seulement si le point est au repos",
+    "est proportionnelle à sa vitesse",
+    "dépend de son altitude"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Ec = ½ m v² est proportionnelle à m et à v², et ne s'annule que pour v = 0. Elle n'est pas proportionnelle à v (doubler v multiplie Ec par 4) ; l'altitude intervient dans l'énergie potentielle de pesanteur, pas dans Ec.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:009",
+   "type": "qcm_unique",
+   "enonce": "Un objet roule à 10 m·s⁻¹. Quelle vitesse doit-il atteindre pour que son énergie cinétique double ?",
+   "propositions": [
+    "14 m·s⁻¹",
+    "20 m·s⁻¹",
+    "40 m·s⁻¹",
+    "7,1 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 3,
+   "explication": "Ec est proportionnelle à v² : doubler Ec revient à multiplier v par √2, soit v = 10 × √2 ≈ 14 m·s⁻¹. 20 m·s⁻¹ quadruple Ec ; 40 m·s⁻¹ la multiplie par 16 ; 7,1 m·s⁻¹ divise v par √2, donc divise Ec par 2.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:010",
+   "type": "qcm_unique",
+   "enonce": "Le produit scalaire de deux vecteurs u⃗ et v⃗ de normes u et v, qui forment un angle α, vaut :",
+   "propositions": [
+    "u × v × sin α",
+    "u × v × cos α",
+    "(u + v) × cos α",
+    "u × v / cos α"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Par définition, u⃗ · v⃗ = u × v × cos α. Le sinus ne convient pas (il donnerait 0 pour des vecteurs colinéaires) ; on multiplie les normes, on ne les additionne pas ; on ne divise pas par cos α.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:011",
+   "type": "vrai_faux",
+   "enonce": "Le produit scalaire de deux vecteurs perpendiculaires est nul.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : pour α = 90°, cos α = 0, donc u⃗ · v⃗ = u × v × cos 90° = 0.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:012",
+   "type": "qcm_unique",
+   "enonce": "Dans un repère orthonormé, on donne u⃗ (3,0 ; 2,0) et v⃗ (1,0 ; −4,0). Que vaut le produit scalaire u⃗ · v⃗ ?",
+   "propositions": [
+    "11",
+    "5,0",
+    "−5,0",
+    "(3,0 ; −8,0)"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "u⃗ · v⃗ = u<sub>x</sub>v<sub>x</sub> + u<sub>y</sub>v<sub>y</sub> = 3,0 × 1,0 + 2,0 × (−4,0) = 3,0 − 8,0 = −5,0. 11 et 5,0 sont des erreurs de signe ; (3,0 ; −8,0) n'est pas un nombre : le produit scalaire n'est pas un vecteur.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:013",
+   "type": "qcm_unique",
+   "enonce": "Deux vecteurs de normes 4,0 et 5,0 forment un angle de 60°. Que vaut leur produit scalaire ?",
+   "propositions": [
+    "20",
+    "17",
+    "−10",
+    "10"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "u⃗ · v⃗ = 4,0 × 5,0 × cos 60° = 20 × 0,50 = 10. 20 oublie le cosinus ; 17 utilise sin 60° ; −10 se trompe de signe alors que α < 90° donne un produit positif.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:014",
+   "type": "vrai_faux",
+   "enonce": "Le produit scalaire de deux vecteurs non nuls qui forment un angle de 120° est positif.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : cos 120° = −0,5 < 0, donc u × v × cos 120° est négatif. Le produit scalaire est négatif dès que l'angle dépasse 90°.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:015",
+   "type": "qcm_multiple",
+   "enonce": "Le produit scalaire u⃗ · v⃗ de deux vecteurs non nuls : Coche toutes les réponses exactes.",
+   "propositions": [
+    "est un nombre, pas un vecteur",
+    "est négatif si l'angle α entre les vecteurs dépasse 90°",
+    "vaut u<sub>x</sub>v<sub>x</sub> + u<sub>y</sub>v<sub>y</sub> dans un repère orthonormé",
+    "est toujours positif, car les normes sont positives",
+    "est maximal quand les vecteurs sont perpendiculaires"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "u⃗ · v⃗ = u v cos α = u<sub>x</sub>v<sub>x</sub> + u<sub>y</sub>v<sub>y</sub> est un nombre, du signe de cos α : négatif pour α > 90°. Les normes sont positives mais cos α peut être négatif ; pour des vecteurs perpendiculaires, le produit est nul, pas maximal.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:016",
+   "type": "qcm_unique",
+   "enonce": "Le travail d'une force constante F⃗ dont le point d'application va de A à B est égal à :",
+   "propositions": [
+    "F⃗ · AB⃗",
+    "F × AB × sin α",
+    "F / AB",
+    "F⃗ + AB⃗"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "W<sub>AB</sub>(F⃗) = F⃗ · AB⃗ = F × AB × cos α. Le sinus est une erreur de fonction ; F/AB n'est pas homogène à une énergie ; F⃗ + AB⃗ additionne une force et une longueur, ce qui n'a pas de sens.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:017",
+   "type": "qcm_multiple",
+   "enonce": "Quelles unités conviennent pour exprimer un travail ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "J",
+    "N·m",
+    "kg·m²·s⁻²",
+    "N·m⁻¹",
+    "N"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "Un travail est une énergie : il s'exprime en joules, avec 1 J = 1 N·m = 1 kg·m²·s⁻². Le N·m⁻¹ divise une force par une longueur au lieu de la multiplier ; le newton est l'unité d'une force.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:018",
+   "type": "qcm_unique",
+   "enonce": "Le travail d'une force constante est résistant lorsque l'angle α entre la force et le déplacement vérifie :",
+   "propositions": [
+    "0° ≤ α < 90°",
+    "90° < α ≤ 180°",
+    "α = 90° exactement",
+    "α = 0° uniquement"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Pour 90° < α ≤ 180°, cos α < 0 donc W < 0 : la force s'oppose au déplacement. Pour 0° ≤ α < 90° (dont α = 0°), le travail est moteur ; pour α = 90°, il est nul.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:019",
+   "type": "qcm_unique",
+   "enonce": "Un enfant tire une luge sur 20 m d'un sol horizontal ; la corde exerce une force constante de 50 N inclinée de 40° au-dessus de l'horizontale. Quel est le travail de cette force ?",
+   "propositions": [
+    "1,0 × 10³ J",
+    "6,4 × 10² J",
+    "7,7 × 10² J",
+    "2,5 J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "W = F × AB × cos α = 50 × 20 × cos 40° ≈ 7,7 × 10² J (moteur). 1,0 × 10³ J oublie le cosinus ; 6,4 × 10² J utilise sin 40° ; 2,5 J divise F par AB au lieu de multiplier.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:020",
+   "type": "reponse_courte",
+   "enonce": "Une force constante F⃗ (25 ; 10), en N, déplace son point d'application de A (0 ; 0) à B (6,0 ; −2,0), en m. Calcule W<sub>AB</sub>(F⃗), en J.",
+   "reponses_acceptees": [
+    "130"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "AB⃗ (6,0 ; −2,0). W<sub>AB</sub>(F⃗) = F<sub>x</sub> × AB<sub>x</sub> + F<sub>y</sub> × AB<sub>y</sub> = 25 × 6,0 + 10 × (−2,0) = 150 − 20 = 130 J.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:021",
+   "type": "qcm_multiple",
+   "enonce": "Dans quelles situations le travail de la force citée est-il nul ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Réaction d'un sol horizontal sans frottement sur un palet qui glisse",
+    "Tension du fil d'un pendule qui oscille",
+    "Poids d'une caisse déplacée sur un sol horizontal",
+    "Poids d'une pomme qui tombe de l'arbre",
+    "Frottement du sol sur un palet qui glisse"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "Les trois premières forces sont perpendiculaires au déplacement : leur travail est nul. Le poids d'une pomme qui tombe est dans le sens du déplacement (travail moteur) ; le frottement est opposé au déplacement (travail résistant).",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:022",
+   "type": "qcm_multiple",
+   "enonce": "Le travail d'une force constante F⃗ entre A et B : Coche toutes les réponses exactes.",
+   "propositions": [
+    "ne dépend que des positions A et B",
+    "est égal au produit scalaire F⃗ · AB⃗",
+    "dépend de la forme du chemin suivi entre A et B",
+    "dépend de la durée du déplacement"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 2,
+   "explication": "Pour une force constante, W<sub>AB</sub>(F⃗) = F⃗ · AB⃗ : seul compte le vecteur AB⃗, donc seules les positions A et B. La forme du chemin et la durée n'interviennent pas.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:023",
+   "type": "vrai_faux",
+   "enonce": "Une force très grande, perpendiculaire au déplacement de son point d'application, effectue un travail important.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : pour α = 90°, cos α = 0, donc le travail est nul quelle que soit la valeur de la force (réaction d'un sol horizontal sans frottement, tension du fil d'un pendule).",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:024",
+   "type": "qcm_unique",
+   "enonce": "Une force constante de 200 N effectue un travail de 1,0 × 10³ J sur un déplacement rectiligne de 10 m. Quel angle forme-t-elle avec le déplacement ?",
+   "propositions": [
+    "30°",
+    "120°",
+    "0°",
+    "60°"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 3,
+   "explication": "cos α = W/(F × AB) = 1,0 × 10³/(200 × 10) = 0,50, donc α = 60°. 30° correspond à sin α = 0,50 ; 120° donnerait un travail négatif ; 0° donnerait 2,0 × 10³ J.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:025",
+   "type": "qcm_multiple",
+   "enonce": "Un objet va de A (0 ; 0) à B (3,0 ; 4,0), en m, sous l'action de trois forces constantes, en N : F⃗<sub>1</sub> (2,0 ; 0), F⃗<sub>2</sub> (0 ; −3,0) et F⃗<sub>3</sub> (−4,0 ; 3,0). Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le travail de F⃗<sub>1</sub> vaut 6,0 J et il est moteur",
+    "Le travail de F⃗<sub>2</sub> vaut −12 J et il est résistant",
+    "Le travail de F⃗<sub>3</sub> est nul",
+    "La somme des trois travaux est nulle",
+    "Le travail de F⃗<sub>2</sub> est nul, car F⃗<sub>2</sub> est verticale"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "AB⃗ (3,0 ; 4,0). W<sub>1</sub> = 2,0 × 3,0 = 6,0 J ; W<sub>2</sub> = −3,0 × 4,0 = −12 J ; W<sub>3</sub> = −4,0 × 3,0 + 3,0 × 4,0 = 0. La somme vaut −6,0 J, pas 0 ; F⃗<sub>2</sub> est verticale mais le déplacement ne l'est pas : son travail n'est pas nul.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:026",
+   "type": "vrai_faux",
+   "enonce": "Si une force constante F⃗ effectue un travail W quand son point d'application va de A à B, elle effectue un travail −W quand il va de B à A.",
+   "bonne_reponse": true,
+   "difficulte": 3,
+   "explication": "Vrai : W<sub>BA</sub>(F⃗) = F⃗ · BA⃗ et BA⃗ = −AB⃗, donc W<sub>BA</sub>(F⃗) = −F⃗ · AB⃗ = −W. Un travail moteur à l'aller est résistant au retour.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:027",
+   "type": "reponse_courte",
+   "enonce": "Une valise est tirée sur un quai horizontal avec une force constante de 35 N inclinée de 25° au-dessus de l'horizontale ; le travail de cette force vaut 1,9 kJ. Sur quelle distance, en m, la valise a-t-elle été tirée ? Arrondis à l'unité.",
+   "reponses_acceptees": [
+    "60"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "W = F × AB × cos α, donc AB = W/(F × cos α) = 1,9 × 10³/(35 × cos 25°) ≈ 1,9 × 10³/31,7 ≈ 60 m.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:028",
+   "type": "qcm_unique",
+   "enonce": "Une force est dite constante si, pendant le déplacement :",
+   "propositions": [
+    "sa direction, son sens et sa valeur ne changent pas",
+    "seule sa valeur reste la même pendant tout le déplacement",
+    "son point d'application reste fixe",
+    "son travail reste égal à zéro"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Une force constante garde la même direction, le même sens et la même valeur (comme le poids près de la Terre). Une valeur constante ne suffit pas ; si le point d'application ne bougeait pas, il n'y aurait pas de travail ; le travail d'une force constante n'est pas forcément nul.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:029",
+   "type": "qcm_unique",
+   "enonce": "Pour calculer une énergie cinétique en joules, avec la masse en kg, la vitesse doit être exprimée en :",
+   "propositions": [
+    "km·h⁻¹",
+    "m·s⁻¹",
+    "km·s⁻¹",
+    "m·h⁻¹"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Le joule vaut 1 kg·m²·s⁻² : la vitesse doit être en m·s⁻¹ (1 m·s⁻¹ = 3,6 km·h⁻¹). Les km·h⁻¹, km·s⁻¹ ou m·h⁻¹ donneraient un résultat faux d'un facteur constant.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:030",
+   "type": "qcm_unique",
+   "enonce": "Une balle de tennis de 58 g a une énergie cinétique de 47 J. Quelle est la valeur de sa vitesse ?",
+   "propositions": [
+    "1,6 × 10³ m·s⁻¹",
+    "1,3 m·s⁻¹",
+    "40 m·s⁻¹",
+    "28 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 3,
+   "explication": "v = √(2 Ec/m) = √(2 × 47/0,058) ≈ √1,6 × 10³ ≈ 40 m·s⁻¹. 1,6 × 10³ m·s⁻¹ oublie la racine carrée ; 1,3 m·s⁻¹ laisse la masse en grammes ; 28 m·s⁻¹ oublie le facteur 2.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:031",
+   "type": "qcm_unique",
+   "enonce": "Le théorème de l'énergie cinétique s'applique dans :",
+   "propositions": [
+    "un référentiel quelconque, sans aucune condition",
+    "le référentiel lié au système étudié",
+    "les seuls mouvements sans frottements",
+    "un référentiel galiléen"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 1,
+   "explication": "Le cours énonce le théorème dans un référentiel galiléen (le référentiel terrestre l'est pour des mouvements courts). Il ne vaut pas dans n'importe quel référentiel ; dans le référentiel du système, sa vitesse est nulle ; il s'applique aussi avec des frottements, dont on compte le travail.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:032",
+   "type": "vrai_faux",
+   "enonce": "D'après le théorème de l'énergie cinétique, si la somme des travaux des forces est nulle entre A et B, la valeur de la vitesse est la même en A et en B.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : ΔEc = ΣW = 0, donc Ec(B) = Ec(A) et v<sub>B</sub> = v<sub>A</sub>, en accord avec le principe d'inertie.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:033",
+   "type": "qcm_unique",
+   "enonce": "Le théorème de l'énergie cinétique s'écrit, entre A et B :",
+   "propositions": [
+    "Ec(B) − Ec(A) = ΣW<sub>AB</sub>(F⃗<sub>i</sub>)",
+    "Ec(A) − Ec(B) = ΣW<sub>AB</sub>(F⃗<sub>i</sub>)",
+    "Ec(B) + Ec(A) = ΣW<sub>AB</sub>(F⃗<sub>i</sub>)",
+    "Ec(B) = ΣW<sub>AB</sub>(F⃗<sub>i</sub>) seulement"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "La variation Ec(B) − Ec(A) (état final moins état initial) est égale à la somme des travaux. Inverser l'ordre change le signe ; une somme Ec(B) + Ec(A) n'est pas une variation ; Ec(B) = ΣW n'est vrai que si le système part du repos.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:034",
+   "type": "qcm_unique",
+   "enonce": "Un palet glisse sur une glace horizontale ; les frottements sont négligés. La valeur de sa vitesse :",
+   "propositions": [
+    "diminue, car le poids s'oppose au mouvement",
+    "reste constante",
+    "augmente, car la réaction du sol est motrice",
+    "diminue jusqu'à zéro à cause de l'inertie"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Le poids et la réaction sont perpendiculaires au déplacement horizontal : leurs travaux sont nuls, donc ΔEc = 0 et la vitesse reste constante. Ni le poids ni la réaction ne travaillent ici ; l'inertie ne ralentit pas un objet.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:035",
+   "type": "qcm_unique",
+   "enonce": "Une voiture de 1,0 × 10³ kg roulant à 20 m·s⁻¹ freine jusqu'à l'arrêt sur une route horizontale. Que vaut la somme des travaux des forces pendant le freinage ?",
+   "propositions": [
+    "2,0 × 10⁵ J",
+    "−4,0 × 10⁵ J",
+    "−2,0 × 10⁵ J",
+    "−1,0 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "ΣW = Ec(B) − Ec(A) = 0 − ½ × 1,0 × 10³ × 20² = −2,0 × 10⁵ J. Le signe + inverse la variation ; −4,0 × 10⁵ J oublie le facteur ½ ; −1,0 × 10⁴ J oublie le carré de la vitesse.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:036",
+   "type": "reponse_courte",
+   "enonce": "Un traîneau de 50 kg, au repos sur une piste horizontale verglacée (frottements négligés), est tiré sur 25 m par une force horizontale constante de 100 N. Calcule la valeur de sa vitesse finale, en m·s⁻¹, arrondie au dixième.",
+   "reponses_acceptees": [
+    "10",
+    "10,0",
+    "10.0"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "Poids et réaction ne travaillent pas. ΔEc = W(F⃗) = 100 × 25 = 2,5 × 10³ J, donc ½ × 50 × v² = 2,5 × 10³ et v = √(2 × 2,5 × 10³/50) = √100 = 10,0 m·s⁻¹.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:037",
+   "type": "qcm_multiple",
+   "enonce": "Entre A et B, l'énergie cinétique d'un point matériel diminue. On peut en déduire que : Coche toutes les réponses exactes.",
+   "propositions": [
+    "la somme des travaux des forces entre A et B est négative",
+    "la valeur de sa vitesse en B est inférieure à celle en A",
+    "au moins une force a un travail résistant",
+    "toutes les forces ont un travail résistant",
+    "le système s'arrête obligatoirement en B"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "ΣW = ΔEc < 0 : la vitesse diminue et au moins un travail est négatif. Rien n'oblige toutes les forces à être résistantes (certaines peuvent être motrices ou ne pas travailler), ni le système à s'arrêter.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:038",
+   "type": "vrai_faux",
+   "enonce": "Un objet monte à vitesse constante, tiré par un câble : la somme des travaux des forces qui s'exercent sur lui est nulle.",
+   "bonne_reponse": true,
+   "difficulte": 2,
+   "explication": "Vrai : la vitesse est constante, donc ΔEc = 0 et ΣW = 0. Le travail moteur du câble compense le travail résistant du poids (et des frottements éventuels).",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:039",
+   "type": "qcm_unique",
+   "enonce": "À force de freinage égale, une voiture roulant à 100 km·h⁻¹ s'arrête en 50 m. Quelle serait sa distance de freinage à 50 km·h⁻¹ ?",
+   "propositions": [
+    "25,0 m",
+    "100 m",
+    "35,4 m",
+    "12,5 m"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "La distance d = Ec/f est proportionnelle à v² : à vitesse divisée par 2, elle est divisée par 4, soit 50/4 = 12,5 m. 25,0 m suppose d proportionnelle à v ; 100 m multiplie au lieu de diviser ; 35,4 m divise par √2.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:040",
+   "type": "reponse_courte",
+   "enonce": "Un cycliste de 75 kg (vélo compris) roule à 8,0 m·s⁻¹ sur une route horizontale et cesse de pédaler. Les frottements sont modélisés par une force constante de 12 N opposée au déplacement. Quelle distance, en m, parcourt-il avant de s'arrêter ?",
+   "reponses_acceptees": [
+    "200"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "Seuls les frottements travaillent : 0 − ½ × 75 × 8,0² = −12 × d. Donc d = 2,4 × 10³/12 = 2,0 × 10² m, soit 200 m.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:041",
+   "type": "qcm_unique",
+   "enonce": "Un skateur de 60 kg arrive à 6,0 m·s⁻¹ sur une aire horizontale et parcourt 30 m avant de s'arrêter. Quelle est l'intensité de la force de frottement, supposée constante ?",
+   "propositions": [
+    "36 N",
+    "72 N",
+    "6,0 N",
+    "1,1 × 10³ N"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 2,
+   "explication": "0 − ½ × 60 × 6,0² = −f × 30, donc f = 1,08 × 10³/30 = 36 N. 72 N oublie le facteur ½ ; 6,0 N oublie le carré de la vitesse ; 1,1 × 10³ N est l'énergie cinétique, non divisée par la distance.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:042",
+   "type": "qcm_unique",
+   "enonce": "Dans le théorème de l'énergie cinétique, un travail moteur :",
+   "propositions": [
+    "diminue l'énergie cinétique",
+    "augmente l'énergie cinétique",
+    "ne modifie pas l'énergie cinétique",
+    "augmente seulement l'énergie potentielle"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Un travail moteur est positif : il contribue à rendre ΔEc positive, donc à augmenter Ec. C'est le travail résistant qui la diminue ; seul un travail nul la laisse inchangée ; le théorème porte sur Ec, pas sur l'énergie potentielle.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:043",
+   "type": "vrai_faux",
+   "enonce": "Le théorème de l'énergie cinétique ne fait intervenir que les travaux des forces motrices.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : ΔEc est la somme des travaux de toutes les forces, motrices, résistantes ou de travail nul, poids compris.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:044",
+   "type": "vrai_faux",
+   "enonce": "Si la vitesse d'un système double entre A et B, la somme des travaux des forces entre A et B est égale à 2 Ec(A).",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : Ec est proportionnelle à v², donc Ec(B) = 4 Ec(A) et ΣW = Ec(B) − Ec(A) = 3 Ec(A).",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:045",
+   "type": "qcm_multiple",
+   "enonce": "Une voiture de 1,2 × 10³ kg passe de 10 m·s⁻¹ à 20 m·s⁻¹ sur une route horizontale. Coche toutes les réponses exactes.",
+   "propositions": [
+    "Son énergie cinétique est multipliée par 4",
+    "La somme des travaux des forces vaut 1,8 × 10⁵ J",
+    "Le travail de son poids est nul",
+    "La somme des travaux des forces vaut 6,0 × 10⁴ J",
+    "Son énergie cinétique est multipliée par 2"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "Ec passe de ½ × 1,2 × 10³ × 10² = 6,0 × 10⁴ J à ½ × 1,2 × 10³ × 20² = 2,4 × 10⁵ J : facteur 4 et ΣW = ΔEc = 1,8 × 10⁵ J. Le poids est perpendiculaire au déplacement horizontal. 6,0 × 10⁴ J calcule ½ m (Δv)² ; le facteur 2 oublie le carré.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:046",
+   "type": "qcm_unique",
+   "enonce": "Dans la méthode d'application du théorème de l'énergie cinétique, quelle étape suit le choix du système et du référentiel ?",
+   "propositions": [
+    "Le calcul de Ec(B) − Ec(A)",
+    "Le calcul du travail de chaque force",
+    "Le bilan des forces",
+    "L'isolement de l'inconnue cherchée"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "La méthode du cours : 1. système et référentiel ; 2. bilan des forces ; 3. travail de chaque force ; 4. Ec(B) − Ec(A) = ΣW, puis on isole l'inconnue. On ne peut calculer les travaux qu'après avoir fait le bilan des forces.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:047",
+   "type": "qcm_unique",
+   "enonce": "Un déménageur pousse un carton sur 3,0 m d'un sol horizontal avec une force horizontale constante de 120 N, dans le sens du déplacement. Le travail de cette force vaut :",
+   "propositions": [
+    "3,6 × 10² J, résistant",
+    "40 J, moteur",
+    "0 J, car le sol est horizontal",
+    "3,6 × 10² J, moteur"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 1,
+   "explication": "α = 0°, donc W = 120 × 3,0 × cos 0° = 3,6 × 10² J, positif : moteur. Il n'est pas résistant, la force étant dans le sens du déplacement ; 40 J divise au lieu de multiplier ; c'est le poids, pas cette force, qui ne travaille pas sur un sol horizontal.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:048",
+   "type": "reponse_courte",
+   "enonce": "Une force constante de 80 N fait un angle de 120° avec le déplacement rectiligne de son point d'application, long de 5,0 m. Calcule son travail, en J.",
+   "reponses_acceptees": [
+    "-200",
+    "−200",
+    "-2,0 × 10²",
+    "−2,0 × 10²"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "W = F × AB × cos α = 80 × 5,0 × cos 120° = 400 × (−0,50) = −200 J : travail résistant.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:049",
+   "type": "qcm_unique",
+   "enonce": "Le travail d'une force est moteur lorsque cette force :",
+   "propositions": [
+    "favorise le déplacement",
+    "s'oppose au déplacement",
+    "est perpendiculaire au déplacement",
+    "s'exerce sur un moteur"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Un travail moteur (W > 0, α < 90°) correspond à une force qui favorise le déplacement. Une force opposée a un travail résistant ; une force perpendiculaire a un travail nul ; « moteur » ne veut pas dire « exercée sur un moteur ».",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:050",
+   "type": "qcm_unique",
+   "enonce": "Un wagonnet de 200 kg, au repos sur des rails horizontaux, est poussé sur 10 m par une force horizontale constante de 300 N ; des frottements d'intensité constante 100 N s'opposent au mouvement. Quelle est la valeur de sa vitesse finale ?",
+   "propositions": [
+    "5,5 m·s⁻¹",
+    "4,5 m·s⁻¹",
+    "3,2 m·s⁻¹",
+    "20 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "ΔEc = 300 × 10 − 100 × 10 = 2,0 × 10³ J (poids et réaction ne travaillent pas), donc v = √(2 × 2,0 × 10³/200) = √20 ≈ 4,5 m·s⁻¹. 5,5 m·s⁻¹ oublie les frottements ; 3,2 m·s⁻¹ oublie le facteur 2 ; 20 m·s⁻¹ oublie la racine carrée.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:051",
+   "type": "qcm_multiple",
+   "enonce": "Pour appliquer le théorème de l'énergie cinétique, il faut : Coche toutes les réponses exactes.",
+   "propositions": [
+    "se placer dans un référentiel galiléen",
+    "faire le bilan des forces qui s'exercent sur le système",
+    "calculer le travail de chaque force, avec son signe",
+    "connaître la durée du mouvement",
+    "ne garder que les forces motrices"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "Le théorème exige un référentiel galiléen, le bilan des forces et le travail de chacune avec son signe. La durée n'intervient pas ; toutes les forces comptent, y compris celles dont le travail est résistant.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:052",
+   "type": "vrai_faux",
+   "enonce": "À force de freinage constante et identique, un véhicule qui roule 30 % plus vite a besoin d'environ 30 % de distance de freinage en plus.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : la distance de freinage est proportionnelle à v² ; 1,3² ≈ 1,69, il lui faut donc environ 69 % de distance en plus.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:053",
+   "type": "qcm_unique",
+   "enonce": "Un objet de 2,0 kg passe de 3,0 m·s⁻¹ à 5,0 m·s⁻¹. Quelle est la variation de son énergie cinétique ?",
+   "propositions": [
+    "4,0 J",
+    "2,0 J",
+    "16 J",
+    "34 J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "ΔEc = ½ × 2,0 × (5,0² − 3,0²) = 1,0 × (25 − 9,0) = 16 J. 4,0 J calcule ½ m (Δv)² ; 2,0 J calcule ½ m Δv ; 34 J additionne les deux énergies cinétiques au lieu de les soustraire.",
+   "notion": "Énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:054",
+   "type": "qcm_multiple",
+   "enonce": "Une bille roule sur un plan horizontal et ralentit. Quelles forces ont un travail nul ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le poids de la bille",
+    "La réaction normale du plan",
+    "La force de frottement",
+    "La force qui ralentit la bille"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 2,
+   "explication": "Le poids et la réaction normale sont perpendiculaires au déplacement horizontal : travaux nuls. C'est la force de frottement, opposée au déplacement, qui a un travail résistant et ralentit la bille.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:055",
+   "type": "vrai_faux",
+   "enonce": "Pour un mouvement court au voisinage du sol, le référentiel terrestre peut être considéré comme galiléen.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : le cours l'indique, ce qui permet d'appliquer le théorème de l'énergie cinétique dans le référentiel terrestre.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:056",
+   "type": "qcm_unique",
+   "enonce": "On donne F⃗ (5,0 ; 0) en N et AB⃗ (6,0 ; 8,0) en m. En calculant le produit scalaire, on trouve que l'angle α entre F⃗ et AB⃗ vaut environ :",
+   "propositions": [
+    "37°",
+    "127°",
+    "60°",
+    "53°"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 3,
+   "explication": "F⃗ · AB⃗ = 5,0 × 6,0 + 0 × 8,0 = 30 ; AB = √(6,0² + 8,0²) = 10 m ; cos α = 30/(5,0 × 10) = 0,60, donc α ≈ 53°. 37° est l'angle avec la verticale ; 127° donnerait un produit négatif ; 60° correspond à cos α = 0,50.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:057",
+   "type": "qcm_multiple",
+   "enonce": "Dans un repère orthonormé, u⃗ (−2,0 ; 5,0) et v⃗ (4,0 ; 3,0). Coche toutes les réponses exactes.",
+   "propositions": [
+    "u⃗ · v⃗ = 7,0",
+    "u⃗ · v⃗ est positif, donc l'angle entre u⃗ et v⃗ est inférieur à 90°",
+    "u⃗ · v⃗ = −23",
+    "u⃗ et v⃗ sont perpendiculaires"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 2,
+   "explication": "u⃗ · v⃗ = (−2,0) × 4,0 + 5,0 × 3,0 = −8,0 + 15 = 7,0 > 0, donc cos α > 0 et α < 90°. −23 vient d'une erreur de signe ; des vecteurs perpendiculaires auraient un produit scalaire nul.",
+   "notion": "Produit scalaire"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:058",
+   "type": "qcm_multiple",
+   "enonce": "Une luge descend une pente rectiligne ; un enfant la pousse vers le bas, parallèlement à la pente. Quels travaux sont positifs ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le travail du poids de la luge",
+    "Le travail de la force exercée par l'enfant",
+    "Le travail des frottements de la neige",
+    "Le travail de la réaction normale de la pente"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 2,
+   "explication": "À la descente, le poids et la poussée de l'enfant font un angle inférieur à 90° avec le déplacement : travaux moteurs. Les frottements, opposés au déplacement, ont un travail résistant ; la réaction normale, perpendiculaire à la pente, ne travaille pas.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:059",
+   "type": "qcm_unique",
+   "enonce": "Quand le travail d'une force constante est-il nul ?",
+   "propositions": [
+    "Quand la force est perpendiculaire au déplacement",
+    "Quand la force est opposée au déplacement",
+    "Quand la force a la même direction que le déplacement",
+    "Quand la valeur de la force est faible"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "W = F × AB × cos α est nul pour α = 90° (ou si le point d'application ne bouge pas). Une force opposée a un travail résistant ; une force de même direction a un travail moteur ou résistant ; une force faible a un travail faible, pas nul.",
+   "notion": "Travail d'une force constante"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:060",
+   "type": "qcm_unique",
+   "enonce": "Une voiture de 1,5 × 10³ kg roulant à 30 m·s⁻¹ freine sur une route horizontale ; la force de freinage, constante, vaut 9,0 × 10³ N. Quelle est la valeur de sa vitesse après 25 m de freinage ?",
+   "propositions": [
+    "17 m·s⁻¹",
+    "24 m·s⁻¹",
+    "5,0 m·s⁻¹",
+    "6,0 × 10² m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "Ec(A) = ½ × 1,5 × 10³ × 30² = 6,75 × 10⁵ J ; W(f⃗) = −9,0 × 10³ × 25 = −2,25 × 10⁵ J ; Ec(B) = 4,5 × 10⁵ J, d'où v = √(2 × 4,5 × 10⁵/1,5 × 10³) = √600 ≈ 24 m·s⁻¹. 17 m·s⁻¹ utilise le seul travail de freinage ; 5,0 m·s⁻¹ soustrait 25 à 30 ; 6,0 × 10² m·s⁻¹ oublie la racine.",
+   "notion": "Théorème de l'énergie cinétique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:061",
+   "type": "qcm_unique",
+   "enonce": "Avec un axe z vertical orienté vers le haut, le travail du poids d'un système de masse m entre A et B s'écrit :",
+   "propositions": [
+    "m × g × (z<sub>B</sub> − z<sub>A</sub>)",
+    "m × g × z<sub>B</sub>",
+    "m × g × (z<sub>A</sub> − z<sub>B</sub>)",
+    "m × (z<sub>A</sub> − z<sub>B</sub>)/g"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "W<sub>AB</sub>(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) : positif à la descente (z<sub>A</sub> > z<sub>B</sub>). L'ordre inverse donne le signe opposé ; m g z<sub>B</sub> est une énergie potentielle, pas un travail ; on multiplie par g, on ne divise pas.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:062",
+   "type": "vrai_faux",
+   "enonce": "Le travail du poids est moteur quand le système descend.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : à la descente, z<sub>A</sub> > z<sub>B</sub>, donc W<sub>AB</sub>(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) > 0 : le poids favorise le mouvement.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:063",
+   "type": "qcm_unique",
+   "enonce": "Un pot de fleurs de 2,0 kg tombe d'un balcon situé 6,0 m au-dessus du sol (g = 9,81 N·kg⁻¹). Quel est le travail de son poids pendant la chute ?",
+   "propositions": [
+    "−1,2 × 10² J",
+    "12 J",
+    "59 J",
+    "1,2 × 10² J"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "W(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) = 2,0 × 9,81 × 6,0 ≈ 1,2 × 10² J, positif car le pot descend. Le signe − correspondrait à une montée ; 12 J oublie g ; 59 J ajoute à tort un facteur ½.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:064",
+   "type": "qcm_unique",
+   "enonce": "Une force est dite conservative lorsque :",
+   "propositions": [
+    "son travail ne dépend pas du chemin suivi",
+    "son travail est toujours nul",
+    "elle conserve la vitesse du système",
+    "son travail dépend de la longueur du trajet"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Par définition, le travail d'une force conservative entre deux points ne dépend pas du chemin suivi (le poids). Son travail n'est pas toujours nul ; elle ne conserve pas la vitesse ; un travail qui dépend de la longueur du trajet caractérise les frottements, non conservatifs.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:065",
+   "type": "vrai_faux",
+   "enonce": "Le poids est une force conservative.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : son travail m g (z<sub>A</sub> − z<sub>B</sub>) ne dépend que des altitudes de départ et d'arrivée, pas du chemin suivi ; on lui associe l'énergie potentielle de pesanteur.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:066",
+   "type": "qcm_unique",
+   "enonce": "L'énergie potentielle de pesanteur d'un point matériel de masse m, d'altitude z sur un axe vertical vers le haut, s'écrit :",
+   "propositions": [
+    "Epp = ½ × m × g × z",
+    "Epp = m × g × z",
+    "Epp = m × z / g",
+    "Epp = m × g × z²"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Le cours donne Epp = m g z, nulle à l'origine choisie. Le facteur ½ appartient à l'énergie cinétique ; on multiplie par g, on ne divise pas ; l'altitude n'est pas élevée au carré.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:067",
+   "type": "reponse_courte",
+   "enonce": "Une valise de 18 kg est hissée sur le porte-bagages d'un train, 1,6 m plus haut (g = 9,81 N·kg⁻¹). De combien augmente son énergie potentielle de pesanteur, en J ? Arrondis à l'unité.",
+   "reponses_acceptees": [
+    "283",
+    "282",
+    "280"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "ΔEpp = m g (z<sub>B</sub> − z<sub>A</sub>) = 18 × 9,81 × 1,6 ≈ 283 J (environ 2,8 × 10² J).",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:068",
+   "type": "qcm_multiple",
+   "enonce": "Le travail du poids d'un système entre deux points A et B : Coche toutes les réponses exactes.",
+   "propositions": [
+    "est nul si A et B sont à la même altitude",
+    "est le même pour un toboggan droit et un toboggan en spirale qui relient A et B",
+    "est égal à −ΔEpp",
+    "dépend de la longueur du chemin entre A et B",
+    "est toujours résistant"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "W<sub>AB</sub>(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) = −ΔEpp ne dépend que des altitudes : nul à altitude égale, identique pour tous les chemins. Il ne dépend pas de la longueur du trajet et il est moteur à la descente.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:069",
+   "type": "qcm_unique",
+   "enonce": "Un randonneur de 65 kg gravit un dénivelé de 500 m (g = 9,81 N·kg⁻¹). Le travail de son poids vaut :",
+   "propositions": [
+    "3,2 × 10⁵ J",
+    "−3,3 × 10⁴ J",
+    "−3,2 × 10⁵ J",
+    "−1,6 × 10⁵ J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "W(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) = 65 × 9,81 × (−500) ≈ −3,2 × 10⁵ J : résistant à la montée. Le signe + correspond à une descente ; −3,3 × 10⁴ J oublie g ; −1,6 × 10⁵ J ajoute un facteur ½.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:070",
+   "type": "vrai_faux",
+   "enonce": "La valeur de l'énergie potentielle de pesanteur dépend du choix de l'origine des altitudes, mais pas sa variation entre deux points.",
+   "bonne_reponse": true,
+   "difficulte": 2,
+   "explication": "Vrai : changer l'origine ajoute la même constante à Epp en tout point ; ΔEpp = m g (z<sub>B</sub> − z<sub>A</sub>) ne change pas. Seules les variations comptent dans un bilan.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:071",
+   "type": "qcm_unique",
+   "enonce": "Une pierre se trouve 3,0 m sous l'origine des altitudes choisie, l'axe z étant orienté vers le haut. Son énergie potentielle de pesanteur est :",
+   "propositions": [
+    "positive",
+    "nulle",
+    "indéfinie",
+    "négative"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "z = −3,0 m, donc Epp = m g z < 0 : le cours précise que Epp est négative en dessous de l'origine. Elle n'est nulle qu'à l'origine ; elle est bien définie une fois l'origine fixée.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:072",
+   "type": "qcm_unique",
+   "enonce": "Un monte-charge élève une charge de 250 kg du rez-de-chaussée (z = 0) au 5ᵉ étage (z = 15 m), puis la redescend au 2ᵉ étage (z = 6,0 m). Avec g = 9,81 N·kg⁻¹, quel est le travail du poids sur l'ensemble du trajet ?",
+   "propositions": [
+    "−1,5 × 10⁴ J",
+    "−3,7 × 10⁴ J",
+    "−5,9 × 10⁴ J",
+    "1,5 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 3,
+   "explication": "Le travail du poids ne dépend que des altitudes de départ et d'arrivée : W = 250 × 9,81 × (0 − 6,0) ≈ −1,5 × 10⁴ J. −3,7 × 10⁴ J ne compte que la montée ; −5,9 × 10⁴ J additionne les distances parcourues (24 m) ; le signe + correspond à une descente.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:073",
+   "type": "vrai_faux",
+   "enonce": "Avec un axe z orienté vers le haut, un objet qui descend voit son énergie potentielle de pesanteur augmenter.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : en descendant, z diminue, donc Epp = m g z diminue ; c'est le travail du poids qui est positif.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:074",
+   "type": "qcm_multiple",
+   "enonce": "Une skieuse de 55 kg descend d'un point A d'altitude 2100 m à un point B d'altitude 1800 m (g = 9,81 N·kg⁻¹). Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le travail de son poids vaut environ 1,6 × 10⁵ J",
+    "Le travail de son poids est moteur",
+    "Son énergie potentielle de pesanteur diminue d'environ 1,6 × 10⁵ J",
+    "Le travail de son poids dépend de la piste choisie",
+    "Le travail de son poids vaut environ −1,6 × 10⁵ J"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "W(P⃗) = 55 × 9,81 × (2100 − 1800) ≈ 1,6 × 10⁵ J, positif (descente), et ΔEpp = −W ≈ −1,6 × 10⁵ J. Le poids est conservatif : la piste choisie ne change rien ; la valeur négative correspond à une montée.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:075",
+   "type": "qcm_unique",
+   "enonce": "Avec un axe z vers le haut, la relation entre le travail du poids et l'énergie potentielle de pesanteur est :",
+   "propositions": [
+    "W<sub>AB</sub>(P⃗) = ΔEpp",
+    "W<sub>AB</sub>(P⃗) = −ΔEpp",
+    "W<sub>AB</sub>(P⃗) = Epp(B)",
+    "W<sub>AB</sub>(P⃗) = ΔEc + Epp"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "W<sub>AB</sub>(P⃗) = Epp(A) − Epp(B) = −ΔEpp : la diminution de Epp est égale au travail du poids. Sans le signe −, le travail serait positif à la montée ; Epp(B) seule dépend de l'origine ; ΔEc + Epp mélange une variation et une valeur.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:076",
+   "type": "reponse_courte",
+   "enonce": "Un enfant de 30 kg descend un toboggan en spirale : il part 3,5 m au-dessus du sol et arrive 0,50 m au-dessus du sol (g = 9,81 N·kg⁻¹). Calcule le travail de son poids, en J, arrondi à la dizaine.",
+   "reponses_acceptees": [
+    "880",
+    "883"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "W(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) = 30 × 9,81 × (3,5 − 0,50) ≈ 883 J, soit environ 880 J. La forme en spirale ne change rien : seul compte le dénivelé.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:077",
+   "type": "qcm_unique",
+   "enonce": "Un objet de 4,0 kg a une énergie potentielle de pesanteur de 196 J, l'origine étant au sol (g = 9,81 N·kg⁻¹). À quelle altitude se trouve-t-il ?",
+   "propositions": [
+    "49 m",
+    "0,20 m",
+    "5,0 m",
+    "7,7 × 10³ m"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "z = Epp/(m g) = 196/(4,0 × 9,81) ≈ 5,0 m. 49 m oublie g ; 0,20 m inverse le rapport ; 7,7 × 10³ m multiplie au lieu de diviser.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:078",
+   "type": "vrai_faux",
+   "enonce": "Le travail du poids d'un objet que l'on monte par l'escalier est plus négatif que si on le monte en ascenseur jusqu'au même étage.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : le poids est conservatif ; son travail m g (z<sub>A</sub> − z<sub>B</sub>) ne dépend que des altitudes de départ et d'arrivée, identiques pour l'escalier et l'ascenseur.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:079",
+   "type": "qcm_multiple",
+   "enonce": "Le poids P⃗ d'un objet de masse m au voisinage de la Terre : Coche toutes les réponses exactes.",
+   "propositions": [
+    "est vertical et orienté vers le bas",
+    "a pour valeur m × g",
+    "est une force constante",
+    "a une valeur qui dépend de la vitesse de l'objet",
+    "est toujours perpendiculaire au déplacement"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "P⃗ = m g⃗ est vertical, vers le bas, de valeur m g : c'est une force constante près de la Terre. Sa valeur ne dépend pas de la vitesse ; il n'est perpendiculaire qu'à un déplacement horizontal.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:080",
+   "type": "qcm_unique",
+   "enonce": "On oriente l'axe z vertical vers le bas. Le travail du poids d'un système de masse m entre A et B s'écrit alors :",
+   "propositions": [
+    "m × g × (z<sub>A</sub> − z<sub>B</sub>)",
+    "−m × g × (z<sub>B</sub> − z<sub>A</sub>)",
+    "0, car le poids est vertical",
+    "m × g × (z<sub>B</sub> − z<sub>A</sub>)"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 3,
+   "explication": "Avec l'axe vers le bas, P⃗ a pour coordonnée +m g sur z, donc W = m g (z<sub>B</sub> − z<sub>A</sub>) : positif quand z augmente, c'est-à-dire à la descente. m g (z<sub>A</sub> − z<sub>B</sub>) et son opposé écrit autrement ne valent que pour l'axe vers le haut ; le poids ne travaille pas seulement pour un déplacement horizontal.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:081",
+   "type": "qcm_multiple",
+   "enonce": "Quelles affirmations sur les forces non conservatives sont exactes ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Les frottements sont des forces non conservatives",
+    "La force d'un moteur est non conservative",
+    "On n'associe pas d'énergie potentielle à une force non conservative",
+    "Le poids est une force non conservative",
+    "Le travail d'une force non conservative est toujours nul"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "Les frottements, la force d'un moteur ou la poussée d'un réacteur sont non conservatifs : leur travail dépend du chemin et aucune énergie potentielle ne leur est associée. Le poids est conservatif ; le travail d'une force non conservative peut être moteur ou résistant.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:082",
+   "type": "qcm_unique",
+   "enonce": "Deux billes identiques partent d'un même point A et arrivent à un même point B, 2,0 m plus bas, l'une en tombant verticalement, l'autre en roulant sur une rampe courbe. Que peut-on dire des travaux de leurs poids ?",
+   "propositions": [
+    "Ils sont égaux",
+    "Celui de la bille sur la rampe est plus grand",
+    "Celui de la chute verticale est plus grand",
+    "Celui de la bille sur la rampe est nul"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 2,
+   "explication": "Le travail du poids m g (z<sub>A</sub> − z<sub>B</sub>) ne dépend que du dénivelé, identique (2,0 m) pour les deux billes de même masse. Le chemin plus long sur la rampe ne change rien, et le travail n'est pas nul puisque la bille descend.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:083",
+   "type": "vrai_faux",
+   "enonce": "Une balle de 0,50 kg passe de l'altitude z = 2,0 m à l'altitude z = −1,0 m, axe vers le haut (g = 9,81 N·kg⁻¹) : son énergie potentielle de pesanteur diminue d'environ 4,9 J.",
+   "bonne_reponse": false,
+   "difficulte": 3,
+   "explication": "Faux : le dénivelé est 2,0 − (−1,0) = 3,0 m, donc Epp diminue de 0,50 × 9,81 × 3,0 ≈ 15 J. 4,9 J correspond à une erreur de signe sur l'altitude négative.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:084",
+   "type": "qcm_unique",
+   "enonce": "Un objet de 3,0 kg est à l'altitude z<sub>A</sub> = 12 m (axe vers le haut). Le travail de son poids entre A et B vaut 2,0 × 10² J (g = 9,81 N·kg⁻¹). Quelle est l'altitude z<sub>B</sub> ?",
+   "propositions": [
+    "19 m",
+    "5,2 m",
+    "6,8 m",
+    "−55 m"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "z<sub>A</sub> − z<sub>B</sub> = W/(m g) = 2,0 × 10²/(3,0 × 9,81) ≈ 6,8 m, donc z<sub>B</sub> ≈ 12 − 6,8 = 5,2 m (travail moteur : l'objet descend). 19 m ajoute au lieu de soustraire ; 6,8 m est le dénivelé, pas l'altitude ; −55 m oublie g.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:085",
+   "type": "qcm_unique",
+   "enonce": "Un objet monte de A à B. Le travail de son poids est :",
+   "propositions": [
+    "positif (moteur)",
+    "nul, car le poids est constant",
+    "négatif (résistant)",
+    "positif ou négatif selon le chemin"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "À la montée, z<sub>A</sub> < z<sub>B</sub>, donc m g (z<sub>A</sub> − z<sub>B</sub>) < 0 : travail résistant. Il est moteur à la descente ; une force constante peut travailler ; le signe ne dépend pas du chemin.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:086",
+   "type": "qcm_multiple",
+   "enonce": "Une bille de 0,20 kg est posée sur une table, à 0,80 m du sol (g = 9,81 N·kg⁻¹). Coche toutes les réponses exactes.",
+   "propositions": [
+    "Avec l'origine des altitudes au sol, Epp ≈ 1,6 J",
+    "Avec l'origine sur la table, Epp = 0",
+    "Si elle tombe au sol, ΔEpp ≈ −1,6 J, quelle que soit l'origine choisie",
+    "Avec l'origine sur la table, Epp ≈ 1,6 J",
+    "Si elle tombe au sol, ΔEpp dépend de l'origine choisie"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "Origine au sol : Epp = 0,20 × 9,81 × 0,80 ≈ 1,6 J ; origine sur la table : z = 0 donc Epp = 0. La variation lors de la chute vaut −m g × 0,80 ≈ −1,6 J quelle que soit l'origine : seule la valeur de Epp en dépend, pas ses variations.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:087",
+   "type": "reponse_courte",
+   "enonce": "Une grue soulève une poutre de 400 kg d'une hauteur de 12 m (g = 9,81 N·kg⁻¹). Calcule le travail du poids de la poutre, en kJ, avec deux chiffres significatifs.",
+   "reponses_acceptees": [
+    "-47",
+    "−47"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "W(P⃗) = m g (z<sub>A</sub> − z<sub>B</sub>) = 400 × 9,81 × (−12) ≈ −4,7 × 10⁴ J, soit −47 kJ : travail résistant, la poutre monte.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:088",
+   "type": "qcm_unique",
+   "enonce": "Avec un axe z vers le haut, entre deux points de même altitude, le travail du poids est :",
+   "propositions": [
+    "positif",
+    "négatif",
+    "égal à m g z",
+    "nul"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 1,
+   "explication": "z<sub>A</sub> = z<sub>B</sub> donne m g (z<sub>A</sub> − z<sub>B</sub>) = 0, quel que soit le chemin. Il serait positif à la descente, négatif à la montée ; m g z est une énergie potentielle, pas ce travail.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:089",
+   "type": "qcm_unique",
+   "enonce": "Pour une même hauteur de descente, comment le travail du poids d'un objet de 2,0 kg se compare-t-il à celui d'un objet de 1,0 kg ?",
+   "propositions": [
+    "Il est deux fois plus grand",
+    "Il est le même, car g est le même",
+    "Il est quatre fois plus grand",
+    "Il est deux fois plus petit"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 2,
+   "explication": "W = m g (z<sub>A</sub> − z<sub>B</sub>) est proportionnel à la masse : à dénivelé égal, il double quand m double. g est le même, mais pas m ; le travail n'est pas proportionnel à m² ; il n'est pas plus petit pour un objet plus lourd.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:090",
+   "type": "qcm_multiple",
+   "enonce": "Un objet se déplace de A (z<sub>A</sub> = 5,0 m) à B (z<sub>B</sub> = 8,0 m), axe z vers le haut. Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le travail de son poids est résistant",
+    "Son énergie potentielle de pesanteur augmente",
+    "Le travail de son poids est moteur",
+    "ΔEpp = m g (z<sub>A</sub> − z<sub>B</sub>)"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 1,
+   "explication": "L'objet monte : W = m g (z<sub>A</sub> − z<sub>B</sub>) < 0 (résistant) et Epp = m g z augmente. Le travail n'est pas moteur ; m g (z<sub>A</sub> − z<sub>B</sub>) est le travail du poids, égal à −ΔEpp, pas à ΔEpp.",
+   "notion": "Travail du poids et énergie potentielle"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:091",
+   "type": "qcm_unique",
+   "enonce": "Sur une trajectoire rectiligne de A à B, le travail d'une force de frottement d'intensité constante f vaut :",
+   "propositions": [
+    "f × AB",
+    "−f × AB",
+    "0",
+    "−f / AB"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "La force de frottement est opposée au déplacement (α = 180°, cos α = −1), donc W = −f × AB, toujours résistant. f × AB oublie le signe ; le travail n'est pas nul puisque la force est parallèle au déplacement ; on multiplie par AB, on ne divise pas.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:092",
+   "type": "vrai_faux",
+   "enonce": "Le travail d'une force de frottement d'intensité constante, sur une trajectoire rectiligne, est proportionnel à la longueur du trajet parcouru.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : W = −f × AB ; pour un trajet deux fois plus long, le travail des frottements double. C'est pourquoi il dépend du chemin suivi.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:093",
+   "type": "qcm_unique",
+   "enonce": "Une luge est tirée en ligne droite sur 30 m ; les frottements de la neige ont une intensité constante de 15 N. Quel est leur travail ?",
+   "propositions": [
+    "+4,5 × 10² J",
+    "−0,50 J",
+    "−4,5 × 10² J",
+    "−45 J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "W(f⃗) = −f × AB = −15 × 30 = −4,5 × 10² J. Le travail des frottements est toujours négatif, donc pas +4,5 × 10² J ; −0,50 J divise f par AB ; −45 J est une erreur d'un facteur 10.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:094",
+   "type": "qcm_multiple",
+   "enonce": "Les forces de frottement : Coche toutes les réponses exactes.",
+   "propositions": [
+    "sont des forces non conservatives",
+    "transfèrent de l'énergie à l'environnement, surtout sous forme thermique",
+    "ont un travail qui dépend du chemin suivi",
+    "ont une énergie potentielle associée",
+    "ont un travail nul sur un aller-retour"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Le travail des frottements dépend de la longueur parcourue, donc du chemin : ils sont non conservatifs, sans énergie potentielle associée, et l'énergie prélevée part dans l'environnement (échauffement). Sur un aller-retour, leur travail est négatif à l'aller comme au retour : il ne s'annule pas.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:095",
+   "type": "qcm_unique",
+   "enonce": "Une caisse est poussée en ligne droite de A à B (AB = 8,0 m) puis ramenée de B à A sur un sol horizontal ; les frottements ont une intensité constante de 60 N. Que vaut leur travail sur l'aller-retour ?",
+   "propositions": [
+    "0 J",
+    "−4,8 × 10² J",
+    "9,6 × 10² J",
+    "−9,6 × 10² J"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "À l'aller comme au retour, W = −60 × 8,0 = −4,8 × 10² J ; au total −9,6 × 10² J. 0 J serait le travail du poids, pas celui des frottements ; −4,8 × 10² J ne compte qu'un trajet ; le travail des frottements n'est jamais positif.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:096",
+   "type": "qcm_multiple",
+   "enonce": "Un bateau est tiré en ligne droite sur 250 m ; la résistance de l'eau, d'intensité supposée constante, vaut 1,2 × 10³ N. Coche toutes les réponses exactes.",
+   "propositions": [
+    "Le travail de la résistance de l'eau vaut −3,0 × 10⁵ J",
+    "Ce travail est résistant",
+    "Ce travail vaut −4,8 J",
+    "Ce travail serait le même sur un trajet deux fois plus long"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 2,
+   "explication": "W = −f × AB = −1,2 × 10³ × 250 = −3,0 × 10⁵ J, négatif : résistant. −4,8 J divise f par AB ; sur un trajet deux fois plus long, le travail des frottements double.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:097",
+   "type": "qcm_unique",
+   "enonce": "L'énergie mécanique d'un système est définie par :",
+   "propositions": [
+    "Em = Ec + Epp",
+    "Em = Ec − Epp",
+    "Em = Ec × Epp",
+    "Em = ½ (Ec + Epp)"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Par définition, Em = Ec + Epp, en joules. Une différence, un produit (qui serait en J²) ou une demi-somme ne correspondent pas à la définition.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:098",
+   "type": "vrai_faux",
+   "enonce": "Si les forces non conservatives ne travaillent pas, l'énergie mécanique du système se conserve.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : ΔEm = ΣW des forces non conservatives = 0 ; Ec et Epp s'échangent alors, leur somme restant constante.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:099",
+   "type": "qcm_unique",
+   "enonce": "La variation de l'énergie mécanique d'un système entre A et B est égale à :",
+   "propositions": [
+    "ΣW de toutes les forces, poids compris",
+    "ΣW des forces non conservatives",
+    "le travail du poids seulement",
+    "la variation d'Ec seulement"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "ΔEm = ΣW<sub>AB</sub>(forces non conservatives). La somme de tous les travaux est égale à ΔEc (théorème de l'énergie cinétique) ; le travail du poids est égal à −ΔEpp ; ΔEc n'est qu'une partie de ΔEm.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:100",
+   "type": "qcm_unique",
+   "enonce": "Une balle est lâchée sans vitesse à 3,2 m du sol ; frottements négligés (g = 9,81 N·kg⁻¹). Avec quelle vitesse arrive-t-elle au sol ?",
+   "propositions": [
+    "63 m·s⁻¹",
+    "5,6 m·s⁻¹",
+    "7,9 m·s⁻¹",
+    "31 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Conservation de Em : m g h = ½ m v², donc v = √(2 g h) = √(2 × 9,81 × 3,2) ≈ 7,9 m·s⁻¹. 63 m·s⁻¹ oublie la racine carrée ; 5,6 m·s⁻¹ oublie le facteur 2 ; 31 m·s⁻¹ calcule g h.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:101",
+   "type": "reponse_courte",
+   "enonce": "La masse d'un pendule est lâchée sans vitesse 20 cm au-dessus de sa position la plus basse. Frottements négligés, g = 9,81 N·kg⁻¹. Calcule la valeur de sa vitesse au point le plus bas, en m·s⁻¹, arrondie au centième.",
+   "reponses_acceptees": [
+    "1,98",
+    "1.98"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "La tension du fil ne travaille pas : Em se conserve, d'où v = √(2 g h) = √(2 × 9,81 × 0,20) ≈ 1,98 m·s⁻¹ (h converti en mètres).",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:102",
+   "type": "qcm_multiple",
+   "enonce": "Dans quelles situations l'énergie mécanique se conserve-t-elle, avec les modèles du cours ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Chute libre d'une bille, frottements négligés",
+    "Oscillations d'un pendule, frottements négligés",
+    "Glissade sans frottement sur une piste courbe",
+    "Freinage d'une voiture jusqu'à l'arrêt",
+    "Montée à vitesse constante d'une charge tirée par un câble"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Sans frottement, seul le poids travaille (la tension du fil et la réaction normale sont perpendiculaires au mouvement) : Em se conserve. Le freinage dissipe de l'énergie (Em diminue) ; le câble, force motrice, fait augmenter Em (Ec constante, Epp croissante).",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:103",
+   "type": "qcm_unique",
+   "enonce": "Lors de la chute d'une pomme, frottements négligés :",
+   "propositions": [
+    "Em augmente, Ec devient Epp",
+    "Ec et Epp diminuent toutes les deux",
+    "Em diminue, Epp devient Ec",
+    "Em est constante, Epp devient Ec"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "Seul le poids travaille : Em se conserve et l'énergie potentielle qui diminue se retrouve en énergie cinétique. Em n'augmente pas (aucune force motrice) ; Ec augmente puisque la pomme accélère ; Em ne diminue que s'il y a des frottements.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:104",
+   "type": "vrai_faux",
+   "enonce": "Sans frottement, la vitesse d'une bille après une chute de hauteur h, sans vitesse initiale, dépend de sa masse.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : m g h = ½ m v² donne v = √(2 g h) ; la masse se simplifie, la vitesse ne dépend que de g et de h.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:105",
+   "type": "qcm_unique",
+   "enonce": "Un wagon de montagnes russes passe au sommet d'une bosse, à 20 m du sol, à 5,0 m·s⁻¹. Frottements négligés (g = 9,81 N·kg⁻¹), quelle est la valeur de sa vitesse au point le plus bas, au niveau du sol ?",
+   "propositions": [
+    "20 m·s⁻¹",
+    "25 m·s⁻¹",
+    "15 m·s⁻¹",
+    "4,2 × 10² m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 3,
+   "explication": "Em se conserve (origine au sol) : ½ v<sub>B</sub>² = ½ v<sub>A</sub>² + g h, d'où v<sub>B</sub> = √(5,0² + 2 × 9,81 × 20) = √417 ≈ 20 m·s⁻¹. 25 et 15 m·s⁻¹ ajoutent ou retranchent des vitesses au lieu d'énergies ; 4,2 × 10² m·s⁻¹ oublie la racine carrée.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:106",
+   "type": "reponse_courte",
+   "enonce": "Une bille est lancée verticalement vers le haut à 6,0 m·s⁻¹ ; frottements négligés, g = 9,81 N·kg⁻¹. Calcule la hauteur maximale atteinte au-dessus du point de lancement, en m, arrondie au centième.",
+   "reponses_acceptees": [
+    "1,83",
+    "1.83",
+    "1,84",
+    "1.84"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "Au sommet, v = 0 : toute l'énergie cinétique initiale est devenue énergie potentielle. ½ m v² = m g h, donc h = v²/(2 g) = 36/(2 × 9,81) ≈ 1,83 m.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:107",
+   "type": "qcm_multiple",
+   "enonce": "Parmi ces expressions, lesquelles sont homogènes à une énergie (en joules) ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "½ m v²",
+    "m g z",
+    "f × AB",
+    "m × g",
+    "F × AB / v"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 1,
+   "explication": "½ m v² (énergie cinétique), m g z (énergie potentielle de pesanteur) et f × AB (travail, en N·m = J) sont des énergies. m × g est une force, en N ; F × AB / v n'est pas en joules.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:108",
+   "type": "qcm_multiple",
+   "enonce": "Un caillou de 0,50 kg est lâché sans vitesse à 8,0 m du sol (origine des altitudes au sol) ; frottements négligés ; g = 9,81 N·kg⁻¹. Coche toutes les réponses exactes.",
+   "propositions": [
+    "Son énergie mécanique vaut environ 39 J pendant toute la chute",
+    "À 4,0 m du sol, Ec et Epp valent chacune environ 20 J",
+    "Il arrive au sol à environ 12,5 m·s⁻¹",
+    "Il arrive au sol à environ 157 m·s⁻¹",
+    "Son énergie cinétique au sol vaut environ 78 J"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "Em = m g h = 0,50 × 9,81 × 8,0 ≈ 39 J, constante. À mi-hauteur, Epp ≈ 19,6 J et donc Ec ≈ 19,6 J. Au sol, v = √(2 × 9,81 × 8,0) ≈ 12,5 m·s⁻¹ et Ec ≈ 39 J. 157 m·s⁻¹ oublie la racine ; 78 J double à tort l'énergie.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:109",
+   "type": "vrai_faux",
+   "enonce": "Pour un pendule qui oscille sans frottement, la tension du fil ne travaille pas, car elle est perpendiculaire à la trajectoire.",
+   "bonne_reponse": true,
+   "difficulte": 2,
+   "explication": "Vrai : la tension du fil est à chaque instant perpendiculaire au déplacement de la masse ; son travail est nul et l'énergie mécanique du pendule se conserve.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:110",
+   "type": "qcm_unique",
+   "enonce": "Pour un pendule simple qui oscille sans frottement, au point le plus bas de la trajectoire :",
+   "propositions": [
+    "Ec est nulle",
+    "Ec est maximale",
+    "Em est maximale",
+    "Epp est maximale"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Au point le plus bas, Epp est minimale ; Em étant constante, Ec = Em − Epp y est maximale. Ec est nulle aux points extrêmes ; Em ne varie pas ; Epp est maximale aux positions les plus hautes.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:111",
+   "type": "qcm_unique",
+   "enonce": "En plus du poids, une force motrice (moteur, lanceur) agit sur un système avec un travail positif. L'énergie mécanique du système :",
+   "propositions": [
+    "diminue",
+    "reste constante",
+    "augmente",
+    "s'annule"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "ΔEm = ΣW des forces non conservatives > 0 : Em augmente. Elle diminuerait avec des frottements ; elle resterait constante si aucune force non conservative ne travaillait ; rien n'impose qu'elle s'annule.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:112",
+   "type": "vrai_faux",
+   "enonce": "La force de traction d'un câble est une force conservative.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : le cours range la traction d'un câble, comme la force d'un moteur ou la poussée d'un réacteur, parmi les forces non conservatives.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:113",
+   "type": "qcm_unique",
+   "enonce": "Un skieur de 70 kg part sans vitesse en haut d'une piste et arrive 30 m plus bas à 15 m·s⁻¹ (g = 9,81 N·kg⁻¹). Quel est le travail des forces non conservatives ?",
+   "propositions": [
+    "1,3 × 10⁴ J",
+    "−2,8 × 10⁴ J",
+    "7,9 × 10³ J",
+    "−1,3 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 3,
+   "explication": "Origine en bas : Em(A) = 70 × 9,81 × 30 ≈ 2,06 × 10⁴ J ; Em(B) = ½ × 70 × 15² ≈ 7,9 × 10³ J. ΣW<sub>nc</sub> = ΔEm ≈ −1,3 × 10⁴ J. Le signe + inverse la variation ; −2,8 × 10⁴ J additionne les deux énergies ; 7,9 × 10³ J est Ec(B).",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:114",
+   "type": "reponse_courte",
+   "enonce": "Un palet de 0,40 kg glisse en ligne droite sur un sol horizontal ; la valeur de sa vitesse passe de 5,0 m·s⁻¹ à 3,0 m·s⁻¹ sur 8,0 m. Calcule l'intensité de la force de frottement, supposée constante, en N.",
+   "reponses_acceptees": [
+    "0,40",
+    "0.40",
+    "0,4",
+    "0.4"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "Epp ne varie pas : ΔEm = ½ × 0,40 × (3,0² − 5,0²) = −3,2 J. Or ΔEm = −f × AB, donc f = 3,2/8,0 = 0,40 N.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:115",
+   "type": "qcm_multiple",
+   "enonce": "Pendant la descente d'un parachutiste à vitesse constante : Coche toutes les réponses exactes.",
+   "propositions": [
+    "son énergie cinétique est constante",
+    "son énergie potentielle de pesanteur diminue",
+    "son énergie mécanique diminue",
+    "son énergie mécanique se conserve",
+    "le travail des frottements de l'air est positif"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "v constante donne Ec constante ; l'altitude diminue, donc Epp et Em = Ec + Epp diminuent. Em ne se conserve pas : les frottements de l'air, opposés au mouvement, ont un travail négatif.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:116",
+   "type": "vrai_faux",
+   "enonce": "Quand des frottements travaillent, l'énergie mécanique d'un système augmente.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : le travail des frottements est négatif, donc ΔEm < 0 : l'énergie mécanique diminue ; elle est dissipée vers l'environnement.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:117",
+   "type": "qcm_unique",
+   "enonce": "L'énergie mécanique d'une voiture qui freine sur une route horizontale :",
+   "propositions": [
+    "diminue",
+    "augmente",
+    "reste constante",
+    "se transforme en énergie potentielle"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Epp est constante et Ec diminue, donc Em diminue : le travail des forces de freinage est négatif. Elle n'augmente pas et ne reste pas constante ; l'énergie perdue part dans l'environnement (échauffement), pas en Epp.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:118",
+   "type": "qcm_unique",
+   "enonce": "Une bille glisse sans frottement : elle passe en A à 2,0 m·s⁻¹ puis en B à 4,0 m·s⁻¹. De quelle hauteur est-elle descendue entre A et B (g = 9,81 N·kg⁻¹) ?",
+   "propositions": [
+    "0,20 m",
+    "0,61 m",
+    "1,2 m",
+    "0,82 m"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "Conservation de Em : g (z<sub>A</sub> − z<sub>B</sub>) = ½ (v<sub>B</sub>² − v<sub>A</sub>²), donc h = (16 − 4,0)/(2 × 9,81) ≈ 0,61 m. 0,20 m utilise (v<sub>B</sub> − v<sub>A</sub>)² ; 1,2 m oublie le facteur ½ ; 0,82 m ignore la vitesse en A.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:119",
+   "type": "qcm_unique",
+   "enonce": "Pour un pendule qui oscille sans frottement, Ec et Epp :",
+   "propositions": [
+    "augmentent toutes les deux en même temps",
+    "restent constantes séparément",
+    "s'échangent, Em restant constante",
+    "diminuent jusqu'à s'annuler"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "Sans frottement, Em = Ec + Epp se conserve : quand l'une augmente, l'autre diminue d'autant. Elles ne peuvent pas augmenter ensemble ; elles varient à chaque oscillation ; aucune force ne dissipe l'énergie.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:120",
+   "type": "qcm_unique",
+   "enonce": "Une caisse de 30 kg glisse en ligne droite sur un sol horizontal et s'arrête après 4,0 m ; frottements d'intensité constante 90 N. Quelle était la valeur de sa vitesse initiale ?",
+   "propositions": [
+    "24 m·s⁻¹",
+    "3,5 m·s⁻¹",
+    "12 m·s⁻¹",
+    "4,9 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "0 − ½ × 30 × v² = −90 × 4,0 = −360 J, donc v = √(2 × 360/30) = √24 ≈ 4,9 m·s⁻¹. 24 m·s⁻¹ oublie la racine ; 3,5 m·s⁻¹ oublie le facteur 2 ; 12 m·s⁻¹ divise 360 par 30 sans racine.",
+   "notion": "Frottements, forces non conservatives"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:121",
+   "type": "qcm_unique",
+   "enonce": "Pour un mouvement vertical pointé sur une vidéo, la méthode du cours estime la vitesse à la date t<sub>i</sub> par :",
+   "propositions": [
+    "|z<sub>i+1</sub> − z<sub>i−1</sub>|/(2Δt)",
+    "|z<sub>i+1</sub> − z<sub>i−1</sub>|/Δt",
+    "z<sub>i</sub>/t<sub>i</sub>",
+    "|z<sub>i+1</sub> − z<sub>i−1</sub>| × 2Δt"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "On divise la distance entre les positions qui encadrent z<sub>i</sub> par la durée qui les sépare, 2Δt, pour avoir vitesse et position à la même date. Diviser par Δt double la vitesse ; z<sub>i</sub>/t<sub>i</sub> n'est pas une vitesse instantanée ; multiplier par 2Δt ne donne pas une vitesse.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:122",
+   "type": "vrai_faux",
+   "enonce": "Pour exploiter une vidéo par pointage, on filme le mouvement à côté d'un objet de longueur connue, qui sert d'échelle.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : l'objet de longueur connue permet au logiciel de convertir les distances de l'image en distances réelles, en mètres.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:123",
+   "type": "reponse_courte",
+   "enonce": "Lors du pointage d'une chute, les images sont espacées de 0,040 s ; on relève z<sub>3</sub> = 0,812 m et z<sub>5</sub> = 0,650 m. Estime la valeur v<sub>4</sub> de la vitesse, en m·s⁻¹, arrondie au centième.",
+   "reponses_acceptees": [
+    "2,03",
+    "2.03",
+    "2,02",
+    "2.02"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "v<sub>4</sub> ≈ |z<sub>5</sub> − z<sub>3</sub>|/(2Δt) = (0,812 − 0,650)/(2 × 0,040) = 0,162/0,080 ≈ 2,03 m·s⁻¹ (2,025 arrondi).",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:124",
+   "type": "qcm_unique",
+   "enonce": "Dans le tableau de pointage d'une chute, l'énergie mécanique reste constante à 0,001 J près. On en conclut que :",
+   "propositions": [
+    "le travail du poids est nul",
+    "les frottements sont négligeables",
+    "l'énergie cinétique est constante",
+    "l'énergie potentielle ne varie pas"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Em constante signifie que les forces non conservatives (ici les frottements de l'air) ne travaillent pratiquement pas. Le poids travaille (la balle descend) ; Ec augmente et Epp diminue pendant la chute, seule leur somme est constante.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:125",
+   "type": "qcm_multiple",
+   "enonce": "Un programme Python réalise le bilan énergétique d'une chute à partir d'un pointage. Quelles étapes font partie de la méthode du cours ? Coche toutes les réponses exactes.",
+   "propositions": [
+    "Entrer m, g, Δt et les listes des dates et des altitudes",
+    "Calculer v<sub>i</sub>, puis Ec, Epp et Em, dans une boucle",
+    "Tracer les trois énergies en fonction du temps",
+    "Calculer la vitesse à la première et à la dernière position",
+    "Mesurer la masse de la balle sur la vidéo"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 2,
+   "explication": "La méthode : entrées (m, g, Δt, listes), boucle de calcul de v<sub>i</sub>, Ec, Epp et Em, tracé, puis bilan. La boucle exclut la première et la dernière position, faute de positions voisines ; la masse est une donnée, pas une mesure sur la vidéo.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:126",
+   "type": "vrai_faux",
+   "enonce": "Avec la méthode du cours, on peut calculer la vitesse à la première date du pointage.",
+   "bonne_reponse": false,
+   "difficulte": 1,
+   "explication": "Faux : v<sub>i</sub> utilise les positions z<sub>i−1</sub> et z<sub>i+1</sub> ; à la première date, il n'y a pas de position précédente, donc pas de vitesse calculable.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:127",
+   "type": "qcm_unique",
+   "enonce": "Une balle de 50 g rebondit : sa hauteur maximale passe de 1,20 m à 0,90 m (g = 9,81 N·kg⁻¹). Quelle énergie mécanique a-t-elle perdue lors du rebond ?",
+   "propositions": [
+    "147 J",
+    "0,44 J",
+    "0,15 J",
+    "0,59 J"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Aux sommets, v ≈ 0 donc Em ≈ Epp : ΔEm = 0,050 × 9,81 × (0,90 − 1,20) ≈ −0,15 J, soit 0,15 J perdus. 147 J laisse la masse en grammes ; 0,44 J et 0,59 J sont les énergies aux sommets, pas leur différence.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:128",
+   "type": "qcm_unique",
+   "enonce": "Au sommet d'un rebond, la vitesse de la balle est quasi nulle. Son énergie mécanique est alors :",
+   "propositions": [
+    "réduite à son Ec",
+    "nulle",
+    "égale au double de son Epp",
+    "réduite à son Epp"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 1,
+   "explication": "Au sommet, v ≈ 0 donc Ec ≈ 0 et Em = Ec + Epp ≈ Epp. Ce n'est pas Ec, qui est nulle ; Em n'est pas nulle puisque la balle est en hauteur ; rien ne justifie un facteur 2.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:129",
+   "type": "qcm_multiple",
+   "enonce": "Une balle de 0,10 kg est filmée (axe z vers le haut, origine au sol, g = 9,81 N·kg⁻¹). Le pointage donne, à t = 0,20 s : z = 1,80 m et v = 2,00 m·s⁻¹ ; à t = 0,60 s : z = 0,60 m et v = 5,00 m·s⁻¹. Coche toutes les réponses exactes.",
+   "propositions": [
+    "À t = 0,20 s, Em ≈ 1,97 J",
+    "À t = 0,60 s, Em ≈ 1,84 J",
+    "Le travail des frottements entre ces dates vaut environ −0,13 J",
+    "Les frottements sont négligeables entre ces deux dates",
+    "Le travail des frottements entre ces dates vaut environ +0,13 J"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "Em(0,20 s) = ½ × 0,10 × 2,00² + 0,10 × 9,81 × 1,80 ≈ 0,20 + 1,77 = 1,97 J ; Em(0,60 s) = 1,25 + 0,59 ≈ 1,84 J. ΔEm ≈ −0,13 J : c'est le travail des frottements, négatif, donc non négligeable.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:130",
+   "type": "vrai_faux",
+   "enonce": "Calculer une vitesse par différence de positions pointées amplifie les erreurs de pointage.",
+   "bonne_reponse": true,
+   "difficulte": 1,
+   "explication": "Vrai : le cours le signale ; une petite erreur sur chaque position devient grande devant une petite différence de positions, puis Ec dépend du carré de la vitesse.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:131",
+   "type": "qcm_unique",
+   "enonce": "Dans un tableau de pointage, la vitesse ne peut pas être calculée à la dernière date, car :",
+   "propositions": [
+    "il manque la position suivante",
+    "la balle y est alors immobile",
+    "l'énergie mécanique y est nulle",
+    "la masse n'y intervient plus"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 2,
+   "explication": "v<sub>i</sub> ≈ |z<sub>i+1</sub> − z<sub>i−1</sub>|/(2Δt) nécessite la position suivante, absente à la dernière date. La balle n'y est pas forcément immobile ; Em n'y est pas nulle ; la masse n'intervient pas dans le calcul de la vitesse.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:132",
+   "type": "reponse_courte",
+   "enonce": "Un enfant de 25 kg part sans vitesse du haut d'un toboggan rectiligne de 5,0 m de long, dont le haut est 2,5 m au-dessus du bas ; il arrive en bas à 5,0 m·s⁻¹ (g = 9,81 N·kg⁻¹). Les frottements étant supposés d'intensité constante, calcule leur intensité, en N, arrondie à l'unité.",
+   "reponses_acceptees": [
+    "60"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 3,
+   "explication": "Origine en bas : Em(A) = 25 × 9,81 × 2,5 ≈ 613 J ; Em(B) = ½ × 25 × 5,0² = 312,5 J ; ΔEm ≈ −301 J. La réaction normale ne travaille pas, donc −f × 5,0 = ΔEm et f ≈ 301/5,0 ≈ 60 N.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:133",
+   "type": "qcm_unique",
+   "enonce": "Une voiture de 1,0 × 10³ kg monte une côte : sa vitesse passe de 20 m·s⁻¹ à 15 m·s⁻¹ pendant qu'elle s'élève de 10 m (g = 9,81 N·kg⁻¹). Quel est le travail total des forces non conservatives ?",
+   "propositions": [
+    "−8,8 × 10⁴ J",
+    "1,1 × 10⁴ J",
+    "−1,9 × 10⁵ J",
+    "9,8 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "ΔEc = ½ × 1,0 × 10³ × (15² − 20²) = −8,75 × 10⁴ J ; ΔEpp = 1,0 × 10³ × 9,81 × 10 = 9,81 × 10⁴ J ; ΣW<sub>nc</sub> = ΔEm ≈ 1,1 × 10⁴ J (le moteur fournit plus que les frottements ne dissipent). −8,8 × 10⁴ J oublie ΔEpp ; −1,9 × 10⁵ J soustrait ΔEpp au lieu de l'ajouter ; 9,8 × 10⁴ J oublie ΔEc.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:134",
+   "type": "vrai_faux",
+   "enonce": "Un objet de 2,0 kg lancé verticalement vers le haut à 10 m·s⁻¹ monte de 4,0 m avant de s'arrêter (g = 9,81 N·kg⁻¹) : les frottements de l'air ont prélevé environ 78 J.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : Em(départ) = ½ × 2,0 × 10² = 100 J ; Em(sommet) = 2,0 × 9,81 × 4,0 ≈ 78 J. Les frottements ont prélevé 100 − 78 ≈ 22 J ; 78 J est l'énergie restante.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:135",
+   "type": "qcm_unique",
+   "enonce": "Quand le travail des forces non conservatives est négatif, on dit que l'énergie mécanique est :",
+   "propositions": [
+    "conservée",
+    "stockée sous forme d'énergie potentielle",
+    "dissipée",
+    "transformée en énergie cinétique"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 1,
+   "explication": "ΔEm < 0 : l'énergie mécanique diminue, elle est dissipée vers l'environnement (surtout sous forme thermique). Elle n'est pas conservée ; les forces non conservatives n'ont pas d'énergie potentielle associée ; Ec fait partie de Em, qui diminue.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:136",
+   "type": "qcm_multiple",
+   "enonce": "L'énergie prélevée à un système par les frottements : Coche toutes les réponses exactes.",
+   "propositions": [
+    "est transférée à l'environnement",
+    "est surtout transférée sous forme thermique",
+    "est stockée sous forme d'énergie potentielle",
+    "reste comptée dans l'énergie mécanique du système"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Le cours indique que cette énergie part dans l'environnement, surtout par échauffement. Aucune énergie potentielle n'est associée aux frottements ; l'énergie mécanique du système diminue d'autant.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:137",
+   "type": "vrai_faux",
+   "enonce": "Un wagon lâché sans vitesse au sommet d'une bosse, sans moteur ni lanceur, peut atteindre, malgré les frottements, une bosse plus haute que son point de départ.",
+   "bonne_reponse": false,
+   "difficulte": 2,
+   "explication": "Faux : Em diminue à cause des frottements ; au départ Em = Epp(départ). Sur une bosse plus haute, Epp seule dépasserait déjà cette valeur, ce qui est impossible.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:138",
+   "type": "qcm_unique",
+   "enonce": "Un plongeur se laisse tomber sans vitesse d'un pont situé 12 m au-dessus de l'eau ; frottements négligés (g = 9,81 N·kg⁻¹). À quelle vitesse touche-t-il l'eau ?",
+   "propositions": [
+    "2,4 × 10² m·s⁻¹",
+    "11 m·s⁻¹",
+    "1,2 × 10² m·s⁻¹",
+    "15 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "Em se conserve : v = √(2 g h) = √(2 × 9,81 × 12) ≈ 15 m·s⁻¹. 2,4 × 10² m·s⁻¹ oublie la racine carrée ; 11 m·s⁻¹ oublie le facteur 2 ; 1,2 × 10² m·s⁻¹ calcule g h.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:139",
+   "type": "qcm_unique",
+   "enonce": "Pour obtenir l'énergie potentielle de pesanteur à chaque date d'un pointage vertical, on calcule :",
+   "propositions": [
+    "m × g × z<sub>i</sub>",
+    "½ × m × v<sub>i</sub>²",
+    "m × g × t<sub>i</sub>",
+    "m × z<sub>i</sub>/g"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 1,
+   "explication": "Epp = m g z, avec l'altitude pointée z<sub>i</sub> (axe vers le haut). ½ m v<sub>i</sub>² est l'énergie cinétique ; la date t<sub>i</sub> n'est pas une altitude ; on multiplie par g, on ne divise pas.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:140",
+   "type": "vrai_faux",
+   "enonce": "Pendant une chute pointée, Ec augmente et Epp diminue ; si Em reste constante, la variation de Ec est l'opposée de celle de Epp.",
+   "bonne_reponse": true,
+   "difficulte": 2,
+   "explication": "Vrai : ΔEm = ΔEc + ΔEpp = 0 donne ΔEc = −ΔEpp : l'énergie potentielle perdue se retrouve en énergie cinétique.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:141",
+   "type": "qcm_unique",
+   "enonce": "Une bille de 30 g est lancée vers le bas à 2,0 m·s⁻¹ depuis 1,5 m du sol ; frottements négligés (g = 9,81 N·kg⁻¹). À quelle vitesse atteint-elle le sol ?",
+   "propositions": [
+    "7,4 m·s⁻¹",
+    "5,8 m·s⁻¹",
+    "5,4 m·s⁻¹",
+    "33 m·s⁻¹"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 3,
+   "explication": "Conservation de Em : v<sub>B</sub>² = v<sub>A</sub>² + 2 g h = 4,0 + 2 × 9,81 × 1,5 ≈ 33,4, d'où v<sub>B</sub> ≈ 5,8 m·s⁻¹ (la masse se simplifie). 7,4 m·s⁻¹ additionne des vitesses ; 5,4 m·s⁻¹ ignore la vitesse initiale ; 33 m·s⁻¹ oublie la racine.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:142",
+   "type": "reponse_courte",
+   "enonce": "Un skateur de 50 kg roule à 4,0 m·s⁻¹ en bas d'une rampe. Frottements négligés, g = 9,81 N·kg⁻¹ : calcule la hauteur maximale qu'il peut atteindre sur la rampe, en m, arrondie au centième.",
+   "reponses_acceptees": [
+    "0,82",
+    "0.82"
+   ],
+   "marge": 0.02,
+   "marge_relative": true,
+   "difficulte": 2,
+   "explication": "Au point le plus haut, v = 0 : ½ m v² = m g h, donc h = v²/(2 g) = 16/(2 × 9,81) ≈ 0,82 m. La masse n'intervient pas ; la réaction de la rampe ne travaille pas.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:143",
+   "type": "qcm_multiple",
+   "enonce": "Un téléski tire un skieur de 70 kg à vitesse constante sur une pente rectiligne ; il s'élève de 150 m (g = 9,81 N·kg⁻¹). Coche toutes les réponses exactes.",
+   "propositions": [
+    "L'énergie cinétique du skieur ne varie pas",
+    "Son énergie mécanique augmente d'environ 1,0 × 10⁵ J",
+    "La somme des travaux de la traction et des frottements vaut environ 1,0 × 10⁵ J",
+    "Son énergie mécanique se conserve",
+    "Le travail de son poids vaut environ +1,0 × 10⁵ J"
+   ],
+   "bonnes_reponses": [
+    0,
+    1,
+    2
+   ],
+   "difficulte": 3,
+   "explication": "v constante : ΔEc = 0 ; ΔEpp = 70 × 9,81 × 150 ≈ 1,0 × 10⁵ J, donc ΔEm ≈ 1,0 × 10⁵ J, égal à ΣW des forces non conservatives (traction et frottements). Em ne se conserve donc pas ; le travail du poids, à la montée, vaut −1,0 × 10⁵ J.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:144",
+   "type": "qcm_unique",
+   "enonce": "Dans un bilan d'énergie mécanique, pourquoi la réaction normale d'une piste n'apporte-t-elle aucun travail ?",
+   "propositions": [
+    "Elle est verticale, quelle que soit la piste",
+    "Elle est toujours plus faible que le poids",
+    "Elle est perpendiculaire au déplacement",
+    "Elle compense exactement les frottements"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "La réaction normale est perpendiculaire à la piste, donc au déplacement : son travail est nul. Elle n'est verticale que sur une piste horizontale ; sa valeur n'y change rien ; elle est perpendiculaire aux frottements, elle ne peut pas les compenser.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:145",
+   "type": "qcm_unique",
+   "enonce": "Sur un sol horizontal, une force motrice constante de 80 N fait avancer un chariot de 10 m en ligne droite, malgré des frottements d'intensité constante 30 N. De combien varie son énergie mécanique ?",
+   "propositions": [
+    "8,0 × 10² J",
+    "−3,0 × 10² J",
+    "1,1 × 10³ J",
+    "5,0 × 10² J"
+   ],
+   "bonnes_reponses": [
+    3
+   ],
+   "difficulte": 2,
+   "explication": "ΔEm = ΣW des forces non conservatives = 80 × 10 − 30 × 10 = 5,0 × 10² J. 8,0 × 10² J oublie les frottements ; −3,0 × 10² J oublie la force motrice ; 1,1 × 10³ J ajoute le travail des frottements au lieu de le retrancher.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:146",
+   "type": "qcm_multiple",
+   "enonce": "Pour un pendule réel, filmé pendant plusieurs oscillations : Coche toutes les réponses exactes.",
+   "propositions": [
+    "Ec et Epp oscillent en opposition",
+    "Em diminue lentement à cause des frottements",
+    "Ec et Epp restent constantes",
+    "Em augmente à chaque oscillation"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Quand le pendule descend, Epp diminue et Ec augmente, et inversement : elles oscillent en opposition. Les frottements dissipent lentement l'énergie, donc Em diminue ; elle ne peut pas augmenter sans force motrice.",
+   "notion": "Exploitation de mesures (vidéo, Python)"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:147",
+   "type": "qcm_unique",
+   "enonce": "Une balle de 0,20 kg est lâchée sans vitesse à 10 m du sol ; elle arrive au sol à 12 m·s⁻¹ (g = 9,81 N·kg⁻¹). Quel est le travail des frottements de l'air ?",
+   "propositions": [
+    "−5,2 J",
+    "−14 J",
+    "+5,2 J",
+    "−34 J"
+   ],
+   "bonnes_reponses": [
+    0
+   ],
+   "difficulte": 3,
+   "explication": "Origine au sol : Em(A) = 0,20 × 9,81 × 10 ≈ 19,6 J ; Em(B) = ½ × 0,20 × 12² = 14,4 J. W(frottements) = ΔEm ≈ −5,2 J. −14 J est −Ec(B) ; +5,2 J a le mauvais signe ; −34 J additionne les deux énergies.",
+   "notion": "Variation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:148",
+   "type": "qcm_multiple",
+   "enonce": "Un objet a une énergie cinétique de 120 J et une énergie potentielle de pesanteur de 380 J. Coche toutes les réponses exactes.",
+   "propositions": [
+    "Son énergie mécanique vaut 500 J",
+    "Si seul son poids travaille, son énergie mécanique restera égale à 500 J",
+    "Son énergie mécanique vaut 260 J",
+    "Son énergie mécanique vaut 4,6 × 10⁴ J"
+   ],
+   "bonnes_reponses": [
+    0,
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Em = Ec + Epp = 120 + 380 = 500 J ; si aucune force non conservative ne travaille, Em se conserve. 260 J soustrait les énergies ; 4,6 × 10⁴ J les multiplie.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:149",
+   "type": "qcm_unique",
+   "enonce": "Lors d'une glissade sans frottement, l'énergie potentielle de pesanteur d'un enfant diminue de 300 J. Son énergie cinétique :",
+   "propositions": [
+    "diminue de 300 J",
+    "augmente de 300 J",
+    "ne varie pas",
+    "augmente de 600 J"
+   ],
+   "bonnes_reponses": [
+    1
+   ],
+   "difficulte": 1,
+   "explication": "Em se conserve : ΔEc = −ΔEpp = +300 J. Ec ne peut pas diminuer en même temps que Epp ; elle varie puisque Epp varie ; rien ne justifie le facteur 2.",
+   "notion": "Conservation de l'énergie mécanique"
+  },
+  {
+   "source": "physique-chimie-1re:ch14:banque:150",
+   "type": "qcm_unique",
+   "enonce": "Une balle rebondit et ne remonte qu'à 80 % de sa hauteur maximale précédente. Quelle fraction de son énergie mécanique a-t-elle perdue lors du rebond ?",
+   "propositions": [
+    "80 %",
+    "36 %",
+    "20 %",
+    "64 %"
+   ],
+   "bonnes_reponses": [
+    2
+   ],
+   "difficulte": 2,
+   "explication": "Aux sommets, Em ≈ m g h, proportionnelle à la hauteur : Em passe à 80 % de sa valeur, soit une perte de 20 %. 80 % est ce qui reste ; 36 % et 64 % élèvent à tort 0,80 au carré.",
+   "notion": "Variation de l'énergie mécanique"
+  }
+ ]
+}
