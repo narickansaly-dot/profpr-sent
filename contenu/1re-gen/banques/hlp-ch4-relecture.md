@@ -18,3 +18,48 @@ Relecture des 150 questions de `hlp-ch4.json` contre le texte du chapitre « Dé
 ## Totaux
 
 Types 75 / 30 / 30 / 15 (vrai/faux : 15 vrais, 15 faux) ; difficultés 60 / 60 / 30 ; position de la bonne réponse des qcm_unique : 19 / 19 / 19 / 18 ; bonne réponse la plus longue (égalités comprises) dans 25 % des qcm_unique. Notions : grandes découvertes 18, Valladolid 12, Montaigne et les cannibales 18, « Des coches », Léry, bon sauvage 12, monde clos et univers infini 20, Pascal et Fontenelle 10, regard étranger 19, robinsonnades et utopies 13, diversité des mœurs 18, interprétation et essai 10. Questions de date pure : 9 (6 %). Vérification : « Banque du chapitre 4 conforme : 150 questions. »
+
+## Relecture indépendante à l'aveugle
+
+Un relecteur distinct a répondu aux 150 questions sans voir les réponses attendues ni les explications, avec le seul texte du cours, puis ses réponses ont été comparées automatiquement aux réponses attendues.
+
+Score : 150 / 150 réponses identiques ; 0 écart ; 18 doutes signalés (8 détaillés, 10 jugés sans objet par le relecteur lui-même).
+
+## Corrections après relecture indépendante
+
+| Source | Problème | Décision |
+| --- | --- | --- |
+| hlp:ch4:banque:019 | QCM multiple sur les arguments de Sepúlveda : les deux distracteurs (« rester hors de toute religion », « surpassent les Européens en vertu ») n'étaient attribués à aucun camp par le cours, donc pas clairement faux selon lui. | Remplacés par deux thèses que le cours donne à Las Casas : « Les Indiens doivent être convertis par la persuasion, non par l'épée » et « Les Indiens sont des hommes égaux aux Européens ». Explication réécrite. |
+| hlp:ch4:banque:020 | L'explication appelait Sepúlveda « juriste ». | « l'humaniste et théologien Sepúlveda », comme le cours corrigé. |
+| hlp:ch4:banque:046 | La rencontre de Rouen comme source d'information n'était pas écrite telle quelle dans le cours. | Le cours dit désormais que Montaigne « a interrogé l'un longuement » ; proposition 0 devenue « De sa conversation à Rouen avec l'un des trois Indiens », explication alignée. |
+| hlp:ch4:banque:069 | L'énoncé datait le livre de Koyré de 1957 sans préciser la langue. | « (1957 en anglais, 1962 en français) », comme le cours corrigé. |
+| hlp:ch4:banque:099 | « De l'étoile Sirius » simplifiait : Micromégas vient d'une planète de Sirius. | Bonne réponse « D'une planète de l'étoile Sirius » ; distracteurs allongés (« De la planète Saturne, comme son compagnon », « De la Terre australe des Sévarambes ») pour que la bonne réponse ne soit pas la plus longue. Explication alignée. |
+| hlp:ch4:banque:101 | Bonne réponse au pluriel (« Les Tahitiens ») alors que le cours parle du seul Orou. | « Le Tahitien Orou y parle comme un philosophe des Lumières ». |
+| hlp:ch4:banque:112 | L'explication plaçait 1721 « à la fin du règne de Louis XIV » (mort en 1715). | « paraît anonymement en 1721. Il suit deux Persans dans la France de la fin du règne de Louis XIV et de la Régence. » |
+| hlp:ch4:banque:028 | Variantes manquantes. | Ajout de « ordre des Prêcheurs », « l'ordre des Prêcheurs », « frères prêcheurs », « frère prêcheur ». |
+| hlp:ch4:banque:060 | Graphie grecque refusée. | Ajout de « βάρβαρος ». |
+| hlp:ch4:banque:088 | Graphies savantes refusées. | Ajout de « kósmos » et « κόσμος ». |
+| hlp:ch4:banque:149 | Nom développé refusé. | Ajout de « Organisation des Nations unies pour l'éducation, la science et la culture ». |
+
+## Points gardés sans correction
+
+| Source | Doute du relecteur | Raison |
+| --- | --- | --- |
+| hlp:ch4:banque:024 | L'écriture de la Très brève relation date de 1542, la publication de 1552. | L'énoncé dit « paraît » : seule la publication est en jeu, et le cours la date de 1552. |
+| hlp:ch4:banque:029, 049, 058, 080, 089, 090, 118, 119, 120 | Doutes mineurs signalés à la comparaison automatique. | Variantes déjà acceptées ou réponse sans ambiguïté réelle selon le cours (avis du relecteur confirmé). |
+
+## Restent à relire
+
+Aucune.
+
+## Faits du cours signalés
+
+Les cinq points ont déjà été corrigés dans le cours, et la banque est alignée sur le nouveau texte :
+
+- « Du monde clos à l'univers infini » : Koyré, « (1957 en anglais, 1962 en français) » (question 069).
+- « Les grandes découvertes » / controverse de Valladolid : « L'humaniste et théologien Juan Ginés de Sepúlveda » au lieu de « Le juriste » (question 020).
+- « Le regard étranger » : les Lettres persanes se passent « dans la France de la fin du règne de Louis XIV et de la Régence » (question 112).
+- « Le regard étranger » : Micromégas est « un géant venu d'une planète de l'étoile Sirius » (question 099).
+- « Des cannibales » : rencontre de Rouen avec trois Indiens, « dont il a interrogé l'un longuement » (question 046).
+
+Aucun autre fait du cours à corriger.
