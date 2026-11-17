@@ -593,13 +593,13 @@
         "(3x − 1)(3x + 1)",
         "(9x − 1)(9x + 1)",
         "(3x − 1)²",
-        "(4,5x − 1)(4,5x + 1)"
+        "9(x − 1)(x + 1)"
       ],
       "bonnes_reponses": [
         0
       ],
       "difficulte": 1,
-      "explication": "9x² − 1 = (3x)² − 1², donc a = 3x, b = 1 : (3x − 1)(3x + 1).",
+      "explication": "9x² − 1 = (3x)² − 1², donc a = 3x, b = 1 : (3x − 1)(3x + 1). Attention, 9(x − 1)(x + 1) = 9x² − 9 : le 9 ne se sort pas ainsi.",
       "notion": "Factoriser"
     },
     {
@@ -1033,7 +1033,7 @@
       "enonce": "On peut diviser les deux membres d'une équation par n'importe quel nombre sans changer ses solutions.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "On peut diviser par un nombre non nul seulement : diviser par 0 est impossible. De même, diviser par x (qui peut valoir 0) fait perdre des solutions.",
+      "explication": "On peut diviser par un nombre non nul seulement : diviser par 0 est impossible. De même, diviser par x (qui peut valoir 0) peut faire perdre des solutions.",
       "notion": "Équations du premier degré, x² = a"
     },
     {
@@ -1539,7 +1539,8 @@
       "type": "reponse_courte",
       "enonce": "Pour quelle valeur de x l'expression −4x + 10 s'annule-t-elle ? Réponds par un nombre.",
       "reponses_acceptees": [
-        "2.5"
+        "2,5",
+        "5/2"
       ],
       "difficulte": 2,
       "explication": "−4x + 10 = 0 donne −4x = −10, donc x = −10/(−4) = 2,5.",
@@ -1551,7 +1552,7 @@
       "enonce": "Dans le tableau de signes de (x − 2)(x + 7), quelles valeurs place-t-on sur la ligne des x, dans l'ordre ?",
       "propositions": [
         "2 puis −7",
-        "−7, 0 puis 2",
+        "−2 puis 7",
         "−7 puis 2",
         "7 puis −2"
       ],
@@ -1559,7 +1560,7 @@
         2
       ],
       "difficulte": 1,
-      "explication": "x − 2 s'annule en 2 et x + 7 en −7. On les range dans l'ordre croissant : −7 puis 2.",
+      "explication": "x − 2 s'annule en 2 et x + 7 en −7. On les range dans l'ordre croissant : −7 puis 2. Lire −2 et 7 dans les parenthèses est une erreur de signe : x + 7 s'annule en −7, pas en 7.",
       "notion": "Tableau de signes"
     },
     {
@@ -1582,11 +1583,11 @@
     {
       "source": "maths-tc:ch2:banque:103",
       "type": "qcm_unique",
-      "enonce": "Sur quel intervalle l'expression (x + 3)(x − 5) est-elle strictement négative ?",
+      "enonce": "Sur quel ensemble l'expression (x + 3)(x − 5) est-elle strictement négative ?",
       "propositions": [
         "]−3 ; 5[",
         "]−5 ; 3[",
-        "]−∞ ; −3[ et ]5 ; +∞[",
+        "]−∞ ; −3[ ∪ ]5 ; +∞[",
         "]5 ; +∞["
       ],
       "bonnes_reponses": [
@@ -1601,7 +1602,7 @@
       "type": "qcm_unique",
       "enonce": "On considère f(x) = −2(x − 1)(x − 4). Sur quel ensemble f(x) est-il strictement positif ?",
       "propositions": [
-        "]−∞ ; 1[ et ]4 ; +∞[",
+        "]−∞ ; 1[ ∪ ]4 ; +∞[",
         "]1 ; 4[",
         "]−4 ; −1[",
         "]4 ; +∞["
@@ -1619,7 +1620,7 @@
       "enonce": "Quel est l'ensemble des solutions de (x + 1)(3 − x) ⩾ 0 ?",
       "propositions": [
         "]−1 ; 3[",
-        "]−∞ ; −1] et [3 ; +∞[",
+        "]−∞ ; −1] ∪ [3 ; +∞[",
         "[−1 ; 3]",
         "[−3 ; 1]"
       ],
