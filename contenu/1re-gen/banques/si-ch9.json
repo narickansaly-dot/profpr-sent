@@ -1,0 +1,2325 @@
+{
+  "chapitre": 9,
+  "notions": [
+    "Information, données et signaux",
+    "Modes de transmission",
+    "Supports filaires et sans fil",
+    "Protocole, trame et parité",
+    "Liaison série UART",
+    "Bus I2C",
+    "Débit et durée de transmission",
+    "Débit utile et efficacité",
+    "Couches, encapsulation et LoRaWAN"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch9:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Une station météo code la température « 18,5 °C » par le nombre 185 (en dixièmes de degré) sur 16 bits. Ce nombre 185 est :",
+      "propositions": [
+        "une donnée",
+        "une information",
+        "un signal",
+        "un protocole"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre 185 est la représentation codée de l'information « il fait 18,5 °C » : c'est une donnée, que l'on peut stocker et traiter. Le signal serait la grandeur physique (tension, onde radio) qui transporte ce nombre.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Le détecteur de fin de course d'un portail motorisé délivre 0 V (portail ouvert) ou 5 V (portail fermé), rien d'autre. Son signal est :",
+      "propositions": [
+        "analogique (variation continue)",
+        "logique (tout ou rien)",
+        "hexadécimal",
+        "parallèle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un signal qui ne prend que deux états (0 et 1, ici 0 V et 5 V) est un signal logique, ou tout ou rien. Un signal analogique varie de façon continue et pourrait prendre toutes les valeurs entre 0 V et 5 V.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits contient un octet ?",
+      "propositions": [
+        "2 bits",
+        "10 bits",
+        "8 bits",
+        "16 bits"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits. 16 bits forment 2 octets.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Combien de valeurs différentes peut-on coder avec 10 bits ?",
+      "propositions": [
+        "20 valeurs",
+        "10 000 valeurs",
+        "512 valeurs",
+        "1 024 valeurs"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Avec n bits, on code 2ⁿ valeurs : 2¹⁰ = 1 024. Ce n'est ni 10 × 2 = 20, ni 10⁴ = 10 000 ; 512 = 2⁹ correspond à 9 bits.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:005",
+      "type": "qcm_unique",
+      "enonce": "La lettre C est codée par l'octet 0100 0011. Comment s'écrit cet octet en hexadécimal ?",
+      "propositions": [
+        "0x34",
+        "0x43",
+        "0xC3",
+        "0x83"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Chaque groupe de 4 bits donne un chiffre hexadécimal : 0100 = 4 et 0011 = 3, donc 0x43. Écrire 0x34, c'est inverser les deux groupes.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de place de parking envoie 6 octets de données toutes les 15 minutes. Quelle quantité de données utiles produit-il en une journée ?",
+      "propositions": [
+        "96 octets",
+        "144 octets",
+        "4 608 octets",
+        "576 octets"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Nombre de messages par jour : 24 × 60 / 15 = 96. Quantité : 96 × 6 = 576 octets (soit 4 608 bits : écrire « 4 608 octets » confond bits et octets).",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Une température doit être codée en dixièmes de degré, de −40,0 °C à +85,0 °C, soit 1 251 valeurs possibles. Quel est le plus petit nombre de bits suffisant ?",
+      "propositions": [
+        "11 bits",
+        "1 251 bits",
+        "10 bits",
+        "16 bits"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Il faut 2ⁿ ⩾ 1 251. Avec 10 bits, 2¹⁰ = 1 024 valeurs : c'est trop peu. Avec 11 bits, 2¹¹ = 2 048 valeurs : cela suffit. 16 bits conviendraient aussi, mais ce n'est pas le minimum ; 1 251 est un nombre de valeurs, pas de bits.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un signal numérique résiste-t-il mieux aux perturbations qu'un signal analogique ?",
+      "propositions": [
+        "Il se propage plus vite dans le câble",
+        "Il ne s'atténue pas le long du câble",
+        "Le récepteur ne distingue que deux niveaux",
+        "Il est toujours transmis par une fibre optique"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le récepteur n'a qu'à décider s'il reçoit un niveau haut ou un niveau bas : une petite déformation ne change pas la donnée. Un signal numérique s'atténue pourtant comme les autres, et il circule sur tous les supports.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces signaux, lesquels sont analogiques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La suite de bits envoyée par un module Bluetooth",
+        "L'état d'un bouton poussoir",
+        "Le son capté par un microphone",
+        "La tension délivrée par un capteur de température"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un signal analogique varie de façon continue et prend toutes les valeurs d'un intervalle : c'est le cas de la tension du capteur et du son. Le bouton poussoir donne un signal logique ; le module Bluetooth un signal numérique.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "On dispose d'un mot de 8 bits. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La plus grande valeur codée vaut 256",
+        "Il forme un octet",
+        "Il permet de coder 16 valeurs différentes",
+        "Il permet de coder 256 valeurs différentes",
+        "Il s'écrit avec 2 chiffres hexadécimaux"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "8 bits forment un octet et codent 2⁸ = 256 valeurs, de 0 à 255 : la plus grande vaut donc 255, pas 256. Chaque groupe de 4 bits donne un chiffre hexadécimal, d'où 2 chiffres (de 0x00 à 0xFF). 16 valeurs correspondent à 4 bits.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Une station météo envoie, toutes les 5 minutes, la température et l'humidité (2 octets chacune) et l'heure de la mesure (4 octets). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un message contient 64 bits",
+        "La station envoie 288 messages par jour",
+        "Elle envoie 144 messages par jour",
+        "Elle produit 2 304 bits de données par jour",
+        "Elle produit 2 304 octets de données par jour"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Un message : 2 × 2 + 4 = 8 octets, soit 64 bits. Messages par jour : 24 × 60 / 5 = 288 (144 correspond à une mesure toutes les 10 minutes). Par jour : 288 × 8 = 2 304 octets, soit 18 432 bits.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Un signal est une grandeur physique qui varie pour transporter des données, par exemple une tension sur un fil ou une onde radio.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est la définition du signal. La donnée est la représentation codée de l'information, le signal la grandeur physique qui la transporte.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Un signal logique peut prendre toutes les valeurs comprises entre 0 V et 5 V.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : un signal logique ne prend que deux états, 0 (niveau bas) et 1 (niveau haut). C'est un signal analogique qui peut prendre toutes les valeurs d'un intervalle.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Avec 16 bits, on peut coder 65 536 valeurs différentes.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : 2¹⁶ = 65 536.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:015",
+      "type": "vrai_faux",
+      "enonce": "L'octet 1000 0010 s'écrit 0x41 en hexadécimal.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : 1000 = 8 et 0010 = 2, donc 1000 0010 s'écrit 0x82. C'est l'octet 0100 0001 qui s'écrit 0x41.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:016",
+      "type": "reponse_courte",
+      "enonce": "Combien de valeurs différentes peut-on coder avec 12 bits ? Donne le nombre seul, sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "4096"
+      ],
+      "difficulte": 2,
+      "explication": "Avec n bits, on code 2ⁿ valeurs : 2¹² = 4 096.",
+      "notion": "Information, données et signaux"
+    },
+    {
+      "source": "si-1re:ch9:banque:017",
+      "type": "qcm_unique",
+      "enonce": "En transmission série, les bits d'un octet sont envoyés :",
+      "propositions": [
+        "l'un après l'autre sur un seul fil de données",
+        "tous en même temps, chacun sur son propre fil de données",
+        "deux par deux sur deux fils de données",
+        "en même temps sur le fil d'horloge"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "En série, les bits passent l'un après l'autre sur un seul fil de données (ou un seul canal radio). Envoyer plusieurs bits en même temps sur plusieurs fils, c'est la transmission parallèle.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Avec un talkie-walkie, on peut parler dans les deux sens, mais chacun son tour. Cette liaison est :",
+      "propositions": [
+        "simplex",
+        "half-duplex",
+        "bidirectionnel simultané",
+        "parallèle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Deux sens possibles mais pas en même temps : c'est le half-duplex (bidirectionnel à l'alternat). Le simplex n'a qu'un sens ; le full-duplex (bidirectionnel simultané) permet les deux sens en même temps.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de température émet ses mesures vers une centrale sans jamais rien recevoir. Le mode d'échange est :",
+      "propositions": [
+        "half-duplex",
+        "full-duplex",
+        "simplex",
+        "synchrone"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un seul sens, toujours le même : c'est le simplex. « Synchrone » ne décrit pas le sens des échanges, mais la présence d'un signal d'horloge.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui caractérise une transmission synchrone ?",
+      "propositions": [
+        "Tous les bits sont envoyés en même temps",
+        "Les deux sens fonctionnent en même temps",
+        "Chaque octet commence toujours par un bit de start",
+        "Un signal d'horloge circule sur un fil séparé"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "En transmission synchrone, l'émetteur fournit un signal d'horloge (fil SCL de l'I2C par exemple) et le récepteur lit un bit à chaque front. Le bit de start caractérise au contraire la transmission asynchrone (UART).",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Un octet est transmis en série, sur un seul fil, avec une durée de bit de 2 µs. Combien de temps dure la transmission de l'octet ?",
+      "propositions": [
+        "2 µs",
+        "16 µs",
+        "0,25 µs",
+        "8 µs"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En série, les 8 bits passent l'un après l'autre : 8 × 2 µs = 16 µs. 2 µs serait la durée en parallèle sur 8 fils.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi une liaison sans fil est-elle forcément une liaison série ?",
+      "propositions": [
+        "Elle n'a jamais besoin d'horloge",
+        "Elle émet toujours en simplex",
+        "Les ondes ne transportent que des octets",
+        "Elle ne dispose que d'un seul canal"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Une liaison radio n'offre qu'un seul « canal » : les bits doivent y passer l'un après l'autre. Une liaison sans fil peut être half- ou full-duplex, et le type de signal n'impose pas d'envoyer des octets.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Une liaison parallèle sur 8 fils transmet un octet avec une durée de bit de 0,8 µs. Quelle durée de bit faut-il en série, sur un seul fil, pour transmettre l'octet aussi vite ?",
+      "propositions": [
+        "0,1 µs",
+        "6,4 µs",
+        "0,8 µs",
+        "0,125 µs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "En parallèle, l'octet passe en 0,8 µs. En série, il faut 8 bits successifs dans ces 0,8 µs : Tb = 0,8 / 8 = 0,1 µs. 6,4 µs = 8 × 0,8 µs est la durée de l'octet en série avec la même durée de bit.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Dans une liaison asynchrone de type UART, comment le récepteur sait-il à quels instants lire les bits ?",
+      "propositions": [
+        "Grâce au fil d'horloge SCL qui accompagne les données",
+        "Grâce à l'adresse de l'émetteur",
+        "Grâce au débit convenu et au bit de start",
+        "Grâce à l'accusé de réception"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sans fil d'horloge, émetteur et récepteur conviennent à l'avance du débit ; le front descendant du bit de start permet au récepteur de se resynchroniser à chaque trame.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces liaisons, lesquelles sont synchrones ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une liaison sans fil d'horloge, avec un débit convenu",
+        "Le bus SPI",
+        "La liaison série UART",
+        "Le bus I2C"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "I2C (fil SCL) et SPI transmettent un signal d'horloge : ils sont synchrones. L'UART n'a pas de fil d'horloge : elle est asynchrone, avec un débit convenu et un bit de start.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Quels sont les avantages d'une transmission série par rapport à une transmission parallèle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle évite le décalage entre fils à grande vitesse",
+        "À durée de bit égale, elle transmet un octet 8 fois plus vite",
+        "Elle est obligatoirement synchrone",
+        "Ses câbles sont plus fins et moins chers",
+        "Elle demande moins de fils"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "La série utilise moins de fils, des câbles plus fins et moins chers, et évite le décalage entre fils qui mélange les bits à grande vitesse. À durée de bit égale, c'est la liaison parallèle sur 8 fils qui est 8 fois plus rapide ; et une liaison série peut être asynchrone (UART).",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "On remplace la télécommande simple d'un portail motorisé par une télécommande « avec retour d'état », dont un voyant s'allume quand le portail est bien fermé. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La télécommande doit utiliser une liaison parallèle",
+        "La télécommande doit pouvoir recevoir des données",
+        "La liaison fonctionne au moins en half-duplex",
+        "Une liaison simplex de la télécommande vers le portail suffit"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Pour allumer le voyant, la télécommande doit recevoir l'état du portail : la liaison doit fonctionner dans les deux sens, au moins en half-duplex. Une liaison simplex ne va que dans un sens, et une liaison radio est forcément série.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:028",
+      "type": "vrai_faux",
+      "enonce": "En full-duplex, les deux sens de communication fonctionnent en même temps.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : full-duplex signifie bidirectionnel simultané, comme une liaison UART avec un fil TX et un fil RX, ou un appel téléphonique.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:029",
+      "type": "vrai_faux",
+      "enonce": "Une liaison UART qui possède un fil TX et un fil RX est une liaison half-duplex.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : avec un fil dans chaque sens, les deux appareils peuvent émettre en même temps : la liaison est full-duplex.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:030",
+      "type": "vrai_faux",
+      "enonce": "En transmission asynchrone, l'émetteur envoie un signal d'horloge sur un fil séparé.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : c'est la définition d'une transmission synchrone. En asynchrone, il n'y a pas de fil d'horloge : on convient du débit et chaque groupe de bits commence par un signal de départ.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Avec une durée de bit de 1 µs, une liaison parallèle sur 8 fils transmet 4 octets en 4 µs, alors qu'une liaison série sur un seul fil met 32 µs.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : en parallèle, chaque octet passe en 1 µs, donc 4 × 1 µs = 4 µs. En série, il faut 4 × 8 = 32 bits successifs, soit 32 × 1 µs = 32 µs.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:032",
+      "type": "reponse_courte",
+      "enonce": "Une liaison série sur un seul fil a une durée de bit de 0,5 µs. Combien de microsecondes faut-il pour transmettre 10 octets (sans bits de service) ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "40"
+      ],
+      "difficulte": 2,
+      "explication": "10 octets = 10 × 8 = 80 bits, transmis l'un après l'autre : 80 × 0,5 µs = 40 µs.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:033",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on le mode d'échange qui permet de communiquer dans les deux sens, mais chacun son tour ?",
+      "reponses_acceptees": [
+        "half-duplex",
+        "half duplex",
+        "halfduplex",
+        "le half-duplex",
+        "bidirectionnel à l'alternat",
+        "à l'alternat",
+        "alternat",
+        "l'alternat",
+        "semi-duplex"
+      ],
+      "difficulte": 1,
+      "explication": "C'est le half-duplex, ou bidirectionnel à l'alternat, comme un talkie-walkie ou le fil SDA du bus I2C.",
+      "notion": "Modes de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Quel support filaire est insensible aux perturbations électromagnétiques ?",
+      "propositions": [
+        "La fibre optique",
+        "La paire torsadée",
+        "Le câble coaxial blindé",
+        "Le câble Ethernet en cuivre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Dans une fibre optique, le signal est lumineux : les perturbations électromagnétiques ne l'affectent pas. La torsade et le blindage réduisent ces perturbations dans les câbles en cuivre, sans les supprimer.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:035",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert la torsade des deux fils d'une paire torsadée ?",
+      "propositions": [
+        "À transporter la lumière par réflexions successives",
+        "À réduire l'effet des perturbations électromagnétiques",
+        "À séparer le fil d'horloge du fil de données",
+        "À porter la longueur maximale du câble à 10 km"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Enrouler les deux fils l'un autour de l'autre réduit l'effet des perturbations électromagnétiques. Un câble Ethernet à paires torsadées reste limité à 100 m.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Une station météo installée au fond d'un champ, alimentée par une petite batterie, envoie quelques octets toutes les 10 minutes à une passerelle située à 5 km. Quelle technologie convient ?",
+      "propositions": [
+        "Wi-Fi",
+        "Bluetooth basse consommation",
+        "LoRa (réseau LoRaWAN)",
+        "Câble Ethernet à paires torsadées"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "LoRa offre une portée de plusieurs kilomètres et une très faible consommation ; son faible débit suffit pour quelques octets. Le Wi-Fi et le Bluetooth ont une portée trop courte (et le Wi-Fi consomme beaucoup), un câble Ethernet ne dépasse pas 100 m.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:037",
+      "type": "qcm_unique",
+      "enonce": "La lumière se propage dans une fibre optique à environ 2 × 10⁸ m/s. Combien de temps met un signal pour parcourir une fibre de 4 km ?",
+      "propositions": [
+        "2 µs",
+        "20 ms",
+        "200 µs",
+        "20 µs"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "t = d / v = (4 × 10³ m) / (2 × 10⁸ m/s) = 2 × 10⁻⁵ s = 20 µs.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un câble Ethernet à paires torsadées est-il limité à une centaine de mètres ?",
+      "propositions": [
+        "Au-delà, la vitesse de propagation du signal devient trop faible",
+        "Au-delà, le signal trop atténué et déformé est mal reçu",
+        "Au-delà, la paire torsadée devient une liaison parallèle",
+        "Au-delà, la norme impose de fonctionner en simplex"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Plus un câble est long, plus le signal s'atténue et se déforme : chaque support a une longueur maximale pour un débit donné. La vitesse de propagation, elle, ne dépend pas de la longueur.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Quel compromis décrit le mieux une liaison LoRa par rapport à une liaison Wi-Fi ?",
+      "propositions": [
+        "Plus de débit et de portée, mais une consommation plus élevée",
+        "Moins de portée, mais un débit et une autonomie bien plus grands",
+        "Le même débit, avec une portée dix fois plus grande",
+        "Plus de portée et d'autonomie, mais un débit bien plus faible"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "LoRa gagne en portée (2 à 15 km) et en autonomie en sacrifiant le débit (0,3 à 5 kbit/s environ) ; le Wi-Fi offre des dizaines à centaines de Mbit/s, mais sur quelques dizaines de mètres et avec une forte consommation.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Une fibre optique de 20 km (lumière à 2 × 10⁸ m/s) transporte 1 Gbit/s. On envoie un fichier de 50 Mo. Quelle affirmation est exacte ?",
+      "propositions": [
+        "Émettre les bits prend 0,4 s ; le retard de propagation, 0,1 ms, est négligeable",
+        "Émettre les bits prend 0,05 s ; le retard de propagation, 0,1 ms, est négligeable",
+        "Émettre les bits prend 0,4 s ; le retard de propagation, 100 s, est le plus long",
+        "Émettre les bits prend 0,4 s ; le retard de propagation, 0,1 s, est du même ordre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Nombre de bits : 50 × 10⁶ × 8 = 4 × 10⁸ bits ; durée d'émission : 4 × 10⁸ / 10⁹ = 0,4 s (0,05 s si l'on oublie de convertir les octets en bits). Retard de propagation : 20 × 10³ / (2 × 10⁸) = 10⁻⁴ s = 0,1 ms. C'est le débit qui limite, pas la propagation.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Une caméra surveille un chantier isolé, sans box internet. Elle doit envoyer une vidéo en direct vers un serveur situé à plusieurs kilomètres. Quelle technologie convient ?",
+      "propositions": [
+        "Une liaison LoRa",
+        "Le Bluetooth basse consommation",
+        "Le réseau mobile 4G ou 5G",
+        "Une liaison série UART"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Il faut à la fois une grande portée (antennes relais à plusieurs kilomètres) et un grand débit (vidéo) : c'est le réseau mobile. LoRa a la portée mais pas le débit ; le Bluetooth a une portée de quelques dizaines de mètres ; l'UART relie deux composants proches.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:042",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces supports, lesquels sont filaires ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La paire torsadée",
+        "Le câble coaxial",
+        "La liaison LoRa",
+        "La fibre optique",
+        "Le Bluetooth basse consommation"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Paire torsadée, câble coaxial et fibre optique sont des supports filaires. LoRa et Bluetooth utilisent des ondes radio : ce sont des liaisons sans fil.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:043",
+      "type": "qcm_multiple",
+      "enonce": "Une prothèse de main se règle depuis une application sur smartphone, par Bluetooth basse consommation (BLE). Pourquoi ce choix est-il adapté ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il offre un débit de plusieurs Gbit/s",
+        "Il porte jusqu'à 15 km",
+        "Sa faible consommation convient à la petite batterie de la prothèse",
+        "Sa portée de quelques mètres suffit, le téléphone est à côté"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le BLE consomme peu et porte à une dizaine de mètres ou plus, ce qui suffit pour un téléphone posé à côté. Son débit est de 1 à 2 Mbit/s, et ce sont les liaisons LoRa qui portent jusqu'à 15 km.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Quels sont les inconvénients d'une liaison sans fil par rapport à une liaison filaire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est sensible aux obstacles",
+        "Elle consomme de l'énergie pour émettre",
+        "Elle est impossible à utiliser pour un objet mobile",
+        "Elle demande un fil par bit transmis",
+        "Le même milieu est partagé entre tous les utilisateurs"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Une liaison radio consomme de l'énergie, est gênée par les obstacles et partage l'air entre tous les utilisateurs. Elle est au contraire indispensable pour un objet mobile, et elle est forcément série.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:045",
+      "type": "vrai_faux",
+      "enonce": "Parmi les supports filaires étudiés, la fibre optique offre les plus grands débits, sur des dizaines de kilomètres.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : la fibre optique transporte plusieurs Gbit/s sur des dizaines de kilomètres, et elle est insensible aux perturbations électromagnétiques.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:046",
+      "type": "vrai_faux",
+      "enonce": "Le Wi-Fi offre à la fois une plus grande portée et une plus faible consommation que LoRa.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : c'est l'inverse. LoRa porte de 2 à 15 km avec une très faible consommation ; le Wi-Fi porte à quelques dizaines de mètres et consomme beaucoup. Son avantage est le débit.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Dans une fibre où la lumière se propage à 2 × 10⁸ m/s, un signal met 1 ms pour parcourir 2 km.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : t = d / v = 2 000 / (2 × 10⁸) = 10⁻⁵ s = 10 µs, cent fois moins que 1 ms.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:048",
+      "type": "reponse_courte",
+      "enonce": "La lumière se propage dans une fibre optique à 2 × 10⁸ m/s. Quelle durée, en microsecondes, met un signal pour parcourir 30 km de fibre ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "150"
+      ],
+      "difficulte": 2,
+      "explication": "t = d / v = (30 × 10³ m) / (2 × 10⁸ m/s) = 1,5 × 10⁻⁴ s = 150 µs.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:049",
+      "type": "reponse_courte",
+      "enonce": "Quel support filaire transporte le signal sous forme de lumière ?",
+      "reponses_acceptees": [
+        "fibre optique",
+        "la fibre optique",
+        "une fibre optique",
+        "fibre",
+        "la fibre",
+        "fibres optiques",
+        "les fibres optiques"
+      ],
+      "difficulte": 1,
+      "explication": "La fibre optique : un fil de verre très fin dans lequel la lumière se propage par réflexions successives.",
+      "notion": "Supports filaires et sans fil"
+    },
+    {
+      "source": "si-1re:ch9:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un protocole de communication ?",
+      "propositions": [
+        "Un ensemble de règles communes à l'émetteur et au récepteur",
+        "Un bloc de bits émis en une seule fois sur le support",
+        "Le milieu physique dans lequel se propage le signal",
+        "La partie d'un message qui intéresse l'application"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un protocole fixe les règles communes : niveaux et forme des signaux, débit, format des messages, ordre des échanges, gestion des erreurs. Le bloc de bits émis en une fois est une trame ; le milieu physique est le support ; la partie utile, ce sont les données utiles.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Dans une trame, quel champ contient en général l'adresse du destinataire ?",
+      "propositions": [
+        "Les données utiles",
+        "L'en-tête",
+        "Le champ de contrôle d'erreur",
+        "La marque de fin de trame"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'en-tête contient les informations de service : adresse du destinataire, parfois de l'émetteur, type de message, longueur des données.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Une station météo envoie une trame contenant la température mesurée. Quel champ de la trame intéresse l'application qui affiche la température ?",
+      "propositions": [
+        "Le préambule de synchronisation",
+        "L'en-tête avec les adresses",
+        "Les données utiles",
+        "Le champ de contrôle d'erreur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Seules les données utiles (la charge utile, ici la température) intéressent l'application. Les autres champs sont des bits de service, indispensables au protocole.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:053",
+      "type": "qcm_unique",
+      "enonce": "On transmet l'octet 0110 1001 en parité paire. Que vaut le bit de parité ?",
+      "propositions": [
+        "1, pour que le total de bits à 1 devienne impair",
+        "1, car l'octet contient 5 bits à 1",
+        "0, car l'octet contient 3 bits à 1",
+        "0, car l'octet contient déjà 4 bits à 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0110 1001 contient 4 bits à 1 : ce nombre est déjà pair. En parité paire, le bit de parité vaut donc 0, et le total reste 4.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:054",
+      "type": "qcm_unique",
+      "enonce": "On transmet l'octet 1011 0000 en parité impaire. Que vaut le bit de parité ?",
+      "propositions": [
+        "1, car l'octet contient 3 bits à 1",
+        "0, car l'octet contient déjà 3 bits à 1",
+        "1, pour obtenir un nombre pair de bits à 1",
+        "0, car l'octet contient 4 bits à 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "1011 0000 contient 3 bits à 1, un nombre impair. En parité impaire, le total (données et parité) doit être impair : le bit de parité vaut 0.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Que permet un bit de parité ?",
+      "propositions": [
+        "Corriger automatiquement le bit erroné",
+        "Détecter n'importe quel nombre d'erreurs",
+        "Indiquer quel bit a été inversé",
+        "Détecter une erreur sur un seul bit"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le bit de parité détecte l'inversion d'un bit. Il ne dit pas lequel est faux, ne corrige rien et ne voit pas deux erreurs simultanées.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Une liaison utilise la parité paire. Le récepteur reçoit les données 1100 0110 avec un bit de parité égal à 1. Que peut-il conclure ?",
+      "propositions": [
+        "Une erreur est détectée : le total de bits à 1 est impair",
+        "Aucune erreur : le total de bits à 1 est pair",
+        "Une erreur est détectée, et c'est le bit b0 qui est faux",
+        "Deux bits ont forcément été inversés pendant le trajet"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Les données contiennent 4 bits à 1 ; avec le bit de parité, cela fait 5 : nombre impair, alors que la parité paire impose un total pair. L'erreur est détectée, mais la parité ne dit pas quel bit est faux, ni combien (1, 3 ou 5 bits inversés sont possibles).",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:057",
+      "type": "qcm_unique",
+      "enonce": "En parité paire, un émetteur envoie 0101 0101 avec le bit de parité 0. Deux bits sont inversés pendant le trajet : le récepteur reçoit 0101 0110, toujours avec le bit de parité 0. Que se passe-t-il ?",
+      "propositions": [
+        "L'erreur est détectée, car la parité devient impaire",
+        "Le récepteur corrige seul les deux bits inversés",
+        "L'erreur passe inaperçue, car la parité reste paire",
+        "Le récepteur détecte que b0 et b1 sont faux"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "0101 0110 contient 4 bits à 1 et le bit de parité vaut 0 : le total, 4, est pair. Deux inversions laissent la parité inchangée : l'erreur n'est pas détectée. C'est la limite du bit de parité ; un CRC détecte beaucoup plus d'erreurs.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:058",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels sont fixés par un protocole de communication ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La gestion des erreurs",
+        "Le format des messages",
+        "Le débit",
+        "La température mesurée par le capteur",
+        "La couleur du boîtier de l'émetteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un protocole fixe les niveaux et la forme des signaux, le débit, le format des messages, l'ordre des échanges et la gestion des erreurs. La valeur mesurée est une donnée utile transportée, pas une règle.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:059",
+      "type": "qcm_multiple",
+      "enonce": "À propos des bits de service ajoutés autour des données utiles dans une trame : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Ils ne sont pas émis sur le support",
+        "Ils allongent la durée de transmission",
+        "Ils sont indispensables au fonctionnement du protocole",
+        "Ils font partie des données utiles"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Synchronisation, en-tête, contrôle d'erreur et fin de trame sont indispensables, mais ils sont émis comme les autres bits et « coûtent » du temps de transmission. Ils ne font pas partie des données utiles.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:060",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la détection des erreurs de transmission : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le bit de parité ne détecte pas deux erreurs simultanées",
+        "Le bit de parité indique quel bit est faux",
+        "Un accusé de réception est envoyé par l'émetteur",
+        "Un CRC détecte beaucoup plus d'erreurs que la parité",
+        "Une trame erronée peut être ignorée ou émise de nouveau"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Deux bits inversés laissent la parité inchangée ; un CRC, calculé sur toute la trame, détecte beaucoup plus d'erreurs. Une trame erronée est ignorée ou réémise. La parité ne localise pas l'erreur, et l'accusé de réception est envoyé par le récepteur.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:061",
+      "type": "vrai_faux",
+      "enonce": "Une trame est un bloc de bits structuré selon le protocole et émis en une seule fois sur le support.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est la définition d'une trame.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:062",
+      "type": "vrai_faux",
+      "enonce": "En parité paire, l'octet 1110 0000 reçoit un bit de parité égal à 1.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : 1110 0000 contient 3 bits à 1, nombre impair. Le bit de parité vaut 1 pour obtenir un total pair (4).",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:063",
+      "type": "vrai_faux",
+      "enonce": "En parité impaire, le nombre total de bits à 1, bit de parité compris, est pair.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : en parité impaire, le bit de parité est choisi pour que le nombre total de bits à 1 soit impair.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:064",
+      "type": "reponse_courte",
+      "enonce": "En parité paire, quelle est la valeur du bit de parité ajouté à l'octet 1101 0111 ? Réponds par 0 ou 1.",
+      "reponses_acceptees": [
+        "0"
+      ],
+      "difficulte": 2,
+      "explication": "1101 0111 contient 6 bits à 1, nombre déjà pair : le bit de parité vaut 0.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:065",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on la partie d'une trame qui contient la seule information intéressant l'application, par exemple la température mesurée ?",
+      "reponses_acceptees": [
+        "données utiles",
+        "les données utiles",
+        "charge utile",
+        "la charge utile",
+        "données",
+        "les données",
+        "donnée utile"
+      ],
+      "difficulte": 1,
+      "explication": "Ce sont les données utiles, ou charge utile. Les autres champs (synchronisation, en-tête, contrôle d'erreur, fin) sont des bits de service.",
+      "notion": "Protocole, trame et parité"
+    },
+    {
+      "source": "si-1re:ch9:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Au repos, quand aucune trame n'est émise, la ligne TX d'une liaison UART est :",
+      "propositions": [
+        "au niveau haut (1)",
+        "au niveau bas (0)",
+        "alternativement à 0 puis à 1",
+        "à la moitié de la tension d'alimentation"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Au repos, la ligne UART est au niveau haut. Le bit de start, à 0, crée un front descendant qui marque le début d'une trame.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits compte une trame UART au format 8N1 ?",
+      "propositions": [
+        "8 bits",
+        "10 bits",
+        "9 bits",
+        "11 bits"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "8N1 : 1 bit de start, 8 bits de données, pas de parité, 1 bit de stop, soit 1 + 8 + 1 = 10 bits. 11 bits correspondent au format 8E1, avec un bit de parité.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Une liaison UART fonctionne à 115 200 bit/s. Quelle est, environ, la durée d'un bit ?",
+      "propositions": [
+        "0,87 µs",
+        "87 µs",
+        "8,7 µs",
+        "104 µs"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Tb = 1 / D = 1 / 115 200 ≈ 8,68 × 10⁻⁶ s ≈ 8,7 µs. 104 µs est la durée d'un bit à 9 600 bit/s.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Comment relie-t-on une carte microcontrôleur à un module GPS par une liaison UART ?",
+      "propositions": [
+        "TX de la carte sur TX du module, RX sur RX, masses reliées",
+        "TX de la carte sur RX du module seulement, sans masse commune",
+        "SDA de la carte sur SDA du module, SCL sur SCL",
+        "TX de la carte sur RX du module, RX sur TX, masses reliées"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les fils sont croisés : ce que l'un émet (TX), l'autre le reçoit (RX), et inversement. La masse commune est indispensable comme référence des tensions. SDA et SCL sont les fils du bus I2C.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le format UART 8E1 ?",
+      "propositions": [
+        "8 bits de données, pas de parité, 1 bit de stop",
+        "8 bits de données, parité paire, 1 bit de stop",
+        "8 bits de données, parité impaire, 1 bit de start",
+        "8 octets de données, 1 erreur tolérée au plus"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le premier chiffre donne le nombre de bits de données, la lettre la parité (N : aucune, E : paire, de « even »), le dernier chiffre le nombre de bits de stop. Une trame 8E1 compte 11 bits.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Sur une trame UART, après le bit de start, on lit dans l'ordre d'arrivée les bits 1, 1, 0, 0, 0, 0, 1, 0. Quel octet a été transmis ?",
+      "propositions": [
+        "1100 0010, soit 0xC2",
+        "0100 0011, soit 0x34",
+        "1100 0011, soit 0xC3",
+        "0100 0011, soit 0x43"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le premier bit reçu est b0. En remettant b7 à gauche : b7…b0 = 0100 0011, soit 0x43 (la lettre C). Lire l'octet dans l'ordre d'arrivée, sans le retourner, donnerait 1100 0010 = 0xC2.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:072",
+      "type": "qcm_unique",
+      "enonce": "À l'oscilloscope, sur la ligne TX d'une liaison UART, trois bits à 1 consécutifs durent 312 µs. Quel est le débit normalisé utilisé ?",
+      "propositions": [
+        "9 600 bit/s",
+        "3 200 bit/s",
+        "4 800 bit/s",
+        "115 200 bit/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Durée d'un bit : Tb = 312 / 3 = 104 µs. Débit : D = 1 / (104 × 10⁻⁶ s) ≈ 9 615 bit/s ; la valeur normalisée la plus proche est 9 600 bit/s. 3 200 bit/s correspond à l'oubli de la division par 3.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Une carte envoie un message de 20 caractères (un octet chacun) par une liaison UART 8N1 à 9 600 bit/s. Combien de temps dure l'envoi ?",
+      "propositions": [
+        "Environ 16,7 ms",
+        "Environ 2,08 ms",
+        "Environ 20,8 ms",
+        "Environ 208 ms"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Chaque octet occupe 10 bits sur la ligne : 20 × 10 = 200 bits. t = 200 / 9 600 ≈ 0,0208 s ≈ 20,8 ms. En oubliant les bits de start et de stop (160 bits), on trouverait 16,7 ms.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Dans une trame UART, le bit de start vaut :",
+      "propositions": [
+        "toujours 0",
+        "toujours 1",
+        "0 ou 1 selon la parité choisie",
+        "la même valeur que le bit b0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le bit de start est toujours à 0 : son front descendant, après le repos à 1, permet au récepteur de se synchroniser. Le bit de stop, lui, est toujours à 1.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la liaison série UART : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le bit de stop vaut 0",
+        "Les données commencent par le bit de poids faible b0",
+        "Un fil d'horloge accompagne le fil de données",
+        "C'est une liaison asynchrone"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'UART est asynchrone : pas de fil d'horloge, un débit convenu et un bit de start. Les données arrivent en commençant par b0, et le bit de stop vaut 1.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Une liaison UART 8N1 fonctionne à 115 200 bit/s. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La durée d'un bit vaut environ 8,7 µs",
+        "On envoie au plus 11 520 octets par seconde",
+        "On envoie au plus 14 400 octets par seconde",
+        "Une trame compte 9 bits",
+        "Une trame dure environ 87 µs"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Tb = 1 / 115 200 ≈ 8,7 µs ; une trame 8N1 compte 10 bits, soit 10 × 8,7 ≈ 87 µs. Octets par seconde : 115 200 / 10 = 11 520. Diviser par 8 (14 400) oublie les bits de start et de stop.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Une trame UART 8N1 est relevée à l'oscilloscope : les niveaux sont 0 V et 3,3 V, et cinq bits identiques consécutifs durent 520 µs. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une trame complète dure environ 1,04 ms",
+        "Le débit vaut environ 9 600 bit/s",
+        "Une trame complète dure 520 µs",
+        "La durée d'un bit vaut 104 µs",
+        "Le débit vaut environ 1 923 bit/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Tb = 520 / 5 = 104 µs ; D = 1 / (104 × 10⁻⁶) ≈ 9 615 bit/s, soit 9 600 bit/s normalisé (1 923 bit/s = 1 / 520 µs oublie de diviser par 5). Une trame de 10 bits dure 10 × 104 µs = 1,04 ms.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:078",
+      "type": "vrai_faux",
+      "enonce": "Dans le format UART 8N1, la lettre N signifie que la trame ne contient pas de bit de parité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : N vient de l'anglais « none » (aucune parité). 8N1 : 8 bits de données, pas de parité, 1 bit de stop.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:079",
+      "type": "vrai_faux",
+      "enonce": "Sur une liaison UART, le premier bit de données reçu après le bit de start est le bit de poids fort b7.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : en UART, les données commencent par le bit de poids faible b0. Pour retrouver l'octet, il faut remettre b7 à gauche.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:080",
+      "type": "vrai_faux",
+      "enonce": "Une trame UART au format 7E2 (7 bits de données, parité paire, 2 bits de stop) compte 11 bits.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : 1 bit de start + 7 bits de données + 1 bit de parité + 2 bits de stop = 11 bits.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:081",
+      "type": "vrai_faux",
+      "enonce": "À 9 600 bit/s, la durée d'un bit vaut environ 1,04 ms.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : Tb = 1 / 9 600 ≈ 1,04 × 10⁻⁴ s ≈ 104 µs. C'est une trame 8N1 complète (10 bits) qui dure environ 1,04 ms.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:082",
+      "type": "reponse_courte",
+      "enonce": "Une liaison UART 8N1 fonctionne à 4 800 bit/s. Combien d'octets de données peut-elle transmettre au plus par seconde ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "480"
+      ],
+      "difficulte": 2,
+      "explication": "Chaque octet occupe une trame de 10 bits : 4 800 / 10 = 480 octets par seconde.",
+      "notion": "Liaison série UART"
+    },
+    {
+      "source": "si-1re:ch9:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Combien de fils de signal (en plus de la masse) utilise le bus I2C ?",
+      "propositions": [
+        "Un seul : SDA",
+        "Deux : SDA et SCL",
+        "Trois : TX, RX et SCL",
+        "Huit, un par bit de l'octet"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le bus I2C utilise deux fils : SDA pour les données et SCL pour l'horloge. TX et RX sont les fils d'une liaison UART.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Sur un bus I2C, quel composant produit le signal d'horloge SCL ?",
+      "propositions": [
+        "L'esclave interrogé",
+        "Chaque esclave à tour de rôle",
+        "Le maître",
+        "Les résistances de tirage"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'horloge est toujours produite par le maître (le microcontrôleur), qui organise tous les échanges. Les résistances de tirage maintiennent seulement les fils au niveau haut au repos.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Combien d'adresses différentes permet un codage sur 7 bits ?",
+      "propositions": [
+        "1 024 adresses",
+        "14 adresses",
+        "256 adresses",
+        "128 adresses"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Avec n bits, on code 2ⁿ valeurs : 2⁷ = 128 adresses (quelques-unes sont réservées). 256 correspond à 8 bits et 1 024 à 10 bits.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Un microcontrôleur veut écrire une consigne dans l'esclave I2C d'adresse 0x48. Quel premier octet envoie-t-il après la condition de départ ?",
+      "propositions": [
+        "0x48",
+        "0x90",
+        "0x91",
+        "0x480"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "0x48 s'écrit 100 1000 sur 7 bits. On ajoute à droite le bit R/W = 0 (écriture) : 1001 0000, soit 0x90. 0x91 serait l'octet de lecture ; 0x480 décale l'adresse de 4 rangs (un chiffre hexadécimal) au lieu d'un seul.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Sur le bus I2C, que signifie le bit d'acquittement (ACK) envoyé par un esclave ?",
+      "propositions": [
+        "Le maître termine l'échange en cours avec l'esclave",
+        "Le maître commence un nouvel échange",
+        "L'échange qui suit est une lecture",
+        "Il a reconnu son adresse ou bien reçu l'octet"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'esclave qui reconnaît son adresse répond par un bit d'acquittement (niveau bas) ; chaque octet de données est aussi suivi d'un acquittement. Le début et la fin sont marqués par START et STOP, la lecture par le bit R/W.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Un microcontrôleur lit 4 octets dans un capteur I2C en mode rapide (400 kbit/s). En négligeant START et STOP, combien de temps dure l'échange ?",
+      "propositions": [
+        "112,5 µs",
+        "80 µs",
+        "1 125 µs",
+        "450 µs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Il faut 9 bits d'horloge pour l'octet d'adresse et 9 pour chacun des 4 octets de données : 9 × 5 = 45 bits. t = 45 / 400 000 = 1,125 × 10⁻⁴ s = 112,5 µs. 80 µs ne compte que les 32 bits de données ; 450 µs correspond au mode standard et 1 125 µs à une erreur de puissance de 10.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Un microcontrôleur veut lire le capteur I2C d'adresse 0x5C. Quel premier octet envoie-t-il après la condition de départ ?",
+      "propositions": [
+        "0xB8",
+        "0x5D",
+        "0xB9",
+        "0x5C"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "0x5C s'écrit 101 1100 sur 7 bits. On ajoute à droite le bit R/W = 1 (lecture) : 1011 1001, soit 0xB9. 0xB8 serait l'octet d'écriture ; ajouter 1 à l'adresse (0x5D) oublie le décalage d'un rang.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:090",
+      "type": "qcm_unique",
+      "enonce": "Comment le maître signale-t-il le début d'un échange sur le bus I2C ?",
+      "propositions": [
+        "SDA passe au niveau bas pendant que SCL est au niveau haut",
+        "SCL passe au niveau bas pendant que SDA reste au niveau haut",
+        "Il envoie un bit de start à 0 sur le fil TX",
+        "Il envoie l'adresse 0x00 à tous les esclaves"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La condition de départ (START) est un passage de SDA au niveau bas pendant que SCL est au niveau haut. Le bit de start sur TX appartient à la liaison UART.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "À propos du bus I2C : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le fil SDA fonctionne en half-duplex",
+        "Il relie des composants proches, sur une même carte",
+        "Chaque octet commence par un bit de start",
+        "Il est prévu pour des liaisons de plusieurs kilomètres",
+        "C'est une liaison synchrone"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "L'I2C est synchrone (horloge SCL), SDA transporte les données dans un sens puis dans l'autre (half-duplex), et le bus relie des composants proches. Le bit de start appartient à l'UART.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Un microcontrôleur lit 3 octets dans le capteur I2C d'adresse 0x76, en mode standard (100 kbit/s). On néglige START et STOP. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'échange compte 36 bits d'horloge",
+        "Le premier octet transmis vaut 0xED",
+        "L'échange dure 240 µs",
+        "L'échange dure 360 µs",
+        "Le premier octet transmis vaut 0x76"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "0x76 = 111 0110 ; avec R/W = 1 : 1110 1101 = 0xED. Bits : 9 pour l'adresse et 9 par octet de données, soit 9 × 4 = 36 bits. t = 36 / 100 000 = 360 µs. 240 µs ne compte que les 24 bits de données.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "À propos des deux résistances de tirage d'un bus I2C : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elles maintiennent SDA et SCL au niveau haut au repos",
+        "Chaque composant peut seulement forcer un fil au niveau bas",
+        "Elles produisent le signal d'horloge",
+        "Elles fixent l'adresse de chaque esclave"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les résistances de tirage ramènent les fils au niveau haut ; les composants ne font que forcer un fil au niveau bas. L'horloge vient du maître, et l'adresse est propre à chaque esclave (parfois réglable par un cavalier).",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:094",
+      "type": "vrai_faux",
+      "enonce": "Sur un bus I2C, un esclave peut prendre la parole quand il le veut, sans avoir été interrogé par le maître.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : le maître organise tous les échanges ; les esclaves ne parlent que lorsque le maître les interroge.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:095",
+      "type": "vrai_faux",
+      "enonce": "En mode standard, l'horloge du bus I2C vaut 100 kHz, ce qui donne un débit de 100 kbit/s.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : un bit est lu à chaque impulsion d'horloge, donc 100 kHz donnent 100 kbit/s. Le mode rapide monte à 400 kHz.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:096",
+      "type": "vrai_faux",
+      "enonce": "Deux capteurs identiques branchés sur le même bus I2C ont, par défaut, la même adresse.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : deux composants identiques ont la même adresse par défaut ; certains modules permettent de la changer par un cavalier, sinon ils ne peuvent pas cohabiter sur le bus.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:097",
+      "type": "reponse_courte",
+      "enonce": "Sur le bus I2C, combien d'impulsions d'horloge faut-il pour transmettre un octet de données suivi de son acquittement ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "difficulte": 1,
+      "explication": "8 impulsions pour les 8 bits de l'octet, plus 1 pour le bit d'acquittement : 9 impulsions.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:098",
+      "type": "reponse_courte",
+      "enonce": "Un microcontrôleur lit 6 octets dans un capteur I2C en mode standard (100 kbit/s). En comptant l'octet d'adresse et les acquittements, mais en négligeant START et STOP, combien de microsecondes dure l'échange ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "630"
+      ],
+      "difficulte": 3,
+      "explication": "Octet d'adresse et 6 octets de données, chacun avec son acquittement : 9 × 7 = 63 bits. t = 63 / 100 000 = 6,3 × 10⁻⁴ s = 630 µs.",
+      "notion": "Bus I2C"
+    },
+    {
+      "source": "si-1re:ch9:banque:099",
+      "type": "qcm_unique",
+      "enonce": "En quelle unité s'exprime un débit binaire ?",
+      "propositions": [
+        "Le bit",
+        "Le bit par seconde",
+        "L'octet",
+        "Le joule par seconde"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le débit binaire D = N / t est un nombre de bits par seconde : il s'exprime en bit/s (avec les multiples kbit/s, Mbit/s, Gbit/s). Le joule par seconde est le watt, unité de puissance.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Un logiciel affiche un débit de 1 Mo/s. À quel débit, en bits par seconde, cela correspond-il ?",
+      "propositions": [
+        "1 Mbit/s",
+        "0,125 Mbit/s",
+        "8 Mbit/s",
+        "1 024 Mbit/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "1 octet = 8 bits, donc 1 Mo/s = 8 × 10⁶ bit/s = 8 Mbit/s. Un débit en octets par seconde est 8 fois plus petit que le même débit en bit/s.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Une liaison transmet 48 000 bits en 0,5 s. Quel est son débit ?",
+      "propositions": [
+        "24 kbit/s",
+        "12 kbit/s",
+        "960 kbit/s",
+        "96 kbit/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "D = N / t = 48 000 / 0,5 = 96 000 bit/s = 96 kbit/s. Multiplier au lieu de diviser donne 24 kbit/s.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la durée d'un bit sur une liaison à 250 kbit/s ?",
+      "propositions": [
+        "0,4 µs",
+        "4 µs",
+        "40 µs",
+        "250 µs"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Tb = 1 / D = 1 / 250 000 = 4 × 10⁻⁶ s = 4 µs.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Un drone envoie une photo de 5 Mo par Wi-Fi, avec un débit utile de 40 Mbit/s. Combien de temps dure le transfert ?",
+      "propositions": [
+        "0,125 s",
+        "8 s",
+        "0,5 s",
+        "1 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "N = 5 × 10⁶ × 8 = 40 × 10⁶ bits ; t = 40 × 10⁶ / (40 × 10⁶) = 1 s. Oublier la conversion des octets en bits donne 0,125 s, un résultat 8 fois trop petit.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Un fournisseur d'accès annonce un débit de 400 Mbit/s. À combien de mégaoctets par seconde cela correspond-il au mieux ?",
+      "propositions": [
+        "50 Mo/s",
+        "400 Mo/s",
+        "3 200 Mo/s",
+        "4 Mo/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "400 Mbit/s / 8 = 50 Mo/s. Multiplier par 8 (3 200 Mo/s) inverse la conversion.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Une caméra de surveillance envoie 25 images par seconde, chacune de 60 ko. Quel débit utile minimal la liaison doit-elle offrir ?",
+      "propositions": [
+        "1,5 Mbit/s",
+        "12 kbit/s",
+        "12 Mbit/s",
+        "96 Mbit/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Par seconde : 25 × 60 × 10³ = 1,5 × 10⁶ octets, soit 1,5 × 10⁶ × 8 = 12 × 10⁶ bits. Il faut donc au moins 12 Mbit/s. 1,5 Mbit/s oublie la conversion des octets en bits.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Un module GPS envoie 72 octets par seconde au microcontrôleur par une liaison UART 8N1 à 9 600 bit/s. Quelle fraction du temps la ligne est-elle occupée par des trames ?",
+      "propositions": [
+        "7,5 %",
+        "6 %",
+        "0,75 %",
+        "75 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Bits émis par seconde : 72 × 10 = 720 bits (10 bits par octet en 8N1). Occupation : 720 / 9 600 = 0,075, soit 7,5 %. Compter 8 bits par octet (576 bits) donnerait 6 %.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Dans la relation D = N / t, que représente N ?",
+      "propositions": [
+        "Le nombre d'octets utiles du message",
+        "Le nombre de bits transmis pendant t",
+        "La fréquence de l'horloge de la liaison",
+        "Le nombre de fils de données utilisés"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le débit D est le nombre de bits transmis par seconde : N est le nombre de bits transmis pendant la durée t (en secondes).",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 octet = 8 bits",
+        "1 Mo/s = 1 Mbit/s",
+        "1 Mbit/s = 10⁶ bit/s",
+        "1 Gbit/s = 10⁶ bit/s",
+        "1 kbit/s = 1 000 bit/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "1 kbit/s = 10³ bit/s, 1 Mbit/s = 10⁶ bit/s, 1 Gbit/s = 10⁹ bit/s et 1 octet = 8 bits. Donc 1 Mo/s = 8 Mbit/s, pas 1 Mbit/s.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Une liaison a un débit de 20 kbit/s. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La durée d'un bit vaut 50 µs",
+        "En 2 s, elle transmet 10 000 bits",
+        "La durée d'un bit vaut 20 µs",
+        "En 2 s, elle transmet 40 000 bits",
+        "Elle transmet au plus 2 500 octets par seconde"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Tb = 1 / 20 000 = 5 × 10⁻⁵ s = 50 µs. N = D × t = 20 000 × 2 = 40 000 bits. 20 000 / 8 = 2 500 octets par seconde, si tous les bits transportent des octets.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "On télécharge un fichier de 600 Mo avec un débit utile de 100 Mbit/s. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le fichier contient 4,8 × 10⁹ bits",
+        "Le logiciel affiche un débit de 100 Mo/s",
+        "Le logiciel affiche un débit de 12,5 Mo/s",
+        "Le téléchargement dure 6 s",
+        "Le téléchargement dure 48 s"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "N = 600 × 10⁶ × 8 = 4,8 × 10⁹ bits ; t = 4,8 × 10⁹ / 10⁸ = 48 s (6 s si l'on oublie le facteur 8). En octets : 100 / 8 = 12,5 Mo/s.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Pour diviser par deux la durée d'un transfert de données, que peut-on faire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Doubler le débit utile de la liaison",
+        "Remplacer une liaison série par une liaison sans fil",
+        "Doubler la durée d'un bit",
+        "Transférer deux fois moins de données utiles"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "t = Nutile / Dutile : la durée est divisée par deux si le débit utile double ou si la quantité de données est divisée par deux. Doubler la durée d'un bit divise le débit par deux, donc double la durée. Passer au sans fil ne change rien en soi : une liaison radio est elle aussi série.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Un débit de 8 kbit/s correspond à 1 000 octets par seconde.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : 8 000 bit/s / 8 = 1 000 octets par seconde.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Sur une liaison à 1 Mbit/s, la durée d'un bit vaut 1 ms.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : Tb = 1 / 10⁶ = 10⁻⁶ s = 1 µs, mille fois moins que 1 ms.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Avec un abonnement à 100 Mbit/s, un logiciel de téléchargement affiche au mieux environ 12,5 Mo/s.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : 100 Mbit/s / 8 = 12,5 Mo/s. Les fournisseurs annoncent des Mbit/s, les logiciels affichent des Mo/s.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:115",
+      "type": "reponse_courte",
+      "enonce": "La mise à jour du logiciel d'un vélo à assistance électrique pèse 12 Mo. Elle est transmise par Bluetooth basse consommation avec un débit utile de 0,8 Mbit/s. Combien de secondes dure le transfert ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "120"
+      ],
+      "difficulte": 2,
+      "explication": "N = 12 × 10⁶ × 8 = 96 × 10⁶ bits ; t = 96 × 10⁶ / (0,8 × 10⁶) = 120 s, soit 2 minutes.",
+      "notion": "Débit et durée de transmission"
+    },
+    {
+      "source": "si-1re:ch9:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le débit utile d'une liaison est-il inférieur à son débit maximal ?",
+      "propositions": [
+        "Le support perd une partie des bits en route",
+        "Le débit maximal compte chaque bit deux fois",
+        "Une partie des bits transmis sert au protocole",
+        "Les données utiles sont compressées à l'envoi"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Synchronisation, en-têtes, contrôle d'erreur et acquittements occupent une partie des bits ; de plus, la liaison n'émet pas en permanence. Il reste donc moins de bits par seconde pour les données utiles.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Comment calcule-t-on l'efficacité η d'un protocole ?",
+      "propositions": [
+        "Bits totaux d'une trame / bits utiles transmis",
+        "Bits utiles × débit maximal",
+        "Débit maximal / débit utile",
+        "Bits utiles / bits totaux d'une trame"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "η = Dutile / Dmax = (nombre de bits utiles) / (nombre total de bits d'une trame). Elle est sans unité et comprise entre 0 et 1 ; le rapport inverse serait supérieur à 1.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'efficacité d'une liaison UART au format 8N2 (8 bits de données, pas de parité, 2 bits de stop) ?",
+      "propositions": [
+        "Exactement 80 %",
+        "Environ 72,7 %",
+        "Environ 66,7 %",
+        "Environ 88,9 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Une trame 8N2 compte 1 + 8 + 2 = 11 bits, dont 8 utiles : η = 8 / 11 ≈ 0,727, soit 72,7 %. 80 % correspond au format 8N1 (10 bits).",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Quel est le débit utile d'une liaison UART 8N1 réglée à 115 200 bit/s ?",
+      "propositions": [
+        "115 200 bit/s",
+        "14 400 bit/s",
+        "103 680 bit/s",
+        "92 160 bit/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "η = 8 / 10 = 0,80 ; Dutile = 0,80 × 115 200 = 92 160 bit/s. 115 200 bit/s est le débit maximal, tous bits confondus.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Une trame compte 48 octets, dont 32 octets de données utiles. Quelle est l'efficacité du protocole ?",
+      "propositions": [
+        "Environ 66,7 %",
+        "150 %",
+        "Environ 33,3 %",
+        "32 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "η = 32 / 48 ≈ 0,667, soit 66,7 %. Le rapport inverse (48 / 32 = 150 %) est impossible : une efficacité ne dépasse jamais 100 %.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Un protocole ajoute 16 octets de service à chaque trame. Quel est le plus petit nombre d'octets utiles par trame qui donne une efficacité d'au moins 80 % ?",
+      "propositions": [
+        "16 octets",
+        "20 octets",
+        "64 octets",
+        "100 octets"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Il faut N / (N + 16) ⩾ 0,80, soit N ⩾ 0,80 × (N + 16), donc 0,20 × N ⩾ 12,8 et N ⩾ 64 octets. Vérification : 64 / 80 = 0,80. Avec 100 octets, l'efficacité vaut 100 / 116 ≈ 86 % : cela convient, mais ce n'est pas le minimum.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un microcontrôleur lit 4 octets dans un capteur I2C : l'échange compte 9 bits pour l'adresse et 9 bits par octet de données (START et STOP négligés). Quelle est l'efficacité de cet échange ?",
+      "propositions": [
+        "Environ 71,1 %",
+        "Environ 88,9 %",
+        "80 %",
+        "62,5 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Bits totaux : 9 × 5 = 45 ; bits utiles : 4 × 8 = 32. η = 32 / 45 ≈ 0,711, soit 71,1 %. 88,9 % = 8 / 9 oublie l'octet d'adresse.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Pour un protocole donné, de quoi dépend l'efficacité ?",
+      "propositions": [
+        "Du débit maximal choisi",
+        "Seulement du format de trame",
+        "De la longueur du câble",
+        "De la vitesse de propagation du signal"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "η = bits utiles / bits totaux d'une trame : elle ne dépend que du format de trame. Le débit maximal dépend du réglage choisi, mais pas l'efficacité.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Un capteur envoie chaque mesure de 2 octets dans sa propre trame, avec 20 octets d'en-têtes. Comment améliorer l'efficacité ?",
+      "propositions": [
+        "Augmenter le débit maximal de la liaison",
+        "Ajouter un champ de contrôle plus long",
+        "Regrouper plusieurs mesures dans une trame",
+        "Envoyer les mesures deux fois de suite"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Avec de petits messages, les en-têtes pèsent lourd. Regrouper plusieurs mesures par trame augmente la part de bits utiles. Changer le débit ne modifie pas l'efficacité, et un contrôle plus long ou une double émission la diminuent.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Une liaison UART au format 8E1 fonctionne à 19 200 bit/s. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une trame compte 11 bits",
+        "Le débit utile vaut 15 360 bit/s",
+        "L'efficacité vaut environ 72,7 %",
+        "Le débit utile vaut environ 13 964 bit/s",
+        "L'efficacité vaut 80 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "8E1 : 1 start + 8 données + 1 parité + 1 stop = 11 bits. η = 8 / 11 ≈ 0,727. Dutile = 19 200 × 8 / 11 ≈ 13 964 bit/s. 15 360 bit/s et 80 % correspondent au format 8N1.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "À propos de l'efficacité η d'un protocole : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle s'exprime en bit/s",
+        "Elle est sans unité",
+        "Elle est comprise entre 0 et 1",
+        "Elle peut dépasser 100 % avec un bon protocole"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "η = Dutile / Dmax est un rapport de deux débits : sans unité, comprise entre 0 et 1 (souvent donnée en pourcentage). Elle ne dépasse jamais 100 %, car le débit utile est inférieur au débit maximal.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:127",
+      "type": "qcm_multiple",
+      "enonce": "Deux formats de trame : A transporte 10 octets utiles et 10 octets de service ; B transporte 40 octets utiles et 12 octets de service. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'efficacité de B vaut 30 %",
+        "L'efficacité de A vaut 50 %",
+        "A est plus efficace que B, car il a moins de service",
+        "B est plus efficace que A",
+        "L'efficacité de B vaut environ 76,9 %"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "ηA = 10 / 20 = 0,50 ; ηB = 40 / 52 ≈ 0,769. B a un peu plus d'octets de service, mais beaucoup plus de données utiles : il est plus efficace. 30 % = 12 / 40 rapporte le service aux données utiles.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Avec un bon protocole, le débit utile peut être supérieur au débit maximal.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : le débit utile ne compte qu'une partie des bits transmis ; il est toujours inférieur au débit maximal.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:129",
+      "type": "vrai_faux",
+      "enonce": "En UART 7N1 (7 bits de données, pas de parité, 1 bit de stop), l'efficacité vaut 70 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : la trame compte 1 + 7 + 1 = 9 bits, dont 7 utiles : η = 7 / 9 ≈ 77,8 %.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Sur une liaison UART 8N1 à 9 600 bit/s, le débit utile vaut 7 680 bit/s ; 1 440 octets de données passent donc en 1,5 s.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : Dutile = 0,80 × 9 600 = 7 680 bit/s ; t = 1 440 × 8 / 7 680 = 11 520 / 7 680 = 1,5 s. On retrouve t = Ntotal / Dmax = 14 400 / 9 600 = 1,5 s.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:131",
+      "type": "reponse_courte",
+      "enonce": "Une trame LoRaWAN transporte 12 octets de données utiles et 13 octets d'en-tête et de contrôle. Quelle est l'efficacité, en pourcentage ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "48"
+      ],
+      "difficulte": 2,
+      "explication": "Taille de la trame : 12 + 13 = 25 octets. η = 12 / 25 = 0,48, soit 48 %.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:132",
+      "type": "reponse_courte",
+      "enonce": "Une liaison UART au format 8E1 fonctionne à 38 400 bit/s. Quel est son débit utile, en bit/s, arrondi à l'unité ? Donne le nombre seul, sans unité ni espace entre les chiffres.",
+      "reponses_acceptees": [
+        "27927"
+      ],
+      "marge": 1,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Trame 8E1 : 11 bits, dont 8 utiles. Dutile = 38 400 × 8 / 11 ≈ 27 927,3 bit/s, soit 27 927 bit/s.",
+      "notion": "Débit utile et efficacité"
+    },
+    {
+      "source": "si-1re:ch9:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Dans le modèle en couches d'un réseau, quelle couche transforme les bits en signal sur le support (câble, fibre, onde radio) ?",
+      "propositions": [
+        "La couche liaison",
+        "La couche réseau",
+        "La couche application",
+        "La couche physique"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La couche physique transforme les bits en signal sur le support. La couche liaison transmet une trame entre deux équipements voisins ; la couche réseau achemine les paquets ; la couche application produit et utilise les données.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quelle couche achemine les paquets d'un réseau à l'autre jusqu'au destinataire, grâce à l'adresse IP ?",
+      "propositions": [
+        "La couche transport",
+        "La couche réseau",
+        "La couche liaison",
+        "La couche physique"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La couche réseau (protocole IP) achemine les paquets de réseau en réseau. La couche transport (TCP, UDP) découpe les données et les remet dans l'ordre au bon programme.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Sur combien de bits est codée une adresse MAC ?",
+      "propositions": [
+        "6 bits",
+        "32 bits",
+        "128 bits",
+        "48 bits"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'adresse MAC est codée sur 48 bits, écrits en 6 octets hexadécimaux (6 × 8 = 48). Une adresse IPv4 est codée sur 32 bits.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on l'encapsulation dans un réseau en couches ?",
+      "propositions": [
+        "L'ajout par chaque couche d'un en-tête autour du bloc reçu",
+        "Le chiffrement des données par la couche application",
+        "Le retrait des en-têtes, couche par couche, lors de la réception",
+        "Le regroupement des paires torsadées dans une même gaine"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "À l'émission, chaque couche ajoute son en-tête (et parfois une fin de trame) autour du bloc reçu de la couche supérieure. Le retrait des en-têtes à la réception est la décapsulation.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces écritures est une adresse IPv4 valide ?",
+      "propositions": [
+        "192.168.300.1",
+        "3C:71:BF:2A:10:9E",
+        "192.168.0.12",
+        "192.168.1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une adresse IPv4 s'écrit avec 4 nombres de 0 à 255 (32 bits). 300 dépasse 255 ; 192.168.1 n'a que 3 nombres ; 3C:71:BF:2A:10:9E est une adresse MAC (6 octets hexadécimaux).",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Un capteur envoie 40 octets de données. La couche transport ajoute 8 octets d'en-tête, la couche réseau 20 octets et la couche liaison 18 octets. Quelle est la taille de la trame émise ?",
+      "propositions": [
+        "86 octets",
+        "40 octets",
+        "46 octets",
+        "66 octets"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Chaque couche ajoute ses octets autour du bloc reçu : 40 + 8 + 20 + 18 = 86 octets. 46 octets ne compte que les en-têtes.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Un capteur envoie seulement 10 octets de mesure. Les couches transport, réseau et liaison ajoutent respectivement 8, 20 et 18 octets. Quelle est l'efficacité de cet envoi ?",
+      "propositions": [
+        "Environ 21,7 %",
+        "Environ 17,9 %",
+        "Environ 35,7 %",
+        "Environ 82,1 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Trame : 10 + 8 + 20 + 18 = 56 octets. η = 10 / 56 ≈ 0,179, soit 17,9 %. 21,7 % = 10 / 46 rapporte les données aux seuls en-têtes ; 82,1 % est la part des en-têtes.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Dans un réseau LoRaWAN, quel équipement reçoit les messages radio des objets et les transmet par internet au serveur de réseau ?",
+      "propositions": [
+        "Le serveur d'application",
+        "Le module GPS de l'objet",
+        "La passerelle",
+        "Le fil SDA du bus"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les objets émettent par radio LoRa vers des passerelles situées à plusieurs kilomètres ; les passerelles transmettent les messages par internet au serveur de réseau, puis au serveur d'application.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces noms, lesquels désignent des couches du modèle en couches étudié ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Passerelle",
+        "Transport",
+        "Liaison",
+        "Application",
+        "Parité"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le modèle étudié compte cinq couches : application, transport, réseau, liaison et physique. Une passerelle est un équipement ; la parité est un moyen de détecter les erreurs.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "À propos du réseau LoRaWAN : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa portée atteint plusieurs kilomètres",
+        "En Europe, il utilise la bande des 868 MHz",
+        "Un capteur peut y fonctionner plusieurs années sur une pile",
+        "Un objet peut y émettre en permanence",
+        "Son débit atteint plusieurs Mbit/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "LoRaWAN offre une grande portée et une très faible consommation, dans la bande des 868 MHz en Europe. En échange, le débit est faible (quelques centaines de bit/s à quelques kbit/s) et un objet ne doit pas émettre plus de 1 % du temps.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Une trame arrive sur la carte réseau d'un serveur et remonte les couches jusqu'à l'application. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Cette opération s'appelle la décapsulation",
+        "Les en-têtes sont tous transmis à l'application",
+        "L'application reçoit les données sans les en-têtes des autres couches",
+        "Chaque couche lit puis retire son en-tête",
+        "La couche physique lit l'adresse IP du destinataire"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "À la réception, chaque couche lit et retire son en-tête : c'est la décapsulation, et l'application ne reçoit que ses données. L'adresse IP est lue par la couche réseau ; la couche physique ne traite que le signal.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Un capteur LoRaWAN envoie toutes les 5 minutes 20 octets de mesures, plus 13 octets d'en-tête et de contrôle, à 0,5 kbit/s. Un objet ne doit pas émettre plus de 1 % du temps. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La limite de 1 % autorise 3,6 s d'émission par heure",
+        "Un message dure 0,528 s",
+        "Un message compte 264 bits",
+        "Un message dure 0,066 s",
+        "Le capteur émet environ 6,3 s par heure et respecte la limite"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Bits : (20 + 13) × 8 = 264. Durée : 264 / 500 = 0,528 s. Par heure : 12 messages, soit 12 × 0,528 ≈ 6,3 s, inférieur à la limite 0,01 × 3 600 = 36 s. 0,066 s = 33 / 500 oublie la conversion en bits.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:145",
+      "type": "vrai_faux",
+      "enonce": "L'adresse MAC identifie la carte réseau d'un équipement.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : l'adresse MAC (couche liaison, 48 bits) identifie la carte réseau ; l'adresse IP (couche réseau) identifie l'équipement dans un réseau.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Dans le modèle en couches, les protocoles TCP et UDP appartiennent à la couche réseau.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : TCP et UDP appartiennent à la couche transport. La couche réseau utilise le protocole IP.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Un objet LoRaWAN qui émet en tout 50 s par heure respecte la limite de 1 % du temps d'émission.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : 1 % d'une heure vaut 0,01 × 3 600 = 36 s. Avec 50 s par heure, l'objet dépasse la limite.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Un objet LoRaWAN ne doit pas émettre plus de 1 % du temps. Quelle est sa durée maximale d'émission sur une journée, en secondes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "864"
+      ],
+      "difficulte": 2,
+      "explication": "Une journée dure 24 × 3 600 = 86 400 s ; 1 % de 86 400 s = 864 s, soit 14 min 24 s.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on l'opération inverse de l'encapsulation, réalisée à la réception, où chaque couche lit et retire son en-tête ?",
+      "reponses_acceptees": [
+        "décapsulation",
+        "la décapsulation",
+        "decapsulation",
+        "désencapsulation",
+        "la désencapsulation"
+      ],
+      "difficulte": 2,
+      "explication": "C'est la décapsulation : chaque couche lit et retire son en-tête avant de transmettre le reste à la couche du dessus.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    },
+    {
+      "source": "si-1re:ch9:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Un capteur LoRaWAN émet des messages de 25 octets (en-têtes compris) à 250 bit/s. Il ne doit pas émettre plus de 1 % du temps. Combien de messages peut-il envoyer au plus par heure ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "45"
+      ],
+      "difficulte": 3,
+      "explication": "Un message : 25 × 8 = 200 bits, soit 200 / 250 = 0,8 s. Limite : 0,01 × 3 600 = 36 s par heure. Nombre maximal : 36 / 0,8 = 45 messages.",
+      "notion": "Couches, encapsulation et LoRaWAN"
+    }
+  ]
+}
