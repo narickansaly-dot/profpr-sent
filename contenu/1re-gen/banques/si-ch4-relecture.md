@@ -32,3 +32,7 @@ Aucune question ne reste douteuse. Remarque mineure, gardée telle quelle : la 0
 
 - « Le rendement global est donc toujours plus petit que le plus petit des rendements » : rigoureusement, il est inférieur ou égal (égalité si tous les autres rendements valent 1) ; la formulation est acceptable puisque tout constituant réel a des pertes.
 - Rien d'autre à signaler : tous les exemples résolus du chapitre ont été recalculés et sont justes.
+
+## Mise à jour après la relecture (17 novembre 2026)
+
+La phrase du cours signalée ci-dessus a été corrigée en « inférieur ou égal au plus petit des rendements (strictement inférieur dès que deux constituants ont des pertes) ». La question 012 (proposition 2 et explication) et l'explication de la 017 ont été alignées ; leurs bonnes réponses sont inchangées.

@@ -35,3 +35,7 @@ Aucun. Remarques mineures sans correction : 117 et 114 (« toujours plus petit q
 ## Cours
 
 Rien de faux à signaler. Imprécision mineure : « Le rendement global est toujours plus petit que le plus petit des rendements » serait strictement « inférieur ou égal » si un constituant était idéal (η = 1), cas qui n'existe pas en pratique. Tous les exemples résolus du chapitre ont été recalculés et sont justes (portail 6 090 J et 87 W, drone 18,5 min, trottinette 0,727 et 344 W, monte-charge 1 682 W, portail 49 W, etc.).
+
+## Mise à jour après la relecture (17 novembre 2026)
+
+La phrase du cours sur le rendement global a été corrigée en « inférieur ou égal au plus petit des rendements (strictement inférieur dès que deux constituants ont des pertes) ». Les questions 114 (proposition 2 et explication) et 117 (énoncé et explication) ont été alignées sur cette formulation ; leurs bonnes réponses sont inchangées.
