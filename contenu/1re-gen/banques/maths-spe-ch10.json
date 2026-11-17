@@ -1,0 +1,2308 @@
+{
+  "chapitre": 10,
+  "notions": [
+    "Équations de droites (rappels)",
+    "Vecteur normal",
+    "Droite définie par un vecteur normal",
+    "Droites perpendiculaires",
+    "Projeté orthogonal et distance",
+    "Équation de cercle",
+    "Reconnaître une équation de cercle",
+    "Configurations et tangentes"
+  ],
+  "questions": [
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel vecteur est un vecteur directeur de la droite d'équation 3x + 5y − 2 = 0 ?",
+      "propositions": [
+        "(−5 ; 3)",
+        "(3 ; 5)",
+        "(3 ; −5)",
+        "(5 ; 3)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Pour ax + by + c = 0, le vecteur (−b ; a) est directeur : ici (−5 ; 3). Le vecteur (3 ; 5) est normal, pas directeur.",
+      "source": "maths-spe-1re:ch10:banque:001"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la droite d'équation y = −2x + 7 ?",
+      "propositions": [
+        "2",
+        "−1/2",
+        "7",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Dans y = mx + p, le coefficient directeur est m = −2 ; 7 est l'ordonnée à l'origine.",
+      "source": "maths-spe-1re:ch10:banque:002"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sous forme réduite, la droite d'équation 4x − 2y + 6 = 0 s'écrit :",
+      "propositions": [
+        "y = −2x + 3",
+        "y = 4x + 6",
+        "y = 2x + 3",
+        "y = 2x − 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "2y = 4x + 6, donc y = 2x + 3.",
+      "source": "maths-spe-1re:ch10:banque:003"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne A(1 ; 2) et B(3 ; 8). Quel est le coefficient directeur de la droite (AB) ?",
+      "propositions": [
+        "−3",
+        "3",
+        "6",
+        "1/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "m = (y_B − y_A)/(x_B − x_A) = (8 − 2)/(3 − 1) = 6/2 = 3.",
+      "source": "maths-spe-1re:ch10:banque:004"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle équation cartésienne décrit la droite passant par A(2 ; 1) et dirigée par u⃗(1 ; 3) ?",
+      "propositions": [
+        "3x + y − 7 = 0",
+        "3x − y − 1 = 0",
+        "3x − y − 5 = 0",
+        "x + 3y − 5 = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "AM⃗(x − 2 ; y − 1) et u⃗(1 ; 3) colinéaires : 3(x − 2) − 1 × (y − 1) = 0, soit 3x − y − 5 = 0.",
+      "source": "maths-spe-1re:ch10:banque:005"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le point A(2 ; −1) appartient à l'une de ces droites. Laquelle ?",
+      "propositions": [
+        "3x + y − 1 = 0",
+        "2x + y + 1 = 0",
+        "x − 3y + 1 = 0",
+        "x + 3y + 1 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "On remplace x par 2 et y par −1 : 2 + 3 × (−1) + 1 = 0. Pour les autres équations, on n'obtient pas 0.",
+      "source": "maths-spe-1re:ch10:banque:006"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces droites est parallèle à la droite d'équation 2x − 5y + 1 = 0 ?",
+      "propositions": [
+        "5x + 2y − 3 = 0",
+        "−4x + 10y + 3 = 0",
+        "2x + 5y + 1 = 0",
+        "5x − 2y + 1 = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Les coefficients (−4 ; 10) sont proportionnels à (2 ; −5) (facteur −2) : les droites sont parallèles.",
+      "source": "maths-spe-1re:ch10:banque:007"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la droite parallèle à l'axe des ordonnées passant par A(−3 ; 4) ?",
+      "propositions": [
+        "x = −3",
+        "y = −3",
+        "x = 4",
+        "y = 4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Une droite parallèle à l'axe des ordonnées a une équation x = k ; elle passe par A, donc k = −3.",
+      "source": "maths-spe-1re:ch10:banque:008"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'ordonnée à l'origine de la droite d'équation 3x + 2y − 8 = 0 ?",
+      "propositions": [
+        "−4",
+        "−8",
+        "4",
+        "8/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "y = −1,5x + 4 : l'ordonnée à l'origine vaut 4. Le nombre 8/3 est l'abscisse du point d'intersection avec l'axe des abscisses.",
+      "source": "maths-spe-1re:ch10:banque:009"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur du réel k les droites kx + 2y − 1 = 0 et 3x − y + 4 = 0 sont-elles parallèles ?",
+      "propositions": [
+        "k = 6",
+        "k = 2/3",
+        "k = −3/2",
+        "k = −6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Parallèles si ab′ − a′b = 0 : k × (−1) − 3 × 2 = 0, donc k = −6.",
+      "source": "maths-spe-1re:ch10:banque:010"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère la droite d d'équation 2x + y − 4 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'ordonnée à l'origine de d vaut 4",
+        "Le point (0 ; −4) est sur d",
+        "Le point (2 ; 0) est sur d",
+        "Le coefficient directeur de d vaut 2",
+        "Le vecteur (−1 ; 2) dirige d"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "y = −2x + 4 : coefficient directeur −2, ordonnée à l'origine 4. On a 2 × 2 + 0 − 4 = 0 et (−b ; a) = (−1 ; 2).",
+      "source": "maths-spe-1re:ch10:banque:011"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces équations, lesquelles décrivent la même droite que x − 2y + 3 = 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "y = x/2 + 3/2",
+        "2x − y + 3 = 0",
+        "−2x + 4y − 6 = 0",
+        "x − 2y − 3 = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Multiplier tous les coefficients par −2 donne la même droite ; en isolant y : y = x/2 + 3/2. Les deux autres équations n'ont pas des coefficients proportionnels.",
+      "source": "maths-spe-1re:ch10:banque:012"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quels vecteurs dirigent la droite d'équation y = 3x − 1 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(3 ; 1)",
+        "(3 ; −1)",
+        "(1 ; 3)",
+        "(1 ; −3)",
+        "(−2 ; −6)"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Le vecteur (1 ; m) = (1 ; 3) dirige la droite, ainsi que tous ses multiples non nuls comme (−2 ; −6).",
+      "source": "maths-spe-1re:ch10:banque:013"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On donne les points A(−1 ; 3) et B(3 ; −5). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le vecteur (2 ; 1) dirige (AB)",
+        "La droite (AB) a pour équation 2x + y − 1 = 0",
+        "Le coefficient directeur de (AB) vaut −2",
+        "La droite (AB) passe par l'origine",
+        "La droite (AB) coupe l'axe des abscisses en (1 ; 0)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Équations de droites (rappels)",
+      "explication": "m = (−5 − 3)/(3 + 1) = −2, et y = −2x + 1, soit 2x + y − 1 = 0. Elle coupe l'axe des abscisses en (1/2 ; 0).",
+      "source": "maths-spe-1re:ch10:banque:014"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation x = 5 n'a pas de coefficient directeur.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "C'est une droite parallèle à l'axe des ordonnées : on ne peut pas l'écrire sous la forme y = mx + p.",
+      "source": "maths-spe-1re:ch10:banque:015"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le vecteur (2 ; 3) est un vecteur directeur de la droite d'équation 2x + 3y − 1 = 0.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "(2 ; 3) = (a ; b) est un vecteur normal. Un vecteur directeur est (−b ; a) = (−3 ; 2).",
+      "source": "maths-spe-1re:ch10:banque:016"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Les équations 6x − 9y + 3 = 0 et 2x − 3y + 1 = 0 décrivent une seule et même droite.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Les coefficients de la première sont ceux de la seconde multipliés par 3.",
+      "source": "maths-spe-1re:ch10:banque:017"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Les droites d'équations y = 2x + 1 et y = −2x + 1 sont parallèles.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Leurs coefficients directeurs 2 et −2 sont différents : elles sont sécantes (en (0 ; 1)).",
+      "source": "maths-spe-1re:ch10:banque:018"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Quel est le coefficient directeur de la droite d'équation 5x + y − 2 = 0 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-5",
+        "−5"
+      ],
+      "difficulte": 1,
+      "notion": "Équations de droites (rappels)",
+      "explication": "On isole y : y = −5x + 2. Le coefficient directeur vaut −5.",
+      "source": "maths-spe-1re:ch10:banque:019"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La droite d'équation 2x − 3y + 6 = 0 coupe l'axe des abscisses en un point. Donne l'abscisse de ce point (nombre entier).",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 2,
+      "notion": "Équations de droites (rappels)",
+      "explication": "Sur l'axe des abscisses, y = 0 : 2x + 6 = 0, donc x = −3.",
+      "source": "maths-spe-1re:ch10:banque:020"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel vecteur est normal à la droite d'équation 4x − 7y + 2 = 0 ?",
+      "propositions": [
+        "(7 ; 4)",
+        "(4 ; −7)",
+        "(4 ; 7)",
+        "(−7 ; 4)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "Pour ax + by + c = 0, le vecteur (a ; b) est normal : ici (4 ; −7). Le vecteur (7 ; 4) est directeur.",
+      "source": "maths-spe-1re:ch10:banque:021"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La droite d a pour équation réduite y = 5x − 2. Un vecteur normal à d est :",
+      "propositions": [
+        "(5 ; −1)",
+        "(1 ; 5)",
+        "(5 ; 1)",
+        "(−2 ; 5)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "y = 5x − 2 s'écrit 5x − y − 2 = 0 : le vecteur (5 ; −1) est normal. (1 ; 5) est un vecteur directeur.",
+      "source": "maths-spe-1re:ch10:banque:022"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On considère la droite parallèle à l'axe des ordonnées d'équation x = 3. Lequel de ces vecteurs lui est normal ?",
+      "propositions": [
+        "(1 ; 3)",
+        "(1 ; 0)",
+        "(3 ; 1)",
+        "(0 ; 1)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "x = 3 s'écrit 1x + 0y − 3 = 0 : le vecteur (1 ; 0) est normal. (0 ; 1) dirige la droite.",
+      "source": "maths-spe-1re:ch10:banque:023"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Par définition, un vecteur normal à une droite est un vecteur :",
+      "propositions": [
+        "non nul et orthogonal à un vecteur directeur de la droite",
+        "de norme 1 et dirigé suivant la droite",
+        "qui joint l'origine du repère à un point de la droite",
+        "colinéaire à un vecteur directeur de la droite"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "Un vecteur normal est non nul et orthogonal aux vecteurs directeurs ; sa norme peut être quelconque.",
+      "source": "maths-spe-1re:ch10:banque:024"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La droite d est dirigée par le vecteur u⃗(3 ; −2). Quel vecteur est normal à d ?",
+      "propositions": [
+        "(−2 ; 3)",
+        "(3 ; 2)",
+        "(−3 ; 2)",
+        "(2 ; 3)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "(2 ; 3) · (3 ; −2) = 6 − 6 = 0. Le vecteur (−3 ; 2) est colinéaire à u⃗ : il dirige d.",
+      "source": "maths-spe-1re:ch10:banque:025"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne la droite d'équation −x + 4y = 6. Lequel de ces vecteurs est orthogonal à cette droite ?",
+      "propositions": [
+        "(−8 ; 2)",
+        "(1 ; 4)",
+        "(2 ; −8)",
+        "(4 ; 1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "L'équation s'écrit −x + 4y − 6 = 0 : (−1 ; 4) est normal, ainsi que son multiple (2 ; −8). Le vecteur (4 ; 1) est directeur.",
+      "source": "maths-spe-1re:ch10:banque:026"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle droite admet n⃗(2 ; −1) comme vecteur normal ?",
+      "propositions": [
+        "x − 2y + 4 = 0",
+        "y = −2x + 7",
+        "y = 2x + 7",
+        "y = −x/2 + 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "y = 2x + 7 s'écrit 2x − y + 7 = 0, dont un vecteur normal est (2 ; −1).",
+      "source": "maths-spe-1re:ch10:banque:027"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur du réel m le vecteur (m ; 2) est-il normal à la droite d'équation 3x − y + 1 = 0 ?",
+      "propositions": [
+        "m = −6",
+        "m = −2/3",
+        "m = 2/3",
+        "m = 6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Vecteur normal",
+      "explication": "Il doit être colinéaire à (3 ; −1) : m × (−1) − 2 × 3 = 0, donc m = −6. Avec m = 2/3, le vecteur est directeur, pas normal.",
+      "source": "maths-spe-1re:ch10:banque:028"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Soit d la droite passant par A(1 ; 2) et B(4 ; 1). Quel vecteur est normal à d ?",
+      "propositions": [
+        "(3 ; 1)",
+        "(1 ; 3)",
+        "(−1 ; 3)",
+        "(3 ; −1)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Vecteur normal",
+      "explication": "AB⃗(3 ; −1) dirige d ; (1 ; 3) · (3 ; −1) = 3 − 3 = 0, donc (1 ; 3) est normal.",
+      "source": "maths-spe-1re:ch10:banque:029"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quels vecteurs sont normaux à la droite d'équation 2x + 5y − 1 = 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(5 ; −2)",
+        "(2 ; 5)",
+        "(−4 ; −10)",
+        "(5 ; 2)",
+        "(−5 ; 2)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "(2 ; 5) et ses multiples non nuls sont normaux. (−5 ; 2) et (5 ; −2) sont directeurs.",
+      "source": "maths-spe-1re:ch10:banque:030"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La droite d est dirigée par le vecteur u⃗(1 ; 4). Coche toutes les réponses exactes.",
+      "propositions": [
+        "(1 ; 4) est normal à d",
+        "(4 ; −1) est normal à d",
+        "(4 ; 1) est normal à d",
+        "(−4 ; 1) est normal à d",
+        "d admet une équation de la forme 4x − y + c = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "(4 ; −1) · (1 ; 4) = 0 ; son opposé convient aussi. Avec n⃗(4 ; −1), l'équation est 4x − y + c = 0.",
+      "source": "maths-spe-1re:ch10:banque:031"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère la droite d : 3x − 6y + 2 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u⃗(−6 ; 3) dirige d",
+        "n⃗(3 ; 6) est normal à d",
+        "u⃗(2 ; 1) dirige d",
+        "n⃗(1 ; −2) est normal à d"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "(3 ; −6) = 3 × (1 ; −2) est normal ; un vecteur directeur est (6 ; 3), colinéaire à (2 ; 1).",
+      "source": "maths-spe-1re:ch10:banque:032"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites ont le vecteur (1 ; −3) pour vecteur normal ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "3x − y = 0",
+        "x − 3y + 2 = 0",
+        "y = −3x + 1",
+        "y = x/3 − 4",
+        "−2x + 6y = 1"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Vecteur normal",
+      "explication": "y = x/3 − 4 s'écrit x − 3y − 12 = 0, et (−2 ; 6) est colinéaire à (1 ; −3). Pour 3x − y = 0 et 3x + y − 1 = 0, les vecteurs normaux (3 ; −1) et (3 ; 1) ne conviennent pas.",
+      "source": "maths-spe-1re:ch10:banque:033"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si a et b ne sont pas tous les deux nuls, le vecteur (a ; b) est normal à la droite d'équation ax + by + c = 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "C'est la propriété du cours : (a ; b) · (−b ; a) = 0, et (−b ; a) dirige la droite.",
+      "source": "maths-spe-1re:ch10:banque:034"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le vecteur nul est un vecteur normal à toute droite.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Vecteur normal",
+      "explication": "Par définition, un vecteur normal est non nul.",
+      "source": "maths-spe-1re:ch10:banque:035"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le vecteur (1 ; 2) est normal à la droite d'équation y = 2x + 3.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "(1 ; 2) = (1 ; m) dirige la droite. Un vecteur normal est (2 ; −1).",
+      "source": "maths-spe-1re:ch10:banque:036"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Deux vecteurs normaux à une même droite sont toujours colinéaires.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "Dans le plan, les vecteurs orthogonaux à un vecteur directeur non nul donné sont tous colinéaires entre eux.",
+      "source": "maths-spe-1re:ch10:banque:037"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Le vecteur n⃗(6 ; k) est normal à la droite d'équation 3x + 2y − 5 = 0. Quelle est la valeur de k ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "notion": "Vecteur normal",
+      "explication": "n⃗ doit être colinéaire à (3 ; 2) : (6 ; k) = 2 × (3 ; 2), donc k = 4.",
+      "source": "maths-spe-1re:ch10:banque:038"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation de la droite passant par A(1 ; 3) et de vecteur normal n⃗(2 ; 5) ?",
+      "propositions": [
+        "2x + 5y + 17 = 0",
+        "x + 3y − 10 = 0",
+        "5x − 2y + 1 = 0",
+        "2x + 5y − 17 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "2(x − 1) + 5(y − 3) = 0, soit 2x + 5y − 17 = 0.",
+      "source": "maths-spe-1re:ch10:banque:039"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une droite d a pour vecteur normal n⃗(4 ; −1) et passe par l'origine du repère. Quelle est son équation ?",
+      "propositions": [
+        "−x + 4y = 0",
+        "x + 4y = 0",
+        "4x − y = 0",
+        "4x − y + 1 = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "L'équation est 4x − y + c = 0, et O est sur d, donc c = 0.",
+      "source": "maths-spe-1re:ch10:banque:040"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La droite d'équation 3x + 4y + c = 0 passe par A(2 ; −1). Que vaut c ?",
+      "propositions": [
+        "−2",
+        "−10",
+        "2",
+        "10"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "3 × 2 + 4 × (−1) + c = 0, soit 2 + c = 0, donc c = −2.",
+      "source": "maths-spe-1re:ch10:banque:041"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation de la médiatrice du segment [AB] avec A(−1 ; 0) et B(3 ; 2) ?",
+      "propositions": [
+        "2x + y − 8 = 0",
+        "x − 2y + 1 = 0",
+        "2x + y + 2 = 0",
+        "2x + y − 3 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Milieu I(1 ; 1) et AB⃗(4 ; 2) normal : 4(x − 1) + 2(y − 1) = 0, soit 2x + y − 3 = 0. x − 2y + 1 = 0 est la droite (AB) elle-même.",
+      "source": "maths-spe-1re:ch10:banque:042"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans le triangle A(0 ; 0), B(4 ; 1), C(1 ; 3), quelle est une équation de la hauteur issue de A ?",
+      "propositions": [
+        "2x + 3y = 0",
+        "3x − 2y = 0",
+        "4x + y = 0",
+        "3x − 2y − 10 = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Elle passe par A et BC⃗(−3 ; 2) lui est normal : −3x + 2y = 0, soit 3x − 2y = 0.",
+      "source": "maths-spe-1re:ch10:banque:043"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la droite qui passe par B(−2 ; 5) et qui est orthogonale au vecteur v⃗(1 ; −3) ?",
+      "propositions": [
+        "x − 3y − 17 = 0",
+        "3x + y + 1 = 0",
+        "x + 3y − 13 = 0",
+        "x − 3y + 17 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "x − 3y + c = 0 avec −2 − 15 + c = 0, donc c = 17.",
+      "source": "maths-spe-1re:ch10:banque:044"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour obtenir une équation de la droite passant par A et de vecteur normal n⃗, quelle condition écrit-on sur un point M ?",
+      "propositions": [
+        "AM⃗ = n⃗",
+        "AM⃗ · n⃗ = 0",
+        "AM⃗ et n⃗ sont colinéaires",
+        "AM = ‖n⃗‖"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "M est sur la droite si et seulement si AM⃗ est orthogonal à n⃗, c'est-à-dire AM⃗ · n⃗ = 0.",
+      "source": "maths-spe-1re:ch10:banque:045"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une droite de vecteur normal n⃗(2 ; −3) passe par A(4 ; 1). En quel point coupe-t-elle l'axe des ordonnées ?",
+      "propositions": [
+        "(0 ; 5/3)",
+        "(0 ; −5)",
+        "(0 ; −5/3)",
+        "(5/2 ; 0)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Équation 2x − 3y − 5 = 0 (car 8 − 3 + c = 0). Avec x = 0 : −3y = 5, y = −5/3. Le point (5/2 ; 0) est sur l'axe des abscisses.",
+      "source": "maths-spe-1re:ch10:banque:046"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On cherche la droite passant par A(3 ; −2) de vecteur normal n⃗(2 ; 4), écrite avec un coefficient de x égal à 1. Laquelle est-ce ?",
+      "propositions": [
+        "x + 2y + 1 = 0",
+        "x − 2y − 7 = 0",
+        "x + 2y + 7 = 0",
+        "x + 2y − 1 = 0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "2x + 4y + c = 0 avec 6 − 8 + c = 0, donc c = 2 : 2x + 4y + 2 = 0, soit x + 2y + 1 = 0 après division par 2.",
+      "source": "maths-spe-1re:ch10:banque:047"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne A(2 ; 1) et B(6 ; 3). La médiatrice de [AB] coupe l'axe des ordonnées au point d'ordonnée :",
+      "propositions": [
+        "5",
+        "2",
+        "−10",
+        "10"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "I(4 ; 2), AB⃗(4 ; 2) : 4(x − 4) + 2(y − 2) = 0, soit 2x + y − 10 = 0. Pour x = 0, y = 10.",
+      "source": "maths-spe-1re:ch10:banque:048"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La droite d passe par A(1 ; −1) et admet n⃗(3 ; 1) pour vecteur normal. Coche toutes les réponses exactes.",
+      "propositions": [
+        "d a pour équation 3x + y − 2 = 0",
+        "u⃗(1 ; −3) dirige d",
+        "le point (1 ; 1) est sur d",
+        "le point (0 ; 2) est sur d",
+        "d a pour équation x − 3y − 4 = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "3(x − 1) + (y + 1) = 0 donne 3x + y − 2 = 0. Un vecteur directeur est (−1 ; 3), colinéaire à (1 ; −3).",
+      "source": "maths-spe-1re:ch10:banque:049"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles conditions caractérisent les points M(x ; y) de la droite passant par A(2 ; 0) et de vecteur normal n⃗(1 ; 1) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "AM⃗ et n⃗ sont colinéaires",
+        "AM⃗ · n⃗ = 0",
+        "x + y − 2 = 0",
+        "x + y + 2 = 0",
+        "x − y − 2 = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "AM⃗ · n⃗ = (x − 2) + y = 0, soit x + y − 2 = 0. La colinéarité caractériserait la perpendiculaire.",
+      "source": "maths-spe-1re:ch10:banque:050"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On donne A(1 ; 2), B(3 ; 6) et C(5 ; 0). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La hauteur issue de C passe par A",
+        "La médiatrice de [AB] a pour équation x + 2y − 10 = 0",
+        "La hauteur issue de C a pour équation x + 2y − 5 = 0",
+        "La médiatrice de [AC] a pour équation x − 2y − 1 = 0",
+        "La médiatrice de [AB] passe par C"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "AB⃗(2 ; 4) est normal à la hauteur issue de C et à la médiatrice de [AB] (milieu (2 ; 4)). A vérifie x + 2y − 5 = 0 : le triangle est rectangle en A. La médiatrice de [AC] a pour équation 2x − y − 5 = 0.",
+      "source": "maths-spe-1re:ch10:banque:051"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite passant par A(1 ; 1) et de vecteur normal n⃗(1 ; −1) passe par l'origine du repère.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Son équation est (x − 1) − (y − 1) = 0, soit x − y = 0, et O la vérifie.",
+      "source": "maths-spe-1re:ch10:banque:052"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite passant par A(2 ; 3) de vecteur normal n⃗(2 ; 3) a pour équation 2x + 3y = 0.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "A ne vérifie pas 2x + 3y = 0. La bonne équation est 2x + 3y − 13 = 0.",
+      "source": "maths-spe-1re:ch10:banque:053"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour deux points distincts A et B, le vecteur AB⃗ est normal à la médiatrice du segment [AB].",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "La médiatrice est perpendiculaire à (AB) : AB⃗ est orthogonal à ses vecteurs directeurs.",
+      "source": "maths-spe-1re:ch10:banque:054"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite passant par A(−1 ; 4) et de vecteur normal n⃗(2 ; 1) coupe l'axe des abscisses au point d'abscisse 2.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Son équation est 2x + y − 2 = 0 ; pour y = 0, x = 1.",
+      "source": "maths-spe-1re:ch10:banque:055"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La droite passant par A(3 ; 1) et de vecteur normal n⃗(1 ; 2) a une équation de la forme x + 2y + c = 0. Quelle est la valeur de c ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-5",
+        "−5"
+      ],
+      "difficulte": 1,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "3 + 2 × 1 + c = 0, donc c = −5.",
+      "source": "maths-spe-1re:ch10:banque:056"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Soit A(0 ; 2) et B(4 ; 6). La médiatrice de [AB] a une équation de la forme x + y + c = 0. Donne la valeur de c (nombre entier).",
+      "reponses_acceptees": [
+        "-6",
+        "−6"
+      ],
+      "difficulte": 2,
+      "notion": "Droite définie par un vecteur normal",
+      "explication": "Milieu (2 ; 4), AB⃗(4 ; 4) normal : 4(x − 2) + 4(y − 4) = 0, soit x + y − 6 = 0.",
+      "source": "maths-spe-1re:ch10:banque:057"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Les droites d : ax + by + c = 0 et d′ : a′x + b′y + c′ = 0 sont perpendiculaires si et seulement si :",
+      "propositions": [
+        "aa′ + bb′ = 0",
+        "aa′ − bb′ = 0",
+        "ab′ + a′b = 0",
+        "ab′ − a′b = 0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "Elles sont perpendiculaires si leurs vecteurs normaux (a ; b) et (a′ ; b′) sont orthogonaux. ab′ − a′b = 0 traduit le parallélisme.",
+      "source": "maths-spe-1re:ch10:banque:058"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel coefficient directeur doit avoir une droite perpendiculaire à la droite d'équation y = 3x + 1 ?",
+      "propositions": [
+        "3",
+        "−1/3",
+        "1/3",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "mm′ = −1 avec m = 3 donne m′ = −1/3.",
+      "source": "maths-spe-1re:ch10:banque:059"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces droites est perpendiculaire à la droite d'équation 2x + 5y − 1 = 0 ?",
+      "propositions": [
+        "5x + 2y − 1 = 0",
+        "2x − 5y = 0",
+        "5x − 2y + 3 = 0",
+        "2x + 5y + 3 = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "2 × 5 + 5 × (−2) = 0 : les vecteurs normaux sont orthogonaux. 2x + 5y + 3 = 0 est parallèle à la droite donnée.",
+      "source": "maths-spe-1re:ch10:banque:060"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Les droites d'équations 3x − y + 2 = 0 et x + ky − 4 = 0 sont perpendiculaires pour k égal à :",
+      "propositions": [
+        "−1/3",
+        "−3",
+        "1/3",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "3 × 1 + (−1) × k = 0, donc k = 3.",
+      "source": "maths-spe-1re:ch10:banque:061"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation de la perpendiculaire à d : x − 2y + 1 = 0 passant par A(1 ; 1) ?",
+      "propositions": [
+        "x − 2y + 1 = 0",
+        "2x + y − 3 = 0",
+        "x + 2y − 3 = 0",
+        "2x − y − 1 = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "Le vecteur directeur (2 ; 1) de d est normal à la perpendiculaire : 2x + y + c = 0 avec 2 + 1 + c = 0, c = −3.",
+      "source": "maths-spe-1re:ch10:banque:062"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Parmi ces couples de droites, lequel est formé de deux droites perpendiculaires ?",
+      "propositions": [
+        "y = 2x − 1 et y = −2x + 4",
+        "y = 2x − 1 et y = x/2 + 4",
+        "y = 2x − 1 et y = −x/2 + 4",
+        "y = 2x − 1 et y = 2x + 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "2 × (−1/2) = −1. Des coefficients opposés (2 et −2) ou inverses (2 et 1/2) ne suffisent pas.",
+      "source": "maths-spe-1re:ch10:banque:063"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La droite d est perpendiculaire à la droite d'équation x = 2 et passe par A(3 ; −1). Quelle est son équation ?",
+      "propositions": [
+        "y = −1",
+        "x = 3",
+        "x = −1",
+        "y = 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "Une perpendiculaire à une droite parallèle à l'axe des ordonnées est parallèle à l'axe des abscisses : y = k, avec k = −1 car elle passe par A.",
+      "source": "maths-spe-1re:ch10:banque:064"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Les droites d : (m − 1)x + 2y = 0 et d′ : 4x + my − 3 = 0 sont perpendiculaires pour :",
+      "propositions": [
+        "m = −2/3",
+        "m = 2/3",
+        "m = 1",
+        "m = 3/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Droites perpendiculaires",
+      "explication": "4(m − 1) + 2m = 0, soit 6m = 4, m = 2/3.",
+      "source": "maths-spe-1re:ch10:banque:065"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Soit A(1 ; 2), B(5 ; 4) et C(3 ; k). Pour quelle valeur de k le triangle ABC est-il rectangle en B ?",
+      "propositions": [
+        "k = 4",
+        "k = −8",
+        "k = 8",
+        "k = 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Droites perpendiculaires",
+      "explication": "BA⃗(−4 ; −2) et BC⃗(−2 ; k − 4) : BA⃗ · BC⃗ = 8 − 2(k − 4) = 16 − 2k = 0, donc k = 8.",
+      "source": "maths-spe-1re:ch10:banque:066"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites sont perpendiculaires à la droite d'équation y = −2x + 3 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2x + y = 0",
+        "y = 2x + 3",
+        "y = x/2 + 1",
+        "y = −x/2",
+        "x − 2y + 5 = 0"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "Il faut un coefficient directeur m′ tel que −2m′ = −1, soit m′ = 1/2 : c'est le cas de y = x/2 + 1 et de x − 2y + 5 = 0.",
+      "source": "maths-spe-1re:ch10:banque:067"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère d : 4x − 3y + 1 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "d est parallèle à la droite 3x − 4y + 1 = 0",
+        "d est perpendiculaire à la droite 3x + 4y = 0",
+        "d est parallèle à la droite −8x + 6y + 5 = 0",
+        "d est perpendiculaire à la droite 4x + 3y − 2 = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "4 × 3 + (−3) × 4 = 0 ; (−8 ; 6) = −2 × (4 ; −3). Pour 4x + 3y − 2 = 0 : 16 − 9 ≠ 0.",
+      "source": "maths-spe-1re:ch10:banque:068"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Deux droites non parallèles aux axes ont pour coefficients directeurs m et m′. Coche toutes les réponses exactes.",
+      "propositions": [
+        "si m = m′, elles sont parallèles",
+        "si m + m′ = 0, elles sont parallèles",
+        "si mm′ = −1, elles sont perpendiculaires",
+        "si m′ = −m, elles sont perpendiculaires"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "Perpendiculaires ⇔ mm′ = −1 ; parallèles ⇔ m = m′. Des coefficients opposés ne donnent ni l'un ni l'autre en général.",
+      "source": "maths-spe-1re:ch10:banque:069"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On donne A(0 ; 0), B(4 ; 2) et C(1 ; −2). Coche toutes les réponses exactes.",
+      "propositions": [
+        "(AC) et (BC) sont perpendiculaires",
+        "(AB) a pour coefficient directeur 2",
+        "(AB) est perpendiculaire à la droite d'équation 2x + y = 0",
+        "(AB) et (AC) sont perpendiculaires"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Droites perpendiculaires",
+      "explication": "AB⃗(4 ; 2) · AC⃗(1 ; −2) = 0 ; (−1 ; 2) dirige 2x + y = 0 et (4 ; 2) · (−1 ; 2) = 0. AC⃗ · BC⃗ = −3 + 8 = 5 ≠ 0 ; (AB) a pour coefficient directeur 1/2.",
+      "source": "maths-spe-1re:ch10:banque:070"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Les droites d'équations y = 3x + 2 et y = −3x + 2 sont perpendiculaires.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "3 × (−3) = −9 ≠ −1 : elles ne sont pas perpendiculaires.",
+      "source": "maths-spe-1re:ch10:banque:071"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Les droites d'équations x = −1 et y = 4 sont perpendiculaires.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "L'une est parallèle à l'axe des ordonnées, l'autre à l'axe des abscisses : (1 ; 0) · (0 ; 1) = 0.",
+      "source": "maths-spe-1re:ch10:banque:072"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Les droites d'équations 5x + 2y − 1 = 0 et 4x − 10y + 3 = 0 sont perpendiculaires.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "5 × 4 + 2 × (−10) = 0 : leurs vecteurs normaux sont orthogonaux.",
+      "source": "maths-spe-1re:ch10:banque:073"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si deux droites ont des vecteurs normaux orthogonaux, alors ces droites sont parallèles.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Droites perpendiculaires",
+      "explication": "Des vecteurs normaux orthogonaux caractérisent des droites perpendiculaires ; des droites parallèles ont des vecteurs normaux colinéaires.",
+      "source": "maths-spe-1re:ch10:banque:074"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La droite d a pour équation y = 4x − 3. Quel est le coefficient directeur d'une droite perpendiculaire à d ? Réponds sous forme décimale.",
+      "reponses_acceptees": [
+        "-0,25",
+        "−0,25",
+        "-0.25",
+        "−0.25",
+        "-1/4",
+        "−1/4"
+      ],
+      "difficulte": 1,
+      "notion": "Droites perpendiculaires",
+      "explication": "4 × m′ = −1, donc m′ = −1/4 = −0,25.",
+      "source": "maths-spe-1re:ch10:banque:075"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Les droites d'équations 2x + ky − 1 = 0 et 3x − 6y + 5 = 0 sont perpendiculaires. Quelle est la valeur de k ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 2,
+      "notion": "Droites perpendiculaires",
+      "explication": "2 × 3 + k × (−6) = 0, donc k = 1.",
+      "source": "maths-spe-1re:ch10:banque:076"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le projeté orthogonal du point A(3 ; 5) sur l'axe des abscisses ?",
+      "propositions": [
+        "(0 ; 3)",
+        "(5 ; 0)",
+        "(0 ; 5)",
+        "(3 ; 0)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "On garde l'abscisse de A et on remplace l'ordonnée par 0.",
+      "source": "maths-spe-1re:ch10:banque:077"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le projeté orthogonal H d'un point A sur une droite d est :",
+      "propositions": [
+        "le point de d tel que (AH) soit perpendiculaire à d, ou A lui-même si A est sur d",
+        "le point d'intersection de d avec l'axe des abscisses",
+        "le milieu du segment joignant A à l'origine du repère",
+        "le point de d le plus éloigné de A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H est le pied de la perpendiculaire à d passant par A ; c'est aussi le point de d le plus proche de A.",
+      "source": "maths-spe-1re:ch10:banque:078"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le projeté orthogonal de A(−2 ; 7) sur la droite d'équation x = 4 ?",
+      "propositions": [
+        "(4 ; −2)",
+        "(4 ; 7)",
+        "(4 ; 0)",
+        "(−2 ; 4)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "La perpendiculaire à x = 4 passant par A est la droite y = 7 ; elle coupe x = 4 en (4 ; 7).",
+      "source": "maths-spe-1re:ch10:banque:079"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le projeté orthogonal de A(4 ; 0) sur la droite d'équation y = x ?",
+      "propositions": [
+        "(0 ; 0)",
+        "(1 ; 1)",
+        "(2 ; 2)",
+        "(4 ; 4)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "La perpendiculaire à y = x passant par A a pour équation x + y − 4 = 0 ; avec y = x, on obtient x = y = 2.",
+      "source": "maths-spe-1re:ch10:banque:080"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le projeté orthogonal de A(5 ; 4) sur la droite d : x + 2y − 3 = 0 ?",
+      "propositions": [
+        "(7 ; 8)",
+        "(−1 ; 2)",
+        "(1 ; 1)",
+        "(3 ; 0)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H = A + t n⃗ avec n⃗(1 ; 2) : (5 + t) + 2(4 + 2t) − 3 = 0 donne t = −2, donc H(3 ; 0). Les points (1 ; 1) et (−1 ; 2) sont sur d, mais AH⃗ n'y est pas normal à d.",
+      "source": "maths-spe-1re:ch10:banque:081"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour déterminer le projeté orthogonal de A sur la droite d, on peut chercher l'intersection de d avec :",
+      "propositions": [
+        "la perpendiculaire à d passant par A",
+        "la droite (OA)",
+        "la parallèle à d passant par A",
+        "l'axe des abscisses"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H est sur d et sur la perpendiculaire à d passant par A. La parallèle à d passant par A ne coupe pas d.",
+      "source": "maths-spe-1re:ch10:banque:082"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est la distance du point A(1 ; 6) à la droite d'équation y = 2 ?",
+      "propositions": [
+        "6",
+        "8",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "Le projeté de A sur y = 2 est H(1 ; 2), et AH = 6 − 2 = 4.",
+      "source": "maths-spe-1re:ch10:banque:083"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est la distance du point A(7 ; 1) à la droite d : 3x + 4y − 15 = 0 ?",
+      "propositions": [
+        "2",
+        "5",
+        "10",
+        "√10"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H = A + t(3 ; 4) avec 3(7 + 3t) + 4(1 + 4t) − 15 = 0 : t = −0,4. Donc AH = 0,4 × ‖(3 ; 4)‖ = 0,4 × 5 = 2.",
+      "source": "maths-spe-1re:ch10:banque:084"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Soit d : 2x − y + 1 = 0 et A(5 ; 1). Quelle est la distance de A à la droite d ?",
+      "propositions": [
+        "10",
+        "2√5",
+        "2√10",
+        "√5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "Le projeté est H(1 ; 3) (H = A + t(2 ; −1) avec t = −2) ; AH = √(16 + 4) = √20 = 2√5.",
+      "source": "maths-spe-1re:ch10:banque:085"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Soit d : x − y + 1 = 0 et A(3 ; 0). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La perpendiculaire à d passant par A a pour équation x + y − 3 = 0",
+        "La distance de A à d vaut 4",
+        "Le projeté orthogonal de A sur d est H(1 ; 2)",
+        "La distance de A à d vaut 2√2",
+        "Le projeté orthogonal de A sur d est le point (0 ; 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "La perpendiculaire x + y − 3 = 0 coupe d en H(1 ; 2) ; AH = √(4 + 4) = 2√2. Le point (0 ; 1) est sur d, mais ce n'est pas le pied de la perpendiculaire.",
+      "source": "maths-spe-1re:ch10:banque:086"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "H est le projeté orthogonal du point A sur la droite d, et A n'appartient pas à d. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AH⃗ est un vecteur directeur de d",
+        "pour tout point M de d, AM ⩾ AH",
+        "AH⃗ est colinéaire à un vecteur normal de d",
+        "AH est la plus grande distance entre A et un point de d",
+        "H appartient à d"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H est sur d et (AH) est perpendiculaire à d ; par Pythagore, AH est la plus petite distance de A à un point de d.",
+      "source": "maths-spe-1re:ch10:banque:087"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On cherche le projeté orthogonal H de A(0 ; 5) sur la droite d : y = 2x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La perpendiculaire à d passant par A a pour équation 2x − y + 5 = 0",
+        "La perpendiculaire à d passant par A a pour équation x + 2y − 10 = 0",
+        "H a pour coordonnées (2 ; 4)",
+        "H a pour coordonnées (1 ; 2)",
+        "AH = √5"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "d est dirigée par (1 ; 2), qui est normal à la perpendiculaire. On résout x + 2y = 10 avec y = 2x : x = 2, y = 4, et AH = √(4 + 1) = √5.",
+      "source": "maths-spe-1re:ch10:banque:088"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Le point A(2 ; 3) a pour projeté orthogonal H(4 ; −1) sur une droite d. Coche toutes les réponses exactes.",
+      "propositions": [
+        "AH⃗(2 ; −4) est normal à d",
+        "d a pour équation x − 2y − 6 = 0",
+        "d passe par A",
+        "d a pour équation 2x + y − 7 = 0",
+        "la distance de A à d vaut 2√5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "d passe par H et admet AH⃗(2 ; −4) pour vecteur normal : 2(x − 4) − 4(y + 1) = 0, soit x − 2y − 6 = 0. AH = √(4 + 16) = 2√5.",
+      "source": "maths-spe-1re:ch10:banque:089"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si le point A appartient à la droite d, alors le projeté orthogonal de A sur d est le point A lui-même.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "Par définition, H = A dans ce cas, et la distance de A à d est nulle.",
+      "source": "maths-spe-1re:ch10:banque:090"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le projeté orthogonal de A(2 ; 6) sur la droite d'équation y = x est le point (2 ; 2).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "La perpendiculaire passant par A est x + y − 8 = 0 ; elle coupe y = x en (4 ; 4).",
+      "source": "maths-spe-1re:ch10:banque:091"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La distance du point A(−3 ; 2) à l'axe des ordonnées est égale à 3.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "Le projeté de A sur l'axe des ordonnées est (0 ; 2), et la distance vaut |−3| = 3.",
+      "source": "maths-spe-1re:ch10:banque:092"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le projeté orthogonal du point A(1 ; 1) sur la droite d'équation x + y − 4 = 0 est le point (3 ; 1).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "(3 ; 1) est bien sur la droite, mais le vecteur (2 ; 0) n'est pas colinéaire au vecteur normal (1 ; 1). Le projeté est (2 ; 2).",
+      "source": "maths-spe-1re:ch10:banque:093"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Soit d : x + y − 6 = 0 et A(5 ; 3). On note H le projeté orthogonal de A sur d. Donne l'abscisse de H (nombre entier).",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H = A + t(1 ; 1) : 5 + t + 3 + t − 6 = 0 donne t = −1, donc H(4 ; 2).",
+      "source": "maths-spe-1re:ch10:banque:094"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On donne la droite d : 3x − 4y + 4 = 0 et le point A(5 ; 1). Calcule la distance de A à d. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 3,
+      "notion": "Projeté orthogonal et distance",
+      "explication": "H = A + t(3 ; −4) avec 3(5 + 3t) − 4(1 − 4t) + 4 = 0 : 15 + 25t = 0, t = −0,6. AH = 0,6 × 5 = 3. (Formule : |15 − 4 + 4|/5 = 3.)",
+      "source": "maths-spe-1re:ch10:banque:095"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation du cercle de centre Ω(2 ; −1) et de rayon 3 ?",
+      "propositions": [
+        "(x + 2)² + (y − 1)² = 9",
+        "(x − 2)² + (y + 1)² = 3",
+        "(x − 2)² + (y − 1)² = 9",
+        "(x − 2)² + (y + 1)² = 9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "(x − a)² + (y − b)² = r² avec a = 2, b = −1 et r² = 9.",
+      "source": "maths-spe-1re:ch10:banque:096"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le cercle d'équation (x + 3)² + (y − 4)² = 25 a pour centre le point :",
+      "propositions": [
+        "(3 ; −4)",
+        "(3 ; 4)",
+        "(−3 ; −4)",
+        "(−3 ; 4)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "x + 3 = x − (−3) : le centre a pour abscisse −3 et pour ordonnée 4.",
+      "source": "maths-spe-1re:ch10:banque:097"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le rayon du cercle d'équation (x − 1)² + y² = 16 ?",
+      "propositions": [
+        "16",
+        "4",
+        "8",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "Le second membre est r² = 16, donc r = 4.",
+      "source": "maths-spe-1re:ch10:banque:098"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation du cercle de centre O et de rayon 2 ?",
+      "propositions": [
+        "x² + y² = 2",
+        "(x − 2)² + (y − 2)² = 4",
+        "x² + y² = 4",
+        "x² + y² = 16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "Centre (0 ; 0) et r² = 4.",
+      "source": "maths-spe-1re:ch10:banque:099"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces points appartient au cercle de centre Ω(1 ; 1) et de rayon 5 ?",
+      "propositions": [
+        "(4 ; 5)",
+        "(1 ; 5)",
+        "(4 ; 4)",
+        "(6 ; 6)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "(4 − 1)² + (5 − 1)² = 9 + 16 = 25 = 5².",
+      "source": "maths-spe-1re:ch10:banque:100"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation du cercle de centre Ω(−2 ; 3) passant par A(1 ; −1) ?",
+      "propositions": [
+        "(x − 2)² + (y + 3)² = 25",
+        "(x − 1)² + (y + 1)² = 25",
+        "(x + 2)² + (y − 3)² = 5",
+        "(x + 2)² + (y − 3)² = 25"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "r² = ΩA² = 3² + (−4)² = 25.",
+      "source": "maths-spe-1re:ch10:banque:101"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le cercle de diamètre [AB], avec A(−1 ; 2) et B(5 ; 2), a pour centre et pour rayon :",
+      "propositions": [
+        "centre (3 ; 0), rayon 3",
+        "centre (2 ; 2), rayon 6",
+        "centre (2 ; 2), rayon 3",
+        "centre (2 ; 2), rayon 9"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "Le centre est le milieu de [AB], (2 ; 2), et le rayon vaut AB/2 = 6/2 = 3.",
+      "source": "maths-spe-1re:ch10:banque:102"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle équation développée correspond au cercle de centre (3 ; 0) et de rayon 2 ?",
+      "propositions": [
+        "x² + y² − 6x − 4 = 0",
+        "x² + y² − 6x + 5 = 0",
+        "x² + y² + 6x + 5 = 0",
+        "x² + y² − 6x + 9 = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "(x − 3)² + y² = 4 donne x² − 6x + 9 + y² − 4 = 0, soit x² + y² − 6x + 5 = 0.",
+      "source": "maths-spe-1re:ch10:banque:103"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On note 𝒞 le cercle de diamètre [AB], avec A(1 ; 0) et B(3 ; 4). Quelle équation décrit 𝒞 ?",
+      "propositions": [
+        "(x − 2)² + (y − 2)² = 5",
+        "(x − 2)² + (y − 2)² = 10",
+        "(x − 1)² + y² = 20",
+        "(x − 2)² + (y − 2)² = 20"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Équation de cercle",
+      "explication": "Centre (2 ; 2), milieu de [AB] ; AB² = 4 + 16 = 20, donc r² = AB²/4 = 5.",
+      "source": "maths-spe-1re:ch10:banque:104"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le cercle 𝒞 a son centre sur l'axe des abscisses et passe par A(0 ; 4) et B(6 ; 2). Quel est son centre ?",
+      "propositions": [
+        "(−2 ; 0)",
+        "(3 ; 0)",
+        "(2 ; 0)",
+        "(3 ; 3)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Équation de cercle",
+      "explication": "Avec Ω(a ; 0) : ΩA² = ΩB² donne a² + 16 = (6 − a)² + 4, soit 12a = 24, a = 2.",
+      "source": "maths-spe-1re:ch10:banque:105"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère le cercle 𝒞 d'équation (x − 1)² + (y + 2)² = 9. Coche toutes les réponses exactes.",
+      "propositions": [
+        "le point (4 ; −2) est sur 𝒞",
+        "son centre est (1 ; −2)",
+        "son rayon est 9",
+        "le point (1 ; 2) est sur 𝒞",
+        "son rayon est 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "Centre (1 ; −2), r² = 9 donc r = 3. (4 − 1)² + 0² = 9, mais (1 ; 2) donne 0 + 16 = 16 ≠ 9.",
+      "source": "maths-spe-1re:ch10:banque:106"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quels points sont situés sur le cercle de centre O et de rayon 5 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(0 ; −5)",
+        "(−5 ; 0)",
+        "(5 ; 5)",
+        "(3 ; −4)",
+        "(2 ; 3)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "Il faut x² + y² = 25 : 9 + 16, 0 + 25 et 25 + 0 conviennent ; 50 et 13 non.",
+      "source": "maths-spe-1re:ch10:banque:107"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On donne A(2 ; 1) et B(6 ; 5) et l'on considère le cercle de diamètre [AB]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "il a pour centre (4 ; 3)",
+        "il a pour équation (x − 4)² + (y − 3)² = 32",
+        "il passe par le point (2 ; 5)",
+        "il a pour rayon 2√2",
+        "il a pour rayon 4√2"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "Centre : milieu (4 ; 3). AB² = 16 + 16 = 32, r² = 8, r = 2√2. (2 − 4)² + (5 − 3)² = 8.",
+      "source": "maths-spe-1re:ch10:banque:108"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Un cercle a pour équation (x − 3)² + (y − 4)² = 25. Coche toutes les réponses exactes.",
+      "propositions": [
+        "il est tangent à l'axe des ordonnées",
+        "son centre est sur la droite d'équation y = x",
+        "il coupe l'axe des abscisses au point (6 ; 0)",
+        "il passe par l'origine du repère"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Équation de cercle",
+      "explication": "9 + 16 = 25 pour (0 ; 0) et pour (6 ; 0). La distance du centre (3 ; 4) à l'axe des ordonnées vaut 3 < 5 : l'axe est sécant, pas tangent.",
+      "source": "maths-spe-1re:ch10:banque:109"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le point A(0 ; 3) appartient au cercle d'équation x² + (y − 1)² = 4.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "0² + (3 − 1)² = 4.",
+      "source": "maths-spe-1re:ch10:banque:110"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le cercle d'équation (x − 2)² + (y + 5)² = 10 a pour rayon 10.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "Le second membre est r² : r = √10.",
+      "source": "maths-spe-1re:ch10:banque:111"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Un point M distinct de A et de B appartient au cercle de diamètre [AB] si et seulement si MA⃗ · MB⃗ = 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "C'est la caractérisation vue au chapitre 9 : l'angle AMB est alors droit.",
+      "source": "maths-spe-1re:ch10:banque:112"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Quel est le rayon du cercle de centre Ω(1 ; 2) passant par A(7 ; 10) ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 1,
+      "notion": "Équation de cercle",
+      "explication": "ΩA² = 6² + 8² = 100, donc r = 10.",
+      "source": "maths-spe-1re:ch10:banque:113"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On considère le cercle de diamètre [AB], où A(−3 ; 1) et B(5 ; 7). Quel est son rayon ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 2,
+      "notion": "Équation de cercle",
+      "explication": "AB = √(8² + 6²) = 10, et le rayon vaut AB/2 = 5.",
+      "source": "maths-spe-1re:ch10:banque:114"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Par complétion du carré, l'expression x² − 4x est égale à :",
+      "propositions": [
+        "(x − 4)² − 16",
+        "(x − 2)² − 4",
+        "(x − 2)² + 4",
+        "(x + 2)² − 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 2)² = x² − 4x + 4, donc x² − 4x = (x − 2)² − 4.",
+      "source": "maths-spe-1re:ch10:banque:115"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "L'équation x² + y² − 2x − 6y + 6 = 0 s'écrit aussi :",
+      "propositions": [
+        "(x − 1)² + (y − 3)² = 6",
+        "(x − 1)² + (y − 3)² = 16",
+        "(x + 1)² + (y + 3)² = 4",
+        "(x − 1)² + (y − 3)² = 4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 1)² − 1 + (y − 3)² − 9 + 6 = 0, donc (x − 1)² + (y − 3)² = 4.",
+      "source": "maths-spe-1re:ch10:banque:116"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le centre du cercle d'équation x² + y² + 8x − 2y + 1 = 0 ?",
+      "propositions": [
+        "(−4 ; 1)",
+        "(4 ; −1)",
+        "(8 ; −2)",
+        "(−8 ; 2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x + 4)² + (y − 1)² = 16 + 1 − 1 = 16 : centre (−4 ; 1), rayon 4.",
+      "source": "maths-spe-1re:ch10:banque:117"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le rayon du cercle d'équation x² + y² − 10y = 0 ?",
+      "propositions": [
+        "√10",
+        "10",
+        "25",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "x² + (y − 5)² = 25 : le rayon vaut 5.",
+      "source": "maths-spe-1re:ch10:banque:118"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Que représente l'ensemble des points M(x ; y) tels que x² + y² − 4x + 2y + 5 = 0 ?",
+      "propositions": [
+        "le seul point (2 ; −1)",
+        "le cercle de centre (−2 ; 1) et de rayon √5",
+        "l'ensemble vide",
+        "le cercle de centre (2 ; −1) et de rayon 5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 2)² + (y + 1)² = 4 + 1 − 5 = 0 : les deux carrés sont nuls, donc x = 2 et y = −1.",
+      "source": "maths-spe-1re:ch10:banque:119"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est la nature de l'ensemble d'équation x² + y² + 2x + 6y + 12 = 0 ?",
+      "propositions": [
+        "le seul point (−1 ; −3)",
+        "l'ensemble vide",
+        "le cercle de centre (1 ; 3) et de rayon 2",
+        "le cercle de centre (−1 ; −3) et de rayon √2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x + 1)² + (y + 3)² = 1 + 9 − 12 = −2 < 0 : aucun point ne convient.",
+      "source": "maths-spe-1re:ch10:banque:120"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Parmi ces équations, laquelle est celle d'un cercle ?",
+      "propositions": [
+        "x² + 3y² − 6x = 0",
+        "x² + y² + 4 = 0",
+        "x² + y² − 6x = 0",
+        "x² − y² + 2y = 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "x² + y² − 6x = 0 s'écrit (x − 3)² + y² = 9. Les coefficients de x² et y² doivent être égaux, et x² + y² = −4 n'a pas de solution.",
+      "source": "maths-spe-1re:ch10:banque:121"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est le rayon du cercle d'équation 2x² + 2y² − 4x + 8y − 8 = 0 ?",
+      "propositions": [
+        "1",
+        "2√2",
+        "3",
+        "9"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "On divise par 2 : x² + y² − 2x + 4y − 4 = 0, puis (x − 1)² + (y + 2)² = 1 + 4 + 4 = 9, donc r = 3.",
+      "source": "maths-spe-1re:ch10:banque:122"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour quelles valeurs du réel γ l'équation x² + y² − 4x + 6y + γ = 0 est-elle celle d'un cercle ?",
+      "propositions": [
+        "γ > 13",
+        "γ < 13",
+        "γ < 0",
+        "γ ⩽ 13"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 2)² + (y + 3)² = 13 − γ : c'est un cercle si 13 − γ > 0. Pour γ = 13, l'ensemble est réduit à un point.",
+      "source": "maths-spe-1re:ch10:banque:123"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère l'équation x² + y² − 6x + 4y − 3 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "elle s'écrit (x − 3)² + (y + 2)² = 16",
+        "c'est un cercle de rayon 4",
+        "son centre est (3 ; −2)",
+        "son centre est (−3 ; 2)",
+        "son rayon est √3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 3)² − 9 + (y + 2)² − 4 − 3 = 0, soit (x − 3)² + (y + 2)² = 16.",
+      "source": "maths-spe-1re:ch10:banque:124"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles équations sont celles de cercles ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x² + y² − 2y = 0",
+        "2x² + 2y² − 8 = 0",
+        "x² + y² + 2x + 2 = 0",
+        "x² + y² + 2x − 4y = 4",
+        "x² + y² − 2x − 4y + 5 = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "Formes réduites : x² + (y − 1)² = 1 ; (x + 1)² + (y − 2)² = 9 ; x² + y² = 4. En revanche (x + 1)² + y² = −1 est vide et (x − 1)² + (y − 2)² = 0 est un point.",
+      "source": "maths-spe-1re:ch10:banque:125"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère l'ensemble ℰ d'équation x² + y² + 5x − 3y = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "ℰ passe par l'origine du repère",
+        "ℰ est un cercle de centre (−2,5 ; 1,5)",
+        "ℰ est un cercle de rayon 8,5",
+        "ℰ est un cercle de centre (5 ; −3)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x + 2,5)² + (y − 1,5)² = 6,25 + 2,25 = 8,5 : c'est r², donc r = √8,5. Le terme constant nul montre que O est sur ℰ.",
+      "source": "maths-spe-1re:ch10:banque:126"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Pour un réel m, on note ℰ l'ensemble d'équation x² + y² − 2mx + m² − 4 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "le centre de ℰ est le point (m ; 0)",
+        "ℰ passe par l'origine quel que soit m",
+        "pour tout réel m, ℰ est un cercle de rayon 2",
+        "pour m = 0, ℰ est réduit à un point"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "L'équation s'écrit (x − m)² + y² = 4. L'origine est sur ℰ seulement si m² = 4 ; pour m = 0, c'est le cercle x² + y² = 4.",
+      "source": "maths-spe-1re:ch10:banque:127"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Toute équation de la forme x² + y² + αx + βy + γ = 0 est celle d'un cercle.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "Après complétion des carrés, le second membre peut être nul (un point) ou négatif (ensemble vide).",
+      "source": "maths-spe-1re:ch10:banque:128"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'ensemble des points M(x ; y) tels que x² + y² + 2x − 8y + 17 = 0 est réduit à un point.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x + 1)² + (y − 4)² = 1 + 16 − 17 = 0 : seul le point (−1 ; 4) convient.",
+      "source": "maths-spe-1re:ch10:banque:129"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'équation x² + y² − 4x + 2y + 1 = 0 est celle du cercle de centre (2 ; −1) et de rayon 1.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 2)² + (y + 1)² = 4 + 1 − 1 = 4 : le centre est bien (2 ; −1), mais le rayon vaut 2.",
+      "source": "maths-spe-1re:ch10:banque:130"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "L'équation x² + y² − 8x + 6y = 0 est celle d'un cercle. Quel est son rayon ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 4)² + (y + 3)² = 16 + 9 = 25, donc r = 5.",
+      "source": "maths-spe-1re:ch10:banque:131"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Pour quelle valeur de γ l'ensemble d'équation x² + y² − 6x + 8y + γ = 0 est-il réduit à un seul point ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "25"
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une équation de cercle",
+      "explication": "(x − 3)² + (y + 4)² = 9 + 16 − γ = 25 − γ ; l'ensemble est un point si 25 − γ = 0, soit γ = 25.",
+      "source": "maths-spe-1re:ch10:banque:132"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Soit 𝒞 un cercle de centre Ω et A un point de 𝒞. La tangente à 𝒞 en A est :",
+      "propositions": [
+        "la droite passant par A parallèle à l'axe des abscisses",
+        "la droite (ΩA)",
+        "la droite passant par Ω perpendiculaire à (ΩA)",
+        "la droite passant par A perpendiculaire à (ΩA)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "La tangente en A est perpendiculaire au rayon [ΩA] : ΩA⃗ en est un vecteur normal.",
+      "source": "maths-spe-1re:ch10:banque:133"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le point A(3 ; 4) est sur un cercle de centre O. Quel vecteur est normal à la tangente à ce cercle en A ?",
+      "propositions": [
+        "(3 ; 4)",
+        "(3 ; −4)",
+        "(4 ; 3)",
+        "(4 ; −3)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "La tangente est perpendiculaire au rayon : OA⃗(3 ; 4) en est un vecteur normal. (4 ; −3) la dirige.",
+      "source": "maths-spe-1re:ch10:banque:134"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation de la tangente au cercle de centre O passant par A(3 ; 4), au point A ?",
+      "propositions": [
+        "4x − 3y = 0",
+        "3x − 4y + 7 = 0",
+        "3x + 4y = 0",
+        "3x + 4y − 25 = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Configurations et tangentes",
+      "explication": "OA⃗(3 ; 4) est normal : 3x + 4y + c = 0 avec 9 + 16 + c = 0, c = −25. La droite 4x − 3y = 0 est (OA).",
+      "source": "maths-spe-1re:ch10:banque:135"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Combien de points communs ont le cercle d'équation x² + y² = 9 et la droite d'équation y = 2 ?",
+      "propositions": [
+        "deux",
+        "aucun",
+        "un seul",
+        "une infinité"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "Avec y = 2 : x² = 5, d'où deux solutions x = √5 et x = −√5.",
+      "source": "maths-spe-1re:ch10:banque:136"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "En quels points le cercle d'équation (x − 3)² + y² = 25 coupe-t-il l'axe des ordonnées ?",
+      "propositions": [
+        "(0 ; 3) et (0 ; −3)",
+        "(0 ; 4) et (0 ; −4)",
+        "(8 ; 0) et (−2 ; 0)",
+        "(0 ; 5) et (0 ; −5)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "Sur l'axe des ordonnées, x = 0 : 9 + y² = 25, y² = 16, y = 4 ou y = −4. Les points (8 ; 0) et (−2 ; 0) sont sur l'axe des abscisses.",
+      "source": "maths-spe-1re:ch10:banque:137"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La droite d'équation x = k est tangente au cercle de centre (2 ; 1) et de rayon 3 lorsque :",
+      "propositions": [
+        "k = 4 ou k = −2",
+        "k = 3 ou k = −3",
+        "k = 5 ou k = −1",
+        "k = 5 seulement"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Configurations et tangentes",
+      "explication": "La droite x = k est tangente si la distance |k − 2| du centre à la droite vaut 3 : k = 5 ou k = −1.",
+      "source": "maths-spe-1re:ch10:banque:138"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On place le carré A(0 ; 0), B(2 ; 0), C(2 ; 2), D(0 ; 2) et le milieu I de [CD]. Que vaut le produit scalaire AI⃗ · BI⃗ ?",
+      "propositions": [
+        "3",
+        "0",
+        "5",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "I(1 ; 2), AI⃗(1 ; 2), BI⃗(−1 ; 2) : −1 + 4 = 3.",
+      "source": "maths-spe-1re:ch10:banque:139"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est une équation de la tangente au cercle (x − 2)² + (y − 1)² = 10 en son point A(3 ; 4) ?",
+      "propositions": [
+        "3x + y − 13 = 0",
+        "x + 3y − 15 = 0",
+        "3x − y − 5 = 0",
+        "x + 3y − 5 = 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Configurations et tangentes",
+      "explication": "ΩA⃗(1 ; 3) est normal : (x − 3) + 3(y − 4) = 0, soit x + 3y − 15 = 0. 3x − y − 5 = 0 est la droite (ΩA).",
+      "source": "maths-spe-1re:ch10:banque:140"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le cercle 𝒞 de centre Ω(1 ; −2) est tangent à l'axe des abscisses. Quelle est son équation ?",
+      "propositions": [
+        "(x − 1)² + (y + 2)² = 1",
+        "(x − 1)² + (y + 2)² = 2",
+        "(x + 1)² + (y − 2)² = 4",
+        "(x − 1)² + (y + 2)² = 4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Configurations et tangentes",
+      "explication": "Le rayon est la distance de Ω à l'axe des abscisses, |−2| = 2, donc r² = 4.",
+      "source": "maths-spe-1re:ch10:banque:141"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Le cercle 𝒞 a pour équation (x − 2)² + (y − 3)² = 4. Coche toutes les réponses exactes.",
+      "propositions": [
+        "la droite y = 0 coupe 𝒞",
+        "la droite x = 5 est tangente à 𝒞",
+        "la droite x = 3 coupe 𝒞 en deux points",
+        "la droite y = 5 est tangente à 𝒞"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "Centre (2 ; 3), rayon 2. |5 − 3| = 2 (tangente) ; |3 − 2| = 1 < 2 (deux points) ; |0 − 3| = 3 > 2 et |5 − 2| = 3 > 2 (aucun point).",
+      "source": "maths-spe-1re:ch10:banque:142"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On considère le cercle 𝒞 : x² + y² = 25 et la droite d : y = 3. Coche toutes les réponses exactes.",
+      "propositions": [
+        "la tangente à 𝒞 en (4 ; 3) a pour équation 4x + 3y − 25 = 0",
+        "d est tangente à 𝒞",
+        "d coupe 𝒞 en (4 ; 3) et (−4 ; 3)",
+        "d coupe 𝒞 en (3 ; 4) et (3 ; −4)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Configurations et tangentes",
+      "explication": "x² + 9 = 25 donne x = ±4. En (4 ; 3), le vecteur (4 ; 3) est normal à la tangente : 4x + 3y − 25 = 0.",
+      "source": "maths-spe-1re:ch10:banque:143"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On place le rectangle A(0 ; 0), B(4 ; 0), C(4 ; 2), D(0 ; 2) et le milieu E de [AB]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "les droites (DE) et (EC) sont perpendiculaires",
+        "les diagonales (AC) et (BD) sont perpendiculaires",
+        "E est sur le cercle de diamètre [DC]",
+        "le triangle DEC est rectangle en C"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Configurations et tangentes",
+      "explication": "E(2 ; 0), ED⃗(−2 ; 2), EC⃗(2 ; 2) : produit scalaire nul, donc E est sur le cercle de diamètre [DC]. AC⃗ · BD⃗ = −16 + 4 ≠ 0.",
+      "source": "maths-spe-1re:ch10:banque:144"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La tangente en un point A à un cercle de centre Ω est perpendiculaire au rayon [ΩA].",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "C'est la propriété de la tangente : ΩA⃗ est un vecteur normal à la tangente en A.",
+      "source": "maths-spe-1re:ch10:banque:145"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation y = 4 coupe le cercle d'équation x² + y² = 9 en deux points.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "x² + 16 = 9 donne x² = −7 : aucun point commun (4 est supérieur au rayon 3).",
+      "source": "maths-spe-1re:ch10:banque:146"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le cercle d'équation (x + 2)² + (y − 3)² = 4 est tangent à l'axe des ordonnées.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Configurations et tangentes",
+      "explication": "Le centre (−2 ; 3) est à la distance 2 de l'axe des ordonnées, égale au rayon.",
+      "source": "maths-spe-1re:ch10:banque:147"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation 3x + 4y − 25 = 0 est la tangente au cercle de centre O et de rayon 5 au point (4 ; 3).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Configurations et tangentes",
+      "explication": "(4 ; 3) ne vérifie pas 3x + 4y − 25 = 0 (12 + 12 − 25 = −1). Cette droite est la tangente en (3 ; 4) ; la tangente en (4 ; 3) est 4x + 3y − 25 = 0.",
+      "source": "maths-spe-1re:ch10:banque:148"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Le cercle d'équation (x − 1)² + (y − 2)² = 13 coupe la droite d'équation y = 4 en deux points. Donne la plus grande de leurs abscisses (nombre entier).",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 1,
+      "notion": "Configurations et tangentes",
+      "explication": "(x − 1)² + 4 = 13, donc (x − 1)² = 9 : x = 4 ou x = −2.",
+      "source": "maths-spe-1re:ch10:banque:149"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La tangente au cercle de centre Ω(1 ; 1) en son point A(4 ; 5) a une équation de la forme 3x + 4y + c = 0. Quelle est la valeur de c ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-32",
+        "−32"
+      ],
+      "difficulte": 2,
+      "notion": "Configurations et tangentes",
+      "explication": "ΩA⃗(3 ; 4) est normal à la tangente : 3 × 4 + 4 × 5 + c = 0, donc c = −32.",
+      "source": "maths-spe-1re:ch10:banque:150"
+    }
+  ]
+}
