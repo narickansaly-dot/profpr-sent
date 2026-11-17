@@ -1,0 +1,2295 @@
+{
+  "chapitre": 8,
+  "notions": [
+    "Paraboles y = ax² et y = ax² + c",
+    "Forme factorisée et racines",
+    "Axe de symétrie et sommet",
+    "Signe d'un polynôme factorisé",
+    "Variations et extremum",
+    "Associer courbe et expression",
+    "Modélisation quadratique",
+    "Automatismes"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch8:banque:001",
+      "type": "qcm_unique",
+      "enonce": "La courbe de la fonction f définie par f(x) = 3x² est une parabole. Quel est son sommet ?",
+      "propositions": [
+        "(3 ; 0)",
+        "(0 ; 3)",
+        "O(0 ; 0)",
+        "(−3 ; 27)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f(x) = ax² avec a = 3 : f(0) = 0 et f(x) = 3x² ⩾ 0 pour tout x. Le point le plus bas est l'origine O(0 ; 0).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'allure de la courbe de la fonction g(x) = −4x² ?",
+      "propositions": [
+        "Une parabole tournée vers le bas",
+        "Une parabole tournée vers le haut",
+        "Une droite qui descend",
+        "Une parabole de sommet (0 ; −4)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "g(x) = ax² avec a = −4 < 0 : la parabole est tournée vers le bas (forme ∩) et son sommet est l'origine, car g(0) = 0.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel est le sommet de la parabole d'équation y = x² − 9 ?",
+      "propositions": [
+        "(−9 ; 0)",
+        "(3 ; 0)",
+        "(0 ; 9)",
+        "(0 ; −9)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "y = ax² + c avec a = 1 et c = −9 : c'est la parabole y = x² descendue de 9 unités, de sommet (0 ; c) = (0 ; −9).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:004",
+      "type": "qcm_unique",
+      "enonce": "On considère h(x) = 0,5x² + 2. Quelle affirmation est exacte ?",
+      "propositions": [
+        "h admet un maximum égal à 2",
+        "h admet un minimum égal à 2",
+        "h admet un minimum égal à 0,5",
+        "h s'annule en x = −2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "a = 0,5 > 0 : forme ∪, sommet (0 ; 2). Donc h(x) ⩾ 2 pour tout x : le minimum est 2, et h ne s'annule jamais (h(−2) = 0,5 × 4 + 2 = 4).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces fonctions, laquelle a la parabole la plus resserrée autour de son axe ?",
+      "propositions": [
+        "x ↦ 2x²",
+        "x ↦ −5x²",
+        "x ↦ 0,1x²",
+        "x ↦ x² + 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Plus |a| est grand, plus la parabole est resserrée. Ici |a| vaut 5, 2, 0,1 et 1 : le plus grand est 5, pour x ↦ −5x² (le signe de a ne joue que sur l'orientation).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:006",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = −2x² + 8. Que vaut f(−1) ?",
+      "propositions": [
+        "10",
+        "4",
+        "12",
+        "6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "f(−1) = −2 × (−1)² + 8 = −2 × 1 + 8 = 6. Attention : (−1)² = 1.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:007",
+      "type": "qcm_unique",
+      "enonce": "On déplace la parabole d'équation y = x² de 5 unités vers le bas. Quelle est l'équation de la courbe obtenue ?",
+      "propositions": [
+        "y = x² − 5",
+        "y = (x − 5)²",
+        "y = x² + 5",
+        "y = −5x²"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Descendre une courbe de 5 unités revient à retrancher 5 à chaque ordonnée : y = x² − 5, de sommet (0 ; −5).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:008",
+      "type": "qcm_unique",
+      "enonce": "La courbe de f(x) = ax² + c a pour sommet (0 ; 6) et passe par le point (2 ; −2). Que vaut a ?",
+      "propositions": [
+        "2",
+        "−1",
+        "−2",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le sommet (0 ; 6) donne c = 6. Puis f(2) = 4a + 6 = −2, donc 4a = −8 et a = −2.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Calcule (−5)².",
+      "propositions": [
+        "−25",
+        "10",
+        "25",
+        "−10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(−5)² = (−5) × (−5) = 25 : le produit de deux nombres négatifs est positif.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Que vaut −2 × 3² ?",
+      "propositions": [
+        "−18",
+        "36",
+        "−36",
+        "18"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le carré est prioritaire : 3² = 9, puis −2 × 9 = −18. Le carré ne porte que sur 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme développée de x(x + 7) ?",
+      "propositions": [
+        "x² + 7",
+        "2x + 7",
+        "2x² + 7x",
+        "x² + 7x"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "x(x + 7) = x × x + x × 7 = x² + 7x.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les racines de la fonction f(x) = (x − 2)(x − 9) ?",
+      "propositions": [
+        "−2 et −9",
+        "2 et 9",
+        "−2 et 9",
+        "11 et 18"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Produit nul : f(x) = 0 ⇔ x − 2 = 0 ou x − 9 = 0 ⇔ x = 2 ou x = 9.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Donne les racines de g(x) = 4(x + 3)(x − 1).",
+      "propositions": [
+        "3 et −1",
+        "−3 et 1",
+        "4, −3 et 1",
+        "−3 et 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le facteur 4 ne s'annule jamais. x + 3 = 0 donne x = −3 et x − 1 = 0 donne x = 1.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:014",
+      "type": "qcm_unique",
+      "enonce": "La courbe de f(x) = −(x − 4)(x + 6) coupe l'axe des abscisses en deux points. Lesquels ?",
+      "propositions": [
+        "(−4 ; 0) et (6 ; 0)",
+        "(0 ; 4) et (0 ; −6)",
+        "(4 ; 0) et (6 ; 0)",
+        "(4 ; 0) et (−6 ; 0)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Les points sur l'axe des abscisses ont une ordonnée nulle : f(x) = 0 ⇔ x = 4 ou x = −6. Les points sont (4 ; 0) et (−6 ; 0).",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction a pour racines −5 et 2 ?",
+      "propositions": [
+        "x ↦ 3(x + 5)(x − 2)",
+        "x ↦ 3(x − 5)(x + 2)",
+        "x ↦ −3(x + 5)(x + 2)",
+        "x ↦ −5(x − 2)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "3(x + 5)(x − 2) s'annule pour x + 5 = 0 (x = −5) et x − 2 = 0 (x = 2). La deuxième s'annule en 5 et −2, la troisième en −5 et −2, la dernière seulement en 2.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:016",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = 2(x − 1)(x − 3). Calcule f(0).",
+      "propositions": [
+        "−6",
+        "2",
+        "6",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(0) = 2 × (0 − 1) × (0 − 3) = 2 × (−1) × (−3) = 6.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Une seule de ces fonctions a une parabole qui touche l'axe des abscisses en un seul point. Laquelle ?",
+      "propositions": [
+        "x ↦ 2(x − 3)(x + 3)",
+        "x ↦ x² − 3",
+        "x ↦ 2(x − 3)²",
+        "x ↦ 2x(x − 3)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "2(x − 3)² = 2(x − 3)(x − 3) n'a qu'une racine, 3 : la parabole touche l'axe en son sommet (3 ; 0). Les autres ont deux racines : −3 et 3, −√3 et √3, 0 et 3.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Développe et réduis (x − 1)(x − 5).",
+      "propositions": [
+        "x² − 6x + 5",
+        "x² − 5x − x − 5",
+        "x² + 6x + 5",
+        "x² − 6x − 5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "(x − 1)(x − 5) = x² − 5x − x + 5 = x² − 6x + 5.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Factorise l'expression x² − 8x.",
+      "propositions": [
+        "(x − 8)²",
+        "8x(x − 1)",
+        "x(x + 8)",
+        "x(x − 8)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "x est un facteur commun : x² − 8x = x × x − 8 × x = x(x − 8). C'est ce calcul qui donne les solutions 0 et 8 de x² − 8x = 0.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:020",
+      "type": "qcm_multiple",
+      "enonce": "On considère la fonction f(x) = −x² + 3. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa courbe est tournée vers le bas.",
+        "Son sommet est le point (0 ; 3).",
+        "f admet un minimum égal à 3.",
+        "f(2) = 7."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "a = −1 < 0 : forme ∩, sommet (0 ; 3), donc 3 est un maximum (pas un minimum). f(2) = −4 + 3 = −1, pas 7.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:021",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles ont une courbe tournée vers le haut ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ 0,2x²",
+        "x ↦ x² − 10",
+        "x ↦ −3x² + 1",
+        "x ↦ −x²",
+        "x ↦ 7x² + 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "La courbe est tournée vers le haut quand a > 0 : a = 0,2, a = 1 et a = 7 conviennent. Pour −3x² + 1 et −x², a est négatif.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:022",
+      "type": "qcm_multiple",
+      "enonce": "On considère la parabole d'équation y = 2x² − 8. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle coupe l'axe des abscisses en −2 et en 2.",
+        "Son sommet est le point (0 ; −8).",
+        "Elle passe par le point (1 ; −6).",
+        "Son axe de symétrie est la droite d'équation x = 2."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "2x² − 8 = 0 ⇔ x² = 4 ⇔ x = −2 ou x = 2. Sommet (0 ; c) = (0 ; −8). Pour x = 1 : 2 − 8 = −6. L'axe est l'axe des ordonnées (x = 0), pas x = 2.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:023",
+      "type": "qcm_multiple",
+      "enonce": "On donne f(x) = 5(x − 7)(x + 1). Coche toutes les réponses exactes.",
+      "propositions": [
+        "7 est une racine de f.",
+        "−1 est une racine de f.",
+        "5 est une racine de f.",
+        "f(1) = 0."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "f(7) = 5 × 0 × 8 = 0 et f(−1) = 5 × (−8) × 0 = 0. En revanche f(5) = 5 × (−2) × 6 = −60 et f(1) = 5 × (−6) × 2 = −60.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:024",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions s'annulent en x = 3 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ (x − 3)(x + 8)",
+        "x ↦ −2x(x − 3)",
+        "x ↦ (x + 3)(x − 1)",
+        "x ↦ x² − 9",
+        "x ↦ x² + 9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "On remplace x par 3 : 0 × 11 = 0 ; −6 × 0 = 0 ; 6 × 2 = 12 ; 9 − 9 = 0 ; 9 + 9 = 18.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "On cherche les solutions de l'équation x² = 36. Coche toutes les réponses exactes.",
+      "propositions": [
+        "6",
+        "−6",
+        "18",
+        "−18"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "6² = 36 et (−6)² = 36 : l'équation x² = 36 a deux solutions, 6 et −6. 18 est la moitié de 36, pas sa racine.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Une parabole tournée vers le bas coupe l'axe des ordonnées au point (0 ; 5). Quelles fonctions peuvent lui correspondre ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(x) = −x² + 5",
+        "f(x) = −3x² + 2x + 5",
+        "f(x) = x² + 5",
+        "f(x) = −x² − 5",
+        "f(x) = 5x² − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Il faut a < 0 et f(0) = 5. −x² + 5 et −3x² + 2x + 5 conviennent. x² + 5 a a > 0 ; −x² − 5 donne f(0) = −5 ; 5x² − 1 a a > 0 et f(0) = −1.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Voici quatre calculs d'images pour la fonction f(x) = −(x − 2)(x − 8). Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(2) = 0",
+        "f(0) = −16",
+        "f(5) = −9",
+        "f(10) = 16"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "f(2) = −0 × (−6) = 0. f(0) = −(−2)(−8) = −16. f(5) = −(3)(−3) = 9, pas −9. f(10) = −(8)(2) = −16, pas 16.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:028",
+      "type": "vrai_faux",
+      "enonce": "La parabole d'équation y = 6x² est symétrique par rapport à l'axe des ordonnées.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour tout x, 6(−x)² = 6x² : les points d'abscisses x et −x ont la même ordonnée, d'où la symétrie par rapport à l'axe des ordonnées.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:029",
+      "type": "vrai_faux",
+      "enonce": "La courbe de la fonction x ↦ −0,5x² est tournée vers le haut.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Ici a = −0,5 < 0 : la parabole est tournée vers le bas (forme ∩), son sommet O est le point le plus haut.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:030",
+      "type": "vrai_faux",
+      "enonce": "La courbe d'équation y = x² + 4 coupe l'axe des abscisses en deux points.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "x² ⩾ 0 donc x² + 4 ⩾ 4 > 0 : l'expression ne s'annule jamais et la courbe reste au-dessus de l'axe des abscisses.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:031",
+      "type": "vrai_faux",
+      "enonce": "La courbe de x ↦ 3x² − 7 s'obtient en déplaçant celle de x ↦ 3x² de 7 unités vers le bas.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Pour chaque x, l'ordonnée 3x² − 7 est celle de 3x² diminuée de 7 : même forme, sommet descendu de (0 ; 0) à (0 ; −7).",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:032",
+      "type": "vrai_faux",
+      "enonce": "La fonction f(x) = 9(x − 4)(x + 2) s'annule pour x = −2.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "f(−2) = 9 × (−6) × 0 = 0 : −2 est une racine (le facteur x + 2 s'annule).",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Les racines de la fonction f(x) = −3(x − 1)(x − 6) sont −3, 1 et 6.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "−3 est le coefficient a, pas une racine : f(−3) = −3 × (−4) × (−9) = −108. Les racines sont seulement 1 et 6.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Pour tout nombre réel x, on a x² ⩾ 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Un carré est le produit d'un nombre par lui-même : deux facteurs de même signe donnent un résultat positif, et 0² = 0.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Le nombre −4² est égal à 16.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Sans parenthèses, le carré ne porte que sur 4 : −4² = −(4²) = −16. C'est (−4)² qui vaut 16.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:036",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = 3x² − 1. Calcule f(2). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "difficulte": 1,
+      "explication": "f(2) = 3 × 2² − 1 = 3 × 4 − 1 = 12 − 1 = 11.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:037",
+      "type": "reponse_courte",
+      "enonce": "On donne f(x) = (x − 6)(x + 4). Calcule f(1). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-25",
+        "−25"
+      ],
+      "difficulte": 2,
+      "explication": "f(1) = (1 − 6) × (1 + 4) = (−5) × 5 = −25.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:038",
+      "type": "reponse_courte",
+      "enonce": "Quel nombre est le milieu de −3 et 11 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 1,
+      "explication": "Le milieu est la moyenne : (−3 + 11)/2 = 8/2 = 4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:039",
+      "type": "reponse_courte",
+      "enonce": "La courbe de g(x) = −x² + c passe par le point (3 ; 1). Quelle est la valeur de c ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 3,
+      "explication": "g(3) = −3² + c = −9 + c. On veut −9 + c = 1, donc c = 10.",
+      "notion": "Paraboles y = ax² et y = ax² + c"
+    },
+    {
+      "source": "maths-tc:ch8:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de l'axe de symétrie de la parabole de f(x) = (x − 2)(x − 8) ?",
+      "propositions": [
+        "x = 6",
+        "x = 5",
+        "x = 10",
+        "x = −5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'axe passe au milieu des racines 2 et 8 : x = (2 + 8)/2 = 5.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:041",
+      "type": "qcm_unique",
+      "enonce": "La parabole de g(x) = −3(x + 4)(x − 2) est symétrique par rapport à une droite verticale. Laquelle ?",
+      "propositions": [
+        "x = 1",
+        "x = −1",
+        "x = −3",
+        "x = 3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Racines : −4 et 2. Milieu : (−4 + 2)/2 = −2/2 = −1. L'axe est la droite x = −1.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quel est le sommet de la parabole de f(x) = (x − 1)(x − 7) ?",
+      "propositions": [
+        "(4 ; 9)",
+        "(−4 ; −9)",
+        "(3 ; −9)",
+        "(4 ; −9)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Abscisse : milieu des racines, (1 + 7)/2 = 4. Ordonnée : f(4) = (4 − 1)(4 − 7) = 3 × (−3) = −9. Sommet (4 ; −9).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:043",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = −2(x − 1)(x − 5). Quel est le maximum de f ?",
+      "propositions": [
+        "8",
+        "3",
+        "−8",
+        "16"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Axe : x = (1 + 5)/2 = 3. f(3) = −2 × 2 × (−2) = 8. a = −2 < 0, donc 8 est le maximum (atteint en 3).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:044",
+      "type": "qcm_unique",
+      "enonce": "On a f(x) = x² − 10x + 7. Quelles sont les solutions de l'équation f(x) = 7 ?",
+      "propositions": [
+        "x = 10 seulement",
+        "x = 7 ou x = −7",
+        "x = 0 ou x = 10",
+        "x = 0 ou x = −10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(x) = 7 ⇔ x² − 10x = 0 ⇔ x(x − 10) = 0 ⇔ x = 0 ou x = 10.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'abscisse du sommet de la parabole de f(x) = x² + 4x + 1 ?",
+      "propositions": [
+        "2",
+        "−4",
+        "−2",
+        "1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(0) = 1. f(x) = 1 ⇔ x² + 4x = 0 ⇔ x(x + 4) = 0 ⇔ x = 0 ou x = −4. L'axe passe au milieu : (0 + (−4))/2 = −2.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quel est le sommet de la parabole d'équation y = 2x² − 8x + 3 ?",
+      "propositions": [
+        "(2 ; −5)",
+        "(4 ; 3)",
+        "(2 ; 3)",
+        "(−2 ; 27)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "y = 3 ⇔ 2x² − 8x = 0 ⇔ 2x(x − 4) = 0 ⇔ x = 0 ou x = 4. Axe x = 2. Pour x = 2 : 2 × 4 − 16 + 3 = −5. Sommet (2 ; −5).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction du second degré f, on sait que f(−1) = 4 et f(7) = 4. Quelle est l'équation de l'axe de symétrie de sa parabole ?",
+      "propositions": [
+        "x = 4",
+        "x = 6",
+        "x = 8",
+        "x = 3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Deux nombres qui ont la même image sont symétriques par rapport à l'axe : celui-ci passe au milieu, x = (−1 + 7)/2 = 3.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:048",
+      "type": "qcm_unique",
+      "enonce": "La courbe de f(x) = −x² + 6x passe par les points (0 ; 0) et (6 ; 0). Quel est son sommet ?",
+      "propositions": [
+        "(3 ; −9)",
+        "(3 ; 9)",
+        "(6 ; 0)",
+        "(3 ; 27)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Axe : x = (0 + 6)/2 = 3. f(3) = −9 + 18 = 9. Sommet (3 ; 9).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Quel est le signe de f(x) = 2(x − 1)(x − 4) lorsque x est strictement compris entre 1 et 4 ?",
+      "propositions": [
+        "Positif",
+        "Négatif",
+        "Nul",
+        "Il change entre 1 et 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "a = 2 > 0 : f(x) a le signe de a à l'extérieur des racines et le signe contraire entre elles. Entre 1 et 4, f(x) est négatif (par exemple f(2) = 2 × 1 × (−2) = −4).",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Sur quel ensemble g(x) = −(x + 3)(x − 5) est-il strictement positif ?",
+      "propositions": [
+        "]−∞ ; −3[ ∪ ]5 ; +∞[",
+        "]3 ; 5[",
+        "]−5 ; 3[",
+        "]−3 ; 5["
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Racines −3 et 5 ; a = −1 < 0 : g(x) est négatif à l'extérieur des racines et positif entre elles, donc sur ]−3 ; 5[.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de l'inéquation (x − 2)(x − 6) ⩽ 0 ?",
+      "propositions": [
+        "[2 ; 6]",
+        "]2 ; 6[",
+        "]−∞ ; 2] ∪ [6 ; +∞[",
+        "[−6 ; −2]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Racines 2 et 6 ; a = 1 > 0 : le produit est négatif entre les racines et nul en 2 et en 6. Avec « ⩽ », on garde les bornes : [2 ; 6].",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Comment varie le signe de f(x) = 3(x + 2)(x − 1) quand x parcourt ℝ ?",
+      "propositions": [
+        "− avant −2, + entre −2 et 1, − après 1",
+        "+ avant −1, − entre −1 et 2, + après 2",
+        "+ avant −2, − entre −2 et 1, + après 1",
+        "− avant −2, − entre −2 et 1, + après 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Racines −2 et 1 (et non −1 et 2). a = 3 > 0 : signe + à l'extérieur des racines, − entre elles.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Le bénéfice d'un atelier, en centaines d'euros, pour x vélos réparés par semaine est B(x) = −(x − 3)(x − 15). Pour quelles valeurs de x a-t-on B(x) > 0 ?",
+      "propositions": [
+        "Pour x < 3 ou x > 15",
+        "Pour x > 15 seulement",
+        "Pour x strictement entre 3 et 15",
+        "Pour x strictement entre −15 et −3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Racines 3 et 15 ; a = −1 < 0 : B(x) est positif entre les racines. L'atelier gagne de l'argent pour un nombre de vélos strictement compris entre 3 et 15.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:054",
+      "type": "qcm_unique",
+      "enonce": "On note f(x) = (5 − x)(x + 1). Sur quel ensemble f(x) est-il négatif ou nul ?",
+      "propositions": [
+        "]−∞ ; −1] ∪ [5 ; +∞[",
+        "[−1 ; 5]",
+        "]−∞ ; −5] ∪ [1 ; +∞[",
+        "[−5 ; 1]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "5 − x = −(x − 5), donc f(x) = −(x − 5)(x + 1) : a = −1 < 0, racines −1 et 5. f(x) est négatif à l'extérieur des racines et nul en −1 et 5.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Résous l'équation produit nul x(x − 9) = 0.",
+      "propositions": [
+        "x = 9 seulement",
+        "x = −9 ou x = 0",
+        "x = 1 ou x = 9",
+        "x = 0 ou x = 9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un produit est nul si l'un des facteurs est nul : x = 0 ou x − 9 = 0, soit x = 0 ou x = 9.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Développe et réduis 2(x − 3)(x + 1).",
+      "propositions": [
+        "2x² − 6",
+        "2x² − 4x − 6",
+        "2x² + 4x − 6",
+        "2x² − 4x − 3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(x − 3)(x + 1) = x² + x − 3x − 3 = x² − 2x − 3, puis 2(x² − 2x − 3) = 2x² − 4x − 6.",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 0,5 × 4² ?",
+      "propositions": [
+        "4",
+        "8",
+        "16",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On calcule d'abord le carré : 4² = 16, puis 0,5 × 16 = 8.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Une parabole a pour racines 0 et 12. Quelle est l'abscisse de son sommet ?",
+      "propositions": [
+        "12",
+        "0",
+        "24",
+        "6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le sommet est sur l'axe de symétrie, au milieu des racines : (0 + 12)/2 = 6.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:059",
+      "type": "qcm_multiple",
+      "enonce": "Étude complète de la fonction f(x) = 4(x − 3)(x − 9) : axe, sommet, extremum, images. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'axe de symétrie a pour équation x = 6.",
+        "Le sommet est le point (6 ; −36).",
+        "f admet un maximum.",
+        "f(0) = 108.",
+        "f(3) = 4."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Axe : (3 + 9)/2 = 6 ; f(6) = 4 × 3 × (−3) = −36. a = 4 > 0 : c'est un minimum, pas un maximum. f(0) = 4 × (−3) × (−9) = 108. f(3) = 4 × 0 × (−6) = 0.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:060",
+      "type": "qcm_multiple",
+      "enonce": "f est une fonction du second degré telle que f(2) = f(10). Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'axe de symétrie de sa courbe est la droite x = 6.",
+        "f(5) = f(7).",
+        "f(0) = f(10).",
+        "f(4) = f(8)."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'axe passe au milieu de 2 et 10 : x = 6. 5 et 7 sont à distance 1 de 6, 4 et 8 à distance 2 : mêmes images. 0 est à distance 6 de l'axe, son symétrique est 12, pas 10.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Soit f(x) = −x² + 8x − 3. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(8) = −3.",
+        "L'axe de symétrie a pour équation x = 4.",
+        "Le maximum de f est 13.",
+        "Le sommet est le point (4 ; −3).",
+        "f admet un minimum."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "f(x) = −3 ⇔ −x² + 8x = 0 ⇔ −x(x − 8) = 0 ⇔ x = 0 ou x = 8 : f(8) = −3 et l'axe est x = 4. f(4) = −16 + 32 − 3 = 13 ; a = −1 < 0, donc 13 est un maximum et le sommet est (4 ; 13).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Pour quelles valeurs de x l'expression 2(x − 1)(x + 5) est-elle strictement négative ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x = 0",
+        "x = −3",
+        "x = 2",
+        "x = −6",
+        "x = −5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Racines −5 et 1, a = 2 > 0 : l'expression est négative strictement entre −5 et 1. 0 et −3 conviennent ; 2 et −6 sont à l'extérieur (positif) ; en −5, elle est nulle.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Signe et images de la fonction f(x) = −(x − 4)², qui est le carré de x − 4 précédé d'un signe moins. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(4) = 0.",
+        "f(x) ⩽ 0 pour tout réel x.",
+        "f(x) > 0 pour x > 4.",
+        "f(0) = 16."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(x − 4)² ⩾ 0, donc −(x − 4)² ⩽ 0 pour tout x, avec égalité seulement en 4. f(0) = −(−4)² = −16, pas 16.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions sont positives ou nulles sur [−2 ; 3] et strictement négatives en dehors ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "−(x + 2)(x − 3)",
+        "(x + 2)(3 − x)",
+        "(x + 2)(x − 3)",
+        "−2(x − 2)(x + 3)",
+        "5(3 − x)(x + 2)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Il faut les racines −2 et 3 et a < 0. (x + 2)(3 − x) = −(x + 2)(x − 3) et 5(3 − x)(x + 2) = −5(x + 2)(x − 3) conviennent. (x + 2)(x − 3) a a > 0 ; −2(x − 2)(x + 3) a pour racines 2 et −3.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures sont égales à x² − 5x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x(x − 5)",
+        "−x(5 − x)",
+        "x(5 − x)",
+        "(x − 5)²"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "x(x − 5) = x² − 5x. −x(5 − x) = −5x + x². x(5 − x) = 5x − x² et (x − 5)² = x² − 10x + 25 sont différents.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:066",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on de la parabole de la fonction f(x) = −2(x − 3)(x + 7) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa courbe coupe l'axe des abscisses en 3 et en −7.",
+        "Son axe de symétrie est la droite x = −2.",
+        "Sa courbe est tournée vers le haut.",
+        "Son axe de symétrie est la droite x = 5."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Racines 3 et −7 ; axe au milieu : (3 + (−7))/2 = −2. a = −2 < 0 : la courbe est tournée vers le bas.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:067",
+      "type": "vrai_faux",
+      "enonce": "L'axe de symétrie de la parabole de f(x) = 5(x − 2)(x − 10) est la droite d'équation x = 6.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Les racines sont 2 et 10, l'axe passe au milieu : (2 + 10)/2 = 6.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:068",
+      "type": "vrai_faux",
+      "enonce": "Le sommet de la parabole de f(x) = x² − 4x + 7 est le point (0 ; 7).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "(0 ; 7) est le point où la courbe coupe l'axe des ordonnées. f(x) = 7 ⇔ x(x − 4) = 0 ⇔ x = 0 ou x = 4 : axe x = 2, f(2) = 4 − 8 + 7 = 3. Sommet (2 ; 3).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:069",
+      "type": "vrai_faux",
+      "enonce": "Multiplier f(x) = (x − 1)(x − 9) par −3 change l'axe de symétrie de sa parabole.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "−3(x − 1)(x − 9) a les mêmes racines 1 et 9, donc le même axe x = 5. Seules l'orientation et l'ordonnée du sommet changent.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:070",
+      "type": "vrai_faux",
+      "enonce": "L'expression (x − 3)(x − 7) est négative pour x = 5.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "(5 − 3)(5 − 7) = 2 × (−2) = −4 < 0 : 5 est entre les racines 3 et 7, et a = 1 > 0.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:071",
+      "type": "vrai_faux",
+      "enonce": "L'expression −2(x − 1)(x − 6) est positive pour tout x supérieur à 6.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "a = −2 < 0 : l'expression a le signe de a, donc est négative, à l'extérieur des racines 1 et 6. Par exemple pour x = 7 : −2 × 6 × 1 = −12.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:072",
+      "type": "vrai_faux",
+      "enonce": "L'inéquation 3(x + 4)(x − 2) > 0 a pour ensemble de solutions ]−∞ ; −4[ ∪ ]2 ; +∞[.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Racines −4 et 2 ; a = 3 > 0 : l'expression est strictement positive à l'extérieur des racines, bornes exclues.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:073",
+      "type": "vrai_faux",
+      "enonce": "L'équation (x + 2)(x − 5) = 0 a pour solutions 2 et −5.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "x + 2 = 0 donne x = −2 et x − 5 = 0 donne x = 5 : les solutions sont −2 et 5 (signes contraires de ceux dans les parenthèses).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:074",
+      "type": "reponse_courte",
+      "enonce": "Une parabole coupe l'axe des abscisses en −6 et en 2. Donne l'abscisse de son sommet. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-2",
+        "−2"
+      ],
+      "difficulte": 1,
+      "explication": "Le sommet est sur l'axe, au milieu des racines : (−6 + 2)/2 = −4/2 = −2.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:075",
+      "type": "reponse_courte",
+      "enonce": "On donne f(x) = −(x − 2)(x − 6). Quel est le maximum de f ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "Axe : x = (2 + 6)/2 = 4. f(4) = −(4 − 2)(4 − 6) = −2 × (−2) = 4. a = −1 < 0 : c'est bien un maximum.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:076",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = x² − 12x + 20. Quelle est la plus petite valeur prise par f(x) ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-16",
+        "−16"
+      ],
+      "difficulte": 3,
+      "explication": "f(x) = 20 ⇔ x(x − 12) = 0 ⇔ x = 0 ou x = 12 : axe x = 6. f(6) = 36 − 72 + 20 = −16. a = 1 > 0 : le minimum est −16.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:077",
+      "type": "reponse_courte",
+      "enonce": "On donne f(x) = 2(x − 3)(x + 1). Calcule f(−2). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 2,
+      "explication": "f(−2) = 2 × (−2 − 3) × (−2 + 1) = 2 × (−5) × (−1) = 10.",
+      "notion": "Signe d'un polynôme factorisé"
+    },
+    {
+      "source": "maths-tc:ch8:banque:078",
+      "type": "qcm_unique",
+      "enonce": "La fonction f(x) = 3(x − 2)(x − 6) a pour sommet S(4 ; −12). Quel est son sens de variation sur [4 ; +∞[ ?",
+      "propositions": [
+        "Croissante",
+        "Décroissante",
+        "Constante",
+        "Croissante puis décroissante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "a = 3 > 0 : forme ∪. f est décroissante avant l'abscisse du sommet, puis croissante après : sur [4 ; +∞[, elle est croissante.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Une fonction du second degré a pour sommet S(−1 ; 5) et sa courbe est tournée vers le bas. Que peut-on affirmer ?",
+      "propositions": [
+        "Elle a un minimum égal à 5, atteint en −1",
+        "Elle a un maximum égal à −1, atteint en 5",
+        "Elle a un maximum égal à 5, atteint en −1",
+        "Elle est croissante sur ℝ"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Courbe tournée vers le bas : le sommet est le point le plus haut. Le maximum est l'ordonnée du sommet, 5, atteint pour x = −1 (l'abscisse).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les variations de g(x) = −x² + 4 ?",
+      "propositions": [
+        "Décroissante sur ]−∞ ; 0], croissante sur [0 ; +∞[",
+        "Croissante sur ]−∞ ; 4], décroissante sur [4 ; +∞[",
+        "Croissante sur ]−∞ ; 0], décroissante sur [0 ; +∞[",
+        "Décroissante sur ℝ tout entier"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "a = −1 < 0 et sommet (0 ; 4) : g monte jusqu'en x = 0, puis descend. Son maximum est g(0) = 4.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:081",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = 2x² − 12x + 1. Sur quel intervalle f est-elle décroissante ?",
+      "propositions": [
+        "]−∞ ; 3]",
+        "[3 ; +∞[",
+        "]−∞ ; 6]",
+        "[0 ; 6]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "f(x) = 1 ⇔ 2x(x − 6) = 0 ⇔ x = 0 ou x = 6 : axe x = 3. a = 2 > 0 : f décroît jusqu'à l'abscisse du sommet, donc sur ]−∞ ; 3].",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Quel est le minimum de la fonction f(x) = (x + 1)(x − 5) ?",
+      "propositions": [
+        "2",
+        "−5",
+        "9",
+        "−9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Racines −1 et 5, axe x = (−1 + 5)/2 = 2. f(2) = 3 × (−3) = −9. a = 1 > 0 : le minimum est −9 (atteint en 2 ; 2 est l'abscisse, pas le minimum).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:083",
+      "type": "qcm_unique",
+      "enonce": "La fonction f(x) = x² − 8x + 3 a pour axe de symétrie la droite x = 4. Laquelle de ces comparaisons est exacte ?",
+      "propositions": [
+        "f(1) = f(9)",
+        "f(1) = f(7)",
+        "f(5) > f(7)",
+        "f(2) < f(3)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "1 et 7 sont à distance 3 de l'axe : f(1) = f(7). 9 est à distance 5, pas 3. a > 0 : f croît sur [4 ; +∞[ donc f(5) < f(7), et décroît sur ]−∞ ; 4] donc f(2) > f(3).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:084",
+      "type": "qcm_unique",
+      "enonce": "On considère g(x) = −(x − 1)(x − 5). Sans calculer d'image, compare g(0) et g(5).",
+      "propositions": [
+        "g(5) < g(0)",
+        "g(5) > g(0)",
+        "g(5) = g(0)",
+        "On ne peut pas comparer"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Axe x = 3 et a = −1 < 0 : g est décroissante sur [3 ; +∞[. Le symétrique de 0 est 6, donc g(0) = g(6) < g(5) car 5 < 6. Vérification : g(0) = −5 et g(5) = 0.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Une fonction f décroît sur ]−∞ ; 2], puis croît sur [2 ; +∞[, avec f(2) = −3. Quelle affirmation est exacte ?",
+      "propositions": [
+        "Pour tout réel x, f(x) ⩽ −3",
+        "Le maximum de f est −3",
+        "On a f(2) = 0",
+        "Pour tout réel x, f(x) ⩾ −3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "f descend jusqu'en 2 puis remonte : f(2) = −3 est la plus petite valeur, un minimum. Donc f(x) ⩾ −3 pour tout x.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces fonctions admet un maximum sur ℝ ?",
+      "propositions": [
+        "x ↦ −0,5(x − 1)(x − 3)",
+        "x ↦ 0,5(x − 1)(x − 3)",
+        "x ↦ 0,5(x − 10)(x + 30)",
+        "x ↦ 2x² + 3x"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une fonction du second degré a un maximum quand a < 0. Seule −0,5(x − 1)(x − 3) a un coefficient négatif ; les trois autres ont a > 0 et un minimum.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Une parabole tournée vers le haut a pour sommet (0 ; −2). Quelle peut être sa fonction ?",
+      "propositions": [
+        "x ↦ −3x² − 2",
+        "x ↦ 3x² + 2",
+        "x ↦ 3x² − 2",
+        "x ↦ −2x²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Il faut a > 0 et un sommet (0 ; c) avec c = −2 : 3x² − 2 convient. −3x² − 2 est tournée vers le bas ; 3x² + 2 a pour sommet (0 ; 2) ; −2x² a pour sommet O.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Une parabole tournée vers le bas coupe l'axe des abscisses en 1 et en 4. Quelle peut être son équation ?",
+      "propositions": [
+        "y = 2(x − 1)(x − 4)",
+        "y = −2(x + 1)(x + 4)",
+        "y = −2(x − 1)(x − 4)",
+        "y = −(x − 1)(x + 4)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Racines 1 et 4 : facteurs (x − 1) et (x − 4). Tournée vers le bas : a < 0. Seule y = −2(x − 1)(x − 4) réunit les deux conditions.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:089",
+      "type": "qcm_unique",
+      "enonce": "La courbe d'une fonction f coupe l'axe des ordonnées au point (0 ; −6). Laquelle de ces fonctions convient ?",
+      "propositions": [
+        "f(x) = x² + x − 6",
+        "f(x) = −6x²",
+        "f(x) = (x − 6)(x − 1)",
+        "f(x) = −x² + 6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Il faut f(0) = −6. 0 + 0 − 6 = −6 convient. Les autres donnent f(0) = 0, (−6)(−1) = 6 et 6.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:090",
+      "type": "qcm_unique",
+      "enonce": "Une parabole coupe l'axe des abscisses en 0 et en 6 et passe par le point (3 ; 18). Quelle est sa fonction ?",
+      "propositions": [
+        "f(x) = 2x(x − 6)",
+        "f(x) = −2x(x + 6)",
+        "f(x) = 6x(x − 6)",
+        "f(x) = −2x(x − 6)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f(x) = a × x × (x − 6). f(3) = a × 3 × (−3) = −9a = 18, donc a = −2.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Une parabole a pour sommet (0 ; 4) et coupe l'axe des abscisses en −2 et 2. Quelle est sa fonction ?",
+      "propositions": [
+        "f(x) = x² + 4",
+        "f(x) = −x² + 4",
+        "f(x) = x² − 4",
+        "f(x) = −4x² + 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Sommet (0 ; 4) : f(x) = ax² + 4. f(2) = 4a + 4 = 0 donne a = −1. Contrôle : −4x² + 4 s'annule en −1 et 1, pas en ±2.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces paraboles ne coupe jamais l'axe des abscisses ?",
+      "propositions": [
+        "y = 2x² − 3",
+        "y = 2x² + 3",
+        "y = −2x² + 3",
+        "y = 2x(x + 3)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "2x² ⩾ 0 donc 2x² + 3 ⩾ 3 > 0 : jamais nul. Dans les deux suivantes, a et c sont de signes contraires (deux racines) ; la dernière s'annule en 0 et −3.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:093",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = x² + 3x. Calcule f(−2).",
+      "propositions": [
+        "10",
+        "−10",
+        "2",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "f(−2) = (−2)² + 3 × (−2) = 4 − 6 = −2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Quel nombre est situé au milieu de −7 et −1 ?",
+      "propositions": [
+        "−4",
+        "−3",
+        "4",
+        "−8"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "(−7 + (−1))/2 = −8/2 = −4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:095",
+      "type": "qcm_unique",
+      "enonce": "En quel point la courbe de f(x) = 5x² − 2x + 9 coupe-t-elle l'axe des ordonnées ?",
+      "propositions": [
+        "(9 ; 0)",
+        "(0 ; 5)",
+        "(0 ; 9)",
+        "(0 ; 12)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Sur l'axe des ordonnées, x = 0 : f(0) = 0 − 0 + 9 = 9. Le point est (0 ; 9).",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:096",
+      "type": "qcm_unique",
+      "enonce": "La hauteur d'un plongeur est modélisée par une fonction du second degré du temps, qui atteint son maximum, 12 m, au bout de 1 seconde. Quelle phrase est exacte ?",
+      "propositions": [
+        "La hauteur augmente pendant 12 secondes",
+        "Avant 1 s la hauteur diminue, après elle augmente",
+        "Avant 1 s la hauteur augmente, après elle diminue",
+        "La hauteur vaut 1 m au bout de 12 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un maximum correspond à une parabole tournée vers le bas : la fonction croît jusqu'à l'abscisse du sommet (1 s) puis décroît. 12 m est la hauteur maximale, pas une durée.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "La fonction f(x) = −3(x − 2)(x − 4) a pour axe de symétrie la droite x = 3. Quelles sont ses variations et son extremum ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "f est croissante sur ]−∞ ; 3].",
+        "Le maximum de f est 3.",
+        "f est croissante sur [3 ; +∞[.",
+        "Le minimum de f est 3."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Axe x = 3 ; f(3) = −3 × 1 × (−1) = 3. a = −3 < 0 : f croît sur ]−∞ ; 3], décroît sur [3 ; +∞[ et a pour maximum 3.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Une fonction du second degré f a pour sommet S(2 ; 1), et f(0) = 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(4) = 5",
+        "f admet un minimum égal à 1",
+        "f est décroissante sur [2 ; +∞[",
+        "f(3) < f(1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "4 est le symétrique de 0 par rapport à x = 2, donc f(4) = f(0) = 5. f(0) = 5 > f(2) = 1 : la courbe est tournée vers le haut, 1 est un minimum et f croît sur [2 ; +∞[. 1 et 3 sont symétriques : f(1) = f(3).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions sont décroissantes sur ]−∞ ; 0] puis croissantes sur [0 ; +∞[ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ x²",
+        "x ↦ 4x² − 1",
+        "x ↦ −x² + 2",
+        "x ↦ 0,3x² + 5",
+        "x ↦ (x − 1)(x − 3)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Il faut a > 0 et un sommet d'abscisse 0 : c'est le cas de ax² + c avec a > 0. −x² + 2 a a < 0 ; (x − 1)(x − 3) a pour axe x = 2.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Une parabole tournée vers le haut coupe l'axe des abscisses en −3 et en 1. Quelles fonctions peuvent lui correspondre ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ (x + 3)(x − 1)",
+        "x ↦ 5(x − 1)(x + 3)",
+        "x ↦ −(x + 3)(x − 1)",
+        "x ↦ (x − 3)(x + 1)",
+        "x ↦ 0,5(x + 3)(x − 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Il faut les racines −3 et 1 et a > 0 : a = 1, 5 et 0,5 conviennent. −(x + 3)(x − 1) est tournée vers le bas ; (x − 3)(x + 1) a pour racines 3 et −1.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions ont une courbe de sommet (0 ; 1) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ x² + 1",
+        "x ↦ −5x² + 1",
+        "x ↦ (x − 1)²",
+        "x ↦ x² + x + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "ax² + c a pour sommet (0 ; c) : les deux premières conviennent. (x − 1)² a pour sommet (1 ; 0). Pour x² + x + 1 : f(x) = 1 ⇔ x(x + 1) = 0, axe x = −0,5, donc le sommet n'est pas sur l'axe des ordonnées.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "On considère la courbe de f(x) = −x² + 9. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle coupe l'axe des abscisses en −3 et en 3.",
+        "Elle coupe l'axe des ordonnées en (0 ; 9).",
+        "Elle a pour sommet (3 ; 0).",
+        "Elle est tournée vers le haut."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "−x² + 9 = 0 ⇔ x² = 9 ⇔ x = −3 ou x = 3. f(0) = 9. Le sommet est (0 ; 9) et a = −1 < 0 : tournée vers le bas.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(−3)² = 9",
+        "−3² = −9",
+        "(−2)³ = 8",
+        "2 × 5² = 100",
+        "0,5² = 0,25"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "(−3)² = 9 ; −3² = −(3²) = −9 ; (−2)³ = −8 ; 2 × 5² = 2 × 25 = 50 ; 0,5² = 0,5 × 0,5 = 0,25.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Une fonction du second degré dont la courbe est tournée vers le haut admet un minimum.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Forme ∪ : la fonction décroît puis croît ; l'ordonnée du sommet est la plus petite valeur, c'est un minimum.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:105",
+      "type": "vrai_faux",
+      "enonce": "La fonction f(x) = −2(x − 1)(x − 5) est décroissante sur ]−∞ ; 3].",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Axe x = (1 + 5)/2 = 3 et a = −2 < 0 : f est croissante sur ]−∞ ; 3] et décroissante sur [3 ; +∞[.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:106",
+      "type": "vrai_faux",
+      "enonce": "La fonction x ↦ x² − 6x + 1 admet un minimum atteint en x = 3.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "f(x) = 1 ⇔ x(x − 6) = 0 ⇔ x = 0 ou x = 6 : axe x = 3. a = 1 > 0 : le minimum est atteint en 3 (il vaut 9 − 18 + 1 = −8).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Si une fonction du second degré f a pour maximum 7, atteint en 2, alors f(0) > f(2).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "f(2) = 7 est la plus grande valeur de f : pour x ≠ 2, f(x) < 7. Donc f(0) < f(2).",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:108",
+      "type": "vrai_faux",
+      "enonce": "La courbe de la fonction x ↦ 4x² − 1 coupe l'axe des ordonnées au point (0 ; −1).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour x = 0 : 4 × 0 − 1 = −1. Le point est (0 ; −1), qui est aussi le sommet.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:109",
+      "type": "vrai_faux",
+      "enonce": "La parabole d'équation y = (x − 2)(x − 4) est tournée vers le bas.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Ici a = 1 > 0 (aucun signe moins devant) : la parabole est tournée vers le haut, de sommet (3 ; −1).",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:110",
+      "type": "vrai_faux",
+      "enonce": "La parabole qui coupe l'axe des abscisses en 0 et en 2 et passe par (1 ; 3) a pour fonction f(x) = 3x(x − 2).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Avec 3x(x − 2), f(1) = 3 × 1 × (−1) = −3, pas 3. On cherche a tel que a × 1 × (−1) = 3 : a = −3, donc f(x) = −3x(x − 2).",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Le développement de (x − 2)(x + 2) est x² − 4.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Identité remarquable (a − b)(a + b) = a² − b² : (x − 2)(x + 2) = x² − 2² = x² − 4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:112",
+      "type": "reponse_courte",
+      "enonce": "Quel est le minimum de la fonction f(x) = x² + 6x + 2 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-7",
+        "−7"
+      ],
+      "difficulte": 2,
+      "explication": "f(x) = 2 ⇔ x(x + 6) = 0 ⇔ x = 0 ou x = −6 : axe x = −3. f(−3) = 9 − 18 + 2 = −7. a = 1 > 0 : minimum −7.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:113",
+      "type": "reponse_courte",
+      "enonce": "La fonction g(x) = −4x² + 11 admet un maximum. Quelle est sa valeur ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "difficulte": 1,
+      "explication": "a = −4 < 0 et sommet (0 ; 11) : g(x) ⩽ 11 pour tout x, le maximum est g(0) = 11.",
+      "notion": "Variations et extremum"
+    },
+    {
+      "source": "maths-tc:ch8:banque:114",
+      "type": "reponse_courte",
+      "enonce": "Une parabole coupe l'axe des abscisses en 1 et en 5, et passe par le point (3 ; 8). Sa fonction s'écrit f(x) = a(x − 1)(x − 5). Quelle est la valeur de a ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-2",
+        "−2"
+      ],
+      "difficulte": 3,
+      "explication": "f(3) = a × (3 − 1) × (3 − 5) = a × 2 × (−2) = −4a. On veut −4a = 8, donc a = −2.",
+      "notion": "Associer courbe et expression"
+    },
+    {
+      "source": "maths-tc:ch8:banque:115",
+      "type": "qcm_unique",
+      "enonce": "La hauteur (en m) d'une balle au bout de t secondes est h(t) = −5t² + 10t. À quel instant retombe-t-elle au sol ?",
+      "propositions": [
+        "t = 2 s",
+        "t = 1 s",
+        "t = 5 s",
+        "t = 10 s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "h(t) = −5t(t − 2) s'annule en t = 0 (départ) et t = 2. La balle retombe au bout de 2 s ; t = 1 s est l'instant du maximum.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Une pierre est lancée ; sa hauteur, en mètres, au bout de t secondes vaut h(t) = −5t(t − 6). Quelle hauteur maximale atteint-elle ?",
+      "propositions": [
+        "3 m",
+        "30 m",
+        "90 m",
+        "45 m"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Racines 0 et 6, axe t = 3. h(3) = −5 × 3 × (−3) = 45. La hauteur maximale est 45 m (atteinte à t = 3 s).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Un projectile a pour hauteur h(t) = −5t² + 30t (en m, t en s). Au bout de combien de temps sa hauteur est-elle maximale ?",
+      "propositions": [
+        "6 s",
+        "3 s",
+        "30 s",
+        "45 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "h(t) = −5t(t − 6) : racines 0 et 6, axe t = 3. La hauteur est maximale au bout de 3 s (elle vaut alors 45 m).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Une entreprise vend un objet au prix de x euros ; à ce prix, elle en vend 100 − 5x. Quelle est l'expression de sa recette R(x) ?",
+      "propositions": [
+        "R(x) = 100 − 5x",
+        "R(x) = x(100 − 5x)",
+        "R(x) = 100x − 5",
+        "R(x) = (100 − 5x) + x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Recette = prix × quantité vendue = x × (100 − 5x). C'est une fonction du second degré : −5x² + 100x.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:119",
+      "type": "qcm_unique",
+      "enonce": "La recette d'un cinéma de quartier, en euros, est R(p) = −20p(p − 16), où p est le prix du billet en euros. Quel prix donne la recette maximale ?",
+      "propositions": [
+        "16 €",
+        "1 280 €",
+        "20 €",
+        "8 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Racines 0 et 16, le maximum est au milieu : p = 8 €. La recette vaut alors R(8) = −20 × 8 × (−8) = 1 280 € (c'est la recette, pas le prix).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Une arche a pour profil h(x) = −0,25x(x − 12), où x et h(x) sont en mètres. Quelle est sa hauteur maximale ?",
+      "propositions": [
+        "9 m",
+        "6 m",
+        "12 m",
+        "3 m"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Racines 0 et 12, sommet en x = 6. h(6) = −0,25 × 6 × (−6) = 0,25 × 36 = 9. L'arche mesure 9 m de haut.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Une arche touche le sol en x = 0 et en x = 10 (en mètres). À quelle abscisse se trouve son point le plus haut ?",
+      "propositions": [
+        "x = 10",
+        "x = 0",
+        "x = 5",
+        "x = 20"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le profil est une parabole symétrique : le point le plus haut est sur l'axe, au milieu des deux pieds, x = (0 + 10)/2 = 5.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Pour une balle lancée depuis le sol, h(t) = −5t² + 20t et h(1) = 15. Comment interpréter cette égalité ?",
+      "propositions": [
+        "La balle met 15 secondes à monter",
+        "La hauteur maximale est 15 m",
+        "La balle est à 15 m de haut au bout de 1 s",
+        "La balle est à 1 m de haut au bout de 15 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "h(1) = −5 + 20 = 15 : l'image de t = 1 s est la hauteur 15 m. Ce n'est pas le maximum : h(2) = 20.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Le nombre d'insectes (en milliers) d'une colonie au jour t est N(t) = −(t − 2)(t − 12), pour t entre 2 et 12. Quel jour la population est-elle maximale ?",
+      "propositions": [
+        "Le 7e jour",
+        "Le 12e jour",
+        "Le 2e jour",
+        "Le 25e jour"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Racines 2 et 12 ; a = −1 < 0 : maximum au milieu, t = 7. Il y a alors N(7) = −5 × (−5) = 25 milliers d'insectes.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Un artisan réalise un bénéfice B(x) = −(x − 2)(x − 18), en centaines d'euros, pour x objets fabriqués. Quel est son bénéfice maximal ?",
+      "propositions": [
+        "64 €",
+        "10 €",
+        "1 000 €",
+        "6 400 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Axe x = (2 + 18)/2 = 10. B(10) = −(8)(−8) = 64 centaines d'euros, soit 6 400 €.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Le câble d'un pont suspendu a la forme d'une parabole tournée vers le haut. Ses deux points d'attache, à la même hauteur, sont aux abscisses 0 m et 80 m. Où est le point le plus bas du câble ?",
+      "propositions": [
+        "À l'abscisse 0 m",
+        "À l'abscisse 40 m",
+        "À l'abscisse 80 m",
+        "À l'abscisse 160 m"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Deux points de même hauteur sont symétriques par rapport à l'axe : le sommet (point le plus bas) est au milieu, en 40 m.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le modèle h(t) = −5t(t − 4) de la hauteur d'une balle n'est-il valable que pour t entre 0 et 4 ?",
+      "propositions": [
+        "La balle monte pendant 4 s",
+        "Hors de [0 ; 4], h(t) est négatif",
+        "h(4) est la hauteur maximale",
+        "Parce que le coefficient −5 est négatif"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "a = −5 < 0 : h(t) est négatif à l'extérieur des racines 0 et 4, ce qui voudrait dire une balle sous le sol. La balle monte pendant 2 s seulement et h(4) = 0.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Calcule 3 × (−2)².",
+      "propositions": [
+        "−12",
+        "36",
+        "−36",
+        "12"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(−2)² = 4, puis 3 × 4 = 12.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 20 × 4 − 5 × 4² ?",
+      "propositions": [
+        "0",
+        "−320",
+        "1 200",
+        "80"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "20 × 4 = 80 et 5 × 4² = 5 × 16 = 80 ; 80 − 80 = 0. (C'est h(4) pour h(t) = 20t − 5t².)",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:129",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la solution de l'équation 4x − 12 = 0 ?",
+      "propositions": [
+        "x = −3",
+        "x = 8",
+        "x = 3",
+        "x = 16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "4x − 12 = 0 ⇔ 4x = 12 ⇔ x = 12/4 = 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:130",
+      "type": "qcm_unique",
+      "enonce": "Factorise −5t² + 20t.",
+      "propositions": [
+        "−5t(t + 4)",
+        "5t(t − 4)",
+        "−5t(t − 4)",
+        "−5(t² − 20t)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "−5t est un facteur commun : −5t × t = −5t² et −5t × (−4) = 20t. Donc −5t² + 20t = −5t(t − 4) : la balle retombe en t = 4.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Quel nombre positif x vérifie 2x² = 50 ?",
+      "propositions": [
+        "5",
+        "25",
+        "10",
+        "√50"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "2x² = 50 ⇔ x² = 25 ⇔ x = 5 ou x = −5. La solution positive est 5.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Une salle de sport a 200 abonnés à 30 € par mois. Chaque baisse de 1 € apporte 10 abonnés de plus. Pour une baisse de x euros, la recette est R(x) = (30 − x)(200 + 10x). Quelle baisse rend la recette maximale ?",
+      "propositions": [
+        "10 €",
+        "30 €",
+        "25 €",
+        "5 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "R(x) = (30 − x)(200 + 10x) s'annule en x = 30 et en x = −20 ; a = −10 < 0. Le maximum est au milieu : x = (30 + (−20))/2 = 5. Recette : 25 × 250 = 6 250 €.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "La hauteur d'un ballon, en mètres, au bout de t secondes est h(t) = −5t² + 10t + 15, qui s'écrit aussi h(t) = −5(t + 1)(t − 3). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le ballon est lancé d'une hauteur de 15 m.",
+        "Il touche le sol au bout de 3 s.",
+        "Sa hauteur maximale est atteinte à t = 1 s.",
+        "Sa hauteur maximale est 15 m."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "h(0) = 15. Racines −1 et 3 : le sol est atteint à t = 3 (t = −1 n'a pas de sens). Axe t = (−1 + 3)/2 = 1 ; h(1) = −5 + 10 + 15 = 20 m, pas 15 m.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:134",
+      "type": "qcm_multiple",
+      "enonce": "Une recette, en euros, est donnée par R(p) = −50p(p − 12), où p est le prix en euros. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La recette est nulle pour p = 12.",
+        "Le prix qui rapporte le plus est 6 €.",
+        "La recette maximale est 1 800 €.",
+        "La recette maximale est 6 €.",
+        "La recette augmente quand le prix passe de 8 € à 10 €."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Racines 0 et 12 ; maximum au milieu, p = 6 ; R(6) = −50 × 6 × (−6) = 1 800 €. Après 6 €, la recette diminue (a < 0) : elle baisse entre 8 € et 10 €.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:135",
+      "type": "qcm_multiple",
+      "enonce": "Quelles situations sont souvent modélisées par une fonction du second degré ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La hauteur d'un objet lancé en l'air au cours du temps",
+        "Le profil d'une arche",
+        "Un capital placé à intérêts composés",
+        "Le prix de x kg de pommes à 2 € le kg"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Trajectoire et arche montent puis descendent symétriquement : modèle quadratique. Les intérêts composés relèvent d'un modèle exponentiel, le prix des pommes d'un modèle linéaire (2x).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:136",
+      "type": "qcm_multiple",
+      "enonce": "Avec 20 m de grillage, on clôture un enclos rectangulaire. Si un côté mesure x m, l'aire est A(x) = x(10 − x). Coche toutes les réponses exactes.",
+      "propositions": [
+        "A(x) = 0 pour x = 0 et pour x = 10.",
+        "L'aire est maximale pour x = 5.",
+        "L'aire maximale vaut 25 m².",
+        "L'aire maximale vaut 100 m².",
+        "L'aire augmente toujours quand x augmente."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "A(x) = −x(x − 10) : racines 0 et 10, a = −1 < 0. Maximum au milieu, x = 5 ; A(5) = 5 × 5 = 25 m². L'aire croît jusqu'à 5 puis décroît.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:137",
+      "type": "qcm_multiple",
+      "enonce": "Quels nombres sont solutions de l'équation (x − 4)(x + 9) = 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "4",
+        "−9",
+        "−4",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Produit nul : x − 4 = 0 ou x + 9 = 0, donc x = 4 ou x = −9.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:138",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions sont égales à −2(x − 1)(x − 3) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "−2x² + 8x − 6",
+        "2(x − 1)(3 − x)",
+        "−2x² − 8x − 6",
+        "−2x² + 8x + 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(x − 1)(x − 3) = x² − 4x + 3, donc −2(x² − 4x + 3) = −2x² + 8x − 6. Et 2(x − 1)(3 − x) = −2(x − 1)(x − 3) car 3 − x = −(x − 3).",
+      "notion": "Forme factorisée et racines"
+    },
+    {
+      "source": "maths-tc:ch8:banque:139",
+      "type": "qcm_multiple",
+      "enonce": "On considère f(x) = 3x² − 6x + 1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(2) = 1",
+        "Le sommet de sa courbe est le point (1 ; −2).",
+        "f admet un maximum égal à −2.",
+        "L'axe de symétrie a pour équation x = 2."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "f(x) = 1 ⇔ 3x(x − 2) = 0 ⇔ x = 0 ou x = 2 : f(2) = 1 et l'axe est x = 1. f(1) = 3 − 6 + 1 = −2. a = 3 > 0 : −2 est un minimum.",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:140",
+      "type": "vrai_faux",
+      "enonce": "Si la hauteur d'une balle est h(t) = −5t(t − 2), alors la balle touche le sol au bout de 2 secondes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "h(2) = −5 × 2 × 0 = 0 : à t = 2 s, la hauteur est nulle, la balle est au sol.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:141",
+      "type": "vrai_faux",
+      "enonce": "Pour la recette R(x) = −2x(x − 40), le prix x = 20 donne la recette maximale.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Racines 0 et 40 ; a = −2 < 0 : maximum au milieu, x = 20 (R(20) = −2 × 20 × (−20) = 800).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:142",
+      "type": "vrai_faux",
+      "enonce": "Une arche de profil h(x) = −x(x − 6) a une hauteur maximale de 6 m.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Sommet en x = 3 : h(3) = −3 × (−3) = 9. La hauteur maximale est 9 m ; 6 m est la largeur au sol.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:143",
+      "type": "vrai_faux",
+      "enonce": "Pour la hauteur h(t) = −5t² + 40t, le maximum est atteint au bout de 8 secondes.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "h(t) = −5t(t − 8) : racines 0 et 8. Le maximum est au milieu, t = 4 s ; à 8 s, l'objet retombe au sol.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:144",
+      "type": "vrai_faux",
+      "enonce": "Le nombre 0 est une solution de l'équation x² − 3x = 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "0² − 3 × 0 = 0. D'ailleurs x² − 3x = x(x − 3) s'annule en 0 et en 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:145",
+      "type": "vrai_faux",
+      "enonce": "L'équation x² = −16 a deux solutions : 4 et −4.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Un carré est toujours positif ou nul : x² = −16 n'a aucune solution. 4² = (−4)² = 16, pas −16.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Le point (0 ; c) appartient toujours à la courbe de x ↦ ax² + bx + c.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour x = 0 : a × 0 + b × 0 + c = c. La courbe coupe l'axe des ordonnées en (0 ; c).",
+      "notion": "Axe de symétrie et sommet"
+    },
+    {
+      "source": "maths-tc:ch8:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Une balle a pour hauteur h(t) = −5t² + 40t (h en m, t en s). Quelle hauteur maximale atteint-elle, en mètres ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "80"
+      ],
+      "difficulte": 2,
+      "explication": "h(t) = −5t(t − 8) : axe t = 4. h(4) = −5 × 16 + 160 = −80 + 160 = 80 m.",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Au prix de x euros, un food-truck vend 120 − 6x repas par jour. Pour quel prix x, en euros, sa recette x(120 − 6x) est-elle maximale ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 3,
+      "explication": "x(120 − 6x) = −6x(x − 20) : racines 0 et 20, a = −6 < 0. Le maximum est au milieu, x = 10 € (recette 10 × 60 = 600 €).",
+      "notion": "Modélisation quadratique"
+    },
+    {
+      "source": "maths-tc:ch8:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Calcule (−3)² + 2 × (−3). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "explication": "(−3)² = 9 et 2 × (−3) = −6 ; 9 − 6 = 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch8:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Une arche a pour profil h(x) = −0,5x(x − 10), x et h en mètres. Quelle est sa hauteur maximale, en mètres ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "12.5"
+      ],
+      "difficulte": 2,
+      "explication": "Racines 0 et 10, sommet en x = 5. h(5) = −0,5 × 5 × (−5) = 0,5 × 25 = 12,5 m.",
+      "notion": "Modélisation quadratique"
+    }
+  ]
+}
