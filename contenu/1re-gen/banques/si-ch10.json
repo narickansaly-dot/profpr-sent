@@ -242,10 +242,10 @@
     {
       "source": "si-1re:ch10:banque:014",
       "type": "vrai_faux",
-      "enonce": "La performance attendue d'un produit figure dans son cahier des charges.",
+      "enonce": "Un écart mesuré-simulé de 1 % montre en général un bon modèle.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai. Le cahier des charges fixe les exigences avec un critère et un niveau : c'est la performance attendue.",
+      "explication": "Vrai. Un si petit écart indique que le modèle représente bien la réalité. Un écart n'est pas forcément une erreur : c'est son interprétation qui compte.",
       "notion": "Attendu, mesuré, simulé"
     },
     {
@@ -269,10 +269,10 @@
     {
       "source": "si-1re:ch10:banque:017",
       "type": "vrai_faux",
-      "enonce": "Un modèle validé permet de tester d'autres solutions sans fabriquer de prototype.",
+      "enonce": "La valeur mesurée d'une performance dépend des conditions d'essai, par exemple de la masse du cycliste ou de l'état de charge de la batterie.",
       "bonne_reponse": true,
       "difficulte": 2,
-      "explication": "Vrai. C'est tout l'intérêt de valider un modèle : on peut ensuite simuler d'autres choix (batterie, réducteur) à moindre coût.",
+      "explication": "Vrai. Une même performance mesurée dans d'autres conditions d'essai donne une autre valeur ; on note donc toujours ces conditions.",
       "notion": "Attendu, mesuré, simulé"
     },
     {
@@ -294,16 +294,15 @@
     {
       "source": "si-1re:ch10:banque:019",
       "type": "reponse_courte",
-      "enonce": "Quel document fixe les performances attendues d'un produit ? Réponds en trois mots.",
+      "enonce": "Pour un VAE, la simulation donne 66 km d'autonomie et l'essai sur piste 58 km. Le modèle est-il optimiste ou pessimiste ? Réponds en un mot.",
       "reponses_acceptees": [
-        "cahier des charges",
-        "le cahier des charges",
-        "un cahier des charges",
-        "CDC",
-        "cahier des charges fonctionnel"
+        "optimiste",
+        "il est optimiste",
+        "le modèle est optimiste",
+        "modèle optimiste"
       ],
       "difficulte": 2,
-      "explication": "Le cahier des charges énonce les exigences du produit et leurs niveaux, c'est-à-dire les performances attendues.",
+      "explication": "La simulation surestime l'autonomie (66 km > 58 km) : le modèle est optimiste. Il néglige des phénomènes qui réduisent l'autonomie réelle.",
       "notion": "Attendu, mesuré, simulé"
     },
     {
@@ -563,19 +562,19 @@
     {
       "source": "si-1re:ch10:banque:035",
       "type": "vrai_faux",
-      "enonce": "Un voltmètre se branche en série avec le dipôle dont on veut connaître la tension.",
+      "enonce": "Un tachymètre mesure le couple fourni par un moteur.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "Faux. Le voltmètre se branche en dérivation, aux bornes du dipôle.",
+      "explication": "Faux. Le couple se mesure avec un capteur de couple (couplemètre), intercalé entre le moteur et la charge.",
       "notion": "Appareils de mesure et raccordement"
     },
     {
       "source": "si-1re:ch10:banque:036",
       "type": "vrai_faux",
-      "enonce": "Un wattmètre possède un circuit courant branché en série et un circuit tension branché en dérivation.",
+      "enonce": "Un oscilloscope affiche l'évolution d'une tension en fonction du temps.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai. Il mesure à la fois l'intensité (en série) et la tension (en dérivation) pour en déduire la puissance.",
+      "explication": "Vrai. On s'en sert pour observer des signaux variables : tension d'un hacheur, trame d'une liaison série, signal d'un capteur.",
       "notion": "Appareils de mesure et raccordement"
     },
     {
@@ -838,10 +837,10 @@
     {
       "source": "si-1re:ch10:banque:053",
       "type": "vrai_faux",
-      "enonce": "On peut changer la fonction d'un multimètre pendant qu'il mesure un circuit sous tension.",
+      "enonce": "Au lycée, les bancs d'essai fonctionnent en général sous 230 V.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "Faux. On ne change jamais la fonction ni les bornes d'un multimètre sous tension : on risque de le détruire.",
+      "explication": "Faux. On travaille en très basse tension chaque fois que possible : les bancs fonctionnent en général sous moins de 50 V.",
       "notion": "Ordre de grandeur, calibre, sécurité"
     },
     {
@@ -1133,19 +1132,19 @@
     {
       "source": "si-1re:ch10:banque:072",
       "type": "vrai_faux",
-      "enonce": "Répéter une mesure de nombreuses fois élimine une erreur systématique.",
+      "enonce": "Une virgule mal placée lors du relevé d'une mesure est une erreur aléatoire.",
       "bonne_reponse": false,
       "difficulte": 1,
-      "explication": "Faux. Une erreur systématique décale toutes les mesures de la même façon : la moyenne reste décalée. On la corrige par étalonnage ou en changeant de méthode.",
+      "explication": "Faux. C'est une erreur grossière, c'est-à-dire une faute, qui n'est ni systématique ni aléatoire.",
       "notion": "Erreurs de mesure"
     },
     {
       "source": "si-1re:ch10:banque:073",
       "type": "vrai_faux",
-      "enonce": "Un multimètre qui affiche au plus 19,99 V sur le calibre 20 V a une résolution de 0,01 V sur ce calibre.",
+      "enonce": "L'environnement (température, vibrations, perturbations électromagnétiques) peut être une source d'erreurs de mesure.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai. Le dernier chiffre affiché est celui des centièmes de volt : la résolution est 0,01 V.",
+      "explication": "Vrai. Une température trop élevée, des vibrations ou des perturbations électromagnétiques peuvent fausser une mesure.",
       "notion": "Erreurs de mesure"
     },
     {
@@ -1410,28 +1409,28 @@
     {
       "source": "si-1re:ch10:banque:090",
       "type": "vrai_faux",
-      "enonce": "L'écart type a la même unité que la grandeur mesurée.",
+      "enonce": "Une valeur qui s'écarte de la moyenne de plus de trois écarts types environ est considérée comme suspecte.",
       "bonne_reponse": true,
       "difficulte": 1,
-      "explication": "Vrai. C'est la racine d'une moyenne de carrés d'écarts : il a l'unité de la grandeur.",
+      "explication": "Vrai. Elle est trop éloignée des autres pour s'expliquer par les seules erreurs aléatoires.",
       "notion": "Moyenne, écart type, incertitude"
     },
     {
       "source": "si-1re:ch10:banque:091",
       "type": "vrai_faux",
-      "enonce": "L'écart type d'une série diminue nettement quand on augmente le nombre de mesures.",
+      "enonce": "Dans l'écart type expérimental, on divise la somme des carrés des écarts à la moyenne par n.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "Faux. L'écart type décrit la dispersion d'une mesure et reste du même ordre. C'est l'incertitude-type sur la moyenne, s / √n, qui diminue.",
+      "explication": "Faux. On divise par n − 1 : s = √[ ((x1 − x̄)² + … + (xn − x̄)²) / (n − 1) ].",
       "notion": "Moyenne, écart type, incertitude"
     },
     {
       "source": "si-1re:ch10:banque:092",
       "type": "vrai_faux",
-      "enonce": "Avec 4 fois plus de mesures, l'incertitude-type sur la moyenne est divisée par 2.",
+      "enonce": "Le rapport s / x̄, exprimé en pourcentage, permet de comparer la dispersion de plusieurs séries.",
       "bonne_reponse": true,
       "difficulte": 2,
-      "explication": "Vrai. u = s / √n et √4 = 2.",
+      "explication": "Vrai. Il rapporte la dispersion à la valeur moyenne ; il est sans unité, ce qui permet de comparer des séries différentes.",
       "notion": "Moyenne, écart type, incertitude"
     },
     {
@@ -1463,7 +1462,7 @@
       "reponses_acceptees": [
         "0,32"
       ],
-      "marge": 0.01,
+      "marge": 0.005,
       "marge_relative": false,
       "difficulte": 3,
       "explication": "Moyenne 10,0 W ; écarts −0,2 ; 0,2 ; 0 ; 0,4 ; −0,4 ; somme des carrés 0,40 W² ; s = √(0,40 / 4) = √0,1 ≈ 0,32 W.",
@@ -2019,10 +2018,10 @@
     {
       "source": "si-1re:ch10:banque:131",
       "type": "vrai_faux",
-      "enonce": "Pour valider un modèle, on prend la valeur simulée comme référence de l'écart relatif.",
+      "enonce": "Un écart relatif de 3 % sur une autonomie de référence de 60 km correspond à un écart absolu de 3 km.",
       "bonne_reponse": false,
       "difficulte": 2,
-      "explication": "Faux. On compare le modèle au réel : la référence est la valeur mesurée.",
+      "explication": "Faux. Δ = ε × xréf = 0,03 × 60 = 1,8 km.",
       "notion": "Écarts absolu et relatif"
     },
     {
@@ -2067,18 +2066,18 @@
     {
       "source": "si-1re:ch10:banque:135",
       "type": "qcm_unique",
-      "enonce": "Que doit indiquer chaque axe d'un graphique de résultats ?",
+      "enonce": "Que doit indiquer le titre d'un tableau de mesures ?",
       "propositions": [
-        "Seulement les valeurs numériques",
-        "La date de l'essai",
-        "Le nom de l'opérateur",
-        "La grandeur et son unité"
+        "Le nom et la référence du fabricant des appareils",
+        "La liste complète des calibres utilisés pendant l'essai",
+        "La conclusion de l'essai",
+        "Ce qui a été mesuré et dans quelles conditions"
       ],
       "bonnes_reponses": [
         3
       ],
       "difficulte": 1,
-      "explication": "Chaque axe porte le nom de la grandeur et son unité, par exemple « t (s) » ou « v (km/h) », avec des graduations régulières.",
+      "explication": "Le titre dit ce qui a été mesuré et dans quelles conditions. Le matériel figure dans le protocole et la conclusion vient après les résultats.",
       "notion": "Critères et présentation des résultats"
     },
     {
@@ -2277,25 +2276,25 @@
     {
       "source": "si-1re:ch10:banque:149",
       "type": "reponse_courte",
-      "enonce": "Un vélo à assistance électrique consomme 450 Wh pour parcourir 30 km. Quelle est sa consommation moyenne, en Wh/km ? Donne le nombre seul, sans unité.",
+      "enonce": "Un vélo à assistance électrique consomme 420 Wh pour parcourir 35 km. Quelle est sa consommation moyenne, en Wh/km ? Donne le nombre seul, sans unité.",
       "reponses_acceptees": [
-        "15"
+        "12"
       ],
       "difficulte": 2,
-      "explication": "Consommation = 450 / 30 = 15 Wh/km.",
+      "explication": "Consommation = 420 / 35 = 12 Wh/km.",
       "notion": "Critères et présentation des résultats"
     },
     {
       "source": "si-1re:ch10:banque:150",
       "type": "reponse_courte",
-      "enonce": "Une batterie de drone de 380 g assure 20 min de vol. Calcule son autonomie par kilogramme, en min/kg, arrondie à l'unité. Donne le nombre seul, sans unité.",
+      "enonce": "Une batterie de drone de 450 g assure 21 min de vol. Calcule son autonomie par kilogramme, en min/kg, arrondie à l'unité. Donne le nombre seul, sans unité.",
       "reponses_acceptees": [
-        "53"
+        "47"
       ],
       "marge": 0.5,
       "marge_relative": false,
       "difficulte": 3,
-      "explication": "Masse 380 g = 0,380 kg ; 20 / 0,380 ≈ 52,6 min/kg, soit 53 min/kg.",
+      "explication": "Masse 450 g = 0,450 kg ; 21 / 0,450 ≈ 46,7 min/kg, soit 47 min/kg.",
       "notion": "Critères et présentation des résultats"
     }
   ]
