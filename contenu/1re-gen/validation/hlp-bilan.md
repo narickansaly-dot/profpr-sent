@@ -16,11 +16,11 @@ Cours `contenu/1re-gen/hlp.json` : slug `hlp-1re-gen`, filière `GEN`, niveau `1
 | 2 | L'autorité de la parole : qui a le droit de dire vrai ? | S1, l'autorité de la parole | 8 | 150 | 75 / 30 / 30 / 15 | 62 / 60 / 28 | 150 / 150 | 9 |
 | 3 | Les séductions de la parole : plaire, émouvoir, tromper | S1, les séductions de la parole | 8 | 150 | 75 / 30 / 30 / 15 | 60 / 61 / 29 | 150 / 150 | 11 |
 | 4 | Découverte du monde et pluralité des cultures | S2, découverte du monde | 7 | 150 | 75 / 30 / 30 / 15 | 60 / 60 / 30 | 150 / 150 | 11 |
-| 5 | Décrire, figurer, imaginer : représenter le monde | S2, décrire, figurer, imaginer | 7 | 150 | 75 / 30 / 30 / 15 | 60 / 61 / 29 | 150 / 150 | CH5_RETOUCHES |
+| 5 | Décrire, figurer, imaginer : représenter le monde | S2, décrire, figurer, imaginer | 7 | 150 | 75 / 30 / 30 / 15 | 60 / 61 / 29 | 150 / 150 | 9 |
 | 6 | L'homme et l'animal | S2, l'homme et l'animal | 8 | 150 | 75 / 30 / 30 / 15 | 61 / 59 / 30 | 150 / 150 | 9 |
-| | **Total** | | **46** | **900** | | | **900 / 900** | **CH_TOTAL** |
+| | **Total** | | **46** | **900** | | | **900 / 900** | **58** |
 
-**Statuts** : STATUTS_LIGNE
+**Statuts** : les 900 questions sont `valide` dans `hlp.json` ; aucune n'est laissée `a_relire`, car aucun doute réel n'est resté sans réponse après la relecture indépendante. Les doutes de forme ou de choix éditorial sont listés plus bas (points à trancher) : l'enseignant peut repasser une question en relecture depuis `/admin`.
 
 ## Comment les quiz ont été vérifiés
 
@@ -40,12 +40,12 @@ Cours `contenu/1re-gen/hlp.json` : slug `hlp-1re-gen`, filière `GEN`, niveau `1
 - ch. 5 : Diderot « fonde » la critique d'art → « l'un des fondateurs » (La Font de Saint-Yenne publie dès 1747) ; *De pictura* : version italienne l'année suivante (1436).
 - ch. 6 : tableau des critères : Rousseau « de degré pour l'entendement, de nature pour la liberté » ; Bentham : « question secondaire : seule compte la capacité de souffrir ».
 
-**Dans les banques** (CH_TOTAL questions retouchées, détail dans chaque `-relecture.md`) : distracteurs défendables (logographes exclus de l'assemblée, La Mettrie comme adversaire de Descartes, « il le flatte » chez Renart…), distracteurs absurdes ou éliminables par la forme (dates invraisemblables, « dans L'Homme-machine de La Mettrie » proposé pour Voltaire), bonnes réponses repérables par leur longueur ou leur formulation, énoncés imprécis (« étapes de la préparation » qui excluait l'action ; l'Évangile de Jean écrit en grec, *verbum* étant la traduction latine), et variantes de réponses courtes ajoutées (Theut, exordium, Yahous, βάρβαρος, kósmos, ordre des Prêcheurs…).
+**Dans les banques** (58 questions retouchées, détail dans chaque `-relecture.md`) : distracteurs défendables (logographes exclus de l'assemblée, La Mettrie comme adversaire de Descartes, « il le flatte » chez Renart…), distracteurs absurdes ou éliminables par la forme (dates invraisemblables, « dans L'Homme-machine de La Mettrie » proposé pour Voltaire), bonnes réponses repérables par leur longueur ou leur formulation, énoncés imprécis (« étapes de la préparation » qui excluait l'action ; l'Évangile de Jean écrit en grec, *verbum* étant la traduction latine), et variantes de réponses courtes ajoutées (Theut, exordium, Yahous, βάρβαρος, kósmos, ordre des Prêcheurs…).
 
 ## Validation
 
 - **Banques** : les six fichiers `banques/hlp-chN.json` sont conformes à `verifierBanque` (quotas de STSS : 150 questions, 75 / 30 / 30 / 15, 60 / 60 / 30, tolérance ± 3) ; rapports détaillés dans `validation/hlp-chN.md`.
-- **Cours** : `analyserImport` ne renvoie aucune erreur ; `nettoyerHtml` ne retire rien des 46 sections et des 6 « Je retiens » ; l'import à blanc (`versDonneesCours`) produit les données de `importer_cours`. Taille : TAILLE octets (3 Mo au plus).
+- **Cours** : `analyserImport` ne renvoie aucune erreur ; `nettoyerHtml` ne retire rien des 46 sections et des 6 « Je retiens » ; l'import à blanc (`versDonneesCours`) produit les données de `importer_cours`. Taille : 840 774 octets (3 Mo au plus).
 - **Import réel** : non lancé (pas de base Supabase locale dans le worktree). À faire : `npm run import:contenu -- contenu/1re-gen/hlp.json`.
 - **Après fusion**, relancer `verifierBanque` sur une banque déjà fusionnée signale des doublons avec les questions du chapitre (elles sont identiques) : c'est attendu, la fusion est rejouable.
 
