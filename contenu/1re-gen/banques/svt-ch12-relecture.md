@@ -15,15 +15,15 @@ Accord initial : **150/150** (aucun écart). Neuf remarques sur des questions o�
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch12:banque:066 | L'énoncé demande un risque, mais les distracteurs sont des bénéfices : réponse évidente. | Corrigée : trois distracteurs formulés comme des risques mais faux d'après le cours (pollinisation du blé, essences locales rendues invasives, repousse impossible sur sol intact) ; explication complétée. |
-| svt:ch12:banque:073 | Le paiement pour services environnementaux n'est pas défini dans le cours, seulement illustré (Vittel). | Chapitre complété (section Monétarisation) : définition explicite (somme versée à des acteurs pour qu'ils adoptent des pratiques qui préservent un service). Question inchangée. |
-| svt:ch12:banque:099 | Le cours ne décrit aucune mesure avant la coupe à Hubbard Brook. | Chapitre complété (section Impacts) : les écologues ont d'abord mesuré pendant quelques années les pertes des deux bassins avant la coupe. Question inchangée. |
-| svt:ch12:banque:137 | Accepter « vautour » et « le vautour fauve ». | Gardée : variantes déjà acceptées. |
-| svt:ch12:banque:141 | Accepter le pluriel « îlots de sénescence ». | Gardée : variante déjà acceptée. |
-| svt:ch12:banque:142 | Accepter « ONF » et « Office national des forêts ». | Gardée : variantes déjà acceptées. |
-| svt:ch12:banque:144 | Accepter « One Health », « Une seule santé », « seule santé ». | Gardée : variantes déjà acceptées (avec ou sans guillemets). |
-| svt:ch12:banque:149 | Le cours dit « prélever moins que l'accroissement » ; « ne pas dépasser 3000 » reste cohérent. | Gardée : le relecteur juge lui-même la formulation cohérente ; la réponse attendue (3000 m³) est la limite à ne pas dépasser. |
-| svt:ch12:banque:150 | Accepter « la trame verte et bleue ». | Gardée : variante déjà acceptée. |
+| svt-1re:ch12:banque:066 | L'énoncé demande un risque, mais les distracteurs sont des bénéfices : réponse évidente. | Corrigée : trois distracteurs formulés comme des risques mais faux d'après le cours (pollinisation du blé, essences locales rendues invasives, repousse impossible sur sol intact) ; explication complétée. |
+| svt-1re:ch12:banque:073 | Le paiement pour services environnementaux n'est pas défini dans le cours, seulement illustré (Vittel). | Chapitre complété (section Monétarisation) : définition explicite (somme versée à des acteurs pour qu'ils adoptent des pratiques qui préservent un service). Question inchangée. |
+| svt-1re:ch12:banque:099 | Le cours ne décrit aucune mesure avant la coupe à Hubbard Brook. | Chapitre complété (section Impacts) : les écologues ont d'abord mesuré pendant quelques années les pertes des deux bassins avant la coupe. Question inchangée. |
+| svt-1re:ch12:banque:137 | Accepter « vautour » et « le vautour fauve ». | Gardée : variantes déjà acceptées. |
+| svt-1re:ch12:banque:141 | Accepter le pluriel « îlots de sénescence ». | Gardée : variante déjà acceptée. |
+| svt-1re:ch12:banque:142 | Accepter « ONF » et « Office national des forêts ». | Gardée : variantes déjà acceptées. |
+| svt-1re:ch12:banque:144 | Accepter « One Health », « Une seule santé », « seule santé ». | Gardée : variantes déjà acceptées (avec ou sans guillemets). |
+| svt-1re:ch12:banque:149 | Le cours dit « prélever moins que l'accroissement » ; « ne pas dépasser 3000 » reste cohérent. | Gardée : le relecteur juge lui-même la formulation cohérente ; la réponse attendue (3000 m³) est la limite à ne pas dépasser. |
+| svt-1re:ch12:banque:150 | Accepter « la trame verte et bleue ». | Gardée : variante déjà acceptée. |
 
 ## Totaux
 

@@ -10,19 +10,19 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch8:banque:003 | Explication douteuse (« comme la plupart des comédies du XVIIe » : L'Avare est en prose) | Corrigée : explication neutre |
-| francais:ch8:banque:048 | Distracteur « Simone Benmussa » qui souffle la réponse de la 051 | Corrigée : distracteur remplacé |
-| francais:ch8:banque:066 | « Arbitres » (cours) vs « témoins » : rôle ambigu | Corrigée : énoncé « Quand la dispute prend la forme d'un procès… » |
-| francais:ch8:banque:073 | Distracteur « plaisanteries du Chœur » défendable comme parole-arme | Corrigée : distracteur remplacé |
-| francais:ch8:banque:087, 089, 090, 091, 094, 099, 122, 130, 144, 148 | Pièce non nommée dans l'énoncé (ambiguïté entre les trois pièces) | Corrigées : titre ou auteur ajouté |
-| francais:ch8:banque:109 | « La jeune fille rencontrée aux Tuileries » : Lucrèce y était aussi | Corrigée : « Dorante épouse Clarice, à qui il a fait la cour… » (faux) |
-| francais:ch8:banque:121, 146 | « Pour rendre Camille jalouse » absent du cours ; 146 : « orgueil » défendable | Corrigées : explications ; énoncé 146 précisé (« blessé ») |
-| francais:ch8:banque:143 | « Dans le bois » absent du cours | Corrigée : « retrouve Perdican à l'acte II » ; variantes ajoutées |
-| francais:ch8:banque:118 | Doublon de 037 | Remplacée : V/F vrai, Le Baron veut marier les cousins |
-| francais:ch8:banque:123 | Doublon de 050 | Remplacée : V/F vrai, H.1 rend visite à H.2 |
-| francais:ch8:banque:132 | Paire inverse de 065 | Remplacée : V/F faux, Géronte père méfiant |
-| francais:ch8:banque:149 | Paire inverse de 061 | Remplacée : réponse courte, le curé Bridaine |
-| francais:ch8:banque:150 | Paire inverse de 060 | Remplacée : réponse courte, Clarice aimée d'Alcippe |
+| francais-1re:ch8:banque:003 | Explication douteuse (« comme la plupart des comédies du XVIIe » : L'Avare est en prose) | Corrigée : explication neutre |
+| francais-1re:ch8:banque:048 | Distracteur « Simone Benmussa » qui souffle la réponse de la 051 | Corrigée : distracteur remplacé |
+| francais-1re:ch8:banque:066 | « Arbitres » (cours) vs « témoins » : rôle ambigu | Corrigée : énoncé « Quand la dispute prend la forme d'un procès… » |
+| francais-1re:ch8:banque:073 | Distracteur « plaisanteries du Chœur » défendable comme parole-arme | Corrigée : distracteur remplacé |
+| francais-1re:ch8:banque:087, 089, 090, 091, 094, 099, 122, 130, 144, 148 | Pièce non nommée dans l'énoncé (ambiguïté entre les trois pièces) | Corrigées : titre ou auteur ajouté |
+| francais-1re:ch8:banque:109 | « La jeune fille rencontrée aux Tuileries » : Lucrèce y était aussi | Corrigée : « Dorante épouse Clarice, à qui il a fait la cour… » (faux) |
+| francais-1re:ch8:banque:121, 146 | « Pour rendre Camille jalouse » absent du cours ; 146 : « orgueil » défendable | Corrigées : explications ; énoncé 146 précisé (« blessé ») |
+| francais-1re:ch8:banque:143 | « Dans le bois » absent du cours | Corrigée : « retrouve Perdican à l'acte II » ; variantes ajoutées |
+| francais-1re:ch8:banque:118 | Doublon de 037 | Remplacée : V/F vrai, Le Baron veut marier les cousins |
+| francais-1re:ch8:banque:123 | Doublon de 050 | Remplacée : V/F vrai, H.1 rend visite à H.2 |
+| francais-1re:ch8:banque:132 | Paire inverse de 065 | Remplacée : V/F faux, Géronte père méfiant |
+| francais-1re:ch8:banque:149 | Paire inverse de 061 | Remplacée : réponse courte, le curé Bridaine |
+| francais-1re:ch8:banque:150 | Paire inverse de 060 | Remplacée : réponse courte, Clarice aimée d'Alcippe |
 
 ## Totaux
 

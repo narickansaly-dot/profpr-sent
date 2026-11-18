@@ -15,21 +15,21 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Le r
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch3:banque:006 | 0,64 est cohérent avec « moins d'une à quelques mutations » (borne 10¹⁰). | Gardée : simple confirmation. |
-| svt:ch3:banque:073 | Le calcul utilise le génome haploïde ; le texte dit « plusieurs millions ». | Gardée : la taille du génome (3,2 × 10⁹) est donnée dans l'énoncé et le résultat concorde avec le texte. |
-| svt:ch3:banque:086 | Deux propositions (40 à 70 ; surtout le père) donnaient les réponses des questions 063 et 065. | Réécrite, même type, même notion, même difficulté : calcul des mutations apparues dans une culture de 10⁹ bactéries (0,004 erreur par réplication, 4 × 10⁶ mutations). |
-| svt:ch3:banque:089 | Les calculs (2 %, 7,5 %, 20 %) recoupaient les questions 017 et 019. | Réécrite avec un autre jeu de données (400 levures ; 45 s et 100 s) ; les propositions fausses ne suggèrent plus l'interprétation demandée à la question 019. |
-| svt:ch3:banque:102 | Donnait mot pour mot la réponse de la question 027 (xeroderma pigmentosum). | Réécrite : affirmations générales sur la réparation (équilibre dommages / réparation, réparation des dommages dus aux mutagènes) ; le xeroderma n'est plus cité. |
-| svt:ch3:banque:127 | Formulation absolue : une petite partie des mutations *de novo* surviennent après la fécondation. | Réécrite : « est le plus souvent apparue dans une cellule germinale d'un de ses parents » (toujours vraie). |
-| svt:ch3:banque:136 | Accepter « polymérase », « ADN-polymérase », « l'ADN polymérase ». | Déjà acceptées (le trait d'union est ignoré). |
-| svt:ch3:banque:137 | Accepter « rouges ». | Déjà acceptée. |
-| svt:ch3:banque:140 | Accepter « Val », « la valine ». | Déjà acceptées. |
-| svt:ch3:banque:142 | Accepter « 20 % ». | Déjà acceptées : « 20 % » et « 20% ». |
-| svt:ch3:banque:143 | Accepter « 8 % ». | Déjà acceptées : « 8 % » et « 8% ». |
-| svt:ch3:banque:146 | Accepter « cellule œuf », « cellule-oeuf », « cellule oeuf », « zygote ». | Déjà acceptées, avec les variantes en « œ » et en « oe » (la normalisation ne les confond pas). |
-| svt:ch3:banque:148 | Accepter « U.V. », « ultraviolets », « ultraviolet ». | Déjà acceptées. |
-| svt:ch3:banque:149 | Accepter « diversité allélique ». | Gardée sans cette variante : l'énoncé demande un mot pour désigner « la diversité des allèles » ; répondre « diversité allélique », c'est recopier l'énoncé. « polymorphisme » est bien orthographié. |
-| svt:ch3:banque:150 | Accepter « Induite » et « mutation induite ». | Déjà acceptées (la casse est ignorée). |
+| svt-1re:ch3:banque:006 | 0,64 est cohérent avec « moins d'une à quelques mutations » (borne 10¹⁰). | Gardée : simple confirmation. |
+| svt-1re:ch3:banque:073 | Le calcul utilise le génome haploïde ; le texte dit « plusieurs millions ». | Gardée : la taille du génome (3,2 × 10⁹) est donnée dans l'énoncé et le résultat concorde avec le texte. |
+| svt-1re:ch3:banque:086 | Deux propositions (40 à 70 ; surtout le père) donnaient les réponses des questions 063 et 065. | Réécrite, même type, même notion, même difficulté : calcul des mutations apparues dans une culture de 10⁹ bactéries (0,004 erreur par réplication, 4 × 10⁶ mutations). |
+| svt-1re:ch3:banque:089 | Les calculs (2 %, 7,5 %, 20 %) recoupaient les questions 017 et 019. | Réécrite avec un autre jeu de données (400 levures ; 45 s et 100 s) ; les propositions fausses ne suggèrent plus l'interprétation demandée à la question 019. |
+| svt-1re:ch3:banque:102 | Donnait mot pour mot la réponse de la question 027 (xeroderma pigmentosum). | Réécrite : affirmations générales sur la réparation (équilibre dommages / réparation, réparation des dommages dus aux mutagènes) ; le xeroderma n'est plus cité. |
+| svt-1re:ch3:banque:127 | Formulation absolue : une petite partie des mutations *de novo* surviennent après la fécondation. | Réécrite : « est le plus souvent apparue dans une cellule germinale d'un de ses parents » (toujours vraie). |
+| svt-1re:ch3:banque:136 | Accepter « polymérase », « ADN-polymérase », « l'ADN polymérase ». | Déjà acceptées (le trait d'union est ignoré). |
+| svt-1re:ch3:banque:137 | Accepter « rouges ». | Déjà acceptée. |
+| svt-1re:ch3:banque:140 | Accepter « Val », « la valine ». | Déjà acceptées. |
+| svt-1re:ch3:banque:142 | Accepter « 20 % ». | Déjà acceptées : « 20 % » et « 20% ». |
+| svt-1re:ch3:banque:143 | Accepter « 8 % ». | Déjà acceptées : « 8 % » et « 8% ». |
+| svt-1re:ch3:banque:146 | Accepter « cellule œuf », « cellule-oeuf », « cellule oeuf », « zygote ». | Déjà acceptées, avec les variantes en « œ » et en « oe » (la normalisation ne les confond pas). |
+| svt-1re:ch3:banque:148 | Accepter « U.V. », « ultraviolets », « ultraviolet ». | Déjà acceptées. |
+| svt-1re:ch3:banque:149 | Accepter « diversité allélique ». | Gardée sans cette variante : l'énoncé demande un mot pour désigner « la diversité des allèles » ; répondre « diversité allélique », c'est recopier l'énoncé. « polymorphisme » est bien orthographié. |
+| svt-1re:ch3:banque:150 | Accepter « Induite » et « mutation induite ». | Déjà acceptées (la casse est ignorée). |
 
 Remarque sur la position des bonnes réponses : dans le fichier, les bonnes réponses des qcm_unique suivent un cycle 0, 1, 2, 3. Ce cycle n'a pas d'effet pour l'élève, car l'application permute les propositions à chaque tirage (`tentative_question.permutation`) ; l'ordre n'a donc pas été changé.
 

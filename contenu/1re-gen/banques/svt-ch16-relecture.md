@@ -16,16 +16,16 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Le r
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch16:banque:028 | Le distracteur « mutations provoquées par l'antigène » est défendable (hypermutation somatique, hors programme). | Corrigée : distracteur remplacé par « l'antigène sert de moule pour façonner l'anticorps », sans ambiguïté. |
-| svt:ch16:banque:031 | « Produits dans la moelle osseuse rouge » est juste mais peut se lire « mûrissent ». | Corrigée : l'explication précise production dans la moelle osseuse, puis maturation dans le thymus. |
-| svt:ch16:banque:034 | Les molécules du soi sont aussi des antigènes : double lecture de « avant toute rencontre avec l'antigène ». | Corrigée : « avant toute rencontre avec l'antigène étranger d'un intrus ». |
-| svt:ch16:banque:054 | Le sang débarrassé de ses cellules est le plasma ; le sérum est ce qui reste après coagulation. | Corrigée, ainsi que le chapitre (section 1) et l'explication de la 024 : « partie liquide du sang qui reste après la coagulation ». |
-| svt:ch16:banque:092 | Tétanos mal choisi : la protection antitétanique repose largement sur les anticorps circulants. | Corrigée : énoncé général (un virus déjà combattu), réponse « faux » inchangée. Le chapitre (section 6) est nuancé : la mémoire est le socle pour beaucoup d'infections, mais contre une toxine rapide comme celle du tétanos il faut garder des anticorps circulants (rappels). |
-| svt:ch16:banque:096 | Accepter le pluriel « complexes immuns ». | Gardée : les variantes au pluriel étaient déjà acceptées. |
-| svt:ch16:banque:100 | Accepter « immunité cellulaire », « cellulaire », « réponse cytotoxique ». | Corrigée : « cellulaire » et « réponse cytotoxique » ajoutées (« immunité cellulaire » était déjà acceptée). |
-| svt:ch16:banque:130 | « Nourrissons » au lieu de « enfants nés depuis 2018 ». | Corrigée : « enfants nés depuis le 1er janvier 2018 » ; même précision dans la 149 et dans le chapitre (section 7). |
-| svt:ch16:banque:138 | « Une personne vaccinée ne transmet pas l'agent » : généralisation fausse. | Corrigée : « pour beaucoup de vaccins, une personne vaccinée transmet beaucoup moins l'agent » ; le chapitre (section 7) dit désormais « le risque de transmission est fortement réduit », avec le contre-exemple du tétanos. |
-| svt:ch16:banque:146 | Accepter « Louis Pasteur ». | Gardée : la variante était déjà acceptée. |
+| svt-1re:ch16:banque:028 | Le distracteur « mutations provoquées par l'antigène » est défendable (hypermutation somatique, hors programme). | Corrigée : distracteur remplacé par « l'antigène sert de moule pour façonner l'anticorps », sans ambiguïté. |
+| svt-1re:ch16:banque:031 | « Produits dans la moelle osseuse rouge » est juste mais peut se lire « mûrissent ». | Corrigée : l'explication précise production dans la moelle osseuse, puis maturation dans le thymus. |
+| svt-1re:ch16:banque:034 | Les molécules du soi sont aussi des antigènes : double lecture de « avant toute rencontre avec l'antigène ». | Corrigée : « avant toute rencontre avec l'antigène étranger d'un intrus ». |
+| svt-1re:ch16:banque:054 | Le sang débarrassé de ses cellules est le plasma ; le sérum est ce qui reste après coagulation. | Corrigée, ainsi que le chapitre (section 1) et l'explication de la 024 : « partie liquide du sang qui reste après la coagulation ». |
+| svt-1re:ch16:banque:092 | Tétanos mal choisi : la protection antitétanique repose largement sur les anticorps circulants. | Corrigée : énoncé général (un virus déjà combattu), réponse « faux » inchangée. Le chapitre (section 6) est nuancé : la mémoire est le socle pour beaucoup d'infections, mais contre une toxine rapide comme celle du tétanos il faut garder des anticorps circulants (rappels). |
+| svt-1re:ch16:banque:096 | Accepter le pluriel « complexes immuns ». | Gardée : les variantes au pluriel étaient déjà acceptées. |
+| svt-1re:ch16:banque:100 | Accepter « immunité cellulaire », « cellulaire », « réponse cytotoxique ». | Corrigée : « cellulaire » et « réponse cytotoxique » ajoutées (« immunité cellulaire » était déjà acceptée). |
+| svt-1re:ch16:banque:130 | « Nourrissons » au lieu de « enfants nés depuis 2018 ». | Corrigée : « enfants nés depuis le 1er janvier 2018 » ; même précision dans la 149 et dans le chapitre (section 7). |
+| svt-1re:ch16:banque:138 | « Une personne vaccinée ne transmet pas l'agent » : généralisation fausse. | Corrigée : « pour beaucoup de vaccins, une personne vaccinée transmet beaucoup moins l'agent » ; le chapitre (section 7) dit désormais « le risque de transmission est fortement réduit », avec le contre-exemple du tétanos. |
+| svt-1re:ch16:banque:146 | Accepter « Louis Pasteur ». | Gardée : la variante était déjà acceptée. |
 
 ## Totaux
 

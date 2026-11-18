@@ -10,10 +10,10 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch2:banque:051 | Paire inverse de la 041 (même fait : l'âge de « Roman » est un masque) | Remplacée (faux, difficulté 3) : « L'Éclatante Victoire de Sarrebrück » ne célèbre pas sans ironie une victoire de Napoléon III |
-| francais:ch2:banque:068 | Doublon de la 073 (le recueil compte sept textes) | Remplacée (vrai, difficulté 1) : « Le Mimosa » et « L'Œillet » sont deux textes de fleurs de La Rage de l'expression |
-| francais:ch2:banque:137 | Paire inverse de la 128 (pas de discours militant) | Remplacée (faux, difficulté 2) : les arbres vivent moins longtemps que les hommes |
-| francais:ch2:banque:119 | Variante manquante sans accent | Corrigée : ajout de « Quebec » aux réponses acceptées |
+| francais-1re:ch2:banque:051 | Paire inverse de la 041 (même fait : l'âge de « Roman » est un masque) | Remplacée (faux, difficulté 3) : « L'Éclatante Victoire de Sarrebrück » ne célèbre pas sans ironie une victoire de Napoléon III |
+| francais-1re:ch2:banque:068 | Doublon de la 073 (le recueil compte sept textes) | Remplacée (vrai, difficulté 1) : « Le Mimosa » et « L'Œillet » sont deux textes de fleurs de La Rage de l'expression |
+| francais-1re:ch2:banque:137 | Paire inverse de la 128 (pas de discours militant) | Remplacée (faux, difficulté 2) : les arbres vivent moins longtemps que les hommes |
+| francais-1re:ch2:banque:119 | Variante manquante sans accent | Corrigée : ajout de « Quebec » aux réponses acceptées |
 | (5 champs) | Typographie (outil `typo`) | Corrigés automatiquement |
 
 ## Totaux

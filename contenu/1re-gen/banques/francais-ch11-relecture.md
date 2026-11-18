@@ -12,21 +12,21 @@ Aucun écart, mais la relecture a corrigé la formulation de questions qui prés
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch11:banque:025 | « doivent s'enchaîner » : méthode présentée comme règle | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:026 | ordre des étapes de l'introduction : convention de méthode | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:029 | ordre du paragraphe d'analyse : méthode | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:041 | caractéristiques des axes : méthode | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:043 | « Un bon plan… » : jugement de méthode sans source | Corrigée : « Selon le cours, … » (reste faux) |
-| francais:ch11:banque:045 | « s'étend sur plusieurs paragraphes » : affirmation présentée comme un fait | Corrigée : « Selon le cours, … » (reste faux) |
-| francais:ch11:banque:051 | plan thématique défendable à partir de l'exemple du cours (« autre chose que le comique ») | Corrigée : ancrée sur le tableau des plans du cours (« question fermée ») |
-| francais:ch11:banque:052 | méthode : troisième partie du plan dialectique | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:057 | méthode : rôle de la problématique | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:058 | méthode : contenu d'un paragraphe | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:079 | méthode : lecture en poésie | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:089 | projet de lecture non exigé par la note de service | Corrigée : « Selon le cours, … » (reste faux) |
-| francais:ch11:banque:122 | conseil sur le choix de l'œuvre | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:123 | conseil sur la présentation | Corrigée : « Selon le cours, … » |
-| francais:ch11:banque:132 | plusieurs adjectifs plausibles pour compléter | Corrigée : énoncé indique qu'il s'agit d'une citation de la note de service |
+| francais-1re:ch11:banque:025 | « doivent s'enchaîner » : méthode présentée comme règle | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:026 | ordre des étapes de l'introduction : convention de méthode | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:029 | ordre du paragraphe d'analyse : méthode | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:041 | caractéristiques des axes : méthode | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:043 | « Un bon plan… » : jugement de méthode sans source | Corrigée : « Selon le cours, … » (reste faux) |
+| francais-1re:ch11:banque:045 | « s'étend sur plusieurs paragraphes » : affirmation présentée comme un fait | Corrigée : « Selon le cours, … » (reste faux) |
+| francais-1re:ch11:banque:051 | plan thématique défendable à partir de l'exemple du cours (« autre chose que le comique ») | Corrigée : ancrée sur le tableau des plans du cours (« question fermée ») |
+| francais-1re:ch11:banque:052 | méthode : troisième partie du plan dialectique | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:057 | méthode : rôle de la problématique | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:058 | méthode : contenu d'un paragraphe | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:079 | méthode : lecture en poésie | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:089 | projet de lecture non exigé par la note de service | Corrigée : « Selon le cours, … » (reste faux) |
+| francais-1re:ch11:banque:122 | conseil sur le choix de l'œuvre | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:123 | conseil sur la présentation | Corrigée : « Selon le cours, … » |
+| francais-1re:ch11:banque:132 | plusieurs adjectifs plausibles pour compléter | Corrigée : énoncé indique qu'il s'agit d'une citation de la note de service |
 
 ## Totaux
 

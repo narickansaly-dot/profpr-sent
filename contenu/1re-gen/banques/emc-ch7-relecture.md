@@ -12,22 +12,22 @@ Méthode : relecture à l'aveugle par un sous-agent indépendant, qui a résolu 
 
 | Source | Problème | Décision |
 |---|---|---|
-| emc:ch7:banque:011 | Le permis de conduire était cité parmi les démarches qui exigent le certificat de JDC ; le texte corrigé précise qu'il n'est plus exigé pour le permis depuis 2024. | Corrigée : bonne réponse « examens et concours soumis au contrôle de l'autorité publique, comme le baccalauréat » ; « S'inscrire à l'examen du permis de conduire » devient un distracteur ; explication alignée sur le texte. |
-| emc:ch7:banque:015 | La résilience, définie dans le même encadré, est un distracteur proche. | Gardée : l'énoncé (la sécurité dépend de l'engagement et du soutien de chaque citoyen) reprend la définition de l'esprit de défense, pas celle de la résilience (résister à un choc et s'en relever). |
-| emc:ch7:banque:016 | Changement de nom en « journée de mobilisation » signalé comme invérifiable ; bonne réponse repérable par sa longueur (doute de l'auteur). | Corrigée : bonne réponse réduite à « La JDC » ; distracteur « Le service militaire volontaire » raccourci. Le changement de nom (loi du 16 août 2026) figure dans le texte corrigé et reste dans l'explication. |
-| emc:ch7:banque:032 | Le texte ne dit pas que la LPM a été « adoptée » dans ce contexte. | Corrigée : énoncé « Dans quel contexte international la LPM 2024-2030 fixe-t-elle les moyens consacrés aux armées ? ». |
-| emc:ch7:banque:058 | « Point commun » déductible, mais pas formulé tel quel dans le cours. | Corrigée : la question demande à quels acteurs Viginum relie les deux affaires ; bonne réponse « À des acteurs russes » ; nouveaux distracteurs ; explication citant les deux formulations du texte. |
-| emc:ch7:banque:070 | Doute de l'auteur : le nouveau service national (2026) vise aussi les 18-25 ans. | Corrigée : l'énoncé précise que Lucas cherche avant tout une formation professionnelle pour s'insérer ; « Le service national créé en 2026 » devient un distracteur explicitement écarté dans l'explication. |
-| emc:ch7:banque:074 | Fait récent (service national de 10 mois, 2026) invérifiable pour le relecteur. | Gardée : le fait figure tel quel dans le texte corrigé du chapitre. |
-| emc:ch7:banque:086 | « Saint-Denis » peut faire hésiter (le Stade de France n'est pas nommé). | Gardée : le texte cite littéralement « les terrasses de Paris et Saint-Denis » pour le 13 novembre. |
-| emc:ch7:banque:096 | Une campagne de faux comptes seule est une modalité, pas une guerre hybride complète au sens de la définition. | Corrigée : énoncé « Lesquelles de ces situations relèvent des modalités d'une guerre hybride décrites dans le cours ? » ; explication reprise. |
-| emc:ch7:banque:121 | Doublon de la 049 (définition) et de la 050 (sous le seuil du conflit ouvert). | Remplacée : vrai/faux (faux, difficulté 1) : le service national de 2026 n'aurait aucun lien avec la réserve (il est suivi d'une affectation dans la réserve). |
-| emc:ch7:banque:131 | Doublon partiel de la 069 (SNU). | Remplacée : vrai/faux (vrai, difficulté 1) : la JDC a été rebaptisée « journée de mobilisation » en 2026. |
-| emc:ch7:banque:137 | Depuis 2026, un élève pourrait répondre « journée de mobilisation ». | Corrigée : l'énoncé demande le nom d'origine de la journée, avant son changement de nom en 2026. |
-| emc:ch7:banque:138 | Explication citant le permis de conduire (fait corrigé dans le texte). | Corrigée : énoncé et explication repris (« examens et concours soumis au contrôle de l'autorité publique, par exemple le baccalauréat »). |
-| emc:ch7:banque:140 | Formulation maladroite. | Corrigée : « Une intervention armée à l'étranger doit être autorisée par un vote pour se prolonger au-delà d'une certaine durée. Quelle est cette durée, en mois ? ». Réponses acceptées inchangées (4, quatre, 4 mois, quatre mois). |
-| emc:ch7:banque:142 | « Hameçonnage » désigne la technique, pas les courriels ; « phishing » à accepter. | Corrigée : l'énoncé demande le mot qui désigne la technique ; « phishing » et « le phishing » étaient déjà acceptés ; explication reprise. |
-| emc:ch7:banque:145 | Tréma difficile à taper. | Corrigée : « Doppelganger » était déjà accepté ; variantes « la campagne Doppelganger », « Doppel-gänger » et « Doppel-ganger » ajoutées. |
+| emc-1re:ch7:banque:011 | Le permis de conduire était cité parmi les démarches qui exigent le certificat de JDC ; le texte corrigé précise qu'il n'est plus exigé pour le permis depuis 2024. | Corrigée : bonne réponse « examens et concours soumis au contrôle de l'autorité publique, comme le baccalauréat » ; « S'inscrire à l'examen du permis de conduire » devient un distracteur ; explication alignée sur le texte. |
+| emc-1re:ch7:banque:015 | La résilience, définie dans le même encadré, est un distracteur proche. | Gardée : l'énoncé (la sécurité dépend de l'engagement et du soutien de chaque citoyen) reprend la définition de l'esprit de défense, pas celle de la résilience (résister à un choc et s'en relever). |
+| emc-1re:ch7:banque:016 | Changement de nom en « journée de mobilisation » signalé comme invérifiable ; bonne réponse repérable par sa longueur (doute de l'auteur). | Corrigée : bonne réponse réduite à « La JDC » ; distracteur « Le service militaire volontaire » raccourci. Le changement de nom (loi du 16 août 2026) figure dans le texte corrigé et reste dans l'explication. |
+| emc-1re:ch7:banque:032 | Le texte ne dit pas que la LPM a été « adoptée » dans ce contexte. | Corrigée : énoncé « Dans quel contexte international la LPM 2024-2030 fixe-t-elle les moyens consacrés aux armées ? ». |
+| emc-1re:ch7:banque:058 | « Point commun » déductible, mais pas formulé tel quel dans le cours. | Corrigée : la question demande à quels acteurs Viginum relie les deux affaires ; bonne réponse « À des acteurs russes » ; nouveaux distracteurs ; explication citant les deux formulations du texte. |
+| emc-1re:ch7:banque:070 | Doute de l'auteur : le nouveau service national (2026) vise aussi les 18-25 ans. | Corrigée : l'énoncé précise que Lucas cherche avant tout une formation professionnelle pour s'insérer ; « Le service national créé en 2026 » devient un distracteur explicitement écarté dans l'explication. |
+| emc-1re:ch7:banque:074 | Fait récent (service national de 10 mois, 2026) invérifiable pour le relecteur. | Gardée : le fait figure tel quel dans le texte corrigé du chapitre. |
+| emc-1re:ch7:banque:086 | « Saint-Denis » peut faire hésiter (le Stade de France n'est pas nommé). | Gardée : le texte cite littéralement « les terrasses de Paris et Saint-Denis » pour le 13 novembre. |
+| emc-1re:ch7:banque:096 | Une campagne de faux comptes seule est une modalité, pas une guerre hybride complète au sens de la définition. | Corrigée : énoncé « Lesquelles de ces situations relèvent des modalités d'une guerre hybride décrites dans le cours ? » ; explication reprise. |
+| emc-1re:ch7:banque:121 | Doublon de la 049 (définition) et de la 050 (sous le seuil du conflit ouvert). | Remplacée : vrai/faux (faux, difficulté 1) : le service national de 2026 n'aurait aucun lien avec la réserve (il est suivi d'une affectation dans la réserve). |
+| emc-1re:ch7:banque:131 | Doublon partiel de la 069 (SNU). | Remplacée : vrai/faux (vrai, difficulté 1) : la JDC a été rebaptisée « journée de mobilisation » en 2026. |
+| emc-1re:ch7:banque:137 | Depuis 2026, un élève pourrait répondre « journée de mobilisation ». | Corrigée : l'énoncé demande le nom d'origine de la journée, avant son changement de nom en 2026. |
+| emc-1re:ch7:banque:138 | Explication citant le permis de conduire (fait corrigé dans le texte). | Corrigée : énoncé et explication repris (« examens et concours soumis au contrôle de l'autorité publique, par exemple le baccalauréat »). |
+| emc-1re:ch7:banque:140 | Formulation maladroite. | Corrigée : « Une intervention armée à l'étranger doit être autorisée par un vote pour se prolonger au-delà d'une certaine durée. Quelle est cette durée, en mois ? ». Réponses acceptées inchangées (4, quatre, 4 mois, quatre mois). |
+| emc-1re:ch7:banque:142 | « Hameçonnage » désigne la technique, pas les courriels ; « phishing » à accepter. | Corrigée : l'énoncé demande le mot qui désigne la technique ; « phishing » et « le phishing » étaient déjà acceptés ; explication reprise. |
+| emc-1re:ch7:banque:145 | Tréma difficile à taper. | Corrigée : « Doppelganger » était déjà accepté ; variantes « la campagne Doppelganger », « Doppel-gänger » et « Doppel-ganger » ajoutées. |
 
 - Gardées sans changement : 137 au total, dont 015, 074 et 086 gardées malgré une remarque.
 - Corrigées : 11 (011, 016, 032, 058, 070, 096, 137, 138, 140, 142, 145).
@@ -49,7 +49,7 @@ Les 12 questions corrigées ou remplacées ont été relues une seconde fois à 
 
 Ces questions reposent sur des faits de 2026 relevés par la vérification factuelle du cours (une seule recherche) et non recoupés : elles restent `a_relire` jusqu'à confirmation par l'enseignant.
 
-- emc:ch7:banque:074 : contenu du service national créé en 2026.
-- emc:ch7:banque:121 : lien entre ce service national et la réserve.
-- emc:ch7:banque:131 : JDC rebaptisée « journée de mobilisation » par la loi du 16 août 2026.
-- emc:ch7:banque:137 : nom d'origine de la JDC, avant ce changement de nom.
+- emc-1re:ch7:banque:074 : contenu du service national créé en 2026.
+- emc-1re:ch7:banque:121 : lien entre ce service national et la réserve.
+- emc-1re:ch7:banque:131 : JDC rebaptisée « journée de mobilisation » par la loi du 16 août 2026.
+- emc-1re:ch7:banque:137 : nom d'origine de la JDC, avant ce changement de nom.

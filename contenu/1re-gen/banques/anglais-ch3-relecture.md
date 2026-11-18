@@ -14,14 +14,14 @@ Un relecteur qui n'a pas écrit la banque a d'abord répondu aux 150 questions �
 
 | Source | Problème | Décision |
 | --- | --- | --- |
-| anglais:ch3:banque:012 | Variantes manquantes avec virgule (« Washington, D.C. », « Washington, DC »), que la normalisation ne ramène pas aux formes déjà acceptées. | Ajout des deux variantes. |
-| anglais:ch3:banque:019 | Le nombre écrit en lettres (« sixty ») n'était pas accepté. | Ajout de « sixty ». |
-| anglais:ch3:banque:114 | Forme contractée du past perfect non acceptée. | Ajout de « 'd taken » et « ’d taken » (« took » reste accepté, comme dans la banque). |
-| anglais:ch3:banque:127 | L'énoncé affirmait que la photo de Lange avait « changé l'opinion publique en 1936 », ce que le texte ne dit pas. | Phrase remplacée par « Lange's photo ___ encourage the government to send help. », conforme au texte ; explication ajustée. |
-| anglais:ch3:banque:134 | Le distracteur « hardly » est défendable : « The portrait was hardly amazing » est un anglais correct (ironique). | « hardly » remplacé par « much », incorrect devant un adjectif seul ; explication complétée. |
-| anglais:ch3:banque:146 | « very terrifying » et « very ridiculous » se rencontrent en anglais courant ; la règle n'est vraie que comme norme scolaire du cours. | Énoncé précisé : « Selon le cours, quels adverbes accompagnent… ». |
-| anglais:ch3:banque:066 | La proposition « He witnessed the Soweto uprising. » donnait mot pour mot la réponse de la question 078. | Exemples remplacés par « Lange witnessed (to) the crisis. » ; bonnes réponses inchangées. |
-| anglais:ch3:banque:032 | Explication maladroite (« célèbrent le pouvoir ou le reconnaissent ») qui ne rendait pas compte des fresques du Federal Art Project. | Explication reformulée. |
+| anglais-1re:ch3:banque:012 | Variantes manquantes avec virgule (« Washington, D.C. », « Washington, DC »), que la normalisation ne ramène pas aux formes déjà acceptées. | Ajout des deux variantes. |
+| anglais-1re:ch3:banque:019 | Le nombre écrit en lettres (« sixty ») n'était pas accepté. | Ajout de « sixty ». |
+| anglais-1re:ch3:banque:114 | Forme contractée du past perfect non acceptée. | Ajout de « 'd taken » et « ’d taken » (« took » reste accepté, comme dans la banque). |
+| anglais-1re:ch3:banque:127 | L'énoncé affirmait que la photo de Lange avait « changé l'opinion publique en 1936 », ce que le texte ne dit pas. | Phrase remplacée par « Lange's photo ___ encourage the government to send help. », conforme au texte ; explication ajustée. |
+| anglais-1re:ch3:banque:134 | Le distracteur « hardly » est défendable : « The portrait was hardly amazing » est un anglais correct (ironique). | « hardly » remplacé par « much », incorrect devant un adjectif seul ; explication complétée. |
+| anglais-1re:ch3:banque:146 | « very terrifying » et « very ridiculous » se rencontrent en anglais courant ; la règle n'est vraie que comme norme scolaire du cours. | Énoncé précisé : « Selon le cours, quels adverbes accompagnent… ». |
+| anglais-1re:ch3:banque:066 | La proposition « He witnessed the Soweto uprising. » donnait mot pour mot la réponse de la question 078. | Exemples remplacés par « Lange witnessed (to) the crisis. » ; bonnes réponses inchangées. |
+| anglais-1re:ch3:banque:032 | Explication maladroite (« célèbrent le pouvoir ou le reconnaissent ») qui ne rendait pas compte des fresques du Federal Art Project. | Explication reformulée. |
 
 Aucune position de bonne réponse ni aucun vrai/faux n'a été modifié.
 

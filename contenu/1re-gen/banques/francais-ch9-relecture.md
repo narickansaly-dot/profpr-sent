@@ -10,10 +10,10 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch9:banque:130 | « Car peut commencer une réponse à pourquoi » : « car » peut ouvrir une phrase dans l'usage réel, énoncé discutable | Corrigée : « Car, comme parce que, peut répondre directement à pourquoi ? » (faux, comme dans le cours) |
-| francais:ch9:banque:060 | Paire inverse de 061 (même type, même notion) | Remplacée par un vrai/faux faux sur la notion du but : afin que et de crainte que n'expriment pas tous deux un but à éviter |
-| francais:ch9:banque:131 | « Asyndète » défendable pour « sans mot de liaison » | Corrigée : variante ajoutée |
-| francais:ch9:banque:150 | Explication listant six éléments pour cinq étapes | Corrigée : explication clarifiée |
+| francais-1re:ch9:banque:130 | « Car peut commencer une réponse à pourquoi » : « car » peut ouvrir une phrase dans l'usage réel, énoncé discutable | Corrigée : « Car, comme parce que, peut répondre directement à pourquoi ? » (faux, comme dans le cours) |
+| francais-1re:ch9:banque:060 | Paire inverse de 061 (même type, même notion) | Remplacée par un vrai/faux faux sur la notion du but : afin que et de crainte que n'expriment pas tous deux un but à éviter |
+| francais-1re:ch9:banque:131 | « Asyndète » défendable pour « sans mot de liaison » | Corrigée : variante ajoutée |
+| francais-1re:ch9:banque:150 | Explication listant six éléments pour cinq étapes | Corrigée : explication clarifiée |
 
 ## Totaux
 

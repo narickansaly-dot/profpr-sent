@@ -17,14 +17,14 @@ La relecture complète a toutefois relevé une explication fausse, quatre questi
 
 | Source | Problème | Décision |
 |---|---|---|
-| anglais:ch2:banque:021 | L'énoncé (« Quel Chief Justice présidait… ») donnait la réponse de la question 034 (« Chief Justice »). | Énoncé reformulé : « Qui présidait la Cour suprême… ». |
-| anglais:ch2:banque:038 | La bonne réponse « Un organe consultatif inscrit dans la Constitution » laissait croire que la Voice y avait été inscrite, alors que la proposition a été rejetée. | Remplacée par « Un organe consultatif à inscrire dans la Constitution ». |
-| anglais:ch2:banque:044 | Explication fausse : elle attribuait aux partisans « les deux dernières propositions », dont l'une (symbolique, sans réel pouvoir) est un argument des critiques. | Explication réécrite en nommant les deux arguments des partisans (propositions 1 et 3). |
-| anglais:ch2:banque:068 | Réponse courte : « integrated » (schools were integrated) est de l'anglais juste et naturel dans ce contexte. | Variante « integrated » ajoutée ; explication complétée. |
-| anglais:ch2:banque:077 | L'explication présentait « to infringe the law » comme un équivalent soutenu courant ; infringe s'emploie surtout avec a rule, a right, copyright. | Explication nuancée. |
-| anglais:ch2:banque:082 | L'énoncé (« Dans the Chief Justice… ») donnait aussi la réponse de 034. | Exemple remplacé par « Nine Justices sit on the Court » ; explication adaptée. |
-| anglais:ch2:banque:087 | La phrase « The Justices ___ by the Senate » donnait la réponse de la question 018 (qui confirme les juges ?). | Nouveau contexte : « The new tenants ___ by the council » (are chosen), même position de la bonne réponse. |
-| anglais:ch2:banque:095 | La phrase « They gave Māori men the vote in 1867 » donnait une réponse de la question 042. | Nouveau contexte : « They gave the tenants a new contract » (were given), même position de la bonne réponse. |
+| anglais-1re:ch2:banque:021 | L'énoncé (« Quel Chief Justice présidait… ») donnait la réponse de la question 034 (« Chief Justice »). | Énoncé reformulé : « Qui présidait la Cour suprême… ». |
+| anglais-1re:ch2:banque:038 | La bonne réponse « Un organe consultatif inscrit dans la Constitution » laissait croire que la Voice y avait été inscrite, alors que la proposition a été rejetée. | Remplacée par « Un organe consultatif à inscrire dans la Constitution ». |
+| anglais-1re:ch2:banque:044 | Explication fausse : elle attribuait aux partisans « les deux dernières propositions », dont l'une (symbolique, sans réel pouvoir) est un argument des critiques. | Explication réécrite en nommant les deux arguments des partisans (propositions 1 et 3). |
+| anglais-1re:ch2:banque:068 | Réponse courte : « integrated » (schools were integrated) est de l'anglais juste et naturel dans ce contexte. | Variante « integrated » ajoutée ; explication complétée. |
+| anglais-1re:ch2:banque:077 | L'explication présentait « to infringe the law » comme un équivalent soutenu courant ; infringe s'emploie surtout avec a rule, a right, copyright. | Explication nuancée. |
+| anglais-1re:ch2:banque:082 | L'énoncé (« Dans the Chief Justice… ») donnait aussi la réponse de 034. | Exemple remplacé par « Nine Justices sit on the Court » ; explication adaptée. |
+| anglais-1re:ch2:banque:087 | La phrase « The Justices ___ by the Senate » donnait la réponse de la question 018 (qui confirme les juges ?). | Nouveau contexte : « The new tenants ___ by the council » (are chosen), même position de la bonne réponse. |
+| anglais-1re:ch2:banque:095 | La phrase « They gave Māori men the vote in 1867 » donnait une réponse de la question 042. | Nouveau contexte : « They gave the tenants a new contract » (were given), même position de la bonne réponse. |
 
 Aucun changement de position de bonne réponse ni de vrai/faux : les répartitions sont inchangées.
 

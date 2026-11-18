@@ -19,8 +19,8 @@
 
 | Source | Problème | Décision |
 | --- | --- | --- |
-| anglais:ch4:banque:066 | « natural gas » compte parmi les bonnes réponses alors que le cours ne cite que coal et oil ; l'explication présentait les trois comme s'ils venaient du cours. | Bonne réponse conservée (fait exact, connaissance générale de niveau B1+) ; explication réécrite : le cours cite coal et oil, natural gas en est un aussi car extrait du sous-sol ; tides et wind sont renouvelables. |
-| anglais:ch4:banque:091 | L'énoncé parle d'« expression soulignée » alors qu'aucun soulignement n'est affiché. | Énoncé reformulé : que signifie "clinical applications" ? |
+| anglais-1re:ch4:banque:066 | « natural gas » compte parmi les bonnes réponses alors que le cours ne cite que coal et oil ; l'explication présentait les trois comme s'ils venaient du cours. | Bonne réponse conservée (fait exact, connaissance générale de niveau B1+) ; explication réécrite : le cours cite coal et oil, natural gas en est un aussi car extrait du sous-sol ; tides et wind sont renouvelables. |
+| anglais-1re:ch4:banque:091 | L'énoncé parle d'« expression soulignée » alors qu'aucun soulignement n'est affiché. | Énoncé reformulé : que signifie "clinical applications" ? |
 
 ## Texte du cours
 

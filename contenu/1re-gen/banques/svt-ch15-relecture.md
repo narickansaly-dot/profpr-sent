@@ -16,14 +16,14 @@ Accord initial : 150/150. Aucun écart ; 8 remarques sur des questions où le re
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch15:banque:037 | Les mastocytes pourraient aussi être qualifiés de sentinelles. | Gardée : les mastocytes ne figurent pas dans les propositions, et la réponse (macrophages et cellules dendritiques) est celle du tableau du cours. |
-| svt:ch15:banque:049 | La question donne la définition de la diapédèse. | Gardée : aucune autre question ne demande ce mot. |
-| svt:ch15:banque:080 | Les virus rangés parmi les « êtres vivants microscopiques » : discutable. | Corrigée : l'énoncé parle de « micro-organismes », comme le texte. |
-| svt:ch15:banque:139 | Accepter « la rate ». | Déjà acceptée ; rien à changer. |
-| svt:ch15:banque:142 | Accepter le singulier « pseudopode ». | Déjà accepté ; rien à changer. |
-| svt:ch15:banque:143 | Variantes Élie Metchnikoff, Metchnikov, Mechnikov. | Corrigée : ajout de « Élie Mechnikov », « Elie Mechnikov », « Elie Metchnikov » et « Ilia Metchnikov ». |
-| svt:ch15:banque:145 | Accepter « résolution de l'inflammation » et « la résolution ». | Déjà acceptées ; rien à changer. |
-| svt:ch15:banque:146 | Variantes cyclooxygénase, cyclo-oxygénase, COX. | Corrigée : ajout de « COX », « la COX » et « cyclooxygenase » ; le chapitre mentionne désormais le sigle (« la cyclo-oxygénase, ou COX »), et l'explication aussi. |
+| svt-1re:ch15:banque:037 | Les mastocytes pourraient aussi être qualifiés de sentinelles. | Gardée : les mastocytes ne figurent pas dans les propositions, et la réponse (macrophages et cellules dendritiques) est celle du tableau du cours. |
+| svt-1re:ch15:banque:049 | La question donne la définition de la diapédèse. | Gardée : aucune autre question ne demande ce mot. |
+| svt-1re:ch15:banque:080 | Les virus rangés parmi les « êtres vivants microscopiques » : discutable. | Corrigée : l'énoncé parle de « micro-organismes », comme le texte. |
+| svt-1re:ch15:banque:139 | Accepter « la rate ». | Déjà acceptée ; rien à changer. |
+| svt-1re:ch15:banque:142 | Accepter le singulier « pseudopode ». | Déjà accepté ; rien à changer. |
+| svt-1re:ch15:banque:143 | Variantes Élie Metchnikoff, Metchnikov, Mechnikov. | Corrigée : ajout de « Élie Mechnikov », « Elie Mechnikov », « Elie Metchnikov » et « Ilia Metchnikov ». |
+| svt-1re:ch15:banque:145 | Accepter « résolution de l'inflammation » et « la résolution ». | Déjà acceptées ; rien à changer. |
+| svt-1re:ch15:banque:146 | Variantes cyclooxygénase, cyclo-oxygénase, COX. | Corrigée : ajout de « COX », « la COX » et « cyclooxygenase » ; le chapitre mentionne désormais le sigle (« la cyclo-oxygénase, ou COX »), et l'explication aussi. |
 
 ## Totaux
 

@@ -14,12 +14,12 @@ Un relecteur qui n'a pas écrit la banque a d'abord répondu à l'aveugle aux 15
 
 | Source | Problème | Décision |
 | --- | --- | --- |
-| anglais:ch1:banque:001 | Explication mêlant anglais et français au milieu d'une phrase (« through Pier 21, dans le port d'Halifax »). | Citation anglaise complète du texte, suivie d'une glose française. |
-| anglais:ch1:banque:008 | « au minimum » alors que le texte dit « more than 25,000 » (strictement, plus de 25 000). | Énoncé reformulé : « le Canada a accueilli plus de combien de réfugiés syriens… ». Réponse inchangée (25000). |
-| anglais:ch1:banque:010 | Explication incorrecte, avec un sujet français suivi d'un verbe anglais (« Le navire et ses 376 passagers… was turned away »). | Citation anglaise complète et correcte du texte, suivie d'une glose française. |
-| anglais:ch1:banque:062 | « Quel mot complète » alors que les propositions sont des expressions de deux mots. | « Quelle expression complète ». |
-| anglais:ch1:banque:064 | Explication fautive (« On immigrate to un pays »). | « On dit to immigrate to + pays : la préposition to indique la destination. » |
-| anglais:ch1:banque:115 | Variante manquante : « had never needed », la forme du texte, est une négation correcte au past perfect. | Variante ajoutée et explication complétée. |
+| anglais-1re:ch1:banque:001 | Explication mêlant anglais et français au milieu d'une phrase (« through Pier 21, dans le port d'Halifax »). | Citation anglaise complète du texte, suivie d'une glose française. |
+| anglais-1re:ch1:banque:008 | « au minimum » alors que le texte dit « more than 25,000 » (strictement, plus de 25 000). | Énoncé reformulé : « le Canada a accueilli plus de combien de réfugiés syriens… ». Réponse inchangée (25000). |
+| anglais-1re:ch1:banque:010 | Explication incorrecte, avec un sujet français suivi d'un verbe anglais (« Le navire et ses 376 passagers… was turned away »). | Citation anglaise complète et correcte du texte, suivie d'une glose française. |
+| anglais-1re:ch1:banque:062 | « Quel mot complète » alors que les propositions sont des expressions de deux mots. | « Quelle expression complète ». |
+| anglais-1re:ch1:banque:064 | Explication fautive (« On immigrate to un pays »). | « On dit to immigrate to + pays : la préposition to indique la destination. » |
+| anglais-1re:ch1:banque:115 | Variante manquante : « had never needed », la forme du texte, est une négation correcte au past perfect. | Variante ajoutée et explication complétée. |
 
 ## Texte du cours
 

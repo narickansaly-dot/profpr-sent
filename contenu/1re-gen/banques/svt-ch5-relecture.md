@@ -17,24 +17,24 @@ Les 7 écarts viennent d'un décalage du relecteur, pas d'une erreur de la banqu
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch5:banque:103 | Écart : attendu [0, 2] (développement, hormones) ; relecteur [1, 3], c'est-à-dire la réponse de la 104. | Gardée : le texte cite le développement et les hormones comme facteurs internes ; le code génétique et le nombre de chromosomes ne varient pas d'une cellule à l'autre. |
-| svt:ch5:banque:104 | Écart : attendu [1, 3] (gène humain introduit, ribosomes de la bactérie) ; relecteur [0, 2], c'est-à-dire la réponse de la 103. | Gardée : les cellules receveuses traduisent « avec leur propre équipement », au niveau des ribosomes, et les bactéries n'ont pas de noyau. |
-| svt:ch5:banque:122 | Écart : attendu vrai ; relecteur faux (réponse de la 123). | Gardée : « Le ribosome se fixe sur l'ARNm et le parcourt » est écrit dans le cours. |
-| svt:ch5:banque:123 | Écart : attendu faux ; relecteur vrai (réponse de la 122). | Gardée : le codon stop n'apporte aucun acide aminé. |
-| svt:ch5:banque:128 | Écart : attendu vrai ; relecteur faux (réponse de la 129). | Gardée : le code binaire utilise deux symboles, 0 et 1. |
-| svt:ch5:banque:132 | Écart : attendu vrai ; relecteur faux (réponse de la 133). | Gardée : seul le 6e acide aminé de la chaîne β est remplacé. |
-| svt:ch5:banque:133 | Écart : attendu faux ; relecteur vrai (réponse de la 132). | Gardée : les personnes HbA//HbS n'ont en général pas de symptômes. |
-| svt:ch5:banque:013 | Son énoncé (passage de l'hémoglobine fœtale à l'hémoglobine adulte) donne la réponse de la 058. | Remplacée par une question du même type et de la même difficulté : nombre de codons de la glycine (4, d'après le tableau du code). |
-| svt:ch5:banque:038 | Syntaxe lourde. | Reformulée : « Quelle protéine humaine produisent des bactéries ayant reçu un gène humain, pour soigner des personnes diabétiques ? » |
-| svt:ch5:banque:078 | On peut hésiter à cocher « cellules riches en ARN » (une observation de Brachet, pas le problème de localisation). | Réécrite : l'énoncé vise le problème de localisation, et les deux bonnes propositions sont « l'ADN reste dans le noyau » et « les protéines sont fabriquées dans le cytoplasme ». |
-| svt:ch5:banque:082 | Son énoncé (maturation du pré-ARNm dans le noyau d'une cellule eucaryote) donne la réponse de la 066. | Réécrite sans la maturation : ADN et transcription dans le noyau, traduction et assemblage des acides aminés hors du noyau. |
-| svt:ch5:banque:090 | « Une protéine peut être fabriquée sans cellule vivante » décrit une condition de l'expérience plutôt qu'un résultat. | Proposition remplacée par un résultat : « On obtient une chaîne formée uniquement de phénylalanine ». |
-| svt:ch5:banque:118 | Une « chaîne » d'un seul acide aminé est un cas limite. | Gardée : la réponse découle directement de la règle du cours (le codon initiateur apporte la méthionine, le codon stop n'apporte rien), et le relecteur l'a trouvée. |
-| svt:ch5:banque:136 | Variantes : « peptidique » seul et « liaison peptidique ». | Déjà acceptées ; « liaison peptide » et « lien peptidique » ajoutées. |
-| svt:ch5:banque:137 | Variantes : « ARN polymérase », « ARN-polymérase », « l'ARN polymérase », « polymérase ». | Déjà acceptées ; « une ARN polymérase » ajoutée. |
-| svt:ch5:banque:145 | Variantes : « transgénique », « OGM », « génétiquement modifié », « organisme transgénique ». | Déjà acceptées ; pluriels et « organisme génétiquement modifié (OGM) » ajoutés. |
-| svt:ch5:banque:146 | Variantes : « valine », « Val », « la valine ». | Déjà acceptées ; « valine (Val) » ajoutée. |
-| svt:ch5:banque:148 | Accepter « 1 » et « 1 million ». | Énoncé précisé (« en millions d'octets, par un nombre seul, par exemple 5 pour 5 millions d'octets ») ; « 1 million », « un million », « 1 million d'octets » et « 1000000 » ajoutées. |
+| svt-1re:ch5:banque:103 | Écart : attendu [0, 2] (développement, hormones) ; relecteur [1, 3], c'est-à-dire la réponse de la 104. | Gardée : le texte cite le développement et les hormones comme facteurs internes ; le code génétique et le nombre de chromosomes ne varient pas d'une cellule à l'autre. |
+| svt-1re:ch5:banque:104 | Écart : attendu [1, 3] (gène humain introduit, ribosomes de la bactérie) ; relecteur [0, 2], c'est-à-dire la réponse de la 103. | Gardée : les cellules receveuses traduisent « avec leur propre équipement », au niveau des ribosomes, et les bactéries n'ont pas de noyau. |
+| svt-1re:ch5:banque:122 | Écart : attendu vrai ; relecteur faux (réponse de la 123). | Gardée : « Le ribosome se fixe sur l'ARNm et le parcourt » est écrit dans le cours. |
+| svt-1re:ch5:banque:123 | Écart : attendu faux ; relecteur vrai (réponse de la 122). | Gardée : le codon stop n'apporte aucun acide aminé. |
+| svt-1re:ch5:banque:128 | Écart : attendu vrai ; relecteur faux (réponse de la 129). | Gardée : le code binaire utilise deux symboles, 0 et 1. |
+| svt-1re:ch5:banque:132 | Écart : attendu vrai ; relecteur faux (réponse de la 133). | Gardée : seul le 6e acide aminé de la chaîne β est remplacé. |
+| svt-1re:ch5:banque:133 | Écart : attendu faux ; relecteur vrai (réponse de la 132). | Gardée : les personnes HbA//HbS n'ont en général pas de symptômes. |
+| svt-1re:ch5:banque:013 | Son énoncé (passage de l'hémoglobine fœtale à l'hémoglobine adulte) donne la réponse de la 058. | Remplacée par une question du même type et de la même difficulté : nombre de codons de la glycine (4, d'après le tableau du code). |
+| svt-1re:ch5:banque:038 | Syntaxe lourde. | Reformulée : « Quelle protéine humaine produisent des bactéries ayant reçu un gène humain, pour soigner des personnes diabétiques ? » |
+| svt-1re:ch5:banque:078 | On peut hésiter à cocher « cellules riches en ARN » (une observation de Brachet, pas le problème de localisation). | Réécrite : l'énoncé vise le problème de localisation, et les deux bonnes propositions sont « l'ADN reste dans le noyau » et « les protéines sont fabriquées dans le cytoplasme ». |
+| svt-1re:ch5:banque:082 | Son énoncé (maturation du pré-ARNm dans le noyau d'une cellule eucaryote) donne la réponse de la 066. | Réécrite sans la maturation : ADN et transcription dans le noyau, traduction et assemblage des acides aminés hors du noyau. |
+| svt-1re:ch5:banque:090 | « Une protéine peut être fabriquée sans cellule vivante » décrit une condition de l'expérience plutôt qu'un résultat. | Proposition remplacée par un résultat : « On obtient une chaîne formée uniquement de phénylalanine ». |
+| svt-1re:ch5:banque:118 | Une « chaîne » d'un seul acide aminé est un cas limite. | Gardée : la réponse découle directement de la règle du cours (le codon initiateur apporte la méthionine, le codon stop n'apporte rien), et le relecteur l'a trouvée. |
+| svt-1re:ch5:banque:136 | Variantes : « peptidique » seul et « liaison peptidique ». | Déjà acceptées ; « liaison peptide » et « lien peptidique » ajoutées. |
+| svt-1re:ch5:banque:137 | Variantes : « ARN polymérase », « ARN-polymérase », « l'ARN polymérase », « polymérase ». | Déjà acceptées ; « une ARN polymérase » ajoutée. |
+| svt-1re:ch5:banque:145 | Variantes : « transgénique », « OGM », « génétiquement modifié », « organisme transgénique ». | Déjà acceptées ; pluriels et « organisme génétiquement modifié (OGM) » ajoutés. |
+| svt-1re:ch5:banque:146 | Variantes : « valine », « Val », « la valine ». | Déjà acceptées ; « valine (Val) » ajoutée. |
+| svt-1re:ch5:banque:148 | Accepter « 1 » et « 1 million ». | Énoncé précisé (« en millions d'octets, par un nombre seul, par exemple 5 pour 5 millions d'octets ») ; « 1 million », « un million », « 1 million d'octets » et « 1000000 » ajoutées. |
 
 ## Totaux
 

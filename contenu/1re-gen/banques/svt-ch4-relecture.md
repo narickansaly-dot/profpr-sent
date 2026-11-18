@@ -15,16 +15,16 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Le r
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch4:banque:116 | 2²⁰ = 1 048 576 « dépasse » à peine le million que le cours arrondit à « environ 1 million » : un élève peut hésiter. | Reformulée : « dépasse 500 000 » (vrai sans ambiguïté) ; l'explication donne 2²⁰ = 1 048 576. |
-| svt:ch4:banque:117 | Le plus ancien ADN humain (400 000 ans) n'est pas de l'Homo sapiens : la comparaison avec les fossiles de sapiens (300 000 ans) peut induire en erreur. | Remplacée (même type, même difficulté, même vrai) : un fossile d'un million d'années a très peu de chances de livrer un ADN lisible. |
-| svt:ch4:banque:119 | « Une grande partie » de l'ADN venant des bactéries n'est pas dans le cours, qui dit seulement « mêlé ». | Reformulée selon le texte : l'ADN extrait d'os anciens est mêlé à l'ADN de bactéries. |
-| svt:ch4:banque:135 | « Sans aucune lacune » en 2022 est trop fort : le chromosome Y n'a été achevé qu'en 2023. | Chapitre nuancé (« séquence presque complète » en 2022, chromosome Y achevé en 2023, aussi dans « Je retiens ») ; question reformulée : année du séquençage des régions très répétées restées illisibles en 2003 (2022). |
-| svt:ch4:banque:138 | Variantes décimales. | Ajout de « 6.25 % » et « 6.25% » (« 6,25 », « 6.25 », « 6,25 % » étaient déjà acceptés). |
-| svt:ch4:banque:144 | Variantes sans accent ou avec article. | Ajout de « la paleogenetique » et de « paléogénomique » ; la casse et les accents sont déjà ignorés par la normalisation. |
-| svt:ch4:banque:147 | « Dérive génétique » est défendable, car le texte relie l'effet fondateur à la dérive. | Rendue univoque : l'énoncé décrit le cas des populations hors d'Afrique et présente le phénomène comme une « conséquence de la dérive génétique » ; la réponse attendue est « effet fondateur » (avec ses variantes). |
-| svt:ch4:banque:148 | Nom difficile à taper. | Ajout de « Y.pestis » et « la bactérie Yersinia pestis » (« Yersinia pestis », « Yersinia », « Y. pestis », « Y pestis » étaient déjà acceptés). |
-| svt:ch4:banque:104 | Doute de l'auteur : « XIVe siècle » n'était pas écrit dans le cours (seulement 1347-1352). | Chapitre complété : « (1347-1352, au XIVe siècle) ». Question inchangée. |
-| svt:ch4:banque:092 | Doute de l'auteur : il faut savoir que des cousins germains ont des grands-parents en commun. | Gardée : l'énoncé le dit explicitement (« ils ont deux grands-parents en commun »). |
+| svt-1re:ch4:banque:116 | 2²⁰ = 1 048 576 « dépasse » à peine le million que le cours arrondit à « environ 1 million » : un élève peut hésiter. | Reformulée : « dépasse 500 000 » (vrai sans ambiguïté) ; l'explication donne 2²⁰ = 1 048 576. |
+| svt-1re:ch4:banque:117 | Le plus ancien ADN humain (400 000 ans) n'est pas de l'Homo sapiens : la comparaison avec les fossiles de sapiens (300 000 ans) peut induire en erreur. | Remplacée (même type, même difficulté, même vrai) : un fossile d'un million d'années a très peu de chances de livrer un ADN lisible. |
+| svt-1re:ch4:banque:119 | « Une grande partie » de l'ADN venant des bactéries n'est pas dans le cours, qui dit seulement « mêlé ». | Reformulée selon le texte : l'ADN extrait d'os anciens est mêlé à l'ADN de bactéries. |
+| svt-1re:ch4:banque:135 | « Sans aucune lacune » en 2022 est trop fort : le chromosome Y n'a été achevé qu'en 2023. | Chapitre nuancé (« séquence presque complète » en 2022, chromosome Y achevé en 2023, aussi dans « Je retiens ») ; question reformulée : année du séquençage des régions très répétées restées illisibles en 2003 (2022). |
+| svt-1re:ch4:banque:138 | Variantes décimales. | Ajout de « 6.25 % » et « 6.25% » (« 6,25 », « 6.25 », « 6,25 % » étaient déjà acceptés). |
+| svt-1re:ch4:banque:144 | Variantes sans accent ou avec article. | Ajout de « la paleogenetique » et de « paléogénomique » ; la casse et les accents sont déjà ignorés par la normalisation. |
+| svt-1re:ch4:banque:147 | « Dérive génétique » est défendable, car le texte relie l'effet fondateur à la dérive. | Rendue univoque : l'énoncé décrit le cas des populations hors d'Afrique et présente le phénomène comme une « conséquence de la dérive génétique » ; la réponse attendue est « effet fondateur » (avec ses variantes). |
+| svt-1re:ch4:banque:148 | Nom difficile à taper. | Ajout de « Y.pestis » et « la bactérie Yersinia pestis » (« Yersinia pestis », « Yersinia », « Y. pestis », « Y pestis » étaient déjà acceptés). |
+| svt-1re:ch4:banque:104 | Doute de l'auteur : « XIVe siècle » n'était pas écrit dans le cours (seulement 1347-1352). | Chapitre complété : « (1347-1352, au XIVe siècle) ». Question inchangée. |
+| svt-1re:ch4:banque:092 | Doute de l'auteur : il faut savoir que des cousins germains ont des grands-parents en commun. | Gardée : l'énoncé le dit explicitement (« ils ont deux grands-parents en commun »). |
 
 ## Totaux
 

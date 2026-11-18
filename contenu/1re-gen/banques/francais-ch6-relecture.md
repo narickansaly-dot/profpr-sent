@@ -10,8 +10,8 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch6:banque:044 | L'explication ajoutait « et suit à cheval », détail absent du cours | Corrigée : explication limitée au cours (Gauvain refuse par souci de son honneur) |
-| francais:ch6:banque:107 | L'explication affirmait que « seule Minerve est une ancienne esclave », plus fort que le cours | Corrigée : « Minerve est l'ancienne esclave de la lignée, Télumée n'en est pas une » |
+| francais-1re:ch6:banque:044 | L'explication ajoutait « et suit à cheval », détail absent du cours | Corrigée : explication limitée au cours (Gauvain refuse par souci de son honneur) |
+| francais-1re:ch6:banque:107 | L'explication affirmait que « seule Minerve est une ancienne esclave », plus fort que le cours | Corrigée : « Minerve est l'ancienne esclave de la lignée, Télumée n'en est pas une » |
 
 ## Totaux
 

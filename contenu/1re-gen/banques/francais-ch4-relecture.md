@@ -10,7 +10,7 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch4:banque:139 | « Quel défaut ... lié au goût des apparences » : hypocrisie, indifférence ou superficialité sont défendables ; un bon élève peut se tromper à cause de la formulation. | Corrigée : énoncé reformulé (« la … et les apparences », tel que le nomme le cours), variantes « vanités » et « les vanités » ajoutées, explication précisée. |
+| francais-1re:ch4:banque:139 | « Quel défaut ... lié au goût des apparences » : hypocrisie, indifférence ou superficialité sont défendables ; un bon élève peut se tromper à cause de la formulation. | Corrigée : énoncé reformulé (« la … et les apparences », tel que le nomme le cours), variantes « vanités » et « les vanités » ajoutées, explication précisée. |
 
 ## Totaux
 

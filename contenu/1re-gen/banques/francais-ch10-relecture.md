@@ -10,13 +10,13 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch10:banque:015 | L'explication appelait « inversion simple » l'inversion du groupe nominal, alors que le cours réserve l'inversion simple au sujet pronominal | Corrigée : explication sans étiquette contradictoire |
-| francais:ch10:banque:025 | Le cours range « quel » parmi les déterminants ; un élève peut hésiter avec le choix « déterminant » | Corrigée : explication précisant que « réponse » a déjà son déterminant « ta » |
-| francais:ch10:banque:044 | « Qui » relatif sans antécédent restait un peu tentant | Corrigée : explication appuyée sur la dépendance à « savoir » |
-| francais:ch10:banque:081 | Le distracteur « Au type exclamatif » traitait l'exclamation comme un type de phrase, contre le cours (trois types, exclamation à part) | Corrigée : distracteur remplacé par « Au type impératif » |
-| francais:ch10:banque:139 | Exigeait des faits absents du cours (« bosser », « ouvrage », « œuvrer ») ; « ouvrage » n'est pas vraiment soutenu | Corrigée : s'appuie sur « Tu viens ? », « bouquin », « Viens-tu ? », « Est-ce que tu viens ? » ; même réponses [0, 1] |
-| francais:ch10:banque:103 | Paire inverse de 102 (« ne… que » restriction / négation totale) | Remplacée : vrai/faux faux, « ne… plus » est une négation totale |
-| francais:ch10:banque:105 | Doublon de 095 (« Je crains qu'il ne vienne ») | Remplacée : vrai/faux faux, on peut supprimer le « ne » à l'écrit |
+| francais-1re:ch10:banque:015 | L'explication appelait « inversion simple » l'inversion du groupe nominal, alors que le cours réserve l'inversion simple au sujet pronominal | Corrigée : explication sans étiquette contradictoire |
+| francais-1re:ch10:banque:025 | Le cours range « quel » parmi les déterminants ; un élève peut hésiter avec le choix « déterminant » | Corrigée : explication précisant que « réponse » a déjà son déterminant « ta » |
+| francais-1re:ch10:banque:044 | « Qui » relatif sans antécédent restait un peu tentant | Corrigée : explication appuyée sur la dépendance à « savoir » |
+| francais-1re:ch10:banque:081 | Le distracteur « Au type exclamatif » traitait l'exclamation comme un type de phrase, contre le cours (trois types, exclamation à part) | Corrigée : distracteur remplacé par « Au type impératif » |
+| francais-1re:ch10:banque:139 | Exigeait des faits absents du cours (« bosser », « ouvrage », « œuvrer ») ; « ouvrage » n'est pas vraiment soutenu | Corrigée : s'appuie sur « Tu viens ? », « bouquin », « Viens-tu ? », « Est-ce que tu viens ? » ; même réponses [0, 1] |
+| francais-1re:ch10:banque:103 | Paire inverse de 102 (« ne… que » restriction / négation totale) | Remplacée : vrai/faux faux, « ne… plus » est une négation totale |
+| francais-1re:ch10:banque:105 | Doublon de 095 (« Je crains qu'il ne vienne ») | Remplacée : vrai/faux faux, on peut supprimer le « ne » à l'écrit |
 
 ## Totaux
 

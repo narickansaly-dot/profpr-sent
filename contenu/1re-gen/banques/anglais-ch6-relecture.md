@@ -17,15 +17,15 @@
 
 | Source | Problème | Décision |
 |---|---|---|
-| anglais:ch6:banque:090 | L'énoncé dit que « Spanish-speaking » est formé « d'un adjectif et d'un participe présent ». Or « Spanish » y est le complément de « speaking » (la langue, donc un nom), comme dans « English-speaking ». La réponse « vrai » suivait le cours mais était linguistiquement fausse. | Énoncé reformulé : le second élément, « speaking », est un participe présent (toujours vrai). Explication réécrite. |
-| anglais:ch6:banque:134 | « Your sister is a nurse, is she? » (tag de même polarité, qui exprime l'intérêt ou une déduction) existe en anglais correct : le distracteur était défendable. | Énoncé précisé : « Complète par le question tag qui demande confirmation ». |
-| anglais:ch6:banque:135 | Même schéma que 134 ; « haven't you » après une phrase négative est rare mais attesté. | Même précision dans l'énoncé, par cohérence. |
-| anglais:ch6:banque:136 | « She speaks Spanish, does she? » (tag de même polarité) est correct en anglais : distracteur défendable. | Même précision dans l'énoncé. |
-| anglais:ch6:banque:137 | « They visited Seattle last year, did they? » est correct en anglais (tag de même polarité) : distracteur défendable. | Même précision dans l'énoncé. |
-| anglais:ch6:banque:138 | « I'm late, am I? » est marginal mais possible avec le même sens de réaction. | Même précision dans l'énoncé. |
-| anglais:ch6:banque:077 | Variante en chiffres non acceptée. | Ajout de « 3-day ». |
-| anglais:ch6:banque:089 | Variante en chiffres non acceptée. | Ajout de « 6-month-old ». |
-| anglais:ch6:banque:141 | La forme britannique « No, they've not » n'était pas acceptée. | Ajout de « they've not » (apostrophes droite et typographique). |
+| anglais-1re:ch6:banque:090 | L'énoncé dit que « Spanish-speaking » est formé « d'un adjectif et d'un participe présent ». Or « Spanish » y est le complément de « speaking » (la langue, donc un nom), comme dans « English-speaking ». La réponse « vrai » suivait le cours mais était linguistiquement fausse. | Énoncé reformulé : le second élément, « speaking », est un participe présent (toujours vrai). Explication réécrite. |
+| anglais-1re:ch6:banque:134 | « Your sister is a nurse, is she? » (tag de même polarité, qui exprime l'intérêt ou une déduction) existe en anglais correct : le distracteur était défendable. | Énoncé précisé : « Complète par le question tag qui demande confirmation ». |
+| anglais-1re:ch6:banque:135 | Même schéma que 134 ; « haven't you » après une phrase négative est rare mais attesté. | Même précision dans l'énoncé, par cohérence. |
+| anglais-1re:ch6:banque:136 | « She speaks Spanish, does she? » (tag de même polarité) est correct en anglais : distracteur défendable. | Même précision dans l'énoncé. |
+| anglais-1re:ch6:banque:137 | « They visited Seattle last year, did they? » est correct en anglais (tag de même polarité) : distracteur défendable. | Même précision dans l'énoncé. |
+| anglais-1re:ch6:banque:138 | « I'm late, am I? » est marginal mais possible avec le même sens de réaction. | Même précision dans l'énoncé. |
+| anglais-1re:ch6:banque:077 | Variante en chiffres non acceptée. | Ajout de « 3-day ». |
+| anglais-1re:ch6:banque:089 | Variante en chiffres non acceptée. | Ajout de « 6-month-old ». |
+| anglais-1re:ch6:banque:141 | La forme britannique « No, they've not » n'était pas acceptée. | Ajout de « they've not » (apostrophes droite et typographique). |
 
 Les bonnes réponses, les types, les difficultés et les positions des bonnes réponses n'ont pas changé.
 

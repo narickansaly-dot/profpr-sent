@@ -15,29 +15,29 @@ Accord initial : **144/150** ; 6 écarts, tous sur des vrai/faux consécutifs (1
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch1:banque:125 | Écart : attendu vrai (l'enveloppe du noyau disparaît en prophase), relecteur faux. | Gardée : la phrase reprend mot pour mot le texte de la prophase. Les six écarts se suivent et le relecteur est d'accord sur toutes les autres questions des mêmes notions : c'est presque sûrement un décalage dans sa liste de réponses. |
-| svt:ch1:banque:126 | Écart : attendu faux (la nouvelle paroi concerne les cellules végétales), relecteur vrai. | Réponse gardée (le texte : étranglement chez les cellules animales). Énoncé réécrit sans le mot « cytodiérèse », qui donnait la réponse de la 145. |
-| svt:ch1:banque:127 | Écart : attendu faux (en mitose, ce sont les chromatides sœurs qui se séparent), relecteur vrai. | Gardée : le texte est explicite (anaphase de mitose : chromatides ; méiose I : homologues). |
-| svt:ch1:banque:128 | Écart : attendu vrai (le fuseau est formé de fibres de protéines), relecteur faux. | Gardée : définition du fuseau dans le texte. |
-| svt:ch1:banque:129 | Écart : attendu faux (les fibres s'attachent aux centromères), relecteur vrai. | Gardée : le texte dit « au niveau des centromères ». |
-| svt:ch1:banque:131 | Écart : attendu vrai (la méiose II se déroule comme une mitose), relecteur faux. | Gardée : phrase du texte (« comme dans une mitose : … les chromatides sœurs se séparent »). |
-| svt:ch1:banque:003 | Remarque : la bonne proposition « Les histones » donne la réponse de la 138. | Gardée ; c'est la 138 qui est réécrite (nucléosomes). |
-| svt:ch1:banque:138 | Remarque : réponse donnée par la 003 ; accepter « histone ». | Réécrite : elle demande le nom des unités en « collier de perles » (nucléosomes, avec variantes), présent dans le texte. |
-| svt:ch1:banque:013 | Remarque : nomme la colchicine et son rôle, ce qui donne la 141. | Gardée ; c'est la 141 qui est réécrite. |
-| svt:ch1:banque:141 | Remarque : réponse donnée par la 013. | Réécrite : quelles cellules du sang cultive-t-on pour un caryotype (globules blancs, leucocytes, avec variantes), information du texte. |
-| svt:ch1:banque:039 | Remarque : le mot « cytodiérèse » donne la réponse de la 145. | Énoncé réécrit (« comment le cytoplasme se partage-t-il »), sans changer les propositions. |
-| svt:ch1:banque:145 | Remarque : prévoir « cytodierese », « la cytodiérèse », « cytocinèse ». | Variantes « cytocinèse » et « la cytocinèse » ajoutées (les autres y étaient). |
-| svt:ch1:banque:059 | Remarque : nomme la fécondation et son effet, ce qui donne la 149. | Réécrite sans le mot « fécondation » : comment qualifier la cellule formée par l'union d'un spermatozoïde et d'un ovule (diploïde). |
-| svt:ch1:banque:149 | Lien avec la 059. | Énoncé raccourci (« l'union d'un spermatozoïde et d'un ovule »), sans « rétablit 2n », qui donnait la réponse de la nouvelle 059. |
-| svt:ch1:banque:042 | Vérification des liens : le distracteur « La fécondation de l'ovule » nommait la réponse de la 149. | Distracteur remplacé par « La séparation des chromosomes homologues en méiose I ». |
-| svt:ch1:banque:024 | Remarque : l'exposant de 2<sup>k</sup> est perdu dans le texte extrait (« 2k »). | Défaut de l'extraction, pas de la question (l'application affiche l'exposant). Explication réécrite avec des exposants Unicode (2ᵏ, 2⁵). |
-| svt:ch1:banque:143 | Même remarque sur 2<sup>k</sup>. | Même décision ; explication avec 2ᵏ et 2³. |
-| svt:ch1:banque:047 | Remarque : sans fuseau, les chromosomes ne s'alignent pas vraiment (« pseudo-métaphase »). | Gardée : la formulation suit le texte (« restent bloqués en métaphase ») et le relecteur la juge acceptable à ce niveau. |
-| svt:ch1:banque:085 | Remarque : en anaphase, la cellule contient encore 2Q ; à bien expliquer. | Gardée : l'explication le dit déjà (« la cellule n'est pas encore divisée : elle contient toujours 2Q »). |
-| svt:ch1:banque:106 | Remarque : certaines cellules eucaryotes perdent leur noyau (globules rouges des mammifères). | Énoncé reformulé au niveau des groupes : « Tous les eucaryotes (animaux, végétaux, champignons) possèdent des chromosomes dans le noyau de leurs cellules. » |
-| svt:ch1:banque:137 | Remarque : prévoir « centromere ». | Variante ajoutée (la normalisation ignore déjà les accents). |
-| svt:ch1:banque:142 | Remarque : prévoir « cellule-oeuf », « cellule oeuf », « la cellule-œuf », « zygote ». | Déjà présentes, gardée. |
-| svt:ch1:banque:150 | Remarque : prévoir « 3 » et « 3h ». | Variantes « 3 h » et « 3h » ajoutées (« 3 » y était, avec une marge de 0,2). |
+| svt-1re:ch1:banque:125 | Écart : attendu vrai (l'enveloppe du noyau disparaît en prophase), relecteur faux. | Gardée : la phrase reprend mot pour mot le texte de la prophase. Les six écarts se suivent et le relecteur est d'accord sur toutes les autres questions des mêmes notions : c'est presque sûrement un décalage dans sa liste de réponses. |
+| svt-1re:ch1:banque:126 | Écart : attendu faux (la nouvelle paroi concerne les cellules végétales), relecteur vrai. | Réponse gardée (le texte : étranglement chez les cellules animales). Énoncé réécrit sans le mot « cytodiérèse », qui donnait la réponse de la 145. |
+| svt-1re:ch1:banque:127 | Écart : attendu faux (en mitose, ce sont les chromatides sœurs qui se séparent), relecteur vrai. | Gardée : le texte est explicite (anaphase de mitose : chromatides ; méiose I : homologues). |
+| svt-1re:ch1:banque:128 | Écart : attendu vrai (le fuseau est formé de fibres de protéines), relecteur faux. | Gardée : définition du fuseau dans le texte. |
+| svt-1re:ch1:banque:129 | Écart : attendu faux (les fibres s'attachent aux centromères), relecteur vrai. | Gardée : le texte dit « au niveau des centromères ». |
+| svt-1re:ch1:banque:131 | Écart : attendu vrai (la méiose II se déroule comme une mitose), relecteur faux. | Gardée : phrase du texte (« comme dans une mitose : … les chromatides sœurs se séparent »). |
+| svt-1re:ch1:banque:003 | Remarque : la bonne proposition « Les histones » donne la réponse de la 138. | Gardée ; c'est la 138 qui est réécrite (nucléosomes). |
+| svt-1re:ch1:banque:138 | Remarque : réponse donnée par la 003 ; accepter « histone ». | Réécrite : elle demande le nom des unités en « collier de perles » (nucléosomes, avec variantes), présent dans le texte. |
+| svt-1re:ch1:banque:013 | Remarque : nomme la colchicine et son rôle, ce qui donne la 141. | Gardée ; c'est la 141 qui est réécrite. |
+| svt-1re:ch1:banque:141 | Remarque : réponse donnée par la 013. | Réécrite : quelles cellules du sang cultive-t-on pour un caryotype (globules blancs, leucocytes, avec variantes), information du texte. |
+| svt-1re:ch1:banque:039 | Remarque : le mot « cytodiérèse » donne la réponse de la 145. | Énoncé réécrit (« comment le cytoplasme se partage-t-il »), sans changer les propositions. |
+| svt-1re:ch1:banque:145 | Remarque : prévoir « cytodierese », « la cytodiérèse », « cytocinèse ». | Variantes « cytocinèse » et « la cytocinèse » ajoutées (les autres y étaient). |
+| svt-1re:ch1:banque:059 | Remarque : nomme la fécondation et son effet, ce qui donne la 149. | Réécrite sans le mot « fécondation » : comment qualifier la cellule formée par l'union d'un spermatozoïde et d'un ovule (diploïde). |
+| svt-1re:ch1:banque:149 | Lien avec la 059. | Énoncé raccourci (« l'union d'un spermatozoïde et d'un ovule »), sans « rétablit 2n », qui donnait la réponse de la nouvelle 059. |
+| svt-1re:ch1:banque:042 | Vérification des liens : le distracteur « La fécondation de l'ovule » nommait la réponse de la 149. | Distracteur remplacé par « La séparation des chromosomes homologues en méiose I ». |
+| svt-1re:ch1:banque:024 | Remarque : l'exposant de 2<sup>k</sup> est perdu dans le texte extrait (« 2k »). | Défaut de l'extraction, pas de la question (l'application affiche l'exposant). Explication réécrite avec des exposants Unicode (2ᵏ, 2⁵). |
+| svt-1re:ch1:banque:143 | Même remarque sur 2<sup>k</sup>. | Même décision ; explication avec 2ᵏ et 2³. |
+| svt-1re:ch1:banque:047 | Remarque : sans fuseau, les chromosomes ne s'alignent pas vraiment (« pseudo-métaphase »). | Gardée : la formulation suit le texte (« restent bloqués en métaphase ») et le relecteur la juge acceptable à ce niveau. |
+| svt-1re:ch1:banque:085 | Remarque : en anaphase, la cellule contient encore 2Q ; à bien expliquer. | Gardée : l'explication le dit déjà (« la cellule n'est pas encore divisée : elle contient toujours 2Q »). |
+| svt-1re:ch1:banque:106 | Remarque : certaines cellules eucaryotes perdent leur noyau (globules rouges des mammifères). | Énoncé reformulé au niveau des groupes : « Tous les eucaryotes (animaux, végétaux, champignons) possèdent des chromosomes dans le noyau de leurs cellules. » |
+| svt-1re:ch1:banque:137 | Remarque : prévoir « centromere ». | Variante ajoutée (la normalisation ignore déjà les accents). |
+| svt-1re:ch1:banque:142 | Remarque : prévoir « cellule-oeuf », « cellule oeuf », « la cellule-œuf », « zygote ». | Déjà présentes, gardée. |
+| svt-1re:ch1:banque:150 | Remarque : prévoir « 3 » et « 3h ». | Variantes « 3 h » et « 3h » ajoutées (« 3 » y était, avec une marge de 0,2). |
 
 ## Totaux
 

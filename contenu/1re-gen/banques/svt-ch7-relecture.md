@@ -16,12 +16,12 @@ Accord initial : 150/150 (aucun écart, aucune question sans réponse). Six rema
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch7:banque:087 | La densité 2,9 est donnée pour la croûte océanique, pas pour le basalte et le gabbro pris isolément. | Chapitre complété (section « Deux croûtes, deux roches ») : densité d'environ 2,9 indiquée pour le gabbro et pour le basalte ; explication précisée. |
-| svt:ch7:banque:088 | L'étape « diviser la masse par le volume » manque. | Proposition juste réécrite : « Diviser sa masse par son volume, puis le résultat par la masse volumique de l'eau ». |
-| svt:ch7:banque:136 | Accepter « bimodal ». | Déjà accepté (avec « bimodale », « bimodales », « répartition bimodale », « distribution bimodale ») : gardée. |
-| svt:ch7:banque:137 | Accepter « sismographe ». | Déjà accepté (« sismographe », « un sismographe », « le sismographe ») : gardée. |
-| svt:ch7:banque:147 | 71 % de 510 = 362,1 ; arrondi non précisé. | Énoncé : « Arrondis à l'unité » ; réponses « 362 » et « 362,1 », marge de 2 ; explication avec le calcul exact. |
-| svt:ch7:banque:149 | Accepter « métamorphiques » et « roches métamorphiques ». | Déjà acceptés : gardée. |
+| svt-1re:ch7:banque:087 | La densité 2,9 est donnée pour la croûte océanique, pas pour le basalte et le gabbro pris isolément. | Chapitre complété (section « Deux croûtes, deux roches ») : densité d'environ 2,9 indiquée pour le gabbro et pour le basalte ; explication précisée. |
+| svt-1re:ch7:banque:088 | L'étape « diviser la masse par le volume » manque. | Proposition juste réécrite : « Diviser sa masse par son volume, puis le résultat par la masse volumique de l'eau ». |
+| svt-1re:ch7:banque:136 | Accepter « bimodal ». | Déjà accepté (avec « bimodale », « bimodales », « répartition bimodale », « distribution bimodale ») : gardée. |
+| svt-1re:ch7:banque:137 | Accepter « sismographe ». | Déjà accepté (« sismographe », « un sismographe », « le sismographe ») : gardée. |
+| svt-1re:ch7:banque:147 | 71 % de 510 = 362,1 ; arrondi non précisé. | Énoncé : « Arrondis à l'unité » ; réponses « 362 » et « 362,1 », marge de 2 ; explication avec le calcul exact. |
+| svt-1re:ch7:banque:149 | Accepter « métamorphiques » et « roches métamorphiques ». | Déjà acceptés : gardée. |
 
 ## Totaux
 

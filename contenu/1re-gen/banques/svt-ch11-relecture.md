@@ -15,13 +15,13 @@ Taux d'accord initial : 150/150 (aucun écart). Six remarques ont été traitée
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch11:banque:018 | Le biais de surestimation, quand les animaux marqués évitent les pièges, se déduit de N ≈ M × C ÷ R mais n'est pas écrit dans le chapitre. | Chapitre complété (section 1) : la méthode suppose que les marques ne changent pas le comportement des animaux ; sinon R est trop petit et l'effectif surestimé. Question inchangée. |
-| svt:ch11:banque:052 | Le texte applique les 10 % à « la matière d'un niveau » ; le distracteur « 10 kg » peut piéger un bon élève. | Énoncé précisé : les chenilles sont mangées par des mésanges, et on demande la masse retrouvée chez les mésanges « après ces deux transferts ». Explication détaillée transfert par transfert. |
-| svt:ch11:banque:090 | La proposition « les chevreuils disposent de nourriture, ce qui favorise leur reproduction » est ambiguë : une population déjà très abondante peut manquer de nourriture. | Reformulée : « Chaque chevreuil qui broute tire un bénéfice de cette ressource alimentaire », sans équivoque. |
-| svt:ch11:banque:141 | Accepter aussi le singulier « hyphe ». | Déjà accepté (variantes : hyphes, hyphe, les hyphes, des hyphes). Aucune modification. |
-| svt:ch11:banque:142 | Accepter aussi le singulier « détritivore ». | Déjà accepté. Aucune modification. |
-| svt:ch11:banque:148 | Accepter aussi « succession » seul. | Déjà accepté (succession, succession écologique, avec ou sans article, au pluriel). Aucune modification. |
-| svt:ch11:banque:065, 104, 147 | Trois calculs de bilan de carbone d'un écosystème ouvert : risque de répétition. | 065 (bilan positif, puits) et 104 (bilan négatif, source) sont gardés : ils couvrent les deux cas. La 147, qui doublait la 065 (autre bilan positif), est devenue un calcul en deux étapes : bilan annuel puis stock gagné en 20 ans (réponse 30). La 130 porte sur le bilan d'eau, pas sur le carbone. |
+| svt-1re:ch11:banque:018 | Le biais de surestimation, quand les animaux marqués évitent les pièges, se déduit de N ≈ M × C ÷ R mais n'est pas écrit dans le chapitre. | Chapitre complété (section 1) : la méthode suppose que les marques ne changent pas le comportement des animaux ; sinon R est trop petit et l'effectif surestimé. Question inchangée. |
+| svt-1re:ch11:banque:052 | Le texte applique les 10 % à « la matière d'un niveau » ; le distracteur « 10 kg » peut piéger un bon élève. | Énoncé précisé : les chenilles sont mangées par des mésanges, et on demande la masse retrouvée chez les mésanges « après ces deux transferts ». Explication détaillée transfert par transfert. |
+| svt-1re:ch11:banque:090 | La proposition « les chevreuils disposent de nourriture, ce qui favorise leur reproduction » est ambiguë : une population déjà très abondante peut manquer de nourriture. | Reformulée : « Chaque chevreuil qui broute tire un bénéfice de cette ressource alimentaire », sans équivoque. |
+| svt-1re:ch11:banque:141 | Accepter aussi le singulier « hyphe ». | Déjà accepté (variantes : hyphes, hyphe, les hyphes, des hyphes). Aucune modification. |
+| svt-1re:ch11:banque:142 | Accepter aussi le singulier « détritivore ». | Déjà accepté. Aucune modification. |
+| svt-1re:ch11:banque:148 | Accepter aussi « succession » seul. | Déjà accepté (succession, succession écologique, avec ou sans article, au pluriel). Aucune modification. |
+| svt-1re:ch11:banque:065, 104, 147 | Trois calculs de bilan de carbone d'un écosystème ouvert : risque de répétition. | 065 (bilan positif, puits) et 104 (bilan négatif, source) sont gardés : ils couvrent les deux cas. La 147, qui doublait la 065 (autre bilan positif), est devenue un calcul en deux étapes : bilan annuel puis stock gagné en 20 ans (réponse 30). La 130 porte sur le bilan d'eau, pas sur le carbone. |
 
 ## Totaux
 

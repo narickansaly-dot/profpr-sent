@@ -15,14 +15,14 @@ Accord initial : **150/150** (aucun écart, aucune question sans réponse). Huit
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch10:banque:040 | 300 °C entre dans la plage du faciès schiste vert du tableau du cours ; seule la profondeur oriente vers le schiste bleu. | Corrigée : la température chiffrée est retirée (« à 35 km de profondeur, à basse température ») ; l'explication rappelle les domaines des trois faciès. |
-| svt:ch10:banque:092 | Énoncé « Quelles roches… » incohérent avec des distracteurs formulés en « Du noyau externe », « Des volcans de l'arc ». | Corrigée : toutes les propositions désignent des roches (« Les roches du noyau externe », « Les laves des volcans de l'arc »). |
-| svt:ch10:banque:136 | Accepter « la glaucophane ». | Déjà acceptée ; ajout de « amphibole glaucophane » et « une glaucophane ». |
-| svt:ch10:banque:137 | Accepter « coin mantellique », « coin du manteau ». | Déjà acceptées ; ajout de « coin de manteau hydraté » et du pluriel. |
-| svt:ch10:banque:139 | Accepter « traction du panneau plongeant », « traction de la plaque ». | Ajout de « traction de la plaque », « traction du slab », « traction gravitaire du panneau » (« traction du panneau plongeant » et « slab pull » déjà acceptées). |
-| svt:ch10:banque:142 | Double lecture : « épaississement crustal » (le phénomène) ou « racine crustale » (la partie profonde). | Corrigée : l'énoncé demande désormais le nom de « la partie épaissie de la croûte qui s'enfonce sous une chaîne », ce qui désigne sans ambiguïté la racine crustale. |
-| svt:ch10:banque:144 | Accepter le pluriel et « surface de chevauchement ». | Ajout de « surface de chevauchement », « contact de chevauchement », « surface de contact anormal » (pluriel déjà accepté). |
-| svt:ch10:banque:150 | Accepter le singulier et « serpentine ». | Singulier déjà accepté ; ajout de « serpentine », « la serpentine », « serpentines ». |
+| svt-1re:ch10:banque:040 | 300 °C entre dans la plage du faciès schiste vert du tableau du cours ; seule la profondeur oriente vers le schiste bleu. | Corrigée : la température chiffrée est retirée (« à 35 km de profondeur, à basse température ») ; l'explication rappelle les domaines des trois faciès. |
+| svt-1re:ch10:banque:092 | Énoncé « Quelles roches… » incohérent avec des distracteurs formulés en « Du noyau externe », « Des volcans de l'arc ». | Corrigée : toutes les propositions désignent des roches (« Les roches du noyau externe », « Les laves des volcans de l'arc »). |
+| svt-1re:ch10:banque:136 | Accepter « la glaucophane ». | Déjà acceptée ; ajout de « amphibole glaucophane » et « une glaucophane ». |
+| svt-1re:ch10:banque:137 | Accepter « coin mantellique », « coin du manteau ». | Déjà acceptées ; ajout de « coin de manteau hydraté » et du pluriel. |
+| svt-1re:ch10:banque:139 | Accepter « traction du panneau plongeant », « traction de la plaque ». | Ajout de « traction de la plaque », « traction du slab », « traction gravitaire du panneau » (« traction du panneau plongeant » et « slab pull » déjà acceptées). |
+| svt-1re:ch10:banque:142 | Double lecture : « épaississement crustal » (le phénomène) ou « racine crustale » (la partie profonde). | Corrigée : l'énoncé demande désormais le nom de « la partie épaissie de la croûte qui s'enfonce sous une chaîne », ce qui désigne sans ambiguïté la racine crustale. |
+| svt-1re:ch10:banque:144 | Accepter le pluriel et « surface de chevauchement ». | Ajout de « surface de chevauchement », « contact de chevauchement », « surface de contact anormal » (pluriel déjà accepté). |
+| svt-1re:ch10:banque:150 | Accepter le singulier et « serpentine ». | Singulier déjà accepté ; ajout de « serpentine », « la serpentine », « serpentines ». |
 
 ## Totaux
 

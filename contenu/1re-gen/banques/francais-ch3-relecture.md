@@ -10,7 +10,7 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch3:banque:077 | Explication peu claire (« la confrontation des voix construit la thèse ») qui ne répond pas à la question posée | Corrigée : l'explication dit que l'auteur ne se confond pas avec ses personnages |
+| francais-1re:ch3:banque:077 | Explication peu claire (« la confrontation des voix construit la thèse ») qui ne répond pas à la question posée | Corrigée : l'explication dit que l'auteur ne se confond pas avec ses personnages |
 
 ## Totaux
 

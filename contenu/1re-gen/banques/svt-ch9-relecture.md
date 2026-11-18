@@ -15,16 +15,16 @@ Accord initial : **150/150** (aucun écart). Dix remarques sur des questions où
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch9:banque:018 | « Comportement mécanique » appelle plutôt rigide/ductile, alors que la réponse porte sur l'état physique. | Corrigée : « Quel est l'état physique du manteau… ». |
-| svt:ch9:banque:060 | Demi-vitesse (1 cm/an) et vitesse d'expansion (2 cm/an) toutes deux proposées. | Corrigée : 1 cm/an remplacé par 5 cm/an ; explication détaillée. Le chapitre (exemple 200 km en 10 Ma) était juste : 2 cm/an y est bien la demi-vitesse et 4 cm/an l'expansion ; un encadré « Attention » distinguant demi-vitesse et vitesse d'expansion a été ajouté. |
-| svt:ch9:banque:073 | Réponse déduite (minéraux hydratés limités à la croûte et au manteau superficiel). | Chapitre complété (section Hydrothermalisme) : les minéraux hydratés se forment là où l'eau circule, sur les premiers kilomètres, pas plus bas ; explication ajustée. |
-| svt:ch9:banque:107 | Thingvellir n'est pas nommé « vallée axiale » dans le cours. | Chapitre complété (section 1) : la vallée de Thingvellir est la vallée axiale de la dorsale médio-atlantique ; explication ajustée. |
-| svt:ch9:banque:127 | Densité moyenne 3,26 contre 3,25 : bascule selon l'arrondi. | Corrigée : lithosphère de 12 km, densité 3,1, nettement inférieure à 3,25 (affirmation vraie, difficulté 3 conservée). |
-| svt:ch9:banque:141 | Accepter « par conduction », « conduction thermique ». | Gardée : ces variantes étaient déjà acceptées. |
-| svt:ch9:banque:144 | Accepter « la hornblende ». | Gardée : variante déjà acceptée. |
-| svt:ch9:banque:147 | Accepter « pillow lava », « pillows », « pillow-lavas ». | Gardée : variantes déjà acceptées. |
-| svt:ch9:banque:148 | Accepter « feldspath plagioclase », « le plagioclase ». | Gardée : variantes déjà acceptées. |
-| svt:ch9:banque:149 | Réponse difficile à taper exactement. | Corrigée : ajout de « dorsale Pacifique Est », « ride est-pacifique », « ride est pacifique », « ride du Pacifique Est ». |
+| svt-1re:ch9:banque:018 | « Comportement mécanique » appelle plutôt rigide/ductile, alors que la réponse porte sur l'état physique. | Corrigée : « Quel est l'état physique du manteau… ». |
+| svt-1re:ch9:banque:060 | Demi-vitesse (1 cm/an) et vitesse d'expansion (2 cm/an) toutes deux proposées. | Corrigée : 1 cm/an remplacé par 5 cm/an ; explication détaillée. Le chapitre (exemple 200 km en 10 Ma) était juste : 2 cm/an y est bien la demi-vitesse et 4 cm/an l'expansion ; un encadré « Attention » distinguant demi-vitesse et vitesse d'expansion a été ajouté. |
+| svt-1re:ch9:banque:073 | Réponse déduite (minéraux hydratés limités à la croûte et au manteau superficiel). | Chapitre complété (section Hydrothermalisme) : les minéraux hydratés se forment là où l'eau circule, sur les premiers kilomètres, pas plus bas ; explication ajustée. |
+| svt-1re:ch9:banque:107 | Thingvellir n'est pas nommé « vallée axiale » dans le cours. | Chapitre complété (section 1) : la vallée de Thingvellir est la vallée axiale de la dorsale médio-atlantique ; explication ajustée. |
+| svt-1re:ch9:banque:127 | Densité moyenne 3,26 contre 3,25 : bascule selon l'arrondi. | Corrigée : lithosphère de 12 km, densité 3,1, nettement inférieure à 3,25 (affirmation vraie, difficulté 3 conservée). |
+| svt-1re:ch9:banque:141 | Accepter « par conduction », « conduction thermique ». | Gardée : ces variantes étaient déjà acceptées. |
+| svt-1re:ch9:banque:144 | Accepter « la hornblende ». | Gardée : variante déjà acceptée. |
+| svt-1re:ch9:banque:147 | Accepter « pillow lava », « pillows », « pillow-lavas ». | Gardée : variantes déjà acceptées. |
+| svt-1re:ch9:banque:148 | Accepter « feldspath plagioclase », « le plagioclase ». | Gardée : variantes déjà acceptées. |
+| svt-1re:ch9:banque:149 | Réponse difficile à taper exactement. | Corrigée : ajout de « dorsale Pacifique Est », « ride est-pacifique », « ride est pacifique », « ride du Pacifique Est ». |
 
 ## Totaux
 

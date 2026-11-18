@@ -10,9 +10,9 @@ Méthode : relecture indépendante en deux temps. 1) Résolution à l'aveugle de
 
 | Source | Problème | Décision |
 |---|---|---|
-| francais:ch1:banque:038 | Les bonnes réponses « couleur criarde » et « son lumineux » ne figurent pas dans le cours (un seul exemple de synesthésie : « doux comme les hautbois ») ; un élève fidèle au cours pouvait ne cocher que le premier. | Remplacée par une question de même type et difficulté (QCM multiple, niveau 3, 3 bonnes réponses sur 4) sur les correspondances, entièrement appuyée sur le cours. |
-| francais:ch1:banque:068 | Paire inverse de la 053 (Un coup de dés / Mallarmé). | Remplacée par une réponse courte de niveau 2 : auteur de Poèmes saturniens et Fêtes galantes (Verlaine ; variantes avec et sans prénom). |
-| francais:ch1:banque:150 | Même fait que la 132 (« Au lecteur » ouvre Les Fleurs du mal). | Remplacée par une réponse courte de niveau 2 : Gaston Miron, L'Homme rapaillé (variantes Miron / Gaston Miron). Notion changée en « Négritude et poésie contemporaine ». |
+| francais-1re:ch1:banque:038 | Les bonnes réponses « couleur criarde » et « son lumineux » ne figurent pas dans le cours (un seul exemple de synesthésie : « doux comme les hautbois ») ; un élève fidèle au cours pouvait ne cocher que le premier. | Remplacée par une question de même type et difficulté (QCM multiple, niveau 3, 3 bonnes réponses sur 4) sur les correspondances, entièrement appuyée sur le cours. |
+| francais-1re:ch1:banque:068 | Paire inverse de la 053 (Un coup de dés / Mallarmé). | Remplacée par une réponse courte de niveau 2 : auteur de Poèmes saturniens et Fêtes galantes (Verlaine ; variantes avec et sans prénom). |
+| francais-1re:ch1:banque:150 | Même fait que la 132 (« Au lecteur » ouvre Les Fleurs du mal). | Remplacée par une réponse courte de niveau 2 : Gaston Miron, L'Homme rapaillé (variantes Miron / Gaston Miron). Notion changée en « Négritude et poésie contemporaine ». |
 
 ## Totaux
 

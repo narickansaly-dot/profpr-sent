@@ -15,17 +15,17 @@ Taux d'accord initial : 150/150 (aucun écart). Onze remarques ont été traité
 
 | Source | Écart ou remarque | Décision |
 |---|---|---|
-| svt:ch13:banque:018 | La bonne réponse ignore le cas d'une mutation nouvelle, que le cours mentionne et que teste la 013. | Corrigée : l'énoncé demande pourquoi l'allèle est « très probablement » récessif, et la bonne réponse précise « sauf mutation nouvelle chez la fille ». Explication complétée. |
-| svt:ch13:banque:057 | Un gamète est haploïde : parler de son « génotype » est maladroit. | Corrigée : « Quel allèle de ce gène ses gamètes portent-ils ? » |
-| svt:ch13:banque:087 | Distracteur défendable : si le statut des parents est inconnu, la naissance d'un enfant atteint change le risque suivant (elle prouve que les deux parents sont porteurs). | Corrigée : le distracteur porte sur des parents « dont on sait déjà qu'ils sont porteurs » ; explication complétée. |
-| svt:ch13:banque:100 | La proposition sur le cadre légal des tests est exacte, mais ne relève pas d'un « esprit critique » : un élève peut hésiter à la cocher. | Corrigée : l'énoncé demande les affirmations exactes « sur les maladies multifactorielles et les tests génétiques ». |
-| svt:ch13:banque:137 | Accepter « chlorure », « ions chlorure », « Cl- », « Cl− » (et éventuellement « chlore »). | Variantes avec le signe moins typographique (Cl−) ajoutées ; les autres étaient déjà acceptées. « Chlore » est refusé : c'est un autre corps chimique que l'ion chlorure. |
-| svt:ch13:banque:139 | Précision attendue non indiquée : accepter « 6,3 », voire « 6 ». | Énoncé précisé (« Donne la valeur exacte. »). La marge de 0,05 accepte déjà 6,3 ; « 6 » reste refusé, car le calcul exact est simple. |
-| svt:ch13:banque:141 | Accepter « CRISPR-Cas9 », « CRISPR Cas9 », « CRISPR/Cas9 », « CRISPR ». | Déjà acceptées. Aucune modification. |
-| svt:ch13:banque:144 | Accepter « la prévalence ». | Déjà acceptée. Aucune modification. |
-| svt:ch13:banque:146 | Accepter « un facteur de confusion », « confusion », « biais de confusion ». | Les deux premières étaient acceptées ; « biais de confusion » et « un biais de confusion » ajoutés. |
-| svt:ch13:banque:149 | Accepter « maladie de Huntington », « Huntington », « chorée de Huntington ». | Déjà acceptées. Aucune modification. |
-| svt:ch13:banque:150 | Accepter « échiquier », « un échiquier de croisement », « tableau de croisement ». | Déjà acceptées. Aucune modification. |
+| svt-1re:ch13:banque:018 | La bonne réponse ignore le cas d'une mutation nouvelle, que le cours mentionne et que teste la 013. | Corrigée : l'énoncé demande pourquoi l'allèle est « très probablement » récessif, et la bonne réponse précise « sauf mutation nouvelle chez la fille ». Explication complétée. |
+| svt-1re:ch13:banque:057 | Un gamète est haploïde : parler de son « génotype » est maladroit. | Corrigée : « Quel allèle de ce gène ses gamètes portent-ils ? » |
+| svt-1re:ch13:banque:087 | Distracteur défendable : si le statut des parents est inconnu, la naissance d'un enfant atteint change le risque suivant (elle prouve que les deux parents sont porteurs). | Corrigée : le distracteur porte sur des parents « dont on sait déjà qu'ils sont porteurs » ; explication complétée. |
+| svt-1re:ch13:banque:100 | La proposition sur le cadre légal des tests est exacte, mais ne relève pas d'un « esprit critique » : un élève peut hésiter à la cocher. | Corrigée : l'énoncé demande les affirmations exactes « sur les maladies multifactorielles et les tests génétiques ». |
+| svt-1re:ch13:banque:137 | Accepter « chlorure », « ions chlorure », « Cl- », « Cl− » (et éventuellement « chlore »). | Variantes avec le signe moins typographique (Cl−) ajoutées ; les autres étaient déjà acceptées. « Chlore » est refusé : c'est un autre corps chimique que l'ion chlorure. |
+| svt-1re:ch13:banque:139 | Précision attendue non indiquée : accepter « 6,3 », voire « 6 ». | Énoncé précisé (« Donne la valeur exacte. »). La marge de 0,05 accepte déjà 6,3 ; « 6 » reste refusé, car le calcul exact est simple. |
+| svt-1re:ch13:banque:141 | Accepter « CRISPR-Cas9 », « CRISPR Cas9 », « CRISPR/Cas9 », « CRISPR ». | Déjà acceptées. Aucune modification. |
+| svt-1re:ch13:banque:144 | Accepter « la prévalence ». | Déjà acceptée. Aucune modification. |
+| svt-1re:ch13:banque:146 | Accepter « un facteur de confusion », « confusion », « biais de confusion ». | Les deux premières étaient acceptées ; « biais de confusion » et « un biais de confusion » ajoutés. |
+| svt-1re:ch13:banque:149 | Accepter « maladie de Huntington », « Huntington », « chorée de Huntington ». | Déjà acceptées. Aucune modification. |
+| svt-1re:ch13:banque:150 | Accepter « échiquier », « un échiquier de croisement », « tableau de croisement ». | Déjà acceptées. Aucune modification. |
 
 ## Totaux
 

@@ -22,9 +22,9 @@ Bilan : 137 gardées, 11 corrigées, 2 remplacées ; statut final : 146 `valide`
 
 ## Questions laissées « à relire »
 
-- emc:ch7:banque:074
-- emc:ch7:banque:121
-- emc:ch7:banque:131
-- emc:ch7:banque:137
+- emc-1re:ch7:banque:074
+- emc-1re:ch7:banque:121
+- emc-1re:ch7:banque:131
+- emc-1re:ch7:banque:137
 
 Ces questions reposent sur des faits de 2026 (service national créé en 2026, JDC rebaptisée « journée de mobilisation » par la loi du 16 août 2026) trouvés par une seule recherche et non recoupés : à confirmer par l'enseignant avant validation.
