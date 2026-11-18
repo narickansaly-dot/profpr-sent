@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
 import { analyserImport } from '../src/lib/contenu/lire-import';
 import { texteChapitre } from '../src/lib/contenu/banque/texte';
@@ -18,8 +18,9 @@ try {
   echouer(e instanceof Error ? e.message : String(e));
 }
 const COURS = config.fichier;
+if (!existsSync(COURS)) echouer(`Cours introuvable : ${COURS}`);
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:texte -- N [--cours stss | --cours 1re-gen/espagnol [--prefixe espagnol-1re]]');
 
 const lu = analyserImport(readFileSync(COURS, 'utf8'));
 if ('erreurs' in lu) {
