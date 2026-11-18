@@ -29,8 +29,8 @@ Branche `claude/contenu-1re-hggsp-c8df08`, du 11 au 18 novembre 2026. Tout est c
 
 Les 1 500 questions se répartissent ainsi :
 
-- par type : 750 QCM à une réponse, 300 QCM à plusieurs réponses, 300 vrai/faux (150 vrais, 150 faux) et 150 réponses courtes ;
-- par difficulté : 599 de niveau 1, 601 de niveau 2 et 300 de niveau 3.
+- par type : 750 QCM à une réponse, 300 QCM à plusieurs réponses, 300 vrai/faux (151 vrais, 149 faux) et 150 réponses courtes ;
+- par difficulté : 597 de niveau 1, 603 de niveau 2 et 300 de niveau 3.
 
 Statut : les **1 500 questions sont `valide`**, comme les questions de BPH et de STSS après leur relecture (commits `67d1671` et `90bd11c`). Aucune question ne reste `a_relire` : la relecture n'a laissé aucune question réellement douteuse.
 
