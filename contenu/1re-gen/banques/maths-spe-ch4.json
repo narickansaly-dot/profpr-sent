@@ -1,0 +1,2336 @@
+{
+  "chapitre": 4,
+  "notions": [
+    "Droites et coefficient directeur",
+    "Taux de variation et sécante",
+    "Nombre dérivé par le calcul",
+    "Lecture graphique et tangente",
+    "Équation de la tangente",
+    "Approximation affine",
+    "Vitesse et coût marginal",
+    "Non-dérivabilité en 0",
+    "Sécantes en Python"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch4:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la droite qui passe par A(1 ; 2) et B(3 ; 8) ?",
+      "propositions": [
+        "3",
+        "1/3",
+        "6",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "m = (8 − 2)/(3 − 1) = 6/2 = 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:002",
+      "type": "qcm_unique",
+      "enonce": "On donne les points A(−2 ; 5) et B(2 ; −3). Calcule la pente de la droite (AB).",
+      "propositions": [
+        "2",
+        "−1/2",
+        "−8",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "m = (−3 − 5)/(2 − (−2)) = −8/4 = −2.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:003",
+      "type": "qcm_unique",
+      "enonce": "La droite d a pour équation réduite y = −3x + 4. Quelle est son ordonnée à l'origine ?",
+      "propositions": [
+        "−3",
+        "3",
+        "4",
+        "4/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Dans y = mx + p, l'ordonnée à l'origine est p = 4 : la droite coupe l'axe des ordonnées en (0 ; 4).",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Une droite de pente 2 passe par le point A(1 ; 5). Quelle est son équation réduite ?",
+      "propositions": [
+        "y = 2x + 5",
+        "y = 2x + 3",
+        "y = 5x + 2",
+        "y = 2x − 3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "y = 2x + p et 5 = 2 × 1 + p, donc p = 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Détermine l'équation réduite de la droite passant par A(0 ; −1) et B(4 ; 1).",
+      "propositions": [
+        "y = 2x − 1",
+        "y = 0,5x − 1",
+        "y = 0,5x + 1",
+        "y = −0,5x − 1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "m = (1 − (−1))/(4 − 0) = 2/4 = 0,5 et p = −1 car A est sur l'axe des ordonnées.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:006",
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation y = 5 − 2x descend quand x augmente.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Son coefficient directeur est −2 < 0 : quand x augmente de 1, y diminue de 2.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:007",
+      "type": "vrai_faux",
+      "enonce": "Le point C(2 ; 7) appartient à la droite d'équation y = 3x − 1.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "3 × 2 − 1 = 5 ≠ 7 : les coordonnées de C ne vérifient pas l'équation.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces droites, lesquelles ont un coefficient directeur égal à −1 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "y = −x + 7",
+        "y = 3 − x",
+        "y = x − 1",
+        "la droite passant par (0 ; 0) et (1 ; 1)",
+        "la droite passant par (0 ; 2) et (2 ; 0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "y = −x + 7 et y = 3 − x ont pour pente −1 ; pour (0 ; 2) et (2 ; 0), m = (0 − 2)/(2 − 0) = −1. Les deux autres ont pour pente 1.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:009",
+      "type": "reponse_courte",
+      "enonce": "Calcule le coefficient directeur de la droite (PQ) avec P(−1 ; −4) et Q(3 ; 8). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "explication": "m = (8 − (−4))/(3 − (−1)) = 12/4 = 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Une droite de coefficient directeur −3 passe par A(2 ; 1). En quel point coupe-t-elle l'axe des ordonnées ?",
+      "propositions": [
+        "(0 ; 7)",
+        "(0 ; −5)",
+        "(0 ; 1)",
+        "(0 ; −3)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "p = y_A − m x_A = 1 − (−3) × 2 = 1 + 6 = 7.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, une droite monte de 6 unités lorsqu'on avance de 2 unités vers la droite. Que vaut son coefficient directeur ?",
+      "propositions": [
+        "1/3",
+        "6",
+        "−3",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "m = Δy/Δx = 6/2 = 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Quelles droites passent par le point A(2 ; 3) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "y = x + 1",
+        "y = 3",
+        "y = 2x + 1",
+        "y = −x + 5",
+        "y = 3x"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On remplace x par 2 : 2 + 1 = 3 ; 3 ; 2 × 2 + 1 = 5 ; −2 + 5 = 3 ; 3 × 2 = 6. Seules la 1re, la 2e et la 4e donnent 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:013",
+      "type": "vrai_faux",
+      "enonce": "La droite passant par A(1 ; 3) et B(1 ; 7) a pour coefficient directeur 4.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "A et B ont la même abscisse : la droite est parallèle à l'axe des ordonnées (équation x = 1) et n'a pas de coefficient directeur.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:014",
+      "type": "qcm_multiple",
+      "enonce": "On considère la droite d d'équation y = 0,5x − 2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle passe par (4 ; 0)",
+        "Elle passe par (0 ; −2)",
+        "Son coefficient directeur vaut −2",
+        "Elle passe par (2 ; −1)",
+        "Elle est parallèle à y = 2x"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0,5 × 4 − 2 = 0 et 0,5 × 2 − 2 = −1 ; l'ordonnée à l'origine est −2. La pente est 0,5, donc d n'est pas parallèle à y = 2x.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la droite d'équation 2y = 6x − 4 ?",
+      "propositions": [
+        "6",
+        "−2",
+        "3",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On isole y : y = 3x − 2, donc la pente est 3.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de m les droites y = mx + 1 et y = −2x + 5 sont-elles parallèles ?",
+      "propositions": [
+        "2",
+        "1/2",
+        "−2",
+        "5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Deux droites non verticales sont parallèles si et seulement si elles ont le même coefficient directeur.",
+      "notion": "Droites et coefficient directeur"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Calcule le taux de variation de la fonction carré entre 1 et 3.",
+      "propositions": [
+        "8",
+        "4",
+        "2",
+        "5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "(3² − 1²)/(3 − 1) = (9 − 1)/2 = 4.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression définit le taux de variation de f entre a et a + h (h ≠ 0) ?",
+      "propositions": [
+        "(f(a + h) − f(a))/h",
+        "(f(a + h) − f(a))/a",
+        "(f(a) + h − f(a))/h",
+        "f(a + h) − f(a)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "On divise la variation des images, f(a + h) − f(a), par la variation des abscisses, h.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = 3x − 1, que vaut le taux de variation entre 2 et 5 ?",
+      "propositions": [
+        "9",
+        "14/3",
+        "−1",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "f(5) = 14 et f(2) = 5, donc (14 − 5)/(5 − 2) = 9/3 = 3 : c'est le coefficient de x.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:020",
+      "type": "qcm_unique",
+      "enonce": "La fonction inverse est notée f(x) = 1/x. Son taux de variation entre 1 et 4 vaut :",
+      "propositions": [
+        "1/4",
+        "−3/4",
+        "−4",
+        "−1/4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(1/4 − 1)/(4 − 1) = (−3/4)/3 = −1/4.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Pour la fonction carré et h ≠ 0, à quoi se simplifie ((a + h)² − a²)/h ?",
+      "propositions": [
+        "2a",
+        "2a + h²",
+        "2a + h",
+        "a + h"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(a + h)² − a² = 2ah + h², puis on divise par h ≠ 0 : 2a + h.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = 1/x, a ≠ 0, h ≠ 0 et a + h ≠ 0, le taux (f(a + h) − f(a))/h est égal à :",
+      "propositions": [
+        "1/(a(a + h))",
+        "−1/(a(a + h))",
+        "−1/a²",
+        "−h/(a + h)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "1/(a + h) − 1/a = −h/(a(a + h)) ; on divise par h.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Soit g(x) = x² − 4x. Après simplification, le taux de variation de g entre 1 et 1 + h vaut :",
+      "propositions": [
+        "h − 2",
+        "h + 2",
+        "−2",
+        "h² − 2h"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "g(1 + h) = h² − 2h − 3 et g(1) = −3, donc le taux vaut (h² − 2h)/h = h − 2.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:024",
+      "type": "vrai_faux",
+      "enonce": "Le taux de variation de f entre a et b est le coefficient directeur de la sécante passant par les points de la courbe d'abscisses a et b.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est l'interprétation graphique du taux de variation : (f(b) − f(a))/(b − a) est la pente de cette sécante.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:025",
+      "type": "vrai_faux",
+      "enonce": "Entre 0 et 2, le taux de variation de x ↦ x² vaut 4.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "(2² − 0²)/(2 − 0) = 4/2 = 2, et non 4 (on a oublié de diviser par 2).",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:026",
+      "type": "vrai_faux",
+      "enonce": "Entre les abscisses −2 et 2, la parabole y = x² a une sécante horizontale.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Les deux points ont la même ordonnée 4 : le taux de variation vaut (4 − 4)/4 = 0.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:027",
+      "type": "reponse_courte",
+      "enonce": "On pose f(x) = x² + 1. Quel est le taux de variation de f entre 2 et 4 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "6"
+      ],
+      "difficulte": 1,
+      "explication": "f(4) = 17 et f(2) = 5 : (17 − 5)/(4 − 2) = 12/2 = 6.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:028",
+      "type": "reponse_courte",
+      "enonce": "Pour la fonction inverse, donne la valeur décimale exacte du taux de variation entre 2 et 4.",
+      "reponses_acceptees": [
+        "-0,125",
+        "-0.125",
+        "−0,125",
+        "−0.125",
+        "-1/8",
+        "−1/8"
+      ],
+      "difficulte": 2,
+      "explication": "(1/4 − 1/2)/(4 − 2) = (−0,25)/2 = −0,125.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "On étudie les taux de variation de la fonction carré sur plusieurs intervalles. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Entre 1 et 1 + h, il vaut 2 + h",
+        "Entre 0 et 3, il vaut 3",
+        "Entre −1 et 1, il vaut 2",
+        "Entre 2 et 5, il vaut 7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "2 + h vient de 2a + h avec a = 1 ; 9/3 = 3 ; (1 − 1)/2 = 0 ; (25 − 4)/3 = 7.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Avec f(x) = 2x² − x, simplifie le taux de variation de f entre 1 et 1 + h (h ≠ 0).",
+      "propositions": [
+        "2h + 3",
+        "2h + 4",
+        "2h² + 3h",
+        "h + 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "f(1 + h) = 2(1 + 2h + h²) − 1 − h = 2h² + 3h + 1 et f(1) = 1 ; on divise 2h² + 3h par h.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Le taux de variation (f(a + h) − f(a))/h a aussi un sens pour h = 0.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Pour h = 0 on diviserait par 0 : le taux de variation n'est défini que pour h ≠ 0.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:032",
+      "type": "qcm_unique",
+      "enonce": "On sait que f(1) = 4 et f(3) = 10. Quel est le taux de variation de f entre 1 et 3 ?",
+      "propositions": [
+        "6",
+        "7",
+        "1/3",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(10 − 4)/(3 − 1) = 6/2 = 3.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "Soit f(x) = mx + p, avec m et p réels. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux de variation de f entre 0 et 1 vaut m",
+        "Le taux de variation de f est le même entre deux réels distincts quelconques",
+        "Le taux de variation de f dépend de p",
+        "Le nombre dérivé de f en tout réel vaut m",
+        "Le taux de variation de f entre 0 et 2 vaut 2m"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "(m(a + h) + p − (ma + p))/h = m pour tous a et h ≠ 0 : le taux vaut toujours m, ne dépend pas de p, et f′(a) = m.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:034",
+      "type": "qcm_multiple",
+      "enonce": "Soit g(x) = −x² + 2x et τ(h) son taux de variation entre 1 et 1 + h (h ≠ 0). Coche toutes les réponses exactes.",
+      "propositions": [
+        "τ(h) = −h",
+        "τ(h) = h − 2",
+        "τ(0,1) = −0,1",
+        "τ(h) se rapproche de 0 quand h se rapproche de 0",
+        "τ(h) = −h²"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "g(1 + h) = −(1 + 2h + h²) + 2 + 2h = 1 − h² et g(1) = 1, donc τ(h) = −h²/h = −h, qui tend vers 0.",
+      "notion": "Taux de variation et sécante"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Pour la fonction carré, f′(a) = 2a. Combien vaut f′(3) ?",
+      "propositions": [
+        "9",
+        "3",
+        "6",
+        "2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f′(3) = 2 × 3 = 6 ; 9 est l'image f(3).",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Le taux de variation d'une fonction f entre 2 et 2 + h vaut 4 + h pour tout h ≠ 0. Quel est le nombre dérivé de f en 2 ?",
+      "propositions": [
+        "4 + h",
+        "4",
+        "2",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Quand h se rapproche de 0, 4 + h se rapproche de 4 : f′(2) = 4.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:037",
+      "type": "qcm_unique",
+      "enonce": "La fonction inverse a pour nombre dérivé −1/a² en tout a ≠ 0. Que vaut ce nombre dérivé en a = 2 ?",
+      "propositions": [
+        "1/4",
+        "−1/4",
+        "−1/2",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "−1/2² = −1/4.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:038",
+      "type": "qcm_unique",
+      "enonce": "On considère la fonction affine f(x) = 5x − 7. Quelle est la valeur de f′(10) ?",
+      "propositions": [
+        "5",
+        "43",
+        "−7",
+        "50"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le taux de variation d'une fonction affine est constant, égal au coefficient de x : f′(10) = 5.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Comment note-t-on le nombre dérivé de f en a ?",
+      "propositions": [
+        "f(a′)",
+        "f(a)",
+        "a′",
+        "f′(a)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On lit « f prime de a ».",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Soit g(x) = x² + 3x. Le taux de variation de g entre 1 et 1 + h se simplifie en h + 5. Déduis-en g′(1).",
+      "propositions": [
+        "4",
+        "2",
+        "5",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(1 + h)² + 3(1 + h) − 4 = h² + 5h, d'où le taux h + 5, qui se rapproche de 5.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:041",
+      "type": "qcm_unique",
+      "enonce": "La racine carrée a pour nombre dérivé 1/(2√a) en tout a > 0. Que vaut ce nombre en 4 ?",
+      "propositions": [
+        "1/2",
+        "2",
+        "1/4",
+        "−1/4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "1/(2√4) = 1/(2 × 2) = 1/4.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quel est le nombre dérivé de x ↦ 1/x au point −1 ?",
+      "propositions": [
+        "1",
+        "−1",
+        "0",
+        "−1/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "f′(a) = −1/a², et (−1)² = 1, donc f′(−1) = −1.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Pour la fonction carré, le nombre dérivé en 0 est nul.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "f′(0) = 2 × 0 = 0 : la tangente au sommet de la parabole est horizontale.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Le nombre dérivé de la fonction inverse est positif en tout réel non nul.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "f′(a) = −1/a² est strictement négatif pour tout a ≠ 0.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Pour h ≠ 0, une fonction f vérifie (f(2 + h) − f(2))/h = 3 − h. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f est dérivable en 2",
+        "f′(2) = 3",
+        "f′(2) = 3 − h",
+        "f′(2) = 2",
+        "Le taux de variation de f entre 2 et 3 vaut 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "3 − h se rapproche de 3, donc f′(2) = 3 (et non 2) ; f′(2) est un nombre qui ne dépend pas de h. Avec h = 1, le taux de variation entre 2 et 3 vaut 2.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:046",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = x² − 6x. En simplifiant le taux de variation entre 4 et 4 + h, détermine f′(4). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 2,
+      "explication": "f(4 + h) − f(4) = (16 + 8h + h² − 24 − 6h) − (−8) = h² + 2h ; le taux h + 2 se rapproche de 2.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:047",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = 3x² + x. Par le calcul du taux de variation entre −2 et −2 + h, détermine f′(−2). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-11",
+        "−11"
+      ],
+      "difficulte": 3,
+      "explication": "f(−2 + h) − f(−2) = 3(4 − 4h + h²) − 2 + h − 10 = 3h² − 11h ; le taux 3h − 11 se rapproche de −11.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "Voici des nombres dérivés annoncés pour la fonction carré. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(1) = 2",
+        "f′(−2) = 4",
+        "f′(5) = 10",
+        "f′(0,5) = 0,25",
+        "f′(−3) = −6"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "f′(a) = 2a : f′(1) = 2, f′(−2) = −4, f′(5) = 10, f′(0,5) = 1, f′(−3) = −6.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction f, le taux (f(3 + h) − f(3))/h vaut 6,1 pour h = 0,1, 6,01 pour h = 0,01 et 5,99 pour h = −0,01. Quelle est la valeur la plus plausible de f′(3) ?",
+      "propositions": [
+        "6",
+        "6,01",
+        "9",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les taux se rapprochent de 6 quand h se rapproche de 0, par valeurs positives comme négatives.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x² + kx, avec k réel. On sait que f′(1) = 5. Que vaut k ?",
+      "propositions": [
+        "5",
+        "4",
+        "7",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le taux entre 1 et 1 + h vaut 2 + h + k, qui se rapproche de 2 + k. Donc 2 + k = 5 et k = 3.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:051",
+      "type": "vrai_faux",
+      "enonce": "Pour la fonction inverse, les nombres dérivés en a et en −a sont égaux, pour tout a ≠ 0.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "f′(a) = −1/a² et f′(−a) = −1/(−a)² = −1/a².",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "La fonction f est définie par f(x) = 1/x pour x ≠ 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(1/2) = −4",
+        "f′(3) = −1/9",
+        "f′(−2) = 1/4",
+        "f′(10) = −0,01",
+        "f′(1) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f′(a) = −1/a² : −1/(1/4) = −4, −1/9, −1/4 (et non 1/4), −1/100 = −0,01, et f′(1) = −1.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:053",
+      "type": "qcm_unique",
+      "enonce": "On multiplie le taux (√(1 + h) − 1)/h (h > 0) par la quantité conjuguée. Quelle expression obtient-on ?",
+      "propositions": [
+        "1/(√(1 + h) − 1)",
+        "√h/h",
+        "(√(1 + h) + 1)/h",
+        "1/(√(1 + h) + 1)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "(√(1 + h) − 1)(√(1 + h) + 1) = (1 + h) − 1 = h, donc le taux vaut h/(h(√(1 + h) + 1)) = 1/(√(1 + h) + 1).",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Le nombre dérivé f′(a) est l'image de a par la fonction f.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "L'image de a est f(a) ; f′(a) est la limite du taux de variation, c'est-à-dire la pente de la tangente.",
+      "notion": "Nombre dérivé par le calcul"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:055",
+      "type": "qcm_unique",
+      "enonce": "La tangente à la courbe de f au point A(2 ; 3) passe aussi par B(4 ; 7). Que vaut f′(2) ?",
+      "propositions": [
+        "3",
+        "1/2",
+        "2",
+        "4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f′(2) est le coefficient directeur de la tangente : (7 − 3)/(4 − 2) = 2. Le nombre 3 est f(2).",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Au point A(1 ; 5) de sa courbe, une fonction f admet une tangente horizontale. Quelle est la valeur de f′(1) ?",
+      "propositions": [
+        "5",
+        "0",
+        "1",
+        "−5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une droite horizontale a un coefficient directeur nul, donc f′(1) = 0.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Depuis le point de contact A, la tangente descend de 2 unités quand on avance d'une unité vers la droite. Que vaut le nombre dérivé en ce point ?",
+      "propositions": [
+        "−2",
+        "2",
+        "−1/2",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le coefficient directeur est Δy/Δx = −2/1 = −2.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:058",
+      "type": "qcm_unique",
+      "enonce": "La tangente à 𝒞f au point A(−1 ; 2) passe par B(1 ; −2). Que peut-on en déduire ?",
+      "propositions": [
+        "f(−1) = 2 et f′(−1) = −2",
+        "f(−1) = −2 et f′(−1) = 2",
+        "f(−1) = 2 et f′(−1) = −1/2",
+        "f(−1) = −1 et f′(−1) = −2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "A est sur la courbe, donc f(−1) = 2 ; la pente vaut (−2 − 2)/(1 − (−1)) = −4/2 = −2.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:059",
+      "type": "qcm_unique",
+      "enonce": "On sait que f(−1) = 4 et f′(−1) = 2. Par quel autre point que A(−1 ; 4) passe la tangente en A ?",
+      "propositions": [
+        "(0 ; 2)",
+        "(1 ; 6)",
+        "(0 ; 5)",
+        "(0 ; 6)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Depuis A, on avance de 1 et on monte de f′(−1) = 2 : on arrive en (0 ; 6).",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Le nombre dérivé en a vaut 2/3. Pour tracer la tangente à partir du point A, on peut :",
+      "propositions": [
+        "avancer de 2 et monter de 3",
+        "avancer de 3 et descendre de 2",
+        "avancer de 3 et monter de 2",
+        "avancer de 1 et monter de 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une pente de 2/3 signifie Δy/Δx = 2/3 : pour Δx = 3, Δy = 2.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:061",
+      "type": "vrai_faux",
+      "enonce": "Si la tangente à une courbe en un point est parallèle à l'axe des abscisses, le nombre dérivé en ce point est nul.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Une tangente parallèle à l'axe des abscisses est horizontale : sa pente est 0.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:062",
+      "type": "vrai_faux",
+      "enonce": "Le nombre dérivé f′(a) se lit sur l'axe des ordonnées, à la hauteur du point d'abscisse a.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Ce qui se lit sur l'axe des ordonnées, c'est f(a). f′(a) est la pente de la tangente.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Une courbe 𝒞f admet au point A(4 ; 1) une tangente qui coupe l'axe des abscisses en x = 6. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(4) = 1",
+        "f′(4) = −0,5",
+        "f′(4) = −2",
+        "Cette tangente descend",
+        "f′(4) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La tangente passe par (4 ; 1) et (6 ; 0) : pente (0 − 1)/(6 − 4) = −0,5 < 0.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:064",
+      "type": "vrai_faux",
+      "enonce": "La tangente à la parabole y = x² au point d'abscisse 1 a pour coefficient directeur 2.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "f′(1) = 2 × 1 = 2.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "La tangente au point A(3 ; 1) de la courbe 𝒞f passe aussi par B(5 ; 5). Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(3) = 1",
+        "f′(3) = 2",
+        "f′(3) = 1",
+        "f(3) = 2",
+        "La tangente monte"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "A est sur la courbe donc f(3) = 1 ; la pente vaut (5 − 1)/(5 − 3) = 2 > 0.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:066",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on de la tangente en un point A(a ; f(a)) d'une courbe, quand f est dérivable en a ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle passe par A",
+        "Son coefficient directeur est f′(a)",
+        "Son coefficient directeur est f(a)",
+        "Elle est toujours horizontale",
+        "C'est la position limite des sécantes (AM) quand M se rapproche de A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Par définition, la tangente passe par A avec la pente f′(a) ; c'est la limite des sécantes.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:067",
+      "type": "qcm_unique",
+      "enonce": "A a pour abscisse a et M pour abscisse a + h sur la courbe d'une fonction f dérivable en a. Vers quel nombre tend le coefficient directeur de (AM) quand M se rapproche de A ?",
+      "propositions": [
+        "f(a)",
+        "f′(a)",
+        "0",
+        "f(a + h)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La pente de (AM) est le taux de variation, qui se rapproche de f′(a).",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, on lit que la tangente au point A(0 ; 1) passe par (−2 ; 0). Que vaut f′(0) ?",
+      "propositions": [
+        "−1/2",
+        "1/2",
+        "2",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Pente = (1 − 0)/(0 − (−2)) = 1/2.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:069",
+      "type": "reponse_courte",
+      "enonce": "La tangente à 𝒞f au point A(2 ; −1) passe par B(5 ; 8). Donne f′(2) sous forme d'un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 2,
+      "explication": "f′(2) = (8 − (−1))/(5 − 2) = 9/3 = 3.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:070",
+      "type": "qcm_unique",
+      "enonce": "f est dérivable en 1, f(1) = 4 et la tangente au point d'abscisse 1 passe par l'origine du repère. Que vaut f′(1) ?",
+      "propositions": [
+        "4",
+        "0",
+        "1/4",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "La tangente passe par (0 ; 0) et (1 ; 4) : pente (4 − 0)/(1 − 0) = 4.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "Pour construire la tangente à 𝒞f au point A(1 ; 2) sachant que f′(1) = −3, quels points de cette tangente peut-on utiliser ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(2 ; −1)",
+        "(0 ; 5)",
+        "(2 ; 5)",
+        "(3 ; −4)",
+        "(4 ; 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La tangente a pour équation y = 2 − 3(x − 1) = −3x + 5 : elle passe par (2 ; −1), (0 ; 5) et (3 ; −4).",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:072",
+      "type": "qcm_multiple",
+      "enonce": "On étudie la fonction cube f(x) = x³ au point O. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux de variation entre 0 et h vaut h²",
+        "f′(0) = 0",
+        "La tangente en O est l'axe des abscisses",
+        "La courbe reste au-dessus de sa tangente en O",
+        "f′(0) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "h³/h = h² se rapproche de 0, donc f′(0) = 0 et la tangente est y = 0. Pour x < 0, x³ < 0 : la courbe traverse sa tangente.",
+      "notion": "Lecture graphique et tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la tangente à 𝒞f au point d'abscisse a ?",
+      "propositions": [
+        "y = f′(a) + f(a)(x − a)",
+        "y = f(a) + f′(a)(x + a)",
+        "y = f′(a)x + f(a)",
+        "y = f(a) + f′(a)(x − a)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "C'est la formule démontrée dans le cours.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Détermine l'équation réduite de la tangente à la parabole y = x² au point d'abscisse 3.",
+      "propositions": [
+        "y = 6x + 6",
+        "y = 6x − 3",
+        "y = 6x − 9",
+        "y = 9x − 18"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(3) = 9, f′(3) = 6 : y = 9 + 6(x − 3) = 6x − 9.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la tangente à la courbe de x ↦ 1/x au point d'abscisse 2 ?",
+      "propositions": [
+        "y = −0,25x + 0,5",
+        "y = 0,25x",
+        "y = −0,25x + 1",
+        "y = −0,5x + 1,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(2) = 0,5 et f′(2) = −1/4 : y = 0,5 − 0,25(x − 2) = −0,25x + 1.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:076",
+      "type": "qcm_unique",
+      "enonce": "On sait que f(2) = 5 et f′(2) = 3. Quelle est l'équation de la tangente au point d'abscisse 2 ?",
+      "propositions": [
+        "y = 3x + 5",
+        "y = 3x − 1",
+        "y = 5x − 7",
+        "y = 3x − 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "y = 5 + 3(x − 2) = 3x − 1. Contrôle : 3 × 2 − 1 = 5.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:077",
+      "type": "qcm_unique",
+      "enonce": "La tangente à 𝒞f au point d'abscisse 4 a pour équation y = 3x − 5. Que vaut f(4) ?",
+      "propositions": [
+        "7",
+        "3",
+        "−5",
+        "12"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le point de contact est sur la tangente : f(4) = 3 × 4 − 5 = 7.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Au point d'abscisse −1, la tangente à la courbe d'une fonction f a pour équation y = −2x + 3. Quelle est la valeur de f′(−1) ?",
+      "propositions": [
+        "5",
+        "3",
+        "−1",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre dérivé est le coefficient directeur de la tangente : −2. (5 est f(−1).)",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:079",
+      "type": "reponse_courte",
+      "enonce": "La tangente à la parabole y = x² au point d'abscisse −2 a pour équation y = mx + p. Donne la valeur de p (nombre entier).",
+      "reponses_acceptees": [
+        "-4",
+        "−4"
+      ],
+      "difficulte": 2,
+      "explication": "f(−2) = 4 et f′(−2) = −4 : y = 4 − 4(x + 2) = −4x − 4.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:080",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = x² − 3x. Calcule f′(1) avec le taux de variation, puis donne l'ordonnée à l'origine de la tangente au point d'abscisse 1. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-1",
+        "−1"
+      ],
+      "difficulte": 3,
+      "explication": "Le taux entre 1 et 1 + h vaut h − 1, donc f′(1) = −1 ; f(1) = −2 ; y = −2 − (x − 1) = −x − 1.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:081",
+      "type": "vrai_faux",
+      "enonce": "La tangente à 𝒞f au point d'abscisse a passe par le point (a ; f(a)).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour x = a, y = f(a) + f′(a) × 0 = f(a).",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:082",
+      "type": "vrai_faux",
+      "enonce": "La tangente à la parabole y = x² au point d'abscisse 1 a pour équation y = 2x + 1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "y = 1 + 2(x − 1) = 2x − 1. La droite y = 2x + 1 ne passe pas par (1 ; 1).",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:083",
+      "type": "vrai_faux",
+      "enonce": "La tangente à l'hyperbole y = 1/x au point d'abscisse 1 a pour équation y = −x + 2.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "f(1) = 1, f′(1) = −1 : y = 1 − (x − 1) = −x + 2.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Voici des tangentes annoncées pour la parabole y = x². Coche toutes les réponses exactes.",
+      "propositions": [
+        "En 0 : y = 0",
+        "En 1 : y = 2x − 1",
+        "En 2 : y = 4x − 2",
+        "En −1 : y = −2x − 1",
+        "En 3 : y = 6x + 9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Tangente en a : y = a² + 2a(x − a) = 2ax − a². En 2 : y = 4x − 4 ; en 3 : y = 6x − 9.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:085",
+      "type": "qcm_unique",
+      "enonce": "En quel point la parabole y = x² admet-elle une tangente parallèle à la droite y = 4x + 1 ?",
+      "propositions": [
+        "(4 ; 16)",
+        "(2 ; 9)",
+        "(−2 ; 4)",
+        "(2 ; 4)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Il faut f′(a) = 2a = 4, soit a = 2 ; le point est (2 ; 2²) = (2 ; 4).",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:086",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'abscisse du point de la parabole y = x² où la tangente est parallèle à la droite y = −6x + 2 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 2,
+      "explication": "Il faut 2a = −6, donc a = −3.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:087",
+      "type": "qcm_unique",
+      "enonce": "En développant y = 4 − 2(x − 3), on obtient :",
+      "propositions": [
+        "y = −2x − 2",
+        "y = −2x + 7",
+        "y = −2x + 10",
+        "y = 2x − 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "4 − 2x + 6 = −2x + 10 : attention au produit −2 × (−3) = +6.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "La tangente T à 𝒞f au point d'abscisse 2 a pour équation y = −x + 4. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(2) = 2",
+        "f′(2) = −1",
+        "f′(2) = 4",
+        "T passe par (0 ; 4)",
+        "f(2) = 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f(2) = −2 + 4 = 2 ; la pente de T est −1 ; pour x = 0, y = 4.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "On considère la tangente à la courbe de f(x) = 1/x au point d'abscisse 2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle passe par (2 ; 0,5)",
+        "Son coefficient directeur est −0,25",
+        "Elle coupe l'axe des abscisses en x = 4",
+        "Elle passe par l'origine",
+        "Elle coupe l'axe des abscisses en x = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "f(2) = 0,5, f′(2) = −0,25 et y = −0,25x + 1 s'annule pour x = 4 ; pour x = 0, y = 1.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:090",
+      "type": "qcm_unique",
+      "enonce": "La tangente à la parabole y = x² au point d'abscisse 3 coupe l'axe des abscisses au point :",
+      "propositions": [
+        "(3 ; 0)",
+        "(1,5 ; 0)",
+        "(0 ; −9)",
+        "(−1,5 ; 0)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La tangente est y = 6x − 9, qui s'annule pour x = 9/6 = 1,5.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Pour écrire l'équation de la tangente au point d'abscisse a, de quoi a-t-on besoin ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "du réel a",
+        "de f(a)",
+        "de f′(a)",
+        "de f(0)",
+        "de f′(0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La formule y = f(a) + f′(a)(x − a) utilise a, f(a) et f′(a).",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction f, f(0) = −2 et f′(0) = 5. Quelle est la tangente à sa courbe au point d'abscisse 0 ?",
+      "propositions": [
+        "y = 5x − 2",
+        "y = −2x + 5",
+        "y = 5x + 2",
+        "y = 5x"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "y = −2 + 5(x − 0) = 5x − 2.",
+      "notion": "Équation de la tangente"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'approximation affine de f(a + h) pour h proche de 0 ?",
+      "propositions": [
+        "f(a + h) ≈ f(a) + f′(a)h",
+        "f(a + h) ≈ f(a) + f(h)",
+        "f(a + h) ≈ f′(a) + f(a)h",
+        "f(a + h) ≈ f(a) + h"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Elle vient de (f(a + h) − f(a))/h ≈ f′(a).",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Par l'approximation affine de la fonction carré en 1, quelle valeur approchée obtient-on pour 1,002² ?",
+      "propositions": [
+        "1,000004",
+        "1,002",
+        "1,04",
+        "1,004"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "1 + 2 × 0,002 = 1,004 (valeur exacte 1,004004).",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Avec l'approximation affine de la fonction inverse en 1, on obtient pour 1/1,01 la valeur approchée :",
+      "propositions": [
+        "1,01",
+        "0,999",
+        "0,99",
+        "0,9"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f(1) = 1, f′(1) = −1, h = 0,01 : 1 − 0,01 = 0,99.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:096",
+      "type": "qcm_unique",
+      "enonce": "La racine carrée a pour nombre dérivé 1/2 en 1. Quelle valeur approchée de √1,04 en déduit-on ?",
+      "propositions": [
+        "1,04",
+        "1,02",
+        "1,2",
+        "1,002"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "1 + (1/2) × 0,04 = 1,02 (valeur exacte 1,0198…).",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:097",
+      "type": "reponse_courte",
+      "enonce": "On sait que f(3) = 5 et f′(3) = 2. Donne la valeur approchée de f(3,1) fournie par l'approximation affine (valeur décimale exacte).",
+      "reponses_acceptees": [
+        "5,2",
+        "5.2"
+      ],
+      "difficulte": 2,
+      "explication": "f(3,1) ≈ f(3) + f′(3) × 0,1 = 5 + 0,2 = 5,2.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:098",
+      "type": "reponse_courte",
+      "enonce": "En utilisant l'approximation affine de la racine carrée en 4, donne une valeur approchée de √4,2 (valeur décimale exacte).",
+      "reponses_acceptees": [
+        "2,05",
+        "2.05"
+      ],
+      "difficulte": 3,
+      "explication": "f(4) = 2 et f′(4) = 1/(2√4) = 0,25 ; h = 0,2 : 2 + 0,25 × 0,2 = 2,05.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:099",
+      "type": "vrai_faux",
+      "enonce": "Pour h proche de 0, (1 + h)² ≈ 1 + 2h.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "(1 + h)² = 1 + 2h + h², et h² est très petit quand h est proche de 0.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:100",
+      "type": "vrai_faux",
+      "enonce": "Pour h proche de 0, on a 1/(1 + h) ≈ 1 + h.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La fonction inverse a pour nombre dérivé −1 en 1 : 1/(1 + h) ≈ 1 − h.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Pour h proche de 0, quelles approximations affines sont correctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(1 + h)² ≈ 1 + 2h",
+        "√(1 + h) ≈ 1 + h/2",
+        "1/(1 + h) ≈ 1 + h",
+        "(1 + h)² ≈ 1 + h²",
+        "1/(1 + h) ≈ 1 − h"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Ce sont f(1) + f′(1)h avec f′(1) = 2 (carré), 1/2 (racine) et −1 (inverse).",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:102",
+      "type": "vrai_faux",
+      "enonce": "L'approximation √(1 + h) ≈ 1 + h/2, appliquée avec h = 1, donne √2 à 10⁻³ près.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Elle donne 1,5 alors que √2 ≈ 1,414 : l'approximation n'est valable que pour h proche de 0.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Voici des valeurs approchées. Lesquelles sont celles que donne l'approximation affine ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2,01² ≈ 4,04",
+        "√1,06 ≈ 1,03",
+        "1/1,02 ≈ 0,98",
+        "0,99² ≈ 0,99",
+        "√0,98 ≈ 0,98"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "4 + 4 × 0,01 = 4,04 ; 1 + 0,06/2 = 1,03 ; 1 − 0,02 = 0,98 ; 0,99² ≈ 1 − 0,02 = 0,98 ; √0,98 ≈ 1 − 0,01 = 0,99.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Un prix augmente de 2 % deux années de suite. D'après l'approximation (1 + h)² ≈ 1 + 2h, l'augmentation globale est d'environ :",
+      "propositions": [
+        "2 %",
+        "4 %",
+        "6 %",
+        "8 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Coefficient global 1,02² ≈ 1 + 2 × 0,02 = 1,04, soit environ +4 % (exactement +4,04 %).",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la fonction affine tangente à la fonction inverse en a = 1 ?",
+      "propositions": [
+        "x ↦ 2 − x",
+        "x ↦ x",
+        "x ↦ 1 − x",
+        "x ↦ x − 2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "x ↦ f(1) + f′(1)(x − 1) = 1 − (x − 1) = 2 − x.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:106",
+      "type": "qcm_multiple",
+      "enonce": "On applique l'approximation affine à f(x) = 1/x au voisinage de a = 2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(2) = −0,25",
+        "f(2,1) ≈ 0,475",
+        "f(1,9) ≈ 0,525",
+        "f(2,1) ≈ 0,525",
+        "f(2 + h) ≈ 0,5 + 0,25h"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "f(2 + h) ≈ 0,5 − 0,25h : h = 0,1 donne 0,475 et h = −0,1 donne 0,525.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Quand on utilise f(a + h) ≈ f(a) + f′(a)h, par quelle droite remplace-t-on la courbe près du point A(a ; f(a)) ?",
+      "propositions": [
+        "L'axe des abscisses",
+        "La droite (OA)",
+        "La droite horizontale passant par A",
+        "La tangente en A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "x ↦ f(a) + f′(a)(x − a) a pour courbe la tangente en A.",
+      "notion": "Approximation affine"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Une bille parcourt d(t) = 5t² mètres en t secondes. Quelle est sa vitesse moyenne entre 1 s et 3 s ?",
+      "propositions": [
+        "40 m/s",
+        "10 m/s",
+        "20 m/s",
+        "45 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(d(3) − d(1))/(3 − 1) = (45 − 5)/2 = 20 m/s.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:109",
+      "type": "qcm_unique",
+      "enonce": "La distance parcourue par un objet en chute est d(t) = 5t² (en m, t en s). Quelle est sa vitesse instantanée à t = 3 s ?",
+      "propositions": [
+        "45 m/s",
+        "15 m/s",
+        "30 m/s",
+        "20 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le taux entre 3 et 3 + h vaut (5(3 + h)² − 45)/h = 30 + 5h, qui se rapproche de 30.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:110",
+      "type": "qcm_unique",
+      "enonce": "d(t) est la distance parcourue à l'instant t. Comment interpréter le nombre dérivé d′(t₀) ?",
+      "propositions": [
+        "La distance parcourue à l'instant t₀",
+        "La vitesse instantanée à l'instant t₀",
+        "La vitesse moyenne entre 0 et t₀",
+        "La durée totale du trajet"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre dérivé de la position par rapport au temps est la vitesse instantanée.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Le coût de production de q objets est C(q) = q² + 10q + 50 euros. Que vaut le coût marginal C′(20), en euros par objet ?",
+      "propositions": [
+        "50",
+        "650",
+        "30",
+        "20"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le taux entre 20 et 20 + h vaut 50 + h, qui se rapproche de 50. (650 est C(20).)",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:112",
+      "type": "reponse_courte",
+      "enonce": "Avec un coût total C(q) = q² + 10q + 50 euros, combien coûte exactement la fabrication de la 21e unité, C(21) − C(20) ? Réponds en euros par un nombre entier.",
+      "reponses_acceptees": [
+        "51"
+      ],
+      "difficulte": 2,
+      "explication": "C(21) = 701 et C(20) = 650, donc 51 € : proche du coût marginal C′(20) = 50 €.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:113",
+      "type": "vrai_faux",
+      "enonce": "La vitesse moyenne d'un mobile entre deux instants est un taux de variation.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la variation de distance divisée par la durée : (d(t₂) − d(t₁))/(t₂ − t₁).",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Un nombre dérivé n'a jamais d'unité.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "En contexte, il a pour unité celle de y divisée par celle de x : m/s pour une vitesse, € par unité pour un coût marginal.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Avec la notation de Leibniz, comment écrit-on le nombre dérivé de y = f(x) par rapport à x ?",
+      "propositions": [
+        "Δx/Δy",
+        "dx/dy",
+        "y/x",
+        "dy/dx"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "dy/dx désigne la limite de Δy/Δx quand Δx se rapproche de 0.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Que représente le quotient Δy/Δx ?",
+      "propositions": [
+        "Un nombre dérivé exact",
+        "Une image",
+        "Une ordonnée à l'origine",
+        "Un taux de variation"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Δy/Δx = (f(a + h) − f(a))/h est le taux de variation entre a et a + h.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:117",
+      "type": "qcm_multiple",
+      "enonce": "Un réservoir contient V(t) litres d'eau à l'instant t (en minutes). Coche toutes les réponses exactes.",
+      "propositions": [
+        "(V(10) − V(5))/5 est un débit moyen en L/min",
+        "V′(5) est le débit instantané à t = 5 min",
+        "V′(5) s'exprime en litres",
+        "Si V′(5) < 0, le réservoir se vide à cet instant",
+        "V′(5) est le volume d'eau à t = 5 min"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le taux de variation est un débit moyen, le nombre dérivé un débit instantané en L/min ; un débit négatif signifie que le volume diminue.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:118",
+      "type": "qcm_unique",
+      "enonce": "T(t) est la température (en °C) à l'heure t, et T′(14) = −1,5. Comment interpréter ce résultat ?",
+      "propositions": [
+        "À 14 h, la température vaut −1,5 °C",
+        "Entre 0 h et 14 h, la température a baissé de 1,5 °C",
+        "À 14 h, la température baisse d'environ 1,5 °C par heure",
+        "À 14 h, la température monte de 1,5 °C par heure"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "T′(14) est une vitesse de variation instantanée en °C par heure ; son signe négatif indique une baisse.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:119",
+      "type": "qcm_multiple",
+      "enonce": "Pour une bille qui parcourt d(t) = 5t² mètres en t secondes, quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Entre 1 s et 3 s, la vitesse moyenne est de 20 m/s",
+        "À l'instant 2 s, la vitesse est de 20 m/s",
+        "À l'instant 1 s, la vitesse est de 5 m/s",
+        "Le taux de variation entre 2 et 2 + h vaut 20 + 5h",
+        "À l'instant 3 s, la vitesse est de 45 m/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Vitesse moyenne (45 − 5)/2 = 20 ; d′(t₀) = 10t₀ donne 20 m/s à 2 s, 10 m/s à 1 s et 30 m/s à 3 s.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Un mobile a pour position x(t) = t² + 4t (en mètres, t en secondes). Calcule sa vitesse instantanée à t = 3 s, en m/s. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 3,
+      "explication": "x(3 + h) − x(3) = 9 + 6h + h² + 12 + 4h − 21 = h² + 10h ; le taux h + 10 se rapproche de 10.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:121",
+      "type": "qcm_multiple",
+      "enonce": "Une usine a un coût total C(q) = q² + 10q + 50 euros pour q unités. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux de variation de C entre q et q + h vaut 2q + 10 + h",
+        "C′(q) = 2q + 10",
+        "C′(40) = 90",
+        "C(41) − C(40) = 90",
+        "Le coût marginal diminue quand q augmente"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "C(q + h) − C(q) = 2qh + h² + 10h ; C′(q) = 2q + 10 augmente avec q ; C(41) − C(40) = 91.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Une voiture roule à la vitesse constante de 90 km/h : le nombre dérivé de sa distance parcourue est nul.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La distance augmente de 90 km par heure : son nombre dérivé vaut 90 km/h. C'est la vitesse qui a un nombre dérivé nul.",
+      "notion": "Vitesse et coût marginal"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Pour h > 0, quel est le taux de variation de la racine carrée entre 0 et h ?",
+      "propositions": [
+        "√h",
+        "1/√h",
+        "1/h",
+        "√h/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(√h − √0)/h = √h/h = 1/√h.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi la fonction racine carrée n'est-elle pas dérivable en 0 ?",
+      "propositions": [
+        "Son taux 1/√h devient aussi grand que l'on veut quand h se rapproche de 0",
+        "Elle n'est pas définie en 0",
+        "Son taux 1/√h se rapproche de 0 quand h se rapproche de 0",
+        "Sa courbe s'arrête avant l'origine"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "√0 = 0 existe, mais le taux de variation ne se rapproche d'aucun nombre réel.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Pour h < 0, que vaut le taux de variation de la valeur absolue entre 0 et h ?",
+      "propositions": [
+        "−1",
+        "1",
+        "0",
+        "h"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "|h| = −h pour h < 0, donc |h|/h = −h/h = −1.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on le point O de la courbe de la valeur absolue, où deux demi-droites de pentes −1 et 1 se rejoignent ?",
+      "propositions": [
+        "Le sommet d'une parabole",
+        "Un point de tangence horizontale",
+        "Un centre de symétrie",
+        "Un point anguleux"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La courbe y forme un angle : elle admet deux demi-tangentes différentes.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:127",
+      "type": "vrai_faux",
+      "enonce": "La fonction valeur absolue n'est pas dérivable en 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Son taux de variation vaut 1 pour h > 0 et −1 pour h < 0.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Une fonction définie en un réel a est toujours dérivable en a.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Contre-exemples : la racine carrée et la valeur absolue sont définies en 0 sans y être dérivables.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:129",
+      "type": "vrai_faux",
+      "enonce": "La courbe de la racine carrée admet à l'origine une tangente verticale.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Les sécantes (OM) se rapprochent de l'axe des ordonnées, d'équation x = 0, qui n'a pas de coefficient directeur.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:130",
+      "type": "vrai_faux",
+      "enonce": "La fonction valeur absolue n'est dérivable en aucun réel.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elle est dérivable en tout a ≠ 0 : son nombre dérivé vaut 1 si a > 0 et −1 si a < 0.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:131",
+      "type": "reponse_courte",
+      "enonce": "Calcule le taux de variation de la racine carrée entre 0 et 0,0001. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "100"
+      ],
+      "difficulte": 2,
+      "explication": "√0,0001 = 0,01, donc 0,01/0,0001 = 100 (c'est 1/√h).",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "On étudie f(x) = |x|. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(3) = 1",
+        "f′(−2) = −1",
+        "f′(0) = 0",
+        "f n'est pas dérivable en 0",
+        "f′(−2) = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Près de 3, |x| = x donc f′(3) = 1 ; près de −2, |x| = −x donc f′(−2) = −1 ; f′(0) n'existe pas.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "Voici des affirmations sur la fonction racine carrée. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est dérivable en 4, de nombre dérivé 1/4",
+        "Elle n'est pas dérivable en 0",
+        "Son taux de variation entre 0 et h vaut √h",
+        "Sa tangente en O a pour équation y = 0",
+        "En 0, les sécantes (OM) se rapprochent de l'axe des ordonnées"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "f′(4) = 1/(2√4) = 1/4 ; entre 0 et h le taux vaut 1/√h, qui devient très grand : la tangente en O est verticale (x = 0).",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quelle raison justifie que la valeur absolue n'est pas dérivable en 0 ?",
+      "propositions": [
+        "On a |0| = 0",
+        "Le taux |h|/h devient aussi grand que l'on veut",
+        "Le taux |h|/h vaut 1 pour h > 0 et −1 pour h < 0",
+        "La valeur absolue n'est pas définie pour x < 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le taux ne se rapproche pas d'un seul nombre quand h se rapproche de 0.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:135",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions, lesquelles ne sont pas dérivables en 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ √x",
+        "x ↦ |x|",
+        "x ↦ x²",
+        "x ↦ x³",
+        "x ↦ 3x + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les taux en 0 de x², x³ et 3x + 1 valent h, h² et 3 : ils ont une limite. Ceux de √x et |x| n'en ont pas.",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:136",
+      "type": "qcm_unique",
+      "enonce": "En quel réel la fonction f(x) = |x − 2| n'est-elle pas dérivable ?",
+      "propositions": [
+        "0",
+        "2",
+        "−2",
+        "1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La courbe est celle de la valeur absolue décalée de 2 vers la droite : le point anguleux est en (2 ; 0).",
+      "notion": "Non-dérivabilité en 0"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:137",
+      "type": "qcm_unique",
+      "enonce": "En Python, quelle écriture calcule le carré de x ?",
+      "propositions": [
+        "x^2",
+        "x**2",
+        "x²",
+        "2*x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'opérateur puissance est **. En Python, ^ est une autre opération (le « ou exclusif »).",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:138",
+      "type": "qcm_unique",
+      "enonce": "On définit f(x) = x**2 et taux(a, h) qui renvoie (f(a + h) - f(a)) / h. Que renvoie taux(3, 1) ?",
+      "propositions": [
+        "7.0",
+        "6.0",
+        "16",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "(f(4) − f(3))/1 = (16 − 9)/1 = 7 ; la division / donne le flottant 7.0.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Après les instructions L = [] puis for h in [1, 0.5]: L.append(h * 2), que contient la liste L ?",
+      "propositions": [
+        "[1, 0.5]",
+        "[2]",
+        "[2, 1.0, 1, 0.5]",
+        "[2, 1.0]"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La boucle ajoute 1 × 2 = 2, puis 0.5 × 2 = 1.0.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:140",
+      "type": "qcm_unique",
+      "enonce": "La fonction secantes(a, b, h) renvoie la liste des (f(x + h) - f(x)) / h pour x = a, a + h, … jusqu'à b − h. Avec f(x) = x**2, que renvoie secantes(0, 2, 0.5) ?",
+      "propositions": [
+        "[0, 1, 2, 3]",
+        "[1.0, 2.0, 3.0, 4.0]",
+        "[0.5, 1.5, 2.5, 3.5]",
+        "[0.25, 1.0, 2.25, 4.0]"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Pour le carré, le taux entre x et x + 0,5 vaut 2x + 0,5 : 0,5 ; 1,5 ; 2,5 ; 3,5.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Combien d'éléments contient la liste renvoyée par secantes(1, 3, 0.5), qui calcule une pente par intervalle [x ; x + h] entre 1 et 3 ?",
+      "propositions": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(3 − 1)/0,5 = 4 intervalles : [1 ; 1,5], [1,5 ; 2], [2 ; 2,5], [2,5 ; 3]. Il y a 5 points mais 4 sécantes.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Avec f(x) = x**2, la fonction secantes(a, b, h) renvoie les pentes (f(x + h) - f(x)) / h pour x = a, a + h, … Donne le premier élément de secantes(1, 2, 0.5) en valeur décimale exacte.",
+      "reponses_acceptees": [
+        "2,5",
+        "2.5"
+      ],
+      "difficulte": 2,
+      "explication": "(f(1,5) − f(1))/0,5 = (2,25 − 1)/0,5 = 2,5.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:143",
+      "type": "vrai_faux",
+      "enonce": "En Python, L.append(v) ajoute la valeur v à la fin de la liste L.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la construction d'une liste par ajouts successifs.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:144",
+      "type": "vrai_faux",
+      "enonce": "L'instruction print([2*k for k in range(3)]) affiche [0, 2, 4].",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "range(3) donne 0, 1, 2 ; la liste en compréhension contient 0, 2 et 4.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "On calcule [taux(1, h) for h in [1, 0.1, 0.01]] avec f(x) = x**2 et taux(a, h) = (f(a + h) - f(a)) / h. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La liste a 3 éléments",
+        "Le premier élément vaut 3.0",
+        "Les valeurs se rapprochent de 2",
+        "Les valeurs se rapprochent de 1",
+        "Le dernier élément vaut exactement 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le taux vaut 2 + h : 3 ; 2,1 ; 2,01 (à des arrondis machine près). Il se rapproche de f′(1) = 2 sans jamais l'atteindre.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:146",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction f, secantes(0, 1, 0.25) affiche [0.25, 0.75, 1.25, 1.75] : ce sont les pentes des sécantes sur [0 ; 0,25], [0,25 ; 0,5], [0,5 ; 0,75] et [0,75 ; 1]. Que vaut le taux de variation de f entre 0 et 1 ?",
+      "propositions": [
+        "4",
+        "1",
+        "1,75",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Chaque pente × 0,25 donne une variation de f ; leur somme est f(1) − f(0) = 0,25 × (0,25 + 0,75 + 1,25 + 1,75) = 1, divisée par 1.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Pour f(x) = x**2, la liste secantes(0, 1, 0.25) contient le nombre dérivé exact f′(0,5) = 1.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Elle contient 0.25, 0.75, 1.25 et 1.75 : des pentes de sécantes (2x + 0,25), pas des nombres dérivés.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:148",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures Python calculent correctement le taux de variation de f entre a et a + h ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(f(a + h) - f(a)) / h",
+        "f(a + h) - f(a) / h",
+        "(f(a + h) - f(a)) / ((a + h) - a)",
+        "(f(a) - f(a + h)) / (-h)",
+        "f((a + h) - a) / h"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Sans parenthèses, la division est prioritaire ; f((a + h) − a) = f(h) n'a rien à voir avec le taux.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:149",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction crée une liste vide en Python ?",
+      "propositions": [
+        "L = []",
+        "L = 0",
+        "L = [0]",
+        "L = ()"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "[] est la liste vide ; [0] contient un élément, 0 est un nombre et () n'est pas une liste.",
+      "notion": "Sécantes en Python"
+    },
+    {
+      "source": "maths-spe-1re:ch4:banque:150",
+      "type": "qcm_multiple",
+      "enonce": "Dans le programme secantes, on écrit n = round((b - a) / h) puis for k in range(n). Coche toutes les réponses exactes.",
+      "propositions": [
+        "n est le nombre de sécantes calculées",
+        "round renvoie 10 même si (b - a) / h vaut 9.999999999999998 à cause des arrondis des flottants",
+        "range(n) exige un nombre entier n",
+        "n est le pas de la subdivision",
+        "n vaut toujours 10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "n = (b − a)/h arrondi : c'est le nombre d'intervalles, donc de sécantes ; le pas est h.",
+      "notion": "Sécantes en Python"
+    }
+  ]
+}

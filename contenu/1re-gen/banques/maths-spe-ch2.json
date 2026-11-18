@@ -1,0 +1,2292 @@
+{
+  "chapitre": 2,
+  "notions": [
+    "Reconnaître une suite arithmétique",
+    "Terme général arithmétique",
+    "Sommes de termes arithmétiques",
+    "Évolutions en pourcentage",
+    "Suites géométriques et terme général",
+    "Sommes de termes géométriques",
+    "Variations et comportement",
+    "Modéliser et déterminer un seuil"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch2:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Une suite (uₙ) est arithmétique de raison r lorsque, pour tout entier naturel n :",
+      "propositions": [
+        "uₙ₊₁ = r × uₙ",
+        "uₙ₊₁ = uₙ + n",
+        "uₙ₊₁ = uₙ + r",
+        "uₙ = r + n"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Dans une suite arithmétique, on passe d'un terme au suivant en ajoutant toujours la même raison r."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:002",
+      "type": "qcm_unique",
+      "enonce": "La suite (uₙ) est arithmétique, de premier terme u₀ = 7 et de raison −2. Que vaut u₁ ?",
+      "propositions": [
+        "5",
+        "9",
+        "−14",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "u₁ = u₀ + r = 7 + (−2) = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Les nombres 4 ; 11 ; 18 ; 25 sont des termes consécutifs d'une suite arithmétique. Quelle est sa raison ?",
+      "propositions": [
+        "7",
+        "4",
+        "−7",
+        "25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "La raison est la différence entre un terme et le précédent : 11 − 4 = 7 (et 18 − 11 = 25 − 18 = 7)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces suites, définies pour tout entier naturel n, est arithmétique ?",
+      "propositions": [
+        "uₙ = n² + 1",
+        "uₙ = 3 × 2ⁿ",
+        "uₙ = 1/(n + 1)",
+        "uₙ = 5 − 2n"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "uₙ₊₁ − uₙ = 5 − 2(n + 1) − (5 − 2n) = −2 est constant : la suite est arithmétique de raison −2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:005",
+      "type": "qcm_unique",
+      "enonce": "On pose uₙ = 3n + 5 pour tout entier naturel n. Que vaut la différence uₙ₊₁ − uₙ ?",
+      "propositions": [
+        "5",
+        "3",
+        "3n + 8",
+        "8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "uₙ₊₁ − uₙ = 3(n + 1) + 5 − (3n + 5) = 3 : la différence ne dépend pas de n."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u₀ = 2,5 et u₁ = 1. Calcule u₂.",
+      "propositions": [
+        "0,4",
+        "−1,5",
+        "3,5",
+        "−0,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "La raison vaut r = 1 − 2,5 = −1,5, donc u₂ = u₁ + r = 1 − 1,5 = −0,5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Le premier rang d'une salle compte 20 places, et chaque rang compte 3 places de plus que le précédent. En notant rₙ le nombre de places du rang n, quelle relation relie deux rangs consécutifs ?",
+      "propositions": [
+        "rₙ₊₁ = 3rₙ",
+        "rₙ₊₁ = rₙ + 3",
+        "rₙ₊₁ = rₙ + 20",
+        "rₙ₊₁ = 20 + 3n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "On ajoute 3 places d'un rang au suivant : (rₙ) est arithmétique de raison 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Soit vₙ = n² − n pour tout entier naturel n. Quelle affirmation est exacte ?",
+      "propositions": [
+        "vₙ₊₁ − vₙ = 2n, donc (vₙ) est arithmétique de raison 2",
+        "vₙ₊₁ − vₙ = 2n, donc (vₙ) n'est pas arithmétique",
+        "vₙ₊₁ − vₙ = 1, donc (vₙ) est arithmétique de raison 1",
+        "vₙ₊₁ − vₙ = 2n − 1, donc (vₙ) n'est pas arithmétique"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "(n + 1)² − (n + 1) − (n² − n) = 2n + 1 − 1 = 2n : la différence dépend de n, la suite n'est pas arithmétique."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableur, la cellule A1 contient le premier terme d'une suite arithmétique de raison 4. Quelle formule écrire en A2 avant de la recopier vers le bas ?",
+      "propositions": [
+        "=A1*4",
+        "=$A$1+4",
+        "=A1+4",
+        "=4*A1+1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Chaque terme s'obtient en ajoutant 4 au précédent ; la référence relative A1 devient A2, A3… à la recopie. Avec $A$1, on ajouterait toujours 4 au premier terme."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Parmi ces suites définies pour tout n ∈ ℕ, lesquelles sont arithmétiques ?",
+      "propositions": [
+        "uₙ = 7",
+        "uₙ = n(n + 1)",
+        "uₙ = 2ⁿ",
+        "uₙ = (2n − 1)/3",
+        "uₙ = −4n + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Une suite constante est arithmétique de raison 0 ; (2n − 1)/3 = (2/3)n − 1/3 et −4n + 1 sont affines en n. n(n + 1) et 2ⁿ ne le sont pas."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. La suite (uₙ) est arithmétique de raison −3 et u₀ = 10. Quelles égalités sont vraies ?",
+      "propositions": [
+        "u₁ = 7",
+        "u₃ = 0",
+        "u₂ = 4",
+        "u₁ = 13",
+        "u₂ = −30"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "On retire 3 à chaque étape : 10, 7, 4, 1… Donc u₃ = 1 et non 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles situations se modélisent par une suite arithmétique ?",
+      "propositions": [
+        "Une réserve d'eau qui perd 40 litres par jour",
+        "Un loyer qui augmente de 15 € chaque année",
+        "Une population de bactéries qui double toutes les heures",
+        "Un salaire qui augmente de 2 % par an"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Une suite arithmétique correspond à une variation de même quantité à chaque période ; une variation en pourcentage ou un doublement relève d'une suite géométrique."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On sait seulement que u₀ = 1, u₁ = 4 et u₂ = 7 pour une suite (uₙ). Quelles affirmations sont justifiées ?",
+      "propositions": [
+        "Si (uₙ) est arithmétique, sa raison vaut 3",
+        "Ces trois termes ne suffisent pas à prouver que (uₙ) est arithmétique",
+        "(uₙ) est forcément arithmétique",
+        "u₃ vaut forcément 10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Trois termes ne disent rien des suivants : il faudrait montrer que uₙ₊₁ − uₙ est constant pour tout n. Si la suite est arithmétique, alors r = 4 − 1 = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Une suite constante est une suite arithmétique de raison 0.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Si uₙ₊₁ = uₙ pour tout n, alors uₙ₊₁ = uₙ + 0 : c'est une suite arithmétique de raison 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:015",
+      "type": "vrai_faux",
+      "enonce": "La suite définie par uₙ = n² est arithmétique, puisque u₁ − u₀ = 1.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "u₁ − u₀ = 1 mais u₂ − u₁ = 4 − 1 = 3 : les différences ne sont pas constantes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Si uₙ = −2n + 9 pour tout n, la suite (uₙ) est arithmétique de raison −2.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "uₙ₊₁ − uₙ = −2(n + 1) + 9 − (−2n + 9) = −2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Une quantité qui augmente de 5 % chaque mois se modélise par une suite arithmétique de raison 5.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "Une hausse de 5 % revient à multiplier par 1,05 : c'est une suite géométrique de raison 1,05."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:018",
+      "type": "reponse_courte",
+      "enonce": "La suite (uₙ) est arithmétique, avec u₄ = 13 et u₅ = 9,5. Quelle est sa raison ? Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "−3,5",
+        "-3,5",
+        "−3.5",
+        "-3.5"
+      ],
+      "difficulte": 2,
+      "notion": "Reconnaître une suite arithmétique",
+      "explication": "r = u₅ − u₄ = 9,5 − 13 = −3,5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Pour une suite arithmétique de premier terme u₀ et de raison r, quelle est l'expression de uₙ ?",
+      "propositions": [
+        "uₙ = u₀ × rⁿ",
+        "uₙ = u₀ + (n + 1)r",
+        "uₙ = u₀ + nr",
+        "uₙ = nu₀ + r"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "De u₀ à uₙ, on ajoute n fois la raison r."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour premier terme u₀ = 4 et pour raison 6. Que vaut u₁₀ ?",
+      "propositions": [
+        "58",
+        "70",
+        "64",
+        "240"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "u₁₀ = u₀ + 10r = 4 + 60 = 64."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique commence au rang 1 avec u₁ = 5 et a pour raison 2. Quelle expression donne uₙ ?",
+      "propositions": [
+        "uₙ = 5 + 2(n − 1)",
+        "uₙ = 5 + 2n",
+        "uₙ = 2 + 5(n − 1)",
+        "uₙ = 5 × 2ⁿ⁻¹"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "De u₁ à uₙ, on ajoute n − 1 fois la raison : uₙ = u₁ + (n − 1)r."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:022",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est arithmétique, avec u₃ = 11 et u₁₀ = 32. Quelle est sa raison ?",
+      "propositions": [
+        "21",
+        "2,1",
+        "3",
+        "3,2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "u₁₀ = u₃ + 7r, donc 7r = 32 − 11 = 21 et r = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:023",
+      "type": "qcm_unique",
+      "enonce": "On sait que u₅ = 20 et que la raison de la suite arithmétique (uₙ) vaut −4. Quel est son premier terme u₀ ?",
+      "propositions": [
+        "0",
+        "36",
+        "40",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "u₅ = u₀ + 5r, donc u₀ = u₅ − 5r = 20 − 5 × (−4) = 40."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Le terme général d'une suite arithmétique est uₙ = 7 − 0,5n. Que vaut u₃₀ ?",
+      "propositions": [
+        "8",
+        "−15",
+        "−8",
+        "6,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "u₃₀ = 7 − 0,5 × 30 = 7 − 15 = −8."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Les points de coordonnées (n ; uₙ) d'une suite arithmétique de raison r et de premier terme u₀ sont alignés. Sur quelle droite ?",
+      "propositions": [
+        "La droite d'équation y = u₀x + r",
+        "La droite d'équation y = rx",
+        "La droite d'équation y = rx + u₀",
+        "La droite d'équation x = r"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "uₙ = rn + u₀ : la raison est le coefficient directeur et u₀ l'ordonnée à l'origine."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:026",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est arithmétique avec u₇ = 4 et u₁₂ = −11. Que vaut u₂₀ ?",
+      "propositions": [
+        "−32",
+        "−38",
+        "13",
+        "−35"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Terme général arithmétique",
+      "explication": "5r = u₁₂ − u₇ = −15, donc r = −3 ; puis u₂₀ = u₁₂ + 8r = −11 − 24 = −35."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u₀ + u₁ = 11 et u₂ + u₃ = 23. Quelle est sa raison ?",
+      "propositions": [
+        "3",
+        "6",
+        "12",
+        "1,5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Terme général arithmétique",
+      "explication": "u₀ + u₁ = 2u₀ + r et u₂ + u₃ = 2u₀ + 5r ; la différence donne 4r = 12, donc r = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour terme général uₙ = 12 + 5n. Quelle est sa raison ?",
+      "propositions": [
+        "12",
+        "5",
+        "17",
+        "5n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "uₙ = u₀ + nr avec u₀ = 12 et r = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est arithmétique de raison 4, avec u₂ = 9. Quelles égalités sont vraies ?",
+      "propositions": [
+        "uₙ = 4n + 1",
+        "u₁ = 13",
+        "u₅ = 21",
+        "u₀ = 1",
+        "uₙ = 9 + 4n"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "u₀ = u₂ − 2 × 4 = 1, donc uₙ = 1 + 4n ; u₅ = 21 et u₁ = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Pour une suite arithmétique (uₙ) de raison r, quelles égalités sont vraies pour tous entiers naturels n et p ?",
+      "propositions": [
+        "uₙ = u₀ × rⁿ",
+        "uₙ = u₀ + nr",
+        "uₙ = uₚ + (n + p)r",
+        "uₙ = uₚ + (n − p)r"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "Entre les rangs p et n, on ajoute n − p fois la raison."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Les points (n ; uₙ) d'une suite arithmétique (uₙ) sont alignés sur la droite d'équation y = −1,5x + 6. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "u₄ = 0",
+        "La raison vaut 6",
+        "u₀ = 6",
+        "u₂ = 4",
+        "La raison vaut −1,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Terme général arithmétique",
+      "explication": "uₙ = −1,5n + 6 : raison −1,5, u₀ = 6, u₄ = 6 − 6 = 0 et u₂ = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles suites (wₙ) sont arithmétiques de raison 2 ?",
+      "propositions": [
+        "wₙ = 2ⁿ",
+        "wₙ = n + 2",
+        "w₀ = 2 et wₙ₊₁ = 2wₙ",
+        "w₀ = 1 et wₙ₊₁ = wₙ + 2",
+        "wₙ = 2n − 9"
+      ],
+      "bonnes_reponses": [
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "2n − 9 augmente de 2 à chaque rang ; wₙ₊₁ = wₙ + 2 est la définition. 2ⁿ et wₙ₊₁ = 2wₙ sont géométriques ; n + 2 a pour raison 1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Si (uₙ) est arithmétique de raison r, alors u₁₀ = u₀ + 10r.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "C'est la formule uₙ = u₀ + nr avec n = 10."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Si (uₙ) est arithmétique avec u₀ = 1 et r = 3, alors u₁₀₀ = 300.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Terme général arithmétique",
+      "explication": "u₁₀₀ = 1 + 100 × 3 = 301."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Pour démontrer que uₙ = u₀ + nr, on peut additionner les n égalités uₖ₊₁ − uₖ = r pour k allant de 0 à n − 1 : les termes intermédiaires s'éliminent.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "La somme des n égalités donne uₙ − u₀ = nr (somme télescopique)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:036",
+      "type": "reponse_courte",
+      "enonce": "(uₙ) est arithmétique, avec u₀ = −8 et une raison de 3,5. Calcule u₁₂. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "34"
+      ],
+      "difficulte": 2,
+      "notion": "Terme général arithmétique",
+      "explication": "u₁₂ = −8 + 12 × 3,5 = −8 + 42 = 34."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:037",
+      "type": "reponse_courte",
+      "enonce": "Une suite arithmétique vérifie u₆ = 17 et u₁₅ = 44. Que vaut u₀ ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "−1",
+        "-1"
+      ],
+      "difficulte": 3,
+      "notion": "Terme général arithmétique",
+      "explication": "9r = 44 − 17 = 27, donc r = 3 ; u₀ = u₆ − 6r = 17 − 18 = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Que vaut la somme 1 + 2 + 3 + … + n pour tout entier n ⩾ 1 ?",
+      "propositions": [
+        "n(n − 1)/2",
+        "n²/2",
+        "n(n + 1)",
+        "n(n + 1)/2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "En écrivant la somme à l'endroit et à l'envers, on obtient 2S = n(n + 1)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 1 + 2 + … + 100 ?",
+      "propositions": [
+        "5000",
+        "10100",
+        "5050",
+        "4950"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "100 × 101/2 = 5050."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Combien y a-t-il de termes dans la somme u₀ + u₁ + … + u₂₀ ?",
+      "propositions": [
+        "20",
+        "19",
+        "21",
+        "22"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "De l'indice 0 à l'indice 20, il y a 20 − 0 + 1 = 21 termes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:041",
+      "type": "qcm_unique",
+      "enonce": "La somme u₅ + u₆ + … + u₁₈ est formée de combien de termes ?",
+      "propositions": [
+        "13",
+        "18",
+        "14",
+        "23"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "De l'indice p = 5 à l'indice n = 18, il y a n − p + 1 = 14 termes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:042",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est arithmétique, de premier terme u₀ = 2 et de raison 5. Que vaut u₀ + u₁ + … + u₁₅ ?",
+      "propositions": [
+        "592,5",
+        "1264",
+        "616",
+        "632"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "u₁₅ = 2 + 75 = 77 ; il y a 16 termes, donc S = 16 × (2 + 77)/2 = 632."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Que vaut la somme des nombres impairs de 1 à 99, c'est-à-dire 1 + 3 + 5 + … + 99 ?",
+      "propositions": [
+        "2500",
+        "5000",
+        "2450",
+        "2550"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "C'est une suite arithmétique de raison 2 avec 50 termes : 50 × (1 + 99)/2 = 2500."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Pour démontrer que 1 + 2 + … + n = n(n + 1)/2, on écrit S à l'endroit puis à l'envers et on additionne les termes placés l'un sous l'autre. Que vaut chacune de ces sommes de deux termes ?",
+      "propositions": [
+        "n + 1",
+        "n",
+        "2n",
+        "n/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "1 + n = 2 + (n − 1) = … = n + 1 ; il y a n telles sommes, d'où 2S = n(n + 1)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Calcule 2 + 4 + 6 + … + 200.",
+      "propositions": [
+        "5050",
+        "10100",
+        "10000",
+        "20200"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "2 + 4 + … + 200 = 2(1 + 2 + … + 100) = 2 × 5050 = 10100."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Un amphithéâtre compte 15 places au premier rang, et chaque rang a 2 places de plus que le précédent. Combien de places offrent ses 20 rangs au total ?",
+      "propositions": [
+        "646",
+        "680",
+        "700",
+        "1360"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "Le 20ᵉ rang compte 15 + 19 × 2 = 53 places ; total : 20 × (15 + 53)/2 = 680."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles expressions sont égales à 1 + 2 + … + 10 ?",
+      "propositions": [
+        "10 × 9/2",
+        "100/2",
+        "110",
+        "10 × 11/2",
+        "55"
+      ],
+      "bonnes_reponses": [
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "Avec n = 10 : n(n + 1)/2 = 10 × 11/2 = 55."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est une suite arithmétique de raison r. Quelles formules donnent S = u₀ + u₁ + … + uₙ ?",
+      "propositions": [
+        "S = (n + 1)(u₀ + uₙ)",
+        "S = n(u₀ + uₙ)/2",
+        "S = (n + 1)u₀ + rn(n + 1)/2",
+        "S = (n + 1)(u₀ + uₙ)/2"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "La somme compte n + 1 termes : (n + 1) × (premier + dernier)/2. En développant avec uₖ = u₀ + kr, on obtient aussi (n + 1)u₀ + r(1 + … + n)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère S = 7 + 10 + 13 + … + 52, somme de termes consécutifs d'une suite arithmétique. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "S compte 15 termes",
+        "S = 472",
+        "La raison vaut 3",
+        "S compte 16 termes"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "(52 − 7)/3 = 15 pas, donc 16 termes ; S = 16 × (7 + 52)/2 = 472."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Ce programme Python doit renvoyer u₀ + u₁ + … + uₙ pour une suite arithmétique : def somme(u0, r, n): s = 0 ; u = u0 ; for k in range(n + 1): s = s + u ; u = u + r ; return s. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "somme(1, 2, 4) renvoie 25",
+        "Avec range(n), le résultat serait le même",
+        "somme(1, 2, 4) renvoie 16",
+        "La boucle s'exécute n + 1 fois"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "range(n + 1) donne k = 0, …, n, soit n + 1 passages. somme(1, 2, 4) = 1 + 3 + 5 + 7 + 9 = 25 ; avec range(n), on oublierait le dernier terme (16)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:051",
+      "type": "vrai_faux",
+      "enonce": "La somme u₀ + u₁ + … + u₁₀ compte 10 termes.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "De 0 à 10, il y a 11 termes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:052",
+      "type": "vrai_faux",
+      "enonce": "1 + 2 + … + 20 = 210.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "20 × 21/2 = 210."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite arithmétique, une somme de termes consécutifs est égale au nombre de termes multiplié par la moyenne du premier et du dernier terme.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "S = (nombre de termes) × (premier + dernier)/2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Pour tout entier n ⩾ 1, la somme 1 + 2 + … + 2n est égale à 2n².",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "1 + 2 + … + 2n = 2n(2n + 1)/2 = n(2n + 1) = 2n² + n."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:055",
+      "type": "reponse_courte",
+      "enonce": "Calcule 1 + 2 + 3 + … + 60. Réponds par un nombre entier, sans espace.",
+      "reponses_acceptees": [
+        "1830"
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "60 × 61/2 = 1830."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:056",
+      "type": "reponse_courte",
+      "enonce": "(uₙ) est arithmétique, de premier terme u₀ = 50 et de raison −4. Calcule u₀ + u₁ + … + u₂₀. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "210"
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes arithmétiques",
+      "explication": "u₂₀ = 50 − 80 = −30 ; 21 termes : S = 21 × (50 − 30)/2 = 210."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Par quel coefficient multiplie-t-on une quantité qui augmente de 8 % ?",
+      "propositions": [
+        "0,08",
+        "1,08",
+        "1,8",
+        "0,92"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "CM = 1 + 8/100 = 1,08."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Quel coefficient multiplicateur correspond à une baisse de 30 % ?",
+      "propositions": [
+        "0,3",
+        "0,7",
+        "1,3",
+        "−0,3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "CM = 1 − 30/100 = 0,7."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Un vélo coûte 240 €. Son prix augmente de 15 %. Quel est le nouveau prix ?",
+      "propositions": [
+        "276 €",
+        "255 €",
+        "36 €",
+        "204 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "240 × 1,15 = 276 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Après une baisse de 20 %, un manteau est vendu 96 €. Quel était son prix avant la baisse ?",
+      "propositions": [
+        "115,20 €",
+        "120 €",
+        "76,80 €",
+        "116 €"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "Prix initial = 96/0,8 = 120 €. Ajouter 20 % à 96 € donnerait 115,20 €, ce qui est faux."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Un loyer passe de 650 € à 676 €. Quel est le taux d'évolution ?",
+      "propositions": [
+        "+26 %",
+        "+4 %",
+        "+3,85 %",
+        "+0,4 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "(676 − 650)/650 = 26/650 = 0,04, soit +4 %. On divise par la valeur de départ."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Un prix augmente de 10 %, puis baisse de 10 %. Quelle est l'évolution globale ?",
+      "propositions": [
+        "Aucune évolution",
+        "Une hausse de 1 %",
+        "Une baisse de 1 %",
+        "Une baisse de 10 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "1,1 × 0,9 = 0,99 : baisse globale de 1 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Une action gagne 20 % un jour, puis encore 20 % le lendemain. Quel est le taux d'évolution global ?",
+      "propositions": [
+        "+44 %",
+        "+40 %",
+        "+20 %",
+        "+42 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "1,2 × 1,2 = 1,44 : hausse globale de 44 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Un prix a augmenté de 25 %. Quelle évolution faut-il lui appliquer pour revenir au prix initial ?",
+      "propositions": [
+        "−20 %",
+        "−25 %",
+        "−75 %",
+        "−80 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Évolutions en pourcentage",
+      "explication": "Le coefficient réciproque est 1/1,25 = 0,8, soit une baisse de 20 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Une population baisse de 4 % par an pendant 3 ans. Quel est le taux d'évolution global, arrondi à 0,1 % près ?",
+      "propositions": [
+        "−11,5 %",
+        "−12 %",
+        "−88,5 %",
+        "+11,5 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Évolutions en pourcentage",
+      "explication": "0,96³ ≈ 0,8847, donc le taux global vaut environ 0,8847 − 1 ≈ −11,5 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Une quantité est multipliée par 1,035. À quelle évolution cela correspond-il ?",
+      "propositions": [
+        "Une hausse de 35 %",
+        "Une hausse de 3,5 %",
+        "Une hausse de 0,35 %",
+        "Une hausse de 103,5 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "1,035 = 1 + 0,035 = 1 + 3,5/100."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:067",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles évolutions correspondent à un coefficient multiplicateur inférieur à 1 ?",
+      "propositions": [
+        "Une baisse de 60 %",
+        "Une hausse de 0,5 %",
+        "Une hausse de 100 %",
+        "Une baisse de 5 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "Une baisse de t % donne CM = 1 − t/100 < 1 (0,95 et 0,4) ; une hausse donne CM > 1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Un article à 50 € subit une hausse de 20 % puis une baisse de 20 %. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "L'évolution globale est une hausse de 4 %",
+        "Le prix final est 48 €",
+        "Le coefficient global est 0,96",
+        "Le prix final est 50 €"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "1,2 × 0,8 = 0,96 et 50 × 0,96 = 48 € : baisse globale de 4 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Une valeur V augmente de 60 %. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "La nouvelle valeur est 0,6V",
+        "La nouvelle valeur est 1,6V",
+        "Pour revenir à V, il faut une baisse de 60 %",
+        "Pour revenir à V, il faut une baisse de 37,5 %"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "CM = 1,6 ; le coefficient réciproque est 1/1,6 = 0,625, soit une baisse de 37,5 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Un salaire augmente de 2 % par an pendant 10 ans. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "La hausse globale est exactement 20 %",
+        "Le coefficient global est 1,2",
+        "La hausse globale dépasse 20 %",
+        "Le coefficient global est 1,02¹⁰"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Évolutions en pourcentage",
+      "explication": "Les coefficients se multiplient : 1,02¹⁰ ≈ 1,219, soit une hausse d'environ 21,9 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:071",
+      "type": "vrai_faux",
+      "enonce": "Diminuer une quantité de 15 % revient à la multiplier par 0,85.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "CM = 1 − 0,15 = 0,85."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Deux hausses successives de 10 % équivalent à une hausse de 20 %.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "1,1² = 1,21 : c'est une hausse de 21 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Après une baisse de 50 %, une hausse de 50 % permet de revenir à la valeur de départ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "0,5 × 1,5 = 0,75 : on perd 25 %. Il faudrait une hausse de 100 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Si un prix passe de 80 € à 60 €, il a baissé de 25 %.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "(60 − 80)/80 = −0,25, soit −25 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:075",
+      "type": "reponse_courte",
+      "enonce": "Un livre coûte 18 €. Son prix augmente de 5 %. Quel est son nouveau prix, en euros ? Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "18,9",
+        "18.9",
+        "18,90",
+        "18.90"
+      ],
+      "difficulte": 1,
+      "notion": "Évolutions en pourcentage",
+      "explication": "18 × 1,05 = 18,9 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:076",
+      "type": "reponse_courte",
+      "enonce": "Une baisse de 20 % est suivie d'une hausse de x %, qui ramène exactement à la valeur de départ. Que vaut x ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "25"
+      ],
+      "difficulte": 2,
+      "notion": "Évolutions en pourcentage",
+      "explication": "Il faut multiplier par 1/0,8 = 1,25, soit une hausse de 25 %."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation de récurrence caractérise une suite géométrique de raison q ?",
+      "propositions": [
+        "uₙ₊₁ = uₙ + q",
+        "uₙ₊₁ = q × uₙ",
+        "uₙ₊₁ = qⁿ",
+        "uₙ = q × n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Dans une suite géométrique, on passe d'un terme au suivant en multipliant toujours par la raison q."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Quel est le terme général d'une suite géométrique (uₙ) dont on connaît u₀ et la raison q ?",
+      "propositions": [
+        "uₙ = (u₀ × q)ⁿ",
+        "uₙ = u₀ + nq",
+        "uₙ = u₀ × qⁿ⁺¹",
+        "uₙ = u₀ × qⁿ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "De u₀ à uₙ, on multiplie n fois par q ; seule la raison est élevée à la puissance n."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:079",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est géométrique, de premier terme u₀ = 5 et de raison 3. Que vaut u₃ ?",
+      "propositions": [
+        "135",
+        "45",
+        "405",
+        "14"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "u₃ = 5 × 3³ = 5 × 27 = 135."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Les nombres 64 ; 32 ; 16 ; 8 sont des termes consécutifs d'une suite géométrique. Quelle est sa raison ?",
+      "propositions": [
+        "2",
+        "−32",
+        "0,5",
+        "−16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "On passe d'un terme au suivant en multipliant par 32/64 = 0,5."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 1000 € est placé à intérêts composés au taux annuel de 4 %. Quelle est la raison de la suite géométrique des capitaux successifs ?",
+      "propositions": [
+        "0,04",
+        "4",
+        "1,4",
+        "1,04"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Chaque année, le capital est multiplié par 1 + 4/100 = 1,04."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:082",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est géométrique, avec u₂ = 12 et u₅ = 96. Quelle est sa raison ?",
+      "propositions": [
+        "8",
+        "2",
+        "28",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "u₅ = u₂ × q³, donc q³ = 96/12 = 8 et q = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:083",
+      "type": "qcm_unique",
+      "enonce": "On définit (vₙ) pour n ⩾ 1 par v₁ = 4 et vₙ₊₁ = 3vₙ. Quelle formule explicite convient ?",
+      "propositions": [
+        "vₙ = 4 × 3ⁿ",
+        "vₙ = 3 × 4ⁿ⁻¹",
+        "vₙ = 4 + 3(n − 1)",
+        "vₙ = 4 × 3ⁿ⁻¹"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "La suite est géométrique de raison 3 et commence au rang 1 : vₙ = v₁ × qⁿ⁻¹."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Soit uₙ = 7 × 2ⁿ pour tout entier naturel n. Laquelle de ces affirmations est exacte ?",
+      "propositions": [
+        "(uₙ) est géométrique de raison 2 et de premier terme 7",
+        "(uₙ) est géométrique de raison 7 et de premier terme 2",
+        "(uₙ) est arithmétique de raison 2",
+        "(uₙ) est géométrique de raison 14 et de premier terme 7"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "uₙ₊₁ = 7 × 2ⁿ⁺¹ = 2uₙ et u₀ = 7 × 2⁰ = 7."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique (uₙ) de raison positive vérifie u₁ = 2 et u₃ = 18. Que vaut u₆ ?",
+      "propositions": [
+        "162",
+        "486",
+        "1458",
+        "42"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Suites géométriques et terme général",
+      "explication": "u₃ = u₁ × q², donc q² = 9 et q = 3 (raison positive) ; u₆ = u₁ × q⁵ = 2 × 243 = 486."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique vérifie u₀ = 3 et u₄ = 48. Quelles sont les valeurs possibles de sa raison ?",
+      "propositions": [
+        "2 seulement",
+        "4 ou −4",
+        "16",
+        "2 ou −2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Suites géométriques et terme général",
+      "explication": "u₄ = u₀ × q⁴, donc q⁴ = 16 ; les réels dont la puissance quatrième vaut 16 sont 2 et −2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles suites sont géométriques ?",
+      "propositions": [
+        "uₙ = n² + 1",
+        "u₀ = 2 et uₙ₊₁ = −uₙ",
+        "uₙ = 5 × 0,9ⁿ",
+        "uₙ = 2n + 3",
+        "uₙ = 3ⁿ"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "5 × 0,9ⁿ (raison 0,9), 3ⁿ (raison 3) et uₙ₊₁ = −uₙ (raison −1) sont géométriques ; 2n + 3 est arithmétique et n² + 1 ni l'un ni l'autre."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est géométrique de raison 0,5, avec u₀ = 80. Quelles égalités sont vraies ?",
+      "propositions": [
+        "u₃ = 10",
+        "u₁ = 40",
+        "u₄ = 2,5",
+        "u₂ = 160"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Les termes sont 80, 40, 20, 10, 5… On divise par 2 à chaque étape."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Dans quels cas la grandeur décrite évolue-t-elle à taux constant, donc selon une suite géométrique ?",
+      "propositions": [
+        "Une voiture qui perd 15 % de sa valeur chaque année",
+        "Un abonnement qui augmente de 2 € par mois",
+        "Une colonie de bactéries qui double toutes les heures",
+        "Un réservoir qui perd 3 litres par heure"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Perdre 15 % revient à multiplier par 0,85 et doubler à multiplier par 2 ; des variations de 3 L ou de 2 € relèvent de suites arithmétiques."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est géométrique de raison q, à termes non nuls. Quelles égalités sont vraies pour tous entiers naturels n ⩾ p ?",
+      "propositions": [
+        "uₙ = uₚ × qⁿ⁺ᵖ",
+        "uₙ = uₚ + (n − p)q",
+        "uₙ₊₁/uₙ = q",
+        "uₙ = uₚ × qⁿ⁻ᵖ"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Entre les rangs p et n, on multiplie n − p fois par q ; le quotient de deux termes consécutifs est la raison."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:091",
+      "type": "vrai_faux",
+      "enonce": "La suite définie par uₙ = 3 × 2ⁿ a pour raison 3.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "uₙ₊₁ = 2uₙ : la raison est 2 ; 3 est le premier terme."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:092",
+      "type": "vrai_faux",
+      "enonce": "Si (uₙ) est géométrique de raison q, alors u₁₀ = u₃ × q⁷.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "uₙ = uₚ × qⁿ⁻ᵖ avec n = 10 et p = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:093",
+      "type": "vrai_faux",
+      "enonce": "Pour tout entier naturel n, 4 × 3ⁿ = 12ⁿ.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Pour n = 0 : 4 × 3⁰ = 4 alors que 12⁰ = 1. Seul 3 est élevé à la puissance n."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:094",
+      "type": "reponse_courte",
+      "enonce": "(uₙ) est géométrique, de premier terme u₀ = 3 et de raison 2. Calcule u₁₀. Réponds par un nombre entier, sans espace.",
+      "reponses_acceptees": [
+        "3072"
+      ],
+      "difficulte": 2,
+      "notion": "Suites géométriques et terme général",
+      "explication": "u₁₀ = 3 × 2¹⁰ = 3 × 1024 = 3072."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:095",
+      "type": "reponse_courte",
+      "enonce": "Une voiture achetée 20000 € perd 15 % de sa valeur chaque année. Quelle est sa valeur au bout de 5 ans, en euros, arrondie à l'unité ? Réponds sans espace.",
+      "reponses_acceptees": [
+        "8874"
+      ],
+      "marge": 0.5,
+      "difficulte": 3,
+      "notion": "Suites géométriques et terme général",
+      "explication": "Valeur = 20000 × 0,85⁵ ≈ 8874,1 €, soit 8874 € à l'unité près."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Pour un réel q ≠ 1, que vaut 1 + q + q² + … + qⁿ ?",
+      "propositions": [
+        "(1 − qⁿ⁺¹)/(1 − q)",
+        "(1 − qⁿ)/(1 − q)",
+        "(1 − qⁿ⁺¹)/(1 + q)",
+        "n(1 + qⁿ)/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "La somme compte n + 1 termes, d'où l'exposant n + 1 au numérateur."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 1 + 2 + 4 + 8 + … + 2¹⁰ ?",
+      "propositions": [
+        "1023",
+        "2047",
+        "2048",
+        "4095"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "(1 − 2¹¹)/(1 − 2) = 2¹¹ − 1 = 2047."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Combien de termes compte la somme 1 + q + q² + … + q⁸ ?",
+      "propositions": [
+        "8",
+        "9",
+        "10",
+        "7"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Les exposants vont de 0 à 8 : il y a 9 termes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:099",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est géométrique, avec u₀ = 5 et q = 3. Que vaut u₀ + u₁ + … + u₅ ?",
+      "propositions": [
+        "605",
+        "3640",
+        "1820",
+        "5465"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "5 × (1 − 3⁶)/(1 − 3) = 5 × 728/2 = 1820."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Dans la démonstration de la formule donnant S = 1 + q + … + qⁿ, on calcule S − qS. Que vaut cette différence ?",
+      "propositions": [
+        "1 − qⁿ",
+        "1 − qⁿ⁺¹",
+        "qⁿ⁺¹ − 1",
+        "1 − q"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "qS = q + … + qⁿ⁺¹ ; dans S − qS, tous les termes de q à qⁿ s'éliminent : il reste 1 − qⁿ⁺¹."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 1 + 1/2 + 1/4 + … + (1/2)⁹ ?",
+      "propositions": [
+        "511/256",
+        "2",
+        "1023/512",
+        "1023/1024"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "(1 − (1/2)¹⁰)/(1 − 1/2) = 2(1 − 1/1024) = 2 − 1/512 = 1023/512."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique a pour premier terme u₁ = 2 et pour raison −1. Que vaut u₁ + u₂ + … + u₇ ?",
+      "propositions": [
+        "0",
+        "2",
+        "14",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Les termes valent 2, −2, 2, −2, 2, −2, 2 : il y a 7 termes, la somme vaut 2."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Le jour 1, Léa met 1 € de côté ; chaque jour suivant, elle met de côté le double de la veille. Au bout de combien de jours le total épargné dépasse-t-il 1000 € ?",
+      "propositions": [
+        "9",
+        "11",
+        "8",
+        "10"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Après n jours, le total vaut 1 + 2 + … + 2ⁿ⁻¹ = 2ⁿ − 1. 2⁹ − 1 = 511 et 2¹⁰ − 1 = 1023 : il faut 10 jours."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Calcule la somme 3 + 6 + 12 + … + 3 × 2⁹.",
+      "propositions": [
+        "3069",
+        "1533",
+        "3072",
+        "6141"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Elle compte 10 termes : 3 × (1 − 2¹⁰)/(1 − 2) = 3 × 1023 = 3069."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles expressions sont égales à 1 + 3 + 9 + 27 + 81 ?",
+      "propositions": [
+        "(3⁴ − 1)/2",
+        "(1 − 3⁵)/(1 − 3)",
+        "121",
+        "(3⁵ − 1)/2",
+        "(1 − 3⁵)/(1 + 3)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "5 termes, raison 3 : (1 − 3⁵)/(1 − 3) = (243 − 1)/2 = 121."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:106",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On note Sₙ = 1 + 0,5 + 0,5² + … + 0,5ⁿ. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "S₁₀ = 2",
+        "Sₙ = 2 − 0,5ⁿ",
+        "Sₙ = 2 − 0,5ⁿ⁺¹",
+        "Sₙ < 2 pour tout entier n"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Sₙ = (1 − 0,5ⁿ⁺¹)/0,5 = 2 − 0,5ⁿ, toujours strictement inférieur à 2 ; S₁₀ = 2 − 1/1024."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:107",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Que sait-on de la formule 1 + q + … + qⁿ = (1 − qⁿ⁺¹)/(1 − q) ?",
+      "propositions": [
+        "Elle ne s'applique qu'aux raisons positives",
+        "L'exposant du numérateur est égal au nombre de termes",
+        "Elle est valable pour q = 1",
+        "Elle n'est valable que pour q ≠ 1"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Pour q = 1, on diviserait par 0 ; la formule vaut pour tout q ≠ 1, même négatif ; il y a n + 1 termes."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Si q = 1, la somme 1 + q + … + qⁿ vaut n + 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Les n + 1 termes valent tous 1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:109",
+      "type": "vrai_faux",
+      "enonce": "1 + 2 + 2² + … + 2⁵ = 2⁶.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Sommes de termes géométriques",
+      "explication": "La somme vaut 2⁶ − 1 = 63."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite géométrique de raison q ≠ 1, u₀ + u₁ + … + uₙ = u₀(1 − qⁿ⁺¹)/(1 − q).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "On factorise par u₀ et on applique la formule de 1 + q + … + qⁿ."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:111",
+      "type": "vrai_faux",
+      "enonce": "La somme 1 + 10 + 100 + … + 10⁶ vaut (10⁶ − 1)/9.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "Il y a 7 termes : la somme vaut (10⁷ − 1)/9 = 1111111."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:112",
+      "type": "reponse_courte",
+      "enonce": "Calcule 1 + 3 + 3² + … + 3⁶. Réponds par un nombre entier, sans espace.",
+      "reponses_acceptees": [
+        "1093"
+      ],
+      "difficulte": 2,
+      "notion": "Sommes de termes géométriques",
+      "explication": "(3⁷ − 1)/2 = (2187 − 1)/2 = 1093."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:113",
+      "type": "reponse_courte",
+      "enonce": "Une suite géométrique (uₙ) vérifie u₀ = 4 et q = −2. Calcule u₀ + u₁ + … + u₉. Réponds par un nombre entier, sans espace.",
+      "reponses_acceptees": [
+        "−1364",
+        "-1364"
+      ],
+      "difficulte": 3,
+      "notion": "Sommes de termes géométriques",
+      "explication": "4 × (1 − (−2)¹⁰)/(1 − (−2)) = 4 × (1 − 1024)/3 = −1364."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour raison r = −0,3. Quel est son sens de variation ?",
+      "propositions": [
+        "Strictement croissante",
+        "Constante",
+        "Strictement décroissante",
+        "Ni croissante ni décroissante"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "uₙ₊₁ − uₙ = r = −0,3 < 0 : chaque terme est inférieur au précédent."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:115",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est géométrique, de premier terme u₀ = 2 et de raison 1,5. Comment varie-t-elle ?",
+      "propositions": [
+        "Elle est strictement décroissante",
+        "Elle est constante",
+        "Elle n'est pas monotone",
+        "Elle est strictement croissante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "u₀ > 0 et q = 1,5 > 1 : la suite est strictement croissante."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Pour u₀ > 0, quelle condition sur la raison q > 0 rend une suite géométrique strictement décroissante ?",
+      "propositions": [
+        "0 < q < 1",
+        "q > 1",
+        "q < 0",
+        "q = 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "uₙ₊₁ − uₙ = u₀qⁿ(q − 1) est négatif quand q < 1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Quel est le comportement des termes de la suite uₙ = 0,9ⁿ quand n devient très grand ?",
+      "propositions": [
+        "Ils se rapprochent de 0",
+        "Ils deviennent aussi grands que l'on veut",
+        "Ils se rapprochent de 0,9",
+        "Ils se rapprochent de 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "0 < 0,9 < 1 : par exemple 0,9⁵⁰ ≈ 0,005. Les termes se rapprochent de 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Pour une suite géométrique uₙ = u₀qⁿ, à quoi est égale la différence uₙ₊₁ − uₙ ?",
+      "propositions": [
+        "u₀(q − 1)",
+        "u₀qⁿ⁺¹(q − 1)",
+        "qⁿ(u₀ − 1)",
+        "u₀qⁿ(q − 1)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "u₀qⁿ⁺¹ − u₀qⁿ = u₀qⁿ(q − 1) : son signe donne le sens de variation."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire du sens de variation de la suite vₙ = −2 × 1,1ⁿ ?",
+      "propositions": [
+        "Elle est strictement croissante",
+        "Elle est constante",
+        "Elle change de sens à chaque rang",
+        "Elle est strictement décroissante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "vₙ₊₁ − vₙ = −2 × 1,1ⁿ × 0,1 < 0 : avec u₀ < 0 et q > 1, la suite décroît."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire de la suite géométrique de premier terme 1 et de raison −2 ?",
+      "propositions": [
+        "Elle est strictement décroissante",
+        "Elle est strictement croissante",
+        "Ses termes changent de signe à chaque rang : elle n'est pas monotone",
+        "Ses termes se rapprochent de 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "Les termes sont 1 ; −2 ; 4 ; −8… : ils alternent de signe et grandissent en valeur absolue."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Une suite géométrique (uₙ) a tous ses termes strictement positifs, avec u₃ = 50 et u₅ = 32. Quel est son sens de variation ?",
+      "propositions": [
+        "Strictement croissante, car q = 1,25",
+        "Strictement décroissante, car q = −0,8",
+        "Non monotone, car q = −0,8",
+        "Strictement décroissante, car q = 0,8"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Variations et comportement",
+      "explication": "q² = 32/50 = 0,64 ; comme les termes sont positifs, q > 0, donc q = 0,8 < 1 : la suite décroît."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:122",
+      "type": "qcm_unique",
+      "enonce": "On compare uₙ = 1000 + 100n et vₙ = 10 × 1,1ⁿ. Que se passe-t-il quand n devient grand ?",
+      "propositions": [
+        "vₙ finit par dépasser uₙ, et l'écart devient aussi grand que l'on veut",
+        "uₙ reste toujours supérieur à vₙ",
+        "vₙ dépasse uₙ dès n = 1",
+        "Les deux suites finissent par être égales"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Variations et comportement",
+      "explication": "Une croissance exponentielle (q = 1,1 > 1) finit par l'emporter sur une croissance linéaire : ici, vₙ dépasse uₙ à partir de n = 71."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles suites sont strictement croissantes ?",
+      "propositions": [
+        "uₙ = 10 − 2n",
+        "uₙ = 5 × 0,7ⁿ",
+        "uₙ = 3 × 1,2ⁿ",
+        "uₙ = (−3)ⁿ",
+        "uₙ = 4 + 0,5n"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "Raison 0,5 > 0 pour la suite arithmétique ; u₀ = 3 > 0 et q = 1,2 > 1 pour la géométrique. (−3)ⁿ alterne de signe."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles suites ont des termes qui se rapprochent de 0 quand n devient grand ?",
+      "propositions": [
+        "uₙ = 7 × 0,5ⁿ",
+        "uₙ = 0,5 + 2n",
+        "uₙ = −2 × 0,99ⁿ",
+        "uₙ = 0,1 × 1,5ⁿ"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "Une suite géométrique de raison comprise entre 0 et 1 se rapproche de 0, quel que soit le signe de u₀ ; avec q = 1,5, les termes grandissent."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est arithmétique de raison r. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "Si r > 0, la suite est strictement croissante",
+        "Si r < 0, ses termes finissent par être inférieurs à n'importe quel nombre donné",
+        "Si r < 0, ses termes se rapprochent de 0",
+        "Si r = 0, la suite est constante"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Variations et comportement",
+      "explication": "uₙ₊₁ − uₙ = r. Si r < 0, uₙ = u₀ + nr diminue sans fin : la suite tend vers −∞, elle ne se rapproche pas de 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. (uₙ) est géométrique de raison q > 0 et de premier terme u₀ < 0. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "Si q > 1, (uₙ) est strictement décroissante",
+        "Si 0 < q < 1, (uₙ) est strictement croissante",
+        "Si 0 < q < 1, (uₙ) est strictement décroissante",
+        "Si q > 1, (uₙ) est strictement croissante"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Variations et comportement",
+      "explication": "uₙ₊₁ − uₙ = u₀qⁿ(q − 1) : avec u₀ < 0, le signe est l'opposé de celui de q − 1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Une suite arithmétique de raison 2 est strictement croissante.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "uₙ₊₁ − uₙ = 2 > 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Toute suite géométrique de raison strictement supérieure à 1 est croissante.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "Contre-exemple : uₙ = −1 × 2ⁿ donne −1 ; −2 ; −4… qui décroît. Il faut aussi u₀ > 0."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:129",
+      "type": "vrai_faux",
+      "enonce": "La suite uₙ = 5 × 0,8ⁿ est strictement croissante.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "u₀ = 5 > 0 et 0 < 0,8 < 1 : la suite est strictement décroissante."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Les termes de la suite uₙ = 1,01ⁿ finissent par dépasser 1000.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Variations et comportement",
+      "explication": "q = 1,01 > 1 et u₀ = 1 > 0 : les termes deviennent aussi grands que l'on veut (par exemple 1,01⁷⁰⁰ > 1000)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:131",
+      "type": "reponse_courte",
+      "enonce": "La suite géométrique définie par uₙ = 20 × qⁿ est constante. Quelle est la valeur de q ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 1,
+      "notion": "Variations et comportement",
+      "explication": "Avec q = 1, tous les termes valent 20. Avec q = 0, on aurait u₀ = 20 puis u₁ = 0 : la suite ne serait pas constante."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 2000 € est placé à intérêts simples au taux annuel de 3 %. Quel est le capital au bout de 10 ans ?",
+      "propositions": [
+        "2600 €",
+        "2687,83 €",
+        "2060 €",
+        "2300 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Les intérêts simples valent 3 % de 2000 €, soit 60 € par an : 2000 + 10 × 60 = 2600 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Une grandeur augmente chaque année de la même quantité. Quel modèle lui convient ?",
+      "propositions": [
+        "Croissance exponentielle, suite géométrique",
+        "Croissance linéaire, suite géométrique",
+        "Croissance exponentielle, suite arithmétique",
+        "Croissance linéaire, suite arithmétique"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Un accroissement constant correspond à une suite arithmétique, dont les points sont alignés."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Au 1er janvier 2026, une ville compte 12000 habitants ; sa population augmente de 2,5 % par an. Quelle expression donne la population pₙ en 2026 + n ?",
+      "propositions": [
+        "pₙ = 12000 × 1,025ⁿ",
+        "pₙ = 12000 + 2,5n",
+        "pₙ = 12000 × 2,5ⁿ",
+        "pₙ = 12000 × 0,025ⁿ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Une hausse de 2,5 % par an multiplie la population par 1,025 chaque année."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 1500 € est placé à intérêts composés au taux annuel de 2 %. Quel est le capital au bout de 8 ans, arrondi au centime ?",
+      "propositions": [
+        "1740,00 €",
+        "1723,03 €",
+        "1530,00 €",
+        "1757,49 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "1500 × 1,02⁸ ≈ 1757,49 €. 1740 € correspond aux intérêts simples, 1723,03 € à 7 ans."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:136",
+      "type": "qcm_unique",
+      "enonce": "On exécute ce programme Python : def seuil(): n = 0 ; p = 12000 ; while p <= 15000: p = p * 1.025 ; n = n + 1 ; return n. Que renvoie seuil() ?",
+      "propositions": [
+        "9",
+        "10",
+        "11",
+        "15361"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "12000 × 1,025⁹ ≈ 14986 ⩽ 15000 et 12000 × 1,025¹⁰ ≈ 15361 > 15000 : la boucle s'arrête avec n = 10. La fonction renvoie n, pas p."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:137",
+      "type": "qcm_unique",
+      "enonce": "(uₙ) est croissante. Dans un algorithme de seuil, quelle boucle permet d'obtenir le premier rang n tel que uₙ > 500 ?",
+      "propositions": [
+        "while u > 500:",
+        "while u == 500:",
+        "while u <= 500:",
+        "while n <= 500:"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "On continue de calculer les termes tant que le seuil n'est pas dépassé, c'est-à-dire tant que u ⩽ 500."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:138",
+      "type": "qcm_unique",
+      "enonce": "On relève une grandeur quatre années de suite : 200 ; 220 ; 242 ; 266,2. Quel modèle convient ?",
+      "propositions": [
+        "Une suite arithmétique de raison 20",
+        "Une suite géométrique de raison 1,2",
+        "Une suite géométrique de raison 1,1",
+        "Une suite arithmétique de raison 22"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Les différences (20 ; 22 ; 24,2) ne sont pas constantes, mais les quotients valent tous 1,1."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Un médicament est éliminé à raison de 30 % de la quantité présente chaque heure. On en injecte 20 mg. Au bout de combien d'heures complètes en reste-t-il moins de 2 mg ?",
+      "propositions": [
+        "6",
+        "4",
+        "10",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "La quantité vaut 20 × 0,7ⁿ : 20 × 0,7⁶ ≈ 2,35 et 20 × 0,7⁷ ≈ 1,65. Il faut 7 heures."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Placement A : 5000 € à intérêts simples à 5 % par an. Placement B : 5000 € à intérêts composés à 4 % par an. À partir de combien d'années le capital de B dépasse-t-il celui de A ?",
+      "propositions": [
+        "11 ans",
+        "13 ans",
+        "Jamais, car 5 % est supérieur à 4 %",
+        "12 ans"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "A : 5000 + 250n ; B : 5000 × 1,04ⁿ. Pour n = 11 : 7750 contre environ 7697 ; pour n = 12 : 8000 contre environ 8005."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On place 2000 € à 3 % par an. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "À intérêts composés, le capital forme une suite géométrique de raison 1,03",
+        "À intérêts composés, les intérêts annuels restent égaux à 60 €",
+        "Les deux placements donnent le même capital au bout de 10 ans",
+        "À intérêts simples, le capital forme une suite arithmétique de raison 60"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Intérêts simples : + 60 € par an. Intérêts composés : × 1,03 par an, les intérêts grandissent ; au bout de 10 ans, 2600 € contre environ 2687,83 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles situations relèvent d'une croissance exponentielle ?",
+      "propositions": [
+        "Une somme de 30 € mise de côté chaque mois",
+        "Un arbre qui grandit de 40 cm par an",
+        "Un nombre d'abonnés qui augmente de 8 % par mois",
+        "Une épargne qui rapporte 1,5 % d'intérêts composés par an"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Une évolution d'un même pourcentage à chaque période est exponentielle ; un ajout fixe est linéaire."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Un emprunt de 10000 € au taux annuel de 4 % est remboursé en 5 annuités constantes a. Quelles affirmations sont vraies ?",
+      "propositions": [
+        "a = 10000 × 1,04⁵/5",
+        "Le coût total du crédit est d'environ 1231 €",
+        "a = 10000 × 0,04/(1 − 1,04⁻⁵)",
+        "Le coût total du crédit est de 2000 €",
+        "a vaut environ 2246,27 €"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "10000 = a/1,04 + … + a/1,04⁵, et la somme géométrique donne a ≈ 2246,27 € ; coût : 5a − 10000 ≈ 1231,36 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:144",
+      "type": "vrai_faux",
+      "enonce": "Une population qui diminue de 1 % par an se modélise par une suite géométrique de raison 0,99.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Baisser de 1 % revient à multiplier par 0,99."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:145",
+      "type": "vrai_faux",
+      "enonce": "À intérêts composés au taux de 5 % par an, un capital est exactement multiplié par 2 au bout de 20 ans.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "1,05²⁰ ≈ 2,65 : le capital fait plus que doubler (il double un peu après 14 ans)."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Pour trouver le premier rang n tel que 3 × 1,2ⁿ > 100, on peut écrire une boucle while qui multiplie le terme par 1,2 tant qu'il reste inférieur ou égal à 100.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "C'est le principe de l'algorithme de seuil : on s'arrête dès que le terme dépasse 100, et le compteur donne n."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Avec des intérêts simples à 4 % par an, un capital de 500 € rapporte chaque année des intérêts de plus en plus grands.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Les intérêts simples sont calculés sur le capital initial : 20 € chaque année."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:148",
+      "type": "reponse_courte",
+      "enonce": "On place 3000 € à intérêts simples au taux annuel de 2 %. Quel est le capital, en euros, au bout de 7 ans ? Réponds par un nombre entier, sans espace.",
+      "reponses_acceptees": [
+        "3420"
+      ],
+      "difficulte": 1,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "Intérêts : 60 € par an ; 3000 + 7 × 60 = 3420 €."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Une ville de 50000 habitants perd 2 % de sa population chaque année. Au bout de combien d'années complètes passera-t-elle sous les 40000 habitants ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 2,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "50000 × 0,98¹¹ ≈ 40037 et 50000 × 0,98¹² ≈ 39236 : il faut 12 ans."
+    },
+    {
+      "source": "maths-spe-1re:ch2:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Ce programme Python renvoie un rang : def f(): n = 0 ; u = 5 ; while u < 1000: u = 2 * u ; n = n + 1 ; return n. Quelle valeur renvoie f() ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "8"
+      ],
+      "difficulte": 3,
+      "notion": "Modéliser et déterminer un seuil",
+      "explication": "u prend les valeurs 5 × 2ⁿ : 5 × 2⁷ = 640 < 1000 et 5 × 2⁸ = 1280 ⩾ 1000. La boucle s'arrête avec n = 8."
+    }
+  ]
+}

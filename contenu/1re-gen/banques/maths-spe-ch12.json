@@ -1,0 +1,2317 @@
+{
+  "chapitre": 12,
+  "notions": [
+    "Variable aléatoire et événements",
+    "Loi de probabilité",
+    "Espérance",
+    "Variance et écart type",
+    "Transformation affine et linéarité",
+    "König-Huygens et algorithmes",
+    "Jeux équitables et décisions",
+    "Simulation et échantillons",
+    "Statistiques et fréquences"
+  ],
+  "questions": [
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance trois fois une pièce et X désigne le nombre de faces obtenues. Comment s'écrit l'événement « obtenir au plus une face » ?",
+      "propositions": [
+        "{X ⩾ 1}",
+        "{X = 1}",
+        "{X < 1}",
+        "{X ⩽ 1}"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "« Au plus une » signifie 0 ou 1 face, c'est-à-dire X ⩽ 1. {X ⩾ 1} traduit « au moins une ».",
+      "source": "maths-spe-1re:ch12:banque:001"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans une famille de quatre enfants, X est le nombre de garçons. Quel événement traduit la phrase « la famille compte au moins deux garçons » ?",
+      "propositions": [
+        "{X ⩾ 2}",
+        "{X = 2}",
+        "{X ⩽ 2}",
+        "{X > 2}"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "« Au moins deux » signifie 2, 3 ou 4 garçons, donc X ⩾ 2. {X > 2} exclurait le cas de deux garçons exactement.",
+      "source": "maths-spe-1re:ch12:banque:002"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable aléatoire réelle X définie sur un univers fini Ω est :",
+      "propositions": [
+        "un nombre réel tiré au hasard entre 0 et 1, une fois pour toutes",
+        "un événement de Ω dont la probabilité est non nulle",
+        "une fonction qui associe un réel à chaque issue de Ω",
+        "la probabilité P({ω}) attribuée à chaque issue ω de l'univers Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Une variable aléatoire est une fonction définie sur Ω à valeurs réelles : à chaque issue ω, elle associe le réel X(ω).",
+      "source": "maths-spe-1re:ch12:banque:003"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est l'événement contraire de {X ⩽ 3} ?",
+      "propositions": [
+        "{X < 3}",
+        "{X > 3}",
+        "{X ⩾ 3}",
+        "{X ⩽ −3}"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Une issue réalise soit X ⩽ 3, soit X > 3, jamais les deux. {X ⩾ 3} contient aussi le cas X = 3, déjà dans {X ⩽ 3}.",
+      "source": "maths-spe-1re:ch12:banque:004"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. La variable Y vaut 5 si le résultat est pair et −1 sinon. Que vaut P(Y = 5) ?",
+      "propositions": [
+        "1/2",
+        "1/6",
+        "5/6",
+        "1/3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "{Y = 5} est formé des issues 2, 4 et 6 : P(Y = 5) = 3/6 = 1/2.",
+      "source": "maths-spe-1re:ch12:banque:005"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré : le joueur gagne 2 € si le résultat est 1 ou 2, et perd 1 € sinon. G désigne son gain algébrique. Quelles issues forment l'événement {G < 0} ?",
+      "propositions": [
+        "{1, 2, 3}",
+        "{1, 2}",
+        "{3, 4, 5, 6}",
+        "{−1}"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "{G < 0} est l'ensemble des issues pour lesquelles le joueur perd 1 € : les résultats 3, 4, 5 et 6. −1 est une valeur de G, pas une issue.",
+      "source": "maths-spe-1re:ch12:banque:006"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance deux pièces équilibrées et X compte les piles obtenus. Quelle est la probabilité de l'événement {X ⩾ 1} ?",
+      "propositions": [
+        "1/4",
+        "2/3",
+        "1/2",
+        "3/4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Sur les quatre issues équiprobables PP, PF, FP, FF, seule FF ne contient aucun pile : P(X ⩾ 1) = 1 − 1/4 = 3/4.",
+      "source": "maths-spe-1re:ch12:banque:007"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On tire au hasard un élève d'une classe et on note X sa taille en centimètres. Que représente l'écriture {X > 170} ?",
+      "propositions": [
+        "le fait que la taille moyenne de la classe dépasse 170 cm",
+        "l'événement « l'élève tiré mesure plus de 170 cm »",
+        "la proportion d'élèves de la classe qui mesurent 170 cm",
+        "la probabilité que l'élève tiré mesure plus de 170 cm"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Une écriture entre accolades désigne un événement (un ensemble d'issues) ; sa probabilité se note P(X > 170).",
+      "source": "maths-spe-1re:ch12:banque:008"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance deux dés équilibrés à six faces et S désigne la somme des deux résultats. Que vaut P(S ⩽ 4) ?",
+      "propositions": [
+        "1/9",
+        "3/11",
+        "1/12",
+        "1/6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Parmi les 36 couples équiprobables, 1 donne S = 2, 2 donnent S = 3 et 3 donnent S = 4 : 6/36 = 1/6. Les 11 sommes ne sont pas équiprobables.",
+      "source": "maths-spe-1re:ch12:banque:009"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "X est le nombre de piles obtenus en quatre lancers d'une pièce. Quelles écritures désignent l'événement « obtenir au moins trois piles » ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "{X = 3} ∪ {X = 4}",
+        "{X ⩽ 3}",
+        "{X > 3}",
+        "{X > 2}",
+        "{X ⩾ 3}"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Au moins trois piles : 3 ou 4 piles. Comme X est entier, X ⩾ 3 équivaut à X > 2. {X > 3} oublie le cas de trois piles exactement.",
+      "source": "maths-spe-1re:ch12:banque:010"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur une variable aléatoire X définie sur un univers fini Ω, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "X(ω) est toujours une probabilité",
+        "P(X = 2) est un nombre compris entre 0 et 1",
+        "{X = 2} est un ensemble d'issues de Ω",
+        "deux issues différentes ont forcément des images différentes"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "{X = 2} est un événement et P(X = 2) une probabilité. X(ω) est un réel quelconque (un gain de −2 €, par exemple), et plusieurs issues peuvent avoir la même image.",
+      "source": "maths-spe-1re:ch12:banque:011"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance un dé équilibré à six faces. X vaut 0 si le résultat est 1, vaut 1 si le résultat est 2 ou 3, et vaut 4 sinon. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X ⩾ 1) = 1/2",
+        "P(X ⩽ 1) = 1/2",
+        "P(X < 1) = 1/6",
+        "P(X = 4) = 1/3",
+        "P(X > 0) = 5/6"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Variable aléatoire et événements",
+      "explication": "{X = 0} = {1}, {X = 1} = {2, 3}, {X = 4} = {4, 5, 6}. Donc P(X ⩽ 1) = 3/6, P(X > 0) = 5/6, P(X = 4) = 1/2, P(X < 1) = 1/6 et P(X ⩾ 1) = 5/6.",
+      "source": "maths-spe-1re:ch12:banque:012"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si X ne prend que des valeurs entières, les événements {X < 3} et {X ⩽ 2} sont égaux.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Pour un entier, être strictement inférieur à 3 équivaut à être inférieur ou égal à 2.",
+      "source": "maths-spe-1re:ch12:banque:013"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'événement contraire de {X ⩾ 5} est {X ⩽ 5}.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Le contraire de {X ⩾ 5} est {X < 5} : l'issue qui donne X = 5 ne peut pas être dans les deux.",
+      "source": "maths-spe-1re:ch12:banque:014"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Une variable aléatoire peut associer deux valeurs différentes à une même issue de l'univers.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "Une variable aléatoire est une fonction : chaque issue a une seule image.",
+      "source": "maths-spe-1re:ch12:banque:015"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Deux issues différentes d'un univers peuvent avoir la même image par une variable aléatoire.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "C'est fréquent : dans un jeu de dé, les issues 1, 2 et 3 peuvent toutes donner un gain de −2 €.",
+      "source": "maths-spe-1re:ch12:banque:016"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On lance quatre fois une pièce équilibrée et X désigne le nombre de piles obtenus. Calcule P(X ⩾ 1). Donne le résultat sous forme décimale exacte ou de fraction irréductible.",
+      "reponses_acceptees": [
+        "0,9375",
+        "0.9375",
+        "15/16"
+      ],
+      "difficulte": 2,
+      "notion": "Variable aléatoire et événements",
+      "explication": "{X ⩾ 1} est le contraire de {X = 0}, réalisé seulement par FFFF, de probabilité (1/2)⁴ = 1/16. Donc P(X ⩾ 1) = 15/16 = 0,9375.",
+      "source": "maths-spe-1re:ch12:banque:017"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X prend les valeurs 1, 2 et 3, avec P(X = 1) = 0,2 et P(X = 2) = 0,5. Combien vaut P(X = 3) ?",
+      "propositions": [
+        "0,8",
+        "0,5",
+        "0,3",
+        "0,7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "La somme des probabilités vaut 1 : P(X = 3) = 1 − 0,2 − 0,5 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:018"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Que vaut toujours la somme de toutes les probabilités P(X = xᵢ) dans la loi d'une variable aléatoire ?",
+      "propositions": [
+        "1",
+        "0",
+        "le nombre de valeurs prises par X",
+        "l'espérance E(X)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "Les événements {X = xᵢ} forment une partition de l'univers, donc la somme de leurs probabilités vaut P(Ω) = 1.",
+      "source": "maths-spe-1re:ch12:banque:019"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend les valeurs −1, 0, 2 et 5 avec les probabilités respectives 0,1 ; 0,3 ; 0,4 et 0,2. Que vaut P(X ⩽ 2) ?",
+      "propositions": [
+        "0,4",
+        "0,8",
+        "0,2",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "On additionne les probabilités des valeurs inférieures ou égales à 2 : 0,1 + 0,3 + 0,4 = 0,8 (ou 1 − P(X = 5)).",
+      "source": "maths-spe-1re:ch12:banque:020"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La loi d'une variable X est : P(X = 0) = 0,15 ; P(X = 1) = 0,35 ; P(X = 2) = a ; P(X = 3) = 0,1. Quelle est la valeur de a ?",
+      "propositions": [
+        "0,4",
+        "0,5",
+        "0,6",
+        "0,35"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "0,15 + 0,35 + a + 0,1 = 1, donc a = 1 − 0,6 = 0,4.",
+      "source": "maths-spe-1re:ch12:banque:021"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 2 boules rouges et 3 noires. On tire successivement deux boules avec remise ; X est le nombre de boules rouges obtenues. Que vaut P(X = 1) ?",
+      "propositions": [
+        "6/25",
+        "12/25",
+        "1/2",
+        "4/25"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "Deux chemins de l'arbre donnent une seule rouge : RN et NR, chacun de probabilité 2/5 × 3/5 = 6/25. Total : 12/25.",
+      "source": "maths-spe-1re:ch12:banque:022"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 4 boules vertes et 2 jaunes. On tire successivement deux boules sans remise, et X compte les boules vertes tirées. Que vaut P(X = 2) ?",
+      "propositions": [
+        "4/9",
+        "8/15",
+        "1/15",
+        "2/5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Loi de probabilité",
+      "explication": "P(X = 2) = 4/6 × 3/5 = 12/30 = 2/5 (après une verte, il reste 3 vertes sur 5 boules). 4/9 correspondrait à un tirage avec remise.",
+      "source": "maths-spe-1re:ch12:banque:023"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable prend les valeurs 1, 2 et 3. Quelle liste de probabilités (dans cet ordre) peut être sa loi ?",
+      "propositions": [
+        "0,1 ; 0,1 ; 0,1",
+        "0,6 ; −0,1 ; 0,5",
+        "0,2 ; 0,5 ; 0,3",
+        "0,2 ; 0,5 ; 0,4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "Les probabilités doivent être positives et de somme 1. 0,2 + 0,5 + 0,4 = 1,1 ; −0,1 n'est pas une probabilité ; 0,1 × 3 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:024"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X prend les valeurs 1, 2, 3 et 4, et P(X = k) = k/10 pour chacune de ces valeurs k. Calcule P(X ⩾ 3).",
+      "propositions": [
+        "0,3",
+        "0,7",
+        "0,6",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "P(X ⩾ 3) = P(X = 3) + P(X = 4) = 3/10 + 4/10 = 0,7. On vérifie que la loi convient : 1 + 2 + 3 + 4 = 10.",
+      "source": "maths-spe-1re:ch12:banque:025"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend les valeurs 1, 2 et 3 ; la probabilité de 2 est le double de celle de 1, et la probabilité de 3 en est le triple. Que vaut P(X = 1) ?",
+      "propositions": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "1/4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Loi de probabilité",
+      "explication": "En notant p = P(X = 1) : p + 2p + 3p = 1, donc 6p = 1 et p = 1/6.",
+      "source": "maths-spe-1re:ch12:banque:026"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La loi d'une variable X est donnée par : valeurs −2, 0, 3 et 4, de probabilités respectives 0,25 ; 0,15 ; 0,4 et 0,2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X ⩾ 3) = 0,4",
+        "P(X ≠ 3) = 0,6",
+        "P(X > 3) = 0,2",
+        "P(X < 0) = 0,15",
+        "P(X ⩽ 0) = 0,4"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "P(X ⩽ 0) = 0,25 + 0,15 = 0,4 ; P(X > 3) = P(X = 4) = 0,2 ; P(X ⩾ 3) = 0,6 ; P(X < 0) = 0,25 ; P(X ≠ 3) = 1 − 0,4 = 0,6.",
+      "source": "maths-spe-1re:ch12:banque:027"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance deux pièces équilibrées et X désigne le nombre de faces obtenues. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X = 1) = 1/3",
+        "P(X = 1) = 1/2",
+        "les valeurs 0, 1 et 2 ont la même probabilité",
+        "P(X = 0) = 1/4"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "Les issues PP, PF, FP, FF sont équiprobables : X = 1 pour PF et FP (2/4), X = 0 et X = 2 pour une seule issue chacun (1/4).",
+      "source": "maths-spe-1re:ch12:banque:028"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Pour une variable aléatoire X sur un univers fini et un réel a, quelles égalités ou inégalités sont toujours vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X ⩽ a) + P(X ⩾ a) = 1",
+        "P(X = a) ⩽ 1/2",
+        "P(X ⩽ a) ⩾ P(X = a)",
+        "P(X ⩽ a) + P(X > a) = 1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "{X ⩽ a} et {X > a} sont contraires ; {X = a} est inclus dans {X ⩽ a}. En revanche {X ⩽ a} et {X ⩾ a} ont en commun {X = a}, et P(X = a) peut valoir 1.",
+      "source": "maths-spe-1re:ch12:banque:029"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Un sac contient trois jetons numérotés 1, 2 et 3. On en tire deux simultanément, au hasard ; S est la somme des deux numéros. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(S = 4) = 1/3",
+        "P(S = 6) = 1/9",
+        "P(S ⩾ 4) = 2/3",
+        "S prend les valeurs 3, 4 et 5",
+        "P(S ⩽ 3) = 1/2"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Loi de probabilité",
+      "explication": "Les trois tirages {1, 2}, {1, 3}, {2, 3} sont équiprobables et donnent S = 3, 4, 5, chacun avec la probabilité 1/3. S = 6 est impossible.",
+      "source": "maths-spe-1re:ch12:banque:030"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si une variable prend les valeurs 0, 1 et 2, alors chacune de ces valeurs a forcément la probabilité 1/3.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "Rien n'impose l'équiprobabilité des valeurs : avec deux pièces, le nombre de piles vaut 1 avec la probabilité 1/2.",
+      "source": "maths-spe-1re:ch12:banque:031"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(X ⩽ 4) = 0,7, alors P(X > 4) = 0,3.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "{X > 4} est l'événement contraire de {X ⩽ 4} : sa probabilité est 1 − 0,7 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:032"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Quand on connaît toutes les probabilités d'une loi sauf une, on obtient la dernière en retranchant à 1 la somme des autres.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "C'est une conséquence directe du fait que la somme des probabilités d'une loi vaut 1.",
+      "source": "maths-spe-1re:ch12:banque:033"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "X prend les valeurs 2, 4, 6 et 8 avec les probabilités 0,1 ; 0,3 ; 0,45 et p. Quelle est la valeur de p ? Donne une écriture décimale.",
+      "reponses_acceptees": [
+        "0,15",
+        "0.15",
+        "3/20"
+      ],
+      "difficulte": 1,
+      "notion": "Loi de probabilité",
+      "explication": "p = 1 − (0,1 + 0,3 + 0,45) = 1 − 0,85 = 0,15.",
+      "source": "maths-spe-1re:ch12:banque:034"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On lance deux dés équilibrés à six faces ; S est la somme obtenue. Écris P(S = 7) sous la forme d'une fraction irréductible.",
+      "reponses_acceptees": [
+        "1/6"
+      ],
+      "difficulte": 2,
+      "notion": "Loi de probabilité",
+      "explication": "Six couples sur 36 donnent 7 : (1, 6), (2, 5), (3, 4), (4, 3), (5, 2), (6, 1). P(S = 7) = 6/36 = 1/6.",
+      "source": "maths-spe-1re:ch12:banque:035"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X prend la valeur 1 avec la probabilité 0,75 et la valeur 5 avec la probabilité 0,25. Quelle est son espérance ?",
+      "propositions": [
+        "2",
+        "2,5",
+        "1,5",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "E(X) = 0,75 × 1 + 0,25 × 5 = 0,75 + 1,25 = 2. 3 serait la moyenne des valeurs sans tenir compte des probabilités.",
+      "source": "maths-spe-1re:ch12:banque:036"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La loi de X est : P(X = −1) = 0,5 ; P(X = 0) = 0,3 ; P(X = 4) = 0,2. Calcule E(X).",
+      "propositions": [
+        "1",
+        "−0,3",
+        "1,3",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "E(X) = 0,5 × (−1) + 0,3 × 0 + 0,2 × 4 = −0,5 + 0,8 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:037"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces et X est le numéro obtenu. Quelle est l'espérance de X ?",
+      "propositions": [
+        "1/6",
+        "3",
+        "4",
+        "3,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "E(X) = (1 + 2 + 3 + 4 + 5 + 6) × 1/6 = 21/6 = 3,5. Ce n'est pas une valeur possible du dé.",
+      "source": "maths-spe-1re:ch12:banque:038"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "À un jeu, on gagne 0 € avec la probabilité 0,7, 10 € avec la probabilité 0,25 et 50 € avec la probabilité 0,05. Quel est le gain moyen espéré ?",
+      "propositions": [
+        "20 €",
+        "2,5 €",
+        "5 €",
+        "60 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "E = 0,7 × 0 + 0,25 × 10 + 0,05 × 50 = 2,5 + 2,5 = 5 €. 20 € est la moyenne des trois valeurs, sans pondération.",
+      "source": "maths-spe-1re:ch12:banque:039"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le gain algébrique G d'un jeu, en euros, a pour espérance −0,4. Comment interpréter ce résultat ?",
+      "propositions": [
+        "Sur un grand nombre de parties, on perd en moyenne environ 0,40 € par partie.",
+        "À chaque partie jouée, le joueur perd exactement 0,40 €.",
+        "Le joueur perd 40 % des parties qu'il joue, à long terme.",
+        "La probabilité de perdre de l'argent à une partie vaut 0,4."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "L'espérance est une moyenne à long terme : sur une partie, le gain est l'une des valeurs de G, pas forcément −0,4.",
+      "source": "maths-spe-1re:ch12:banque:040"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend les valeurs 1, 2 et 4 avec les probabilités 1/2, 1/3 et 1/6. Quelle est la valeur exacte de E(X) ?",
+      "propositions": [
+        "7/3",
+        "11/6",
+        "3/2",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "E(X) = 1/2 + 2/3 + 4/6 = 3/6 + 4/6 + 4/6 = 11/6. 7/3 est la moyenne non pondérée des valeurs.",
+      "source": "maths-spe-1re:ch12:banque:041"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend les valeurs 0, 1, 2 et 3. On sait que P(X = 0) = 0,1, P(X = 1) = 0,3 et P(X = 2) = 0,4. Quelle est l'espérance de X ?",
+      "propositions": [
+        "2",
+        "1,7",
+        "1,5",
+        "1,1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Espérance",
+      "explication": "P(X = 3) = 1 − 0,8 = 0,2, puis E(X) = 0,3 + 0,8 + 0,6 = 1,7. Oublier la valeur 3 donne 1,1.",
+      "source": "maths-spe-1re:ch12:banque:042"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable vaut 2 avec la probabilité 0,6 et vaut a avec la probabilité 0,4. Son espérance est égale à 4. Que vaut a ?",
+      "propositions": [
+        "2,8",
+        "6",
+        "10",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Espérance",
+      "explication": "0,6 × 2 + 0,4a = 4 donne 0,4a = 2,8, donc a = 7. Le résultat 6 vient d'une moyenne non pondérée (2 + a)/2 = 4.",
+      "source": "maths-spe-1re:ch12:banque:043"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable aléatoire prend uniquement les valeurs 2, 5 et 9. Lequel de ces nombres ne peut pas être son espérance ?",
+      "propositions": [
+        "10",
+        "5",
+        "2,5",
+        "8,9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "L'espérance est une moyenne pondérée : elle est comprise entre la plus petite valeur (2) et la plus grande (9).",
+      "source": "maths-spe-1re:ch12:banque:044"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur l'espérance d'une variable aléatoire X sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "E(X) est la valeur de X qui a la plus grande probabilité",
+        "E(X) est toujours l'une des valeurs prises par X",
+        "E(X) est la moyenne des valeurs de X pondérées par leurs probabilités",
+        "E(X) est comprise entre la plus petite et la plus grande valeur de X"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "E(X) = Σ pᵢxᵢ est une moyenne pondérée. Pour un dé, E(X) = 3,5 n'est pas une valeur possible, et ce n'est pas non plus la valeur la plus probable en général.",
+      "source": "maths-spe-1re:ch12:banque:045"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Un sac contient cinq jetons : trois portent le nombre 2 et deux portent le nombre 7. On tire un jeton au hasard et X est le nombre lu. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X = E(X)) = 0,5",
+        "E(X) = 4,5",
+        "E(X) = 4",
+        "E(X) > 3",
+        "P(X = 7) = 0,4"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "P(X = 2) = 3/5 et P(X = 7) = 2/5, donc E(X) = 1,2 + 2,8 = 4. La valeur 4 n'est pas sur les jetons : P(X = 4) = 0.",
+      "source": "maths-spe-1re:ch12:banque:046"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "X prend les valeurs −3, 1 et 6. Pour quelles listes de probabilités (données dans l'ordre −3, 1, 6) l'espérance de X est-elle nulle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,6 ; 0,2 ; 0,2",
+        "0,5 ; 0,3 ; 0,2",
+        "1/3 ; 1/3 ; 1/3",
+        "0,25 ; 0,75 ; 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Espérance",
+      "explication": "On calcule −3p₁ + p₂ + 6p₃ : −1,5 + 0,3 + 1,2 = 0 ; −0,75 + 0,75 + 0 = 0 ; (−3 + 1 + 6)/3 = 4/3 ; −1,8 + 0,2 + 1,2 = −0,4.",
+      "source": "maths-spe-1re:ch12:banque:047"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'espérance d'une variable aléatoire peut être un nombre négatif.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "Par exemple, le gain d'un jeu défavorable a une espérance négative.",
+      "source": "maths-spe-1re:ch12:banque:048"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si X prend uniquement les valeurs 0 et 10, alors E(X) = 5.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "Cela n'est vrai que si les deux valeurs ont la probabilité 1/2. Avec P(X = 10) = 0,1, on obtient E(X) = 1.",
+      "source": "maths-spe-1re:ch12:banque:049"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si toutes les valeurs prises par X sont positives ou nulles, alors son espérance est positive ou nulle.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "E(X) est une somme de produits pᵢxᵢ, tous positifs ou nuls.",
+      "source": "maths-spe-1re:ch12:banque:050"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La loi de X est : P(X = 0) = 0,5 ; P(X = 2) = 0,3 ; P(X = 5) = 0,2. Donne E(X) en écriture décimale.",
+      "reponses_acceptees": [
+        "1,6",
+        "1.6",
+        "8/5"
+      ],
+      "difficulte": 1,
+      "notion": "Espérance",
+      "explication": "E(X) = 0 + 0,3 × 2 + 0,2 × 5 = 0,6 + 1 = 1,6.",
+      "source": "maths-spe-1re:ch12:banque:051"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une roue de loterie est partagée en 8 secteurs de même taille : un secteur rapporte 10 points, trois secteurs rapportent 2 points et les autres ne rapportent rien. Quelle est l'espérance du nombre de points obtenus en un lancer ? Donne un nombre.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 2,
+      "notion": "Espérance",
+      "explication": "E = 10 × 1/8 + 2 × 3/8 + 0 × 4/8 = 10/8 + 6/8 = 2 points.",
+      "source": "maths-spe-1re:ch12:banque:052"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Soit X une variable aléatoire d'espérance μ. Quelle écriture définit sa variance ?",
+      "propositions": [
+        "V(X) = √E((X − μ)²)",
+        "V(X) = E(X − μ)",
+        "V(X) = E((X − μ)²)",
+        "V(X) = (E(X) − μ)²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "La variance est l'espérance du carré de l'écart à l'espérance. E(X − μ) vaut toujours 0, et √V(X) est l'écart type.",
+      "source": "maths-spe-1re:ch12:banque:053"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La variance d'une variable aléatoire est égale à 16. Quel est son écart type ?",
+      "propositions": [
+        "4",
+        "8",
+        "16",
+        "256"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "L'écart type est la racine carrée de la variance : σ = √16 = 4.",
+      "source": "maths-spe-1re:ch12:banque:054"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable vaut −2 ou 2, chacune de ces valeurs ayant la probabilité 1/2. Combien vaut sa variance ?",
+      "propositions": [
+        "2",
+        "16",
+        "0",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 0, puis V(X) = 1/2 × (−2)² + 1/2 × 2² = 4. La valeur 2 est l'écart type, et 0 l'espérance.",
+      "source": "maths-spe-1re:ch12:banque:055"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La loi de X est : P(X = 0) = 0,25 ; P(X = 1) = 0,5 ; P(X = 2) = 0,25, et son espérance vaut 1. Calcule V(X).",
+      "propositions": [
+        "1",
+        "√0,5",
+        "0,5",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "V(X) = 0,25 × (0 − 1)² + 0,5 × 0² + 0,25 × (2 − 1)² = 0,25 + 0,25 = 0,5.",
+      "source": "maths-spe-1re:ch12:banque:056"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance une pièce équilibrée : X vaut 1 pour pile et 3 pour face. Quel est l'écart type de X ?",
+      "propositions": [
+        "2",
+        "1",
+        "0,5",
+        "√2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 2, chaque écart vaut ±1, donc V(X) = 1 et σ(X) = √1 = 1.",
+      "source": "maths-spe-1re:ch12:banque:057"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend la valeur 0 avec la probabilité 0,9 et la valeur 10 avec la probabilité 0,1. Quelle est la variance de X ?",
+      "propositions": [
+        "10",
+        "9",
+        "8,1",
+        "3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 1, puis V(X) = 0,9 × (0 − 1)² + 0,1 × (10 − 1)² = 0,9 + 8,1 = 9. 10 est E(X²) et 3 l'écart type.",
+      "source": "maths-spe-1re:ch12:banque:058"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le gain G d'un jeu est exprimé en euros. Dans quelle unité s'exprime son écart type σ(G) ?",
+      "propositions": [
+        "en pourcentage du gain moyen",
+        "sans unité, car c'est une probabilité",
+        "en euros carrés",
+        "en euros"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "L'écart type est la racine carrée de la variance (en euros carrés) : il a la même unité que G.",
+      "source": "maths-spe-1re:ch12:banque:059"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Deux jeux ont la même espérance de gain. L'écart type du gain vaut 2 € pour le jeu A et 15 € pour le jeu B. Que peut-on en conclure ?",
+      "propositions": [
+        "Le jeu B rapporte davantage en moyenne que le jeu A.",
+        "Le jeu A est forcément défavorable au joueur.",
+        "Les gains de B sont plus dispersés : B est plus risqué.",
+        "Le joueur gagne plus souvent au jeu B qu'au jeu A."
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "L'écart type mesure la dispersion autour de l'espérance, ici la même pour les deux jeux. Il ne renseigne ni sur le gain moyen ni sur la fréquence des gains.",
+      "source": "maths-spe-1re:ch12:banque:060"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la variance et l'écart type d'une variable aléatoire sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "une variance est toujours positive ou nulle",
+        "l'écart type est le carré de la variance",
+        "une variance peut être négative si X prend des valeurs négatives",
+        "l'écart type est la racine carrée de la variance"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "V(X) est une somme de termes pᵢ(xᵢ − μ)², tous positifs ou nuls, quelles que soient les valeurs de X ; σ(X) = √V(X).",
+      "source": "maths-spe-1re:ch12:banque:061"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une variable X vaut 2 avec la probabilité 1 (elle est constante). Coche toutes les réponses exactes.",
+      "propositions": [
+        "V(X) = 0",
+        "V(X) = 4",
+        "E(X) = 2",
+        "σ(X) = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 1 × 2 = 2 et l'unique écart vaut 2 − 2 = 0 : la variance et l'écart type sont nuls. 4 est E(X²).",
+      "source": "maths-spe-1re:ch12:banque:062"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "A vaut −1 ou 1 et B vaut −3 ou 3, avec la probabilité 1/2 pour chaque valeur ; C vaut −3, 0 et 3 avec les probabilités 0,1 ; 0,8 et 0,1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "σ(B) = 9",
+        "V(C) > V(B)",
+        "A, B et C ont la même espérance",
+        "V(C) = 1,8",
+        "V(B) = 9"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Variance et écart type",
+      "explication": "Les trois espérances sont nulles. V(A) = 1, V(B) = 9 (donc σ(B) = 3), V(C) = 0,1 × 9 + 0,1 × 9 = 1,8 < V(B).",
+      "source": "maths-spe-1re:ch12:banque:063"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'écart type d'une variable aléatoire s'exprime dans le carré de l'unité de cette variable.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Variance et écart type",
+      "explication": "C'est la variance qui s'exprime dans le carré de l'unité ; l'écart type, sa racine carrée, a la même unité que la variable.",
+      "source": "maths-spe-1re:ch12:banque:064"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Une variable aléatoire de variance nulle ne prend qu'une seule valeur avec une probabilité non nulle.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "Si V(X) = 0, chaque terme pᵢ(xᵢ − μ)² est nul : toute valeur de probabilité non nulle est égale à μ.",
+      "source": "maths-spe-1re:ch12:banque:065"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour toute variable aléatoire X d'espérance μ, la somme des produits pᵢ(xᵢ − μ), sans carré, est égale à V(X).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "Cette somme vaut Σ pᵢxᵢ − μ Σ pᵢ = μ − μ = 0 : les écarts positifs et négatifs se compensent. D'où les carrés dans la définition de la variance.",
+      "source": "maths-spe-1re:ch12:banque:066"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une variable prend les valeurs 0 et 4, chacune avec la probabilité 0,5. Calcule sa variance. Donne un nombre.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 2 ; chaque écart vaut ±2, donc V(X) = 0,5 × 4 + 0,5 × 4 = 4.",
+      "source": "maths-spe-1re:ch12:banque:067"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La loi de X est : P(X = 1) = 0,5 ; P(X = 2) = 0,3 ; P(X = 6) = 0,2. Calcule l'écart type σ(X). Donne sa valeur exacte en écriture décimale.",
+      "reponses_acceptees": [
+        "1,9",
+        "1.9",
+        "19/10"
+      ],
+      "difficulte": 3,
+      "notion": "Variance et écart type",
+      "explication": "E(X) = 0,5 + 0,6 + 1,2 = 2,3 ; E(X²) = 0,5 + 1,2 + 7,2 = 8,9 ; V(X) = 8,9 − 2,3² = 3,61, donc σ(X) = √3,61 = 1,9.",
+      "source": "maths-spe-1re:ch12:banque:068"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X a pour espérance 5. Quelle est l'espérance de la variable 2X + 3 ?",
+      "propositions": [
+        "13",
+        "16",
+        "8",
+        "10"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "E(2X + 3) = 2E(X) + 3 = 10 + 3 = 13. Le résultat 16 vient de 2 × (5 + 3).",
+      "source": "maths-spe-1re:ch12:banque:069"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait que V(X) = 4. Combien vaut la variance de 3X ?",
+      "propositions": [
+        "12",
+        "36",
+        "6",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "V(aX) = a²V(X) : V(3X) = 9 × 4 = 36. Multiplier la variance par 3 au lieu de 9 est l'erreur classique.",
+      "source": "maths-spe-1re:ch12:banque:070"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X a une variance de 9. On ajoute 7 à toutes ses valeurs. Quelle est la variance de la nouvelle variable X + 7 ?",
+      "propositions": [
+        "9",
+        "16",
+        "58",
+        "63"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "Ajouter une constante décale toutes les valeurs sans modifier leur dispersion : V(X + 7) = V(X) = 9.",
+      "source": "maths-spe-1re:ch12:banque:071"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "L'écart type de X vaut 2. Quel est l'écart type de −3X + 1 ?",
+      "propositions": [
+        "−6",
+        "−5",
+        "6",
+        "18"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "σ(aX + b) = |a| σ(X) = 3 × 2 = 6. Un écart type n'est jamais négatif, et la constante 1 n'intervient pas.",
+      "source": "maths-spe-1re:ch12:banque:072"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "L'espérance de X est −2. Quelle est l'espérance de la variable 1 − 4X ?",
+      "propositions": [
+        "−9",
+        "−7",
+        "7",
+        "9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "E(1 − 4X) = 1 − 4E(X) = 1 − 4 × (−2) = 1 + 8 = 9.",
+      "source": "maths-spe-1re:ch12:banque:073"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable X a pour espérance 1,5 et pour variance 0,8. On pose Y = 10X − 2. Que vaut la variance de Y ?",
+      "propositions": [
+        "78",
+        "6",
+        "80",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "V(10X − 2) = 10² × V(X) = 100 × 0,8 = 80. Le terme −2 ne change pas la variance.",
+      "source": "maths-spe-1re:ch12:banque:074"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance trois dés équilibrés à six faces. Quelle est l'espérance de la somme des trois numéros obtenus ?",
+      "propositions": [
+        "9",
+        "18",
+        "3,5",
+        "10,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "Par linéarité, l'espérance de la somme est la somme des espérances : 3,5 + 3,5 + 3,5 = 10,5.",
+      "source": "maths-spe-1re:ch12:banque:075"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La prime mensuelle X d'un salarié, en euros, a pour espérance 200 et pour écart type 50. Toutes les primes sont augmentées de 10 %, puis on leur ajoute 20 €. Quel est l'écart type de la nouvelle prime ?",
+      "propositions": [
+        "55 €",
+        "70 €",
+        "60,5 €",
+        "75 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Transformation affine et linéarité",
+      "explication": "La nouvelle prime est Y = 1,1X + 20, donc σ(Y) = 1,1 × 50 = 55 €. L'ajout de 20 € ne change pas l'écart type.",
+      "source": "maths-spe-1re:ch12:banque:076"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une variable X vérifie E(X) = 4 et V(X) = 2. On pose Y = X − 1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "V(Y) = 2",
+        "E(Y) = 4",
+        "V(Y) = 1",
+        "σ(Y) = √2",
+        "E(Y) = 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "E(Y) = E(X) − 1 = 3 ; retrancher une constante ne change pas la variance : V(Y) = 2 et σ(Y) = √2.",
+      "source": "maths-spe-1re:ch12:banque:077"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Pour toute variable aléatoire X et tous réels a et b, quelles égalités sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "V(2X) = 2V(X)",
+        "σ(aX) = |a| σ(X)",
+        "V(aX + b) = aV(X) + b",
+        "V(−X) = V(X)",
+        "E(X²) = E(X)²"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "V(aX + b) = a²V(X), donc V(−X) = V(X) et V(2X) = 4V(X) ; σ(aX) = |a|σ(X). En général E(X²) ≠ E(X)² (leur différence est la variance).",
+      "source": "maths-spe-1re:ch12:banque:078"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Deux variables X et Y sont définies sur le même univers, avec E(X) = 3 et E(Y) = −1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "E(X + Y) = 2",
+        "E(X − Y) = 2",
+        "E(3Y) = 3",
+        "E(2X − Y) = 7"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "Par linéarité : E(X + Y) = 3 − 1 = 2, E(2X − Y) = 6 + 1 = 7, E(X − Y) = 3 + 1 = 4 et E(3Y) = −3.",
+      "source": "maths-spe-1re:ch12:banque:079"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La température X d'une ville, en degrés Celsius, a pour espérance 20 et pour écart type 3. En degrés Fahrenheit, elle vaut Y = 1,8X + 32. Coche toutes les réponses exactes.",
+      "propositions": [
+        "σ(Y) = 5,4",
+        "E(Y) = 68",
+        "V(Y) = 29,16",
+        "σ(Y) = 37,4",
+        "V(Y) = 16,2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Transformation affine et linéarité",
+      "explication": "E(Y) = 1,8 × 20 + 32 = 68 ; σ(Y) = 1,8 × 3 = 5,4 ; V(Y) = 1,8² × 9 = 3,24 × 9 = 29,16. Le terme 32 n'intervient ni dans σ ni dans V.",
+      "source": "maths-spe-1re:ch12:banque:080"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Ajouter une même constante à toutes les valeurs d'une variable aléatoire ne change pas sa variance.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "V(X + b) = V(X) : les valeurs et l'espérance sont décalées de b, les écarts à l'espérance restent les mêmes.",
+      "source": "maths-spe-1re:ch12:banque:081"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour toute variable aléatoire X, on a σ(−5X) = −5σ(X).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Transformation affine et linéarité",
+      "explication": "σ(−5X) = |−5| σ(X) = 5σ(X) : un écart type est positif ou nul.",
+      "source": "maths-spe-1re:ch12:banque:082"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour deux variables X et Y définies sur le même univers, on a toujours V(X + Y) = V(X) + V(Y).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Transformation affine et linéarité",
+      "explication": "Contre-exemple : avec Y = X et V(X) ≠ 0, V(X + X) = V(2X) = 4V(X), et non 2V(X). Seule l'espérance est toujours additive.",
+      "source": "maths-spe-1re:ch12:banque:083"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une variable X a pour espérance 12. Calcule l'espérance de la variable 0,5X − 4. Donne un nombre.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "E(0,5X − 4) = 0,5 × 12 − 4 = 6 − 4 = 2.",
+      "source": "maths-spe-1re:ch12:banque:084"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "La variance d'une variable X vaut 2,5. Quelle est la variance de −2X + 9 ? Donne un nombre.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 1,
+      "notion": "Transformation affine et linéarité",
+      "explication": "V(−2X + 9) = (−2)² × V(X) = 4 × 2,5 = 10.",
+      "source": "maths-spe-1re:ch12:banque:085"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces égalités est la formule de König-Huygens ?",
+      "propositions": [
+        "V(X) = E(X)² − E(X²)",
+        "V(X) = E(X²) − E(X)²",
+        "V(X) = E(X²) + E(X)²",
+        "V(X) = E(X²) − E(X)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "La variance est l'espérance du carré moins le carré de l'espérance. L'ordre compte : E(X²) ⩾ E(X)², donc V(X) ⩾ 0.",
+      "source": "maths-spe-1re:ch12:banque:086"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait que E(X) = 3 et E(X²) = 13. Combien vaut V(X) ?",
+      "propositions": [
+        "7",
+        "4",
+        "22",
+        "10"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "V(X) = E(X²) − E(X)² = 13 − 9 = 4. Le résultat 10 vient de 13 − 3, sans élever l'espérance au carré.",
+      "source": "maths-spe-1re:ch12:banque:087"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable vérifie E(X²) = 10 et V(X) = 6. Quelles sont les valeurs possibles de son espérance ?",
+      "propositions": [
+        "16 ou −16",
+        "4",
+        "2 ou −2",
+        "2 seulement"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "E(X)² = E(X²) − V(X) = 4, donc E(X) = 2 ou E(X) = −2 : les données ne permettent pas de trancher.",
+      "source": "maths-spe-1re:ch12:banque:088"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La loi de X est : P(X = 0) = 0,5 ; P(X = 2) = 0,25 ; P(X = 4) = 0,25. Que vaut E(X²) ?",
+      "propositions": [
+        "2,25",
+        "20",
+        "1,5",
+        "5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "E(X²) = 0,5 × 0 + 0,25 × 4 + 0,25 × 16 = 1 + 4 = 5. 1,5 est E(X) et 2,25 son carré.",
+      "source": "maths-spe-1re:ch12:banque:089"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "En Python, la fonction esperance(X, P) part de s = 0, ajoute X[i]*P[i] pour chaque indice i de range(len(X)), puis renvoie s. Que renvoie esperance([1, 2, 3], [0.5, 0.25, 0.25]) ?",
+      "propositions": [
+        "1,75",
+        "1",
+        "2",
+        "6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "La fonction calcule 1 × 0,5 + 2 × 0,25 + 3 × 0,25 = 0,5 + 0,5 + 0,75 = 1,75 : c'est l'espérance de la loi.",
+      "source": "maths-spe-1re:ch12:banque:090"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La fonction esperance(X, P) renvoie l'espérance d'une loi donnée par la liste X des valeurs et la liste P des probabilités. Quelle instruction renvoie la variance avec la formule de König-Huygens ?",
+      "propositions": [
+        "return esperance([x**2 for x in P], X) - esperance(P, X)**2",
+        "return esperance(X, P)**2 - esperance([x**2 for x in X], P)",
+        "return esperance([x**2 for x in X], P) - esperance(X, P)",
+        "return esperance([x**2 for x in X], P) - esperance(X, P)**2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "On calcule E(X²) avec la liste des carrés des valeurs (les probabilités ne changent pas), puis on retranche le carré de E(X).",
+      "source": "maths-spe-1re:ch12:banque:091"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "X prend les valeurs −1, 1 et 3 avec les probabilités 0,2 ; 0,5 et 0,3. Calcule V(X).",
+      "propositions": [
+        "1,96",
+        "4,84",
+        "1,4",
+        "2,2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "E(X) = −0,2 + 0,5 + 0,9 = 1,2 ; E(X²) = 0,2 + 0,5 + 2,7 = 3,4 ; V(X) = 3,4 − 1,44 = 1,96 (et σ(X) = 1,4).",
+      "source": "maths-spe-1re:ch12:banque:092"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une fonction Python mystere(X, P) calcule m = esperance(X, P), ajoute P[i]*(X[i] - m)**2 pour chaque indice i, puis renvoie la racine carrée de la somme obtenue. Que renvoie-t-elle ?",
+      "propositions": [
+        "la moyenne des valeurs de X",
+        "la variance de la loi",
+        "l'écart type de la loi",
+        "l'espérance de X²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "La somme des pᵢ(xᵢ − m)² est la variance ; sa racine carrée est l'écart type.",
+      "source": "maths-spe-1re:ch12:banque:093"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une variable X vérifie E(X) = 2 et V(X) = 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "E(X²) = 1",
+        "E(X²) ⩾ E(X)²",
+        "σ(X) = √5",
+        "E(X²) = 4",
+        "E(X²) = 9"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "König-Huygens donne E(X²) = V(X) + E(X)² = 5 + 4 = 9, qui est bien supérieur à E(X)² = 4 ; σ(X) = √5.",
+      "source": "maths-spe-1re:ch12:banque:094"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "En Python, X = [0, 10] et P = [0.6, 0.4] décrivent une loi ; esperance(X, P) renvoie la somme des produits X[i]*P[i]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "len(X) vaut 2",
+        "X[1] vaut 0",
+        "esperance(X, P) renvoie 4",
+        "esperance(X, P) renvoie 5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "0 × 0,6 + 10 × 0,4 = 4. Les indices commencent à 0 : X[0] vaut 0 et X[1] vaut 10.",
+      "source": "maths-spe-1re:ch12:banque:095"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Les fonctions Python esperance, variance et ecart_type calculent les indicateurs d'une loi donnée par la liste X des valeurs et la liste P des probabilités. On prend X = [-1, 1] et P = [0.5, 0.5]. Coche toutes les réponses exactes.",
+      "propositions": [
+        "variance(X, P) renvoie 0",
+        "ecart_type(X, P) renvoie 1",
+        "esperance(X, P) renvoie 0",
+        "variance(X, P) renvoie 1"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "E = −0,5 + 0,5 = 0 ; V = 0,5 × 1 + 0,5 × 1 = 1 ; σ = √1 = 1. La variance n'est pas nulle : les valeurs s'écartent de 1 de l'espérance.",
+      "source": "maths-spe-1re:ch12:banque:096"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour toute variable aléatoire X, l'espérance de X² est égale au carré de l'espérance de X.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "Leur différence est la variance, nulle seulement si X est constante. Pour un dé : E(X²) = 91/6 et E(X)² = 12,25.",
+      "source": "maths-spe-1re:ch12:banque:097"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le carré de l'espérance d'une variable aléatoire ne dépasse jamais l'espérance de son carré.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "D'après König-Huygens, E(X²) − E(X)² = V(X) ⩾ 0.",
+      "source": "maths-spe-1re:ch12:banque:098"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si une variable aléatoire a une espérance nulle, alors sa variance est égale à l'espérance de son carré.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "V(X) = E(X²) − E(X)² = E(X²) − 0 = E(X²).",
+      "source": "maths-spe-1re:ch12:banque:099"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une variable X vérifie E(X) = −1,5 et E(X²) = 6. Calcule V(X) et donne le résultat en écriture décimale.",
+      "reponses_acceptees": [
+        "3,75",
+        "3.75",
+        "15/4"
+      ],
+      "difficulte": 2,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "V(X) = E(X²) − E(X)² = 6 − (−1,5)² = 6 − 2,25 = 3,75.",
+      "source": "maths-spe-1re:ch12:banque:100"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "X prend les valeurs 0, 1 et 4 avec les probabilités 0,3 ; 0,5 et 0,2. Calcule la variance de X à l'aide de la formule de König-Huygens. Donne la valeur exacte en écriture décimale.",
+      "reponses_acceptees": [
+        "2,01",
+        "2.01",
+        "201/100"
+      ],
+      "difficulte": 3,
+      "notion": "König-Huygens et algorithmes",
+      "explication": "E(X) = 0,5 + 0,8 = 1,3 ; E(X²) = 0,5 + 3,2 = 3,7 ; V(X) = 3,7 − 1,69 = 2,01.",
+      "source": "maths-spe-1re:ch12:banque:101"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quand dit-on qu'un jeu d'argent est équitable ?",
+      "propositions": [
+        "quand gagner et perdre ont la même probabilité à chaque partie",
+        "quand l'espérance du gain algébrique est nulle",
+        "quand la mise est égale au plus gros gain possible",
+        "quand le joueur gagne exactement une partie sur deux"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Jeux équitables et décisions",
+      "explication": "Équitable signifie E(G) = 0, où G est le gain algébrique (somme reçue moins mise) : en moyenne, à long terme, ni le joueur ni l'organisateur ne gagnent.",
+      "source": "maths-spe-1re:ch12:banque:102"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le gain algébrique G d'un joueur, en euros, a pour espérance 0,25. Le jeu est :",
+      "propositions": [
+        "équitable",
+        "favorable à l'organisateur",
+        "favorable au joueur",
+        "défavorable au joueur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Jeux équitables et décisions",
+      "explication": "E(G) > 0 : en moyenne, le joueur gagne 0,25 € par partie à long terme.",
+      "source": "maths-spe-1re:ch12:banque:103"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour jouer, on paie 2 € puis on lance un dé équilibré : on reçoit 9 € si l'on obtient 6, et rien sinon. Quelle est l'espérance du gain algébrique, en euros ?",
+      "propositions": [
+        "1,5",
+        "−2",
+        "0,5",
+        "−0,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "La somme reçue a pour espérance 9 × 1/6 = 1,5 ; on retire la mise : E(G) = 1,5 − 2 = −0,5. Le jeu est défavorable.",
+      "source": "maths-spe-1re:ch12:banque:104"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une tombola compte 100 billets : un billet gagne un lot de 50 €, quatre billets gagnent 10 € et les autres rien. Quel prix du billet rend la tombola équitable ?",
+      "propositions": [
+        "0,90 €",
+        "0,50 €",
+        "1,10 €",
+        "90 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "L'espérance de la somme reçue est 50 × 0,01 + 10 × 0,04 = 0,5 + 0,4 = 0,9 € : le jeu est équitable si le billet coûte 0,90 €.",
+      "source": "maths-spe-1re:ch12:banque:105"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un joueur lance un dé équilibré : il gagne a euros si le résultat est 5 ou 6, et il perd 2 € sinon. Pour quelle valeur de a ce jeu est-il équitable ?",
+      "propositions": [
+        "1",
+        "4",
+        "2",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "E(G) = a × 1/3 − 2 × 2/3 = (a − 4)/3, nul pour a = 4.",
+      "source": "maths-spe-1re:ch12:banque:106"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges et 2 bleues. On paie une mise m, puis on tire successivement deux boules sans remise : on reçoit 10 € si les deux sont rouges, rien sinon. Quelle mise rend le jeu équitable ?",
+      "propositions": [
+        "5 €",
+        "6 €",
+        "3,6 €",
+        "3 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Jeux équitables et décisions",
+      "explication": "P(deux rouges) = 3/5 × 2/4 = 3/10, donc la somme reçue a pour espérance 10 × 3/10 = 3 €. 3,6 € correspondrait à un tirage avec remise (9/25 × 10).",
+      "source": "maths-spe-1re:ch12:banque:107"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Option A : recevoir 50 € à coup sûr. Option B : recevoir 120 € avec la probabilité 0,5, et rien sinon. Quelle affirmation est exacte ?",
+      "propositions": [
+        "B a une espérance plus grande que A, mais B est plus risquée.",
+        "A et B ont exactement la même espérance de gain.",
+        "B est plus intéressante que A et ne comporte aucun risque.",
+        "B a une espérance plus faible que A, car on peut ne rien gagner."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "E(B) = 0,5 × 120 = 60 € > 50 €, mais l'écart type de B vaut 60 € alors que celui de A est nul.",
+      "source": "maths-spe-1re:ch12:banque:108"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Le gain algébrique moyen d'un jeu est de −0,2 € par partie. Quelle estimation du gain total peut-on faire pour un joueur qui joue 500 parties ?",
+      "propositions": [
+        "une perte d'environ 20 €",
+        "une perte d'environ 0,20 €",
+        "une perte d'environ 100 €",
+        "un gain d'environ 100 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "À long terme, le gain moyen par partie est proche de l'espérance : 500 × (−0,2) = −100, soit une perte d'environ 100 €.",
+      "source": "maths-spe-1re:ch12:banque:109"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Dans un jeu, la somme reçue X a pour espérance 3 € et la mise vaut 3 €. Coche toutes les réponses exactes.",
+      "propositions": [
+        "le joueur gagne 3 € à chaque partie",
+        "le jeu est équitable",
+        "le joueur ne perd jamais d'argent",
+        "le gain algébrique X − 3 a une espérance nulle"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Jeux équitables et décisions",
+      "explication": "E(X − 3) = E(X) − 3 = 0 : le jeu est équitable. Cela ne dit rien d'une partie isolée, où le joueur peut perdre ou gagner.",
+      "source": "maths-spe-1re:ch12:banque:110"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Un joueur paie 1 € et lance deux pièces équilibrées. Il reçoit 3 € s'il obtient deux piles, 1 € s'il obtient exactement un pile, et rien sinon. G est son gain algébrique. Coche toutes les réponses exactes.",
+      "propositions": [
+        "le jeu est équitable",
+        "P(G > 0) = 3/4",
+        "le jeu est favorable au joueur",
+        "E(G) = 0,25 €",
+        "P(G < 0) = 1/4"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "G vaut 2, 0 ou −1 avec les probabilités 1/4, 1/2 et 1/4. E(G) = 0,5 − 0,25 = 0,25 > 0. P(G > 0) = 1/4 seulement.",
+      "source": "maths-spe-1re:ch12:banque:111"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Option A : 40 € à coup sûr. Option B : 100 € avec la probabilité 0,4, rien sinon. Option C : 80 € avec la probabilité 0,5, rien sinon. Coche toutes les réponses exactes.",
+      "propositions": [
+        "l'écart type de C vaut 40 €",
+        "A est la plus risquée des trois",
+        "les trois options ont la même espérance",
+        "C a une espérance supérieure à celle de B",
+        "B est la plus risquée des trois"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Jeux équitables et décisions",
+      "explication": "Les trois espérances valent 40 €. σ(A) = 0, σ(C) = √1600 = 40 €, σ(B) = √2400 ≈ 49 € : B est la plus dispersée.",
+      "source": "maths-spe-1re:ch12:banque:112"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Un jeu équitable est un jeu dans lequel on gagne exactement une partie sur deux.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Jeux équitables et décisions",
+      "explication": "Équitable signifie que l'espérance du gain algébrique est nulle. Un jeu peut faire perdre 9 parties sur 10 et rester équitable si le gain rare est élevé.",
+      "source": "maths-spe-1re:ch12:banque:113"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si l'espérance du gain algébrique d'un jeu est strictement négative, ce jeu est défavorable au joueur.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Jeux équitables et décisions",
+      "explication": "C'est la définition : E(G) < 0 signifie qu'à long terme le joueur perd de l'argent en moyenne.",
+      "source": "maths-spe-1re:ch12:banque:114"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Dans un jeu équitable, un joueur qui fait 10 parties retrouve forcément exactement sa somme de départ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "L'espérance décrit une moyenne à long terme ; sur 10 parties, le gain total fluctue et peut être positif ou négatif.",
+      "source": "maths-spe-1re:ch12:banque:115"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si l'on augmente de 1 € la mise d'un jeu sans changer les sommes reçues, l'espérance du gain algébrique diminue de 1 €.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Jeux équitables et décisions",
+      "explication": "G = X − m, donc E(G) = E(X) − m : augmenter m de 1 diminue E(G) de 1.",
+      "source": "maths-spe-1re:ch12:banque:116"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Un jeu de grattage comporte 20 tickets : un ticket rapporte 30 €, cinq tickets rapportent 4 € et les autres rien. Quel prix du ticket, en euros, rend le jeu équitable ? Donne un nombre décimal.",
+      "reponses_acceptees": [
+        "2,5",
+        "2.5",
+        "5/2"
+      ],
+      "difficulte": 2,
+      "notion": "Jeux équitables et décisions",
+      "explication": "La somme reçue a pour espérance 30 × 1/20 + 4 × 5/20 = 1,5 + 1 = 2,5 € : c'est la mise équitable.",
+      "source": "maths-spe-1re:ch12:banque:117"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On lance un dé équilibré : si le résultat est pair, on reçoit en euros le double de ce résultat ; s'il est impair, on ne reçoit rien. Quelle mise, en euros, rend ce jeu équitable ? Donne un nombre.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 3,
+      "notion": "Jeux équitables et décisions",
+      "explication": "Les sommes reçues sont 4, 8, 12 € (probabilité 1/6 chacune) ou 0 € : E = (4 + 8 + 12)/6 = 24/6 = 4 €.",
+      "source": "maths-spe-1re:ch12:banque:118"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Après from random import randint, quelle expression Python simule le lancer d'un dé équilibré à six faces ?",
+      "propositions": [
+        "random(6)",
+        "randint(1, 6)",
+        "randint(1, 7)",
+        "randint(0, 6)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "randint(a, b) renvoie un entier au hasard entre a et b, bornes comprises. randint(0, 6) donnerait 7 valeurs possibles.",
+      "source": "maths-spe-1re:ch12:banque:119"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La fonction X() tire u = random() puis renvoie 5 si u < 0.3, et -1 sinon. Quelle est la probabilité que X() renvoie 5 ?",
+      "propositions": [
+        "5/6",
+        "0,7",
+        "0,3",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "random() renvoie un réel au hasard dans [0 ; 1[ ; la probabilité que ce réel soit dans [0 ; 0,3[ est la longueur 0,3.",
+      "source": "maths-spe-1re:ch12:banque:120"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La fonction Y() tire u = random() ; elle renvoie 10 si u < 0.1, renvoie 2 si 0.1 ⩽ u < 0.4, et renvoie 0 sinon. Que vaut P(Y = 2) ?",
+      "propositions": [
+        "0,4",
+        "0,3",
+        "0,6",
+        "0,1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "Y vaut 2 quand u est dans [0,1 ; 0,4[, intervalle de longueur 0,4 − 0,1 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:121"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La fonction moyenne(n) additionne n résultats de la simulation G(), puis divise la somme par n. Que renvoie-t-elle ?",
+      "propositions": [
+        "l'espérance exacte E(G), quelle que soit la valeur de n",
+        "la probabilité que G prenne une valeur positive",
+        "la somme des n valeurs de G obtenues par simulation",
+        "la moyenne d'un échantillon de taille n de G"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "Chaque appel simule n valeurs de G et en renvoie la moyenne ; cette moyenne fluctue d'un appel à l'autre et n'est pas l'espérance exacte.",
+      "source": "maths-spe-1re:ch12:banque:122"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable a pour espérance μ = 10 et pour écart type σ = 4. Pour des échantillons de taille n = 100, combien vaut 2σ/√n ?",
+      "propositions": [
+        "0,8",
+        "0,08",
+        "8",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "2σ/√n = 2 × 4/√100 = 8/10 = 0,8.",
+      "source": "maths-spe-1re:ch12:banque:123"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Par combien faut-il multiplier la taille n d'un échantillon pour que la quantité 2σ/√n soit divisée par 2 ?",
+      "propositions": [
+        "8",
+        "4",
+        "√2",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "√(4n) = 2√n : multiplier n par 4 divise 2σ/√n par 2.",
+      "source": "maths-spe-1re:ch12:banque:124"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On simule 1000 échantillons de taille 400 d'une variable d'espérance μ et d'écart type σ. Quelle proportion d'échantillons vérifiant |m − μ| ⩽ 2σ/√n s'attend-on à observer ?",
+      "propositions": [
+        "100 %, car la taille 400 est grande",
+        "environ 50 %",
+        "exactement 95 %, à chaque simulation",
+        "environ 95 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Simulation et échantillons",
+      "explication": "On observe expérimentalement une proportion voisine de 95 %, qui varie légèrement d'une simulation à l'autre.",
+      "source": "maths-spe-1re:ch12:banque:125"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une variable a pour espérance 2 et pour écart type 3. On simule de nombreux échantillons de taille 36. Dans quel intervalle se trouvent environ 95 % des moyennes de ces échantillons ?",
+      "propositions": [
+        "[−4 ; 8]",
+        "[0 ; 4]",
+        "[1 ; 3]",
+        "[1,5 ; 2,5]"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Simulation et échantillons",
+      "explication": "2σ/√n = 2 × 3/6 = 1, donc on observe environ 95 % des moyennes dans [2 − 1 ; 2 + 1]. [−4 ; 8] utilise 2σ sans diviser par √n.",
+      "source": "maths-spe-1re:ch12:banque:126"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la moyenne m d'un échantillon simulé d'une variable aléatoire sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "m varie d'un échantillon à l'autre",
+        "m ne dépend pas de la taille de l'échantillon",
+        "m tend à se rapprocher de l'espérance quand la taille n augmente",
+        "m est toujours égale à l'espérance"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "La moyenne observée fluctue ; plus l'échantillon est grand, plus elle a tendance à être proche de l'espérance.",
+      "source": "maths-spe-1re:ch12:banque:127"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La fonction proportion(N, n, mu, sigma) simule N échantillons de taille n et compte ceux dont la moyenne m vérifie abs(m - mu) <= 2*sigma/sqrt(n), puis renvoie ce compte divisé par N. Coche toutes les réponses exactes.",
+      "propositions": [
+        "N est le nombre d'échantillons simulés",
+        "la valeur renvoyée est comprise entre 0 et 1",
+        "n est la taille de chacun des échantillons",
+        "la valeur renvoyée est l'espérance de la variable"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "La fonction renvoie une proportion (compte/N), donc un nombre de [0 ; 1], et non une espérance.",
+      "source": "maths-spe-1re:ch12:banque:128"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance une pièce équilibrée ; X vaut 1 pour pile et 0 pour face. On simule des échantillons de taille n = 100 ; m est alors la fréquence de pile. Coche toutes les réponses exactes.",
+      "propositions": [
+        "2σ/√n vaut 0,1",
+        "l'écart type de X vaut 0,25",
+        "l'espérance de X vaut 0,5",
+        "toutes les fréquences observées seront dans [0,4 ; 0,6]",
+        "l'écart type de X vaut 0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Simulation et échantillons",
+      "explication": "μ = 0,5 et V(X) = 0,25, donc σ = 0,5 et 2σ/√n = 1/10. On observe environ 95 % des fréquences dans [0,4 ; 0,6], pas toutes.",
+      "source": "maths-spe-1re:ch12:banque:129"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Deux simulations d'un échantillon de même taille donnent toujours la même moyenne.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "La moyenne d'un échantillon fluctue d'une simulation à l'autre : c'est la fluctuation d'échantillonnage.",
+      "source": "maths-spe-1re:ch12:banque:130"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La fonction random() du module random renvoie un réel au hasard dans l'intervalle [0 ; 1[.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Simulation et échantillons",
+      "explication": "C'est ce qui permet de simuler une loi : la probabilité que random() tombe dans un intervalle de [0 ; 1[ est sa longueur.",
+      "source": "maths-spe-1re:ch12:banque:131"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Quand la taille n d'un échantillon est multipliée par 100, la quantité 2σ/√n est divisée par 10.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "√(100n) = 10√n.",
+      "source": "maths-spe-1re:ch12:banque:132"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Le fait qu'environ 95 % des échantillons vérifient |m − μ| ⩽ 2σ/√n est un théorème démontré en Première.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Simulation et échantillons",
+      "explication": "En Première, c'est un constat expérimental obtenu par simulation ; la proportion observée varie légèrement d'une simulation à l'autre.",
+      "source": "maths-spe-1re:ch12:banque:133"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une variable a pour écart type σ = 1,5. Pour des échantillons de taille n = 225, calcule 2σ/√n. Donne un nombre décimal.",
+      "reponses_acceptees": [
+        "0,2",
+        "0.2",
+        "1/5"
+      ],
+      "difficulte": 2,
+      "notion": "Simulation et échantillons",
+      "explication": "√225 = 15, donc 2σ/√n = 3/15 = 0,2.",
+      "source": "maths-spe-1re:ch12:banque:134"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quelle est la moyenne de la série statistique 4 ; 8 ; 9 ; 11 ?",
+      "propositions": [
+        "8",
+        "32",
+        "8,5",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = (4 + 8 + 9 + 11)/4 = 32/4 = 8. 8,5 est la médiane.",
+      "source": "maths-spe-1re:ch12:banque:135"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Trois élèves ont obtenu 10 et deux élèves ont obtenu 14 à un contrôle. Quelle est la moyenne de ces cinq notes ?",
+      "propositions": [
+        "12",
+        "11",
+        "11,6",
+        "12,4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = (3 × 10 + 2 × 14)/5 = 58/5 = 11,6. 12 est la moyenne des deux valeurs sans tenir compte des effectifs.",
+      "source": "maths-spe-1re:ch12:banque:136"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans une classe de 25 élèves, 10 ont au moins un frère ou une sœur. On choisit un élève au hasard. Quelle est la probabilité qu'il ait au moins un frère ou une sœur ?",
+      "propositions": [
+        "0,4",
+        "0,6",
+        "0,1",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "Avec un tirage équiprobable, la probabilité est la fréquence : 10/25 = 0,4.",
+      "source": "maths-spe-1re:ch12:banque:137"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quel est l'écart type de la série 2 ; 4 ; 6 ?",
+      "propositions": [
+        "8/3",
+        "√(8/3)",
+        "2",
+        "4/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = 4 ; la moyenne des carrés des écarts vaut (4 + 0 + 4)/3 = 8/3, et l'écart type est sa racine carrée √(8/3) ≈ 1,63.",
+      "source": "maths-spe-1re:ch12:banque:138"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans un village, 20 % des foyers n'ont pas d'enfant, 30 % en ont un, 40 % en ont deux et 10 % en ont trois. Quel est le nombre moyen d'enfants par foyer ?",
+      "propositions": [
+        "1",
+        "2",
+        "1,5",
+        "1,4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = 0,2 × 0 + 0,3 × 1 + 0,4 × 2 + 0,1 × 3 = 0,3 + 0,8 + 0,3 = 1,4.",
+      "source": "maths-spe-1re:ch12:banque:139"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On choisit au hasard une lettre du mot « banane ». Quelle est la probabilité d'obtenir la lettre a ?",
+      "propositions": [
+        "2",
+        "1/3",
+        "1/6",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "Le mot compte 6 lettres dont 2 « a » : la fréquence, donc la probabilité, vaut 2/6 = 1/3.",
+      "source": "maths-spe-1re:ch12:banque:140"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "La fonction frequence(texte, a) compte les lettres du texte (sans les espaces) et renvoie la proportion de celles qui sont égales à a. Que renvoie frequence(\"la vie\", \"a\") ?",
+      "propositions": [
+        "0,5",
+        "1/6",
+        "1",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "« la vie » contient 5 lettres (l'espace ne compte pas) dont un « a » : 1/5 = 0,2. 1/6 compterait l'espace.",
+      "source": "maths-spe-1re:ch12:banque:141"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Calcule l'écart type de la série statistique 1 ; 1 ; 1 ; 5.",
+      "propositions": [
+        "√3",
+        "√12",
+        "3",
+        "2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = 8/4 = 2 ; les carrés des écarts sont 1, 1, 1 et 9, de moyenne 12/4 = 3 ; l'écart type vaut √3 ≈ 1,73.",
+      "source": "maths-spe-1re:ch12:banque:142"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une enquête auprès de 50 familles donne : 10 n'ont aucun animal, 25 en ont un et 15 en ont deux. On tire une famille au hasard et X est son nombre d'animaux. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(X = 2) = 0,15",
+        "E(X) = 1,1",
+        "P(X ⩾ 1) = 0,8",
+        "P(X = 1) = 0,5"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "Les probabilités sont les fréquences : 0,2 ; 0,5 ; 0,3. P(X ⩾ 1) = 0,8 et E(X) = 0,5 + 0,6 = 1,1. P(X = 2) = 15/50 = 0,3.",
+      "source": "maths-spe-1re:ch12:banque:143"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On tire au hasard un individu dans une population et X est la valeur d'un caractère numérique de cet individu. Quelles correspondances sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "écart type de la population ↔ écart type de X",
+        "fréquence d'une valeur dans la population ↔ probabilité de cette valeur",
+        "effectif total de la population ↔ espérance de X",
+        "moyenne de la population ↔ espérance de X",
+        "médiane de la population ↔ espérance de X"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "Avec l'équiprobabilité, P(X = xᵢ) est la fréquence de xᵢ ; l'espérance et l'écart type de X sont alors la moyenne et l'écart type de la population.",
+      "source": "maths-spe-1re:ch12:banque:144"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La fonction frequence(texte, a) renvoie la fréquence de la lettre a parmi les lettres du texte, sans compter les espaces. On prend texte = \"papa a la pipe\". Coche toutes les réponses exactes.",
+      "propositions": [
+        "frequence(texte, \"a\") renvoie la même valeur que pour \"p\"",
+        "la somme des fréquences des 26 lettres vaut 11",
+        "frequence(texte, \"e\") renvoie 1/14",
+        "frequence(texte, \"p\") renvoie 4/11"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "Le texte compte 11 lettres : 4 « p », 4 « a », un « l », un « i », un « e ». La fréquence de « e » est 1/11 (14 compterait les espaces) et la somme des fréquences vaut 1.",
+      "source": "maths-spe-1re:ch12:banque:145"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On étudie la série statistique 2 ; 2 ; 4 ; 4 ; 8. Coche toutes les réponses exactes.",
+      "propositions": [
+        "la moyenne vaut 4",
+        "la variance vaut 4,8",
+        "l'écart type vaut 4,8",
+        "la moyenne vaut 5",
+        "la médiane vaut 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = 20/5 = 4 ; les carrés des écarts sont 4, 4, 0, 0 et 16, de moyenne 24/5 = 4,8 (variance) ; l'écart type est √4,8 ≈ 2,19. La médiane (3ᵉ valeur) vaut 4.",
+      "source": "maths-spe-1re:ch12:banque:146"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si l'on tire au hasard un individu dans une population, la probabilité qu'il présente une valeur donnée d'un caractère est égale à la fréquence de cette valeur dans la population.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "Avec l'équiprobabilité, la probabilité est le nombre d'individus concernés divisé par l'effectif total, c'est-à-dire la fréquence.",
+      "source": "maths-spe-1re:ch12:banque:147"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "L'écart type d'une série statistique peut être négatif lorsque toutes ses valeurs sont négatives.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "L'écart type est la racine carrée d'une moyenne de carrés : il est toujours positif ou nul.",
+      "source": "maths-spe-1re:ch12:banque:148"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La moyenne d'une série statistique est toujours égale à l'une des valeurs de la série.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Statistiques et fréquences",
+      "explication": "La moyenne de la série 1 ; 2 vaut 1,5, qui n'est pas une valeur de la série.",
+      "source": "maths-spe-1re:ch12:banque:149"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Calcule la moyenne de la série 12 ; 15 ; 9 ; 14. Donne la valeur en écriture décimale.",
+      "reponses_acceptees": [
+        "12,5",
+        "12.5",
+        "25/2"
+      ],
+      "difficulte": 1,
+      "notion": "Statistiques et fréquences",
+      "explication": "x̄ = (12 + 15 + 9 + 14)/4 = 50/4 = 12,5.",
+      "source": "maths-spe-1re:ch12:banque:150"
+    }
+  ]
+}
