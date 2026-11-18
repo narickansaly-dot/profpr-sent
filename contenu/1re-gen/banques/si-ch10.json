@@ -1,0 +1,2301 @@
+{
+  "chapitre": 10,
+  "notions": [
+    "Attendu, mesuré, simulé",
+    "Appareils de mesure et raccordement",
+    "Ordre de grandeur, calibre, sécurité",
+    "Erreurs de mesure",
+    "Moyenne, écart type, incertitude",
+    "Chiffres significatifs et résultat",
+    "Écarts absolu et relatif",
+    "Critères et présentation des résultats"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch10:banque:001",
+      "type": "qcm_unique",
+      "enonce": "D'où provient la performance attendue d'un produit ?",
+      "propositions": [
+        "Du cahier des charges",
+        "D'un essai sur le prototype",
+        "D'un logiciel de simulation",
+        "De la moyenne de plusieurs mesures"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La performance attendue (ou exigée) est fixée par le cahier des charges, avec un critère et un niveau. L'essai donne la performance mesurée, le logiciel la performance simulée.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Une performance calculée à l'aide d'un modèle numérique du produit est une performance…",
+      "propositions": [
+        "attendue",
+        "simulée",
+        "mesurée",
+        "exigée"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un modèle (calcul, tableur, programme, logiciel) fournit une performance simulée. Attendue et exigée désignent la valeur du cahier des charges ; mesurée désigne le résultat d'un essai.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel écart permet de juger si le modèle de simulation représente bien la réalité ?",
+      "propositions": [
+        "L'écart entre performances attendue et mesurée",
+        "L'écart entre performances attendue et simulée",
+        "L'écart entre performances mesurée et simulée",
+        "L'écart entre deux exigences du cahier des charges"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Comparer la simulation au réel (la mesure) valide ou non le modèle. L'écart attendu-mesuré valide le produit ; l'écart attendu-simulé aide au choix de conception.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Avant toute fabrication, un bureau d'études simule une nouvelle motorisation de portail et compare le résultat au cahier des charges. Quel écart calcule-t-il ?",
+      "propositions": [
+        "L'écart attendu-mesuré",
+        "L'écart mesuré-simulé",
+        "L'incertitude-type de la mesure",
+        "L'écart attendu-simulé"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Il n'y a encore ni prototype ni mesure : on compare la valeur simulée à la valeur attendue. C'est une aide au choix de conception.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Le prototype d'une prothèse de main serre avec une force de 38 N alors que le cahier des charges exige 40 N. Que permet de juger cette comparaison ?",
+      "propositions": [
+        "Si le produit réel respecte l'exigence",
+        "Si le modèle numérique est fidèle au réel",
+        "Si le logiciel de simulation est bien paramétré",
+        "Si les hypothèses du modèle sont justes"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "On compare une valeur mesurée (38 N) à une valeur attendue (40 N) : c'est l'écart attendu-mesuré, qui sert à valider le produit. Aucun modèle n'intervient.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi une performance simulée diffère-t-elle souvent de la performance mesurée ?",
+      "propositions": [
+        "Le cahier des charges est toujours arrondi",
+        "Le modèle repose sur des hypothèses simplificatrices",
+        "Une simulation ne donne jamais de valeur chiffrée",
+        "La mesure est toujours parfaitement exacte"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Un modèle néglige des phénomènes (frottements, vent, masse des câbles) et utilise des paramètres approximatifs. La mesure, elle, comporte des erreurs ; elle n'est jamais parfaitement exacte.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Comment obtient-on une performance mesurée ?",
+      "propositions": [
+        "Par un calcul sur tableur",
+        "Par lecture du cahier des charges",
+        "Par des essais sur le produit réel ou un prototype",
+        "Par un logiciel de simulation multiphysique"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La performance mesurée provient d'essais avec des appareils de mesure sur le système réel ou un prototype. Le tableur et le logiciel donnent des valeurs simulées, le cahier des charges la valeur attendue.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Le modèle d'un drone prévoit 24 min de vol, l'essai donne 23 min et le cahier des charges exige au moins 25 min. Quelle conclusion est correcte ?",
+      "propositions": [
+        "Exigence atteinte et modèle à rejeter",
+        "Modèle faux puisqu'il dépasse la mesure de 1 min",
+        "Exigence atteinte grâce à la valeur simulée",
+        "Modèle assez fidèle, mais exigence non atteinte"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Écart mesuré-simulé : 1 min sur 23 min, soit environ 4 % : le modèle est assez fidèle. Écart attendu-mesuré : 23 min < 25 min, l'exigence n'est pas respectée. Seule la mesure permet de valider le produit réel.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:009",
+      "type": "qcm_unique",
+      "enonce": "La simulation d'un bras robotisé donne une vitesse 30 % plus élevée que la vitesse mesurée. Quelle démarche est la plus pertinente ?",
+      "propositions": [
+        "Vérifier la mesure, puis revoir le modèle",
+        "Conclure que le cahier des charges est faux",
+        "Ignorer l'écart car la simulation fait foi",
+        "Garder le modèle sans changement pour la suite"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Un écart de 30 % est trop grand pour un modèle utilisable. On vérifie d'abord que la mesure est fiable, puis on cherche l'hypothèse ou le paramètre du modèle à corriger. Le cahier des charges n'est pas en cause.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces moyens, lesquels fournissent une performance simulée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un tableur qui applique un modèle de calcul",
+        "Un logiciel de simulation multiphysique",
+        "Un essai sur banc avec un tachymètre",
+        "Le cahier des charges du produit"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le tableur et le logiciel calculent à partir d'un modèle : ce sont des simulations. L'essai sur banc donne une mesure ; le cahier des charges donne la valeur attendue.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "L'autonomie mesurée d'un vélo à assistance électrique est inférieure à son autonomie simulée. Quelles causes peuvent l'expliquer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le modèle ne tient pas compte du vent",
+        "L'essai a eu lieu par temps froid",
+        "Le modèle suppose un rendement constant",
+        "Le cahier des charges impose 60 km",
+        "La simulation exprime l'autonomie en km"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les hypothèses simplificatrices (vent ignoré, rendement constant) et les conditions d'essai (température) expliquent l'écart. La valeur du cahier des charges et l'unité utilisée n'agissent pas sur l'écart mesuré-simulé.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Quels énoncés décrivent correctement le rôle d'un écart ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'écart attendu-mesuré sert à valider le produit",
+        "L'écart mesuré-simulé sert à valider le modèle",
+        "L'écart attendu-simulé aide à choisir une solution",
+        "L'écart mesuré-simulé sert à valider le cahier des charges"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Chaque côté du triangle répond à une question : produit conforme (attendu-mesuré), modèle fidèle (mesuré-simulé), solution envisageable (attendu-simulé). Le cahier des charges n'est pas validé par ces écarts.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "Le modèle d'une trottinette électrique est validé : l'écart mesuré-simulé ne dépasse pas 2 %. Quelles utilisations deviennent raisonnables ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Simuler une autre batterie avant de l'acheter",
+        "Comparer plusieurs réducteurs sans fabriquer de prototype",
+        "Supprimer tous les essais futurs du produit",
+        "Affirmer que la mesure était parfaitement exacte"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Un modèle validé permet de tester d'autres solutions sans prototype. Il ne remplace pas définitivement les essais (le produit final doit être validé) et la mesure garde ses erreurs.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Un écart mesuré-simulé de 1 % montre en général un bon modèle.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Un si petit écart indique que le modèle représente bien la réalité. Un écart n'est pas forcément une erreur : c'est son interprétation qui compte.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Une performance simulée s'obtient en mesurant le produit réel avec des capteurs.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Une mesure sur le réel donne la performance mesurée ; la performance simulée est calculée par un modèle.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Un écart entre performances mesurée et simulée prouve toujours une faute de mesure.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Un écart vient souvent des hypothèses simplificatrices du modèle ou de paramètres mal connus ; un petit écart est normal. Il faut en chercher la cause.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:017",
+      "type": "vrai_faux",
+      "enonce": "La valeur mesurée d'une performance dépend des conditions d'essai, par exemple de la masse du cycliste ou de l'état de charge de la batterie.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Une même performance mesurée dans d'autres conditions d'essai donne une autre valeur ; on note donc toujours ces conditions.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:018",
+      "type": "reponse_courte",
+      "enonce": "Comment qualifie-t-on la performance fixée par le cahier des charges ? Réponds par un seul adjectif.",
+      "reponses_acceptees": [
+        "attendue",
+        "performance attendue",
+        "la performance attendue",
+        "exigée",
+        "performance exigée",
+        "la performance exigée"
+      ],
+      "difficulte": 1,
+      "explication": "La performance fixée par le cahier des charges est la performance attendue (on dit aussi exigée).",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Pour un VAE, la simulation donne 66 km d'autonomie et l'essai sur piste 58 km. Le modèle est-il optimiste ou pessimiste ? Réponds en un mot.",
+      "reponses_acceptees": [
+        "optimiste",
+        "il est optimiste",
+        "le modèle est optimiste",
+        "modèle optimiste"
+      ],
+      "difficulte": 2,
+      "explication": "La simulation surestime l'autonomie (66 km > 58 km) : le modèle est optimiste. Il néglige des phénomènes qui réduisent l'autonomie réelle.",
+      "notion": "Attendu, mesuré, simulé"
+    },
+    {
+      "source": "si-1re:ch10:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Comment branche-t-on un voltmètre pour mesurer la tension aux bornes d'un moteur ?",
+      "propositions": [
+        "En série avec le moteur",
+        "En dérivation aux bornes du moteur",
+        "En série entre le moteur et la batterie",
+        "Sur une seule borne du moteur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un voltmètre se branche en dérivation (en parallèle) aux bornes du dipôle. En série, il bloquerait presque tout le courant à cause de sa très grande résistance interne.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Comment insère-t-on un ampèremètre dans un circuit ?",
+      "propositions": [
+        "En dérivation aux bornes du générateur",
+        "En parallèle sur le dipôle étudié",
+        "En série dans la branche étudiée",
+        "À côté du fil, sans le toucher"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'ampèremètre doit être traversé par le courant à mesurer : on ouvre le circuit et on l'insère en série. Seule une pince ampèremétrique mesure sans ouvrir le circuit, en entourant le fil.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quel appareil mesure la fréquence de rotation de l'arbre d'un moteur ?",
+      "propositions": [
+        "Un dynamomètre",
+        "Un wattmètre",
+        "Un voltmètre",
+        "Un tachymètre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le tachymètre (optique ou à contact) mesure une fréquence de rotation en tr/min. Le dynamomètre mesure une force, le wattmètre une puissance, le voltmètre une tension.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Sur un banc d'essai, un capteur de couple indique 0,40 N·m et un tachymètre 1 500 tr/min. Quelle est la puissance mécanique fournie par le moteur ?",
+      "propositions": [
+        "62,8 W",
+        "600 W",
+        "10,0 W",
+        "3 750 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "ω = 2π × 1 500 / 60 ≈ 157,1 rad/s, puis P = C × ω = 0,40 × 157,1 ≈ 62,8 W. 600 W vient de l'oubli de la conversion (0,40 × 1 500), 10,0 W de l'oubli du facteur 2π, 3 750 W divise 1 500 par 0,40.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il si l'on branche un ampèremètre directement en dérivation aux bornes d'une batterie ?",
+      "propositions": [
+        "Il mesure la tension de la batterie",
+        "Un quasi court-circuit qui peut faire fondre son fusible",
+        "Rien : il affiche simplement zéro",
+        "Le circuit s'ouvre et plus aucun courant ne passe"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'ampèremètre a une résistance interne très petite : en dérivation, il court-circuite presque la batterie. Un courant intense le traverse et son fusible fond, ou l'appareil est endommagé.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de portail est alimenté sous U = 24,0 V et absorbe I = 3,00 A. Quelle puissance électrique absorbe-t-il ?",
+      "propositions": [
+        "8,00 W",
+        "27,0 W",
+        "72,0 W",
+        "0,125 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P = U × I = 24,0 × 3,00 = 72,0 W. 8,00 W correspond à U / I, 27,0 à U + I, 0,125 à I / U : aucune n'est une puissance.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Un tachymètre indique 3 000 tr/min sur l'arbre d'un moteur de drone. Quelle est sa vitesse angulaire ?",
+      "propositions": [
+        "50 rad/s",
+        "18 850 rad/s",
+        "5,24 rad/s",
+        "314 rad/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "ω = 2π × N / 60 = 2π × 3 000 / 60 ≈ 314 rad/s. 50 rad/s oublie le facteur 2π (c'est la fréquence en tr/s) ; 18 850 rad/s oublie la division par 60 ; 5,24 rad/s divise par 3 600.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Sur un oscilloscope réglé à 2 ms/div, une période du signal occupe 5 divisions. Quelle est la fréquence du signal ?",
+      "propositions": [
+        "100 Hz",
+        "10 Hz",
+        "400 Hz",
+        "0,1 Hz"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "T = 5 × 2 ms = 10 ms = 0,010 s, donc f = 1 / T = 1 / 0,010 = 100 Hz. 400 Hz vient de 2 / 5 ms au lieu de 5 × 2 ms ; 0,1 Hz vient de 1 / 10 sans convertir les ms en s.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un bras robotisé absorbe 1,50 A sous 12,0 V. Il tourne à 2 000 tr/min et fournit un couple de 0,060 N·m. Quel est son rendement ?",
+      "propositions": [
+        "667 %",
+        "70 %",
+        "143 %",
+        "11 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Pe = 12,0 × 1,50 = 18,0 W ; ω = 2π × 2 000 / 60 ≈ 209,4 rad/s ; Pu = 0,060 × 209,4 ≈ 12,6 W ; η = 12,6 / 18,0 ≈ 0,70 = 70 %. 667 % oublie la conversion en rad/s, 143 % inverse le rapport, 11 % oublie le facteur 2π.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Un oscilloscope est réglé à 5 V/div. Le signal monte à 2,4 divisions au-dessus de la ligne de zéro. Quelle est sa tension maximale ?",
+      "propositions": [
+        "2,1 V",
+        "7,4 V",
+        "12 V",
+        "0,48 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U = 2,4 div × 5 V/div = 12 V. Diviser (5 / 2,4 ≈ 2,1 V ou 2,4 / 5 = 0,48 V) ou additionner (7,4 V) n'a pas de sens physique.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Quels appareils ou circuits se branchent en série dans le circuit étudié ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'ampèremètre",
+        "Le circuit courant d'un wattmètre",
+        "Le voltmètre",
+        "L'oscilloscope",
+        "Le circuit tension d'un wattmètre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Ce qui mesure un courant se place en série : ampèremètre et circuit courant du wattmètre. Ce qui mesure une tension se place en dérivation : voltmètre, oscilloscope, circuit tension du wattmètre.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Pour déterminer la puissance mécanique utile d'un moteur sur un banc, quelles grandeurs faut-il mesurer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le couple fourni par le moteur",
+        "La fréquence de rotation de l'arbre",
+        "La tension d'alimentation du moteur",
+        "L'intensité absorbée par le moteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La puissance mécanique vaut P = C × ω : il faut le couple (couplemètre) et la vitesse de rotation (tachymètre). La tension et l'intensité donnent la puissance électrique absorbée.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le voltmètre sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa résistance interne est très grande",
+        "Il se branche en dérivation",
+        "Il faut ouvrir le circuit pour l'insérer",
+        "Il se comporte presque comme un simple fil"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le voltmètre, de très grande résistance interne, se branche en dérivation sans ouvrir le circuit. C'est l'ampèremètre qui s'insère en ouvrant le circuit et se comporte presque comme un fil.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations faut-il pour convertir en grandeurs physiques ce qu'on lit sur l'écran d'un oscilloscope ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La base de temps, en s/div",
+        "La sensibilité verticale, en V/div",
+        "Le nombre de divisions lues",
+        "La résistance interne d'un ampèremètre",
+        "La fréquence de rotation du moteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On multiplie un nombre de divisions par la base de temps (pour une durée) ou par la sensibilité verticale (pour une tension).",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Une pince ampèremétrique mesure une intensité sans qu'il faille ouvrir le circuit.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. La pince entoure un seul fil et mesure le courant qui le traverse, sans ouvrir le circuit.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Un tachymètre mesure le couple fourni par un moteur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Le couple se mesure avec un capteur de couple (couplemètre), intercalé entre le moteur et la charge.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Un oscilloscope affiche l'évolution d'une tension en fonction du temps.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. On s'en sert pour observer des signaux variables : tension d'un hacheur, trame d'une liaison série, signal d'un capteur.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Si un multimètre affiche une tension négative, la mesure est fausse et inutilisable.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Le signe moins indique seulement que les bornes COM et V sont inversées : la valeur est juste, au signe près.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:038",
+      "type": "reponse_courte",
+      "enonce": "Un wattmètre indique 150 W pour un moteur alimenté sous 25 V. Quelle intensité ce moteur absorbe-t-il, en A ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "6"
+      ],
+      "difficulte": 2,
+      "explication": "I = P / U = 150 / 25 = 6 A.",
+      "notion": "Appareils de mesure et raccordement"
+    },
+    {
+      "source": "si-1re:ch10:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Avant de mesurer une intensité dont on ignore totalement l'ordre de grandeur, quel calibre choisit-on d'abord ?",
+      "propositions": [
+        "Le plus petit calibre",
+        "Le calibre intermédiaire",
+        "Le calibre de la mesure précédente",
+        "Le plus grand calibre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Quand la valeur est inconnue, on commence par le plus grand calibre pour ne pas saturer ni endommager l'appareil, puis on descend.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on la résolution d'un appareil de mesure numérique ?",
+      "propositions": [
+        "Le poids du dernier chiffre affiché",
+        "La plus grande valeur mesurable",
+        "Le nombre de mesures par seconde",
+        "L'intervalle des valeurs mesurables"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La résolution est la plus petite variation affichable : une unité du dernier chiffre. La plus grande valeur mesurable est le calibre ; l'intervalle mesurable est la gamme.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:041",
+      "type": "qcm_unique",
+      "enonce": "On s'attend à mesurer 0,35 A. Les calibres disponibles sont 20 mA, 200 mA, 2 A et 10 A. Lequel choisir ?",
+      "propositions": [
+        "200 mA",
+        "2 A",
+        "10 A",
+        "20 mA"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On choisit le plus petit calibre supérieur à la valeur attendue : 0,35 A = 350 mA dépasse 200 mA, donc le calibre 2 A. Le calibre 10 A ferait perdre de la résolution.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Le moteur-roue d'un fauteuil roulant électrique absorbe 360 W sous 24 V. Quel est l'ordre de grandeur de l'intensité absorbée ?",
+      "propositions": [
+        "1 A",
+        "100 A",
+        "10 A",
+        "0,1 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "I = P / U = 360 / 24 = 15 A, dont l'ordre de grandeur (puissance de 10 la plus proche) est 10 A.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Un multimètre « 2 000 points » (il affiche au plus 1 999) est réglé sur le calibre 200 V. Quelle est sa résolution ?",
+      "propositions": [
+        "0,01 V",
+        "1 V",
+        "2 V",
+        "0,1 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Sur le calibre 200 V, l'affichage maximal est 199,9 V : le dernier chiffre correspond aux dixièmes, la résolution est 0,1 V. Le calibre 20 V aurait une résolution de 0,01 V.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Que signifie l'affichage « OL » sur l'écran d'un multimètre ?",
+      "propositions": [
+        "La valeur dépasse le calibre choisi",
+        "La pile du multimètre est neuve",
+        "La valeur mesurée est exactement nulle",
+        "La mesure est terminée et enregistrée"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "OL (overload) signale une surcharge : la valeur dépasse le calibre. Il faut passer à un calibre plus grand.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quelle règle de sécurité respecte-t-on au moment de câbler un montage de mesure ?",
+      "propositions": [
+        "Câbler sous tension pour vérifier au fur et à mesure",
+        "Câbler hors tension",
+        "Régler le multimètre sur le plus petit calibre",
+        "Retirer le fusible du circuit d'essai"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On câble toujours hors tension, puis on fait vérifier avant la mise sous tension. Le plus petit calibre risque la saturation ; le fusible est une protection à conserver.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ordre de grandeur de la tension d'une batterie de vélo à assistance électrique ?",
+      "propositions": [
+        "Quelques millivolts",
+        "Quelques milliers de volts",
+        "Quelques dizaines de volts",
+        "Quelques microvolts"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les batteries de VAE fournissent typiquement 24 V, 36 V ou 48 V : quelques dizaines de volts.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Un lampadaire à LED de 40 W est alimenté sous 24 V. Le multimètre propose les calibres 200 mA, 2 A, 10 A et 20 A. Quel calibre convient le mieux pour mesurer son intensité ?",
+      "propositions": [
+        "200 mA",
+        "10 A",
+        "20 A",
+        "2 A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Estimation : I = P / U = 40 / 24 ≈ 1,7 A. Le plus petit calibre supérieur à 1,7 A est 2 A. Le calibre 200 mA saturerait ; 10 A et 20 A donneraient une moins bonne résolution.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "Quelles règles de sécurité s'appliquent à un essai sur un banc moteur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Câbler le montage hors tension",
+        "Faire vérifier le montage avant la mise sous tension",
+        "Protéger les pièces en mouvement par un carter",
+        "Changer de calibre sous tension pour gagner du temps"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On câble hors tension, on fait vérifier, on protège des pièces tournantes. On ne change jamais de fonction ni de calibre sous tension.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "À quoi sert l'estimation de l'ordre de grandeur avant une mesure ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "À choisir l'appareil et son calibre",
+        "À repérer une mesure aberrante",
+        "À remplacer la mesure elle-même",
+        "À augmenter la résolution de l'appareil"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'estimation guide le choix du calibre, permet de détecter une valeur absurde et participe à la sécurité. Elle ne remplace pas la mesure et ne change pas la résolution de l'appareil.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "Quelles valeurs un multimètre « 2 000 points » réglé sur le calibre 20 V peut-il afficher ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "12,47 V",
+        "19,99 V",
+        "0,05 V",
+        "23,10 V",
+        "12,475 V"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sur le calibre 20 V, l'affichage va jusqu'à 19,99 V avec deux décimales. 23,10 V dépasse le calibre ; 12,475 V a une décimale de trop.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le choix du calibre sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un calibre trop petit fait saturer l'affichage",
+        "Un calibre trop grand fait perdre des chiffres significatifs",
+        "Un calibre trop grand détruit toujours l'appareil",
+        "Un calibre trop petit améliore la résolution sans aucun risque"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Trop petit : saturation (OL) et risque pour l'appareil. Trop grand : pas de danger, mais une résolution moins bonne, donc moins de chiffres significatifs.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:052",
+      "type": "vrai_faux",
+      "enonce": "Le calibre est la plus grande valeur qu'un appareil peut mesurer sur la position choisie.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. C'est la définition du calibre.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Au lycée, les bancs d'essai fonctionnent en général sous 230 V.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. On travaille en très basse tension chaque fois que possible : les bancs fonctionnent en général sous moins de 50 V.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Une batterie de trottinette, bien qu'en très basse tension, peut provoquer un incendie en cas de court-circuit.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Elle peut débiter des centaines d'ampères en court-circuit : les fils chauffent fortement. D'où le fusible dans le circuit d'essai.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:055",
+      "type": "vrai_faux",
+      "enonce": "Pour mesurer une tension de 12 V avec la meilleure résolution, il faut choisir le calibre 200 V plutôt que le calibre 20 V.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Le calibre 20 V suffit (12 V < 20 V) et donne une résolution de 0,01 V, contre 0,1 V sur le calibre 200 V.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:056",
+      "type": "reponse_courte",
+      "enonce": "Un multimètre « 2 000 points » (affichage maximal 1 999) est réglé sur le calibre 2 V. Quelle est sa résolution, en mV ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 2,
+      "explication": "Sur le calibre 2 V, l'affichage maximal est 1,999 V : le dernier chiffre vaut 0,001 V, soit 1 mV.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:057",
+      "type": "reponse_courte",
+      "enonce": "Le servomoteur d'une prothèse de main absorbe 6 W sous 5 V. Estime l'intensité absorbée, en A. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1,2"
+      ],
+      "difficulte": 2,
+      "explication": "I = P / U = 6 / 5 = 1,2 A : le calibre 2 A conviendra.",
+      "notion": "Ordre de grandeur, calibre, sécurité"
+    },
+    {
+      "source": "si-1re:ch10:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Une erreur qui se reproduit toujours dans le même sens et avec la même valeur est une erreur…",
+      "propositions": [
+        "systématique",
+        "aléatoire",
+        "statistique",
+        "de dispersion"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une erreur systématique décale toutes les mesures de la même façon. Une erreur aléatoire change de valeur et de signe d'une mesure à l'autre.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Comment réduit-on l'effet des erreurs aléatoires sur un résultat ?",
+      "propositions": [
+        "En étalonnant l'appareil une seule fois",
+        "En répétant la mesure et en prenant la moyenne",
+        "En choisissant le plus grand calibre",
+        "En arrondissant davantage le résultat"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les erreurs aléatoires se compensent en partie quand on moyenne plusieurs mesures. L'étalonnage corrige une erreur systématique.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Avant chaque essai, un dynamomètre indique déjà 0,3 N alors qu'aucune force ne s'exerce. De quel type d'erreur s'agit-il ?",
+      "propositions": [
+        "Aléatoire : on la corrige en répétant les mesures",
+        "Aléatoire : elle est due au bruit électrique",
+        "Systématique : on la corrige en faisant le zéro",
+        "Systématique : on la corrige en changeant d'opérateur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le décalage de 0,3 N s'ajoute à toutes les mesures, toujours dans le même sens : erreur systématique. On la supprime en faisant le zéro (la tare). Répéter ou changer d'opérateur n'y change rien.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Des mesures très proches les unes des autres mais toutes décalées par rapport à la valeur vraie sont…",
+      "propositions": [
+        "justes mais pas fidèles",
+        "justes et fidèles",
+        "ni justes ni fidèles",
+        "fidèles mais pas justes"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Resserrées : fidèles. Décalées par rapport à la valeur vraie : pas justes. C'est le signe d'une erreur systématique.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:062",
+      "type": "qcm_unique",
+      "enonce": "En chronométrant l'ouverture d'un portail, l'opérateur déclenche tantôt trop tôt, tantôt trop tard. De quelle erreur s'agit-il ?",
+      "propositions": [
+        "Une erreur aléatoire",
+        "Une erreur systématique",
+        "Une erreur d'étalonnage du chronomètre",
+        "Une erreur de calibre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'erreur change de sens d'une mesure à l'autre : elle est aléatoire. On la réduit en répétant les mesures ou en automatisant le déclenchement.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Un voltmètre affiche 5,00 V (résolution 0,01 V). Sa notice indique une précision de ±(1 % + 2 digits). Quelle est l'erreur maximale due à l'appareil ?",
+      "propositions": [
+        "0,05 V",
+        "0,07 V",
+        "0,03 V",
+        "1,02 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "1 % de 5,00 V = 0,05 V ; 2 digits = 2 × 0,01 = 0,02 V ; total 0,07 V. 0,05 V oublie les digits, 0,03 V prend 1 digit pour 1 %, 1,02 V additionne un pourcentage et des volts.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Un ampèremètre affiche 2,40 A (résolution 0,01 A) avec une précision de ±(1,5 % + 3 digits). Dans quel intervalle se trouve vraisemblablement l'intensité vraie ?",
+      "propositions": [
+        "De 2,364 A à 2,436 A",
+        "De 2,370 A à 2,430 A",
+        "De 2,334 A à 2,466 A",
+        "De 2,385 A à 2,415 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "1,5 % de 2,40 = 0,036 A ; 3 digits = 0,03 A ; erreur maximale 0,066 A, d'où l'intervalle 2,334 A à 2,466 A. Les autres intervalles oublient une des deux parts ou lisent 1,5 % comme 0,015 A.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:065",
+      "type": "qcm_unique",
+      "enonce": "L'anémomètre d'une station météo connectée est installé à l'abri d'un mur. Quelle est la principale source d'erreur ?",
+      "propositions": [
+        "L'opérateur : une erreur de lecture",
+        "La résolution de l'afficheur",
+        "Le temps de réaction de l'opérateur",
+        "La méthode : le capteur est mal placé"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le mur abrite le capteur du vent : il mesurera toujours trop peu. C'est une erreur de méthode, systématique, qui ne dépend ni de l'opérateur ni de l'afficheur.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Un thermomètre affiche 50,0 °C (résolution 0,1 °C) avec une précision de ±(2 % + 1 digit). Quelle est l'erreur maximale due à l'appareil ?",
+      "propositions": [
+        "1,1 °C",
+        "1,0 °C",
+        "2,1 °C",
+        "2,0 °C"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "2 % de 50,0 °C = 1,0 °C ; 1 digit = 0,1 °C ; total 1,1 °C. 1,0 °C oublie le digit, 2,1 °C prend 2 % pour 2 °C, 2,0 °C prend le digit pour 1 °C.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Dans une série de durées toutes proches de 14,5 s, une valeur relevée vaut 145 s. Que faut-il faire ?",
+      "propositions": [
+        "L'inclure dans la moyenne",
+        "Vérifier et refaire cette mesure",
+        "Diviser toutes les mesures par 10",
+        "Remplacer toute la série par cette valeur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Une valeur aberrante, très éloignée des autres et de l'ordre de grandeur prévu, est une faute (sans doute une virgule oubliée). On la vérifie et on refait la mesure ; on ne la moyenne pas.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Quelles situations produisent une erreur systématique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une balance mal étalonnée",
+        "Un dynamomètre mal remis à zéro",
+        "Un chronomètre toujours déclenché en retard",
+        "Des vibrations irrégulières de la table",
+        "Un bruit électrique imprévisible"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Étalonnage, zéro et retard constant décalent toujours dans le même sens : erreurs systématiques. Vibrations et bruit électrique varient d'une mesure à l'autre : erreurs aléatoires.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Quelles sources d'écart sont propres à une simulation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Des hypothèses simplificatrices",
+        "Des paramètres mal connus",
+        "Un pas de calcul trop grand",
+        "Une erreur de parallaxe sur une aiguille"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une simulation dépend de ses hypothèses, de ses paramètres et de sa méthode de calcul. La parallaxe est une erreur de lecture, propre à une mesure.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Une série de mesures est à la fois fidèle et juste. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les valeurs sont proches les unes des autres",
+        "Leur moyenne est proche de la valeur vraie",
+        "L'appareil présente une forte erreur systématique",
+        "Les mesures sont très dispersées"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Fidèle : valeurs resserrées. Juste : moyenne centrée sur la valeur vraie, donc pas d'erreur systématique importante.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "Le capteur de température d'une station météo est exposé au soleil, et sa lecture fluctue de ±0,1 °C d'une seconde à l'autre. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le soleil introduit une erreur systématique",
+        "Les fluctuations sont des erreurs aléatoires",
+        "Placer le capteur à l'ombre réduit l'erreur systématique",
+        "Répéter les mesures supprime l'effet du soleil"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le soleil chauffe le capteur : toutes les mesures sont trop hautes (systématique), on corrige en changeant la méthode (ombre, abri ventilé). Les fluctuations sont aléatoires. Répéter ne corrige pas une erreur systématique.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Une virgule mal placée lors du relevé d'une mesure est une erreur aléatoire.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. C'est une erreur grossière, c'est-à-dire une faute, qui n'est ni systématique ni aléatoire.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:073",
+      "type": "vrai_faux",
+      "enonce": "L'environnement (température, vibrations, perturbations électromagnétiques) peut être une source d'erreurs de mesure.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Une température trop élevée, des vibrations ou des perturbations électromagnétiques peuvent fausser une mesure.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Comme la valeur vraie d'une grandeur est inconnue, l'erreur de mesure n'est jamais connue exactement.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. L'erreur est la différence entre la mesure et la valeur vraie ; on l'estime par une incertitude sans pouvoir la connaître exactement.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Une série de mesures juste est forcément fidèle.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Justesse et fidélité sont indépendantes : des mesures dispersées peuvent avoir une moyenne centrée sur la valeur vraie (justes mais peu fidèles).",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:076",
+      "type": "reponse_courte",
+      "enonce": "Un tachymètre mal étalonné affiche toujours 2 % de trop. De quel type d'erreur s'agit-il ? Réponds par un adjectif.",
+      "reponses_acceptees": [
+        "systématique",
+        "erreur systématique",
+        "une erreur systématique",
+        "systematique"
+      ],
+      "difficulte": 2,
+      "explication": "Le décalage est toujours dans le même sens et de même valeur relative : c'est une erreur systématique, corrigée par étalonnage.",
+      "notion": "Erreurs de mesure"
+    },
+    {
+      "source": "si-1re:ch10:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette atteint successivement 20,4 ; 20,6 ; 20,2 et 20,8 km/h lors de quatre essais. Quelle est la vitesse moyenne ?",
+      "propositions": [
+        "27,3 km/h",
+        "82,0 km/h",
+        "20,5 km/h",
+        "0,6 km/h"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Moyenne = (20,4 + 20,6 + 20,2 + 20,8) / 4 = 82,0 / 4 = 20,5 km/h. 82,0 est la somme, 27,3 divise par 3 au lieu de 4, 0,6 est l'étendue (max − min).",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Que mesure l'écart type d'une série de mesures ?",
+      "propositions": [
+        "La valeur la plus probable",
+        "L'écart entre la mesure et la simulation",
+        "Le nombre de mesures réalisées",
+        "La dispersion des valeurs autour de la moyenne"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'écart type chiffre la dispersion de la série. La valeur la plus probable est la moyenne.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation donne l'incertitude-type sur la moyenne de n mesures d'écart type s ?",
+      "propositions": [
+        "u = s / √n",
+        "u = s × √n",
+        "u = s / n",
+        "u = √s / n"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'incertitude-type sur la moyenne est u = s / √n : elle diminue quand n augmente, mais comme la racine de n.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Une série de 9 mesures de durée a un écart type s = 0,30 s. Quelle est l'incertitude-type sur la moyenne ?",
+      "propositions": [
+        "0,033 s",
+        "0,10 s",
+        "0,90 s",
+        "0,30 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u = s / √n = 0,30 / √9 = 0,30 / 3 = 0,10 s. 0,033 s divise par n, 0,90 s multiplie par √n, 0,30 s est l'écart type lui-même.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Pour 16 mesures de la force de serrage d'une pince, l'écart type vaut 0,8 N. Que vaut l'incertitude-type sur la force moyenne ?",
+      "propositions": [
+        "0,05 N",
+        "3,2 N",
+        "0,2 N",
+        "12,8 N"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u = 0,8 / √16 = 0,8 / 4 = 0,2 N. 0,05 N divise par 16, 3,2 N multiplie par 4, 12,8 N multiplie par 16.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Combien de fois plus de mesures faut-il faire pour diviser par 3 l'incertitude-type sur la moyenne ?",
+      "propositions": [
+        "3 fois plus",
+        "6 fois plus",
+        "27 fois plus",
+        "9 fois plus"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "u = s / √n : pour diviser u par 3, il faut multiplier √n par 3, donc n par 3² = 9.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:083",
+      "type": "qcm_unique",
+      "enonce": "On mesure quatre fois l'intensité absorbée par un drone : 2,0 A ; 2,2 A ; 1,8 A ; 2,0 A. Quel est l'écart type expérimental (division par n − 1), arrondi au centième ?",
+      "propositions": [
+        "0,16 A",
+        "0,14 A",
+        "0,027 A",
+        "0,08 A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Moyenne 2,0 A ; écarts 0 ; 0,2 ; −0,2 ; 0 ; somme des carrés 0,08 A² ; s = √(0,08 / 3) ≈ 0,16 A. 0,14 A divise par n, 0,027 est la variance, 0,08 la somme des carrés.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Pour la série de quatre intensités 2,0 A, 2,2 A, 1,8 A et 2,0 A, que vaut l'incertitude-type sur la moyenne (s calculé avec n − 1), à un chiffre significatif ?",
+      "propositions": [
+        "0,04 A",
+        "0,08 A",
+        "0,07 A",
+        "0,3 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "s = √(0,08 / 3) ≈ 0,163 A, puis u = s / √4 ≈ 0,082, soit 0,08 A. 0,04 A divise s par n, 0,07 A calcule s avec n au lieu de n − 1, 0,3 A multiplie par √n.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableur, quelle fonction donne l'écart type expérimental d'une colonne de mesures ?",
+      "propositions": [
+        "MOYENNE",
+        "SOMME",
+        "ECARTYPE",
+        "MAX"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "ECARTYPE (ou ECARTYPE.STANDARD) calcule l'écart type avec la division par n − 1. MOYENNE donne la moyenne, SOMME la somme, MAX la plus grande valeur.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la moyenne d'une série de mesures sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "C'est la meilleure estimation de la valeur de la grandeur",
+        "Elle a la même unité que les mesures",
+        "Elle est toujours égale à la valeur vraie",
+        "Elle est toujours l'une des valeurs mesurées"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La moyenne estime la valeur de la grandeur, dans la même unité. Elle n'est pas la valeur vraie (inconnue) et n'est pas forcément une des valeurs relevées.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "On multiplie par 4 le nombre de mesures, dans les mêmes conditions. Que se passe-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'incertitude-type sur la moyenne est environ divisée par 2",
+        "L'écart type reste du même ordre de grandeur",
+        "L'écart type est divisé par 4",
+        "La moyenne est multipliée par 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u = s / √n : avec n × 4, √n est multiplié par 2 et u divisé par 2. L'écart type décrit la dispersion d'une mesure et ne diminue pas ; la moyenne reste du même ordre.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "La durée moyenne d'ouverture d'un portail est 14,35 s, avec un écart type de 0,19 s. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le rapport s / moyenne vaut environ 1,3 %",
+        "La série est plutôt fidèle",
+        "L'écart type s'exprime en secondes",
+        "L'écart type est sans unité"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0,19 / 14,35 ≈ 0,013 = 1,3 % : dispersion faible, série fidèle. L'écart type a l'unité de la grandeur, ici la seconde.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Une série a pour moyenne 14,35 s et pour écart type 0,19 s. Quelles valeurs seraient suspectes, c'est-à-dire à plus de trois écarts types de la moyenne ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "15,10 s",
+        "13,60 s",
+        "14,70 s",
+        "14,00 s",
+        "14,50 s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "3s = 0,57 s : l'intervalle acceptable va de 13,78 s à 14,92 s. 15,10 s et 13,60 s en sortent ; 14,70 s, 14,00 s et 14,50 s y sont.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:090",
+      "type": "vrai_faux",
+      "enonce": "Une valeur qui s'écarte de la moyenne de plus de trois écarts types environ est considérée comme suspecte.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Elle est trop éloignée des autres pour s'expliquer par les seules erreurs aléatoires.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:091",
+      "type": "vrai_faux",
+      "enonce": "Dans l'écart type expérimental, on divise la somme des carrés des écarts à la moyenne par n.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. On divise par n − 1 : s = √[ ((x1 − x̄)² + … + (xn − x̄)²) / (n − 1) ].",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:092",
+      "type": "vrai_faux",
+      "enonce": "Le rapport s / x̄, exprimé en pourcentage, permet de comparer la dispersion de plusieurs séries.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Il rapporte la dispersion à la valeur moyenne ; il est sans unité, ce qui permet de comparer des séries différentes.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:093",
+      "type": "reponse_courte",
+      "enonce": "On chronomètre quatre fois la descente d'un store motorisé : 12,1 s ; 12,3 s ; 12,2 s ; 12,4 s. Quelle est la durée moyenne, en s, au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "12,25"
+      ],
+      "difficulte": 1,
+      "explication": "Moyenne = (12,1 + 12,3 + 12,2 + 12,4) / 4 = 49,0 / 4 = 12,25 s.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:094",
+      "type": "reponse_courte",
+      "enonce": "Une série de 4 mesures de couple a un écart type de 0,6 N·m. Quelle est l'incertitude-type sur la moyenne, en N·m ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,3"
+      ],
+      "difficulte": 2,
+      "explication": "u = s / √n = 0,6 / √4 = 0,6 / 2 = 0,3 N·m.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:095",
+      "type": "reponse_courte",
+      "enonce": "Cinq mesures de la puissance d'un module d'éclairage donnent 9,8 ; 10,2 ; 10,0 ; 10,4 et 9,6 W. Calcule l'écart type expérimental (division par n − 1), en W, arrondi au centième. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,32"
+      ],
+      "marge": 0.005,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Moyenne 10,0 W ; écarts −0,2 ; 0,2 ; 0 ; 0,4 ; −0,4 ; somme des carrés 0,40 W² ; s = √(0,40 / 4) = √0,1 ≈ 0,32 W.",
+      "notion": "Moyenne, écart type, incertitude"
+    },
+    {
+      "source": "si-1re:ch10:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Combien de chiffres significatifs comporte l'intensité 0,050 A ?",
+      "propositions": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les zéros à gauche ne comptent pas ; le zéro final compte : 5 et 0, soit 2 chiffres significatifs.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Le nombre 2,40 A s'écrit avec combien de chiffres significatifs ?",
+      "propositions": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "2, 4 et le zéro final : 3 chiffres significatifs. Ce zéro indique que l'intensité est connue au centième d'ampère.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Un calcul donne U = 3,8462 V avec une incertitude-type de 0,0237 V. Quelle écriture du résultat respecte les règles du cours ?",
+      "propositions": [
+        "U = 3,8462 V avec u(U) = 0,0237 V",
+        "U = 3,85 V avec u(U) = 0,02 V",
+        "U = 3,8 V avec u(U) = 0,02 V",
+        "U = 3,85 V avec u(U) = 0,0237 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u arrondie à un chiffre significatif : 0,02 V (rang des centièmes). La valeur est arrondie au même rang : 3,85 V.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:099",
+      "type": "qcm_unique",
+      "enonce": "On mesure U = 11,8 V (3 chiffres significatifs) et I = 0,52 A (2 chiffres significatifs). Comment écrire la puissance P = U × I ?",
+      "propositions": [
+        "6,136 W",
+        "6 W",
+        "6,1 W",
+        "6,14 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "11,8 × 0,52 = 6,136. Le résultat garde autant de chiffres significatifs que la donnée la moins précise, soit 2 : P ≈ 6,1 W.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi écrire une puissance 1,2 × 10³ W plutôt que 1 200 W ?",
+      "propositions": [
+        "Pour changer la valeur de la puissance",
+        "Parce que 1 200 W n'est pas une valeur valide",
+        "Pour convertir des watts en joules",
+        "Pour préciser le nombre de chiffres significatifs"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1 200 W peut avoir 2, 3 ou 4 chiffres significatifs ; l'écriture scientifique 1,2 × 10³ W lève l'ambiguïté (2 chiffres significatifs).",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:101",
+      "type": "qcm_unique",
+      "enonce": "La durée 0,000 8 s comporte…",
+      "propositions": [
+        "1 chiffre significatif",
+        "5 chiffres significatifs",
+        "4 chiffres significatifs",
+        "2 chiffres significatifs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Tous les zéros sont à gauche du 8 : ils ne comptent pas. Il n'y a qu'un chiffre significatif.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Un calcul d'incertitude-type donne 0,0763 s. Comment l'écrire avec un chiffre significatif ?",
+      "propositions": [
+        "0,0763 s",
+        "0,08 s",
+        "0,1 s",
+        "0,07 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le premier chiffre non nul est 7 (centièmes) ; 0,0763 s'arrondit à 0,08. 0,07 s tronque au lieu d'arrondir ; 0,1 s arrondit au mauvais rang.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:103",
+      "type": "qcm_unique",
+      "enonce": "La durée moyenne d'ouverture d'un store vaut 9,4667 s avec u = 0,127 s. En gardant un chiffre significatif pour u, comment écrire le résultat ?",
+      "propositions": [
+        "t = 9,47 s avec u(t) = 0,1 s",
+        "t = 9,4667 s avec u(t) = 0,127 s",
+        "t = 9,5 s avec u(t) = 0,1 s",
+        "t = 9 s avec u(t) = 0,1 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "u ≈ 0,1 s (rang des dixièmes) ; la valeur est arrondie au même rang : 9,5 s. 9,47 s a un chiffre de trop par rapport à u, 9 s un de moins.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Quelle erreur commet-on en écrivant P = 56,64 W à partir de U = 23,6 V et I = 2,4 A ?",
+      "propositions": [
+        "Le calcul U × I est faux",
+        "L'unité devrait être le joule",
+        "Il manque des chiffres significatifs",
+        "On affiche une précision que la mesure n'a pas"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "I n'a que 2 chiffres significatifs : P doit s'écrire avec 2 chiffres, soit 57 W. 56,64 W recopie la calculatrice et suggère une fausse précision.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Quels nombres comportent exactement 3 chiffres significatifs ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "23,6 V",
+        "2,40 A",
+        "1,20 × 10³ W",
+        "0,050 A",
+        "0,000 8 s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "23,6 ; 2,40 et 1,20 × 10³ ont 3 chiffres significatifs. 0,050 en a 2 et 0,000 8 en a 1.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:106",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments un résultat de mesure complet comporte-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une valeur",
+        "Une incertitude",
+        "Une unité",
+        "Le nom de l'opérateur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un résultat complet associe une valeur, une incertitude et une unité. Le nom de l'opérateur peut figurer dans le compte rendu, pas dans l'écriture du résultat.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:107",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures respectent les règles (incertitude à un chiffre significatif, valeur arrondie au même rang) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "v = 23,6 km/h avec u = 0,3 km/h",
+        "F = 152 N avec u = 4 N",
+        "m = 1,253 kg avec u = 0,02 kg",
+        "I = 2,4 A avec u = 0,05 A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Il faut que le dernier chiffre de la valeur soit au rang de l'incertitude. 1,253 kg a un chiffre de trop (u au centième) ; 2,4 A en a un de moins (u au centième).",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Dans un calcul en plusieurs étapes à partir de mesures, quelles pratiques sont recommandées ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Garder les valeurs complètes dans la calculatrice",
+        "N'arrondir que le résultat final",
+        "Arrondir chaque résultat intermédiaire à un chiffre",
+        "Recopier tous les chiffres de la calculatrice à la fin"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Arrondir trop tôt crée des erreurs qui s'accumulent ; on arrondit seulement le résultat final, avec un nombre de chiffres adapté, sans recopier tous ceux de la calculatrice.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Les zéros placés à gauche d'un nombre ne sont pas des chiffres significatifs.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Dans 0,050, les deux premiers zéros ne comptent pas ; le zéro final compte.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Pour un expérimentateur, 2,4 A et 2,40 A ont exactement la même signification.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. 2,40 A indique une intensité connue au centième d'ampère, 2,4 A seulement au dixième.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Le produit de 4,52 m par 2,1 m doit s'écrire avec 2 chiffres significatifs.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. 2,1 m n'a que 2 chiffres significatifs : 4,52 × 2,1 = 9,492, écrit 9,5 m².",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Une incertitude doit s'écrire avec au moins quatre chiffres significatifs.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. On garde un chiffre significatif pour l'incertitude, deux au plus.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:113",
+      "type": "reponse_courte",
+      "enonce": "Combien de chiffres significatifs le nombre 0,0305 comporte-t-il ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "explication": "Les deux premiers zéros ne comptent pas ; restent 3, 0 et 5 : 3 chiffres significatifs.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:114",
+      "type": "reponse_courte",
+      "enonce": "Une trottinette parcourt 125 m en 9,8 s. Calcule sa vitesse moyenne en m/s, écrite avec le nombre de chiffres significatifs adapté. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "13"
+      ],
+      "difficulte": 3,
+      "explication": "v = 125 / 9,8 ≈ 12,76 m/s. 9,8 s n'a que 2 chiffres significatifs : v ≈ 13 m/s.",
+      "notion": "Chiffres significatifs et résultat"
+    },
+    {
+      "source": "si-1re:ch10:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité d'un écart relatif ?",
+      "propositions": [
+        "Aucune : il s'exprime souvent en %",
+        "L'unité de la grandeur comparée",
+        "Toujours le mètre",
+        "Le carré de l'unité de la grandeur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'écart relatif est un rapport de deux grandeurs de même unité : il est sans unité, souvent exprimé en pourcentage.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:116",
+      "type": "qcm_unique",
+      "enonce": "L'autonomie attendue d'une trottinette est 40 km ; l'essai donne 37 km. Quel est l'écart relatif attendu-mesuré ?",
+      "propositions": [
+        "8,1 %",
+        "7,5 %",
+        "3 %",
+        "92,5 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Δ = |37 − 40| = 3 km ; ε = 3 / 40 = 0,075 = 7,5 % (la référence est la valeur attendue). 8,1 % prend 37 km comme référence, 92,5 % est le rapport 37 / 40.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:117",
+      "type": "qcm_unique",
+      "enonce": "La vitesse simulée d'un convoyeur est 26,4 m/min ; la vitesse mesurée est 24,0 m/min. Quel est l'écart relatif mesuré-simulé ?",
+      "propositions": [
+        "9,1 %",
+        "2,4 %",
+        "10 %",
+        "110 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Pour valider le modèle, la référence est la mesure : ε = |26,4 − 24,0| / 24,0 = 2,4 / 24,0 = 0,10 = 10 %. 9,1 % prend la simulation comme référence ; 110 % est le rapport 26,4 / 24,0.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Le cahier des charges impose une durée de 20 s ; la mesure donne 21,5 s. Quel est l'écart absolu ?",
+      "propositions": [
+        "7,5 %",
+        "41,5 s",
+        "1,08 s",
+        "1,5 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Δ = |21,5 − 20| = 1,5 s, dans l'unité de la grandeur. 7,5 % est l'écart relatif, 41,5 s la somme, 1,08 le rapport 21,5 / 20 arrondi.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Pour juger si un modèle de simulation est fidèle à la réalité, quelle valeur prend-on comme référence ?",
+      "propositions": [
+        "La valeur mesurée",
+        "La valeur simulée",
+        "La valeur attendue",
+        "La moyenne des trois valeurs"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "On juge le modèle par rapport au réel : la référence de l'écart mesuré-simulé est la valeur mesurée.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:120",
+      "type": "qcm_unique",
+      "enonce": "La masse attendue d'une prothèse de main est 400 g ; le prototype pèse 436 g. Quel est l'écart relatif attendu-mesuré ?",
+      "propositions": [
+        "8,3 %",
+        "9 %",
+        "36 %",
+        "109 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Δ = 436 − 400 = 36 g ; ε = 36 / 400 = 0,09 = 9 %. 8,3 % prend 436 g comme référence, 36 % confond grammes et pourcentage, 109 % est le rapport 436 / 400.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:121",
+      "type": "qcm_unique",
+      "enonce": "La course d'un vérin attendue à 10 mm est mesurée à 8 mm ; l'autonomie d'un VAE attendue à 60 km est mesurée à 58 km. Que montrent les écarts relatifs attendu-mesuré ?",
+      "propositions": [
+        "Même écart de 2 unités, donc même qualité",
+        "Vérin : 3,3 % ; VAE : 20 % environ",
+        "Vérin : 20 % ; VAE : 3,3 % environ",
+        "Vérin : 25 % ; VAE : 3,4 % environ"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Vérin : 2 / 10 = 20 % ; VAE : 2 / 60 ≈ 3,3 %. Le même écart absolu cache des écarts relatifs très différents. 25 % et 3,4 % prennent la mesure comme référence au lieu de la valeur attendue.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Pour une pompe d'arrosage, le cahier des charges demande 0,50 L/s ; la simulation donne 0,46 L/s et l'essai 0,44 L/s. Quel est l'écart relatif mesuré-simulé ?",
+      "propositions": [
+        "4,3 %",
+        "12 %",
+        "8,0 %",
+        "4,5 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Référence = mesure : ε = |0,46 − 0,44| / 0,44 = 0,02 / 0,44 ≈ 4,5 %. 4,3 % prend la simulation comme référence ; 12 % est l'écart attendu-mesuré ; 8,0 % l'écart attendu-simulé.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:123",
+      "type": "qcm_unique",
+      "enonce": "La puissance attendue d'un moteur est 400 W ; on mesure 380 W, soit 95 % de la valeur attendue. Quel est l'écart relatif ?",
+      "propositions": [
+        "5 %",
+        "95 %",
+        "20 %",
+        "5,3 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "ε = |380 − 400| / 400 = 20 / 400 = 5 %. 95 % est le rapport x / x_réf, pas l'écart ; 20 est l'écart absolu en W ; 5,3 % prend 380 W comme référence.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Le cahier des charges tolère un écart relatif de 5 % sur la vitesse d'un convoyeur réglée à 0,80 m/s. On mesure 0,85 m/s. Que conclure ?",
+      "propositions": [
+        "Conforme : l'écart vaut 5,9 %",
+        "Non conforme : l'écart vaut 6,25 %",
+        "Conforme : l'écart ne vaut que 0,05 %",
+        "Non conforme : l'écart vaut 0,05 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "ε = |0,85 − 0,80| / 0,80 = 0,05 / 0,80 = 6,25 % > 5 % : l'exigence n'est pas respectée. 5,9 % prend la mesure comme référence (et dépasse aussi 5 %) ; 0,05 est l'écart absolu en m/s.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur l'écart absolu sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il s'exprime dans l'unité de la grandeur",
+        "Il vaut |x − x_réf|",
+        "Il s'exprime toujours en pourcentage",
+        "Il est sans unité"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'écart absolu Δ = |x − x_réf| a l'unité de la grandeur. C'est l'écart relatif qui est sans unité et souvent exprimé en %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Pour un VAE, l'autonomie attendue est 50 km, la simulée 54 km et la mesurée 48 km. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'écart absolu attendu-mesuré vaut 2 km",
+        "L'écart relatif attendu-mesuré vaut 4 %",
+        "L'écart absolu mesuré-simulé vaut 6 km",
+        "L'écart relatif mesuré-simulé vaut 11,1 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "|48 − 50| = 2 km et 2 / 50 = 4 %. |54 − 48| = 6 km ; la référence pour valider le modèle est la mesure : 6 / 48 = 12,5 %, et non 6 / 54 ≈ 11,1 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:127",
+      "type": "qcm_multiple",
+      "enonce": "Un modèle est jugé satisfaisant si l'écart relatif mesuré-simulé reste inférieur à 10 %. Quels modèles sont validés ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Mesuré 50 W, simulé 54 W",
+        "Mesuré 2,0 A, simulé 2,1 A",
+        "Mesuré 20 s, simulé 17 s",
+        "Mesuré 100 tr/min, simulé 112 tr/min"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Référence = mesure : 4 / 50 = 8 % ; 0,1 / 2,0 = 5 % ; 3 / 20 = 15 % ; 12 / 100 = 12 %. Seuls les deux premiers restent sous 10 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "L'écart attendu-mesuré d'un produit est défavorable : l'exigence n'est pas atteinte. Quelles réactions sont pertinentes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Modifier la solution technique",
+        "Renégocier l'exigence si sa flexibilité le permet",
+        "Déclarer malgré tout le produit conforme",
+        "Supprimer l'exigence sans en discuter"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "On modifie la solution (batterie, réducteur…) ou, si le cahier des charges prévoit une flexibilité, on renégocie le niveau. On ne déclare pas conforme un produit qui ne l'est pas.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Pour une mesure de 52 W et une référence de 50 W, l'écart relatif vaut 4 %.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. ε = |52 − 50| / 50 = 2 / 50 = 0,04 = 4 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Si la mesure vaut 58 km et la référence 60 km, l'écart relatif vaut 96,7 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. 58 / 60 ≈ 96,7 % est le rapport des deux valeurs. L'écart relatif vaut 2 / 60 ≈ 3,3 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Un écart relatif de 3 % sur une autonomie de référence de 60 km correspond à un écart absolu de 3 km.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Δ = ε × xréf = 0,03 × 60 = 1,8 km.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:132",
+      "type": "reponse_courte",
+      "enonce": "Le cahier des charges d'un portail impose une ouverture en 15 s ; la mesure donne 15,6 s. Calcule l'écart relatif attendu-mesuré, en %. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "ε = |15,6 − 15| / 15 = 0,6 / 15 = 0,04 = 4 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:133",
+      "type": "reponse_courte",
+      "enonce": "Le couple simulé d'un motoréducteur vaut 1,32 N·m ; le couple mesuré vaut 1,20 N·m. Calcule l'écart relatif mesuré-simulé, en %. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 3,
+      "explication": "Référence = mesure : ε = |1,32 − 1,20| / 1,20 = 0,12 / 1,20 = 0,10 = 10 %.",
+      "notion": "Écarts absolu et relatif"
+    },
+    {
+      "source": "si-1re:ch10:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, comment représente-t-on des points de mesure ?",
+      "propositions": [
+        "Par une courbe continue lissée",
+        "Par des barres verticales colorées",
+        "Par des marques, sans les relier",
+        "Par une ligne brisée qui relie tous les points"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les mesures sont des points isolés : on les marque (croix, points) sans les relier. La courbe continue est réservée au modèle.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Que doit indiquer le titre d'un tableau de mesures ?",
+      "propositions": [
+        "Le nom et la référence du fabricant des appareils",
+        "La liste complète des calibres utilisés pendant l'essai",
+        "La conclusion de l'essai",
+        "Ce qui a été mesuré et dans quelles conditions"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le titre dit ce qui a été mesuré et dans quelles conditions. Le matériel figure dans le protocole et la conclusion vient après les résultats.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Quelle propriété doit avoir un critère de comparaison pertinent ?",
+      "propositions": [
+        "Être mesurable et lié à une exigence",
+        "Être choisi après l'essai pour favoriser une solution",
+        "Être toujours le prix du produit",
+        "Porter sur une grandeur impossible à mesurer"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un critère pertinent est lié à une exigence du cahier des charges, mesurable, et son seuil est fixé avant l'essai.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Pour un drone, la batterie A donne 30 min de vol pour 600 g et la batterie B 26 min pour 400 g. Quelle batterie a la meilleure autonomie par kilogramme ?",
+      "propositions": [
+        "A, avec 50 min/kg",
+        "B, avec 65 min/kg",
+        "A, avec 0,05 min/kg",
+        "B, avec 15,4 min/kg"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "A : 30 / 0,600 = 50 min/kg ; B : 26 / 0,400 = 65 min/kg. B l'emporte. 0,05 oublie la conversion des grammes en kilogrammes, 15,4 inverse le rapport.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableau de mesures, où indique-t-on l'unité de chaque grandeur ?",
+      "propositions": [
+        "Nulle part, elle est sous-entendue",
+        "Seulement dans la conclusion",
+        "Dans la ligne d'en-tête",
+        "Dans le titre de l'axe des abscisses"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La ligne d'en-tête indique la grandeur et son unité, par exemple « I (A) » ; les cases ne contiennent alors que des nombres.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique, où place-t-on la grandeur que l'on fait varier, par exemple le temps ?",
+      "propositions": [
+        "En ordonnée",
+        "Dans la légende",
+        "Dans le titre",
+        "En abscisse"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La grandeur que l'on fait varier (souvent le temps) se place sur l'axe horizontal, en abscisse.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette doit atteindre 20 km/h en moins de 5 s. On relève 7,5 km/h à 1 s, 16,6 km/h à 3 s, 19,2 km/h à 4 s et 20,8 km/h à 5 s. Que conclure ?",
+      "propositions": [
+        "Respecté : 20 km/h est atteint entre 4 et 5 s",
+        "Non respecté : on n'a que 19,2 km/h à 4 s",
+        "Respecté : 20 km/h est atteint avant 3 s",
+        "Non respecté : il faudrait 25 km/h à 5 s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "19,2 km/h à 4 s (< 20) et 20,8 km/h à 5 s (> 20) : le seuil est franchi entre 4 s et 5 s, donc en moins de 5 s. L'exigence est respectée.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Quand plusieurs critères comptent pour choisir une solution, comment procède-t-on ?",
+      "propositions": [
+        "On garde le critère le plus favorable",
+        "Exigences impératives d'abord, puis critères qui départagent",
+        "On fait la moyenne de toutes les grandeurs",
+        "On choisit une solution au hasard"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On élimine d'abord les solutions qui ne respectent pas les exigences impératives, puis on départage les autres avec les critères secondaires.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Dans quel ordre organise-t-on une conclusion argumentée ?",
+      "propositions": [
+        "Conclusion, puis résultats choisis pour la soutenir",
+        "Résultats bruts seulement, sans conclusion",
+        "Exigence, résultats chiffrés, conclusion, causes et suite",
+        "Causes des écarts, puis exigence, sans aucun chiffre"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "On rappelle l'exigence et le critère, on donne les résultats chiffrés et les écarts, on conclut, puis on propose des causes et une suite.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments sont indispensables sur un graphique de résultats ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un titre",
+        "Des axes nommés avec leurs unités",
+        "Une légende quand plusieurs séries sont tracées",
+        "Une couleur rouge pour les mesures"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Titre, axes avec grandeurs et unités, légende si plusieurs séries. La couleur est un choix libre.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Un drone doit voler au moins 18 min. Batterie A : 22 min pour 520 g ; B : 20 min pour 380 g ; C : 17 min pour 300 g. Le second critère est l'autonomie par kilogramme. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La batterie C est éliminée par le premier critère",
+        "Parmi les batteries conformes, B a la meilleure autonomie par kilogramme",
+        "C a pourtant la plus grande autonomie par kilogramme des trois",
+        "A est retenue car elle vole le plus longtemps"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "C : 17 min < 18 min, éliminée, bien que 17 / 0,300 ≈ 57 min/kg soit le meilleur rapport. A : 22 / 0,520 ≈ 42 min/kg ; B : 20 / 0,380 ≈ 53 min/kg : B est retenue.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Sur un graphique, les résultats d'un modèle se représentent par une courbe continue.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Le modèle donne une valeur pour chaque instant : on trace une courbe continue. Les mesures sont des points.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Le critère de comparaison se choisit après l'essai, en fonction des résultats obtenus.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Le critère et son seuil se fixent à l'avance, sinon on risque de choisir le critère qui arrange.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Un VAE qui consomme 600 Wh sur 40 km a une consommation moyenne de 15 Wh/km.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. 600 / 40 = 15 Wh/km. C'est un critère qui combine deux grandeurs (énergie et distance).",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau de mesures, les nombres d'une même colonne peuvent avoir des nombres de décimales différents sans inconvénient.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Les nombres d'une même colonne ont le même nombre de décimales, qui traduit la précision de la mesure.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Un vélo à assistance électrique consomme 420 Wh pour parcourir 35 km. Quelle est sa consommation moyenne, en Wh/km ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 2,
+      "explication": "Consommation = 420 / 35 = 12 Wh/km.",
+      "notion": "Critères et présentation des résultats"
+    },
+    {
+      "source": "si-1re:ch10:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Une batterie de drone de 450 g assure 21 min de vol. Calcule son autonomie par kilogramme, en min/kg, arrondie à l'unité. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "47"
+      ],
+      "marge": 0.5,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Masse 450 g = 0,450 kg ; 21 / 0,450 ≈ 46,7 min/kg, soit 47 min/kg.",
+      "notion": "Critères et présentation des résultats"
+    }
+  ]
+}

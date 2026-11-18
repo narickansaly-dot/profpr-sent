@@ -1,0 +1,2301 @@
+{
+  "chapitre": 6,
+  "notions": [
+    "Solide indéformable et classes",
+    "Degrés de liberté",
+    "Liaisons usuelles",
+    "Graphe des liaisons et schéma",
+    "Hypothèses et modélisation plane",
+    "Forces, poids et pression",
+    "Moment d'une force et couple",
+    "Torseurs et actions transmissibles",
+    "Graphe des actions et réciprocité"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch6:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un solide indéformable ?",
+      "propositions": [
+        "Un solide qui ne peut pas bouger par rapport au bâti",
+        "Un solide dont la masse ne varie pas au cours du temps",
+        "Un solide dont la distance entre deux points quelconques reste constante",
+        "Un solide fabriqué dans un matériau très dur, comme l'acier trempé"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Par définition, la distance entre deux points quelconques d'un solide indéformable reste constante, quelles que soient les actions qu'il subit. Il peut bouger ; c'est sa forme qui ne change pas.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on un ensemble de pièces qui n'ont aucun mouvement relatif entre elles pendant le fonctionnement d'un mécanisme ?",
+      "propositions": [
+        "Un degré de liberté",
+        "Une classe d'équivalence",
+        "Une chaîne fermée de solides",
+        "Une liaison encastrement entre toutes les pièces"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un ensemble de pièces sans mouvement relatif forme une classe d'équivalence (sous-ensemble cinématiquement équivalent) ; elle se comporte comme un seul solide.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel numéro porte en général la classe d'équivalence qui sert de référence fixe, le bâti ?",
+      "propositions": [
+        "6",
+        "1",
+        "10",
+        "0"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le bâti, classe fixe de référence, porte en général le numéro 0 ; les autres classes sont numérotées 1, 2, 3…",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces pièces d'un vélo à assistance électrique, laquelle ne doit pas être modélisée comme un solide indéformable ?",
+      "propositions": [
+        "Le ressort de la fourche suspendue",
+        "Le carter en aluminium du moteur électrique",
+        "Le cadre en aluminium du vélo",
+        "Le pédalier en acier"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un ressort est fait pour se déformer : on ne le modélise pas comme un solide indéformable, on le remplace par l'action mécanique qu'il exerce.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Dans un roulement monté entre un arbre tournant et son logement fixe, à quelle classe appartient la bague intérieure ?",
+      "propositions": [
+        "À la classe de l'arbre",
+        "À une classe à part, avec les billes",
+        "À aucune classe, car elle tourne",
+        "À la classe du logement"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La bague intérieure est serrée sur l'arbre et tourne avec lui : elle appartient à la classe de l'arbre. La bague extérieure suit le logement ; on ne compte pas les billes.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Un portail battant est motorisé par un bras articulé : motoréducteur vissé sur le pilier, bras moteur, bras secondaire articulé au bout du bras moteur, vantail portant la patte qui reçoit le bras secondaire. Combien de classes d'équivalence compte le modèle ?",
+      "propositions": [
+        "10, une par pièce",
+        "5",
+        "4",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Bâti 0 (pilier, carter, patte de fixation), bras moteur 1, bras secondaire 2, vantail 3 avec sa patte vissée : 4 classes d'équivalence.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Sur une trottinette électrique, le guidon, la potence, la colonne de direction et la fourche sont assemblés par des vis. Que peut-on en conclure ?",
+      "propositions": [
+        "Ils forment quatre classes reliées par des pivots",
+        "Ils forment une même classe d'équivalence",
+        "Ils appartiennent tous au bâti de la trottinette",
+        "Ils doivent être modélisés comme des pièces déformables"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Des pièces vissées entre elles n'ont aucun mouvement relatif : elles forment une seule classe (l'ensemble de direction), qui tourne par rapport au cadre.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Le bras moteur d'un portail est fixé sur l'arbre de sortie du réducteur par une vis et une rondelle. À quelle classe appartiennent cette vis et cette rondelle ?",
+      "propositions": [
+        "Au bâti, car la vis est en acier",
+        "À la classe du vantail du portail",
+        "À une classe propre à chaque vis",
+        "À la classe du bras moteur"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La vis et la rondelle sont immobiles par rapport au bras qu'elles fixent : elles appartiennent à la même classe d'équivalence que le bras moteur.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Le bras en acier d'un portail fléchit de 0,3 mm quand le vent pousse le vantail, qui tourne de 90° à l'ouverture. Pourquoi peut-on modéliser ce bras comme un solide indéformable pour étudier le mouvement ?",
+      "propositions": [
+        "L'acier est un matériau qui ne se déforme jamais, même sous un effort important",
+        "Le vent ne s'exerce que lorsque le portail est fermé",
+        "Sa déformation est très petite devant les déplacements étudiés",
+        "Un solide en rotation ne peut pas se déformer"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Toute pièce réelle se déforme un peu ; on néglige la déformation (quelques dixièmes de millimètre) parce qu'elle est minuscule devant les déplacements étudiés (le vantail tourne de 90°). C'est une hypothèse simplificatrice.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Deux pièces d'un mécanisme appartiennent à la même classe d'équivalence si elles sont liées par… Coche toutes les réponses exactes.",
+      "propositions": [
+        "un vissage",
+        "une liaison pivot",
+        "une liaison glissière",
+        "une soudure",
+        "un collage"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "Vissage, soudure, collage (comme rivetage ou emmanchement serré) suppriment tout mouvement relatif : même classe. Un pivot ou une glissière laisse un mouvement : les pièces sont dans deux classes différentes.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Lors de la recherche des classes d'équivalence d'un mécanisme, quelles pièces écarte-t-on, car elles sont déformables ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les arbres en acier",
+        "Les joints en caoutchouc",
+        "Les vis de fixation",
+        "Les courroies",
+        "Les ressorts"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "On écarte les pièces faites pour se déformer : ressorts, courroies, joints, câbles. Les vis appartiennent à la classe des pièces qu'elles fixent, et un arbre en acier est considéré comme indéformable.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Une trottinette électrique est modélisée sans les roulements, les câbles ni les pneus. Quels ensembles forment des classes d'équivalence distinctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'ensemble guidon, potence, colonne et fourche",
+        "Le guidon seul, séparé de la fourche",
+        "La roue arrière",
+        "Le cadre avec le plateau"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le modèle compte 4 classes : cadre avec plateau (bâti 0), ensemble de direction (guidon, potence, colonne, fourche, vissés entre eux), roue avant et roue arrière. Le guidon est vissé sur la potence : il ne forme pas une classe à part.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Un modèle de mécanisme est une représentation simplifiée qui garde l'essentiel du fonctionnement et néglige le reste.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est le rôle du modèle : on oublie les détails (vis, rondelles, joints) pour garder ce qui compte pour les mouvements et les efforts.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Deux pièces d'une même classe d'équivalence peuvent tourner l'une par rapport à l'autre.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : par définition, les pièces d'une même classe n'ont aucun mouvement relatif entre elles pendant le fonctionnement.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Dans le modèle d'un mécanisme, les billes d'un roulement forment une classe d'équivalence qu'il faut compter.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : on ne compte pas les billes. La bague intérieure suit l'arbre, la bague extérieure suit le logement.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Le résultat d'un calcul fait sur un modèle n'est valable que si les hypothèses simplificatrices sont justifiées.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : c'est pourquoi on énonce clairement les hypothèses et qu'on les vérifie en comparant le modèle à des mesures.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:017",
+      "type": "reponse_courte",
+      "enonce": "Une trottinette électrique est modélisée par le cadre avec le plateau, l'ensemble de direction (guidon, potence, colonne, fourche), la roue avant et la roue arrière. Combien de classes d'équivalence ce modèle comporte-t-il ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "Cadre et plateau (bâti 0), ensemble de direction, roue avant, roue arrière : 4 classes d'équivalence.",
+      "notion": "Solide indéformable et classes"
+    },
+    {
+      "source": "si-1re:ch6:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Combien de degrés de liberté possède un solide totalement libre dans l'espace ?",
+      "propositions": [
+        "6",
+        "12",
+        "4",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un solide libre dans l'espace a 6 degrés de liberté : 3 translations (Tx, Ty, Tz) et 3 rotations (Rx, Ry, Rz).",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Combien de degrés de liberté possède un solide qui se déplace librement dans un plan ?",
+      "propositions": [
+        "2",
+        "3",
+        "4",
+        "6, comme dans l'espace"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans le plan (x, y), il reste deux translations (Tx, Ty) et une rotation (Rz) : 3 degrés de liberté.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Pour un solide qui se déplace dans le plan (x, y), quels sont les mouvements élémentaires possibles ?",
+      "propositions": [
+        "Tz, Rx et Ry",
+        "Tx, Ty et Rz",
+        "Rx, Ry et Rz",
+        "Tx, Ty et Tz"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans le plan (x, y), le solide peut translater selon x et y et tourner autour de l'axe z, perpendiculaire au plan.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Un tiroir ne peut que coulisser dans son meuble. Quel est le degré de liaison entre le tiroir et le meuble ?",
+      "propositions": [
+        "1, comme son nombre de ddl",
+        "5",
+        "0",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le tiroir a 1 ddl (Tx). Degré de liaison = 6 − 1 = 5 mouvements supprimés. Le 1 est le nombre de ddl, pas le degré de liaison.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:022",
+      "type": "qcm_unique",
+      "enonce": "La bille d'un stylo peut tourner dans tous les sens dans son logement, mais ne peut pas en sortir. Quels sont ses degrés de liberté par rapport au corps du stylo ?",
+      "propositions": [
+        "Tx, Ty et Tz",
+        "Rx, Ry et Rz",
+        "Tx, Ty et Rz",
+        "Aucun, elle est prisonnière"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les trois translations sont impossibles (la bille est retenue), les trois rotations sont possibles : 3 ddl, Rx, Ry et Rz.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Quel est le degré de liaison d'un drone en vol par rapport au sol ?",
+      "propositions": [
+        "3",
+        "1",
+        "0",
+        "6, comme son nombre de ddl"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le drone en vol est libre : il a 6 ddl, donc le degré de liaison vaut 6 − 6 = 0. Aucun mouvement n'est supprimé.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que désigne le degré de liaison d'une liaison mécanique ?",
+      "propositions": [
+        "Le nombre de mouvements élémentaires qu'elle laisse possibles",
+        "Le nombre de mouvements élémentaires qu'elle supprime",
+        "Le nombre de pièces qu'elle relie",
+        "L'angle maximal de rotation qu'elle permet"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le degré de liaison est le nombre de mouvements supprimés ; dans l'espace, il vaut 6 − nombre de ddl.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Une liaison entre deux solides supprime 4 mouvements élémentaires dans l'espace. Combien de degrés de liberté laisse-t-elle, et quelle liaison usuelle cela peut-il être ?",
+      "propositions": [
+        "4 ddl, par exemple une ponctuelle",
+        "4 ddl, par exemple une linéaire annulaire",
+        "2 ddl, par exemple une rotule",
+        "2 ddl, par exemple un pivot glissant"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "ddl = 6 − degré de liaison = 6 − 4 = 2. Le pivot glissant laisse 2 ddl (Tx et Rx). La rotule laisse 3 ddl, la ponctuelle 5, la linéaire annulaire 4.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces notations, lesquelles désignent des mouvements élémentaires de translation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Rx",
+        "Tz",
+        "Rz",
+        "Tx",
+        "Ty"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "Les translations sont notées Tx, Ty, Tz (le long des axes) ; Rx, Ry, Rz sont des rotations autour des axes.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Un solide est étudié dans le plan (x, y). Quels mouvements font partie de ses degrés de liberté possibles ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Tz",
+        "Ty",
+        "Tx",
+        "Rx",
+        "Rz"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Dans le plan (x, y), seuls Tx, Ty et Rz existent. Tz et Rx feraient sortir le solide du plan.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Quels objets ont exactement 1 degré de liberté par rapport à leur support ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un tiroir dans un meuble",
+        "Une souris sur un tapis",
+        "Le vantail d'un portail sur ses gonds",
+        "Un moteur vissé sur un cadre de vélo",
+        "Un drone en vol par rapport au sol"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le tiroir (Tx) et le vantail (Rz) ont 1 ddl. La souris en a 3, le moteur vissé 0, le drone 6.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Une souris d'ordinateur glisse sur un tapis plat. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle a 3 degrés de liberté par rapport au tapis",
+        "Elle peut tourner autour de l'axe normal au tapis",
+        "Le degré de liaison vaut 3",
+        "Elle peut tourner autour d'un axe horizontal"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La souris peut translater dans le plan du tapis (Tx, Ty) et tourner autour de la normale (Rz) : 3 ddl, degré de liaison 6 − 3 = 3. Tourner autour d'un axe horizontal la ferait décoller.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Un degré de liberté est toujours un mouvement relatif entre deux solides : on doit préciser par rapport à quoi.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : la roue d'un fauteuil roulant a 1 ddl par rapport au châssis, pas par rapport au sol. On dit toujours par rapport à quoi.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Une souris qui glisse sur un tapis a 6 degrés de liberté par rapport à ce tapis.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : elle n'a que 3 ddl (Tx, Ty, Rz). Monter, ou basculer autour d'un axe horizontal, la ferait quitter le tapis.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:032",
+      "type": "vrai_faux",
+      "enonce": "Le degré de liaison entre un moteur vissé sur un cadre de vélo et ce cadre vaut 6.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : le moteur n'a aucun mouvement par rapport au cadre (0 ddl), donc degré de liaison = 6 − 0 = 6.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:033",
+      "type": "reponse_courte",
+      "enonce": "Le palpeur d'un capteur touche une pièce plane en un point : c'est une liaison ponctuelle. Combien de mouvements élémentaires cette liaison supprime-t-elle ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 1,
+      "explication": "La ponctuelle laisse 5 ddl (Tx, Ty, Rx, Ry, Rz) : seule la translation selon la normale est supprimée. Degré de liaison = 6 − 5 = 1.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:034",
+      "type": "reponse_courte",
+      "enonce": "Une liaison laisse 2 degrés de liberté entre deux solides dans l'espace. Quel est son degré de liaison ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "Degré de liaison = 6 − ddl = 6 − 2 = 4 mouvements supprimés.",
+      "notion": "Degrés de liberté"
+    },
+    {
+      "source": "si-1re:ch6:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quelle liaison relie un tiroir à son meuble ?",
+      "propositions": [
+        "Un pivot",
+        "Une glissière",
+        "Un appui plan sur le fond",
+        "Une rotule"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le tiroir ne peut que translater selon une direction : c'est une liaison glissière (1 ddl, Tx).",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Quelle liaison relie une roue de vélo à son axe, sachant qu'elle tourne mais ne glisse pas le long de celui-ci ?",
+      "propositions": [
+        "Un pivot glissant",
+        "Un pivot",
+        "Une glissière",
+        "Une hélicoïdale"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une seule rotation autour de l'axe, pas de translation : c'est une liaison pivot (1 ddl).",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Combien de degrés de liberté laisse une liaison pivot glissant ?",
+      "propositions": [
+        "4, comme la linéaire annulaire",
+        "1",
+        "2",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le pivot glissant (cylindre dans cylindre) permet la rotation et la translation selon l'axe : Tx et Rx, soit 2 ddl.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Dans un vérin électrique, une vis tourne dans un écrou relié à la tige. Quelle liaison relie la vis et l'écrou, et combien de degrés de liberté laisse-t-elle ?",
+      "propositions": [
+        "Hélicoïdale, 1 ddl",
+        "Hélicoïdale, 2 ddl",
+        "Pivot glissant, 2 ddl",
+        "Glissière, 1 ddl"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Vis dans écrou : liaison hélicoïdale. La rotation et la translation sont liées par le pas : il n'y a qu'un seul degré de liberté.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Une sphère est posée sur un plan. Quelle liaison modélise ce contact ?",
+      "propositions": [
+        "Une rotule, à 3 ddl",
+        "Une linéaire annulaire, à 4 ddl",
+        "Une ponctuelle, à 5 ddl",
+        "Un appui plan, à 3 ddl"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Contact sphère-plan : liaison ponctuelle. Seule la translation selon la normale est supprimée : 5 ddl.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Le manche d'une radiocommande de drone peut s'incliner dans toutes les directions et tourner, sans se déplacer. Quelle liaison le relie au boîtier ?",
+      "propositions": [
+        "Un pivot",
+        "Une rotule",
+        "Une ponctuelle",
+        "Un encastrement"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Trois rotations possibles autour d'un centre fixe, aucune translation : c'est une rotule (liaison sphérique) à 3 ddl.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Un arbre est monté dans un alésage cylindrique, et un anneau élastique (circlip) empêche tout coulissement. Quelle liaison obtient-on ?",
+      "propositions": [
+        "Un pivot glissant",
+        "Un pivot",
+        "Une linéaire annulaire",
+        "Une glissière"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Sans arrêt axial, ce serait un pivot glissant (2 ddl). Le circlip supprime la translation : il ne reste que la rotation, c'est un pivot.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quand dit-on qu'une liaison mécanique est parfaite ?",
+      "propositions": [
+        "Quand elle supprime les six mouvements",
+        "Quand elle ne s'use jamais au cours du temps",
+        "Quand elle est réalisée avec des roulements de précision",
+        "Surfaces parfaites, sans jeu ni frottement"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Une liaison parfaite a des surfaces géométriquement parfaites, sans jeu, et le contact se fait sans frottement. C'est un modèle.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:043",
+      "type": "qcm_unique",
+      "enonce": "La vis d'un vérin électrique a un pas de 5 mm. Le moteur la fait tourner de 120 tours. De combien la tige du vérin sort-elle ?",
+      "propositions": [
+        "0,024 m",
+        "6 m",
+        "0,06 m",
+        "0,6 m"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Déplacement = pas × nombre de tours = 5 mm × 120 = 600 mm = 0,6 m.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Quelles liaisons laissent exactement 1 degré de liberté ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le pivot",
+        "Le pivot glissant",
+        "La glissière",
+        "L'hélicoïdale",
+        "La rotule"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pivot (Rx), glissière (Tx) et hélicoïdale (Tx et Rx liés) ont 1 ddl. Le pivot glissant en a 2, la rotule 3.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Un rouleau cylindrique repose sur un plan. Quelles affirmations sur la liaison entre le rouleau et le plan sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle laisse 4 degrés de liberté",
+        "C'est une liaison linéaire rectiligne",
+        "C'est une liaison appui plan",
+        "Elle laisse 2 degrés de liberté"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Cylindre sur plan : liaison linéaire rectiligne, 4 ddl (deux translations dans le plan, rotation autour de la ligne de contact et autour de la normale).",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "On cherche les liaisons qui autorisent trois mouvements élémentaires indépendants, ni plus ni moins. Lesquelles conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La ponctuelle",
+        "L'appui plan",
+        "Le pivot glissant",
+        "La rotule",
+        "La linéaire annulaire"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Rotule (3 rotations) et appui plan (Tx, Ty, Rz) ont 3 ddl. Linéaire annulaire : 4 ; ponctuelle : 5 ; pivot glissant : 2.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "Pour décrire complètement une liaison, quelles écritures sont correctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Glissière de direction x",
+        "Rotule de centre O",
+        "Pivot, sans autre précision",
+        "Pivot d'axe (A, z)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le nom seul ne suffit pas : on précise toujours l'axe d'un pivot, la direction d'une glissière, le centre d'une rotule.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Une liaison encastrement laisse une rotation possible autour de son axe.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : l'encastrement (pièces vissées, soudées, collées) ne laisse aucun mouvement : 0 ddl.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Dans une liaison hélicoïdale, la rotation et la translation ne sont pas indépendantes : elles sont liées par le pas.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : quand la vis fait un tour, l'écrou avance d'un pas p. C'est pourquoi l'hélicoïdale n'a qu'un ddl.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:050",
+      "type": "vrai_faux",
+      "enonce": "La liaison linéaire annulaire correspond au contact d'une sphère posée sur un plan.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : la linéaire annulaire est une sphère dans un cylindre (4 ddl). Une sphère sur un plan forme une liaison ponctuelle (5 ddl).",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:051",
+      "type": "reponse_courte",
+      "enonce": "La vis d'un vérin de portail a un pas de 2,5 mm. Combien de tours doit-elle faire pour que la tige sorte de 150 mm ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "60"
+      ],
+      "difficulte": 2,
+      "explication": "Nombre de tours = déplacement / pas = 150 mm / 2,5 mm = 60 tours.",
+      "notion": "Liaisons usuelles"
+    },
+    {
+      "source": "si-1re:ch6:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Dans un graphe des liaisons, comment représente-t-on une classe d'équivalence ?",
+      "propositions": [
+        "Par un cercle portant son numéro",
+        "Par le symbole normalisé de sa liaison",
+        "Par une flèche orientée vers le bâti",
+        "Par un rectangle hachuré"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Chaque classe d'équivalence est un cercle numéroté ; chaque liaison est un trait entre deux cercles, avec son nom et ses éléments géométriques.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Dans un graphe des liaisons, que représente un trait qui relie deux cercles ?",
+      "propositions": [
+        "Une pièce déformable comme un ressort",
+        "Le poids d'une classe d'équivalence",
+        "Une liaison entre deux classes",
+        "Le sens du mouvement de la classe menante"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un trait relie deux classes d'équivalence et représente la liaison entre elles, par exemple « pivot (A, z) ».",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Un bras robotisé est formé d'un socle, d'un bras, d'un avant-bras et d'une pince, chacun lié au suivant. Quelle est la structure de son graphe des liaisons ?",
+      "propositions": [
+        "Une chaîne ouverte",
+        "Une chaîne fermée",
+        "Un graphe sans liaison",
+        "Une boucle unique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les solides se suivent sans former de boucle : c'est une chaîne ouverte, chaque articulation ayant son propre moteur.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Dans un système bielle-manivelle, quelle liaison relie le piston au bâti ?",
+      "propositions": [
+        "Une rotule",
+        "Une glissière",
+        "Un pivot",
+        "Une hélicoïdale"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le piston coulisse dans le cylindre sans tourner : c'est une glissière de direction x. Les trois autres liaisons (en A, B, C) sont des pivots.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un mécanisme comporte C = 4 classes d'équivalence et L = 4 liaisons, son graphe étant connexe. Combien de boucles indépendantes possède-t-il ?",
+      "propositions": [
+        "2",
+        "8, soit L + C",
+        "0",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "γ = L − C + 1 = 4 − 4 + 1 = 1. Il y a une boucle : la chaîne est fermée, comme dans un système bielle-manivelle.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Le mécanisme d'un essuie-glace (bâti, manivelle, bielle, balancier reliés par quatre pivots d'axes parallèles) est un quadrilatère articulé. Quel mouvement produit-il ?",
+      "propositions": [
+        "Une rotation alternée à partir d'une rotation continue",
+        "Une rotation continue de même vitesse",
+        "Une translation continue à partir d'une rotation",
+        "Une rotation continue à partir d'une translation"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La manivelle tourne en continu ; le balancier, qui porte le bras et le balai, effectue un aller-retour : rotation continue transformée en rotation alternée.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un schéma cinématique ?",
+      "propositions": [
+        "Un dessin à l'échelle de la forme exacte des pièces",
+        "Un tableau des degrés de liberté",
+        "Les symboles des liaisons placés comme dans le mécanisme réel",
+        "La liste des pièces avec leurs matériaux"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le schéma cinématique utilise les symboles normalisés des liaisons, placés et orientés comme dans le mécanisme réel, reliés par des traits de la couleur de chaque classe. Il ne montre pas la forme des pièces.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Le graphe connexe d'un mécanisme comporte 5 classes d'équivalence et 6 liaisons. Que peut-on en déduire ?",
+      "propositions": [
+        "Deux boucles : chaîne fermée",
+        "Onze boucles : chaîne fermée",
+        "Aucune boucle : chaîne ouverte",
+        "Une boucle : chaîne ouverte"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "γ = L − C + 1 = 6 − 5 + 1 = 2 boucles indépendantes. Dès que γ ⩾ 1, la chaîne est fermée.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:060",
+      "type": "qcm_multiple",
+      "enonce": "Quelles règles respecte-t-on en traçant un schéma cinématique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les symboles sont orientés comme dans le mécanisme réel",
+        "Les pièces sont dessinées avec leur forme exacte",
+        "Une couleur par classe d'équivalence",
+        "Le bâti est hachuré"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On attribue une couleur à chaque classe, on hachure le bâti, et on place et oriente les symboles comme dans le réel. La forme exacte des pièces n'apparaît pas.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Quels mécanismes ont un graphe des liaisons qui forme une chaîne fermée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le mécanisme d'un essuie-glace",
+        "Une pince coupante à deux branches",
+        "Un système bielle-manivelle",
+        "Un bras robotisé à trois articulations"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Bielle-manivelle et essuie-glace (quadrilatère articulé) forment une boucle. Le bras robotisé (γ = 3 − 4 + 1 = 0) et la pince (2 classes, 1 liaison) sont des chaînes ouvertes.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "On étudie un système bielle-manivelle : bâti 0, manivelle 1, bielle 2, piston 3. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le nombre de boucles γ vaut 1",
+        "Le piston est relié directement à la manivelle",
+        "Il comporte trois pivots d'axes parallèles",
+        "La rotation de la manivelle impose la translation du piston",
+        "Le graphe des liaisons est une chaîne ouverte"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Pivots en A (0-1), B (1-2), C (2-3) et glissière (3-0) : C = 4, L = 4, γ = 1, chaîne fermée. Le piston est relié à la bielle, pas à la manivelle.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:063",
+      "type": "vrai_faux",
+      "enonce": "Deux mécanismes de formes très différentes peuvent avoir le même schéma cinématique.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : le schéma ne montre pas la forme des pièces, seulement les liaisons et leurs positions.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:064",
+      "type": "vrai_faux",
+      "enonce": "Dans un schéma cinématique, on peut placer les symboles des liaisons n'importe où : seuls leur nombre et leur type comptent.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : la position des centres et l'orientation des axes doivent être respectées, sinon le schéma ne bouge pas comme le mécanisme réel.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:065",
+      "type": "vrai_faux",
+      "enonce": "Le graphe des liaisons d'une pince multiprise comporte 2 classes d'équivalence et 1 liaison.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : deux branches reliées par un pivot, soit 2 classes et 1 liaison.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Une chaîne ouverte de solides comporte au moins une boucle dans son graphe des liaisons.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : une chaîne ouverte n'a aucune boucle (γ = 0) ; c'est une chaîne fermée qui en comporte au moins une.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:067",
+      "type": "reponse_courte",
+      "enonce": "Un bras robotisé industriel comporte 7 classes d'équivalence (socle compris) reliées les unes à la suite des autres par 6 liaisons pivot. Combien de boucles indépendantes son graphe comporte-t-il ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "0"
+      ],
+      "difficulte": 2,
+      "explication": "γ = L − C + 1 = 6 − 7 + 1 = 0 : aucune boucle, c'est une chaîne ouverte.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:068",
+      "type": "reponse_courte",
+      "enonce": "Le graphe connexe d'un mécanisme de presse comporte 6 classes d'équivalence et 7 liaisons. Calcule le nombre γ de boucles indépendantes. Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 3,
+      "explication": "γ = L − C + 1 = 7 − 6 + 1 = 2 boucles : la chaîne est fermée.",
+      "notion": "Graphe des liaisons et schéma"
+    },
+    {
+      "source": "si-1re:ch6:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Que faut-il faire d'une hypothèse simplificatrice choisie pour étudier un mécanisme ?",
+      "propositions": [
+        "L'énoncer et la justifier",
+        "L'appliquer à tous les mécanismes sans distinction",
+        "La garder secrète pour ne pas compliquer l'étude",
+        "La remplacer par une mesure systématique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une hypothèse simplificatrice doit être énoncée et justifiée, car le résultat n'est valable que si elle l'est.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Dans quel cas peut-on étudier un mécanisme par une modélisation plane ?",
+      "propositions": [
+        "Quand il ne comporte qu'une seule liaison avec le bâti fixe",
+        "Quand ses mouvements sont contenus dans un plan",
+        "Quand toutes ses pièces sont plates",
+        "Quand son poids est négligeable"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On fait une modélisation plane quand les mouvements sont contenus dans un plan, en général grâce à un plan de symétrie (géométrie et efforts) ou à des mouvements dans des plans parallèles.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Combien de liaisons différentes faut-il connaître en modélisation plane ?",
+      "propositions": [
+        "4",
+        "10",
+        "6",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Dans le plan, il reste l'encastrement, le pivot, la glissière et la ponctuelle : 4 liaisons.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Dans une étude plane (x, y), à quelle liaison plane se ramène une rotule de centre A ?",
+      "propositions": [
+        "Un encastrement en A",
+        "Une ponctuelle en A",
+        "Un pivot de centre A",
+        "Une glissière de direction x"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Dans le plan, seule la rotation autour de z subsiste parmi les rotations de la rotule : elle se ramène à un pivot de centre A.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans une étude plane (x, y), à quelle liaison plane se ramène un appui plan de normale y ?",
+      "propositions": [
+        "Une ponctuelle de normale y",
+        "Une glissière de direction x",
+        "Un pivot de centre A",
+        "Un encastrement"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "L'appui plan de normale y permet Tx, Tz et Ry ; dans le plan (x, y), il ne reste que Tx : c'est une glissière de direction x.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Dans une étude plane (x, y), un rouleau repose sur un plan horizontal (linéaire rectiligne de normale y, ligne de contact parallèle à z). À quelle liaison plane cela correspond-il ?",
+      "propositions": [
+        "Une glissière de direction x",
+        "Un pivot de centre A",
+        "Un encastrement",
+        "Une ponctuelle de normale y"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Dans le plan, il reste Tx et Rz : c'est une ponctuelle (contact) de normale y, à 2 ddl.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Dans un compresseur, une bielle de 50 g transmet des efforts qui atteignent 2 000 N. Quelle hypothèse est justifiée ?",
+      "propositions": [
+        "Supprimer la bielle du modèle",
+        "Négliger le poids de la bielle",
+        "Considérer la bielle comme déformable",
+        "Remplacer la bielle par un encastrement"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le poids de la bielle (environ 0,5 N) est très faible devant les efforts de 2 000 N : on peut le négliger.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Un portail battant est étudié dans un plan horizontal (vue de dessus). Pourquoi ce modèle ne permet-il pas de dimensionner les gonds sous le poids du vantail ?",
+      "propositions": [
+        "Le poids du vantail est toujours négligeable",
+        "Le poids, vertical, est perpendiculaire au plan d'étude",
+        "Le vantail est un solide déformable",
+        "Les gonds sont des liaisons encastrement"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Une modélisation plane ne permet pas d'étudier les efforts perpendiculaires au plan. Le poids, vertical, n'apparaît pas dans un modèle horizontal : il faut une étude dans un plan vertical.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Quelles hypothèses simplificatrices sont couramment faites pour modéliser un mécanisme ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le problème est plan",
+        "Les solides sont indéformables",
+        "Les liaisons sont parfaites",
+        "Le mécanisme est immobile en permanence"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Solides indéformables, liaisons parfaites, poids négligé, action répartie remplacée par une force, problème plan sont les hypothèses courantes. Supposer le mécanisme immobile n'a pas de sens pour étudier ses mouvements.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Dans une étude plane (x, y), quelles liaisons de l'espace se ramènent à un pivot de centre A ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un pivot d'axe (A, z)",
+        "Un pivot glissant d'axe (A, z)",
+        "Une glissière de direction x",
+        "Une ponctuelle de normale y en A",
+        "Une rotule de centre A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Pivot d'axe (A, z), rotule de centre A et pivot glissant d'axe (A, z) ne laissent, dans le plan, que la rotation Rz : pivot plan de centre A.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Le vantail d'un portail tient par deux gonds alignés sur un axe vertical. Quelles affirmations sur sa modélisation sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On remplace les deux gonds par une seule liaison pivot équivalente",
+        "Chaque gond forme une classe d'équivalence distincte du pilier",
+        "Ce remplacement fait partie des hypothèses du modèle",
+        "Un modèle plan horizontal suffit pour dimensionner les gonds"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Deux zones de contact entre les mêmes classes sont remplacées par une liaison équivalente (pivot), ce qui est une hypothèse. Les gonds sont fixés au pilier (bâti) et le poids, vertical, échappe au modèle horizontal.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:080",
+      "type": "vrai_faux",
+      "enonce": "Une hypothèse simplificatrice n'a jamais besoin d'être vérifiée.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : une hypothèse se vérifie en comparant les résultats du modèle à des mesures ; si l'écart est trop grand, on l'abandonne.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:081",
+      "type": "vrai_faux",
+      "enonce": "Si les résultats d'un modèle s'écartent trop des mesures, il faut abandonner une hypothèse et enrichir le modèle.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est la démarche de validation d'un modèle.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:082",
+      "type": "vrai_faux",
+      "enonce": "La modélisation plane permet d'étudier les efforts perpendiculaires au plan d'étude.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : ces efforts n'apparaissent pas dans un modèle plan ; il faut une autre étude dans un autre plan.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:083",
+      "type": "vrai_faux",
+      "enonce": "Dans un modèle plan (x, y), les axes des liaisons pivot sont perpendiculaires au plan d'étude.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : tous les axes de pivot sont parallèles à z, perpendiculaires au plan (x, y), et un solide n'y a que Tx, Ty et Rz.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:084",
+      "type": "reponse_courte",
+      "enonce": "Dans une étude plane, combien de degrés de liberté laisse une liaison ponctuelle (contact) de normale y ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 2,
+      "explication": "La ponctuelle plane de normale y permet Tx et Rz : 2 ddl. Seule Ty est supprimée.",
+      "notion": "Hypothèses et modélisation plane"
+    },
+    {
+      "source": "si-1re:ch6:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime l'intensité d'une force ?",
+      "propositions": [
+        "Le joule (J)",
+        "Le kilogramme (kg)",
+        "Le pascal (Pa)",
+        "Le newton (N)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité d'une force s'exprime en newtons (N). Le kilogramme mesure une masse, le pascal une pression, le joule une énergie.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les quatre caractéristiques d'une force ?",
+      "propositions": [
+        "Masse, vitesse, direction, durée",
+        "Point d'application, direction, sens, intensité",
+        "Intensité, puissance, énergie, sens",
+        "Point d'application, masse, surface, pression"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une force est un vecteur défini par son point d'application, sa direction (droite d'action), son sens et son intensité en N.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces actions mécaniques, laquelle est une action à distance ?",
+      "propositions": [
+        "L'appui du pied sur une pédale",
+        "L'action du sol sur une roue",
+        "La pesanteur",
+        "La poussée d'un fluide sur un piston"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La pesanteur s'exerce sans contact : c'est une action à distance. Les trois autres s'exercent par une surface de contact.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Un drone de prise de vue a une masse de 2,5 kg. Quelle est l'intensité de son poids ? On prend g = 9,81 N/kg.",
+      "propositions": [
+        "0,25 N",
+        "245,25 N",
+        "2,5 N",
+        "24,5 N"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P = m × g = 2,5 × 9,81 ≈ 24,5 N. Le 2,5 est la masse en kg, pas le poids.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Un drone de 1,4 kg est emporté sur la Lune, où la pesanteur est environ six fois plus faible. Que deviennent sa masse et son poids ?",
+      "propositions": [
+        "Masse et poids six fois plus faibles",
+        "Masse six fois plus faible, même poids",
+        "Même masse, poids environ six fois plus faible",
+        "Masse et poids inchangés"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La masse (en kg) est propre à l'objet et ne change pas ; le poids P = m × g dépend de g, il est environ six fois plus faible.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:090",
+      "type": "qcm_unique",
+      "enonce": "Comment est orientée une action de contact sans frottement entre deux solides ?",
+      "propositions": [
+        "Perpendiculairement aux surfaces en contact",
+        "Parallèlement aux surfaces en contact",
+        "Dans le sens du glissement",
+        "Toujours verticalement vers le haut"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Sans frottement, l'action de contact est normale (perpendiculaire) aux surfaces. Avec frottement, elle s'incline.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Un câble tire sur la lisse d'une barrière avec une force de 300 N inclinée de 30° au-dessus de l'horizontale x. Que vaut la composante horizontale Fx ?",
+      "propositions": [
+        "150 N",
+        "346,4 N",
+        "300 N",
+        "260 N"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Fx = F × cos 30° = 300 × 0,866 ≈ 260 N. 150 N est la composante verticale Fy = 300 × sin 30°.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Le vérin pneumatique d'un bras robotisé a un piston de diamètre 40 mm, alimenté sous 5 bar. Quelle force de poussée exerce-t-il ?",
+      "propositions": [
+        "628 N",
+        "2 513 N",
+        "0,0063 N",
+        "157 N"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Rayon 0,020 m : S = π × 0,020² ≈ 1,257 × 10⁻³ m². p = 5 bar = 5 × 10⁵ Pa. F = p × S ≈ 628 N. Prendre le diamètre comme rayon donne 2 513 N ; oublier de convertir les bar donne 0,0063 N.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces actions mécaniques, lesquelles sont des actions à distance ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'attraction d'une ventouse électromagnétique sur un portail",
+        "La poussée de l'air comprimé sur un piston",
+        "L'appui du pied sur une pédale de vélo",
+        "Le poids d'un fauteuil roulant"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pesanteur et action magnétique s'exercent sans contact. L'appui du pied et la poussée d'un fluide sont des actions de contact.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le poids d'un solide sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il s'exprime en kilogrammes",
+        "Il est vertical et dirigé vers le bas",
+        "Son intensité vaut P = m × g",
+        "Il est appliqué au centre de gravité"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le poids est une force verticale vers le bas, appliquée en G, d'intensité P = m × g en newtons. Le kilogramme est l'unité de masse.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la pression sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "p = F / S, avec F en N et S en m²",
+        "1 bar = 1 000 Pa",
+        "Une pression s'exprime en newtons",
+        "1 bar = 10⁵ Pa"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La pression vaut p = F / S, en pascals (1 Pa = 1 N/m²), et 1 bar = 10⁵ Pa = 100 000 Pa.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:096",
+      "type": "vrai_faux",
+      "enonce": "Le poids d'un solide est appliqué en son centre de gravité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : le poids est une force verticale, vers le bas, appliquée au centre de gravité G.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Une action de contact sans frottement peut être inclinée par rapport à la normale aux surfaces en contact.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : sans frottement, l'action de contact est toujours normale (perpendiculaire) aux surfaces. Seul le frottement l'incline.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Une pression uniforme sur une surface peut être remplacée, dans le modèle, par une force unique appliquée au centre de cette surface.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : on remplace l'action répartie par une force équivalente appliquée au bon point, le centre de la surface pour une pression uniforme.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:099",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'intensité du poids d'un colis de 10 kg livré par drone ? On prend g = 9,81 N/kg. Donne la valeur en newtons, le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "98,1"
+      ],
+      "difficulte": 1,
+      "explication": "P = m × g = 10 × 9,81 = 98,1 N.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:100",
+      "type": "reponse_courte",
+      "enonce": "Un fauteuil roulant électrique de 80 kg transporte une personne de 70 kg. Calcule le poids de l'ensemble en newtons, avec g = 9,81 N/kg, arrondi à l'unité. Donne le nombre seul, sans unité et sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "1472"
+      ],
+      "marge": 1,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "P = (80 + 70) × 9,81 = 150 × 9,81 = 1 471,5 N, soit 1 472 N arrondi à l'unité.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:101",
+      "type": "reponse_courte",
+      "enonce": "Une force de 900 N est répartie uniformément sur une surface de 0,0015 m². Calcule la pression correspondante en bar. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "6"
+      ],
+      "difficulte": 3,
+      "explication": "p = F / S = 900 / 0,0015 = 600 000 Pa. Comme 1 bar = 10⁵ Pa, p = 6 bar.",
+      "notion": "Forces, poids et pression"
+    },
+    {
+      "source": "si-1re:ch6:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime le moment d'une force par rapport à un point ?",
+      "propositions": [
+        "Le newton (N)",
+        "Le newton par mètre (N/m)",
+        "Le watt (W)",
+        "Le newton-mètre (N·m)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le moment vaut F × d, une force en N multipliée par une distance en m : il s'exprime en N·m.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer le moment d'une force par rapport à un point A, qu'appelle-t-on le bras de levier d ?",
+      "propositions": [
+        "La distance de A à la droite d'action",
+        "La longueur totale de la pièce",
+        "La distance du point d'application au sol",
+        "La distance de A au point d'application de la force"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le bras de levier est la distance du point A à la droite d'action de la force, mesurée perpendiculairement à celle-ci, pas la distance au point d'application.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:104",
+      "type": "qcm_unique",
+      "enonce": "On tire sur une porte avec une force dont la droite d'action passe exactement par l'axe des gonds. Que vaut le moment de cette force par rapport à cet axe ?",
+      "propositions": [
+        "Il vaut F × la largeur de la porte",
+        "Il est maximal",
+        "Il dépend du sens de la force",
+        "Il est nul"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Si la droite d'action passe par le point (ou l'axe), le bras de levier est nul, donc le moment est nul : la porte ne tourne pas.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:105",
+      "type": "qcm_unique",
+      "enonce": "On serre un écrou de roue de fauteuil roulant avec une clé de 0,25 m, en exerçant une force de 120 N perpendiculaire au manche, à son extrémité. Quel moment exerce-t-on ?",
+      "propositions": [
+        "480 N·m",
+        "3 000 N·m",
+        "30 N·m",
+        "0,0021 N·m"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "M = F × d = 120 N × 0,25 m = 30 N·m. Diviser donne 480 ; garder la longueur en cm (25) donne 3 000.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Dans un problème plan, quand le moment d'une force par rapport à A est-il compté positivement ?",
+      "propositions": [
+        "Si son point d'application est à droite de A",
+        "Si elle tend à faire tourner dans le sens des aiguilles d'une montre",
+        "Si la force est dirigée vers le haut",
+        "Si elle tend à faire tourner dans le sens trigonométrique"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Par convention, le moment est positif si la force tend à faire tourner autour de A dans le sens trigonométrique (inverse des aiguilles d'une montre).",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Quelle propriété caractérise un couple ?",
+      "propositions": [
+        "Sa résultante est nulle",
+        "Il fait avancer le solide en ligne droite",
+        "Ses deux forces ont la même droite d'action",
+        "Son moment dépend du point choisi"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un couple est formé de deux forces parallèles, de même intensité, de sens opposés et de droites d'action distinctes : leur somme est nulle et le moment est le même en tout point.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Une clé de 0,40 m de long est tirée à son extrémité par une force de 100 N inclinée de 30° par rapport au manche. Quel moment exerce-t-elle par rapport à l'axe de l'écrou ?",
+      "propositions": [
+        "80 N·m",
+        "40 N·m",
+        "34,6 N·m",
+        "20 N·m"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le bras de levier vaut d = L × sin 30° = 0,40 × 0,5 = 0,20 m, donc M = 100 × 0,20 = 20 N·m. 40 N·m serait le moment avec une force perpendiculaire ; 34,6 N·m vient d'un cosinus utilisé à tort.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Un bras robotisé horizontal de masse 1,5 kg a son centre de gravité à 0,30 m de l'axe de l'épaule ; il porte une charge de 0,5 kg à 0,60 m de cet axe. Quel moment des poids, par rapport à l'axe de l'épaule, le moteur doit-il compenser ? On prend g = 9,81 N/kg.",
+      "propositions": [
+        "0,75 N·m",
+        "5,9 N·m",
+        "7,4 N·m",
+        "17,7 N·m"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "M = 1,5 × 9,81 × 0,30 + 0,5 × 9,81 × 0,60 ≈ 4,41 + 2,94 ≈ 7,4 N·m. Oublier g donne 0,75 ; multiplier la masse totale par la somme des distances donne 17,7.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "Quelles grandeurs s'expriment en newtons-mètres (N·m) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le couple fourni par un moteur électrique",
+        "L'intensité d'une force",
+        "Une pression",
+        "Le moment d'une force par rapport à un point"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Moment et couple s'expriment en N·m. Une force s'exprime en N et une pression en Pa.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le moment d'une force sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le moment d'une force dépend du point choisi",
+        "À force égale, doubler le bras de levier double le moment",
+        "Le bras de levier est la distance au point d'application",
+        "Il est nul si la droite d'action passe par le point"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "M = F × d : le moment est proportionnel au bras de levier, dépend du point, et s'annule si d = 0. Le bras de levier se mesure jusqu'à la droite d'action.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Un conducteur tourne un volant avec deux forces de même intensité, tangentes au volant, de sens opposés. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le couple vaut F multiplié par le diamètre du volant",
+        "Leur moment dépend du point choisi",
+        "Les deux forces forment un couple",
+        "Elles font avancer le volant en translation",
+        "Leur somme est nulle"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Deux forces parallèles, opposées, de même intensité et de droites distinctes forment un couple : résultante nulle, moment C = F × d (d : distance entre les droites d'action, ici le diamètre), identique en tout point.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Le couple indiqué sur la plaque signalétique d'un moteur électrique s'exprime en N·m.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : l'action d'un moteur sur son arbre est un couple, exprimé en N·m.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Le bras de levier d'une force par rapport à un point A est la distance entre A et le point d'application de la force.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : c'est la distance de A à la droite d'action, mesurée perpendiculairement. Elle est plus petite que la distance au point d'application si la force est inclinée.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Le moment d'une force a la même valeur quel que soit le point par rapport auquel on le calcule.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : le moment d'une force dépend du point choisi. C'est le moment d'un couple qui est le même en tout point.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:116",
+      "type": "reponse_courte",
+      "enonce": "On exerce une force de 200 N perpendiculaire au manche d'une clé de 0,30 m, à son extrémité. Calcule le moment par rapport à l'axe de l'écrou, en N·m. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "60"
+      ],
+      "difficulte": 1,
+      "explication": "M = F × d = 200 × 0,30 = 60 N·m.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:117",
+      "type": "reponse_courte",
+      "enonce": "Un volant de diamètre 0,40 m est tourné par deux mains qui exercent chacune une force de 25 N, tangente au volant, en sens opposés. Calcule le couple exercé, en N·m. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 2,
+      "explication": "C = F × d, d étant la distance entre les deux droites d'action (le diamètre) : C = 25 × 0,40 = 10 N·m.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:118",
+      "type": "reponse_courte",
+      "enonce": "La lisse horizontale d'une barrière de parking a une masse de 4,0 kg et son centre de gravité est à 1,5 m de l'axe du pivot. Calcule le moment de son poids par rapport à cet axe, en valeur absolue, en N·m, avec g = 9,81 N/kg, arrondi au dixième. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "58,9"
+      ],
+      "marge": 0.1,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "P = 4,0 × 9,81 = 39,24 N ; le poids est vertical et la lisse horizontale, donc d = 1,5 m. M = 39,24 × 1,5 ≈ 58,9 N·m.",
+      "notion": "Moment d'une force et couple"
+    },
+    {
+      "source": "si-1re:ch6:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Quels sont les deux éléments d'un torseur d'action mécanique écrit en un point A ?",
+      "propositions": [
+        "La vitesse et l'accélération en A",
+        "La masse et le poids",
+        "La pression et la surface de contact",
+        "La résultante et le moment en A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le torseur {R⃗ ; M⃗A}A rassemble la résultante (effet de translation) et le moment en A (effet de rotation).",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Dans quelles unités s'expriment la résultante et le moment d'un torseur d'action mécanique ?",
+      "propositions": [
+        "Résultante en N·m, moment en N",
+        "Les deux en N",
+        "Résultante en N, moment en N·m",
+        "Résultante en kg, moment en N·m"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La résultante est une force (N), le moment un produit force × distance (N·m).",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Une force F⃗ est appliquée au point A. Comment s'écrit son torseur au point A ?",
+      "propositions": [
+        "Résultante F⃗, moment nul en A",
+        "Résultante F⃗, moment F × A en A",
+        "Résultante nulle, moment nul",
+        "Résultante nulle, moment F⃗ en A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le moment d'une force en son point d'application est nul (bras de levier nul) : {F⃗ ; 0⃗}A.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit le torseur d'un couple de moment C⃗ ?",
+      "propositions": [
+        "Résultante et moment égaux à C⃗",
+        "Résultante C⃗, moment nul",
+        "Résultante nulle, moment nul au centre",
+        "Résultante nulle, moment C⃗ en tout point"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La résultante d'un couple est nulle et son moment est le même en tout point : {0⃗ ; C⃗}.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Dans un problème plan (x, y), quelles composantes d'un torseur d'action mécanique restent à déterminer ?",
+      "propositions": [
+        "Z, L, M et N",
+        "X, Y et Z",
+        "L, M et N",
+        "X, Y et N"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Dans le plan (x, y), il reste les deux composantes de la résultante dans le plan (X, Y) et le moment autour de z (N).",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Combien de composantes inconnues comporte le torseur transmissible par une liaison pivot parfaite d'axe (A, x) dans l'espace ?",
+      "propositions": [
+        "4",
+        "1",
+        "5",
+        "6, comme l'encastrement"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le pivot a 1 ddl ; il transmet une action selon les 5 mouvements interdits : X, Y, Z ; M, N (L = 0). 6 − 1 = 5 inconnues.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Une glissière parfaite de direction x guide le chariot d'une imprimante 3D. Quelle composante ne peut-elle pas transmettre ?",
+      "propositions": [
+        "Un moment autour de x",
+        "Une force selon y",
+        "Une force selon x",
+        "Un moment autour de z"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La glissière permet la translation selon x : elle ne transmet donc aucune force selon x (X = 0). Elle transmet Y, Z et les trois moments.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Une bille repose sur un plan horizontal (liaison ponctuelle parfaite de normale (A, z)). Quelle action ce contact peut-il transmettre ?",
+      "propositions": [
+        "Une force selon z seulement",
+        "Une force selon x et une selon y",
+        "Trois forces et aucun moment",
+        "Un moment autour de z seulement"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "La ponctuelle n'interdit que la translation selon la normale z : elle ne transmet qu'une force Z, normale au contact. 6 − 5 = 1 inconnue.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Le chariot d'une imprimante 3D est guidé par une glissière supposée parfaite de direction x. Qu'est-ce qui pousse ou retient le chariot selon x ?",
+      "propositions": [
+        "Personne : il n'y a aucune action selon x",
+        "Le poids de la tête d'impression",
+        "La glissière elle-même",
+        "La courroie entraînée par le moteur"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La glissière parfaite ne transmet aucune force selon x. C'est la courroie, entraînée par le moteur pas à pas, qui pousse ou retient le chariot ; la glissière reprend le poids et les moments.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Selon le principe de réciprocité entre mouvements et actions transmissibles, une liaison parfaite… Coche toutes les réponses exactes.",
+      "propositions": [
+        "transmet une force selon chaque translation qu'elle interdit",
+        "transmet un moment autour de chaque rotation qu'elle interdit",
+        "transmet une force selon chaque translation qu'elle permet",
+        "transmet un moment autour de chaque rotation qu'elle permet"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Pour empêcher un mouvement, la liaison doit exercer l'action correspondante. Elle ne transmet ni force selon une translation permise, ni moment autour d'une rotation permise.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Quelles composantes transmet une liaison pivot parfaite de centre A dans une étude plane (x, y) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un moment autour de z en A",
+        "Une force selon z",
+        "Une force selon y",
+        "Une force selon x"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le pivot plan permet Rz : il transmet X et Y, mais pas de moment en A autour de z (N = 0). Z n'existe pas dans le plan.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur une rotule parfaite de centre O sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle transmet une force dans toutes les directions",
+        "Elle transmet un moment autour de x en O",
+        "Son torseur transmissible compte 3 inconnues",
+        "Son moment transmissible en O est nul"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La rotule interdit les 3 translations et permet les 3 rotations : elle transmet X, Y, Z et aucun moment en O. 6 − 3 = 3 inconnues.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "Quelles liaisons parfaites ont un torseur transmissible à 2 inconnues dans l'espace ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La rotule",
+        "Le pivot glissant",
+        "La linéaire annulaire",
+        "La linéaire rectiligne",
+        "La ponctuelle"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Linéaire annulaire (Y, Z) et linéaire rectiligne (Z ; M) ont 4 ddl, donc 2 inconnues. Ponctuelle : 1 ; rotule : 3 ; pivot glissant : 4.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Le nombre de composantes inconnues du torseur transmissible par une liaison parfaite est égal à son degré de liaison.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : chaque mouvement interdit correspond à une composante transmissible, soit 6 − ddl inconnues.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Une liaison pivot parfaite d'axe (A, z) peut transmettre un moment autour de z en A.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : le pivot permet la rotation autour de z, il ne transmet donc aucun moment autour de cet axe. C'est le moteur ou le câble qui doit fournir ce moment.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Avec frottement, une glissière réelle transmet aussi une petite force selon sa direction de translation.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : la réciprocité ne vaut que pour une liaison parfaite ; le frottement crée une force qui freine le mouvement.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Combien de composantes inconnues comporte le torseur transmissible par une liaison appui plan parfaite, dans l'espace ? Donne le nombre seul, en chiffres.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 3,
+      "explication": "L'appui plan de normale z a 3 ddl (Tx, Ty, Rz) ; il transmet Z ; L, M, soit 6 − 3 = 3 inconnues.",
+      "notion": "Torseurs et actions transmissibles"
+    },
+    {
+      "source": "si-1re:ch6:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Que dit le principe des actions réciproques ?",
+      "propositions": [
+        "F⃗2→1 = −F⃗1→2",
+        "La somme des forces sur un solide est nulle",
+        "F⃗2→1 = F⃗1→2",
+        "F⃗1→2 est toujours verticale"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Si 1 agit sur 2, 2 agit sur 1 avec une action opposée : même droite d'action, même intensité, sens opposés.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Que contient un graphe des actions mécaniques en plus du graphe des liaisons ?",
+      "propositions": [
+        "Uniquement les mouvements possibles",
+        "Les symboles normalisés de toutes les liaisons",
+        "La pesanteur et les autres actions",
+        "Les dimensions de chaque pièce"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le graphe des actions mécaniques complète le graphe des liaisons par les actions à distance (pesanteur) et les autres actions de contact (vérin, ressort, utilisateur, fluide, vent).",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Un drone est en vol stationnaire : ses hélices poussent l'air vers le bas. Que fait l'air sur les hélices ?",
+      "propositions": [
+        "Il les pousse vers le haut",
+        "Il n'exerce aucune action",
+        "Il les fait tourner plus vite",
+        "Il les pousse vers le bas"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "D'après le principe des actions réciproques, l'air exerce sur les hélices une action opposée, dirigée vers le haut.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:139",
+      "type": "qcm_unique",
+      "enonce": "On isole un système en l'entourant d'une frontière. Comment appelle-t-on les actions exercées sur lui par ce qui est à l'extérieur de cette frontière ?",
+      "propositions": [
+        "Les actions extérieures",
+        "Les actions transmissibles",
+        "Les actions réciproques",
+        "Les actions intérieures"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les actions exercées par l'extérieur de la frontière sont les actions extérieures ; celles qu'exercent entre elles les pièces du système sont intérieures.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Sur quels solides s'exercent deux actions réciproques ?",
+      "propositions": [
+        "Toujours sur le bâti",
+        "Sur deux solides différents",
+        "Sur le solide le plus lourd des deux",
+        "Sur le même solide"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "F⃗1→2 s'exerce sur 2 et F⃗2→1 s'exerce sur 1 : deux solides différents. C'est pourquoi elles ne s'annulent jamais l'une l'autre.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette électrique accélère : sa roue motrice pousse le sol vers l'arrière. Que fait le sol sur la roue ?",
+      "propositions": [
+        "Il ne fait rien, car il est fixe",
+        "Il la pousse vers l'arrière",
+        "Il la pousse vers l'avant",
+        "Il l'attire vers le bas"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Par le principe des actions réciproques, le sol pousse la roue vers l'avant : c'est cette action qui fait avancer la trottinette.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Les roues d'un fauteuil roulant à l'arrêt appuient sur le sol avec une force totale de 1 300 N. Quelle action le sol exerce-t-il sur les roues ?",
+      "propositions": [
+        "1 300 N vers le bas",
+        "650 N vers le haut",
+        "1 300 N vers le haut",
+        "0 N, car le sol est fixe"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Principe des actions réciproques : même droite d'action, même intensité (1 300 N), sens opposé, donc vers le haut.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:143",
+      "type": "qcm_unique",
+      "enonce": "La lisse horizontale d'une barrière de parking a une masse de 6,0 kg ; son centre de gravité est à 1,5 m de l'axe du pivot. Pour l'équilibrer sans couple moteur, on place un contrepoids à 0,50 m de l'axe, de l'autre côté. Quelle doit être sa masse ?",
+      "propositions": [
+        "6,0 kg",
+        "18 kg",
+        "2,0 kg",
+        "177 kg"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Les deux moments doivent être égaux : 6,0 × g × 1,5 = m × g × 0,50, d'où m = 6,0 × 1,5 / 0,50 = 18 kg. Inverser les distances donne 2,0 kg ; 177 N est le poids, pas la masse.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Quelles actions figurent dans le graphe des actions mécaniques d'une barrière levante de parking (bâti, lisse avec contrepoids) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le couple moteur entre bâti et lisse",
+        "Le degré de liberté de la lisse",
+        "L'action du vent sur la lisse",
+        "La pesanteur sur la lisse"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le graphe reprend la liaison pivot et ajoute la pesanteur, le couple moteur et le vent. Un degré de liberté est un mouvement, pas une action.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur l'isolement d'un système sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les actions intérieures traversent la frontière",
+        "Les actions intérieures s'exercent entre pièces du système",
+        "Le système isolé est entouré d'une frontière imaginaire",
+        "Le système isolé est toujours un seul solide"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On isole un solide ou un ensemble de solides par une frontière imaginaire. Seules les actions extérieures traversent la frontière.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Un fauteuil roulant est immobile sur un sol horizontal. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'action du fauteuil sur le sol et l'action du sol sur le fauteuil sont réciproques",
+        "L'action du sol sur le fauteuil et son action réciproque s'annulent",
+        "Le poids du fauteuil et l'action du sol sur le fauteuil ne sont pas des actions réciproques",
+        "Le poids du fauteuil et l'action du sol sur le fauteuil s'exercent sur le même solide"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le poids et l'action du sol agissent sur le fauteuil : ce sont deux forces opposées sur un même solide en équilibre, pas des actions réciproques. Les actions réciproques (sol sur fauteuil, fauteuil sur sol) s'exercent sur deux solides différents et ne s'annulent pas.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Le contrepoids vissé sur la lisse d'une barrière levante appartient à la même classe d'équivalence que la lisse.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : il est vissé sur la lisse et n'a aucun mouvement relatif par rapport à elle.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Deux actions réciproques s'annulent toujours, puisqu'elles sont opposées.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : elles s'exercent sur deux solides différents, elles ne peuvent donc pas s'annuler l'une l'autre.",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Un graphe des actions mécaniques ne représente que les liaisons entre les classes d'équivalence.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : il ajoute au graphe des liaisons la pesanteur et les autres actions (actionneurs, ressorts, fluides, vent, utilisateur).",
+      "notion": "Graphe des actions et réciprocité"
+    },
+    {
+      "source": "si-1re:ch6:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Une barrière levante équilibrée comporte une lisse de 4,0 kg et un contrepoids de 16 kg, sans couple moteur. Le pivot supporte le poids de l'ensemble. Calcule l'intensité de l'action du pivot sur la lisse, en N, avec g = 9,81 N/kg, arrondie à l'unité. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "196"
+      ],
+      "marge": 1,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Le pivot supporte le poids total : (4,0 + 16) × 9,81 = 20 × 9,81 = 196,2 N, soit 196 N vers le haut.",
+      "notion": "Graphe des actions et réciprocité"
+    }
+  ]
+}

@@ -1,0 +1,2334 @@
+{
+  "chapitre": 2,
+  "notions": [
+    "Besoin, fonctions et cahier des charges",
+    "Critère, niveau et flexibilité",
+    "SysML et ses diagrammes",
+    "Frontière et cas d'utilisation",
+    "Diagramme des exigences",
+    "Composition et bdd",
+    "Ports, flux et ibd",
+    "Chaîne de puissance",
+    "Chaîne d'information",
+    "Analyse d'un produit réel"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch2:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces énoncés exprime un besoin, sans citer de solution ?",
+      "propositions": [
+        "Entrer chez soi en voiture sans descendre ouvrir le portail",
+        "Installer un moteur électrique sur chacun des vantaux du portail",
+        "Équiper le portail d'une télécommande radio et d'un récepteur",
+        "Ajouter un vérin hydraulique et une carte de commande au portail"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le besoin dit ce que veut l'utilisateur sans dire comment l'obtenir. Moteur, télécommande, vérin ou carte de commande sont déjà des solutions techniques.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les trois questions de la bête à cornes, qui permet d'énoncer le besoin ?",
+      "propositions": [
+        "À qui rend-il service ? Sur quoi agit-il ? Dans quel but ?",
+        "Combien coûte-t-il ? Combien pèse-t-il ? Quand sera-t-il livré au client ?",
+        "Qui le fabrique ? Avec quels matériaux ? Dans quelle usine est-il assemblé ?",
+        "Quel moteur choisir ? Quelle batterie prendre ? Quel microcontrôleur programmer ?"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La bête à cornes se demande à qui le produit rend service, sur quoi il agit et dans quel but. Les autres questions concernent le coût, la fabrication ou les solutions techniques.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Comment écrit-on une fonction dans l'analyse d'un produit ?",
+      "propositions": [
+        "Le nom d'un composant suivi de sa référence commerciale",
+        "Un verbe à l'infinitif suivi d'un complément",
+        "Une valeur numérique suivie de son unité et de sa tolérance",
+        "Un adjectif qui qualifie le produit, par exemple « rapide »"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une fonction est une action attendue du produit : un verbe à l'infinitif et un complément, comme « ouvrir le portail à distance » ou « assister le pédalage ».",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Pour une station météo connectée, laquelle de ces fonctions est une fonction contrainte ?",
+      "propositions": [
+        "Mesurer la température extérieure",
+        "Mesurer la vitesse et la direction du vent",
+        "Afficher les mesures sur le téléphone de l'utilisateur",
+        "Résister aux intempéries"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Une fonction contrainte impose une limite au produit (résister aux intempéries, respecter une norme, coûter moins qu'un prix donné). Mesurer et afficher les mesures sont des services rendus à l'utilisateur.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Qui rédige le cahier des charges fonctionnel, et à quoi sert-il ?",
+      "propositions": [
+        "Le concepteur seul ; il décrit les solutions techniques qu'il a retenues",
+        "Le client, ou le concepteur avec lui ; il sert de contrat",
+        "Le fabricant des composants ; il fixe le prix de vente de chaque pièce",
+        "Le vendeur en magasin ; il sert de notice d'utilisation pour l'acheteur"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le cahier des charges fonctionnel est rédigé par le client (ou avec lui). Il décrit ce que le produit doit faire, jamais comment, et sert de contrat avec le concepteur.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces formulations est une bonne fonction pour un portail motorisé ?",
+      "propositions": [
+        "Motoriser le portail avec un vérin électrique",
+        "Ouvrir le portail sans effort",
+        "Moteur à courant continu de 24 V sur chaque vantail",
+        "Portail rapide, silencieux et agréable à regarder"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "« Ouvrir le portail sans effort » est un verbe à l'infinitif et ne cite aucune solution. « Motoriser avec un vérin » impose une solution, « moteur 24 V » est une solution, et la dernière n'est pas une action.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme FAST, quel type d'élément trouve-t-on tout à droite ?",
+      "propositions": [
+        "Les solutions techniques",
+        "La fonction principale du produit",
+        "Les acteurs qui utilisent le système étudié",
+        "Les exigences avec leurs critères et leurs niveaux"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le FAST se lit de gauche à droite en répondant à « comment ? » : la fonction se décompose en fonctions techniques, jusqu'aux solutions techniques, placées à droite.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Une élève écrit dans le cahier des charges d'une trottinette : « la trottinette utilise une batterie lithium-ion de 36 V ». Quel est le défaut de cette phrase ?",
+      "propositions": [
+        "Elle impose une solution, alors que le cahier des charges dit seulement quoi faire",
+        "Elle devrait être placée dans le diagramme de cas d'utilisation",
+        "La tension d'une batterie doit s'exprimer en wattheures (Wh)",
+        "Aucun : citer un composant précis rend l'exigence vérifiable"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Le cahier des charges décrit ce que le produit doit faire, jamais comment : le choix d'une batterie lithium-ion de 36 V revient au concepteur. Une tension s'exprime bien en volts, pas en wattheures.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces formulations, lesquelles expriment un besoin sans imposer de solution ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Parcourir quelques kilomètres en ville sans effort",
+        "Saisir et tenir des objets du quotidien",
+        "Fixer un moteur-roue de 350 W sur une trottinette",
+        "Ajouter un module Bluetooth à la station météo"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Se déplacer sans effort et saisir des objets sont des besoins (trottinette, prothèse de main). Un moteur-roue de 350 W ou un module Bluetooth sont des solutions techniques.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Que trouve-t-on dans un cahier des charges fonctionnel ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le besoin auquel répond le produit",
+        "Les fonctions et les exigences avec critères, niveaux et flexibilités",
+        "Le contexte d'utilisation du produit",
+        "La liste des composants choisis par le concepteur",
+        "Le plan de câblage de la carte électronique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le CdCF rassemble le besoin, le contexte d'utilisation, les fonctions et les exigences quantifiées. Il ne contient pas les solutions (composants, câblage) : elles reviennent au concepteur.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles sont des fonctions correctement écrites ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Assister le pédalage",
+        "Mesurer la température extérieure",
+        "Batterie de 360 Wh",
+        "Rapidité d'ouverture"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une fonction s'écrit avec un verbe à l'infinitif suivi d'un complément. « Batterie de 360 Wh » est une solution et « rapidité d'ouverture » un nom, pas une action.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Le besoin s'exprime sans citer de solution technique.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Le besoin répond à « à qui ? sur quoi ? dans quel but ? » ; « un moteur sur le portail » serait déjà une solution.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Le cahier des charges fonctionnel indique au concepteur quelles solutions techniques il doit utiliser.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Le cahier des charges décrit ce que le produit doit faire, jamais comment il le fait : le choix des solutions revient au concepteur.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:014",
+      "type": "vrai_faux",
+      "enonce": "La fonction principale d'un produit, appelée aussi fonction d'usage, est celle qui justifie son existence.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. La fonction principale (ou d'usage) justifie l'existence du produit ; les fonctions contraintes imposent des limites.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:015",
+      "type": "reponse_courte",
+      "enonce": "Quel nom donne-t-on au schéma qui présente le besoin à l'aide de trois questions : à qui le produit rend-il service, sur quoi agit-il, dans quel but ? Réponds en trois mots.",
+      "reponses_acceptees": [
+        "bête à cornes",
+        "la bête à cornes",
+        "une bête à cornes",
+        "bete a cornes",
+        "bête a cornes",
+        "bete à cornes",
+        "bêtes à cornes"
+      ],
+      "difficulte": 2,
+      "explication": "C'est la bête à cornes : elle permet d'énoncer le besoin sans citer de solution.",
+      "notion": "Besoin, fonctions et cahier des charges"
+    },
+    {
+      "source": "si-1re:ch2:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Dans l'exigence « durée d'ouverture complète : 18 s ± 2 s » d'un portail, quel est le critère ?",
+      "propositions": [
+        "Le niveau de 18 s",
+        "La flexibilité de ± 2 s",
+        "La durée d'ouverture complète",
+        "La fonction « ouvrir rapidement »"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le critère est la grandeur qui permet de juger : la durée d'ouverture complète. 18 s est le niveau, ± 2 s la flexibilité.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Que signifie une flexibilité de classe F0 ?",
+      "propositions": [
+        "Niveau très négociable, simple souhait du client",
+        "Niveau négociable, avec une marge moyenne acceptée",
+        "Niveau impératif, aucune marge",
+        "Niveau peu négociable, avec une faible marge acceptée"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "F0 correspond à une flexibilité nulle : le niveau est impératif, comme pour une exigence de sécurité ou une norme. F1 est faible, F2 moyenne, F3 forte.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Un vantail de portail doit tourner de 90°. Exigence : ouverture complète en 18 s ± 2 s. Le moteur choisi fait tourner le vantail à 6 °/s. Que conclure ?",
+      "propositions": [
+        "15 s : l'exigence est satisfaite, car un portail plus rapide est toujours mieux",
+        "540 s : l'exigence n'est pas satisfaite, car la durée dépasse largement 20 s",
+        "15 s : l'exigence est satisfaite, car 15 s est inférieur à la limite de 20 s",
+        "15 s : l'exigence n'est pas satisfaite, car 15 s est sous la plage de 16 s à 20 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "t = angle / vitesse = 90 / 6 = 15 s. La plage acceptée va de 18 − 2 = 16 s à 18 + 2 = 20 s. 15 s est en dehors (trop rapide) : l'exigence n'est pas satisfaite. 540 s vient d'une multiplication au lieu d'une division.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:019",
+      "type": "qcm_unique",
+      "enonce": "L'exigence de portée d'une télécommande de portail est : niveau 30 m, minimum (F1). Quelle portée mesurée satisfait l'exigence ?",
+      "propositions": [
+        "32 m",
+        "28 m",
+        "25 m",
+        "15 m"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le niveau 30 m est un minimum : la portée mesurée doit être au moins égale à 30 m. Seule la portée de 32 m convient.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi « le portail doit s'ouvrir rapidement » n'est-elle pas une exigence vérifiable ?",
+      "propositions": [
+        "Elle cite une solution technique imposée au concepteur",
+        "Elle n'est pas écrite avec un verbe à l'infinitif",
+        "Il lui manque un critère, un niveau et une flexibilité",
+        "Elle concerne la sécurité et doit donc être classée en F0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une exigence n'est vérifiable que si on lui associe un critère (durée d'ouverture), un niveau (18 s) et une flexibilité (± 2 s). « Rapidement » ne donne aucune valeur mesurable.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:021",
+      "type": "qcm_unique",
+      "enonce": "L'effort maximal d'un vantail sur un obstacle est limité à 400 N, avec une flexibilité F0. Pourquoi cette classe F0 ?",
+      "propositions": [
+        "C'est un simple souhait du client, peu important pour lui",
+        "L'effort est trop difficile à mesurer avec un dynamomètre",
+        "C'est une exigence de sécurité imposée par une norme",
+        "La valeur de 400 N peut être négociée avec le client"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "F0 signifie flexibilité nulle : le niveau est impératif. C'est le cas des exigences de sécurité et des normes, comme l'effort maximal sur un obstacle.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:022",
+      "type": "qcm_unique",
+      "enonce": "L'exigence de charge d'une trottinette est : durée de charge complète 6 h ± 1 h. Laquelle de ces durées mesurées ne satisfait pas l'exigence ?",
+      "propositions": [
+        "7 h 20 min",
+        "5 h 10 min",
+        "6 h 45 min",
+        "5 h 55 min"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La plage acceptée va de 6 − 1 = 5 h à 6 + 1 = 7 h. 7 h 20 min dépasse 7 h ; les trois autres durées sont dans la plage.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:023",
+      "type": "qcm_multiple",
+      "enonce": "Une exigence vérifiable est quantifiée par : Coche toutes les réponses exactes.",
+      "propositions": [
+        "un critère",
+        "un niveau",
+        "une flexibilité",
+        "une solution technique",
+        "un acteur principal"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une exigence vérifiable comporte un critère (la grandeur qui permet de juger), un niveau (la valeur visée) et une flexibilité (la marge acceptée). Elle n'impose pas de solution.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:024",
+      "type": "qcm_multiple",
+      "enonce": "L'exigence de masse d'une trottinette est : 15 kg au maximum. Quelles masses pesées satisfont cette exigence ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "14,3 kg",
+        "15 kg",
+        "15,2 kg",
+        "13,8 kg",
+        "16 kg"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La masse doit être inférieure ou égale à 15 kg : 14,3 kg, 15 kg et 13,8 kg conviennent ; 15,2 kg et 16 kg dépassent le maximum.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles peuvent servir de flexibilité dans un cahier des charges ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "± 2 s",
+        "au maximum 15 kg",
+        "classe F1",
+        "rapide",
+        "moteur de 24 V"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La flexibilité s'exprime par une tolérance chiffrée (± 2 s, au maximum 15 kg) ou par une classe de F0 à F3. « Rapide » n'est pas chiffré et « moteur de 24 V » est une solution.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:026",
+      "type": "vrai_faux",
+      "enonce": "La classe de flexibilité F3 correspond à un niveau impératif, sans aucune marge.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. F3 est une flexibilité forte : le niveau est très négociable, c'est un simple souhait. Le niveau impératif correspond à F0.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:027",
+      "type": "vrai_faux",
+      "enonce": "Une exigence de durée de charge « 6 h ± 1 h » accepte une durée mesurée de 5 h 30 min.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. La plage acceptée va de 5 h à 7 h ; 5 h 30 min est dans cette plage.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:028",
+      "type": "vrai_faux",
+      "enonce": "Un vantail doit tourner de 90° ; s'il tourne à 4 °/s, l'exigence « ouverture complète en 18 s ± 2 s » est satisfaite.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux. t = 90 / 4 = 22,5 s, supérieur à 18 + 2 = 20 s : l'exigence n'est pas satisfaite.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:029",
+      "type": "reponse_courte",
+      "enonce": "L'exigence de durée d'ouverture d'un portail est 18 s ± 2 s. Quelle est la durée maximale acceptée, en secondes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "20"
+      ],
+      "difficulte": 1,
+      "explication": "Durée maximale = niveau + flexibilité = 18 + 2 = 20 s.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:030",
+      "type": "reponse_courte",
+      "enonce": "Un vantail doit tourner de 90°. Exigence : ouverture complète en 18 s ± 2 s. Quelle est la vitesse de rotation minimale du vantail, en degrés par seconde, qui respecte encore l'exigence ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "4,5"
+      ],
+      "difficulte": 3,
+      "explication": "La durée la plus longue acceptée est 18 + 2 = 20 s. Vitesse minimale = 90 / 20 = 4,5 °/s. Plus lent, l'ouverture dépasserait 20 s.",
+      "notion": "Critère, niveau et flexibilité"
+    },
+    {
+      "source": "si-1re:ch2:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le sigle SysML ?",
+      "propositions": [
+        "System Mechanical Layout",
+        "Simulation of Systems Machine Learning",
+        "Structured Software Modeling Library",
+        "Systems Modeling Language"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "SysML signifie Systems Modeling Language : langage de modélisation des systèmes, publié par l'OMG en 2007.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce que SysML ?",
+      "propositions": [
+        "Un logiciel de CAO pour dessiner les pièces en 3D",
+        "Un langage de programmation pour les microcontrôleurs",
+        "Un langage graphique normalisé de modélisation",
+        "Une norme de câblage pour les cartes électroniques"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "SysML est un langage graphique normalisé, dérivé d'UML. Ce n'est pas un logiciel : c'est un ensemble de règles de dessin que plusieurs logiciels savent utiliser.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Quel diagramme SysML répond à la question « De quoi le produit est-il composé ? » ?",
+      "propositions": [
+        "Le diagramme de cas d'utilisation (uc)",
+        "Le diagramme des exigences (req)",
+        "Le diagramme de définition de blocs (bdd)",
+        "Le diagramme de séquence (sd)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le bdd décrit la composition du système. Le uc montre les services rendus, le req ce que le produit doit respecter, le sd l'ordre des messages.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Le cadre d'un diagramme porte en haut à gauche l'étiquette « uc [Portail motorisé] ». Que représente ce diagramme ?",
+      "propositions": [
+        "Les exigences du cahier des charges du portail motorisé",
+        "L'unité de commande électronique du portail motorisé",
+        "Les liaisons internes et les flux du portail motorisé",
+        "Les cas d'utilisation du portail motorisé"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'étiquette donne l'abréviation du type (uc : diagramme de cas d'utilisation) et le nom de l'élément décrit. Lire cette étiquette est le premier réflexe devant un diagramme.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:035",
+      "type": "qcm_unique",
+      "enonce": "À quelle famille de diagrammes SysML appartient le diagramme de blocs internes (ibd) ?",
+      "propositions": [
+        "Exigences",
+        "Comportement",
+        "Structure",
+        "Cas d'utilisation"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les diagrammes se rangent en trois familles : exigences (req), comportement (uc, sd, stm, act) et structure (bdd, ibd, par, pkg). L'ibd est un diagramme de structure.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Dans un modèle SysML, un bloc est renommé dans le bdd. Que devient ce bloc dans l'ibd du même modèle ?",
+      "propositions": [
+        "Il garde son ancien nom, car chaque diagramme est un document indépendant",
+        "Il disparaît de l'ibd, qui doit alors être entièrement redessiné à la main",
+        "Il est renommé aussi, car les diagrammes sont des vues d'un seul modèle",
+        "Il est remplacé par un acteur, car il n'existe plus dans le bdd du modèle"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Avec SysML, on construit un seul modèle regardé à travers plusieurs diagrammes : si un bloc est renommé dans une vue, il l'est partout.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:037",
+      "type": "qcm_unique",
+      "enonce": "À quelle question répond le diagramme d'activité (act) ?",
+      "propositions": [
+        "Quel enchaînement d'actions le produit réalise-t-il ?",
+        "Comment ses éléments sont-ils reliés, et que s'échangent-ils ?",
+        "Quelles équations relient les grandeurs du modèle entre elles ?",
+        "Comment le modèle est-il rangé en paquetages et en dossiers ?"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le diagramme d'activité décrit un enchaînement d'actions. Les liaisons sont décrites par l'ibd, les équations par le diagramme paramétrique, le rangement par le diagramme de paquetage.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Comment l'ingénierie système considère-t-elle un produit ?",
+      "propositions": [
+        "Uniquement pendant sa phase de fabrication dans l'usine du constructeur",
+        "Comme un tout, dans son environnement et sur son cycle de vie",
+        "Pièce par pièce, chaque métier travaillant séparément des autres métiers",
+        "Seulement du point de vue de son logiciel et de son programme embarqué"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'ingénierie système considère le produit comme un tout, dans son environnement et sur tout son cycle de vie, de l'expression du besoin au recyclage.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:039",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces diagrammes SysML décrivent le comportement d'un produit ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le diagramme de cas d'utilisation",
+        "Le diagramme de séquence",
+        "Le diagramme d'activité",
+        "Le diagramme de définition de blocs",
+        "Le diagramme paramétrique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La famille comportement regroupe uc, sd, stm et act. Le bdd et le diagramme paramétrique appartiennent à la famille structure.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:040",
+      "type": "qcm_multiple",
+      "enonce": "Pour décrire de quoi est fait un produit et comment ses parties sont reliées, quels diagrammes SysML utilise-t-on ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le diagramme de blocs internes (ibd)",
+        "Le diagramme de définition de blocs (bdd)",
+        "Le diagramme des exigences (req)",
+        "Le diagramme de cas d'utilisation (uc)",
+        "Le diagramme d'états-transitions (stm)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le point de vue de la structure utilise le bdd (de quoi il est fait) et l'ibd (comment les parties sont reliées).",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:041",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur un diagramme SysML sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il décrit l'organisation du produit",
+        "Il est une vue partielle d'un modèle unique",
+        "Il donne la forme exacte et les cotes des pièces",
+        "Il remplace le schéma électrique détaillé du produit"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Un diagramme SysML est une vue partielle d'un modèle unique qui décrit l'organisation du produit. Ce n'est ni un plan, ni un schéma électrique, ni un schéma cinématique.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:042",
+      "type": "vrai_faux",
+      "enonce": "SysML n'est pas un logiciel : c'est un ensemble de règles de dessin que plusieurs logiciels savent utiliser.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. SysML est un langage graphique normalisé, pas un logiciel.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Le diagramme de cas d'utilisation appartient à la famille des diagrammes de structure.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Le diagramme de cas d'utilisation (uc) appartient à la famille comportement : il dit quels services le produit rend, et à qui.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Un diagramme de définition de blocs montre le câblage détaillé de la carte électronique, fil par fil.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Un diagramme SysML décrit l'organisation du produit, pas le câblage détaillé : celui-ci relève du schéma électrique.",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:045",
+      "type": "reponse_courte",
+      "enonce": "Quelle abréviation désigne le diagramme des exigences en SysML ? Réponds par l'abréviation de trois lettres.",
+      "reponses_acceptees": [
+        "req",
+        "REQ"
+      ],
+      "difficulte": 1,
+      "explication": "Le diagramme des exigences est noté req, par exemple req [Portail motorisé].",
+      "notion": "SysML et ses diagrammes"
+    },
+    {
+      "source": "si-1re:ch2:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme de cas d'utilisation, comment dessine-t-on un cas d'utilisation ?",
+      "propositions": [
+        "Par un personnage en traits placé hors du cadre",
+        "Par un rectangle marqué « block » avec ses valeurs",
+        "Par un petit carré placé sur le bord d'un bloc",
+        "Par une ellipse contenant un verbe"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un cas d'utilisation est un service rendu, dessiné par une ellipse contenant un verbe à l'infinitif, à l'intérieur du rectangle qui figure la frontière du système.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un acteur dans un diagramme de cas d'utilisation ?",
+      "propositions": [
+        "Un constituant interne du système, comme le moteur ou la batterie",
+        "Un service rendu par le système à l'utilisateur, écrit dans une ellipse",
+        "Une exigence que le système doit satisfaire, avec son identifiant",
+        "Un rôle extérieur qui interagit avec le système"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un acteur est un rôle joué par une personne ou par un système extérieur qui interagit avec le système étudié. Il est toujours hors de la frontière.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Pour un portail motorisé, lequel de ces éléments fait partie du système étudié ?",
+      "propositions": [
+        "La voiture de l'habitant",
+        "La carte de commande",
+        "Le réseau électrique de la maison",
+        "Le vent qui souffle sur le vantail"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les bras motorisés, la carte de commande et le récepteur radio sont dans le système ; la voiture, le réseau électrique et le vent font partie de l'environnement.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Sur le diagramme de cas d'utilisation d'un portail, un passant est informé par le feu clignotant que le portail bouge. Quel est son rôle ?",
+      "propositions": [
+        "Un acteur principal qui déclenche l'ouverture",
+        "Un acteur secondaire",
+        "Un cas d'utilisation du portail",
+        "Un bloc interne du système"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le passant n'a rien demandé, mais il est informé par le système : c'est un acteur secondaire, placé à droite. L'acteur principal déclenche le cas et en bénéficie.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces intitulés est un cas d'utilisation correct pour un fauteuil roulant électrique ?",
+      "propositions": [
+        "Alimenter le moteur de la roue gauche",
+        "Lire le capteur de position du joystick",
+        "Régler la vitesse maximale",
+        "Batterie lithium-ion de 24 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un cas d'utilisation est un service vu de l'extérieur, demandé par un acteur. Alimenter le moteur ou lire un capteur sont des opérations internes ; une batterie est un constituant.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:051",
+      "type": "qcm_unique",
+      "enonce": "« Arrêter le vantail » ne se produit que si un obstacle est détecté pendant la fermeture du portail. Quelle relation relie ce cas d'utilisation à « fermer le portail » ?",
+      "propositions": [
+        "« include »",
+        "« extend »",
+        "« satisfy »",
+        "« deriveReqt »"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La relation « extend » indique un cas facultatif, qui ne se produit que dans certaines conditions. « include » signale un cas toujours contenu ; « satisfy » et « deriveReqt » sont des relations du diagramme des exigences.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:052",
+      "type": "qcm_unique",
+      "enonce": "On dessine le contexte d'un portail motorisé en phase de maintenance. Quel élément apparaît, alors qu'il est absent en phase d'utilisation ?",
+      "propositions": [
+        "Le technicien et ses outils",
+        "L'utilisateur et sa voiture",
+        "Le vent et la pluie",
+        "Le passant sur le trottoir"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le diagramme de contexte dépend de la phase de vie étudiée : en maintenance, le technicien et ses outils apparaissent ; en utilisation, non.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Un habitant programme lui-même une nouvelle télécommande pour son portail. Sur le diagramme de cas d'utilisation, quel rôle joue-t-il à ce moment-là ?",
+      "propositions": [
+        "Passant informé par le feu clignotant",
+        "Acteur secondaire sollicité par le système",
+        "Carte de commande du portail",
+        "Installateur"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Un acteur est un rôle, pas une personne : l'habitant qui programme sa télécommande joue le rôle d'installateur, l'acteur qui réalise le cas « programmer une télécommande ».",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:054",
+      "type": "qcm_multiple",
+      "enonce": "Pour un drone de livraison en phase d'utilisation, lesquels de ces éléments appartiennent à son environnement ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les satellites GPS",
+        "Le colis à livrer",
+        "Le vent et la pluie",
+        "Le contrôleur de vol",
+        "Les moteurs des hélices"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le contexte du drone comprend l'opérateur, le colis, l'air (vent, pluie), les satellites GPS, le réseau 4G, les obstacles… Le contrôleur de vol et les moteurs sont des constituants du drone.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:055",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces éléments ne peuvent pas être des acteurs du diagramme de cas d'utilisation d'une trottinette électrique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La batterie de la trottinette",
+        "Le moteur-roue arrière",
+        "Le téléphone de l'usager",
+        "Le chargeur branché sur le secteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Un acteur est toujours hors de la frontière : la batterie et le moteur-roue font partie du produit, ils ne sont jamais des acteurs. Le téléphone et le chargeur sont des systèmes extérieurs, donc des acteurs secondaires.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:056",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments figurent sur un diagramme de cas d'utilisation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La frontière du système, dessinée par un rectangle",
+        "Les acteurs",
+        "Les associations entre acteurs et cas",
+        "Les multiplicités des blocs",
+        "Les ports et les flux d'énergie"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le uc montre la frontière, les acteurs, les cas d'utilisation et les traits (associations) qui les relient. Multiplicités, ports et flux appartiennent au bdd et à l'ibd.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:057",
+      "type": "vrai_faux",
+      "enonce": "Dans un diagramme de cas d'utilisation, un acteur est toujours placé hors de la frontière du système.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. L'acteur est un rôle extérieur au système ; un moteur ou une batterie du produit n'est jamais un acteur.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:058",
+      "type": "vrai_faux",
+      "enonce": "La relation « include » signale un cas facultatif, qui ne se produit que dans certaines conditions.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. C'est la relation « extend » qui signale un cas facultatif. « include » indique qu'un cas en contient toujours un autre.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:059",
+      "type": "vrai_faux",
+      "enonce": "« Lire le capteur de fin de course » est un bon cas d'utilisation pour un portail motorisé.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. C'est une opération interne : aucun acteur ne la demande directement. Un cas d'utilisation est un service vu de l'extérieur, comme « ouvrir le portail ».",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:060",
+      "type": "reponse_courte",
+      "enonce": "Dans un diagramme de cas d'utilisation, quel mot désigne le rôle joué par une personne ou par un système extérieur qui interagit avec le système étudié ? Réponds en un mot.",
+      "reponses_acceptees": [
+        "acteur",
+        "un acteur",
+        "l'acteur",
+        "acteurs",
+        "les acteurs"
+      ],
+      "difficulte": 1,
+      "explication": "C'est un acteur, dessiné par un personnage en traits hors de la frontière du système.",
+      "notion": "Frontière et cas d'utilisation"
+    },
+    {
+      "source": "si-1re:ch2:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Comment une exigence est-elle dessinée dans un diagramme des exigences (req) ?",
+      "propositions": [
+        "Par une ellipse contenant un verbe à l'infinitif",
+        "Par un personnage en traits hors de la frontière",
+        "Par un rectangle marqué « requirement »",
+        "Par un trait terminé par un losange plein noir"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une exigence se dessine par un rectangle marqué « requirement », qui porte un nom, un identifiant (Id) et un texte.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Quelles informations une exigence du diagramme req porte-t-elle au minimum ?",
+      "propositions": [
+        "Une masse, une tension et une puissance électrique",
+        "Un nom, un identifiant (Id) et un texte",
+        "Un acteur, une ellipse et un trait d'association",
+        "Un port, un flux et un connecteur vers un autre bloc"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une exigence porte au minimum un nom, un identifiant unique (par exemple 1.2) et un texte qui l'énonce, si possible avec un critère et un niveau.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme des exigences, que signifie la croix cerclée placée du côté d'une exigence mère ?",
+      "propositions": [
+        "La contenance : elle se décompose en sous-exigences",
+        "La dérivation : l'exigence a été déduite par un calcul",
+        "La vérification : un essai contrôle l'exigence mère",
+        "La satisfaction : un bloc réalise l'exigence mère"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La croix cerclée, côté exigence mère, marque la contenance : l'exigence se décompose en sous-exigences qui en sont des parties.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Un essai chronométré permet de contrôler l'exigence « durée d'ouverture » d'un portail. Comment le relie-t-on à cette exigence ?",
+      "propositions": [
+        "« verify », flèche de l'essai vers l'exigence",
+        "« satisfy », flèche de l'exigence vers l'essai",
+        "« verify », flèche de l'exigence vers l'essai",
+        "« refine », flèche de l'essai vers le bloc moteur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un essai qui contrôle une exigence la vérifie : relation « verify », flèche en pointillés de l'essai vers l'exigence. Toutes ces flèches pointent vers l'exigence concernée.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:065",
+      "type": "qcm_unique",
+      "enonce": "« La vitesse du vantail est de 5 °/s » a été déduite par calcul de « le portail s'ouvre de 90° en 18 s ». Quelle relation relie ces deux exigences ?",
+      "propositions": [
+        "Contenance, la vitesse étant une partie de la durée d'ouverture",
+        "« deriveReqt », de la vitesse vers la durée",
+        "« deriveReqt », de la durée d'ouverture vers l'exigence de vitesse",
+        "« satisfy », de l'exigence de vitesse vers la durée d'ouverture"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "L'exigence de vitesse est une conséquence obtenue par calcul (90 / 18 = 5 °/s) : elle dérive de la durée d'ouverture. La flèche « deriveReqt » part de l'exigence dérivée et pointe vers l'exigence d'origine.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces exigences est la mieux rédigée ?",
+      "propositions": [
+        "Le portail doit être sûr et ne jamais blesser personne, en toutes circonstances",
+        "Le portail utilise un capteur de courant pour être sûr et ne blesser personne",
+        "Le vantail s'arrête si l'effort sur un obstacle dépasse 400 N",
+        "Le portail doit être sûr, rapide, silencieux et facile à utiliser au quotidien"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une bonne exigence est unique, non ambiguë, vérifiable et sans solution imposée. L'effort de 400 N se mesure avec un dynamomètre ; « être sûr » n'est pas vérifiable, et « capteur de courant » impose une solution.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Exigence d'une trottinette : « autonomie d'au moins 25 km sur terrain plat ». La batterie stocke 360 Wh utilisables et la consommation est de 15 Wh par kilomètre. Que conclure ?",
+      "propositions": [
+        "24 km : l'exigence est satisfaite, l'écart est faible",
+        "24 km : l'exigence n'est pas satisfaite",
+        "5 400 km : l'exigence est largement satisfaite",
+        "30 km : l'exigence est satisfaite avec 5 km de marge"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "d = énergie / consommation = 360 / 15 = 24 km, inférieur à 25 km : l'exigence n'est pas satisfaite. 5 400 vient d'une multiplication, 30 km correspond à une consommation de 12 Wh/km.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Quelles relations du diagramme des exigences se dessinent par une flèche en pointillés qui pointe vers l'exigence concernée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "« satisfy »",
+        "« verify »",
+        "« refine »",
+        "La contenance",
+        "La composition"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "« satisfy », « verify », « refine » et « deriveReqt » sont des flèches en pointillés vers l'exigence. La contenance se dessine par un trait plein avec une croix cerclée ; la composition (losange plein) appartient au bdd.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces exigences, lesquelles sont non fonctionnelles ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Coûter moins de 500 €",
+        "Respecter la norme de sécurité des portails",
+        "Consommer moins de 12 Wh par kilomètre",
+        "Ouvrir le portail sur commande",
+        "Mesurer la température extérieure"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les exigences non fonctionnelles fixent des performances ou des contraintes (coût, norme, consommation). Ouvrir le portail ou mesurer la température disent ce que fait le produit : ce sont des exigences fonctionnelles.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Quelles qualités doit avoir une bonne exigence ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle exprime une seule idée",
+        "Elle est vérifiable par une mesure ou un essai",
+        "Elle n'impose aucune solution",
+        "Elle cite le composant retenu par le concepteur",
+        "Elle reste générale, comme « être sûr »"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une bonne exigence est unique, non ambiguë, vérifiable et sans solution imposée. Citer un composant impose une solution ; « être sûr » n'est pas vérifiable.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:071",
+      "type": "vrai_faux",
+      "enonce": "Dans un diagramme des exigences, chaque exigence possède un identifiant unique, par exemple 1.2.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Chaque exigence porte un nom, un identifiant unique (Id) et un texte.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Une exigence dérivée n'est qu'une partie de l'exigence mère, au même titre qu'une sous-exigence contenue.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux. Une sous-exigence contenue est une partie de l'exigence mère ; une exigence dérivée en est une conséquence, obtenue par un raisonnement ou un calcul.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:073",
+      "type": "vrai_faux",
+      "enonce": "La flèche « satisfy » part de l'exigence et pointe vers le bloc qui la satisfait.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La flèche « satisfy » part du bloc et pointe vers l'exigence qu'il satisfait, comme toutes les flèches en pointillés du diagramme des exigences.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:074",
+      "type": "reponse_courte",
+      "enonce": "La batterie d'une trottinette stocke une énergie utilisable de 480 Wh. Sur terrain plat, la trottinette consomme 16 Wh par kilomètre. Quelle distance peut-elle parcourir, en kilomètres ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "30"
+      ],
+      "difficulte": 2,
+      "explication": "d = énergie / consommation = 480 / 16 = 30 km.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:075",
+      "type": "reponse_courte",
+      "enonce": "Le bdd d'un fauteuil roulant électrique donne les masses suivantes : châssis 17 kg, deux moteurs-roues de 5,5 kg chacun, batterie 8 kg, siège 4 kg, commande 1 kg. Quelle est la masse totale du fauteuil, en kilogrammes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "41"
+      ],
+      "difficulte": 3,
+      "explication": "m = 17 + 2 × 5,5 + 8 + 4 + 1 = 41 kg. Attention à bien compter les deux moteurs-roues.",
+      "notion": "Diagramme des exigences"
+    },
+    {
+      "source": "si-1re:ch2:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Comment se dessine le lien de composition dans un diagramme de définition de blocs (bdd) ?",
+      "propositions": [
+        "Un trait avec un losange plein côté constituant contenu",
+        "Un trait avec un losange plein côté ensemble",
+        "Une flèche en pointillés qui pointe vers une exigence",
+        "Un trait plein terminé par une croix cerclée côté mère"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le lien de composition est un trait terminé par un losange plein du côté du bloc qui contient (l'ensemble). La multiplicité est écrite à l'autre bout.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Que représente un bloc en SysML ?",
+      "propositions": [
+        "Un constituant du système",
+        "Un service rendu par le système à un acteur extérieur",
+        "Une exigence du cahier des charges avec son identifiant",
+        "Un flux d'énergie qui circule entre deux ports du système"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un bloc représente un constituant du système : une pièce, un sous-ensemble, une carte électronique, un logiciel, voire un opérateur humain.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Dans un bdd, que représente la multiplicité écrite près d'un bloc ?",
+      "propositions": [
+        "La masse du constituant, exprimée en kilogrammes",
+        "Le nombre d'exemplaires du constituant",
+        "Le nombre de ports par lesquels le bloc échange",
+        "L'ordre dans lequel les pièces sont montées en usine"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La multiplicité indique combien d'exemplaires du constituant contient l'ensemble : par exemple 2 bras motorisés pour un portail à deux vantaux.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:079",
+      "type": "qcm_unique",
+      "enonce": "À quelle question le bdd répond-il ?",
+      "propositions": [
+        "Qui contient quoi ?",
+        "Qui est relié à qui, et qu'est-ce qui circule ?",
+        "Dans quel ordre les messages sont-ils échangés ?",
+        "Quels services sont rendus, et à quels acteurs ?"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le bdd répond à « qui contient quoi ? ». L'ibd répond à « qui est relié à qui, et qu'est-ce qui circule ? ».",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Le bdd d'un bras robotisé indique qu'il est composé de 6 axes, et que chaque axe est composé d'1 moteur, d'1 réducteur et d'1 codeur. Combien le bras contient-il de codeurs ?",
+      "propositions": [
+        "1",
+        "6",
+        "3",
+        "18"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les multiplicités se multiplient le long de l'arbre : 6 axes × 1 codeur = 6 codeurs. 18 serait le nombre total de constituants des axes (6 × 3).",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Un drone hexarotor est composé de 6 bras, d'1 contrôleur de vol et d'1 batterie ; chaque bras est composé d'1 moteur, d'1 hélice et d'1 variateur. Combien de constituants le drone compte-t-il au total, bras compris ?",
+      "propositions": [
+        "20",
+        "24",
+        "26",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "6 bras + 6 × 3 constituants de bras + 1 contrôleur + 1 batterie = 6 + 18 + 2 = 26. Oublier les bras donne 20 ; oublier le contrôleur et la batterie donne 24.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Quelle information le bdd d'un produit ne donne-t-il pas ?",
+      "propositions": [
+        "La liste des constituants du système étudié",
+        "Le nombre d'exemplaires de chaque constituant",
+        "Quel bloc est contenu dans quel autre bloc",
+        "Les liaisons et les échanges entre constituants"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le bdd décrit la composition (constituants, multiplicités, qui contient quoi) mais ne dit rien des liaisons entre les éléments ni de ce qu'ils échangent : c'est le rôle de l'ibd.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Quelles valeurs un bloc peut-il porter comme propriétés ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une masse",
+        "Une tension",
+        "Une puissance",
+        "Une flèche « verify »",
+        "Un acteur secondaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un bloc peut porter des propriétés (valeurs) : masse, tension, puissance, dimensions. Les flèches « verify » et les acteurs appartiennent à d'autres diagrammes.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Qu'est-ce qui peut être représenté par un bloc en SysML ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une carte électronique",
+        "Un logiciel",
+        "Un opérateur humain",
+        "Un service rendu, écrit avec un verbe à l'infinitif",
+        "Une relation de dérivation entre deux exigences"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Un bloc représente un constituant : pièce, sous-ensemble, carte électronique, logiciel, voire opérateur humain. Un service rendu est un cas d'utilisation ; une dérivation est une relation entre exigences.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Le bdd d'un vélo à assistance électrique indique : le vélo est composé de 2 roues, d'1 moteur et d'1 batterie ; chaque roue est composée de 32 rayons. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le vélo compte 64 rayons",
+        "Le losange plein est dessiné du côté du vélo",
+        "Le bdd indique quel câble relie la batterie au moteur",
+        "La multiplicité 2 est écrite du côté du vélo"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "2 × 32 = 64 rayons. Le losange plein est côté ensemble (le vélo) et la multiplicité 2 à l'autre bout, côté roue. Le bdd ne montre pas les liaisons : c'est le rôle de l'ibd.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:086",
+      "type": "vrai_faux",
+      "enonce": "Dans un bdd, la multiplicité est écrite à l'extrémité du lien opposée au losange, près du constituant.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Le losange plein est côté ensemble ; le nombre d'exemplaires est écrit à l'autre bout, près du constituant.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Le losange plein d'un lien de composition est placé du côté du constituant contenu.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Le losange plein est placé du côté du bloc qui contient, c'est-à-dire l'ensemble.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Un drone est composé de 4 bras, et chaque bras est composé de 2 moteurs : le drone contient donc 8 moteurs.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Les multiplicités se multiplient le long de l'arbre : 4 × 2 = 8 moteurs.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:089",
+      "type": "reponse_courte",
+      "enonce": "Une station météo est composée de 3 modules de mesure ; chaque module est composé de 2 capteurs et d'1 câble. Combien de capteurs la station contient-elle ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "6"
+      ],
+      "difficulte": 2,
+      "explication": "Les multiplicités se multiplient : 3 modules × 2 capteurs = 6 capteurs.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:090",
+      "type": "reponse_courte",
+      "enonce": "Le bdd de l'éclairage public d'un parking indique : 12 lampadaires ; chaque lampadaire est composé d'1 module LED, d'1 driver, d'1 microcontrôleur, d'1 module LoRa et de 2 capteurs. Combien l'éclairage compte-t-il de constituants au total, lampadaires compris ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "84"
+      ],
+      "difficulte": 3,
+      "explication": "Chaque lampadaire contient 1 + 1 + 1 + 1 + 2 = 6 constituants. Total : 12 lampadaires + 12 × 6 = 12 + 72 = 84 constituants.",
+      "notion": "Composition et bdd"
+    },
+    {
+      "source": "si-1re:ch2:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme de blocs internes (ibd), comment dessine-t-on un port ?",
+      "propositions": [
+        "Par un petit carré sur le bord d'un bloc",
+        "Par une ellipse à l'intérieur de la frontière",
+        "Par un losange plein à l'extrémité d'un trait",
+        "Par une croix cerclée du côté de l'exigence mère"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un port est un point d'échange d'un bloc avec l'extérieur, dessiné par un petit carré sur le bord du bloc.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les trois natures de flux qui circulent dans un ibd ?",
+      "propositions": [
+        "Matière, énergie, information",
+        "Tension, courant et puissance électrique",
+        "Acteur, cas d'utilisation et frontière",
+        "Masse, volume et masse volumique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les flux sont de trois natures : matière (air, eau, colis…), énergie (électrique, mécanique, thermique, lumineuse) et information (consigne, mesure, ordre, message).",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Pour un drone de livraison, de quelle nature est le flux que représente le colis transporté ?",
+      "propositions": [
+        "Énergie",
+        "Information",
+        "Matière",
+        "Puissance"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le colis est un objet physique transporté : c'est un flux de matière, comme l'air, l'eau ou une pièce usinée.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ibd simplifié d'un portail, dans quel ordre l'énergie électrique du secteur traverse-t-elle les blocs ?",
+      "propositions": [
+        "Carte de commande, alimentation, bras, motoréducteur, vantail",
+        "Récepteur radio, carte de commande, alimentation, vantail, bras",
+        "Motoréducteur, alimentation, carte de commande, bras, vantail",
+        "Alimentation, carte, motoréducteur, bras, vantail"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "L'énergie entre par l'alimentation, traverse la carte de commande qui la module, puis le motoréducteur la convertit en énergie mécanique, transmise au bras puis au vantail. Le récepteur radio reçoit de l'information, pas de l'énergie.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ibd d'un portail motorisé, quelle conversion d'énergie le motoréducteur réalise-t-il ?",
+      "propositions": [
+        "Électrique en mécanique",
+        "Mécanique en énergie électrique",
+        "Information en énergie électrique",
+        "Énergie électrique en information"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le motoréducteur reçoit l'énergie électrique modulée par la carte et la convertit en énergie mécanique, transmise au bras puis au vantail.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ibd d'un drone, une partie « caméra » apparaît, alors qu'elle est absente du bdd du drone. Que faut-il en conclure ?",
+      "propositions": [
+        "C'est normal : un ibd peut ajouter librement des parties",
+        "Le modèle est incohérent : il faut l'ajouter au bdd",
+        "La caméra est forcément un acteur extérieur au système",
+        "La caméra doit être déplacée dans le diagramme req"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Les parties d'un ibd doivent toutes exister dans le bdd du même bloc. Une partie présente seulement dans l'ibd révèle une incohérence du modèle.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ibd d'un drone, qu'est-ce qui circule de la batterie vers les variateurs ?",
+      "propositions": [
+        "De l'énergie mécanique de rotation",
+        "De l'énergie électrique",
+        "Des consignes de vitesse",
+        "De l'air, flux de matière"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La batterie envoie de l'énergie électrique aux variateurs, qui la modulent pour les moteurs. L'énergie mécanique va des moteurs aux hélices ; les consignes viennent du contrôleur de vol.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ibd simplifié d'un portail, les flèches pleines et les flèches en pointillés n'ont pas le même sens. Que portent-elles ?",
+      "propositions": [
+        "Pleines : énergie ; pointillés : information",
+        "Pleines : information ; pointillés : énergie",
+        "Pleines : matière ; pointillés : énergie électrique",
+        "Pleines : composition ; pointillés : exigences"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Sur l'ibd du portail, les flèches pleines portent l'énergie (électrique puis mécanique) et les flèches en pointillés portent l'information (ordre radio, information vers la carte).",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces flux sont des flux d'énergie ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'énergie électrique envoyée à un moteur",
+        "La rotation transmise du moteur à l'hélice",
+        "La lumière émise par la LED d'un lampadaire",
+        "La consigne envoyée par le contrôleur au variateur",
+        "L'eau aspirée par une pompe"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'énergie peut être électrique, mécanique ou lumineuse. Une consigne est une information ; l'eau pompée est de la matière.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Quels éléments un diagramme de blocs internes (ibd) montre-t-il ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les parties du bloc étudié",
+        "Les ports des parties",
+        "Les flux qui circulent entre les ports",
+        "La décomposition du produit en arbre, comme une nomenclature",
+        "Les acteurs et les services qu'ils attendent"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'ibd montre l'intérieur d'un bloc : ses parties, leurs ports, les connecteurs et les flux. La décomposition en arbre est le rôle du bdd ; les acteurs et services, celui du uc.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Dans l'ibd d'un drone, quels blocs envoient des informations au contrôleur de vol ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La centrale inertielle",
+        "Le récepteur radio",
+        "La batterie",
+        "Les hélices",
+        "Le châssis du drone"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Dans l'ibd du drone, la centrale inertielle et le récepteur radio envoient des informations au contrôleur de vol. La batterie fournit de l'énergie électrique, les hélices reçoivent de l'énergie mécanique et le châssis est une pièce de structure : aucun d'eux n'envoie d'information.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:102",
+      "type": "vrai_faux",
+      "enonce": "Un flux est ce qui circule entre deux ports ; une flèche en indique le sens et une étiquette en indique la nature.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. C'est la définition du flux dans un ibd.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:103",
+      "type": "vrai_faux",
+      "enonce": "Le bdd indique ce qui circule entre les constituants, alors que l'ibd ne le fait pas.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. C'est l'inverse : le bdd dit seulement qui contient quoi ; l'ibd montre les liaisons et ce qui circule entre les parties.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Dans l'ibd d'un drone, les hélices agissent sur l'air, qui constitue un flux de matière.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Les hélices reçoivent l'énergie mécanique des moteurs et agissent sur l'air, flux de matière.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:105",
+      "type": "reponse_courte",
+      "enonce": "Quel nom donne-t-on au petit carré dessiné sur le bord d'un bloc, par lequel ce bloc échange avec l'extérieur ? Réponds en un mot.",
+      "reponses_acceptees": [
+        "port",
+        "un port",
+        "le port",
+        "ports",
+        "les ports"
+      ],
+      "difficulte": 1,
+      "explication": "C'est un port : un point d'échange d'un bloc avec l'extérieur.",
+      "notion": "Ports, flux et ibd"
+    },
+    {
+      "source": "si-1re:ch2:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont, dans l'ordre, les fonctions génériques de la chaîne de puissance ?",
+      "propositions": [
+        "Alimenter, distribuer, convertir, transmettre, agir",
+        "Acquérir, traiter, communiquer, convertir, agir",
+        "Alimenter, convertir, distribuer, agir, transmettre",
+        "Distribuer, alimenter, transmettre, convertir, agir"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La chaîne de puissance alimente, distribue (module), convertit, transmet puis agit sur la matière d'œuvre. Acquérir, traiter et communiquer sont les fonctions de la chaîne d'information.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction de la chaîne de puissance un moteur électrique réalise-t-il ?",
+      "propositions": [
+        "Distribuer",
+        "Convertir",
+        "Transmettre",
+        "Alimenter"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le moteur électrique change la forme de l'énergie : il convertit l'énergie électrique en énergie mécanique.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction de la chaîne de puissance un réducteur à engrenages réalise-t-il ?",
+      "propositions": [
+        "Convertir",
+        "Distribuer",
+        "Communiquer",
+        "Transmettre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le réducteur adapte et transporte l'énergie mécanique (vitesse, couple) : il réalise la fonction transmettre.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction un variateur ou un hacheur réalise-t-il dans une chaîne de puissance ?",
+      "propositions": [
+        "Convertir",
+        "Traiter",
+        "Distribuer",
+        "Alimenter"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le variateur ou le hacheur dose l'énergie envoyée à l'actionneur selon les ordres reçus : c'est la fonction distribuer (ou moduler).",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Sur une trottinette électrique, aucun constituant ne réalise la fonction transmettre. Pourquoi ?",
+      "propositions": [
+        "La fonction transmettre appartient à la chaîne d'information",
+        "La batterie envoie directement l'énergie électrique au pneu",
+        "Le module Bluetooth réalise déjà la fonction transmettre",
+        "Le moteur est dans la roue : l'entraînement est direct"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le moteur-roue est placé dans la roue : il n'y a pas de réducteur, l'entraînement est direct. Transmettre appartient à la chaîne de puissance ; le Bluetooth réalise communiquer.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Dans un lampadaire d'éclairage public intelligent, quel constituant réalise la fonction distribuer ?",
+      "propositions": [
+        "La LED, qui transforme l'énergie électrique en lumière",
+        "Le réseau électrique, qui fournit l'énergie au lampadaire",
+        "L'optique, qui oriente le flux lumineux vers la chaussée",
+        "Le driver de LED, qui dose le courant"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le driver de LED dose le courant envoyé à la LED : il distribue. Le réseau alimente, la LED convertit, l'optique transmet.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Lors d'un freinage avec récupération d'énergie sur une trottinette, que se passe-t-il dans la chaîne de puissance ?",
+      "propositions": [
+        "La batterie fournit davantage d'énergie au moteur pour ralentir",
+        "Le frein à disque recharge la batterie grâce au frottement",
+        "Le contrôleur coupe la chaîne de puissance et la chaîne d'information",
+        "Le moteur-roue devient génératrice et recharge la batterie"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "En freinage, le moteur-roue fonctionne en génératrice et renvoie de l'énergie vers la batterie : la chaîne de puissance est parcourue en sens inverse, elle est réversible.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:113",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces constituants, lesquels peuvent réaliser la fonction alimenter ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une batterie",
+        "Un panneau solaire",
+        "Un réservoir d'air comprimé",
+        "Un relais",
+        "Une LED"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Alimenter, c'est fournir l'énergie : batterie, réseau et bloc d'alimentation, panneau solaire, réservoir d'air comprimé. Le relais distribue ; la LED convertit.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Quels constituants réalisent la fonction agir, c'est-à-dire l'action sur la matière d'œuvre ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La roue d'un fauteuil roulant",
+        "L'hélice d'un drone",
+        "Le réducteur d'un portail",
+        "Le transistor d'un variateur",
+        "Le moteur d'un bras robotisé"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La fonction agir est réalisée par le constituant en contact avec la matière d'œuvre : roue, vantail, hélice, pince, doigt de prothèse. Le réducteur transmet, le transistor distribue, le moteur convertit.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:115",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'un vélo à assistance électrique, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La chaîne et les pignons réalisent la fonction transmettre",
+        "Le capteur de pédalage réalise la fonction acquérir",
+        "La batterie réalise la fonction distribuer",
+        "L'assistance doit être coupée au-delà de 25 km/h",
+        "La puissance nominale peut atteindre 350 W"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Sur le vélo, la chaîne et les pignons transmettent, le capteur de pédalage acquiert. La batterie alimente (elle ne distribue pas). La réglementation impose une assistance coupée au-delà de 25 km/h et une puissance nominale de 250 W au maximum.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:116",
+      "type": "vrai_faux",
+      "enonce": "La chaîne de puissance réalise l'action sur la matière d'œuvre.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. La chaîne de puissance alimente, distribue, convertit, transmet et agit sur la matière d'œuvre ; la chaîne d'information élabore les ordres.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Sur une trottinette électrique, la fonction distribuer est réalisée par la batterie de 36 V.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La batterie alimente. La fonction distribuer est réalisée par l'étage de puissance du contrôleur (transistors), qui module l'énergie envoyée au moteur.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:118",
+      "type": "vrai_faux",
+      "enonce": "La fonction distribuer appartient à la chaîne de puissance, même si elle obéit aux ordres de la chaîne d'information.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. L'énergie passe par le distributeur (relais, variateur, transistors), qui reçoit ses ordres de la fonction traiter.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:119",
+      "type": "reponse_courte",
+      "enonce": "Quelle fonction de la chaîne de puissance change la forme de l'énergie, par exemple d'électrique en mécanique ? Réponds par un verbe à l'infinitif.",
+      "reponses_acceptees": [
+        "convertir"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la fonction convertir, réalisée par exemple par un moteur électrique, un vérin ou une résistance chauffante.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Dans un lampadaire d'éclairage public, quel constituant dose le courant envoyé à la LED ? Réponds en trois mots.",
+      "reponses_acceptees": [
+        "driver de LED",
+        "le driver de LED",
+        "un driver de LED",
+        "driver de LEDs",
+        "driver LED",
+        "driver",
+        "le driver",
+        "drivers de LED"
+      ],
+      "difficulte": 2,
+      "explication": "C'est le driver de LED : il réalise la fonction distribuer en dosant le courant envoyé à la LED.",
+      "notion": "Chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch2:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les fonctions génériques de la chaîne d'information ?",
+      "propositions": [
+        "Alimenter, distribuer, convertir",
+        "Transmettre, convertir, agir",
+        "Mesurer, alimenter, éclairer",
+        "Acquérir, traiter, communiquer"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La chaîne d'information acquiert les informations, les traite et communique. Alimenter, distribuer, convertir, transmettre et agir sont les fonctions de la chaîne de puissance.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction un capteur de luminosité réalise-t-il ?",
+      "propositions": [
+        "Traiter",
+        "Communiquer",
+        "Acquérir",
+        "Convertir"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un capteur prélève une information sur l'environnement : il réalise la fonction acquérir de la chaîne d'information.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Dans un lampadaire intelligent, un module LoRa envoie l'état du lampadaire au service technique de la ville. Quelle fonction réalise-t-il ?",
+      "propositions": [
+        "Transmettre",
+        "Acquérir",
+        "Communiquer",
+        "Distribuer"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le module LoRa transmet des informations à un autre système : c'est la fonction communiquer. « Transmettre » désigne, dans la chaîne de puissance, le transport de l'énergie mécanique.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:124",
+      "type": "qcm_unique",
+      "enonce": "À quelle fonction de la chaîne de puissance la chaîne d'information envoie-t-elle ses ordres ?",
+      "propositions": [
+        "Distribuer",
+        "Convertir",
+        "Agir",
+        "Alimenter"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La fonction traiter envoie des ordres à la fonction distribuer, qui dose alors l'énergie envoyée à l'actionneur.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Sur une trottinette électrique, quelle fonction la poignée d'accélérateur réalise-t-elle ?",
+      "propositions": [
+        "Traiter",
+        "Distribuer",
+        "Acquérir",
+        "Transmettre"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La poignée d'accélérateur prélève la consigne de l'usager : elle réalise la fonction acquérir. Le microcontrôleur traite ensuite cette information.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Un capteur de fin de course est placé sur le bras d'un portail motorisé. Quel est son rôle ?",
+      "propositions": [
+        "Fournir l'énergie électrique au motoréducteur du bras",
+        "Moduler l'énergie électrique envoyée au moteur du bras",
+        "Renseigner la chaîne d'information sur l'action",
+        "Transmettre l'énergie mécanique du bras jusqu'au vantail"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Des capteurs placés sur la chaîne de puissance (fin de course, mesure de courant, codeur) renseignent la chaîne d'information sur l'état de l'action.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Le récepteur radio d'un portail capte l'ordre envoyé par la télécommande. Quelle fonction de la chaîne d'information réalise-t-il ?",
+      "propositions": [
+        "Communiquer",
+        "Acquérir",
+        "Traiter",
+        "Transmettre"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le récepteur radio prélève une information venant de l'utilisateur (l'ordre de la télécommande) : il fait partie des constituants de la fonction acquérir, comme un bouton ou un clavier.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Quel est le rôle de la fonction traiter dans un produit automatisé ?",
+      "propositions": [
+        "Prélever des informations sur le système et l'utilisateur",
+        "Doser l'énergie envoyée à l'actionneur selon les ordres",
+        "Élaborer les ordres à partir des informations",
+        "Transmettre des informations à l'utilisateur ou au réseau"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Traiter, c'est élaborer les ordres à partir des informations et du programme (microcontrôleur, automate, ordinateur). Prélever, c'est acquérir ; doser l'énergie, c'est distribuer ; informer l'utilisateur, c'est communiquer.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Quels constituants transmettent des informations à l'utilisateur ou à d'autres systèmes (fonction communiquer) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un afficheur",
+        "Un voyant",
+        "Un module Wi-Fi",
+        "Un capteur de température",
+        "Un relais"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Communiquer, c'est transmettre des informations : afficheur, voyant, haut-parleur, module Wi-Fi, Bluetooth ou LoRa. Le capteur acquiert ; le relais distribue l'énergie.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces constituants d'une station météo connectée appartiennent à sa chaîne d'information ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'anémomètre",
+        "La carte à microcontrôleur",
+        "Le module radio",
+        "La batterie",
+        "Le panneau solaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'anémomètre acquiert, le microcontrôleur traite, le module radio communique. La batterie et le panneau solaire fournissent l'énergie : ils réalisent la fonction alimenter de la chaîne de puissance.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces constituants, coche ceux qui prélèvent des informations, c'est-à-dire qui réalisent la fonction acquérir. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un bouton-poussoir",
+        "Un clavier",
+        "Un détecteur de présence",
+        "Un haut-parleur",
+        "Un automate programmable"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Boutons, claviers, capteurs, détecteurs et récepteurs radio acquièrent des informations. Le haut-parleur communique ; l'automate programmable traite.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Un microcontrôleur réalise la fonction traiter de la chaîne d'information.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Le microcontrôleur élabore les ordres à partir des informations et du programme.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:133",
+      "type": "vrai_faux",
+      "enonce": "« Communiquer » et « transmettre » désignent la même fonction de la chaîne d'information.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux. « Communiquer » appartient à la chaîne d'information (on transmet des informations) ; « transmettre » appartient à la chaîne de puissance (on transmet de l'énergie mécanique).",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Un haut-parleur réalise la fonction acquérir de la chaîne d'information.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Un haut-parleur donne une information à l'utilisateur : il réalise la fonction communiquer.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Quelle fonction de la chaîne d'information élabore les ordres à partir des informations reçues et du programme ? Réponds par un verbe à l'infinitif.",
+      "reponses_acceptees": [
+        "traiter"
+      ],
+      "difficulte": 1,
+      "explication": "C'est la fonction traiter, réalisée par un microcontrôleur, un automate programmable ou un ordinateur.",
+      "notion": "Chaîne d'information"
+    },
+    {
+      "source": "si-1re:ch2:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce que la matière d'œuvre d'un produit ?",
+      "propositions": [
+        "Ce sur quoi le produit agit",
+        "Le matériau dans lequel le produit est fabriqué",
+        "L'énergie stockée dans la batterie du produit",
+        "Le programme enregistré dans le microcontrôleur"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La matière d'œuvre est ce sur quoi le produit agit (le vantail et le véhicule, l'usager transporté, l'air brassé). Le produit lui apporte une valeur ajoutée.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la matière d'œuvre d'une trottinette électrique ?",
+      "propositions": [
+        "La batterie lithium-ion",
+        "Le moteur-roue arrière",
+        "Le cadre en aluminium",
+        "L'usager transporté"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La trottinette agit sur l'usager, qu'elle déplace : c'est sa matière d'œuvre. La batterie, le moteur et le cadre sont des constituants du produit.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur ajoutée un portail motorisé apporte-t-il à sa matière d'œuvre ?",
+      "propositions": [
+        "Une transformation chimique du vantail",
+        "Une information sur la météo du jour",
+        "Un stockage d'énergie dans le vantail",
+        "Un déplacement"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le portail déplace le vantail (de fermé à ouvert) et permet au véhicule de passer : la valeur ajoutée est un déplacement.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:139",
+      "type": "qcm_unique",
+      "enonce": "L'exigence de vitesse d'une trottinette est : 25 km/h au maximum, flexibilité F0 (réglementation). Un essai mesure une vitesse maximale de 25,4 km/h. Que conclure ?",
+      "propositions": [
+        "Satisfaite : un écart de 0,4 km/h est négligeable",
+        "Non satisfaite : 25,4 km/h dépasse la limite",
+        "Satisfaite : la classe F0 autorise ± 1 km/h d'écart",
+        "Satisfaite : seule l'autonomie compte pour l'usager"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "25,4 km/h est supérieur à 25 km/h et la flexibilité F0 est nulle : aucune marge n'est acceptée. L'exigence n'est pas satisfaite.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:140",
+      "type": "qcm_unique",
+      "enonce": "L'autonomie d'une trottinette, 27 km, a été mesurée sur terrain plat avec un usager de 75 kg. L'exigence est de 25 km au minimum. Que peut-on dire pour un usager de 95 kg qui roule en montée ?",
+      "propositions": [
+        "L'exigence est forcément satisfaite, car 27 km ⩾ 25 km",
+        "L'autonomie restera exactement égale à 27 km",
+        "L'autonomie sera plus grande, car l'usager pèse plus lourd",
+        "On ne peut rien garantir : les conditions diffèrent"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Une exigence satisfaite au banc ne l'est pas forcément dans toutes les conditions : un usager plus lourd et des montées augmentent la consommation. Il faut toujours préciser les conditions de mesure.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Exigences d'une trottinette : masse 15 kg au maximum ; charge 6 h ± 1 h ; autonomie 25 km au minimum ; vitesse 25 km/h au maximum (F0). Essais : masse 15,4 kg ; charge 7 h 15 min ; autonomie 26 km ; vitesse 24,6 km/h. Combien d'exigences sont satisfaites ?",
+      "propositions": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Masse : 15,4 kg > 15 kg, non. Charge : 7 h 15 min > 7 h, non. Autonomie : 26 km ⩾ 25 km, oui. Vitesse : 24,6 km/h ⩽ 25 km/h, oui. Deux exigences sont satisfaites.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Sur une trottinette électrique, qu'est-ce qui sort de l'étage de puissance du contrôleur (les transistors) ?",
+      "propositions": [
+        "Des ordres élaborés par le programme",
+        "De l'énergie électrique modulée",
+        "De l'énergie mécanique de rotation",
+        "Des informations pour le téléphone"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "L'étage de puissance réalise la fonction distribuer : il module l'énergie électrique de la batterie avant de l'envoyer au moteur-roue, qui la convertit en énergie mécanique.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Dans l'analyse d'une trottinette électrique, quels éléments sont des acteurs de son diagramme de cas d'utilisation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'usager",
+        "Le chargeur branché sur le secteur",
+        "Le téléphone avec l'application",
+        "La batterie de 36 V",
+        "Le contrôleur du moteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Acteurs : l'usager (principal), le chargeur et le téléphone (secondaires), les autres usagers de la route. La batterie et le contrôleur sont des constituants, à l'intérieur de la frontière.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Pour un vélo à assistance électrique, la réglementation impose une assistance coupée au-delà de 25 km/h et une puissance nominale de 250 W au maximum. Quels résultats d'essai sont conformes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Assistance coupée à 24,5 km/h",
+        "Puissance nominale de 250 W",
+        "Assistance encore active à 27 km/h",
+        "Puissance nominale de 300 W"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "24,5 km/h ⩽ 25 km/h et 250 W ⩽ 250 W sont conformes. Une assistance active à 27 km/h ou une puissance nominale de 300 W dépassent les limites réglementaires.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces intitulés sont des cas d'utilisation de la trottinette électrique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Se déplacer",
+        "Consulter l'état de charge",
+        "Recharger la batterie",
+        "Moduler le courant du moteur",
+        "Mesurer la position de la poignée"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les cas d'utilisation sont des services vus de l'extérieur : se déplacer, freiner, éclairer et signaler, recharger, consulter l'état de charge. Moduler le courant ou mesurer la poignée sont des opérations internes.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:146",
+      "type": "vrai_faux",
+      "enonce": "La matière d'œuvre d'un portail motorisé est le vantail, ainsi que le véhicule qui passe.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Le portail agit sur le vantail, qu'il déplace, pour laisser passer le véhicule.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Pour comparer une performance mesurée à une exigence, il faut préciser les conditions dans lesquelles la mesure a été faite.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Une exigence satisfaite au banc d'essai ne l'est pas forcément dans toutes les conditions (masse de l'usager, pente, température…).",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Pour une trottinette, une durée de charge de 7 h 30 min satisfait l'exigence « durée de charge complète : 6 h ± 1 h ».",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La plage acceptée va de 5 h à 7 h ; 7 h 30 min la dépasse.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:149",
+      "type": "reponse_courte",
+      "enonce": "La batterie d'une trottinette stocke 360 Wh utilisables. Avec un usager lourd en montée, la consommation atteint 18 Wh par kilomètre. L'exigence d'autonomie est de 25 km au minimum. Combien de kilomètres manque-t-il pour atteindre cette exigence ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 3,
+      "explication": "Autonomie : d = 360 / 18 = 20 km. Il manque 25 − 20 = 5 km : l'exigence n'est pas satisfaite dans ces conditions.",
+      "notion": "Analyse d'un produit réel"
+    },
+    {
+      "source": "si-1re:ch2:banque:150",
+      "type": "reponse_courte",
+      "enonce": "L'exigence de charge d'une trottinette est 6 h ± 1 h. Quelle est la durée de charge maximale acceptée, exprimée en minutes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "420"
+      ],
+      "difficulte": 3,
+      "explication": "Durée maximale : 6 + 1 = 7 h, soit 7 × 60 = 420 min.",
+      "notion": "Analyse d'un produit réel"
+    }
+  ]
+}

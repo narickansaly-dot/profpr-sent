@@ -1,0 +1,2317 @@
+{
+  "chapitre": 4,
+  "notions": [
+    "Fonctions de la chaîne de puissance",
+    "Sources parfaites d'effort et de flux",
+    "Stockage et batteries",
+    "Interrupteur parfait et hacheur",
+    "Moteur à courant continu",
+    "Vérins et autres convertisseurs",
+    "Rapport de transmission et couple",
+    "Transformer rotation en translation",
+    "Réversibilité"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch4:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Dans la chaîne de puissance d'une trottinette électrique, quelle fonction la batterie assure-t-elle ?",
+      "propositions": [
+        "Alimenter",
+        "Convertir",
+        "Transmettre",
+        "Agir"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La batterie fournit (et stocke) l'énergie électrique au début de la chaîne : elle réalise la fonction alimenter.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction de la chaîne de puissance le moteur électrique d'un portail motorisé réalise-t-il ?",
+      "propositions": [
+        "Moduler",
+        "Convertir",
+        "Alimenter",
+        "Agir"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le moteur change la nature de l'énergie, électrique en mécanique : c'est la fonction convertir.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Le réducteur placé entre le moteur et la roue d'un fauteuil roulant électrique réalise la fonction…",
+      "propositions": [
+        "convertir",
+        "distribuer",
+        "transmettre",
+        "alimenter"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le réducteur adapte la vitesse et le couple sans changer la nature mécanique de l'énergie : il transmet.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:004",
+      "type": "qcm_multiple",
+      "enonce": "Parmi les éléments suivants, lesquels réalisent la fonction « agir » dans leur produit ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'hélice d'un drone",
+        "Le vantail d'un portail motorisé",
+        "La pince d'un bras robotisé",
+        "Le moteur d'un drone",
+        "La batterie d'une trottinette"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Agir, c'est produire l'effet attendu sur la matière d'œuvre : l'hélice propulse l'air, le vantail ferme le passage, la pince saisit l'objet. Le moteur convertit et la batterie alimente.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui distingue la fonction « distribuer » de la fonction « moduler » ?",
+      "propositions": [
+        "Distribuer change la nature de l'énergie ; moduler la stocke",
+        "Distribuer adapte le couple ; moduler adapte la vitesse",
+        "Distribuer concerne la chaîne d'information ; moduler la chaîne de puissance",
+        "Distribuer laisse passer l'énergie en tout ou rien ; moduler en dose la quantité"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Un contacteur distribue : le moteur reçoit toute l'énergie ou rien. Un variateur module : il règle la quantité d'énergie transmise, donc la vitesse.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans quel ordre les fonctions d'une chaîne de puissance se succèdent-elles ?",
+      "propositions": [
+        "Alimenter, moduler, convertir, transmettre, agir",
+        "Alimenter, convertir, moduler, agir, transmettre",
+        "Convertir, alimenter, transmettre, moduler, agir",
+        "Moduler, alimenter, convertir, agir, transmettre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'énergie est d'abord fournie (alimenter), puis dosée (distribuer ou moduler), changée de nature (convertir), adaptée (transmettre) et enfin utilisée (agir).",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Une chaîne comporte un variateur (rendement 0,96), un moteur (0,80) et un réducteur (0,90), placés en série. Quel est son rendement global, arrondi au centième ?",
+      "propositions": [
+        "0,80",
+        "0,69",
+        "2,66",
+        "0,89"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les rendements de constituants en série se multiplient : η = 0,96 × 0,80 × 0,90 = 0,6912 ≈ 0,69. La somme (2,66) n'a pas de sens : un rendement ne dépasse pas 1.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:008",
+      "type": "qcm_unique",
+      "enonce": "La batterie d'un vélo à assistance électrique fournit 600 W à une chaîne de rendement global 0,75. Quelle puissance arrive à la roue ?",
+      "propositions": [
+        "800 W",
+        "150 W",
+        "450 W",
+        "600 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P(roue) = η × P(batterie) = 0,75 × 600 = 450 W. 150 W correspond aux pertes, 800 W à une division par le rendement au lieu d'une multiplication.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:009",
+      "type": "reponse_courte",
+      "enonce": "La roue d'une trottinette doit recevoir 300 W. La chaîne comporte un variateur (rendement 0,95), un moteur (0,85) et un réducteur (0,90). Quelle puissance la batterie doit-elle fournir, en watts, arrondie à l'unité ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "413"
+      ],
+      "difficulte": 3,
+      "explication": "η(global) = 0,95 × 0,85 × 0,90 = 0,72675. P(batterie) = P(roue) / η = 300 / 0,72675 ≈ 412,8 W, soit 413 W.",
+      "notion": "Fonctions de la chaîne de puissance",
+      "marge": 1,
+      "marge_relative": false
+    },
+    {
+      "source": "si-1re:ch4:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Quels constituants changent la nature de l'énergie qu'ils reçoivent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un moteur électrique",
+        "Un vérin pneumatique",
+        "Une LED",
+        "Un engrenage",
+        "Un hacheur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le moteur (électrique → mécanique), le vérin (pneumatique → mécanique) et la LED (électrique → lumineuse) convertissent. L'engrenage transmet une énergie qui reste mécanique ; le hacheur dose une énergie qui reste électrique.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Un concepteur cherche des solutions pour la fonction « transmettre » d'un bras robotisé. Lesquelles conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Des poulies et une courroie",
+        "Un pignon et une crémaillère",
+        "Une roue et une vis sans fin",
+        "Un hacheur",
+        "Un contacteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Poulies-courroie, pignon-crémaillère et roue et vis sans fin adaptent le mouvement mécanique : ce sont des transmetteurs. Le hacheur module et le contacteur distribue l'énergie électrique.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "À propos du rendement global d'une chaîne de constituants placés en série : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il est égal au produit des rendements des constituants",
+        "Il est inférieur ou égal au plus petit des rendements",
+        "Il est égal à la somme des rendements",
+        "Il peut dépasser 1 si la chaîne est longue",
+        "Il est égal à la moyenne des rendements"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "η(global) = η1 × η2 × … × ηn. Chaque facteur est compris entre 0 et 1, donc le produit est inférieur ou égal à chacun d'eux, en particulier au plus petit.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:013",
+      "type": "vrai_faux",
+      "enonce": "La chaîne d'information décide quand et combien d'énergie transmettre ; la chaîne de puissance réalise l'action.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est le partage des rôles décrit dans le cours : la chaîne d'information envoie les ordres (au variateur par exemple), la chaîne de puissance agit.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Un contacteur module l'énergie : il permet de régler progressivement la vitesse d'un moteur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Un contacteur distribue en tout ou rien : le moteur reçoit toute la tension ou rien. C'est le variateur qui module.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Entre deux blocs d'une chaîne de puissance, le flux d'énergie peut être décrit par une grandeur d'effort et une grandeur de flux.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Toute puissance s'écrit effort × flux : U et I en électricité, C et ω en rotation, F et v en translation, p et qv pour un fluide.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:016",
+      "type": "reponse_courte",
+      "enonce": "Une chaîne comporte trois constituants en série de rendements 0,9 ; 0,8 et 0,5. Quel est son rendement global ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,36"
+      ],
+      "difficulte": 2,
+      "explication": "η = 0,9 × 0,8 × 0,5 = 0,36, soit 36 %.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Le rendement global d'une chaîne de puissance est égal au rendement de son meilleur constituant.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Le rendement global est le produit des rendements : il est inférieur ou égal au plus petit d'entre eux, donc inférieur au rendement du meilleur constituant dès que les autres ont des pertes.",
+      "notion": "Fonctions de la chaîne de puissance"
+    },
+    {
+      "source": "si-1re:ch4:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Une source parfaite de tension…",
+      "propositions": [
+        "débite le même courant quelle que soit la tension",
+        "voit sa tension baisser quand le courant augmente",
+        "ne peut débiter aucun courant",
+        "garde la même tension quel que soit le courant débité"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une source parfaite de tension impose l'effort (la tension E) quel que soit le flux (le courant) demandé par la charge.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quelle grandeur une source parfaite de courant impose-t-elle ?",
+      "propositions": [
+        "L'intensité du courant",
+        "La tension à ses bornes",
+        "La puissance fournie",
+        "La résistance de la charge"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une source parfaite de flux électrique impose l'intensité I₀, quelle que soit la tension nécessaire.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphique donnant la tension U en fonction de l'intensité I, comment se représente une source parfaite de courant ?",
+      "propositions": [
+        "Par une droite horizontale",
+        "Par une droite verticale",
+        "Par une droite passant par l'origine",
+        "Par une droite décroissante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le courant vaut I₀ quelle que soit la tension : tous les points ont la même abscisse I₀, d'où une droite verticale. La droite horizontale correspond à la source de tension.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Une pompe volumétrique impose son débit, quelle que soit la pression nécessaire. Quel modèle lui associer ?",
+      "propositions": [
+        "Une source parfaite d'effort",
+        "Un interrupteur parfait",
+        "Une source parfaite de flux",
+        "Un transmetteur parfait"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le débit volumique est une grandeur de flux : une pompe qui l'impose se modélise par une source parfaite de flux.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Le réseau d'air comprimé d'un atelier maintient 6 bar quel que soit le débit consommé par les vérins. Il se modélise par…",
+      "propositions": [
+        "une source parfaite de flux",
+        "un hacheur",
+        "un convertisseur",
+        "une source parfaite d'effort"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La pression est une grandeur d'effort ; elle est imposée quel que soit le débit : c'est une source parfaite d'effort.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Une batterie a une tension à vide E = 24 V et une résistance interne r = 0,2 Ω. Elle débite 15 A. Quelle est la tension à ses bornes ?",
+      "propositions": [
+        "21 V",
+        "27 V",
+        "24 V",
+        "3 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "U = E − r·I = 24 − 0,2 × 15 = 24 − 3 = 21 V. 27 V résulte d'une addition au lieu d'une soustraction ; 3 V est seulement la chute de tension r·I.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de tension à vide 48 V et de résistance interne 0,1 Ω débite 30 A. Quel est l'écart relatif entre sa tension et celle du modèle parfait, rapporté à la tension à vide ?",
+      "propositions": [
+        "3 %",
+        "6,25 %",
+        "93,75 %",
+        "6,67 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "U = 48 − 0,1 × 30 = 45 V. Écart : 48 − 45 = 3 V, rapporté à la valeur du modèle parfait 48 V : 3 / 48 = 0,0625 = 6,25 %. 6,67 % viendrait d'une division par 45 V.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:025",
+      "type": "reponse_courte",
+      "enonce": "Une batterie de résistance interne 0,15 Ω débite 20 A. Quelle puissance perd-elle dans sa résistance interne, en watts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "60"
+      ],
+      "difficulte": 2,
+      "explication": "P = r·I² = 0,15 × 20² = 0,15 × 400 = 60 W, dissipés en chaleur dans la batterie.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces éléments se modélisent par une source parfaite d'effort ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La batterie d'un vélo à assistance électrique",
+        "Une prise du réseau 230 V",
+        "Un château d'eau",
+        "Une pompe volumétrique",
+        "Un driver de LED à courant constant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La batterie et la prise imposent une tension, le château d'eau une pression : ce sont des efforts. La pompe volumétrique impose un débit et le driver un courant : ce sont des sources de flux.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Quelles grandeurs sont des grandeurs d'effort ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tension électrique",
+        "Le couple",
+        "La pression",
+        "Le débit volumique",
+        "La vitesse angulaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Tension, couple, force et pression sont des efforts ; intensité, vitesse, vitesse angulaire et débit sont des flux.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Classe les grandeurs : lesquelles sont des grandeurs de flux ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'intensité du courant",
+        "La vitesse d'un chariot",
+        "Le débit volumique",
+        "La force",
+        "La tension"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Intensité, vitesse et débit volumique décrivent ce qui « circule » : ce sont des flux. Force et tension sont des efforts.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:029",
+      "type": "vrai_faux",
+      "enonce": "Une source parfaite de courant impose la tension à ses bornes.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Elle impose l'intensité I₀ ; la tension à ses bornes dépend de la charge.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Un driver de LED qui impose 350 mA quelle que soit la tension se modélise par une source parfaite de courant.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Il impose une grandeur de flux (l'intensité) quelle que soit la grandeur d'effort : c'est une source de courant.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Court-circuiter une source de tension ne présente aucun danger, car le modèle de la source parfaite prévoit un courant limité.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le modèle parfait prévoit au contraire un courant infini en court-circuit. Le courant réel, limité seulement par la petite résistance interne, est très élevé : il faut un fusible.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:032",
+      "type": "reponse_courte",
+      "enonce": "Une batterie de tension à vide 36 V et de résistance interne 0,25 Ω débite 8 A. Quelle est la tension à ses bornes, en volts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "34"
+      ],
+      "difficulte": 2,
+      "explication": "U = E − r·I = 36 − 0,25 × 8 = 36 − 2 = 34 V.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Une source réelle de tension peut se modéliser par une source parfaite de tension E associée à une résistance interne r.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est le modèle le plus simple d'une source réelle : U = E − r·I.",
+      "notion": "Sources parfaites d'effort et de flux"
+    },
+    {
+      "source": "si-1re:ch4:banque:034",
+      "type": "qcm_unique",
+      "enonce": "En quelle unité exprime-t-on la capacité d'une batterie ?",
+      "propositions": [
+        "En wattheures (Wh)",
+        "En volts (V)",
+        "En ampères-heures (Ah)",
+        "En watts (W)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La capacité Q est la charge que la batterie peut débiter, en Ah. L'énergie s'exprime en Wh et vaut W = U × Q.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quelle énergie stocke une batterie de 48 V et 10 Ah ?",
+      "propositions": [
+        "58 Wh",
+        "4,8 Wh",
+        "0,21 Wh",
+        "480 Wh"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "W = U × Q = 48 × 10 = 480 Wh. Additionner 48 et 10 (58) n'a pas de sens physique.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 36 V et 10 Ah est complètement chargée. Quelle énergie stocke-t-elle, exprimée en joules ?",
+      "propositions": [
+        "Environ 1,3 × 10⁶ J",
+        "360 J",
+        "Environ 1,3 × 10³ J",
+        "0,1 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "W = 36 × 10 = 360 Wh, et 1 Wh = 3 600 J : W = 360 × 3 600 = 1 296 000 J ≈ 1,3 × 10⁶ J.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 400 Wh alimente un moteur qui consomme en moyenne 250 W. Quelle est l'autonomie ?",
+      "propositions": [
+        "0,63 h",
+        "1,6 h",
+        "2,5 h",
+        "6,4 h"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "t = W / P = 400 / 250 = 1,6 h (soit 1 h 36 min). 0,63 h vient du calcul inverse P / W.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:038",
+      "type": "qcm_unique",
+      "enonce": "On associe en série 10 cellules lithium-ion identiques de 3,6 V et 2,5 Ah. Quelles sont la tension et la capacité de la batterie obtenue ?",
+      "propositions": [
+        "3,6 V et 25 Ah",
+        "36 V et 25 Ah",
+        "36 V et 2,5 Ah",
+        "3,6 V et 2,5 Ah"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "En série, les tensions s'ajoutent (10 × 3,6 = 36 V) et la capacité reste celle d'une cellule (2,5 Ah).",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Une batterie « 13S5P » est faite de cellules de 3,6 V et 3 Ah : 13 cellules en série, et 5 de ces groupes en parallèle. Quelle énergie stocke-t-elle ?",
+      "propositions": [
+        "140 Wh",
+        "54 Wh",
+        "10,8 Wh",
+        "702 Wh"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Tension : 13 × 3,6 = 46,8 V. Capacité : 5 × 3 = 15 Ah. W = 46,8 × 15 = 702 Wh, qui est bien l'énergie de 65 cellules de 10,8 Wh.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:040",
+      "type": "qcm_multiple",
+      "enonce": "À propos des énergies massiques citées dans le cours : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une batterie lithium-ion stocke de 150 à 250 Wh/kg",
+        "Une batterie au plomb stocke de 30 à 40 Wh/kg",
+        "Un supercondensateur stocke plus d'énergie par kilogramme qu'une batterie lithium-ion",
+        "Une batterie au plomb stocke plus d'énergie par kilogramme qu'une batterie lithium-ion"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Ordres de grandeur : lithium-ion 150 à 250 Wh/kg, plomb 30 à 40 Wh/kg, supercondensateur 5 à 10 Wh/kg. Le lithium-ion est le meilleur des trois.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quel est le principal atout d'un supercondensateur par rapport à une batterie lithium-ion ?",
+      "propositions": [
+        "Il fournit une forte puissance et supporte de très nombreux cycles",
+        "Il stocke plus d'énergie par kilogramme qu'une batterie",
+        "Il convertit l'énergie électrique en énergie mécanique",
+        "Il impose un courant constant à la charge"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le supercondensateur encaisse ou restitue une forte puissance pendant quelques secondes et supporte des centaines de milliers de cycles, mais il stocke peu d'énergie (5 à 10 Wh/kg).",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quelle énergie stocke un supercondensateur de capacité 500 F chargé sous 16 V ?",
+      "propositions": [
+        "128 000 J",
+        "64 000 J",
+        "4 000 J",
+        "8 000 J"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "W = ½·C·U² = 0,5 × 500 × 16² = 0,5 × 500 × 256 = 64 000 J. Oublier le ½ donne 128 000 J ; oublier le carré donne 4 000 J.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Une STEP remonte 500 m³ d'eau (masse 5 × 10⁵ kg) d'une hauteur de 200 m. Quelle énergie potentielle stocke-t-elle, en kWh (g = 9,81 N/kg) ?",
+      "propositions": [
+        "Environ 981 kWh",
+        "Environ 0,27 kWh",
+        "Environ 273 kWh",
+        "Environ 27 300 kWh"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "W = m·g·h = 5 × 10⁵ × 9,81 × 200 = 9,81 × 10⁸ J. En Wh : 9,81 × 10⁸ / 3 600 ≈ 2,73 × 10⁵ Wh ≈ 273 kWh. 981 kWh vient d'une division des joules par 10⁶ au lieu de 3,6 × 10⁶ (1 kWh = 3 600 000 J).",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "On associe des cellules identiques pour former une batterie. Coche toutes les réponses exactes.",
+      "propositions": [
+        "En série, les tensions s'ajoutent",
+        "En parallèle, les capacités s'ajoutent",
+        "En série, les capacités s'ajoutent",
+        "En parallèle, les tensions s'ajoutent",
+        "L'énergie totale est la somme des énergies des cellules"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Série : tension multipliée, capacité inchangée. Parallèle : tension inchangée, capacité multipliée. Dans les deux cas, l'énergie totale est la somme des énergies.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels stockent de l'énergie ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La batterie au plomb de secours d'un portail",
+        "Un réservoir d'air comprimé",
+        "L'eau remontée dans le bassin haut d'une STEP",
+        "Un hacheur",
+        "Un engrenage"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Batterie (chimique), réservoir d'air (pneumatique) et eau en hauteur (potentielle de pesanteur) stockent l'énergie. Le hacheur la module, l'engrenage la transmet.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:046",
+      "type": "vrai_faux",
+      "enonce": "L'ampère-heure est une unité d'énergie.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "L'ampère-heure est une unité de charge électrique (la capacité). L'énergie s'exprime en Wh ou en J : W = U × Q.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Une batterie de 12 V et 10 Ah stocke quatre fois moins d'énergie qu'une batterie de 48 V et 10 Ah.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "12 × 10 = 120 Wh et 48 × 10 = 480 Wh : le rapport est bien de 4.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Un wattheure vaut 3 600 joules.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "1 Wh = 1 W × 3 600 s = 3 600 J.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:049",
+      "type": "reponse_courte",
+      "enonce": "La batterie d'un drone a une tension de 22,2 V et une capacité de 5 Ah. Quelle énergie stocke-t-elle, en Wh ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "111"
+      ],
+      "difficulte": 2,
+      "explication": "W = U × Q = 22,2 × 5 = 111 Wh.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Une station météo isolée est alimentée par une batterie de 12 V et 20 Ah ; elle consomme en moyenne 2 W. Quelle est son autonomie, en heures ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "120"
+      ],
+      "difficulte": 3,
+      "explication": "W = 12 × 20 = 240 Wh, puis t = W / P = 240 / 2 = 120 h, soit 5 jours.",
+      "notion": "Stockage et batteries"
+    },
+    {
+      "source": "si-1re:ch4:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire d'un interrupteur parfait lorsqu'il est fermé ?",
+      "propositions": [
+        "Le courant qui le traverse est nul",
+        "Il dissipe une puissance égale à u × i",
+        "Sa tension est égale à celle de la source",
+        "La tension à ses bornes est nulle"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Fermé : u = 0, quel que soit le courant. Ouvert : i = 0, quelle que soit la tension. Dans les deux cas p = u × i = 0.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Quelle puissance un interrupteur parfait dissipe-t-il ?",
+      "propositions": [
+        "Aucune",
+        "La moitié de la puissance de la charge",
+        "Toute la puissance de la charge",
+        "Une puissance proportionnelle au courant"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Fermé, u = 0 ; ouvert, i = 0 : le produit p = u × i est toujours nul.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Comment est défini le rapport cyclique α d'un hacheur de période T, dont l'interrupteur est fermé pendant t_on ?",
+      "propositions": [
+        "α = T / t_on",
+        "α = t_on / T",
+        "α = t_on × T",
+        "α = T − t_on"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "α est la fraction de la période pendant laquelle l'interrupteur est fermé : α = t_on / T, compris entre 0 et 1.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Un hacheur alimenté sous 24 V fonctionne avec un rapport cyclique de 0,5. Quelle est la tension moyenne aux bornes du moteur ?",
+      "propositions": [
+        "48 V",
+        "0,5 V",
+        "12 V",
+        "24 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "U(moy) = α × U = 0,5 × 24 = 12 V.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Un hacheur fonctionne à 10 kHz ; l'interrupteur reste fermé 60 µs par période. Quel est le rapport cyclique ?",
+      "propositions": [
+        "0,06",
+        "1,67",
+        "6",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "T = 1 / f = 1 / 10 000 = 100 µs ; α = t_on / T = 60 / 100 = 0,6.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un variateur de trottinette alimenté par une batterie de 36 V doit fournir 27 V en moyenne au moteur. Quel rapport cyclique faut-il ?",
+      "propositions": [
+        "0,75",
+        "1,33",
+        "0,27",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "α = U(moy) / U = 27 / 36 = 0,75. 1,33 est l'inverse : un rapport cyclique ne dépasse jamais 1.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la période de découpage d'un hacheur qui fonctionne à 20 kHz ?",
+      "propositions": [
+        "20 µs",
+        "50 µs",
+        "0,05 µs",
+        "5 ms"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "T = 1 / f = 1 / 20 000 = 5 × 10⁻⁵ s = 50 µs.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Un hacheur alimenté sous 48 V fonctionne à 5 kHz ; l'interrupteur est fermé 150 µs par période. Quelle tension moyenne reçoit la charge ?",
+      "propositions": [
+        "7,2 V",
+        "64 V",
+        "36 V",
+        "12 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "T = 1 / 5 000 = 200 µs ; α = 150 / 200 = 0,75 ; U(moy) = 0,75 × 48 = 36 V. 12 V correspond à la durée d'ouverture ; 64 V à une division par α.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un moteur alimenté par un hacheur réagit-il à la valeur moyenne de la tension ?",
+      "propositions": [
+        "Le hacheur produit une tension continue parfaitement constante",
+        "L'interrupteur du hacheur reste fermé en permanence",
+        "La batterie fournit une tension alternative",
+        "L'inertie et l'inductance du moteur lissent les créneaux rapides"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La fréquence de découpage (1 à 20 kHz) est élevée : l'inertie mécanique et l'inductance du bobinage empêchent le moteur de suivre chaque créneau.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Un moteur doit recevoir 18 V sous 6 A ; la batterie fournit 24 V. On règle la tension avec une résistance placée en série. Quelle puissance cette résistance dissipe-t-elle ?",
+      "propositions": [
+        "36 W",
+        "108 W",
+        "144 W",
+        "6 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "La résistance supporte 24 − 18 = 6 V et est traversée par 6 A : P = 6 × 6 = 36 W perdus en chaleur. Le moteur reçoit 108 W sur 144 W fournis : rendement 75 %, bien moins qu'avec un hacheur.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "À propos de l'interrupteur parfait : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Ouvert, le courant qui le traverse est nul",
+        "Fermé, la tension à ses bornes est nulle",
+        "Le passage d'un état à l'autre est supposé instantané",
+        "Ouvert, la tension à ses bornes est nulle",
+        "Il dissipe de l'énergie à chaque instant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le modèle a deux états : fermé u = 0, ouvert i = 0, avec une commutation instantanée. Il ne dissipe donc jamais d'énergie.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Dans quelles situations l'énergie est-elle modulée (et non distribuée en tout ou rien) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un hacheur règle la vitesse du moteur d'un fauteuil roulant",
+        "La MLI baisse la luminosité des LED d'un lampadaire en milieu de nuit",
+        "Un contacteur met en marche un tapis roulant",
+        "Un distributeur pneumatique fait sortir complètement un vérin"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le hacheur et la MLI dosent la quantité d'énergie. Le contacteur et le distributeur laissent passer l'énergie en totalité ou pas du tout : ils distribuent.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "Un hacheur est alimenté sous 24 V et son rapport cyclique α peut varier. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pour α = 0,25, la tension moyenne vaut 6 V",
+        "Pour α = 1, la tension moyenne vaut 24 V",
+        "Pour α = 0, la tension moyenne est nulle",
+        "Pour α = 0,5, la tension moyenne vaut 48 V",
+        "En choisissant α = 2, on obtient 48 V en moyenne"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "U(moy) = α × 24 avec 0 ⩽ α ⩽ 1 : 6 V pour 0,25 ; 24 V pour 1 ; 0 V pour 0. Le hacheur ne peut pas dépasser la tension de la source.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:064",
+      "type": "vrai_faux",
+      "enonce": "La tension moyenne en sortie d'un hacheur est toujours comprise entre 0 et la tension de la source.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "U(moy) = α × U avec α compris entre 0 et 1.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:065",
+      "type": "vrai_faux",
+      "enonce": "Pour un même moteur, régler la vitesse avec une résistance en série donne un meilleur rendement qu'avec un hacheur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "La résistance dissipe en chaleur la tension qu'elle absorbe ; le hacheur, fait d'interrupteurs presque parfaits, atteint couramment 95 % de rendement.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Un pont en H, montage à quatre interrupteurs, permet d'inverser le sens de rotation d'un moteur à courant continu.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Le pont en H permet d'appliquer la tension au moteur dans un sens ou dans l'autre.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:067",
+      "type": "reponse_courte",
+      "enonce": "Un hacheur alimenté sous 12 V fonctionne avec un rapport cyclique de 0,35. Quelle est la tension moyenne en sortie, en volts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "4,2"
+      ],
+      "difficulte": 2,
+      "explication": "U(moy) = α × U = 0,35 × 12 = 4,2 V.",
+      "notion": "Interrupteur parfait et hacheur"
+    },
+    {
+      "source": "si-1re:ch4:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Dans le modèle simple du moteur à courant continu, le couple électromagnétique est proportionnel…",
+      "propositions": [
+        "à la tension d'alimentation",
+        "à l'intensité du courant",
+        "à la vitesse angulaire",
+        "à la résistance du bobinage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "C = K·I : le couple est proportionnel au courant absorbé.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Dans ce même modèle, la force électromotrice E d'un moteur à courant continu est proportionnelle…",
+      "propositions": [
+        "à l'intensité du courant",
+        "à la résistance du bobinage",
+        "à la vitesse angulaire",
+        "au couple résistant"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "E = K·Ω : la force électromotrice est proportionnelle à la vitesse angulaire.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de constante K = 0,04 V·s/rad absorbe 10 A. Quel couple électromagnétique développe-t-il ?",
+      "propositions": [
+        "250 N·m",
+        "0,004 N·m",
+        "4 N·m",
+        "0,4 N·m"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "C = K·I = 0,04 × 10 = 0,4 N·m. 250 N·m correspond à I / K.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de résistance R = 0,5 Ω est alimenté sous 12 V et absorbe 4 A. Que vaut sa force électromotrice ?",
+      "propositions": [
+        "10 V",
+        "14 V",
+        "2 V",
+        "12 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "U = E + R·I donc E = U − R·I = 12 − 0,5 × 4 = 10 V. 2 V est la chute de tension R·I ; 14 V résulte d'une erreur de signe.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Un moteur à courant continu (U = 24 V, R = 0,5 Ω, K = 0,06 V·s/rad) absorbe 6 A. À quelle vitesse tourne-t-il ?",
+      "propositions": [
+        "350 tr/min",
+        "Environ 3 340 tr/min",
+        "Environ 3 820 tr/min",
+        "21 000 tr/min"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "E = 24 − 0,5 × 6 = 21 V ; Ω = E / K = 21 / 0,06 = 350 rad/s ; N = 350 × 60 / (2π) ≈ 3 342 tr/min. 3 820 tr/min vient d'un oubli de R·I ; 350 tr/min d'un oubli de conversion.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Convertis en rad/s la vitesse d'un moteur qui tourne à 3 000 tr/min.",
+      "propositions": [
+        "50 rad/s",
+        "3 000 rad/s",
+        "Environ 314 rad/s",
+        "Environ 18 850 rad/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Ω = 2π × N / 60 = 2π × 3 000 / 60 = 100π ≈ 314 rad/s. 50 rad/s oublie le 2π ; 18 850 rad/s oublie la division par 60.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:074",
+      "type": "reponse_courte",
+      "enonce": "Un moteur de résistance 0,6 Ω est alimenté sous 24 V et absorbe 5 A. Quelle puissance perd-il par effet Joule, en watts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "15"
+      ],
+      "difficulte": 2,
+      "explication": "P(J) = R·I² = 0,6 × 5² = 0,6 × 25 = 15 W.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Un moteur alimenté sous 12 V absorbe 3 A ; sa résistance vaut 1 Ω et ses pertes mécaniques 2 W. Quel est son rendement, arrondi à l'unité ?",
+      "propositions": [
+        "75 %",
+        "94 %",
+        "144 %",
+        "69 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "P(a) = 12 × 3 = 36 W ; P(J) = 1 × 3² = 9 W ; P(em) = 36 − 9 = 27 W ; P(u) = 27 − 2 = 25 W ; η = 25 / 36 ≈ 0,69. 75 % oublie les pertes mécaniques ; 144 % inverse le rapport.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Au démarrage d'un moteur à courant continu alimenté sous tension constante : Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vitesse est nulle, donc la force électromotrice est nulle",
+        "Le courant vaut U / R",
+        "Le variateur doit limiter ce courant élevé",
+        "Le courant de démarrage est nul",
+        "Le couple au démarrage est nul"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Ω = 0 donc E = K·Ω = 0, et U = R·I donne I = U / R, très élevé car R est petite. Le couple C = K·I est donc grand, pas nul.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de résistance 0,3 Ω est branché directement sur une batterie de 24 V. Quel courant absorbe-t-il au démarrage ?",
+      "propositions": [
+        "80 A",
+        "7,2 A",
+        "0,0125 A",
+        "24 A"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Au démarrage, E = 0 donc I = U / R = 24 / 0,3 = 80 A. 7,2 A correspond au produit U × R.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Quelles relations du modèle simple du moteur à courant continu sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "U = E + R·I",
+        "P(em) = E·I = C·Ω",
+        "P(J) = R·I²",
+        "E = K·I",
+        "C = K·Ω"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les relations correctes sont U = E + R·I, P(em) = E·I = C·Ω, P(J) = R·I², ainsi que E = K·Ω et C = K·I ; les propositions « E = K·I » et « C = K·Ω » échangent I et Ω.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Un moteur à courant continu est alimenté sous tension constante. On augmente le couple résistant qu'il doit vaincre. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le courant absorbé augmente",
+        "La chute de tension R·I augmente",
+        "La vitesse diminue un peu",
+        "La force électromotrice augmente",
+        "Le courant absorbé diminue"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "C = K·I : plus de couple demande plus de courant. R·I augmente, donc E = U − R·I diminue, et Ω = E / K diminue un peu.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:080",
+      "type": "vrai_faux",
+      "enonce": "La constante K d'un moteur à courant continu s'exprime en V·s/rad, unité égale au N·m/A.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "E = K·Ω donne K en V/(rad/s) = V·s/rad ; C = K·I donne K en N·m/A. Les deux unités sont égales.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:081",
+      "type": "vrai_faux",
+      "enonce": "À vide, la vitesse angulaire d'un moteur à courant continu est à peu près égale à K / U.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "À vide, I ≈ 0 donc E ≈ U et Ω ≈ U / K, et non K / U.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:082",
+      "type": "vrai_faux",
+      "enonce": "Dans les relations E = K·Ω et C = K·I, la vitesse angulaire doit être exprimée en rad/s.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Les formules utilisent Ω en rad/s ; une vitesse en tr/min se convertit par Ω = 2π × N / 60.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:083",
+      "type": "reponse_courte",
+      "enonce": "La force électromotrice d'un moteur de constante K = 0,05 V·s/rad vaut 15 V. Quelle est sa vitesse angulaire, en rad/s ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "300"
+      ],
+      "difficulte": 2,
+      "explication": "Ω = E / K = 15 / 0,05 = 300 rad/s.",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:084",
+      "type": "reponse_courte",
+      "enonce": "Un moteur de résistance 0,4 Ω, alimenté sous 24 V, absorbe 10 A. Quelle est sa puissance électromagnétique, en watts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "200"
+      ],
+      "difficulte": 3,
+      "explication": "E = U − R·I = 24 − 0,4 × 10 = 20 V ; P(em) = E·I = 20 × 10 = 200 W (soit P(a) = 240 W moins P(J) = 40 W).",
+      "notion": "Moteur à courant continu"
+    },
+    {
+      "source": "si-1re:ch4:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Comment calcule-t-on la force de poussée théorique d'un vérin ?",
+      "propositions": [
+        "F = p / S",
+        "F = p × S",
+        "F = S / p",
+        "F = qv × S"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La force est le produit de la pression (en Pa) par la surface du piston (en m²).",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Un vérin a un piston de surface 2 × 10⁻³ m² et il est alimenté sous 5 bar. Quelle est sa force théorique ?",
+      "propositions": [
+        "0,01 N",
+        "2,5 × 10⁸ N",
+        "1 000 N",
+        "100 N"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "p = 5 bar = 5 × 10⁵ Pa ; F = p × S = 5 × 10⁵ × 2 × 10⁻³ = 1 000 N. 0,01 N vient d'un oubli de la conversion des bars en pascals.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Un vérin de bras robotisé a un piston de diamètre 50 mm et il est alimenté sous 6 bar. Quelle est sa force théorique ?",
+      "propositions": [
+        "Environ 4 710 N",
+        "Environ 118 N",
+        "Environ 0,012 N",
+        "Environ 1 180 N"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "S = π × D² / 4 = π × 0,050² / 4 ≈ 1,96 × 10⁻³ m² ; F = 6 × 10⁵ × 1,96 × 10⁻³ ≈ 1 178 N. 4 710 N vient de l'usage du diamètre comme rayon.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Un vérin de surface 8 × 10⁻⁴ m² reçoit un débit de 1,2 × 10⁻⁴ m³/s. À quelle vitesse sa tige sort-elle ?",
+      "propositions": [
+        "0,15 m/s",
+        "6,7 m/s",
+        "9,6 × 10⁻⁸ m/s",
+        "1,5 m/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "v = qv / S = 1,2 × 10⁻⁴ / 8 × 10⁻⁴ = 0,15 m/s. 6,7 m/s correspond au rapport inverse S / qv.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Dans un lampadaire d'éclairage public, quel composant convertit l'énergie électrique en lumière ?",
+      "propositions": [
+        "Le hacheur",
+        "La LED",
+        "La batterie",
+        "Le driver"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La LED convertit l'énergie électrique en énergie lumineuse ; le hacheur et le driver dosent l'énergie, la batterie la stocke.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les moteurs électriques présentés dans le cours sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le moteur pas à pas tourne d'un angle fixe à chaque impulsion",
+        "Le servomoteur associe un moteur, un réducteur et un capteur de position",
+        "Le moteur sans balais équipe les drones et les moteurs-roues",
+        "Le moteur sans balais fonctionne sans variateur électronique",
+        "Le moteur pas à pas a besoin d'un vérin pour tourner"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Pas à pas : un angle fixe par impulsion (1,8° par exemple). Servomoteur : moteur + réducteur + capteur. Sans balais : drones, trottinettes, avec un variateur plus complexe.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Un moteur pas à pas tourne de 1,8° par impulsion. Combien d'impulsions faut-il pour le faire tourner d'un quart de tour ?",
+      "propositions": [
+        "200",
+        "162",
+        "50",
+        "90"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un quart de tour vaut 90° ; 90 / 1,8 = 50 impulsions. 200 impulsions font un tour complet ; 162 correspond au produit 90 × 1,8.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:092",
+      "type": "qcm_unique",
+      "enonce": "De quoi est constitué l'actionneur linéaire électrique d'un lit médicalisé ?",
+      "propositions": [
+        "D'un vérin pneumatique et d'un distributeur",
+        "D'une batterie et d'une LED",
+        "D'un hacheur et d'un supercondensateur",
+        "D'un moteur, d'un réducteur et d'un système vis-écrou"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'actionneur linéaire réunit dans un même boîtier un moteur, un réducteur et un système vis-écrou qui transforme la rotation en translation.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Quelle conversion d'énergie une pompe réalise-t-elle ?",
+      "propositions": [
+        "Mécanique en hydraulique",
+        "Hydraulique en électrique",
+        "Électrique en lumineuse",
+        "Thermique en mécanique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La pompe reçoit une énergie mécanique (sur son arbre) et la convertit en énergie hydraulique (pression et débit du fluide).",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Quelles associations entre convertisseur et conversion d'énergie sont correctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Moteur électrique : électrique → mécanique",
+        "Résistance chauffante : électrique → thermique",
+        "Vérin pneumatique : pneumatique → mécanique",
+        "LED : lumineuse → électrique",
+        "Pompe : hydraulique → mécanique"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La LED convertit l'électrique en lumineuse (pas l'inverse) et la pompe le mécanique en hydraulique (pas l'inverse).",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Un vérin a un piston de surface S, alimenté sous la pression p avec le débit qv. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa puissance vaut P = F·v = p·qv",
+        "Sa vitesse de sortie vaut v = qv / S",
+        "Si on double la pression, la force double",
+        "Si on double le diamètre du piston, la force double",
+        "À débit constant, la vitesse augmente si la surface augmente"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "F = p·S et v = qv / S, d'où P = F·v = p·qv. Doubler D multiplie S, donc F, par 4 ; à débit fixé, une surface plus grande donne une vitesse plus faible.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "À propos du rendement lumineux des sources de lumière : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une LED blanche récente restitue de l'ordre de 30 à 50 % de sa puissance en lumière",
+        "Une ampoule à incandescence en restitue environ 5 %",
+        "Une LED convertit 100 % de sa puissance en lumière",
+        "Une ampoule à incandescence a un meilleur rendement lumineux qu'une LED"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le cours donne 30 à 50 % pour une LED récente et environ 5 % pour une ampoule à incandescence ; le reste est perdu en chaleur.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Un vérin pneumatique transforme l'énergie d'un fluide sous pression en mouvement de translation.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition du vérin : F = p × S pour la force, v = qv / S pour la vitesse.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Si l'on double le diamètre du piston d'un vérin, à pression égale, la force de poussée double.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "S = π × D² / 4 : doubler D multiplie la surface, donc la force, par 4.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:099",
+      "type": "vrai_faux",
+      "enonce": "Une résistance chauffante ne convertit qu'environ la moitié de l'énergie électrique reçue en chaleur.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Une résistance chauffante convertit toute l'énergie électrique reçue en chaleur.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:100",
+      "type": "reponse_courte",
+      "enonce": "Un vérin a un piston de surface 3 × 10⁻³ m², alimenté sous une pression de 4 × 10⁵ Pa. Quelle est sa force théorique, en newtons ? Donne le nombre seul, sans unité. Écris-le sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "1200"
+      ],
+      "difficulte": 2,
+      "explication": "F = p × S = 4 × 10⁵ × 3 × 10⁻³ = 1 200 N.",
+      "notion": "Vérins et autres convertisseurs"
+    },
+    {
+      "source": "si-1re:ch4:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Un réducteur relie un moteur à la roue d'un fauteuil roulant. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son rapport de transmission r = ωs / ωe est inférieur à 1",
+        "La vitesse de sortie est plus faible que celle du moteur",
+        "Le couple de sortie est plus grand que le couple moteur, au rendement près",
+        "La puissance de sortie est plus grande que la puissance d'entrée",
+        "Son rapport de transmission est supérieur à 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un réducteur a r < 1 : il divise la vitesse et multiplie le couple (C(s) = η × C(e) / r). La puissance de sortie est au plus égale à la puissance d'entrée.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Pour un engrenage à deux roues dentées, quelle relation donne le rapport de transmission r = ωs / ωe ?",
+      "propositions": [
+        "r = Z(menée) / Z(menante)",
+        "r = Z(menante) / Z(menée)",
+        "r = Z(menante) × Z(menée)",
+        "r = Z(menée) − Z(menante)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La roue qui a le moins de dents tourne le plus vite : ωs / ωe = Z(menante) / Z(menée).",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Un pignon menant de 20 dents, monté sur un moteur qui tourne à 1 500 tr/min, entraîne une roue de 60 dents. À quelle vitesse tourne la roue ?",
+      "propositions": [
+        "4 500 tr/min",
+        "1 500 tr/min",
+        "500 tr/min",
+        "30 000 tr/min"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "r = 20 / 60 = 1/3 ; N(roue) = 1 500 / 3 = 500 tr/min. 4 500 tr/min vient de la fraction inversée.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Une poulie motrice de diamètre 80 mm, entraînée à 2 000 tr/min, entraîne par courroie une poulie de 200 mm. À quelle vitesse tourne la poulie menée ?",
+      "propositions": [
+        "5 000 tr/min",
+        "2 000 tr/min",
+        "1 200 tr/min",
+        "800 tr/min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "r = d(menante) / d(menée) = 80 / 200 = 0,4 ; N = 0,4 × 2 000 = 800 tr/min.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Un réducteur de rapport r = 1/10 et de rendement 0,9 reçoit un couple de 0,8 N·m. Quel couple fournit-il en sortie ?",
+      "propositions": [
+        "7,2 N·m",
+        "8 N·m",
+        "0,072 N·m",
+        "8,9 N·m"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "C(s) = η × C(e) / r = 0,9 × 0,8 × 10 = 7,2 N·m. 8 N·m oublie le rendement ; 8,9 N·m divise par le rendement au lieu de multiplier.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Un pignon entraîne directement une roue dentée extérieure. Comment tourne la roue par rapport au pignon ?",
+      "propositions": [
+        "Dans le même sens",
+        "En sens inverse",
+        "Dans un sens qui dépend du nombre de dents",
+        "Elle ne tourne que si les deux ont le même nombre de dents"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Pour un engrenage extérieur, chaque contact inverse le sens de rotation.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Un réducteur à deux étages : un pignon de 15 dents entraîne une roue de 45 dents, puis, sur le même arbre, un pignon de 12 dents entraîne une roue de 60 dents. Le moteur tourne à 3 000 tr/min. Quelle est la vitesse de sortie ?",
+      "propositions": [
+        "45 000 tr/min",
+        "1 000 tr/min",
+        "200 tr/min",
+        "600 tr/min"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "r = (15 × 12) / (45 × 60) = 180 / 2 700 = 1/15 ; N = 3 000 / 15 = 200 tr/min. 1 000 tr/min ne tient compte que du premier étage, 600 tr/min que du second.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Un réducteur à roue et vis sans fin a une vis à 2 filets et une roue de 40 dents. La vis tourne à 1 400 tr/min. À quelle vitesse tourne la roue ?",
+      "propositions": [
+        "35 tr/min",
+        "28 000 tr/min",
+        "700 tr/min",
+        "70 tr/min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "r = n(filets) / Z(roue) = 2 / 40 = 1/20 ; N = 1 400 / 20 = 70 tr/min. 35 tr/min correspondrait à une vis à 1 filet.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Sur un vélo, le plateau a 48 dents et le pignon arrière 12 dents ; le cycliste pédale à 70 tr/min. La roue a un diamètre de 0,70 m. Quelle est la vitesse du vélo ?",
+      "propositions": [
+        "Environ 36,9 km/h",
+        "Environ 10,3 km/h",
+        "Environ 2,3 km/h",
+        "Environ 18,5 km/h"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "r = 48 / 12 = 4 ; N(roue) = 280 tr/min. v = π × 0,70 × 280 / 60 ≈ 10,26 m/s ≈ 36,9 km/h. 10,3 est la valeur en m/s ; 18,5 km/h utilise le rayon au lieu du diamètre.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Un réducteur de rapport 1/25 et de rendement 0,8 doit fournir un couple de 40 N·m. Quel couple le moteur doit-il fournir ?",
+      "propositions": [
+        "1,28 N·m",
+        "2 N·m",
+        "1 000 N·m",
+        "1,6 N·m"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "C(s) = η × C(e) / r donc C(e) = C(s) × r / η = 40 / 25 / 0,8 = 2 N·m. 1,6 N·m oublie le rendement ; 1,28 N·m le multiplie au lieu de diviser.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Un transmetteur de rendement η reçoit la puissance P(e), le couple C(e) et la vitesse ωe. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(s) = η × P(e)",
+        "La puissance de sortie est inférieure à la puissance d'entrée",
+        "C(s) = η × C(e) / r",
+        "La puissance de sortie est supérieure à celle d'entrée quand le couple est multiplié",
+        "C(s) = C(e) × r / η"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "On ne gagne pas de puissance : P(s) = η × P(e) < P(e). Avec P = C × ω, C(s) × ωs = η × C(e) × ωe donne C(s) = η × C(e) / r.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Dans quels cas la sortie tourne-t-elle dans le même sens que l'entrée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Transmission par poulies et courroie",
+        "Transmission par pignon et chaîne",
+        "Train de deux engrenages extérieurs successifs (deux contacts)",
+        "Engrenage extérieur à deux roues (un contact)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Poulies-courroie et chaîne conservent le sens. Chaque contact extérieur inverse le sens : deux contacts le rétablissent, un seul l'inverse.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Un rapport de transmission n'a pas d'unité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "r = ωs / ωe est un quotient de deux vitesses de même unité.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Un réducteur augmente à la fois la vitesse et le couple.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Un réducteur divise la vitesse et multiplie le couple ; augmenter les deux reviendrait à créer de la puissance.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Dans une transmission par poulies et courroie, les deux poulies tournent en sens inverse.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Une courroie ouverte entraîne les deux poulies dans le même sens.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:116",
+      "type": "reponse_courte",
+      "enonce": "Un pignon menant de 18 dents entraîne une roue de 54 dents. Quel est le rapport de transmission r = ωs / ωe, arrondi au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,33"
+      ],
+      "difficulte": 2,
+      "explication": "r = Z(menante) / Z(menée) = 18 / 54 = 1/3 ≈ 0,33.",
+      "notion": "Rapport de transmission et couple",
+      "marge": 0.004,
+      "marge_relative": false
+    },
+    {
+      "source": "si-1re:ch4:banque:117",
+      "type": "reponse_courte",
+      "enonce": "Un réducteur de rapport 1/8 et de rendement 0,9 est entraîné par un moteur qui fournit 2 N·m. Quel couple obtient-on en sortie, en N·m ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "14,4"
+      ],
+      "difficulte": 3,
+      "explication": "C(s) = η × C(e) / r = 0,9 × 2 × 8 = 14,4 N·m.",
+      "notion": "Rapport de transmission et couple"
+    },
+    {
+      "source": "si-1re:ch4:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Quel transmetteur transforme la rotation du moteur en translation du vantail d'un portail coulissant ?",
+      "propositions": [
+        "Les poulies-courroie",
+        "La roue et vis sans fin",
+        "Le pignon-crémaillère",
+        "L'engrenage extérieur"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le pignon, entraîné par le moteur, engrène sur une crémaillère fixée au portail, qui se translate.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Dans un système vis-écrou, de combien l'écrou avance-t-il à chaque tour de vis ?",
+      "propositions": [
+        "D'un diamètre de vis",
+        "D'un périmètre de vis",
+        "D'un rayon de vis",
+        "D'un pas"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Par définition du pas, l'écrou avance d'un pas par tour : v = pas × N.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Une vis de pas 5 mm tourne à 1 200 tr/min. Quelle est la vitesse de l'écrou ?",
+      "propositions": [
+        "100 mm/s",
+        "6 000 mm/s",
+        "240 mm/s",
+        "4 mm/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "N = 1 200 / 60 = 20 tr/s ; v = pas × N = 5 × 20 = 100 mm/s. 6 000 mm/s oublie la conversion en tr/s (c'est une vitesse en mm/min).",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Un pignon de rayon primitif 0,02 m tourne à 10 rad/s sur une crémaillère. Quelle est la vitesse de la crémaillère ?",
+      "propositions": [
+        "500 m/s",
+        "0,2 m/s",
+        "0,002 m/s",
+        "0,4 m/s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "v = R × ω = 0,02 × 10 = 0,2 m/s. 0,4 m/s utilise le diamètre au lieu du rayon.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un pignon de diamètre primitif 50 mm tourne à 60 tr/min sur une crémaillère. Quelle est la vitesse de la crémaillère ?",
+      "propositions": [
+        "Environ 0,31 m/s",
+        "1,5 m/s",
+        "Environ 0,16 m/s",
+        "0,025 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "ω = 2π × 60 / 60 ≈ 6,28 rad/s ; R = 0,025 m ; v = 0,025 × 6,28 ≈ 0,157 m/s. 0,31 m/s utilise le diamètre ; 1,5 m/s oublie de convertir les tr/min.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un portail coulissant tourne à 1 500 tr/min ; un réducteur à roue et vis sans fin (1 filet, 30 dents) entraîne un pignon de diamètre primitif 80 mm sur la crémaillère. Quelle est la vitesse du portail ?",
+      "propositions": [
+        "Environ 0,42 m/s",
+        "Environ 6,3 m/s",
+        "2 m/s",
+        "Environ 0,21 m/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "N(pignon) = 1 500 / 30 = 50 tr/min, ω = 2π × 50 / 60 ≈ 5,24 rad/s ; v = 0,040 × 5,24 ≈ 0,21 m/s. 6,3 m/s oublie le réducteur ; 0,42 m/s prend le diamètre pour le rayon.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Un pignon de diamètre primitif 40 mm engrène sur une crémaillère. De combien la crémaillère avance-t-elle quand le pignon fait un tour ?",
+      "propositions": [
+        "Environ 126 mm",
+        "40 mm",
+        "20 mm",
+        "Environ 251 mm"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "À chaque tour, la crémaillère avance du périmètre primitif π × d = π × 40 ≈ 125,7 mm.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:125",
+      "type": "qcm_unique",
+      "enonce": "L'actionneur d'un fauteuil releveur utilise une vis de pas 3 mm ; l'écrou doit avancer à 45 mm/s. À quelle vitesse la vis doit-elle tourner ?",
+      "propositions": [
+        "15 tr/min",
+        "900 tr/min",
+        "135 tr/min",
+        "8 100 tr/min"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "N = v / pas = 45 / 3 = 15 tr/s, soit 15 × 60 = 900 tr/min. 15 tr/min oublie la conversion des tr/s en tr/min.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Le pignon d'un portail transmet 60 W à la crémaillère, qui avance à 0,15 m/s. Quelle force de poussée s'exerce sur la crémaillère ?",
+      "propositions": [
+        "9 N",
+        "0,0025 N",
+        "400 N",
+        "40 N"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P = F × v donc F = P / v = 60 / 0,15 = 400 N. 9 N correspond au produit P × v.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Dans un actionneur linéaire électrique, quel système transforme la rotation du moteur en translation de la tige ?",
+      "propositions": [
+        "Une roue et vis sans fin",
+        "Des poulies et une courroie",
+        "Un engrenage extérieur",
+        "Un système vis-écrou"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'actionneur linéaire associe un moteur, un réducteur et un système vis-écrou ; c'est la vis-écrou qui produit la translation.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces transmetteurs transforment une rotation en translation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le pignon-crémaillère",
+        "Le système vis-écrou",
+        "Les poulies-courroie",
+        "La roue et vis sans fin",
+        "L'engrenage extérieur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Pignon-crémaillère et vis-écrou donnent une translation ; les trois autres transforment une rotation en une autre rotation.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Une vis de pas 2 mm tourne à 600 tr/min et entraîne un écrou. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vis fait 10 tours par seconde",
+        "L'écrou avance à 20 mm/s",
+        "En 3 s, l'écrou avance de 60 mm",
+        "L'écrou avance à 1 200 mm/s",
+        "L'écrou avance à 300 mm/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "N = 600 / 60 = 10 tr/s ; v = 2 × 10 = 20 mm/s ; en 3 s : 20 × 3 = 60 mm. 1 200 mm/s oublie la conversion ; 300 mm/s divise au lieu de multiplier.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Pour un système pignon-crémaillère, on utilise v = R × ω. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Avec R en m et ω en rad/s, on obtient v en m/s",
+        "À ω constant, doubler le diamètre du pignon double la vitesse de la crémaillère",
+        "La crémaillère tourne avec le pignon",
+        "La vitesse de la crémaillère ne dépend pas du rayon du pignon"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "v = R × ω : la vitesse est proportionnelle au rayon (donc au diamètre). La crémaillère se translate, elle ne tourne pas.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Dans un système vis-écrou, la vitesse de l'écrou vaut v = pas × N, avec N en tours par seconde.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "L'écrou avance d'un pas à chaque tour de vis.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:132",
+      "type": "vrai_faux",
+      "enonce": "À chaque tour du pignon, une crémaillère avance d'une longueur égale au diamètre primitif du pignon.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elle avance du périmètre primitif π × d, et non du diamètre d.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Le système poulies-courroie transforme une rotation en translation.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Les poulies-courroie transforment une rotation en une autre rotation, dans le même sens.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:134",
+      "type": "reponse_courte",
+      "enonce": "Une vis de pas 6 mm tourne à 25 tours par seconde. Quelle est la vitesse de l'écrou, en mm/s ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "150"
+      ],
+      "difficulte": 2,
+      "explication": "v = pas × N = 6 × 25 = 150 mm/s.",
+      "notion": "Transformer rotation en translation"
+    },
+    {
+      "source": "si-1re:ch4:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Que signifie qu'un composant de la chaîne de puissance est réversible ?",
+      "propositions": [
+        "Il transmet la puissance dans les deux sens",
+        "Il ne fonctionne que dans un seul sens",
+        "Il inverse le sens de rotation",
+        "Il stocke l'énergie"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un composant réversible peut transmettre la puissance de l'entrée vers la sortie et de la sortie vers l'entrée.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Une machine à courant continu est entraînée mécaniquement par la roue d'un vélo. Comment fonctionne-t-elle ?",
+      "propositions": [
+        "En moteur",
+        "En génératrice",
+        "En hacheur",
+        "En source de courant"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Entraînée, la machine produit une force électromotrice E = K·Ω : elle fonctionne en génératrice.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le vantail d'un portail motorisé par roue et vis sans fin reste-t-il fermé malgré le vent ?",
+      "propositions": [
+        "Le moteur consomme en permanence pour bloquer le vantail",
+        "La batterie de secours alimente un frein",
+        "Le réducteur est irréversible",
+        "La crémaillère est réversible"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La roue ne peut pas entraîner la vis : l'effort du vent ne fait pas tourner le moteur. La position est tenue sans frein ni énergie.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces composants n'est pas réversible ?",
+      "propositions": [
+        "Une batterie lithium-ion",
+        "Un supercondensateur",
+        "Une machine à courant continu",
+        "Une pile"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La pile ne se recharge pas. La batterie et le supercondensateur se chargent et se déchargent ; la machine à courant continu est moteur ou génératrice.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'énergie cinétique d'un cycliste et de son vélo (masse totale 80 kg) roulant à 5 m/s ?",
+      "propositions": [
+        "1 000 J",
+        "200 J",
+        "2 000 J",
+        "400 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Ec = ½ × m × v² = 0,5 × 80 × 5² = 0,5 × 80 × 25 = 1 000 J. 2 000 J oublie le ½ ; 200 J oublie le carré.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette et son utilisateur (90 kg) freinent de 18 km/h jusqu'à l'arrêt ; la chaîne de récupération a un rendement de 0,5. Quelle énergie la batterie récupère-t-elle ?",
+      "propositions": [
+        "Environ 0,31 Wh",
+        "Environ 0,16 Wh",
+        "Environ 2,0 Wh",
+        "Environ 562 Wh"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "v = 18 / 3,6 = 5 m/s ; Ec = 0,5 × 90 × 25 = 1 125 J ; récupéré : 0,5 × 1 125 = 562,5 J = 562,5 / 3 600 ≈ 0,16 Wh. 0,31 Wh oublie le rendement ; 2,0 Wh oublie la conversion des km/h.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Le portail d'une maison est entraîné par un réducteur irréversible. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il reste fermé sans frein",
+        "Il ne consomme pas d'énergie pour maintenir sa position",
+        "Il faut prévoir un déverrouillage manuel en cas de panne de courant",
+        "Il récupère de l'énergie quand le vent pousse le vantail",
+        "Son réducteur a un rendement supérieur à 90 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'irréversibilité tient la position sans frein ni énergie, mais impose un déverrouillage manuel. Ces réducteurs ont souvent un rendement inférieur à 50 %, et rien ne peut remonter vers la batterie.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Un vélo électrique descend une pente ; sur l'axe de sa machine électrique, le couple et la vitesse angulaire sont de signes contraires. Que fait la machine ?",
+      "propositions": [
+        "Elle fournit de la puissance mécanique et fonctionne en moteur",
+        "Elle n'échange aucune puissance",
+        "Elle reçoit de la puissance mécanique et fonctionne en génératrice",
+        "Elle stocke l'énergie cinétique sous forme chimique"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "P = C·Ω est négative : la machine reçoit de la puissance mécanique, elle freine le vélo et fonctionne en génératrice.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces composants sont en général réversibles ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un engrenage",
+        "Une batterie lithium-ion",
+        "Une machine à courant continu",
+        "Une roue et vis sans fin à fort rapport de réduction",
+        "Une pile"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Engrenages, batteries et machines à courant continu fonctionnent dans les deux sens. La roue et vis sans fin à fort rapport est souvent irréversible ; la pile ne se recharge pas.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Une trottinette doit récupérer de l'énergie au freinage. Quelles conditions sont nécessaires ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La machine électrique fonctionne en génératrice",
+        "Le variateur est réversible en courant",
+        "Le stockage est rechargeable",
+        "La transmission est irréversible",
+        "Le stockage est une pile"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Une chaîne n'est réversible que si tous ses composants le sont : machine en génératrice, variateur à récupération, batterie rechargeable, transmission réversible.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "On considère un réducteur à roue et vis sans fin irréversible. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vis peut entraîner la roue",
+        "La roue ne peut pas entraîner la vis",
+        "Son rendement est en général supérieur à 90 %",
+        "Il permet la récupération d'énergie au freinage"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "L'irréversibilité vient des frottements : la vis entraîne la roue, pas l'inverse ; le rendement est souvent inférieur à 50 %, et la puissance ne peut pas remonter.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:146",
+      "type": "vrai_faux",
+      "enonce": "La dynamo d'un vélo est une machine électrique qui fonctionne en génératrice.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Entraînée par la roue, elle convertit l'énergie mécanique en énergie électrique.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Une vis à billes, de rendement voisin de 90 %, est irréversible.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le cours la cite comme réversible : une charge axiale suffit à faire tourner la vis.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Une chaîne de puissance n'est réversible que si tous ses composants sont réversibles.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Il suffit d'un composant irréversible (une roue et vis sans fin, une pile, un variateur non réversible) pour bloquer le retour de la puissance.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Grâce au freinage récupératif, un vélo électrique roulant à plat peut recharger complètement sa batterie.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On ne récupère qu'une fraction de l'énergie cinétique ou potentielle déjà fournie : récupérer ne crée pas d'énergie.",
+      "notion": "Réversibilité"
+    },
+    {
+      "source": "si-1re:ch4:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Une trottinette et son utilisateur (100 kg) roulent à 36 km/h puis freinent jusqu'à l'arrêt ; la chaîne de récupération a un rendement de 0,6. Quelle énergie la batterie récupère-t-elle, en joules ? Donne le nombre seul, sans unité. Écris-le sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "3000"
+      ],
+      "difficulte": 3,
+      "explication": "v = 36 / 3,6 = 10 m/s ; Ec = 0,5 × 100 × 10² = 5 000 J ; énergie récupérée : 0,6 × 5 000 = 3 000 J.",
+      "notion": "Réversibilité"
+    }
+  ]
+}

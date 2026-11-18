@@ -1,0 +1,2306 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Référentiel, trajectoire et mouvements",
+    "Vitesse et accélération en translation",
+    "Graphe v(t) et vitesse vectorielle",
+    "Grandeurs angulaires et conversions",
+    "v = R·ω et champ des vitesses",
+    "Torseur cinématique et liaisons",
+    "Composition des vitesses",
+    "Loi d'entrée-sortie en chaîne fermée",
+    "Profil de vitesse en trapèze"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch7:banque:001",
+      "type": "qcm_unique",
+      "enonce": "En cinématique, qu'appelle-t-on un référentiel ?",
+      "propositions": [
+        "La courbe décrite par un point mobile au cours du temps",
+        "Un solide de référence muni d'une horloge",
+        "L'unité utilisée pour exprimer la vitesse d'un point",
+        "La pièce la plus rapide du mécanisme, notée 0 sur le schéma"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un référentiel est un solide de référence (sol, cadre, base d'un robot) associé à une horloge ; on y attache un repère pour repérer les positions. La courbe décrite par un point est sa trajectoire, et la pièce notée 0 est le bâti, fixe.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Sur un schéma de mécanisme, que signifie l'expression « mouvement de 2/1 » ?",
+      "propositions": [
+        "Le mouvement de la pièce 1 observé depuis la pièce 2",
+        "Le rapport des vitesses des pièces 2 et 1, nombre sans unité",
+        "Le mouvement des deux pièces par rapport au bâti 0, qui est fixe",
+        "Le mouvement de la pièce 2 par rapport à la pièce 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On lit « 2 par rapport à 1 » : on décrit le mouvement de la pièce 2 en prenant la pièce 1 comme référence. Le mouvement de 1 vu depuis 2 serait le mouvement de 1/2.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Tu es assis dans un tramway qui roule. Par rapport à quoi es-tu immobile ?",
+      "propositions": [
+        "Le quai de la station suivante",
+        "Les rails de la voie ferrée",
+        "Un piéton arrêté sur le trottoir",
+        "La rame du tramway"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Tu gardes la même position par rapport à la rame : tu y es immobile. Par rapport au quai, aux rails ou au piéton, tu te déplaces avec le tramway. Un mouvement n'a de sens que par rapport à un référentiel.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Dans le référentiel du cadre d'un vélo, quelle est la trajectoire de la valve de la roue avant ?",
+      "propositions": [
+        "Une cycloïde, courbe formée d'arches successives",
+        "Une droite parallèle à la route",
+        "Un cercle centré sur l'axe de la roue",
+        "Un point unique, car la valve ne bouge pas"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Par rapport au cadre, la roue est en rotation autour de son axe : la valve décrit un cercle centré sur cet axe. La cycloïde est sa trajectoire par rapport à la route.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Un cycliste roule en ligne droite. Pour un piéton immobile au bord de la route, quelle courbe décrit la valve de la roue avant ?",
+      "propositions": [
+        "Une cycloïde, courbe en arches",
+        "Un cercle centré sur l'axe de la roue",
+        "Une droite parallèle à la chaussée",
+        "Un cercle centré sur le point de contact"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Par rapport à la route, la valve tourne autour de l'axe tout en avançant avec le vélo : elle décrit une courbe en arches, la cycloïde. Le cercle est sa trajectoire par rapport au cadre : la trajectoire dépend du référentiel.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quel est le mouvement du vantail d'un portail coulissant par rapport au sol ?",
+      "propositions": [
+        "Une translation circulaire",
+        "Une translation rectiligne",
+        "Une rotation autour d'un axe fixe",
+        "Un mouvement hélicoïdal"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le vantail glisse le long de son rail sans changer d'orientation, et tous ses points décrivent des droites parallèles : c'est une translation rectiligne.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:007",
+      "type": "qcm_unique",
+      "enonce": "La nacelle d'une grande roue reste horizontale pendant que la roue tourne. Quel est son mouvement par rapport au sol ?",
+      "propositions": [
+        "Une rotation autour de l'axe de la grande roue",
+        "Une translation rectiligne verticale",
+        "Une rotation autour de son point d'accroche",
+        "Une translation circulaire"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La nacelle garde la même orientation (elle reste horizontale) : c'est une translation. Ses points décrivent des cercles de même rayon : la translation est circulaire. C'est le bras qui la porte qui est en rotation.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quel est le mouvement du vantail d'un portail battant par rapport au pilier qui le porte ?",
+      "propositions": [
+        "Une rotation autour d'un axe fixe",
+        "Une translation circulaire",
+        "Une translation rectiligne",
+        "Une translation curviligne quelconque"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le vantail tourne autour de l'axe de ses gonds : les points de cet axe restent immobiles et le vantail change d'orientation. C'est une rotation autour d'un axe fixe.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Un bras robotisé comprend un bras 1 en liaison pivot avec la base 0 et un chariot 2 qui coulisse le long du bras 1 (liaison glissière). Les deux axes bougent en même temps. Quel est le mouvement de 2/0 ?",
+      "propositions": [
+        "Une translation rectiligne, la même que celle de la glissière seule",
+        "Ni translation ni rotation simple : trajectoire quelconque",
+        "Une rotation autour de l'axe du pivot entre 1 et 0",
+        "Une translation circulaire, car le bras 1 tourne"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le mouvement de 2/1 est une translation rectiligne et celui de 1/0 une rotation. Leur combinaison n'est ni l'une ni l'autre : le chariot change d'orientation et s'éloigne de l'axe, sa trajectoire est une courbe quelconque.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces mouvements par rapport au sol ou au bâti, lesquels sont des translations rectilignes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le vantail d'un portail coulissant",
+        "Le chariot d'une imprimante 3D qui se déplace sur son axe",
+        "L'hélice d'un drone par rapport au corps du drone",
+        "Le vantail d'un portail battant par rapport à son pilier",
+        "La nacelle d'une grande roue"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le vantail coulissant et le chariot d'imprimante gardent leur orientation et se déplacent en ligne droite. L'hélice et le vantail battant tournent autour d'un axe fixe ; la nacelle est en translation circulaire.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Un solide indéformable est en translation. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il garde la même orientation au cours du mouvement",
+        "À chaque instant, tous ses points ont la même vitesse",
+        "Ses points décrivent des cercles centrés sur un axe fixe",
+        "Les trajectoires de ses points sont forcément des droites"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En translation, tout segment du solide reste parallèle à lui-même et tous les points ont la même vitesse. Les trajectoires ne sont pas forcément des droites : la translation peut être circulaire ou curviligne. Les cercles centrés sur un axe fixe caractérisent la rotation.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Quelles associations entre une liaison et le mouvement relatif qu'elle impose sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Glissière : translation rectiligne",
+        "Pivot : rotation autour de l'axe de la liaison",
+        "Hélicoïdale : rotation et translation liées entre elles",
+        "Pivot : translation circulaire autour de l'axe"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La glissière impose une translation rectiligne, le pivot une rotation autour de son axe et la liaison hélicoïdale une rotation et une translation liées (vis dans son écrou). Dans un pivot, la pièce change d'orientation : ce n'est pas une translation.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:013",
+      "type": "vrai_faux",
+      "enonce": "La trajectoire d'un point d'un solide dépend du référentiel dans lequel on l'observe.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. La valve d'une roue de vélo décrit un cercle par rapport au cadre et une cycloïde par rapport à la route : même point, deux trajectoires.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:014",
+      "type": "vrai_faux",
+      "enonce": "La cinématique étudie les causes des mouvements, c'est-à-dire les efforts qui les produisent.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. La cinématique décrit les mouvements (trajectoires, vitesses, accélérations) sans chercher leurs causes ; les efforts relèvent des actions mécaniques.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Dans une rotation autour d'un axe fixe, les points situés sur l'axe restent immobiles.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Les points de l'axe ne bougent pas, et tous les autres points décrivent des cercles centrés sur l'axe.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Par rapport au châssis d'un fauteuil roulant, la roue est en translation circulaire, puisque ses points décrivent des cercles.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La roue change d'orientation et ses points décrivent des cercles centrés sur un même axe fixe, l'axe de la roue : c'est une rotation autour d'un axe fixe. En translation circulaire, le solide garde son orientation et ses points décrivent des cercles de même rayon mais de centres différents.",
+      "notion": "Référentiel, trajectoire et mouvements"
+    },
+    {
+      "source": "si-1re:ch7:banque:017",
+      "type": "qcm_unique",
+      "enonce": "À combien de km/h correspond une vitesse de 1 m/s ?",
+      "propositions": [
+        "1 000 km/h",
+        "3,6 km/h",
+        "60 km/h",
+        "0,36 km/h"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "1 m/s = 3 600 m/h = 3,6 km/h. On multiplie par 3,6 pour passer des m/s aux km/h et on divise par 3,6 pour l'inverse.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité d'une accélération linéaire dans le système international ?",
+      "propositions": [
+        "m/s",
+        "m/s²",
+        "rad/s",
+        "km/h"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'accélération est une variation de vitesse (m/s) par unité de temps (s) : a = Δv / Δt s'exprime en m/s², « mètres par seconde, par seconde ».",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Un chariot se trouve en x = 2,0 m à l'instant t = 1,0 s, puis en x = 8,0 m à l'instant t = 4,0 s. Quelle est sa vitesse moyenne entre ces deux instants ?",
+      "propositions": [
+        "2,7 m/s",
+        "6,0 m/s",
+        "1,5 m/s",
+        "2,0 m/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "vmoy = (x2 − x1) / (t2 − t1) = (8,0 − 2,0) / (4,0 − 1,0) = 6,0 / 3,0 = 2,0 m/s. Diviser 8,0 par 3,0 oublie la position de départ, et 6,0 m est un déplacement, pas une vitesse.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Que signifie une accélération de 2 m/s² ?",
+      "propositions": [
+        "La vitesse augmente de 2 m/s chaque seconde",
+        "Le point parcourt exactement 2 m chaque seconde",
+        "La vitesse reste égale à 2 m/s pendant tout le mouvement",
+        "La distance augmente de 2 m² à chaque seconde écoulée"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "a = Δv / Δt : une accélération de 2 m/s² signifie que la vitesse gagne 2 m/s à chaque seconde. Parcourir 2 m chaque seconde correspond à une vitesse de 2 m/s.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette électrique passe de l'arrêt à 18 km/h en 4,0 s, avec une accélération constante. Quelle est son accélération ?",
+      "propositions": [
+        "4,5 m/s²",
+        "20 m/s²",
+        "0,8 m/s²",
+        "1,25 m/s²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "18 km/h = 18 / 3,6 = 5,0 m/s. a = Δv / Δt = 5,0 / 4,0 = 1,25 m/s². 4,5 m/s² vient de l'oubli de la conversion (18 / 4,0), et 0,8 m/s² d'un rapport inversé (4,0 / 5,0).",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Un fauteuil roulant électrique roule à 7,2 km/h et s'arrête en 1,0 s avec une décélération constante. Quelle distance parcourt-il pendant le freinage ?",
+      "propositions": [
+        "2,0 m",
+        "3,6 m",
+        "1,0 m",
+        "0,50 m"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "v0 = 7,2 / 3,6 = 2,0 m/s. À décélération constante, la distance est l'aire du triangle sous v(t) : d = ½ × 2,0 × 1,0 = 1,0 m. 2,0 m oublie le facteur ½, et 3,6 m oublie la conversion des km/h.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui caractérise un mouvement rectiligne uniforme ?",
+      "propositions": [
+        "Une accélération constante différente de zéro",
+        "Une vitesse qui augmente proportionnellement au temps",
+        "Une position qui reste constante au cours du temps",
+        "Une vitesse constante et une accélération nulle"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Uniforme signifie à vitesse constante : a = 0 et x(t) = x0 + v·t. Une accélération constante non nulle définit le mouvement uniformément varié, où v augmente avec t.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Le chariot d'une imprimante 3D démarre à l'arrêt avec une accélération constante de 0,50 m/s² pendant 0,40 s. Quelle distance parcourt-il pendant cette phase ?",
+      "propositions": [
+        "80 mm",
+        "100 mm",
+        "200 mm",
+        "40 mm"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Départ à l'arrêt : x = ½·a·t² = 0,5 × 0,50 × 0,40² = 0,5 × 0,50 × 0,16 = 0,040 m = 40 mm. 80 mm oublie le ½ ; 200 mm correspond à a × t = 0,20, qui est une vitesse en m/s, pas une distance.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "À un instant donné, un point se déplace sur un axe avec une vitesse v = +3 m/s et une accélération a = −1 m/s². Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le mouvement est ralenti",
+        "Le point se déplace dans le sens de l'axe",
+        "Le point se déplace dans le sens contraire de l'axe",
+        "La vitesse augmente de 1 m/s chaque seconde"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "v > 0 : le point avance dans le sens de l'axe. a et v sont de signes contraires : le mouvement est ralenti, la vitesse diminue de 1 m/s chaque seconde.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Quelles relations sont celles du mouvement rectiligne uniformément varié ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "v(t) = v0 + a·t",
+        "x(t) = x0 + v0·t + ½·a·t²",
+        "x(t) = x0 + a·t",
+        "a = Δx / Δt"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans le mouvement uniformément varié, v(t) = v0 + a·t et x(t) = x0 + v0·t + ½·a·t². Δx / Δt est une vitesse moyenne, pas une accélération.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Un véhicule roule à 36 km/h, puis freine avec une accélération constante de −2,5 m/s² jusqu'à l'arrêt. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa vitesse initiale vaut 10 m/s",
+        "Le freinage dure 4,0 s",
+        "La distance de freinage vaut 20 m",
+        "La distance de freinage vaut 40 m",
+        "L'accélération est positive car le véhicule avance"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "v0 = 36 / 3,6 = 10 m/s. Durée : Δt = Δv / a = (0 − 10) / (−2,5) = 4,0 s. Distance : aire du triangle ½ × 10 × 4,0 = 20 m (40 m oublie le ½). L'accélération est négative car le véhicule ralentit.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:028",
+      "type": "vrai_faux",
+      "enonce": "Pour convertir une vitesse en km/h en une vitesse en m/s, on multiplie par 3,6.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. On divise par 3,6 : 36 km/h = 10 m/s. On multiplie par 3,6 pour passer des m/s aux km/h.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:029",
+      "type": "vrai_faux",
+      "enonce": "Une vitesse négative signifie que le point se déplace dans le sens contraire de l'axe choisi.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Le signe de la vitesse indique le sens du déplacement par rapport à l'axe : positif dans le sens de l'axe, négatif en sens contraire.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Un drone qui vole en ligne droite à 54 km/h constants parcourt 60 m en 4,0 s.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. 54 km/h = 54 / 3,6 = 15 m/s. Mouvement uniforme : d = v·t = 15 × 4,0 = 60 m.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:031",
+      "type": "reponse_courte",
+      "enonce": "Convertis 90 km/h en m/s. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "25"
+      ],
+      "difficulte": 1,
+      "explication": "v = 90 / 3,6 = 25 m/s.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:032",
+      "type": "reponse_courte",
+      "enonce": "Le vantail d'un portail coulissant passe de l'arrêt à 0,30 m/s en 1,5 s, avec une accélération constante. Calcule cette accélération en m/s². Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "0,2",
+        "0,20"
+      ],
+      "difficulte": 2,
+      "explication": "a = Δv / Δt = (0,30 − 0) / 1,5 = 0,20 m/s².",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:033",
+      "type": "reponse_courte",
+      "enonce": "Une trottinette part de l'arrêt et accélère à 1,5 m/s² pendant 4,0 s. Quelle distance, en mètres, parcourt-elle pendant cette phase ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 3,
+      "explication": "Départ à l'arrêt : d = ½·a·t² = 0,5 × 1,5 × 4,0² = 0,5 × 1,5 × 16 = 12 m. Vérification : vfinale = 1,5 × 4,0 = 6,0 m/s et aire du triangle ½ × 6,0 × 4,0 = 12 m.",
+      "notion": "Vitesse et accélération en translation"
+    },
+    {
+      "source": "si-1re:ch7:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphe de la vitesse en fonction du temps, v(t), que représente la pente de la courbe ?",
+      "propositions": [
+        "L'accélération",
+        "La distance parcourue",
+        "La position à l'instant t",
+        "La vitesse moyenne du trajet"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La pente de v(t) est Δv / Δt, c'est-à-dire l'accélération. La distance parcourue est l'aire sous la courbe.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Sur un graphe v(t), que représente l'aire comprise entre la courbe et l'axe du temps ?",
+      "propositions": [
+        "L'accélération",
+        "La durée totale du mouvement",
+        "La distance parcourue",
+        "La vitesse maximale atteinte"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'aire sous la courbe v(t) est une vitesse multipliée par une durée : c'est la distance parcourue. La pente, elle, donne l'accélération.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'allure du graphe x(t) d'un mouvement rectiligne uniforme ?",
+      "propositions": [
+        "Une parabole",
+        "Une droite horizontale à la hauteur v",
+        "Une droite de pente égale à l'accélération",
+        "Une droite de pente égale à la vitesse"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "x(t) = x0 + v·t est une fonction affine du temps : son graphe est une droite de pente v. La parabole correspond au mouvement uniformément varié.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'allure du graphe v(t) d'un mouvement rectiligne uniformément accéléré ?",
+      "propositions": [
+        "Une droite de pente a",
+        "Une parabole tournée vers le haut",
+        "Une droite horizontale",
+        "Une hyperbole décroissante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "v(t) = v0 + a·t : le graphe v(t) est une droite de pente a. C'est x(t) qui est une parabole ; une droite horizontale correspondrait à un mouvement uniforme.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Sur le graphe v(t) d'un chariot, la vitesse passe linéairement de 0 à 6,0 m/s entre t = 0 et t = 3,0 s. Quelle distance le chariot parcourt-il pendant ces 3,0 s ?",
+      "propositions": [
+        "18 m",
+        "2,0 m",
+        "9,0 m",
+        "4,5 m"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La distance est l'aire du triangle sous la courbe : d = ½ × 6,0 × 3,0 = 9,0 m. 18 m oublie le ½, et 2,0 est la pente (accélération en m/s²), pas une distance.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Un drone monte en ligne droite à 10 m/s sur une trajectoire inclinée de 30° par rapport à l'horizontale. Quelle est sa vitesse verticale de montée ?",
+      "propositions": [
+        "8,7 m/s",
+        "5,0 m/s",
+        "10 m/s",
+        "3,0 m/s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Vy = V·sin α = 10 × sin 30° = 10 × 0,5 = 5,0 m/s. 8,7 m/s = 10 × cos 30° est la vitesse horizontale Vx.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Dans un repère du plan, le vecteur vitesse d'un point a pour composantes Vx = 3,0 m/s et Vy = 4,0 m/s. Quelle est la norme de cette vitesse ?",
+      "propositions": [
+        "5,0 m/s",
+        "7,0 m/s",
+        "1,0 m/s",
+        "12 m/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "V = √(Vx² + Vy²) = √(9,0 + 16) = √25 = 5,0 m/s. On n'additionne pas les composantes (7,0 m/s) : ce sont des vecteurs perpendiculaires.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la direction du vecteur vitesse d'un point qui se déplace sur sa trajectoire ?",
+      "propositions": [
+        "Perpendiculaire à la trajectoire",
+        "Tangente à la trajectoire",
+        "Toujours horizontale",
+        "Dirigée vers l'origine du repère"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le vecteur vitesse est tangent à la trajectoire, orienté dans le sens du mouvement, et sa norme est la vitesse en m/s.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:042",
+      "type": "qcm_multiple",
+      "enonce": "Sur un graphe v(t), la vitesse d'un chariot croît linéairement de 0 à 2,0 m/s en 2,0 s, reste à 2,0 m/s pendant 4,0 s, puis décroît linéairement jusqu'à 0 en 2,0 s. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'accélération vaut 1,0 m/s² pendant la première phase",
+        "La distance totale parcourue vaut 12 m",
+        "La distance totale parcourue vaut 16 m",
+        "L'accélération est nulle pendant la phase à 2,0 m/s",
+        "La vitesse est nulle pendant la phase à 2,0 m/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Pente de la 1re phase : 2,0 / 2,0 = 1,0 m/s². Aire : ½ × 2,0 × 2,0 + 2,0 × 4,0 + ½ × 2,0 × 2,0 = 2,0 + 8,0 + 2,0 = 12 m (16 m = 2,0 × 8,0 oublie les triangles). Au palier, la vitesse est constante, donc l'accélération est nulle mais pas la vitesse.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:043",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la vitesse et l'accélération sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un drone en vol stationnaire a une vitesse nulle",
+        "Une trottinette qui roule à 25 km/h constants a une accélération nulle",
+        "Une grande vitesse implique forcément une grande accélération",
+        "Une accélération nulle implique forcément une vitesse nulle"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "L'accélération ne dit rien de la valeur de la vitesse, seulement de sa variation : à vitesse constante (même élevée), l'accélération est nulle. Le drone immobile a une vitesse et une accélération nulles.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "Quelles caractéristiques du vecteur vitesse d'un point sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa direction est tangente à la trajectoire",
+        "Son sens est celui du mouvement",
+        "Sa norme s'exprime en m/s",
+        "Il est toujours dirigé vers le centre de la trajectoire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le vecteur vitesse est tangent à la trajectoire, orienté dans le sens du mouvement, et sa norme est la vitesse en m/s. Il n'est pas dirigé vers un centre.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Un drone monte en ligne droite à 4,0 m/s, sur une trajectoire inclinée de 60° par rapport à l'horizontale. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa vitesse horizontale vaut 2,0 m/s",
+        "Sa vitesse de montée vaut environ 3,5 m/s",
+        "En 10 s, il gagne environ 35 m d'altitude",
+        "Sa vitesse horizontale vaut environ 3,5 m/s",
+        "En 10 s, il gagne 40 m d'altitude"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Vx = 4,0 × cos 60° = 2,0 m/s ; Vy = 4,0 × sin 60° ≈ 3,46 m/s. En 10 s : 3,46 × 10 ≈ 35 m d'altitude. 40 m supposerait une montée verticale à 4,0 m/s.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:046",
+      "type": "vrai_faux",
+      "enonce": "Dans un mouvement rectiligne uniformément varié, le graphe x(t) est une parabole.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. x(t) = x0 + v0·t + ½·a·t² contient un terme en t² : le graphe x(t) est une parabole, tandis que le graphe v(t) est une droite de pente a.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Pour un démarrage depuis l'arrêt à accélération constante, la distance parcourue vaut vfinale × durée.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. L'aire sous v(t) est un triangle : d = ½ × vfinale × durée. Le produit vfinale × durée est deux fois trop grand.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Si les composantes de la vitesse d'un point sont Vx = 6,0 m/s et Vy = 8,0 m/s, la norme de sa vitesse vaut 14 m/s.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Les composantes sont perpendiculaires : V = √(6,0² + 8,0²) = √100 = 10 m/s, et non 6,0 + 8,0.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:049",
+      "type": "reponse_courte",
+      "enonce": "Un chariot démarre à l'arrêt et atteint 8,0 m/s en 4,0 s avec une accélération constante. Quelle distance, en mètres, a-t-il parcourue ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "16"
+      ],
+      "difficulte": 2,
+      "explication": "Aire du triangle sous v(t) : d = ½ × 8,0 × 4,0 = 16 m.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:050",
+      "type": "reponse_courte",
+      "enonce": "Un drone vole en ligne droite à 6,0 m/s, sur une trajectoire inclinée de 30° au-dessus de l'horizontale, pendant 20 s. De combien de mètres son altitude augmente-t-elle ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "60"
+      ],
+      "difficulte": 3,
+      "explication": "Vitesse de montée : Vy = 6,0 × sin 30° = 3,0 m/s. Gain d'altitude : 3,0 × 20 = 60 m.",
+      "notion": "Graphe v(t) et vitesse vectorielle"
+    },
+    {
+      "source": "si-1re:ch7:banque:051",
+      "type": "qcm_unique",
+      "enonce": "À combien de radians correspond un tour complet ?",
+      "propositions": [
+        "π rad",
+        "2π rad",
+        "360 rad",
+        "π/2 rad"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un tour complet vaut 360°, soit 2π rad ≈ 6,28 rad. π rad correspond à un demi-tour et π/2 rad à un quart de tour.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation permet de calculer la vitesse angulaire ω (en rad/s) à partir de la fréquence de rotation N (en tr/min) ?",
+      "propositions": [
+        "ω = 60·N / (2π)",
+        "ω = 2π·N",
+        "ω = N / 60",
+        "ω = 2π·N / 60"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un tour vaut 2π rad et une minute vaut 60 s : ω = 2π·N / 60. La relation 60·ω / (2π) est la conversion inverse, qui donne N à partir de ω.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Un moteur électrique tourne à 1 500 tr/min. Quelle est sa vitesse angulaire ?",
+      "propositions": [
+        "25 rad/s",
+        "9 425 rad/s",
+        "157 rad/s",
+        "1 500 rad/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "ω = 2π × 1 500 / 60 = 50π ≈ 157 rad/s. 25 rad/s oublie le facteur 2π (c'est 25 tr/s), et 9 425 rad/s oublie la division par 60.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Une roue tourne à ω = 21 rad/s. Quelle est sa fréquence de rotation en tours par minute ?",
+      "propositions": [
+        "≈ 3,3 tr/min",
+        "≈ 1 260 tr/min",
+        "≈ 2,2 tr/min",
+        "≈ 200 tr/min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "N = 60·ω / (2π) = 60 × 21 / 6,28 ≈ 200 tr/min. 3,3 est le nombre de tours par seconde (21 / 2π) ; 1 260 oublie la division par 2π.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:055",
+      "type": "qcm_unique",
+      "enonce": "L'épaule d'un bras robotisé tourne de 60° en 2,0 s, à vitesse constante. Quelle est sa vitesse angulaire ?",
+      "propositions": [
+        "30 rad/s",
+        "≈ 1,047 rad/s",
+        "≈ 0,52 rad/s",
+        "≈ 0,26 rad/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "60° = 60 × π / 180 = π/3 ≈ 1,047 rad. ω = Δθ / Δt = 1,047 / 2,0 ≈ 0,52 rad/s. 30 est une vitesse en degrés par seconde, et 1,047 est l'angle en radians, pas une vitesse.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Un moteur passe de l'arrêt à 300 rad/s en 0,50 s, avec une accélération angulaire constante. Quelle est cette accélération angulaire ?",
+      "propositions": [
+        "150 rad/s²",
+        "600 rad/s",
+        "0,0017 rad/s²",
+        "600 rad/s²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "α = Δω / Δt = 300 / 0,50 = 600 rad/s². 150 rad/s² vient d'une multiplication (300 × 0,50), 0,0017 d'un rapport inversé, et rad/s est l'unité d'une vitesse angulaire.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Au décollage, un moteur de drone passe de l'arrêt à 6 000 tr/min en 0,50 s, avec une accélération angulaire constante. Quelle est cette accélération angulaire ?",
+      "propositions": [
+        "12 000 rad/s²",
+        "≈ 314 rad/s²",
+        "≈ 1 260 rad/s²",
+        "200 rad/s²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "ω = 2π × 6 000 / 60 = 200π ≈ 628 rad/s. α = 628 / 0,50 ≈ 1 257 rad/s² ≈ 1 260 rad/s². 12 000 oublie la conversion des tr/min, 200 oublie le facteur 2π et 314 multiplie par 0,50 au lieu de diviser.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Environ combien de degrés vaut un angle de 1 rad ?",
+      "propositions": [
+        "1°",
+        "180°",
+        "57,3°",
+        "0,0175°"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "1 rad = 180° / π ≈ 57,3°. 180° correspond à π rad, et 0,0175 est la valeur en radians de 1°.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:059",
+      "type": "qcm_multiple",
+      "enonce": "Quelles associations entre une grandeur de rotation et son unité sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Vitesse angulaire ω : rad/s",
+        "Fréquence de rotation N : tr/min",
+        "Accélération angulaire α : rad/s²",
+        "Angle θ : m",
+        "Vitesse angulaire ω : m/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "ω s'exprime en rad/s, N en tr/min, α en rad/s² et un angle en radians (rad). Le mètre et le m/s sont des unités de translation.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:060",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités entre angles sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "90° = π/2 rad",
+        "180° = π rad",
+        "1 rad = 360°",
+        "45° = π/2 rad"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "θ (rad) = θ (°) × π / 180 : 90° = π/2 rad, 180° = π rad, 45° = π/4 rad. Un tour (360°) vaut 2π rad, pas 1 rad.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "Un plateau tournant passe de l'arrêt à 2,0 rad/s en 4,0 s, avec une accélération angulaire constante. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son accélération angulaire vaut 0,50 rad/s²",
+        "Il tourne de 4,0 rad pendant ces 4,0 s",
+        "Il tourne de 8,0 rad pendant ces 4,0 s",
+        "Il fait moins d'un tour complet pendant cette phase"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "α = 2,0 / 4,0 = 0,50 rad/s². Angle : θ = ½·α·t² = 0,5 × 0,50 × 16 = 4,0 rad (aire du triangle sous ω(t) : ½ × 2,0 × 4,0). 4,0 rad < 2π ≈ 6,28 rad : moins d'un tour. 8,0 rad oublie le ½.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:062",
+      "type": "vrai_faux",
+      "enonce": "L'aiguille des secondes d'une horloge, qui fait un tour par minute, tourne à 1 rad/s.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. N = 1 tr/min donne ω = 2π × 1 / 60 ≈ 0,105 rad/s. Un tour par minute n'est pas un radian par seconde : il faut convertir les tours en radians (× 2π) et les minutes en secondes (÷ 60).",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:063",
+      "type": "vrai_faux",
+      "enonce": "Un moteur qui tourne à 3 000 tr/min a une vitesse angulaire d'environ 314 rad/s.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. ω = 2π × 3 000 / 60 = 100π ≈ 314 rad/s.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:064",
+      "type": "vrai_faux",
+      "enonce": "Pour convertir une fréquence de rotation en tr/min en vitesse angulaire en rad/s, il suffit de diviser par 60.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Diviser par 60 donne des tours par seconde ; il faut aussi multiplier par 2π pour passer des tours aux radians : ω = 2π·N / 60.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:065",
+      "type": "reponse_courte",
+      "enonce": "Convertis un angle de 180° en radians. Arrondis au centième et donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "3,14"
+      ],
+      "difficulte": 1,
+      "explication": "180° = π rad ≈ 3,14 rad.",
+      "notion": "Grandeurs angulaires et conversions",
+      "marge": 0.005,
+      "marge_relative": false
+    },
+    {
+      "source": "si-1re:ch7:banque:066",
+      "type": "reponse_courte",
+      "enonce": "Un cycliste pédale à 90 tr/min. Calcule la vitesse angulaire du pédalier en rad/s, arrondie au dixième. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "9,4"
+      ],
+      "marge": 0.03,
+      "marge_relative": false,
+      "difficulte": 2,
+      "explication": "ω = 2π × 90 / 60 = 3π ≈ 9,42 rad/s, soit 9,4 rad/s au dixième.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:067",
+      "type": "reponse_courte",
+      "enonce": "Un moteur passe de l'arrêt à 1 200 tr/min en 2,0 s, avec une accélération angulaire constante. Combien de tours complets fait-il pendant ces 2,0 s ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "20"
+      ],
+      "difficulte": 3,
+      "explication": "ωfinale = 2π × 1 200 / 60 ≈ 125,7 rad/s. Angle = aire du triangle sous ω(t) : ½ × 125,7 × 2,0 ≈ 125,7 rad, soit 125,7 / (2π) = 20 tours. Autre raisonnement : fréquence moyenne 600 tr/min = 10 tr/s pendant 2,0 s, donc 20 tours.",
+      "notion": "Grandeurs angulaires et conversions"
+    },
+    {
+      "source": "si-1re:ch7:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation donne la vitesse v d'un point situé à la distance R de l'axe de rotation d'un solide ?",
+      "propositions": [
+        "v = R·N, avec N en tours par minute",
+        "v = ω / R, avec ω en rad/s",
+        "v = 2π·R, avec R en mètres",
+        "v = R·ω, avec ω en rad/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "v = R·ω, avec v en m/s, R en m et ω en rad/s. La fréquence en tr/min doit d'abord être convertie en rad/s. 2π·R est le périmètre du cercle, une longueur.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Un solide tourne autour d'un axe fixe. Quelle est la direction du vecteur vitesse d'un de ses points ?",
+      "propositions": [
+        "Perpendiculaire au rayon, tangente au cercle",
+        "Le long du rayon, vers l'axe de rotation",
+        "Le long du rayon, en s'éloignant de l'axe de rotation",
+        "Parallèle à l'axe de rotation du solide"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le point décrit un cercle centré sur l'axe : sa vitesse est tangente à ce cercle, donc perpendiculaire au rayon, orientée dans le sens de la rotation.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Une hélice de drone de 20 cm de diamètre tourne à 9 000 tr/min. Quelle est la vitesse du bout de ses pales ?",
+      "propositions": [
+        "≈ 94 m/s",
+        "≈ 188 m/s",
+        "900 m/s",
+        "15 m/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "R = 0,10 m ; ω = 2π × 9 000 / 60 ≈ 942 rad/s ; v = 0,10 × 942 ≈ 94 m/s. 188 m/s utilise le diamètre au lieu du rayon ; 900 et 15 oublient la conversion en rad/s.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Sur un bras en rotation autour d'un axe fixe, le point A, à 0,40 m de l'axe, va à 2,0 m/s. Quelle est la vitesse du point C, situé sur le même rayon à 0,10 m de l'axe ?",
+      "propositions": [
+        "8,0 m/s",
+        "2,0 m/s",
+        "0,5 m/s",
+        "1,0 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La vitesse est proportionnelle à la distance à l'axe : ω = 2,0 / 0,40 = 5,0 rad/s, donc v(C) = 0,10 × 5,0 = 0,50 m/s. La distance est divisée par 4, la vitesse aussi.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:072",
+      "type": "qcm_unique",
+      "enonce": "La roue d'un fauteuil roulant a un diamètre de 60 cm et tourne à 5,0 rad/s par rapport au châssis. Quelle est la vitesse d'un point de la jante par rapport au châssis ?",
+      "propositions": [
+        "1,5 m/s",
+        "3,0 m/s",
+        "0,060 m/s",
+        "16,7 m/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "R = 0,30 m ; v = R·ω = 0,30 × 5,0 = 1,5 m/s. 3,0 m/s utilise le diamètre ; 0,060 et 16,7 viennent d'une division au lieu d'une multiplication.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette roule sans glisser à 18 km/h sur des roues de 20 cm de diamètre. Quelle est la fréquence de rotation de ses roues ?",
+      "propositions": [
+        "50 tr/min",
+        "≈ 239 tr/min",
+        "≈ 8,0 tr/min",
+        "≈ 477 tr/min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "v = 18 / 3,6 = 5,0 m/s ; R = 0,10 m ; ω = v / R = 50 rad/s ; N = 60 × 50 / (2π) ≈ 477 tr/min. 50 confond rad/s et tr/min ; 239 utilise le diamètre comme rayon ; 8,0 est le nombre de tours par seconde.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Une roue de vélo roule sans glisser sur la route. Quelle est la vitesse, par rapport au sol, du point de la roue en contact avec le sol ?",
+      "propositions": [
+        "Nulle",
+        "R·ω",
+        "2·R·ω",
+        "R·ω / 2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Rouler sans glisser signifie justement que le point de contact a une vitesse nulle par rapport au sol. Par rapport au cadre, ce même point va à R·ω.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Un point d'un disque tourne à 0,20 m de l'axe, à vitesse angulaire constante ω = 10 rad/s. Que vaut son accélération normale (centripète) ?",
+      "propositions": [
+        "2,0 m/s²",
+        "500 m/s²",
+        "20 m/s²",
+        "0 m/s², car ω est constante"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "an = R·ω² = 0,20 × 10² = 20 m/s². Même à ω constante, la direction de la vitesse change sans cesse, d'où une accélération dirigée vers l'axe. 2,0 m/s² est R·ω, une vitesse en m/s.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Un solide tourne autour d'un axe fixe. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Tous ses points ont la même vitesse angulaire",
+        "La vitesse d'un point est proportionnelle à sa distance à l'axe",
+        "Tous ses points ont la même vitesse linéaire",
+        "Les points de l'axe sont ceux qui vont le plus vite"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Tous les points tournent à la même vitesse angulaire ω, mais leur vitesse v = R·ω augmente avec la distance R à l'axe. Les points de l'axe sont immobiles.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le champ des vitesses d'un solide sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "En translation, le champ des vitesses est uniforme",
+        "En rotation, les extrémités des vecteurs vitesse des points d'un même rayon sont alignées avec le centre",
+        "En rotation, tous les vecteurs vitesse sont parallèles à l'axe de rotation",
+        "En translation, la vitesse d'un point est proportionnelle à sa distance à un axe"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En translation, tous les points ont le même vecteur vitesse. En rotation, les vecteurs sont perpendiculaires aux rayons et leur norme est proportionnelle à la distance à l'axe : répartition « en triangle ».",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Un vélo roule sans glisser à 21,6 km/h sur des roues de 0,60 m de diamètre. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vitesse angulaire des roues vaut 20 rad/s",
+        "Les roues tournent à environ 191 tr/min",
+        "La vitesse angulaire des roues vaut 10 rad/s",
+        "À chaque tour de roue, le vélo avance d'environ 1,9 m",
+        "Le point de la roue en contact avec le sol va à 6,0 m/s par rapport au sol"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "v = 21,6 / 3,6 = 6,0 m/s ; R = 0,30 m ; ω = 6,0 / 0,30 = 20 rad/s (10 rad/s utilise le diamètre) ; N = 60 × 20 / (2π) ≈ 191 tr/min. Un tour fait avancer d'un périmètre : π × 0,60 ≈ 1,9 m. Le point de contact a une vitesse nulle par rapport au sol.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:079",
+      "type": "vrai_faux",
+      "enonce": "Sur une hélice qui tourne, le bout de pale va plus vite que les points proches du moyeu.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Tous les points ont la même vitesse angulaire, mais v = R·ω croît avec la distance à l'axe.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:080",
+      "type": "vrai_faux",
+      "enonce": "Dans la relation v = R·ω, on peut utiliser ω en tr/min à condition d'exprimer R en millimètres.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La relation v = R·ω exige ω en rad/s (elle vient de la longueur d'arc s = R·θ, avec θ en radians). Changer l'unité de R ne corrige pas l'erreur.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:081",
+      "type": "vrai_faux",
+      "enonce": "Un point situé à 0,25 m de l'axe d'une roue qui tourne à 12 rad/s a une vitesse de 3,0 m/s par rapport au châssis.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. v = R·ω = 0,25 × 12 = 3,0 m/s.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:082",
+      "type": "reponse_courte",
+      "enonce": "Un plateau de rayon 0,15 m tourne à 40 rad/s autour de son axe. Calcule la vitesse, en m/s, d'un point de son bord. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "6",
+        "6,0"
+      ],
+      "difficulte": 2,
+      "explication": "v = R·ω = 0,15 × 40 = 6,0 m/s.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:083",
+      "type": "reponse_courte",
+      "enonce": "Un fauteuil roulant roule sans glisser à 4,5 km/h sur des roues de 0,60 m de diamètre. Calcule la vitesse angulaire des roues en rad/s, arrondie au dixième. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "4,2"
+      ],
+      "marge": 0.03,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "v = 4,5 / 3,6 = 1,25 m/s ; R = 0,30 m ; ω = v / R = 1,25 / 0,30 ≈ 4,17 rad/s, soit 4,2 rad/s au dixième.",
+      "notion": "v = R·ω et champ des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Que rassemble le torseur cinématique du mouvement de 2/1, écrit au point A ?",
+      "propositions": [
+        "La force et le moment transmis par la liaison en A",
+        "Le vecteur rotation Ω⃗(2/1) et la vitesse V⃗(A, 2/1)",
+        "La position et l'accélération du point A de la pièce 2",
+        "La vitesse angulaire de 1 et celle de 2 par rapport au bâti 0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le torseur cinématique a pour résultante le vecteur vitesse de rotation Ω⃗(2/1) et pour moment en A la vitesse V⃗(A, 2/1). La force et le moment transmis forment le torseur d'actions mécaniques.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Quelle propriété a la résultante Ω⃗(2/1) du torseur cinématique ?",
+      "propositions": [
+        "Elle change d'un point à l'autre du solide",
+        "Elle est la même en tout point du solide",
+        "Elle s'exprime en m/s",
+        "Elle est toujours nulle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La résultante Ω⃗(2/1), vitesse de rotation en rad/s, est la même en tout point. C'est le moment, la vitesse d'un point en m/s, qui change d'un point à l'autre.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Un solide 2 est en translation par rapport à 1. Comment se présente son torseur cinématique ?",
+      "propositions": [
+        "Vitesse nulle en un point de l'axe (torseur glisseur)",
+        "Ω⃗ et vitesse tous deux nuls en tout point du solide",
+        "Ω⃗ nul et même vitesse en tout point (torseur couple)",
+        "Ω⃗ non nul et vitesse nulle partout"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "En translation, il n'y a pas de rotation (Ω⃗ = 0⃗) et tous les points ont la même vitesse : le torseur se réduit à un vecteur vitesse valable partout, c'est un torseur couple. Le torseur glisseur correspond à la rotation autour d'un axe fixe.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les composantes non nulles possibles du torseur cinématique d'une liaison pivot d'axe (A, x⃗), écrit au point A ?",
+      "propositions": [
+        "vx seulement, en tout point de la pièce",
+        "ωx et vx, indépendantes l'une de l'autre",
+        "ωx seulement",
+        "ωx, ωy et ωz"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La liaison pivot autorise une seule rotation, autour de son axe : seule ωx est non nulle, et la vitesse au point A de l'axe est nulle. ωx et vx indépendantes correspondent au pivot glissant ; trois rotations à la rotule.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Combien de degrés de liberté possède une liaison pivot glissant ?",
+      "propositions": [
+        "2 : une rotation et une translation selon x",
+        "1 : seulement la rotation autour de l'axe x",
+        "3 : trois rotations autour du point A",
+        "4 : deux rotations et deux translations combinées"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le pivot glissant autorise la rotation autour de son axe et la translation le long de cet axe, indépendantes : ωx et vx, soit 2 degrés de liberté.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:089",
+      "type": "qcm_unique",
+      "enonce": "Quels mouvements autorise une liaison rotule de centre A ?",
+      "propositions": [
+        "3 translations, aucune rotation",
+        "1 rotation et 2 translations",
+        "3 rotations et 3 translations, sans aucune restriction",
+        "3 rotations, aucune translation au centre"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La rotule autorise les trois rotations ωx, ωy, ωz, mais le centre A reste immobile : aucune translation. Elle a 3 degrés de liberté.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:090",
+      "type": "qcm_unique",
+      "enonce": "La roue arrière d'un fauteuil roulant est en liaison pivot d'axe (A, x⃗) avec le châssis et tourne à 6,0 rad/s. Quel est le torseur cinématique {𝒱(roue/châssis)}, écrit au point A de l'axe ?",
+      "propositions": [
+        "{ 0⃗ ; 6,0·x⃗ }A",
+        "{ 6,0·x⃗ ; 0⃗ }A",
+        "{ 6,0·x⃗ ; 6,0·x⃗ }A",
+        "{ 0⃗ ; 0⃗ }A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Résultante : vecteur rotation 6,0·x⃗ (rad/s) ; moment en A : vitesse du point A, nulle car A est sur l'axe. Donc { 6,0·x⃗ ; 0⃗ }A.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Le vantail d'un portail coulissant, en liaison glissière avec son rail, se déplace à 0,25 m/s. Quelle est la vitesse d'un point du vantail situé à 1,5 m du moteur ?",
+      "propositions": [
+        "0,375 m/s, car elle est proportionnelle à la distance",
+        "0,17 m/s, car elle diminue avec la distance",
+        "Nulle, car le moteur est fixé au sol",
+        "0,25 m/s, comme tous les points du vantail"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La glissière impose une translation : Ω⃗ = 0⃗ et le champ des vitesses est uniforme. Tous les points du vantail vont à 0,25 m/s. La proportionnalité à la distance ne vaut que pour une rotation.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Une liaison pivot parfaite d'axe x autorise la rotation ωx. D'après la réciprocité entre mouvements et efforts, quelle action mécanique ne peut-elle pas transmettre ?",
+      "propositions": [
+        "Le moment autour de l'axe x",
+        "La force selon l'axe x",
+        "Le moment autour d'un axe y perpendiculaire",
+        "La force selon l'axe y"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Un mouvement autorisé par une liaison parfaite ne transmet aucun effort correspondant : la rotation ωx étant libre, le moment autour de x est nul. Les autres composantes correspondent à des mouvements interdits, donc transmissibles.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Quelles liaisons ont exactement un degré de liberté ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pivot",
+        "Glissière",
+        "Hélicoïdale",
+        "Rotule",
+        "Encastrement"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Pivot (ωx), glissière (vx) et hélicoïdale (ωx et vx liées par le pas) ont 1 degré de liberté. La rotule en a 3, l'encastrement 0.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "On considère une liaison glissière de direction x⃗. Quelles affirmations sur son torseur cinématique sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La composante vx peut être non nulle",
+        "Toutes les composantes de rotation sont nulles",
+        "La composante ωx peut être non nulle",
+        "La liaison a 3 degrés de liberté"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La glissière n'autorise que la translation selon x : seule vx est non nulle, aucune rotation. Elle a 1 degré de liberté.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Un solide 2 tourne par rapport à 1 autour d'un axe fixe passant par A. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vitesse V⃗(A, 2/1) est nulle",
+        "Écrit en A, le torseur cinématique est un torseur glisseur",
+        "La vitesse d'un point M vaut AM × ω, perpendiculairement à AM",
+        "Le vecteur rotation Ω⃗(2/1) est nul"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les points de l'axe sont immobiles : V⃗(A, 2/1) = 0⃗ et le torseur se réduit au vecteur rotation (glisseur). Un point M va à AM × ω, perpendiculairement à AM. Ω⃗ n'est nul qu'en translation.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "On considère une liaison appui plan de normale x⃗. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La rotation ωx est possible",
+        "Les translations vy et vz sont possibles",
+        "La translation vx est possible",
+        "La rotation ωy est possible",
+        "La liaison a 3 degrés de liberté"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "L'appui plan de normale x⃗ autorise la rotation autour de la normale (ωx) et les deux translations dans le plan (vy, vz) : 3 degrés de liberté. La translation selon la normale (décollement ou pénétration) et les rotations ωy, ωz sont interdites.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Le moment du torseur cinématique de 2/1 au point A est la vitesse du point A appartenant à 2 par rapport à 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. On note {𝒱(2/1)} = { Ω⃗(2/1) ; V⃗(A, 2/1) }A : le moment en A est la vitesse V⃗(A, 2/1), en m/s.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Une liaison encastrement a un torseur cinématique nul : elle n'autorise aucun mouvement relatif.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. L'encastrement n'a aucun degré de liberté : toutes les composantes de son torseur cinématique sont nulles.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:099",
+      "type": "vrai_faux",
+      "enonce": "Dans une liaison hélicoïdale, la rotation ωx et la translation vx sont indépendantes l'une de l'autre.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. Dans une liaison hélicoïdale, vx est liée à ωx par le pas : c'est pourquoi elle n'a qu'un degré de liberté. Rotation et translation indépendantes caractérisent le pivot glissant.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:100",
+      "type": "vrai_faux",
+      "enonce": "Dans une liaison parfaite, un mouvement autorisé transmet l'effort correspondant.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. C'est l'inverse : un mouvement autorisé ne transmet aucun effort, et un mouvement interdit transmet l'effort correspondant. Torseur cinématique et torseur transmissible sont complémentaires.",
+      "notion": "Torseur cinématique et liaisons"
+    },
+    {
+      "source": "si-1re:ch7:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Dans une chaîne ouverte 0 – 1 – 2, quelle relation donne la vitesse d'un point P de la pièce 2 par rapport au bâti 0 ?",
+      "propositions": [
+        "V⃗(P, 2/0) = V⃗(P, 2/1) − V⃗(P, 1/0)",
+        "V⃗(P, 2/0) = V⃗(P, 2/1) + V⃗(P, 1/0)",
+        "V⃗(P, 2/0) = V⃗(P, 2/1) × V⃗(P, 1/0)",
+        "V⃗(P, 2/0) = V⃗(P, 2/1) + V⃗(P, 1/0) + V⃗(P, 0/2)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On « enchaîne » les indices : 2/1 puis 1/0 donne 2/0. La vitesse par rapport au bâti est la somme vectorielle des vitesses relatives le long de la chaîne.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui caractérise une chaîne ouverte de solides ?",
+      "propositions": [
+        "Les pièces forment une boucle qui revient au bâti",
+        "Les pièces sont reliées en série, sans former de boucle",
+        "Toutes les pièces sont reliées directement au bâti fixe",
+        "Le mécanisme ne comporte qu'une seule pièce mobile"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Dans une chaîne ouverte, chaque pièce n'est reliée qu'à la précédente et à la suivante, et la dernière n'est pas reliée à la base : le graphe des liaisons est une ligne, sans boucle.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces mécanismes est une chaîne ouverte ?",
+      "propositions": [
+        "Un système bielle-manivelle avec son piston guidé",
+        "Un pignon qui engrène sur une crémaillère guidée",
+        "Un bras robotisé, de la base à la pince",
+        "Un système vis-écrou dont la vis et l'écrou sont guidés par le bâti"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le bras robotisé relie en série la base, les bras et la pince, qui n'est pas reliée à la base. Bielle-manivelle, pignon-crémaillère et vis-écrou guidé par le bâti forment une boucle qui revient au bâti : ce sont des chaînes fermées.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Un tapis roulant avance à 0,40 m/s par rapport au sol. Un vérin pousse un colis sur le tapis, dans le même sens, à 0,15 m/s par rapport au tapis. Quelle est la vitesse du colis par rapport au sol ?",
+      "propositions": [
+        "0,25 m/s",
+        "0,060 m/s",
+        "0,55 m/s",
+        "0,43 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les deux vitesses ont la même direction et le même sens : V(colis/sol) = V(colis/tapis) + V(tapis/sol) = 0,15 + 0,40 = 0,55 m/s. Pythagore (0,43 m/s) ne s'applique qu'à des vitesses perpendiculaires.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Un tapis avance à 0,60 m/s par rapport au sol. Un colis y est poussé à 0,20 m/s par rapport au tapis, mais en sens inverse du tapis. Quelle est sa vitesse par rapport au sol ?",
+      "propositions": [
+        "0,40 m/s dans le sens du tapis",
+        "0,80 m/s dans le sens du tapis",
+        "0,40 m/s dans le sens inverse du tapis",
+        "0,63 m/s par le théorème de Pythagore"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les vitesses ont la même direction et des sens opposés : 0,60 − 0,20 = 0,40 m/s, dans le sens du tapis, qui va plus vite que la poussée.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:106",
+      "type": "qcm_unique",
+      "enonce": "La flèche d'une grue à tour tourne autour du mât à 0,040 rad/s. Le chariot, situé à 25 m de l'axe, s'éloigne de celui-ci à 0,75 m/s le long de la flèche. Quelle est la vitesse du chariot par rapport au sol ?",
+      "propositions": [
+        "1,25 m/s",
+        "1,75 m/s",
+        "0,25 m/s",
+        "1,0 m/s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "V(P, 1/0) = 25 × 0,040 = 1,0 m/s, perpendiculaire à la flèche ; V(P, 2/1) = 0,75 m/s, le long de la flèche. Vecteurs perpendiculaires : V(P, 2/0) = √(0,75² + 1,0²) = √1,5625 = 1,25 m/s. On n'additionne pas les normes (1,75 m/s).",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Un bras robotisé plan comporte un bras 1 (pivot en O avec la base 0) et un avant-bras 2 (pivot en A avec le bras 1). OA = 0,50 m et AP = 0,20 m, P étant la pince. O, A et P sont alignés ; ω(1/0) = 0,40 rad/s et ω(2/1) = 1,5 rad/s, dans le même sens. Quelle est la vitesse de P par rapport à la base ?",
+      "propositions": [
+        "0,50 m/s",
+        "1,33 m/s",
+        "0,58 m/s",
+        "0,02 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "V(P, 2/1) = AP × ω(2/1) = 0,20 × 1,5 = 0,30 m/s ; V(P, 1/0) = OP × ω(1/0) = 0,70 × 0,40 = 0,28 m/s. Même direction et même sens : V(P, 2/0) = 0,30 + 0,28 = 0,58 m/s. 0,50 m/s utilise OA au lieu de OP pour V(P, 1/0).",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Deux pivots ont des axes parallèles. Ω(1/0) = 0,30 rad/s et Ω(2/1) = 0,50 rad/s, dans le même sens. Que vaut Ω(2/0) ?",
+      "propositions": [
+        "0,20 rad/s",
+        "0,15 rad/s",
+        "0,58 rad/s",
+        "0,80 rad/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "On compose les vitesses de rotation comme les vitesses : Ω⃗(2/0) = Ω⃗(2/1) + Ω⃗(1/0). Vecteurs de même direction et de même sens : 0,50 + 0,30 = 0,80 rad/s.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la composition des vitesses sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On additionne des vecteurs, pas des nombres",
+        "Les normes s'ajoutent directement si les vitesses ont même direction et même sens",
+        "Si les deux vitesses sont perpendiculaires, on utilise le théorème de Pythagore",
+        "Les normes s'ajoutent toujours, quelles que soient les directions"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La composition est une somme vectorielle. On ajoute les normes seulement pour des vitesses de même direction et de même sens ; pour des vitesses perpendiculaires, on utilise Pythagore ; sinon, on construit la somme ou on projette.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:110",
+      "type": "qcm_multiple",
+      "enonce": "Sur une grue à tour, la flèche 1 tourne autour du mât (sol 0) et le chariot 2 roule le long de la flèche. Au point P du chariot, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "V⃗(P, 2/1) est dirigée le long de la flèche",
+        "V⃗(P, 1/0) est perpendiculaire à la flèche",
+        "La norme de V⃗(P, 1/0) vaut OP × ω, O étant sur l'axe du mât",
+        "V⃗(P, 1/0) est dirigée le long de la flèche"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le chariot se translate le long de la flèche : V⃗(P, 2/1) est dirigée selon la flèche. La flèche tourne autour du mât : V⃗(P, 1/0) est perpendiculaire au rayon OP, donc à la flèche, de norme OP × ω.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Sur une grue, la flèche tourne à 0,030 rad/s et le chariot, à 40 m de l'axe du mât, se rapproche de cet axe à 0,90 m/s par rapport à la flèche. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La vitesse du chariot due à la rotation de la flèche vaut 1,2 m/s",
+        "La vitesse du chariot par rapport au sol vaut 1,5 m/s",
+        "La vitesse du chariot par rapport au sol vaut 2,1 m/s",
+        "La vitesse du chariot par rapport au sol vaut 0,30 m/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "V(P, 1/0) = 40 × 0,030 = 1,2 m/s, perpendiculaire à la flèche ; V(P, 2/1) = 0,90 m/s le long de la flèche. V(P, 2/0) = √(0,90² + 1,2²) = √2,25 = 1,5 m/s. 2,1 m/s est la somme des normes et 0,30 m/s leur différence, toutes deux fausses pour des vecteurs perpendiculaires.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Dans une chaîne ouverte, la dernière pièce n'est pas reliée à la base.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. C'est la définition de la chaîne ouverte : les pièces sont en série de la base jusqu'à l'outil, sans boucle.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Une grue à tour, dont le chariot roule sur une flèche qui tourne autour du mât, est un exemple de chaîne fermée.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Sol, flèche et chariot sont reliés en série et le chariot n'est pas relié au sol : c'est une chaîne ouverte.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:114",
+      "type": "vrai_faux",
+      "enonce": "On compose les vitesses de rotation comme les vitesses linéaires : Ω⃗(2/0) = Ω⃗(2/1) + Ω⃗(1/0).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Le cours donne cette composition des vecteurs vitesse de rotation, avec le même enchaînement des indices.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:115",
+      "type": "reponse_courte",
+      "enonce": "Dans un tramway qui roule à 8,0 m/s par rapport au quai, un passager marche vers l'avant de la rame à 1,2 m/s par rapport à elle. Quelle est sa vitesse par rapport au quai, en m/s ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "9,2"
+      ],
+      "difficulte": 1,
+      "explication": "Vitesses de même direction et de même sens : V(passager/quai) = V(passager/rame) + V(rame/quai) = 1,2 + 8,0 = 9,2 m/s.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:116",
+      "type": "reponse_courte",
+      "enonce": "Un plateau tourne à 0,060 rad/s autour d'un axe vertical fixe. Un chariot, à 10 m de cet axe, roule vers l'extérieur sur un rail radial du plateau, à 0,80 m/s par rapport au plateau. Quelle est la vitesse du chariot par rapport au sol, en m/s ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1",
+        "1,0"
+      ],
+      "difficulte": 3,
+      "explication": "Vitesse due à la rotation : 10 × 0,060 = 0,60 m/s, perpendiculaire au rail. Vitesse le long du rail : 0,80 m/s. Vecteurs perpendiculaires : √(0,80² + 0,60²) = √1,00 = 1,0 m/s.",
+      "notion": "Composition des vitesses"
+    },
+    {
+      "source": "si-1re:ch7:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on la loi d'entrée-sortie d'un mécanisme ?",
+      "propositions": [
+        "La liste des pièces qui entrent et qui sortent du mécanisme",
+        "Le rapport entre la puissance de sortie et la puissance d'entrée",
+        "L'ordre dans lequel on assemble les pièces du mécanisme",
+        "La relation entre la position de sortie et celle d'entrée"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La loi d'entrée-sortie relie la position (ou la vitesse) de la sortie à celle de l'entrée. Le rapport des puissances est le rendement.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:118",
+      "type": "qcm_unique",
+      "enonce": "En quoi consiste la fermeture géométrique d'une chaîne fermée ?",
+      "propositions": [
+        "Vérifier que toutes les liaisons de la boucle sont des pivots",
+        "Écrire que la somme des vecteurs du tour de la boucle est nulle",
+        "Mesurer la position de sortie avec un capteur de position",
+        "Additionner les vitesses des pièces comme dans une chaîne ouverte"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On écrit que la somme des vecteurs qui font le tour de la boucle est nulle (O⃗A + A⃗B + B⃗O = 0⃗), puis on projette cette relation sur les axes pour obtenir la loi d'entrée-sortie.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Un pignon de rayon primitif R tourne à la vitesse angulaire ω et entraîne une crémaillère. Quelle est la vitesse v de la crémaillère ?",
+      "propositions": [
+        "v = ω / R",
+        "v = R·ω",
+        "v = 2π·R",
+        "v = R·N avec N en tr/min"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Quand le pignon tourne de θ, la crémaillère avance de l'arc R·θ : x = R·θ, donc v = R·ω, avec ω en rad/s.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Un pignon de diamètre primitif 40 mm tourne à 60 tr/min et entraîne une crémaillère. Quelle est la vitesse de la crémaillère ?",
+      "propositions": [
+        "≈ 0,251 m/s",
+        "≈ 0,13 m/s",
+        "1,2 m/s",
+        "0,020 m/s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "R = 0,020 m ; ω = 2π × 60 / 60 ≈ 6,28 rad/s ; v = 0,020 × 6,28 ≈ 0,126 m/s ≈ 0,13 m/s. 0,251 m/s utilise le diamètre ; 1,2 et 0,020 oublient la conversion en rad/s.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Une vis de pas 4 mm, entraînée à 1 200 tr/min, déplace un écrou. Quelle est la vitesse de l'écrou ?",
+      "propositions": [
+        "4 800 mm/s",
+        "300 mm/s",
+        "80 mm/s",
+        "≈ 503 mm/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "v = p·N = 4 × 1 200 = 4 800 mm/min = 4 800 / 60 = 80 mm/s. 4 800 mm/s oublie la conversion des minutes ; 503 mm/s multiplie le pas par ω sans diviser par 2π.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un système bielle-manivelle a une manivelle de longueur R = 25 mm et une bielle de longueur L = 90 mm. Quelle est la course du piston ?",
+      "propositions": [
+        "50 mm",
+        "25 mm",
+        "180 mm",
+        "115 mm"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le piston va de L + R à L − R : sa course vaut 2R = 2 × 25 = 50 mm, quelle que soit la longueur de la bielle. 115 mm est la position du point mort haut (L + R), pas la course.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Pour un système bielle-manivelle de manivelle R = 40 mm et de bielle L = 120 mm, la loi d'entrée-sortie est x(θ) = R·cos θ + √(L² − R²·sin² θ). Quelle est la position x du piston pour θ = 90° ?",
+      "propositions": [
+        "≈ 113 mm",
+        "160 mm",
+        "≈ 126 mm",
+        "80 mm"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "cos 90° = 0 et sin 90° = 1 : x = 0 + √(120² − 40²) = √(14 400 − 1 600) = √12 800 ≈ 113 mm. 160 mm et 80 mm sont les points morts (L + R et L − R) ; 126 mm vient de √(L² + R²), une erreur de signe.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Dans un système bielle-manivelle, que se passe-t-il aux points morts haut et bas ?",
+      "propositions": [
+        "La vitesse du piston est maximale",
+        "La manivelle est perpendiculaire au guidage du piston",
+        "La vitesse du piston s'annule",
+        "La bielle est perpendiculaire à la manivelle"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Aux points morts (θ = 0° et θ = 180°), le piston change de sens : sa vitesse s'annule. Manivelle et bielle sont alors alignées avec l'axe du piston.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Le motoréducteur d'un portail coulissant entraîne à 30 tr/min un pignon de diamètre primitif 50 mm, qui engrène sur la crémaillère du vantail. Combien de temps faut-il pour ouvrir de 3,0 m, en négligeant démarrage et arrêt ?",
+      "propositions": [
+        "≈ 19 s",
+        "4,0 s",
+        "≈ 76 s",
+        "≈ 38 s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "ω = 2π × 30 / 60 = π ≈ 3,14 rad/s ; R = 0,025 m ; v = 0,025 × 3,14 ≈ 0,0785 m/s. Durée : 3,0 / 0,0785 ≈ 38 s. 19 s prend le diamètre comme rayon, 76 s la moitié du rayon, et 4,0 s oublie la conversion en rad/s.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Quels mécanismes transforment une rotation en translation ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le pignon-crémaillère",
+        "Le système vis-écrou",
+        "Le système bielle-manivelle",
+        "Un train d'engrenages à roues dentées",
+        "Une transmission par poulies et courroie"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Pignon-crémaillère, vis-écrou et bielle-manivelle transforment une rotation en translation. Engrenages et poulies-courroie transmettent une rotation en une autre rotation.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:127",
+      "type": "qcm_multiple",
+      "enonce": "Une vis de pas 2 mm tourne à 600 tr/min dans son écrou, qui ne peut que se translater. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'écrou avance à 1 200 mm/min",
+        "L'écrou avance à 20 mm/s",
+        "L'écrou avance à 1 200 mm/s",
+        "En un tour de vis, l'écrou avance de 2 mm"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le pas est l'avance par tour : 2 mm. v = p·N = 2 × 600 = 1 200 mm/min = 1 200 / 60 = 20 mm/s. 1 200 mm/s oublie la conversion des minutes en secondes.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur le système bielle-manivelle sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La course du piston vaut 2R, deux fois la longueur de la manivelle",
+        "La loi d'entrée-sortie x(θ) n'est pas linéaire",
+        "La course du piston dépend de la longueur de la bielle",
+        "Si la manivelle tourne à vitesse constante, le piston va à vitesse constante"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le piston va de L + R à L − R : course 2R, indépendante de L. La loi x(θ) = R·cos θ + √(L² − R²·sin² θ) n'est pas linéaire : à rotation constante, le piston accélère, ralentit et s'arrête aux points morts.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Un système bielle-manivelle a une manivelle R = 30 mm et une bielle L = 100 mm, avec x(θ) = R·cos θ + √(L² − R²·sin² θ). Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pour θ = 0°, x = 130 mm",
+        "Pour θ = 180°, x = 70 mm",
+        "Pour θ = 90°, x ≈ 95,4 mm",
+        "Pour θ = 90°, x = 100 mm",
+        "La course du piston vaut 200 mm"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "θ = 0° : x = 30 + 100 = 130 mm. θ = 180° : x = −30 + 100 = 70 mm. θ = 90° : x = √(10 000 − 900) = √9 100 ≈ 95,4 mm. Course : 130 − 70 = 60 mm = 2R.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Dans une chaîne fermée, comme dans un bras robotisé, la dernière pièce n'est reliée à aucune autre pièce.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Dans une chaîne fermée, les pièces forment une boucle : on part du bâti et on y revient en passant par les liaisons. Le bras robotisé est une chaîne ouverte.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Pour un pignon de diamètre primitif d, un tour de pignon fait avancer la crémaillère de π·d.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. Un tour fait avancer la crémaillère d'un périmètre primitif, 2π·R = π·d.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Dans un système bielle-manivelle, allonger la bielle augmente la course du piston.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. La course vaut 2R : elle ne dépend que de la longueur de la manivelle, pas de celle de la bielle.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:133",
+      "type": "reponse_courte",
+      "enonce": "Un vérin électrique utilise une vis de pas 5 mm. Sa tige doit parcourir 150 mm en 2,0 s à vitesse constante. À quelle fréquence de rotation, en tr/min, doit tourner la vis ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "900"
+      ],
+      "difficulte": 3,
+      "explication": "v = 150 / 2,0 = 75 mm/s = 75 × 60 = 4 500 mm/min. N = v / p = 4 500 / 5 = 900 tr/min.",
+      "notion": "Loi d'entrée-sortie en chaîne fermée"
+    },
+    {
+      "source": "si-1re:ch7:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont, dans l'ordre, les trois phases d'un profil de vitesse en trapèze ?",
+      "propositions": [
+        "Accélération, palier à vitesse constante, décélération",
+        "Accélération, décélération, puis arrêt prolongé",
+        "Palier à vitesse lente, accélération, puis palier rapide",
+        "Démarrage instantané, palier, puis arrêt instantané"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le trapèze comporte une accélération constante de 0 à vmax, un palier à vmax, puis une décélération constante jusqu'à l'arrêt.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un axe motorisé ne peut-il pas passer instantanément de l'arrêt à sa vitesse maximale ?",
+      "propositions": [
+        "Le moteur ne peut pas tourner dans les deux sens",
+        "L'accélération et l'effort seraient infinis",
+        "Le capteur de position serait détruit par le choc",
+        "La vitesse maximale serait alors dépassée deux fois"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Passer de 0 à vmax en une durée nulle demanderait une accélération infinie, donc un effort infini : la commande impose une montée progressive de la vitesse.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Un chariot atteint sa vitesse maximale de 0,40 m/s en 0,50 s, avec une accélération constante. Quelle est son accélération ?",
+      "propositions": [
+        "0,20 m/s²",
+        "1,25 m/s²",
+        "0,8 m/s²",
+        "0,40 m/s²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "a = vmax / ta = 0,40 / 0,50 = 0,80 m/s². 0,20 vient d'une multiplication, 1,25 d'un rapport inversé.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Un axe atteint vmax = 0,30 m/s en ta = 2,0 s, avec une accélération constante. Quelle distance parcourt-il pendant cette phase d'accélération ?",
+      "propositions": [
+        "0,30 m",
+        "0,60 m",
+        "0,15 m",
+        "0,90 m"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Aire du triangle sous v(t) : da = ½ × vmax × ta = 0,5 × 0,30 × 2,0 = 0,30 m. 0,60 m oublie le ½.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Un portail coulissant doit parcourir 5,0 m. Sa vitesse maximale est 0,25 m/s ; l'accélération et le freinage durent chacun 2,0 s. Quelle est la durée totale du mouvement ?",
+      "propositions": [
+        "20 s",
+        "24 s",
+        "22 s",
+        "21 s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "da = ½ × 0,25 × 2,0 = 0,25 m, deux fois : 0,50 m < 5,0 m, le profil est bien en trapèze. Palier : (5,0 − 0,50) / 0,25 = 18 s. T = 2,0 + 18 + 2,0 = 22 s, soit course / vmax + ta = 20 + 2,0. 20 s supposerait un démarrage et un arrêt instantanés.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Dans un profil en trapèze, pourquoi la durée totale est-elle plus grande que course / vmax ?",
+      "propositions": [
+        "Le moteur s'arrête quelques secondes à mi-course pour refroidir",
+        "Au démarrage et au freinage, l'axe va en moyenne à vmax / 2",
+        "La vitesse maximale n'est atteinte qu'à la toute fin du mouvement",
+        "La distance parcourue au palier est le double de la course"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Pendant l'accélération et la décélération, la vitesse moyenne n'est que vmax / 2 : le profil en trapèze ajoute ta à la durée course / vmax.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Un axe a une vitesse maximale de 0,50 m/s, atteinte en 1,0 s ; le freinage dure aussi 1,0 s. Pour lequel de ces déplacements le profil devient-il triangulaire ?",
+      "propositions": [
+        "0,60 m",
+        "0,40 m",
+        "1,2 m",
+        "2,0 m"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le profil est triangulaire si la course est inférieure à 2 × da = vmax × ta = 0,50 × 1,0 = 0,50 m. Seule la course de 0,40 m est inférieure à 0,50 m.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Une articulation de bras robotisé doit tourner de 120°, avec ωmax = 0,60 rad/s et des phases d'accélération et de décélération de 0,50 s chacune. Quelle est la durée totale du mouvement ?",
+      "propositions": [
+        "≈ 4,0 s",
+        "≈ 3,5 s",
+        "≈ 4,5 s",
+        "200 s"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "θ = 120 × π / 180 ≈ 2,09 rad. T = θ / ωmax + ta = 2,09 / 0,60 + 0,50 ≈ 3,49 + 0,50 ≈ 4,0 s. 3,5 s oublie ta, 4,5 s ajoute ta deux fois, et 200 s utilise l'angle en degrés.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Quelles relations sont exactes pour un profil en trapèze symétrique (accélération et décélération de même durée ta, durée totale T) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "a = vmax / ta",
+        "da = ½ × vmax × ta",
+        "d = vmax × (T − ta)",
+        "d = vmax × T"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "a = vmax / ta ; la distance d'accélération est l'aire d'un triangle, ½ × vmax × ta ; la distance totale est l'aire du trapèze, vmax × (T − ta). vmax × T supposerait un démarrage instantané.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Un axe en rotation suit un profil de vitesse angulaire en trapèze. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'aire sous la courbe ω(t) donne l'angle parcouru en radians",
+        "L'accélération angulaire vaut α = ωmax / ta",
+        "Le raisonnement est le même que pour un profil en translation",
+        "L'aire sous la courbe ω(t) donne l'angle en tours par minute",
+        "L'aire sous la courbe ω(t) donne la vitesse angulaire moyenne"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Avec les grandeurs angulaires, le raisonnement est identique : α = ωmax / ta et l'aire sous ω(t), en rad/s × s, donne un angle en radians.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Un chariot doit parcourir 1,2 m avec vmax = 0,40 m/s ; l'accélération et la décélération durent chacune 0,50 s. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son accélération vaut 0,80 m/s²",
+        "Le palier à vitesse constante dure 2,5 s",
+        "La durée totale vaut 3,5 s",
+        "La durée totale vaut 3,0 s",
+        "La distance parcourue pendant l'accélération vaut 0,20 m"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "a = 0,40 / 0,50 = 0,80 m/s². da = ½ × 0,40 × 0,50 = 0,10 m (0,20 m oublie le ½). Palier : (1,2 − 2 × 0,10) / 0,40 = 2,5 s. T = 0,50 + 2,5 + 0,50 = 3,5 s ; 3,0 s = course / vmax oublie les phases de démarrage et d'arrêt.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Dans un profil en trapèze, l'aire sous la courbe v(t) donne la distance parcourue.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai. L'aire du trapèze donne la distance totale : d = vmax × (T − ta).",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Dans un profil en trapèze, l'accélération est maximale pendant le palier à vmax.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux. Pendant le palier, la vitesse est constante : l'accélération est nulle. Elle est non nulle pendant les phases de démarrage et de freinage.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Si la course est inférieure à vmax × ta, l'axe n'a pas le temps d'atteindre vmax et le profil devient triangulaire.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai. Il faut au moins 2 × da = vmax × ta pour accélérer jusqu'à vmax puis freiner ; en deçà, l'axe freine avant d'atteindre vmax.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:148",
+      "type": "vrai_faux",
+      "enonce": "La durée totale d'un déplacement en profil trapézoïdal vaut course / vmax.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux. course / vmax suppose un démarrage et un arrêt instantanés. Avec le trapèze, la durée vaut course / vmax + ta.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Un axe atteint vmax = 0,20 m/s en ta = 0,50 s, avec une accélération constante. Quelle distance, en millimètres, parcourt-il pendant l'accélération ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "50"
+      ],
+      "difficulte": 2,
+      "explication": "da = ½ × vmax × ta = 0,5 × 0,20 × 0,50 = 0,050 m = 50 mm.",
+      "notion": "Profil de vitesse en trapèze"
+    },
+    {
+      "source": "si-1re:ch7:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Un portail coulissant parcourt 6,0 m avec une vitesse maximale de 0,30 m/s ; l'accélération et le freinage durent chacun 1,5 s. Quelle est la durée totale du mouvement, en secondes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "21,5"
+      ],
+      "difficulte": 3,
+      "explication": "da = ½ × 0,30 × 1,5 = 0,225 m ; 2 × 0,225 = 0,45 m < 6,0 m : profil en trapèze. Palier : (6,0 − 0,45) / 0,30 = 18,5 s. T = 1,5 + 18,5 + 1,5 = 21,5 s, soit 6,0 / 0,30 + 1,5.",
+      "notion": "Profil de vitesse en trapèze"
+    }
+  ]
+}
