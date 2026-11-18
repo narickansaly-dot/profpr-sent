@@ -1,0 +1,2311 @@
+{
+  "chapitre": 5,
+  "notions": [
+    "Rappels de probabilités",
+    "Probabilité conditionnelle",
+    "Tableau croisé d'effectifs",
+    "Arbre pondéré",
+    "Probabilités totales",
+    "Tests de dépistage",
+    "Indépendance",
+    "Automatismes"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch5:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Calcule de tête 0,3 × 0,4.",
+      "propositions": [
+        "0,12",
+        "1,2",
+        "0,7",
+        "0,012"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "0,3 × 0,4 : on calcule 3 × 4 = 12, puis on place deux chiffres après la virgule (un pour chaque facteur) : 0,12.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quel est le résultat de 1 − 0,27 ?",
+      "propositions": [
+        "0,83",
+        "0,37",
+        "1,27",
+        "0,73"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1 − 0,27 = 1,00 − 0,27 = 0,73. Vérification : 0,73 + 0,27 = 1.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 15 % de 60 ?",
+      "propositions": [
+        "15",
+        "4",
+        "9",
+        "45"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "15 % de 60 = 0,15 × 60 = 9. Autre méthode : 10 % de 60 = 6 et 5 % de 60 = 3, donc 6 + 3 = 9.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Écris la fraction 36/48 sous forme décimale.",
+      "propositions": [
+        "0,36",
+        "0,75",
+        "0,48",
+        "1,33"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On simplifie par 12 : 36/48 = 3/4 = 0,75.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Calcule 0,08 / 0,4 sans calculatrice.",
+      "propositions": [
+        "0,02",
+        "0,2",
+        "2",
+        "0,32"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On multiplie le numérateur et le dénominateur par 100 : 0,08 / 0,4 = 8 / 40 = 0,2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Parmi 250 votants, 50 ont voté blanc. Quelle part des votants cela représente-t-il ?",
+      "propositions": [
+        "20 %",
+        "50 %",
+        "25 %",
+        "5 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "50/250 = 1/5 = 0,2, soit 20 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Que vaut le produit 2/5 × 3/4 ?",
+      "propositions": [
+        "5/9",
+        "6/9",
+        "8/15",
+        "3/10"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On multiplie les numérateurs et les dénominateurs : 2/5 × 3/4 = 6/20 = 3/10.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Calcule 0,7 × 0,1 + 0,3 × 0,6.",
+      "propositions": [
+        "1,7",
+        "0,16",
+        "0,25",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0,7 × 0,1 = 0,07 et 0,3 × 0,6 = 0,18 ; la somme vaut 0,07 + 0,18 = 0,25. C'est le calcul type des probabilités totales.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel nombre décimal correspond à 4 % ?",
+      "propositions": [
+        "0,4",
+        "4",
+        "0,04",
+        "0,004"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "4 % = 4/100 = 0,04.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Simplifie la fraction 45/75.",
+      "propositions": [
+        "9/16",
+        "3/5",
+        "5/3",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "45 = 15 × 3 et 75 = 15 × 5, donc 45/75 = 3/5 (soit 0,6).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles sont égales à 0,25 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1/4",
+        "25 %",
+        "2/5",
+        "0,5²",
+        "2,5 %"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1/4 = 0,25 ; 25 % = 25/100 = 0,25 ; 0,5² = 0,5 × 0,5 = 0,25. En revanche 2/5 = 0,4 et 2,5 % = 0,025.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Quels calculs donnent 0,06 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,2 × 0,3",
+        "0,6 × 0,1",
+        "0,3 × 0,3",
+        "0,03 × 2",
+        "0,6 × 0,6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0,2 × 0,3 = 0,06 ; 0,6 × 0,1 = 0,06 ; 0,03 × 2 = 0,06. Mais 0,3 × 0,3 = 0,09 et 0,6 × 0,6 = 0,36.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres, lesquels peuvent être la probabilité d'un événement ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,99",
+        "1,2",
+        "3/4",
+        "−0,1",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Une probabilité est comprise entre 0 et 1 (bornes incluses) : 0,99, 3/4 = 0,75 et 1 conviennent. 1,2 est plus grand que 1 et −0,1 est négatif.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Le produit 0,5 × 0,5 est égal à 0,25.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "0,5 × 0,5 : 5 × 5 = 25, avec deux chiffres après la virgule : 0,25. C'est aussi la moitié de la moitié, soit un quart.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Multiplier 0,1 par lui-même donne 0,1.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "0,1 × 0,1 = 0,01 (un dixième d'un dixième, soit un centième). Le produit de deux nombres compris entre 0 et 1 est plus petit que chacun d'eux.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:016",
+      "type": "vrai_faux",
+      "enonce": "La fraction 12/40 est égale à 30 %.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "12/40 = 3/10 = 0,3, soit 30 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Diviser 0,2 par 0,5 donne 0,1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "0,2 / 0,5 = 2 / 5 = 0,4 (on a multiplié le haut et le bas par 10). Le résultat 0,1 correspond au produit 0,2 × 0,5.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:018",
+      "type": "reponse_courte",
+      "enonce": "Calcule 1 − 0,08. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.92"
+      ],
+      "difficulte": 1,
+      "explication": "1 − 0,08 = 1,00 − 0,08 = 0,92.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Calcule 0,6 × 0,3 + 0,4 × 0,5. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.38"
+      ],
+      "difficulte": 2,
+      "explication": "0,6 × 0,3 = 0,18 et 0,4 × 0,5 = 0,2 ; 0,18 + 0,2 = 0,38.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:020",
+      "type": "reponse_courte",
+      "enonce": "Écris le quotient 21/30 en pourcentage. Réponds par un nombre, sans le signe %.",
+      "reponses_acceptees": [
+        "70",
+        "70 %",
+        "70%"
+      ],
+      "difficulte": 1,
+      "explication": "21/30 = 7/10 = 0,7, soit 70 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch5:banque:021",
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. Quelle est la probabilité d'obtenir un multiple de 3 ?",
+      "propositions": [
+        "1/3",
+        "1/2",
+        "1/6",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les multiples de 3 entre 1 et 6 sont 3 et 6 : 2 issues favorables sur 6 équiprobables. P = 2/6 = 1/3.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:022",
+      "type": "qcm_unique",
+      "enonce": "La probabilité qu'il pleuve demain est estimée à 0,35. Quelle est la probabilité qu'il ne pleuve pas ?",
+      "propositions": [
+        "0,35",
+        "0,75",
+        "1,35",
+        "0,65"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "« Ne pas pleuvoir » est l'événement contraire : P = 1 − 0,35 = 0,65.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges, 5 bleues et 2 vertes, indiscernables au toucher. On tire une boule au hasard. Quelle est la probabilité qu'elle soit bleue ?",
+      "propositions": [
+        "1/5",
+        "5/8",
+        "1/3",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Il y a 3 + 5 + 2 = 10 boules, dont 5 bleues. P = 5/10 = 1/2.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:024",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,5, P(B) = 0,4 et P(A ∩ B) = 0,1. Que vaut P(A ∪ B) ?",
+      "propositions": [
+        "0,9",
+        "1",
+        "0,8",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0,5 + 0,4 − 0,1 = 0,8. Sans retirer 0,1, on compterait deux fois les issues communes.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Deux événements A et B sont incompatibles, avec P(A) = 0,25 et P(B) = 0,4. Que vaut P(A ∪ B) ?",
+      "propositions": [
+        "0,1",
+        "0,65",
+        "0,6",
+        "0,35"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Incompatibles : P(A ∩ B) = 0, donc P(A ∪ B) = P(A) + P(B) = 0,25 + 0,4 = 0,65.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Que désigne l'événement A ∩ B ?",
+      "propositions": [
+        "A et B sont réalisés tous les deux",
+        "Au moins l'un des deux, A ou B, est réalisé",
+        "A est réalisé mais pas B",
+        "Ni A ni B n'est réalisé"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le symbole ∩ (intersection) se lit « et » : A ∩ B contient les issues qui sont à la fois dans A et dans B. « A ou B » se note A ∪ B.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:027",
+      "type": "qcm_unique",
+      "enonce": "On tire une carte au hasard dans un jeu de 32 cartes : 4 couleurs de 8 cartes, dont 4 as en tout. Quelle est la probabilité de tirer un as ou un cœur ?",
+      "propositions": [
+        "11/32",
+        "12/32",
+        "1/32",
+        "4/32"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "P(as) = 4/32, P(cœur) = 8/32 et P(as de cœur) = 1/32. P(as ou cœur) = 4/32 + 8/32 − 1/32 = 11/32 : l'as de cœur ne doit être compté qu'une fois.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:028",
+      "type": "qcm_unique",
+      "enonce": "La réunion de A et B a pour probabilité 0,7 ; de plus, P(A) = 0,4 et P(B) = 0,5. Calcule la probabilité de l'intersection A ∩ B.",
+      "propositions": [
+        "0,9",
+        "0,3",
+        "1,6",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "De P(A ∪ B) = P(A) + P(B) − P(A ∩ B), on tire P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0,4 + 0,5 − 0,7 = 0,2.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "On lance un dé équilibré à six faces. A est l'événement « obtenir un nombre impair ». Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(A) = 1/2",
+        "Ā est l'événement « obtenir un nombre pair »",
+        "P(Ā) = 1/3",
+        "A = {1 ; 3 ; 5}",
+        "A et Ā peuvent se réaliser en même temps"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "A = {1 ; 3 ; 5}, donc P(A) = 3/6 = 1/2. Son contraire Ā = {2 ; 4 ; 6} (nombres pairs), P(Ā) = 1 − 1/2 = 1/2. Un événement et son contraire ne se réalisent jamais ensemble.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont deux événements incompatibles de probabilités non nulles. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(A ∩ B) = 0",
+        "P(A ∪ B) = P(A) + P(B)",
+        "P(A) + P(B) peut valoir 1,5",
+        "A et B peuvent se réaliser simultanément"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Incompatibles signifie A ∩ B vide : P(A ∩ B) = 0 et donc P(A ∪ B) = P(A) + P(B). Cette somme est une probabilité, donc elle ne dépasse pas 1 : 1,5 est impossible.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Une loterie compte 200 billets, dont 10 gagnants. On achète un billet au hasard. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité de gagner est 0,05",
+        "La probabilité de perdre est 0,95",
+        "La probabilité de gagner est 10 %",
+        "La probabilité de gagner est 1/10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P(gagner) = 10/200 = 1/20 = 0,05, soit 5 % (et non 10 % ou 1/10). P(perdre) = 1 − 0,05 = 0,95.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:032",
+      "type": "vrai_faux",
+      "enonce": "La probabilité d'un événement est toujours comprise entre 0 et 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Par définition, une probabilité est un nombre de l'intervalle de 0 à 1 : 0 pour un événement impossible, 1 pour un événement certain.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Pour deux événements quelconques A et B, on a toujours P(A ∪ B) = P(A) + P(B).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "En général P(A ∪ B) = P(A) + P(B) − P(A ∩ B). L'égalité P(A ∪ B) = P(A) + P(B) n'est vraie que si A et B sont incompatibles. Exemple avec un dé : « pair » et « au moins 5 » : 3/6 + 2/6 − 1/6 = 4/6, et non 5/6.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Si P(A) = 0,3, alors la probabilité de l'événement contraire de A est 0,7.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "P(Ā) = 1 − P(A) = 1 − 0,3 = 0,7.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:035",
+      "type": "reponse_courte",
+      "enonce": "Dans un sac de 20 jetons, 6 sont jaunes. On tire un jeton au hasard. Quelle est la probabilité qu'il soit jaune ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.3",
+        "3/10"
+      ],
+      "difficulte": 1,
+      "explication": "Situation d'équiprobabilité : P = 6/20 = 3/10 = 0,3.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:036",
+      "type": "reponse_courte",
+      "enonce": "On donne P(A) = 0,6, P(B) = 0,3 et P(A ∪ B) = 0,8. Calcule P(A ∩ B). Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.1",
+        "1/10"
+      ],
+      "difficulte": 2,
+      "explication": "P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0,6 + 0,3 − 0,8 = 0,1.",
+      "notion": "Rappels de probabilités"
+    },
+    {
+      "source": "maths-tc:ch5:banque:037",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,5 et P(A ∩ B) = 0,2. Que vaut P_A(B) ?",
+      "propositions": [
+        "0,1",
+        "2,5",
+        "0,4",
+        "0,7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "P_A(B) = P(A ∩ B) / P(A) = 0,2 / 0,5 = 2/5 = 0,4.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Dans une entreprise, 30 % des salariés sont cadres et, parmi les cadres, 60 % télétravaillent. On note C « être cadre » et T « télétravailler ». Comment se note la donnée 60 % ?",
+      "propositions": [
+        "P(C ∩ T) = 0,6",
+        "P_C(T) = 0,6",
+        "P_T(C) = 0,6",
+        "P(T) = 0,6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "« Parmi les cadres » indique la condition C : on restreint la population aux cadres. La donnée est donc P_C(T) = 0,6. La condition s'écrit en indice.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Dans un club, 25 % des adhérents sont des enfants, et 15 % des adhérents sont des enfants qui font de la natation. Quelle est la probabilité qu'un enfant du club fasse de la natation ?",
+      "propositions": [
+        "0,0375",
+        "0,6",
+        "0,15",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On note E « être un enfant » et N « faire de la natation » : P(E) = 0,25 et P(E ∩ N) = 0,15. P_E(N) = 0,15 / 0,25 = 15/25 = 0,6.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:040",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,4 et P_A(B) = 0,3. Que vaut P(A ∩ B) ?",
+      "propositions": [
+        "0,12",
+        "0,7",
+        "0,75",
+        "0,1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Formule du produit : P(A ∩ B) = P(A) × P_A(B) = 0,4 × 0,3 = 0,12.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Sachant que P_A(B) = 0,85, que vaut P_A(B̄) ?",
+      "propositions": [
+        "0,85",
+        "1,85",
+        "On ne peut pas le savoir sans P(A)",
+        "0,15"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Quand A est réalisé, B ou B̄ se produit : P_A(B) + P_A(B̄) = 1, donc P_A(B̄) = 1 − 0,85 = 0,15.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:042",
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. On sait que le résultat est supérieur ou égal à 4. Quelle est la probabilité que ce soit un 6 ?",
+      "propositions": [
+        "1/6",
+        "1/2",
+        "1/3",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sachant que le résultat est au moins 4, il reste trois issues équiprobables : 4, 5, 6. Une seule convient, donc la probabilité vaut 1/3. Avec la formule : (1/6) / (3/6) = 1/3.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:043",
+      "type": "qcm_unique",
+      "enonce": "On note S « l'élève est en seconde » et V « l'élève vient à vélo ». Quelle phrase traduit P_S(V) = 0,8 ?",
+      "propositions": [
+        "80 % des élèves qui viennent à vélo sont en seconde",
+        "80 % des élèves sont en seconde et viennent à vélo",
+        "80 % des élèves de seconde viennent à vélo",
+        "80 % de tous les élèves du lycée viennent à vélo"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Dans P_S(V), la condition est S : on se place parmi les élèves de seconde, et on regarde la part de ceux qui viennent à vélo. « Parmi les cyclistes » serait P_V(S) ; « en seconde et à vélo » serait P(S ∩ V).",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Une enquête indique que 12 % des habitants d'une ville ont plus de 65 ans et sont vaccinés contre la grippe. Les plus de 65 ans représentent 20 % de la population. Calcule la probabilité qu'un habitant de plus de 65 ans, choisi au hasard, soit vacciné.",
+      "propositions": [
+        "0,024",
+        "0,6",
+        "0,12",
+        "0,32"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Avec S « avoir plus de 65 ans » et V « être vacciné » : P(S ∩ V) = 0,12 et P(S) = 0,2. P_S(V) = 0,12 / 0,2 = 12/20 = 0,6.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:045",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,4, P(B) = 0,5 et P_B(A) = 0,6. Que vaut P_A(B) ?",
+      "propositions": [
+        "0,75",
+        "0,6",
+        "0,3",
+        "0,8"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "D'abord P(A ∩ B) = P(B) × P_B(A) = 0,5 × 0,6 = 0,3. Puis P_A(B) = P(A ∩ B) / P(A) = 0,3 / 0,4 = 0,75. P_A(B) et P_B(A) sont différentes.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Jeu de Monty Hall : un candidat choisit une porte parmi trois ; une seule cache une voiture. L'animateur, qui sait où est la voiture, ouvre une autre porte qui cache une chèvre, puis propose de changer. Quelle est la probabilité de gagner la voiture si le candidat change de porte ?",
+      "propositions": [
+        "1/2",
+        "1/3",
+        "1",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Le premier choix est mauvais avec la probabilité 2/3. Dans ce cas, l'animateur ouvre la seule autre porte à chèvre, et la porte restante cache la voiture : changer fait gagner. Donc P(gagner en changeant) = 2/3 (et 1/3 en gardant).",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "Un événement A a pour probabilité 0,5 et l'événement « A et B » a pour probabilité 0,1. Quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) = 0,2",
+        "P_A(B̄) = 0,8",
+        "P_A(B) = 0,05",
+        "P(A ∩ B̄) = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P_A(B) = 0,1 / 0,5 = 0,2 ; P_A(B̄) = 1 − 0,2 = 0,8 ; P(A ∩ B̄) = P(A) − P(A ∩ B) = 0,5 − 0,1 = 0,4. La valeur 0,05 vient d'une multiplication au lieu d'une division.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "Dans quelles phrases reconnaît-on une probabilité conditionnelle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Parmi les fumeurs, 20 % sont asthmatiques",
+        "Chez les plus de 60 ans, 40 % portent des lunettes",
+        "15 % des clients sont des femmes qui paient par carte",
+        "Sachant qu'il pleut, le bus a du retard avec une probabilité de 0,3",
+        "30 % des élèves sont internes"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les mots « parmi », « chez », « sachant que » restreignent la population : ce sont des probabilités conditionnelles. « 15 % des clients sont des femmes qui paient par carte » est une intersection, et « 30 % des élèves sont internes » une probabilité simple.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont deux événements avec P(A) ≠ 0. Quelles égalités sont toujours vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(A ∩ B) = P(A) × P_A(B)",
+        "P_A(B) + P_A(B̄) = 1",
+        "P_A(B) = P_B(A)",
+        "P_A(B) = P(A ∩ B) / P(B)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La définition P_A(B) = P(A ∩ B) / P(A) donne la formule du produit P(A ∩ B) = P(A) × P_A(B). Sachant A, B ou B̄ se réalise, d'où P_A(B) + P_A(B̄) = 1. On divise par P(A), pas par P(B), et en général P_A(B) ≠ P_B(A).",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "Au jeu de Monty Hall, il y a trois portes et une seule voiture ; l'animateur ouvre toujours une porte à chèvre que le candidat n'a pas choisie. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "En gardant sa porte, on gagne avec la probabilité 1/3",
+        "En changeant de porte, on gagne avec la probabilité 2/3",
+        "Après l'ouverture, les deux portes fermées ont chacune une chance sur deux",
+        "Changer de porte ne modifie pas les chances de gagner"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Garder gagne seulement si le premier choix était bon : 1/3. Changer gagne si le premier choix était mauvais : 2/3. L'animateur n'ouvre pas une porte au hasard, donc les deux portes restantes ne sont pas équiprobables.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:051",
+      "type": "vrai_faux",
+      "enonce": "La notation P_A(B) se lit « probabilité de B sachant A ».",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Dans P_A(B), l'événement en indice (A) est la condition, celui entre parenthèses (B) est l'événement dont on cherche la probabilité : P_A(B) = P(A ∩ B) / P(A).",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:052",
+      "type": "vrai_faux",
+      "enonce": "Pour calculer P_A(B), on divise P(A ∩ B) par P(B).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On divise par la probabilité de la condition : P_A(B) = P(A ∩ B) / P(A). Diviser par P(B) donne P_B(A).",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Si P(A) = 0,2 et P_A(B) = 0,5, alors la probabilité que A et B soient réalisés tous les deux vaut 0,1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "P(A ∩ B) = P(A) × P_A(B) = 0,2 × 0,5 = 0,1.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:054",
+      "type": "vrai_faux",
+      "enonce": "Au jeu de Monty Hall, une fois qu'une porte à chèvre est ouverte, le candidat a une chance sur deux de gagner, qu'il change de porte ou non.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Il gagne avec la probabilité 1/3 en gardant sa porte et 2/3 en changeant : l'animateur, qui connaît la position de la voiture, donne une information. Deux possibilités ne veulent pas dire équiprobabilité.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:055",
+      "type": "reponse_courte",
+      "enonce": "Dans un lycée, 40 % des élèves sont demi-pensionnaires et 10 % des élèves sont demi-pensionnaires inscrits à l'option théâtre. Calcule la probabilité qu'un demi-pensionnaire choisi au hasard soit inscrit à l'option théâtre. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.25",
+        "1/4"
+      ],
+      "difficulte": 2,
+      "explication": "Avec D « demi-pensionnaire » et T « option théâtre » : P_D(T) = P(D ∩ T) / P(D) = 0,1 / 0,4 = 0,25.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:056",
+      "type": "reponse_courte",
+      "enonce": "Un magasin constate que 80 % de ses clients ont la carte de fidélité et que la moitié des titulaires de la carte achètent en promotion. Quelle est la probabilité qu'un client ait la carte et achète en promotion ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.4",
+        "2/5"
+      ],
+      "difficulte": 1,
+      "explication": "Avec F « avoir la carte » et R « acheter en promotion » : P(F) = 0,8 et P_F(R) = 0,5. P(F ∩ R) = 0,8 × 0,5 = 0,4.",
+      "notion": "Probabilité conditionnelle"
+    },
+    {
+      "source": "maths-tc:ch5:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Un sondage auprès de 400 spectateurs : 240 ont moins de 30 ans, et 180 d'entre eux ont vu le film en 3D ; parmi les 160 spectateurs de 30 ans ou plus, 40 l'ont vu en 3D. Quelle est la probabilité qu'un spectateur choisi au hasard ait moins de 30 ans et ait vu le film en 3D ?",
+      "propositions": [
+        "0,75",
+        "0,6",
+        "0,55",
+        "0,45"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On cherche une intersection : on divise l'effectif de la case « moins de 30 ans et 3D » par l'effectif total : 180/400 = 0,45. (0,75 = 180/240 serait la probabilité sachant « moins de 30 ans ».)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableau croisé d'effectifs, la case « A et B » contient 30, la ligne A a pour total 120 et la colonne B a pour total 50. Que vaut P_A(B) ?",
+      "propositions": [
+        "0,6",
+        "0,3",
+        "0,25",
+        "4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Sachant A, on se place dans la ligne A : P_A(B) = 30/120 = 1/4 = 0,25. (30/50 = 0,6 serait P_B(A).)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Sur 500 clients d'une banque, 200 ont un crédit immobilier. Parmi les 150 clients de moins de 35 ans, 60 ont un crédit immobilier. On choisit au hasard un client de moins de 35 ans. Quelle est la probabilité qu'il ait un crédit immobilier ?",
+      "propositions": [
+        "0,3",
+        "0,4",
+        "0,12",
+        "0,75"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La condition est « moins de 35 ans » : on divise par 150. P = 60/150 = 2/5 = 0,4.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Dans un hôpital, sur 1 000 patients, 300 sont venus par les urgences. Parmi eux, 90 ont été hospitalisés plus de deux jours ; parmi les autres patients, 60 l'ont été. Quelle est la probabilité qu'un patient hospitalisé plus de deux jours soit venu par les urgences ?",
+      "propositions": [
+        "0,6",
+        "0,3",
+        "0,09",
+        "0,15"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Patients hospitalisés plus de deux jours : 90 + 60 = 150. Parmi eux, 90 viennent des urgences : P = 90/150 = 0,6. (90/300 = 0,3 est la probabilité inverse.)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Une classe de 32 élèves compte 20 filles. 12 élèves de la classe portent des lunettes, dont 8 filles. On choisit un élève au hasard. Quelle est la probabilité que ce soit une fille qui porte des lunettes ?",
+      "propositions": [
+        "1/4",
+        "2/5",
+        "2/3",
+        "5/8"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "On cherche P(F ∩ L), sans condition : on divise par l'effectif total. P = 8/32 = 1/4. (8/20 = 2/5 serait « sachant fille », 8/12 = 2/3 « sachant lunettes ».)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Parmi 120 randonneurs, 45 ont choisi le circuit long ; 18 d'entre eux ont eu des ampoules aux pieds. Quelle est la probabilité qu'un randonneur du circuit long ait eu des ampoules ?",
+      "propositions": [
+        "0,15",
+        "0,375",
+        "0,6",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On se place parmi les 45 randonneurs du circuit long : P = 18/45 = 2/5 = 0,4.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Un contrôle routier porte sur 300 voitures, dont 60 électriques. On compte 75 voitures en infraction, dont 15 électriques. On note I « en infraction » et E « électrique ». Quelle est la valeur de P_I(E) ?",
+      "propositions": [
+        "0,25",
+        "0,05",
+        "0,2",
+        "0,8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sachant I, on divise par le nombre de voitures en infraction : P_I(E) = 15/75 = 0,2. (15/60 = 0,25 est P_E(I) ; 15/300 = 0,05 est P(E ∩ I).)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Dans une enquête sur 1 000 foyers, 400 ont un animal. Parmi les foyers avec animal, 25 % vivent en maison ; parmi les foyers sans animal, 10 % vivent en maison. Quelle est la probabilité qu'un foyer vivant en maison ait un animal ?",
+      "propositions": [
+        "0,25",
+        "0,625",
+        "0,1",
+        "0,16"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "On remplit le tableau : avec animal et maison, 25 % de 400 = 100 ; sans animal et maison, 10 % de 600 = 60. Total des maisons : 160. P = 100/160 = 5/8 = 0,625.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:065",
+      "type": "qcm_unique",
+      "enonce": "On a rangé 250 réponses dans un tableau à double entrée. 50 personnes vérifient à la fois A et B. Une personne est tirée au sort : quelle est la probabilité qu'elle vérifie A et B ?",
+      "propositions": [
+        "0,5",
+        "0,2",
+        "5",
+        "0,05"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "P(A ∩ B) = effectif de la case A ∩ B / effectif total = 50/250 = 1/5 = 0,2.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer P_B(A) avec un tableau croisé, par quoi divise-t-on l'effectif de la case A ∩ B ?",
+      "propositions": [
+        "Par l'effectif total de B",
+        "Par l'effectif total de A",
+        "Par l'effectif de toute la population",
+        "Par l'effectif de la case Ā ∩ B"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Sachant B, on restreint la population aux individus de B : P_B(A) = effectif de A ∩ B / effectif de B.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Un sondage interroge 90 jeunes et 110 adultes. 54 jeunes s'informent surtout par les réseaux sociaux, contre 18 adultes. Quelle est la probabilité qu'une personne qui s'informe surtout par les réseaux sociaux soit jeune ?",
+      "propositions": [
+        "0,6",
+        "0,27",
+        "0,36",
+        "0,75"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Personnes informées par les réseaux : 54 + 18 = 72. Parmi elles, 54 jeunes : P = 54/72 = 3/4 = 0,75. (54/90 = 0,6 est la probabilité inverse.)",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Un tableau croisé décrit 100 élèves : 30 garçons internes, 20 garçons externes, 10 filles internes et 40 filles externes. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité qu'un élève soit interne est 0,4",
+        "La probabilité qu'un garçon soit interne est 0,6",
+        "La probabilité qu'un interne soit une fille est 0,1",
+        "La probabilité qu'un élève soit une fille externe est 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Internes : 30 + 10 = 40, soit 0,4. Garçons : 50, dont 30 internes : 30/50 = 0,6. Internes filles : 10/40 = 0,25 (et non 0,1 = 10/100). Filles externes : 40/100 = 0,4.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Sur 400 salariés d'une usine, 100 travaillent de nuit. 30 salariés ont eu un accident du travail cette année, dont 15 travaillent de nuit. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Parmi les salariés de nuit, 15 % ont eu un accident",
+        "La moitié des accidentés travaillent de nuit",
+        "Un quart des salariés travaille de nuit",
+        "Parmi les salariés de jour, 15 % ont eu un accident",
+        "La probabilité qu'un salarié travaille de nuit et ait eu un accident est 0,15"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Nuit : 15/100 = 15 %. Accidentés : 15/30 = 1/2 de nuit. 100/400 = 1/4 de nuit. Jour : 15 accidents pour 300 salariés, soit 5 %. Intersection : 15/400 = 0,0375.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Avec un tableau croisé d'effectifs, quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme des cases d'une ligne donne le total de cette ligne",
+        "P(A ∩ B) s'obtient en divisant la case A ∩ B par l'effectif total",
+        "P_A(B) s'obtient en divisant la case A ∩ B par l'effectif total",
+        "Le total général est la somme des totaux des lignes"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les totaux s'obtiennent en additionnant les cases. Pour P(A ∩ B), on divise par l'effectif total ; pour P_A(B), on divise par l'effectif de A, pas par l'effectif total.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "On traduit des pourcentages en effectifs pour 1 000 personnes : 30 % des personnes sont fumeuses et, parmi les fumeurs, 20 % font du sport régulièrement. Quelles valeurs sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "300 fumeurs",
+        "60 fumeurs sportifs",
+        "240 fumeurs non sportifs",
+        "200 fumeurs sportifs"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "30 % de 1 000 = 300 fumeurs ; 20 % de 300 = 60 fumeurs sportifs ; 300 − 60 = 240 fumeurs non sportifs. Le nombre 200 vient de 20 % de 1 000 : erreur de population de référence.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:072",
+      "type": "qcm_multiple",
+      "enonce": "Une flotte compte 60 véhicules : 36 voitures et 24 utilitaires ; 18 voitures et 12 utilitaires roulent au diesel. On note D « diesel » et V « voiture ». Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(D) = 0,5",
+        "P_V(D) = 0,5",
+        "P_D(V) = 0,6",
+        "P(V ∩ D) = 0,5",
+        "P_D(V) = 0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Diesel : 18 + 12 = 30, donc P(D) = 30/60 = 0,5. P_V(D) = 18/36 = 0,5. P_D(V) = 18/30 = 0,6. P(V ∩ D) = 18/60 = 0,3.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau croisé, P_A(B) s'obtient en divisant l'effectif de A ∩ B par l'effectif de A.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Sachant A, la population de référence est formée des individus de A : P_A(B) = effectif de A ∩ B / effectif de A.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Dans un groupe de 50 personnes, 20 sont végétariennes, et 5 des végétariennes ont plus de 50 ans. La probabilité qu'une personne végétarienne ait plus de 50 ans vaut alors 0,1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On se place parmi les 20 végétariens : 5/20 = 0,25. La valeur 0,1 = 5/50 est la probabilité d'être végétarien et d'avoir plus de 50 ans.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau croisé, P_A(B) et P_B(A) sont toujours égales, car elles utilisent la même case A ∩ B.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elles ont le même numérateur mais pas le même dénominateur : effectif de A pour P_A(B), effectif de B pour P_B(A). Exemple : 70/110 et 70/120.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:076",
+      "type": "vrai_faux",
+      "enonce": "Parmi 200 élèves, 80 font du théâtre et 60 de la musique ; 20 font les deux. La probabilité qu'un musicien fasse du théâtre est 1/3.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Parmi les 60 musiciens, 20 font du théâtre : 20/60 = 1/3.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:077",
+      "type": "reponse_courte",
+      "enonce": "Sur 800 abonnés d'une médiathèque, 320 empruntent des bandes dessinées. Parmi ces 320 abonnés, 96 ont moins de 15 ans. On choisit un abonné qui emprunte des bandes dessinées. Quelle est la probabilité qu'il ait moins de 15 ans ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.3",
+        "3/10"
+      ],
+      "difficulte": 2,
+      "explication": "La condition est « emprunter des bandes dessinées » : P = 96/320 = 0,3 (on simplifie par 32 : 3/10).",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:078",
+      "type": "reponse_courte",
+      "enonce": "Un restaurant reçoit 250 clients : 150 le midi et 100 le soir. 45 clients du midi et 55 clients du soir prennent un dessert. Calcule la probabilité qu'un client qui prend un dessert soit venu le soir. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.55",
+        "11/20"
+      ],
+      "difficulte": 3,
+      "explication": "Clients avec dessert : 45 + 55 = 100. Parmi eux, 55 sont venus le soir : P = 55/100 = 0,55.",
+      "notion": "Tableau croisé d'effectifs"
+    },
+    {
+      "source": "maths-tc:ch5:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Un arbre pondéré part d'un nœud avec deux branches : l'une mène à A avec la probabilité 0,7, l'autre mène à Ā. Quelle probabilité porte la branche Ā ?",
+      "propositions": [
+        "0,7",
+        "1,7",
+        "0,3",
+        "0,49"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les branches issues d'un même nœud ont pour somme 1 : P(Ā) = 1 − 0,7 = 0,3.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Sur un arbre pondéré, le chemin « A puis B » porte les probabilités 0,4 puis 0,5. Quelle est la probabilité de ce chemin ?",
+      "propositions": [
+        "0,9",
+        "0,45",
+        "0,2",
+        "0,8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La probabilité d'un chemin est le produit des probabilités de ses branches : P(A ∩ B) = 0,4 × 0,5 = 0,2.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Dans un arbre pondéré à deux niveaux, que représente la probabilité écrite sur la branche qui va de A vers B ?",
+      "propositions": [
+        "P(A ∩ B)",
+        "P_A(B)",
+        "P(B)",
+        "P_B(A)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Au second niveau, on est déjà « dans » A : la branche porte la probabilité de B sachant A, P_A(B). P(A ∩ B) est la probabilité du chemin entier.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Un fabricant produit 70 % de ses jouets dans l'atelier X, les autres dans l'atelier Y. 5 % des jouets de X sont défectueux, contre 10 % de ceux de Y. Quelle est la probabilité qu'un jouet vienne de Y et soit défectueux ?",
+      "propositions": [
+        "0,03",
+        "0,1",
+        "0,3",
+        "0,035"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les jouets de Y représentent 1 − 0,7 = 0,3. Chemin « Y puis défectueux » : 0,3 × 0,1 = 0,03. (0,035 = 0,7 × 0,05 est le chemin passant par X.)",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 4 boules rouges et 6 noires. On tire successivement deux boules, sans remise. Quelle est la probabilité de tirer deux boules rouges ?",
+      "propositions": [
+        "4/25",
+        "1/3",
+        "2/5",
+        "2/15"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Premier tirage : 4/10. Sans remise, il reste 3 rouges sur 9 : P_R1(R2) = 3/9. P = 4/10 × 3/9 = 12/90 = 2/15. (4/25 = 4/10 × 4/10 correspondrait à un tirage avec remise.)",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Dans un arbre, A a la probabilité 0,2 ; la branche de A vers B porte 0,9 et la branche de Ā vers B porte 0,3. Quelle probabilité porte la branche qui va de Ā vers B̄ ?",
+      "propositions": [
+        "0,1",
+        "0,8",
+        "0,3",
+        "0,7"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les deux branches issues du nœud Ā ont pour somme 1 : P_Ā(B̄) = 1 − P_Ā(B) = 1 − 0,3 = 0,7.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Dans une station de ski, 80 % des jours de la saison sont ensoleillés. Un jour ensoleillé, la probabilité qu'une remontée soit en panne est 0,05 ; un jour sans soleil, elle est de 0,15. Quelle est la probabilité qu'un jour soit sans soleil et sans panne ?",
+      "propositions": [
+        "0,03",
+        "0,76",
+        "0,17",
+        "0,85"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sans soleil : 1 − 0,8 = 0,2. Sans panne un jour sans soleil : 1 − 0,15 = 0,85. Chemin : 0,2 × 0,85 = 0,17.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Combien de chemins compte un arbre pondéré à deux niveaux dont chaque nœud a deux branches ?",
+      "propositions": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le premier niveau a 2 branches, et chacune se divise en 2 : 2 × 2 = 4 chemins (A ∩ B, A ∩ B̄, Ā ∩ B, Ā ∩ B̄).",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Sur un arbre pondéré, P(A) = 0,6 et P(A ∩ B) = 0,42. Quelle probabilité doit-on écrire sur la branche de A vers B ?",
+      "propositions": [
+        "0,7",
+        "0,252",
+        "0,18",
+        "0,42"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La branche porte P_A(B) = P(A ∩ B) / P(A) = 0,42 / 0,6 = 4,2 / 6 = 0,7. Vérification : 0,6 × 0,7 = 0,42.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:088",
+      "type": "qcm_unique",
+      "enonce": "On lance une pièce équilibrée. Sur « pile », on tire une boule dans une urne contenant 1 boule blanche et 3 noires ; sur « face », on tire dans une urne de 2 blanches et 2 noires. Quelle est la probabilité d'obtenir « pile » puis une boule blanche ?",
+      "propositions": [
+        "1/8",
+        "1/4",
+        "3/8",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Chemin « pile puis blanche » : 1/2 × 1/4 = 1/8.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Quelles règles s'appliquent à un arbre pondéré ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme des probabilités des branches issues d'un même nœud vaut 1",
+        "La probabilité d'un chemin est le produit des probabilités de ses branches",
+        "La probabilité d'un chemin est la somme des probabilités de ses branches",
+        "Toutes les branches d'un arbre portent la même probabilité"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Ce sont les deux règles de l'arbre : somme 1 à chaque nœud, produit le long d'un chemin. On additionne des chemins (probabilités totales), pas les branches d'un même chemin.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Dans un arbre, P(A) = 0,4 ; la branche de A vers B porte 0,25 et celle de Ā vers B porte 0,5. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(Ā) = 0,6",
+        "P(A ∩ B) = 0,1",
+        "P_A(B̄) = 0,5",
+        "P(Ā ∩ B) = 0,3",
+        "P(A ∩ B) = 0,65"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P(Ā) = 1 − 0,4 = 0,6 ; P(A ∩ B) = 0,4 × 0,25 = 0,1 ; P_A(B̄) = 1 − 0,25 = 0,75 ; P(Ā ∩ B) = 0,6 × 0,5 = 0,3. On multiplie, on n'additionne pas : 0,65 = 0,4 + 0,25 est faux.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Une enquête indique que 55 % des clients d'un supermarché viennent en voiture et que, parmi eux, 80 % utilisent le parking couvert. On note V « venir en voiture » et C « utiliser le parking couvert ». Quelles notations sont correctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(V) = 0,55",
+        "P_V(C) = 0,8",
+        "P(V ∩ C) = 0,8",
+        "P_C(V) = 0,8",
+        "P(V̄) = 0,45"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "55 % des clients : P(V) = 0,55, donc P(V̄) = 0,45. « Parmi eux » : condition V, donc P_V(C) = 0,8. P(V ∩ C) vaut 0,55 × 0,8 = 0,44.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "On tire successivement, sans remise, deux jetons dans un sac contenant 3 jetons verts et 2 jetons blancs. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité que le premier jeton soit vert est 3/5",
+        "Si le premier est vert, la probabilité que le second soit vert est 2/4",
+        "La probabilité de tirer deux verts est 9/25",
+        "La probabilité de tirer deux blancs est 1/10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "P(V1) = 3/5. Après un vert, il reste 2 verts sur 4 jetons : 2/4. Deux verts : 3/5 × 2/4 = 6/20 = 3/10 (9/25 serait avec remise). Deux blancs : 2/5 × 1/4 = 2/20 = 1/10.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:093",
+      "type": "vrai_faux",
+      "enonce": "Sur un arbre pondéré, les probabilités des branches qui partent d'un même nœud ont pour somme 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "D'un nœud partent toutes les issues possibles de l'étape (par exemple A et Ā) : leurs probabilités ont pour somme 1, comme 0,3 + 0,7 = 1.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:094",
+      "type": "vrai_faux",
+      "enonce": "Si P(A) = 0,5 et P_A(B) = 0,4, alors le chemin qui mène à A ∩ B a une probabilité de 0,9.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On multiplie le long d'un chemin : 0,5 × 0,4 = 0,2. Une probabilité de 0,9 viendrait d'une addition, ce qui est faux.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:095",
+      "type": "vrai_faux",
+      "enonce": "Lors de deux tirages sans remise, la probabilité inscrite sur une branche du second niveau dépend du résultat du premier tirage.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Sans remise, la composition de l'urne change après le premier tirage. Exemple : 4 rouges et 6 noires ; après une rouge, P(rouge) = 3/9, après une noire, 4/9.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:096",
+      "type": "vrai_faux",
+      "enonce": "Sur un arbre qui commence par A puis B, la probabilité P_B(A) se lit directement sur une branche.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Les branches du second niveau portent P_A(B) ou P_Ā(B). Pour P_B(A), il faut calculer P(A ∩ B) / P(B), avec P(B) obtenue par les probabilités totales.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:097",
+      "type": "reponse_courte",
+      "enonce": "Sur une plateforme de vidéos, 60 % des abonnés regardent des séries ; parmi eux, 30 % regardent aussi des documentaires. Quelle est la probabilité qu'un abonné regarde des séries et des documentaires ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.18"
+      ],
+      "difficulte": 2,
+      "explication": "Chemin « séries puis documentaires » : 0,6 × 0,3 = 0,18.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:098",
+      "type": "reponse_courte",
+      "enonce": "Deux branches partent du nœud A d'un arbre. L'une porte la probabilité 0,35. Quelle probabilité porte l'autre ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.65"
+      ],
+      "difficulte": 1,
+      "explication": "La somme des branches issues d'un même nœud vaut 1 : 1 − 0,35 = 0,65.",
+      "notion": "Arbre pondéré"
+    },
+    {
+      "source": "maths-tc:ch5:banque:099",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,3, P_A(B) = 0,6 et P_Ā(B) = 0,2. Que vaut P(B) ?",
+      "propositions": [
+        "0,8",
+        "0,18",
+        "0,4",
+        "0,32"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P(Ā) = 0,7. P(B) = P(A) × P_A(B) + P(Ā) × P_Ā(B) = 0,3 × 0,6 + 0,7 × 0,2 = 0,18 + 0,14 = 0,32.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Une usine fabrique 70 % de ses jouets dans l'atelier X et 30 % dans l'atelier Y. Le taux de défaut est de 5 % pour X et de 10 % pour Y. Quelle proportion de l'ensemble des jouets est défectueuse ?",
+      "propositions": [
+        "15 %",
+        "7,5 %",
+        "6,5 %",
+        "3,5 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P(D) = 0,7 × 0,05 + 0,3 × 0,1 = 0,035 + 0,03 = 0,065, soit 6,5 %. On ne fait ni la somme (15 %) ni la moyenne simple (7,5 %) des taux.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Un jeu : on tire une carte dans un jeu de 32 cartes contenant 8 cœurs. Avec un cœur, on gagne si une pièce équilibrée tombe sur « pile » ; sinon, on gagne si un dé équilibré donne 6. Quelle est la probabilité de gagner ?",
+      "propositions": [
+        "1/8",
+        "1/4",
+        "2/3",
+        "1/12"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P(cœur) = 8/32 = 1/4, P(pas cœur) = 3/4. P(gagner) = 1/4 × 1/2 + 3/4 × 1/6 = 1/8 + 3/24 = 1/8 + 1/8 = 1/4.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:102",
+      "type": "qcm_unique",
+      "enonce": "En hiver, il gèle 40 % des jours. Un jour de gel, un automobiliste arrive en retard avec une probabilité de 0,3 ; sinon, avec une probabilité de 0,1. Il est en retard. Quelle est la probabilité qu'il ait gelé ce jour-là ?",
+      "propositions": [
+        "0,3",
+        "2/3",
+        "0,12",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "P(G ∩ R) = 0,4 × 0,3 = 0,12 ; P(Ḡ ∩ R) = 0,6 × 0,1 = 0,06 ; P(R) = 0,18. P_R(G) = 0,12 / 0,18 = 12/18 = 2/3.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Sur un arbre à deux niveaux (A et Ā, puis B et B̄), à quoi est égale P(B) d'après la formule des probabilités totales ?",
+      "propositions": [
+        "P(A ∩ B) + P(Ā ∩ B)",
+        "P(A ∩ B) × P(Ā ∩ B)",
+        "P_A(B) + P_Ā(B)",
+        "P(A) + P_A(B)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Deux chemins mènent à B : A puis B, et Ā puis B. On additionne leurs probabilités : P(B) = P(A ∩ B) + P(Ā ∩ B) = P(A) × P_A(B) + P(Ā) × P_Ā(B).",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Dans une entreprise, 75 % des salariés viennent en transports en commun ; parmi eux, 8 % ont été en retard ce mois-ci. Parmi les autres, 4 % ont été en retard. Quelle est la proportion de salariés en retard ce mois-ci ?",
+      "propositions": [
+        "12 %",
+        "6 %",
+        "6,5 %",
+        "7 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "0,75 × 0,08 + 0,25 × 0,04 = 0,06 + 0,01 = 0,07, soit 7 %. (6 % ne compte que le premier chemin.)",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:105",
+      "type": "qcm_unique",
+      "enonce": "À un QCM, un élève connaît la réponse à une question avec la probabilité 0,6. S'il la connaît, il répond juste ; sinon, il répond au hasard parmi 4 propositions. Quelle est la probabilité qu'il réponde juste ?",
+      "propositions": [
+        "0,85",
+        "0,15",
+        "0,7",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Deux chemins mènent à « juste » : 0,6 × 1 = 0,6 et 0,4 × 1/4 = 0,1. P(juste) = 0,6 + 0,1 = 0,7.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Les deux chemins d'un arbre qui mènent à l'événement B ont pour probabilités 0,1 et 0,3. Que vaut P(B) ?",
+      "propositions": [
+        "0,03",
+        "0,2",
+        "0,4",
+        "0,7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Probabilités totales : on additionne les probabilités des chemins qui mènent à B : 0,1 + 0,3 = 0,4.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:107",
+      "type": "qcm_multiple",
+      "enonce": "Dans une médiathèque, la moitié des usagers sont des adultes (A). 40 % des adultes empruntent des romans (R), contre 80 % des autres usagers. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(R) = 0,6",
+        "P(A ∩ R) = 0,2",
+        "P(R) = 1,2",
+        "P(Ā ∩ R) = 0,4",
+        "P_A(R) = 0,8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P(A ∩ R) = 0,5 × 0,4 = 0,2 ; P(Ā ∩ R) = 0,5 × 0,8 = 0,4 ; P(R) = 0,2 + 0,4 = 0,6. 1,2 = 0,4 + 0,8 n'est pas une probabilité, et P_A(R) = 0,4.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "90 % des pièces d'une usine sont conformes. La machine de contrôle accepte une pièce conforme avec la probabilité 0,95 et une pièce non conforme avec la probabilité 0,2. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité qu'une pièce soit acceptée est 0,875",
+        "La probabilité qu'une pièce soit conforme et refusée est 0,045",
+        "La probabilité qu'une pièce soit acceptée est 1,15",
+        "La probabilité qu'une pièce non conforme soit refusée est 0,8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "P(acceptée) = 0,9 × 0,95 + 0,1 × 0,2 = 0,855 + 0,02 = 0,875. Conforme et refusée : 0,9 × 0,05 = 0,045. Non conforme refusée : 1 − 0,2 = 0,8. 1,15 = 0,95 + 0,2 n'est pas une probabilité.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "Pour calculer P(B) à l'aide d'un arbre dont le premier niveau porte A et Ā, quelles étapes sont correctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Multiplier les probabilités le long du chemin « A puis B »",
+        "Multiplier les probabilités le long du chemin « Ā puis B »",
+        "Additionner les probabilités des deux chemins qui mènent à B",
+        "Additionner simplement P_A(B) et P_Ā(B)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On calcule chaque chemin par un produit, puis on additionne les chemins : P(B) = P(A) × P_A(B) + P(Ā) × P_Ā(B). Additionner P_A(B) et P_Ā(B) oublie les poids P(A) et P(Ā).",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Si P_A(B) = 0,3 et P_Ā(B) = 0,5, alors P(B) = 0,8.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Il faut pondérer par P(A) et P(Ā) : P(B) = P(A) × 0,3 + P(Ā) × 0,5. Par exemple, avec P(A) = 0,5 : 0,15 + 0,25 = 0,4. P(B) est toujours comprise entre 0,3 et 0,5 ici.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Dans une ville, 40 % des habitants ont un vélo. 50 % des propriétaires d'un vélo et 10 % des autres habitants vont au travail à vélo. La proportion d'habitants qui vont au travail à vélo est alors de 26 %.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "0,4 × 0,5 + 0,6 × 0,1 = 0,2 + 0,06 = 0,26, soit 26 %.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Avec P(A) = 0,5, P_A(B) = 0,6 et P_Ā(B) = 0,2, on obtient P_B(A) = 0,6.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "P(A ∩ B) = 0,5 × 0,6 = 0,3 ; P(B) = 0,3 + 0,5 × 0,2 = 0,4. P_B(A) = 0,3 / 0,4 = 0,75, et non 0,6 = P_A(B).",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:113",
+      "type": "reponse_courte",
+      "enonce": "Dans un élevage, 30 % des poules sont de race A. 90 % des poules de race A pondent chaque jour, contre 60 % des autres. Quelle est la probabilité qu'une poule prise au hasard ponde un jour donné ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.69"
+      ],
+      "difficulte": 2,
+      "explication": "0,3 × 0,9 + 0,7 × 0,6 = 0,27 + 0,42 = 0,69.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:114",
+      "type": "reponse_courte",
+      "enonce": "Un téléphone sur cinq vendus par une boutique est reconditionné. 15 % des téléphones reconditionnés et 5 % des téléphones neufs reviennent en panne dans l'année. Quel pourcentage des téléphones vendus revient en panne ? Réponds par un nombre, sans le signe %.",
+      "reponses_acceptees": [
+        "7",
+        "7 %",
+        "7%"
+      ],
+      "difficulte": 3,
+      "explication": "P(reconditionné) = 1/5 = 0,2. P(panne) = 0,2 × 0,15 + 0,8 × 0,05 = 0,03 + 0,04 = 0,07, soit 7 %.",
+      "notion": "Probabilités totales"
+    },
+    {
+      "source": "maths-tc:ch5:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Pour un test de dépistage, comment appelle-t-on une personne non malade dont le test est positif ?",
+      "propositions": [
+        "Un faux négatif",
+        "Un faux positif",
+        "Un vrai positif",
+        "Un vrai négatif"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le test dit « positif » mais se trompe, puisque la personne n'est pas malade : c'est un faux positif. Un faux négatif est une personne malade au test négatif.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:116",
+      "type": "qcm_unique",
+      "enonce": "On note M « être malade » et T « avoir un test positif ». Que désigne la sensibilité du test ?",
+      "propositions": [
+        "P_M(T)",
+        "P_T(M)",
+        "P(M ∩ T)",
+        "P_M̄(T̄)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "La sensibilité est la probabilité qu'un malade soit détecté : parmi les malades (condition M), la probabilité d'un test positif, P_M(T). P_M̄(T̄) est la spécificité.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Un test a une spécificité de 0,9. Quelle est la probabilité qu'une personne non malade ait un test positif ?",
+      "propositions": [
+        "0,9",
+        "0,09",
+        "On ne peut pas la calculer sans la proportion de malades",
+        "0,1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La spécificité est P_M̄(T̄) = 0,9. Sachant M̄, T ou T̄ se réalise, donc P_M̄(T) = 1 − 0,9 = 0,1 : c'est le taux de faux positifs.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Sur 1 000 personnes dépistées, 50 sont malades. Parmi les malades, 45 ont un test positif ; parmi les non-malades, 105 ont un test positif. Quelle est la probabilité qu'une personne au test positif soit malade ?",
+      "propositions": [
+        "0,9",
+        "0,045",
+        "0,15",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Tests positifs : 45 + 105 = 150. Parmi eux, 45 malades : P_T(M) = 45/150 = 0,3. (45/50 = 0,9 est la sensibilité P_M(T).)",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Une maladie touche 1 % d'une population de 10 000 personnes. Le test détecte 90 % des malades et donne un résultat positif à 10 % des non-malades. Combien de personnes ont un test positif ?",
+      "propositions": [
+        "1 000",
+        "90",
+        "1 080",
+        "990"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Malades : 1 % de 10 000 = 100, dont 90 positifs. Non-malades : 9 900, dont 10 % = 990 faux positifs. Total : 90 + 990 = 1 080.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Dans une population, 10 % des personnes sont porteuses d'un virus. Un test est positif pour 90 % des porteurs et pour 10 % des non-porteurs. Quelle est la probabilité qu'une personne testée positive soit porteuse ?",
+      "propositions": [
+        "0,9",
+        "0,5",
+        "0,09",
+        "0,18"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "P(porteur et positif) = 0,1 × 0,9 = 0,09 ; P(non porteur et positif) = 0,9 × 0,1 = 0,09 ; P(positif) = 0,18. P_T(porteur) = 0,09 / 0,18 = 0,5 : une chance sur deux seulement.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un test positif ne signifie-t-il pas forcément que l'on est malade ?",
+      "propositions": [
+        "Parce que des personnes saines peuvent être positives",
+        "Parce que la sensibilité d'un test est toujours égale à 1",
+        "Parce que P_T(M) est toujours égale à la sensibilité P_M(T)",
+        "Parce qu'un résultat positif prouve toujours que l'on est sain"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Un test peut donner des faux positifs : des personnes non malades au test positif. Parmi les positifs, il y a donc des malades et des non-malades, et P_T(M) peut être faible.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:122",
+      "type": "qcm_unique",
+      "enonce": "On note M « être malade » et T « avoir un test positif ». Quel événement correspond à un faux négatif ?",
+      "propositions": [
+        "M ∩ T̄",
+        "M̄ ∩ T",
+        "M ∩ T",
+        "M̄ ∩ T̄"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un faux négatif est une personne malade (M) dont le test est négatif (T̄) : c'est M ∩ T̄. M̄ ∩ T correspond aux faux positifs.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur les tests de dépistage sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un faux négatif est une personne malade dont le test est négatif",
+        "La spécificité est la probabilité qu'une personne non malade ait un test négatif",
+        "Un faux positif est une personne malade dont le test est positif",
+        "La sensibilité est la probabilité d'être malade quand le test est positif"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Faux négatif : malade et test négatif. Spécificité : P_M̄(T̄). Un faux positif est une personne non malade au test positif. La sensibilité est P_M(T), pas P_T(M).",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Une population compte 2 000 personnes, dont 10 % sont malades. Le test est positif pour 90 % des malades et pour 5 % des non-malades. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il y a 90 faux positifs",
+        "Il y a 270 tests positifs",
+        "Il y a 180 faux négatifs",
+        "La probabilité qu'une personne positive soit malade est 0,9",
+        "La probabilité qu'une personne positive soit malade est 2/3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Malades : 200, dont 180 positifs et 20 faux négatifs. Non-malades : 1 800, dont 5 % = 90 faux positifs. Positifs : 180 + 90 = 270. P_T(M) = 180/270 = 2/3 (0,9 est la sensibilité).",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "On note M « être malade » et T « avoir un test positif ». Quelles probabilités mesurent une erreur du test ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_M(T̄)",
+        "P_M̄(T)",
+        "P_M(T)",
+        "P_M̄(T̄)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P_M(T̄) : un malade a un test négatif (faux négatif). P_M̄(T) : une personne saine a un test positif (faux positif). P_M(T) (sensibilité) et P_M̄(T̄) (spécificité) mesurent les bonnes réponses du test.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Une personne malade dont le test est négatif est un faux négatif.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Le test dit « négatif » à tort, puisque la personne est malade : c'est un faux négatif, l'événement M ∩ T̄.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Si un test a une sensibilité de 99 %, alors une personne testée positive est malade avec une probabilité de 99 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La sensibilité est P_M(T) = 0,99. La probabilité d'être malade quand le test est positif est P_T(M), qui peut être bien plus faible si la maladie est rare (exemple du cours : P_M(T) = 0,95 mais P_T(M) ≈ 0,16).",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Quand une maladie est très rare, les faux positifs d'un test peuvent être plus nombreux que les vrais positifs.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Exemple : 2 % de malades sur 10 000 personnes, sensibilité 95 %, spécificité 90 %. Vrais positifs : 190 ; faux positifs : 10 % de 9 800 = 980. Les faux positifs sont environ cinq fois plus nombreux.",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Sur 100 malades et 900 non-malades, un test est positif pour 90 malades et pour 90 non-malades. La probabilité qu'une personne positive soit malade vaut alors 0,9.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Positifs : 90 + 90 = 180, dont 90 malades. P_T(M) = 90/180 = 0,5. La valeur 0,9 = 90/100 est la sensibilité P_M(T).",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:130",
+      "type": "reponse_courte",
+      "enonce": "Sur 5 000 personnes, 100 sont malades. Le test est positif pour 95 malades et pour 285 non-malades. On choisit au hasard une personne au test positif. Quelle est la probabilité qu'elle soit malade ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.25",
+        "1/4"
+      ],
+      "difficulte": 3,
+      "explication": "Positifs : 95 + 285 = 380. Parmi eux, 95 malades : P_T(M) = 95/380 = 1/4 = 0,25 (car 4 × 95 = 380).",
+      "notion": "Tests de dépistage"
+    },
+    {
+      "source": "maths-tc:ch5:banque:131",
+      "type": "qcm_unique",
+      "enonce": "A et B sont indépendants, avec P(A) = 0,5 et P(B) = 0,4. Que vaut P(A ∩ B) ?",
+      "propositions": [
+        "0,9",
+        "0,1",
+        "0,45",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pour des événements indépendants, P(A ∩ B) = P(A) × P(B) = 0,5 × 0,4 = 0,2.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Les événements A et B sont indépendants, avec P(B) ≠ 0 et P(A) = 0,3. Que vaut P_B(A) ?",
+      "propositions": [
+        "0,7",
+        "0,09",
+        "0,3",
+        "On ne peut pas la calculer sans P(B)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Par définition de l'indépendance, P_B(A) = P(A) = 0,3 : savoir que B est réalisé ne change pas la probabilité de A.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:133",
+      "type": "qcm_unique",
+      "enonce": "On lance une pièce équilibrée et un dé équilibré à six faces. Quelle est la probabilité d'obtenir « face » et un nombre pair ?",
+      "propositions": [
+        "1/12",
+        "1/4",
+        "1",
+        "1/8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Les deux lancers sont indépendants : P = 1/2 × 3/6 = 1/2 × 1/2 = 1/4.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:134",
+      "type": "qcm_unique",
+      "enonce": "On a P(A) = 0,6, P(B) = 0,5 et P(A ∩ B) = 0,3. Que peut-on dire de A et B ?",
+      "propositions": [
+        "Ils sont incompatibles",
+        "Ils sont indépendants",
+        "Ils ne sont pas indépendants",
+        "Ils sont contraires l'un de l'autre"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P(A) × P(B) = 0,6 × 0,5 = 0,3 = P(A ∩ B) : A et B sont indépendants. Ils ne sont pas incompatibles puisque P(A ∩ B) ≠ 0.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Parmi 100 salariés, 40 parlent anglais et 25 parlent espagnol ; 10 parlent les deux langues. Les événements « parler anglais » et « parler espagnol » sont-ils indépendants ?",
+      "propositions": [
+        "Oui, car 0,4 × 0,25 = 0,1",
+        "Non, car 0,4 + 0,25 n'est pas égal à 0,1",
+        "Non, car 10 personnes parlent les deux langues",
+        "Oui, car 40 est différent de 25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "P(A) = 0,4, P(E) = 0,25 et P(A ∩ E) = 10/100 = 0,1. Or 0,4 × 0,25 = 0,1 : l'égalité P(A ∩ E) = P(A) × P(E) est vérifiée, les événements sont indépendants.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:136",
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,2, P(B) = 0,5 et P(A ∪ B) = 0,6. A et B sont-ils indépendants ?",
+      "propositions": [
+        "Non, car P(A ∩ B) = 0,1 alors que 0,2 × 0,5 = 0,01",
+        "Non, car P(A) + P(B) n'est pas égal à P(A ∪ B)",
+        "Oui, car P(A) + P(B) = 0,7",
+        "Oui, car P(A ∩ B) = 0,1 = 0,2 × 0,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0,2 + 0,5 − 0,6 = 0,1. Et P(A) × P(B) = 0,2 × 0,5 = 0,1. L'égalité est vérifiée : A et B sont indépendants.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Sur 200 vacanciers, 120 partent à la mer et 80 partent en juillet. Combien de vacanciers doivent partir à la mer en juillet pour que ces deux événements soient indépendants ?",
+      "propositions": [
+        "40",
+        "96",
+        "48",
+        "24"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Il faut P(M ∩ J) = P(M) × P(J) = 0,6 × 0,4 = 0,24. L'effectif est 0,24 × 200 = 48.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Que signifie, intuitivement, « A et B sont indépendants » ?",
+      "propositions": [
+        "A et B ne peuvent jamais se réaliser simultanément",
+        "A et B ont forcément la même probabilité",
+        "Savoir que B est réalisé ne change pas P(A)",
+        "La réalisation de A empêche toujours celle de B"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La définition est P_B(A) = P(A) : l'information « B est réalisé » ne modifie pas la probabilité de A. « Ne jamais se réaliser ensemble » signifie incompatibles, ce qui est autre chose.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Deux événements indépendants A et B ont pour probabilités respectives 0,4 et 0,5. Calcule la probabilité que l'un au moins des deux se réalise.",
+      "propositions": [
+        "0,9",
+        "0,7",
+        "0,2",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Indépendance : P(A ∩ B) = 0,4 × 0,5 = 0,2. Puis P(A ∪ B) = 0,4 + 0,5 − 0,2 = 0,7.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Deux machines fonctionnent de façon indépendante. Un jour donné, la première tombe en panne avec une probabilité de 0,1, la seconde avec une probabilité de 0,2. Quelle est la probabilité que les deux tombent en panne le même jour ?",
+      "propositions": [
+        "0,02",
+        "0,3",
+        "0,2",
+        "0,72"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Indépendance : P(P1 ∩ P2) = 0,1 × 0,2 = 0,02. (0,72 = 0,9 × 0,8 est la probabilité qu'aucune ne tombe en panne.)",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont deux événements de probabilités non nulles. Quelles conditions traduisent l'indépendance de A et B ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_B(A) = P(A)",
+        "P(A ∩ B) = P(A) × P(B)",
+        "P_A(B) = P(B)",
+        "P(A ∩ B) = 0",
+        "P(A ∪ B) = P(A) + P(B)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les trois premières égalités sont équivalentes et traduisent l'indépendance. P(A ∩ B) = 0 et P(A ∪ B) = P(A) + P(B) traduisent l'incompatibilité.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Sur 100 personnes, 12 sont à la fois sportives (S) et végétariennes (V), 18 sont sportives non végétariennes, 28 végétariennes non sportives et 42 ni l'un ni l'autre. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(S) = 0,3",
+        "P_S(V) = 0,4",
+        "S et V sont indépendants",
+        "P(S ∩ V) = 0,7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Sportifs : 12 + 18 = 30, donc P(S) = 0,3. Végétariens : 12 + 28 = 40, donc P(V) = 0,4. P_S(V) = 12/30 = 0,4 = P(V) : indépendants (et 0,3 × 0,4 = 0,12 = P(S ∩ V)). P(S ∩ V) = 0,12.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "On lance deux fois de suite une pièce équilibrée. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les deux lancers sont indépendants",
+        "La probabilité d'obtenir deux fois « pile » est 1/4",
+        "Après un « pile », « face » a plus de chances de sortir",
+        "La probabilité d'obtenir deux fois « pile » est 1/2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La pièce n'a pas de mémoire : les lancers sont indépendants et P(pile, pile) = 1/2 × 1/2 = 1/4. Après un « pile », « face » a toujours la probabilité 1/2.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "A et B sont incompatibles, avec P(A) = 0,3 et P(B) = 0,4. Quelles affirmations sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(A ∩ B) = 0",
+        "A et B ne sont pas indépendants",
+        "P(A ∩ B) = 0,12",
+        "A et B sont indépendants",
+        "P(A ∪ B) = 0,7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Incompatibles : P(A ∩ B) = 0 et P(A ∪ B) = 0,3 + 0,4 = 0,7. Or P(A) × P(B) = 0,12 ≠ 0 : A et B ne sont pas indépendants.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Dans une entreprise, la probabilité d'être cadre (C) est 0,25 et celle de télétravailler (T) est 0,4. Dans quels cas C et T sont-ils indépendants ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Si P(C ∩ T) = 0,1",
+        "Si P_C(T) = 0,4",
+        "Si P_C(T) = 0,25",
+        "Si P(C ∩ T) = 0,65"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Indépendance : P(C ∩ T) = 0,25 × 0,4 = 0,1, ou bien P_C(T) = P(T) = 0,4. 0,65 = 0,25 + 0,4 est une somme, sans rapport.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Si A et B sont indépendants, alors P(A ∩ B) = P(A) × P(B).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la caractérisation de l'indépendance : P_B(A) = P(A) équivaut à P(A ∩ B) / P(B) = P(A), soit P(A ∩ B) = P(A) × P(B).",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Deux événements incompatibles de probabilités non nulles sont toujours indépendants.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "S'ils sont incompatibles, P(A ∩ B) = 0, alors que P(A) × P(B) > 0. L'égalité est fausse : ils ne sont jamais indépendants. Si A se réalise, B devient impossible.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Avec P(A) = 0,5, P(B) = 0,6 et P(A ∩ B) = 0,35, les événements A et B sont indépendants.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "P(A) × P(B) = 0,5 × 0,6 = 0,3, différent de P(A ∩ B) = 0,35 : A et B ne sont pas indépendants.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Dans un groupe, 30 % des personnes sont gauchères. Si, parmi les filles du groupe, 30 % sont aussi gauchères, alors « être une fille » et « être gaucher » sont des événements indépendants.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "On a P_F(G) = 0,3 = P(G) : savoir que la personne est une fille ne change pas la probabilité d'être gaucher. C'est la définition de l'indépendance.",
+      "notion": "Indépendance"
+    },
+    {
+      "source": "maths-tc:ch5:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Deux événements indépendants A et B vérifient P(A) = 0,8 et P(B) = 0,25. Calcule la probabilité de l'événement « A et B ». Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0.2",
+        "1/5"
+      ],
+      "difficulte": 2,
+      "explication": "Indépendance : P(A ∩ B) = P(A) × P(B) = 0,8 × 0,25 = 0,2.",
+      "notion": "Indépendance"
+    }
+  ]
+}

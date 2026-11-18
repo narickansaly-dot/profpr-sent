@@ -2,7 +2,8 @@ import { z } from 'zod';
 import type { QuestionImport } from '../format-import';
 
 /**
- * Fichier de travail d'un chapitre : `contenu/1re-st2s/banques/<cours>-chN.json` (`bph` ou `stss`).
+ * Fichier de travail d'un chapitre : `<dossier du cours>/banques/<matiere>-chN.json`
+ * (`contenu/1re-st2s/banques/bph-chN.json`, `contenu/1re-gen/banques/svt-chN.json`…, voir `cours.ts`).
  * Les questions sont gardées telles quelles : c'est `verifierBanque` qui les passe une à une au validateur d'import,
  * pour rapporter chaque erreur avec la source de la question.
  */

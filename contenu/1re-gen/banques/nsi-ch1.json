@@ -1,0 +1,2277 @@
+{
+  "chapitre": 1,
+  "notions": [
+    "Bits, octets et nombre de valeurs",
+    "Écriture positionnelle et bases",
+    "Du binaire au décimal",
+    "Du décimal au binaire",
+    "Hexadécimal",
+    "Nombre de bits nécessaires",
+    "Addition binaire et dépassement",
+    "Conversions en Python",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch1:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits compte un octet ?",
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "16",
+        "8",
+        "10",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Combien de valeurs différentes peut-on représenter avec un octet ?",
+      "difficulte": 1,
+      "explication": "Avec n bits on distingue 2ⁿ valeurs : 2⁸ = 256 (de 0 à 255).",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "8",
+        "255",
+        "256",
+        "128"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quelles valeurs un bit peut-il prendre ?",
+      "difficulte": 1,
+      "explication": "Un bit (binary digit) est un chiffre binaire : il vaut 0 ou 1.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "0 à 9",
+        "0 à 7",
+        "1 ou 2",
+        "0 ou 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Avec 3 bits, combien de combinaisons différentes peut-on former ?",
+      "difficulte": 1,
+      "explication": "Chaque bit double le nombre de possibilités : 2³ = 8 (de 000 à 111).",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "8",
+        "6",
+        "9",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Combien de chiffres différents utilise-t-on pour écrire les nombres en base 16 ?",
+      "difficulte": 1,
+      "explication": "En base b on utilise b chiffres ; en base 16, ce sont 0 à 9 puis A à F.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "10",
+        "17",
+        "16",
+        "15"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans l'écriture décimale 2507, quel est le poids du chiffre 5 ?",
+      "difficulte": 1,
+      "explication": "Le 5 est au rang 2 en partant de la droite (rang 0) : son poids est 10² = 100.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "10",
+        "100",
+        "5",
+        "1000"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:007",
+      "type": "qcm_unique",
+      "enonce": "En base 2, quel est le poids du bit de rang 3 (les rangs étant comptés à partir de 0 en partant de la droite) ?",
+      "difficulte": 1,
+      "explication": "Le bit de rang k a pour poids 2ᵏ : 2³ = 8.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "8",
+        "3",
+        "6",
+        "16"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quelle valeur décimale représente le chiffre hexadécimal C ?",
+      "difficulte": 1,
+      "explication": "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "14",
+        "11",
+        "13",
+        "12"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel est le plus grand chiffre de la base 16 ?",
+      "difficulte": 1,
+      "explication": "Les seize chiffres hexadécimaux vont de 0 à F ; F vaut 15.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "F",
+        "G",
+        "E",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 101 en base 2 ?",
+      "difficulte": 1,
+      "explication": "101₂ = 4 + 0 + 1 = 5.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "6",
+        "5",
+        "3",
+        "101"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 1111₂ ?",
+      "difficulte": 1,
+      "explication": "1111₂ = 8 + 4 + 2 + 1 = 15.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "1111",
+        "4",
+        "16",
+        "15"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 10000₂ en décimal ?",
+      "difficulte": 1,
+      "explication": "Un seul bit à 1, au rang 4 : 2⁴ = 16.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "5",
+        "10",
+        "16",
+        "32"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit six avec les seuls chiffres 0 et 1 ?",
+      "difficulte": 1,
+      "explication": "6 = 4 + 2, soit 110₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "101",
+        "011",
+        "1100",
+        "110"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Un élève convertit le nombre neuf en base 2. Que doit-il trouver ?",
+      "difficulte": 1,
+      "explication": "9 = 8 + 1, soit 1001₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "1001",
+        "1100",
+        "1010",
+        "111"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Pour convertir un entier décimal en binaire par divisions successives, par quel nombre divise-t-on à chaque étape ?",
+      "difficulte": 1,
+      "explication": "On divise par la base d'arrivée, ici 2, et on garde les restes.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "Par 8",
+        "Par 10",
+        "Par 2",
+        "Par 16"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Dans la méthode des divisions successives, dans quel ordre lit-on les restes pour obtenir l'écriture binaire ?",
+      "difficulte": 1,
+      "explication": "Le premier reste donne le bit de poids faible : on lit donc les restes du dernier au premier.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "Du premier reste obtenu au dernier",
+        "Du dernier reste obtenu au premier",
+        "Seulement les restes égaux à 1",
+        "Dans l'ordre croissant des restes"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:017",
+      "type": "qcm_unique",
+      "enonce": "À combien de bits correspond un chiffre hexadécimal ?",
+      "difficulte": 1,
+      "explication": "16 = 2⁴ : un chiffre hexadécimal correspond exactement à 4 bits.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "2",
+        "16",
+        "8",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Avec combien de chiffres hexadécimaux écrit-on la valeur d'un octet ?",
+      "difficulte": 1,
+      "explication": "Un octet compte 8 bits, soit deux paquets de 4 bits, donc deux chiffres hexadécimaux.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "1",
+        "2",
+        "8",
+        "4"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'écriture binaire sur 4 bits du chiffre hexadécimal A ?",
+      "difficulte": 1,
+      "explication": "A vaut 10 = 8 + 2, soit 1010₂.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "1011",
+        "1100",
+        "1010",
+        "0110"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quel est le plus grand entier naturel que l'on peut écrire sur 8 bits ?",
+      "difficulte": 1,
+      "explication": "Sur n bits, le plus grand entier naturel est 2ⁿ − 1 : 2⁸ − 1 = 255.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "255",
+        "128",
+        "256",
+        "127"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Sur 4 bits, quels entiers naturels peut-on écrire ?",
+      "difficulte": 1,
+      "explication": "2⁴ = 16 valeurs, de 0000 (0) à 1111 (15).",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "De 0 à 4",
+        "De 1 à 16",
+        "De 0 à 16",
+        "De 0 à 15"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quel est le résultat de la somme de deux bits égaux à 1, écrit en base 2 ?",
+      "difficulte": 1,
+      "explication": "1 + 1 = 2, qui s'écrit 10 en binaire : on pose 0 et on retient 1.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "10",
+        "11",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Pendant une addition posée, on ajoute 1, 1 et une retenue de 1. Qu'obtient-on en binaire ?",
+      "difficulte": 1,
+      "explication": "1 + 1 + 1 = 3 = 11₂ : on pose 1 et on retient 1.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "111",
+        "3",
+        "11",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie bin(5) en Python ?",
+      "difficulte": 1,
+      "explication": "bin renvoie une chaîne de caractères préfixée par 0b.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "'101b'",
+        "'0b101'",
+        "'0x5'",
+        "101"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie hex(255) en Python ?",
+      "difficulte": 1,
+      "explication": "hex renvoie une chaîne préfixée par 0x, avec des lettres minuscules.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "'0b11111111'",
+        "'0xff'",
+        "255",
+        "'FF0x'"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie int('1010', 2) en Python ?",
+      "difficulte": 1,
+      "explication": "Le second argument indique la base de la chaîne : 1010₂ = 10.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "'0b1010'",
+        "2",
+        "1010",
+        "10"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Quel préfixe permet d'écrire directement un entier en hexadécimal dans un programme Python ?",
+      "difficulte": 1,
+      "explication": "0x10 vaut 16 ; 0b sert pour le binaire.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "0h",
+        "#",
+        "0x",
+        "0b"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Quel savant publie en 1703 une étude de l'arithmétique binaire ?",
+      "difficulte": 1,
+      "explication": "Leibniz publie en 1703 son « Explication de l'arithmétique binaire ».",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Gottfried Wilhelm Leibniz",
+        "Blaise Pascal",
+        "Alan Turing",
+        "Charles Babbage"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quel peuple de l'Antiquité comptait en base 60, dont il nous reste les 60 minutes d'une heure ?",
+      "difficulte": 1,
+      "explication": "La numération babylonienne était en base 60 (sexagésimale).",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Les Égyptiens",
+        "Les Babyloniens",
+        "Les Grecs",
+        "Les Romains"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Le mot « bit » est la contraction de l'expression anglaise binary digit. Que signifie-t-elle ?",
+      "difficulte": 1,
+      "explication": "bit est la contraction de binary digit, chiffre binaire.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "Chiffre binaire",
+        "Bloc d'information",
+        "Petit morceau",
+        "Octet de base"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 1011 0110₂ ?",
+      "difficulte": 2,
+      "explication": "128 + 32 + 16 + 4 + 2 = 182.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "118",
+        "174",
+        "182",
+        "186"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de l'octet 0110 0100 ?",
+      "difficulte": 2,
+      "explication": "64 + 32 + 4 = 100.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "68",
+        "102",
+        "96",
+        "100"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Convertis 101011₂ en décimal.",
+      "difficulte": 2,
+      "explication": "32 + 8 + 2 + 1 = 43.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "53",
+        "45",
+        "41",
+        "43"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Par divisions successives par 2, on convertit 43. Quel résultat obtient-on ?",
+      "difficulte": 2,
+      "explication": "43 = 32 + 8 + 2 + 1, soit 101011₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "101101",
+        "110101",
+        "101011",
+        "100111"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:035",
+      "type": "qcm_unique",
+      "enonce": "En retirant les puissances de 2 de cent (64, puis 32, puis 4), quelle écriture en base 2 obtient-on ?",
+      "difficulte": 2,
+      "explication": "100 = 64 + 32 + 4, soit 1100100₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "1001100",
+        "1100100",
+        "1100010",
+        "1010100"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Un capteur envoie la valeur 200 sur un octet. Quels sont les huit bits transmis ?",
+      "difficulte": 2,
+      "explication": "200 = 128 + 64 + 8, soit 11001000₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "11001000",
+        "10011000",
+        "11010000",
+        "11000100"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:037",
+      "type": "qcm_unique",
+      "enonce": "L'octet 1011 0110₂ s'écrit avec deux chiffres hexadécimaux. Lesquels ?",
+      "difficulte": 2,
+      "explication": "1011 donne B et 0110 donne 6 : B6.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "A6",
+        "B5",
+        "6B",
+        "B6"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:038",
+      "type": "qcm_unique",
+      "enonce": "On découpe 101011₂ en paquets de quatre bits à partir de la droite. Quelle écriture en base 16 obtient-on ?",
+      "difficulte": 2,
+      "explication": "On groupe par 4 à partir de la droite : 0010 1011, soit 2 et B.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "B2",
+        "2B",
+        "2A",
+        "AB"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Remplace chaque chiffre de 3F₁₆ par ses quatre bits. Quel octet obtiens-tu ?",
+      "difficulte": 2,
+      "explication": "3 donne 0011 et F donne 1111.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "1111 0011",
+        "0011 1110",
+        "0011 1111",
+        "0011 0111"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 2B₁₆ ?",
+      "difficulte": 2,
+      "explication": "2 × 16 + 11 = 43.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "43",
+        "27",
+        "211",
+        "32"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de FF₁₆ ?",
+      "difficulte": 2,
+      "explication": "15 × 16 + 15 = 255.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "256",
+        "240",
+        "1515",
+        "255"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quels sont les deux chiffres hexadécimaux de l'octet qui vaut 200 ?",
+      "difficulte": 2,
+      "explication": "200 = 12 × 16 + 8 : C8.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "B8",
+        "8C",
+        "C8",
+        "C4"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Dans la couleur Web #FF8000, quelle est la valeur décimale de la composante verte 80 ?",
+      "difficulte": 2,
+      "explication": "80₁₆ = 8 × 16 = 128.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "160",
+        "128",
+        "80",
+        "64"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la longueur minimale, en bits, de l'écriture de cent en base 2 ?",
+      "difficulte": 2,
+      "explication": "64 ⩽ 100 < 128 = 2⁷ : il faut 7 bits (1100100).",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "7",
+        "6",
+        "3",
+        "8"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:045",
+      "type": "qcm_unique",
+      "enonce": "256 vaut 2⁸. Combien de chiffres compte son écriture en base 2 ?",
+      "difficulte": 2,
+      "explication": "256 = 2⁸ s'écrit 1 suivi de huit 0 : 9 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "8",
+        "16",
+        "9",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Un compteur doit pouvoir afficher 1000. De combien de bits au minimum a-t-il besoin ?",
+      "difficulte": 2,
+      "explication": "512 ⩽ 1000 < 1024 = 2¹⁰ : il faut 10 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "10",
+        "11",
+        "4",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Un entier non signé est codé sur deux octets. Quelle est sa valeur maximale ?",
+      "difficulte": 2,
+      "explication": "2¹⁶ − 1 = 65535.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "255",
+        "65536",
+        "32767",
+        "65535"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Deux entiers naturels s'écrivent chacun sur 8 bits. Sur combien de bits au plus s'écrit leur somme ?",
+      "difficulte": 2,
+      "explication": "a < 2⁸ et b < 2⁸ donc a + b < 2⁹ : au plus 9 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "8",
+        "9",
+        "10",
+        "16"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:049",
+      "type": "qcm_unique",
+      "enonce": "On multiplie deux octets (entiers de 0 à 255). Quelle est la taille maximale du résultat, en bits ?",
+      "difficulte": 2,
+      "explication": "a < 2⁸ et b < 2⁸ donc a × b < 2¹⁶ : au plus 16 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "64",
+        "9",
+        "8",
+        "16"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Quel est le résultat de l'addition binaire 1101 + 0111 ?",
+      "difficulte": 2,
+      "explication": "13 + 7 = 20 = 10100₂.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "1110",
+        "11100",
+        "10100",
+        "10010"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Pose l'addition 1010₂ + 0101₂ : que trouves-tu ?",
+      "difficulte": 2,
+      "explication": "Aucune retenue : 10 + 5 = 15 = 1111₂.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "1111",
+        "10000",
+        "1110",
+        "11111"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il quand une machine qui calcule sur 8 bits additionne 200 et 100 ?",
+      "difficulte": 2,
+      "explication": "300 ne tient pas sur 8 bits : la retenue est perdue et il reste 300 − 256 = 44 (dépassement).",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "La machine obtient 0 car le calcul est impossible",
+        "La retenue qui sort du 8e bit est perdue et la machine obtient 44",
+        "La machine ajoute automatiquement un neuvième bit et obtient 300",
+        "La machine obtient 255, la plus grande valeur possible"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Que devient un entier quand on ajoute un 0 à droite de son écriture binaire ?",
+      "difficulte": 2,
+      "explication": "Chaque bit monte d'un rang, donc son poids double : le nombre est multiplié par 2.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "Il est divisé par 2",
+        "Il est multiplié par 10",
+        "Il ne change pas",
+        "Il est multiplié par 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 101 lu comme un nombre écrit en base 16 ?",
+      "difficulte": 2,
+      "explication": "1 × 16² + 0 × 16 + 1 = 257.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "101",
+        "65",
+        "257",
+        "5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 21 écrit en base 8 ?",
+      "difficulte": 2,
+      "explication": "2 × 8 + 1 = 17.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "10",
+        "17",
+        "21",
+        "16"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Par quel chiffre se termine l'écriture binaire d'un entier impair ?",
+      "difficulte": 2,
+      "explication": "Seul le bit de rang 0 a un poids impair (1) : un nombre est impair si et seulement si ce bit vaut 1.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "1",
+        "0",
+        "Cela dépend de l'entier",
+        "01"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie int('B6', 16) en Python ?",
+      "difficulte": 2,
+      "explication": "B6₁₆ = 11 × 16 + 6 = 182.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "116",
+        "'B6'",
+        "182",
+        "'0xb6'"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Que vaut l'expression Python 0b1010 + 0x10 ?",
+      "difficulte": 2,
+      "explication": "0b1010 vaut 10 et 0x10 vaut 16 ; la somme est l'entier 26 (affiché en décimal).",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "0b11010",
+        "1020",
+        "20",
+        "26"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de la valeur renvoyée par bin(12) en Python ?",
+      "difficulte": 2,
+      "explication": "bin renvoie la chaîne '0b1100'.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "Une chaîne de caractères",
+        "Un entier",
+        "Un nombre flottant",
+        "Un booléen"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Vers quelle époque l'octet de 8 bits s'impose-t-il comme unité standard, avec l'IBM System/360 ?",
+      "difficulte": 2,
+      "explication": "L'IBM System/360 (1964) généralise l'octet de 8 bits.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Dans les années 1990",
+        "Dans les années 1960",
+        "Au XIXe siècle",
+        "Dans les années 1930"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Un entier naturel a s'écrit sur 5 bits et un entier naturel b sur 3 bits. Sur combien de bits au plus s'écrit a × b ?",
+      "difficulte": 3,
+      "explication": "a < 2⁵ et b < 2³ donc a × b < 2⁸ : au plus 5 + 3 = 8 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "6",
+        "15",
+        "5",
+        "8"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Quelle place occupe la puissance 2²⁰ quand on l'écrit en binaire, en nombre de bits ?",
+      "difficulte": 3,
+      "explication": "2²⁰ s'écrit 1 suivi de vingt 0 : 21 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "21",
+        "20",
+        "40",
+        "19"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:063",
+      "type": "qcm_unique",
+      "enonce": "L'écriture binaire de 2²⁰ − 1 ne contient que des 1. Combien en contient-elle ?",
+      "difficulte": 3,
+      "explication": "2²⁰ − 1 s'écrit avec vingt chiffres 1 : 20 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "10",
+        "19",
+        "20",
+        "21"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de 1A3₁₆ ?",
+      "difficulte": 3,
+      "explication": "1 × 256 + 10 × 16 + 3 = 419.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "4103",
+        "419",
+        "163",
+        "403"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Le nombre mille, converti en base 16, donne :",
+      "difficulte": 3,
+      "explication": "1000 = 3 × 256 + 14 × 16 + 8 : 3E8.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "8E3",
+        "3F8",
+        "3E0",
+        "3E8"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Une adresse MAC compte 6 octets. Combien de chiffres hexadécimaux faut-il pour l'écrire ?",
+      "difficulte": 3,
+      "explication": "Chaque octet s'écrit avec 2 chiffres hexadécimaux : 6 × 2 = 12.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "6",
+        "24",
+        "12",
+        "48"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Sur 8 bits, quel résultat donne l'addition 1111 1111 + 0000 0001 ?",
+      "difficulte": 3,
+      "explication": "255 + 1 = 256 ne tient pas sur 8 bits : les huit bits valent 0 et la retenue sort.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "1 0000 0000, sur neuf bits",
+        "0000 0000, la retenue étant perdue",
+        "1111 1111, la valeur maximale",
+        "1111 1110, par débordement inverse"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Combien de retenues apparaissent quand on pose l'addition binaire 0111 + 0011 ?",
+      "difficulte": 3,
+      "explication": "Rang 0 : 1 + 1 = 10 (retenue) ; rang 1 : 1 + 1 + 1 = 11 (retenue) ; rang 2 : 1 + 0 + 1 = 10 (retenue) ; rang 3 : 0 + 0 + 1 = 1. Trois retenues ; résultat 1010.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:069",
+      "type": "qcm_unique",
+      "enonce": "En base 3, quelle est l'écriture du nombre décimal 10 ?",
+      "difficulte": 3,
+      "explication": "10 = 1 × 9 + 0 × 3 + 1, soit 101 en base 3.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "1010",
+        "110",
+        "101",
+        "31"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Si on supprime le dernier bit de l'écriture binaire d'un entier n, quel nombre obtient-on ?",
+      "difficulte": 3,
+      "explication": "Chaque bit descend d'un rang : on obtient n // 2.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "La moitié exacte de n",
+        "Le reste de la division de n par 2",
+        "Le nombre n − 1",
+        "Le quotient de la division entière de n par 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'écriture binaire de 255 + 1 ?",
+      "difficulte": 3,
+      "explication": "256 = 2⁸ : un 1 suivi de huit 0.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "100000000",
+        "111111111",
+        "10000000",
+        "11111111"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Que vaut l'entier dont l'écriture binaire est formée de dix chiffres 1 ?",
+      "difficulte": 3,
+      "explication": "11…1 avec n chiffres vaut 2ⁿ − 1 : 2¹⁰ − 1 = 1023.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "511",
+        "1023",
+        "10",
+        "1024"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:073",
+      "type": "qcm_unique",
+      "enonce": "La fonction en_binaire du cours ajoute str(n % 2) à gauche de s, puis fait n = n // 2, tant que n > 0. Quelle chaîne renvoie en_binaire(6) ?",
+      "difficulte": 3,
+      "explication": "n = 6 : bit 0, n = 3 ; bit 1, n = 1 ; bit 1, n = 0. Chaque bit est placé à gauche : '110'.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "'011'",
+        "'0110'",
+        "'11'",
+        "'110'"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il si, dans la fonction en_binaire du cours, on écrit s = s + str(n % 2) au lieu de s = str(n % 2) + s ?",
+      "difficulte": 3,
+      "explication": "Le premier bit calculé est celui de poids faible ; ajouté à droite, il se retrouve en tête de lecture inversée : en_binaire(6) donnerait '011'.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "Le résultat ne change pas",
+        "Python déclenche une erreur de type",
+        "Les bits sont dans l'ordre inverse",
+        "La fonction ne s'arrête jamais"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur décimale de la couleur grise #808080 pour chacune de ses trois composantes ?",
+      "difficulte": 3,
+      "explication": "80₁₆ = 8 × 16 = 128, pour le rouge, le vert et le bleu.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "128",
+        "80",
+        "8",
+        "127"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles sont des écritures hexadécimales valides ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les chiffres hexadécimaux vont de 0 à 9 et de A à F ; G n'en fait pas partie.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "19",
+        "A0",
+        "G2",
+        "3F"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles peuvent être des écritures en base 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "En base 2, seuls les chiffres 0 et 1 sont permis.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "1021",
+        "1A",
+        "0",
+        "1011"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Comment définit-on un bit ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Un bit vaut 0 ou 1 ; c'est un octet qui regroupe 8 bits.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "Il peut prendre 10 valeurs",
+        "Il regroupe 8 octets",
+        "Il vaut 0 ou 1",
+        "C'est la plus petite unité d'information"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Lesquels de ces nombres binaires sont supérieurs ou égaux à cinq ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "101 = 5, 1000 = 8, 100 = 4, 11 = 3.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "1000",
+        "11",
+        "101",
+        "100"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces entiers, lesquels ont une écriture binaire qui se termine par 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les nombres pairs se terminent par 0 en binaire.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "30",
+        "25",
+        "12",
+        "7"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces correspondances entre un chiffre hexadécimal et sa valeur décimale, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "F vaut 15",
+        "A vaut 10",
+        "E vaut 13",
+        "B vaut 12"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces entiers, lesquels peuvent s'écrire sur 8 bits ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Sur 8 bits on écrit les entiers de 0 à 255.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "200",
+        "256",
+        "255",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces fonctions Python, lesquelles renvoient une chaîne de caractères ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "bin et hex renvoient des chaînes ; int renvoie un entier, len aussi.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "int",
+        "len",
+        "bin",
+        "hex"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles valent l'entier 10 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "bin(10) et '1010' sont des chaînes, pas l'entier 10.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "'1010'",
+        "int('1010', 2)",
+        "0b1010",
+        "bin(10)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités en binaire, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "En binaire le chiffre 2 n'existe pas : 1 + 1 = 10 ; 11 est le résultat de 1 + 1 + 1.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "1 + 0 = 1",
+        "1 + 1 = 10",
+        "1 + 1 = 11",
+        "1 + 1 = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces bases, lesquelles ont été ou sont utilisées pour écrire des nombres ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Une base doit être au moins égale à 2 ; les processeurs calculent en base 2.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "La base 60, chez les Babyloniens",
+        "La base 2, dans les ordinateurs",
+        "La base 10, dans la vie courante",
+        "La base 1, dans les processeurs actuels"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces grandeurs, lesquelles valent exactement 1 024 octets ou 1 000 octets ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "1 ko = 1 000 octets ; 1 Kio = 1 024 octets ; 1 Mo = 10⁶ octets.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "1 Kio",
+        "1 Mo",
+        "1 ko",
+        "1 bit"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures en base 2 désignent douze ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "1100₂ = 8 + 4 = 12 ; les 0 à gauche ne changent pas la valeur.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "1010",
+        "1100",
+        "0011",
+        "00001100"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles représentent le nombre 255 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "FF₁₆ = 1111 1111₂ = 255 ; 100₁₆ = 1 0000 0000₂ = 256.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "100₁₆",
+        "FF₁₆",
+        "1 0000 0000₂",
+        "1111 1111₂"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces conversions de la base 16 vers la base 10, lesquelles sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "20₁₆ = 32 et A1₁₆ = 161.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "20₁₆ = 20",
+        "1F₁₆ = 31",
+        "A1₁₆ = 101",
+        "10₁₆ = 16"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces entiers, lesquels s'écrivent avec exactement 7 bits ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Il faut 7 bits pour les entiers de 64 à 127 ; 128 en demande 8.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "100",
+        "64",
+        "127",
+        "128"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Que peut-on dire d'un code formé de n bits ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Avec n bits : 2ⁿ valeurs, de 0 à 2ⁿ − 1.",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "On distingue 2 × n valeurs",
+        "Le plus grand entier naturel écrit est 2ⁿ",
+        "On distingue 2ⁿ valeurs",
+        "Le plus grand entier naturel écrit est 2ⁿ − 1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures binaires, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "14 = 1110₂ et 20 = 10100₂.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "17 = 10001₂",
+        "20 = 10010₂",
+        "10 = 1010₂",
+        "14 = 1101₂"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces additions binaires, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "6 + 3 = 9 ; 15 + 1 = 16 ; 5 + 5 = 10 = 1010 ; 8 + 8 = 16 = 10000.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "1111 + 0001 = 10000",
+        "0110 + 0011 = 1001",
+        "0101 + 0101 = 1111",
+        "1000 + 1000 = 1100"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres écrits en base 8, lesquels sont des écritures valides ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "En base 8, les chiffres vont de 0 à 7 : 8 et 9 sont interdits.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "17",
+        "70",
+        "18",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles valent 255 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "int('FF', 2) provoque une erreur : F n'est pas un chiffre binaire.",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "0xff",
+        "2 ** 8 - 1",
+        "int('FF', 16)",
+        "int('FF', 2)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces utilisations, lesquelles font couramment appel à l'hexadécimal ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les couleurs (#FF8000) et les adresses MAC (00:1A:2B:…) s'écrivent en hexadécimal.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "Les numéros de téléphone",
+        "Les prix affichés en magasin",
+        "Les couleurs des pages Web",
+        "Les adresses MAC des cartes réseau"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces nombres binaires, lesquels sont impairs ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Un nombre est impair si son dernier bit vaut 1.",
+      "notion": "Du binaire au décimal",
+      "propositions": [
+        "10100",
+        "111",
+        "1110",
+        "1011"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on de l'octet ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "2⁸ = 256 valeurs (de 0 à 255) ; 2 × 8 = 16 bits.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "propositions": [
+        "Deux octets forment 16 bits",
+        "Un octet peut prendre 256 valeurs",
+        "Un octet peut prendre 255 valeurs",
+        "Un octet est formé de 2 bits"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Deux entiers naturels a et b s'écrivent chacun sur 16 bits. Parmi ces affirmations, lesquelles sont toujours vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "a, b < 2¹⁶ donc a + b < 2¹⁷ et a × b < 2³².",
+      "notion": "Nombre de bits nécessaires",
+      "propositions": [
+        "a × b s'écrit sur au plus 32 bits",
+        "a × b s'écrit sur au plus 17 bits",
+        "a + b s'écrit sur au plus 17 bits",
+        "a + b s'écrit sur au plus 16 bits"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Vérifie ces conversions de nombres hexadécimaux à trois chiffres : lesquelles sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "100₁₆ = 256 et FFF₁₆ = 4095.",
+      "notion": "Hexadécimal",
+      "propositions": [
+        "1A3₁₆ = 419",
+        "3E8₁₆ = 1000",
+        "100₁₆ = 100",
+        "FFF₁₆ = 4096"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Sur 8 bits, parmi ces additions, lesquelles provoquent un dépassement ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Il y a dépassement quand la somme dépasse 255 : 300 et 256 ; 200 et 255 tiennent.",
+      "notion": "Addition binaire et dépassement",
+      "propositions": [
+        "200 + 100",
+        "100 + 100",
+        "127 + 128",
+        "255 + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "On note n un entier naturel. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Les bits montent d'un rang (× 2) puis on ajoute le bit de rang 0 ; un 0 à gauche ne change rien.",
+      "notion": "Écriture positionnelle et bases",
+      "propositions": [
+        "Ajouter un 1 à droite de son écriture binaire donne 2n + 1",
+        "Ajouter un 0 à droite de son écriture binaire donne 2n",
+        "Ajouter un 1 à droite de son écriture binaire donne n + 1",
+        "Ajouter un 0 à gauche de son écriture binaire donne 2n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces entiers, lesquels ont exactement trois bits égaux à 1 dans leur écriture binaire ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "7 = 111, 11 = 1011, 28 = 11100 ; 12 = 1100 n'en a que deux.",
+      "notion": "Du décimal au binaire",
+      "propositions": [
+        "7",
+        "28",
+        "12",
+        "11"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "On exécute s = bin(6) en Python. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "s est la chaîne '0b110' de 5 caractères ; s + 1 provoque une erreur (chaîne + entier).",
+      "notion": "Conversions en Python",
+      "propositions": [
+        "s vaut 110",
+        "len(s) vaut 5",
+        "s + 1 vaut '0b111'",
+        "s vaut '0b110'"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Avec n bits, on peut représenter 2ⁿ valeurs différentes.",
+      "difficulte": 1,
+      "explication": "Chaque bit ajouté double le nombre de combinaisons.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Un chiffre hexadécimal correspond exactement à 4 bits.",
+      "difficulte": 1,
+      "explication": "16 = 2⁴.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:108",
+      "type": "vrai_faux",
+      "enonce": "1000₂ vaut 8.",
+      "difficulte": 1,
+      "explication": "Un seul bit à 1, au rang 3 : 2³ = 8.",
+      "notion": "Du binaire au décimal",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Un entier pair a une écriture binaire qui se termine par 0.",
+      "difficulte": 1,
+      "explication": "Le bit de rang 0 vaut 1 pour les impairs et 0 pour les pairs.",
+      "notion": "Du décimal au binaire",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:110",
+      "type": "vrai_faux",
+      "enonce": "En Python, bin(3) renvoie la chaîne '0b11'.",
+      "difficulte": 1,
+      "explication": "3 = 11₂ ; bin ajoute le préfixe 0b.",
+      "notion": "Conversions en Python",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:111",
+      "type": "vrai_faux",
+      "enonce": "En base 10, le chiffre des centaines a pour poids 10².",
+      "difficulte": 1,
+      "explication": "Il est au rang 2 : 10² = 100.",
+      "notion": "Écriture positionnelle et bases",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:112",
+      "type": "vrai_faux",
+      "enonce": "1011 0110₂ s'écrit B6 en hexadécimal.",
+      "difficulte": 2,
+      "explication": "1011 = B et 0110 = 6.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Il faut 9 bits pour écrire 256 en binaire.",
+      "difficulte": 2,
+      "explication": "256 = 2⁸ = 1 0000 0000₂.",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:114",
+      "type": "vrai_faux",
+      "enonce": "En binaire, 1101 + 0111 = 10100.",
+      "difficulte": 2,
+      "explication": "13 + 7 = 20 = 10100₂.",
+      "notion": "Addition binaire et dépassement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:115",
+      "type": "vrai_faux",
+      "enonce": "La somme de deux entiers naturels écrits sur 8 bits s'écrit toujours sur au plus 9 bits.",
+      "difficulte": 2,
+      "explication": "a + b < 2⁸ + 2⁸ = 2⁹.",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:116",
+      "type": "vrai_faux",
+      "enonce": "En Python, int('ff', 16) vaut 255.",
+      "difficulte": 2,
+      "explication": "FF₁₆ = 15 × 16 + 15 = 255 ; les minuscules sont acceptées.",
+      "notion": "Conversions en Python",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Les écritures 0101 et 101 représentent le même entier en binaire.",
+      "difficulte": 2,
+      "explication": "Des 0 à gauche ne changent pas la valeur : les deux valent 5.",
+      "notion": "Du binaire au décimal",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Le produit de deux entiers naturels qui s'écrivent sur 5 bits s'écrit toujours sur au plus 10 bits.",
+      "difficulte": 3,
+      "explication": "a, b < 2⁵ donc a × b < 2¹⁰.",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Sur 8 bits, l'addition 200 + 100 donne 44.",
+      "difficulte": 3,
+      "explication": "300 − 256 = 44 : la retenue qui sort du 8e bit est perdue.",
+      "notion": "Addition binaire et dépassement",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:120",
+      "type": "vrai_faux",
+      "enonce": "En base 3, l'écriture 102 représente le nombre décimal 11.",
+      "difficulte": 3,
+      "explication": "1 × 9 + 0 × 3 + 2 = 11.",
+      "notion": "Écriture positionnelle et bases",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch1:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Un octet est formé de 4 bits.",
+      "difficulte": 1,
+      "explication": "Un octet compte 8 bits ; 4 bits forment un quartet, qui correspond à un chiffre hexadécimal.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:122",
+      "type": "vrai_faux",
+      "enonce": "En hexadécimal, la lettre G représente la valeur 16.",
+      "difficulte": 1,
+      "explication": "Les chiffres hexadécimaux s'arrêtent à F (15) ; 16 s'écrit 10₁₆.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:123",
+      "type": "vrai_faux",
+      "enonce": "111₂ vaut 111 en décimal.",
+      "difficulte": 1,
+      "explication": "111₂ = 4 + 2 + 1 = 7.",
+      "notion": "Du binaire au décimal",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Un octet non signé peut valoir 256.",
+      "difficulte": 1,
+      "explication": "C'est 2⁸ − 1 = 255 ; 256 demande 9 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:125",
+      "type": "vrai_faux",
+      "enonce": "Pour convertir un entier en binaire par divisions successives, on lit les restes du premier au dernier.",
+      "difficulte": 1,
+      "explication": "Le premier reste est le bit de poids faible : on lit du dernier au premier.",
+      "notion": "Du décimal au binaire",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:126",
+      "type": "vrai_faux",
+      "enonce": "En Python, hex(16) renvoie l'entier 10.",
+      "difficulte": 1,
+      "explication": "hex renvoie la chaîne '0x10'.",
+      "notion": "Conversions en Python",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:127",
+      "type": "vrai_faux",
+      "enonce": "2B₁₆ vaut 28 en décimal.",
+      "difficulte": 2,
+      "explication": "2 × 16 + 11 = 43.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:128",
+      "type": "vrai_faux",
+      "enonce": "L'écriture binaire de 14 est 1101.",
+      "difficulte": 2,
+      "explication": "14 = 8 + 4 + 2 = 1110₂ ; 1101₂ vaut 13.",
+      "notion": "Du décimal au binaire",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Il faut 8 bits pour écrire 100 en binaire.",
+      "difficulte": 2,
+      "explication": "64 ⩽ 100 < 128 : 7 bits suffisent (1100100).",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:130",
+      "type": "vrai_faux",
+      "enonce": "En binaire, 1 + 1 + 1 = 10.",
+      "difficulte": 2,
+      "explication": "1 + 1 + 1 = 3 = 11₂.",
+      "notion": "Addition binaire et dépassement",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Ajouter un 0 à droite de l'écriture binaire d'un entier le multiplie par 10.",
+      "difficulte": 2,
+      "explication": "En base 2, cela multiplie par 2 ; c'est en base 10 qu'on multiplie par 10.",
+      "notion": "Écriture positionnelle et bases",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Pour passer du binaire à l'hexadécimal, on groupe les bits par 4 à partir de la gauche.",
+      "difficulte": 2,
+      "explication": "On groupe à partir de la droite (bits de poids faible) et on complète à gauche par des 0.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Le produit de deux entiers naturels qui s'écrivent sur 8 bits tient toujours sur 9 bits.",
+      "difficulte": 3,
+      "explication": "255 × 255 = 65025 demande 16 bits ; seule la somme tient sur 9 bits.",
+      "notion": "Nombre de bits nécessaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Les entiers de Python sont limités à 64 bits, comme ceux du processeur.",
+      "difficulte": 3,
+      "explication": "Les entiers de Python ont une taille arbitraire : 2 ** 100 est calculé exactement.",
+      "notion": "Conversions en Python",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:135",
+      "type": "vrai_faux",
+      "enonce": "100₁₆ et 100₂ représentent le même entier.",
+      "difficulte": 3,
+      "explication": "100₁₆ = 256 et 100₂ = 4.",
+      "notion": "Hexadécimal",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch1:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la valeur décimale de 1101₂ ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "8 + 4 + 1 = 13.",
+      "notion": "Du binaire au décimal",
+      "reponses_acceptees": [
+        "13"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Écris 5 en binaire (sans préfixe).",
+      "difficulte": 1,
+      "explication": "5 = 4 + 1 = 101₂.",
+      "notion": "Du décimal au binaire",
+      "reponses_acceptees": [
+        "101",
+        "0b101"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Combien de bits contient un octet ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "Un octet est un groupe de 8 bits.",
+      "notion": "Bits, octets et nombre de valeurs",
+      "reponses_acceptees": [
+        "8"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quelle valeur décimale représente le chiffre hexadécimal F ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "F est le plus grand chiffre hexadécimal : il vaut 15.",
+      "notion": "Hexadécimal",
+      "reponses_acceptees": [
+        "15"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Combien de valeurs différentes peut-on coder avec 4 bits ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "2⁴ = 16.",
+      "notion": "Nombre de bits nécessaires",
+      "reponses_acceptees": [
+        "16"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel préfixe Python indique un entier écrit en binaire, comme dans 0b101 ?",
+      "difficulte": 1,
+      "explication": "0b pour le binaire, 0x pour l'hexadécimal.",
+      "notion": "Conversions en Python",
+      "reponses_acceptees": [
+        "0b"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Écris 1111 1010₂ en hexadécimal (sans préfixe).",
+      "difficulte": 2,
+      "explication": "1111 = F et 1010 = A.",
+      "notion": "Hexadécimal",
+      "reponses_acceptees": [
+        "FA",
+        "0xFA"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Écris 37 en binaire (sans préfixe, sans espace).",
+      "difficulte": 2,
+      "explication": "37 = 32 + 4 + 1 = 100101₂.",
+      "notion": "Du décimal au binaire",
+      "reponses_acceptees": [
+        "100101",
+        "0b100101"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la valeur décimale de A0₁₆ ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "10 × 16 + 0 = 160.",
+      "notion": "Hexadécimal",
+      "reponses_acceptees": [
+        "160"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Combien de bits faut-il au minimum pour écrire 50 en binaire ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "32 ⩽ 50 < 64 = 2⁶ : 6 bits (110010).",
+      "notion": "Nombre de bits nécessaires",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Quel est le plus grand entier naturel que l'on peut écrire sur 10 bits ? Réponds par un nombre, sans espace.",
+      "difficulte": 2,
+      "explication": "2¹⁰ − 1 = 1023.",
+      "notion": "Nombre de bits nécessaires",
+      "reponses_acceptees": [
+        "1023"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Donne le résultat en binaire de l'addition 1011 + 0110 (sans espace).",
+      "difficulte": 2,
+      "explication": "11 + 6 = 17 = 10001₂.",
+      "notion": "Addition binaire et dépassement",
+      "reponses_acceptees": [
+        "10001"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Écris 2024 en hexadécimal (sans préfixe).",
+      "difficulte": 3,
+      "explication": "2024 = 7 × 256 + 14 × 16 + 8 : 7E8.",
+      "notion": "Hexadécimal",
+      "reponses_acceptees": [
+        "7E8",
+        "0x7E8",
+        "07E8"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Sur 8 bits, quel résultat décimal donne l'addition 250 + 10, la retenue sortante étant perdue ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "260 − 256 = 4.",
+      "notion": "Addition binaire et dépassement",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch1:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Deux entiers naturels s'écrivent chacun sur 12 bits. Sur combien de bits au plus s'écrit leur produit ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "a, b < 2¹² donc a × b < 2²⁴.",
+      "notion": "Nombre de bits nécessaires",
+      "reponses_acceptees": [
+        "24"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2293 @@
+{
+  "chapitre": 4,
+  "notions": [
+    "Indicateurs d'une série",
+    "Lecture de graphiques",
+    "Tableau croisé et fréquences",
+    "Diagrammes du croisement",
+    "Nuage de points et point moyen",
+    "Ajustement affine",
+    "Interpolation et extrapolation",
+    "Corrélation et causalité",
+    "Automatismes"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch4:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Les températures maximales (en °C) d'une semaine sont 12, 14, 15, 15, 16, 18, 22. Quelle est la médiane ?",
+      "propositions": [
+        "15",
+        "16",
+        "15,5",
+        "14"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "7 valeurs rangées : la médiane est la 4e valeur, soit 15.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Calcule la moyenne de la série 6 ; 9 ; 12 ; 13.",
+      "propositions": [
+        "9",
+        "10",
+        "10,5",
+        "12"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Somme : 6 + 9 + 12 + 13 = 40 ; moyenne : 40/4 = 10.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Un sportif court 5 km le lundi, 9 km le mercredi, 7 km le vendredi et ne court pas les quatre autres jours. Quelle est sa distance moyenne par jour sur la semaine ?",
+      "propositions": [
+        "7 km",
+        "5 km",
+        "3 km",
+        "21 km"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Total : 5 + 9 + 7 = 21 km sur 7 jours (les jours sans course comptent pour 0) ; moyenne : 21/7 = 3 km par jour.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Série rangée : 2, 3, 3, 5, 7, 8, 9, 10, 12, 14, 15, 20 (12 valeurs). Quel est le premier quartile ?",
+      "propositions": [
+        "5",
+        "4",
+        "4,5",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "N/4 = 12/4 = 3 : Q1 est la 3e valeur, soit 3.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Même série rangée de 12 valeurs : 2, 3, 3, 5, 7, 8, 9, 10, 12, 14, 15, 20. Quel est le troisième quartile ?",
+      "propositions": [
+        "12",
+        "10",
+        "14",
+        "12,5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "3N/4 = 9 : Q3 est la 9e valeur, soit 12.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans une série, le minimum vaut 4 et le maximum vaut 31. Quelle est l'étendue ?",
+      "propositions": [
+        "35",
+        "27",
+        "31",
+        "17,5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Étendue = max − min = 31 − 4 = 27.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Dans une classe, 10 élèves ont 12 de moyenne et 20 élèves ont 9. Quelle est la moyenne de la classe entière ?",
+      "propositions": [
+        "10,5",
+        "11",
+        "10",
+        "9,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Moyenne pondérée : (10 × 12 + 20 × 9)/30 = (120 + 180)/30 = 300/30 = 10. Ce n'est pas (12 + 9)/2 = 10,5 car les groupes n'ont pas le même effectif.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Cinq salaires mensuels (en euros) : 1 800 ; 1 900 ; 2 000 ; 2 100 ; 7 200. Quelle affirmation est exacte ?",
+      "propositions": [
+        "La moyenne et la médiane valent toutes deux 2 000 €.",
+        "La moyenne vaut 2 000 € et la médiane 3 000 €.",
+        "La moyenne vaut 3 000 € et la médiane 2 100 €.",
+        "La moyenne vaut 3 000 € et la médiane 2 000 €."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Somme : 1 800 + 1 900 + 2 000 + 2 100 + 7 200 = 15 000, moyenne 15 000/5 = 3 000 €. Médiane : 3e valeur, 2 000 €. Le gros salaire tire la moyenne vers le haut, pas la médiane.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Pour une série, Q1 = 11 et Q3 = 18. Que vaut l'écart interquartile ?",
+      "propositions": [
+        "7",
+        "29",
+        "14,5",
+        "18"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Écart interquartile = Q3 − Q1 = 18 − 11 = 7.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:010",
+      "type": "qcm_unique",
+      "enonce": "On compte les frères et sœurs de 20 élèves : 4 n'en ont aucun, 9 en ont 1, 5 en ont 2, 2 en ont 3. Quelle est la moyenne ?",
+      "propositions": [
+        "1,5",
+        "1,25",
+        "1",
+        "0,625"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Total : 0 × 4 + 1 × 9 + 2 × 5 + 3 × 2 = 0 + 9 + 10 + 6 = 25 ; moyenne 25/20 = 1,25.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "On considère la série rangée 3, 4, 6, 6, 9, 10, 13, 13 (8 valeurs). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La médiane vaut 7,5.",
+        "La moyenne vaut 9.",
+        "L'étendue vaut 10.",
+        "Q1 vaut 4.",
+        "Q3 vaut 13."
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Médiane : (6 + 9)/2 = 7,5. Somme : 64, moyenne 64/8 = 8, pas 9. Étendue 13 − 3 = 10. Q1 : rang 2, valeur 4. Q3 : rang 6, valeur 10, pas 13.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces indicateurs, lesquels mesurent la dispersion d'une série ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'étendue",
+        "La médiane",
+        "L'écart interquartile",
+        "La moyenne"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'étendue (max − min) et l'écart interquartile (Q3 − Q1) mesurent l'étalement ; la moyenne et la médiane sont des indicateurs de position.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "On remplace la plus grande valeur d'une série de 9 valeurs distinctes par une valeur encore plus grande. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La médiane ne change pas.",
+        "La moyenne augmente.",
+        "L'étendue augmente.",
+        "Le premier quartile augmente."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La médiane (5e valeur) et Q1 (3e valeur) ne bougent pas. La somme augmente donc la moyenne augmente, et max − min augmente.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:014",
+      "type": "qcm_multiple",
+      "enonce": "Une série a pour moyenne 12. On ajoute 3 à chaque valeur. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La nouvelle moyenne vaut 15.",
+        "L'étendue ne change pas.",
+        "La nouvelle moyenne vaut 36.",
+        "L'étendue augmente de 3."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Chaque valeur augmente de 3, donc la moyenne aussi : 12 + 3 = 15. Max et min augmentent tous deux de 3, leur différence ne change pas.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Dans une série de 11 valeurs rangées dans l'ordre croissant, la médiane est la 6e valeur.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "N = 11 est impair : la médiane est la valeur de rang (11 + 1)/2 = 6.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:016",
+      "type": "vrai_faux",
+      "enonce": "La moyenne d'une série est toujours l'une des valeurs de la série.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Contre-exemple : la moyenne de 1 et 2 vaut 1,5, qui n'est pas une valeur de la série.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Au moins la moitié des valeurs d'une série sont supérieures ou égales à sa médiane.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est la définition : la médiane partage la série en deux moitiés ; au moins 50 % des valeurs lui sont supérieures ou égales.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:018",
+      "type": "vrai_faux",
+      "enonce": "Si deux groupes ont pour moyennes 8 et 14, la moyenne de leur réunion vaut forcément 11.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Ce n'est vrai que si les groupes ont le même effectif. Avec 1 élève à 8 et 3 élèves à 14 : (8 + 42)/4 = 12,5.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Calcule la moyenne des cinq notes 7 ; 11 ; 12 ; 14 ; 16. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 1,
+      "explication": "Somme : 7 + 11 + 12 + 14 + 16 = 60 ; moyenne : 60/5 = 12.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:020",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la médiane de la série 5 ; 8 ; 12 ; 13 ; 15 ; 21 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "12.5"
+      ],
+      "difficulte": 2,
+      "explication": "6 valeurs rangées : moyenne des 3e et 4e valeurs, (12 + 13)/2 = 12,5.",
+      "notion": "Indicateurs d'une série"
+    },
+    {
+      "source": "maths-tc:ch4:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme circulaire, un secteur représente 25 % de l'effectif. Quel est son angle ?",
+      "propositions": [
+        "25°",
+        "45°",
+        "90°",
+        "120°"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Angle = 0,25 × 360° = 90°.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme circulaire, un secteur mesure 180°. Quelle fréquence représente-t-il ?",
+      "propositions": [
+        "18 %",
+        "180 %",
+        "25 %",
+        "50 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "180/360 = 0,5, soit 50 % : un demi-disque.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Un diagramme circulaire représente 300 personnes. Le secteur « bus » mesure 60°. Combien de personnes prennent le bus ?",
+      "propositions": [
+        "50",
+        "60",
+        "180",
+        "20"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Fréquence : 60/360 = 1/6 ; effectif : 300/6 = 50.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Sur 50 élèves, 15 font de la natation. Quel angle donner au secteur « natation » d'un diagramme circulaire ?",
+      "propositions": [
+        "15°",
+        "108°",
+        "30°",
+        "54°"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Fréquence : 15/50 = 0,3 ; angle : 0,3 × 360 = 108°.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Un diagramme en boîte indique min = 2, Q1 = 6, Me = 9, Q3 = 12, max = 20. Quelle est la médiane ?",
+      "propositions": [
+        "11",
+        "6",
+        "9",
+        "12"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La médiane est le trait à l'intérieur de la boîte : Me = 9.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Un diagramme en boîte de temps de trajet (en minutes) indique Q1 = 10 et Q3 = 25. Quelle proportion des élèves met entre 10 et 25 minutes, environ ?",
+      "propositions": [
+        "25 %",
+        "75 %",
+        "37,5 %",
+        "50 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Entre Q1 et Q3, il y a environ 75 % − 25 % = 50 % des valeurs.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Un diagramme en boîte indique min = 5, Q1 = 8, Me = 9, Q3 = 18, max = 20. Quelle interprétation est exacte ?",
+      "propositions": [
+        "Les valeurs entre 9 et 18 sont plus dispersées que celles entre 8 et 9.",
+        "Il y a plus de valeurs entre 9 et 18 qu'entre 8 et 9.",
+        "Il y a environ 25 % des valeurs entre 5 et 20.",
+        "La moyenne vaut forcément 9."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Chaque partie de la boîte contient environ 25 % des valeurs : une partie plus longue signifie des valeurs plus étalées, pas plus nombreuses.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme en barres, l'axe vertical commence à 95 au lieu de 0. Deux barres valent 96 et 100. Quel est l'effet visuel ?",
+      "propositions": [
+        "Les deux barres paraissent de même hauteur.",
+        "La seconde barre paraît 5 fois plus haute alors que l'écart réel est d'environ 4 %.",
+        "Le graphique est exact, l'écart paraît de 4 %.",
+        "La première barre paraît plus haute que la seconde."
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Au-dessus de 95, les barres mesurent 1 et 5 unités : rapport visuel de 5, alors que 100/96 ≈ 1,04, soit un écart d'environ 4 %.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Un histogramme a deux classes d'amplitudes différentes : [0 ; 10[ et [10 ; 30[. Les deux rectangles ont la même hauteur. Que peut-on dire des effectifs ?",
+      "propositions": [
+        "Les deux classes ont le même effectif.",
+        "La première classe a un effectif double.",
+        "La seconde classe a un effectif double de la première.",
+        "On ne peut rien dire sans l'axe vertical."
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Quand les amplitudes diffèrent, c'est l'aire qui est proportionnelle à l'effectif. Même hauteur, largeur 20 contre 10 : aire double, donc effectif double.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Sur 40 élèves, 10 viennent à pied. Quelle fréquence, en pourcentage, indiquer sur le diagramme ?",
+      "propositions": [
+        "10 %",
+        "40 %",
+        "2,5 %",
+        "25 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "10/40 = 1/4 = 0,25, soit 25 %.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Dans un diagramme circulaire de 360 personnes, les secteurs mesurent 90°, 120°, 150°. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le secteur de 90° représente 90 personnes.",
+        "Le secteur de 120° représente un tiers des personnes.",
+        "Le secteur de 150° représente 150 personnes.",
+        "Le secteur de 90° représente 50 % des personnes."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Avec 360 personnes, 1° correspond à 1 personne : 90, 120 et 150 personnes. 120/360 = 1/3. 90/360 = 25 %, pas 50 %.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:032",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations peut-on lire directement sur un diagramme en boîte ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le minimum",
+        "La médiane",
+        "La moyenne",
+        "Le premier quartile"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La boîte montre min, Q1, Me, Q3, max. La moyenne n'y figure pas.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:033",
+      "type": "qcm_multiple",
+      "enonce": "Une boîte de salaires (en centaines d'euros) indique min = 12, Q1 = 15, Me = 18, Q3 = 24, max = 50. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Au moins 75 % des salaires sont inférieurs ou égaux à 2 400 €.",
+        "L'écart interquartile vaut 900 €.",
+        "Au moins la moitié des salaires valent 1 800 € ou plus.",
+        "L'étendue vaut 5 000 €."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Q3 = 24 donne la première affirmation. Q3 − Q1 = 9 centaines, soit 900 €. Me = 18 : au moins la moitié valent 1 800 € ou plus. Étendue : 50 − 12 = 38 centaines, soit 3 800 €.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Dans un diagramme circulaire, la somme des angles de tous les secteurs vaut 360°.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Les secteurs remplissent le disque entier : la somme des fréquences vaut 1, donc celle des angles 1 × 360° = 360°.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Sur un diagramme en boîte, la moustache la plus longue contient le plus de valeurs.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Chaque moustache contient environ 25 % des valeurs ; une moustache longue indique des valeurs plus dispersées.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:036",
+      "type": "vrai_faux",
+      "enonce": "Un diagramme circulaire où le secteur « oui » mesure 72° montre que 20 % des personnes ont répondu « oui ».",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "72/360 = 0,2, soit 20 %.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:037",
+      "type": "vrai_faux",
+      "enonce": "Dans un histogramme dont les classes ont la même amplitude, le rectangle le plus haut correspond à la classe de plus grand effectif.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "À amplitude égale, la hauteur est proportionnelle à l'effectif : le plus haut rectangle a le plus grand effectif.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:038",
+      "type": "reponse_courte",
+      "enonce": "Un diagramme circulaire représente 120 votants. Le secteur d'un candidat mesure 90°. Combien de votants a-t-il obtenus ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "30"
+      ],
+      "difficulte": 2,
+      "explication": "90/360 = 1/4 ; 120/4 = 30 votants.",
+      "notion": "Lecture de graphiques"
+    },
+    {
+      "source": "maths-tc:ch4:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Dans un lycée de 400 élèves : 200 filles, dont 120 pratiquent un sport en club ; 200 garçons, dont 150 pratiquent un sport en club. Quelle est la fréquence des filles parmi les élèves du lycée ?",
+      "propositions": [
+        "50 %",
+        "30 %",
+        "60 %",
+        "33,3 %"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Fréquence marginale : 200/400 = 0,5, soit 50 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Un club de sport compte 120 adhérentes parmi les 200 filles d'un lycée. Quelle fraction des filles du lycée est inscrite en club, en pourcentage ?",
+      "propositions": [
+        "30 %",
+        "60 %",
+        "44 %",
+        "120 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Fréquence conditionnelle : 120/200 = 0,6, soit 60 %. Le dénominateur est le nombre de filles.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Lycée de 400 élèves : 120 filles et 150 garçons font du sport en club, les 130 autres élèves non. Quelle fréquence représentent les filles sportives dans tout le lycée ?",
+      "propositions": [
+        "60 %",
+        "44 %",
+        "30 %",
+        "67,5 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Fréquence globale : 120/400 = 0,3, soit 30 %. Le dénominateur est l'effectif total.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Parmi 270 élèves sportifs d'un lycée, 120 sont des filles et 150 des garçons. Quelle est, environ, la part des filles parmi les sportifs ?",
+      "propositions": [
+        "60 %",
+        "30 %",
+        "55,6 %",
+        "44 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Fréquence conditionnelle : 120/270 = 4/9 ≈ 0,44, soit environ 44 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Sur 1 000 personnes suivies un hiver : 600 vaccinées contre la grippe, dont 30 ont eu la grippe ; 400 non vaccinées, dont 80 ont eu la grippe. Combien de personnes ont eu la grippe au total ?",
+      "propositions": [
+        "110",
+        "80",
+        "50",
+        "30"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Effectif marginal : 30 + 80 = 110.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Sur 1 000 personnes suivies un hiver : 600 vaccinées contre la grippe, dont 30 ont eu la grippe ; 400 non vaccinées, dont 80 ont eu la grippe. Parmi les personnes vaccinées, quelle est la fréquence de celles qui ont eu la grippe ?",
+      "propositions": [
+        "3 %",
+        "5 %",
+        "30 %",
+        "27 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "30/600 = 0,05, soit 5 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Suivi d'un hiver : 400 personnes non vaccinées contre la grippe, dont 80 l'ont attrapée. Dans ce groupe, quelle proportion a eu la grippe ?",
+      "propositions": [
+        "8 %",
+        "80 %",
+        "20 %",
+        "25 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "80/400 = 0,2, soit 20 %. Ne pas diviser par 320, le nombre de non-malades : 80/320 = 25 % n'est pas une proportion du groupe.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Sur 110 personnes qui ont eu la grippe un hiver, 30 étaient vaccinées et 80 non. Quelle phrase est exacte ?",
+      "propositions": [
+        "27 % des vaccinés ont eu la grippe.",
+        "30 % des malades étaient vaccinés.",
+        "Le vaccin ne protège que 27 % des personnes.",
+        "Environ 27 % des malades étaient vaccinés."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Parmi les malades (110), 30 vaccinés : 30/110 ≈ 0,27. C'est une proportion parmi les malades, pas parmi les vaccinés (le nombre de vaccinés n'est d'ailleurs pas donné).",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Un magasin interroge 250 clients : 100 ont acheté en boutique (80 satisfaits, 20 non satisfaits) et 150 sur internet (90 satisfaits, 60 non satisfaits). Combien de clients sont satisfaits au total ?",
+      "propositions": [
+        "170",
+        "90",
+        "80",
+        "150"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Effectif marginal : 80 + 90 = 170.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Un magasin interroge 250 clients : 100 ont acheté en boutique (80 satisfaits, 20 non satisfaits) et 150 sur internet (90 satisfaits, 60 non satisfaits). Quelle est la fréquence de satisfaction parmi les clients en boutique ?",
+      "propositions": [
+        "32 %",
+        "80 %",
+        "47,1 %",
+        "68 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "80/100 = 0,8, soit 80 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Sur 150 clients ayant acheté sur internet, 90 sont satisfaits. Quel pourcentage des clients internet est satisfait ?",
+      "propositions": [
+        "90 %",
+        "36 %",
+        "60 %",
+        "66,7 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "90/150 = 3/5 = 0,6, soit 60 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Une enquête porte sur 250 clients. 60 ont acheté sur internet et ne sont pas satisfaits. Quelle est la fréquence globale de ces clients ?",
+      "propositions": [
+        "40 %",
+        "60 %",
+        "37,5 %",
+        "24 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Fréquence globale : 60/250 = 0,24, soit 24 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableau croisé, comment appelle-t-on les effectifs de la ligne et de la colonne « Total » ?",
+      "propositions": [
+        "Les effectifs marginaux",
+        "Les effectifs conditionnels",
+        "Les fréquences globales",
+        "Les effectifs cumulés"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les totaux en marge du tableau (dernière ligne, dernière colonne) sont les effectifs marginaux.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Un tableau croisé (âge, avis) est incomplet : 300 personnes au total, 180 favorables ; parmi les moins de 30 ans (120 personnes), 90 sont favorables. Combien de personnes de 30 ans ou plus sont favorables ?",
+      "propositions": [
+        "60",
+        "90",
+        "180",
+        "30"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Favorables : 180 au total, dont 90 de moins de 30 ans ; il reste 180 − 90 = 90 favorables de 30 ans ou plus.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Sur 500 salariés, 300 vivent en ville. Parmi les urbains, 20 % viennent à vélo. Combien de salariés urbains viennent à vélo ?",
+      "propositions": [
+        "100",
+        "20",
+        "60",
+        "150"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "20 % de 300 : 0,2 × 300 = 60.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer une fréquence conditionnelle « parmi les fumeurs », par quoi divise-t-on ?",
+      "propositions": [
+        "Par l'effectif total de l'enquête",
+        "Par le nombre de non-fumeurs",
+        "Par le nombre de malades",
+        "Par le nombre total de fumeurs"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "« Parmi les fumeurs » désigne la sous-population : on divise par l'effectif marginal des fumeurs.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:055",
+      "type": "qcm_multiple",
+      "enonce": "Dans un lycée de 400 élèves : 200 filles, dont 120 pratiquent un sport en club ; 200 garçons, dont 150 pratiquent un sport en club. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La fréquence des élèves sportifs est 67,5 %.",
+        "Parmi les garçons, 75 % sont sportifs.",
+        "Parmi les filles, 30 % sont sportives.",
+        "Les filles sportives représentent 30 % des élèves."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Sportifs : 270/400 = 0,675. Garçons : 150/200 = 0,75. Filles : 120/200 = 60 %, pas 30 %. Filles sportives dans le lycée : 120/400 = 30 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:056",
+      "type": "qcm_multiple",
+      "enonce": "Sur 1 000 personnes suivies un hiver : 600 vaccinées contre la grippe, dont 30 ont eu la grippe ; 400 non vaccinées, dont 80 ont eu la grippe. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les vaccinés ont moins souvent eu la grippe que les non-vaccinés.",
+        "11 % des personnes suivies ont eu la grippe.",
+        "60 % des personnes suivies sont vaccinées.",
+        "La majorité des malades étaient vaccinés."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "5 % des vaccinés contre 20 % des non-vaccinés ; 110/1 000 = 11 % ; 600/1 000 = 60 %. Parmi les 110 malades, 30 vaccinés seulement : ce n'est pas la majorité.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:057",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fréquences ont pour dénominateur l'effectif total ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La fréquence globale",
+        "La fréquence marginale",
+        "La fréquence conditionnelle",
+        "La fréquence « parmi les femmes »"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Fréquences globale et marginale : divisées par l'effectif total. Conditionnelle : divisée par l'effectif d'une sous-population.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:058",
+      "type": "qcm_multiple",
+      "enonce": "Un magasin interroge 250 clients : 100 ont acheté en boutique (80 satisfaits, 20 non satisfaits) et 150 sur internet (90 satisfaits, 60 non satisfaits). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les clients en boutique sont plus souvent satisfaits que ceux d'internet.",
+        "68 % des clients sont satisfaits.",
+        "Parmi les satisfaits, plus de la moitié ont acheté sur internet.",
+        "40 % des clients ont acheté en boutique et sont satisfaits."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "80 % contre 60 %. 170/250 = 0,68. Parmi 170 satisfaits, 90 internet : 90/170 ≈ 53 %. Boutique et satisfaits : 80/250 = 32 %, pas 40 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:059",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau croisé, la somme des effectifs marginaux de la ligne « Total » est égale à l'effectif total.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Chaque individu est compté une fois dans une seule colonne : la somme des totaux de colonnes redonne l'effectif total.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:060",
+      "type": "vrai_faux",
+      "enonce": "Dans un lycée, 120 des 200 filles font du sport. La part des filles parmi les sportifs est donc 60 %.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "60 % est la part des sportives parmi les filles (120/200). La part des filles parmi les sportifs se divise par le nombre total de sportifs, inconnu ici.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:061",
+      "type": "vrai_faux",
+      "enonce": "Si 30 % des 600 vaccinés ont un effet secondaire, alors 180 vaccinés ont un effet secondaire.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "0,3 × 600 = 180.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:062",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau croisé, la part des A parmi les B est toujours égale à la part des B parmi les A.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Même numérateur, dénominateurs différents. Exemple : 50 cyclistes urbains, 300 urbains, 70 cyclistes : 50/300 ≈ 17 % mais 50/70 ≈ 71 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:063",
+      "type": "vrai_faux",
+      "enonce": "Une fréquence conditionnelle se calcule en divisant l'effectif d'une case par l'effectif de la sous-population étudiée.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition : on divise par l'effectif marginal de la sous-population (« parmi les… »).",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:064",
+      "type": "reponse_courte",
+      "enonce": "Sur 80 salariés à temps partiel, 60 sont des femmes. Quelle est la fréquence des femmes parmi les salariés à temps partiel, en %, sans le signe % ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "75",
+        "75 %",
+        "75%"
+      ],
+      "difficulte": 2,
+      "explication": "60/80 = 3/4 = 0,75, soit 75 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:065",
+      "type": "reponse_courte",
+      "enonce": "Une enquête porte sur 200 personnes : 50 sont fumeuses, et 10 fumeurs ont une bronchite chronique. Quelle est la fréquence de la bronchite parmi les fumeurs, en %, sans le signe % ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "20",
+        "20 %",
+        "20%"
+      ],
+      "difficulte": 3,
+      "explication": "Parmi les 50 fumeurs : 10/50 = 0,2, soit 20 %.",
+      "notion": "Tableau croisé et fréquences"
+    },
+    {
+      "source": "maths-tc:ch4:banque:066",
+      "type": "qcm_unique",
+      "enonce": "On veut comparer la répartition des modes de transport entre une ville de 3 000 habitants et une ville de 50 000 habitants. Quel diagramme convient le mieux ?",
+      "propositions": [
+        "Des barres empilées à 100 %",
+        "Des barres groupées en effectifs",
+        "Un seul diagramme circulaire pour les deux villes",
+        "Un nuage de points"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les populations ont des tailles très différentes : on compare des proportions, donc des barres empilées à 100 % (fréquences conditionnelles).",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Dans un diagramme en barres empilées à 100 %, que représente chaque barre ?",
+      "propositions": [
+        "L'effectif total de l'enquête, découpé selon les modalités",
+        "Une sous-population, en fréquences conditionnelles",
+        "Une valeur moyenne",
+        "Un couple (x ; y)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Chaque barre est une sous-population ; ses morceaux sont les fréquences conditionnelles, et leur total fait 100 %.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableur, B2 contient l'effectif « Ville et voiture » et E2 le total de la ligne « Ville ». Quelle formule donne la fréquence conditionnelle en ligne, recopiable vers la droite ?",
+      "propositions": [
+        "=B2/E2",
+        "=B2*$E2",
+        "=B2/$E2",
+        "=$B2/E2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On divise par le total de la ligne, en bloquant la colonne E avec $ pour que la recopie vers la droite garde le même dénominateur.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Quelle formule de tableur calcule la somme des cellules B2, C2 et D2 ?",
+      "propositions": [
+        "=MOYENNE(B2:D2)",
+        "=B2*C2*D2",
+        "=SOMME(B2;D2)/3",
+        "=SOMME(B2:D2)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La fonction SOMME sur la plage B2:D2 additionne les trois cellules.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Ville : 50 cyclistes sur 300 habitants interrogés. Campagne : 20 cyclistes sur 200. Un diagramme en barres groupées en effectifs montre une barre « vélo » plus haute pour la ville. Que conclure ?",
+      "propositions": [
+        "La ville a une plus grande part de cyclistes : environ 17 % contre 10 %.",
+        "La ville a 2,5 fois plus de cyclistes en proportion.",
+        "Les deux groupes ont la même part de cyclistes.",
+        "On ne peut comparer que des effectifs."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Proportions : 50/300 ≈ 17 % et 20/200 = 10 %. Le rapport des effectifs (50/20 = 2,5) n'est pas celui des proportions, car les groupes n'ont pas la même taille.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "Pour représenter le croisement de deux caractères qualitatifs, quels graphiques conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Des barres groupées",
+        "Des barres empilées à 100 %",
+        "Un diagramme circulaire par sous-population",
+        "Un nuage de points"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les trois premiers servent au croisement de caractères qualitatifs ; le nuage de points sert pour deux caractères quantitatifs.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:072",
+      "type": "qcm_multiple",
+      "enonce": "Une barre empilée à 100 % « Campagne » est découpée en 80 % voiture, 10 % transports, 10 % vélo, sur 200 personnes. Coche toutes les réponses exactes.",
+      "propositions": [
+        "160 personnes de la campagne prennent la voiture.",
+        "20 personnes de la campagne viennent à vélo.",
+        "La barre « Ville » a forcément la même découpe.",
+        "10 % des personnes de toute l'enquête prennent les transports en commun."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "0,8 × 200 = 160 ; 0,1 × 200 = 20. La barre « Ville » a sa propre découpe. Les 10 % sont une fréquence conditionnelle parmi les habitants de la campagne, pas parmi toute l'enquête.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Dans un diagramme en barres empilées à 100 %, toutes les barres ont la même hauteur.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Chaque barre représente 100 % de sa sous-population : elles ont toutes la même hauteur.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:074",
+      "type": "vrai_faux",
+      "enonce": "Pour comparer deux groupes d'effectifs très différents, des barres groupées en effectifs sont plus adaptées que des fréquences conditionnelles.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "C'est l'inverse : en effectifs, le grand groupe a toujours des barres plus hautes ; on compare des fréquences conditionnelles.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:075",
+      "type": "vrai_faux",
+      "enonce": "Dans un tableur, la formule =B2/$E2 recopiée en C2 devient =C2/$F2.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "La référence B2 est relative et devient C2, mais $E2 a la colonne bloquée par le $ : elle reste $E2. La formule devient =C2/$E2.",
+      "notion": "Diagrammes du croisement"
+    },
+    {
+      "source": "maths-tc:ch4:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Une série à deux variables est donnée par x : 1 ; 2 ; 3 ; 4 et y : 10 ; 12 ; 15 ; 19. Quelles sont les coordonnées du point moyen G ?",
+      "propositions": [
+        "(2,5 ; 15)",
+        "(2,5 ; 14)",
+        "(10 ; 56)",
+        "(2,5 ; 14,5)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "x̄ = (1 + 2 + 3 + 4)/4 = 10/4 = 2,5 ; ȳ = (10 + 12 + 15 + 19)/4 = 56/4 = 14.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Quel est le point moyen du nuage formé par A(2 ; 5), B(4 ; 9), C(6 ; 10), D(8 ; 16) ?",
+      "propositions": [
+        "G(4 ; 9)",
+        "G(5 ; 9,5)",
+        "G(5 ; 10)",
+        "G(20 ; 40)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "x̄ = 20/4 = 5 ; ȳ = (5 + 9 + 10 + 16)/4 = 40/4 = 10.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:078",
+      "type": "qcm_unique",
+      "enonce": "On relève l'altitude x (en km) et la température y (en °C) : (0 ; 15), (1 ; 9), (2 ; 2), (3 ; −4). Que vaut ȳ ?",
+      "propositions": [
+        "8",
+        "7,5",
+        "7,25",
+        "5,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Somme : 15 + 9 + 2 − 4 = 22 ; ȳ = 22/4 = 5,5.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Les points d'un nuage descendent régulièrement de gauche à droite, presque alignés. Que peut-on dire ?",
+      "propositions": [
+        "Les deux caractères varient en sens contraire et un ajustement affine est pertinent.",
+        "Les deux caractères varient dans le même sens.",
+        "Un ajustement affine est impossible car la droite descend.",
+        "Il n'y a aucun lien entre les deux caractères."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un nuage qui descend indique que y diminue quand x augmente ; s'il est presque rectiligne, une droite (de coefficient directeur négatif) le résume bien.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Dans un nuage de points, que représente chaque point ?",
+      "propositions": [
+        "La moyenne des x",
+        "Un individu, avec ses deux valeurs (x ; y)",
+        "Une classe d'effectifs",
+        "Une fréquence conditionnelle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Chaque individu i est représenté par le point de coordonnées (x_i ; y_i).",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Le point moyen d'un nuage de 4 points est G(5 ; 12). Trois points sont (2 ; 8), (5 ; 10) et (6 ; 14). Quel est le quatrième ?",
+      "propositions": [
+        "(6,5 ; 16)",
+        "(8 ; 16)",
+        "(7 ; 16)",
+        "(7 ; 18)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Somme des x : 4 × 5 = 20, donc x = 20 − 13 = 7. Somme des y : 4 × 12 = 48, donc y = 48 − 32 = 16.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Un nuage de points a la forme d'une boule, sans direction nette. Quelle conclusion est la plus raisonnable ?",
+      "propositions": [
+        "La droite passant par le point moyen est un très bon modèle.",
+        "Les deux caractères sont liés par une relation de cause à effet.",
+        "Il faut faire une extrapolation.",
+        "Un ajustement affine n'est pas pertinent."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Sans direction nette, aucune droite ne résume bien le nuage : l'ajustement affine n'a pas d'intérêt.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Le nuage des points (0 ; 3), (2 ; 7), (4 ; 8), (6 ; 12), (8 ; 15) a pour point moyen :",
+      "propositions": [
+        "G(4 ; 9)",
+        "G(4 ; 8)",
+        "G(5 ; 9)",
+        "G(20 ; 45)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "x̄ = (0 + 2 + 4 + 6 + 8)/5 = 20/5 = 4 ; ȳ = (3 + 7 + 8 + 12 + 15)/5 = 45/5 = 9. Le point moyen n'est pas forcément le point du milieu (4 ; 8).",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Pour le nuage des points (1 ; 2), (3 ; 6), (5 ; 7), (7 ; 9) : Coche toutes les réponses exactes.",
+      "propositions": [
+        "x̄ = 4",
+        "ȳ = 6",
+        "G est l'un des points du nuage.",
+        "ȳ = 6,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "x̄ = 16/4 = 4 ; ȳ = (2 + 6 + 7 + 9)/4 = 24/4 = 6. G(4 ; 6) n'est pas un point du nuage.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Quels couples de caractères se prêtent à un nuage de points ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Âge et taille d'enfants",
+        "Année et émissions de CO₂",
+        "Couleur des yeux et sport préféré",
+        "Prix d'un article et nombre d'articles vendus"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un nuage demande deux caractères quantitatifs (des nombres). La couleur des yeux et le sport sont qualitatifs : on utiliserait un tableau croisé.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Un nuage de 5 points a pour point moyen G(3 ; 20). On ajoute 2 à toutes les ordonnées. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le nouveau point moyen est (3 ; 22).",
+        "La somme des ordonnées augmente de 10.",
+        "Le nouveau point moyen est (5 ; 22).",
+        "La forme du nuage change."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Chaque y augmente de 2 : ȳ devient 22, x̄ reste 3. Somme : 5 × 2 = 10 de plus. Le nuage est seulement translaté vers le haut, sa forme ne change pas.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Le point moyen d'un nuage a pour coordonnées la moyenne des abscisses et la moyenne des ordonnées.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Par définition, G(x̄ ; ȳ).",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Le point moyen d'un nuage est toujours l'un des points du nuage.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Contre-exemple : (1 ; 1) et (3 ; 5) ont pour point moyen (2 ; 3), qui n'est pas un point du nuage.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Pour les points (1 ; 4), (2 ; 6), (3 ; 11), le point moyen est (2 ; 6).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "ȳ = (4 + 6 + 11)/3 = 21/3 = 7, donc G(2 ; 7) : ȳ n'est pas l'ordonnée du point du milieu.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:090",
+      "type": "reponse_courte",
+      "enonce": "Les ventes y (en milliers) d'un jeu sur 4 mois x = 1, 2, 3, 4 sont 6, 9, 13, 16. Calcule ȳ. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "difficulte": 2,
+      "explication": "ȳ = (6 + 9 + 13 + 16)/4 = 44/4 = 11.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:091",
+      "type": "reponse_courte",
+      "enonce": "Calcule l'abscisse du point moyen des points (2 ; 1), (5 ; 3), (8 ; 4). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 1,
+      "explication": "x̄ = (2 + 5 + 8)/3 = 15/3 = 5.",
+      "notion": "Nuage de points et point moyen"
+    },
+    {
+      "source": "maths-tc:ch4:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Nuage : (1 ; 3), (2 ; 5), (3 ; 6), (4 ; 10). Pour la droite de Mayer, quel est le point moyen G1 des deux premiers points ?",
+      "propositions": [
+        "(2,5 ; 6)",
+        "(1,5 ; 4)",
+        "(1,5 ; 8)",
+        "(1,5 ; 5,5)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "G1 : ((1 + 2)/2 ; (3 + 5)/2) = (1,5 ; 4).",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Une droite de Mayer passe par G1(1,5 ; 4) et G2(3,5 ; 8). Quelle est son équation ?",
+      "propositions": [
+        "y = 2x + 4",
+        "y = 0,5x + 3,25",
+        "y = 2x + 1",
+        "y = 4x − 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "a = (8 − 4)/(3,5 − 1,5) = 4/2 = 2 ; 4 = 2 × 1,5 + b donne b = 1 : y = 2x + 1.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Une droite d'ajustement passe par G1(2 ; 23) et G2(5 ; 32). Quel est son coefficient directeur ?",
+      "propositions": [
+        "9",
+        "4,5",
+        "1/3",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "a = (32 − 23)/(5 − 2) = 9/3 = 3.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Le point moyen d'un nuage est G(4 ; 18). Une droite d'ajustement de coefficient directeur 3 passe par G. Quelle est son ordonnée à l'origine ?",
+      "propositions": [
+        "6",
+        "18",
+        "12",
+        "−6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "18 = 3 × 4 + b, donc b = 18 − 12 = 6.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Par quel point passe toujours la droite de Mayer d'un nuage ?",
+      "propositions": [
+        "L'origine du repère",
+        "Le point moyen G du nuage",
+        "Le premier point du nuage",
+        "Le point le plus haut du nuage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "G1 et G2 sont les points moyens de deux moitiés de même effectif ; G est le milieu de [G1G2], donc la droite (G1G2) passe par G.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableur, comment obtient-on la droite des moindres carrés d'un nuage ?",
+      "propositions": [
+        "En calculant la moyenne des x",
+        "En traçant un diagramme circulaire",
+        "En ajoutant une courbe de tendance linéaire avec son équation",
+        "En reliant le premier et le dernier point"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le tableur trace la courbe de tendance « linéaire » et peut afficher son équation y = ax + b.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Le point moyen d'un nuage est G(3,5 ; 20). Laquelle de ces droites peut être un ajustement passant par G ?",
+      "propositions": [
+        "y = 4x + 20",
+        "y = 3x + 6",
+        "y = 2x + 10",
+        "y = 4x + 6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "4 × 3,5 + 6 = 20 : seule la première passe par G. Les autres donnent 34, 16,5 et 17.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Pour tracer une droite d'ajustement au jugé, quelle règle suit-on ?",
+      "propositions": [
+        "Elle passe par G et laisse à peu près autant de points de chaque côté.",
+        "Elle passe par le premier et le dernier point.",
+        "Elle passe par l'origine.",
+        "Elle passe par le plus de points possible, même au bord du nuage."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Au jugé, on vise le « milieu » du nuage : la droite passe par le point moyen et équilibre les points au-dessus et en dessous.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Nuage de six points : x = 1, 2, 3, 4, 5, 6 et y = 21, 22, 26, 30, 31, 35. On construit la droite de Mayer. Coche toutes les réponses exactes.",
+      "propositions": [
+        "G1(2 ; 23)",
+        "G2(5 ; 32)",
+        "Son coefficient directeur vaut 3.",
+        "Son équation est y = 3x + 23."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "G1 : (6/3 ; 69/3) = (2 ; 23). G2 : (15/3 ; 96/3) = (5 ; 32). a = 9/3 = 3 ; b = 23 − 3 × 2 = 17, donc y = 3x + 17.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Quelles méthodes d'ajustement affine sont au programme ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Au jugé",
+        "Droite de Mayer",
+        "Moindres carrés au tableur",
+        "Diagramme en boîte"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Les trois ajustements cités sont au programme ; le diagramme en boîte résume une seule série.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Pour un même nuage presque rectiligne, on compare la droite de Mayer y = 4x + 6 et celle du tableur y = 3,9x + 6,4. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les deux droites passent par le point moyen.",
+        "Elles donnent des prévisions voisines près des données.",
+        "Une seule des deux est juste, l'autre est fausse.",
+        "Pour x = 1, elles donnent 10 et 10,3."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Mayer et moindres carrés passent par G. Ce sont deux modèles possibles, aucun n'est « le seul juste ». Pour x = 1 : 4 + 6 = 10 et 3,9 + 6,4 = 10,3.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "La droite y = −2x + 50 ajuste un nuage. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le nuage descend de gauche à droite.",
+        "Pour x = 10, l'ajustement donne y = 30.",
+        "Pour x = 0, l'ajustement donne y = −2.",
+        "Si x augmente de 1, y diminue de 2."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Coefficient −2 : décroissante, y diminue de 2 quand x augmente de 1. x = 10 : −20 + 50 = 30. x = 0 : y = 50.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Pour un même nuage, plusieurs droites d'ajustement sont possibles.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Au jugé, Mayer, moindres carrés… donnent des droites différentes ; ce sont des modèles, aucun n'est unique.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:105",
+      "type": "vrai_faux",
+      "enonce": "Pour construire la droite de Mayer d'un nuage de 8 points rangés selon x, on forme deux groupes de 4 points.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "On partage le nuage en deux groupes de même effectif : 8/2 = 4.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:106",
+      "type": "vrai_faux",
+      "enonce": "La droite d'équation y = 2x + 3 passe par le point moyen G(4 ; 10).",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "2 × 4 + 3 = 11 ≠ 10 : la droite ne passe pas par G.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:107",
+      "type": "reponse_courte",
+      "enonce": "Une droite de Mayer passe par G1(1 ; 10) et G2(5 ; 18). Quel est son coefficient directeur ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 2,
+      "explication": "a = (18 − 10)/(5 − 1) = 8/4 = 2.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:108",
+      "type": "reponse_courte",
+      "enonce": "Une droite d'ajustement de coefficient directeur 1,5 passe par le point moyen G(6 ; 14). Quelle est son ordonnée à l'origine ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 3,
+      "explication": "14 = 1,5 × 6 + b = 9 + b, donc b = 5.",
+      "notion": "Ajustement affine"
+    },
+    {
+      "source": "maths-tc:ch4:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Un ajustement donne y = 4x + 6, où x est le rang de l'année (rang 1 = 2019) et y une élévation en mm. Quelle estimation pour le rang 10 ?",
+      "propositions": [
+        "40 mm",
+        "46 mm",
+        "64 mm",
+        "106 mm"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "y = 4 × 10 + 6 = 40 + 6 = 46.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Les données vont de x = 1 à x = 8. On utilise l'ajustement pour estimer y en x = 5,5. Comment s'appelle cette estimation ?",
+      "propositions": [
+        "Une extrapolation",
+        "Une médiane",
+        "Une interpolation",
+        "Une fréquence"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "5,5 est dans la plage [1 ; 8] des données observées : c'est une interpolation.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:111",
+      "type": "qcm_unique",
+      "enonce": "La consommation d'eau y (en m³) d'un foyer est ajustée par y = 50x + 100, x en nombre de personnes, avec des données de 1 à 5 personnes. Quelle estimation donne-t-on pour 3 personnes ?",
+      "propositions": [
+        "150 m³",
+        "350 m³",
+        "153 m³",
+        "250 m³"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "y = 50 × 3 + 100 = 150 + 100 = 250.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Un ajustement donne y = 2,5x + 40 pour le prix d'un loyer (en €/m²) selon les années x. Pour quelle valeur de x le prix atteint-il 65 €/m² ?",
+      "propositions": [
+        "x = 10",
+        "x = 26",
+        "x = 42",
+        "x = 25"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "On résout 2,5x + 40 = 65 : 2,5x = 25, puis x = 25/2,5 = 10. Ne pas s'arrêter à 2,5x = 25.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:113",
+      "type": "qcm_unique",
+      "enonce": "La taille d'enfants entre 2 et 10 ans est ajustée par y = 6x + 80 (y en cm, x en années). Que penser de l'estimation pour un adulte de 40 ans ?",
+      "propositions": [
+        "Elle donne 320 cm, valeur fiable car la droite est bonne.",
+        "Elle donne 320 cm : l'extrapolation est absurde, la croissance s'arrête.",
+        "C'est une interpolation fiable.",
+        "Elle donne 86 cm."
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "6 × 40 + 80 = 320 cm. 40 ans est très loin de la plage [2 ; 10] : la tendance ne se maintient pas, l'extrapolation n'a pas de sens.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Des données couvrent les années 2015 à 2024. Quelles estimations sont des extrapolations ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une estimation pour 2030",
+        "Une estimation pour 2010",
+        "Une estimation pour 2020",
+        "Une estimation pour mi-2018"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "2030 et 2010 sont en dehors de la plage 2015-2024 : extrapolations. 2020 et 2018 sont à l'intérieur : interpolations.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:115",
+      "type": "qcm_multiple",
+      "enonce": "Un ajustement y = −0,5x + 30 modélise le stock y (en tonnes) d'une réserve d'eau selon le jour x, pour x de 0 à 20. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Au jour 10, le modèle donne 25 tonnes.",
+        "Le modèle donne un stock nul au jour 60.",
+        "Une estimation au jour 60 est une extrapolation.",
+        "Au jour 20, le modèle donne 40 tonnes."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "x = 10 : −5 + 30 = 25. Stock nul : −0,5x + 30 = 0 donne x = 60, hors de [0 ; 20] : extrapolation. x = 20 : −10 + 30 = 20, pas 40.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:116",
+      "type": "qcm_multiple",
+      "enonce": "Pourquoi une extrapolation lointaine est-elle risquée ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tendance observée peut changer.",
+        "On n'a pas de données dans cette zone pour contrôler.",
+        "Le calcul y = ax + b devient impossible.",
+        "Elle est toujours exactement fausse."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le calcul reste possible, mais le modèle n'est validé que sur la plage des données : la tendance peut changer (accélération, saturation…).",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Estimer une valeur pour un x situé entre la plus petite et la plus grande valeur observée s'appelle une interpolation.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition de l'interpolation.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Une extrapolation à partir d'un bon ajustement affine est toujours fiable, même très loin des données.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Loin des données, rien ne garantit que la tendance continue : l'extrapolation devient risquée.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:119",
+      "type": "reponse_courte",
+      "enonce": "Un ajustement donne y = 3x + 12. Quelle valeur de y le modèle donne-t-il pour x = 8 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "36"
+      ],
+      "difficulte": 2,
+      "explication": "y = 3 × 8 + 12 = 24 + 12 = 36.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Un ajustement donne y = 5x + 20 pour le nombre d'abonnés y (en milliers) au mois x. Pour quel mois x le modèle atteint-il 95 milliers ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "15"
+      ],
+      "difficulte": 3,
+      "explication": "5x + 20 = 95 donne 5x = 75, x = 15.",
+      "notion": "Interpolation et extrapolation"
+    },
+    {
+      "source": "maths-tc:ch4:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Les ventes de glaces et le nombre de coups de soleil augmentent ensemble au cours de l'année. Quelle explication est la plus raisonnable ?",
+      "propositions": [
+        "Les glaces provoquent les coups de soleil.",
+        "Les coups de soleil donnent envie de glaces.",
+        "Un troisième facteur, l'ensoleillement, agit sur les deux.",
+        "Ce lien prouve que manger une glace augmente le risque de coup de soleil."
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le soleil et la chaleur font monter à la fois les ventes de glaces et les coups de soleil : c'est un facteur commun, pas une cause directe.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Une étude montre que les élèves qui ont un bureau dans leur chambre ont de meilleures notes. Que peut-on conclure ?",
+      "propositions": [
+        "Acheter un bureau à un élève fait forcément monter ses notes, l'étude le prouve.",
+        "Les bonnes notes font acheter des bureaux.",
+        "Il n'y a aucun lien entre bureau et notes.",
+        "Il y a une corrélation, qui ne prouve pas que le bureau fait monter les notes."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le lien observé peut venir d'un troisième facteur (conditions de vie, place au domicile…). Une corrélation ne prouve pas une cause.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Comment établir qu'un médicament fait vraiment baisser la tension ?",
+      "propositions": [
+        "Par un essai avec un groupe témoin tiré au sort",
+        "En observant que ceux qui le prennent ont une tension plus basse",
+        "En traçant un nuage de points très aligné",
+        "En calculant le point moyen des patients"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Seule une expérience contrôlée (groupe traité et groupe témoin tirés au sort) écarte les facteurs de confusion ; une simple observation montre une corrélation.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "Une corrélation forte entre deux caractères peut s'expliquer par : Coche toutes les réponses exactes.",
+      "propositions": [
+        "un lien de cause à effet",
+        "un troisième facteur qui agit sur les deux",
+        "le hasard, avec peu de données",
+        "la forme du diagramme circulaire"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Les trois premières origines sont possibles ; le type de graphique n'explique rien.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Plus il y a de pompiers sur un incendie, plus les dégâts sont importants. Coche toutes les réponses exactes.",
+      "propositions": [
+        "C'est une corrélation.",
+        "La taille de l'incendie explique les deux.",
+        "Envoyer moins de pompiers réduirait les dégâts.",
+        "Les pompiers sont la cause des dégâts."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Les deux varient ensemble (corrélation), parce qu'un grand incendie attire plus de pompiers et fait plus de dégâts. Ce ne sont pas les pompiers qui causent les dégâts.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:126",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces phrases, lesquelles sont conformes à la règle « corrélation n'est pas causalité » ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Deux grandeurs peuvent varier ensemble sans que l'une cause l'autre.",
+        "Un nuage presque aligné ne suffit pas à prouver une cause.",
+        "Si deux grandeurs varient ensemble, l'une cause toujours l'autre.",
+        "Un nuage aligné prouve toujours une cause."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une corrélation, même forte, ne suffit pas : il faut une expérience ou un mécanisme pour établir une cause.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Un nuage de points presque aligné suffit à prouver que x est la cause de y.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le nuage montre une corrélation ; un troisième facteur ou le hasard peuvent l'expliquer.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Le nombre de prix Nobel et la consommation de chocolat par habitant sont corrélés, ce qui prouve que le chocolat rend plus intelligent.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "La richesse du pays agit sur les deux : c'est un facteur de confusion, la corrélation ne prouve rien sur le chocolat.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Deux caractères corrélés peuvent avoir une cause commune sans que l'un agisse sur l'autre.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Exemple : glaces et noyades augmentent ensemble à cause de la chaleur.",
+      "notion": "Corrélation et causalité"
+    },
+    {
+      "source": "maths-tc:ch4:banque:130",
+      "type": "qcm_unique",
+      "enonce": "Calcule 15 % de 200.",
+      "propositions": [
+        "15",
+        "30",
+        "20",
+        "300"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "15 % de 200 = 0,15 × 200 = 30.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Quelle fraction est égale à 0,75 ?",
+      "propositions": [
+        "7/5",
+        "1/75",
+        "3/4",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "0,75 = 75/100 = 3/4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:132",
+      "type": "qcm_unique",
+      "enonce": "36 élèves sur 120 portent des lunettes. Quel pourcentage cela représente-t-il ?",
+      "propositions": [
+        "36 %",
+        "12 %",
+        "33,3 %",
+        "30 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "36/120 = 3/10 = 0,3, soit 30 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Calcule le coefficient directeur de la droite passant par A(1 ; 2) et B(4 ; 11).",
+      "propositions": [
+        "3",
+        "9",
+        "1/3",
+        "2,6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "m = (11 − 2)/(4 − 1) = 9/3 = 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Que vaut y = 2x − 5 pour x = 6 ?",
+      "propositions": [
+        "17",
+        "7",
+        "1",
+        "−7"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "2 × 6 − 5 = 12 − 5 = 7.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Quel est le milieu du segment [AB] avec A(2 ; 8) et B(6 ; 4) ?",
+      "propositions": [
+        "(8 ; 12)",
+        "(2 ; −2)",
+        "(4 ; 6)",
+        "(4 ; 2)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "((2 + 6)/2 ; (8 + 4)/2) = (4 ; 6) : c'est aussi le point moyen de A et B.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Un prix passe de 50 € à 60 €. Quel est le taux d'évolution ?",
+      "propositions": [
+        "+10 %",
+        "+16,7 %",
+        "+60 %",
+        "+20 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(60 − 50)/50 = 10/50 = 0,2, soit +20 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Calcule 3/5 de 40.",
+      "propositions": [
+        "24",
+        "8",
+        "15",
+        "120"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "40/5 = 8, puis 8 × 3 = 24.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la médiane de la série 1 ; 4 ; 4 ; 7 ; 9 ; 10 ?",
+      "propositions": [
+        "4",
+        "5,5",
+        "7",
+        "5,83"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "6 valeurs : (4 + 7)/2 = 11/2 = 5,5.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:139",
+      "type": "qcm_unique",
+      "enonce": "La droite y = 0,5x + 4 coupe l'axe des abscisses en quel point ?",
+      "propositions": [
+        "x = 8",
+        "x = −2",
+        "x = −8",
+        "x = 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0,5x + 4 = 0 donne 0,5x = −4, x = −8.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:140",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures sont égales à 25 % ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,25",
+        "1/4",
+        "25/100",
+        "2,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "25 % = 25/100 = 0,25 = 1/4 ; 2,5 vaut 250 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,2 × 450 = 90",
+        "45/300 = 0,15",
+        "0,3 × 360 = 108",
+        "12/48 = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0,2 × 450 = 90 ; 45/300 = 15/100 = 0,15 ; 0,3 × 360 = 108 ; 12/48 = 1/4 = 0,25, pas 0,4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Le point A(2 ; 7) appartient à quelles droites ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "y = 3x + 1",
+        "y = x + 5",
+        "y = 2x + 7",
+        "y = −x + 9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "3 × 2 + 1 = 7 ; 2 + 5 = 7 ; 2 × 2 + 7 = 11 ≠ 7 ; −2 + 9 = 7.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "On considère la série 2 ; 2 ; 5 ; 7 ; 9. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa moyenne vaut 5.",
+        "Sa médiane vaut 5.",
+        "Son étendue vaut 7.",
+        "Sa moyenne vaut 7."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Somme 25, moyenne 25/5 = 5 ; médiane : 3e valeur, 5 ; étendue : 9 − 2 = 7.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:144",
+      "type": "vrai_faux",
+      "enonce": "20 % de 80 est égal à 80 % de 20.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "0,2 × 80 = 16 et 0,8 × 20 = 16 : les deux valent 16.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Une hausse de 10 % suivie d'une baisse de 10 % ramène un prix à sa valeur de départ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Coefficient global : 1,1 × 0,9 = 0,99, soit une baisse de 1 %.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:146",
+      "type": "vrai_faux",
+      "enonce": "La moyenne de 0,5 et 1,5 est égale à 2.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "(0,5 + 1,5)/2 = 2/2 = 1, pas 2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Calcule 25 % de 360. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "90"
+      ],
+      "difficulte": 1,
+      "explication": "25 % = 1/4 ; 360/4 = 90.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Quelle fraction de 360° représente un angle de 45° ? Réponds par une fraction irréductible ou un nombre décimal.",
+      "reponses_acceptees": [
+        "1/8",
+        "0.125"
+      ],
+      "difficulte": 2,
+      "explication": "45/360 = 1/8 = 0,125.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Calcule la moyenne de −3 ; 1 ; 5 ; 9. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 2,
+      "explication": "Somme : −3 + 1 + 5 + 9 = 12 ; moyenne : 12/4 = 3.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch4:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Que vaut y = −4x + 10 pour x = 3 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-2",
+        "−2"
+      ],
+      "difficulte": 3,
+      "explication": "−4 × 3 + 10 = −12 + 10 = −2.",
+      "notion": "Automatismes"
+    }
+  ]
+}

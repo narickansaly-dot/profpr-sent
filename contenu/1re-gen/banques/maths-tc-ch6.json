@@ -1,0 +1,2288 @@
+{
+  "chapitre": 6,
+  "notions": [
+    "Automatismes",
+    "Épreuve de Bernoulli",
+    "Arbre et indépendance",
+    "Probabilité d'un chemin",
+    "Nombre de succès",
+    "Au moins un succès",
+    "Tirages avec ou sans remise",
+    "Simulation et grands nombres",
+    "Jeux historiques"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch6:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Calcule 0,5³ de tête.",
+      "propositions": [
+        "1,5",
+        "0,25",
+        "0,0125",
+        "0,125"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "0,5³ = 0,5 × 0,5 × 0,5 = 0,25 × 0,5 = 0,125. Ce n'est pas 3 × 0,5 = 1,5.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut le produit 0,2 × 0,2 × 0,2 ?",
+      "propositions": [
+        "0,6",
+        "0,08",
+        "0,008",
+        "0,0008"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "0,2 × 0,2 = 0,04, puis 0,04 × 0,2 = 0,008 (2 × 2 × 2 = 8, et trois chiffres après la virgule).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur de 1 − 0,35 ?",
+      "propositions": [
+        "0,75",
+        "0,65",
+        "0,35",
+        "1,35"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "1 − 0,35 = 0,65 : c'est le calcul de la probabilité d'un événement contraire.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'écriture décimale de la fraction 3/8 ?",
+      "propositions": [
+        "0,375",
+        "0,38",
+        "2,666…",
+        "0,83"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "1/8 = 0,125, donc 3/8 = 3 × 0,125 = 0,375.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quel est le résultat de 0,9 × 0,9 ?",
+      "propositions": [
+        "1,8",
+        "0,81",
+        "0,18",
+        "8,1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "9 × 9 = 81 et il faut deux chiffres après la virgule : 0,9 × 0,9 = 0,81. 1,8 serait 0,9 + 0,9.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Que vaut (1/4)² ?",
+      "propositions": [
+        "1/8",
+        "2/4",
+        "1/16",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(1/4)² = 1/4 × 1/4 = 1/(4 × 4) = 1/16. On ne multiplie pas par 2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Que vaut le carré de la fraction 5/6 ?",
+      "propositions": [
+        "10/12",
+        "25/6",
+        "5/36",
+        "25/36"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(5/6)² = (5 × 5)/(6 × 6) = 25/36 : on élève au carré le numérateur et le dénominateur.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Combien vaut 2⁴ ?",
+      "propositions": [
+        "16",
+        "8",
+        "6",
+        "32"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "2⁴ = 2 × 2 × 2 × 2 = 16. C'est le nombre de chemins d'un arbre de 4 épreuves à deux issues.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Calcule 1 − 0,8².",
+      "propositions": [
+        "0,36",
+        "0,2",
+        "0,04",
+        "0,64"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "On calcule d'abord la puissance : 0,8² = 0,64, puis 1 − 0,64 = 0,36. Attention, ce n'est pas (1 − 0,8)² = 0,04.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quelle fraction est égale au nombre décimal 0,0625 ?",
+      "propositions": [
+        "1/8",
+        "1/16",
+        "6/25",
+        "625/100"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "1/16 = 1/2 × 1/8 = 0,125/2 = 0,0625. On a aussi 0,0625 = (1/2)⁴.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles sont égales à 1/4 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,25",
+        "25 %",
+        "0,4",
+        "2/8",
+        "1,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1/4 = 0,25 = 25/100 = 25 % et 2/8 = 1/4 en simplifiant par 2. En revanche 0,4 = 2/5 et 1,4 > 1.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités, lesquelles sont vraies ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,1³ = 0,001",
+        "0,3² = 0,9",
+        "0,5² = 0,25",
+        "0,2³ = 0,6"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "0,1³ = 0,001 et 0,5² = 0,25 sont justes. Mais 0,3² = 0,09 (et non 0,9) et 0,2³ = 0,008 (et non 3 × 0,2 = 0,6).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "On donne P(A) = 0,3. Quelles écritures sont égales à P(Ā), la probabilité de l'événement contraire ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,7",
+        "1 − 0,3",
+        "7/10",
+        "0,3 − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "P(Ā) = 1 − P(A) = 1 − 0,3 = 0,7 = 7/10. L'écriture 0,3 − 1 donne −0,7 : une probabilité n'est jamais négative.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Le produit 0,1 × 0,1 × 0,1 × 0,1 est égal à 0,0001.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "0,1⁴ : on multiplie 1 × 1 × 1 × 1 = 1 et on place quatre chiffres après la virgule, donc 0,0001.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Le carré de 0,6 vaut 3,6.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "0,6² = 0,6 × 0,6 = 0,36 (6 × 6 = 36, deux chiffres après la virgule). 3,6 est faux.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:016",
+      "type": "vrai_faux",
+      "enonce": "La fraction 9/64 est inférieure à 0,15.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "0,15 × 64 = 9,6, donc 0,15 = 9,6/64 > 9/64. En effet 9/64 ≈ 0,14.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Le produit 0,4 × 0,6 vaut 0,024.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "4 × 6 = 24 et il y a deux chiffres après la virgule en tout : 0,4 × 0,6 = 0,24, pas 0,024.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:018",
+      "type": "reponse_courte",
+      "enonce": "Calcule 0,3 × 0,7 de tête. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,21"
+      ],
+      "difficulte": 1,
+      "explication": "3 × 7 = 21, avec deux chiffres après la virgule : 0,3 × 0,7 = 0,21.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Calcule 1 − 0,9³ sans calculatrice. Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,271"
+      ],
+      "difficulte": 2,
+      "explication": "0,9² = 0,81, puis 0,9³ = 0,81 × 0,9 = 0,729. Enfin 1 − 0,729 = 0,271.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:020",
+      "type": "reponse_courte",
+      "enonce": "Écris la fraction 1/8 sous forme décimale. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "0,125"
+      ],
+      "difficulte": 1,
+      "explication": "1/8 = 1/2 × 1/2 × 1/2 = 0,5³ = 0,125.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch6:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on une épreuve de Bernoulli ?",
+      "propositions": [
+        "Une expérience aléatoire dont toutes les issues, quel que soit leur nombre, sont équiprobables",
+        "Une expérience que l'on répète exactement deux fois de suite",
+        "Une expérience aléatoire à deux issues : succès ou échec",
+        "Une expérience dont la probabilité de succès vaut toujours 1/2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une épreuve de Bernoulli n'a que deux issues : le succès (probabilité p) et l'échec (probabilité 1 − p). p n'est pas forcément 1/2.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:022",
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. Le succès est « obtenir 6 ». Quelle est la probabilité p du succès ?",
+      "propositions": [
+        "1/2",
+        "5/6",
+        "6",
+        "1/6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une seule face sur 6 équiprobables donne 6 : p = 1/6. 5/6 est la probabilité de l'échec.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Un joueur réussit un penalty avec une probabilité de 0,85. On appelle succès « marquer ». Quelle est la probabilité de l'échec ?",
+      "propositions": [
+        "0,85",
+        "1,85",
+        "0,5",
+        "0,15"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Probabilité de l'échec = 1 − p = 1 − 0,85 = 0,15.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:024",
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. Le succès est « obtenir un multiple de 3 ». Que vaut p ?",
+      "propositions": [
+        "1/2",
+        "1/3",
+        "1/6",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Les multiples de 3 entre 1 et 6 sont 3 et 6 : 2 issues sur 6, donc p = 2/6 = 1/3.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges et 7 boules noires. On tire une boule au hasard ; le succès est « la boule est rouge ». Que vaut p ?",
+      "propositions": [
+        "0,3",
+        "3/7",
+        "0,7",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Il y a 3 boules rouges sur 10 boules en tout : p = 3/10 = 0,3. 3/7 compare les rouges aux noires, pas au total.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Un élève répond au hasard à une question de QCM qui a 4 propositions dont une seule est juste. Quelle est la probabilité qu'il réponde juste ?",
+      "propositions": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "3/4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Une proposition juste sur 4 équiprobables : p = 1/4. Juste ou faux ne sont pas équiprobables.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Dans une épreuve de Bernoulli, la probabilité de l'échec est le triple de celle du succès. Que vaut p ?",
+      "propositions": [
+        "1/3",
+        "0,75",
+        "0,25",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "p + 3p = 1, donc 4p = 1 et p = 0,25. L'échec a alors la probabilité 0,75.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Une roue de loterie est partagée en 8 secteurs égaux : 2 sont rouges, 1 est doré, les autres sont blancs. Le succès est « la roue s'arrête sur un secteur rouge ou doré ». Quelle est la probabilité de l'échec ?",
+      "propositions": [
+        "3/8",
+        "5/8",
+        "1/8",
+        "1/4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Succès : 2 + 1 = 3 secteurs sur 8, donc p = 3/8. Échec : 1 − 3/8 = 5/8 (les 5 secteurs blancs).",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Dans quelles situations a-t-on une épreuve de Bernoulli de paramètre p = 1/2 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Lancer une pièce équilibrée, succès : « pile »",
+        "Lancer un dé équilibré, succès : « obtenir un nombre pair »",
+        "Lancer un dé équilibré, succès : « obtenir 6 »",
+        "Tirer une carte dans un jeu de 32 cartes, succès : « carte rouge »",
+        "Tirer une boule dans une urne de 2 boules blanches et 3 noires, succès : « blanche »"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pièce : p = 1/2. Nombre pair : 3 faces sur 6, p = 1/2. Carte rouge : 16 sur 32, p = 1/2. Mais « obtenir 6 » : p = 1/6, et boule blanche : p = 2/5.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "Pour une épreuve de Bernoulli de paramètre p, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité de l'échec vaut 1 − p",
+        "p est compris entre 0 et 1",
+        "p vaut forcément 1/2 puisqu'il y a deux issues",
+        "Le succès est toujours un événement agréable"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Succès et échec sont contraires : P(échec) = 1 − p, et p est une probabilité, donc entre 0 et 1. Les deux issues ne sont pas forcément équiprobables, et « succès » n'est qu'un nom.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "Un test de dépistage est positif chez 2 % des personnes testées. On choisit une personne testée au hasard ; le succès est « le test est positif ». Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "p = 0,02",
+        "La probabilité de l'échec est 0,98",
+        "p = 2",
+        "La probabilité de l'échec est 0,8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "2 % = 2/100 = 0,02, donc p = 0,02 et P(échec) = 1 − 0,02 = 0,98. Une probabilité ne vaut jamais 2.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:032",
+      "type": "vrai_faux",
+      "enonce": "Une épreuve de Bernoulli a forcément une probabilité de succès égale à 0,5.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Deux issues ne sont pas forcément équiprobables : pour « obtenir 6 » avec un dé, p = 1/6.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Si la probabilité du succès d'une épreuve de Bernoulli est 0,4, alors celle de l'échec est 0,6.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "P(échec) = 1 − p = 1 − 0,4 = 0,6.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Dans une épreuve de Bernoulli, le mot « succès » peut désigner un événement désagréable, comme « tomber malade ».",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Le succès est simplement l'issue que l'on choisit d'étudier ; dans une étude médicale, ce peut être « tomber malade ».",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:035",
+      "type": "reponse_courte",
+      "enonce": "Une épreuve de Bernoulli a une probabilité d'échec égale à 0,72. Quelle est la probabilité p du succès ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,28"
+      ],
+      "difficulte": 2,
+      "explication": "p = 1 − P(échec) = 1 − 0,72 = 0,28.",
+      "notion": "Épreuve de Bernoulli"
+    },
+    {
+      "source": "maths-tc:ch6:banque:036",
+      "type": "qcm_unique",
+      "enonce": "On lance 2 fois une pièce équilibrée. Quelle est la probabilité de chacun des chemins de l'arbre ?",
+      "propositions": [
+        "1/4",
+        "1/2",
+        "1/8",
+        "1/16"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Chaque chemin a deux branches de probabilité 1/2 : 1/2 × 1/2 = 1/4. Les 4 chemins ont bien pour somme 1.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Combien de chemins a l'arbre qui représente 4 lancers successifs d'une pièce (pile ou face à chaque lancer) ?",
+      "propositions": [
+        "8",
+        "4",
+        "32",
+        "16"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Chaque lancer double le nombre de chemins : 2 × 2 × 2 × 2 = 2⁴ = 16.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:038",
+      "type": "qcm_unique",
+      "enonce": "On répète des épreuves de Bernoulli identiques et indépendantes de paramètre p = 0,3. Quelle probabilité porte chaque branche « échec » de l'arbre ?",
+      "propositions": [
+        "0,3",
+        "1,3",
+        "0,7",
+        "0,49"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Chaque branche « échec » porte 1 − p = 1 − 0,3 = 0,7, à tous les niveaux de l'arbre.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Que signifie l'expression « les épreuves sont indépendantes » ?",
+      "propositions": [
+        "Les épreuves ont toutes la même probabilité de succès, quel que soit leur ordre",
+        "Le résultat d'une épreuve ne change pas les probabilités des suivantes",
+        "Chaque épreuve donne obligatoirement un succès puis un échec",
+        "On ne peut pas représenter ces épreuves sur un même arbre"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Indépendantes : ce qui se passe à une épreuve n'influence pas les suivantes. « Même probabilité de succès » correspond au mot « identiques ».",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Une pièce équilibrée vient de tomber 5 fois de suite sur pile. Quelle est la probabilité qu'elle tombe sur pile au 6e lancer ?",
+      "propositions": [
+        "Moins de 1/2, car face doit compenser",
+        "Plus de 1/2, car pile est en série",
+        "(1/2)⁶",
+        "1/2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Les lancers sont indépendants : la pièce n'a pas de mémoire. P(pile) = 1/2 à chaque lancer. (1/2)⁶ serait la probabilité de 6 « pile » de suite avant de commencer.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Dans l'arbre de 2 épreuves identiques et indépendantes de paramètre p = 0,6, combien vaut la somme des probabilités des 4 chemins ?",
+      "propositions": [
+        "1",
+        "2",
+        "0,6",
+        "2,4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les chemins décrivent toutes les issues : 0,36 + 0,24 + 0,24 + 0,16 = 1.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Un basketteur réussit chaque lancer franc avec une probabilité de 0,6, de façon indépendante. Il en tire 2. Quel chemin de l'arbre a pour probabilité 0,24 ?",
+      "propositions": [
+        "Réussite puis réussite",
+        "Échec puis échec",
+        "Aucun chemin de l'arbre",
+        "Échec puis réussite"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Échec puis réussite : 0,4 × 0,6 = 0,24. Réussite puis réussite : 0,6² = 0,36 ; échec puis échec : 0,4² = 0,16.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:043",
+      "type": "qcm_unique",
+      "enonce": "On répète 3 fois, de façon indépendante, une épreuve de Bernoulli. Combien de branches l'arbre complet compte-t-il au total, tous niveaux confondus ?",
+      "propositions": [
+        "8",
+        "6",
+        "14",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Premier niveau : 2 branches ; deuxième : 4 ; troisième : 8. Total : 2 + 4 + 8 = 14 branches (pour 8 chemins).",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:044",
+      "type": "qcm_unique",
+      "enonce": "On choisit au hasard 3 personnes en France, où 12 % des habitants sont gauchers. Pourquoi peut-on modéliser ce choix par 3 épreuves indépendantes de paramètre 0,12 ?",
+      "propositions": [
+        "Parce qu'une personne est soit gauchère, soit droitière, et qu'il n'y a donc que deux issues possibles",
+        "Parce que la population est si grande que retirer une personne ne change presque pas la proportion",
+        "Parce que la probabilité 0,12 reste nettement inférieure à 0,5 lors de chacun des trois choix",
+        "Parce que l'on choisit exactement 3 personnes et que 3 est inférieur à 4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le choix se fait sans remise, mais parmi des millions de personnes : la proportion de gauchers reste pratiquement 0,12 à chaque choix, comme avec remise.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "On lance 2 fois de suite un dé équilibré ; le succès est « obtenir 6 ». Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'arbre a 4 chemins",
+        "Chaque branche « succès » porte 1/6",
+        "Chaque branche « échec » porte 1/6",
+        "Les deux lancers sont indépendants"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "2 épreuves : 2² = 4 chemins. Succès : 1/6 ; échec : 1 − 1/6 = 5/6. Le premier lancer n'influence pas le second.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "Quelles situations peut-on modéliser par une répétition d'épreuves de Bernoulli identiques et indépendantes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Lancer 3 fois une pièce et compter les « pile »",
+        "Tirer 2 boules avec remise dans une urne et compter les boules rouges",
+        "Tirer 2 boules sans remise dans une urne de 5 boules et compter les rouges",
+        "Tirer 4 fois une carte avec remise et compter les cœurs"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Lancers et tirages avec remise : la probabilité ne change pas d'une épreuve à l'autre. Sans remise dans une petite urne, la composition change : les tirages ne sont pas indépendants.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "Un arbre représente 2 épreuves de Bernoulli identiques et indépendantes de paramètre p. Quelles règles s'appliquent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les deux branches issues d'un même nœud ont pour somme 1",
+        "La probabilité d'un chemin est le produit des probabilités de ses branches",
+        "La probabilité d'un chemin est la somme des probabilités de ses branches",
+        "Les branches du deuxième niveau portent les mêmes probabilités que celles du premier"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "p + (1 − p) = 1 à chaque nœud ; on multiplie le long d'un chemin ; épreuves identiques et indépendantes : p et 1 − p à chaque niveau. On n'additionne pas le long d'un chemin.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "Un archer touche la cible avec une probabilité de 0,9 à chaque tir, de façon indépendante. Il tire 2 flèches. Quelles probabilités de chemins sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(touché, touché) = 0,81",
+        "P(touché, manqué) = 0,09",
+        "P(manqué, manqué) = 0,01",
+        "P(manqué, touché) = 0,9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "0,9 × 0,9 = 0,81 ; 0,9 × 0,1 = 0,09 ; 0,1 × 0,1 = 0,01 ; et P(manqué, touché) = 0,1 × 0,9 = 0,09, pas 0,9.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Avec 2 épreuves de Bernoulli identiques et indépendantes, l'arbre complet compte 4 chemins.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "2² = 4 chemins : SS, SE, ES et EE.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:050",
+      "type": "vrai_faux",
+      "enonce": "Après une longue série de « face », une pièce équilibrée a plus de chances de tomber sur « pile » au lancer suivant.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Les lancers sont indépendants : la probabilité de « pile » reste 1/2. Le hasard ne compense pas.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:051",
+      "type": "vrai_faux",
+      "enonce": "Dans l'arbre de 3 épreuves de Bernoulli identiques et indépendantes, toutes les branches « succès » portent la même probabilité p.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Épreuves identiques : même p à chaque épreuve ; indépendantes : p ne dépend pas des résultats précédents.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:052",
+      "type": "vrai_faux",
+      "enonce": "Si l'on lance 4 fois une pièce équilibrée, les 16 chemins de l'arbre n'ont pas tous la même probabilité.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Chaque chemin est un produit de quatre facteurs égaux à 1/2 : (1/2)⁴ = 1/16 pour les 16 chemins, qui sont donc équiprobables.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:053",
+      "type": "reponse_courte",
+      "enonce": "On lance 3 fois de suite un dé équilibré et l'on note à chaque fois si l'on obtient 6 ou non. Combien de chemins compte l'arbre ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "8"
+      ],
+      "difficulte": 1,
+      "explication": "Deux issues à chaque lancer (6 ou pas 6) : 2 × 2 × 2 = 2³ = 8 chemins.",
+      "notion": "Arbre et indépendance"
+    },
+    {
+      "source": "maths-tc:ch6:banque:054",
+      "type": "qcm_unique",
+      "enonce": "On répète 3 épreuves de Bernoulli identiques et indépendantes de paramètre p = 0,5. Quelle est la probabilité du chemin SSE (succès, succès, échec) ?",
+      "propositions": [
+        "0,125",
+        "0,25",
+        "1,5",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "On multiplie les branches : 0,5 × 0,5 × 0,5 = 0,125.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Un tireur réussit chaque tir avec une probabilité de 0,8, de façon indépendante. Quelle est la probabilité qu'il réussisse ses 2 tirs ?",
+      "propositions": [
+        "1,6",
+        "0,8",
+        "0,16",
+        "0,64"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Chemin « réussi, réussi » : 0,8 × 0,8 = 0,64. On multiplie, on n'additionne pas (1,6 > 1 est impossible).",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:056",
+      "type": "qcm_unique",
+      "enonce": "On lance 2 fois un dé équilibré. Quelle est la probabilité d'obtenir 6 au premier lancer et pas 6 au second ?",
+      "propositions": [
+        "1/36",
+        "10/36",
+        "5/36",
+        "1/6"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Un seul chemin : 1/6 × 5/6 = 5/36. 10/36 correspond à « exactement un 6 », dans n'importe quel ordre.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Avec p = 0,1 et 3 épreuves indépendantes et identiques, quelle est la probabilité du chemin ESE ?",
+      "propositions": [
+        "0,009",
+        "0,081",
+        "0,09",
+        "0,729"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P(ESE) = 0,9 × 0,1 × 0,9 = 0,81 × 0,1 = 0,081.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Pour 4 épreuves identiques et indépendantes de paramètre p, quelle expression donne la probabilité du chemin SESS ?",
+      "propositions": [
+        "p³(1 − p)",
+        "3p(1 − p)",
+        "p³ + (1 − p)",
+        "4p³(1 − p)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le chemin contient 3 succès et 1 échec : p × (1 − p) × p × p = p³(1 − p). Le facteur 4 servirait pour « exactement 3 succès », pas pour un seul chemin.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Pour 3 épreuves de Bernoulli identiques et indépendantes de paramètre p, quelle est la probabilité du chemin EEE ?",
+      "propositions": [
+        "1 − p³",
+        "3(1 − p)",
+        "1 − 3p",
+        "(1 − p)³"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Trois branches « échec » de probabilité 1 − p : (1 − p) × (1 − p) × (1 − p) = (1 − p)³.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Un cycliste trouve chaque feu vert avec une probabilité de 0,4, sinon rouge. Il passe 3 feux réglés de façon indépendante. Quelle est la probabilité qu'il trouve le premier feu rouge et les deux suivants verts ?",
+      "propositions": [
+        "0,096",
+        "0,064",
+        "0,24",
+        "0,144"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Chemin rouge, vert, vert : 0,6 × 0,4 × 0,4 = 0,6 × 0,16 = 0,096.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Pour 2 épreuves identiques et indépendantes, le chemin SS a pour probabilité 0,49. Que vaut p ?",
+      "propositions": [
+        "0,245",
+        "0,7",
+        "0,51",
+        "0,07"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "P(SS) = p² = 0,49, et p est positif, donc p = 0,7 (car 0,7 × 0,7 = 0,49).",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Une pièce truquée tombe sur pile avec une probabilité de 0,6. On la lance 2 fois. Quelle est la probabilité d'obtenir face deux fois ?",
+      "propositions": [
+        "0,36",
+        "0,8",
+        "0,16",
+        "0,24"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "P(face) = 1 − 0,6 = 0,4, donc P(face, face) = 0,4 × 0,4 = 0,16. 0,36 est la probabilité de pile deux fois.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "On répète 2 épreuves indépendantes et identiques de paramètre p = 0,3. Quelles probabilités de chemins sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(SS) = 0,09",
+        "P(SE) = 0,21",
+        "P(EE) = 0,49",
+        "P(ES) = 0,7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "0,3 × 0,3 = 0,09 ; 0,3 × 0,7 = 0,21 ; 0,7 × 0,7 = 0,49 ; et P(ES) = 0,7 × 0,3 = 0,21, pas 0,7.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:064",
+      "type": "qcm_multiple",
+      "enonce": "Avec 3 épreuves de Bernoulli identiques et indépendantes de paramètre p, quels chemins ont pour probabilité p²(1 − p) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "SSE",
+        "SES",
+        "ESE",
+        "ESS",
+        "EEE"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "p²(1 − p) correspond aux chemins à 2 succès et 1 échec : SSE, SES et ESS. ESE a pour probabilité p(1 − p)² et EEE, (1 − p)³.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Pour 4 épreuves identiques et indépendantes de paramètre p = 0,5, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Chaque chemin a pour probabilité 0,0625",
+        "Le chemin SSSS est plus probable que le chemin SESE",
+        "La somme des probabilités des 16 chemins vaut 1",
+        "Le chemin EEEE a pour probabilité 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Chaque chemin vaut 0,5⁴ = 0,0625 = 1/16, donc tous sont équiprobables (SSSS autant que SESE, EEEE aussi) et 16 × 1/16 = 1.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:066",
+      "type": "qcm_multiple",
+      "enonce": "Avec p = 0,2 et 3 épreuves identiques et indépendantes, quels chemins ont pour probabilité 0,032 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "SSE",
+        "SEE",
+        "ESS",
+        "SES",
+        "EEE"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "0,2² × 0,8 = 0,04 × 0,8 = 0,032 : ce sont les chemins à 2 succès (SSE, ESS, SES). SEE vaut 0,2 × 0,64 = 0,128 et EEE vaut 0,512.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:067",
+      "type": "vrai_faux",
+      "enonce": "Avec p = 0,5, le chemin « succès, succès » de l'arbre de 2 épreuves indépendantes a pour probabilité 0,25.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "0,5 × 0,5 = 0,25.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:068",
+      "type": "vrai_faux",
+      "enonce": "Pour 3 épreuves identiques et indépendantes, les chemins SSE et ESS ont des probabilités différentes, car l'ordre des succès n'est pas le même.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "P(SSE) = p × p × (1 − p) et P(ESS) = (1 − p) × p × p : le produit ne dépend pas de l'ordre, les deux valent p²(1 − p).",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:069",
+      "type": "vrai_faux",
+      "enonce": "Pour 2 épreuves indépendantes de paramètre p = 0,1, le chemin « échec, échec » a pour probabilité 0,01.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Chaque échec a la probabilité 1 − 0,1 = 0,9 : P(EE) = 0,9 × 0,9 = 0,81. 0,01 est la probabilité de SS.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:070",
+      "type": "reponse_courte",
+      "enonce": "Une graine germe avec une probabilité de 0,9. On sème 2 graines qui germent indépendamment l'une de l'autre. Quelle est la probabilité que les 2 graines germent ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,81"
+      ],
+      "difficulte": 1,
+      "explication": "Chemin « germe, germe » : 0,9 × 0,9 = 0,81.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:071",
+      "type": "reponse_courte",
+      "enonce": "On répète 4 épreuves identiques et indépendantes de paramètre p = 0,5. Quelle est la probabilité du chemin ESSE ? Réponds par une fraction ou un nombre décimal.",
+      "reponses_acceptees": [
+        "1/16",
+        "0,0625"
+      ],
+      "difficulte": 3,
+      "explication": "Quatre branches de probabilité 0,5 : 0,5⁴ = 1/16 = 0,0625.",
+      "notion": "Probabilité d'un chemin"
+    },
+    {
+      "source": "maths-tc:ch6:banque:072",
+      "type": "qcm_unique",
+      "enonce": "On lance 3 fois une pièce. Combien de chemins de l'arbre comportent exactement 1 « pile » ?",
+      "propositions": [
+        "3",
+        "1",
+        "2",
+        "8"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le « pile » peut être au 1er, au 2e ou au 3e lancer : PFF, FPF, FFP. Il y a 3 chemins.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:073",
+      "type": "qcm_unique",
+      "enonce": "On répète 2 épreuves de Bernoulli identiques et indépendantes. Combien de chemins comportent exactement 1 succès ?",
+      "propositions": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les chemins SE et ES contiennent exactement 1 succès : il y en a 2.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Pour 4 épreuves de Bernoulli identiques et indépendantes, combien de chemins comportent exactement 2 succès ?",
+      "propositions": [
+        "4",
+        "8",
+        "6",
+        "2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "SSEE, SESE, SEES, ESSE, ESES, EESS : 6 chemins (ligne 1, 4, 6, 4, 1 du tableau des chemins).",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Un basketteur tente 4 lancers francs indépendants. Combien de chemins de l'arbre correspondent à exactement 3 paniers réussis ?",
+      "propositions": [
+        "3",
+        "4",
+        "6",
+        "12"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Exactement 3 réussites, c'est exactement 1 échec, qui peut être au 1er, 2e, 3e ou 4e lancer : 4 chemins.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:076",
+      "type": "qcm_unique",
+      "enonce": "On lance 3 fois une pièce équilibrée. Quelle est la probabilité d'obtenir exactement 2 « pile » ?",
+      "propositions": [
+        "1/8",
+        "3/8",
+        "2/8",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "3 chemins (PPF, PFP, FPP), chacun de probabilité (1/2)³ = 1/8 : P = 3 × 1/8 = 3/8.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:077",
+      "type": "qcm_unique",
+      "enonce": "On lance 2 fois un dé équilibré. Quelle est la probabilité d'obtenir exactement un 6 ?",
+      "propositions": [
+        "1/6",
+        "5/36",
+        "10/36",
+        "2/6"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "2 chemins (6 puis autre, autre puis 6), chacun de probabilité 1/6 × 5/6 = 5/36 : P = 2 × 5/36 = 10/36.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Un élève répond au hasard aux 3 questions d'un QCM ; chaque question a 4 propositions dont une seule juste. Quelle est la probabilité qu'il ait exactement 2 bonnes réponses ?",
+      "propositions": [
+        "3/64",
+        "1/16",
+        "27/64",
+        "9/64"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "p = 1/4. Un chemin à 2 bonnes réponses : (1/4)² × 3/4 = 3/64. Il y a 3 tels chemins : 3 × 3/64 = 9/64.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Un joueur réussit un penalty avec une probabilité de 0,8. Il en tire 3, de façon indépendante. Quelle est la probabilité qu'il en réussisse exactement 2 ?",
+      "propositions": [
+        "0,384",
+        "0,128",
+        "0,64",
+        "0,512"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Un chemin à 2 réussites : 0,8² × 0,2 = 0,64 × 0,2 = 0,128. Il y a 3 chemins : 3 × 0,128 = 0,384.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Avec p = 0,1 et 3 épreuves identiques et indépendantes, quelle est la probabilité d'obtenir exactement 1 succès ?",
+      "propositions": [
+        "0,081",
+        "0,3",
+        "0,729",
+        "0,243"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Un chemin à 1 succès : 0,1 × 0,9² = 0,1 × 0,81 = 0,081. 3 chemins (SEE, ESE, EES) : 3 × 0,081 = 0,243.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:081",
+      "type": "qcm_unique",
+      "enonce": "On lance 4 fois une pièce équilibrée. Quelle est la probabilité d'obtenir autant de « pile » que de « face » ?",
+      "propositions": [
+        "3/8",
+        "1/2",
+        "1/16",
+        "1/4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Autant de chaque : 2 « pile » et 2 « face ». 6 chemins de probabilité 1/16 : 6/16 = 3/8.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer la probabilité d'obtenir exactement 2 succès sur 3 épreuves, que faut-il faire après avoir calculé la probabilité d'un chemin à 2 succès ?",
+      "propositions": [
+        "L'élever au carré, puisqu'il y a exactement 2 succès",
+        "La multiplier par le nombre de chemins qui ont 2 succès",
+        "La soustraire à 1, pour passer à l'événement contraire",
+        "L'ajouter à p, la probabilité d'un succès isolé"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Tous les chemins à 2 succès ont la même probabilité p²(1 − p) ; on l'additionne autant de fois qu'il y a de chemins (3 ici), donc on multiplie par 3.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "On lance 3 fois une pièce équilibrée. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(aucun pile) = 1/8",
+        "P(exactement 1 pile) = 3/8",
+        "P(exactement 2 piles) = 1/4",
+        "P(3 piles) = 1/3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Chaque chemin vaut 1/8. Aucun pile : 1 chemin, 1/8. Un pile : 3 chemins, 3/8. Deux piles : 3 chemins, 3/8 (pas 1/4). Trois piles : 1 chemin, 1/8.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Pour 4 épreuves identiques et indépendantes, quels nombres de chemins sont exacts ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 chemin avec 0 succès",
+        "4 chemins avec 1 succès",
+        "4 chemins avec 2 succès",
+        "6 chemins avec 3 succès",
+        "1 chemin avec 4 succès"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Pour n = 4, les nombres de chemins à 0, 1, 2, 3, 4 succès sont 1, 4, 6, 4, 1 (total 16). Il y a 6 chemins à 2 succès et 4 à 3 succès.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "On répète 3 épreuves identiques et indépendantes de paramètre p = 0,5. Quelles probabilités sont égales à 1/2 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(au moins 2 succès)",
+        "P(au plus 1 succès)",
+        "P(exactement 1 succès)",
+        "P(au moins 1 succès)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Chemins de probabilité 1/8 ; nombres 1, 3, 3, 1. Au moins 2 : 3 + 1 = 4 chemins, 4/8 = 1/2. Au plus 1 : 1 + 3 = 4, 1/2. Exactement 1 : 3/8. Au moins 1 : 7/8.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Une joueuse tente deux tirs indépendants, chacun réussi avec une probabilité de 0,4. Quelles affirmations sur le nombre de tirs réussis sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(exactement 1 succès) = 0,48",
+        "P(exactement 1 succès) = 0,24",
+        "P(aucun succès) = 0,36",
+        "P(2 succès) = 0,8"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Un succès : 2 chemins de probabilité 0,4 × 0,6 = 0,24, donc 0,48. Aucun : 0,6² = 0,36. Deux : 0,4² = 0,16 (pas 0,8).",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Pour 3 épreuves identiques et indépendantes, il y a autant de chemins avec 1 succès que de chemins avec 2 succès.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Pour n = 3 : 3 chemins à 1 succès (SEE, ESE, EES) et 3 chemins à 2 succès (SSE, SES, ESS).",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:088",
+      "type": "vrai_faux",
+      "enonce": "Pour 3 épreuves identiques et indépendantes de paramètre p, la probabilité d'obtenir exactement 1 succès est p(1 − p)².",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "p(1 − p)² est la probabilité d'un seul chemin. Il y a 3 chemins à 1 succès : la bonne formule est 3p(1 − p)².",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Pour 4 épreuves identiques et indépendantes, les nombres de chemins avec 0, 1, 2, 3 et 4 succès ont pour somme 16.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "1 + 4 + 6 + 4 + 1 = 16 = 2⁴, le nombre total de chemins.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:090",
+      "type": "vrai_faux",
+      "enonce": "On lance 4 fois une pièce équilibrée : la probabilité d'obtenir exactement 2 « pile » vaut 1/2.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "6 chemins sur 16 équiprobables : 6/16 = 3/8 = 0,375, moins que 1/2.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:091",
+      "type": "reponse_courte",
+      "enonce": "Dans une famille de 3 enfants, on admet que chaque naissance donne une fille avec une probabilité de 1/2, indépendamment des autres. Quelle est la probabilité que la famille compte exactement 1 fille ? Réponds par une fraction ou un nombre décimal.",
+      "reponses_acceptees": [
+        "3/8",
+        "0,375"
+      ],
+      "difficulte": 2,
+      "explication": "3 chemins (FGG, GFG, GGF), chacun de probabilité (1/2)³ = 1/8 : 3/8 = 0,375.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:092",
+      "type": "reponse_courte",
+      "enonce": "Un vaccin protège une personne avec une probabilité de 0,9. On vaccine 4 personnes, protégées indépendamment. On admet que 0,9³ = 0,729. Quelle est la probabilité qu'exactement 3 de ces personnes soient protégées ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,2916"
+      ],
+      "difficulte": 3,
+      "explication": "Un chemin à 3 protégées et 1 non protégée : 0,9³ × 0,1 = 0,0729. Il y a 4 chemins : 4 × 0,0729 = 0,2916.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:093",
+      "type": "reponse_courte",
+      "enonce": "Pour 3 épreuves identiques et indépendantes, combien de chemins de l'arbre comportent exactement 2 échecs ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "explication": "2 échecs, c'est 1 succès : SEE, ESE, EES, soit 3 chemins.",
+      "notion": "Nombre de succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'événement contraire de « obtenir au moins un succès » ?",
+      "propositions": [
+        "Obtenir au moins un échec",
+        "Obtenir exactement un succès",
+        "N'obtenir aucun succès",
+        "Obtenir uniquement des succès"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "« Au moins un succès » est faux seulement si l'on n'a que des échecs : le contraire est « aucun succès ».",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:095",
+      "type": "qcm_unique",
+      "enonce": "On répète n épreuves identiques et indépendantes de paramètre p. Quelle formule donne P(au moins un succès) ?",
+      "propositions": [
+        "n × p",
+        "1 − pⁿ",
+        "(1 − p)ⁿ",
+        "1 − (1 − p)ⁿ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "P(aucun succès) = (1 − p)ⁿ (un seul chemin E…E), donc P(au moins un succès) = 1 − (1 − p)ⁿ. n × p peut dépasser 1.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:096",
+      "type": "qcm_unique",
+      "enonce": "On lance 2 fois une pièce équilibrée. Quelle est la probabilité d'obtenir au moins une fois « pile » ?",
+      "propositions": [
+        "1/2",
+        "3/4",
+        "1",
+        "1/4"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Contraire : aucun « pile », soit FF, de probabilité 1/4. Donc P = 1 − 1/4 = 3/4.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Trois amis jouent chacun une fois à pile ou face avec une pièce équilibrée. Quelle est la probabilité qu'au moins l'un d'eux obtienne « face » ?",
+      "propositions": [
+        "3/8",
+        "1/8",
+        "7/8",
+        "3/2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Contraire : les trois obtiennent « pile », probabilité (1/2)³ = 1/8. Donc P = 1 − 1/8 = 7/8.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Une alarme se déclenche lors d'une intrusion avec une probabilité de 0,9. On installe 2 alarmes qui fonctionnent indépendamment. Quelle est la probabilité qu'au moins une alarme se déclenche lors d'une intrusion ?",
+      "propositions": [
+        "0,99",
+        "0,81",
+        "1,8",
+        "0,9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Aucune ne se déclenche : 0,1 × 0,1 = 0,01. Donc P(au moins une) = 1 − 0,01 = 0,99. 0,81 est la probabilité que les deux se déclenchent.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:099",
+      "type": "qcm_unique",
+      "enonce": "On lance 2 fois un dé équilibré. Quelle est la probabilité d'obtenir au moins un 6 ?",
+      "propositions": [
+        "11/36",
+        "2/6",
+        "1/36",
+        "25/36"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "P(aucun 6) = (5/6)² = 25/36, donc P(au moins un 6) = 1 − 25/36 = 11/36. L'addition 1/6 + 1/6 = 12/36 est fausse.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:100",
+      "type": "qcm_unique",
+      "enonce": "On répète 4 épreuves identiques et indépendantes de paramètre p = 0,5. Quelle est la probabilité d'obtenir au moins un succès ?",
+      "propositions": [
+        "0,0625",
+        "0,5",
+        "1",
+        "0,9375"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "P(aucun succès) = 0,5⁴ = 0,0625, donc P(au moins un) = 1 − 0,0625 = 0,9375.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Chaque jour, un bus est en retard avec une probabilité de 0,2, indépendamment des autres jours. On admet que 0,8³ = 0,512. Quelle est la probabilité que le bus soit en retard au moins une fois sur 3 jours ?",
+      "propositions": [
+        "0,6",
+        "0,512",
+        "0,488",
+        "0,008"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "P(aucun retard) = 0,8³ = 0,512, donc P(au moins un retard) = 1 − 0,512 = 0,488. 0,6 = 3 × 0,2 vient d'une addition fautive.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Un élève dit : « Avec un dé, la probabilité de faire 6 est 1/6, donc en 6 lancers je suis sûr d'obtenir au moins un 6. » Où est son erreur ?",
+      "propositions": [
+        "Il oublie qu'un dé réel n'est jamais parfaitement équilibré",
+        "Il additionne les probabilités alors qu'il faut passer par l'événement contraire",
+        "Il faudrait en réalité 7 lancers pour être certain d'obtenir un 6",
+        "Il confond 1/6 avec 1/2, la probabilité d'obtenir un nombre pair"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "6 × 1/6 = 1 est faux : on peut ne jamais obtenir 6. Le bon calcul est 1 − (5/6)⁶, qui est inférieur à 1 ; aucun nombre de lancers ne donne la certitude.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "On répète 3 épreuves identiques et indépendantes de paramètre p. Quelles expressions sont égales à P(au moins un succès) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 − (1 − p)³",
+        "1 − P(aucun succès)",
+        "3p",
+        "1 − p³"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P(au moins un) = 1 − P(aucun succès) = 1 − (1 − p)³. 3p additionne à tort, et 1 − p³ est le contraire de « 3 succès ».",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Léo joue deux fois de suite à pile ou face avec une pièce bien équilibrée. Que peut-on affirmer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(au moins un pile) = 3/4",
+        "P(aucun pile) = 1/4",
+        "P(au moins un pile) = 1",
+        "P(au plus un pile) = 3/4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Aucun pile : FF, 1/4 ; au moins un pile : 1 − 1/4 = 3/4. Au plus un pile est le contraire de PP : 1 − 1/4 = 3/4.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "On répète 4 épreuves identiques et indépendantes de paramètre p = 0,1. On admet que 0,9⁴ = 0,6561. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(aucun succès) = 0,6561",
+        "P(au moins un succès) = 0,3439",
+        "P(au moins un succès) = 0,4",
+        "P(4 succès) = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Aucun succès : 0,9⁴ = 0,6561. Au moins un : 1 − 0,6561 = 0,3439. 0,4 = 4 × 0,1 est une addition fautive ; P(4 succès) = 0,1⁴ = 0,0001.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:106",
+      "type": "vrai_faux",
+      "enonce": "L'événement contraire de « au moins un succès » est « aucun succès ».",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Si l'on n'a pas au moins un succès, c'est qu'on n'en a aucun : un seul chemin, E…E.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:107",
+      "type": "vrai_faux",
+      "enonce": "En lançant 3 fois un dé équilibré, la probabilité d'obtenir au moins un 6 est 3/6.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "On n'additionne pas : P = 1 − (5/6)³ = 1 − 125/216 = 91/216, un peu moins que 1/2.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Pour 3 lancers indépendants d'une pièce équilibrée, P(au moins un pile) = 1 − 1/8 = 7/8.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "P(aucun pile) = (1/2)³ = 1/8, donc P(au moins un pile) = 1 − 1/8 = 7/8.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Si une épreuve a une probabilité de succès de 0,3, alors en 4 épreuves indépendantes on est certain d'obtenir au moins un succès, car 4 × 0,3 = 1,2 > 1.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Additionner les probabilités est faux. P(aucun succès) = 0,7⁴ = 0,2401 > 0 : P(au moins un succès) = 1 − 0,2401 = 0,7599, pas 1.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:110",
+      "type": "reponse_courte",
+      "enonce": "Un gardien arrête un tir avec une probabilité de 0,5. Il fait face à 3 tirs indépendants. Quelle est la probabilité qu'il arrête au moins un tir ? Réponds par une fraction ou un nombre décimal.",
+      "reponses_acceptees": [
+        "7/8",
+        "0,875"
+      ],
+      "difficulte": 2,
+      "explication": "P(aucun arrêt) = 0,5³ = 0,125, donc P(au moins un arrêt) = 1 − 0,125 = 0,875 = 7/8.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:111",
+      "type": "reponse_courte",
+      "enonce": "Une ampoule tombe en panne dans l'année avec une probabilité de 0,1. Une pièce est éclairée par 3 ampoules qui tombent en panne indépendamment. Quelle est la probabilité qu'au moins une ampoule tombe en panne dans l'année ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,271"
+      ],
+      "difficulte": 3,
+      "explication": "P(aucune panne) = 0,9³ = 0,729, donc P(au moins une panne) = 1 − 0,729 = 0,271.",
+      "notion": "Au moins un succès"
+    },
+    {
+      "source": "maths-tc:ch6:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 2 boules rouges et 3 boules vertes. On tire une boule, on la remet, puis on en tire une deuxième. Quelle est la probabilité que les deux boules soient rouges ?",
+      "propositions": [
+        "2/5",
+        "1/10",
+        "4/10",
+        "4/25"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Avec remise, l'urne est la même : 2/5 × 2/5 = 4/25. 1/10 serait le résultat sans remise (2/5 × 1/4).",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Un sac contient 2 jetons rouges et 3 jetons verts. On tire un jeton, on le garde, puis on en tire un second. Quelle est la probabilité d'obtenir deux jetons rouges ?",
+      "propositions": [
+        "1/10",
+        "4/25",
+        "2/9",
+        "1/5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Sans remise : 2/5 pour le premier, puis il reste 1 rouge sur 4 jetons, donc 1/4. P = 2/5 × 1/4 = 2/20 = 1/10.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi des tirages sans remise dans une petite urne ne sont-ils pas des épreuves indépendantes ?",
+      "propositions": [
+        "Parce que l'urne contient forcément plus de deux couleurs de boules",
+        "Parce que la composition de l'urne change après chaque tirage",
+        "Parce qu'il est impossible de les représenter par un arbre pondéré",
+        "Parce que la probabilité de succès vaut toujours 1/2 au premier tirage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Sans remise, la boule tirée n'est plus dans l'urne : les probabilités du tirage suivant dépendent du résultat du premier.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 4 boules : 1 noire et 3 blanches. On tire 2 boules sans remise. Quelle est la probabilité que la deuxième boule soit noire sachant que la première est blanche ?",
+      "propositions": [
+        "1/4",
+        "3/4",
+        "1/3",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Après avoir retiré une blanche, il reste 3 boules dont 1 noire : la probabilité vaut 1/3.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:116",
+      "type": "qcm_unique",
+      "enonce": "On tire simultanément 2 cartes dans un paquet. Quel modèle convient ?",
+      "propositions": [
+        "Deux tirages successifs avec remise",
+        "Deux tirages successifs sans remise",
+        "Une seule épreuve de Bernoulli",
+        "Deux épreuves indépendantes de paramètre 1/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Tirer simultanément, c'est garder la première carte : cela revient à deux tirages successifs sans remise.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges et 2 bleues. On tire 2 boules sans remise. Quelle est la probabilité d'obtenir une boule de chaque couleur ?",
+      "propositions": [
+        "0,48",
+        "0,3",
+        "0,24",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "RB : 3/5 × 2/4 = 6/20 ; BR : 2/5 × 3/4 = 6/20. Total 12/20 = 0,6. 0,48 serait le résultat avec remise.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Dans un jeu, on fait tourner 2 fois une roue partagée en 5 secteurs égaux : 3 jaunes et 2 bleus. Quelle est la probabilité d'obtenir une fois jaune et une fois bleu ?",
+      "propositions": [
+        "0,24",
+        "0,6",
+        "0,48",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "La roue ne change pas (comme un tirage avec remise) : JB et BJ valent chacun 0,6 × 0,4 = 0,24, total 0,48.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:119",
+      "type": "qcm_multiple",
+      "enonce": "Dans quelles situations les deux tirages sont-ils indépendants ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "On tire une boule, on la remet, puis on en tire une autre",
+        "On tire 2 boules en même temps dans une urne de 6 boules",
+        "On lance 2 fois le même dé",
+        "On distribue 2 cartes à un joueur dans un paquet de 32 cartes"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Avec remise et pour un dé, rien ne change entre les deux épreuves. Tirer 2 boules en même temps ou distribuer des cartes revient à tirer sans remise.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:120",
+      "type": "qcm_multiple",
+      "enonce": "Une urne contient 5 boules dont 2 rouges. On tire 2 boules sans remise. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité que la première boule soit rouge est 2/5",
+        "Si la première boule est rouge, la deuxième est rouge avec la probabilité 1/4",
+        "Si la première boule est rouge, la deuxième est rouge avec la probabilité 2/5",
+        "Les deux tirages sont indépendants"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Premier tirage : 2 rouges sur 5. Si une rouge est sortie, il reste 1 rouge sur 4 boules : 1/4. La probabilité change, donc les tirages ne sont pas indépendants.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:121",
+      "type": "qcm_multiple",
+      "enonce": "Une urne contient 1 boule rouge et 1 boule bleue. On tire 2 boules. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Avec remise, P(deux rouges) = 1/4",
+        "Sans remise, P(deux rouges) = 0",
+        "Sans remise, P(une boule de chaque couleur) = 1/2",
+        "Avec remise, P(une boule de chaque couleur) = 1/2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Avec remise : RR = 1/2 × 1/2 = 1/4 ; RB + BR = 1/4 + 1/4 = 1/2. Sans remise : il n'y a qu'une rouge, donc P(RR) = 0, et on a forcément une boule de chaque couleur : probabilité 1.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Des tirages successifs avec remise dans une même urne sont des épreuves indépendantes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La boule est remise : l'urne a la même composition à chaque tirage, les probabilités ne changent pas.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Avec ou sans remise, la probabilité de tirer deux boules rouges dans une urne est toujours la même.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Exemple : 3 rouges et 2 bleues. Avec remise : 3/5 × 3/5 = 0,36 ; sans remise : 3/5 × 2/4 = 0,3.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Choisir 3 personnes au hasard parmi les 68 millions d'habitants de la France peut être modélisé, avec une très bonne approximation, comme 3 tirages avec remise.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Retirer 1 ou 2 personnes parmi 68 millions ne change pratiquement pas les proportions : on assimile ce choix à des tirages avec remise.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:125",
+      "type": "reponse_courte",
+      "enonce": "Un sac contient 3 jetons gagnants et 7 perdants. On tire un jeton, on le remet, puis on en tire un autre. Quelle est la probabilité que les deux jetons soient gagnants ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,09"
+      ],
+      "difficulte": 1,
+      "explication": "Avec remise, p = 3/10 = 0,3 à chaque tirage : 0,3 × 0,3 = 0,09.",
+      "notion": "Tirages avec ou sans remise"
+    },
+    {
+      "source": "maths-tc:ch6:banque:126",
+      "type": "qcm_unique",
+      "enonce": "En Python, random() renvoie un nombre au hasard dans l'intervalle [0 ; 1[. Avec quelle probabilité le test random() < 0.3 est-il vrai ?",
+      "propositions": [
+        "0,3",
+        "0,7",
+        "0,5",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre tombe dans [0 ; 0,3[ avec une probabilité égale à la longueur de cet intervalle, 0,3 : ce test simule un succès de probabilité 0,3.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Que dit la loi des grands nombres ?",
+      "propositions": [
+        "Après une longue série d'échecs, un succès devient de plus en plus probable",
+        "Quelle que soit la taille de l'échantillon, la fréquence observée est égale à la probabilité",
+        "Plus on répète l'expérience, plus la probabilité du succès augmente",
+        "Quand le nombre de répétitions est grand, la fréquence observée est proche de la probabilité"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pour un grand nombre de répétitions indépendantes, la fréquence se rapproche (sauf exception) de la probabilité. La probabilité, elle, ne change pas, et le hasard ne compense pas.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Dans un tableur, quelle formule simule une épreuve de Bernoulli de paramètre 0,2 (1 pour un succès, 0 pour un échec) ?",
+      "propositions": [
+        "=SI(ALEA()>0,2;1;0)",
+        "=SI(ALEA()<0,2;1;0)",
+        "=ALEA()*0,2",
+        "=0,2*ALEA.ENTRE.BORNES(0;1)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "ALEA() est inférieur à 0,2 avec la probabilité 0,2 : la formule affiche alors 1. Avec « > 0,2 », la probabilité d'afficher 1 serait 0,8.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:129",
+      "type": "qcm_unique",
+      "enonce": "Deux élèves simulent chacun 100 lancers d'une pièce équilibrée. L'un obtient 46 « pile », l'autre 55. Comment s'appelle ce phénomène ?",
+      "propositions": [
+        "Une erreur de programmation",
+        "La loi des grands nombres",
+        "La fluctuation d'échantillonnage",
+        "L'indépendance des épreuves"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Deux échantillons de même taille donnent des fréquences différentes (0,46 et 0,55) : c'est la fluctuation d'échantillonnage, normale.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:130",
+      "type": "qcm_unique",
+      "enonce": "On simule 10 000 fois le lancer de 4 dés et l'on compte les parties où apparaît au moins un 6. Quelle fréquence est la plus vraisemblable ?",
+      "propositions": [
+        "0,52",
+        "0,25",
+        "0,67",
+        "0,97"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La probabilité vaut 1 − (5/6)⁴ = 671/1296 ≈ 0,518 ; avec 10 000 simulations, la fréquence en est proche. 0,67 = 4/6 vient d'une addition fautive.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Une fonction Python simule n lancers d'une pièce équilibrée et renvoie la fréquence des « pile ». Appelée avec n = 10 000, que renvoie-t-elle le plus probablement ?",
+      "propositions": [
+        "Exactement 0,5 à chaque appel",
+        "Un nombre proche de 0,5, différent à chaque appel",
+        "Un nombre proche de 5 000",
+        "Un nombre au hasard entre 0 et 10 000"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Elle renvoie une fréquence, donc un nombre entre 0 et 1 ; par la loi des grands nombres il est proche de 0,5, mais il fluctue d'un appel à l'autre. 5 000 serait le nombre de « pile », pas la fréquence.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Pour estimer la probabilité d'obtenir au moins deux « pile » en 4 lancers d'une pièce, on simule l'expérience. Quel choix donne l'estimation la plus fiable ?",
+      "propositions": [
+        "Simuler 10 000 séries de 4 lancers",
+        "Simuler 10 séries de 4 lancers",
+        "Simuler une seule série de 10 000 lancers",
+        "Simuler 4 séries de 10 lancers"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "L'expérience est une série de 4 lancers : il faut la répéter un grand nombre de fois. Avec 10 000 séries, la fluctuation est faible (la valeur exacte est 11/16 ≈ 0,69).",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "Quelles affirmations sur la simulation sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une simulation remplace l'expérience réelle par un tirage au hasard fait par un ordinateur",
+        "Deux simulations de même taille donnent en général des fréquences différentes",
+        "Une simulation donne la probabilité exacte",
+        "Une simulation n'a d'intérêt que pour 2 épreuves au plus"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Simuler, c'est faire tirer le hasard par la machine ; les résultats fluctuent. On obtient une estimation, pas la valeur exacte, et c'est justement utile quand le calcul est long.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:134",
+      "type": "qcm_multiple",
+      "enonce": "Quelles instructions simulent le lancer d'un dé équilibré à six faces ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "=ALEA.ENTRE.BORNES(1;6) dans un tableur",
+        "randint(1, 6) en Python",
+        "=ALEA()*6 dans un tableur",
+        "random() < 1/6 en Python"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "ALEA.ENTRE.BORNES(1;6) et randint(1, 6) donnent un entier au hasard de 1 à 6. ALEA()*6 donne un nombre à virgule ; random() < 1/6 simule seulement le succès « obtenir 6 ».",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:135",
+      "type": "qcm_multiple",
+      "enonce": "On simule 1 000 répétitions d'une épreuve de paramètre 0,3, puis 100 000. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Avec 100 000 répétitions, la fréquence des succès est très probablement proche de 0,3",
+        "Avec 1 000 répétitions, la fréquence vaut exactement 0,3",
+        "La fluctuation est en général plus faible avec 100 000 répétitions",
+        "Avec 100 000 répétitions, la fréquence est forcément supérieure à 0,3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Loi des grands nombres : plus la taille est grande, plus la fréquence est proche de 0,3 et moins elle fluctue. Rien n'oblige la fréquence à valoir exactement 0,3, ni à la dépasser.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:136",
+      "type": "qcm_multiple",
+      "enonce": "Un joueur a perdu 6 parties de suite à un jeu où il gagne chaque partie avec une probabilité de 0,5, de façon indépendante. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa probabilité de gagner la partie suivante est 0,5",
+        "Il va forcément gagner bientôt pour compenser",
+        "Sur un très grand nombre de parties, sa fréquence de victoires sera très probablement proche de 0,5",
+        "Sa probabilité de gagner la partie suivante est supérieure à 0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Les parties sont indépendantes : la probabilité reste 0,5. La loi des grands nombres porte sur la fréquence à long terme ; elle ne dit pas que le hasard compense à court terme.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:137",
+      "type": "vrai_faux",
+      "enonce": "Quand on répète un grand nombre de fois une expérience, la fréquence observée d'un événement est en général proche de sa probabilité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la loi des grands nombres (version vulgarisée).",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:138",
+      "type": "vrai_faux",
+      "enonce": "Si l'on simule 50 lancers d'une pièce équilibrée, on obtient toujours exactement 25 « pile ».",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le nombre de « pile » fluctue : on peut obtenir 22, 27… 25 est seulement la valeur autour de laquelle les résultats se répartissent.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:139",
+      "type": "vrai_faux",
+      "enonce": "Pour qu'une simulation donne une bonne estimation d'une probabilité, il suffit de répéter l'expérience une dizaine de fois.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Avec 10 répétitions, la fluctuation est forte (on peut trouver 0,7 pour une probabilité de 0,5). Il faut un grand nombre de répétitions, par exemple plusieurs milliers.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Sur 2 000 simulations de 3 lancers d'une pièce, on a observé 1 760 fois au moins un « pile ». Quelle est la fréquence observée ? Réponds par un nombre décimal.",
+      "reponses_acceptees": [
+        "0,88"
+      ],
+      "difficulte": 2,
+      "explication": "Fréquence = 1 760/2 000 = 0,88. Elle est proche de la probabilité 1 − 1/8 = 0,875.",
+      "notion": "Simulation et grands nombres"
+    },
+    {
+      "source": "maths-tc:ch6:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Au jeu de « croix ou pile », on lance une pièce équilibrée au plus 2 fois et l'on gagne dès que « croix » apparaît. Quelle est la probabilité de gagner ?",
+      "propositions": [
+        "1/2",
+        "2/3",
+        "1/4",
+        "3/4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On perd seulement avec « pile, pile », de probabilité 1/4. Donc P(gagner) = 1 − 1/4 = 3/4 (ou 1/2 + 1/4).",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:142",
+      "type": "qcm_unique",
+      "enonce": "D'Alembert pensait qu'au jeu de « croix ou pile », la probabilité de gagner était 2/3. Quelle était son erreur ?",
+      "propositions": [
+        "Il a oublié que l'on peut lancer la pièce jusqu'à trois fois de suite",
+        "Il a supposé à tort que la pièce tombait plus souvent sur « croix »",
+        "Il a considéré trois cas comme équiprobables alors qu'ils ne le sont pas",
+        "Il a additionné 1/2 et 1/4 au lieu de les multiplier"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Ses trois cas (croix ; pile puis croix ; pile puis pile) ont pour probabilités 1/2, 1/4 et 1/4 : ils ne sont pas équiprobables. La bonne réponse est 1/2 + 1/4 = 3/4.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Le chevalier de Méré pariait d'obtenir au moins un 6 en 4 lancers d'un dé équilibré. Sachant que 5⁴ = 625 et 6⁴ = 1 296, quelle est sa probabilité de gagner ?",
+      "propositions": [
+        "625/1296",
+        "4/6",
+        "671/1296",
+        "1/1296"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P(aucun 6) = (5/6)⁴ = 625/1296, donc P(au moins un 6) = 1 − 625/1296 = 671/1296 ≈ 0,518.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Deux joueurs de même force jouent en 3 manches gagnantes pour une mise de 64 pistoles. La partie s'arrête quand A a gagné 2 manches et B 1 manche. Selon Pascal et Fermat, combien de pistoles A doit-il recevoir ?",
+      "propositions": [
+        "48",
+        "32",
+        "43",
+        "56"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "B ne gagne que s'il remporte les 2 manches suivantes : 1/2 × 1/2 = 1/4. Donc A gagne avec la probabilité 3/4 et reçoit 3/4 × 64 = 48 pistoles.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:145",
+      "type": "qcm_unique",
+      "enonce": "Il manque 1 manche au joueur A et 2 manches au joueur B pour gagner ; chaque manche est remportée par l'un ou l'autre avec une probabilité de 1/2. Quelle est la probabilité que B finisse par l'emporter ?",
+      "propositions": [
+        "1/3",
+        "1/4",
+        "1/2",
+        "1/8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "B doit gagner les deux manches suivantes, sinon A gagne : 1/2 × 1/2 = 1/4.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Au jeu de « croix ou pile » (pièce équilibrée lancée au plus 2 fois, on gagne dès que « croix » sort), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité de gagner au premier lancer est 1/2",
+        "La probabilité de « pile puis croix » est 1/4",
+        "La probabilité de perdre est 1/3",
+        "La probabilité de gagner est 1 − (1/2)²"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Croix au 1er lancer : 1/2 ; pile puis croix : 1/2 × 1/2 = 1/4. On perd avec « pile, pile » : 1/4 (pas 1/3). Donc P(gagner) = 1 − (1/2)² = 3/4.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Un joueur gagne s'il obtient au moins un 6 en 4 lancers d'un dé équilibré. On donne 5⁴ = 625 et 6⁴ = 1 296, et l'on remarque que 1 296/2 = 648. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La probabilité de n'obtenir aucun 6 est 625/1296",
+        "Le pari est favorable au joueur, car sa probabilité de gagner dépasse 1/2",
+        "Sa probabilité de gagner est 4/6",
+        "Sa probabilité de gagner est exactement 1/2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "P(aucun 6) = (5/6)⁴ = 625/1296. P(gagner) = 671/1296, et 671 > 648, donc elle dépasse 1/2. 4/6 vient d'une addition fautive.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Au jeu de « croix ou pile », les trois issues « croix », « pile puis croix » et « pile puis pile » sont équiprobables.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Leurs probabilités sont 1/2, 1/4 et 1/4 : c'était l'erreur de d'Alembert.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Le problème des partis, étudié par Pascal et Fermat, consiste à partager équitablement une mise quand une partie est interrompue.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "On partage la mise proportionnellement aux probabilités de gagner de chaque joueur si la partie avait continué.",
+      "notion": "Jeux historiques"
+    },
+    {
+      "source": "maths-tc:ch6:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Dans le problème des partis, A et B ont des chances égales à chaque manche. Il manque 1 manche à A et 2 manches à B, et la mise est de 80 euros. Combien d'euros doit recevoir B pour un partage équitable ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "20"
+      ],
+      "difficulte": 3,
+      "explication": "B gagne seulement s'il remporte les 2 manches suivantes : probabilité 1/4. Il reçoit 1/4 × 80 = 20 euros (et A, 60 euros).",
+      "notion": "Jeux historiques"
+    }
+  ]
+}

@@ -1,0 +1,2324 @@
+{
+  "chapitre": 5,
+  "notions": [
+    "Fonction dérivée",
+    "Fonctions de référence",
+    "Puissances entières",
+    "Somme et produit par un réel",
+    "Dérivée d'un produit",
+    "Inverse et quotient",
+    "Notation dy/dx et méthodes",
+    "Démonstrations"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch5:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Si f est dérivable sur un intervalle I, que désigne la notation f′ ?",
+      "propositions": [
+        "La fonction qui, à tout x de I, associe le nombre dérivé f′(x)",
+        "Le nombre dérivé de f en 0",
+        "La pente d'une sécante entre deux points de la courbe",
+        "La fonction f multipliée par x"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "f′ est la fonction dérivée : elle associe à chaque x de I le nombre dérivé f′(x).",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:002",
+      "type": "qcm_unique",
+      "enonce": "On sait que la fonction carré a pour dérivée x ↦ 2x. Quelle est la pente de la tangente à la parabole y = x² au point d'abscisse 5 ?",
+      "propositions": [
+        "25",
+        "10",
+        "5",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La pente est f′(5) = 2 × 5 = 10 ; 25 est l'image f(5), pas le nombre dérivé.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction f dérivable, on lit f′(3) = −2. Que représente ce nombre ?",
+      "propositions": [
+        "La valeur de f au point d'abscisse −2",
+        "L'image de 3 par la fonction f",
+        "Le coefficient directeur de la tangente à la courbe au point d'abscisse 3",
+        "L'ordonnée à l'origine de la tangente au point d'abscisse 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le nombre dérivé f′(3) est la pente de la tangente au point d'abscisse 3.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:004",
+      "type": "vrai_faux",
+      "enonce": "Dire qu'une fonction f est dérivable sur un intervalle I signifie que f est dérivable en chaque réel de I.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la définition : f est dérivable sur I si elle est dérivable en tout réel a de I.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:005",
+      "type": "vrai_faux",
+      "enonce": "Le nombre f′(a) et la fonction f′ désignent le même objet mathématique.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "f′(a) est un nombre (la pente d'une tangente) ; f′ est une fonction, qui à x associe f′(x).",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:006",
+      "type": "qcm_unique",
+      "enonce": "On donne f(x) = x² et on demande f′(4). Un élève répond 16. Quelle est son erreur ?",
+      "propositions": [
+        "Il aurait dû trouver 2, car la dérivée de x² est 2",
+        "Il a oublié un signe moins : f′(4) = −16",
+        "Il aurait dû trouver 4, car la dérivée de x² est x",
+        "Il a calculé f(4) au lieu de f′(4), qui vaut 8"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = 2x donc f′(4) = 8 ; 16 = 4² est l'image f(4).",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:007",
+      "type": "qcm_multiple",
+      "enonce": "Soit f une fonction dérivable sur ℝ telle que f′(x) = 3x² − 1 pour tout réel x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(−1) = −4",
+        "La tangente au point d'abscisse 0 a pour coefficient directeur −1",
+        "f(0) = −1",
+        "f′(1) = 2",
+        "f′(0) = −1"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "f′(0) = −1, f′(1) = 3 − 1 = 2 et f′(−1) = 3 − 1 = 2. La pente en 0 vaut f′(0) = −1. On ne connaît pas f(0) : seule la dérivée est donnée.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:008",
+      "type": "reponse_courte",
+      "enonce": "Une fonction f dérivable sur ℝ a pour dérivée f′(x) = 4x − 7. Calcule le nombre dérivé f′(3). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "difficulte": 1,
+      "explication": "On remplace x par 3 dans f′(x) : 4 × 3 − 7 = 5.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:009",
+      "type": "vrai_faux",
+      "enonce": "Une fonction peut être définie en un réel a sans être dérivable en a.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Exemple : la racine carrée est définie en 0 mais n'y est pas dérivable (tangente verticale).",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Une fonction f a pour dérivée f′(x) = −x + 6. Quelle est la pente de sa tangente au point d'abscisse 2 ?",
+      "propositions": [
+        "4",
+        "6",
+        "8",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "f′(2) = −2 + 6 = 4.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:011",
+      "type": "qcm_unique",
+      "enonce": "On connaît pour une fonction f : f(1) = 3, f′(1) = −2, f(2) = 0 et f′(2) = 5. Quel est le coefficient directeur de la tangente à sa courbe au point A(1 ; 3) ?",
+      "propositions": [
+        "0",
+        "−2",
+        "3",
+        "5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le point A a pour abscisse 1 : la pente de la tangente en A est f′(1) = −2.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Si une fonction f vérifie f′(x) = 2x pour tout réel x, alors on a forcément f(3) = 6.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "f peut être x ↦ x², ou x ↦ x² + c pour toute constante c : alors f(3) = 9 + c, qui n'a aucune raison de valoir 6. Ne confonds pas f et f′.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "On rappelle que la fonction f(x) = x² a pour dérivée f′(x) = 2x. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(0,5) = 0,25",
+        "La tangente au point d'abscisse 0 est horizontale",
+        "f′(−3) = −6",
+        "f′(3) = 9"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f′(−3) = −6 ; f′(3) = 6 (9 est f(3)) ; f′(0) = 0 donc tangente horizontale ; f′(0,5) = 1.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Une fonction f est dérivable sur ℝ et f′(2) = 0. Que peut-on dire de la tangente à sa courbe au point d'abscisse 2 ?",
+      "propositions": [
+        "Elle est parallèle à l'axe des ordonnées",
+        "Elle coupe l'axe des abscisses au point d'abscisse 2",
+        "Elle est parallèle à l'axe des abscisses",
+        "Elle passe forcément par l'origine du repère"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Une pente nulle donne une tangente horizontale, donc parallèle à l'axe des abscisses.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:015",
+      "type": "qcm_multiple",
+      "enonce": "Une fonction f dérivable sur ℝ vérifie f′(x) = 2x + 1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f′(1) = 2",
+        "f′(0) = 1",
+        "f′(2) = 5",
+        "f′(−1) = −1"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On remplace x : f′(0) = 1, f′(−1) = −1, f′(1) = 3 et non 2, f′(2) = 5.",
+      "notion": "Fonction dérivée"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de la fonction cube x ↦ x³ ?",
+      "propositions": [
+        "x ↦ 3x",
+        "x ↦ 3x³",
+        "x ↦ x²",
+        "x ↦ 3x²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(x³)′ = 3x² : on multiplie par l'exposant et on le diminue de 1.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la fonction dérivée de la fonction inverse x ↦ 1/x ?",
+      "propositions": [
+        "x ↦ −1/x²",
+        "x ↦ 1/x²",
+        "x ↦ −1/x",
+        "x ↦ 1/(2x)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "(1/x)′ = −1/x² : la dérivée est toujours négative.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la fonction dérivée de la racine carrée x ↦ √x ?",
+      "propositions": [
+        "x ↦ √x/2",
+        "x ↦ 1/(2√x)",
+        "x ↦ 2√x",
+        "x ↦ 1/√x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "(√x)′ = 1/(2√x), sur ]0 ; +∞[ seulement.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:019",
+      "type": "qcm_unique",
+      "enonce": "La fonction f est constante : f(x) = 7 pour tout réel x. Que vaut f′(x) ?",
+      "propositions": [
+        "7x",
+        "1",
+        "0",
+        "7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La dérivée d'une constante est nulle : sa courbe est une droite horizontale, de pente 0.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de la fonction affine f(x) = −3x + 5 ?",
+      "propositions": [
+        "f′(x) = −3x",
+        "f′(x) = 3",
+        "f′(x) = 5",
+        "f′(x) = −3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(mx + p)′ = m : ici m = −3. La dérivée d'une fonction affine est son coefficient directeur.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:021",
+      "type": "reponse_courte",
+      "enonce": "On note g la fonction inverse, g(x) = 1/x. Calcule g′(2). Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "-0,25",
+        "−0,25",
+        "-0.25",
+        "−0.25",
+        "-1/4",
+        "−1/4"
+      ],
+      "difficulte": 1,
+      "explication": "g′(x) = −1/x², donc g′(2) = −1/4 = −0,25.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:022",
+      "type": "reponse_courte",
+      "enonce": "On note r la fonction racine carrée. Calcule r′(25). Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "0,1",
+        "0.1",
+        "1/10"
+      ],
+      "difficulte": 1,
+      "explication": "r′(x) = 1/(2√x), donc r′(25) = 1/(2 × 5) = 1/10 = 0,1.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Pour h(x) = x³, quelle est la valeur de h′(−2) ?",
+      "propositions": [
+        "12",
+        "−8",
+        "6",
+        "−12"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "h′(x) = 3x², donc h′(−2) = 3 × 4 = 12. Un carré est positif : le résultat n'est pas négatif.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:024",
+      "type": "vrai_faux",
+      "enonce": "La fonction inverse est dérivable sur ]−∞ ; 0[ et sur ]0 ; +∞[.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Sur chacun de ces intervalles, sa dérivée est x ↦ −1/x². Elle n'est pas définie en 0.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:025",
+      "type": "vrai_faux",
+      "enonce": "La fonction racine carrée est dérivable en 0.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Elle est définie en 0 mais pas dérivable en 0 : sa courbe y a une tangente verticale. Elle est dérivable sur ]0 ; +∞[.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:026",
+      "type": "vrai_faux",
+      "enonce": "La fonction dérivée de x ↦ √x est x ↦ √x/2.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "(√x)′ = 1/(2√x). Par exemple en x = 4 : 1/(2 × 2) = 0,25, alors que √4/2 = 1.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Parmi ces fonctions, lesquelles sont dérivables sur ℝ tout entier ?",
+      "propositions": [
+        "x ↦ −4x + 1",
+        "x ↦ x³",
+        "x ↦ 1/x",
+        "x ↦ √x"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Cube et fonctions affines sont dérivables sur ℝ. La fonction inverse n'est pas définie en 0 ; la racine carrée n'est pas définie sur ]−∞ ; 0[ et pas dérivable en 0.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles égalités de dérivées sont correctes ?",
+      "propositions": [
+        "(x³)′ = 3x",
+        "(√x)′ = 1/(2√x)",
+        "(x²)′ = 2x",
+        "(1/x)′ = 1/x²",
+        "(5)′ = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "(1/x)′ = −1/x² (signe moins) et (x³)′ = 3x² ; les trois autres sont justes.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Soit f la fonction inverse. Quelle est la valeur de f′(−1) ?",
+      "propositions": [
+        "1",
+        "−1",
+        "2",
+        "−1/2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = −1/x², donc f′(−1) = −1/(−1)² = −1/1 = −1.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = √x. Pour quel réel x a-t-on f′(x) = 1/4 ?",
+      "propositions": [
+        "1/16",
+        "2",
+        "4",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "1/(2√x) = 1/4 équivaut à 2√x = 4, soit √x = 2, donc x = 4.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la tangente à la courbe de la fonction cube au point d'abscisse 1 ?",
+      "propositions": [
+        "9",
+        "1",
+        "6",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La dérivée du cube est 3x² : en 1, elle vaut 3.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Pour quels réels a la tangente à la courbe de la fonction cube au point d'abscisse a a-t-elle pour coefficient directeur 12 ?",
+      "propositions": [
+        "a = 2 ou a = −2",
+        "a = √12 seulement",
+        "a = 4",
+        "a = 2 seulement"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "3a² = 12 équivaut à a² = 4, soit a = 2 ou a = −2 : deux tangentes parallèles.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:033",
+      "type": "qcm_unique",
+      "enonce": "La courbe de la fonction inverse est étudiée sur ]0 ; +∞[. En quelle abscisse la tangente a-t-elle pour coefficient directeur −4 ?",
+      "propositions": [
+        "1/4",
+        "1/2",
+        "−1/2",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "−1/a² = −4 équivaut à a² = 1/4 ; avec a > 0, a = 1/2.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel x non nul, le nombre dérivé de la fonction inverse en x est strictement négatif.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "f′(x) = −1/x² et x² > 0 pour x ≠ 0, donc f′(x) < 0.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:035",
+      "type": "reponse_courte",
+      "enonce": "La tangente à la parabole y = x² au point d'abscisse a a pour pente −7. Quelle est la valeur de a ? Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "-3,5",
+        "−3,5",
+        "-3.5",
+        "−3.5",
+        "-7/2",
+        "−7/2"
+      ],
+      "difficulte": 2,
+      "explication": "La pente est 2a ; 2a = −7 donne a = −3,5.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:036",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère la fonction f(x) = √x sur ]0 ; +∞[.",
+      "propositions": [
+        "f′(9) = 3",
+        "f′(4) = 0,25",
+        "f′(16) = 0,5",
+        "f′(1) = 0,5",
+        "f′(x) > 0 pour tout x > 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = 1/(2√x) > 0. f′(1) = 1/2, f′(4) = 1/4, f′(9) = 1/6 et f′(16) = 1/8.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:037",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles fonctions ont une dérivée constante sur ℝ ?",
+      "propositions": [
+        "x ↦ 9",
+        "x ↦ x²",
+        "x ↦ −x",
+        "x ↦ 4x − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les dérivées sont 4, −1, 2x et 0. Seule x ↦ x² a une dérivée qui dépend de x.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:038",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On étudie les tangentes à la courbe de la fonction inverse x ↦ 1/x.",
+      "propositions": [
+        "Au point d'abscisse 1, la pente vaut −1",
+        "Au point d'abscisse −1, la pente vaut −1",
+        "Au point d'abscisse 2, la pente vaut −1/2",
+        "Au point d'abscisse 2, la pente vaut −1/4",
+        "Au point d'abscisse −2, la pente est positive"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La pente en a vaut −1/a², toujours négative : −1 en 1 et en −1, −1/4 en 2 et en −2.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:039",
+      "type": "qcm_unique",
+      "enonce": "La racine carrée est définie sur [0 ; +∞[. Sur quel ensemble est-elle dérivable ?",
+      "propositions": [
+        "]−∞ ; 0[",
+        "ℝ",
+        "]0 ; +∞[",
+        "[0 ; +∞["
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Elle n'est pas dérivable en 0 (tangente verticale) : elle est dérivable sur ]0 ; +∞[.",
+      "notion": "Fonctions de référence"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de x ↦ x⁵ ?",
+      "propositions": [
+        "x ↦ x⁴",
+        "x ↦ 5x⁵",
+        "x ↦ 4x⁵",
+        "x ↦ 5x⁴"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(xⁿ)′ = n xⁿ⁻¹ avec n = 5 : 5x⁴.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:041",
+      "type": "qcm_unique",
+      "enonce": "En appliquant la formule des puissances, quelle est la dérivée de la fonction g(x) = x⁸ ?",
+      "propositions": [
+        "g′(x) = 8x⁷",
+        "g′(x) = x⁷",
+        "g′(x) = 8x⁹",
+        "g′(x) = 7x⁸"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "On multiplie par l'exposant 8 et on le diminue de 1 : 8x⁷.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la dérivée de f(x) = 1/x² ?",
+      "propositions": [
+        "f′(x) = −1/(2x)",
+        "f′(x) = −2/x³",
+        "f′(x) = 2/x³",
+        "f′(x) = −2/x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "1/x² = x⁻², de dérivée −2x⁻³ = −2/x³.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Pour x ≠ 0, quelle est la dérivée de x ↦ x⁻³ ?",
+      "propositions": [
+        "x ↦ −2x⁻³",
+        "x ↦ −3x⁻²",
+        "x ↦ −3x⁻⁴",
+        "x ↦ 3x⁻⁴"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "L'exposant diminue de 1 : −3 − 1 = −4. Donc (x⁻³)′ = −3x⁻⁴.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Une fonction est définie sur ]0 ; +∞[ par f(x) = 1/x⁴. Laquelle de ces expressions est f′(x) ?",
+      "propositions": [
+        "4/x⁵",
+        "−4/x³",
+        "1/(4x³)",
+        "−4/x⁵"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "1/x⁴ = x⁻⁴, donc f′(x) = −4x⁻⁵ = −4/x⁵.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:045",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = x⁴. Calcule f′(2). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "32"
+      ],
+      "difficulte": 1,
+      "explication": "f′(x) = 4x³, donc f′(2) = 4 × 8 = 32.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Soit g(x) = 1/x³ pour x ≠ 0. Que vaut g′(1) ?",
+      "propositions": [
+        "−3",
+        "3",
+        "1",
+        "−1/3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "g′(x) = −3/x⁴, donc g′(1) = −3.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:047",
+      "type": "vrai_faux",
+      "enonce": "Pour tout entier n ⩾ 1, la dérivée de x ↦ xⁿ est x ↦ n xⁿ⁻¹.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "C'est la formule des puissances, valable sur ℝ pour n ⩾ 1.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:048",
+      "type": "vrai_faux",
+      "enonce": "La dérivée de x ↦ x⁻⁵ est x ↦ −5x⁻⁴.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "L'exposant diminue de 1 : −5 − 1 = −6, donc (x⁻⁵)′ = −5x⁻⁶.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:049",
+      "type": "vrai_faux",
+      "enonce": "La fonction x ↦ 1/x⁷ est dérivable sur ]0 ; +∞[ et sa dérivée est x ↦ −7/x⁸.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "1/x⁷ = x⁻⁷, de dérivée −7x⁻⁸ = −7/x⁸.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:050",
+      "type": "vrai_faux",
+      "enonce": "Affirmation : x ↦ 1/x² admet un nombre dérivé en tout réel, y compris en 0.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Elle n'est pas définie en 0 : elle est dérivable sur ]−∞ ; 0[ et sur ]0 ; +∞[.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles égalités sont justes ?",
+      "propositions": [
+        "(x⁷)′ = 6x⁷",
+        "(x²)′ = x",
+        "(x¹⁰)′ = 10x⁹",
+        "(x⁴)′ = 4x³"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "On applique n xⁿ⁻¹ : (x⁷)′ = 7x⁶ et (x²)′ = 2x.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:052",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Pour x ≠ 0, quelles sont des écritures correctes de la dérivée de x ↦ 1/x³ ?",
+      "propositions": [
+        "−3x⁻²",
+        "3/x⁴",
+        "−3/x⁴",
+        "−1/(3x²)",
+        "−3x⁻⁴"
+      ],
+      "bonnes_reponses": [
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "1/x³ = x⁻³ ; sa dérivée est −3x⁻⁴, c'est-à-dire −3/x⁴.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Pour quel entier relatif n la dérivée de x ↦ xⁿ est-elle x ↦ −6x⁻⁷ ?",
+      "propositions": [
+        "n = −7",
+        "n = −6",
+        "n = −8",
+        "n = 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "n xⁿ⁻¹ = −6x⁻⁷ impose n = −6 (et alors n − 1 = −7).",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Une fonction puissance x ↦ xⁿ (n entier, n ⩾ 1) a un nombre dérivé égal à 20 en x = 1. Quel est l'entier n ?",
+      "propositions": [
+        "19",
+        "21",
+        "20",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La dérivée vaut n xⁿ⁻¹ ; en x = 1, elle vaut n. Donc n = 20.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:055",
+      "type": "reponse_courte",
+      "enonce": "On définit f(x) = 1/x⁵ pour x > 0. Quelle est la valeur de f′(2) ? Écris-la sous forme décimale exacte.",
+      "reponses_acceptees": [
+        "-0,078125",
+        "−0,078125",
+        "-0.078125",
+        "−0.078125",
+        "-5/64",
+        "−5/64"
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = −5/x⁶ et 2⁶ = 64 : f′(2) = −5/64 = −0,078125.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Comment écrire 1/x⁶ (x ≠ 0) sous la forme d'une puissance de x ?",
+      "propositions": [
+        "−x⁶",
+        "x⁻⁵",
+        "6x⁻¹",
+        "x⁻⁶"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Par définition, 1/xⁿ = x⁻ⁿ, donc 1/x⁶ = x⁻⁶.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:057",
+      "type": "qcm_unique",
+      "enonce": "D'après la formule n xⁿ⁻¹ appliquée avec n = 1, quelle est la dérivée de x ↦ x ?",
+      "propositions": [
+        "1",
+        "2x",
+        "x",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "1 × x⁰ = 1 : on retrouve la dérivée de la fonction affine x ↦ x.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:058",
+      "type": "vrai_faux",
+      "enonce": "La formule (xⁿ)′ = n xⁿ⁻¹ redonne la dérivée de la fonction inverse quand on prend n = −1.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Avec n = −1 : (x⁻¹)′ = −1 × x⁻² = −1/x², qui est bien la dérivée de 1/x.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:059",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On pose f(x) = x⁻⁴ sur ]0 ; +∞[.",
+      "propositions": [
+        "f′(2) = −1/8",
+        "f′(1) = −4",
+        "f′(x) = −4/x⁵",
+        "f′(x) = −4x⁻³",
+        "f′(x) > 0 pour tout x > 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = −4x⁻⁵ = −4/x⁵ < 0 ; f′(1) = −4 ; f′(2) = −4/32 = −1/8.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:060",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles fonctions ont une dérivée de la forme x ↦ k/x⁴, avec k réel non nul ?",
+      "propositions": [
+        "x ↦ x⁴",
+        "x ↦ 5x⁻³",
+        "x ↦ x⁻⁵",
+        "x ↦ 1/x³",
+        "x ↦ 1/x⁴"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(1/x³)′ = −3/x⁴ et (5x⁻³)′ = −15/x⁴. En revanche (x⁴)′ = 4x³, (1/x⁴)′ = −4/x⁵ et (x⁻⁵)′ = −5/x⁶.",
+      "notion": "Puissances entières"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de f(x) = x² + 5x ?",
+      "propositions": [
+        "f′(x) = 2x + 5x",
+        "f′(x) = 2x + 5",
+        "f′(x) = x + 5",
+        "f′(x) = 2x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "On dérive terme à terme : (x²)′ = 2x et (5x)′ = 5.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:062",
+      "type": "qcm_unique",
+      "enonce": "On multiplie la fonction cube par 4 : f(x) = 4x³. Que vaut f′(x) ?",
+      "propositions": [
+        "3x²",
+        "12x³",
+        "12x²",
+        "4x²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(ku)′ = k u′ : 4 × 3x² = 12x².",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression donne la dérivée de la fonction f(x) = x² + 9 ?",
+      "propositions": [
+        "x + 9",
+        "2x + 9",
+        "2x + 1",
+        "2x"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La constante ajoutée a une dérivée nulle : f′(x) = 2x.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée du polynôme f(x) = 3x⁴ − 5x² + 7x − 2 ?",
+      "propositions": [
+        "12x³ − 10x + 7",
+        "12x³ − 10x + 5",
+        "3x³ − 5x + 7",
+        "12x⁴ − 10x² + 7x"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Terme à terme : 3 × 4x³ − 5 × 2x + 7 − 0 = 12x³ − 10x + 7.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Pour le trinôme g(x) = −2x² + 6x + 1, laquelle de ces expressions est g′(x) ?",
+      "propositions": [
+        "4x + 6",
+        "−4x + 6",
+        "−4x + 7",
+        "−2x + 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "(ax² + bx + c)′ = 2ax + b avec a = −2 et b = 6 : −4x + 6.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x² − 3x + 4. Que vaut f′(5) ?",
+      "propositions": [
+        "13",
+        "10",
+        "7",
+        "14"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f′(x) = 2x − 3, donc f′(5) = 10 − 3 = 7 ; 14 est f(5).",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:067",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = 2x³ − x² + 4x. Calcule f′(−1). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = 6x² − 2x + 4, donc f′(−1) = 6 + 2 + 4 = 12.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:068",
+      "type": "reponse_courte",
+      "enonce": "Soit g(x) = 4√x − 3/x sur ]0 ; +∞[. Calcule g′(4). Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "1,1875",
+        "1.1875",
+        "19/16"
+      ],
+      "difficulte": 3,
+      "explication": "g′(x) = 2/√x + 3/x², donc g′(4) = 1 + 3/16 = 19/16 = 1,1875.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de h(x) = x³/6 ?",
+      "propositions": [
+        "h′(x) = x²/6",
+        "h′(x) = 3x²",
+        "h′(x) = x³/2",
+        "h′(x) = x²/2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "x³/6 = (1/6)x³, donc h′(x) = (1/6) × 3x² = x²/2.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, que vaut la dérivée de f(x) = 5√x ?",
+      "propositions": [
+        "5/(2√x)",
+        "5√x/2",
+        "5/√x",
+        "1/(2√x)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "(5√x)′ = 5 × 1/(2√x) = 5/(2√x).",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Pour x ≠ 0, quelle est la dérivée de f(x) = 6/x ?",
+      "propositions": [
+        "−1/x²",
+        "−6/x²",
+        "6/x²",
+        "−6/x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "6/x = 6 × (1/x), donc f′(x) = 6 × (−1/x²) = −6/x².",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Le trinôme f(x) = ax² + bx + c a pour dérivée f′(x) = 2ax + b.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "On dérive terme à terme : a × 2x + b + 0.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:073",
+      "type": "vrai_faux",
+      "enonce": "La dérivée de x ↦ 5x² est x ↦ 2x.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le facteur 5 se garde : (5x²)′ = 5 × 2x = 10x.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:074",
+      "type": "vrai_faux",
+      "enonce": "La fonction f(x) = 3x² − √x est dérivable sur ℝ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "√x n'est dérivable que sur ]0 ; +∞[ : f est dérivable sur ]0 ; +∞[ seulement.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère le trinôme f(x) = x² − 4x + 1.",
+      "propositions": [
+        "f′(x) = 2x − 4x",
+        "f′(2) = 0",
+        "f′(0) = 1",
+        "f′(x) = 2x − 4"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "f′(x) = 2x − 4, donc f′(2) = 0 et f′(0) = −4 (1 est f(0)).",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Soit g(x) = −x³ + 2x.",
+      "propositions": [
+        "g′(x) = 3x² + 2",
+        "g′(−1) = 5",
+        "g′(0) = 2",
+        "g′(1) = −1",
+        "g′(x) = −3x² + 2"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "g′(x) = −3x² + 2 : g′(1) = −1, g′(0) = 2 et g′(−1) = −3 + 2 = −1.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = x³ − 12x + 1. En quelles abscisses la tangente à sa courbe est-elle parallèle à l'axe des abscisses ?",
+      "propositions": [
+        "En 2 seulement",
+        "En 0 et en 12",
+        "En −2 et en 2",
+        "En −4 et en 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = 3x² − 12 = 0 équivaut à x² = 4, soit x = −2 ou x = 2.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Pour quel réel m la tangente à la courbe de f(x) = mx² + 3x au point d'abscisse 1 a-t-elle pour pente 7 ?",
+      "propositions": [
+        "m = 4",
+        "m = 5",
+        "m = 3,5",
+        "m = 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = 2mx + 3, donc f′(1) = 2m + 3 = 7, d'où m = 2.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère f(x) = 2√x + x² sur ]0 ; +∞[.",
+      "propositions": [
+        "f′(0) = 0",
+        "f′(x) = 1/(2√x) + 2x",
+        "f′(4) = 8,5",
+        "f′(x) = 1/√x + 2x",
+        "f′(1) = 3"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "(2√x)′ = 2/(2√x) = 1/√x, donc f′(x) = 1/√x + 2x ; f′(1) = 3 et f′(4) = 0,5 + 8 = 8,5. f n'est pas dérivable en 0. La proposition f′(0) = 0 est fausse : 0 n’est pas dans l’intervalle d’étude, et f n’est pas dérivable en 0 à cause de la racine carrée.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles égalités sont vraies pour tout réel x ?",
+      "propositions": [
+        "(2x³)′ = 6x³",
+        "(x² + 7)′ = 2x",
+        "(−3x)′ = −3",
+        "(x − 1)′ = 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(2x³)′ = 6x² et (x − 1)′ = 1 : la constante disparaît, mais pas le terme en x.",
+      "notion": "Somme et produit par un réel"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Si u et v sont dérivables sur un intervalle I, quelle est la dérivée du produit uv ?",
+      "propositions": [
+        "u′v + uv′",
+        "u′v − uv′",
+        "(u′v + uv′)/v²",
+        "u′v′"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "C'est la formule du produit : (uv)′ = u′v + uv′.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = (2x + 1)(x² − 3). Quelle est l'expression de f′(x) ?",
+      "propositions": [
+        "4x",
+        "6x² + 2x − 6",
+        "6x² − 2x − 6",
+        "2x³ + x² − 6x − 3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u = 2x + 1, u′ = 2, v = x² − 3, v′ = 2x : 2(x² − 3) + (2x + 1) × 2x = 6x² + 2x − 6. 4x serait le produit des dérivées.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la dérivée de g(x) = x√x ?",
+      "propositions": [
+        "√x + 1/(2√x)",
+        "x/(2√x)",
+        "(3/2)√x",
+        "1/(2√x)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "g′(x) = 1 × √x + x × 1/(2√x) = √x + √x/2 = (3/2)√x.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de f(x) = (3x − 1)² ?",
+      "propositions": [
+        "2(3x − 1)",
+        "9x² − 6x + 1",
+        "18x − 1",
+        "18x − 6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(u²)′ = 2u′u = 2 × 3 × (3x − 1) = 18x − 6. On peut vérifier en développant : 9x² − 6x + 1 se dérive en 18x − 6.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:085",
+      "type": "qcm_unique",
+      "enonce": "On développe ou on utilise la formule du produit : quelle est la dérivée de f(x) = x(x + 1) ?",
+      "propositions": [
+        "2x + 1",
+        "x + 1",
+        "2x",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "u′v + uv′ = 1 × (x + 1) + x × 1 = 2x + 1 (ou développer : x² + x).",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:086",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = (x + 2)(x − 3). Que vaut f′(4) ?",
+      "propositions": [
+        "1",
+        "7",
+        "−7",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "f′(x) = (x − 3) + (x + 2) = 2x − 1, donc f′(4) = 7. Le produit des dérivées donnerait 1.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:087",
+      "type": "qcm_unique",
+      "enonce": "On pose g(x) = x√x sur ]0 ; +∞[. Quelle est la valeur de g′(4) ?",
+      "propositions": [
+        "2",
+        "1/4",
+        "3",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "g′(x) = (3/2)√x, donc g′(4) = (3/2) × 2 = 3.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:088",
+      "type": "vrai_faux",
+      "enonce": "La dérivée d'un produit uv est le produit u′v′ des dérivées.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Contre-exemple : avec u(x) = v(x) = x, (x²)′ = 2x mais u′v′ = 1. La formule est (uv)′ = u′v + uv′.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Pour toute fonction u dérivable sur un intervalle I, la dérivée de u² est 2u′u.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Avec la formule du produit : (u × u)′ = u′u + uu′ = 2u′u.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Pour dériver f(x) = (x² + 3)(2x − 5) avec la formule du produit, on peut poser :",
+      "propositions": [
+        "u(x) = x² + 3 et u′(x) = 2x",
+        "u(x) = x² + 3 et u′(x) = 2x + 3",
+        "v(x) = 2x − 5 et v′(x) = −5",
+        "v(x) = 2x − 5 et v′(x) = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(x² + 3)′ = 2x (la constante disparaît) et (2x − 5)′ = 2.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Soit f(x) = x²(x − 1).",
+      "propositions": [
+        "f′(x) = 3x² − 2x",
+        "f′(0) = −1",
+        "f′(x) = 2x(x − 1) + x²",
+        "f′(x) = 2x",
+        "f′(1) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = 2x(x − 1) + x² × 1 = 3x² − 2x ; f′(1) = 1 et f′(0) = 0.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Soit f(x) = (x² − 1)√x sur ]0 ; +∞[. Que vaut f′(1) ?",
+      "propositions": [
+        "0",
+        "3",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = 2x√x + (x² − 1)/(2√x) ; en 1 : 2 × 1 × 1 + 0 = 2. Attention : f(1) = 0 mais f′(1) ≠ 0.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée de f(x) = x³(2x + 1) ?",
+      "propositions": [
+        "8x³ + 3x²",
+        "8x³ + x²",
+        "6x²",
+        "6x³ + 3x²"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "3x²(2x + 1) + x³ × 2 = 6x³ + 3x² + 2x³ = 8x³ + 3x². 6x² serait le produit des dérivées.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:094",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = (2x − 3)(x² + x). Calcule f′(1) avec la formule du produit. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = 2(x² + x) + (2x − 3)(2x + 1) ; en 1 : 2 × 2 + (−1) × 3 = 1.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la dérivée du produit f(x) = x × (1/x) ?",
+      "propositions": [
+        "−1/x",
+        "0",
+        "1 − 1/x²",
+        "−1/x²"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "u′v + uv′ = 1 × (1/x) + x × (−1/x²) = 1/x − 1/x = 0 : normal, f(x) = 1 est constante.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère f(x) = (2x + 3)².",
+      "propositions": [
+        "f′(x) = 4(2x + 3)",
+        "f′(0) = 12",
+        "f′(x) = 2(2x + 3)",
+        "f′(x) = 8x + 12",
+        "f′(−1,5) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "(u²)′ = 2u′u = 2 × 2 × (2x + 3) = 8x + 12 ; f′(0) = 12 et f′(−1,5) = 0.",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Soit f(x) = (x − 2)(x + 3).",
+      "propositions": [
+        "f′(x) = (x + 3) + (x − 2)",
+        "f′(0) = −6",
+        "f′(x) = 2x + 1",
+        "f′(x) = 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u′v + uv′ = 1 × (x + 3) + (x − 2) × 1 = 2x + 1 ; f′(0) = 1 (−6 est f(0)).",
+      "notion": "Dérivée d'un produit"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Si v est dérivable et ne s'annule pas sur I, quelle est la dérivée de 1/v ?",
+      "propositions": [
+        "1/v′",
+        "−1/v²",
+        "−v′/v²",
+        "v′/v²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "(1/v)′ = −v′/v² ; avec v(x) = x, on retrouve −1/x².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Si u et v sont dérivables sur I et v ne s'annule pas sur I, quelle est la dérivée de u/v ?",
+      "propositions": [
+        "(u′v + uv′)/v²",
+        "u′/v′",
+        "(uv′ − u′v)/v²",
+        "(u′v − uv′)/v²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(u/v)′ = (u′v − uv′)/v² : l'ordre et le signe moins comptent.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Sur ℝ, la fonction f(x) = 1/(x² + 1) est l'inverse de v(x) = x² + 1. Quelle est sa dérivée ?",
+      "propositions": [
+        "−2x/(x² + 1)²",
+        "2x/(x² + 1)²",
+        "−1/(x² + 1)²",
+        "1/(2x)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "(1/v)′ = −v′/v² avec v(x) = x² + 1 et v′(x) = 2x.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Sur ]−3 ; +∞[, laquelle de ces expressions est la dérivée de g(x) = (2x − 1)/(x + 3) ?",
+      "propositions": [
+        "2",
+        "7/(x + 3)²",
+        "−7/(x + 3)²",
+        "(4x + 5)/(x + 3)²"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(2(x + 3) − (2x − 1) × 1)/(x + 3)² = (2x + 6 − 2x + 1)/(x + 3)² = 7/(x + 3)².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:102",
+      "type": "qcm_unique",
+      "enonce": "On étudie h(x) = x²/(x − 1) sur ]1 ; +∞[. Quelle est l'expression de h′(x) ?",
+      "propositions": [
+        "2x",
+        "(−x² + 2x)/(x − 1)²",
+        "(x² − 2x)/(x − 1)²",
+        "(3x² − 2x)/(x − 1)²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "(2x(x − 1) − x² × 1)/(x − 1)² = (x² − 2x)/(x − 1)².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:103",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = 1/(x² + 1). Calcule f′(1). Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "-0,5",
+        "−0,5",
+        "-0.5",
+        "−0.5",
+        "-1/2",
+        "−1/2"
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = −2x/(x² + 1)², donc f′(1) = −2/4 = −0,5.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:104",
+      "type": "qcm_unique",
+      "enonce": "On pose g(x) = (2x − 1)/(x + 3) sur ]−3 ; +∞[. Que vaut g′(−2) ?",
+      "propositions": [
+        "−7",
+        "2",
+        "−5",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "g′(x) = 7/(x + 3)², donc g′(−2) = 7/1 = 7.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:105",
+      "type": "reponse_courte",
+      "enonce": "Soit h(x) = (x + 1)/(x − 2) sur ]2 ; +∞[. Calcule h′(3). Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 2,
+      "explication": "h′(x) = ((x − 2) − (x + 1))/(x − 2)² = −3/(x − 2)², donc h′(3) = −3.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Sur ]−5 ; +∞[, quelle est la dérivée de f(x) = 2/(x + 5) ?",
+      "propositions": [
+        "−2/(x + 5)²",
+        "2/(x + 5)²",
+        "−1/(x + 5)²",
+        "−2/(x + 5)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "f = 2 × 1/v avec v(x) = x + 5, v′(x) = 1 : f′(x) = 2 × (−1/(x + 5)²).",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Pour dériver un quotient u/v, la fonction v ne doit pas s'annuler sur l'intervalle considéré.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La formule (u/v)′ = (u′v − uv′)/v² n'a de sens que là où v(x) ≠ 0.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:108",
+      "type": "vrai_faux",
+      "enonce": "La dérivée d'un quotient u/v est u′/v′.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Contre-exemple : x/1 = x a pour dérivée 1, mais u′/v′ = 1/0 n'existe pas. La formule est (u′v − uv′)/v².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Comme x² + 4 ne s'annule jamais, la fonction x ↦ 1/(x² + 4) est dérivable en tout réel.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "x² + 4 ⩾ 4 ne s'annule jamais : le quotient est dérivable sur ℝ.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:110",
+      "type": "vrai_faux",
+      "enonce": "On peut dériver x ↦ 1/(x − 3) sur l'ensemble de tous les réels.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le dénominateur s'annule en 3 : la fonction est dérivable sur ]−∞ ; 3[ et sur ]3 ; +∞[.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Sur quels intervalles la fonction x ↦ (x + 1)/(x − 2) est-elle dérivable ?",
+      "propositions": [
+        "]−1 ; +∞[",
+        "]−∞ ; 2[",
+        "]2 ; +∞[",
+        "ℝ"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le dénominateur s'annule en 2 : on travaille sur ]−∞ ; 2[ ou sur ]2 ; +∞[. ]−1 ; +∞[ contient 2.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Soit f(x) = 3/(x² + 2) sur ℝ.",
+      "propositions": [
+        "f′(x) = 3/(2x)",
+        "f′(1) = −2/3",
+        "f′(0) = 0",
+        "f′(x) = −6x/(x² + 2)²",
+        "f′(1) = 2/3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "f′(x) = 3 × (−2x)/(x² + 2)² ; f′(0) = 0 ; f′(1) = −6/9 = −2/3.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Sur ]−2 ; +∞[, quelle est la dérivée de f(x) = (3x + 1)/(x + 2) ?",
+      "propositions": [
+        "−5/(x + 2)²",
+        "5/(x + 2)²",
+        "3",
+        "7/(x + 2)²"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "(3(x + 2) − (3x + 1) × 1)/(x + 2)² = 5/(x + 2)².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:114",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = (x² + 1)/x sur ]0 ; +∞[. Calcule f′(2). Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "0,75",
+        "0.75",
+        "3/4"
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = (2x × x − (x² + 1))/x² = (x² − 1)/x², donc f′(2) = 3/4 = 0,75.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la dérivée sur ℝ de f(x) = (x − 1)/(x² + 1) ?",
+      "propositions": [
+        "(3x² − 2x + 1)/(x² + 1)²",
+        "1/(2x)",
+        "(−x² + 2x + 1)/(x² + 1)²",
+        "(x² − 2x − 1)/(x² + 1)²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "(1 × (x² + 1) − (x − 1) × 2x)/(x² + 1)² = (x² + 1 − 2x² + 2x)/(x² + 1)² = (−x² + 2x + 1)/(x² + 1)².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:116",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère g(x) = 1/(2x − 4) sur ]2 ; +∞[.",
+      "propositions": [
+        "g′(x) = −2/(2x − 4)²",
+        "g′(x) = −1/(2x − 4)²",
+        "g′(3) = −0,5",
+        "g′(x) < 0 pour tout x > 2",
+        "g′(3) = 0,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "v(x) = 2x − 4, v′(x) = 2 : g′(x) = −2/(2x − 4)², négatif ; g′(3) = −2/4 = −0,5.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Sur ]−1 ; +∞[, la dérivée de x ↦ x/(x + 1) est x ↦ 1/(x + 1)².",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "(1 × (x + 1) − x × 1)/(x + 1)² = 1/(x + 1)².",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Sur ]0 ; +∞[, quelle est la dérivée de f(x) = 1/√x, vue comme l'inverse de v(x) = √x ?",
+      "propositions": [
+        "1/(2√x)",
+        "−1/(2√x)",
+        "−1/x",
+        "−1/(2x√x)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "−v′/v² = −(1/(2√x))/x = −1/(2x√x).",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Dans la formule de la dérivée d'un quotient, on peut écrire indifféremment u′v − uv′ ou uv′ − u′v au numérateur.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Les deux expressions sont opposées : inverser l'ordre change le signe de la dérivée. C'est u′v − uv′.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:120",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles fonctions se dérivent directement avec la formule (1/v)′ = −v′/v², éventuellement multipliée par un réel, sans la formule du quotient ?",
+      "propositions": [
+        "x ↦ √x/(x + 1)",
+        "x ↦ 1/(x² + 3)",
+        "x ↦ 4/(2x − 1)",
+        "x ↦ (x² − 1)/(x + 2)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Si le numérateur est constant, f = k × 1/v. Pour x/(x + 1) et (x² − 1)/(x + 2), le numérateur dépend de x : c'est un vrai quotient. Pour √x/(x + 1), le numérateur n’est pas constant : il faut la formule du quotient.",
+      "notion": "Inverse et quotient"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Si y = x³ − 4x, que vaut dy/dx ?",
+      "propositions": [
+        "3x² − 4",
+        "3x² − 4x",
+        "x² − 4",
+        "3x − 4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "dy/dx est la dérivée de y par rapport à x : 3x² − 4.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Comment se lit et que signifie la notation dy/dx ?",
+      "propositions": [
+        "Le produit d × y divisé par d × x, qu'on simplifie par d",
+        "« d y sur d x » : la dérivée de y par rapport à x",
+        "L'écart entre deux valeurs de y",
+        "La valeur de y divisée par la valeur de x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "dy/dx (notation de Leibniz) désigne la dérivée f′(x) quand y = f(x) ; ce n'est pas une fraction à simplifier.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:123",
+      "type": "reponse_courte",
+      "enonce": "La position d'un mobile est x(t) = 5t² (x en mètres, t en secondes) et sa vitesse est v(t) = dx/dt. Quelle est sa vitesse en m/s à l'instant t = 3 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "30"
+      ],
+      "difficulte": 2,
+      "explication": "dx/dt = 10t, donc v(3) = 30 m/s.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Quelle méthode est la plus adaptée pour dériver f(x) = (x³ + 2)/4 ?",
+      "propositions": [
+        "La formule des puissances avec l'exposant −4",
+        "La formule de l'inverse avec v(x) = x³ + 2",
+        "Le produit par le réel 1/4 : f′(x) = (1/4) × 3x²",
+        "La formule du produit avec u(x) = x³ et v(x) = 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le dénominateur est constant : f(x) = (1/4)(x³ + 2), donc f′(x) = 3x²/4.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'équation de la tangente à la courbe de f(x) = x³ − 2x au point d'abscisse 1 ?",
+      "propositions": [
+        "y = −x",
+        "y = x − 1",
+        "y = 3x − 4",
+        "y = x − 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "f(1) = −1 et f′(x) = 3x² − 2 donc f′(1) = 1 : y = 1 × (x − 1) + (−1) = x − 2.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:126",
+      "type": "reponse_courte",
+      "enonce": "Soit f(x) = x³ + 2/x sur ]0 ; +∞[. La tangente à sa courbe au point d'abscisse 1 a une équation de la forme y = mx + p. Donne p. Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 3,
+      "explication": "f(1) = 3, f′(x) = 3x² − 2/x², f′(1) = 1. Tangente : y = 1 × (x − 1) + 3 = x + 2, donc p = 2.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Pour calculer f′(2), on peut remplacer x par 2 dans f(x), puis dériver le nombre obtenu.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le nombre f(2) est une constante, de dérivée 0. Il faut d'abord calculer f′(x), puis remplacer x par 2.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Parmi ces dérivées, lesquelles sont justes ?",
+      "propositions": [
+        "(3/x²)′ = −6/x³",
+        "((x + 1)/(x − 2))′ = 3/(x − 2)²",
+        "(7x³ − x + 4)′ = 21x² − 1",
+        "(2/(x + 5))′ = −2/(x + 5)²"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "((x + 1)/(x − 2))′ = ((x − 2) − (x + 1))/(x − 2)² = −3/(x − 2)² : le signe est faux.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Quelles écritures sont correctes ?",
+      "propositions": [
+        "(√x)′ = 1/√x",
+        "(x² + 3)′ = 2x",
+        "(x²)′ = 2x²",
+        "(1/x)′ = −1/x²"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "(√x)′ = 1/(2√x) (ne pas oublier le 2) et (x²)′ = 2x.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:130",
+      "type": "qcm_unique",
+      "enonce": "On veut dériver f(x) = 5/(x² + 1). Quelle méthode donne le résultat le plus directement ?",
+      "propositions": [
+        "Écrire f = 5 × 1/v avec v(x) = x² + 1 et utiliser (1/v)′ = −v′/v²",
+        "Dériver séparément le numérateur et le dénominateur, ce qui donne 0/(2x)",
+        "Utiliser la formule des puissances avec l'exposant −2 pour x² + 1",
+        "Utiliser (ku)′ = k u′ avec u(x) = x² + 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Numérateur constant : f′(x) = 5 × (−2x)/(x² + 1)² = −10x/(x² + 1)².",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:131",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = −x² + 4x, laquelle de ces valeurs est f′(1) ?",
+      "propositions": [
+        "−2",
+        "2",
+        "4",
+        "3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "f′(x) = −2x + 4, donc f′(1) = 2 ; 3 est f(1).",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Si x(t) est la position d'un mobile à l'instant t, sa vitesse instantanée est v(t) = dx/dt.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "La vitesse instantanée est la dérivée de la position par rapport au temps.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Pour f(x) = x³ − 2x, la tangente à la courbe au point d'abscisse 1 a pour équation y = x.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "f′(1) = 1 mais f(1) = −1 : la tangente est y = x − 2. Il ne faut pas oublier f(a) dans y = f′(a)(x − a) + f(a).",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces fonctions, laquelle demande vraiment la formule du quotient (aucune réécriture ne permet de l'éviter simplement) ?",
+      "propositions": [
+        "f(x) = (x³ + 2)/4",
+        "f(x) = (2x + 6)/2",
+        "f(x) = (x + 1)/(x − 2)",
+        "f(x) = 3/x²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "(x³ + 2)/4 et (2x + 6)/2 ont un dénominateur constant ; 3/x² = 3x⁻². Seul (x + 1)/(x − 2) a un numérateur et un dénominateur variables.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Si y = 4x² − x, quelle est la valeur de dy/dx pour x = 2 ?",
+      "propositions": [
+        "16",
+        "14",
+        "7",
+        "15"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "dy/dx = 8x − 1, donc 15 pour x = 2 ; 14 est la valeur de y.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:136",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On considère f(x) = x³ − 3x et sa courbe C.",
+      "propositions": [
+        "La tangente à C au point d'abscisse 0 a pour équation y = −3x",
+        "f′(2) = 2",
+        "La tangente à C au point d'abscisse 1 est horizontale",
+        "La tangente à C au point d'abscisse −1 est horizontale"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "f′(x) = 3x² − 3 : f′(1) = f′(−1) = 0 ; f(0) = 0 et f′(0) = −3 ; f′(2) = 9 (2 est f(2)).",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:137",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Un mobile a pour position x(t) = t³ − 6t (t en secondes, x en mètres), avec t ⩾ 0.",
+      "propositions": [
+        "La vitesse s'annule pour t = √2",
+        "v(0) = 0 m/s",
+        "Sa vitesse est v(t) = 3t² − 6",
+        "v(2) = 6 m/s"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "v(t) = dx/dt = 3t² − 6 ; v(2) = 6 ; v(0) = −6 ; 3t² = 6 donne t = √2.",
+      "notion": "Notation dy/dx et méthodes"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = x², a réel et h ≠ 0, à quoi est égal le taux de variation (f(a + h) − f(a))/h ?",
+      "propositions": [
+        "2a + h",
+        "a + h",
+        "2a",
+        "2a + h²"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "((a + h)² − a²)/h = (2ah + h²)/h = 2a + h ; sa limite en 0 est 2a.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = 1/x, a ≠ 0 et h ≠ 0 avec a + h ≠ 0, à quoi est égal le taux de variation (f(a + h) − f(a))/h ?",
+      "propositions": [
+        "−1/a²",
+        "−1/(a(a + h))",
+        "1/(a(a + h))",
+        "−h/(a(a + h))"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "1/(a + h) − 1/a = −h/(a(a + h)) ; en divisant par h : −1/(a(a + h)). −1/a² en est seulement la limite.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Dans la démonstration de la formule du produit, quelle quantité ajoute-t-on et retranche-t-on à u(a + h)v(a + h) − u(a)v(a) ?",
+      "propositions": [
+        "u(a)v(a)",
+        "h × u(a)v(a)",
+        "u(a)v(a + h)",
+        "u′(a)v′(a)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "On écrit u(a + h)v(a + h) − u(a)v(a + h) + u(a)v(a + h) − u(a)v(a), puis on factorise.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:141",
+      "type": "vrai_faux",
+      "enonce": "Pour démontrer que la dérivée de x ↦ x² est x ↦ 2x, on peut calculer ((a + h)² − a²)/h, qui vaut 2a + h, puis faire tendre h vers 0.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "C'est la démonstration du cours : le taux 2a + h tend vers 2a.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:142",
+      "type": "vrai_faux",
+      "enonce": "Dans la démonstration de la dérivée de l'inverse, le taux de variation entre a et a + h vaut exactement −1/a².",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Le taux vaut −1/(a(a + h)) ; c'est seulement sa limite, quand h tend vers 0, qui vaut −1/a².",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. Dans la démonstration de (uv)′ = u′v + uv′, on utilise :",
+      "propositions": [
+        "que u(a + h) = u(a) + h",
+        "que v′(a) = 0",
+        "que (u(a + h) − u(a))/h tend vers u′(a)",
+        "que v(a + h) tend vers v(a) quand h tend vers 0"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le taux de uv s'écrit avec les taux de u et de v et le facteur v(a + h), qui tend vers v(a).",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:144",
+      "type": "qcm_unique",
+      "enonce": "Pour a réel et h ≠ 0, à quoi est égal le taux ((a + h)³ − a³)/h utilisé pour dériver la fonction cube ?",
+      "propositions": [
+        "3a²",
+        "3a² + h²",
+        "3a² + 3ah",
+        "3a² + 3ah + h²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "(a + h)³ − a³ = 3a²h + 3ah² + h³ ; divisé par h : 3a² + 3ah + h², qui tend vers 3a².",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Pour a > 0 et h ≠ 0 assez petit, (√(a + h) − √a)/h = 1/(√(a + h) + √a).",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "On multiplie par la quantité conjuguée : (√(a + h) − √a)(√(a + h) + √a) = h.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:146",
+      "type": "qcm_unique",
+      "enonce": "Dans la démonstration de la dérivée de la fonction carré, quelle quantité fait-on tendre vers 0 ?",
+      "propositions": [
+        "Le pas h",
+        "Le taux de variation",
+        "La valeur f(a)",
+        "Le réel a"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "On calcule le taux de variation entre a et a + h, puis on fait tendre h vers 0.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Pour f(x) = x², a = 3 et h = 0,1, calcule le taux de variation (f(a + h) − f(a))/h. Donne la valeur décimale exacte.",
+      "reponses_acceptees": [
+        "6,1",
+        "6.1"
+      ],
+      "difficulte": 2,
+      "explication": "Le taux vaut 2a + h = 6 + 0,1 = 6,1 (soit (9,61 − 9)/0,1).",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:148",
+      "type": "qcm_unique",
+      "enonce": "Pour f(x) = 1/x, a = 2 et h = 0,5, que vaut le taux de variation (f(a + h) − f(a))/h ?",
+      "propositions": [
+        "−0,25",
+        "−0,2",
+        "−0,1",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Le taux vaut −1/(a(a + h)) = −1/(2 × 2,5) = −0,2 ; −0,25 = −1/a² est la limite.",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:149",
+      "type": "qcm_multiple",
+      "enonce": "Coche toutes les réponses exactes. On démontre que la fonction inverse est dérivable en a ≠ 0.",
+      "propositions": [
+        "On fait tendre h vers 0 dans −1/(a(a + h))",
+        "On écrit 1/(a + h) − 1/a = −h/(a(a + h))",
+        "On conclut que f′(a) = 1/a²",
+        "On remplace h par 0 dès la première ligne, avant de simplifier par h",
+        "On conclut que f′(a) = −1/a²"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "On simplifie d'abord par h (sinon on divise par 0), puis on passe à la limite : −1/a².",
+      "notion": "Démonstrations"
+    },
+    {
+      "source": "maths-spe-1re:ch5:banque:150",
+      "type": "qcm_unique",
+      "enonce": "Dans la démonstration de la formule du produit, le taux s'écrit ((u(a + h) − u(a))/h) × v(a + h) + u(a) × ((v(a + h) − v(a))/h). Quelle est sa limite quand h tend vers 0 ?",
+      "propositions": [
+        "u′(a)v(a) − u(a)v′(a)",
+        "u′(a)v′(a)",
+        "u′(a)v(a) + u(a)v′(a)",
+        "u(a)v(a) + u′(a)v′(a)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le premier quotient tend vers u′(a), v(a + h) vers v(a), le second quotient vers v′(a).",
+      "notion": "Démonstrations"
+    }
+  ]
+}

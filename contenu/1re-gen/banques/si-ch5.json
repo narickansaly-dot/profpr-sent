@@ -1,0 +1,2309 @@
+{
+  "chapitre": 5,
+  "notions": [
+    "Vocabulaire et conventions",
+    "Lois de Kirchhoff",
+    "Loi d'Ohm et associations de résistors",
+    "Pont diviseur de tension",
+    "Puissance, énergie et effet Joule",
+    "Condensateur et bobine",
+    "Diode, transistor, interrupteur parfait",
+    "Signaux périodiques et réseau électrique"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch5:banque:001",
+      "type": "qcm_unique",
+      "enonce": "En sciences de l'ingénieur, quelle grandeur électrique joue le rôle de grandeur flux ?",
+      "propositions": [
+        "L'intensité du courant",
+        "La tension",
+        "La résistance",
+        "La puissance"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'intensité, en ampères, mesure le débit de charges : c'est la grandeur flux. La tension est la grandeur effort, et leur produit est la puissance.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on un nœud dans un circuit électrique ?",
+      "propositions": [
+        "Un point relié à exactement deux fils",
+        "Un point relié à au moins trois fils",
+        "Un chemin fermé formé de branches",
+        "Une portion de circuit entre deux dipôles"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un nœud est un point du circuit où se rejoignent au moins trois fils. Un chemin fermé est une maille ; la portion entre deux nœuds est une branche.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:003",
+      "type": "qcm_unique",
+      "enonce": "En convention récepteur, comment sont orientées la flèche de tension et la flèche de courant d'un dipôle ?",
+      "propositions": [
+        "Dans le même sens",
+        "Perpendiculairement l'une à l'autre",
+        "En sens opposés",
+        "Toutes deux vers la masse du circuit"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Convention récepteur : la flèche de U et la flèche de I sont de sens opposés. En convention générateur, elles sont de même sens.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Pour indiquer une tension U_AB sur un schéma, vers quel point la flèche de tension doit-elle pointer ?",
+      "propositions": [
+        "Vers le point B",
+        "Vers la masse du circuit",
+        "Vers la borne − du générateur",
+        "Vers le point A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La flèche de U_AB = V_A − V_B pointe vers le point dont on donne le potentiel en premier, ici A.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Une batterie alimente un résistor R1 placé en série avec un ensemble de deux résistors R2 et R3 montés en parallèle. Combien ce circuit compte-t-il de nœuds ?",
+      "propositions": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Seuls les deux points où R2 et R3 se séparent et se rejoignent sont reliés à au moins trois fils : il y a 2 nœuds.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans un montage, le point A est au potentiel V_A = 9 V et le point B au potentiel V_B = 3 V. Que vaut la tension U_AB ?",
+      "propositions": [
+        "−6 V",
+        "6 V",
+        "12 V",
+        "3 V"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "U_AB = V_A − V_B = 9 − 3 = 6 V. La valeur −6 V correspondrait à U_BA, et 12 V à une somme au lieu d'une différence.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:007",
+      "type": "qcm_unique",
+      "enonce": "La masse d'un circuit est à 0 V et le point A est au potentiel 12 V. La tension aux bornes d'un résistor placé entre A et B vaut U_AB = 4,5 V. Quel est le potentiel du point B ?",
+      "propositions": [
+        "16,5 V",
+        "4,5 V",
+        "7,5 V",
+        "−7,5 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "U_AB = V_A − V_B, donc V_B = V_A − U_AB = 12 − 4,5 = 7,5 V. Ajouter les deux valeurs (16,5 V) revient à inverser le sens de la tension.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Lors d'une mesure de tension aux bornes d'une lampe de vélo, comment faut-il brancher le voltmètre ?",
+      "propositions": [
+        "En série avec la lampe",
+        "À la place de la lampe",
+        "En série, juste après la batterie",
+        "En dérivation, aux bornes de la lampe"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Un voltmètre se branche toujours en dérivation, entre les deux points dont on veut la différence de potentiel ; c'est l'ampèremètre qui se branche en série.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'une branche d'un circuit électrique. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle relie deux nœuds consécutifs.",
+        "Tous ses dipôles sont parcourus par le même courant.",
+        "Elle forme un chemin fermé.",
+        "Elle contient obligatoirement un générateur."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une branche est la portion de circuit comprise entre deux nœuds consécutifs ; ses dipôles sont en série, donc parcourus par le même courant. Le chemin fermé est une maille, et une branche peut ne contenir qu'un résistor.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces choix d'orientation, lesquels correspondent à l'usage habituel ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Batterie en convention générateur",
+        "Résistor en convention récepteur",
+        "Moteur en convention générateur",
+        "Lampe en convention générateur",
+        "DEL en convention récepteur"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "On oriente habituellement les sources (batterie, alimentation) en convention générateur et tous les autres dipôles (résistor, lampe, moteur, DEL) en convention récepteur.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Voici des descriptions de symboles de schéma électrique. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Moteur : cercle contenant la lettre M",
+        "Résistor : rectangle",
+        "Condensateur : deux traits parallèles",
+        "Diode : cercle contenant la lettre D",
+        "Interrupteur : deux traits parallèles"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le moteur est un cercle contenant M, le résistor un rectangle, le condensateur deux traits parallèles. La diode est un triangle pointant vers une barre, et l'interrupteur un trait incliné entre deux bornes.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:012",
+      "type": "qcm_multiple",
+      "enonce": "Une batterie alimente un résistor R1 en série avec trois résistors R2, R3 et R4, tous les trois montés en parallèle entre deux nœuds N et M. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le circuit compte 2 nœuds.",
+        "Le circuit compte 4 branches.",
+        "R2, R3 et R4 ont la même tension à leurs bornes.",
+        "Le circuit ne compte que 2 mailles."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Nœuds : N et M. Branches : « batterie et R1 », R2, R3, R4, soit 4. R2, R3 et R4 sont en parallèle entre N et M, donc ont la même tension. Il y a bien plus de 2 mailles : chaque paire de branches en forme une, soit 6.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:013",
+      "type": "qcm_multiple",
+      "enonce": "À propos des appareils de mesure. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un voltmètre se branche en dérivation.",
+        "Un ampèremètre se branche en série.",
+        "Un ampèremètre se branche en dérivation.",
+        "Un voltmètre se branche en série avec le dipôle étudié."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le voltmètre mesure une différence de potentiel entre deux points : il se branche en dérivation. L'ampèremètre doit être traversé par le courant : il se branche en série.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:014",
+      "type": "vrai_faux",
+      "enonce": "À l'extérieur d'un générateur, le courant conventionnel va de la borne − vers la borne +.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : par convention, à l'extérieur d'un générateur, le courant va de la borne + vers la borne −.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:015",
+      "type": "vrai_faux",
+      "enonce": "La masse est le point de référence d'un circuit, dont le potentiel est pris égal à 0 V.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : on choisit un point de référence, la masse, de potentiel 0 V ; les autres potentiels sont donnés par rapport à elle.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:016",
+      "type": "vrai_faux",
+      "enonce": "Si le calcul d'une intensité fléchée donne −0,3 A, le courant réel circule dans le sens opposé à la flèche choisie.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : le sens des flèches est choisi librement ; une valeur négative signifie simplement que la grandeur réelle est dans l'autre sens.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:017",
+      "type": "vrai_faux",
+      "enonce": "Si deux dipôles ont la même tension à leurs bornes, ils sont forcément montés en parallèle.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : des dipôles en parallèle ont la même tension, mais la réciproque est fausse. Deux résistors identiques en série ont aussi la même tension, sans être en parallèle.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:018",
+      "type": "reponse_courte",
+      "enonce": "Une batterie alimente un résistor R1, lui-même en série avec deux résistors R2 et R3 branchés en parallèle. Combien de mailles ce circuit possède-t-il ? Donne le nombre seul.",
+      "reponses_acceptees": [
+        "3",
+        "trois"
+      ],
+      "difficulte": 2,
+      "explication": "Les mailles sont : batterie, R1, R2 ; batterie, R1, R3 ; R2, R3. Il y en a 3.",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:019",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on un composant électrique qui possède deux bornes ?",
+      "reponses_acceptees": [
+        "dipôle",
+        "un dipôle",
+        "dipole",
+        "un dipole",
+        "le dipôle",
+        "dipôles"
+      ],
+      "difficulte": 1,
+      "explication": "Un dipôle est un composant à deux bornes : pile, résistor, lampe, diode, moteur…",
+      "notion": "Vocabulaire et conventions"
+    },
+    {
+      "source": "si-1re:ch5:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Que dit la loi des nœuds ?",
+      "propositions": [
+        "Les courants qui arrivent ont pour somme celle des courants qui repartent",
+        "La somme des tensions d'une maille est nulle",
+        "La tension est proportionnelle à l'intensité",
+        "Toutes les branches reliées au nœud ont le même courant"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Loi des nœuds : en un nœud, la somme des intensités des courants qui arrivent est égale à la somme des intensités des courants qui repartent. Les charges ne s'accumulent pas.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Dans des dipôles branchés en série, que peut-on dire de l'intensité du courant ?",
+      "propositions": [
+        "Elle est plus forte près de la borne +",
+        "Elle est la même dans tous les dipôles",
+        "Elle se partage entre les dipôles",
+        "Elle est nulle dans le dernier dipôle"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Des dipôles en série forment une branche : ils sont parcourus par le même courant (conséquence de la loi des nœuds).",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 36 V alimente un contrôleur de moteur et un phare montés en parallèle. Quelle est la tension aux bornes du phare ?",
+      "propositions": [
+        "18 V",
+        "72 V",
+        "36 V",
+        "12 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Des dipôles en parallèle ont la même tension à leurs bornes (loi des mailles) : le phare est sous 36 V, comme le contrôleur.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:023",
+      "type": "qcm_unique",
+      "enonce": "En un nœud arrivent deux courants de 2,5 A et 0,7 A ; repartent un courant de 1,8 A et un courant I. Que vaut I ?",
+      "propositions": [
+        "5,0 A",
+        "3,2 A",
+        "1,1 A",
+        "1,4 A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : 2,5 + 0,7 = 1,8 + I, donc I = 3,2 − 1,8 = 1,4 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 24 V alimente le moteur d'un portail par l'intermédiaire de câbles. La tension aux bornes du moteur vaut 23,2 V. Quelle tension perdent les câbles au total ?",
+      "propositions": [
+        "0,8 V",
+        "47,2 V",
+        "23,2 V",
+        "1,0 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles : 24 = U_câbles + 23,2, donc U_câbles = 24 − 23,2 = 0,8 V.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Une batterie débite 10 A. Le moteur en reçoit 9,5 A et le reste se partage également entre deux lampes identiques montées en parallèle. Quelle est l'intensité dans chaque lampe ?",
+      "propositions": [
+        "0,5 A",
+        "0,25 A",
+        "4,75 A",
+        "9,75 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : les lampes reçoivent ensemble 10 − 9,5 = 0,5 A ; identiques et en parallèle, elles se le partagent : 0,5 / 2 = 0,25 A chacune.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Une maille est parcourue dans le sens horaire. On y rencontre E = 12 V (flèche dans le sens du parcours), U1 = 3 V (flèche en sens contraire), U2 (flèche dans le sens du parcours) et U3 = 5 V (flèche en sens contraire). Que vaut U2 ?",
+      "propositions": [
+        "4 V",
+        "20 V",
+        "−4 V",
+        "−20 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Loi des mailles : E − U1 + U2 − U3 = 0, soit 12 − 3 + U2 − 5 = 0, donc U2 = −4 V. La tension réelle est orientée dans l'autre sens.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Une source E = 9 V alimente R1 en série avec R2 et R3 montés en parallèle. On mesure U1 = 3 V aux bornes de R1, I2 = 0,2 A dans R2 et I3 = 0,1 A dans R3. Que valent U3 et le courant I1 dans R1 ?",
+      "propositions": [
+        "U3 = 3 V et I1 = 0,3 A",
+        "U3 = 6 V et I1 = 0,1 A",
+        "U3 = 9 V et I1 = 0,2 A",
+        "U3 = 6 V et I1 = 0,3 A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Maille : U2 = E − U1 = 9 − 3 = 6 V, et U3 = U2 = 6 V (parallèle). Nœud : I1 = I2 + I3 = 0,2 + 0,1 = 0,3 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Pour calculer toutes les grandeurs d'un circuit, que faut-il ajouter aux lois de Kirchhoff ?",
+      "propositions": [
+        "Les lois de comportement des composants",
+        "Rien : elles suffisent toujours",
+        "Le théorème de superposition",
+        "La valeur de la fréquence du réseau"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Les lois de Kirchhoff ne dépendent pas des composants ; il faut leur ajouter les lois de comportement (par exemple U = R × I) pour résoudre le circuit.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Une source E alimente R1, parcouru par I1, en série avec R2 et R3 montés en parallèle, parcourus par I2 et I3. U1, U2, U3 sont les tensions aux bornes des résistors. Coche toutes les réponses exactes.",
+      "propositions": [
+        "I1 = I2 + I3",
+        "E = U1 + U2",
+        "U2 = U3",
+        "I2 = I3 dans tous les cas",
+        "E = U1 + U2 + U3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Nœud : I1 = I2 + I3. Maille E, R1, R2 : E = U1 + U2. Maille R2, R3 : U2 = U3. I2 = I3 seulement si R2 = R3 ; et E = U1 + U2 + U3 ajoute deux fois la même tension.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:030",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la loi des mailles. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme algébrique des tensions le long d'une maille est nulle.",
+        "Une tension fléchée dans le sens du parcours compte positivement.",
+        "Elle ne s'applique qu'aux circuits formés uniquement de résistors.",
+        "Son énoncé change selon les composants de la maille."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le long d'une maille, la somme algébrique des tensions est nulle, en comptant positivement les flèches dans le sens du parcours. Comme toutes les lois de Kirchhoff, elle ne dépend pas des composants.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:031",
+      "type": "qcm_multiple",
+      "enonce": "À propos des dipôles en série et en parallèle. Coche toutes les réponses exactes.",
+      "propositions": [
+        "En série, les dipôles sont parcourus par le même courant.",
+        "En parallèle, les dipôles ont la même tension.",
+        "En série, la tension totale est la somme des tensions.",
+        "En parallèle, les courants sont toujours égaux."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "En série : même courant, tensions qui s'additionnent. En parallèle : même tension ; les courants, eux, s'additionnent et ne sont égaux que si les dipôles sont identiques.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:032",
+      "type": "vrai_faux",
+      "enonce": "La loi des nœuds traduit le fait que les charges électriques ne s'accumulent pas en un point du circuit.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : tout ce qui entre dans un nœud en ressort ; c'est la conservation de la charge, d'où l'égalité entre la somme des courants qui arrivent et celle des courants qui repartent.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:033",
+      "type": "vrai_faux",
+      "enonce": "Les lois de Kirchhoff changent selon la nature des composants du circuit.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : les lois des nœuds et des mailles ne dépendent pas des composants. Ce sont les lois de comportement qui décrivent chaque composant.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:034",
+      "type": "vrai_faux",
+      "enonce": "Deux résistors montés en série ont toujours la même tension à leurs bornes.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : en série, les résistors sont parcourus par le même courant, et la tension de chacun vaut U = R × I. Leurs tensions ne sont égales que si leurs résistances le sont ; ce sont des dipôles en parallèle qui ont toujours la même tension.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:035",
+      "type": "vrai_faux",
+      "enonce": "Dans un circuit à plusieurs sources ne contenant que des composants linéaires comme des résistors, on peut calculer l'effet de chaque source seule puis additionner les résultats.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : c'est le théorème de superposition, présenté en ouverture (il sera utilisé en terminale). Les autres sources de tension sont alors remplacées par des fils.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:036",
+      "type": "reponse_courte",
+      "enonce": "En un nœud arrive un courant I1 = 3,2 A ; en repartent un courant I2 = 1,5 A et un courant I3. Que vaut I3, en ampères ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1,7"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des nœuds : I1 = I2 + I3, donc I3 = 3,2 − 1,5 = 1,7 A.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:037",
+      "type": "reponse_courte",
+      "enonce": "Une batterie de 48 V alimente en série un fusible, un câble et le contrôleur d'un vélo. Le fusible a 0,1 V à ses bornes et le câble 0,6 V. Quelle est la tension aux bornes du contrôleur, en volts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "47,3"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles (additivité en série) : 48 = 0,1 + 0,6 + U, donc U = 48 − 0,7 = 47,3 V.",
+      "notion": "Lois de Kirchhoff"
+    },
+    {
+      "source": "si-1re:ch5:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation traduit la loi d'Ohm pour un résistor en convention récepteur ?",
+      "propositions": [
+        "U = R / I",
+        "U = R × I",
+        "I = R × U",
+        "P = U × I"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La loi d'Ohm s'écrit U = R × I : la tension est proportionnelle à l'intensité, R étant la résistance en ohms.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime une résistance électrique ?",
+      "propositions": [
+        "L'ampère (A)",
+        "Le farad (F)",
+        "L'ohm (Ω)",
+        "Le henry (H)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La résistance s'exprime en ohms (Ω). Le farad est l'unité de capacité, le henry celle d'inductance.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Un résistor de 220 Ω est traversé par un courant de 50 mA. Quelle est la tension à ses bornes ?",
+      "propositions": [
+        "4,4 V",
+        "11 000 V",
+        "0,23 V",
+        "11 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "On convertit : 50 mA = 0,050 A. U = R × I = 220 × 0,050 = 11 V. Oublier la conversion donne 11 000 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Sous une tension de 12 V, un résistor est traversé par 25 mA. Quelle est sa résistance ?",
+      "propositions": [
+        "480 Ω",
+        "0,48 Ω",
+        "300 Ω",
+        "2,1 Ω"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "R = U / I = 12 / 0,025 = 480 Ω. Sans convertir les milliampères, on obtiendrait 0,48 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Deux résistors de 60 Ω et 30 Ω sont montés en parallèle. Quelle est la résistance équivalente ?",
+      "propositions": [
+        "90 Ω",
+        "20 Ω",
+        "45 Ω",
+        "30 Ω"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En parallèle : R_éq = (60 × 30) / (60 + 30) = 1 800 / 90 = 20 Ω, plus petite que la plus petite des deux résistances.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Deux résistors de 100 Ω sont branchés l'un à la suite de l'autre, en série. Quelle résistance équivalente obtient-on ?",
+      "propositions": [
+        "50 Ω",
+        "100 Ω",
+        "200 Ω",
+        "10 000 Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "En série, R_éq = R1 + R2 = 100 + 100 = 200 Ω. La valeur 50 Ω serait celle du montage en parallèle.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Trois résistors identiques de 120 Ω sont montés en parallèle sous une tension de 12 V. Quelle intensité débite la source ?",
+      "propositions": [
+        "0,033 A",
+        "0,10 A",
+        "3,0 A",
+        "0,30 A"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Trois résistors identiques en parallèle : R_éq = 120 / 3 = 40 Ω. I = U / R_éq = 12 / 40 = 0,30 A. La valeur 0,10 A n'est que le courant dans un seul résistor.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Un résistor de 100 Ω est en série avec deux résistors de 200 Ω montés en parallèle entre eux. L'ensemble est sous 20 V. Quelle est la tension aux bornes du résistor de 100 Ω ?",
+      "propositions": [
+        "10 V",
+        "4 V",
+        "20 V",
+        "5 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Les deux 200 Ω en parallèle équivalent à 100 Ω ; R_éq = 100 + 100 = 200 Ω. I = 20 / 200 = 0,1 A, d'où U = 100 × 0,1 = 10 V. Mettre les trois en série donnerait 4 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'un résistor qui suit la loi d'Ohm. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa caractéristique U = f(I) est une droite passant par l'origine.",
+        "Sa résistance vaut R = U / I.",
+        "Si la tension double, l'intensité double.",
+        "La résistance d'un fil de connexion est en général très grande."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I : la caractéristique est une droite par l'origine, R = U / I, et U et I sont proportionnels. Un fil de connexion a au contraire une résistance très faible, souvent négligée.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "On dispose de deux résistors de 10 Ω et de 40 Ω. Coche toutes les réponses exactes.",
+      "propositions": [
+        "En série, ils équivalent à 50 Ω.",
+        "En parallèle, ils équivalent à 8 Ω.",
+        "En parallèle, ils équivalent à 25 Ω.",
+        "En série, ils équivalent à 400 Ω."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Série : 10 + 40 = 50 Ω. Parallèle : (10 × 40) / (10 + 40) = 400 / 50 = 8 Ω. 25 Ω est la moyenne, 400 Ω le produit.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:048",
+      "type": "qcm_multiple",
+      "enonce": "On dispose de quatre résistors identiques de 100 Ω. Quels montages ont une résistance équivalente de 100 Ω ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Deux en série, en parallèle avec deux autres en série",
+        "Les quatre en parallèle",
+        "Deux en parallèle, en série avec deux autres en parallèle",
+        "Les quatre en série"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "200 Ω en parallèle avec 200 Ω donnent 100 Ω ; 50 Ω en série avec 50 Ω donnent 100 Ω. Les quatre en parallèle donnent 25 Ω, les quatre en série 400 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:049",
+      "type": "qcm_multiple",
+      "enonce": "Voici des conversions d'unités. Coche toutes les réponses exactes.",
+      "propositions": [
+        "1 MΩ = 10⁶ Ω",
+        "1 kΩ = 1 000 Ω",
+        "1 mA = 0,1 A",
+        "22 mA = 0,022 A"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Méga = 10⁶, kilo = 10³, milli = 10⁻³. Donc 1 mA = 0,001 A et 22 mA = 0,022 A.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "On monte deux résistors de 10 Ω et 1 kΩ en parallèle. Que peut-on dire de la résistance équivalente ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est inférieure à 10 Ω.",
+        "Elle est proche de 10 Ω.",
+        "Elle est supérieure à 1 kΩ.",
+        "Elle vaut 505 Ω."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "En parallèle, R_éq est plus petite que la plus petite des résistances : (10 × 1 000) / 1 010 ≈ 9,9 Ω, juste en dessous de 10 Ω. 505 Ω est une moyenne, sans signification ici.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:051",
+      "type": "vrai_faux",
+      "enonce": "En série, la résistance équivalente est la somme des résistances.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : R_éq = R1 + R2 + … ; elle est plus grande que chacune des résistances.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:052",
+      "type": "vrai_faux",
+      "enonce": "Deux résistors identiques de 1 kΩ montés en parallèle équivalent à un résistor de 2 kΩ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : deux résistors identiques R en parallèle équivalent à R / 2, soit 500 Ω. C'est en série qu'on obtiendrait 2 kΩ.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:053",
+      "type": "vrai_faux",
+      "enonce": "Si l'on double la tension aux bornes d'un résistor, l'intensité qui le traverse est divisée par deux.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : I = U / R, donc l'intensité est proportionnelle à la tension : elle double aussi.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:054",
+      "type": "reponse_courte",
+      "enonce": "Un résistor de 470 Ω est parcouru par un courant de 20 mA. Quelle tension, en volts, mesure-t-on à ses bornes ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "9,4"
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I = 470 × 0,020 = 9,4 V.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:055",
+      "type": "reponse_courte",
+      "enonce": "Deux résistors montés en parallèle ont une résistance équivalente de 12 Ω. L'un d'eux vaut 20 Ω. Quelle est la résistance de l'autre, en ohms ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "30"
+      ],
+      "difficulte": 3,
+      "explication": "1 / R_éq = 1 / R1 + 1 / R2, donc 1 / R2 = 1 / 12 − 1 / 20 = 5 / 60 − 3 / 60 = 2 / 60, d'où R2 = 30 Ω. Vérification : (20 × 30) / 50 = 12 Ω.",
+      "notion": "Loi d'Ohm et associations de résistors"
+    },
+    {
+      "source": "si-1re:ch5:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'expression de la tension de sortie U2 d'un pont diviseur à vide, alimenté sous E, U2 étant prise aux bornes de R2 ?",
+      "propositions": [
+        "U2 = E × R1 / (R1 + R2)",
+        "U2 = E × R2 / (R1 + R2)",
+        "U2 = E × (R1 + R2) / R2",
+        "U2 = E × R2 / R1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "R1 et R2 sont en série, parcourus par I = E / (R1 + R2) ; U2 = R2 × I = E × R2 / (R1 + R2).",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Un pont diviseur à vide est alimenté sous 5,0 V, avec R1 = 3 kΩ et R2 = 2 kΩ. Que vaut la tension aux bornes de R2 ?",
+      "propositions": [
+        "3,0 V",
+        "3,3 V",
+        "2,0 V",
+        "12,5 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "U2 = 5,0 × 2 / (3 + 2) = 2,0 V. La valeur 3,0 V est la tension aux bornes de R1 ; 3,3 V vient de l'erreur E × R2 / R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi choisit-on des résistances de l'ordre de 100 kΩ pour le pont diviseur qui surveille la batterie d'une trottinette ?",
+      "propositions": [
+        "Pour que U2 soit égale à la tension de la batterie",
+        "Pour chauffer la batterie par temps froid",
+        "Pour augmenter le courant envoyé au moteur",
+        "Pour que le pont décharge très peu la batterie"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le courant du pont vaut I = E / (R1 + R2) : avec de grandes résistances, il est de l'ordre du dixième de milliampère et la batterie se décharge à peine.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Une batterie de 48 V doit être surveillée par un microcontrôleur dont l'entrée accepte au plus 3,3 V. On utilise un pont diviseur à vide avec R2 = 10 kΩ. Parmi ces valeurs de R1, laquelle donne une tension de sortie inférieure à 3,3 V ?",
+      "propositions": [
+        "150 kΩ",
+        "100 kΩ",
+        "47 kΩ",
+        "22 kΩ"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "U2 = 48 × 10 / (R1 + 10). Avec 150 kΩ : 480 / 160 = 3,0 V, acceptable. Avec 100 kΩ : 4,4 V ; 47 kΩ : 8,4 V ; 22 kΩ : 15 V, trop élevées.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Un pont diviseur formé de R1 = 100 kΩ et R2 = 20 kΩ est alimenté sous 24 V, sans rien brancher sur la sortie. Quel courant traverse les deux résistors ?",
+      "propositions": [
+        "0,24 mA",
+        "0,2 mA",
+        "1,2 mA",
+        "0,2 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "I = E / (R1 + R2) = 24 / 120 000 = 0,000 2 A = 0,2 mA. La valeur 0,24 mA oublie R2, 1,2 mA oublie R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Dans un lampadaire, une photorésistance détecte la tombée de la nuit. Comment varie sa résistance quand la lumière augmente ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle reste constante",
+        "Elle diminue",
+        "Elle devient infinie"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La résistance d'une photorésistance diminue quand la lumière augmente ; placée dans un pont diviseur, elle fait varier la tension de sortie avec l'éclairement.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Quel composant résistif place-t-on dans un pont diviseur pour mesurer la température d'une station météo ?",
+      "propositions": [
+        "Une photorésistance",
+        "Un condensateur",
+        "Une diode",
+        "Une thermistance"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La résistance d'une thermistance varie avec la température : dans un pont diviseur, elle donne une tension qui dépend de la température.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:063",
+      "type": "qcm_unique",
+      "enonce": "On branche sur la sortie d'un pont diviseur une charge qui consomme un courant important. Comment évolue la tension de sortie ?",
+      "propositions": [
+        "Elle baisse",
+        "Elle augmente",
+        "Elle ne change pas",
+        "Elle devient égale à E"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "La formule du pont diviseur suppose un courant de sortie négligeable. Si la charge consomme beaucoup, U2 baisse.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On veut obtenir 2,5 V à vide à partir d'une source de 10 V, avec un pont diviseur dont R2 vaut 1 kΩ. Quelle valeur faut-il donner à R1 ?",
+      "propositions": [
+        "4 kΩ",
+        "3 kΩ",
+        "0,33 kΩ",
+        "2,5 kΩ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "U2 / E = R2 / (R1 + R2) = 2,5 / 10 = 0,25, donc R1 + R2 = 1 / 0,25 = 4 kΩ et R1 = 4 − 1 = 3 kΩ. 4 kΩ est la résistance totale, pas R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:065",
+      "type": "qcm_multiple",
+      "enonce": "Un pont diviseur à vide est alimenté sous 9 V, avec deux résistances R1 et R2 égales. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tension de sortie vaut 4,5 V.",
+        "R1 et R2 sont parcourus par le même courant.",
+        "Les tensions aux bornes de R1 et de R2 sont égales.",
+        "La tension de sortie vaut 9 V."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "À vide, R1 et R2 sont en série : même courant, et avec R1 = R2, même tension. Chacune reçoit la moitié de 9 V, soit 4,5 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:066",
+      "type": "qcm_multiple",
+      "enonce": "Un pont diviseur à vide est alimenté sous 12 V, avec R1 = 8 kΩ et R2 = 4 kΩ. Coche toutes les réponses exactes.",
+      "propositions": [
+        "U2 = 4 V",
+        "U1 = 8 V",
+        "Le courant vaut 1 mA.",
+        "Le courant vaut 1,5 mA.",
+        "U2 = 6 V"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "I = 12 / (8 000 + 4 000) = 0,001 A = 1 mA. U2 = 4 000 × 0,001 = 4 V et U1 = 8 000 × 0,001 = 8 V ; on vérifie U1 + U2 = 12 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:067",
+      "type": "vrai_faux",
+      "enonce": "Un pont diviseur de tension peut fournir une tension de sortie supérieure à sa tension d'alimentation.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : U2 = E × R2 / (R1 + R2), et R2 / (R1 + R2) est inférieur à 1 : la sortie est une fraction de E.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:068",
+      "type": "vrai_faux",
+      "enonce": "Lorsque R1 = R2, la tension de sortie d'un pont diviseur à vide vaut la moitié de la tension d'alimentation.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : U2 = E × R / (R + R) = E / 2.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:069",
+      "type": "vrai_faux",
+      "enonce": "Dans un pont diviseur à vide, augmenter R2 sans changer R1 ni E fait augmenter la tension de sortie U2.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : U2 = E × R2 / (R1 + R2) ; la fraction R2 / (R1 + R2) augmente quand R2 augmente. Par exemple 1/2 pour R2 = R1, 2/3 pour R2 = 2 R1.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:070",
+      "type": "vrai_faux",
+      "enonce": "La formule du pont diviseur reste exacte même quand la charge branchée sur la sortie consomme un courant important.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : la formule n'est valable que si le courant de sortie est négligeable devant celui qui traverse R1 et R2 ; sinon la tension de sortie baisse.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:071",
+      "type": "reponse_courte",
+      "enonce": "Une batterie chargée à 42 V alimente un pont diviseur à vide avec R1 = 120 kΩ et R2 = 10 kΩ. Quelle est la tension de sortie aux bornes de R2, en volts, arrondie au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "3,23"
+      ],
+      "marge": 0.01,
+      "marge_relative": false,
+      "difficulte": 2,
+      "explication": "U2 = 42 × 10 / (120 + 10) = 420 / 130 ≈ 3,23 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:072",
+      "type": "reponse_courte",
+      "enonce": "Dans une station météo, un pont diviseur à vide est alimenté sous 5 V : R1 = 10 kΩ, et R2 est une thermistance qui vaut 5 kΩ à 40 °C. Quelle est la tension de sortie aux bornes de la thermistance à 40 °C, en volts, arrondie au centième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "1,67"
+      ],
+      "marge": 0.01,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "U2 = 5 × 5 / (10 + 5) = 25 / 15 ≈ 1,67 V.",
+      "notion": "Pont diviseur de tension"
+    },
+    {
+      "source": "si-1re:ch5:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation donne la puissance électrique reçue par un dipôle ?",
+      "propositions": [
+        "P = U / I",
+        "P = R × I",
+        "P = U × I",
+        "P = U × I²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La puissance électrique d'un dipôle est le produit de la tension à ses bornes par l'intensité qui le traverse : P = U × I, en watts.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:074",
+      "type": "qcm_unique",
+      "enonce": "À combien de joules correspond une énergie de 1 Wh ?",
+      "propositions": [
+        "60 J",
+        "1 000 J",
+        "3,6 J",
+        "3 600 J"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "1 Wh est l'énergie d'une puissance de 1 W pendant 1 h = 3 600 s : 1 × 3 600 = 3 600 J.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Le phare d'un vélo, alimenté sous 12 V, absorbe 0,5 A. Quelle puissance reçoit-il ?",
+      "propositions": [
+        "6 W",
+        "24 W",
+        "12,5 W",
+        "0,04 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "P = U × I = 12 × 0,5 = 6 W. 24 W vient d'une division par 0,5 au lieu d'une multiplication, 0,04 W de I / U.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Quel phénomène physique fait fondre le fil d'un fusible lorsque l'intensité devient trop forte ?",
+      "propositions": [
+        "La charge d'un condensateur",
+        "L'effet Joule",
+        "La surtension d'une bobine",
+        "Le redressement par une diode"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le fusible utilise l'effet Joule : un courant trop intense chauffe son fil jusqu'à le faire fondre, ce qui ouvre le circuit.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Dans un câble de résistance fixée, l'intensité du courant double. Que deviennent les pertes par effet Joule ?",
+      "propositions": [
+        "Elles sont multipliées par 2",
+        "Elles ne changent pas",
+        "Elles sont multipliées par 4",
+        "Elles sont divisées par 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "P = R × I² : la puissance perdue est proportionnelle au carré de l'intensité. Avec 2 I, on obtient R × 4 I², soit 4 fois plus de pertes.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Une plaque chauffante de résistance 20 Ω est parcourue par un courant de 5 A. Quelle puissance dissipe-t-elle ?",
+      "propositions": [
+        "100 W",
+        "25 W",
+        "10 000 W",
+        "500 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Effet Joule : P = R × I² = 20 × 5² = 20 × 25 = 500 W. 100 W correspond à R × I (c'est une tension, pas une puissance), 10 000 W à (R × I)².",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Une lampe d'éclairage public de 60 W reste allumée pendant 3 h. Quelle énergie consomme-t-elle ?",
+      "propositions": [
+        "180 Wh",
+        "20 Wh",
+        "10 800 Wh",
+        "648 000 Wh"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "W = P × Δt = 60 × 3 = 180 Wh (soit 180 × 3 600 = 648 000 J). 10 800 Wh vient d'une durée prise en minutes, 648 000 Wh confond joules et wattheures.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Un radiateur électrique, assimilé à un résistor de 46 Ω, est branché sous 230 V. Quelle puissance reçoit-il ?",
+      "propositions": [
+        "5 W",
+        "1 150 W",
+        "10 580 W",
+        "276 W"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P = U² / R = 230² / 46 = 52 900 / 46 = 1 150 W. 5 W correspond à U / R (c'est l'intensité en ampères), 10 580 W à U × R.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Pour transporter la même puissance avec moins de pertes par effet Joule dans les câbles, que faut-il faire ?",
+      "propositions": [
+        "Diminuer la tension",
+        "Utiliser des câbles plus fins",
+        "Augmenter la tension",
+        "Augmenter l'intensité"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "À puissance P = U × I fixée, une tension plus élevée demande une intensité plus faible ; or les pertes valent R × I². C'est pourquoi le réseau transporte l'électricité sous très haute tension.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Une source de 12 V débite 2 A dans un circuit formé de trois résistors R1, R2 et R3. R1 reçoit 9 W et R2 reçoit 6 W. Quelle puissance reçoit R3 ?",
+      "propositions": [
+        "24 W",
+        "15 W",
+        "39 W",
+        "9 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Bilan de puissance : la source fournit 12 × 2 = 24 W, égale à la somme des puissances reçues. P3 = 24 − 9 − 6 = 9 W.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Un vélo à assistance électrique demande 960 W. Ses câbles ont une résistance totale de 0,1 Ω. Sous 24 V, ils perdent 160 W. Quelles sont les pertes dans ces câbles si la batterie fournit la même puissance sous 48 V ?",
+      "propositions": [
+        "40 W",
+        "80 W",
+        "160 W",
+        "10 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Sous 48 V : I = P / U = 960 / 48 = 20 A, d'où P = R × I² = 0,1 × 20² = 40 W. Doubler la tension divise le courant par 2, donc les pertes par 4 (et non par 2, qui donnerait 80 W).",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un portail absorbe 5 A sous 24 V. Les pertes par effet Joule dans ses enroulements valent 18 W et on néglige les autres pertes. Quel est son rendement ?",
+      "propositions": [
+        "0,15",
+        "0,85",
+        "1,18",
+        "0,18"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Puissance absorbée : 24 × 5 = 120 W. Puissance utile : 120 − 18 = 102 W. η = 102 / 120 = 0,85. 1,18 est le rapport inversé, impossible pour un rendement.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces situations, lesquelles utilisent l'effet Joule de façon utile ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une bouilloire qui chauffe l'eau",
+        "Le dégivrage d'une caméra extérieure",
+        "Un radiateur électrique",
+        "L'échauffement des câbles d'un fauteuil roulant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La bouilloire, le dégivrage et le radiateur exploitent la chaleur produite. L'échauffement des câbles est une perte d'énergie.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Un résistor de 10 Ω est parcouru par un courant constant de 2 A. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La tension à ses bornes vaut 20 V.",
+        "Il dissipe 40 W.",
+        "Il dissipe 20 W.",
+        "En 1 min, il dissipe 2 400 J.",
+        "Il dissipe 200 W."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "U = R × I = 10 × 2 = 20 V ; P = R × I² = 10 × 4 = 40 W ; en 60 s, W = 40 × 60 = 2 400 J.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "La batterie d'un drone, sous 11,1 V, débite 20 A pendant 6 min. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle fournit une puissance de 222 W.",
+        "Elle fournit une énergie de 79 920 J.",
+        "Elle fournit une énergie de 22,2 Wh.",
+        "Elle fournit une énergie de 1 332 J."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "P = 11,1 × 20 = 222 W. Δt = 6 min = 360 s = 0,1 h. W = 222 × 360 = 79 920 J = 222 × 0,1 = 22,2 Wh. 1 332 J vient d'une durée laissée en minutes.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:088",
+      "type": "vrai_faux",
+      "enonce": "À puissance constante, l'énergie consommée par un appareil pendant une durée Δt vaut W = P × Δt.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est la relation entre énergie et puissance ; W en joules si Δt est en secondes, en wattheures si Δt est en heures.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Le wattheure est une unité de puissance.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : le wattheure est une unité d'énergie (1 Wh = 3 600 J). L'unité de puissance est le watt.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:090",
+      "type": "vrai_faux",
+      "enonce": "En convention récepteur, si le produit U × I d'un dipôle est positif, ce dipôle reçoit de la puissance.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : en convention récepteur, P = U × I > 0 signifie que le dipôle reçoit de la puissance ; en convention générateur, P > 0 signifie qu'il en fournit.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:091",
+      "type": "reponse_courte",
+      "enonce": "Une bouilloire de puissance 2 200 W fonctionne pendant 3 min. Quelle énergie consomme-t-elle, en kilojoules ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "396"
+      ],
+      "difficulte": 2,
+      "explication": "Δt = 3 min = 180 s. W = P × Δt = 2 200 × 180 = 396 000 J = 396 kJ.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:092",
+      "type": "reponse_courte",
+      "enonce": "L'élément chauffant qui dégivre une caméra extérieure est alimenté sous 12 V et dissipe 18 W. Quelle est sa résistance, en ohms ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "8"
+      ],
+      "difficulte": 3,
+      "explication": "P = U² / R, donc R = U² / P = 12² / 18 = 144 / 18 = 8 Ω.",
+      "notion": "Puissance, énergie et effet Joule"
+    },
+    {
+      "source": "si-1re:ch5:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime la capacité d'un condensateur ?",
+      "propositions": [
+        "Le henry (H)",
+        "L'ohm (Ω)",
+        "Le farad (F)",
+        "Le watt (W)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La capacité C s'exprime en farads (F). Le henry est l'unité d'inductance d'une bobine.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Dans quelle unité s'exprime l'inductance d'une bobine ?",
+      "propositions": [
+        "Le farad (F)",
+        "Le hertz (Hz)",
+        "L'ohm (Ω)",
+        "Le henry (H)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'inductance L d'une bobine s'exprime en henrys (H), souvent en millihenrys (mH).",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:095",
+      "type": "qcm_unique",
+      "enonce": "En régime continu établi, comment se comporte un condensateur ?",
+      "propositions": [
+        "Comme un interrupteur ouvert",
+        "Comme un fil",
+        "Comme un interrupteur fermé",
+        "Comme une source de 230 V"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Quand la tension à ses bornes est devenue constante, plus aucun courant ne traverse le condensateur : il se comporte comme un interrupteur ouvert.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:096",
+      "type": "qcm_unique",
+      "enonce": "En régime continu établi, comment se comporte une bobine idéale ?",
+      "propositions": [
+        "Comme un interrupteur ouvert",
+        "Comme un fil",
+        "Comme une diode bloquée",
+        "Comme un condensateur chargé"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "En régime établi en continu, la bobine se comporte comme un fil, à sa petite résistance près.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Quelle grandeur ne peut pas varier brusquement pour un condensateur ?",
+      "propositions": [
+        "L'intensité du courant qui le traverse",
+        "La puissance qu'il reçoit",
+        "La tension à ses bornes",
+        "Le sens du courant qui le traverse"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Il faut du temps pour charger ou décharger un condensateur : sa tension ne peut pas varier brusquement. Pour une bobine, c'est l'intensité qui ne peut pas varier brusquement.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Un condensateur de 470 µF est chargé sous 10 V. Quelle énergie stocke-t-il ?",
+      "propositions": [
+        "2,35 mJ",
+        "4,7 mJ",
+        "47 mJ",
+        "23,5 mJ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "E = ½ × C × U² = 0,5 × 470 × 10⁻⁶ × 10² = 0,023 5 J = 23,5 mJ. 4,7 mJ vient de C × U, 47 mJ de C × U² sans le facteur ½.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:099",
+      "type": "qcm_unique",
+      "enonce": "La bobine d'un relais a une inductance de 0,2 H et est parcourue par 3 A. Quelle énergie magnétique stocke-t-elle ?",
+      "propositions": [
+        "0,9 J",
+        "0,3 J",
+        "1,8 J",
+        "0,6 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "E = ½ × L × I² = 0,5 × 0,2 × 3² = 0,1 × 9 = 0,9 J. 1,8 J oublie le facteur ½, 0,6 J oublie le carré.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Un condensateur de 470 µF se charge à travers un résistor de 2 kΩ. Au bout de combien de temps peut-on le considérer comme chargé ?",
+      "propositions": [
+        "Environ 0,94 s",
+        "Environ 4,7 s",
+        "Environ 9,4 s",
+        "Environ 0,19 s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "τ = R × C = 2 000 × 470 × 10⁻⁶ = 0,94 s. Le condensateur est chargé au bout d'environ 5τ = 5 × 0,94 = 4,7 s. 0,94 s n'est que la constante de temps.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:101",
+      "type": "qcm_unique",
+      "enonce": "Un supercondensateur de 50 F, chargé sous 2,7 V, se décharge jusqu'à 1,35 V pour alimenter une station météo. Quelle énergie a-t-il fournie ?",
+      "propositions": [
+        "Environ 91 J",
+        "Environ 182 J",
+        "Environ 137 J",
+        "Environ 46 J"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "E initiale = ½ × 50 × 2,7² ≈ 182,3 J ; E finale = ½ × 50 × 1,35² ≈ 45,6 J. Énergie fournie ≈ 182,3 − 45,6 ≈ 137 J. Diviser la tension par 2 divise l'énergie par 4, pas par 2 : la réponse 91 J est fausse.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:102",
+      "type": "qcm_unique",
+      "enonce": "Quelle capacité faut-il pour qu'un condensateur chargé sous 10 V stocke une énergie de 1 J ?",
+      "propositions": [
+        "10 mF",
+        "200 mF",
+        "100 mF",
+        "20 mF"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "E = ½ × C × U², donc C = 2 × E / U² = 2 × 1 / 10² = 0,02 F = 20 mF. 10 mF oublie le facteur 2, 200 mF oublie le carré de U.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "À propos du condensateur. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il est formé de deux armatures séparées par un isolant.",
+        "Sa capacité s'exprime en farads.",
+        "Il transforme l'énergie électrique en chaleur comme un résistor.",
+        "La tension à ses bornes peut sauter instantanément d'une valeur à une autre."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un condensateur est fait de deux armatures séparées par un isolant, et sa capacité s'exprime en farads. Il stocke l'énergie au lieu de la dissiper, et sa tension ne varie pas brusquement.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces usages, lesquels sont des usages d'un condensateur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Lisser la tension d'une alimentation",
+        "Maintenir l'horloge d'une station météo pendant une coupure",
+        "Fournir la pointe de courant d'un flash",
+        "Limiter le courant dans une DEL",
+        "Mesurer la température extérieure"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le condensateur stocke de l'énergie et la restitue : lissage, maintien d'une horloge, flash. Limiter le courant d'une DEL est le rôle d'un résistor, mesurer la température celui d'une thermistance.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la bobine. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle s'oppose aux variations du courant qui la traverse.",
+        "Elle stocke une énergie ½ × L × I².",
+        "En régime continu établi, elle se comporte comme un interrupteur ouvert.",
+        "Son inductance s'exprime en farads.",
+        "Les enroulements d'un moteur électrique sont des bobines."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "La bobine s'oppose aux variations du courant, stocke ½ × L × I², et les enroulements d'un moteur en sont. En continu établi, elle se comporte comme un fil ; son inductance s'exprime en henrys.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:106",
+      "type": "qcm_multiple",
+      "enonce": "On double la tension aux bornes d'un condensateur, et, dans une autre expérience, on double l'intensité du courant dans une bobine. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'énergie stockée par le condensateur est multipliée par 4.",
+        "L'énergie stockée par la bobine est multipliée par 4.",
+        "L'énergie stockée par le condensateur est multipliée par 2.",
+        "La capacité du condensateur est multipliée par 2."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "E = ½ × C × U² et E = ½ × L × I² : les énergies dépendent du carré de U ou de I, donc doubler U ou I multiplie l'énergie par 2² = 4. La capacité est une caractéristique du composant, elle ne change pas.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Une fois chargé, un condensateur ne peut plus restituer l'énergie qu'il a stockée.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : le condensateur stocke de l'énergie (½ × C × U²) puis la restitue, par exemple pour fournir la pointe de courant d'un flash ou maintenir une horloge pendant une coupure.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Si l'on coupe brutalement le courant dans une bobine, une forte surtension peut apparaître à ses bornes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : le courant d'une bobine ne peut pas s'annuler instantanément ; la coupure brutale provoque une surtension qui peut détruire l'interrupteur.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:109",
+      "type": "vrai_faux",
+      "enonce": "En régime continu établi, une bobine idéale dissipe une puissance importante par effet Joule.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : une bobine ne dissipe presque rien ; elle stocke une énergie ½ × L × I². En régime continu établi, elle se comporte comme un fil (à sa petite résistance près).",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Avec R = 10 kΩ et C = 10 µF, un condensateur qui se charge à travers ce résistor peut être considéré comme chargé au bout d'environ 0,5 s.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : τ = R × C = 10 000 × 10 × 10⁻⁶ = 0,1 s, et la charge dure environ 5τ = 0,5 s.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:111",
+      "type": "reponse_courte",
+      "enonce": "Un supercondensateur de 10 F est chargé sous 3 V. Quelle énergie stocke-t-il, en joules ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "45"
+      ],
+      "difficulte": 2,
+      "explication": "E = ½ × C × U² = 0,5 × 10 × 3² = 0,5 × 10 × 9 = 45 J.",
+      "notion": "Condensateur et bobine"
+    },
+    {
+      "source": "si-1re:ch5:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire d'un interrupteur parfait fermé ?",
+      "propositions": [
+        "La tension à ses bornes est nulle",
+        "Le courant qui le traverse est nul",
+        "Il consomme une forte puissance",
+        "Sa résistance est infinie"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Fermé, un interrupteur parfait a une tension nulle à ses bornes, quel que soit le courant. C'est ouvert que le courant est nul.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Dans quel sens une diode passante laisse-t-elle passer le courant ?",
+      "propositions": [
+        "De la cathode vers l'anode",
+        "De l'anode vers la cathode",
+        "Dans les deux sens",
+        "Dans aucun sens"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une diode ne laisse passer le courant que de l'anode vers la cathode, dans le sens de la flèche de son symbole.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Comment s'appellent les trois bornes d'un transistor MOSFET ?",
+      "propositions": [
+        "Base, collecteur, émetteur",
+        "Anode, cathode, grille",
+        "Grille, drain, source",
+        "Base, drain, source"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le MOSFET a pour bornes la grille, le drain et la source. Base, collecteur et émetteur sont les bornes du transistor bipolaire.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Quelle tension trouve-t-on environ aux bornes d'une diode au silicium passante ?",
+      "propositions": [
+        "2 V",
+        "5 V",
+        "12 V",
+        "0,6 à 0,7 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une diode au silicium passante présente une tension de seuil d'environ 0,6 à 0,7 V. Environ 2 V correspond à une DEL rouge.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:116",
+      "type": "qcm_unique",
+      "enonce": "Dans la commande d'un moteur par un transistor, quel est le rôle de la diode de roue libre ?",
+      "propositions": [
+        "Protéger le transistor à l'ouverture",
+        "Augmenter la vitesse du moteur",
+        "Transformer le 230 V en 12 V",
+        "Éclairer le moteur en marche"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Quand le transistor s'ouvre, le courant de la bobine du moteur ne peut pas s'annuler d'un coup : il passe par la diode au lieu de créer une surtension qui détruirait le transistor.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:117",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui fixe l'état, passant ou bloqué, d'une diode dans un circuit ?",
+      "propositions": [
+        "Un signal envoyé sur sa grille",
+        "Le reste du circuit",
+        "Un courant envoyé sur sa base",
+        "Un bouton actionné à la main"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Personne ne commande une diode : c'est le reste du circuit qui impose son état. Le transistor, lui, est commandé par un signal sur sa grille ou sa base.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:118",
+      "type": "qcm_unique",
+      "enonce": "Une DEL blanche (3,0 V quand elle est passante) doit être parcourue par 20 mA sous une alimentation de 5,0 V. Quelle résistance de protection faut-il ?",
+      "propositions": [
+        "250 Ω",
+        "150 Ω",
+        "100 Ω",
+        "0,1 Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles : U_R = 5,0 − 3,0 = 2,0 V. Loi d'Ohm : R = 2,0 / 0,020 = 100 Ω. 250 Ω oublie la tension de la DEL, 0,1 Ω oublie de convertir les milliampères.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:119",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi une sortie de microcontrôleur commande-t-elle un moteur de 12 V, 2 A par l'intermédiaire d'un transistor ?",
+      "propositions": [
+        "Elle délivre une tension trop élevée",
+        "Elle ne fonctionne qu'en alternatif",
+        "Le moteur ne supporte pas le continu",
+        "Elle ne fournit que quelques milliampères"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une sortie de microcontrôleur ne fournit que quelques milliampères sous 3,3 V. Elle commande le transistor, qui joue le rôle d'interrupteur dans le circuit de puissance.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Une DEL rouge (2,0 V quand elle est passante) est alimentée sous 12 V à travers un résistor qui fixe son courant à 10 mA. Quelle puissance dissipe ce résistor ?",
+      "propositions": [
+        "0,10 W",
+        "0,12 W",
+        "0,02 W",
+        "10 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "U_R = 12 − 2,0 = 10 V (loi des mailles), donc P = U_R × I = 10 × 0,010 = 0,10 W (et R = 10 / 0,010 = 1 000 Ω). 0,12 W utilise toute la tension, 0,02 W est la puissance de la DEL.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Une diode au silicium (0,7 V quand elle est passante) protège une carte contre l'inversion de la batterie de 9,0 V. La carte se comporte comme un résistor de 83 Ω. Batterie bien branchée, quel courant traverse la carte ?",
+      "propositions": [
+        "0,11 A",
+        "0,10 A",
+        "0,12 A",
+        "0 A"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "La diode est passante : U_carte = 9,0 − 0,7 = 8,3 V, donc I = 8,3 / 83 = 0,10 A. 0,11 A néglige la tension de seuil ; 0 A serait le cas de la batterie branchée à l'envers.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:122",
+      "type": "qcm_multiple",
+      "enonce": "À propos de l'interrupteur parfait. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Fermé, la tension à ses bornes est nulle.",
+        "Ouvert, le courant qui le traverse est nul.",
+        "Il ne consomme aucune puissance.",
+        "Ouvert, la tension à ses bornes est nulle."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Fermé : U = 0 ; ouvert : I = 0. Dans les deux cas P = U × I = 0. Ouvert, la tension à ses bornes peut être quelconque.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:123",
+      "type": "qcm_multiple",
+      "enonce": "Dans une chaîne de puissance, quels composants peut-on modéliser par un interrupteur ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une diode",
+        "Un transistor en commutation",
+        "Un relais",
+        "Un condensateur",
+        "Un résistor"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "La diode (commandée par le circuit), le transistor en commutation (commandé par un signal) et le relais (commandé par un électroaimant) sont des interrupteurs. Condensateur et résistor sont des dipôles passifs.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:124",
+      "type": "qcm_multiple",
+      "enonce": "À propos du transistor bipolaire NPN utilisé en commutation. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Saturé, il se comporte comme un interrupteur fermé entre collecteur et émetteur.",
+        "Sans courant de base, il est bloqué.",
+        "Il est commandé par la tension entre grille et source.",
+        "Il faut un courant de base plus fort que le courant commandé."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Un petit courant de base sature le NPN (interrupteur fermé entre collecteur et émetteur) ; sans courant de base, il est bloqué. La commande par la tension grille-source concerne le MOSFET, et un faible signal pilote un courant bien plus intense.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:125",
+      "type": "qcm_multiple",
+      "enonce": "Un transistor commande le moteur d'un portail ; une diode de roue libre est branchée aux bornes du moteur. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Quand le transistor est fermé, la diode est bloquée.",
+        "Quand le transistor s'ouvre, le courant du moteur passe par la diode.",
+        "Sans la diode, une surtension pourrait détruire le transistor.",
+        "La diode est passante en permanence.",
+        "La diode sert à augmenter la tension aux bornes du moteur."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Transistor fermé : le moteur est alimenté et la diode, en inverse, est bloquée. À l'ouverture, le courant de la bobine du moteur ne peut pas s'annuler d'un coup : il passe par la diode, ce qui évite la surtension destructrice.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Une DEL doit toujours être protégée par un résistor qui limite son courant.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : sans résistor de protection, le courant dans la DEL ne serait pas limité et elle serait détruite.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Une diode parfaite bloquée se comporte comme un interrupteur fermé.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : bloquée, la diode parfaite est un interrupteur ouvert (courant nul). Passante, elle est un interrupteur fermé.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Un transistor MOSFET a besoin d'un fort courant de grille pour être commandé.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : le MOSFET est commandé par la tension entre grille et source, presque sans courant de commande.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:129",
+      "type": "vrai_faux",
+      "enonce": "La tension aux bornes d'une DEL bleue passante est plus élevée que celle d'une DEL rouge passante.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : la tension de seuil dépend de la couleur, environ 2 V pour une DEL rouge et 3 V pour une DEL blanche ou bleue.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:130",
+      "type": "reponse_courte",
+      "enonce": "Une DEL rouge (2,0 V quand elle est passante) doit être parcourue par 20 mA sous une alimentation de 12 V. Quelle résistance de protection faut-il, en ohms ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "500"
+      ],
+      "difficulte": 2,
+      "explication": "Loi des mailles : U_R = 12 − 2,0 = 10 V. Loi d'Ohm : R = U_R / I = 10 / 0,020 = 500 Ω.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:131",
+      "type": "reponse_courte",
+      "enonce": "Comment s'appelle la borne d'une diode repérée par un anneau sur son boîtier ?",
+      "reponses_acceptees": [
+        "cathode",
+        "la cathode",
+        "une cathode",
+        "la cathode de la diode"
+      ],
+      "difficulte": 1,
+      "explication": "La cathode est repérée par un anneau ; le courant traverse la diode passante de l'anode vers la cathode.",
+      "notion": "Diode, transistor, interrupteur parfait"
+    },
+    {
+      "source": "si-1re:ch5:banque:132",
+      "type": "qcm_unique",
+      "enonce": "Un signal périodique a une période de 20 ms. Quelle est sa fréquence ?",
+      "propositions": [
+        "0,05 Hz",
+        "20 Hz",
+        "50 Hz",
+        "500 Hz"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f = 1 / T = 1 / 0,020 = 50 Hz. 0,05 Hz vient d'une période laissée en millisecondes (1 / 20).",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:133",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les caractéristiques du réseau électrique domestique en France ?",
+      "propositions": [
+        "325 V et 50 Hz",
+        "230 V et 60 Hz",
+        "400 V et 50 Hz",
+        "230 V et 50 Hz"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le réseau domestique est monophasé 230 V / 50 Hz, 230 V étant la valeur efficace. 325 V est la valeur maximale, 400 V la tension entre deux phases du triphasé.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la valeur moyenne d'une tension sinusoïdale de valeur maximale Û ?",
+      "propositions": [
+        "0",
+        "Û / √2",
+        "Û",
+        "Û / 2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les alternances positive et négative d'une sinusoïde se compensent : sa valeur moyenne est nulle. Û / √2 est sa valeur efficace.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Que mesure un multimètre réglé en position « DC » ?",
+      "propositions": [
+        "La valeur efficace",
+        "La valeur moyenne",
+        "La valeur maximale",
+        "La fréquence"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "En position « DC », un multimètre mesure la valeur moyenne ; en position « AC », il mesure la valeur efficace.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Un hacheur produit une tension rectangulaire qui vaut 24 V pendant 40 % de la période et 0 V le reste du temps. Quelle est sa valeur moyenne ?",
+      "propositions": [
+        "14,4 V",
+        "24 V",
+        "9,6 V",
+        "60 V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "⟨u⟩ = α × U = 0,40 × 24 = 9,6 V. 14,4 V correspond à (1 − α) × U, 60 V à U / α.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Une tension sinusoïdale a une valeur efficace de 12 V. Quelle est sa valeur maximale ?",
+      "propositions": [
+        "Environ 8,5 V",
+        "12 V",
+        "24 V",
+        "Environ 17 V"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Û = U × √2 = 12 × 1,414 ≈ 17 V. 8,5 V vient d'une division par √2 au lieu d'une multiplication.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Sur un oscilloscope réglé à 2 ms par division, une période d'un signal occupe 5 divisions. Quelle est la fréquence du signal ?",
+      "propositions": [
+        "100 Hz",
+        "10 Hz",
+        "2,5 Hz",
+        "1 000 Hz"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "T = 5 × 2 = 10 ms = 0,010 s, donc f = 1 / 0,010 = 100 Hz. 10 Hz vient d'une erreur de conversion (T pris égal à 0,1 s), 2,5 Hz du calcul 5 / 2.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Le hacheur d'un fauteuil roulant commute la tension de 24 V de sa batterie. Quel rapport cyclique faut-il pour que le moteur reçoive une tension moyenne de 15 V ?",
+      "propositions": [
+        "1,6",
+        "0,625",
+        "0,375",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "⟨u⟩ = α × U, donc α = 15 / 24 = 0,625. 1,6 est le rapport inverse (impossible, α est compris entre 0 et 1) ; 0,375 donnerait 9 V.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Un radiateur, assimilé à un résistor, consomme 1 150 W sous la tension du secteur de 230 V. Quelle est la valeur maximale de l'intensité qui le traverse ?",
+      "propositions": [
+        "5,0 A",
+        "Environ 3,5 A",
+        "Environ 7,1 A",
+        "10 A"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Intensité efficace : I = P / U = 1 150 / 230 = 5,0 A. Le courant est sinusoïdal, donc Î = I × √2 = 5,0 × 1,414 ≈ 7,1 A. 5,0 A est la valeur efficace, 3,5 A vient d'une division par √2.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:141",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la tension du secteur, 230 V / 50 Hz. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa période vaut 20 ms.",
+        "Sa valeur maximale vaut environ 325 V.",
+        "230 V est sa valeur efficace.",
+        "Sa valeur moyenne vaut 230 V."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "T = 1 / 50 = 20 ms ; Û = 230 × √2 ≈ 325 V ; 230 V est la valeur efficace. Comme toute sinusoïde, sa valeur moyenne est nulle.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:142",
+      "type": "qcm_multiple",
+      "enonce": "Une tension rectangulaire vaut 5 V pendant une partie de la période et 0 V le reste du temps. Sa période vaut 0,5 ms et son rapport cyclique 0,2. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa fréquence vaut 2 kHz.",
+        "Sa valeur moyenne vaut 1 V.",
+        "Elle reste à 5 V pendant 0,1 ms à chaque période.",
+        "Sa valeur moyenne vaut 4 V.",
+        "Sa fréquence vaut 0,5 Hz."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "f = 1 / 0,000 5 = 2 000 Hz = 2 kHz ; ⟨u⟩ = 0,2 × 5 = 1 V ; durée à 5 V : α × T = 0,2 × 0,5 = 0,1 ms. 4 V correspond à (1 − α) × U.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "À propos du réseau triphasé. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il comporte trois tensions sinusoïdales décalées d'un tiers de période.",
+        "La tension efficace entre deux phases vaut 400 V.",
+        "La tension efficace entre une phase et le neutre vaut 230 V.",
+        "Ses trois tensions sont toujours égales à chaque instant."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le triphasé utilise trois tensions sinusoïdales décalées d'un tiers de période : elles ne sont donc pas égales à chaque instant. 230 V entre phase et neutre, 400 V entre deux phases.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "À propos de la valeur efficace d'une tension. Coche toutes les réponses exactes.",
+      "propositions": [
+        "C'est la tension continue qui produirait le même effet Joule dans un même résistor.",
+        "La relation U = Û / √2 est valable pour toutes les formes de signal.",
+        "Un multimètre TRMS la mesure correctement même pour un signal non sinusoïdal.",
+        "Les tensions indiquées sur les appareils domestiques sont des valeurs efficaces."
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "La valeur efficace est définie par l'effet Joule équivalent ; les multimètres TRMS la mesurent quelle que soit la forme du signal ; les tensions indiquées sont des valeurs efficaces. En revanche U = Û / √2 n'est valable que pour une sinusoïde.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:145",
+      "type": "vrai_faux",
+      "enonce": "Une tension rectangulaire qui vaut 10 V pendant la moitié de la période et 0 V le reste du temps a une valeur moyenne de 5 V.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : le rapport cyclique vaut α = 0,5, donc ⟨u⟩ = α × U = 0,5 × 10 = 5 V.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:146",
+      "type": "vrai_faux",
+      "enonce": "La tension d'une prise domestique ne dépasse jamais 230 V.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : 230 V est la valeur efficace ; la tension atteint environ 325 V (230 × √2) à chaque alternance, et −325 V dans l'autre sens.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:147",
+      "type": "vrai_faux",
+      "enonce": "La relation U = Û / √2 permet de calculer la valeur efficace d'une tension rectangulaire.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : cette relation n'est valable que pour une tension sinusoïdale.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Dans un même résistor, une tension sinusoïdale de valeur maximale 325 V et une tension continue de 230 V produisent pratiquement la même puissance moyenne.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Vrai : la valeur efficace de la sinusoïde vaut 325 / √2 ≈ 230 V ; par définition de la valeur efficace, elle produit le même effet Joule qu'une tension continue de 230 V.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Une tension périodique a une période de 2,5 ms. Quelle est sa fréquence, en hertz ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "400"
+      ],
+      "difficulte": 2,
+      "explication": "T = 2,5 ms = 0,002 5 s ; f = 1 / T = 1 / 0,002 5 = 400 Hz.",
+      "notion": "Signaux périodiques et réseau électrique"
+    },
+    {
+      "source": "si-1re:ch5:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Le hacheur d'une trottinette alimentée par une batterie de 36 V fonctionne avec un rapport cyclique de 0,35. Quelle tension moyenne reçoit le moteur, en volts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "12,6"
+      ],
+      "difficulte": 3,
+      "explication": "La tension de sortie vaut 36 V pendant α × T et 0 V le reste du temps : ⟨u⟩ = α × U = 0,35 × 36 = 12,6 V.",
+      "notion": "Signaux périodiques et réseau électrique"
+    }
+  ]
+}

@@ -1,0 +1,2275 @@
+{
+  "chapitre": 11,
+  "notions": [
+    "Constituants d'un réseau local",
+    "Adresses IP et masques",
+    "Adresses MAC",
+    "Découpage en paquets",
+    "Modèle en couches TCP/IP",
+    "Encapsulation",
+    "Accusés de réception",
+    "Protocole du bit alterné",
+    "Simulation et commandes",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch11:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Quel équipement relie entre elles les machines d'un même réseau local ?",
+      "difficulte": 1,
+      "explication": "Le routeur relie des réseaux différents.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Le serveur DNS, qui traduit les noms en adresses",
+        "L'imprimante",
+        "Le routeur",
+        "Le commutateur (switch)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Quel équipement relie des réseaux différents et choisit la route des paquets ?",
+      "difficulte": 1,
+      "explication": "Il utilise les adresses IP.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Le routeur",
+        "Le câble Ethernet",
+        "Le commutateur",
+        "La carte réseau"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Quel composant relie un ordinateur au réseau ?",
+      "difficulte": 1,
+      "explication": "Elle peut être filaire (Ethernet) ou sans fil (Wi-Fi).",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "La mémoire vive",
+        "La carte réseau",
+        "L'UAL",
+        "La carte graphique"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un réseau local (LAN) ?",
+      "difficulte": 1,
+      "explication": "Internet relie des millions de réseaux locaux.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Le réseau mondial internet",
+        "Un câble reliant l'ordinateur à l'écran",
+        "Un réseau qui relie les machines d'un même lieu, comme une maison ou un lycée",
+        "Un réseau qui ne relie que deux serveurs situés dans des pays différents"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quels équipements une box Internet regroupe-t-elle généralement ?",
+      "difficulte": 1,
+      "explication": "Elle relie le réseau de la maison à internet.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Un serveur Web, une base de données et un serveur de messagerie",
+        "Un processeur et une carte graphique",
+        "Un routeur, un commutateur et un point d'accès Wi-Fi",
+        "Un écran et un clavier"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets compte une adresse MAC ?",
+      "difficulte": 1,
+      "explication": "Par exemple 00:1A:2B:3C:4D:5E.",
+      "notion": "Adresses MAC",
+      "propositions": [
+        "2",
+        "6",
+        "4",
+        "16"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:007",
+      "type": "qcm_unique",
+      "enonce": "À quoi est associée une adresse MAC ?",
+      "difficulte": 1,
+      "explication": "C'est l'adresse physique de la carte.",
+      "notion": "Adresses MAC",
+      "propositions": [
+        "À une carte réseau",
+        "À un site Web",
+        "À un fichier",
+        "À un utilisateur et à son compte sur le réseau"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Une adresse comme 192.168.1.20 est formée de combien d'octets ?",
+      "difficulte": 1,
+      "explication": "Par exemple 192.168.1.20.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "16",
+        "8",
+        "6",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces écritures est une adresse IPv4 valide ?",
+      "difficulte": 1,
+      "explication": "Chaque octet vaut de 0 à 255 ; la troisième proposition est une adresse MAC.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "192.168.1.20",
+        "192.168.1",
+        "00:1A:2B:3C:4D:5E",
+        "192.168.1.300"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi passe-t-on progressivement d'IPv4 à IPv6 ?",
+      "difficulte": 1,
+      "explication": "IPv4 n'offre que 2³² adresses, environ 4,3 milliards.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "IPv6 est plus facile à retenir",
+        "Les adresses IPv4 ne suffisent plus pour toutes les machines connectées",
+        "IPv4 est interdit depuis 2000",
+        "IPv4 ne fonctionne pas en Wi-Fi ni sur les téléphones portables"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Comment un fichier est-il transmis sur un réseau ?",
+      "difficulte": 1,
+      "explication": "Chaque paquet porte un en-tête.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Uniquement par câble",
+        "Caractère par caractère, sans adresse",
+        "Découpé en petits paquets",
+        "D'un seul bloc, quelle que soit sa taille"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi chaque paquet porte-t-il un numéro d'ordre ?",
+      "difficulte": 1,
+      "explication": "Les paquets peuvent arriver dans le désordre.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Pour indiquer sa vitesse",
+        "Pour choisir la couleur de l'affichage",
+        "Pour indiquer le prix de la transmission à payer au fournisseur d'accès",
+        "Pour que le destinataire puisse remettre les données dans l'ordre et repérer les manques"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Si un paquet est perdu pendant la transmission d'un fichier, que réémet-on ?",
+      "difficulte": 1,
+      "explication": "C'est un avantage du découpage en paquets.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Tout le fichier",
+        "Seulement le paquet perdu",
+        "Rien, le fichier est perdu",
+        "Tous les paquets suivants"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Combien de couches compte le modèle TCP/IP présenté dans le cours ?",
+      "difficulte": 1,
+      "explication": "Application, transport, internet, accès réseau.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "3",
+        "7",
+        "2",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Le Web repose sur HTTP. Dans quelle couche du modèle TCP/IP ce protocole se situe-t-il ?",
+      "difficulte": 1,
+      "explication": "C'est le protocole du Web.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "Application",
+        "Accès réseau",
+        "Transport",
+        "Internet"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Le protocole IP achemine les paquets entre réseaux. Dans quelle couche du modèle TCP/IP se situe-t-il ?",
+      "difficulte": 1,
+      "explication": "Il achemine les paquets de réseau en réseau.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "Accès réseau",
+        "Application",
+        "Internet (réseau)",
+        "Transport"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:017",
+      "type": "qcm_unique",
+      "enonce": "À quelle couche appartient le protocole TCP ?",
+      "difficulte": 1,
+      "explication": "Il assure une transmission fiable.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "Transport",
+        "Internet",
+        "Application",
+        "Accès réseau"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce que l'encapsulation ?",
+      "difficulte": 1,
+      "explication": "Comme une lettre glissée dans une enveloppe, puis dans un colis.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "La compression des fichiers avant l'envoi pour gagner de la place sur le réseau",
+        "Chaque couche ajoute son en-tête aux données reçues de la couche du dessus",
+        "Le chiffrement des données par HTTPS",
+        "Le rangement des câbles dans une gaine"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Que fait chaque couche à la réception d'un paquet ?",
+      "difficulte": 1,
+      "explication": "C'est la désencapsulation.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Elle renvoie le paquet à l'émetteur pour qu'il vérifie son contenu",
+        "Elle ajoute un nouvel en-tête",
+        "Elle lit et retire son en-tête, puis transmet le reste à la couche du dessus",
+        "Elle chiffre le paquet"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un accusé de réception (ACK) ?",
+      "difficulte": 1,
+      "explication": "Sans accusé, l'émetteur réémet après un délai.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Un message d'erreur envoyé par le routeur quand un paquet est perdu en route",
+        "Un paquet perdu",
+        "Une adresse IP",
+        "Un message du destinataire qui confirme qu'un paquet est bien arrivé"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'émetteur s'il ne reçoit pas d'accusé de réception dans le délai prévu ?",
+      "difficulte": 1,
+      "explication": "Le délai est géré par un temporisateur.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Il arrête définitivement la transmission",
+        "Il réémet le paquet",
+        "Il envoie le paquet suivant",
+        "Il change d'adresse IP"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Dans le protocole du bit alterné, quelles valeurs prend le bit de contrôle ?",
+      "difficulte": 1,
+      "explication": "0, 1, 0, 1…",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "0 et 1, alternativement d'un paquet au suivant",
+        "0 seulement",
+        "Le numéro complet du paquet, de 1 jusqu'au nombre total de paquets",
+        "1 seulement"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Dans le protocole du bit alterné, quand l'émetteur envoie-t-il le paquet suivant ?",
+      "difficulte": 1,
+      "explication": "Il attend l'accusé avant de continuer.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Quand le récepteur le lui demande par un message spécial, après chaque série de dix paquets",
+        "Immédiatement, sans attendre",
+        "Quand il a reçu l'accusé de réception du paquet en cours, avec le même bit",
+        "Après avoir envoyé tous les paquets"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande envoie de petits paquets à une machine pour tester si elle répond ?",
+      "difficulte": 1,
+      "explication": "ping mesure aussi le temps d'aller-retour.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "chmod",
+        "pwd",
+        "ls",
+        "ping"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Quel logiciel libre permet de simuler un réseau en classe ?",
+      "difficulte": 1,
+      "explication": "On y place ordinateurs, commutateurs et routeurs.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "Excel",
+        "Filius",
+        "Thonny",
+        "Photoshop"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Quelle commande Windows affiche l'adresse IP de la machine ?",
+      "difficulte": 1,
+      "explication": "Sous Linux, on utilise ip addr.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "dir",
+        "ping",
+        "tracert",
+        "ipconfig"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:027",
+      "type": "qcm_unique",
+      "enonce": "En quelle année ARPANET relie-t-il ses premiers ordinateurs ?",
+      "difficulte": 1,
+      "explication": "ARPANET est l'ancêtre d'internet.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "1969",
+        "2001",
+        "1989",
+        "1945"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Qui a publié en 1974 le protocole TCP, à l'origine de TCP/IP ?",
+      "difficulte": 1,
+      "explication": "TCP/IP est adopté par ARPANET en 1983.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Tim Berners-Lee et Robert Cailliau",
+        "Ken Thompson et Dennis Ritchie",
+        "Vinton Cerf et Robert Kahn",
+        "Bill Gates et Paul Allen"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle adresse permet à une machine de joindre un autre réseau ?",
+      "difficulte": 1,
+      "explication": "La passerelle fait suivre les paquets vers les autres réseaux.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "L'adresse de sa passerelle, c'est-à-dire du routeur",
+        "L'adresse de son imprimante",
+        "Sa propre adresse IP",
+        "L'adresse MAC du commutateur auquel elle est branchée"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Quel protocole de la couche accès réseau est utilisé pour les liaisons sans fil ?",
+      "difficulte": 1,
+      "explication": "Ethernet est utilisé pour les liaisons filaires.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "DNS",
+        "Wi-Fi",
+        "TCP",
+        "HTTP"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Avec le masque 255.255.255.0, quelle machine est sur le même réseau que 192.168.1.20 ?",
+      "difficulte": 2,
+      "explication": "Les trois premiers octets doivent être identiques.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "192.169.1.20",
+        "10.0.0.20",
+        "192.168.1.35",
+        "192.168.2.20"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Avec le masque 255.255.255.0 (/24), quels octets d'une adresse IPv4 désignent le réseau ?",
+      "difficulte": 2,
+      "explication": "Le dernier octet désigne la machine.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "Les deux premiers",
+        "Aucun",
+        "Le dernier seulement",
+        "Les trois premiers"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Combien d'adresses IPv4 différentes existe-t-il ?",
+      "difficulte": 2,
+      "explication": "4 octets = 32 bits.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "2⁸, soit 256",
+        "4 × 255",
+        "2³², environ 4,3 milliards",
+        "2¹²⁸"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Combien d'octets compte une adresse IPv6 ?",
+      "difficulte": 2,
+      "explication": "128 bits, soit 2¹²⁸ adresses possibles.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "8",
+        "16",
+        "4",
+        "6"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Une machine sans passerelle configurée peut-elle joindre un serveur d'un autre réseau ?",
+      "difficulte": 2,
+      "explication": "Elle ne peut joindre que les machines de son réseau local.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "Non, elle ne sait pas à quel routeur envoyer les paquets",
+        "Oui, si elle utilise le Wi-Fi",
+        "Oui, grâce à son adresse MAC",
+        "Oui, le commutateur s'en charge en lisant l'adresse IP de destination"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Quelle adresse le commutateur utilise-t-il pour envoyer une trame vers la bonne machine du réseau local ?",
+      "difficulte": 2,
+      "explication": "Le routeur, lui, utilise les adresses IP.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "L'adresse IP du routeur",
+        "Le nom de domaine",
+        "Le numéro de port",
+        "L'adresse MAC du destinataire"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi des paquets d'un même fichier peuvent-ils arriver dans le désordre ?",
+      "difficulte": 2,
+      "explication": "Le numéro d'ordre permet de les remettre en ordre.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Parce que le récepteur les trie à l'envers",
+        "Ils ne peuvent jamais arriver dans le désordre, car ils suivent tous le même câble",
+        "Parce que le serveur les envoie au hasard",
+        "Ils sont acheminés indépendamment et peuvent suivre des chemins différents"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Quel avantage le découpage en paquets apporte-t-il au partage du réseau ?",
+      "difficulte": 2,
+      "explication": "Un gros fichier n'occupe pas la ligne d'un seul bloc.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Les paquets de plusieurs communications s'intercalent, aucune ne bloque les autres longtemps",
+        "Il rend les adresses IP inutiles",
+        "Il chiffre automatiquement les données pour qu'elles ne soient pas lues",
+        "Il supprime le besoin de routeurs"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Environ combien de paquets d'au plus 1500 octets faut-il pour transmettre un fichier de 3 Mo (3 000 000 d'octets) ?",
+      "difficulte": 2,
+      "explication": "3000000 / 1500 = 2000 ; les en-têtes en ajoutent un peu.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "20",
+        "3",
+        "Au moins 2000",
+        "1500"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle couche découpe les données en segments numérotés et vérifie leur arrivée ?",
+      "difficulte": 2,
+      "explication": "TCP numérote, acquitte et réémet.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "La couche application (HTTP)",
+        "La couche transport (TCP)",
+        "La couche internet (IP)",
+        "La couche accès réseau (Ethernet)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Quel numéro de port est associé par défaut à HTTPS ?",
+      "difficulte": 2,
+      "explication": "HTTP utilise le port 80.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "8",
+        "443",
+        "22",
+        "80"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Quelle différence y a-t-il entre TCP et UDP ?",
+      "difficulte": 2,
+      "explication": "UDP sert par exemple pour la vidéo en direct.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "TCP garantit l'arrivée et l'ordre des données, UDP est plus rapide mais sans garantie",
+        "TCP est un protocole d'application et UDP un protocole de la couche accès réseau, comme Ethernet",
+        "UDP garantit l'arrivée, TCP non",
+        "Il n'y a aucune différence"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Quelle adresse utilise la couche internet pour acheminer un paquet ?",
+      "difficulte": 2,
+      "explication": "Le port sert à la couche transport.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "L'adresse MAC",
+        "Le numéro de port",
+        "L'URL",
+        "L'adresse IP"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Dans quel ordre trouve-t-on les en-têtes d'une trame qui transporte une requête Web, de l'extérieur vers l'intérieur ?",
+      "difficulte": 2,
+      "explication": "L'en-tête de la couche la plus basse est le plus extérieur.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "IP, Ethernet, HTTP, TCP",
+        "HTTP, TCP, IP, Ethernet",
+        "Ethernet, IP, TCP, puis les données HTTP",
+        "TCP, HTTP, Ethernet, IP"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'intérêt principal de l'organisation en couches ?",
+      "difficulte": 2,
+      "explication": "HTTP fonctionne de la même façon en Wi-Fi ou par fibre.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Elle supprime les pertes de paquets, car chaque couche vérifie toutes les autres",
+        "Elle rend les paquets plus petits",
+        "Elle évite d'avoir des adresses",
+        "Les couches sont indépendantes : on peut changer l'une sans modifier les autres"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Jusqu'à quelle couche un routeur ouvre-t-il un paquet pour le faire suivre ?",
+      "difficulte": 2,
+      "explication": "Il lui suffit de l'adresse IP de destination.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Jusqu'à la couche application, pour lire le contenu de la page",
+        "Il ne lit aucun en-tête",
+        "Jusqu'à la couche internet (IP)",
+        "Jusqu'à la couche transport"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Dans l'analogie de l'enveloppe, à quoi correspond l'en-tête ajouté par une couche ?",
+      "difficulte": 2,
+      "explication": "Les données sont la lettre ; chaque couche ajoute sa propre enveloppe.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "À la lettre elle-même",
+        "Aux informations écrites sur l'enveloppe, comme l'adresse",
+        "Au timbre déjà oblitéré par la poste au départ du courrier",
+        "Au facteur"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi l'émetteur peut-il envoyer deux fois le même paquet alors que le destinataire l'a bien reçu ?",
+      "difficulte": 2,
+      "explication": "L'émetteur croit alors que son paquet est perdu.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Parce que l'accusé de réception a été perdu",
+        "Parce que le destinataire l'a demandé deux fois",
+        "Parce que le routeur l'a copié",
+        "Parce que le paquet était trop petit"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Quel problème pose un paquet reçu deux fois s'il n'est pas reconnu ?",
+      "difficulte": 2,
+      "explication": "D'où la nécessité de numéroter les paquets.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Les données seraient gardées en double",
+        "Le paquet serait chiffré deux fois et deviendrait illisible pour le destinataire",
+        "Le réseau s'arrêterait",
+        "L'adresse IP changerait"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Le récepteur attend le bit 1 et reçoit un paquet avec le bit 0. Que fait-il ?",
+      "difficulte": 2,
+      "explication": "C'est une copie d'un paquet déjà reçu ; il faut quand même l'acquitter.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Il ne répond pas",
+        "Il le garde comme un nouveau paquet et renvoie un accusé avec le bit 1",
+        "Il le jette comme doublon et renvoie un accusé avec le bit 0",
+        "Il le garde et attend le bit 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Un paquet arrive avec exactement le bit attendu, 0. Quelle est la réaction du récepteur ?",
+      "difficulte": 2,
+      "explication": "C'est le paquet attendu.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Il le garde sans répondre",
+        "Il renvoie un accusé avec le bit 1 sans garder le paquet reçu",
+        "Il le jette et attend le bit 1",
+        "Il le garde, renvoie un accusé avec le bit 0 et attend désormais le bit 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:052",
+      "type": "qcm_unique",
+      "enonce": "L'émetteur a envoyé un paquet avec le bit 1 et le délai expire sans accusé. Que fait-il ?",
+      "difficulte": 2,
+      "explication": "On réémet le même paquet avec le même bit.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Il réémet le même paquet avec le bit 0",
+        "Il réémet le même paquet avec le bit 1",
+        "Il envoie le paquet suivant avec le bit 0",
+        "Il abandonne la transmission"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un seul bit suffit-il dans le protocole du bit alterné ?",
+      "difficulte": 2,
+      "explication": "Le récepteur doit seulement savoir si c'est le même paquet ou le suivant.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Parce que les paquets ne se perdent jamais",
+        "Parce que les paquets ont tous la même taille",
+        "L'émetteur n'envoie le suivant qu'après l'accusé du précédent : il n'y a que deux cas à distinguer",
+        "Parce que le récepteur connaît d'avance le contenu des paquets"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:054",
+      "type": "qcm_unique",
+      "enonce": "L'émetteur envoie 4 paquets sans aucune perte. Quels bits portent-ils successivement ?",
+      "difficulte": 2,
+      "explication": "Le bit alterne à chaque nouveau paquet.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "0, 1, 0, 1",
+        "0, 0, 1, 1",
+        "0, 0, 0, 0",
+        "1, 2, 3, 4"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Que mesure la commande ping ?",
+      "difficulte": 2,
+      "explication": "Elle indique aussi si des paquets sont perdus.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "Le débit maximal de la connexion, en mégabits par seconde",
+        "Le nombre de pages d'un site",
+        "La température du routeur",
+        "Le temps d'aller-retour de petits paquets vers une machine"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Que montre la commande traceroute (tracert sous Windows) ?",
+      "difficulte": 2,
+      "explication": "Chaque ligne correspond à un routeur.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "Les fichiers du répertoire courant et leurs droits d'accès",
+        "Les routeurs traversés jusqu'à une destination",
+        "Le mot de passe du Wi-Fi",
+        "Le contenu d'une page Web"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que fait la commande nslookup www.example.org ?",
+      "difficulte": 2,
+      "explication": "Le DNS traduit les noms en adresses IP.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "Elle télécharge la page d'accueil du site pour l'afficher dans le terminal",
+        "Elle affiche l'adresse MAC du site",
+        "Elle demande au DNS l'adresse IP associée à ce nom",
+        "Elle bloque l'accès au site"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Quel réseau français, conçu par Louis Pouzin au début des années 1970, a introduit le datagramme ?",
+      "difficulte": 2,
+      "explication": "Le datagramme est un paquet acheminé indépendamment, idée reprise par IP.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Cyclades",
+        "Minitel",
+        "Renater",
+        "ARPANET"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Quand ARPANET adopte-t-il TCP/IP ?",
+      "difficulte": 2,
+      "explication": "Cette date est souvent considérée comme la naissance d'internet.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "En 1969",
+        "En 2010",
+        "En 1995",
+        "Le 1er janvier 1983"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Avec le masque /24, combien d'adresses de machines différentes le dernier octet permet-il d'écrire ?",
+      "difficulte": 3,
+      "explication": "2⁸ = 256 valeurs ; deux sont réservées (réseau et diffusion).",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "2²⁴",
+        "256, dont certaines sont réservées",
+        "24",
+        "255 exactement, sans exception"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Une machine a l'adresse 10.0.5.12/24. Laquelle de ces machines n'est pas sur son réseau local ?",
+      "difficulte": 3,
+      "explication": "Le troisième octet diffère : il faut passer par un routeur.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "10.0.5.13",
+        "10.0.5.1",
+        "10.0.5.200",
+        "10.0.6.12"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Le paquet P1 (bit 0) arrive, mais son accusé ACK 0 est perdu. Que se passe-t-il ensuite ?",
+      "difficulte": 3,
+      "explication": "Le doublon est reconnu grâce au bit.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "L'émetteur réémet P1 avec le bit 0 ; le récepteur, qui attend 1, le jette et renvoie ACK 0",
+        "Le récepteur garde P1 une seconde fois",
+        "L'émetteur envoie P2 avec le bit 1",
+        "La transmission s'arrête définitivement et l'émetteur signale une erreur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Dans le déroulement du cours (P2 perdu une fois, puis ACK 1 perdu une fois), combien de fois P2 est-il envoyé en tout ?",
+      "difficulte": 3,
+      "explication": "Envoi perdu, réémission reçue (ACK perdu), seconde réémission reçue comme doublon.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Dans ce même déroulement, combien de fois le récepteur garde-t-il P2 ?",
+      "difficulte": 3,
+      "explication": "La deuxième copie reçue est jetée comme doublon.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Que se passerait-il si le récepteur jetait un doublon sans renvoyer d'accusé de réception ?",
+      "difficulte": 3,
+      "explication": "L'émetteur n'apprendrait jamais que son paquet est arrivé.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Le paquet suivant serait perdu",
+        "Rien de particulier",
+        "La transmission serait plus rapide, car il y aurait moins d'accusés à envoyer",
+        "L'émetteur réémettrait le paquet indéfiniment"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le protocole du bit alterné est-il lent sur une liaison longue (satellite) ?",
+      "difficulte": 3,
+      "explication": "TCP envoie plusieurs segments avant de recevoir leurs accusés.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "Parce que le satellite jette tous les accusés",
+        "L'émetteur attend chaque accusé avant d'envoyer le paquet suivant, et la ligne reste inutilisée pendant l'aller-retour",
+        "Parce que le bit doit être converti en hexadécimal par chaque routeur du trajet",
+        "Parce que chaque paquet est envoyé deux fois"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Une requête HTTP de 400 octets reçoit un en-tête TCP de 20 octets, un en-tête IP de 20 octets et un en-tête Ethernet de 14 octets. Quelle est la taille de la trame ?",
+      "difficulte": 3,
+      "explication": "400 + 20 + 20 + 14 = 454.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "54 octets",
+        "400 octets",
+        "454 octets",
+        "434 octets"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Quel équipement lit l'en-tête TCP d'un paquet de la requête d'un navigateur vers un serveur Web ?",
+      "difficulte": 3,
+      "explication": "Seules les extrémités lisent les couches transport et application.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Le serveur destinataire",
+        "Chaque commutateur traversé",
+        "Aucun équipement",
+        "Chaque routeur traversé"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Pour une visioconférence, pourquoi utilise-t-on souvent UDP plutôt que TCP ?",
+      "difficulte": 3,
+      "explication": "La rapidité compte plus que la fiabilité pour le direct.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "Parce qu'UDP garantit qu'aucune image n'est perdue ni affichée dans le désordre",
+        "Une image perdue ne vaut pas la peine d'être réémise : mieux vaut passer à la suivante sans attendre",
+        "Parce qu'UDP chiffre les images",
+        "Parce que TCP ne transporte pas d'images"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Un fichier est envoyé en 5 paquets numérotés ; ils arrivent dans l'ordre 2, 1, 5, 3. Que doit faire le destinataire ?",
+      "difficulte": 3,
+      "explication": "Les numéros révèlent l'ordre et le manque.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Jeter tout le fichier",
+        "Garder seulement les paquets 1 et 2, arrivés en premier, et jeter les autres",
+        "Remettre les paquets dans l'ordre et attendre ou redemander le paquet 4",
+        "Assembler le fichier tel quel"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Deux ordinateurs reliés au même commutateur ont les adresses 192.168.1.10/24 et 192.168.2.10/24. Peuvent-ils communiquer directement ?",
+      "difficulte": 3,
+      "explication": "La partie réseau (192.168.1 et 192.168.2) diffère.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Non, ils ne sont pas dans le même réseau IP : il faut un routeur",
+        "Oui, car ils sont branchés au même commutateur",
+        "Non, car le commutateur bloque toutes les trames qui ne viennent pas d'un routeur",
+        "Oui, car leur dernier octet est identique"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Dans Filius, une machine a l'adresse 192.168.0.5/24 et la passerelle 192.168.0.1. Que doit être 192.168.0.1 ?",
+      "difficulte": 3,
+      "explication": "La passerelle est l'interface du routeur dans le réseau local.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "L'adresse d'un autre ordinateur de la salle, choisi au hasard",
+        "Une adresse qui n'existe pas",
+        "L'adresse du commutateur, dans tous les cas",
+        "L'adresse d'un routeur relié à ce réseau"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Qui a décrit en 1969 le protocole du bit alterné ?",
+      "difficulte": 3,
+      "explication": "Dans un article sur la transmission fiable.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Berners-Lee et Cailliau",
+        "Cerf et Kahn",
+        "Bartlett, Scantlebury et Wilkinson",
+        "Kleinrock et Baran"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi l'émetteur doit-il utiliser un délai (temporisateur) avant de réémettre ?",
+      "difficulte": 3,
+      "explication": "Un délai trop court provoquerait des réémissions inutiles.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Il ne peut pas savoir directement qu'un paquet est perdu : seule l'absence d'accusé le lui indique",
+        "Pour laisser refroidir la carte réseau",
+        "Pour économiser des adresses IP",
+        "Parce que le récepteur ne lit qu'un paquet par minute et ignore les autres pendant ce temps"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces équipements, lesquels font partie d'un réseau local ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le processeur graphique sert à l'affichage.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Un commutateur",
+        "Une carte réseau",
+        "Un processeur graphique",
+        "Un point d'accès Wi-Fi"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles sont des adresses IPv4 valides ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Quatre octets de 0 à 255.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "1.2.3",
+        "256.1.1.1",
+        "172.16.254.3",
+        "10.0.0.1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces protocoles, lesquels appartiennent à la couche application ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "SMTP sert au courriel.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "SMTP",
+        "IP",
+        "Ethernet",
+        "HTTP"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on des paquets d'un même fichier ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le numéro permet de remettre en ordre.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Ils arrivent toujours dans l'ordre d'envoi",
+        "Ils ne peuvent jamais se perdre",
+        "Ils peuvent suivre des chemins différents",
+        "Ils portent un numéro d'ordre"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur l'encapsulation, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les routeurs lisent l'en-tête IP sans le supprimer.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Chaque couche ajoute un en-tête à l'émission",
+        "Seule la couche application ajoute un en-tête",
+        "Chaque couche retire son en-tête à la réception",
+        "Les en-têtes sont supprimés par le premier routeur"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces événements, lesquels peuvent provoquer une réémission ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Dans les deux premiers cas, l'émetteur ne reçoit pas d'accusé.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "La perte de l'accusé de réception",
+        "La perte du paquet",
+        "La bonne réception de l'accusé",
+        "L'envoi du paquet suivant"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le protocole du bit alterné, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le récepteur jette les doublons.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "L'émetteur attend l'accusé avant d'envoyer le paquet suivant",
+        "Le récepteur garde tous les paquets qu'il reçoit",
+        "Le bit de contrôle alterne entre 0 et 1",
+        "Chaque paquet porte son numéro complet"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces commandes, lesquelles servent à observer le réseau ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "mkdir et cat concernent les fichiers.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "mkdir",
+        "cat",
+        "traceroute",
+        "ping"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Comment se présentent les adresses physiques (MAC) des cartes réseau ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les routeurs utilisent les adresses IP.",
+      "notion": "Adresses MAC",
+      "propositions": [
+        "Elles changent à chaque connexion à un site",
+        "Elles sont utilisées par les routeurs pour traverser internet",
+        "Elles s'écrivent souvent en hexadécimal",
+        "Elles comptent 6 octets"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La première norme Wi-Fi date de 1997, IPv6 de 1995 (révisé en 1998).",
+      "notion": "Repères historiques",
+      "propositions": [
+        "TCP, Cerf et Kahn, 1974",
+        "Wi-Fi, 1969",
+        "ARPANET, 1969",
+        "IPv6, 1945"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations entre protocole et couche, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "IP est à la couche internet, HTTP à la couche application.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "HTTP : internet",
+        "Ethernet : accès réseau",
+        "IP : application",
+        "TCP : transport"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Quel est le rôle d'un routeur ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le commutateur relie les machines d'un même réseau.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Il utilise les adresses IP",
+        "Il relie des réseaux différents",
+        "Il ne relie que des machines du même réseau local",
+        "Il utilise uniquement les adresses MAC pour choisir la route"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Avec le masque /24, parmi ces adresses, lesquelles sont sur le même réseau que 192.168.10.7 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les trois premiers octets doivent être 192.168.10.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "192.168.11.7",
+        "192.168.1.7",
+        "192.168.10.254",
+        "192.168.10.1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Le récepteur attend le bit 1. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Il acquitte toujours ce qu'il reçoit.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "S'il reçoit un paquet avec le bit 0, il le garde",
+        "S'il reçoit un paquet avec le bit 1, il le garde",
+        "S'il reçoit un paquet avec le bit 1, il ne répond pas",
+        "S'il reçoit un paquet avec le bit 0, il le jette mais renvoie ACK 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces raisons, lesquelles justifient le découpage des données en paquets ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le découpage peut au contraire provoquer des arrivées dans le désordre.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Réémettre seulement les paquets perdus",
+        "Partager le réseau entre plusieurs communications",
+        "Supprimer le besoin d'adresses",
+        "Garantir l'arrivée dans l'ordre"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Une trame transporte une requête Web. Parmi ces informations, lesquelles sont dans l'en-tête IP ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le port est dans l'en-tête TCP, l'adresse MAC dans l'en-tête Ethernet.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "L'adresse IP du destinataire",
+        "Le numéro de port 443",
+        "L'adresse IP de l'émetteur",
+        "L'adresse MAC de la carte réseau"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Que fait le protocole de transport fiable d'internet ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La route est choisie par IP.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "Il choisit la route entre les routeurs",
+        "Il numérote les segments",
+        "Il réémet les segments perdus",
+        "Il fonctionne sans accusé de réception"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces commandes, lesquelles affichent l'adresse IP de la machine ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "ping teste une autre machine, nslookup interroge le DNS.",
+      "notion": "Simulation et commandes",
+      "propositions": [
+        "ip addr sous Linux",
+        "ipconfig sous Windows",
+        "ping sous Linux",
+        "nslookup sous Windows"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les accusés de réception, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Ils sont envoyés par le destinataire et ne contiennent pas les données.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Ils sont envoyés par le routeur",
+        "Ils permettent à l'émetteur de savoir qu'il peut continuer",
+        "Ils contiennent les données du paquet",
+        "Ils peuvent eux-mêmes être perdus"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Pourquoi et comment les adresses de nouvelle génération remplacent-elles IPv4 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La première spécification d'IPv6 date de 1995.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "Une adresse IPv6 compte 16 octets",
+        "IPv6 offre bien plus d'adresses qu'IPv4",
+        "IPv6 a été publié en 1969",
+        "Une adresse IPv6 compte 4 octets"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "À quoi sert le switch d'une salle informatique ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le routeur choisit la route ; le DNS gère les noms.",
+      "notion": "Constituants d'un réseau local",
+      "propositions": [
+        "Il relie les machines d'un même réseau local",
+        "Il attribue les noms de domaine",
+        "Il choisit la route entre deux réseaux éloignés",
+        "Il envoie chaque trame vers la machine destinataire grâce à son adresse MAC"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Sans aucune perte, l'émetteur envoie P1, P2 et P3. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Bits 0, 1, 0.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "P3 porte le même bit que P1",
+        "P2 porte le bit 0",
+        "P1 porte le bit 0",
+        "Les trois paquets portent le bit 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "P1 (bit 0) est perdu une fois, puis tout se passe bien pour P1 et P2. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "P1 est réémis après le délai, puis P2 part avec le bit 1.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "P2 porte le bit 1",
+        "P1 est envoyé deux fois",
+        "P2 porte le bit 0",
+        "Le récepteur garde P1 deux fois"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Quel protocole traduit un nom de domaine comme www.example.org en adresse IP ?",
+      "difficulte": 2,
+      "explication": "Le DNS est un service de la couche application.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "TCP",
+        "MAC",
+        "UDP",
+        "DNS"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le temporisateur, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "L'émetteur lance le temporisateur à chaque envoi.",
+      "notion": "Accusés de réception",
+      "propositions": [
+        "Il est déclenché par le routeur",
+        "Il mesure le délai d'attente de l'accusé de réception",
+        "Il fixe le nombre de paquets du fichier",
+        "À son expiration, l'émetteur réémet le paquet"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Adresse MAC ou adresse IP : quelles phrases sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "C'est l'adresse MAC qui est fixée à la fabrication (6 octets).",
+      "notion": "Adresses MAC",
+      "propositions": [
+        "L'adresse MAC compte 4 octets",
+        "L'adresse IP permet d'acheminer un paquet entre réseaux",
+        "L'adresse MAC identifie une carte réseau",
+        "L'adresse IP est gravée dans la carte réseau à sa fabrication"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur une requête HTTPS envoyée d'un ordinateur du lycée à un serveur distant, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Chaque lien a ses adresses MAC ; l'adresse IP de destination reste la même.",
+      "notion": "Encapsulation",
+      "propositions": [
+        "Les routeurs lisent le contenu de la requête HTTP",
+        "L'adresse IP de destination change à chaque routeur",
+        "Les routeurs traversés lisent l'adresse IP de destination",
+        "L'en-tête de la couche accès réseau (adresses MAC) change à chaque lien traversé"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Une machine a l'adresse 172.16.4.9/24 et la passerelle 172.16.4.1. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Hors de son réseau, elle passe par la passerelle.",
+      "notion": "Adresses IP et masques",
+      "propositions": [
+        "Elle ne peut joindre aucune machine hors de son réseau",
+        "Pour joindre 8.8.8.8, elle envoie à 172.16.4.1",
+        "Pour joindre 172.16.5.9, elle envoie directement",
+        "Pour joindre 172.16.4.80, elle envoie directement"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "ACK 1 est perdu alors que P2 (bit 1) avait été bien reçu. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Le doublon est reconnu et acquitté.",
+      "notion": "Protocole du bit alterné",
+      "propositions": [
+        "L'émetteur envoie P3 avec le bit 0 sans attendre",
+        "L'émetteur réémet P2 avec le bit 1",
+        "Le récepteur, qui attend 0, jette ce P2 et renvoie ACK 1",
+        "Le récepteur garde ce P2 une seconde fois"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Un fichier de 6000 octets est découpé en paquets de 1500 octets de données. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "6000 / 1500 = 4.",
+      "notion": "Découpage en paquets",
+      "propositions": [
+        "Si le paquet 3 est perdu, seul le paquet 3 est réémis",
+        "Il faut 4 paquets",
+        "Si le paquet 3 est perdu, tout le fichier est réémis",
+        "Il faut 6 paquets"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les ports, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "HTTPS utilise le port 443.",
+      "notion": "Modèle en couches TCP/IP",
+      "propositions": [
+        "HTTP utilise par défaut le port 80",
+        "Le port remplace l'adresse IP",
+        "HTTPS utilise par défaut le port 80",
+        "Le port permet de distinguer les applications d'une même machine"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Un routeur relie des réseaux différents.",
+      "difficulte": 1,
+      "explication": "Il utilise les adresses IP.",
+      "notion": "Constituants d'un réseau local",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Une adresse IPv4 compte 4 octets.",
+      "difficulte": 1,
+      "explication": "Par exemple 192.168.1.20.",
+      "notion": "Adresses IP et masques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Les données sont découpées en paquets pour être transmises sur un réseau.",
+      "difficulte": 1,
+      "explication": "Chaque paquet porte un en-tête.",
+      "notion": "Découpage en paquets",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:109",
+      "type": "vrai_faux",
+      "enonce": "À l'émission, chaque couche ajoute un en-tête aux données.",
+      "difficulte": 1,
+      "explication": "C'est l'encapsulation.",
+      "notion": "Encapsulation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Dans le protocole du bit alterné, le bit de contrôle vaut 0 puis 1 puis 0, d'un paquet au suivant.",
+      "difficulte": 1,
+      "explication": "Il alterne.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:111",
+      "type": "vrai_faux",
+      "enonce": "ARPANET, ancêtre d'internet, a été mis en service en 1969.",
+      "difficulte": 1,
+      "explication": "Avec quatre ordinateurs.",
+      "notion": "Repères historiques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Les machines 192.168.1.20/24 et 192.168.1.35/24 peuvent communiquer sans routeur.",
+      "difficulte": 2,
+      "explication": "Les trois premiers octets sont identiques.",
+      "notion": "Adresses IP et masques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:113",
+      "type": "vrai_faux",
+      "enonce": "HTTP appartient à la couche application du modèle TCP/IP.",
+      "difficulte": 2,
+      "explication": "Il utilise TCP à la couche transport.",
+      "notion": "Modèle en couches TCP/IP",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Si l'accusé de réception est perdu, l'émetteur réémet le paquet.",
+      "difficulte": 2,
+      "explication": "Il ne sait pas que le paquet est arrivé.",
+      "notion": "Accusés de réception",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Un paquet reçu avec le bit inattendu est jeté, mais le récepteur renvoie quand même un accusé.",
+      "difficulte": 2,
+      "explication": "Sinon l'émetteur réémettrait sans fin.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Un routeur lit l'en-tête IP d'un paquet pour le faire suivre.",
+      "difficulte": 2,
+      "explication": "Il n'a pas besoin des couches supérieures.",
+      "notion": "Encapsulation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:117",
+      "type": "vrai_faux",
+      "enonce": "HTTPS utilise par défaut le port 443.",
+      "difficulte": 2,
+      "explication": "HTTP utilise le port 80.",
+      "notion": "Modèle en couches TCP/IP",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Dans le déroulement du cours, P2 est envoyé trois fois mais gardé une seule fois.",
+      "difficulte": 3,
+      "explication": "La troisième copie est un doublon.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Une requête HTTP de 400 octets avec des en-têtes TCP (20), IP (20) et Ethernet (14) donne une trame de 454 octets.",
+      "difficulte": 3,
+      "explication": "400 + 20 + 20 + 14 = 454.",
+      "notion": "Encapsulation",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Deux machines branchées sur le même commutateur, d'adresses 192.168.1.10/24 et 192.168.2.10/24, ont besoin d'un routeur pour communiquer.",
+      "difficulte": 3,
+      "explication": "Elles sont dans deux réseaux IP différents.",
+      "notion": "Adresses IP et masques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch11:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Un commutateur relie des réseaux différents à travers internet.",
+      "difficulte": 1,
+      "explication": "Il relie les machines d'un même réseau local ; c'est le routeur qui relie les réseaux.",
+      "notion": "Constituants d'un réseau local",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Une adresse MAC compte 4 octets.",
+      "difficulte": 1,
+      "explication": "Elle en compte 6 ; c'est l'adresse IPv4 qui en compte 4.",
+      "notion": "Adresses MAC",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Un fichier est toujours envoyé d'un seul bloc sur un réseau.",
+      "difficulte": 1,
+      "explication": "Il est découpé en paquets.",
+      "notion": "Découpage en paquets",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:124",
+      "type": "vrai_faux",
+      "enonce": "IP appartient à la couche application.",
+      "difficulte": 1,
+      "explication": "IP appartient à la couche internet.",
+      "notion": "Modèle en couches TCP/IP",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:125",
+      "type": "vrai_faux",
+      "enonce": "L'accusé de réception est envoyé par l'émetteur du paquet.",
+      "difficulte": 1,
+      "explication": "Il est envoyé par le destinataire.",
+      "notion": "Accusés de réception",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Dans le protocole du bit alterné, chaque paquet porte son numéro complet.",
+      "difficulte": 1,
+      "explication": "Il porte un seul bit qui alterne entre 0 et 1.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Les paquets d'un même fichier arrivent toujours dans l'ordre d'envoi.",
+      "difficulte": 2,
+      "explication": "Ils peuvent suivre des chemins différents.",
+      "notion": "Découpage en paquets",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Avec le masque /24, 192.168.1.20 et 192.168.2.20 sont sur le même réseau.",
+      "difficulte": 2,
+      "explication": "Le troisième octet diffère.",
+      "notion": "Adresses IP et masques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:129",
+      "type": "vrai_faux",
+      "enonce": "L'en-tête TCP se trouve à l'extérieur de l'en-tête Ethernet dans une trame.",
+      "difficulte": 2,
+      "explication": "L'en-tête Ethernet, de la couche la plus basse, est le plus extérieur.",
+      "notion": "Encapsulation",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Le récepteur garde tous les paquets qu'il reçoit, même les doublons.",
+      "difficulte": 2,
+      "explication": "Il jette les doublons.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:131",
+      "type": "vrai_faux",
+      "enonce": "UDP garantit que toutes les données arrivent dans l'ordre.",
+      "difficulte": 2,
+      "explication": "C'est TCP qui le garantit ; UDP ne garantit rien.",
+      "notion": "Modèle en couches TCP/IP",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:132",
+      "type": "vrai_faux",
+      "enonce": "La commande ping affiche le contenu d'une page Web.",
+      "difficulte": 2,
+      "explication": "Elle teste si une machine répond et mesure le temps d'aller-retour.",
+      "notion": "Simulation et commandes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Si le récepteur jetait les doublons sans renvoyer d'accusé, la transmission se poursuivrait normalement même après la perte d'un accusé de réception.",
+      "difficulte": 3,
+      "explication": "L'émetteur réémettrait indéfiniment le paquet.",
+      "notion": "Protocole du bit alterné",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:134",
+      "type": "vrai_faux",
+      "enonce": "L'adresse IP de destination d'un paquet change à chaque routeur traversé.",
+      "difficulte": 3,
+      "explication": "Elle reste la même ; ce sont les adresses MAC qui changent à chaque lien.",
+      "notion": "Encapsulation",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Le dernier octet d'une adresse en /24 permet d'écrire 1024 adresses de machines.",
+      "difficulte": 3,
+      "explication": "Il permet 256 valeurs (2⁸), dont deux réservées.",
+      "notion": "Adresses IP et masques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch11:banque:136",
+      "type": "reponse_courte",
+      "enonce": "En IPv4, combien d'octets faut-il pour écrire une adresse ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "32 bits.",
+      "notion": "Adresses IP et masques",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Une adresse physique de carte réseau occupe combien d'octets ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "48 bits.",
+      "notion": "Adresses MAC",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quelle commande permet de tester si une machine répond sur le réseau ?",
+      "difficulte": 1,
+      "explication": "Elle mesure aussi le temps d'aller-retour.",
+      "notion": "Simulation et commandes",
+      "reponses_acceptees": [
+        "ping"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quel est le sigle du protocole de la couche transport qui garantit une transmission fiable ?",
+      "difficulte": 1,
+      "explication": "Transmission Control Protocol.",
+      "notion": "Modèle en couches TCP/IP",
+      "reponses_acceptees": [
+        "TCP"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Quel sigle anglais désigne l'accusé de réception ?",
+      "difficulte": 1,
+      "explication": "acknowledgement.",
+      "notion": "Accusés de réception",
+      "reponses_acceptees": [
+        "ACK"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de l'ancêtre d'internet mis en service en 1969 ?",
+      "difficulte": 1,
+      "explication": "Advanced Research Projects Agency Network.",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "ARPANET",
+        "Arpanet",
+        "ARPAnet"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Quel numéro de port est associé par défaut à HTTP ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "HTTPS utilise 443.",
+      "notion": "Modèle en couches TCP/IP",
+      "reponses_acceptees": [
+        "80"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Sans perte, quel bit porte le cinquième paquet envoyé avec le protocole du bit alterné ? Réponds par 0 ou 1.",
+      "difficulte": 2,
+      "explication": "Bits 0, 1, 0, 1, 0.",
+      "notion": "Protocole du bit alterné",
+      "reponses_acceptees": [
+        "0"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Combien de paquets de 1500 octets de données faut-il pour un fichier de 9000 octets ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "9000 / 1500 = 6.",
+      "notion": "Découpage en paquets",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Une adresse de nouvelle génération (IPv6) s'écrit sur combien d'octets ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "128 bits.",
+      "notion": "Adresses IP et masques",
+      "reponses_acceptees": [
+        "16"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on, en français, l'équipement (switch en anglais) qui relie les machines d'un même réseau local ?",
+      "difficulte": 2,
+      "explication": "Le routeur relie des réseaux différents.",
+      "notion": "Constituants d'un réseau local",
+      "reponses_acceptees": [
+        "commutateur",
+        "un commutateur",
+        "switch",
+        "commutateur réseau"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de famille de l'informaticien qui a publié le protocole TCP avec Robert Kahn en 1974 ?",
+      "difficulte": 2,
+      "explication": "Vinton Cerf.",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "Cerf",
+        "Vinton Cerf",
+        "Vint Cerf"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Une requête HTTP de 600 octets reçoit des en-têtes TCP (20 octets), IP (20 octets) et Ethernet (14 octets). Quelle est la taille de la trame en octets ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "600 + 20 + 20 + 14 = 654.",
+      "notion": "Encapsulation",
+      "reponses_acceptees": [
+        "654"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:149",
+      "type": "reponse_courte",
+      "enonce": "P1 (bit 0) est perdu deux fois avant d'arriver. Combien de fois P1 est-il envoyé en tout ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "Deux envois perdus, puis un envoi reçu.",
+      "notion": "Protocole du bit alterné",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch11:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Avec le masque /24, combien de valeurs différentes peut prendre la partie machine d'une adresse IPv4 ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "2⁸ = 256, dont deux réservées.",
+      "notion": "Adresses IP et masques",
+      "reponses_acceptees": [
+        "256"
+      ]
+    }
+  ]
+}

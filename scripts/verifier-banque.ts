@@ -1,5 +1,5 @@
-import { readFileSync } from 'node:fs';
-import { lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
+import { existsSync, readFileSync } from 'node:fs';
+import { cheminBanque, lireCoursArgument, type ConfigCours } from '../src/lib/contenu/banque/cours';
 import { analyserImport } from '../src/lib/contenu/lire-import';
 import { schemaFichierBanque } from '../src/lib/contenu/banque/format';
 import { verifierBanque } from '../src/lib/contenu/banque/verifier';
@@ -19,10 +19,11 @@ try {
   echouer(e instanceof Error ? e.message : String(e));
 }
 const COURS = config.fichier;
+if (!existsSync(COURS)) echouer(`Cours introuvable : ${COURS}`);
 
-if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N [--cours stss]');
+if (!Number.isInteger(numero) || numero < 1) echouer('Usage : npm run banque:verifier -- N [--cours stss | --cours 1re-gen/espagnol [--prefixe espagnol-1re]]');
 
-const chemin = `contenu/1re-st2s/banques/${config.nom}-ch${numero}.json`;
+const chemin = cheminBanque(config, numero);
 let brut: unknown;
 try {
   brut = JSON.parse(readFileSync(chemin, 'utf8'));

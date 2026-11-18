@@ -1,0 +1,2318 @@
+{
+  "chapitre": 1,
+  "notions": [
+    "Notations et vocabulaire",
+    "Suite définie explicitement",
+    "Suite définie par récurrence",
+    "Motifs et dénombrements",
+    "Représentation graphique",
+    "Sens de variation",
+    "Limite intuitive",
+    "Listes en Python",
+    "Algorithmes de suites"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch1:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Dans l'écriture u_n, que représente l'entier n ?",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "La valeur du terme",
+        "Le rang (ou indice) du terme",
+        "Le nombre total de termes de la suite",
+        "Le premier terme de la suite"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "u_n est le terme de rang n : n indique la position, u_n est la valeur."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:002",
+      "type": "qcm_unique",
+      "enonce": "La suite (u_n) est définie par u_n = 2n + 1. Quelle expression est égale à u_(n+1) ?",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "2n + 3",
+        "2n + 2",
+        "2n + 1",
+        "3n + 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "On remplace n par n + 1 : u_(n+1) = 2(n + 1) + 1 = 2n + 3. L'expression 2n + 2 est u_n + 1, un autre nombre."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Une suite a pour premier terme u_0. Lequel de ses termes est le dixième ?",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "u_9",
+        "u_10",
+        "u_11",
+        "u_1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Les termes sont u_0, u_1, …, u_9 : le dixième a le rang 9."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces écritures désigne la suite tout entière, et non un seul de ses termes ?",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "u_n",
+        "u_(n+1)",
+        "u(n)",
+        "(u_n)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Avec les parenthèses, (u_n) désigne la suite ; u_n, u(n) et u_(n+1) sont des nombres."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Pour la suite définie par u_n = n², quelle expression est égale à u_n + 1 ?",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "(n + 1)²",
+        "n² + 2n + 1",
+        "n² + 1",
+        "n + 1"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "u_n + 1 ajoute 1 à la valeur u_n = n². Les expressions (n + 1)² et n² + 2n + 1 correspondent à u_(n+1)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Combien de termes compte-t-on de u_3 à u_12, ces deux termes compris ?",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "9",
+        "12",
+        "13",
+        "10"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "De u_p à u_n, il y a n − p + 1 termes : 12 − 3 + 1 = 10."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:007",
+      "type": "qcm_unique",
+      "enonce": "La suite (v_n) est définie par v_n = √(n − 5). Pour quels entiers naturels n le terme v_n existe-t-il ?",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "Pour n > 5",
+        "Pour n ⩽ 5",
+        "Pour n ⩾ 5",
+        "Pour tout entier naturel n"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "La racine carrée exige n − 5 ⩾ 0, soit n ⩾ 5 ; v_5 = 0 existe."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:008",
+      "type": "qcm_unique",
+      "enonce": "On pose u_n = 3n − 4 pour tout entier naturel n. Quelle est l'expression du terme de rang 2n ?",
+      "difficulte": 3,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "6n − 8",
+        "5n − 4",
+        "6n − 4",
+        "3n − 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "On remplace n par 2n : u_(2n) = 3 × 2n − 4 = 6n − 4. Le résultat 6n − 8 serait 2u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "La suite (u_n) est définie par u_n = 5n − 2. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "u_0 = −2",
+        "u_1 = 3",
+        "u_2 = 10",
+        "u_n + 1 = 5n − 1",
+        "u_(n+1) = 5n − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "u_0 = −2, u_1 = 3, u_2 = 8 ; u_n + 1 = 5n − 1, tandis que u_(n+1) = 5(n + 1) − 2 = 5n + 3."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles désignent un nombre, c'est-à-dire un terme, et non une suite ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "u_5",
+        "u(n)",
+        "(u_n)",
+        "u_(n+1)",
+        "(u(n))"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "u_5, u(n) et u_(n+1) sont des termes ; (u_n) et (u(n)) désignent la suite."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Une suite (w_n) est définie seulement pour les entiers n ⩾ 1. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Notations et vocabulaire",
+      "propositions": [
+        "Son premier terme est w_1",
+        "Son cinquième terme est w_5",
+        "Son cinquième terme est w_4",
+        "De w_1 à w_20, il y a 20 termes",
+        "Le terme w_0 existe forcément"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "La suite commence à w_1, donc le k-ième terme est w_k ; de w_1 à w_20 il y a 20 − 1 + 1 = 20 termes ; w_0 n'est pas défini."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:012",
+      "type": "vrai_faux",
+      "enonce": "Pour toute suite (u_n), le nombre u_(n+1) est le terme qui suit u_n.",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "bonne_reponse": true,
+      "explication": "u_(n+1) est le terme de rang n + 1, celui qui vient juste après u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Pour n'importe quelle suite, les nombres u_(n+1) et u_n + 1 sont égaux.",
+      "difficulte": 1,
+      "notion": "Notations et vocabulaire",
+      "bonne_reponse": false,
+      "explication": "Contre-exemple : u_n = 2n donne u_(n+1) = 2n + 2 mais u_n + 1 = 2n + 1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Une suite numérique peut être vue comme une fonction définie sur les entiers naturels (ou à partir d'un certain entier).",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "bonne_reponse": true,
+      "explication": "C'est la définition : à chaque entier n, on associe un réel u(n) = u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:015",
+      "type": "vrai_faux",
+      "enonce": "Si une suite commence au terme u_0, alors u_20 est son vingtième terme.",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "bonne_reponse": false,
+      "explication": "Les termes u_0 à u_20 sont au nombre de 21 : u_20 est le vingt et unième terme, le vingtième est u_19."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:016",
+      "type": "reponse_courte",
+      "enonce": "La suite (u_n) est définie par u_n = 2n + 1. Calcule la différence u_(n+1) − u_n. Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Notations et vocabulaire",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "explication": "u_(n+1) − u_n = (2n + 3) − (2n + 1) = 2, quel que soit n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Avec u_n = n² − 3n + 1, que vaut u_4 ?",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "1",
+        "−1",
+        "5",
+        "9"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "u_4 = 16 − 12 + 1 = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:018",
+      "type": "qcm_unique",
+      "enonce": "La suite (v_n) est définie par v_n = (2n + 1)/(n + 1). Quelle est la valeur de v_0 ?",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "0",
+        "2",
+        "3",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "v_0 = (0 + 1)/(0 + 1) = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:019",
+      "type": "qcm_unique",
+      "enonce": "La suite (w_n) est donnée par w_n = (−1)ⁿ. Combien vaut w_7 ?",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "1",
+        "−7",
+        "−1",
+        "7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "7 est impair, donc (−1)⁷ = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle formule traduit la phrase « le terme de rang n est le carré de n diminué de 4 » ?",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "u_n = (n − 4)²",
+        "u_n = 2n − 4",
+        "u_n = n² − 4",
+        "u_n = 4 − n²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "On prend le carré de n, puis on retire 4. L'écriture (n − 4)² serait le carré de n − 4."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:021",
+      "type": "qcm_unique",
+      "enonce": "On définit u_n = n² + n. Quelle est l'expression de u_(n+1) ?",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "n² + n + 1",
+        "n² + 2n + 2",
+        "n² + 3n + 1",
+        "n² + 3n + 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "u_(n+1) = (n + 1)² + (n + 1) = n² + 2n + 1 + n + 1 = n² + 3n + 2."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:022",
+      "type": "qcm_unique",
+      "enonce": "La suite (u_n) vérifie u_n = n² − 3n + 1. Pour quel entier n a-t-on u_n = 41 ?",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "7",
+        "9",
+        "8",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "u_8 = 64 − 24 + 1 = 41 (et u_7 = 29, u_9 = 55, u_10 = 71)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Soit u_n = 3 × 2ⁿ. Que vaut u_5 ?",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "30",
+        "96",
+        "192",
+        "48"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "2⁵ = 32 et 3 × 32 = 96. On calcule la puissance avant de multiplier."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:024",
+      "type": "qcm_unique",
+      "enonce": "La suite définie pour n ⩾ 1 par a_n = 1/n commence au rang 1. Quel est son quatrième terme ?",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "0,25",
+        "0,2",
+        "1/3",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Le premier terme est a_1, donc le quatrième est a_4 = 1/4 = 0,25."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Pour u_n = n² − 5n, quelle est l'expression simplifiée de u_(n+1) − u_n ?",
+      "difficulte": 3,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "2n + 1",
+        "2n − 4",
+        "−4",
+        "2n − 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "u_(n+1) = n² + 2n + 1 − 5n − 5 = n² − 3n − 4, d'où u_(n+1) − u_n = 2n − 4."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:026",
+      "type": "qcm_multiple",
+      "enonce": "Calcule quelques termes de la suite donnée par la formule u_n = 10 − 3n, puis repère les égalités justes. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "u_0 = 10",
+        "u_2 = 4",
+        "u_3 = 1",
+        "u_4 = −1",
+        "u_5 = −15"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u_0 = 10, u_2 = 4, u_3 = 1, u_4 = −2 et u_5 = −5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Pour lesquelles de ces suites peut-on calculer u_100 directement, sans calculer les termes précédents ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "u_n = n³ − n",
+        "u_0 = 1 et u_(n+1) = 2u_n + 3",
+        "u_n = (n + 1)/(n + 2)",
+        "u_0 = 4 et u_(n+1) = √(u_n)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "explication": "Les suites définies explicitement se calculent directement ; pour une récurrence, il faut les termes précédents."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "On considère la suite définie par u_n = (n − 2)². Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "u_0 = 4",
+        "u_2 = 0",
+        "u_(n+1) = (n − 1)²",
+        "u_1 = −1",
+        "u_(n+1) = (n − 2)² + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u_0 = (−2)² = 4, u_1 = 1, u_2 = 0, et u_(n+1) = (n + 1 − 2)² = (n − 1)²."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "On étudie les valeurs prises par l'expression u_n = n² − 6n + 10 pour les premiers entiers n. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Suite définie explicitement",
+      "propositions": [
+        "u_3 = 1",
+        "u_2 = u_4",
+        "u_0 = u_6",
+        "u_n = 1 pour deux valeurs de n",
+        "u_1 = 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u_n = (n − 3)² + 1 : u_3 = 1 (seul rang où u_n = 1), u_2 = u_4 = 2, u_0 = u_6 = 10, u_1 = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:030",
+      "type": "vrai_faux",
+      "enonce": "Si u_n = 4n − 1, alors u_10 = 39.",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "bonne_reponse": true,
+      "explication": "u_10 = 40 − 1 = 39."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:031",
+      "type": "vrai_faux",
+      "enonce": "Pour u_n = n² + 1, on a u_(n+1) = n² + 2n + 2.",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "bonne_reponse": true,
+      "explication": "u_(n+1) = (n + 1)² + 1 = n² + 2n + 1 + 1 = n² + 2n + 2."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:032",
+      "type": "vrai_faux",
+      "enonce": "Pour u_n = n² + 1, le terme de rang 2n vaut 2n² + 2.",
+      "difficulte": 2,
+      "notion": "Suite définie explicitement",
+      "bonne_reponse": false,
+      "explication": "u_(2n) = (2n)² + 1 = 4n² + 1 ; 2n² + 2 est 2u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:033",
+      "type": "reponse_courte",
+      "enonce": "La suite (u_n) est définie par u_n = 2n² − n + 3. Calcule u_5. Réponds par un nombre entier.",
+      "difficulte": 1,
+      "notion": "Suite définie explicitement",
+      "reponses_acceptees": [
+        "48"
+      ],
+      "explication": "u_5 = 2 × 25 − 5 + 3 = 48."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:034",
+      "type": "reponse_courte",
+      "enonce": "Avec u_n = n² − 3n + 1, détermine l'entier naturel n tel que u_n = 55. Réponds par un nombre entier.",
+      "difficulte": 3,
+      "notion": "Suite définie explicitement",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "explication": "n² − 3n − 54 = 0 s'écrit (n − 9)(n + 6) = 0 ; le seul entier naturel solution est 9 : 81 − 27 + 1 = 55."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:035",
+      "type": "qcm_unique",
+      "enonce": "On donne u_0 = 2 et, pour tout n, u_(n+1) = 3u_n − 1. Que vaut u_2 ?",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "14",
+        "5",
+        "41",
+        "15"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "u_1 = 3 × 2 − 1 = 5, puis u_2 = 3 × 5 − 1 = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 5! (factorielle 5) ?",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "15",
+        "25",
+        "720",
+        "120"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "5! = 1 × 2 × 3 × 4 × 5 = 120."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Dans la suite de Fibonacci 0, 1, 1, 2, 3, 5, 8, …, quel nombre vient juste après 8 ?",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "11",
+        "16",
+        "13",
+        "21"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Chaque terme est la somme des deux précédents : 5 + 8 = 13."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Selon la règle de Syracuse (moitié si le terme est pair, triple plus un sinon), quel terme suit 7 ?",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "3,5",
+        "22",
+        "21",
+        "8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "7 est impair : 3 × 7 + 1 = 22."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:039",
+      "type": "qcm_unique",
+      "enonce": "La suite (u_n) est définie par u_0 = 1 et u_(n+1) = 2u_n + n. Calcule u_3.",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "19",
+        "9",
+        "13",
+        "12"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "u_1 = 2 × 1 + 0 = 2, u_2 = 2 × 2 + 1 = 5, u_3 = 2 × 5 + 2 = 12. Attention : pour calculer u_1, on prend n = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation relie (n + 1)! à n! pour tout entier naturel n ?",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "(n + 1)! = n! + 1",
+        "(n + 1)! = (n + 1) × n!",
+        "(n + 1)! = n × n!",
+        "(n + 1)! = n! + n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "(n + 1)! = 1 × 2 × … × n × (n + 1) = n! × (n + 1)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi faut-il donner deux termes initiaux pour définir la suite de Fibonacci ?",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "Elle est définie par une formule explicite",
+        "Chaque terme se calcule avec les deux termes précédents",
+        "Ses termes sont tour à tour pairs et impairs",
+        "Elle tend vers +∞"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "F_(n+2) = F_(n+1) + F_n : pour calculer F_2, il faut connaître F_0 et F_1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:042",
+      "type": "qcm_unique",
+      "enonce": "On pose v_0 = 1 et v_(n+1) = v_n + 2n + 1. Quelle formule explicite donne les termes v_0, v_1, v_2, v_3 obtenus ?",
+      "difficulte": 3,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "v_n = n² + 1",
+        "v_n = 2n + 1",
+        "v_n = (n + 1)²",
+        "v_n = n² + n + 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "On trouve 1, 2, 5, 10, qui sont 0² + 1, 1² + 1, 2² + 1, 3² + 1 ; et n² + 1 + 2n + 1 = (n + 1)² + 1 confirme la formule."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:043",
+      "type": "qcm_unique",
+      "enonce": "En partant de u_0 = 3 dans la suite de Syracuse, après combien d'étapes obtient-on 1 pour la première fois ?",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "8",
+        "6",
+        "5",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "3, 10, 5, 16, 8, 4, 2, 1 : on atteint 1 au rang 7, donc après 7 étapes."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:044",
+      "type": "qcm_multiple",
+      "enonce": "On donne u_0 = 4 et u_(n+1) = u_n/2 + 1 pour tout n. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "u_1 = 3",
+        "u_2 = 2,5",
+        "u_3 = 2,25",
+        "u_1 = 2",
+        "u_2 = 1,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u_1 = 2 + 1 = 3, u_2 = 1,5 + 1 = 2,5, u_3 = 1,25 + 1 = 2,25."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:045",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités sur les factorielles, lesquelles sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "0! = 1",
+        "4! = 24",
+        "6! = 6 × 5!",
+        "3! = 3",
+        "2! = 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "0! = 1 par convention, 4! = 24, 6! = 6 × 5! = 720 ; mais 3! = 6 et 2! = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:046",
+      "type": "qcm_multiple",
+      "enonce": "On applique la règle de Syracuse en partant de u_0 = 12. Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "u_3 = 10",
+        "Le plus grand terme obtenu est 16",
+        "u_2 = 3",
+        "u_1 = 37",
+        "On atteint 1 au rang 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "12, 6, 3, 10, 5, 16, 8, 4, 2, 1 : u_2 = 3, u_3 = 10, maximum 16, et 1 est atteint au rang 9."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:047",
+      "type": "qcm_multiple",
+      "enonce": "Une suite vérifie u_(n+1) = u_n + 3 pour tout entier naturel n. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Suite définie par récurrence",
+      "propositions": [
+        "Si u_0 = 5, alors u_n = 5 + 3n",
+        "Si u_0 = 0, alors u_10 = 30",
+        "Cette relation suffit à elle seule pour connaître u_10",
+        "u_(n+1) − u_n = 3 pour tout n",
+        "u_n = 3n pour toute suite vérifiant cette relation"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "On ajoute 3 à chaque étape : u_n = u_0 + 3n. Sans u_0, on ne connaît pas u_10, et u_n = 3n seulement si u_0 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:048",
+      "type": "vrai_faux",
+      "enonce": "Une relation u_(n+1) = f(u_n) suffit, sans premier terme, à définir une suite.",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "bonne_reponse": false,
+      "explication": "Il faut aussi le premier terme : u_(n+1) = 3u_n − 1 donne 2, 5, 14… avec u_0 = 2 mais 0, −1, −4… avec u_0 = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:049",
+      "type": "vrai_faux",
+      "enonce": "Avec F_0 = 0, F_1 = 1 et F_(n+2) = F_(n+1) + F_n, on obtient F_10 = 55.",
+      "difficulte": 2,
+      "notion": "Suite définie par récurrence",
+      "bonne_reponse": true,
+      "explication": "0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 : le terme de rang 10 est 55."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:050",
+      "type": "vrai_faux",
+      "enonce": "Il est démontré que la suite de Syracuse finit par atteindre 1 quel que soit l'entier de départ.",
+      "difficulte": 3,
+      "notion": "Suite définie par récurrence",
+      "bonne_reponse": false,
+      "explication": "C'est une conjecture : vérifiée sur tous les essais faits, elle n'est pas démontrée."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:051",
+      "type": "reponse_courte",
+      "enonce": "On pose u_0 = −1 et u_(n+1) = u_n² + 1. Calcule u_2. Réponds par un nombre entier.",
+      "difficulte": 1,
+      "notion": "Suite définie par récurrence",
+      "reponses_acceptees": [
+        "5"
+      ],
+      "explication": "u_1 = (−1)² + 1 = 2, puis u_2 = 2² + 1 = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:052",
+      "type": "reponse_courte",
+      "enonce": "Calcule le quotient 7!/5!. Réponds par un nombre entier.",
+      "difficulte": 3,
+      "notion": "Suite définie par récurrence",
+      "reponses_acceptees": [
+        "42"
+      ],
+      "explication": "7! = 7 × 6 × 5!, donc 7!/5! = 7 × 6 = 42."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Les nombres triangulaires commencent par T_1 = 1, T_2 = 3, T_3 = 6, T_4 = 10. Quel est T_5 ?",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "15",
+        "14",
+        "16",
+        "20"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "On ajoute une ligne de 5 points : T_5 = 10 + 5 = 15."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Combien de points faut-il ajouter à un carré de n × n points pour obtenir le carré de (n + 1) × (n + 1) points ?",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "n + 1",
+        "2n",
+        "2n + 2",
+        "2n + 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "(n + 1)² − n² = 2n + 1 : une bande en L de n + n points, plus le point du coin."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Des carrés d'allumettes sont alignés côte à côte : 4 allumettes pour un carré, 7 pour deux carrés. Combien en faut-il pour trois carrés ?",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "12",
+        "10",
+        "11",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Chaque carré ajouté partage un côté avec le précédent et demande 3 allumettes : 7 + 3 = 10."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Une rangée de n carrés d'allumettes demande a_n allumettes, avec a_1 = 4 et 3 allumettes de plus par carré ajouté. Quelle formule donne a_n ?",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "a_n = 4n",
+        "a_n = 3n + 4",
+        "a_n = 4n − 1",
+        "a_n = 3n + 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "a_n = 4 + 3(n − 1) = 3n + 1 ; la formule 4n compterait deux fois les côtés communs."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Dans un groupe de n personnes, chacune serre une fois la main de chacune des autres ; p_n est le nombre de poignées de main. Quelle relation lie p_(n+1) et p_n ?",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "p_(n+1) = p_n + n + 1",
+        "p_(n+1) = p_n + n",
+        "p_(n+1) = 2p_n",
+        "p_(n+1) = p_n + 2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "La personne qui arrive serre la main des n personnes déjà présentes."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Combien de diagonales possède un hexagone (polygone à 6 côtés) ?",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "6",
+        "12",
+        "9",
+        "18"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Chaque sommet est relié par une diagonale à 6 − 3 = 3 sommets ; 6 × 3 = 18 compte chaque diagonale deux fois : 9."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Combien existe-t-il de codes formés de 5 chiffres, chaque chiffre valant 0 ou 1 ?",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "10",
+        "25",
+        "32",
+        "64"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Chaque chiffre ajouté double le nombre de codes : 2⁵ = 32."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:060",
+      "type": "qcm_unique",
+      "enonce": "On place 12 points dont trois ne sont jamais alignés. Combien de segments relient ces points deux à deux ?",
+      "difficulte": 3,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "132",
+        "66",
+        "144",
+        "78"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Chaque point est relié aux 11 autres ; 12 × 11 = 132 compte chaque segment deux fois : 66."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:061",
+      "type": "qcm_multiple",
+      "enonce": "On note T_n le n-ième nombre triangulaire : T_1 = 1, T_2 = 3, T_3 = 6, T_4 = 10. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "T_(n+1) = T_n + (n + 1)",
+        "T_6 = 21",
+        "T_n = n(n + 1)/2",
+        "T_(n+1) = 2T_n",
+        "T_5 = 16"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "On ajoute une ligne de n + 1 points ; T_5 = 15, T_6 = 21 ; n(n + 1)/2 donne bien 1, 3, 6, 10."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:062",
+      "type": "qcm_multiple",
+      "enonce": "Pour n personnes qui se serrent toutes la main une fois, on note p_n le nombre de poignées de main. Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "p_2 = 1",
+        "p_10 = 45",
+        "p_4 = 8",
+        "p_n = n(n + 1)/2",
+        "p_3 = 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "p_n = n(n − 1)/2 : p_2 = 1, p_3 = 3, p_4 = 6, p_10 = 45."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:063",
+      "type": "qcm_multiple",
+      "enonce": "À l'étape n, une figure en L est formée d'une ligne de n carreaux et d'une colonne de n carreaux qui partagent le carreau du coin. On note c_n son nombre de carreaux. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Motifs et dénombrements",
+      "propositions": [
+        "c_1 = 1",
+        "c_n = 2n − 1",
+        "c_(n+1) = c_n + 2",
+        "c_n = 2n",
+        "c_5 = 10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "n + n carreaux, moins le coin compté deux fois : c_n = 2n − 1 ; on ajoute un carreau à chaque branche : c_(n+1) = c_n + 2 ; c_5 = 9."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:064",
+      "type": "vrai_faux",
+      "enonce": "Les nombres carrés C_n = n² vérifient C_(n+1) = C_n + 2n + 1.",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "bonne_reponse": true,
+      "explication": "(n + 1)² = n² + 2n + 1 : on ajoute une bande en L de 2n + 1 points."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:065",
+      "type": "vrai_faux",
+      "enonce": "Quand on passe des codes binaires de longueur n à ceux de longueur n + 1, le nombre de codes double.",
+      "difficulte": 1,
+      "notion": "Motifs et dénombrements",
+      "bonne_reponse": true,
+      "explication": "Chaque code de longueur n se prolonge par 0 ou par 1 : b_(n+1) = 2b_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:066",
+      "type": "vrai_faux",
+      "enonce": "Si les quatre premiers termes d'une suite sont 1, 2, 4, 8, alors le terme suivant est forcément 16.",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "bonne_reponse": false,
+      "explication": "Plusieurs règles donnent ces quatre termes : u_n = (n³ + 5n + 6)/6 donne 1, 2, 4, 8 puis 15. Quelques termes ne déterminent pas la suite."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:067",
+      "type": "reponse_courte",
+      "enonce": "Une rangée de carrés d'allumettes côte à côte utilise 4 allumettes pour 1 carré, puis 3 de plus pour chaque carré ajouté. Combien d'allumettes faut-il pour 20 carrés ? Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Motifs et dénombrements",
+      "reponses_acceptees": [
+        "61"
+      ],
+      "explication": "a_n = 3n + 1, donc a_20 = 61."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:068",
+      "type": "reponse_courte",
+      "enonce": "Combien de diagonales possède un polygone convexe à 10 côtés ? Réponds par un nombre entier.",
+      "difficulte": 3,
+      "notion": "Motifs et dénombrements",
+      "reponses_acceptees": [
+        "35"
+      ],
+      "explication": "d_n = n(n − 3)/2 : 10 × 7/2 = 35."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Comment représente-t-on une suite (u_n) dans un repère ?",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "Par une courbe continue qui relie les points (n ; u_n)",
+        "Par les points de coordonnées (u_n ; n)",
+        "Par les points isolés de coordonnées (n ; u_n)",
+        "Par une droite passant par l'origine"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "n ne prend que des valeurs entières : on obtient un nuage de points qu'on ne relie pas."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Le point de coordonnées (3 ; 7) appartient au nuage de points d'une suite (u_n). Que peut-on en déduire ?",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "u_3 = 7",
+        "u_7 = 3",
+        "u_3 = 10",
+        "u_4 = 7"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "L'abscisse est le rang, l'ordonnée est la valeur du terme."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Les points du nuage d'une suite montent régulièrement de gauche à droite. Quelle conjecture est raisonnable ?",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "La suite est décroissante",
+        "La suite est croissante",
+        "La suite est constante",
+        "Tous les termes sont positifs"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Des points qui montent traduisent u_(n+1) ⩾ u_n ; cela ne dit rien sur le signe des termes."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:072",
+      "type": "qcm_unique",
+      "enonce": "La suite est définie par u_n = f(n), où f est une fonction définie sur [0 ; +∞[. Où sont situés les points (n ; u_n) ?",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "Sur la droite d'équation y = x",
+        "Sur la courbe de f, aux abscisses entières",
+        "Sur l'axe des abscisses",
+        "Sur la courbe de f, aux ordonnées entières"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Le point (n ; f(n)) est le point de la courbe de f d'abscisse n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans la construction en escalier d'une suite u_(n+1) = f(u_n), sur quel élément du graphique lit-on les termes u_0, u_1, u_2… ?",
+      "difficulte": 2,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "Uniquement sur l'axe des ordonnées",
+        "Sur la courbe de f",
+        "Sur la droite d'équation y = 1",
+        "Sur l'axe des abscisses"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "On place u_0 sur l'axe des abscisses, et la droite y = x reporte chaque terme sur cet axe."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:074",
+      "type": "qcm_unique",
+      "enonce": "À quoi sert la droite d'équation y = x dans la construction en escalier ?",
+      "difficulte": 2,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "À reporter u_(n+1) sur l'axe des abscisses",
+        "À représenter la suite par un nuage de points",
+        "À calculer l'image f(u_n)",
+        "À prouver que la suite est croissante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "f(u_n) = u_(n+1) se lit en ordonnée ; le passage par y = x transforme cette ordonnée en abscisse."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Dans le nuage d'une suite, les points d'abscisse paire sont à la hauteur 1 et ceux d'abscisse impaire à la hauteur −1. Quelle formule convient ?",
+      "difficulte": 3,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "u_n = (−1)ⁿ⁺¹",
+        "u_n = 1 − n",
+        "u_n = (−1)ⁿ",
+        "u_n = −1ⁿ"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "(−1)ⁿ vaut 1 pour n pair et −1 pour n impair ; (−1)ⁿ⁺¹ fait l'inverse, et −1ⁿ = −(1ⁿ) vaut toujours −1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "On représente la suite u_n = 2n − 1 pour n allant de 0 à 3. Quels points appartiennent à ce nuage ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "(0 ; −1)",
+        "(2 ; 3)",
+        "(3 ; 5)",
+        "(1 ; 2)",
+        "(−1 ; 0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u_0 = −1, u_1 = 1, u_2 = 3, u_3 = 5 ; le rang −1 n'existe pas."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "On réalise la construction en escalier de la suite u_0 = 0, u_(n+1) = 0,5u_n + 2. Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "Les premiers termes sont 0 ; 2 ; 3 ; 3,5",
+        "Les termes s'accumulent près de l'abscisse 4",
+        "Les droites y = 0,5x + 2 et y = x se coupent au point d'abscisse 4",
+        "Les termes se lisent sur l'axe des ordonnées",
+        "Les termes diminuent"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "0,5x + 2 = x donne x = 4 ; les termes 0, 2, 3, 3,5… augmentent vers 4 et se lisent en abscisse."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "On représente la suite u_n = 0,5n² − 2n + 1 pour n allant de 0 à 5. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Représentation graphique",
+      "propositions": [
+        "u_1 = u_3",
+        "Le point le plus bas du nuage est (2 ; −1)",
+        "u_5 = 3,5",
+        "Le nuage forme une courbe continue",
+        "u_4 = 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "Termes : 1 ; −0,5 ; −1 ; −0,5 ; 1 ; 3,5. Les points sont isolés et u_4 = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:079",
+      "type": "vrai_faux",
+      "enonce": "Pour représenter une suite, on relie toujours les points de son nuage.",
+      "difficulte": 1,
+      "notion": "Représentation graphique",
+      "bonne_reponse": false,
+      "explication": "Les points sont isolés : relier les points inventerait des termes de rang non entier."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:080",
+      "type": "vrai_faux",
+      "enonce": "Si u_n = f(n) pour tout n, les points (n ; u_n) appartiennent à la courbe représentative de f.",
+      "difficulte": 2,
+      "notion": "Représentation graphique",
+      "bonne_reponse": true,
+      "explication": "Le point (n ; f(n)) est sur la courbe de f."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:081",
+      "type": "vrai_faux",
+      "enonce": "Si la courbe de f descend sur [0 ; 0,4], alors la suite définie par u_n = f(n) ne peut pas être croissante.",
+      "difficulte": 3,
+      "notion": "Représentation graphique",
+      "bonne_reponse": false,
+      "explication": "Contre-exemple : f(x) = (x − 0,4)² décroît sur [0 ; 0,4], mais u_n = (n − 0,4)² donne 0,16 ; 0,36 ; 2,56… qui croissent. Seules les abscisses entières comptent."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:082",
+      "type": "reponse_courte",
+      "enonce": "Les points (n ; u_n) d'une suite sont tous sur la droite d'équation y = −2x + 5. Que vaut u_4 ? Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Représentation graphique",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "explication": "u_n = −2n + 5, donc u_4 = −8 + 5 = −3."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Que signifie l'affirmation « la suite (u_n) est croissante » ?",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Pour tout n, u_(n+1) ⩽ u_n",
+        "Pour tout n, u_n ⩾ 0",
+        "On a u_1 ⩾ u_0",
+        "Pour tout n, u_(n+1) ⩾ u_n"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Chaque terme est supérieur ou égal au précédent, pour tous les rangs."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:084",
+      "type": "qcm_unique",
+      "enonce": "Pour tout n, u_(n+1) − u_n = −3. Quel est le sens de variation de (u_n) ?",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Strictement décroissante",
+        "Strictement croissante",
+        "Constante",
+        "Ni croissante ni décroissante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "La différence est strictement négative : chaque terme est inférieur au précédent."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:085",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la méthode générale pour étudier le sens de variation d'une suite (u_n) ?",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Comparer seulement u_0 et u_1",
+        "Étudier le signe de u_(n+1) − u_n",
+        "Étudier le signe de u_n",
+        "Calculer u_100"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "Le signe de la différence u_(n+1) − u_n, pour tout n, donne le sens de variation."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:086",
+      "type": "qcm_unique",
+      "enonce": "On pose u_0 = −5 et u_(n+1) = u_n + n² + 1. Quel est le sens de variation de la suite ?",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Strictement croissante",
+        "Strictement décroissante",
+        "Décroissante puis croissante",
+        "Constante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "u_(n+1) − u_n = n² + 1 > 0 pour tout n ; le signe de u_0 ne compte pas."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:087",
+      "type": "qcm_unique",
+      "enonce": "Pour u_n = n² − 3n + 1, on trouve u_(n+1) − u_n = 2n − 2. Que peut-on en conclure ?",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "propositions": [
+        "La suite est croissante à partir du rang 1",
+        "La suite est croissante dès le rang 0",
+        "La suite est décroissante",
+        "La suite est constante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "2n − 2 ⩾ 0 pour n ⩾ 1, mais pour n = 0 la différence vaut −2 : u_1 < u_0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:088",
+      "type": "qcm_unique",
+      "enonce": "Les termes d'une suite sont strictement positifs et u_(n+1)/u_n = 0,8 pour tout n. Que dire de la suite ?",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Elle est strictement croissante",
+        "Elle est constante",
+        "Elle est strictement décroissante",
+        "Elle devient négative à partir d'un rang"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "u_n > 0 et u_(n+1) = 0,8u_n < u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:089",
+      "type": "qcm_unique",
+      "enonce": "On considère u_n = 5 − 2/(n + 1) et la fonction f(x) = 5 − 2/(x + 1) sur [0 ; +∞[, qui est croissante. Que peut-on dire de (u_n) ?",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Elle est décroissante",
+        "Elle est constante",
+        "Elle est croissante",
+        "On ne peut rien conclure"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "u_n = f(n) avec f croissante sur [0 ; +∞[ : f(n) ⩽ f(n + 1), donc la suite est croissante."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:090",
+      "type": "qcm_unique",
+      "enonce": "Quel est le sens de variation de la suite w_n = 3 × (−1)ⁿ ?",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Croissante",
+        "Décroissante",
+        "Constante",
+        "Ni croissante ni décroissante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Les termes valent 3, −3, 3, −3… : ils descendent puis remontent."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:091",
+      "type": "qcm_unique",
+      "enonce": "On pose u_n = n/2ⁿ pour n ⩾ 1. Quelle est l'expression simplifiée du quotient u_(n+1)/u_n ?",
+      "difficulte": 3,
+      "notion": "Sens de variation",
+      "propositions": [
+        "2n/(n + 1)",
+        "(n + 1)/2",
+        "1/2",
+        "(n + 1)/(2n)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "u_(n+1)/u_n = (n + 1)/2ⁿ⁺¹ × 2ⁿ/n = (n + 1)/(2n), qui est ⩽ 1 pour n ⩾ 1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:092",
+      "type": "qcm_unique",
+      "enonce": "La suite est définie par u_0 = 10 et u_(n+1) = 0,5u_n + 2. Quel est son sens de variation, au vu de ses premiers termes et de la construction en escalier ?",
+      "difficulte": 3,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Croissante, car x ↦ 0,5x + 2 est croissante",
+        "Décroissante",
+        "Constante",
+        "Ni croissante ni décroissante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "10 ; 7 ; 5,5 ; 4,75… : les termes descendent vers 4. Pour une récurrence, le sens de variation de f ne donne pas celui de la suite."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces suites définies pour n ∈ ℕ, lesquelles sont strictement croissantes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "propositions": [
+        "u_n = 3n − 7",
+        "u_n = n²",
+        "u_n = 5 − n",
+        "u_n = 2",
+        "u_n = √n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "explication": "3n − 7, n² et √n augmentent strictement avec n ; 5 − n diminue ; 2 est constante."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Repère, dans cette liste, chaque suite dont les termes diminuent ou restent égaux d'un rang au suivant (suite décroissante). Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "propositions": [
+        "u_n = 1/(n + 1)",
+        "u_n = −n²",
+        "u_n = (−1)ⁿ",
+        "u_n = n² − 10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "1/(n + 1) et −n² diminuent ; (−1)ⁿ oscille ; n² − 10 augmente."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "On considère la suite v_n = 2 − 1/(n + 1). Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "propositions": [
+        "v_(n+1) − v_n = 1/((n + 1)(n + 2))",
+        "(v_n) est strictement croissante",
+        "(v_n) est décroissante",
+        "v_0 = 1",
+        "v_1 = 2,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "v_(n+1) − v_n = 1/(n + 1) − 1/(n + 2) = 1/((n + 1)(n + 2)) > 0 ; v_0 = 1 et v_1 = 1,5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le sens de variation, lesquelles sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Sens de variation",
+      "propositions": [
+        "Si u_n = f(n) avec f croissante sur [0 ; +∞[, alors (u_n) est croissante",
+        "Si la suite u_n = f(n) est croissante, alors f est croissante sur [0 ; +∞[",
+        "Si u_(n+1) = f(u_n) avec f croissante, alors (u_n) est croissante",
+        "Si tous les termes sont strictement positifs et u_(n+1)/u_n ⩾ 1 pour tout n, alors (u_n) est croissante"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "La 2e est fausse (u_n = (n − 0,4)²) ; la 3e aussi (u_(n+1) = 0,5u_n + 2 avec u_0 = 10 décroît)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:097",
+      "type": "vrai_faux",
+      "enonce": "Une suite constante est à la fois croissante et décroissante.",
+      "difficulte": 1,
+      "notion": "Sens de variation",
+      "bonne_reponse": true,
+      "explication": "u_(n+1) = u_n vérifie u_(n+1) ⩾ u_n et u_(n+1) ⩽ u_n."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:098",
+      "type": "vrai_faux",
+      "enonce": "Si u_1 > u_0, alors la suite (u_n) est croissante.",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "bonne_reponse": false,
+      "explication": "Il faut comparer tous les termes consécutifs : 0, 1, 0, 1… vérifie u_1 > u_0 sans être croissante."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:099",
+      "type": "vrai_faux",
+      "enonce": "La suite u_n = n² − 3n + 1 n'est pas croissante dès le rang 0.",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "bonne_reponse": true,
+      "explication": "u_0 = 1 et u_1 = −1 : u_1 < u_0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:100",
+      "type": "vrai_faux",
+      "enonce": "Si u_(n+1)/u_n ⩾ 1 pour tout n, alors (u_n) est croissante, quel que soit le signe des termes.",
+      "difficulte": 3,
+      "notion": "Sens de variation",
+      "bonne_reponse": false,
+      "explication": "Contre-exemple : u_n = −2ⁿ donne −1, −2, −4… avec un quotient égal à 2, mais la suite décroît. La méthode exige des termes strictement positifs."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:101",
+      "type": "reponse_courte",
+      "enonce": "La suite est définie par u_n = n² − 8n + 3. Quel est le plus petit entier n à partir duquel la suite est croissante, c'est-à-dire tel que u_(k+1) ⩾ u_k pour tout k ⩾ n ? Réponds par un nombre entier.",
+      "difficulte": 3,
+      "notion": "Sens de variation",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "explication": "u_(n+1) − u_n = 2n − 7, positif pour n ⩾ 3,5, donc à partir de n = 4 (u_3 = −12 > u_4 = −13, puis u_5 = −12)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:102",
+      "type": "reponse_courte",
+      "enonce": "On pose u_n = 3ⁿ/n! pour n ⩾ 1. Calcule le quotient u_6/u_5 et donne sa valeur décimale exacte.",
+      "difficulte": 2,
+      "notion": "Sens de variation",
+      "reponses_acceptees": [
+        "0,5",
+        "0.5",
+        "1/2"
+      ],
+      "explication": "u_(n+1)/u_n = 3/(n + 1), donc u_6/u_5 = 3/6 = 0,5."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:103",
+      "type": "qcm_unique",
+      "enonce": "Pour v_n = 2 − 1/(n + 1), on calcule v_10 ≈ 1,909, v_100 ≈ 1,990 et v_1000 ≈ 1,999. Quelle conjecture faire ?",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "La suite tend vers 2",
+        "La suite tend vers 1",
+        "La suite tend vers +∞",
+        "La suite n'a pas de limite"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Les termes se rapprochent de 2 autant qu'on veut quand n grandit."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:104",
+      "type": "qcm_unique",
+      "enonce": "Vers quel nombre semble tendre u_n = 1/n (n ⩾ 1) quand n devient très grand ?",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "1",
+        "0",
+        "+∞",
+        "−∞"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "1/10 = 0,1 ; 1/1000 = 0,001… les termes s'approchent de 0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:105",
+      "type": "qcm_unique",
+      "enonce": "Quel est le comportement de la suite u_n = n² quand n devient grand ?",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "Elle tend vers 0",
+        "Elle tend vers 1",
+        "Elle tend vers +∞",
+        "Elle n'a pas de limite"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "n² dépasse n'importe quel nombre fixé dès que n est assez grand."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Comment se comporte la suite w_n = 5 − 2n pour les grandes valeurs de n ?",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "Elle tend vers 5",
+        "Elle tend vers +∞",
+        "Elle tend vers −∞",
+        "Elle tend vers 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "On retire 2 à chaque rang : les termes deviennent inférieurs à tout nombre négatif fixé."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire de la limite de la suite (−1)ⁿ ?",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "Elle n'a pas de limite",
+        "Elle tend vers 0",
+        "Elle tend vers 1",
+        "Elle tend vers −1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Ses termes valent alternativement 1 et −1 : ils ne s'approchent d'aucun nombre et ne tendent pas vers l'infini."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:108",
+      "type": "qcm_unique",
+      "enonce": "On pose u_0 = 0 et u_(n+1) = 0,5u_n + 2 ; on trouve u_10 ≈ 3,996. Quelle limite peut-on conjecturer ?",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "4",
+        "2",
+        "+∞",
+        "3,996"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Les termes 0 ; 2 ; 3 ; 3,5 ; 3,75… se rapprochent de 4, abscisse du point où 0,5x + 2 = x. La valeur 3,996 n'est qu'un terme."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Que signifie, intuitivement, « la suite (u_n) tend vers +∞ » ?",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "Ses termes finissent par dépasser tout nombre fixé, et restent au-dessus",
+        "Chaque terme est plus grand que le précédent",
+        "L'un de ses termes est très grand",
+        "Ses termes s'approchent d'un très grand nombre"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "Tendre vers +∞, c'est dépasser n'importe quel seuil A à partir d'un certain rang ; une suite croissante peut rester bornée."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces suites tend vers +∞ sans être croissante ?",
+      "difficulte": 3,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "u_n = 2 − 1/(n + 1)",
+        "u_n = n²",
+        "u_n = (−1)ⁿ",
+        "u_n = n + 3 × (−1)ⁿ"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "n + 3 × (−1)ⁿ vaut 3 ; −2 ; 5 ; 0 ; 7 ; 2… : elle monte et descend mais dépasse tout seuil. n² tend vers +∞ en croissant."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:111",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces suites, lesquelles tendent vers 0 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "1/n (n ⩾ 1)",
+        "1/n² (n ⩾ 1)",
+        "(−0,5)ⁿ",
+        "√n",
+        "(−1)ⁿ"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "1/n, 1/n² et (−0,5)ⁿ (en changeant de signe) s'approchent de 0 ; √n tend vers +∞ ; (−1)ⁿ n'a pas de limite."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:112",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces suites, lesquelles n'ont pas de limite ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "(−1)ⁿ",
+        "n × (−1)ⁿ",
+        "5 − 2n",
+        "1/(n + 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "(−1)ⁿ oscille entre 1 et −1 ; n × (−1)ⁿ change de signe en grandissant ; 5 − 2n tend vers −∞ et 1/(n + 1) vers 0."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:113",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les limites, lesquelles sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Limite intuitive",
+      "propositions": [
+        "Une suite croissante peut avoir une limite finie",
+        "Une suite qui tend vers +∞ est forcément croissante",
+        "Calculer quelques termes suffit à prouver une limite",
+        "Une suite peut tendre vers un nombre en oscillant autour de lui",
+        "Une suite qui a une limite finie finit toujours par l'atteindre"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "explication": "2 − 1/(n + 1) croît vers 2 sans l'atteindre ; (−0,5)ⁿ oscille autour de 0 ; n + 3 × (−1)ⁿ tend vers +∞ sans être croissante ; des calculs ne donnent qu'une conjecture."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:114",
+      "type": "vrai_faux",
+      "enonce": "La suite √n tend vers +∞.",
+      "difficulte": 1,
+      "notion": "Limite intuitive",
+      "bonne_reponse": true,
+      "explication": "√n dépasse tout nombre A dès que n > A²."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Une suite croissante tend forcément vers +∞.",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "bonne_reponse": false,
+      "explication": "v_n = 2 − 1/(n + 1) est croissante et tend vers 2."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Les termes d'une suite qui tend vers 3 peuvent être tantôt au-dessus, tantôt au-dessous de 3.",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "bonne_reponse": true,
+      "explication": "Par exemple 3 + (−0,5)ⁿ : 4 ; 2,5 ; 3,25 ; 2,875… tend vers 3 en oscillant."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:117",
+      "type": "vrai_faux",
+      "enonce": "La suite u_n = 1000n − n² tend vers +∞, puisque ses 400 premiers termes augmentent.",
+      "difficulte": 3,
+      "notion": "Limite intuitive",
+      "bonne_reponse": false,
+      "explication": "Elle croît jusqu'au rang 500, puis diminue et tend vers −∞ (u_2000 < 0) : des termes observés ne prouvent rien."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:118",
+      "type": "reponse_courte",
+      "enonce": "La suite u_n = n² − 3n + 1 tend vers +∞ et croît à partir du rang 1. Quel est le plus petit entier n tel que u_n > 1000 ? Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Limite intuitive",
+      "reponses_acceptees": [
+        "34"
+      ],
+      "explication": "u_33 = 1089 − 99 + 1 = 991 ⩽ 1000 et u_34 = 1156 − 102 + 1 = 1055 > 1000."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:119",
+      "type": "qcm_unique",
+      "enonce": "On définit L = [3, 1, 4, 1, 5]. Que vaut L[0] ?",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "1",
+        "5",
+        "3",
+        "Une erreur se produit"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "Les indices commencent à 0 : L[0] est le premier élément, 3."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:120",
+      "type": "qcm_unique",
+      "enonce": "Avec la liste L = [3, 1, 4, 1, 5], que renvoie len(L) ?",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "4",
+        "5",
+        "6",
+        "14"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "len(L) compte les éléments, y compris les répétitions : 5 (14 est leur somme)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction ajoute la valeur 9 à la fin d'une liste L ?",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "L.pop(9)",
+        "L.append(9)",
+        "L[0] = 9",
+        "L = L + 9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "append ajoute un élément à la fin ; L + 9 provoque une erreur (on écrirait L + [9])."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:122",
+      "type": "qcm_unique",
+      "enonce": "On pose L = [2, 7, 1, 8]. Que vaut L[-1] ?",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "2",
+        "1",
+        "Une erreur, car l'indice est négatif",
+        "8"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "L'indice −1 désigne le dernier élément de la liste."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Que contient la liste [k**2 for k in range(5)] ?",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "propositions": [
+        "[1, 4, 9, 16, 25]",
+        "[0, 1, 4, 9, 16]",
+        "[0, 1, 4, 9, 16, 25]",
+        "[0, 2, 4, 6, 8]"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "range(5) donne k = 0, 1, 2, 3, 4, et k**2 est le carré de k."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:124",
+      "type": "qcm_unique",
+      "enonce": "On exécute A = [], puis for k in range(4): A.append(3*k + 1). Que contient A à la fin ?",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "propositions": [
+        "[1, 4, 7, 10]",
+        "[4, 7, 10, 13]",
+        "[1, 4, 7, 10, 13]",
+        "[0, 3, 6, 9]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "k prend les valeurs 0, 1, 2, 3, donc on ajoute 1, 4, 7 et 10."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Après L = [5, 8, 2] puis L[1] = 0, que contient la liste L ?",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "[5, 0, 2]",
+        "[0, 8, 2]",
+        "[5, 8, 0]",
+        "[5, 0, 8, 2]"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "L[1] = 0 remplace l'élément d'indice 1, c'est-à-dire le deuxième (8)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qui distingue une liste Python d'un ensemble au sens mathématique ?",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "propositions": [
+        "La liste est ordonnée et peut contenir des répétitions",
+        "La liste ne peut contenir que des nombres entiers",
+        "La liste ne peut plus être modifiée une fois créée",
+        "La liste n'a pas de premier élément"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "[1, 2] et [2, 1] sont deux listes différentes et [1, 1, 2] a trois éléments, alors que {1, 2} = {2, 1}."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Que contient la liste [k for k in range(20) if k % 3 == 0] ?",
+      "difficulte": 3,
+      "notion": "Listes en Python",
+      "propositions": [
+        "[3, 6, 9, 12, 15, 18]",
+        "[0, 3, 6, 9, 12, 15, 18, 21]",
+        "[0, 3, 6, 9, 12, 15, 18]",
+        "[1, 4, 7, 10, 13, 16, 19]"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "On garde les k de 0 à 19 dont le reste dans la division par 3 est nul ; 0 en fait partie, 21 non."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "On définit la liste L = [4, 6, 8, 10]. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "propositions": [
+        "L[1] vaut 6",
+        "L[4] provoque une erreur",
+        "len(L) vaut 4",
+        "L[0] vaut 6",
+        "L[-1] vaut 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "Les indices vont de 0 à 3 : L[0] = 4, L[1] = 6, L[-1] = 10, et L[4] n'existe pas."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions Python donnent la liste [1, 3, 5, 7] ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "propositions": [
+        "[1, 3, 5, 7]",
+        "[2*k + 1 for k in range(4)]",
+        "[2*k - 1 for k in range(4)]",
+        "[k for k in range(1, 8) if k % 2 == 1]",
+        "[2*k + 1 for k in range(1, 5)]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "[2*k - 1 for k in range(4)] donne [−1, 1, 3, 5] et [2*k + 1 for k in range(1, 5)] donne [3, 5, 7, 9]."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "On part de L = [3, 1, 4, 1, 5], puis on exécute L.pop() et enfin del L[0]. Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Listes en Python",
+      "propositions": [
+        "L vaut alors [1, 4, 1]",
+        "len(L) vaut alors 3",
+        "L contient encore 5",
+        "L[0] vaut encore 3",
+        "L vaut alors [3, 1, 4]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "explication": "L.pop() retire le dernier élément (5) : [3, 1, 4, 1] ; del L[0] retire le premier (3) : [1, 4, 1]."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Dans une liste Python, le premier élément a l'indice 0.",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "bonne_reponse": true,
+      "explication": "Les indices vont de 0 à len(L) − 1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:132",
+      "type": "vrai_faux",
+      "enonce": "En Python, [1, 2] et [2, 1] sont la même liste.",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "bonne_reponse": false,
+      "explication": "Une liste est ordonnée : [1, 2] == [2, 1] vaut False."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Avec s = 0 au départ, la boucle for x in [3, 1, 4, 1, 5]: s = s + x donne s = 14.",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "bonne_reponse": true,
+      "explication": "On ajoute chaque élément : 3 + 1 + 4 + 1 + 5 = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:134",
+      "type": "reponse_courte",
+      "enonce": "On définit L = [7, 2, 9, 4]. Quelle valeur contient L[2] ? Réponds par un nombre entier.",
+      "difficulte": 1,
+      "notion": "Listes en Python",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "explication": "L[0] = 7, L[1] = 2, L[2] = 9 : l'indice 2 est le troisième élément."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Combien d'éléments contient la liste [n**2 - 3*n + 1 for n in range(11)] ? Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Listes en Python",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "explication": "range(11) donne n = 0, 1, …, 10, soit 11 valeurs : les termes u_0 à u_10."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:136",
+      "type": "qcm_unique",
+      "enonce": "La fonction terme(n), qui exécute v = 2 puis for k in range(n): v = 3*v - 1 et renvoie v, calcule le terme u_n de quelle suite ?",
+      "difficulte": 1,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "u_n = 3n − 1",
+        "u_1 = 2 et u_(n+1) = 3u_n − 1",
+        "u_n = 2 × 3ⁿ − 1",
+        "u_0 = 2 et u_(n+1) = 3u_n − 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "v part de u_0 = 2 et la boucle applique n fois la relation : terme(0) = 2, terme(1) = 5, terme(2) = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Quel type d'instruction convient pour chercher le premier rang n tel que u_n > 1000, sans connaître ce rang à l'avance ?",
+      "difficulte": 1,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "Une boucle while (tant que)",
+        "Une boucle for k in range(1000)",
+        "Une instruction if seule",
+        "Une liste écrite en extension"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "explication": "On ne sait pas combien de termes calculer : on répète tant que le seuil n'est pas dépassé."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:138",
+      "type": "qcm_unique",
+      "enonce": "On exécute p = 1, puis for k in range(1, 6): p = p * k. Que vaut p à la fin ?",
+      "difficulte": 1,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "720",
+        "120",
+        "24",
+        "15"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "k va de 1 à 5 : p = 1 × 2 × 3 × 4 × 5 = 5! = 120."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:139",
+      "type": "qcm_unique",
+      "enonce": "On exécute L = [0, 1], puis while len(L) < 8: L.append(L[-1] + L[-2]). Quel est le dernier élément de L ?",
+      "difficulte": 2,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "21",
+        "8",
+        "13",
+        "7"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "explication": "On obtient les 8 premiers termes de Fibonacci : 0, 1, 1, 2, 3, 5, 8, 13."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Algorithme de seuil : n = 0, v = 2, puis while v <= 1000: v = 3*v - 1 et n = n + 1. Quelle est la valeur de n à la fin ?",
+      "difficulte": 2,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "5",
+        "7",
+        "1094",
+        "6"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Les termes sont 2, 5, 14, 41, 122, 365, 1094 : le premier qui dépasse 1000 a le rang 6. 1094 est la valeur de v."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:141",
+      "type": "qcm_unique",
+      "enonce": "On exécute L = [5], puis for k in range(3): L.append(L[-1] + 2*k). Que contient L ?",
+      "difficulte": 3,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "[5, 7, 9, 11]",
+        "[5, 7, 11, 17]",
+        "[5, 5, 7]",
+        "[5, 5, 7, 11]"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "explication": "Pour k = 0 on ajoute 5 + 0 = 5, pour k = 1 on ajoute 5 + 2 = 7, pour k = 2 on ajoute 7 + 4 = 11."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:142",
+      "type": "qcm_unique",
+      "enonce": "La fonction syracuse(a) renvoie la liste des termes de Syracuse depuis a jusqu'au premier 1. Que vaut len(syracuse(5)) ?",
+      "difficulte": 3,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "5",
+        "6",
+        "7",
+        "16"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "explication": "syracuse(5) = [5, 16, 8, 4, 2, 1] : 6 éléments (et 5 étapes)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "On définit la fonction Python def u(n): return n**2 - 3*n + 1. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "u(0) renvoie 1",
+        "u(4) renvoie 5",
+        "u(10) renvoie 71",
+        "u(2) renvoie 3",
+        "u(1) renvoie 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "u(0) = 1, u(4) = 16 − 12 + 1 = 5, u(10) = 71, mais u(2) = −1 et u(1) = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "La fonction termes(n) part de L = [2], exécute n fois L.append(3*L[-1] - 1), puis renvoie L. Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "termes(4) renvoie [2, 5, 14, 41, 122]",
+        "termes(n) contient n + 1 éléments",
+        "termes(0) renvoie une liste vide",
+        "Le dernier élément de termes(3) est 41",
+        "termes(2) renvoie [5, 14]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "explication": "La liste contient u_0 à u_n : termes(0) = [2], termes(2) = [2, 5, 14], termes(3) se termine par u_3 = 41."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "On exécute n = 0, v = 0, puis while 4 - v >= 0.01: v = 0.5*v + 2 et n = n + 1 (suite u_0 = 0, u_(n+1) = 0,5u_n + 2). Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "notion": "Algorithmes de suites",
+      "propositions": [
+        "La boucle s'arrête car les termes s'approchent de 4",
+        "À la fin, n vaut 9",
+        "À la fin, n est le rang du premier terme à moins de 0,01 de 4",
+        "À la fin, v est supérieur à 4",
+        "La boucle fait exactement 100 tours"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "explication": "4 − u_n = 4 × 0,5ⁿ ; il devient inférieur à 0,01 pour la première fois au rang 9 (0,0078…), et v reste inférieur à 4."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:146",
+      "type": "vrai_faux",
+      "enonce": "La boucle for k in range(n) effectue n + 1 tours.",
+      "difficulte": 1,
+      "notion": "Algorithmes de suites",
+      "bonne_reponse": false,
+      "explication": "range(n) donne k = 0, 1, …, n − 1 : n tours."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Si L contient les premiers termes de la suite de Fibonacci, le terme suivant s'obtient par L[-1] + L[-2].",
+      "difficulte": 2,
+      "notion": "Algorithmes de suites",
+      "bonne_reponse": true,
+      "explication": "L[-1] et L[-2] sont les deux derniers termes, dont la somme donne le suivant."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Une boucle while de recherche de seuil s'arrête toujours, quelle que soit la suite étudiée.",
+      "difficulte": 3,
+      "notion": "Algorithmes de suites",
+      "bonne_reponse": false,
+      "explication": "Si la suite ne dépasse jamais le seuil (par exemple v_n = 2 − 1/(n + 1) avec le seuil 3), la condition reste vraie et la boucle ne s'arrête pas."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:149",
+      "type": "reponse_courte",
+      "enonce": "On exécute s = 0, puis for k in range(1, 6): s = s + k**2. Quelle est la valeur finale de s ? Réponds par un nombre entier.",
+      "difficulte": 2,
+      "notion": "Algorithmes de suites",
+      "reponses_acceptees": [
+        "55"
+      ],
+      "explication": "s = 1 + 4 + 9 + 16 + 25 = 55 (k va de 1 à 5)."
+    },
+    {
+      "source": "maths-spe-1re:ch1:banque:150",
+      "type": "reponse_courte",
+      "enonce": "On exécute n = 0, u = 100, puis while u >= 10: u = 0.8*u et n = n + 1. Quelle est la valeur finale de n ? Réponds par un nombre entier.",
+      "difficulte": 3,
+      "notion": "Algorithmes de suites",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "explication": "u_n = 100 × 0,8ⁿ : u_10 ≈ 10,74 ⩾ 10 et u_11 ≈ 8,59 < 10, donc la boucle s'arrête avec n = 11."
+    }
+  ]
+}

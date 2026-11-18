@@ -1,0 +1,2312 @@
+{
+  "chapitre": 3,
+  "notions": [
+    "Formes d'énergie et conservation",
+    "Unités d'énergie (J, Wh, kWh)",
+    "Puissance, effort et flux",
+    "Conversions en unités SI",
+    "Énergie, durée et puissance moyenne",
+    "Batterie et autonomie",
+    "Rendement et pertes",
+    "Rendement d'une chaîne",
+    "Énergies cinétique et potentielle",
+    "Flux d'énergie sur un ibd"
+  ],
+  "questions": [
+    {
+      "source": "si-1re:ch3:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Dans le Système international, en quelle unité s'exprime une énergie ?",
+      "propositions": [
+        "Le joule (J)",
+        "Le watt (W)",
+        "Le newton (N)",
+        "Le volt (V)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "L'unité SI d'énergie est le joule (J). Le watt est l'unité de puissance (1 W = 1 J/s), le newton celle de la force, le volt celle de la tension.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Sous quelle forme l'énergie est-elle stockée dans la batterie lithium-ion d'une trottinette ?",
+      "propositions": [
+        "Énergie rayonnante",
+        "Énergie chimique",
+        "Énergie nucléaire",
+        "Énergie cinétique"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Une batterie stocke de l'énergie chimique (liaisons entre atomes), qu'elle libère sous forme électrique lors de la décharge.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Le panneau photovoltaïque d'une station météo connectée capte de l'énergie. Sous quelle forme la reçoit-il ?",
+      "propositions": [
+        "Hydraulique",
+        "Chimique",
+        "Rayonnante",
+        "Mécanique"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le Soleil fournit de l'énergie rayonnante (lumière) ; le panneau photovoltaïque la convertit en énergie électrique.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Que signifie le principe de conservation de l'énergie pour un produit technique ?",
+      "propositions": [
+        "Il crée de l'énergie lorsqu'il fonctionne",
+        "Il restitue toujours toute l'énergie reçue sous forme utile",
+        "Il consomme une énergie qui disparaît définitivement",
+        "Il convertit l'énergie sans en créer ni en détruire"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Un produit ne crée jamais d'énergie : il la convertit d'une forme à une autre. Toute l'énergie reçue se retrouve en sortie, sous forme utile ou sous forme de pertes (souvent de la chaleur).",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Dans un vélo à assistance électrique, quelle suite de conversions décrit le trajet de l'énergie, de la batterie jusqu'à la roue ?",
+      "propositions": [
+        "électrique → chimique → mécanique → thermique",
+        "chimique → électrique → mécanique",
+        "mécanique → électrique → chimique",
+        "chimique → thermique → mécanique"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "La batterie libère son énergie chimique sous forme électrique ; le moteur convertit l'énergie électrique en énergie mécanique. Une partie finit en énergie thermique, mais ce n'est pas le trajet utile.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un portail chauffe pendant l'ouverture. Une partie de l'énergie électrique qu'il reçoit est donc convertie en énergie :",
+      "propositions": [
+        "chimique",
+        "potentielle de pesanteur",
+        "nucléaire",
+        "thermique"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "L'échauffement correspond à de l'énergie thermique : c'est une perte, due à l'effet Joule dans les bobinages et aux frottements.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Le vérin d'un bras de pelleteuse est alimenté par de l'huile sous pression. Quelle forme d'énergie cette huile transporte-t-elle ?",
+      "propositions": [
+        "Énergie hydraulique",
+        "Énergie chimique",
+        "Énergie potentielle de pesanteur",
+        "Énergie électrique"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Un fluide sous pression qui circule transporte de l'énergie hydraulique (pneumatique s'il s'agit d'air).",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Un vélo à assistance électrique muni de freins à disque classiques freine jusqu'à l'arrêt. Que devient son énergie cinétique ?",
+      "propositions": [
+        "Elle est stockée dans la batterie",
+        "Elle disparaît, puisque le vélo est arrêté",
+        "Elle est dissipée en chaleur, surtout dans les freins",
+        "Elle devient de l'énergie chimique dans les plaquettes"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Avec un freinage classique, l'énergie cinétique est convertie en énergie thermique (freins, air). Elle ne disparaît pas (conservation de l'énergie) et elle n'est pas récupérée dans la batterie, ce qui demanderait un moteur fonctionnant en génératrice.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces énergies, lesquelles sont des énergies mécaniques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La chaleur dégagée par un moteur",
+        "L'énergie stockée dans une batterie lithium-ion",
+        "L'énergie potentielle de pesanteur d'une charge soulevée",
+        "L'énergie cinétique d'un vélo lancé"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'énergie mécanique regroupe l'énergie cinétique (mouvement) et l'énergie potentielle de pesanteur (altitude). La batterie stocke de l'énergie chimique ; la chaleur est de l'énergie thermique.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Une lampe d'éclairage public à LED est alimentée par le réseau électrique. Sous quelles formes l'énergie ressort-elle de la lampe ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Énergie nucléaire",
+        "Énergie thermique (échauffement)",
+        "Énergie potentielle de pesanteur",
+        "Énergie rayonnante (lumière)",
+        "Énergie chimique"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La lampe convertit l'énergie électrique en énergie rayonnante (la lumière utile) et, pour une part, en énergie thermique (pertes).",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "À propos des conversions d'énergie dans un produit technique : Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le produit convertit l'énergie d'une forme à une autre",
+        "La chaleur dissipée ne compte pas dans un bilan d'énergie",
+        "Une partie de l'énergie finit presque toujours en chaleur",
+        "Un moteur bien conçu crée de l'énergie mécanique"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Un produit ne crée pas d'énergie, il la convertit, et une partie se dissipe presque toujours en chaleur. Pour qu'un bilan soit juste, il faut compter toutes les formes, chaleur comprise : énergie reçue = énergie utile + pertes.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:012",
+      "type": "vrai_faux",
+      "enonce": "L'énergie nucléaire est stockée dans les noyaux des atomes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : l'énergie nucléaire est stockée dans les noyaux des atomes et exploitée dans les centrales.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Le moteur électrique d'une trottinette convertit de l'énergie électrique en énergie mécanique, et une partie en énergie thermique.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : l'énergie utile est mécanique (rotation de la roue), et une partie de l'énergie reçue chauffe le moteur (pertes).",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Lorsqu'un vélo à assistance électrique roule sur le plat à vitesse constante, toute l'énergie chimique prélevée sur la batterie se retrouve en énergie mécanique utile à la roue.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Faux : à chaque conversion, une partie de l'énergie est dissipée en chaleur (effet Joule, frottements). L'énergie mécanique utile est donc inférieure à l'énergie prélevée sur la batterie.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:015",
+      "type": "reponse_courte",
+      "enonce": "Un vélo descend une côte sans pédaler. À cause des frottements, une partie de son énergie mécanique est convertie en une autre forme d'énergie. Laquelle ? Réponds par un seul mot.",
+      "reponses_acceptees": [
+        "thermique",
+        "énergie thermique",
+        "l'énergie thermique",
+        "chaleur",
+        "la chaleur",
+        "de la chaleur",
+        "calorifique",
+        "thermiques"
+      ],
+      "difficulte": 2,
+      "explication": "Les frottements (air, roulement, transmission) transforment de l'énergie mécanique en énergie thermique, c'est-à-dire en chaleur.",
+      "notion": "Formes d'énergie et conservation"
+    },
+    {
+      "source": "si-1re:ch3:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Combien de joules vaut 1 Wh ?",
+      "propositions": [
+        "3 600 J",
+        "216 000 J",
+        "1 000 J",
+        "3,6 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "1 Wh est l'énergie consommée par un appareil de 1 W pendant 1 h = 3 600 s, donc 1 Wh = 1 × 3 600 = 3 600 J.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Une facture d'électricité compte l'énergie en kilowattheures. À combien de joules correspond 1 kWh ?",
+      "propositions": [
+        "3 600 J",
+        "3 600 000 J",
+        "1 000 J",
+        "36 000 000 J"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "1 kWh = 1 000 Wh = 1 000 × 3 600 J = 3 600 000 J = 3,6 MJ.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces unités, laquelle est une unité d'énergie ?",
+      "propositions": [
+        "kW",
+        "kW/h",
+        "kWh",
+        "V"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le kilowattheure (kWh) est une énergie : une puissance (kW) multipliée par une durée (h). Le kW est une puissance, le V une tension, et « kW/h » n'a pas de sens ici.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:019",
+      "type": "qcm_unique",
+      "enonce": "La batterie d'un vélo à assistance électrique stocke 400 Wh. Quelle est cette énergie en joules ?",
+      "propositions": [
+        "24 000 J",
+        "144 000 J",
+        "14 400 000 J",
+        "1 440 000 J"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "E = 400 × 3 600 = 1 440 000 J = 1,44 MJ. Multiplier par 60 au lieu de 3 600 est une erreur de conversion.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Une bouilloire consomme 0,15 kWh pour chauffer de l'eau. Combien de kilojoules cela représente-t-il ?",
+      "propositions": [
+        "150 kJ",
+        "540 kJ",
+        "54 kJ",
+        "5 400 kJ"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "0,15 kWh = 0,15 × 3 600 000 J = 540 000 J = 540 kJ. (150 correspond à 0,15 × 1 000, c'est-à-dire 150 Wh, pas des kJ.)",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:021",
+      "type": "qcm_unique",
+      "enonce": "La batterie de 60 kWh d'une voiture électrique est rechargée de 20 % à 80 % de sa capacité. Le kilowattheure coûte 0,20 €. Quel est le coût de cette recharge, sans compter les pertes du chargeur ?",
+      "propositions": [
+        "12,00 €",
+        "9,60 €",
+        "2,40 €",
+        "7,20 €"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Énergie rechargée : (80 % − 20 %) × 60 = 0,60 × 60 = 36 kWh. Coût : 36 × 0,20 = 7,20 €. 12 € correspondrait à une recharge complète, 9,60 € à 80 % de la batterie.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Une pile AA de 1,5 V et 2 Ah stocke environ 3 Wh. Combien de piles faudrait-il au minimum pour stocker autant d'énergie qu'une batterie de vélo de 500 Wh ?",
+      "propositions": [
+        "167",
+        "17",
+        "250",
+        "1 667"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "500 / 3 ≈ 166,7 ; il faut donc au minimum 167 piles. Diviser par 2 (les Ah) au lieu de 3 (les Wh) donnerait 250, ce qui mélange capacité et énergie.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:023",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces valeurs d'énergie, lesquelles sont égales à 1,8 MJ ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "500 kWh",
+        "1 800 J",
+        "500 Wh",
+        "0,5 kWh",
+        "1 800 000 J"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "1,8 MJ = 1 800 000 J. En wattheures : 1 800 000 / 3 600 = 500 Wh = 0,5 kWh. 1 800 J est mille fois trop petit, 500 kWh mille fois trop grand.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:024",
+      "type": "qcm_multiple",
+      "enonce": "Dans cette liste de données techniques, repère celles qui désignent une énergie. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les 20 W d'un chargeur",
+        "Les 15 Wh stockés dans une batterie de smartphone",
+        "Les 440 kWh consommés en un an par un réfrigérateur",
+        "Les 230 V du réseau domestique"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Le Wh et le kWh sont des unités d'énergie. Le watt (W) mesure une puissance et le volt (V) une tension.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "Une batterie de smartphone stocke 15 Wh. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle stocke 0,015 kWh",
+        "Elle stocke 15 000 kWh",
+        "Elle stocke 54 kJ",
+        "Elle stocke 900 J",
+        "Elle stocke 54 000 J"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "15 Wh = 15 × 3 600 = 54 000 J = 54 kJ, et 15 Wh = 15 / 1 000 = 0,015 kWh. 900 J vient d'une multiplication par 60 au lieu de 3 600.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:026",
+      "type": "vrai_faux",
+      "enonce": "Le kilowattheure est une unité de puissance.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : le kilowattheure est une unité d'énergie (1 kWh = 3,6 MJ). L'unité de puissance correspondante est le kilowatt (kW).",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:027",
+      "type": "vrai_faux",
+      "enonce": "1 kWh correspond à 3,6 MJ.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : 1 kWh = 1 000 × 3 600 J = 3 600 000 J = 3,6 MJ.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:028",
+      "type": "vrai_faux",
+      "enonce": "Une lampe de 1 W allumée pendant 1 min consomme 1 Wh.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : 1 Wh correspond à 1 W pendant 1 heure. Pendant 1 min, la lampe consomme 1 × 60 = 60 J, soit 1/60 Wh ≈ 0,017 Wh.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:029",
+      "type": "reponse_courte",
+      "enonce": "Exprime une énergie de 2,5 kWh en wattheures. Donne le nombre seul, sans unité et sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "2500"
+      ],
+      "difficulte": 1,
+      "explication": "1 kWh = 1 000 Wh, donc 2,5 kWh = 2,5 × 1 000 = 2 500 Wh.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:030",
+      "type": "reponse_courte",
+      "enonce": "Un litre d'essence contient environ 9 kWh d'énergie. Exprime cette énergie en mégajoules (MJ), arrondie à l'unité. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "32"
+      ],
+      "marge": 0.4,
+      "marge_relative": false,
+      "difficulte": 2,
+      "explication": "1 kWh = 3,6 MJ, donc 9 × 3,6 = 32,4 MJ, soit 32 MJ arrondi à l'unité.",
+      "notion": "Unités d'énergie (J, Wh, kWh)"
+    },
+    {
+      "source": "si-1re:ch3:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Que mesure la puissance d'un moteur ?",
+      "propositions": [
+        "L'énergie totale qu'il peut stocker",
+        "La force maximale qu'il exerce sur sa charge",
+        "L'énergie qu'il transfère par unité de temps",
+        "La durée pendant laquelle il peut fonctionner sans s'arrêter"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "La puissance est l'énergie transférée ou convertie par unité de temps : P = E / Δt, en watts (1 W = 1 J/s).",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Dans un transfert de puissance électrique, quelle grandeur joue le rôle d'effort ?",
+      "propositions": [
+        "La tension U",
+        "L'intensité I",
+        "La résistance R",
+        "La puissance P"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "En électricité, la tension U « pousse » (effort) et l'intensité I « circule » (flux) : P = U × I.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Pour un arbre en rotation, quelle grandeur joue le rôle de flux ?",
+      "propositions": [
+        "Le couple C exercé sur l'arbre",
+        "La vitesse angulaire ω",
+        "La force F",
+        "La pression p"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "En rotation, le couple C est l'effort et la vitesse angulaire ω (en rad/s) est le flux : P = C × ω.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'une trottinette est alimenté sous 48 V et absorbe un courant de 8,0 A. Quelle puissance électrique absorbe-t-il ?",
+      "propositions": [
+        "6 W",
+        "56 W",
+        "384 W",
+        "3 840 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "P = U × I = 48 × 8,0 = 384 W. Diviser (48 / 8 = 6) ou additionner (48 + 8 = 56) n'a pas de sens physique.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Un fauteuil roulant électrique avance à 1,5 m/s en vainquant une force résistante de 40 N. Quelle puissance mécanique doit-il fournir ?",
+      "propositions": [
+        "26,7 W",
+        "6 W",
+        "600 W",
+        "60 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "En translation, P = F × v = 40 × 1,5 = 60 W. 6 W est dix fois trop petit (erreur de virgule), 600 W dix fois trop grand ; 26,7 W vient de la division F / v.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Un vérin est alimenté sous une pression de 2 × 10⁶ Pa avec un débit volumique de 5 × 10⁻⁴ m³/s. Quelle puissance hydraulique reçoit-il ?",
+      "propositions": [
+        "100 W",
+        "1 000 W",
+        "10 000 W",
+        "400 W"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "P = p × qv = 2 × 10⁶ × 5 × 10⁻⁴ = 10 × 10² = 1 000 W, soit 1 kW.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:037",
+      "type": "qcm_unique",
+      "enonce": "L'arbre d'un moteur de bras robotisé exerce un couple de 0,40 N·m et tourne à 250 rad/s. Quelle puissance mécanique transmet-il ?",
+      "propositions": [
+        "625 W",
+        "10 W",
+        "1 000 W",
+        "100 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "P = C × ω = 0,40 × 250 = 100 W (le couple et la vitesse angulaire sont déjà en unités SI). 10 W et 1 000 W viennent d'une erreur de virgule ; 625 W = 250 / 0,40 : on a divisé au lieu de multiplier.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Une clôture électrique délivre une tension de plusieurs milliers de volts, mais sa puissance ne dépasse pas quelques watts. Comment l'expliquer ?",
+      "propositions": [
+        "L'intensité moyenne du courant est très faible",
+        "La tension est la grandeur flux de ce transfert",
+        "Une forte tension réduit toujours la puissance électrique",
+        "La puissance électrique se calcule par P = U / I"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "P = U × I : une forte tension ne suffit pas, il faut aussi du courant. Avec une intensité moyenne minuscule, le produit U × I reste de quelques watts.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:039",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces grandeurs, lesquelles sont des grandeurs effort ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le débit volumique qv",
+        "Le couple C",
+        "La vitesse v",
+        "La force F",
+        "La pression p"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "Les grandeurs effort sont la tension, la force, le couple et la pression. La vitesse et le débit volumique sont des grandeurs flux.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:040",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces produits de grandeurs exprimées en unités SI, lesquels donnent une puissance en watts ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Tension × résistance",
+        "Force × durée",
+        "Pression × débit volumique",
+        "Couple × vitesse angulaire",
+        "Tension × intensité"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Une puissance est toujours le produit d'un effort par le flux associé : U × I, F × v, C × ω, p × qv. Force × durée et tension × résistance n'associent pas un effort et son flux.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:041",
+      "type": "qcm_multiple",
+      "enonce": "Un moteur A fournit 3 000 J en 10 s ; un moteur B fournit 3 000 J en 60 s. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La puissance moyenne de B vaut 180 000 W",
+        "A et B fournissent la même énergie",
+        "A est plus puissant que B",
+        "La puissance moyenne de A vaut 300 W",
+        "B est six fois plus puissant que A"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Même énergie (3 000 J), mais A la fournit plus vite. P(A) = 3 000 / 10 = 300 W ; P(B) = 3 000 / 60 = 50 W. A est six fois plus puissant que B ; 180 000 vient d'une multiplication au lieu d'une division.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:042",
+      "type": "vrai_faux",
+      "enonce": "Un watt correspond à un joule transféré chaque seconde.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : la puissance est une énergie par unité de temps, donc 1 W = 1 J/s.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Dans un transfert de puissance électrique, l'intensité du courant est la grandeur effort.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : en électricité, l'effort est la tension U et le flux est l'intensité I.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Un cycliste qui roule à 6,0 m/s contre une force résistante totale de 25 N fournit une puissance de 150 W.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : P = F × v = 25 × 6,0 = 150 W.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:045",
+      "type": "reponse_courte",
+      "enonce": "Le moteur d'un fauteuil roulant reçoit une puissance électrique de 360 W sous une tension de 24 V. Quelle est l'intensité du courant absorbé, en ampères ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "15"
+      ],
+      "difficulte": 3,
+      "explication": "P = U × I, donc I = P / U = 360 / 24 = 15 A.",
+      "notion": "Puissance, effort et flux"
+    },
+    {
+      "source": "si-1re:ch3:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation permet de passer d'une vitesse de rotation N en tr/min à une vitesse angulaire ω en rad/s ?",
+      "propositions": [
+        "ω = 60 × N / (2π)",
+        "ω = N / 60",
+        "ω = 2π × N / 60",
+        "ω = 2π × N × 60"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Un tour vaut 2π rad et une minute vaut 60 s : N tours par minute correspondent à N × 2π radians en 60 s, donc ω = 2π × N / 60.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Comment convertit-on une vitesse exprimée en km/h en m/s ?",
+      "propositions": [
+        "On divise par 3,6",
+        "On multiplie par 3,6",
+        "On divise par 60",
+        "On multiplie par 1 000"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "1 km/h = 1 000 m en 3 600 s = 1 / 3,6 m/s : on divise par 3,6 (et on multiplie par 3,6 pour revenir en km/h).",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:048",
+      "type": "qcm_unique",
+      "enonce": "À combien de pascals correspond une pression de 1 bar ?",
+      "propositions": [
+        "1 000 Pa",
+        "100 000 Pa",
+        "10 Pa",
+        "1 000 000 Pa"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "1 bar = 10⁵ Pa = 100 000 Pa. (1 000 000 Pa = 1 MPa = 10 bar.)",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un drone tourne à 9 000 tr/min. Quelle est sa vitesse angulaire, arrondie à l'unité ?",
+      "propositions": [
+        "150 rad/s",
+        "24 rad/s",
+        "942 rad/s",
+        "56 549 rad/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "ω = 2π × N / 60 = 2π × 9 000 / 60 = 300π ≈ 942 rad/s. 150 rad/s oublie le facteur 2π ; 56 549 oublie la division par 60.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette roule à 20 km/h. Quelle est sa vitesse en m/s, arrondie au centième ?",
+      "propositions": [
+        "72 m/s",
+        "0,33 m/s",
+        "20 000 m/s",
+        "5,56 m/s"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "v = 20 / 3,6 ≈ 5,56 m/s. Multiplier par 3,6 donnerait 72, diviser par 60 donnerait 0,33.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Une pompe débite 12 L/min. Quelle est la valeur de ce débit en m³/s ?",
+      "propositions": [
+        "0,012 m³/s",
+        "2 × 10⁻⁴ m³/s",
+        "7,2 × 10⁻¹ m³/s",
+        "0,2 m³/s"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "qv = 12 × 10⁻³ / 60 = 0,012 / 60 = 2 × 10⁻⁴ m³/s. 0,012 oublie la division par 60 ; 0,2 oublie la conversion des litres en m³.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Une pompe d'arrosage automatique débite 18 L/min sous une pression de 3 bar. Quelle puissance hydraulique fournit-elle à l'eau ?",
+      "propositions": [
+        "54 W",
+        "5 400 W",
+        "900 W",
+        "90 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "qv = 18 × 10⁻³ / 60 = 3 × 10⁻⁴ m³/s et p = 3 × 10⁵ Pa. P = p × qv = 3 × 10⁵ × 3 × 10⁻⁴ = 90 W. Oublier la division par 60 donne 5 400 W ; multiplier 18 × 3 sans convertir donne 54.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:053",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces unités, lesquelles sont des unités SI à utiliser directement dans P = effort × flux ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "tr/min",
+        "rad/s",
+        "bar",
+        "m/s",
+        "Pa"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "Le rad/s, le m/s et le pascal sont des unités SI. Le tr/min et le bar sont des unités pratiques des fiches techniques : il faut les convertir avant de calculer.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:054",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces vitesses, lesquelles sont égales à 10 m/s ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2,78 km/h",
+        "36 km/h",
+        "600 m/min",
+        "10 000 km/h"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "10 m/s = 10 × 3,6 = 36 km/h, et 10 m/s = 10 × 60 = 600 m/min. 2,78 km/h vient d'une division par 3,6 au lieu d'une multiplication.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:055",
+      "type": "qcm_multiple",
+      "enonce": "Un moteur de portail fournit un couple de 3,0 N·m à 1 000 tr/min. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa vitesse angulaire vaut environ 105 rad/s",
+        "Sa vitesse angulaire vaut environ 16,7 rad/s",
+        "Sa puissance utile vaut environ 314 W",
+        "Sa puissance utile vaut 3 000 W"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "ω = 2π × 1 000 / 60 ≈ 104,7 rad/s, donc P = C × ω ≈ 3,0 × 104,7 ≈ 314 W. 3 000 W vient du calcul C × N avec N en tr/min ; 16,7 = 1 000 / 60 oublie le facteur 2π.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:056",
+      "type": "vrai_faux",
+      "enonce": "Un litre correspond à 10⁻³ m³.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : 1 L = 1 dm³ = 10⁻³ m³.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:057",
+      "type": "vrai_faux",
+      "enonce": "Pour un moteur, on peut calculer P = C × N avec la vitesse N en tr/min : le résultat est directement en watts.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : il faut d'abord convertir N en rad/s (ω = 2π × N / 60). Avec N en tr/min, on obtient un résultat près de dix fois trop grand.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:058",
+      "type": "vrai_faux",
+      "enonce": "Une pression de 1 MPa est égale à 1 bar.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : 1 MPa = 10⁶ Pa et 1 bar = 10⁵ Pa, donc 1 MPa = 10 bar.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:059",
+      "type": "reponse_courte",
+      "enonce": "Un moteur tourne à 3 000 tr/min. Calcule sa vitesse angulaire en rad/s, arrondie à l'unité. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "314"
+      ],
+      "marge": 0.2,
+      "marge_relative": false,
+      "difficulte": 2,
+      "explication": "ω = 2π × 3 000 / 60 = 100π ≈ 314 rad/s.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:060",
+      "type": "reponse_courte",
+      "enonce": "Une trottinette roule à 18 km/h en luttant contre une force résistante de 25 N. Quelle puissance mécanique faut-il fournir, en watts ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "125"
+      ],
+      "difficulte": 3,
+      "explication": "On convertit d'abord la vitesse : v = 18 / 3,6 = 5 m/s. Puis P = F × v = 25 × 5 = 125 W.",
+      "notion": "Conversions en unités SI"
+    },
+    {
+      "source": "si-1re:ch3:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Une puissance P reste constante pendant une durée Δt. Quelle relation donne l'énergie transférée ?",
+      "propositions": [
+        "E = P × Δt",
+        "E = P / Δt",
+        "E = Δt / P",
+        "E = P / (2 × Δt)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "À puissance constante, l'énergie est le produit de la puissance par la durée : E = P × Δt (J avec W et s, ou Wh avec W et h).",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Sur le graphique de la puissance en fonction du temps, à quoi correspond l'énergie échangée ?",
+      "propositions": [
+        "Au maximum de la courbe",
+        "À la pente de la courbe",
+        "À l'aire sous la courbe",
+        "À la durée totale du relevé"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "L'énergie est l'aire sous la courbe P(t) ; pour une puissance constante par morceaux, c'est une somme de rectangles P × Δt.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Un chargeur de 20 W fonctionne pendant 3 h. Quelle énergie consomme-t-il ?",
+      "propositions": [
+        "60 Wh",
+        "6,7 Wh",
+        "23 Wh",
+        "60 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "E = P × Δt = 20 × 3 = 60 Wh (W × h donne des Wh, pas des J). En joules : 60 × 3 600 = 216 000 J.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Le ventilateur d'un boîtier électronique, de puissance 50 W, tourne pendant 5 min. Quelle énergie reçoit-il ?",
+      "propositions": [
+        "250 J",
+        "15 000 J",
+        "10 J",
+        "150 000 J"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On convertit d'abord la durée : 5 min = 300 s. E = 50 × 300 = 15 000 J. Calculer 50 × 5 = 250 oublie la conversion des minutes en secondes.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Pendant un cycle de 60 s, le moteur d'un portail absorbe 200 W pendant 15 s, puis 4 W pendant 30 s, puis 200 W pendant 15 s. Quelle est sa puissance moyenne sur le cycle ?",
+      "propositions": [
+        "200 W",
+        "134,7 W",
+        "102 W",
+        "6 120 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "E = 200 × 15 + 4 × 30 + 200 × 15 = 3 000 + 120 + 3 000 = 6 120 J. Pmoy = E / Δt = 6 120 / 60 = 102 W. Faire la moyenne des trois valeurs (134,7 W) ne tient pas compte des durées.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Au cours d'un cycle, la puissance absorbée par un moteur varie entre 3 W et 150 W. Que peut-on dire de sa puissance moyenne sur le cycle ?",
+      "propositions": [
+        "Elle vaut forcément 76,5 W, la moyenne de 3 et 150",
+        "Elle est égale à 150 W, la valeur maximale",
+        "Elle est supérieure à 150 W",
+        "Elle est comprise entre 3 W et 150 W"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "La puissance moyenne est la hauteur d'un rectangle de même aire que la courbe : elle est forcément entre le minimum et le maximum. Sa valeur exacte dépend des durées passées à chaque niveau, pas seulement des extrêmes.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Une lampe LED d'éclairage public de 60 W éclaire 12 h par nuit. Quelle énergie consomme-t-elle sur une année de 365 nuits ?",
+      "propositions": [
+        "0,72 kWh",
+        "263 kWh",
+        "21,9 kWh",
+        "2 628 kWh"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Par nuit : 60 × 12 = 720 Wh. Sur l'année : 720 × 365 = 262 800 Wh ≈ 263 kWh. 0,72 kWh est la consommation d'une seule nuit ; 21,9 kWh oublie les 12 h.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces relations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pmoy = E / Δt",
+        "E = P × Δt (puissance constante)",
+        "Δt = E × P",
+        "P = E × Δt"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "E = P × Δt à puissance constante, et la puissance moyenne vaut Pmoy = E / Δt. On en déduit Δt = E / P et P = E / Δt, pas des produits.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Un appareil absorbe 100 W pendant 2 min. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il consomme 200 J",
+        "Il consomme 200 Wh",
+        "Il consomme 12 000 J",
+        "Il consomme environ 3,3 Wh"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Δt = 2 min = 120 s, donc E = 100 × 120 = 12 000 J. En Wh : 12 000 / 3 600 ≈ 3,3 Wh (ou 100 × 2/60 h). 200 J vient de l'oubli de conversion des minutes.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "Un programme additionne des puissances relevées toutes les secondes : mesures = [0, 100, 100, 50] (en W), avec dt = 1 s ; il calcule energie = somme des p × dt. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'énergie calculée vaut 250 J",
+        "La puissance moyenne calculée vaut 62,5 W",
+        "L'énergie calculée vaut 62,5 J",
+        "La puissance moyenne vaut 100 W, la valeur la plus fréquente",
+        "Des mesures plus rapprochées donneraient une meilleure estimation"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "E = (0 + 100 + 100 + 50) × 1 = 250 J. Durée : 4 mesures × 1 s = 4 s, donc Pmoy = 250 / 4 = 62,5 W. Plus les mesures sont rapprochées, plus la somme des rectangles approche l'aire sous la courbe.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:071",
+      "type": "vrai_faux",
+      "enonce": "La puissance moyenne sur une durée Δt est la puissance constante qui transférerait la même énergie pendant la même durée.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est la définition, d'où Pmoy = E / Δt.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:072",
+      "type": "vrai_faux",
+      "enonce": "La carte de commande d'un portail consomme 3 W en veille, 24 h sur 24 : elle consomme ainsi 72 Wh par jour.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : E = P × Δt = 3 × 24 = 72 Wh par jour.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Une veille de 1 W est négligeable : sur une année de 8 760 h, elle consomme moins de 1 Wh.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : E = 1 × 8 760 = 8 760 Wh ≈ 8,8 kWh par an. Les veilles permanentes pèsent lourd dans un bilan annuel.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:074",
+      "type": "reponse_courte",
+      "enonce": "Un radiateur de 1 500 W chauffe pendant 2 h. Quelle énergie consomme-t-il, en kWh ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "3"
+      ],
+      "difficulte": 1,
+      "explication": "E = P × Δt = 1,5 kW × 2 h = 3 kWh (soit 3 000 Wh).",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:075",
+      "type": "reponse_courte",
+      "enonce": "Le capteur d'une station météo connectée consomme 0,5 W pendant 10 s chaque minute, et 0,01 W pendant les 50 s restantes. Quelle est sa puissance moyenne, en milliwatts (1 mW = 0,001 W), arrondie à l'unité ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "92"
+      ],
+      "marge": 0.4,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Énergie sur une minute : 0,5 × 10 + 0,01 × 50 = 5 + 0,5 = 5,5 J. Pmoy = 5,5 / 60 ≈ 0,0917 W ≈ 92 mW.",
+      "notion": "Énergie, durée et puissance moyenne"
+    },
+    {
+      "source": "si-1re:ch3:banque:076",
+      "type": "qcm_unique",
+      "enonce": "En quelle unité la capacité d'une batterie est-elle souvent donnée ?",
+      "propositions": [
+        "En watts (W)",
+        "En volts (V)",
+        "En newtons-mètres (N·m)",
+        "En ampères-heures (Ah)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "La capacité Q d'une batterie est donnée en ampères-heures (Ah) ; multipliée par la tension, elle donne l'énergie en Wh.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Quelle relation donne l'énergie stockée dans une batterie de tension nominale U et de capacité Q ?",
+      "propositions": [
+        "E = U × Q",
+        "E = U / Q",
+        "E = Q / U",
+        "E = U² × Q"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "E = U × Q : avec U en V et Q en Ah, on obtient des wattheures.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Une batterie stocke une énergie E et le produit consomme en moyenne Pmoy. Comment estime-t-on son autonomie Δt ?",
+      "propositions": [
+        "Δt = E × Pmoy",
+        "Δt = Pmoy / E",
+        "Δt = E / Pmoy",
+        "Δt = E × Pmoy²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "De E = Pmoy × Δt, on tire Δt = E / Pmoy (en h si E est en Wh et Pmoy en W).",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Quelle énergie stocke une batterie de trottinette de 36 V et 10 Ah ?",
+      "propositions": [
+        "360 Wh",
+        "3 600 Wh",
+        "46 Wh",
+        "360 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "E = U × Q = 36 × 10 = 360 Wh. Attention à l'unité : V × Ah donne des Wh, et 360 Wh = 1 296 000 J, pas 360 J.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Un drone embarque une batterie de 14,8 V et 4,0 Ah, et consomme en moyenne 200 W. Quelle est son autonomie théorique, batterie vidée entièrement ?",
+      "propositions": [
+        "environ 29,6 min",
+        "environ 17,8 min",
+        "environ 177,6 min",
+        "environ 0,3 min"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "E = 14,8 × 4,0 = 59,2 Wh ; Δt = 59,2 / 200 = 0,296 h = 0,296 × 60 ≈ 17,8 min. Lire 0,296 h comme 0,3 min ou 29,6 min est une erreur de conversion ; 177,6 min est dix fois trop grand.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:081",
+      "type": "qcm_unique",
+      "enonce": "La batterie d'un fauteuil roulant électrique a une tension de 24 V et une capacité de 50 Ah. Quelle énergie stocke-t-elle, en kWh ?",
+      "propositions": [
+        "1 200 kWh",
+        "12 kWh",
+        "1,2 kWh",
+        "2,08 kWh"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "E = 24 × 50 = 1 200 Wh = 1,2 kWh (on divise par 1 000 pour passer des Wh aux kWh).",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette a une batterie de 36 V et 12 Ah, dont on n'utilise que 80 % de l'énergie. Elle consomme en moyenne 250 W. Quelle est son autonomie ?",
+      "propositions": [
+        "environ 104 min",
+        "environ 66 min",
+        "environ 1,38 min",
+        "environ 83 min"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "E = 36 × 12 = 432 Wh ; énergie utilisable : 0,8 × 432 = 345,6 Wh. Δt = 345,6 / 250 ≈ 1,38 h ≈ 83 min. Sans la limite de 80 %, on trouverait 104 min.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:083",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi l'autonomie réelle d'un drone est-elle plus faible que l'autonomie calculée avec toute l'énergie de sa batterie ?",
+      "propositions": [
+        "La tension nominale de la batterie augmente au cours de chaque vol",
+        "On ne vide jamais entièrement la batterie, pour la préserver",
+        "La capacité en ampères-heures augmente pendant la décharge",
+        "La puissance consommée devient nulle en vol stationnaire"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Pour préserver la batterie, on n'en utilise qu'une partie (par exemple 80 %) : l'énergie réellement disponible, donc l'autonomie, est plus faible que la valeur théorique.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Quelles informations de la fiche technique d'une batterie faut-il pour calculer son énergie en Wh ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa capacité (Ah)",
+        "Sa tension nominale (V)",
+        "Sa masse (kg)",
+        "Sa durée de recharge (h)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "E = U × Q : il faut la tension nominale U et la capacité Q.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Une batterie de 12 V et 20 Ah alimente une station météo connectée qui consomme en moyenne 5 W. Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'autonomie théorique vaut 48 h",
+        "L'autonomie théorique vaut 1 200 h",
+        "L'autonomie théorique vaut 2 jours",
+        "La batterie stocke 32 Wh",
+        "La batterie stocke 240 Wh"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "E = 12 × 20 = 240 Wh ; Δt = 240 / 5 = 48 h = 2 jours. 1 200 h viendrait d'une multiplication E × P.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Pour doubler l'autonomie d'un drone sans changer sa consommation moyenne, quelle modification de la batterie suffit ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Doubler sa capacité, à tension égale",
+        "Diviser sa tension par deux",
+        "Réduire sa capacité de moitié",
+        "Doubler sa tension, à capacité égale"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Δt = U × Q / Pmoy : à consommation égale, doubler U ou doubler Q double l'énergie stockée, donc l'autonomie. Diviser U ou Q par deux la divise par deux.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:087",
+      "type": "vrai_faux",
+      "enonce": "Une batterie de 11,1 V et 5,0 Ah stocke 55,5 Wh.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : E = U × Q = 11,1 × 5,0 = 55,5 Wh.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:088",
+      "type": "vrai_faux",
+      "enonce": "L'énergie d'une batterie de 48 V et 10 Ah vaut 4,8 Wh.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : E = 48 × 10 = 480 Wh.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:089",
+      "type": "vrai_faux",
+      "enonce": "Si la consommation moyenne d'un drone double, son autonomie double aussi.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : Δt = E / Pmoy. Si Pmoy double, l'autonomie est divisée par deux.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:090",
+      "type": "reponse_courte",
+      "enonce": "La batterie d'un vélo à assistance électrique stocke 500 Wh ; le vélo consomme en moyenne 125 W. Quelle est son autonomie théorique, en heures ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "explication": "Δt = E / Pmoy = 500 / 125 = 4 h.",
+      "notion": "Batterie et autonomie"
+    },
+    {
+      "source": "si-1re:ch3:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Comment définit-on le rendement η d'un constituant qui absorbe Pa et fournit Pu ?",
+      "propositions": [
+        "η = Pa / Pu",
+        "η = Pa − Pu",
+        "η = (Pa − Pu) / Pa",
+        "η = Pu / Pa"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Le rendement est le rapport de la puissance utile à la puissance absorbée : η = Pu / Pa. Pa − Pu, ce sont les pertes, et (Pa − Pu) / Pa est la part perdue.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'unité du rendement ?",
+      "propositions": [
+        "Sans unité",
+        "Le watt (W)",
+        "Le joule (J)",
+        "Le wattheure (Wh)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "η = Pu / Pa est un rapport de deux puissances : c'est un nombre sans unité, entre 0 et 1, souvent donné en pourcentage.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Le moteur d'un fauteuil roulant absorbe 400 W et fournit 320 W sur son arbre. Quel est son rendement ?",
+      "propositions": [
+        "125 %",
+        "8 %",
+        "80 %",
+        "0,8 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "η = Pu / Pa = 320 / 400 = 0,80, soit 80 %. 125 % correspond au rapport inversé Pa / Pu, impossible pour un rendement.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:094",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de rendement 0,85 absorbe 500 W. Quelle puissance perd-il ?",
+      "propositions": [
+        "75 W",
+        "425 W",
+        "588 W",
+        "85 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Pu = η × Pa = 0,85 × 500 = 425 W ; pertes = Pa − Pu = 500 − 425 = 75 W. 425 W est la puissance utile, pas les pertes.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Un moteur de rendement 0,75 doit fournir une puissance utile de 300 W. Quelle puissance absorbe-t-il ?",
+      "propositions": [
+        "225 W",
+        "400 W",
+        "375 W",
+        "75 W"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Pa = Pu / η = 300 / 0,75 = 400 W. Multiplier par le rendement (225 W) donnerait une puissance absorbée plus petite que la puissance utile, ce qui est impossible. 75 W = 300 × 0,25 n'est pas la puissance absorbée (ni même les pertes, qui valent 400 − 300 = 100 W).",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Le bobinage d'un moteur a une résistance de 0,50 Ω et il est parcouru par un courant de 6,0 A. Quelle puissance dissipe-t-il par effet Joule ?",
+      "propositions": [
+        "3 W",
+        "9 W",
+        "18 W",
+        "180 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "PJ = R × I² = 0,50 × 6,0² = 0,50 × 36 = 18 W. 3 W oublie le carré ; 9 W met aussi la résistance au carré ; 180 W est dix fois trop grand.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Lors d'un démarrage en côte, le courant dans le bobinage d'un moteur passe de 5 A à 15 A. Par combien les pertes par effet Joule sont-elles multipliées ?",
+      "propositions": [
+        "Par 3",
+        "Par 6",
+        "Par 10",
+        "Par 9"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "PJ = R × I² : l'intensité est multipliée par 15 / 5 = 3, donc les pertes Joule sont multipliées par 3² = 9.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces phénomènes, lesquels sont des sources de pertes dans une chaîne de puissance ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les pertes magnétiques dans le fer des moteurs",
+        "L'effet Joule dans les fils et les bobinages",
+        "La conservation de l'énergie",
+        "Les frottements dans les paliers et les engrenages"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Les pertes viennent de l'effet Joule, des frottements, des pertes magnétiques (et des commutations électroniques). La conservation de l'énergie est un principe, pas une source de pertes.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Un moteur de rendement 0,80 absorbe 250 W. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il fournit 200 W",
+        "Ses pertes le font chauffer",
+        "Il fournit 312,5 W",
+        "Ses pertes valent 200 W",
+        "Ses pertes valent 50 W"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Pu = 0,80 × 250 = 200 W ; pertes = 250 − 200 = 50 W, dissipées en chaleur. 312,5 W = 250 / 0,80 : on ne divise pas la puissance absorbée par le rendement.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Un élève trouve un rendement de 1,2 pour un moteur. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le moteur est simplement très performant",
+        "Le moteur fonctionne sans perte",
+        "Il a sans doute calculé Pa / Pu au lieu de Pu / Pa",
+        "Son résultat est forcément faux"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Un rendement est toujours inférieur à 1 : un rendement supérieur à 1 signale une erreur, le plus souvent un rapport à l'envers (Pa / Pu au lieu de Pu / Pa). Ce n'est pas le signe d'un moteur très performant : aucun moteur ne fournit plus qu'il ne reçoit, et aucun n'est sans pertes.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:101",
+      "type": "vrai_faux",
+      "enonce": "Les pertes d'un constituant valent Pa − Pu.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : la puissance absorbée se répartit en puissance utile et en pertes, donc Ppertes = Pa − Pu.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:102",
+      "type": "vrai_faux",
+      "enonce": "Pour retrouver la puissance absorbée à partir de la puissance utile, on multiplie la puissance utile par le rendement.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : on divise par le rendement, Pa = Pu / η. Multiplier donnerait Pa < Pu, ce qui est impossible.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:103",
+      "type": "vrai_faux",
+      "enonce": "Si l'intensité du courant dans un bobinage double, les pertes par effet Joule sont multipliées par 4.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : PJ = R × I², donc doubler I multiplie PJ par 2² = 4.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:104",
+      "type": "reponse_courte",
+      "enonce": "Un chargeur de rendement 0,90 doit stocker 450 Wh dans une batterie. Quelle énergie prélève-t-il sur le réseau, en Wh ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "500"
+      ],
+      "difficulte": 2,
+      "explication": "Le rendement s'applique aussi aux énergies : Ea = Eu / η = 450 / 0,90 = 500 Wh.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:105",
+      "type": "reponse_courte",
+      "enonce": "Le moteur d'un bras robotisé est alimenté sous 24 V et absorbe 5,0 A ; il fournit un couple de 0,50 N·m à 2 000 tr/min. Calcule son rendement en pourcentage, arrondi à l'unité. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "87"
+      ],
+      "marge": 0.3,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "Pa = U × I = 24 × 5,0 = 120 W. ω = 2π × 2 000 / 60 ≈ 209,4 rad/s, Pu = C × ω ≈ 0,50 × 209,4 ≈ 104,7 W. η = 104,7 / 120 ≈ 0,873, soit 87 %.",
+      "notion": "Rendement et pertes"
+    },
+    {
+      "source": "si-1re:ch3:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Comment obtient-on le rendement global de constituants placés en série dans une chaîne de puissance ?",
+      "propositions": [
+        "On additionne leurs rendements",
+        "On multiplie leurs rendements",
+        "On fait la moyenne de leurs rendements",
+        "On garde seulement le plus petit des rendements"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "La puissance utile d'un constituant est la puissance absorbée du suivant : les rendements se multiplient, ηglobal = η₁ × η₂ × η₃ × …",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Trois constituants en série ont chacun un rendement de 90 %. Quel est le rendement global de la chaîne ?",
+      "propositions": [
+        "90 %",
+        "270 %",
+        "30 %",
+        "73 %"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "ηglobal = 0,9 × 0,9 × 0,9 ≈ 0,729, soit environ 73 %. Les rendements ne se moyennent pas (90 %) et ne s'additionnent pas (270 %).",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Dans une chaîne de puissance, à quoi est égale la puissance utile d'un constituant ?",
+      "propositions": [
+        "À la puissance absorbée par le constituant suivant",
+        "Aux pertes du constituant suivant",
+        "À la puissance fournie par la source de toute la chaîne",
+        "À la somme des pertes de toute la chaîne"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Chaque constituant transmet sa puissance utile au suivant, pour qui elle devient la puissance absorbée.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Un variateur (η₁ = 0,95) alimente un moteur (η₂ = 0,80) qui entraîne un réducteur (η₃ = 0,90). Quel est le rendement global de cette chaîne ?",
+      "propositions": [
+        "environ 0,883",
+        "2,65",
+        "0,684",
+        "0,80"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "ηglobal = 0,95 × 0,80 × 0,90 = 0,684. 0,883 est la moyenne des rendements et 2,65 leur somme : ces calculs sont faux.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Le rendement global d'une chaîne de puissance vaut 0,70 et la roue doit recevoir 210 W. Quelle puissance la batterie doit-elle fournir ?",
+      "propositions": [
+        "300 W",
+        "147 W",
+        "280 W",
+        "63 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Pa = Pu / ηglobal = 210 / 0,70 = 300 W. 147 W = 210 × 0,70 : multiplier par le rendement est l'erreur classique. 63 W = 210 × 0,30 n'est pas la puissance absorbée (ni même les pertes, qui valent 300 − 210 = 90 W).",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Une chaîne comprend deux constituants de rendements 0,90 et 0,60. Sans calcul, que peut-on affirmer sur son rendement global ?",
+      "propositions": [
+        "Il est compris entre 0,60 et 0,90",
+        "Il est inférieur à 0,60",
+        "Il est égal à 0,75, la moyenne des deux",
+        "Il est supérieur à 0,90"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le rendement global est le produit des rendements ; multiplier 0,60 par un nombre inférieur à 1 donne moins que 0,60 (ici 0,90 × 0,60 = 0,54).",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Une batterie fournit 400 W à une chaîne formée d'un variateur (0,95), d'un moteur (0,85) et d'une transmission par chaîne (0,95). Quelle puissance la roue reçoit-elle ?",
+      "propositions": [
+        "environ 521,4 W",
+        "environ 367 W",
+        "environ 307 W",
+        "environ 323 W"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "ηglobal = 0,95 × 0,85 × 0,95 ≈ 0,767 ; Pu = 400 × 0,767 ≈ 307 W. 323 W oublie la transmission ; 367 W utilise la moyenne des rendements ; 521 W divise au lieu de multiplier.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Dans une trottinette, la batterie fournit 500 W et la roue reçoit 360 W. Le variateur a un rendement de 0,96 et le réducteur de 0,90. Quel est le rendement du moteur ?",
+      "propositions": [
+        "0,72",
+        "environ 0,622",
+        "1,2",
+        "environ 0,83"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "ηglobal = 360 / 500 = 0,72 = 0,96 × ηmoteur × 0,90, donc ηmoteur = 0,72 / (0,96 × 0,90) = 0,72 / 0,864 ≈ 0,83. 0,72 est le rendement global, pas celui du moteur ; 1,2 est un rapport inversé.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Le rendement global d'une chaîne de constituants en série… Coche toutes les réponses exactes.",
+      "propositions": [
+        "est la somme des rendements des constituants",
+        "est inférieur ou égal au plus petit des rendements",
+        "peut dépasser 1 si la chaîne est longue",
+        "est le produit des rendements des constituants"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "ηglobal = η₁ × η₂ × … : c'est un produit de nombres compris entre 0 et 1, donc inférieur ou égal à chacun d'eux et jamais supérieur à 1.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:115",
+      "type": "qcm_multiple",
+      "enonce": "Une chaîne de puissance comporte trois constituants de rendements 0,90, 0,80 et 0,50. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le rendement global vaut 0,36",
+        "Pour 100 W fournis en entrée, la sortie reçoit 36 W",
+        "Le constituant de rendement 0,90 est celui qui perd le plus",
+        "Le rendement global vaut 0,73",
+        "Les pertes totales représentent 64 % de la puissance d'entrée"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "ηglobal = 0,90 × 0,80 × 0,50 = 0,36 : 100 W en entrée donnent 36 W en sortie, et 64 W (64 %) sont perdus. 0,73 est la moyenne des rendements. Le constituant à 0,50 est celui qui perd le plus.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:116",
+      "type": "qcm_multiple",
+      "enonce": "Une chaîne comprend un variateur (0,95), un moteur (0,85) et un réducteur (0,60). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le variateur est le constituant qui perd la plus grande part de la puissance",
+        "Le rendement global vaut 0,80",
+        "Avec un réducteur de rendement 0,90, le rendement global passerait à environ 0,73",
+        "Le rendement global vaut environ 0,48"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "ηglobal = 0,95 × 0,85 × 0,60 ≈ 0,48 ; avec 0,90 au lieu de 0,60 : 0,95 × 0,85 × 0,90 ≈ 0,73. Le réducteur (0,60) est le maillon faible ; le variateur (0,95) perd peu. 0,80 est la moyenne, calcul faux.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Le rendement global d'une chaîne est toujours inférieur ou égal au plus petit des rendements de ses constituants.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : c'est un produit de nombres compris entre 0 et 1, donc inférieur ou égal à chacun d'eux (strictement inférieur dès que deux constituants ont des pertes).",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Deux constituants de rendements 0,90 et 0,80 placés en série donnent un rendement global de 0,85.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : les rendements se multiplient, ηglobal = 0,90 × 0,80 = 0,72. 0,85 est leur moyenne.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Pour fournir 250 W à la roue d'une trottinette dont la chaîne a un rendement global de 0,727, la batterie doit délivrer environ 182 W.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : Pa = Pu / η = 250 / 0,727 ≈ 344 W. 182 W = 250 × 0,727 : on a multiplié au lieu de diviser.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Une chaîne comporte deux constituants en série, de rendements 0,90 et 0,85. Calcule son rendement global en pourcentage. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "76,5"
+      ],
+      "difficulte": 2,
+      "explication": "ηglobal = 0,90 × 0,85 = 0,765, soit 76,5 %.",
+      "notion": "Rendement d'une chaîne"
+    },
+    {
+      "source": "si-1re:ch3:banque:121",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'expression de l'énergie cinétique d'un objet de masse m qui se déplace en translation à la vitesse v ?",
+      "propositions": [
+        "Ec = m × v²",
+        "Ec = ½ × m × v²",
+        "Ec = ½ × m × v",
+        "Ec = ½ × m × g × v"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Ec = ½ × m × v², en joules avec m en kg et v en m/s.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:122",
+      "type": "qcm_unique",
+      "enonce": "Un objet de masse m est placé à une hauteur h au-dessus du niveau de référence. Que vaut son énergie potentielle de pesanteur ?",
+      "propositions": [
+        "Ep = ½ × m × h²",
+        "Ep = m × h",
+        "Ep = g × h / m",
+        "Ep = m × g × h"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Ep = m × g × h, avec g ≈ 9,81 N/kg : en joules avec m en kg et h en m.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:123",
+      "type": "qcm_unique",
+      "enonce": "La vitesse d'un vélo est divisée par 2. Comment évolue son énergie cinétique ?",
+      "propositions": [
+        "Elle est divisée par 4",
+        "Elle est divisée par 2",
+        "Elle est multipliée par 2",
+        "Elle ne change pas"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Ec = ½ × m × v² dépend du carré de la vitesse : diviser v par 2 divise Ec par 2² = 4.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Un drone de 1,5 kg monte de 40 m (g = 9,81 N/kg). De combien son énergie potentielle de pesanteur augmente-t-elle ?",
+      "propositions": [
+        "60 J",
+        "environ 1 177 J",
+        "environ 589 J",
+        "environ 6,1 J"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "ΔEp = m × g × h = 1,5 × 9,81 × 40 ≈ 589 J. 60 J oublie g ; 1 177 J est le double du bon résultat.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Une trottinette et son conducteur, de masse totale 90 kg, roulent à 18 km/h. Quelle est leur énergie cinétique ?",
+      "propositions": [
+        "1 125 J",
+        "14 580 J",
+        "225 J",
+        "2 250 J"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "v = 18 / 3,6 = 5 m/s ; Ec = ½ × 90 × 5² = 45 × 25 = 1 125 J. 14 580 J vient de la vitesse laissée en km/h ; 2 250 J oublie le ½.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Un vélo descend une côte sans pédaler. En l'absence de frottements, que devient son énergie mécanique Em = Ec + Ep ?",
+      "propositions": [
+        "Elle augmente",
+        "Elle reste constante",
+        "Elle diminue",
+        "Elle s'annule en bas de la côte"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Sans frottements, l'énergie mécanique se conserve : ce que le vélo perd en énergie potentielle, il le gagne en énergie cinétique.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Un vélo part à l'arrêt en haut d'une descente de 20 m de dénivelé. Sans frottements ni pédalage, quelle vitesse atteint-il en bas (g = 9,81 N/kg) ?",
+      "propositions": [
+        "environ 392 m/s",
+        "environ 14,0 m/s",
+        "environ 19,8 m/s",
+        "environ 196,2 m/s"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Ep se convertit entièrement en Ec : ½ × m × v² = m × g × h, donc v = √(2 × g × h) = √(2 × 9,81 × 20) = √392,4 ≈ 19,8 m/s (environ 71 km/h). 392 oublie la racine carrée ; 14,0 oublie le facteur 2.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:128",
+      "type": "qcm_multiple",
+      "enonce": "Dans quelles situations l'énergie potentielle de pesanteur d'un objet augmente-t-elle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un fauteuil roulant descend une rampe",
+        "Un vélo accélère sur une route plate",
+        "Un drone prend de l'altitude",
+        "Un monte-charge soulève une charge"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Ep = m × g × h augmente quand la hauteur augmente : drone qui monte, charge soulevée. Sur le plat, c'est l'énergie cinétique qui augmente ; en descendant, Ep diminue.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Un monte-charge soulève 200 kg de 5,0 m en 10 s (g = 9,81 N/kg). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La puissance utile vaut environ 98 100 W",
+        "L'énergie utile vaut 1 000 J",
+        "La puissance utile vaut environ 981 W",
+        "L'énergie utile vaut environ 9 810 J"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Eu = m × g × h = 200 × 9,81 × 5,0 = 9 810 J ; Pu = Eu / Δt = 9 810 / 10 = 981 W. 1 000 J oublie g ; 98 100 W multiplie par la durée au lieu de diviser.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Un fauteuil roulant électrique et son utilisateur (120 kg) gravissent une rampe de 0,50 m de dénivelé en 6,0 s. Le rendement global entre batterie et roues vaut 0,60 ; on néglige les frottements de roulement (g = 9,81 N/kg). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La batterie fournit environ 164 W",
+        "La puissance utile vaut environ 98 W",
+        "La batterie fournit environ 59 W",
+        "La variation d'énergie potentielle vaut environ 589 J"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "explication": "ΔEp = 120 × 9,81 × 0,50 ≈ 589 J ; Pu = 589 / 6,0 ≈ 98 W ; Pa = Pu / η = 98,1 / 0,60 ≈ 164 W. 59 W = 98 × 0,60 : on a multiplié par le rendement au lieu de diviser.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:131",
+      "type": "vrai_faux",
+      "enonce": "L'énergie cinétique s'exprime en joules lorsque la masse est en kg et la vitesse en m/s.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : Ec = ½ × m × v² donne des joules avec les unités SI (kg et m/s).",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Lors d'un freinage classique, l'énergie cinétique d'une trottinette est dissipée en chaleur dans les freins.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Vrai : sans récupération par le moteur, l'énergie cinétique devient de l'énergie thermique dans les freins.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Sans frottements, un vélo plus lourd atteint une vitesse plus grande en bas d'une même descente.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : de ½ × m × v² = m × g × h on tire v = √(2 × g × h) ; la masse se simplifie et n'intervient pas.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:134",
+      "type": "reponse_courte",
+      "enonce": "Un objet de 4,0 kg se déplace à 3,0 m/s. Calcule son énergie cinétique en joules. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "18"
+      ],
+      "difficulte": 1,
+      "explication": "Ec = ½ × m × v² = 0,5 × 4,0 × 3,0² = 0,5 × 4,0 × 9,0 = 18 J.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Un bras robotisé soulève une pièce de 2,0 kg de 0,60 m en 1,5 s (g = 9,81 N/kg). Quelle puissance moyenne consacre-t-il à la seule prise d'altitude de la pièce, en watts, arrondie au dixième ? Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "7,8"
+      ],
+      "marge": 0.06,
+      "marge_relative": false,
+      "difficulte": 3,
+      "explication": "ΔEp = m × g × h = 2,0 × 9,81 × 0,60 ≈ 11,77 J. P = ΔEp / Δt = 11,77 / 1,5 ≈ 7,85 W, soit 7,8 W arrondi au dixième.",
+      "notion": "Énergies cinétique et potentielle"
+    },
+    {
+      "source": "si-1re:ch3:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Sur un diagramme de blocs internes (ibd), comment les flux d'information sont-ils souvent tracés, pour les distinguer des flux d'énergie ?",
+      "propositions": [
+        "En trait plein épais",
+        "Par une double flèche",
+        "Par un bloc rectangulaire",
+        "En pointillés"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Sur un ibd, les flux d'énergie sont tracés en trait plein et les flux d'information souvent en pointillés.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Sur l'ibd d'un portail motorisé, le flux « carte → moteur » est électrique. Quel couple effort-flux le caractérise ?",
+      "propositions": [
+        "Couple et vitesse angulaire",
+        "Tension et intensité",
+        "Force et vitesse",
+        "Pression et débit"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Un flux électrique est caractérisé par la tension (effort) et l'intensité (flux).",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Le flux « réducteur → bras » d'un portail motorisé est mécanique de rotation. Quelle grandeur en est l'effort ?",
+      "propositions": [
+        "La vitesse angulaire ω",
+        "L'intensité I",
+        "Le débit qv",
+        "Le couple C"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "En rotation, l'effort est le couple C et le flux la vitesse angulaire ω.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le flux venant du récepteur radio d'un portail n'est-il pas compté dans le bilan de la chaîne de puissance ?",
+      "propositions": [
+        "Il transporte un ordre, pas de la puissance utile",
+        "Il transporte toute l'énergie électrique fournie au moteur",
+        "Il est toujours de nature hydraulique",
+        "Il n'existe que lorsque le portail est fermé"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Le récepteur radio appartient à la chaîne d'information : il transmet un ordre, avec des puissances minuscules qu'on ne compte pas dans le bilan de la chaîne de puissance.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Dans le réducteur d'un portail, comment évoluent le couple et la vitesse angulaire entre l'entrée (côté moteur) et la sortie (côté bras) ?",
+      "propositions": [
+        "Le couple et la vitesse augmentent tous les deux",
+        "Le couple diminue, la vitesse augmente",
+        "Le couple augmente, la vitesse diminue",
+        "Le couple et la vitesse restent identiques"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Le réducteur échange un couple faible et une vitesse rapide contre un couple fort et une vitesse lente, en conservant la puissance au rendement près.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Le bras d'un portail exerce une force de 150 N sur le vantail, qui avance à 0,20 m/s. Quelle puissance utile le vantail reçoit-il ?",
+      "propositions": [
+        "30 W",
+        "750 W",
+        "3 000 W",
+        "300 W"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Flux mécanique de translation : P = F × v = 150 × 0,20 = 30 W. 750 W = 150 / 0,20 : on a divisé au lieu de multiplier. 300 W et 3 000 W sont dix et cent fois trop grands (erreur de virgule sur la vitesse).",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Le vantail d'un portail doit recevoir 24 W. Rendements : bras 0,80, réducteur 0,60, moteur 0,75, carte de commande 0,90. Quelle puissance la carte prélève-t-elle sur le réseau ?",
+      "propositions": [
+        "environ 7,8 W",
+        "environ 74 W",
+        "environ 31 W",
+        "environ 50 W"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "ηglobal = 0,80 × 0,60 × 0,75 × 0,90 = 0,324 ; Pa = 24 / 0,324 ≈ 74 W. 50 W ne tient compte que du bras et du réducteur ; 7,8 W multiplie au lieu de diviser.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:143",
+      "type": "qcm_unique",
+      "enonce": "Sur l'ibd d'un drone, un élève note pour le flux « moteur → hélice » : effort = vitesse angulaire, flux = couple. Qu'en penses-tu ?",
+      "propositions": [
+        "C'est exact : la vitesse angulaire est bien un effort",
+        "Il fallait noter tension et intensité",
+        "Les rôles sont inversés : le couple est l'effort",
+        "Ce flux n'a pas de couple effort-flux"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Le flux moteur → hélice est mécanique de rotation : le couple est l'effort et la vitesse angulaire le flux. Inverser les rôles rend le diagramme incohérent.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces flux d'un portail motorisé, lesquels sont des flux d'énergie ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Récepteur radio → carte (ordre d'ouverture)",
+        "Réseau → carte de commande",
+        "Moteur → réducteur",
+        "Bras → vantail"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Réseau → carte (électrique), moteur → réducteur (rotation) et bras → vantail (translation) transportent de l'énergie. L'ordre du récepteur radio est une information.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "Sur l'ibd d'une pompe d'arrosage automatique alimentée par le réseau : Coche toutes les réponses exactes.",
+      "propositions": [
+        "le flux « pompe → tuyau » a pour flux le débit volumique",
+        "le flux « pompe → tuyau » a pour effort la pression",
+        "le flux « moteur → pompe » a pour flux la vitesse angulaire",
+        "le flux « moteur → pompe » a pour effort la tension",
+        "le flux « réseau → moteur » a pour effort l'intensité"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Flux hydraulique : effort = pression, flux = débit volumique. Flux de rotation moteur → pompe : effort = couple, flux = vitesse angulaire. Flux électrique : effort = tension, flux = intensité.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Sur l'ibd d'un portail, le moteur fournit 33 W au réducteur (rendement 0,60), qui entraîne le bras (rendement 0,90). Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le bras perd plus de puissance que le réducteur",
+        "Les pertes du réducteur valent environ 13,2 W",
+        "Le vantail reçoit environ 61 W",
+        "Le réducteur fournit environ 19,8 W au bras",
+        "Le vantail reçoit environ 17,8 W"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Sortie du réducteur : 33 × 0,60 = 19,8 W (pertes 33 − 19,8 = 13,2 W). Sortie du bras : 19,8 × 0,90 ≈ 17,8 W (pertes ≈ 2 W, bien moins que le réducteur). 61 W = 33 / (0,60 × 0,90) : division au lieu de multiplication.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:147",
+      "type": "vrai_faux",
+      "enonce": "Sur un ibd, chaque flux d'énergie peut être caractérisé par un couple effort-flux.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Vrai : tension-intensité, force-vitesse, couple-vitesse angulaire ou pression-débit selon la nature du flux.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:148",
+      "type": "vrai_faux",
+      "enonce": "Un réducteur augmente la puissance transmise, puisqu'il augmente le couple.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Faux : le réducteur augmente le couple mais diminue la vitesse angulaire ; la puissance est conservée au rendement près, donc légèrement diminuée.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:149",
+      "type": "vrai_faux",
+      "enonce": "Sur l'ibd d'un portail, le flux « moteur → réducteur » est un flux électrique.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Faux : c'est un flux mécanique de rotation, caractérisé par un couple et une vitesse angulaire.",
+      "notion": "Flux d'énergie sur un ibd"
+    },
+    {
+      "source": "si-1re:ch3:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Sur l'ibd d'un portail, le moteur fournit 40 W au réducteur, qui transmet 26 W au bras. Calcule le rendement du réducteur, en pourcentage. Donne le nombre seul, sans unité.",
+      "reponses_acceptees": [
+        "65"
+      ],
+      "difficulte": 2,
+      "explication": "η = Pu / Pa = 26 / 40 = 0,65, soit 65 %.",
+      "notion": "Flux d'énergie sur un ibd"
+    }
+  ]
+}

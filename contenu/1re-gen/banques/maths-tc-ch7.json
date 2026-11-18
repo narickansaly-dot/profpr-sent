@@ -1,0 +1,2308 @@
+{
+  "chapitre": 7,
+  "notions": [
+    "Notation et rang d'une suite",
+    "Définition d'une suite arithmétique",
+    "Terme de rang n",
+    "Sens de variation et représentation",
+    "Fonctions affines",
+    "Modélisation linéaire",
+    "Fonction affine par morceaux",
+    "Problèmes de seuil",
+    "Automatismes"
+  ],
+  "questions": [
+    {
+      "source": "maths-tc:ch7:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Une suite u commence au rang 0 (premier terme u(0)). Quel terme est le 5e terme de la liste ?",
+      "propositions": [
+        "u(4)",
+        "u(5)",
+        "u(6)",
+        "u(3)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Les termes sont u(0), u(1), u(2), u(3), u(4) : le 5e terme est u(4), car on commence à compter à 0.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Une suite v commence au rang 1 (premier terme v(1)). Quel est le rang du 12e terme ?",
+      "propositions": [
+        "11",
+        "13",
+        "12",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Avec v(1) comme premier terme, le k-ième terme est v(k) : le 12e terme est v(12), de rang 12.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Les premiers termes d'une suite, à partir de u(0), sont 3 ; 8 ; 13 ; 18 ; 23. Que vaut u(3) ?",
+      "propositions": [
+        "13",
+        "18",
+        "23",
+        "8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "u(0) = 3, u(1) = 8, u(2) = 13, u(3) = 18. Attention : u(3) est le 4e terme, pas le 3e.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:004",
+      "type": "qcm_unique",
+      "enonce": "On note w(n) la population d'un village, en habitants, n années après 2020 (w(0) correspond à 2020). Que représente w(6) ?",
+      "propositions": [
+        "La population en 2025",
+        "La hausse de population entre 2020 et 2026",
+        "La population en 2006",
+        "La population en 2026"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "w(n) correspond à l'année 2020 + n ; pour n = 6, c'est l'année 2026. w(6) est une population, pas une hausse.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:005",
+      "type": "vrai_faux",
+      "enonce": "Les notations u(n) et u_n désignent le même nombre : le terme de rang n de la suite u.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "u_n (u indice n) est une autre écriture de u(n) : les deux désignent le terme de rang n.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:006",
+      "type": "vrai_faux",
+      "enonce": "Si une suite commence au rang 0, alors u(10) est le 10e terme de la suite.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Les termes sont u(0), u(1), …, u(10) : u(10) est le 11e terme, car il y a 11 entiers de 0 à 10.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:007",
+      "type": "reponse_courte",
+      "enonce": "Une suite est définie pour tout entier n ⩾ 0 par u(n) = n² + 1. Calcule u(3). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 1,
+      "explication": "u(3) = 3² + 1 = 9 + 1 = 10.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:008",
+      "type": "qcm_multiple",
+      "enonce": "Une suite u est définie pour n ⩾ 0 par u(n) = 2n + 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(0) = 5",
+        "u(1) = 7",
+        "u(2) = 10",
+        "u(4) = 13"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "u(0) = 0 + 5 = 5 ; u(1) = 2 + 5 = 7 ; u(2) = 4 + 5 = 9 (et non 10) ; u(4) = 8 + 5 = 13.",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "Pour une suite qui commence au rang 1 (premier terme u(1)), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le 3e terme est u(3).",
+        "Le terme qui suit u(7) est u(8).",
+        "Le 10e terme est u(9).",
+        "Le terme qui précède u(5) est u(4).",
+        "u(0) est le premier terme."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Quand la suite commence à u(1), le k-ième terme est u(k) : le 3e est u(3), le 10e est u(10) (pas u(9)) et u(0) n'existe pas. Le terme suivant u(n) est u(n + 1), le précédent est u(n − 1).",
+      "notion": "Notation et rang d'une suite"
+    },
+    {
+      "source": "maths-tc:ch7:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 7 et pour raison 4. Que vaut u(1) ?",
+      "propositions": [
+        "28",
+        "4",
+        "3",
+        "11"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une suite arithmétique ajoute la raison à chaque étape : u(1) = u(0) + 4 = 7 + 4 = 11 (on ne multiplie pas).",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces listes de nombres consécutifs, laquelle peut être le début d'une suite arithmétique ?",
+      "propositions": [
+        "1 ; 2 ; 4 ; 8",
+        "5 ; 9 ; 13 ; 17",
+        "3 ; 6 ; 10 ; 15",
+        "1 ; 4 ; 9 ; 16"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Différences : 5 ; 9 ; 13 ; 17 donne 4, 4, 4 (constantes). Pour 1 ; 2 ; 4 ; 8 : 1, 2, 4 ; pour 3 ; 6 ; 10 ; 15 : 3, 4, 5 ; pour 1 ; 4 ; 9 ; 16 : 3, 5, 7. Seule la première a des différences constantes.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Les termes 20 ; 17 ; 14 ; 11 sont consécutifs dans une suite arithmétique. Quelle est la raison ?",
+      "propositions": [
+        "3",
+        "−17",
+        "−3",
+        "20"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Raison = terme suivant − terme précédent = 17 − 20 = −3. La suite diminue, la raison est négative.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Une suite vérifie u(n + 1) = u(n) − 2,5 pour tout n ⩾ 0, avec u(0) = 10. Que vaut u(2) ?",
+      "propositions": [
+        "5",
+        "7,5",
+        "12,5",
+        "2,5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "u(1) = 10 − 2,5 = 7,5 puis u(2) = 7,5 − 2,5 = 5.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces relations définit une suite arithmétique (pour tout n ⩾ 0) ?",
+      "propositions": [
+        "u(n + 1) = u(n) + 6",
+        "u(n + 1) = 6 × u(n)",
+        "u(n + 1) = u(n)² + 6",
+        "u(n + 1) = 6 − u(n)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Une suite est arithmétique quand on ajoute toujours le même nombre : u(n + 1) = u(n) + r. Ici r = 6. Multiplier par 6 donne une suite géométrique ; les deux autres relations ne donnent pas un ajout constant.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Chaque semaine, Nina lit 35 pages de plus. Au départ (semaine 0), elle a déjà lu 40 pages. On note p(n) le nombre total de pages lues après n semaines, avec p(0) = 40. Quelle relation est vraie ?",
+      "propositions": [
+        "p(n + 1) = p(n) + 40",
+        "p(n + 1) = 35 × p(n)",
+        "p(n + 1) = p(n) + 35",
+        "p(n + 1) = p(n) + 75"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "Chaque semaine, on ajoute 35 pages au total précédent : p(n + 1) = p(n) + 35. Le 40 est la valeur de départ, pas la raison.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Un carré de n × n carreaux blancs est entouré d'une bordure de carreaux gris. Il faut 8 carreaux gris pour n = 1, 12 pour n = 2 et 16 pour n = 3. Combien en faut-il pour n = 4 ?",
+      "propositions": [
+        "24",
+        "20",
+        "18",
+        "32"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On ajoute 4 carreaux gris à chaque étape (8, 12, 16) : suite arithmétique de raison 4, donc 16 + 4 = 20. On le vérifie avec la formule 4n + 4 = 16 + 4 = 20.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Un capital augmente de 5 % par an. La suite des capitaux annuels est-elle arithmétique ?",
+      "propositions": [
+        "Oui, de raison 5.",
+        "Oui, de raison 0,05.",
+        "Oui, de raison 1,05.",
+        "Non, car la hausse en euros augmente chaque année."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Une hausse de 5 % ajoute 5 % du capital de l'année : comme le capital grandit, la hausse en euros grandit aussi. L'ajout n'est pas constant : la suite n'est pas arithmétique (elle est géométrique, de raison 1,05).",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u(4) = 13 et u(5) = 9. Quelle est sa raison ?",
+      "propositions": [
+        "4",
+        "9/13",
+        "−9",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "u(4) et u(5) sont consécutifs : r = u(5) − u(4) = 9 − 13 = −4.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:019",
+      "type": "vrai_faux",
+      "enonce": "La suite des nombres impairs 1 ; 3 ; 5 ; 7 ; … est une suite arithmétique de raison 2.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "On passe d'un nombre impair au suivant en ajoutant 2 : 1 + 2 = 3, 3 + 2 = 5, etc. La différence est constante, égale à 2.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:020",
+      "type": "vrai_faux",
+      "enonce": "La suite 1 ; 3 ; 9 ; 27 est le début d'une suite arithmétique.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Différences : 3 − 1 = 2, 9 − 3 = 6, 27 − 9 = 18. Elles ne sont pas égales : la suite n'est pas arithmétique (on multiplie par 3).",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:021",
+      "type": "vrai_faux",
+      "enonce": "Une suite arithmétique peut avoir une raison négative.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La raison r est le nombre ajouté à chaque étape ; il peut être négatif, par exemple r = −3 : 20 ; 17 ; 14 ; …",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:022",
+      "type": "vrai_faux",
+      "enonce": "Si u(0) = 2, u(1) = 5 et u(2) = 8, alors on peut être sûr que u(3) = 11.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "explication": "Trois termes ne suffisent pas : rien n'oblige la suite à rester arithmétique ensuite (par exemple u(3) pourrait valoir 12 avec une autre règle). Si on SAIT que la suite est arithmétique, alors u(3) = 11.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:023",
+      "type": "vrai_faux",
+      "enonce": "Une suite vérifie u(n + 1) − u(n) = 7 pour tout entier n ⩾ 0. Cette suite est arithmétique de raison 7.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "u(n + 1) − u(n) = 7 signifie u(n + 1) = u(n) + 7 : on ajoute toujours 7, c'est la définition d'une suite arithmétique de raison 7.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:024",
+      "type": "vrai_faux",
+      "enonce": "La suite définie pour n ⩾ 0 par u(n) = n² est arithmétique.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "u(0) = 0, u(1) = 1, u(2) = 4, u(3) = 9 : différences 1, 3, 5, non constantes. La suite n'est pas arithmétique.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:025",
+      "type": "vrai_faux",
+      "enonce": "Une suite constante (tous ses termes égaux à 5) est une suite arithmétique de raison 0.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "On passe d'un terme au suivant en ajoutant 0 : u(n + 1) = u(n) + 0. C'est une suite arithmétique de raison 0.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:026",
+      "type": "reponse_courte",
+      "enonce": "Une suite arithmétique commence par u(0) = 12, u(1) = 9. Quelle est sa raison ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 1,
+      "explication": "r = u(1) − u(0) = 9 − 12 = −3.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:027",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces suites (les points de suspension indiquent que la même règle continue), lesquelles sont arithmétiques ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "10 ; 7 ; 4 ; 1 ; …",
+        "2 ; 2 ; 2 ; 2 ; …",
+        "1 ; 2 ; 4 ; 7 ; …",
+        "0,5 ; 1 ; 1,5 ; 2 ; …",
+        "100 ; 50 ; 25 ; 12,5 ; …"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Différences : −3, −3, −3 (arithmétique) ; 0, 0, 0 (arithmétique, constante) ; 1, 2, 3 (non) ; 0,5, 0,5, 0,5 (arithmétique) ; −50, −25, −12,5 (non, on divise par 2).",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:028",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces situations, lesquelles sont modélisées par une suite arithmétique ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un loyer qui augmente de 20 € chaque année.",
+        "Une population qui augmente de 2 % par an.",
+        "Un livret qui rapporte chaque année 3 % du capital de départ (intérêts simples).",
+        "Une bactérie qui se divise en deux toutes les heures.",
+        "Une pile de livres à laquelle on ajoute 3 livres chaque jour."
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "On ajoute un même nombre : +20 € par an, 3 % du capital DE DÉPART (montant fixe), +3 livres par jour. Une hausse de 2 % par an ou un doublement font augmenter de plus en plus : ce sont des suites géométriques.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:029",
+      "type": "qcm_multiple",
+      "enonce": "Une suite arithmétique a pour raison r = 6 et vérifie u(2) = 15 (premier terme u(0)). Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(3) = 21",
+        "u(1) = 9",
+        "u(0) = 3",
+        "u(0) = 15"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u(3) = u(2) + 6 = 21 ; u(1) = u(2) − 6 = 9 ; u(0) = u(1) − 6 = 3. u(0) ne vaut pas 15 : c'est u(2).",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Dans un motif en T, l'étape 1 compte 4 carrés, l'étape 2 en compte 7 et l'étape 3 en compte 10. On note m(1) = 4. Que vaut m(n + 1) en fonction de m(n) ?",
+      "propositions": [
+        "m(n) + 4",
+        "m(n) + 3",
+        "3 × m(n)",
+        "m(n) + n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "De 4 à 7, puis de 7 à 10, on ajoute 3 carrés : m(n + 1) = m(n) + 3, suite arithmétique de raison 3.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique de raison 0,5 vérifie u(10) = 8. Que vaut u(9) ?",
+      "propositions": [
+        "8,5",
+        "4",
+        "7,5",
+        "16"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u(10) = u(9) + 0,5, donc u(9) = u(10) − 0,5 = 8 − 0,5 = 7,5.",
+      "notion": "Définition d'une suite arithmétique"
+    },
+    {
+      "source": "maths-tc:ch7:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 5 et pour raison 3. Que vaut u(20) ?",
+      "propositions": [
+        "65",
+        "68",
+        "62",
+        "300"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "u(n) = u(0) + n × r, donc u(20) = 5 + 20 × 3 = 5 + 60 = 65.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:033",
+      "type": "qcm_unique",
+      "enonce": "On ajoute 3 à chaque étape, en partant de u(1) = 5 : la suite u commence au rang 1. Quelle est la valeur du terme u(20) ?",
+      "propositions": [
+        "62",
+        "65",
+        "68",
+        "60"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Le premier terme est u(1) : u(n) = u(1) + (n − 1) × r, donc u(20) = 5 + 19 × 3 = 5 + 57 = 62.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la formule explicite de la suite arithmétique de premier terme u(0) = 40 et de raison −5 ?",
+      "propositions": [
+        "u(n) = −5 + 40n",
+        "u(n) = 40 − 5(n − 1)",
+        "u(n) = 40 − 5n",
+        "u(n) = 35n"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Avec u(0) comme premier terme : u(n) = u(0) + n × r = 40 + n × (−5) = 40 − 5n.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la formule explicite de la suite arithmétique de premier terme v(1) = 7 et de raison 2 ?",
+      "propositions": [
+        "v(n) = 7 + 2n",
+        "v(n) = 5 + 2n",
+        "v(n) = 2 + 7n",
+        "v(n) = 9 + 2n"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "v(n) = v(1) + (n − 1) × 2 = 7 + 2n − 2 = 5 + 2n. Vérification : v(1) = 5 + 2 = 7.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Un club compte 150 membres en 2024 et en gagne 12 par an. On note u(0) = 150 le nombre de membres en 2024 et u(n) celui de l'année 2024 + n. Combien de membres le modèle prévoit-il en 2034 ?",
+      "propositions": [
+        "282",
+        "258",
+        "162",
+        "270"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "2034 correspond à n = 10 : u(10) = 150 + 10 × 12 = 150 + 120 = 270.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u(2) = 11 et u(7) = 31 (premier terme u(0)). Quelle est sa raison ?",
+      "propositions": [
+        "5",
+        "20",
+        "6,2",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Du rang 2 au rang 7, on ajoute 5 fois la raison : 31 − 11 = 5r, donc r = 20/5 = 4.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u(3) = 10 et a pour raison 2 (premier terme u(0)). Que vaut u(0) ?",
+      "propositions": [
+        "16",
+        "4",
+        "8",
+        "7"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "u(3) = u(0) + 3 × 2, donc u(0) = 10 − 6 = 4.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Une salle a 18 places au rang 1, puis 2 places de plus à chaque rang. On note p(1) = 18. Combien de places compte le rang 25 ?",
+      "propositions": [
+        "68",
+        "64",
+        "66",
+        "50"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "p(n) = 18 + (n − 1) × 2, donc p(25) = 18 + 24 × 2 = 18 + 48 = 66.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Une suite est définie par u(0) = 1 000 et u(n + 1) = u(n) − 40 pour tout n ⩾ 0. Que vaut u(15) ?",
+      "propositions": [
+        "400",
+        "600",
+        "960",
+        "440"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Suite arithmétique de raison −40 : u(15) = 1 000 − 15 × 40 = 1 000 − 600 = 400.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u(10) = 50 et u(20) = 20 (premier terme u(0)). Que vaut u(0) ?",
+      "propositions": [
+        "80",
+        "50",
+        "65",
+        "−10"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "r = (20 − 50)/(20 − 10) = −30/10 = −3. Puis u(0) = u(10) − 10 × r = 50 − 10 × (−3) = 50 + 30 = 80.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique de raison r vérifie u(0) = 2. Quelle égalité est toujours vraie ?",
+      "propositions": [
+        "u(8) = u(5) + 8r",
+        "u(8) = u(5) × 3r",
+        "u(8) = u(5) + 3r",
+        "u(8) = 8 × u(1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Pour passer du rang 5 au rang 8, on ajoute la raison 8 − 5 = 3 fois : u(8) = u(5) + 3r.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite arithmétique de premier terme u(1) et de raison r, on a u(10) = u(1) + 9r.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Du rang 1 au rang 10, on ajoute la raison 10 − 1 = 9 fois : u(10) = u(1) + 9r.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Si u est arithmétique de premier terme u(0) = 3 et de raison 4, alors u(5) = 3 × 4⁵.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Pour une suite arithmétique, on ajoute la raison : u(5) = 3 + 5 × 4 = 23. La formule avec une puissance correspond aux suites géométriques.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:045",
+      "type": "vrai_faux",
+      "enonce": "La suite arithmétique de premier terme u(0) = −8 et de raison 2 vérifie u(5) = 0.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "u(5) = −8 + 5 × 2 = −8 + 10 = 2. C'est u(4) = −8 + 8 = 0 qui est nul.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:046",
+      "type": "vrai_faux",
+      "enonce": "La suite arithmétique de premier terme u(0) = 7 et de raison 3 a pour formule u(n) = 3n + 7.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "u(n) = u(0) + nr = 7 + 3n, que l'on peut écrire 3n + 7.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:047",
+      "type": "reponse_courte",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 12 et pour raison 7. Calcule u(10). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "82"
+      ],
+      "difficulte": 1,
+      "explication": "u(10) = 12 + 10 × 7 = 12 + 70 = 82.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:048",
+      "type": "reponse_courte",
+      "enonce": "Une suite arithmétique a pour premier terme v(1) = 100 et pour raison −6. Calcule v(11). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "40"
+      ],
+      "difficulte": 2,
+      "explication": "v(11) = v(1) + (11 − 1) × (−6) = 100 − 60 = 40.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:049",
+      "type": "reponse_courte",
+      "enonce": "Une suite arithmétique vérifie u(4) = 9 et u(9) = 24 (premier terme u(0)). Calcule u(0). Réponds par un nombre.",
+      "reponses_acceptees": [
+        "-3",
+        "−3"
+      ],
+      "difficulte": 3,
+      "explication": "r = (24 − 9)/(9 − 4) = 15/5 = 3. Puis u(0) = u(4) − 4 × 3 = 9 − 12 = −3.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:050",
+      "type": "qcm_multiple",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 4 et pour raison 6. Quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(n) = 4 + 6n",
+        "u(10) = 64",
+        "u(n + 1) = u(n) + 6",
+        "u(3) = 24",
+        "u(n) = 6 + 4n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "u(n) = 4 + 6n ; u(10) = 4 + 60 = 64 ; la relation de récurrence est u(n + 1) = u(n) + 6. Mais u(3) = 4 + 18 = 22, et 6 + 4n inverse le premier terme et la raison.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:051",
+      "type": "qcm_multiple",
+      "enonce": "Une suite arithmétique vérifie u(1) = 3 et u(2) = 8 (premier terme u(1)). Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "La raison vaut 5.",
+        "u(n) = 3 + 5(n − 1) pour n ⩾ 1.",
+        "u(n) = 5n − 2 pour n ⩾ 1.",
+        "u(10) = 53.",
+        "u(n) = 3 + 5n pour n ⩾ 1."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "r = 8 − 3 = 5 ; u(n) = 3 + 5(n − 1) = 5n − 2. Alors u(10) = 50 − 2 = 48, pas 53 ; et 3 + 5n donnerait u(1) = 8, faux.",
+      "notion": "Terme de rang n"
+    },
+    {
+      "source": "maths-tc:ch7:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = −100 et pour raison 0,5. Quel est son sens de variation ?",
+      "propositions": [
+        "Strictement décroissante",
+        "Strictement croissante",
+        "Constante",
+        "D'abord décroissante, puis croissante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "Le sens de variation dépend seulement du signe de la raison : r = 0,5 > 0, donc la suite est strictement croissante, même si ses premiers termes sont négatifs.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:053",
+      "type": "qcm_unique",
+      "enonce": "La suite définie pour n ⩾ 0 par u(n) = 25 − 4n est…",
+      "propositions": [
+        "strictement croissante, de raison 25",
+        "strictement décroissante, de raison −25",
+        "strictement croissante, de raison 4",
+        "strictement décroissante, de raison −4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "u(n) = 25 + (−4)n : suite arithmétique de premier terme 25 et de raison −4 < 0, donc strictement décroissante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:054",
+      "type": "qcm_unique",
+      "enonce": "On place les points de coordonnées (n ; u(n)) d'une suite arithmétique dans un repère. Comment sont ces points ?",
+      "propositions": [
+        "Sur une parabole",
+        "Sur une courbe qui monte de plus en plus vite",
+        "Disposés au hasard",
+        "Alignés sur une droite"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Pour une suite arithmétique, u(n) = u(0) + rn : les points (n ; u(n)) sont sur la droite d'équation y = u(0) + rx. Ils sont alignés.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Les points (n ; u(n)) d'une suite arithmétique sont sur une droite qui passe par (0 ; 6) et (3 ; 0). Quelle est la raison de la suite ?",
+      "propositions": [
+        "2",
+        "−2",
+        "6",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "De n = 0 à n = 3, la valeur passe de 6 à 0 : elle baisse de 6 en 3 rangs, donc r = −6/3 = −2.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Les points d'une suite arithmétique passent par (0 ; 4) et (5 ; 19). Quelle est la formule de u(n), pour n ⩾ 0 ?",
+      "propositions": [
+        "u(n) = 4 + 15n",
+        "u(n) = 19 − 3n",
+        "u(n) = 4 + 3n",
+        "u(n) = 3 + 4n"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "u(0) = 4 et r = (19 − 4)/5 = 15/5 = 3, donc u(n) = 4 + 3n. Vérification : u(5) = 4 + 15 = 19.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi ne relie-t-on pas les points (n ; u(n)) quand on représente une suite ?",
+      "propositions": [
+        "Parce que la suite n'est définie que pour des rangs entiers",
+        "Parce que les points ne sont jamais alignés",
+        "Parce que la raison est toujours négative",
+        "Parce qu'une suite n'a pas de premier terme"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Une suite modélise une évolution discrète : u(n) n'existe que pour n entier (0, 1, 2…). Entre deux rangs, il n'y a pas de valeur.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique vérifie u(3) = 12 et u(8) = 12. Quel est son sens de variation ?",
+      "propositions": [
+        "Constante",
+        "Strictement croissante",
+        "Strictement décroissante",
+        "On ne peut pas savoir"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "u(8) − u(3) = 5r = 0, donc r = 0 : tous les termes sont égaux, la suite est constante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 60. Après 6 étapes, u(6) = 30. Comment varie-t-elle ?",
+      "propositions": [
+        "Elle diminue de 30 à chaque étape.",
+        "Elle diminue de moitié à chaque étape.",
+        "Elle diminue de 5 à chaque étape.",
+        "Elle augmente de 5 à chaque étape."
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "r = (30 − 60)/6 = −30/6 = −5 : la suite diminue de 5 à chaque étape. Diminuer de moitié serait une évolution géométrique.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:060",
+      "type": "vrai_faux",
+      "enonce": "La suite arithmétique de premier terme u(0) = −20 et de raison 3 est strictement croissante.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "La raison 3 est positive, donc u(n + 1) − u(n) = 3 > 0 : la suite est strictement croissante. Le premier terme négatif n'y change rien.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:061",
+      "type": "vrai_faux",
+      "enonce": "Une suite arithmétique dont le premier terme est positif est forcément croissante.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le sens de variation dépend du signe de la raison, pas du premier terme : u(0) = 50 et r = −2 donnent une suite strictement décroissante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:062",
+      "type": "vrai_faux",
+      "enonce": "Si les points (n ; u(n)) d'une suite sont alignés, alors la suite est arithmétique.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Si les points sont sur une droite y = mx + p, alors u(n) = p + mn : on ajoute m à chaque rang, la suite est arithmétique de raison m.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:063",
+      "type": "vrai_faux",
+      "enonce": "Une suite dont les points (n ; u(n)) montent de plus en plus vite est arithmétique.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Si la hausse augmente d'une étape à l'autre, les écarts u(n + 1) − u(n) ne sont pas constants : la suite n'est pas arithmétique, ses points ne sont pas alignés.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:064",
+      "type": "vrai_faux",
+      "enonce": "Pour une suite arithmétique, la raison est le coefficient directeur de la droite qui porte les points (n ; u(n)).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Les points sont sur la droite y = u(0) + rx : son coefficient directeur est r et son ordonnée à l'origine est u(0).",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:065",
+      "type": "reponse_courte",
+      "enonce": "La suite définie pour n ⩾ 0 par u(n) = 8 − 3n est-elle croissante, décroissante ou constante ? Réponds par un seul mot.",
+      "reponses_acceptees": [
+        "décroissante",
+        "strictement décroissante"
+      ],
+      "difficulte": 1,
+      "explication": "u(n) = 8 + (−3)n : suite arithmétique de raison −3 < 0, donc (strictement) décroissante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:066",
+      "type": "qcm_multiple",
+      "enonce": "Une suite arithmétique a pour premier terme u(0) = 10 et pour raison −2. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle est strictement décroissante.",
+        "Ses points (n ; u(n)) sont alignés.",
+        "u(5) = 0.",
+        "Elle est croissante car u(0) > 0.",
+        "u(5) = 20."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "explication": "r = −2 < 0 : décroissante (le signe de u(0) ne compte pas). Points alignés, comme pour toute suite arithmétique. u(5) = 10 − 10 = 0.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:067",
+      "type": "qcm_multiple",
+      "enonce": "Quelles suites, définies pour n ⩾ 0, sont strictement croissantes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(n) = −7 + 2n",
+        "v(n) = 100 − n",
+        "w(n) = 0,1n − 50",
+        "t(n) = 3 − 0,5n"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Raisons : u a 2 > 0 et w a 0,1 > 0 (croissantes) ; v a −1 et t a −0,5 (décroissantes). Le terme constant ne compte pas.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:068",
+      "type": "qcm_multiple",
+      "enonce": "Les points d'une suite u (premier terme u(0)) sont alignés et passent par (0 ; 2) et (2 ; 8). Coche toutes les réponses exactes.",
+      "propositions": [
+        "La suite est arithmétique de raison 3.",
+        "u(4) = 14.",
+        "La suite est strictement croissante.",
+        "La raison vaut 6."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "r = (8 − 2)/2 = 3 (et non 6 : on divise la hausse par l'écart des rangs). u(4) = 2 + 4 × 3 = 14. r > 0 : strictement croissante.",
+      "notion": "Sens de variation et représentation"
+    },
+    {
+      "source": "maths-tc:ch7:banque:069",
+      "type": "qcm_unique",
+      "enonce": "La fonction f est définie par f(x) = 7 − 3x. Quel est son coefficient directeur ?",
+      "propositions": [
+        "7",
+        "−3",
+        "3",
+        "−3x"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "f(x) = −3x + 7 : le coefficient directeur est le nombre devant x, soit −3. Le 7 est l'ordonnée à l'origine.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'ordonnée à l'origine de la fonction g définie par g(x) = 0,5x − 4 ?",
+      "propositions": [
+        "0,5",
+        "4",
+        "8",
+        "−4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "L'ordonnée à l'origine est p = g(0) = 0,5 × 0 − 4 = −4.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Une fonction affine f vérifie f(1) = 5 et f(4) = 17. Quel est son coefficient directeur ?",
+      "propositions": [
+        "12",
+        "3",
+        "17/4",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "m = (f(4) − f(1))/(4 − 1) = (17 − 5)/3 = 12/3 = 4.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Une fonction affine f vérifie f(2) = 3 et f(6) = 11. Quelle est son expression ?",
+      "propositions": [
+        "f(x) = 2x + 3",
+        "f(x) = 2x − 1",
+        "f(x) = 8x + 3",
+        "f(x) = 4x − 5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "explication": "m = (11 − 3)/(6 − 2) = 8/4 = 2. Puis f(2) = 2 × 2 + p = 3, donc p = −1 : f(x) = 2x − 1. Vérification : f(6) = 12 − 1 = 11.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Pour une fonction affine f(x) = mx + p, que vaut le taux d'accroissement (f(b) − f(a))/(b − a), pour deux nombres a ≠ b ?",
+      "propositions": [
+        "Toujours p",
+        "m + p",
+        "Toujours m",
+        "Il dépend de a et de b"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "f(b) − f(a) = mb + p − ma − p = m(b − a), donc le quotient vaut m, quels que soient a et b : le taux d'accroissement d'une fonction affine est constant.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Quand x augmente de 5, comment varie f(x) pour la fonction f(x) = −2x + 9 ?",
+      "propositions": [
+        "f(x) diminue de 10.",
+        "f(x) augmente de 10.",
+        "f(x) diminue de 2.",
+        "f(x) diminue de 1."
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "Quand x augmente de 1, f(x) varie de m = −2. Quand x augmente de 5, f(x) varie de 5 × (−2) = −10 : il diminue de 10.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:075",
+      "type": "qcm_unique",
+      "enonce": "On convertit une température C en degrés Celsius en degrés Fahrenheit par F = 1,8C + 32. Combien vaut 30 °C en °F ?",
+      "propositions": [
+        "86 °F",
+        "54 °F",
+        "62 °F",
+        "57,6 °F"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "F = 1,8 × 30 + 32 = 54 + 32 = 86 °F.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Avec F = 1,8C + 32, quelle température en °C correspond à 50 °F ?",
+      "propositions": [
+        "18 °C",
+        "122 °C",
+        "10 °C",
+        "45,6 °C"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "On résout 1,8C + 32 = 50 : 1,8C = 18, donc C = 18/1,8 = 10 °C.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:077",
+      "type": "qcm_unique",
+      "enonce": "La température augmente de 10 °C. De combien augmente-t-elle en °F (avec F = 1,8C + 32) ?",
+      "propositions": [
+        "50 °F",
+        "18 °F",
+        "42 °F",
+        "10 °F"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le coefficient directeur est 1,8 : une hausse de 1 °C donne 1,8 °F, donc 10 °C donnent 18 °F. Le 32 n'intervient pas dans une variation.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Une fonction affine f est strictement décroissante et vérifie f(0) = 3. Laquelle de ces expressions peut être celle de f ?",
+      "propositions": [
+        "f(x) = 3x − 0,2",
+        "f(x) = 0,2x + 3",
+        "f(x) = −3 + 2x",
+        "f(x) = 3 − 0,2x"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Il faut m < 0 et p = f(0) = 3. Seule f(x) = 3 − 0,2x convient (m = −0,2 et p = 3).",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces fonctions, laquelle est linéaire (cas particulier de fonction affine) ?",
+      "propositions": [
+        "x ↦ 4x + 1",
+        "x ↦ 4",
+        "x ↦ x² + 4",
+        "x ↦ 4x"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Une fonction linéaire s'écrit x ↦ mx, avec p = 0 : sa droite passe par l'origine. x ↦ 4x convient ; x ↦ 4 est constante, x ↦ x² + 4 n'est pas affine.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:080",
+      "type": "vrai_faux",
+      "enonce": "La courbe représentative d'une fonction affine est une droite.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "f(x) = mx + p : la courbe est la droite d'équation y = mx + p.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:081",
+      "type": "vrai_faux",
+      "enonce": "La fonction f(x) = 5 − 4x est strictement croissante, car 5 est positif.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le sens de variation dépend du coefficient directeur m = −4 < 0 : f est strictement décroissante. Le 5 est l'ordonnée à l'origine.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:082",
+      "type": "vrai_faux",
+      "enonce": "Si une fonction a toujours le même taux d'accroissement, égal à 3, alors c'est une fonction affine de coefficient directeur 3.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "explication": "Un taux d'accroissement constant m caractérise les fonctions affines : la fonction s'écrit f(x) = 3x + p.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:083",
+      "type": "vrai_faux",
+      "enonce": "Pour la fonction f(x) = 2x + 1, le taux d'accroissement entre 0 et 10 est plus grand qu'entre 0 et 1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Entre 0 et 10 : (21 − 1)/10 = 2 ; entre 0 et 1 : (3 − 1)/1 = 2. Pour une fonction affine, le taux d'accroissement est constant, égal à m = 2.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:084",
+      "type": "vrai_faux",
+      "enonce": "Avec la formule F = 1,8C + 32, une température de 0 °F correspond à une température négative en °C.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "1,8C + 32 = 0 donne C = −32/1,8 ≈ −17,8 °C : c'est bien une température négative.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:085",
+      "type": "vrai_faux",
+      "enonce": "La suite u(n) = 3 + 2n (n entier ⩾ 0) et la fonction f(x) = 2x + 3 sont liées : les points (n ; u(n)) sont sur la droite représentant f.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "explication": "Pour tout entier n, u(n) = 3 + 2n = f(n) : chaque point (n ; u(n)) est sur la droite y = 2x + 3. La suite est la version « discrète » de la fonction affine.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:086",
+      "type": "reponse_courte",
+      "enonce": "La fonction affine f vérifie f(0) = 4 et f(5) = 14. Quel est son coefficient directeur ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 1,
+      "explication": "m = (14 − 4)/(5 − 0) = 10/5 = 2.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:087",
+      "type": "reponse_courte",
+      "enonce": "Convertis 25 °C en degrés Fahrenheit avec F = 1,8C + 32. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "77"
+      ],
+      "difficulte": 2,
+      "explication": "F = 1,8 × 25 + 32 = 45 + 32 = 77.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "On considère la fonction f(x) = −0,5x + 6. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f est strictement décroissante.",
+        "La droite coupe l'axe des ordonnées en (0 ; 6).",
+        "f(4) = 4.",
+        "Quand x augmente de 2, f(x) augmente de 1.",
+        "Le coefficient directeur vaut 6."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "m = −0,5 < 0 : décroissante. p = 6 : point (0 ; 6). f(4) = −2 + 6 = 4. Quand x augmente de 2, f(x) varie de 2 × (−0,5) = −1 : il diminue de 1. Le coefficient directeur est −0,5, pas 6.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Une fonction affine f vérifie f(0) = −1 et f(2) = 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(x) = 3x − 1",
+        "f est strictement croissante.",
+        "f(10) = 29",
+        "f(1) = 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "p = f(0) = −1 et m = (5 − (−1))/2 = 6/2 = 3, donc f(x) = 3x − 1, croissante. f(10) = 30 − 1 = 29 ; f(1) = 3 − 1 = 2, pas 3.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions sont affines ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ 3 − x",
+        "x ↦ 2/x",
+        "x ↦ 0,7x",
+        "x ↦ x² − 1",
+        "x ↦ 5"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "explication": "Affine : de la forme mx + p. 3 − x (m = −1, p = 3), 0,7x (p = 0, linéaire) et 5 (m = 0, constante) le sont. 2/x et x² − 1 ne le sont pas.",
+      "notion": "Fonctions affines"
+    },
+    {
+      "source": "maths-tc:ch7:banque:091",
+      "type": "qcm_unique",
+      "enonce": "On place 3 000 € à intérêts simples au taux annuel de 2 %. Quel montant d'intérêts reçoit-on chaque année ?",
+      "propositions": [
+        "600 €",
+        "60 €",
+        "6 €",
+        "62 €"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Intérêts simples : chaque année, 2 % du capital de départ, soit 0,02 × 3 000 = 60 €.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Un capital de 5 000 € est placé à intérêts simples au taux annuel de 4 %. Quel est le capital après 6 ans ?",
+      "propositions": [
+        "5 200 €",
+        "6 000 €",
+        "6 200 €",
+        "7 400 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Intérêts annuels : 0,04 × 5 000 = 200 €. Après 6 ans : 5 000 + 6 × 200 = 6 200 €.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:093",
+      "type": "qcm_unique",
+      "enonce": "Un abonnement coûte 25 € par mois, plus 40 € de frais d'inscription. Quelle fonction donne le coût total T(x) après x mois ?",
+      "propositions": [
+        "T(x) = 25x + 40",
+        "T(x) = 40x + 25",
+        "T(x) = 65x",
+        "T(x) = 25(x + 40)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "Le prix mensuel, 25 €, est payé x fois : 25x. Les frais, 40 €, sont payés une seule fois : T(x) = 25x + 40.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:094",
+      "type": "qcm_unique",
+      "enonce": "On modélise la hausse du niveau moyen des océans par 3 mm par an. De combien le niveau monte-t-il en 40 ans selon ce modèle ?",
+      "propositions": [
+        "12 cm",
+        "1,2 cm",
+        "120 cm",
+        "43 mm"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "40 × 3 = 120 mm, soit 12 cm (1 cm = 10 mm).",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:095",
+      "type": "qcm_unique",
+      "enonce": "Pour un produit vendu au prix p (en euros), la demande est D(p) = 80 − 2p et l'offre est O(p) = 3p − 20 (en milliers d'unités). Quel est le prix d'équilibre ?",
+      "propositions": [
+        "12 €",
+        "40 €",
+        "20 €",
+        "60 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Équilibre : O(p) = D(p), soit 3p − 20 = 80 − 2p, donc 5p = 100 et p = 20 €. Vérification : D(20) = 40 = O(20).",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:096",
+      "type": "qcm_unique",
+      "enonce": "Avec une demande D(p) = 100 − 4p et une offre O(p) = 6p − 20, le prix d'équilibre est 12 €. Quelle quantité est échangée à ce prix ?",
+      "propositions": [
+        "48",
+        "52",
+        "12",
+        "100"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Quantité échangée = D(12) = 100 − 4 × 12 = 100 − 48 = 52. On vérifie : O(12) = 72 − 20 = 52.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Une demande vérifie D(p) = 60 − 3p, avec p le prix en euros. Que se passe-t-il quand le prix augmente de 1 € ?",
+      "propositions": [
+        "La demande augmente de 3 unités.",
+        "La demande baisse de 60 unités.",
+        "La demande baisse de 3 %.",
+        "La demande baisse de 3 unités."
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Le coefficient directeur −3 indique la variation de la demande quand p augmente de 1 : elle baisse de 3 unités (un nombre fixe, pas un pourcentage).",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Un bassin contient 1 200 L et on le vide à raison de 50 L par minute. Quelle fonction donne le volume V(t), en litres, après t minutes ?",
+      "propositions": [
+        "V(t) = 50t − 1 200",
+        "V(t) = 1 200 − 50",
+        "V(t) = 1 200 × 0,5t",
+        "V(t) = 1 200 − 50t"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "Volume de départ 1 200 L, on enlève 50 L chaque minute : V(t) = 1 200 − 50t (fonction affine de coefficient −50).",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:099",
+      "type": "qcm_unique",
+      "enonce": "Graphiquement, comment lit-on le point d'équilibre entre une droite d'offre et une droite de demande ?",
+      "propositions": [
+        "Au point où la droite de demande coupe l'axe des ordonnées",
+        "Au point d'intersection des deux droites",
+        "Au sommet de la courbe d'offre",
+        "Là où l'offre est la plus grande"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Le prix d'équilibre est celui pour lequel offre et demande sont égales : c'est l'abscisse du point commun aux deux droites.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:100",
+      "type": "qcm_unique",
+      "enonce": "Un livret à intérêts simples rapporte 45 € par an pour un dépôt de 1 500 €. Quel est le taux annuel ?",
+      "propositions": [
+        "4,5 %",
+        "33 %",
+        "3 %",
+        "0,3 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Taux = intérêts / capital = 45/1 500 = 0,03 = 3 %.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:101",
+      "type": "vrai_faux",
+      "enonce": "Un placement à intérêts simples rapporte chaque année le même montant d'intérêts.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "explication": "Les intérêts simples sont calculés sur le capital de départ, qui ne change pas : le montant annuel est fixe, la croissance est linéaire.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:102",
+      "type": "vrai_faux",
+      "enonce": "Un placement à 5 % par an à intérêts composés suit une croissance linéaire.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "Avec les intérêts composés, les intérêts sont calculés sur un capital qui grandit : la hausse annuelle en euros augmente, ce n'est pas linéaire (c'est une suite géométrique).",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:103",
+      "type": "vrai_faux",
+      "enonce": "Un taxi facture 4 € de prise en charge puis 2 € par kilomètre. Le prix d'une course de 10 km est 42 €.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Prix = 4 + 2 × 10 = 24 €, et non 42 € : les 4 € ne sont payés qu'une fois, ce sont les 2 € qui sont multipliés par 10.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Si le prix de vente augmente, une demande modélisée par D(p) = 50 − 2p augmente.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Le coefficient directeur est −2 < 0 : D est décroissante. Quand le prix augmente, la demande diminue.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:105",
+      "type": "vrai_faux",
+      "enonce": "On place 1 000 € à intérêts simples à 5 % par an. Les intérêts reçus la 4e année sont plus élevés que ceux reçus la 1re année.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "explication": "À intérêts simples, chaque année rapporte 5 % du capital de départ : 0,05 × 1 000 = 50 €, la 1re comme la 4e année. Les intérêts sont identiques.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:106",
+      "type": "reponse_courte",
+      "enonce": "On place 4 000 € à intérêts simples au taux annuel de 3 %. Quel est le capital, en euros, au bout de 5 ans ? Réponds par un nombre, sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "4600"
+      ],
+      "difficulte": 3,
+      "explication": "Intérêts annuels : 0,03 × 4 000 = 120 €. Après 5 ans : 4 000 + 5 × 120 = 4 600 €.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:107",
+      "type": "reponse_courte",
+      "enonce": "L'offre d'un produit est O(p) = 5p − 30 et la demande est D(p) = 90 − 5p, avec p le prix en euros. Quel est le prix d'équilibre, en euros ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "12"
+      ],
+      "difficulte": 3,
+      "explication": "5p − 30 = 90 − 5p donne 10p = 120, donc p = 12 €. Vérification : O(12) = D(12) = 30.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:108",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces situations, lesquelles relèvent d'une évolution linéaire continue, modélisée par une fonction affine du temps ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Une bougie qui raccourcit de 2 cm par heure",
+        "Une baignoire qui se remplit de 12 L par minute",
+        "Un capital placé à 3 % par an, intérêts composés",
+        "Une épidémie où le nombre de malades double chaque semaine",
+        "Une voiture qui roule à vitesse constante de 90 km/h"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "explication": "Bougie (−2 cm/h), baignoire (+12 L/min) et voiture (+90 km/h) : même variation par unité de temps, donc fonction affine. Intérêts composés et doublement sont des évolutions exponentielles.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:109",
+      "type": "qcm_multiple",
+      "enonce": "On place 2 000 € à intérêts simples au taux annuel de 5 %. On note C(n) le capital après n années (C(0) = 2 000). Coche toutes les réponses exactes.",
+      "propositions": [
+        "C(n + 1) = C(n) + 100",
+        "C(n) = 2 000 + 100n",
+        "C(10) = 3 000",
+        "C(n + 1) = 1,05 × C(n)",
+        "C(10) = 2 100"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Intérêts annuels : 0,05 × 2 000 = 100 €. C(n + 1) = C(n) + 100 et C(n) = 2 000 + 100n, donc C(10) = 3 000. Multiplier par 1,05 correspond aux intérêts composés.",
+      "notion": "Modélisation linéaire"
+    },
+    {
+      "source": "maths-tc:ch7:banque:110",
+      "type": "qcm_unique",
+      "enonce": "Barème fictif : 0 % pour la partie du revenu jusqu'à 10 000 €, 10 % pour la partie entre 10 000 € et 30 000 €, 30 % pour la partie au-delà de 30 000 €. Quel impôt paie une personne dont le revenu est 25 000 € ?",
+      "propositions": [
+        "1 500 €",
+        "2 500 €",
+        "7 500 €",
+        "2 000 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Les 10 000 premiers euros ne sont pas taxés. La partie entre 10 000 et 25 000 €, soit 15 000 €, est taxée à 10 % : 0,1 × 15 000 = 1 500 €.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Un pays imaginaire prélève un impôt par tranches : rien sur les 10 000 premiers euros, 10 % sur les euros compris entre 10 000 et 30 000, 30 % sur chaque euro au-delà de 30 000. Combien d'impôt doit-on pour un revenu de 50 000 € ?",
+      "propositions": [
+        "8 000 €",
+        "15 000 €",
+        "6 000 €",
+        "9 000 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "Tranche à 10 % : 0,1 × 20 000 = 2 000 €. Tranche à 30 % : 0,3 × (50 000 − 30 000) = 6 000 €. Total : 8 000 €. Taxer tout le revenu à 30 % (15 000 €) est l'erreur classique.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Une personne gagne 40 000 € et paie 5 000 € d'impôt. Quel est son taux moyen d'imposition ?",
+      "propositions": [
+        "30 %",
+        "8 %",
+        "12,5 %",
+        "5 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taux moyen = impôt / revenu = 5 000/40 000 = 0,125 = 12,5 %.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:113",
+      "type": "qcm_unique",
+      "enonce": "Barème fictif : 0 % pour la partie du revenu jusqu'à 10 000 €, 10 % pour la partie entre 10 000 € et 30 000 €, 30 % pour la partie au-delà de 30 000 €. Quel est le taux marginal d'une personne qui gagne 22 000 € ?",
+      "propositions": [
+        "0 %",
+        "10 %",
+        "30 %",
+        "5,5 %"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "22 000 € se trouve dans la tranche entre 10 000 et 30 000 € : le dernier euro gagné est taxé à 10 %, c'est le taux marginal.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:114",
+      "type": "qcm_unique",
+      "enonce": "Sur le graphique de l'impôt en fonction du revenu pour un barème par tranches, à quoi correspond la pente d'un segment ?",
+      "propositions": [
+        "Au taux moyen",
+        "Au montant total de l'impôt",
+        "Au revenu maximal de la tranche",
+        "Au taux de la tranche correspondante"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Sur une tranche, chaque euro de plus fait payer t euros d'impôt en plus (t = taux de la tranche) : l'impôt est affine de coefficient directeur t. La pente du segment est donc le taux marginal de cette tranche.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:115",
+      "type": "qcm_unique",
+      "enonce": "Un barème fictif taxe à 0 % la partie du revenu jusqu'à 12 000 € et à 20 % la partie au-delà. Quelle expression donne l'impôt I(R) pour un revenu R ⩾ 12 000 € ?",
+      "propositions": [
+        "I(R) = 0,2R",
+        "I(R) = 0,2R + 12 000",
+        "I(R) = 0,2(R + 12 000)",
+        "I(R) = 0,2(R − 12 000)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "explication": "Seule la partie au-delà de 12 000 €, c'est-à-dire R − 12 000, est taxée à 20 % : I(R) = 0,2(R − 12 000) = 0,2R − 2 400.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Avec un barème par tranches, quand on passe dans une tranche plus taxée, tout le revenu est taxé au nouveau taux.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "explication": "Chaque taux ne s'applique qu'à la partie du revenu située dans sa tranche. Passer dans la tranche supérieure n'augmente l'impôt que sur les euros au-delà du seuil.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:117",
+      "type": "reponse_courte",
+      "enonce": "Barème fictif : 0 % pour la partie du revenu jusqu'à 10 000 €, 10 % pour la partie entre 10 000 € et 30 000 €, 30 % pour la partie au-delà de 30 000 €. Quel impôt, en euros, paie une personne dont le revenu est 36 000 € ? Réponds par un nombre, sans espace entre les chiffres.",
+      "reponses_acceptees": [
+        "3800"
+      ],
+      "difficulte": 3,
+      "explication": "Tranche à 10 % : 0,1 × 20 000 = 2 000 €. Tranche à 30 % : 0,3 × 6 000 = 1 800 €. Total : 3 800 €.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:118",
+      "type": "qcm_multiple",
+      "enonce": "Barème fictif : 0 % pour la partie du revenu jusqu'à 10 000 €, 10 % pour la partie entre 10 000 € et 30 000 €, 30 % pour la partie au-delà de 30 000 €. Pour un revenu de 40 000 €, quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'impôt vaut 5 000 €.",
+        "Le taux marginal est de 30 %.",
+        "Le taux moyen est de 12,5 %.",
+        "L'impôt vaut 12 000 €.",
+        "Le taux moyen est de 30 %."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "Impôt : 0,1 × 20 000 + 0,3 × 10 000 = 2 000 + 3 000 = 5 000 €. Taux marginal : 30 % (tranche du dernier euro). Taux moyen : 5 000/40 000 = 12,5 %. 12 000 € serait 30 % de tout le revenu, ce qui est faux.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:119",
+      "type": "qcm_multiple",
+      "enonce": "À propos d'un barème d'impôt par tranches (taux croissants), quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le taux moyen est inférieur ou égal au taux marginal.",
+        "L'impôt est une fonction affine par morceaux du revenu.",
+        "Gagner 100 € de plus peut faire baisser le revenu après impôt.",
+        "Le taux marginal est le taux de la tranche du dernier euro gagné."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "explication": "Les premiers euros sont moins taxés que le dernier : taux moyen ⩽ taux marginal. L'impôt est affine sur chaque tranche. 100 € de plus coûtent au plus « taux marginal × 100 » d'impôt : le revenu après impôt augmente toujours.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:120",
+      "type": "qcm_multiple",
+      "enonce": "Un barème fictif taxe à 0 % la partie du revenu jusqu'à 10 000 € et à 20 % la partie au-delà. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Pour 15 000 €, l'impôt vaut 1 000 €.",
+        "Pour 30 000 €, l'impôt vaut 4 000 €.",
+        "Pour 8 000 €, l'impôt est nul.",
+        "Pour 30 000 €, le taux moyen est de 20 %."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "15 000 € : 0,2 × 5 000 = 1 000 €. 30 000 € : 0,2 × 20 000 = 4 000 €, taux moyen 4 000/30 000 ≈ 13,3 %, pas 20 %. 8 000 € est dans la tranche à 0 %.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:121",
+      "type": "qcm_multiple",
+      "enonce": "La courbe de l'impôt en fonction du revenu, pour un barème à trois tranches de taux 0 %, 10 % et 30 %, est… Coche toutes les réponses exactes.",
+      "propositions": [
+        "formée de trois segments de droite",
+        "horizontale sur la première tranche",
+        "de plus en plus pentue d'une tranche à la suivante",
+        "une seule droite passant par l'origine",
+        "une parabole"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Sur chaque tranche, l'impôt est affine : trois segments. La pente vaut 0 (horizontal), puis 0,1, puis 0,3 : de plus en plus pentue. Ce n'est ni une seule droite ni une parabole.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:122",
+      "type": "qcm_multiple",
+      "enonce": "Barème fictif : 0 % pour la partie du revenu jusqu'à 10 000 €, 10 % pour la partie entre 10 000 € et 30 000 €, 30 % pour la partie au-delà de 30 000 €. Une personne gagne 30 000 €. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son impôt est de 2 000 €.",
+        "Son taux moyen est d'environ 6,7 %.",
+        "Son taux moyen est de 10 %.",
+        "Son impôt est de 3 000 €."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "Seuls 20 000 € sont taxés, à 10 % : impôt 2 000 €. Taux moyen : 2 000/30 000 = 1/15 ≈ 6,7 %. 3 000 € reviendrait à taxer tout le revenu à 10 %.",
+      "notion": "Fonction affine par morceaux"
+    },
+    {
+      "source": "maths-tc:ch7:banque:123",
+      "type": "qcm_unique",
+      "enonce": "Une suite est définie pour n ⩾ 0 par u(n) = 50 + 6n. Quel est le plus petit entier n tel que u(n) > 200 ?",
+      "propositions": [
+        "25",
+        "26",
+        "24",
+        "34"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "50 + 6n > 200 ⇔ 6n > 150 ⇔ n > 25. n = 25 donne exactement 200, qui ne dépasse pas : il faut n = 26 (u(26) = 206).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Un réservoir contient 800 L et perd 60 L par jour. On note v(n) le volume après n jours (v(0) = 800). À partir de combien de jours passe-t-il sous 200 L ?",
+      "propositions": [
+        "10",
+        "13",
+        "11",
+        "14"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "800 − 60n < 200 ⇔ −60n < −600 ⇔ n > 10 (on divise par −60 : le sens change). n = 10 donne exactement 200 L, pas moins : il faut 11 jours (v(11) = 140).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Une association compte 300 membres en 2025 et en gagne 25 par an. En quelle année dépassera-t-elle 500 membres ?",
+      "propositions": [
+        "2034",
+        "2033",
+        "2032",
+        "2045"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "explication": "u(n) = 300 + 25n, n années après 2025. 300 + 25n > 500 ⇔ n > 8. n = 8 donne exactement 500 : il faut n = 9, soit l'année 2025 + 9 = 2034.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:126",
+      "type": "qcm_unique",
+      "enonce": "On résout 4n + 10 > 47 pour n entier. On trouve n > 9,25. Quel est le plus petit entier qui convient ?",
+      "propositions": [
+        "10",
+        "9",
+        "9,25",
+        "11"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "n doit être un entier strictement plus grand que 9,25 : le plus petit est 10 (on arrondit à l'entier supérieur).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Forfait A : 20 € par mois. Forfait B : 8 € par mois plus 60 € d'inscription. À partir de combien de mois le forfait B est-il strictement moins cher ?",
+      "propositions": [
+        "5",
+        "3",
+        "6",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "explication": "B est moins cher quand 8x + 60 < 20x ⇔ 60 < 12x ⇔ x > 5. À 5 mois, les deux coûtent 100 € : il faut 6 mois.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:128",
+      "type": "reponse_courte",
+      "enonce": "Une suite est définie pour n ⩾ 0 par u(n) = 7 + 3n. Quel est le plus petit entier n tel que u(n) ⩾ 100 ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "31"
+      ],
+      "difficulte": 2,
+      "explication": "7 + 3n ⩾ 100 ⇔ 3n ⩾ 93 ⇔ n ⩾ 31. u(31) = 100 convient (on demande ⩾).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "On considère la suite u définie pour n ⩾ 0 par u(n) = 120 + 8n. On veut le plus petit entier n tel que u(n) > 300. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'inéquation équivaut à n > 22,5.",
+        "Le plus petit entier qui convient est 23.",
+        "u(22) = 296.",
+        "Le plus petit entier qui convient est 22.",
+        "u(23) = 300."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "8n > 180 ⇔ n > 22,5, donc n = 23. u(22) = 120 + 176 = 296 et u(23) = 120 + 184 = 304 (pas 300).",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Un programme Python calcule le plus petit rang n tel que u(n) > 300, pour u(0) = 120 et une raison 8. Quelles instructions conviennent dans la boucle « while u <= 300 » ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "u = u + 8",
+        "n = n + 1",
+        "u = u * 8",
+        "n = n + 8"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "À chaque tour, on passe au terme suivant (u = u + 8, car la suite est arithmétique) et on augmente le rang de 1 (n = n + 1). Multiplier par 8 ou ajouter 8 au rang est faux.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "Une bougie de 30 cm raccourcit de 2,5 cm par heure. On note h(t) sa hauteur, en cm, après t heures (h(0) = 30). Coche toutes les réponses exactes.",
+      "propositions": [
+        "h(t) = 30 − 2,5t",
+        "Elle mesure 10 cm après 8 heures.",
+        "Elle est entièrement consumée après 12 heures.",
+        "Elle mesure 15 cm après 5 heures.",
+        "h est une fonction croissante."
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "explication": "h(t) = 30 − 2,5t (décroissante). h(8) = 30 − 20 = 10 cm. h(t) = 0 ⇔ t = 30/2,5 = 12 h. h(5) = 30 − 12,5 = 17,5 cm, pas 15.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:132",
+      "type": "qcm_multiple",
+      "enonce": "Une suite est définie pour n ⩾ 0 par u(n) = 10 + 5n. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "u(n) ⩾ 60 dès n = 10.",
+        "u(n) > 60 seulement à partir de n = 11.",
+        "u(n) > 60 dès n = 10.",
+        "u(n) ⩾ 60 seulement à partir de n = 12."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "explication": "u(10) = 60 : il atteint 60 (⩾) mais ne le dépasse pas (>). Il faut n = 11 pour dépasser : u(11) = 65. Et u(n) ⩾ 60 est déjà vrai dès n = 10, pas seulement à partir de n = 12.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:133",
+      "type": "qcm_multiple",
+      "enonce": "Le nombre d'abonnés d'une chaîne passe de 2 000 à 2 150 en un mois et on suppose qu'il augmente ensuite de 150 par mois. On note a(n) le nombre d'abonnés après n mois (a(0) = 2 000). Coche toutes les réponses exactes.",
+      "propositions": [
+        "a(n) = 2 000 + 150n",
+        "La chaîne atteint 3 500 abonnés après 10 mois.",
+        "La chaîne dépasse 3 000 abonnés pour la première fois après 7 mois.",
+        "a(n) = 2 150n"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "explication": "a(n) = 2 000 + 150n. a(10) = 3 500. 2 000 + 150n > 3 000 ⇔ n > 6,67, donc n = 7 (a(7) = 3 050, a(6) = 2 900). 2 150n ne donne pas a(0) = 2 000.",
+      "notion": "Problèmes de seuil"
+    },
+    {
+      "source": "maths-tc:ch7:banque:134",
+      "type": "qcm_unique",
+      "enonce": "Calcule 15 % de 80.",
+      "propositions": [
+        "15",
+        "12",
+        "8",
+        "65"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "15 % de 80 = 0,15 × 80 = 12 (10 % = 8 et 5 % = 4).",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:135",
+      "type": "qcm_unique",
+      "enonce": "Résous l'équation 3x + 7 = 22.",
+      "propositions": [
+        "x = 29/3",
+        "x = 15",
+        "x = 7",
+        "x = 5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "3x = 22 − 7 = 15, donc x = 15/3 = 5.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Quel est le coefficient directeur de la droite passant par A(2 ; 1) et B(6 ; 9) ?",
+      "propositions": [
+        "4",
+        "1/2",
+        "8",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "explication": "m = (9 − 1)/(6 − 2) = 8/4 = 2.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Développe et réduis 4(x − 3) + x.",
+      "propositions": [
+        "5x − 3",
+        "5x − 12",
+        "4x − 12",
+        "5x − 7"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "explication": "4(x − 3) = 4x − 12, puis 4x − 12 + x = 5x − 12.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Un prix de 60 € augmente de 10 €. Quel est le taux d'évolution ?",
+      "propositions": [
+        "10 %",
+        "6 %",
+        "Environ 16,7 %",
+        "Environ 14,3 %"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "explication": "Taux = hausse / valeur de départ = 10/60 = 1/6 ≈ 0,167, soit environ 16,7 %. Diviser par 70 (la valeur d'arrivée) donne 14,3 %, c'est une erreur.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Quel nombre est égal à 2/5 ?",
+      "propositions": [
+        "0,4",
+        "2,5",
+        "0,25",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "explication": "2/5 = 4/10 = 0,4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Résous l'inéquation −2x > 8.",
+      "propositions": [
+        "x < −4",
+        "x > −4",
+        "x < 4",
+        "x > 4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "explication": "On divise par −2, nombre négatif : le sens de l'inégalité change. x < 8/(−2), soit x < −4.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Le point M(3 ; 5) appartient-il à la droite d'équation y = 2x − 1 ?",
+      "propositions": [
+        "Non, car 2 × 5 − 1 = 9",
+        "Non, car 2 × 3 − 1 = 7",
+        "Oui, car 2 × 3 − 1 = 5",
+        "Oui, car 3 + 5 = 8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "explication": "On remplace x par 3 : 2 × 3 − 1 = 6 − 1 = 5, qui est bien l'ordonnée de M. Le point est sur la droite.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'antécédent de 11 par la fonction f(x) = 2x + 3 ?",
+      "propositions": [
+        "25",
+        "4",
+        "7",
+        "5,5"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "explication": "On résout 2x + 3 = 11 : 2x = 8, x = 4. (25 est l'image de 11, pas son antécédent.)",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Calcule 20 × 7 − 35. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "105"
+      ],
+      "difficulte": 1,
+      "explication": "20 × 7 = 140, puis 140 − 35 = 105.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Un article coûte 50 € et augmente de 8 %. Quel est son nouveau prix, en euros ? Réponds par un nombre.",
+      "reponses_acceptees": [
+        "54"
+      ],
+      "difficulte": 1,
+      "explication": "Coefficient multiplicateur 1,08 : 50 × 1,08 = 54 €. (8 % de 50 = 4 €.)",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Calcule l'image de −2 par la fonction f(x) = 5 − 3x. Réponds par un nombre.",
+      "reponses_acceptees": [
+        "11"
+      ],
+      "difficulte": 1,
+      "explication": "f(−2) = 5 − 3 × (−2) = 5 + 6 = 11.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:146",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0,5 × 40 = 20",
+        "1/4 = 0,25",
+        "3² + 4² = 7²",
+        "10 % de 250 = 25",
+        "2 × 0,3 = 0,9"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "explication": "0,5 × 40 = 20 ; 1/4 = 0,25 ; 10 % de 250 = 25. Mais 3² + 4² = 9 + 16 = 25 = 5², pas 49 ; et 2 × 0,3 = 0,6.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:147",
+      "type": "qcm_multiple",
+      "enonce": "Quelles valeurs de x sont solutions de 2x − 5 ⩾ 3 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x = 4",
+        "x = 10",
+        "x = 3",
+        "x = 0",
+        "x = 7,5"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "explication": "2x − 5 ⩾ 3 ⇔ 2x ⩾ 8 ⇔ x ⩾ 4. Conviennent 4, 10 et 7,5 ; 3 et 0 sont trop petits.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:148",
+      "type": "qcm_multiple",
+      "enonce": "La droite d'équation y = −x + 4 … Coche toutes les réponses exactes.",
+      "propositions": [
+        "passe par le point (0 ; 4)",
+        "passe par le point (4 ; 0)",
+        "a pour coefficient directeur 4",
+        "monte de gauche à droite"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "x = 0 donne y = 4 et x = 4 donne y = 0 : les deux points sont sur la droite. Le coefficient directeur est −1 (pas 4) : la droite descend.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:149",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions sont égales à 3(x + 2) − x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2x + 6",
+        "2(x + 3)",
+        "3x + 2 − x",
+        "2x + 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "explication": "3(x + 2) − x = 3x + 6 − x = 2x + 6 = 2(x + 3). Oublier de multiplier 2 par 3 donne 2x + 2 : c'est faux.",
+      "notion": "Automatismes"
+    },
+    {
+      "source": "maths-tc:ch7:banque:150",
+      "type": "qcm_multiple",
+      "enonce": "Une quantité passe de 200 à 250. Quelles affirmations sont exactes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Elle augmente de 25 %.",
+        "Le coefficient multiplicateur est 1,25.",
+        "Elle augmente de 50 %.",
+        "Le coefficient multiplicateur est 0,25."
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "explication": "Taux = (250 − 200)/200 = 50/200 = 0,25 = 25 %. CM = 250/200 = 1,25. La hausse est de 50 unités, pas de 50 %.",
+      "notion": "Automatismes"
+    }
+  ]
+}

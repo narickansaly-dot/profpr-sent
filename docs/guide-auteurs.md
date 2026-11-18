@@ -361,7 +361,7 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 
 ### Le fichier de travail
 
-`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS) :
+`contenu/1re-st2s/banques/bph-chN.json` (N = numéro du chapitre ; `stss-chN.json` pour le cours STSS ; pour un autre cours, `contenu/<dossier>/banques/<matiere>-chN.json`, par exemple `contenu/1re-gen/banques/espagnol-chN.json`) :
 
 ```jsonc
 {
@@ -381,16 +381,24 @@ Les banques de questions d'un chapitre se produisent dans un **fichier de travai
 ### Les trois commandes
 
 ```bash
-npm run banque:texte -- N [--cours stss]       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
-npm run banque:verifier -- N [--cours stss]    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
-npm run banque:fusionner -- N [--cours stss]   # ajoute les questions au chapitre N du cours
+npm run banque:texte -- N [--cours <cours>]       # texte brut du chapitre (titre, chapeau, objectifs, sections, « Je retiens »)
+npm run banque:verifier -- N [--cours <cours>]    # contrôle le fichier de travail ; code de sortie 1 s'il y a des erreurs
+npm run banque:fusionner -- N [--cours <cours>]   # ajoute les questions au chapitre N du cours
 ```
 
-Sans `--cours`, c'est `bph`. Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
+`<cours>` vaut `bph` (par défaut), `stss`, ou le **chemin du cours** sous `contenu/`, avec ou sans `contenu/` et `.json` : `--cours 1re-gen/espagnol` ou `--cours contenu/1re-gen/espagnol.json`. Pour un cours désigné par son chemin `contenu/<dossier>/<matiere>.json` :
+
+- les fichiers de travail sont dans `contenu/<dossier>/banques/` et s'appellent `<matiere>-chN.json` ;
+- les sources s'écrivent `<matiere>:chN:banque:NNN` ; ajoute `--prefixe <p>` pour un autre préfixe (sources `<p>:chN:banque:NNN`) ;
+- chaque chapitre compte 150 nouvelles questions, avec les mêmes quotas que STSS.
+
+**Les sources sont uniques dans toute la base**, pas seulement dans le fichier : deux cours ne peuvent pas employer la même source, sinon l'import est refusé (« Cette source est déjà utilisée dans un autre chapitre »). Les cours de 2de utilisent `<matiere>:` ; les cours de 1re de même nom prennent un préfixe distinct, par exemple `--cours 1re-gen/espagnol --prefixe espagnol-1re`.
+
+Le cours STSS compte 150 nouvelles questions par chapitre : les quotas sont proportionnels (75 / 30 / 30 / 15 pour les types, 60 / 60 / 30 pour les difficultés).
 
 - `banque:fusionner` refuse un fichier non conforme, et une source déjà présente avec un contenu différent. Une source déjà présente avec le même contenu est ignorée : la fusion est rejouable. `bph.json` est réécrit avec 2 espaces d'indentation et un saut de ligne final, sans changer le reste.
 - Script ponctuel : `npx tsx scripts/typo-anciennes-questions.ts` a remplacé les espaces avant « ? : ; ! » par des espaces insécables dans l'énoncé et l'explication des anciennes questions (`quiz`, `bis`), sans toucher aux propositions ; le rejouer est sans effet.
-- Après la fusion, importe le cours avec `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts` (partie 6).
+- Après la fusion, importe le cours avec `npm run import:contenu -- contenu/1re-st2s/bph.json --garder-statuts` (partie 6), ou le fichier du cours concerné.
 
 ### Les règles contrôlées
 

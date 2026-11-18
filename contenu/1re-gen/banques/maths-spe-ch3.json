@@ -1,0 +1,2326 @@
+{
+  "chapitre": 3,
+  "notions": [
+    "Parabole, sommet et axe",
+    "Forme factorisée et racines",
+    "Somme et produit des racines",
+    "Forme canonique",
+    "Discriminant et résolution",
+    "Signe et inéquations",
+    "Choisir la forme adaptée",
+    "Factorisation directe",
+    "Vocabulaire logique",
+    "Automatismes de calcul"
+  ],
+  "questions": [
+    {
+      "source": "maths-spe-1re:ch3:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Parmi ces fonctions, laquelle est une fonction polynôme du second degré ?",
+      "propositions": [
+        "f(x) = 3 − 2x²",
+        "f(x) = 3x − 2",
+        "f(x) = (x + 1)² − x²",
+        "f(x) = 2/x² + 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "3 − 2x² s'écrit ax² + bx + c avec a = −2 ≠ 0. En revanche (x + 1)² − x² = 2x + 1 est affine, et 2/x² + 1 n'est pas un polynôme."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:002",
+      "type": "qcm_unique",
+      "enonce": "On considère f(x) = −4x² + x − 7. Quelle est la valeur du coefficient b ?",
+      "propositions": [
+        "−4",
+        "1",
+        "−7",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "b est le coefficient de x : ici x = 1 × x, donc b = 1 (a = −4 et c = −7)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Comment est orientée la parabole d'équation y = −2x² + 3x + 1 ?",
+      "propositions": [
+        "Vers le haut, car c = 1 > 0",
+        "Vers le haut, car b = 3 > 0",
+        "Vers le bas, car a = −2 < 0",
+        "Vers le bas, car c = 1 > 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "C'est le signe de a, coefficient de x², qui fixe l'orientation : a = −2 < 0, la parabole est tournée vers le bas."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:004",
+      "type": "qcm_unique",
+      "enonce": "En quel point la courbe de f(x) = x² − 5x + 4 coupe-t-elle l'axe des ordonnées ?",
+      "propositions": [
+        "(4 ; 0)",
+        "(0 ; −5)",
+        "(1 ; 0)",
+        "(0 ; 4)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "Sur l'axe des ordonnées, x = 0, et f(0) = c = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quelle est l'abscisse du sommet de la parabole d'équation y = 2x² − 12x + 1 ?",
+      "propositions": [
+        "3",
+        "−3",
+        "6",
+        "12"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "α = −b/(2a) = 12/4 = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les coordonnées du sommet de la parabole d'équation y = x² + 4x − 1 ?",
+      "propositions": [
+        "(2 ; 11)",
+        "(−2 ; −5)",
+        "(−4 ; −1)",
+        "(−2 ; −1)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "α = −4/2 = −2 et β = f(−2) = 4 − 8 − 1 = −5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Quelle droite est l'axe de symétrie de la courbe de g(x) = −3x² + 6x + 2 ?",
+      "propositions": [
+        "La droite d'équation x = −1",
+        "La droite d'équation y = 5",
+        "La droite d'équation x = 1",
+        "La droite d'équation x = 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "L'axe est vertical, d'équation x = α avec α = −b/(2a) = −6/(−6) = 1. (Le maximum vaut 5, mais y = 5 est horizontale.)"
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Une fonction f du second degré vérifie f(−1) = f(5) = 7. Quelle est l'abscisse du sommet de sa courbe ?",
+      "propositions": [
+        "3",
+        "6",
+        "7",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Parabole, sommet et axe",
+      "explication": "Deux points de même ordonnée sont symétriques par rapport à l'axe : α = (−1 + 5)/2 = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:009",
+      "type": "qcm_multiple",
+      "enonce": "On considère f(x) = 5 − x². Coche toutes les réponses exactes.",
+      "propositions": [
+        "a = −1",
+        "b = 0",
+        "c = 5",
+        "a = 5",
+        "f est une fonction affine"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "f(x) = −1 × x² + 0 × x + 5 : a = −1, b = 0, c = 5. C'est une fonction du second degré."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:010",
+      "type": "qcm_multiple",
+      "enonce": "Une parabole P a pour sommet S(−1 ; 4) et elle est tournée vers le bas. Que peut-on affirmer ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "4 est le maximum de la fonction associée",
+        "La droite d'équation x = −1 est l'axe de symétrie de P",
+        "Le coefficient a est strictement positif",
+        "La fonction atteint son minimum en −1",
+        "Aucun point de P n'a une ordonnée supérieure à 4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "Tournée vers le bas : a < 0 et le sommet donne le maximum 4, atteint en −1 ; l'axe passe par le sommet."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:011",
+      "type": "qcm_multiple",
+      "enonce": "Soit f(x) = ax² + bx + c avec a > 0, telle que f(1) = f(7). Coche toutes les réponses exactes.",
+      "propositions": [
+        "L'axe de symétrie de la courbe est la droite x = 4",
+        "f(4) est le minimum de f",
+        "f(0) = f(8)",
+        "f(2) = f(5)",
+        "f est croissante sur [1 ; 7]"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Parabole, sommet et axe",
+      "explication": "α = (1 + 7)/2 = 4 ; a > 0 donc minimum en 4 ; 0 et 8 sont symétriques par rapport à 4, pas 2 et 5 ; f décroît sur [1 ; 4]."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:012",
+      "type": "vrai_faux",
+      "enonce": "La courbe représentative d'une fonction polynôme du second degré est une parabole.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Parabole, sommet et axe",
+      "explication": "C'est une propriété du cours : quelle que soit la forme de f, sa courbe est une parabole."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:013",
+      "type": "vrai_faux",
+      "enonce": "Si a < 0, la fonction x ↦ ax² + bx + c admet un minimum sur ℝ.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "Si a < 0, la parabole est tournée vers le bas : la fonction admet un maximum (en α), pas de minimum."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:014",
+      "type": "vrai_faux",
+      "enonce": "Pour f(x) = x² − 6x + 2, les images de 1 et de 5 sont égales.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Parabole, sommet et axe",
+      "explication": "f(1) = 1 − 6 + 2 = −3 et f(5) = 25 − 30 + 2 = −3 : 1 et 5 sont symétriques par rapport à l'axe x = 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:015",
+      "type": "reponse_courte",
+      "enonce": "La parabole d'équation y = x² + bx + 3 admet pour axe de symétrie la droite d'équation x = 2. Quelle est la valeur de b ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-4",
+        "−4"
+      ],
+      "difficulte": 3,
+      "notion": "Parabole, sommet et axe",
+      "explication": "L'axe a pour équation x = −b/(2a) = −b/2. Donc −b/2 = 2 et b = −4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les racines de f(x) = 3(x − 2)(x + 5) ?",
+      "propositions": [
+        "2 et −5",
+        "−2 et 5",
+        "3, 2 et −5",
+        "2 et 5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "Produit nul : x − 2 = 0 ou x + 5 = 0, donc x = 2 ou x = −5. Le facteur 3 ne s'annule pas."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:017",
+      "type": "qcm_unique",
+      "enonce": "L'expression (2x − 3)(x + 1) s'annule en −1. En quelle autre valeur s'annule-t-elle ?",
+      "propositions": [
+        "3",
+        "3/2",
+        "−3/2",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "2x − 3 = 0 donne x = 3/2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Quel nombre est une racine du trinôme x² − 3x + 2 ?",
+      "propositions": [
+        "−1",
+        "3",
+        "1",
+        "−2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "1 − 3 + 2 = 0. Les racines sont 1 et 2 ; −1, 3 et −2 donnent 6, 2 et 12."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Graphiquement, que représentent les racines d'un polynôme du second degré ?",
+      "propositions": [
+        "Les ordonnées des points où sa courbe coupe l'axe des ordonnées",
+        "Les coordonnées du sommet de sa courbe",
+        "Les abscisses des points où sa courbe coupe l'axe des ordonnées",
+        "Les abscisses des points où sa courbe coupe l'axe des abscisses"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "Une racine x₀ vérifie f(x₀) = 0 : le point (x₀ ; 0) est sur la courbe et sur l'axe des abscisses."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:020",
+      "type": "qcm_unique",
+      "enonce": "On écrit f(x) = (3 − x)(x + 4) sous la forme a(x − x₁)(x − x₂). Quelle est la valeur de a ?",
+      "propositions": [
+        "−1",
+        "1",
+        "3",
+        "−3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "3 − x = −(x − 3), donc f(x) = −1 × (x − 3)(x + 4) : a = −1 (c'est aussi le coefficient de x²)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction polynôme a pour racines −2 et 4 et vérifie f(0) = 16 ?",
+      "propositions": [
+        "f(x) = 2(x + 2)(x − 4)",
+        "f(x) = −2(x + 2)(x − 4)",
+        "f(x) = −2(x − 2)(x + 4)",
+        "f(x) = 16(x + 2)(x − 4)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Forme factorisée et racines",
+      "explication": "f(x) = a(x + 2)(x − 4) et f(0) = −8a = 16, donc a = −2. La troisième proposition vaut bien 16 en 0, mais ses racines sont 2 et −4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Une parabole coupe l'axe des abscisses en 1 et en 5 et passe par A(3 ; −8). Quelle est son équation ?",
+      "propositions": [
+        "y = −2(x − 1)(x − 5)",
+        "y = 2(x + 1)(x + 5)",
+        "y = 2(x − 1)(x − 5)",
+        "y = −8(x − 1)(x − 5)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Forme factorisée et racines",
+      "explication": "y = a(x − 1)(x − 5) ; en x = 3 : a × 2 × (−2) = −4a = −8, donc a = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:023",
+      "type": "qcm_multiple",
+      "enonce": "Quels nombres sont des racines de f(x) = −(x + 3)(4x − 1) ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "−3",
+        "1/4",
+        "3",
+        "4",
+        "−1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "x + 3 = 0 donne −3 ; 4x − 1 = 0 donne 1/4. Le signe − devant ne s'annule pas."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:024",
+      "type": "qcm_multiple",
+      "enonce": "Que peut-on dire du polynôme g(x) = 5(x − 1)² ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Il a une seule racine, 1",
+        "Il est positif ou nul pour tout réel x",
+        "Il a pour racines 1 et −1",
+        "Il a pour racine 5",
+        "Il s'annule en 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "(x − 1)² = 0 seulement pour x = 1 (racine double) ; 5 > 0 et un carré est positif, donc g(x) ⩾ 0."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:025",
+      "type": "qcm_multiple",
+      "enonce": "Quelles fonctions s'annulent à la fois en 2 et en −3 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x ↦ (x − 2)(x + 3)",
+        "x ↦ −4(x − 2)(x + 3)",
+        "x ↦ x² + x − 6",
+        "x ↦ (x + 2)(x − 3)",
+        "x ↦ x² − x − 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "Ce sont les a(x − 2)(x + 3) avec a ≠ 0 ; x² + x − 6 = (x − 2)(x + 3). Les deux dernières s'annulent en −2 et 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:026",
+      "type": "vrai_faux",
+      "enonce": "Les racines de (x − 4)(x + 7) sont −4 et 7.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "x − 4 = 0 donne 4 et x + 7 = 0 donne −7 : les racines sont 4 et −7."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:027",
+      "type": "vrai_faux",
+      "enonce": "Il existe une infinité de fonctions polynômes du second degré qui s'annulent en 0 et en 1.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "Ce sont toutes les fonctions x ↦ a x(x − 1), pour chaque réel a non nul."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:028",
+      "type": "vrai_faux",
+      "enonce": "Le nombre 0 est une racine de x² − 9x.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Forme factorisée et racines",
+      "explication": "0² − 9 × 0 = 0. D'ailleurs x² − 9x = x(x − 9) : racines 0 et 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:029",
+      "type": "reponse_courte",
+      "enonce": "Le polynôme f(x) = 2(x + 4)(x − 6) a deux racines. Quelle est la plus petite ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-4",
+        "−4"
+      ],
+      "difficulte": 2,
+      "notion": "Forme factorisée et racines",
+      "explication": "Racines : x + 4 = 0 donne −4 et x − 6 = 0 donne 6. La plus petite est −4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:030",
+      "type": "reponse_courte",
+      "enonce": "On cherche f(x) = a(x − 1)(x − 3) telle que f(2) = 5. Quelle est la valeur de a ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-5",
+        "−5"
+      ],
+      "difficulte": 3,
+      "notion": "Forme factorisée et racines",
+      "explication": "f(2) = a × 1 × (−1) = −a = 5, donc a = −5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Le trinôme 2x² − 6x + 1 a deux racines. Que vaut leur somme ?",
+      "propositions": [
+        "−3",
+        "6",
+        "1/2",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "S = −b/a = 6/2 = 3 (Δ = 36 − 8 = 28 > 0, les racines existent)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Le trinôme x² + 5x − 14 a deux racines. Que vaut leur produit ?",
+      "propositions": [
+        "−14",
+        "14",
+        "5",
+        "−5"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "P = c/a = −14/1 = −14. Les racines sont 2 et −7."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Quelles formules donnent la somme S et le produit P des racines de ax² + bx + c (a ≠ 0) ?",
+      "propositions": [
+        "S = b/a et P = c/a",
+        "S = −b/a et P = c/a",
+        "S = −b/a et P = −c/a",
+        "S = c/a et P = −b/a"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "En développant a(x − x₁)(x − x₂) = ax² − a(x₁ + x₂)x + ax₁x₂, on identifie b = −aS et c = aP."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Le nombre 1 est racine de 4x² − 9x + 5. Quelle est l'autre racine ?",
+      "propositions": [
+        "−5/4",
+        "9/4",
+        "5/4",
+        "5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "Le produit des racines vaut c/a = 5/4 ; comme l'une vaut 1, l'autre vaut 5/4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Le nombre −2 est racine de x² + 7x + 10. Quelle est l'autre racine ?",
+      "propositions": [
+        "5",
+        "−3",
+        "−10",
+        "−5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "Produit : c/a = 10, donc l'autre racine vaut 10/(−2) = −5 (et la somme −2 − 5 = −7 = −b/a)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Quel trinôme a pour racines 3 et −1 ?",
+      "propositions": [
+        "x² − 2x − 3",
+        "x² + 2x − 3",
+        "x² − 2x + 3",
+        "x² + 2x + 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "Somme 2, produit −3 : x² − Sx + P = x² − 2x − 3 = (x − 3)(x + 1)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur de c le trinôme x² − 6x + c a-t-il deux racines dont l'une est le double de l'autre ?",
+      "propositions": [
+        "9",
+        "8",
+        "4",
+        "−8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Somme et produit des racines",
+      "explication": "Racines r et 2r : 3r = 6 (somme), donc r = 2 ; c = produit = 2 × 4 = 8."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Les racines x₁ et x₂ de x² − 4x + 1 vérifient x₁ + x₂ = 4 et x₁x₂ = 1. Que vaut x₁² + x₂² ?",
+      "propositions": [
+        "16",
+        "18",
+        "14",
+        "15"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Somme et produit des racines",
+      "explication": "x₁² + x₂² = (x₁ + x₂)² − 2x₁x₂ = 16 − 2 = 14."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:039",
+      "type": "qcm_multiple",
+      "enonce": "On considère le trinôme 3x² + 12x − 15. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme de ses racines vaut −4",
+        "Le produit de ses racines vaut −5",
+        "La somme de ses racines vaut 12",
+        "Le produit de ses racines vaut −15",
+        "1 est une de ses racines"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "S = −12/3 = −4 ; P = −15/3 = −5 ; 3 + 12 − 15 = 0, donc 1 est racine (l'autre est −5)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:040",
+      "type": "qcm_multiple",
+      "enonce": "Deux réels u et v vérifient u + v = 9 et uv = 20. Coche toutes les réponses exactes.",
+      "propositions": [
+        "u et v sont les solutions de X² − 9X + 20 = 0",
+        "Les deux nombres sont 4 et 5",
+        "u et v sont les solutions de X² + 9X + 20 = 0",
+        "Les deux nombres sont 2 et 10"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "(X − u)(X − v) = X² − 9X + 20, dont les racines sont 4 et 5 (somme 9, produit 20). 2 et 10 ont pour produit 20 mais pour somme 12."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:041",
+      "type": "qcm_multiple",
+      "enonce": "Un trinôme ax² + bx + c a deux racines dont le produit est strictement négatif. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les deux racines sont de signes contraires",
+        "a et c sont de signes contraires",
+        "Les deux racines sont négatives",
+        "Le coefficient b est nul",
+        "Le discriminant est négatif"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "P = c/a < 0 : a et c de signes contraires, et un produit négatif de deux réels signifie qu'ils sont de signes contraires."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:042",
+      "type": "vrai_faux",
+      "enonce": "La somme des racines de x² − 8x + 3 vaut −8.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "S = −b/a = −(−8)/1 = 8, et non −8."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:043",
+      "type": "vrai_faux",
+      "enonce": "Le produit des racines de 2x² + x − 10 vaut −5.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Somme et produit des racines",
+      "explication": "Δ = 1 + 80 = 81 > 0 et P = c/a = −10/2 = −5 (racines 2 et −5/2)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:044",
+      "type": "vrai_faux",
+      "enonce": "Le trinôme x² + x + 1 a deux racines dont la somme vaut −1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Somme et produit des racines",
+      "explication": "Δ = 1 − 4 = −3 < 0 : il n'a pas de racine. La formule S = −b/a ne s'applique que si les racines existent."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:045",
+      "type": "reponse_courte",
+      "enonce": "Deux nombres ont pour somme 17 et pour produit 72. Quel est le plus grand des deux ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "difficulte": 3,
+      "notion": "Somme et produit des racines",
+      "explication": "Ce sont les racines de X² − 17X + 72 = 0 : Δ = 289 − 288 = 1, d'où 8 et 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme canonique de x² + 6x + 11 ?",
+      "propositions": [
+        "(x + 3)² + 11",
+        "(x − 3)² + 2",
+        "(x + 6)² − 25",
+        "(x + 3)² + 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "x² + 6x = (x + 3)² − 9, donc x² + 6x + 11 = (x + 3)² − 9 + 11 = (x + 3)² + 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Par complétion du carré, à quelle expression x² + 10x est-elle égale pour tout réel x ?",
+      "propositions": [
+        "(x + 5)² − 25",
+        "(x + 5)² + 25",
+        "(x + 10)² − 100",
+        "(x + 5)²"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "x² + 2kx = (x + k)² − k² avec k = 5 : x² + 10x = (x + 5)² − 25."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les coordonnées du sommet de la parabole qui représente f(x) = 3(x − 4)² − 7 ?",
+      "propositions": [
+        "(−4 ; −7)",
+        "(4 ; −7)",
+        "(3 ; −7)",
+        "(4 ; 7)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "Forme a(x − α)² + β avec α = 4 et β = −7 : sommet S(4 ; −7)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme canonique de 2x² − 8x + 3 ?",
+      "propositions": [
+        "2(x − 2)² − 1",
+        "(x − 2)² − 5",
+        "2(x − 2)² − 5",
+        "2(x − 4)² + 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "2x² − 8x + 3 = 2(x² − 4x) + 3 = 2[(x − 2)² − 4] + 3 = 2(x − 2)² − 5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Que peut-on dire de f(x) = (x + 1)² − 6 sur ℝ ?",
+      "propositions": [
+        "Son minimum vaut −6, atteint en x = 1",
+        "Son minimum vaut 1, atteint en x = −6",
+        "Son maximum vaut −6, atteint en x = −1",
+        "Son minimum vaut −6, atteint en x = −1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "(x + 1)² ⩾ 0 donc f(x) ⩾ −6, avec égalité pour x = −1 ; a = 1 > 0 : c'est un minimum."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme canonique de x² − 5x + 1 ?",
+      "propositions": [
+        "(x − 5/2)² − 21/4",
+        "(x − 5/2)² + 1",
+        "(x − 5)² − 24",
+        "(x + 5/2)² − 21/4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "x² − 5x = (x − 5/2)² − 25/4, puis −25/4 + 1 = −21/4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:052",
+      "type": "qcm_unique",
+      "enonce": "La courbe de g(x) = −(x − 2)² + 3 est l'image de celle de x ↦ −x² par une translation. Laquelle ?",
+      "propositions": [
+        "2 unités vers la gauche et 3 unités vers le haut",
+        "2 unités vers la droite et 3 unités vers le haut",
+        "3 unités vers la droite et 2 unités vers le haut",
+        "2 unités vers la droite et 3 unités vers le bas"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Forme canonique",
+      "explication": "Le sommet passe de O(0 ; 0) à S(2 ; 3) : décalage de α = 2 horizontalement (vers la droite) et de β = 3 verticalement (vers le haut)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:053",
+      "type": "qcm_multiple",
+      "enonce": "La fonction f est définie sur ℝ par f(x) = −2(x + 3)² + 5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son maximum vaut 5",
+        "Ce maximum est atteint en x = −3",
+        "Son minimum vaut 5",
+        "Le sommet de sa courbe est le point (3 ; 5)",
+        "L'axe de symétrie de sa courbe est la droite x = −3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "α = −3, β = 5 et a = −2 < 0 : maximum 5 atteint en −3, sommet (−3 ; 5), axe x = −3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:054",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions sont égales à x² − 4x + 7 pour tout réel x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(x − 2)² + 3",
+        "(x − 2)² + 7",
+        "(x + 2)² + 3",
+        "(x − 2)² − 4 + 7",
+        "(x − 4)² − 9"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "x² − 4x = (x − 2)² − 4, donc x² − 4x + 7 = (x − 2)² − 4 + 7 = (x − 2)² + 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:055",
+      "type": "qcm_multiple",
+      "enonce": "Une fonction s'écrit f(x) = a(x − α)² + β avec a > 0 et β > 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(x) > 0 pour tout réel x",
+        "L'équation f(x) = 0 n'a pas de solution",
+        "f admet un maximum égal à β",
+        "Sa courbe coupe l'axe des abscisses en deux points"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Forme canonique",
+      "explication": "a(x − α)² ⩾ 0, donc f(x) ⩾ β > 0 : f ne s'annule jamais ; β est un minimum."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:056",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel x, x² − 2x = (x − 1)² − 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "(x − 1)² − 1 = x² − 2x + 1 − 1 = x² − 2x."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:057",
+      "type": "vrai_faux",
+      "enonce": "La forme canonique de x² + 4x + 1 est (x + 2)² + 1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "(x + 2)² = x² + 4x + 4, donc x² + 4x + 1 = (x + 2)² − 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:058",
+      "type": "vrai_faux",
+      "enonce": "Dans f(x) = (x + 7)² − 2, l'abscisse du sommet est 7.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Forme canonique",
+      "explication": "(x + 7)² = (x − (−7))² : α = −7 et β = −2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:059",
+      "type": "reponse_courte",
+      "enonce": "On écrit x² + 8x + 20 sous la forme (x + p)² + q. Quelle est la valeur de q ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "4"
+      ],
+      "difficulte": 2,
+      "notion": "Forme canonique",
+      "explication": "x² + 8x = (x + 4)² − 16, donc x² + 8x + 20 = (x + 4)² + 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:060",
+      "type": "reponse_courte",
+      "enonce": "Une balle suit la trajectoire h(t) = −5t² + 20t + 1, où h est la hauteur en mètres et t le temps en secondes. Quelle est la hauteur maximale atteinte, en mètres ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "21"
+      ],
+      "difficulte": 3,
+      "notion": "Forme canonique",
+      "explication": "h(t) = −5(t − 2)² + 21 : α = −20/(−10) = 2 et h(2) = −20 + 40 + 1 = 21."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Quel est le discriminant du trinôme 2x² − 3x − 2 ?",
+      "propositions": [
+        "−7",
+        "−25",
+        "25",
+        "17"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = (−3)² − 4 × 2 × (−2) = 9 + 16 = 25."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrit le discriminant du trinôme ax² + bx + c ?",
+      "propositions": [
+        "Δ = b² + 4ac",
+        "Δ = a² − 4bc",
+        "Δ = b − 4ac",
+        "Δ = b² − 4ac"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "C'est la définition : Δ = b² − 4ac."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Le discriminant d'une équation du second degré vaut −12. Combien a-t-elle de solutions réelles ?",
+      "propositions": [
+        "Aucune",
+        "Une",
+        "Deux",
+        "Une infinité"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "Si Δ < 0, l'équation n'a aucune solution réelle."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Combien de solutions réelles a l'équation x² − 6x + 9 = 0 ?",
+      "propositions": [
+        "Deux, 3 et −3",
+        "Une seule, x = 3",
+        "Aucune",
+        "Une seule, x = −3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 36 − 36 = 0 : une solution, −b/(2a) = 6/2 = 3. D'ailleurs x² − 6x + 9 = (x − 3)²."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les solutions de l'équation x² − 2x − 1 = 0 ?",
+      "propositions": [
+        "−1 − √2 et −1 + √2",
+        "1 − √8 et 1 + √8",
+        "1 − √2 et 1 + √2",
+        "2 − √2 et 2 + √2"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 4 + 4 = 8 et √8 = 2√2, donc x = (2 ± 2√2)/2 = 1 ± √2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les solutions de l'équation x² = 3x + 4 ?",
+      "propositions": [
+        "1 et −4",
+        "1 et 4",
+        "Il n'y en a pas",
+        "−1 et 4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "On se ramène à x² − 3x − 4 = 0 : Δ = 9 + 16 = 25, x = (3 − 5)/2 = −1 ou x = (3 + 5)/2 = 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les solutions de 3x² + 5x − 2 = 0 ?",
+      "propositions": [
+        "−2 et 1/3",
+        "2 et −1/3",
+        "−2 et −1/3",
+        "−2 et 1/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 25 + 24 = 49, √Δ = 7 : x = (−5 − 7)/6 = −2 ou x = (−5 + 7)/6 = 1/3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle valeur du paramètre m l'équation x² − 4x + m = 0 a-t-elle une unique solution ?",
+      "propositions": [
+        "−4",
+        "4",
+        "16",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Discriminant et résolution",
+      "explication": "Une seule solution quand Δ = 16 − 4m = 0, soit m = 4 (la solution est alors 2)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:069",
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces équations ont deux solutions réelles distinctes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x² − 5x + 6 = 0",
+        "x² + 2x + 5 = 0",
+        "−x² + 3x + 4 = 0",
+        "x² − 4x + 4 = 0",
+        "2x² − 7 = 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "Discriminants : 1, −16, 25, 0 et 56. Seuls les discriminants strictement positifs donnent deux solutions."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:070",
+      "type": "qcm_multiple",
+      "enonce": "On étudie l'équation 4x² − 12x + 9 = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son discriminant est nul",
+        "Elle a pour unique solution 3/2",
+        "Elle a deux solutions opposées",
+        "Elle n'a pas de solution",
+        "Le trinôme 4x² − 12x + 9 est égal à (2x − 3)²"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 144 − 144 = 0 ; x₀ = 12/8 = 3/2 ; et (2x − 3)² = 4x² − 12x + 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:071",
+      "type": "qcm_multiple",
+      "enonce": "Un trinôme ax² + bx + c vérifie a > 0 et c < 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Son discriminant est strictement positif",
+        "L'équation ax² + bx + c = 0 a deux solutions",
+        "Ses racines sont de même signe",
+        "Sa courbe ne coupe pas l'axe des abscisses",
+        "Ses racines ont un produit négatif"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Discriminant et résolution",
+      "explication": "−4ac > 0 et b² ⩾ 0, donc Δ > 0 : deux racines, de produit c/a < 0, donc de signes contraires."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:072",
+      "type": "vrai_faux",
+      "enonce": "Si Δ > 0, l'équation ax² + bx + c = 0 (a ≠ 0) a exactement deux solutions réelles.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Discriminant et résolution",
+      "explication": "C'est le théorème de résolution : (−b − √Δ)/(2a) et (−b + √Δ)/(2a), distinctes car √Δ ≠ 0."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:073",
+      "type": "vrai_faux",
+      "enonce": "Le discriminant de x² − 5x + 1 vaut 21, donc l'équation x² − 5x + 1 = 0 n'a pas de solution.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 25 − 4 = 21 > 0 : l'équation a deux solutions, (5 − √21)/2 et (5 + √21)/2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:074",
+      "type": "vrai_faux",
+      "enonce": "L'équation −x² + 4x − 5 = 0 admet deux solutions réelles.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 16 − 4 × (−1) × (−5) = 16 − 20 = −4 < 0 : aucune solution."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:075",
+      "type": "reponse_courte",
+      "enonce": "On résout 2x² + 3x − 5 = 0. Quelle est la solution négative ? Donne sa valeur décimale exacte.",
+      "reponses_acceptees": [
+        "-2,5",
+        "−2,5",
+        "-2.5",
+        "−2.5",
+        "-5/2",
+        "−5/2"
+      ],
+      "difficulte": 3,
+      "notion": "Discriminant et résolution",
+      "explication": "Δ = 9 + 40 = 49 : x = (−3 − 7)/4 = −2,5 ou x = (−3 + 7)/4 = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:076",
+      "type": "qcm_unique",
+      "enonce": "Le trinôme x² − 2x − 3 a pour racines −1 et 3. Sur quel ensemble est-il strictement négatif ?",
+      "propositions": [
+        "]−∞ ; −1[ ∪ ]3 ; +∞[",
+        "[−1 ; 3]",
+        "]−1 ; 3[",
+        "]−3 ; 1["
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "a = 1 > 0 : le trinôme est du signe de a à l'extérieur des racines, donc négatif entre elles (strictement, crochets ouverts)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:077",
+      "type": "qcm_unique",
+      "enonce": "Un trinôme a un discriminant négatif et un coefficient a = −2. Quel est son signe ?",
+      "propositions": [
+        "Strictement positif pour tout réel x",
+        "Positif entre ses racines",
+        "Il change de signe une fois",
+        "Strictement négatif pour tout réel x"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "Si Δ < 0, le trinôme est strictement du signe de a pour tout x ; ici a < 0."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:078",
+      "type": "qcm_unique",
+      "enonce": "Quel est le signe de f(x) = −3(x − 1)(x − 4) pour x = 2 ?",
+      "propositions": [
+        "Strictement positif",
+        "Strictement négatif",
+        "Nul",
+        "On ne peut pas le savoir sans développer"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "f(2) = −3 × 1 × (−2) = 6 > 0 : 2 est entre les racines 1 et 4, où le trinôme est du signe contraire de a = −3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:079",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de l'inéquation −x² + x + 6 ⩾ 0 ?",
+      "propositions": [
+        "]−∞ ; −2] ∪ [3 ; +∞[",
+        "[−2 ; 3]",
+        "]−2 ; 3[",
+        "[−3 ; 2]"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "Δ = 1 + 24 = 25, racines −2 et 3 ; a = −1 < 0, donc le trinôme est positif entre les racines, bornes comprises (⩾)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:080",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de x² + 2x + 5 > 0 ?",
+      "propositions": [
+        "∅",
+        "]−∞ ; −1[",
+        "ℝ",
+        "]−1 ; +∞["
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "Δ = 4 − 20 = −16 < 0 et a = 1 > 0 : le trinôme est strictement positif pour tout x."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:081",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de l'inéquation 2x² < 8x ?",
+      "propositions": [
+        "]−∞ ; 4[",
+        "]4 ; +∞[",
+        "]−∞ ; 0[ ∪ ]4 ; +∞[",
+        "]0 ; 4["
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "2x² − 8x < 0 ⇔ 2x(x − 4) < 0 : racines 0 et 4, a = 2 > 0, négatif entre les racines. Diviser par x ferait perdre l'information sur le signe."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:082",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de x² − 4x + 4 > 0 ?",
+      "propositions": [
+        "]−∞ ; 2[ ∪ ]2 ; +∞[",
+        "ℝ",
+        "∅",
+        "]2 ; +∞["
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Signe et inéquations",
+      "explication": "x² − 4x + 4 = (x − 2)² : strictement positif sauf en 2, où il est nul."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "On considère f(x) = x² − 9, dont les racines sont −3 et 3. Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(0) < 0",
+        "f(4) > 0",
+        "f(x) > 0 pour tout x de ]−3 ; 3[",
+        "f(x) ⩽ 0 pour tout x de [−3 ; 3]",
+        "f(−5) < 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "a = 1 > 0 : f est négatif entre −3 et 3 (nul aux bornes), positif ailleurs. f(0) = −9, f(4) = 7, f(−5) = 16."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Quels réels x vérifient (x + 2)(5 − x) > 0 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "0",
+        "4",
+        "−3",
+        "5",
+        "6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "Le produit est positif strictement entre les racines −2 et 5 (coefficient de x² égal à −1). 5 l'annule ; −3 et 6 sont à l'extérieur."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "On sait que ax² + bx + c > 0 pour tout réel x (avec a ≠ 0). Coche toutes les réponses exactes.",
+      "propositions": [
+        "a > 0",
+        "Δ < 0",
+        "c > 0",
+        "b > 0",
+        "Δ > 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Signe et inéquations",
+      "explication": "Le trinôme ne s'annule jamais (Δ < 0) et reste du signe de a, donc a > 0 ; en x = 0, c = f(0) > 0. Le signe de b est quelconque (x² − x + 1 > 0)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:086",
+      "type": "vrai_faux",
+      "enonce": "Un trinôme du second degré est toujours du signe de a entre ses racines.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "C'est l'inverse : il est du signe de a à l'extérieur des racines et du signe contraire entre elles."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:087",
+      "type": "vrai_faux",
+      "enonce": "L'inéquation x² + 1 < 0 n'a aucune solution réelle.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "x² ⩾ 0, donc x² + 1 ⩾ 1 > 0 pour tout réel x."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:088",
+      "type": "vrai_faux",
+      "enonce": "L'ensemble des solutions de x² ⩾ 9 est [3 ; +∞[.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Signe et inéquations",
+      "explication": "x² − 9 = (x − 3)(x + 3) ⩾ 0 à l'extérieur des racines : S = ]−∞ ; −3] ∪ [3 ; +∞[. Par exemple (−4)² = 16 ⩾ 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:089",
+      "type": "reponse_courte",
+      "enonce": "Quel est le plus grand entier x tel que (x − 3)(x + 2) < 0 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "2"
+      ],
+      "difficulte": 1,
+      "notion": "Signe et inéquations",
+      "explication": "Le produit est négatif strictement entre −2 et 3 ; 3 est exclu, donc le plus grand entier est 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:090",
+      "type": "reponse_courte",
+      "enonce": "Combien d'entiers relatifs x vérifient x² − 3x − 10 ⩽ 0 ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "8"
+      ],
+      "difficulte": 3,
+      "notion": "Signe et inéquations",
+      "explication": "Δ = 9 + 40 = 49, racines −2 et 5 ; a > 0, donc S = [−2 ; 5], qui contient les 8 entiers −2, −1, 0, 1, 2, 3, 4, 5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:091",
+      "type": "qcm_unique",
+      "enonce": "Pour résoudre l'équation f(x) = 0 quand f est du second degré, quelle écriture de f est la plus directe ?",
+      "propositions": [
+        "La forme canonique",
+        "La forme factorisée",
+        "La forme développée",
+        "Le calcul de f(0)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Avec a(x − x₁)(x − x₂), l'équation produit nul donne immédiatement x₁ et x₂."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:092",
+      "type": "qcm_unique",
+      "enonce": "Quelle écriture d'une fonction du second degré donne directement les coordonnées du sommet de sa courbe ?",
+      "propositions": [
+        "La forme factorisée",
+        "La forme développée",
+        "La forme canonique",
+        "Le discriminant"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Dans a(x − α)² + β, le sommet est S(α ; β)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:093",
+      "type": "qcm_unique",
+      "enonce": "On donne g(x) = −x² + 2x + 8 = −(x − 1)² + 9 = −(x + 2)(x − 4). Que vaut g(0) ?",
+      "propositions": [
+        "9",
+        "−8",
+        "4",
+        "8"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "La forme développée donne directement g(0) = c = 8."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:094",
+      "type": "qcm_unique",
+      "enonce": "On donne g(x) = −x² + 2x + 8 = −(x − 1)² + 9 = −(x + 2)(x − 4). Quel est le maximum de g sur ℝ ?",
+      "propositions": [
+        "9, atteint en x = 1",
+        "8, atteint en x = 0",
+        "9, atteint en x = −1",
+        "1, atteint en x = 9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Forme canonique : −(x − 1)² ⩽ 0, donc g(x) ⩽ 9, avec égalité en x = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:095",
+      "type": "qcm_unique",
+      "enonce": "On donne g(x) = −x² + 2x + 8 = −(x − 1)² + 9 = −(x + 2)(x − 4). Quelles sont les solutions de l'équation g(x) = 8 ?",
+      "propositions": [
+        "−2 et 4",
+        "0 et 2",
+        "1 seulement",
+        "0 et −2"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Forme développée : −x² + 2x + 8 = 8 ⇔ −x² + 2x = 0 ⇔ x(2 − x) = 0 ⇔ x = 0 ou x = 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:096",
+      "type": "qcm_unique",
+      "enonce": "On a h(x) = 3(x − 2)² − 12 = 3x² − 12x = 3x(x − 4). Quel est l'ensemble des solutions de h(x) < 0 ?",
+      "propositions": [
+        "]−∞ ; 0[ ∪ ]4 ; +∞[",
+        "]2 ; +∞[",
+        "]0 ; 4[",
+        "]−12 ; 0["
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Forme factorisée : racines 0 et 4, coefficient 3 > 0, donc h est négatif strictement entre 0 et 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Avec 40 m de grillage, on clôture un enclos rectangulaire contre un mur : le côté le long du mur n'est pas grillagé. Quelle aire maximale peut-on obtenir ?",
+      "propositions": [
+        "100 m²",
+        "400 m²",
+        "160 m²",
+        "200 m²"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Avec x la largeur, la longueur vaut 40 − 2x et A(x) = x(40 − 2x) = −2(x − 10)² + 200 : maximum 200 m² pour x = 10 m."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:098",
+      "type": "qcm_unique",
+      "enonce": "Le bénéfice d'une entreprise, en milliers d'euros, vaut B(q) = −2q² + 24q − 40 pour q centaines d'objets vendus. Pour quelle valeur de q ce bénéfice est-il maximal ?",
+      "propositions": [
+        "q = 6",
+        "q = 12",
+        "q = 32",
+        "q = 2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Choisir la forme adaptée",
+      "explication": "α = −24/(2 × (−2)) = 6 et a < 0 : le maximum, B(6) = 32, est atteint pour q = 6. Les racines 2 et 10 annulent le bénéfice."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "On donne la forme canonique f(x) = 4(x + 1)² − 3. Quelles informations lit-on directement sur cette écriture ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "Le minimum de f, égal à −3",
+        "L'abscisse du sommet, égale à −1",
+        "Le sens de variation de f",
+        "Les racines de f",
+        "Que la courbe est tournée vers le bas"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "a = 4 > 0, α = −1, β = −3 : minimum −3 en −1, f décroît puis croît. Les racines demandent un calcul ; la courbe est tournée vers le haut."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "On a f(x) = x² − x − 12 = (x − 4)(x + 3). Coche toutes les réponses exactes.",
+      "propositions": [
+        "f(x) < 0 sur ]−3 ; 4[",
+        "f(0) = −12",
+        "Les solutions de f(x) = 0 sont 4 et −3",
+        "f(x) > 0 sur ]−3 ; 4[",
+        "Les solutions de f(x) = −12 sont 0 et −1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Racines 4 et −3, a = 1 > 0 : négatif entre les racines. f(x) = −12 ⇔ x² − x = 0 ⇔ x = 0 ou x = 1."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Soit f(x) = 2x² + 4x − 6. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Sa forme canonique est 2(x + 1)² − 8",
+        "Sa forme factorisée est 2(x − 1)(x + 3)",
+        "Son minimum vaut −6",
+        "f est croissante sur [−1 ; +∞[",
+        "Sa forme factorisée est 2(x + 1)(x − 3)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Choisir la forme adaptée",
+      "explication": "2(x + 1)² − 8 = 2x² + 4x − 6 ; racines 1 et −3 ; minimum −8 en −1, puis f croît."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:102",
+      "type": "vrai_faux",
+      "enonce": "La forme factorisée d'un trinôme permet de dresser directement son tableau de signes.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "On étudie le signe de chaque facteur du premier degré et on applique la règle des signes."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:103",
+      "type": "vrai_faux",
+      "enonce": "Pour résoudre f(x) = f(0) avec f(x) = ax² + bx + c, la forme développée conduit à ax² + bx = 0.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "f(0) = c, donc f(x) = c ⇔ ax² + bx = 0 ⇔ x(ax + b) = 0 : solutions 0 et −b/a."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:104",
+      "type": "vrai_faux",
+      "enonce": "Pour trouver l'extremum d'une fonction du second degré, c'est la forme factorisée qu'il faut privilégier.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Choisir la forme adaptée",
+      "explication": "C'est la forme canonique a(x − α)² + β qui donne l'extremum β, atteint en α."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:105",
+      "type": "reponse_courte",
+      "enonce": "On donne f(x) = (x − 3)(x + 5) = x² + 2x − 15 = (x + 1)² − 16. Quelle est l'ordonnée du point d'intersection de la courbe de f avec l'axe des ordonnées ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "-15",
+        "−15"
+      ],
+      "difficulte": 1,
+      "notion": "Choisir la forme adaptée",
+      "explication": "Il s'agit de f(0), lu sur la forme développée : f(0) = −15."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:106",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la factorisation de x² − 10x + 25 ?",
+      "propositions": [
+        "(x + 5)²",
+        "(x − 5)²",
+        "(x − 5)(x + 5)",
+        "(x − 25)²"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "Identité remarquable a² − 2ab + b² = (a − b)² avec a = x, b = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:107",
+      "type": "qcm_unique",
+      "enonce": "Comment factoriser 9x² − 4 ?",
+      "propositions": [
+        "(9x − 2)(9x + 2)",
+        "(3x − 2)²",
+        "(3x − 2)(3x + 2)",
+        "(3x − 4)(3x + 1)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "9x² − 4 = (3x)² − 2² = (3x − 2)(3x + 2)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:108",
+      "type": "qcm_unique",
+      "enonce": "Quelle est une factorisation de 5x² − 3x ?",
+      "propositions": [
+        "5x(x − 3)",
+        "x²(5 − 3x)",
+        "x(5 − 3x)",
+        "x(5x − 3)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "x est facteur commun : 5x² − 3x = x × 5x − x × 3 = x(5x − 3)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:109",
+      "type": "qcm_unique",
+      "enonce": "Le trinôme 3x² + 2x − 5 a pour racine évidente 1. Quelle est sa forme factorisée ?",
+      "propositions": [
+        "(x − 1)(3x + 5)",
+        "(x − 1)(3x − 5)",
+        "(x + 1)(3x − 5)",
+        "3(x − 1)(x + 5)"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "a + b + c = 0, donc 1 est racine et l'autre vaut c/a = −5/3 : 3(x − 1)(x + 5/3) = (x − 1)(3x + 5)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:110",
+      "type": "qcm_unique",
+      "enonce": "En cherchant deux entiers de somme 7 et de produit 12, on factorise x² − 7x + 12. Quel résultat obtient-on ?",
+      "propositions": [
+        "(x + 3)(x + 4)",
+        "(x − 3)(x − 4)",
+        "(x − 2)(x − 6)",
+        "(x − 1)(x − 12)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "3 + 4 = 7 et 3 × 4 = 12 : les racines sont 3 et 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:111",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme factorisée de x² + x − 6 ?",
+      "propositions": [
+        "(x + 2)(x − 3)",
+        "(x − 1)(x + 6)",
+        "(x − 2)(x + 3)",
+        "(x + 1)(x − 6)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "On cherche deux nombres de somme −1 et de produit −6 : 2 et −3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:112",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces trinômes admet −1 comme racine évidente ?",
+      "propositions": [
+        "2x² − 5x + 3",
+        "x² + 5x − 6",
+        "3x² − 2x − 4",
+        "2x² + 5x + 3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Factorisation directe",
+      "explication": "−1 est racine quand a − b + c = 0 : 2 − 5 + 3 = 0. Alors 2x² + 5x + 3 = (x + 1)(2x + 3)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:113",
+      "type": "qcm_multiple",
+      "enonce": "Quelles écritures sont des factorisations exactes de x² − 16 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(x − 4)(x + 4)",
+        "(x − 4)²",
+        "(4 − x)(4 + x)",
+        "−(4 − x)(x + 4)",
+        "(x − 8)(x + 8)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "x² − 16 = (x − 4)(x + 4) ; −(4 − x) = x − 4. En revanche (4 − x)(4 + x) = 16 − x²."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:114",
+      "type": "qcm_multiple",
+      "enonce": "Quels trinômes ont le nombre 1 pour racine ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x² + 4x − 5",
+        "2x² − 7x + 5",
+        "x² + x + 2",
+        "3x² − 3",
+        "x² − 3x − 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "1 est racine si a + b + c = 0 : 1 + 4 − 5 = 0, 2 − 7 + 5 = 0, 3 − 3 = 0. Les deux autres donnent 4 et −4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:115",
+      "type": "qcm_multiple",
+      "enonce": "On veut factoriser 2x² − 2x − 12. Quelles écritures conviennent ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2(x − 3)(x + 2)",
+        "(x − 3)(2x + 4)",
+        "(2x − 6)(x + 2)",
+        "2(x + 3)(x − 2)",
+        "(x − 3)(x + 2)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Factorisation directe",
+      "explication": "2x² − 2x − 12 = 2(x² − x − 6) = 2(x − 3)(x + 2) ; on peut distribuer le 2 dans l'un des facteurs. Sans le facteur 2, l'égalité est fausse."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Pour tout réel x, x² + 4 = (x − 2)(x + 2).",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "(x − 2)(x + 2) = x² − 4. D'ailleurs x² + 4 ⩾ 4 n'a pas de racine, il ne se factorise pas."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Si a + b + c = 0, alors 1 est une racine du trinôme ax² + bx + c.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "En x = 1, ax² + bx + c vaut a + b + c = 0."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Le trinôme 4x² + 12x + 9 est le carré de 2x + 3.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Factorisation directe",
+      "explication": "(2x + 3)² = 4x² + 2 × 2x × 3 + 9 = 4x² + 12x + 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:119",
+      "type": "reponse_courte",
+      "enonce": "On factorise x² − 49 sous la forme (x − p)(x + p) avec p > 0. Quelle est la valeur de p ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "7"
+      ],
+      "difficulte": 1,
+      "notion": "Factorisation directe",
+      "explication": "x² − 49 = x² − 7² = (x − 7)(x + 7)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:120",
+      "type": "reponse_courte",
+      "enonce": "Par somme et produit, on factorise x² − 11x + 24 = (x − p)(x − q) avec p < q. Quelle est la valeur de q ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "8"
+      ],
+      "difficulte": 3,
+      "notion": "Factorisation directe",
+      "explication": "On cherche deux entiers de somme 11 et de produit 24 : 3 et 8. Donc q = 8."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:121",
+      "type": "qcm_unique",
+      "enonce": "L'implication « x = 3 ⇒ x² = 9 » est vraie. Quelle est sa réciproque ?",
+      "propositions": [
+        "x² = 9 ⇒ x = 3",
+        "x ≠ 3 ⇒ x² ≠ 9",
+        "x² ≠ 9 ⇒ x ≠ 3",
+        "x = −3 ⇒ x² = 9"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "La réciproque de P ⇒ Q est Q ⇒ P. Ici elle est fausse : x = −3 vérifie x² = 9."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:122",
+      "type": "qcm_unique",
+      "enonce": "L'égalité (x − 3)² = x² − 6x + 9 est vraie pour tout réel x. Comment appelle-t-on une telle égalité ?",
+      "propositions": [
+        "Une équation",
+        "Une identité",
+        "Une inéquation",
+        "Une définition de fonction"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "Une égalité vraie pour toutes les valeurs de la lettre est une identité ; une équation n'est vraie que pour certaines valeurs."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:123",
+      "type": "qcm_unique",
+      "enonce": "On discute le nombre de solutions de x² + mx + 1 = 0 selon les valeurs de m. Quel est le statut de la lettre m ?",
+      "propositions": [
+        "Une inconnue",
+        "Une variable",
+        "Un paramètre",
+        "Une racine"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "m est fixé mais quelconque : c'est un paramètre. L'inconnue est x."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:124",
+      "type": "qcm_unique",
+      "enonce": "Si l'implication P ⇒ Q est vraie, que peut-on dire de Q ?",
+      "propositions": [
+        "Q est une condition suffisante pour P",
+        "Q est équivalente à P",
+        "Q est la négation de P",
+        "Q est une condition nécessaire pour P"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "Pour que P soit vraie, il faut que Q le soit : Q est nécessaire pour P (et P est suffisante pour Q)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:125",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces propositions est vraie quel que soit le réel x ?",
+      "propositions": [
+        "x = 2 ⇒ x² = 4",
+        "x² = 4 ⇒ x = 2",
+        "x² = 4 ⇔ x = 2",
+        "x > −2 ⇒ x² > 4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "Si x = 2, alors x² = 4. Les autres ont des contre-exemples : x = −2 pour les deux suivantes, x = 0 pour la dernière."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:126",
+      "type": "qcm_unique",
+      "enonce": "Pour que le trinôme ax² + bx + c ait un discriminant strictement positif, que représente la condition « a et c sont de signes contraires » ?",
+      "propositions": [
+        "Une condition nécessaire mais pas suffisante",
+        "Une condition suffisante mais pas nécessaire",
+        "Une condition nécessaire et suffisante",
+        "Une condition ni nécessaire ni suffisante"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "Si ac < 0, alors Δ = b² − 4ac > 0 : elle suffit. Mais x² − 5x + 6 a Δ = 1 > 0 avec a et c positifs : elle n'est pas nécessaire."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:127",
+      "type": "qcm_unique",
+      "enonce": "Quelle chaîne d'équivalences résout correctement l'équation x² = 5x ?",
+      "propositions": [
+        "x² = 5x ⇔ x = 5",
+        "x² = 5x ⇔ x = 0",
+        "x² = 5x ⇔ x(x − 5) = 0 ⇔ x = 0 ou x = 5",
+        "x² = 5x ⇔ x = √5 ou x = −√5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "Diviser par x n'est pas une équivalence (on perd la solution 0). On factorise : x² − 5x = x(x − 5)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:128",
+      "type": "qcm_unique",
+      "enonce": "Pour quelles valeurs du paramètre m l'équation x² + mx + 1 = 0 n'a-t-elle aucune solution réelle ?",
+      "propositions": [
+        "m < −2 ou m > 2",
+        "m = −2 ou m = 2",
+        "m < 4",
+        "−2 < m < 2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Vocabulaire logique",
+      "explication": "Δ = m² − 4 = (m − 2)(m + 2) < 0 entre les racines −2 et 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:129",
+      "type": "qcm_multiple",
+      "enonce": "Quelles égalités sont des identités, c'est-à-dire vraies pour tout réel x ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "(x + 1)² = x² + 2x + 1",
+        "x² − 1 = (x − 1)(x + 1)",
+        "x² = 2x",
+        "(x − 2)² = x² − 4",
+        "x² + 2x = (x + 1)² − 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "Les trois identités se vérifient en développant. x² = 2x est une équation (solutions 0 et 2) ; (x − 2)² = x² − 4x + 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:130",
+      "type": "qcm_multiple",
+      "enonce": "Quelles conditions sont suffisantes pour que x² > 9 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "x > 3",
+        "x < −3",
+        "x > 2",
+        "x = −4",
+        "x ≠ 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "x² > 9 ⇔ x < −3 ou x > 3. « x > 2 » ne suffit pas (x = 2,5 donne 6,25) ; « x ≠ 3 » non plus (x = 0)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:131",
+      "type": "qcm_multiple",
+      "enonce": "Le réel m est un paramètre et on considère l'équation x² − 2x + m = 0. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Si m < 1, elle a deux solutions",
+        "Si m = 1, elle a une unique solution, 1",
+        "Si m > 1, elle a deux solutions",
+        "« m ⩽ 1 » est une condition nécessaire et suffisante pour qu'elle ait au moins une solution",
+        "Si m = 0, ses solutions sont 0 et −2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Vocabulaire logique",
+      "explication": "Δ = 4 − 4m : positif si m < 1, nul si m = 1 (solution 1), négatif si m > 1. Pour m = 0 : x(x − 2) = 0, solutions 0 et 2."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:132",
+      "type": "vrai_faux",
+      "enonce": "« P ⇔ Q » signifie que les implications P ⇒ Q et Q ⇒ P sont toutes les deux vraies.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Vocabulaire logique",
+      "explication": "C'est la définition de l'équivalence : P est une condition nécessaire et suffisante pour Q."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:133",
+      "type": "vrai_faux",
+      "enonce": "La réciproque d'une implication vraie est toujours vraie.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "Contre-exemple : « x = 3 ⇒ x² = 9 » est vraie, mais sa réciproque « x² = 9 ⇒ x = 3 » est fausse (x = −3)."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Dans l'équation 2x² − 3x − 2 = 0, la lettre x joue le rôle d'un paramètre.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Vocabulaire logique",
+      "explication": "x est l'inconnue : on cherche les valeurs (−1/2 et 2) qui rendent l'égalité vraie. Un paramètre est fixé à l'avance."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:135",
+      "type": "reponse_courte",
+      "enonce": "Pour quelle valeur du paramètre m l'équation x² + 6x + m = 0 admet-elle une racine double ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "9"
+      ],
+      "difficulte": 3,
+      "notion": "Vocabulaire logique",
+      "explication": "Racine double ⇔ Δ = 36 − 4m = 0 ⇔ m = 9 ; alors x² + 6x + 9 = (x + 3)², racine −3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:136",
+      "type": "qcm_unique",
+      "enonce": "Quelles sont les solutions de l'équation (x − 6)(3x + 2) = 0 ?",
+      "propositions": [
+        "6 et −2/3",
+        "−6 et 2/3",
+        "6 et −3/2",
+        "−6 et −2/3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "Produit nul : x − 6 = 0 ou 3x + 2 = 0, soit x = 6 ou x = −2/3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:137",
+      "type": "qcm_unique",
+      "enonce": "Sur quel intervalle l'expression 2x − 6 est-elle strictement positive ?",
+      "propositions": [
+        "]−∞ ; 3[",
+        "]3 ; +∞[",
+        "]−3 ; +∞[",
+        "]6 ; +∞["
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "2x − 6 > 0 ⇔ x > 3 ; le coefficient 2 est positif, donc l'expression est positive à droite de 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:138",
+      "type": "qcm_unique",
+      "enonce": "Quel est le développement réduit de (x − 3)(x + 5) ?",
+      "propositions": [
+        "x² − 2x − 15",
+        "x² + 2x + 15",
+        "x² + 2x − 15",
+        "x² − 15"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "x² + 5x − 3x − 15 = x² + 2x − 15."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:139",
+      "type": "qcm_unique",
+      "enonce": "Quel est le développement de (2x − 1)² ?",
+      "propositions": [
+        "4x² + 1",
+        "2x² − 4x + 1",
+        "4x² − 2x + 1",
+        "4x² − 4x + 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "(a − b)² = a² − 2ab + b² : (2x)² − 2 × 2x × 1 + 1 = 4x² − 4x + 1."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:140",
+      "type": "qcm_unique",
+      "enonce": "Quel est le signe de −3x + 12 lorsque x appartient à ]4 ; +∞[ ?",
+      "propositions": [
+        "Strictement négatif",
+        "Strictement positif",
+        "Nul",
+        "Il change de signe"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "−3x + 12 s'annule en 4 ; le coefficient −3 est négatif, donc l'expression est négative à droite de 4."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:141",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la forme réduite de (x + 2)² − (x − 2)² ?",
+      "propositions": [
+        "0",
+        "8x",
+        "8",
+        "2x² + 8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "(x² + 4x + 4) − (x² − 4x + 4) = 8x. Attention aux signes devant la parenthèse."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:142",
+      "type": "qcm_unique",
+      "enonce": "Quel est l'ensemble des solutions de (x − 1)(x + 2) = (x − 1)(2x − 3) ?",
+      "propositions": [
+        "{5}",
+        "{1 ; −5}",
+        "{1 ; 5}",
+        "{−2 ; 3/2}"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Automatismes de calcul",
+      "explication": "On ne simplifie pas par x − 1 : (x − 1)[(x + 2) − (2x − 3)] = 0 ⇔ (x − 1)(5 − x) = 0 ⇔ x = 1 ou x = 5."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:143",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces écritures, lesquelles sont des factorisations ou réécritures exactes de 2x² − 8 ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "2(x² − 4)",
+        "2(x − 2)(x + 2)",
+        "(2x − 4)(x + 2)",
+        "2(x − 2)²",
+        "(2x − 8)(x + 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "2x² − 8 = 2(x² − 4) = 2(x − 2)(x + 2) = (2x − 4)(x + 2). En revanche 2(x − 2)² = 2x² − 8x + 8."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:144",
+      "type": "qcm_multiple",
+      "enonce": "Pour quelles valeurs de x l'expression (4 − x)(x + 1) est-elle nulle ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "4",
+        "−1",
+        "−4",
+        "1",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "4 − x = 0 donne x = 4 ; x + 1 = 0 donne x = −1."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:145",
+      "type": "qcm_multiple",
+      "enonce": "On considère A(x) = (2x − 1)(x + 3). Coche toutes les réponses exactes.",
+      "propositions": [
+        "A(0) < 0",
+        "A(x) > 0 pour tout x de ]1/2 ; +∞[",
+        "A(x) > 0 pour tout x de ]−3 ; 1/2[",
+        "A s'annule en 1/2 et en −3",
+        "Pour tout x, A(x) = 2x² + 7x − 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Automatismes de calcul",
+      "explication": "Racines 1/2 et −3, coefficient de x² égal à 2 > 0 : A est négatif entre les racines (A(0) = −3) et positif à l'extérieur. A(x) = 2x² + 5x − 3."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:146",
+      "type": "vrai_faux",
+      "enonce": "Un produit de facteurs est nul si et seulement si l'un au moins de ses facteurs est nul.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Automatismes de calcul",
+      "explication": "C'est la règle du produit nul, utilisée pour résoudre les équations factorisées."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:147",
+      "type": "vrai_faux",
+      "enonce": "L'expression 5 − x est positive ou nulle pour tout x de ]−∞ ; 5].",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "5 − x ⩾ 0 ⇔ x ⩽ 5 ; elle est nulle en 5 et strictement positive avant."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:148",
+      "type": "vrai_faux",
+      "enonce": "En développant le carré d'une somme, on obtient (x + 3)² = x² + 9.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "(x + 3)² = x² + 6x + 9 : on oublie souvent le double produit 6x. Pour x = 1 : 16 ≠ 10."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:149",
+      "type": "reponse_courte",
+      "enonce": "On développe et on réduit (3x − 2)(x + 4) sous la forme ax² + bx + c. Quelle est la valeur de b ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "10"
+      ],
+      "difficulte": 2,
+      "notion": "Automatismes de calcul",
+      "explication": "3x² + 12x − 2x − 8 = 3x² + 10x − 8, donc b = 10."
+    },
+    {
+      "source": "maths-spe-1re:ch3:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Quelle est l'unique solution de l'équation (x + 1)² = (x − 3)² ? Réponds par un nombre entier.",
+      "reponses_acceptees": [
+        "1"
+      ],
+      "difficulte": 3,
+      "notion": "Automatismes de calcul",
+      "explication": "x² + 2x + 1 = x² − 6x + 9 ⇔ 8x = 8 ⇔ x = 1 (les termes en x² s'éliminent)."
+    }
+  ]
+}
