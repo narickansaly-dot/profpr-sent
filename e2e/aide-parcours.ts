@@ -1,4 +1,5 @@
 import { expect, type Browser, type BrowserContext, type Page, type TestInfo } from '@playwright/test';
+import type { BonneReponse } from './aide-db';
 
 export function emailDeTest(prefixe: string) {
   return `${prefixe}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}@test.local`;
@@ -23,27 +24,52 @@ export async function inscrireEleve(page: Page, email: string) {
   await terminerBienvenue(page);
 }
 
-/** Clique la proposition `indice` et attend que l'enregistrement (action serveur) soit revenu. */
-export async function cocherEtAttendreSauvegarde(page: Page, indice: number) {
-  const sauvegarde = page.waitForResponse((r) => r.request().method() === 'POST' && 'next-action' in r.request().headers() && r.ok());
-  await page.locator('.choix .option').nth(indice).click();
-  await sauvegarde;
+const attendreActionServeur = (page: Page) =>
+  page.waitForResponse((r) => r.request().method() === 'POST' && 'next-action' in r.request().headers() && r.ok());
+
+async function verifierSauvegarde(page: Page) {
   await expect(page.locator('.sauvegarde')).toHaveText('Réponses enregistrées');
   await expect(page.locator('.lecteur .sauvegarde-erreur')).toHaveCount(0);
   await expect(page.locator('.lecteur [role=alert]')).toHaveCount(0);
 }
 
+/** Clique la proposition `indice` et attend que l'enregistrement (action serveur) soit revenu. */
+export async function cocherEtAttendreSauvegarde(page: Page, indice: number) {
+  const sauvegarde = attendreActionServeur(page);
+  await page.locator('.choix .option').nth(indice).click();
+  await sauvegarde;
+  await verifierSauvegarde(page);
+}
+
+/**
+ * Tape `texte` dans le champ « Ta réponse » puis le quitte (Tab) : la réponse courte ne s'enregistre
+ * qu'à la perte du focus. Attend que l'enregistrement soit revenu.
+ */
+export async function taperEtAttendreSauvegarde(page: Page, texte: string) {
+  await page.getByLabel('Ta réponse').fill(texte);
+  const sauvegarde = attendreActionServeur(page);
+  await page.getByLabel('Ta réponse').blur();
+  await sauvegarde;
+  await verifierSauvegarde(page);
+}
+
+/** Saisit la bonne réponse de la question affichée, quel que soit son type, et attend chaque enregistrement. */
+export async function saisirEtAttendreSauvegarde(page: Page, bonne: BonneReponse) {
+  if (Array.isArray(bonne)) for (const indice of bonne) await cocherEtAttendreSauvegarde(page, indice);
+  else await taperEtAttendreSauvegarde(page, bonne.texte);
+}
+
 /** Répond juste à la question `i` (0-based) du lecteur, vérifie la pastille, puis passe à la suivante (ou termine). */
-export async function repondreJusteQuestion(page: Page, i: number, total: number, bonnes: number[]) {
+export async function repondreJusteQuestion(page: Page, i: number, total: number, bonne: BonneReponse) {
   await expect(page.locator('.lecteur-position').filter({ hasText: new RegExp(`^Question ${i + 1}\\D+${total}$`) })).toBeVisible();
-  for (const indice of bonnes) await cocherEtAttendreSauvegarde(page, indice);
+  await saisirEtAttendreSauvegarde(page, bonne);
   await expect(page.getByRole('button', { name: `Question ${i + 1}, répondue` })).toBeVisible();
   const suivant = i < total - 1 ? 'Suivante →' : 'Terminer';
   await page.getByRole('button', { name: suivant, exact: true }).click();
 }
 
 /** Répond juste à toutes les questions du lecteur puis termine. */
-export async function repondreJuste(page: Page, bonnes: number[][]) {
+export async function repondreJuste(page: Page, bonnes: BonneReponse[]) {
   for (let i = 0; i < bonnes.length; i++) await repondreJusteQuestion(page, i, bonnes.length, bonnes[i]);
 }
 

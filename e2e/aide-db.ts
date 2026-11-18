@@ -17,24 +17,37 @@ export const db = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, 
 });
 
 /**
- * Bonnes réponses d'une tentative, dans l'ordre d'affichage (QCM et vrai ou faux) : réservé aux tests (clé service_role).
+ * Bonne réponse d'une question telle qu'on la saisit dans le lecteur : indices des propositions à cocher
+ * (QCM, vrai ou faux) ou texte à taper dans le champ « Ta réponse » (réponse courte).
+ */
+export type BonneReponse = number[] | { texte: string };
+
+/**
+ * Bonnes réponses d'une tentative, dans l'ordre d'affichage (tous les types) : réservé aux tests (clé service_role).
  * Deux requêtes plutôt qu'une jointure imbriquée : question_corrige n'est pas lisible par les élèves,
  * et on évite de dépendre de la détection de relation de PostgREST.
  */
-export async function bonnesReponsesAffichees(tentativeId: string): Promise<number[][]> {
+export async function bonnesReponsesAffichees(tentativeId: string): Promise<BonneReponse[]> {
   const { data: lignes, error } = await db.from('tentative_question')
     .select('ordre, question_id, permutation').eq('tentative_id', tentativeId).order('ordre');
   if (error || !lignes) throw error ?? new Error('tentative introuvable');
   const { data: corriges, error: erreurCorriges } = await db.from('question_corrige')
-    .select('question_id, bonnes_reponses').in('question_id', lignes.map((l) => l.question_id));
+    .select('question_id, bonnes_reponses, reponses_acceptees').in('question_id', lignes.map((l) => l.question_id));
   if (erreurCorriges || !corriges) throw erreurCorriges ?? new Error('corrigés introuvables');
   const { data: types, error: erreurTypes } = await db.from('question').select('id, type').in('id', lignes.map((l) => l.question_id));
   if (erreurTypes || !types) throw erreurTypes ?? new Error('types introuvables');
   const typeDe = new Map(types.map((t) => [t.id, t.type]));
-  const parQuestion = new Map(corriges.map((c) => [c.question_id, c.bonnes_reponses as (number | boolean)[]]));
-  return lignes.map((ligne) => {
-    const bonnes = parQuestion.get(ligne.question_id);
-    if (!bonnes) throw new Error(`corrigé manquant pour ${ligne.question_id}`);
+  const parQuestion = new Map(corriges.map((c) => [c.question_id, c]));
+  return lignes.map((ligne): BonneReponse => {
+    const corrige = parQuestion.get(ligne.question_id);
+    if (!corrige) throw new Error(`corrigé manquant pour ${ligne.question_id}`);
+    // Réponse courte : la première réponse acceptée, tapée telle quelle, est toujours juste.
+    if (typeDe.get(ligne.question_id) === 'reponse_courte') {
+      const texte = corrige.reponses_acceptees[0];
+      if (!texte) throw new Error(`aucune réponse acceptée pour ${ligne.question_id}`);
+      return { texte };
+    }
+    const bonnes = corrige.bonnes_reponses as (number | boolean)[];
     // Vrai ou faux : « Vrai » est affiché en premier (indice 0), « Faux » en second, sans permutation.
     if (typeDe.get(ligne.question_id) === 'vrai_faux') return [bonnes[0] === true ? 0 : 1];
     return (bonnes as number[]).map((origine) => ligne.permutation.indexOf(origine));
