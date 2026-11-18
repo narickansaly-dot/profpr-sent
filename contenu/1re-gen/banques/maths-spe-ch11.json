@@ -1,0 +1,2358 @@
+{
+  "chapitre": 11,
+  "notions": [
+    "Probabilité conditionnelle",
+    "Tableau croisé",
+    "Arbre pondéré",
+    "Probabilités totales",
+    "Inversion du conditionnement",
+    "Indépendance",
+    "Deux épreuves indépendantes",
+    "Épreuves de Bernoulli répétées",
+    "Méthode de Monte-Carlo"
+  ],
+  "questions": [
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,5 et P(A ∩ B) = 0,2. Que vaut P_A(B) ?",
+      "propositions": [
+        "0,1",
+        "2,5",
+        "0,7",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A(B) = P(A ∩ B)/P(A) = 0,2/0,5 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:001"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un événement A a pour probabilité 0,8 et la probabilité de B sachant A vaut 0,25. Calculer la probabilité de A ∩ B.",
+      "propositions": [
+        "1,05",
+        "0,2",
+        "0,3125",
+        "0,55"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "Formule des probabilités composées : P(A ∩ B) = P(A) × P_A(B) = 0,8 × 0,25 = 0,2.",
+      "source": "maths-spe-1re:ch11:banque:002"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Que désigne la notation P_A(B) ?",
+      "propositions": [
+        "la probabilité que B soit réalisé sachant que A l'est",
+        "la probabilité que A soit réalisé sachant que B l'est",
+        "la probabilité que A et B soient réalisés tous les deux",
+        "la probabilité que A ou B soit réalisé"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "L'événement en indice est celui que l'on sait réalisé : P_A(B) est la probabilité de B sachant A.",
+      "source": "maths-spe-1re:ch11:banque:003"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait seulement que P_A(B) = 0,35. Que vaut P_A(B̄) ?",
+      "propositions": [
+        "0,1225",
+        "on ne peut pas conclure sans connaître P(A)",
+        "0,65",
+        "0,35"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A est une probabilité : P_A(B̄) = 1 − P_A(B) = 1 − 0,35 = 0,65, sans avoir besoin de P(A).",
+      "source": "maths-spe-1re:ch11:banque:004"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Deux événements vérifient P(A) = 0,4, P(B) = 0,5 et P(A ∩ B) = 0,1. Déterminer la probabilité de A sachant B.",
+      "propositions": [
+        "0,04",
+        "0,8",
+        "0,2",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_B(A) = P(A ∩ B)/P(B) = 0,1/0,5 = 0,2 ; 0,25 est P_A(B), qu'il ne faut pas confondre avec P_B(A).",
+      "source": "maths-spe-1re:ch11:banque:005"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Lorsque P(A) ≠ 0, laquelle de ces égalités est vraie pour tout événement B ?",
+      "propositions": [
+        "P(A ∩ B) = P_A(B)/P(A)",
+        "P(A ∩ B) = P(A) × P(B)",
+        "P(A ∩ B) = P(B) × P_A(B)",
+        "P(A ∩ B) = P(A) × P_A(B)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "Par définition P_A(B) = P(A ∩ B)/P(A), donc P(A ∩ B) = P(A) × P_A(B). L'égalité P(A ∩ B) = P(A) × P(B) n'est vraie que pour des événements indépendants.",
+      "source": "maths-spe-1re:ch11:banque:006"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne P(A) = 0,6, P(B) = 0,5 et P(A ∪ B) = 0,8. Quelle est la valeur de P_A(B) ?",
+      "propositions": [
+        "0,375",
+        "0,5",
+        "0,3",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P(A ∩ B) = P(A) + P(B) − P(A ∪ B) = 0,3, puis P_A(B) = 0,3/0,6 = 0,5.",
+      "source": "maths-spe-1re:ch11:banque:007"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sachant que P(A) = 0,4, P(B) = 0,8 et que la probabilité de B sachant A est 0,5, que vaut P_B(A) ?",
+      "propositions": [
+        "0,25",
+        "0,2",
+        "0,5",
+        "0,625"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P(A ∩ B) = 0,4 × 0,5 = 0,2 puis P_B(A) = 0,2/0,8 = 0,25.",
+      "source": "maths-spe-1re:ch11:banque:008"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Soit A un événement de probabilité non nulle et B un événement quelconque. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) + P_A(B̄) = 1",
+        "P_A(A) = 1",
+        "P_A(B) + P_B(A) = 1",
+        "P_A(B) = P_B(A) dans tous les cas",
+        "0 ⩽ P_A(B) ⩽ 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A est une probabilité : ses valeurs sont entre 0 et 1, P_A(B̄) = 1 − P_A(B) et P_A(A) = P(A)/P(A) = 1. En revanche P_A(B) et P_B(A) n'ont pas de lien simple.",
+      "source": "maths-spe-1re:ch11:banque:009"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On connaît P(A) = 0,5 et P(A ∩ B) = 0,15, mais pas P(B). Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) = 0,075",
+        "P(A ∩ B̄) = 0,35",
+        "P_A(B̄) = 0,7",
+        "P_A(B) = 0,3",
+        "P(B) = 0,3"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A(B) = 0,15/0,5 = 0,3, donc P_A(B̄) = 0,7 ; P(A ∩ B̄) = P(A) − P(A ∩ B) = 0,35. P(B) ne peut pas être déterminé avec ces seules données.",
+      "source": "maths-spe-1re:ch11:banque:010"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Dans un lycée, 40 % des élèves sont internes (événement I) et 25 % des internes jouent au rugby (événement R). On choisit un élève au hasard. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_R(I) = 0,25",
+        "P(I) = 0,4",
+        "P(I ∩ R) = 0,1",
+        "P_I(R) = 0,25",
+        "P(I ∩ R) = 0,25"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "« 25 % des internes » est une proportion parmi les internes : P_I(R) = 0,25. Alors P(I ∩ R) = 0,4 × 0,25 = 0,1. P_R(I) n'est pas connu.",
+      "source": "maths-spe-1re:ch11:banque:011"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On donne P(A) = 0,5, P(B) = 0,4 et P_B(A) = 0,75. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) = 0,6",
+        "P_A(B) = 0,75",
+        "P(A ∩ B) = 0,3",
+        "P(A ∪ B) = 0,9",
+        "P(Ā ∩ B) = 0,1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P(A ∩ B) = 0,4 × 0,75 = 0,3 ; P_A(B) = 0,3/0,5 = 0,6 ; P(Ā ∩ B) = 0,4 − 0,3 = 0,1 ; P(A ∪ B) = 0,5 + 0,4 − 0,3 = 0,6.",
+      "source": "maths-spe-1re:ch11:banque:012"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour tous événements A et B de probabilités non nulles, on a P_A(B) = P_B(A).",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "Faux en général : P_A(B) = P(A ∩ B)/P(A) et P_B(A) = P(A ∩ B)/P(B) ont le même numérateur mais des dénominateurs différents.",
+      "source": "maths-spe-1re:ch11:banque:013"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(A) ≠ 0, la probabilité de B sachant A est égale au quotient P(A ∩ B)/P(A).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "C'est la définition de la probabilité conditionnelle P_A(B).",
+      "source": "maths-spe-1re:ch11:banque:014"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(A) ≠ 0, alors P_A(B) est toujours supérieure ou égale à P(A ∩ B).",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A(B) = P(A ∩ B)/P(A) et l'on divise par un nombre compris entre 0 (exclu) et 1 : le quotient est au moins égal à P(A ∩ B).",
+      "source": "maths-spe-1re:ch11:banque:015"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si 0 < P(A) < 1, alors P_A(B) + P_Ā(B) = 1 pour tout événement B.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Probabilité conditionnelle",
+      "explication": "C'est P_A(B) + P_A(B̄) qui vaut 1. Contre-exemple : si B = Ω, P_A(B) + P_Ā(B) = 1 + 1 = 2.",
+      "source": "maths-spe-1re:ch11:banque:016"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On donne P(A) = 0,25 et P(A ∩ B) = 0,05. Calculer P_A(B) (réponse sous forme décimale).",
+      "reponses_acceptees": [
+        "0,2",
+        "0.2",
+        "1/5"
+      ],
+      "difficulte": 1,
+      "notion": "Probabilité conditionnelle",
+      "explication": "P_A(B) = 0,05/0,25 = 0,2.",
+      "source": "maths-spe-1re:ch11:banque:017"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une salle de sport compte 500 clients : 250 sont abonnés à l'année (A) ; 150 de ces abonnés et 50 clients non abonnés suivent des cours collectifs (C). On choisit un client au hasard. Que vaut P(A ∩ C) ?",
+      "propositions": [
+        "0,6",
+        "0,75",
+        "0,4",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "P(A ∩ C) = 150/500 = 0,3 : pour une intersection, on divise par l'effectif total.",
+      "source": "maths-spe-1re:ch11:banque:018"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans un groupe de 200 élèves, 120 étudient l'espagnol (E), dont 30 suivent l'option théâtre (O) ; parmi les 80 autres, 30 suivent aussi cette option. On interroge au hasard un élève qui étudie l'espagnol. Quelle est la probabilité qu'il suive l'option théâtre ?",
+      "propositions": [
+        "0,5",
+        "0,25",
+        "0,15",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "On cherche P_E(O) : parmi les 120 hispanistes, 30 font du théâtre, soit 30/120 = 0,25.",
+      "source": "maths-spe-1re:ch11:banque:019"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans une ville de 1000 habitants, 600 sont vaccinés (V). Cet hiver, 30 personnes vaccinées et 60 personnes non vaccinées ont eu la grippe (G). On choisit au hasard un habitant non vacciné : quelle est la probabilité qu'il ait eu la grippe ?",
+      "propositions": [
+        "0,1",
+        "0,06",
+        "0,15",
+        "0,09"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "Il y a 1000 − 600 = 400 non-vaccinés, dont 60 ont eu la grippe : P_V̄(G) = 60/400 = 0,15.",
+      "source": "maths-spe-1re:ch11:banque:020"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Reprenons la salle de sport de 500 clients, dont 250 abonnés ; 200 clients suivent des cours collectifs, parmi lesquels 150 sont abonnés. Un client inscrit aux cours collectifs est choisi au hasard. Probabilité qu'il soit abonné ?",
+      "propositions": [
+        "0,75",
+        "0,3",
+        "0,5",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "On restreint l'univers aux 200 clients des cours collectifs : P_C(A) = 150/200 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:021"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sur 1000 habitants, 600 vaccinés dont 30 ont eu la grippe, et 400 non vaccinés dont 60 ont eu la grippe. Quelle est la probabilité qu'un habitant pris au hasard ait eu la grippe ?",
+      "propositions": [
+        "0,09",
+        "0,03",
+        "0,2",
+        "0,1"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "90 habitants sur 1000 ont eu la grippe : 0,09. Additionner les fréquences conditionnelles 0,05 et 0,15 n'a pas de sens.",
+      "source": "maths-spe-1re:ch11:banque:022"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On choisit au hasard un individu d'une population décrite par un tableau croisé d'effectifs. Pour obtenir P_A(B), on divise l'effectif de A ∩ B par :",
+      "propositions": [
+        "l'effectif de A ∪ B",
+        "l'effectif total",
+        "l'effectif de A",
+        "l'effectif de B"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "P_A(B) est une fréquence calculée dans la sous-population A : on divise par l'effectif de A.",
+      "source": "maths-spe-1re:ch11:banque:023"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un tableau de probabilités indique P(A ∩ B) = 0,12, P(A ∩ B̄) = 0,28, P(Ā ∩ B) = 0,18 et P(Ā ∩ B̄) = 0,42. Que vaut P_B(A) ?",
+      "propositions": [
+        "0,3",
+        "0,4",
+        "0,12",
+        "0,6"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Tableau croisé",
+      "explication": "P(B) = 0,12 + 0,18 = 0,3 (total de la colonne B), donc P_B(A) = 0,12/0,3 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:024"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un lycée accueille 800 élèves, dont 45 % de filles ; 60 % des filles sont externes et le lycée compte 304 externes en tout. On choisit un garçon au hasard. Quelle est la probabilité qu'il soit externe ?",
+      "propositions": [
+        "0,38",
+        "0,4",
+        "0,11",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Tableau croisé",
+      "explication": "Filles : 360, dont 216 externes. Garçons : 440, dont 304 − 216 = 88 externes. Probabilité : 88/440 = 0,2.",
+      "source": "maths-spe-1re:ch11:banque:025"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Parmi 200 élèves, 120 font de l'espagnol et 80 de l'allemand ; 30 hispanistes et 30 germanistes suivent l'option théâtre. Quelle est la probabilité qu'un élève choisi au hasard étudie l'espagnol ou suive le théâtre ?",
+      "propositions": [
+        "0,9",
+        "0,6",
+        "0,15",
+        "0,75"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Tableau croisé",
+      "explication": "E ∪ O regroupe les 120 hispanistes et les 30 germanistes du théâtre : 150/200 = 0,75. Avec la formule : 0,6 + 0,3 − 0,15 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:026"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une salle de sport a 500 clients : 250 abonnés (A), dont 150 suivent des cours collectifs (C) ; 50 non-abonnés suivent aussi ces cours. Un client est tiré au sort. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(C) = 0,4",
+        "P_C(A) = 0,6",
+        "P_Ā(C) = 0,2",
+        "P(A) = 0,5",
+        "P_A(C) = 0,3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Tableau croisé",
+      "explication": "P(C) = 200/500 = 0,4 ; P_Ā(C) = 50/250 = 0,2. En revanche P_A(C) = 150/250 = 0,6 et P_C(A) = 150/200 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:027"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Dans une ville, 600 habitants sur 1000 sont vaccinés (V) ; 30 vaccinés et 60 non-vaccinés ont attrapé la grippe (G). On choisit un habitant au hasard. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_V(G) = 0,03",
+        "P(V ∩ G) = 0,03",
+        "P_V(G) = 0,05",
+        "P_V̄(G) = 0,1",
+        "P(G) = 0,09"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Tableau croisé",
+      "explication": "P_V(G) = 30/600 = 0,05 ; P(V ∩ G) = 30/1000 = 0,03 ; P(G) = 90/1000 = 0,09 ; P_V̄(G) = 60/400 = 0,15.",
+      "source": "maths-spe-1re:ch11:banque:028"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On tire au hasard un individu d'une population décrite par un tableau croisé d'effectifs (événements A et B). Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) = effectif de A divisé par l'effectif de B",
+        "P_B(A) = effectif de A ∩ B divisé par l'effectif de A",
+        "P_B(A) = effectif de A ∩ B divisé par l'effectif de B",
+        "P(A ∩ B) = effectif de A ∩ B divisé par l'effectif total",
+        "P_A(B) et P_B(A) ont le même numérateur : l'effectif de A ∩ B"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "Le numérateur est toujours l'effectif de A ∩ B ; le dénominateur est l'effectif total pour P(A ∩ B), celui de l'événement en indice pour une probabilité conditionnelle.",
+      "source": "maths-spe-1re:ch11:banque:029"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Une probabilité conditionnelle lue dans un tableau croisé d'effectifs (tirage au hasard) est une fréquence calculée dans une sous-population.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "P_A(B) est la proportion d'individus de B parmi ceux de A : c'est une fréquence conditionnelle.",
+      "source": "maths-spe-1re:ch11:banque:030"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Sur 200 élèves, 120 étudient l'espagnol (dont 30 font du théâtre) et 80 l'allemand (dont 30 font du théâtre). La probabilité qu'un élève pris au hasard étudie l'espagnol et fasse du théâtre vaut 0,25.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "P(E ∩ O) = 30/200 = 0,15. La valeur 0,25 = 30/120 est P_E(O).",
+      "source": "maths-spe-1re:ch11:banque:031"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau de probabilités croisant A, Ā (en lignes) et B, B̄ (en colonnes), la somme des deux cases de la ligne A vaut toujours 1.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Tableau croisé",
+      "explication": "La ligne A contient P(A ∩ B) et P(A ∩ B̄), dont la somme est P(A), pas 1. C'est la somme des quatre cases qui vaut 1.",
+      "source": "maths-spe-1re:ch11:banque:032"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Un club compte 250 adhérents, dont 100 femmes ; 40 de ces femmes font de la compétition. On choisit une adhérente au hasard. Donner, sous forme décimale, la probabilité qu'elle fasse de la compétition.",
+      "reponses_acceptees": [
+        "0,4",
+        "0.4",
+        "2/5",
+        "40/100"
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "On se restreint aux 100 femmes : 40/100 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:033"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une entreprise compte 400 salariés, dont 120 cadres (C) ; 48 cadres travaillent à temps partiel (T). On choisit un salarié au hasard. Donner P(C ∩ T) sous forme décimale.",
+      "reponses_acceptees": [
+        "0,12",
+        "0.12",
+        "3/25",
+        "48/400"
+      ],
+      "difficulte": 1,
+      "notion": "Tableau croisé",
+      "explication": "P(C ∩ T) = 48/400 = 0,12 (on divise par l'effectif total). La valeur 48/120 = 0,4 serait P_C(T).",
+      "source": "maths-spe-1re:ch11:banque:034"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sur un arbre pondéré, que vaut la somme des probabilités des branches issues d'un même nœud ?",
+      "propositions": [
+        "1",
+        "le produit des probabilités du chemin menant à ce nœud",
+        "0,5 s'il y a deux branches",
+        "la probabilité de la branche qui arrive à ce nœud"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Règle des nœuds : les branches issues d'un nœud décrivent toutes les possibilités, de probabilités conditionnelles de somme 1.",
+      "source": "maths-spe-1re:ch11:banque:035"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans un arbre pondéré, la branche A porte 0,7 et la branche qui va de A vers B porte 0,4. Que vaut P(A ∩ B) ?",
+      "propositions": [
+        "0,3",
+        "0,28",
+        "0,4",
+        "1,1"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Règle du produit : P(A ∩ B) = P(A) × P_A(B) = 0,7 × 0,4 = 0,28.",
+      "source": "maths-spe-1re:ch11:banque:036"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans un arbre pondéré dont le premier niveau est A, Ā, que représente le nombre écrit sur la branche reliant A à B ?",
+      "propositions": [
+        "P(A ∩ B)",
+        "P_B(A)",
+        "P_A(B)",
+        "P(B)"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Les branches du second niveau portent des probabilités conditionnelles : de A vers B, c'est P_A(B).",
+      "source": "maths-spe-1re:ch11:banque:037"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sur un arbre, la branche issue du nœud Ā et menant à B porte 0,8. Quel nombre porte l'autre branche issue de Ā, celle qui mène à B̄ ?",
+      "propositions": [
+        "0,3",
+        "0,8",
+        "0,06",
+        "0,2"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Règle des nœuds : P_Ā(B̄) = 1 − P_Ā(B) = 1 − 0,8 = 0,2.",
+      "source": "maths-spe-1re:ch11:banque:038"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un arbre pondéré donne P(A) = 0,3, P_A(B) = 0,6 et P_Ā(B) = 0,2. En suivant les chemins qui mènent à B, calculer P(B).",
+      "propositions": [
+        "0,18",
+        "0,4",
+        "0,32",
+        "0,8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "P(B) = 0,3 × 0,6 + 0,7 × 0,2 = 0,18 + 0,14 = 0,32.",
+      "source": "maths-spe-1re:ch11:banque:039"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un appareil provient du fournisseur F avec la probabilité 0,9 ; dans ce cas il tombe en panne la première année avec la probabilité 0,05. Quelle est la probabilité qu'un appareil vienne de F et ne tombe pas en panne ?",
+      "propositions": [
+        "0,9",
+        "0,855",
+        "0,045",
+        "0,95"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "Chemin F puis « pas de panne » : 0,9 × (1 − 0,05) = 0,9 × 0,95 = 0,855.",
+      "source": "maths-spe-1re:ch11:banque:040"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On veut compléter un arbre de premier niveau A, Ā sachant que P(A) = 0,4, P(A ∩ B) = 0,1 et P(B) = 0,4. Quelle probabilité faut-il écrire sur la branche allant de Ā à B ?",
+      "propositions": [
+        "0,5",
+        "0,25",
+        "0,75",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Arbre pondéré",
+      "explication": "P(Ā ∩ B) = P(B) − P(A ∩ B) = 0,3, puis P_Ā(B) = 0,3/0,6 = 0,5.",
+      "source": "maths-spe-1re:ch11:banque:041"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Comment obtient-on la probabilité d'un chemin complet sur un arbre pondéré ?",
+      "propositions": [
+        "en additionnant les probabilités de ses branches",
+        "en prenant la probabilité de sa dernière branche",
+        "en multipliant les probabilités de ses branches",
+        "en divisant 1 par le nombre total de chemins"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Règle du produit : la probabilité du chemin A puis B est P(A) × P_A(B) = P(A ∩ B).",
+      "source": "maths-spe-1re:ch11:banque:042"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour un arbre de premier niveau A, Ā, on a P(A) = 0,6 et P_A(B) = 0,5 ; on sait aussi que P(B) = 0,46. Déterminer P_Ā(B).",
+      "propositions": [
+        "0,4",
+        "0,54",
+        "0,96",
+        "0,16"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Arbre pondéré",
+      "explication": "P(Ā ∩ B) = 0,46 − 0,6 × 0,5 = 0,16, puis P_Ā(B) = 0,16/0,4 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:043"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Un arbre pondéré a pour premier niveau A (probabilité 0,7) et Ā ; après A, la branche vers B porte 0,4 ; après Ā, la branche vers B porte 0,8. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B̄) = 0,6",
+        "P_Ā(B̄) = 0,2",
+        "P(B) = 1,2",
+        "P(Ā) = 0,3",
+        "P(A ∩ B) = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "Règle des nœuds : 1 − 0,7 = 0,3, 1 − 0,4 = 0,6, 1 − 0,8 = 0,2. P(A ∩ B) = 0,7 × 0,4 = 0,28 et une probabilité ne dépasse jamais 1.",
+      "source": "maths-spe-1re:ch11:banque:044"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Avec P(A) = 0,7, P_A(B) = 0,4 et P_Ā(B) = 0,8, on calcule les probabilités des quatre chemins de l'arbre. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(B) = 0,52",
+        "P(A ∩ B) = 0,28",
+        "P(Ā ∩ B̄) = 0,2",
+        "P(A ∩ B̄) = 0,6",
+        "P(Ā ∩ B) = 0,24"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "P(A ∩ B) = 0,28 ; P(Ā ∩ B) = 0,3 × 0,8 = 0,24 ; P(B) = 0,52 ; P(A ∩ B̄) = 0,7 × 0,6 = 0,42 ; P(Ā ∩ B̄) = 0,3 × 0,2 = 0,06.",
+      "source": "maths-spe-1re:ch11:banque:045"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Voici des affirmations sur un arbre pondéré à deux niveaux. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Les branches du premier niveau portent des probabilités non conditionnelles",
+        "Les branches du second niveau portent les probabilités des intersections",
+        "La somme des probabilités de tous les chemins complets vaut 1",
+        "La probabilité d'un événement est la somme des probabilités des chemins qui y mènent",
+        "Deux branches issues de nœuds différents ont des probabilités de somme 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "Au second niveau, on lit des probabilités conditionnelles ; ce sont les chemins (produits) qui donnent les intersections. La règle des nœuds ne concerne que des branches issues d'un même nœud.",
+      "source": "maths-spe-1re:ch11:banque:046"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "À une question de QCM à 4 choix, un élève connaît la réponse (C) avec la probabilité 0,6 ; il répond alors juste (J). Sinon, il répond au hasard. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(C̄ ∩ J) = 0,1",
+        "P_C̄(J) = 0,25",
+        "P(J) = 0,85",
+        "P(J) = 0,6",
+        "P(J) = 0,7"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Arbre pondéré",
+      "explication": "P_C(J) = 1 et P_C̄(J) = 1/4 = 0,25. P(C̄ ∩ J) = 0,4 × 0,25 = 0,1, donc P(J) = 0,6 + 0,1 = 0,7.",
+      "source": "maths-spe-1re:ch11:banque:047"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Sur un arbre pondéré, la probabilité d'un chemin est la somme des probabilités des branches qui le composent.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "C'est le produit des probabilités des branches (règle du produit), pas leur somme.",
+      "source": "maths-spe-1re:ch11:banque:048"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Dans un arbre pondéré à deux niveaux, la branche allant de A vers B porte la probabilité P(A ∩ B).",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "Elle porte P_A(B). P(A ∩ B) est la probabilité du chemin : P(A) × P_A(B).",
+      "source": "maths-spe-1re:ch11:banque:049"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si une branche A porte 0,2 et la branche suivante, de A vers B, porte 0,5, alors le chemin A puis B a pour probabilité 0,1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "0,2 × 0,5 = 0,1 = P(A ∩ B).",
+      "source": "maths-spe-1re:ch11:banque:050"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Sur un arbre pondéré, la branche C porte 0,35 et, à sa suite, la branche de C vers D porte 0,6. Donner la probabilité du chemin C puis D sous forme décimale.",
+      "reponses_acceptees": [
+        "0,21",
+        "0.21",
+        "21/100"
+      ],
+      "difficulte": 1,
+      "notion": "Arbre pondéré",
+      "explication": "0,35 × 0,6 = 0,21.",
+      "source": "maths-spe-1re:ch11:banque:051"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Un arbre a trois branches au premier niveau : A₁ (0,2), A₂ (0,5) et A₃. Après A₃, la branche vers B porte 0,4. Donner P(A₃ ∩ B) sous forme décimale.",
+      "reponses_acceptees": [
+        "0,12",
+        "0.12",
+        "3/25",
+        "12/100"
+      ],
+      "difficulte": 2,
+      "notion": "Arbre pondéré",
+      "explication": "Règle des nœuds : P(A₃) = 1 − 0,2 − 0,5 = 0,3, puis P(A₃ ∩ B) = 0,3 × 0,4 = 0,12.",
+      "source": "maths-spe-1re:ch11:banque:052"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Avec la partition {A ; Ā}, la formule des probabilités totales donne P(B) égal à :",
+      "propositions": [
+        "P(A) × P_A(B) × P(Ā) × P_Ā(B)",
+        "P(A) × P_A(B) + P(Ā) × P_Ā(B)",
+        "P(A) × P(B) + P(Ā) × P(B̄)",
+        "P_A(B) + P_Ā(B)"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "P(B) = P(A ∩ B) + P(Ā ∩ B) = P(A) P_A(B) + P(Ā) P_Ā(B).",
+      "source": "maths-spe-1re:ch11:banque:053"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé à six faces. Laquelle de ces familles d'événements est une partition de l'univers ?",
+      "propositions": [
+        "{1 ; 2 ; 3} et {3 ; 4 ; 5 ; 6}",
+        "{1 ; 2} et {4 ; 5 ; 6}",
+        "{2 ; 4 ; 6} et {1 ; 2 ; 3 ; 5}",
+        "{1 ; 2}, {3 ; 4 ; 5} et {6}"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "Une partition : parties non vides, deux à deux disjointes, dont la réunion est {1 ; … ; 6}. Les autres familles se chevauchent (3 ou 2 en double) ou oublient le 3.",
+      "source": "maths-spe-1re:ch11:banque:054"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Trois ateliers produisent respectivement 50 %, 30 % et 20 % des pièces d'une usine ; leurs taux de pièces défectueuses sont 1 %, 2 % et 5 %. Quelle est la probabilité qu'une pièce prise au hasard soit défectueuse ?",
+      "propositions": [
+        "0,08",
+        "0,021",
+        "0,05",
+        "0,011"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "P(D) = 0,5 × 0,01 + 0,3 × 0,02 + 0,2 × 0,05 = 0,005 + 0,006 + 0,01 = 0,021.",
+      "source": "maths-spe-1re:ch11:banque:055"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne P(A) = 0,4, P_A(B) = 0,5 et P_Ā(B) = 0,25. Calculer P(B) à l'aide de la partition {A ; Ā}.",
+      "propositions": [
+        "0,2",
+        "0,375",
+        "0,75",
+        "0,35"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "P(B) = 0,4 × 0,5 + 0,6 × 0,25 = 0,2 + 0,15 = 0,35.",
+      "source": "maths-spe-1re:ch11:banque:056"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On choisit au hasard, avec la même probabilité, l'une de deux urnes : U₁ contient 3 boules rouges et 2 noires, U₂ contient 1 boule rouge et 4 noires. On tire une boule dans l'urne choisie. Probabilité qu'elle soit rouge ?",
+      "propositions": [
+        "0,4",
+        "0,3",
+        "0,8",
+        "0,12"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "P(R) = 0,5 × 0,6 + 0,5 × 0,2 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:057"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Des événements A₁, A₂, A₃ de probabilités non nulles forment une partition de l'univers Ω lorsque :",
+      "propositions": [
+        "la somme de leurs probabilités vaut 1",
+        "ils sont deux à deux incompatibles",
+        "ils sont deux à deux incompatibles et de réunion Ω",
+        "ils sont deux à deux indépendants et de réunion Ω"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "Il faut à la fois l'incompatibilité deux à deux et une réunion égale à Ω : chaque issue est dans un et un seul des A_i.",
+      "source": "maths-spe-1re:ch11:banque:058"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A) = 0,3, P_Ā(B) = 0,5 et P(B) = 0,47. Que vaut P_A(B) ?",
+      "propositions": [
+        "0,97",
+        "0,4",
+        "0,53",
+        "0,12"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Probabilités totales",
+      "explication": "P(Ā ∩ B) = 0,7 × 0,5 = 0,35, donc P(A ∩ B) = 0,47 − 0,35 = 0,12 et P_A(B) = 0,12/0,3 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:059"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "A₁, A₂, A₃ forment une partition avec P(A₁) = 0,2 et P(A₂) = 0,5. De plus P_A₁(B) = 0,5, P_A₂(B) = 0,2 et P_A₃(B) = 0,6. Calculer P(B).",
+      "propositions": [
+        "0,2",
+        "0,26",
+        "1,3",
+        "0,38"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Probabilités totales",
+      "explication": "P(A₃) = 1 − 0,2 − 0,5 = 0,3, puis P(B) = 0,1 + 0,1 + 0,18 = 0,38.",
+      "source": "maths-spe-1re:ch11:banque:060"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Que forment les événements portés par les branches du premier niveau d'un arbre pondéré ?",
+      "propositions": [
+        "une partition de l'univers",
+        "des probabilités conditionnelles",
+        "des événements indépendants",
+        "des événements de même probabilité"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "Ils sont deux à deux incompatibles et leur réunion est l'univers : c'est ce qui permet d'appliquer la formule des probabilités totales.",
+      "source": "maths-spe-1re:ch11:banque:061"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Soit A un événement tel que 0 < P(A) < 1, et B un événement quelconque. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(B) = P(A) P_A(B) + P(Ā) P_Ā(B)",
+        "P(B) = P(A ∩ B) + P(Ā ∩ B)",
+        "P(B) = P_A(B) + P_Ā(B)",
+        "P(B) = P(A ∩ B) + P(A ∩ B̄)",
+        "A et Ā forment une partition de l'univers"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "B est la réunion des événements incompatibles A ∩ B et Ā ∩ B. La somme P(A ∩ B) + P(A ∩ B̄) vaut P(A), pas P(B).",
+      "source": "maths-spe-1re:ch11:banque:062"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une expérience consiste à lancer un dé cubique numéroté de 1 à 6. Quelles familles d'événements forment une partition de l'univers ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "{1 ; 3 ; 5} et {2 ; 4 ; 6}",
+        "{6} et {1 ; 2 ; 3 ; 4 ; 5}",
+        "{1 ; 2 ; 3 ; 4} et {4 ; 5 ; 6}",
+        "{1 ; 2 ; 3} et {4 ; 5}",
+        "{1}, {2 ; 3} et {4 ; 5 ; 6}"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "{1 ; 2 ; 3} et {4 ; 5} oublient le 6 ; {1 ; 2 ; 3 ; 4} et {4 ; 5 ; 6} ont le 4 en commun.",
+      "source": "maths-spe-1re:ch11:banque:063"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Dans un magasin, 30 % des clients paient en espèces (E), 50 % par carte (C) et 20 % par chèque (Q). Parmi eux, 40 %, 60 % et 10 % respectivement achètent un article en promotion (événement R). Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(Q ∩ R) = 0,02",
+        "P(R) = 0,44",
+        "P(C ∩ R) = 0,3",
+        "P(R) = 1,1",
+        "P(E ∩ R) = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Probabilités totales",
+      "explication": "P(E ∩ R) = 0,3 × 0,4 = 0,12 ; P(C ∩ R) = 0,5 × 0,6 = 0,3 ; P(Q ∩ R) = 0,2 × 0,1 = 0,02 ; donc P(R) = 0,44.",
+      "source": "maths-spe-1re:ch11:banque:064"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si A₁, A₂, A₃ forment une partition de l'univers, alors P(A₁) + P(A₂) + P(A₃) = 1.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "Ils sont deux à deux incompatibles et de réunion Ω, donc la somme de leurs probabilités vaut P(Ω) = 1.",
+      "source": "maths-spe-1re:ch11:banque:065"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P_A(B) = 0,3 et P_Ā(B) = 0,5, alors P(B) = 0,8.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "Il faut pondérer : P(B) = P(A) × 0,3 + P(Ā) × 0,5, qui est compris entre 0,3 et 0,5 ; ce n'est jamais 0,8.",
+      "source": "maths-spe-1re:ch11:banque:066"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si 0 < P(A) < 1 et P_A(B) = P_Ā(B) = 0,4, alors P(B) = 0,4.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Probabilités totales",
+      "explication": "P(B) = 0,4 P(A) + 0,4 P(Ā) = 0,4 (P(A) + P(Ā)) = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:067"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On donne P(A) = 0,6, P_A(B) = 0,3 et P_Ā(B) = 0,7. Calculer P(B) et donner le résultat sous forme décimale.",
+      "reponses_acceptees": [
+        "0,46",
+        "0.46",
+        "23/50"
+      ],
+      "difficulte": 1,
+      "notion": "Probabilités totales",
+      "explication": "P(B) = 0,6 × 0,3 + 0,4 × 0,7 = 0,18 + 0,28 = 0,46.",
+      "source": "maths-spe-1re:ch11:banque:068"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Trois machines fabriquent 20 %, 30 % et 50 % des pièces d'une usine, avec des taux de défaut de 5 %, 4 % et 2 %. Donner, sous forme décimale, la probabilité qu'une pièce prise au hasard soit défectueuse.",
+      "reponses_acceptees": [
+        "0,032",
+        "0.032",
+        "4/125"
+      ],
+      "difficulte": 2,
+      "notion": "Probabilités totales",
+      "explication": "P(D) = 0,2 × 0,05 + 0,3 × 0,04 + 0,5 × 0,02 = 0,01 + 0,012 + 0,01 = 0,032.",
+      "source": "maths-spe-1re:ch11:banque:069"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un arbre donne P(A) = 0,6, P_A(B) = 0,5 et P_Ā(B) = 0,25. Quelle est la probabilité de A sachant que B est réalisé ?",
+      "propositions": [
+        "0,3",
+        "0,6",
+        "0,75",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(B) = 0,3 + 0,1 = 0,4 et P_B(A) = P(A ∩ B)/P(B) = 0,3/0,4 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:070"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Un arbre a pour premier niveau A, Ā. Comment obtient-on P_B(A) ?",
+      "propositions": [
+        "P(A ∩ B)/P(A)",
+        "P_A(B), lu sur la branche",
+        "P(A) × P(B)",
+        "P(A ∩ B)/P(B)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Inversion du conditionnement",
+      "explication": "On revient à la définition : P_B(A) = P(A ∩ B)/P(B). Le numérateur est un chemin de l'arbre, le dénominateur vient des probabilités totales.",
+      "source": "maths-spe-1re:ch11:banque:071"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une maladie touche 1 % d'une population. Un test est positif chez 90 % des malades et chez 5 % des personnes saines. Quelle est, environ, la probabilité qu'une personne testée positive soit malade ?",
+      "propositions": [
+        "0,009",
+        "environ 0,154",
+        "0,0585",
+        "0,9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(T) = 0,01 × 0,9 + 0,99 × 0,05 = 0,0585, puis P_T(M) = 0,009/0,0585 = 2/13 ≈ 0,154 : la plupart des positifs sont sains.",
+      "source": "maths-spe-1re:ch11:banque:072"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans un lycée, la moitié des élèves sont externes (E), les autres demi-pensionnaires. Un jour donné, 30 % des externes et 10 % des demi-pensionnaires sont absents. On choisit au hasard un élève absent : probabilité qu'il soit externe ?",
+      "propositions": [
+        "0,75",
+        "0,5",
+        "0,15",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(Abs) = 0,15 + 0,05 = 0,2 et P_Abs(E) = 0,15/0,2 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:073"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Trois machines M₁, M₂, M₃ produisent 50 %, 30 % et 20 % des pièces ; leurs taux de pièces hors norme sont 4 %, 10 % et 25 %. Une pièce hors norme est prélevée : quelle est la probabilité qu'elle vienne de M₃ ?",
+      "propositions": [
+        "0,2",
+        "0,25",
+        "0,5",
+        "0,05"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(D) = 0,02 + 0,03 + 0,05 = 0,1 et P_D(M₃) = 0,05/0,1 = 0,5.",
+      "source": "maths-spe-1re:ch11:banque:074"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On sait que P(A ∩ B) = 0,12 et P(B) = 0,4. Que vaut P_B(A) ?",
+      "propositions": [
+        "0,3",
+        "0,28",
+        "0,52",
+        "0,048"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Inversion du conditionnement",
+      "explication": "P_B(A) = 0,12/0,4 = 0,3.",
+      "source": "maths-spe-1re:ch11:banque:075"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne P(A) = 0,2, P(B) = 0,5 et P_A(B) = 0,75. Que vaut P_B(A) ?",
+      "propositions": [
+        "0,4",
+        "0,75",
+        "0,3",
+        "0,15"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(A ∩ B) = 0,2 × 0,75 = 0,15, puis P_B(A) = 0,15/0,5 = 0,3.",
+      "source": "maths-spe-1re:ch11:banque:076"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La moitié des élèves viennent en bus (B). Parmi eux, 20 % arrivent en retard (R) ; parmi les autres, 30 % arrivent en retard. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_R(B) = 0,2",
+        "P_R(B) = 0,4",
+        "P_R(B) = 0,1",
+        "P_R(B̄) = 0,6",
+        "P(R) = 0,25"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(R) = 0,1 + 0,15 = 0,25 ; P_R(B) = 0,1/0,25 = 0,4 et P_R(B̄) = 0,6. 0,2 est P_B(R) et 0,1 est P(B ∩ R).",
+      "source": "maths-spe-1re:ch11:banque:077"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Dans un groupe à risque, 40 % des personnes sont malades (M). Un test est positif (T) pour 90 % des malades et pour 20 % des non-malades. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_T(M) = 0,9",
+        "P(T) = 0,48",
+        "P(M ∩ T) = 0,9",
+        "P_T(M) = 0,75",
+        "P_T(M̄) = 0,25"
+      ],
+      "bonnes_reponses": [
+        1,
+        3,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(M ∩ T) = 0,36 et P(T) = 0,36 + 0,12 = 0,48, donc P_T(M) = 0,36/0,48 = 0,75. 0,9 est P_M(T).",
+      "source": "maths-spe-1re:ch11:banque:078"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Soient A et B deux événements de probabilités non nulles. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_B(A) = P_A(B) × P(B)/P(A)",
+        "P_A(B) × P(A) = P_B(A) × P(B)",
+        "P_B(A) = P(A ∩ B)/P(B)",
+        "P_B(A) = 1 − P_A(B)",
+        "En général, P_A(B) ≠ P_B(A)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Inversion du conditionnement",
+      "explication": "Les deux produits P_A(B) × P(A) et P_B(A) × P(B) valent P(A ∩ B). On en tire P_B(A) = P_A(B) × P(A)/P(B), et non × P(B)/P(A).",
+      "source": "maths-spe-1re:ch11:banque:079"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Un test est positif chez 99 % des malades. Une personne testée positive est donc malade avec la probabilité 0,99.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Inversion du conditionnement",
+      "explication": "0,99 est P_M(T). La probabilité cherchée est P_T(M), qui dépend de la proportion de malades et du taux de faux positifs ; elle peut être bien plus faible.",
+      "source": "maths-spe-1re:ch11:banque:080"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(A ∩ B) = 0,1 et P(B) = 0,4, alors P_B(A) = 0,25.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Inversion du conditionnement",
+      "explication": "P_B(A) = 0,1/0,4 = 0,25.",
+      "source": "maths-spe-1re:ch11:banque:081"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(A) = P(B) et que cette probabilité n'est pas nulle, alors P_A(B) = P_B(A).",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P_A(B) = P(A ∩ B)/P(A) et P_B(A) = P(A ∩ B)/P(B) : les dénominateurs sont égaux.",
+      "source": "maths-spe-1re:ch11:banque:082"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On donne P(A ∩ B) = 0,18 et P(B) = 0,24. Calculer P_B(A) et donner le résultat sous forme décimale.",
+      "reponses_acceptees": [
+        "0,75",
+        "0.75",
+        "3/4"
+      ],
+      "difficulte": 1,
+      "notion": "Inversion du conditionnement",
+      "explication": "P_B(A) = 0,18/0,24 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:083"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Un arbre donne P(A) = 0,25, P_A(B) = 0,8 et P_Ā(B) = 0,4. Calculer P_B(A) (réponse sous forme décimale).",
+      "reponses_acceptees": [
+        "0,4",
+        "0.4",
+        "2/5"
+      ],
+      "difficulte": 3,
+      "notion": "Inversion du conditionnement",
+      "explication": "P(B) = 0,25 × 0,8 + 0,75 × 0,4 = 0,2 + 0,3 = 0,5, puis P_B(A) = 0,2/0,5 = 0,4.",
+      "source": "maths-spe-1re:ch11:banque:084"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "A et B sont deux événements indépendants avec P(A) = 0,4 et P(B) = 0,5. Que vaut P(A ∩ B) ?",
+      "propositions": [
+        "0,1",
+        "0,2",
+        "0",
+        "0,9"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "Indépendance : P(A ∩ B) = P(A) × P(B) = 0,4 × 0,5 = 0,2. La valeur 0 correspondrait à des événements incompatibles.",
+      "source": "maths-spe-1re:ch11:banque:085"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Par définition, deux événements A et B sont indépendants lorsque :",
+      "propositions": [
+        "P(A ∩ B) = P(A) + P(B)",
+        "P(A ∪ B) = P(A) + P(B)",
+        "A ∩ B = ∅",
+        "P(A ∩ B) = P(A) × P(B)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "C'est la définition. A ∩ B = ∅ signifie que A et B sont incompatibles, ce qui est tout autre chose.",
+      "source": "maths-spe-1re:ch11:banque:086"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Les événements A et B sont indépendants, avec P(A) = 0,6 et P(B) = 0,3. Que vaut P_B(A) ?",
+      "propositions": [
+        "0,3",
+        "0,5",
+        "0,6",
+        "0,18"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "Si A et B sont indépendants et P(B) ≠ 0, alors P_B(A) = P(A) = 0,6 : savoir que B est réalisé ne change pas la probabilité de A.",
+      "source": "maths-spe-1re:ch11:banque:087"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces. A : « obtenir un multiple de 3 » ; B : « obtenir un nombre pair ». Que peut-on dire de A et B ?",
+      "propositions": [
+        "A et B sont indépendants",
+        "A et B sont incompatibles",
+        "A et B ne sont pas indépendants, car A ∩ B n'est pas vide",
+        "A et B ne sont pas indépendants, car P_B(A) = 1/2"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "A ∩ B = {6} : P(A ∩ B) = 1/6 et P(A) × P(B) = 1/3 × 1/2 = 1/6. Ils sont indépendants (et P_B(A) = 1/3 = P(A)).",
+      "source": "maths-spe-1re:ch11:banque:088"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "A et B sont indépendants, avec P(A) = 0,3 et P(B) = 0,6. Calculer P(A ∩ B̄).",
+      "propositions": [
+        "0,28",
+        "0,12",
+        "0,18",
+        "0,42"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "A et B̄ sont aussi indépendants : P(A ∩ B̄) = 0,3 × 0,4 = 0,12.",
+      "source": "maths-spe-1re:ch11:banque:089"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On donne P(A) = 0,5, P(B) = 0,4 et P(A ∪ B) = 0,7. Les événements A et B sont-ils indépendants ?",
+      "propositions": [
+        "on ne peut pas conclure sans connaître P_A(B)",
+        "non, car P(A ∪ B) ≠ P(A) + P(B)",
+        "non, car P(A ∩ B) n'est pas nul",
+        "oui, car P(A ∩ B) = 0,2 = P(A) × P(B)"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(A ∩ B) = 0,5 + 0,4 − 0,7 = 0,2 et P(A) × P(B) = 0,2 : ils sont indépendants.",
+      "source": "maths-spe-1re:ch11:banque:090"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "A et B sont indépendants, P(A) = 0,4 et P(A ∪ B) = 0,7. Déterminer P(B).",
+      "propositions": [
+        "0,28",
+        "0,75",
+        "0,3",
+        "0,5"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Indépendance",
+      "explication": "P(A ∪ B) = P(A) + P(B) − P(A)P(B) = 0,4 + 0,6 P(B) = 0,7, d'où P(B) = 0,3/0,6 = 0,5.",
+      "source": "maths-spe-1re:ch11:banque:091"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans une population de 300 personnes, l'événement A concerne 100 personnes et A ∩ B en concerne 60. Quel doit être l'effectif de B pour que A et B soient indépendants (tirage au hasard) ?",
+      "propositions": [
+        "180",
+        "160",
+        "120",
+        "200"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Indépendance",
+      "explication": "Il faut P_A(B) = P(B) : 60/100 = 0,6, donc P(B) = 0,6 et l'effectif de B vaut 0,6 × 300 = 180.",
+      "source": "maths-spe-1re:ch11:banque:092"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "A et B sont incompatibles, avec P(A) = 0,3 et P(B) = 0,4. Que peut-on en déduire ?",
+      "propositions": [
+        "P_B(A) = 0,3",
+        "A et B sont indépendants",
+        "A et B ne sont pas indépendants",
+        "P(A ∩ B) = 0,12"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(A ∩ B) = 0 alors que P(A) × P(B) = 0,12 ≠ 0 : ils ne sont pas indépendants. D'ailleurs P_B(A) = 0.",
+      "source": "maths-spe-1re:ch11:banque:093"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "A et B sont deux événements indépendants, de probabilités non nulles. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_B(A) = P(A)",
+        "P_A(B) = P(B)",
+        "A ∩ B = ∅",
+        "P(A ∩ B) = P(A) × P(B)",
+        "P(A ∪ B) = P(A) + P(B)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "Indépendance : produit des probabilités, et le conditionnement par l'un ne change pas la probabilité de l'autre. A ∩ B = ∅ est impossible ici puisque P(A ∩ B) = P(A)P(B) > 0.",
+      "source": "maths-spe-1re:ch11:banque:094"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Soient A et B indépendants tels que P(A) = 0,2 et P(B) = 0,5. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P_A(B) = 0,2",
+        "P(A ∪ B) = 0,7",
+        "P(A ∪ B) = 0,6",
+        "P(Ā ∩ B̄) = 0,4",
+        "P(A ∩ B) = 0,1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(A ∩ B) = 0,1 ; P(A ∪ B) = 0,2 + 0,5 − 0,1 = 0,6 ; Ā et B̄ sont indépendants : 0,8 × 0,5 = 0,4 ; P_A(B) = P(B) = 0,5.",
+      "source": "maths-spe-1re:ch11:banque:095"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance un dé équilibré à six faces et l'on note A l'événement « obtenir au plus 4 ». Quels événements sont indépendants de A ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "B = « obtenir un nombre pair »",
+        "D = « obtenir 1, 2 ou 3 »",
+        "C = « obtenir 1, 2 ou 5 »",
+        "G = « obtenir 1 ou 5 »",
+        "E = « obtenir 5 ou 6 »"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(A) = 2/3. Pour B : P(A ∩ B) = 2/6 = 2/3 × 1/2. Pour C : P(A ∩ C) = 2/6 = 2/3 × 1/2. Pour D : 3/6 ≠ 1/3 ; E est incompatible avec A ; pour G : 1/6 ≠ 2/9.",
+      "source": "maths-spe-1re:ch11:banque:096"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On sait que P(A) = 0,6, P(B) = 0,5 et P(A ∩ B) = 0,3. Coche toutes les réponses exactes.",
+      "propositions": [
+        "A et B̄ sont indépendants",
+        "A et B sont incompatibles",
+        "P_Ā(B) = 0,5",
+        "A et B sont indépendants",
+        "P(A ∩ B̄) = 0,2"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Indépendance",
+      "explication": "0,6 × 0,5 = 0,3 : indépendance, donc aussi A et B̄. P_Ā(B) = (0,5 − 0,3)/0,4 = 0,5 ; P(A ∩ B̄) = 0,6 − 0,3 = 0,3.",
+      "source": "maths-spe-1re:ch11:banque:097"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Deux événements incompatibles de probabilités non nulles sont indépendants.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "Si A ∩ B = ∅, P(A ∩ B) = 0 alors que P(A) × P(B) > 0 : ils ne sont jamais indépendants.",
+      "source": "maths-spe-1re:ch11:banque:098"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si A et B sont indépendants, alors la probabilité de A ∩ B est le produit P(A) × P(B).",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Indépendance",
+      "explication": "C'est la définition de l'indépendance.",
+      "source": "maths-spe-1re:ch11:banque:099"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si A et B sont indépendants, alors Ā et B sont aussi indépendants.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(Ā ∩ B) = P(B) − P(A ∩ B) = P(B) − P(A)P(B) = P(Ā) × P(B).",
+      "source": "maths-spe-1re:ch11:banque:100"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si P(B) ≠ 0 et P_B(A) = P(A), alors A et B sont indépendants.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P_B(A) = P(A) équivaut à P(A ∩ B)/P(B) = P(A), c'est-à-dire P(A ∩ B) = P(A) × P(B).",
+      "source": "maths-spe-1re:ch11:banque:101"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si A et B sont indépendants, avec P(A) = P(B) = 0,5, alors A et B̄ sont incompatibles.",
+      "bonne_reponse": false,
+      "difficulte": 3,
+      "notion": "Indépendance",
+      "explication": "A et B̄ sont indépendants : P(A ∩ B̄) = 0,5 × 0,5 = 0,25 ≠ 0, donc ils ne sont pas incompatibles.",
+      "source": "maths-spe-1re:ch11:banque:102"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "A et B sont indépendants, avec P(A) = 0,7 et P(B) = 0,2. Calculer P(A ∪ B) (réponse sous forme décimale).",
+      "reponses_acceptees": [
+        "0,76",
+        "0.76",
+        "19/25"
+      ],
+      "difficulte": 2,
+      "notion": "Indépendance",
+      "explication": "P(A ∩ B) = 0,7 × 0,2 = 0,14, donc P(A ∪ B) = 0,7 + 0,2 − 0,14 = 0,76.",
+      "source": "maths-spe-1re:ch11:banque:103"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance deux fois de suite une pièce équilibrée. Quelle est la probabilité d'obtenir deux fois pile ?",
+      "propositions": [
+        "1/3",
+        "0,25",
+        "0,5",
+        "0,75"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Les lancers sont indépendants : 0,5 × 0,5 = 0,25. Les issues PP, PF, FP, FF sont équiprobables (il y en a 4, pas 3).",
+      "source": "maths-spe-1re:ch11:banque:104"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 4 boules rouges et 1 noire. On tire une boule, on la remet, puis on en tire une seconde. Probabilité d'obtenir deux boules rouges ?",
+      "propositions": [
+        "1,6",
+        "0,6",
+        "0,8",
+        "0,64"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Avec remise, les tirages sont indépendants : 0,8 × 0,8 = 0,64. Le produit 0,8 × 0,75 = 0,6 correspondrait à un tirage sans remise.",
+      "source": "maths-spe-1re:ch11:banque:105"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance un dé équilibré à six faces puis une pièce équilibrée. Combien d'issues équiprobables compte cette expérience ?",
+      "propositions": [
+        "36",
+        "6",
+        "12",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Chaque issue est un couple (résultat du dé ; côté de la pièce) : 6 × 2 = 12 issues, chacune de probabilité 1/12.",
+      "source": "maths-spe-1re:ch11:banque:106"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance deux dés équilibrés à six faces. Quelle est la probabilité que la somme des deux résultats soit égale à 7 ?",
+      "propositions": [
+        "1/12",
+        "1/6",
+        "1/11",
+        "7/36"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Le tableau à double entrée a 36 cases équiprobables ; la somme 7 apparaît 6 fois : 6/36 = 1/6. Les 11 sommes possibles ne sont pas équiprobables.",
+      "source": "maths-spe-1re:ch11:banque:107"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges et 2 bleues. On effectue deux tirages avec remise. Quelle est la probabilité d'obtenir au moins une boule bleue ?",
+      "propositions": [
+        "0,64",
+        "0,48",
+        "0,16",
+        "0,4"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Événement contraire : deux rouges, de probabilité 0,6 × 0,6 = 0,36. D'où 1 − 0,36 = 0,64.",
+      "source": "maths-spe-1re:ch11:banque:108"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pourquoi deux tirages successifs sans remise dans une urne ne sont-ils pas des épreuves indépendantes ?",
+      "propositions": [
+        "on tire les boules l'une après l'autre",
+        "le contenu de l'urne au second tirage dépend du premier résultat",
+        "les deux tirages se font dans la même urne",
+        "la probabilité de chaque couleur est nulle au second tirage"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Sans remise, la boule tirée manque au second tirage : la probabilité de chaque couleur change selon le premier résultat. Avec remise, même urne et tirages successifs, les épreuves sont indépendantes.",
+      "source": "maths-spe-1re:ch11:banque:109"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Deux archers tirent chacun une flèche, indépendamment. Le premier atteint la cible avec la probabilité 0,8, le second avec la probabilité 0,6. Probabilité que la cible soit atteinte exactement une fois ?",
+      "propositions": [
+        "0,48",
+        "0,32",
+        "0,44",
+        "0,92"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 3,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Deux cas : touché puis manqué (0,8 × 0,4 = 0,32) ou manqué puis touché (0,2 × 0,6 = 0,12). Total : 0,44.",
+      "source": "maths-spe-1re:ch11:banque:110"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Une urne contient 3 boules rouges et 2 bleues. On tire deux boules successivement, sans remise. Quelle est la probabilité d'obtenir deux rouges ?",
+      "propositions": [
+        "0,4",
+        "0,6",
+        "0,36",
+        "0,3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Sans remise, la seconde probabilité est conditionnelle : 3/5 × 2/4 = 0,3. Le calcul 0,6 × 0,6 = 0,36 supposerait des tirages indépendants.",
+      "source": "maths-spe-1re:ch11:banque:111"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance successivement deux pièces équilibrées. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(au moins un pile) = 0,5",
+        "P(pile puis face) = 0,25",
+        "Il y a 4 issues équiprobables",
+        "P(un pile et un face, dans un ordre quelconque) = 0,5",
+        "P(deux faces) = 0,5"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ],
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "PP, PF, FP, FF ont chacune la probabilité 0,25. Un pile et un face : PF ou FP, soit 0,5. Au moins un pile : 1 − 0,25 = 0,75.",
+      "source": "maths-spe-1re:ch11:banque:112"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une roue donne A avec la probabilité 0,2 et B sinon ; on lance ensuite, indépendamment, un dé équilibré à quatre faces numérotées de 1 à 4. On représente l'expérience par un tableau à double entrée. Coche toutes les réponses exactes.",
+      "propositions": [
+        "La somme des 8 cases du tableau vaut 1",
+        "P(A et 4) = 0,05",
+        "P(A et 4) = 0,45",
+        "P(B et 1) = 0,8",
+        "P(B et un nombre pair) = 0,4"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Chaque case est un produit : P(A et 4) = 0,2 × 0,25 = 0,05 ; P(B et pair) = 0,8 × 0,5 = 0,4 ; P(B et 1) = 0,8 × 0,25 = 0,2.",
+      "source": "maths-spe-1re:ch11:banque:113"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces expériences sont des successions de deux épreuves indépendantes ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "tirer deux cartes successivement avec remise",
+        "tirer deux boules successivement sans remise",
+        "lancer deux fois un dé",
+        "lancer une pièce puis un dé",
+        "choisir deux délégués différents dans une classe"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Sans remise, ou en choisissant deux personnes différentes, le second choix dépend du premier : les épreuves ne sont pas indépendantes.",
+      "source": "maths-spe-1re:ch11:banque:114"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Dans un tableau à double entrée qui représente deux épreuves indépendantes, chaque case contient le produit de la probabilité de sa ligne par celle de sa colonne.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Pour deux épreuves indépendantes, P(x ; y) = p(x) × p(y).",
+      "source": "maths-spe-1re:ch11:banque:115"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Dans l'arbre de deux épreuves indépendantes, les branches du second niveau issues de nœuds différents portent des probabilités différentes.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "C'est l'inverse : la seconde épreuve ne dépend pas de la première, donc les branches du second niveau sont identiques d'un nœud à l'autre.",
+      "source": "maths-spe-1re:ch11:banque:116"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "On lance deux dés équilibrés à six faces : la probabilité d'obtenir un double vaut 1/36.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Il y a 6 doubles parmi les 36 cases équiprobables : 6/36 = 1/6. La valeur 1/36 est celle d'un double précis, par exemple (6 ; 6).",
+      "source": "maths-spe-1re:ch11:banque:117"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Une pièce truquée donne pile avec la probabilité 0,7. On la lance deux fois, de façon indépendante. Donner, sous forme décimale, la probabilité d'obtenir deux piles.",
+      "reponses_acceptees": [
+        "0,49",
+        "0.49",
+        "49/100"
+      ],
+      "difficulte": 1,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "0,7 × 0,7 = 0,49.",
+      "source": "maths-spe-1re:ch11:banque:118"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "Sur un trajet, le feu A est vert avec la probabilité 0,4 et le feu B, qui fonctionne indépendamment, avec la probabilité 0,75. Donner, sous forme décimale, la probabilité que les deux feux soient verts.",
+      "reponses_acceptees": [
+        "0,3",
+        "0.3",
+        "3/10"
+      ],
+      "difficulte": 2,
+      "notion": "Deux épreuves indépendantes",
+      "explication": "Indépendance : 0,4 × 0,75 = 0,3.",
+      "source": "maths-spe-1re:ch11:banque:119"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Qu'appelle-t-on une épreuve de Bernoulli ?",
+      "propositions": [
+        "une expérience à deux issues, succès ou échec",
+        "une expérience dont toutes les issues sont équiprobables",
+        "une expérience dont le succès a pour probabilité 0,5",
+        "une expérience répétée plusieurs fois de façon indépendante"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Une épreuve de Bernoulli a exactement deux issues ; le succès a une probabilité p quelconque entre 0 et 1.",
+      "source": "maths-spe-1re:ch11:banque:120"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On répète trois fois, de manière indépendante, une épreuve de Bernoulli de paramètre 0,2. Quelle est la probabilité du chemin SES (succès, échec, succès) ?",
+      "propositions": [
+        "0,032",
+        "0,128",
+        "0,4",
+        "0,096"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Règle du produit : 0,2 × 0,8 × 0,2 = 0,032. Le facteur 3 compterait tous les chemins à deux succès, pas un seul.",
+      "source": "maths-spe-1re:ch11:banque:121"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On répète quatre fois une épreuve de Bernoulli. Combien de chemins comporte l'arbre ?",
+      "propositions": [
+        "4",
+        "12",
+        "16",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Chaque épreuve double le nombre de chemins : 2 × 2 × 2 × 2 = 16.",
+      "source": "maths-spe-1re:ch11:banque:122"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On répète trois fois une épreuve de Bernoulli. Sur l'arbre, combien de chemins mènent à exactement deux succès ?",
+      "propositions": [
+        "2",
+        "1",
+        "6",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Ce sont SSE, SES et ESS : trois chemins.",
+      "source": "maths-spe-1re:ch11:banque:123"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Dans l'arbre d'une répétition de quatre épreuves de Bernoulli, combien de chemins comportent deux succès et deux échecs ?",
+      "propositions": [
+        "4",
+        "6",
+        "2",
+        "8"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "SSEE, SESE, SEES, ESSE, ESES, EESS : six chemins.",
+      "source": "maths-spe-1re:ch11:banque:124"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance trois fois une pièce équilibrée. Quelle est la probabilité d'obtenir exactement un pile ?",
+      "propositions": [
+        "0,125",
+        "0,5",
+        "1/3",
+        "0,375"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Trois chemins (PFF, FPF, FFP), chacun de probabilité 0,5³ = 0,125 : 3 × 0,125 = 0,375.",
+      "source": "maths-spe-1re:ch11:banque:125"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On répète trois fois une épreuve de Bernoulli de paramètre 0,1, de manière indépendante. Quelle est la probabilité d'obtenir au moins un succès ?",
+      "propositions": [
+        "0,3",
+        "0,729",
+        "0,271",
+        "0,001"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Événement contraire « aucun succès » : 0,9³ = 0,729, donc 1 − 0,729 = 0,271.",
+      "source": "maths-spe-1re:ch11:banque:126"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On lance quatre fois une pièce équilibrée. Quelle est la probabilité d'obtenir au moins trois piles ?",
+      "propositions": [
+        "0,0625",
+        "0,3125",
+        "0,6875",
+        "0,25"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 3,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "4 chemins à 3 piles et 1 chemin à 4 piles, chacun de probabilité 1/16 : 5/16 = 0,3125.",
+      "source": "maths-spe-1re:ch11:banque:127"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "On répète trois fois, de façon indépendante, une épreuve de Bernoulli de paramètre 0,4. Quelle est la probabilité d'obtenir exactement deux succès ?",
+      "propositions": [
+        "0,288",
+        "0,16",
+        "0,096",
+        "0,352"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 3,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Trois chemins à deux succès, chacun de probabilité 0,4² × 0,6 = 0,096 : 3 × 0,096 = 0,288.",
+      "source": "maths-spe-1re:ch11:banque:128"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On répète trois fois, de façon indépendante, une épreuve de Bernoulli de paramètre p. Coche toutes les réponses exactes.",
+      "propositions": [
+        "Un chemin à deux succès a pour probabilité 2p(1 − p)",
+        "L'arbre comporte 8 chemins",
+        "Un chemin à deux succès a pour probabilité p²(1 − p)",
+        "Il y a 6 chemins à exactement deux succès",
+        "Il y a 3 chemins à exactement un succès"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 1,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "2³ = 8 chemins ; un chemin à 2 succès porte deux fois p et une fois 1 − p ; il y a 3 chemins à un succès et 3 à deux succès.",
+      "source": "maths-spe-1re:ch11:banque:129"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On lance quatre fois une pièce équilibrée, les lancers étant indépendants. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(au moins un pile) = 0,9375",
+        "P(quatre piles) = 0,0625",
+        "P(exactement un pile) = 0,0625",
+        "P(exactement deux piles) = 0,5",
+        "P(exactement deux piles) = 0,375"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Chaque chemin a pour probabilité 1/16 = 0,0625. Deux piles : 6 chemins, 0,375 ; un pile : 4 chemins, 0,25 ; au moins un pile : 1 − 0,0625.",
+      "source": "maths-spe-1re:ch11:banque:130"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Lesquelles de ces expériences sont des épreuves de Bernoulli ? Coche toutes les réponses exactes.",
+      "propositions": [
+        "tirer une carte et noter si c'est un cœur ou non",
+        "lancer un dé et noter le résultat obtenu, de 1 à 6",
+        "tirer une boule dans une urne à trois couleurs et noter sa couleur",
+        "tirer un billet de loterie et noter s'il est gagnant ou non",
+        "lancer un dé et noter si l'on obtient 6 ou non"
+      ],
+      "bonnes_reponses": [
+        0,
+        3,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Une épreuve de Bernoulli n'a que deux issues. Noter le résultat du dé (six issues) ou une couleur parmi trois ne convient pas.",
+      "source": "maths-spe-1re:ch11:banque:131"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "Une joueuse réussit un tir avec la probabilité 0,6. Elle tire trois fois, les tirs étant indépendants. Coche toutes les réponses exactes.",
+      "propositions": [
+        "P(au moins une réussite) = 0,936",
+        "P(exactement deux réussites) = 0,144",
+        "P(aucune réussite) = 0,064",
+        "P(exactement une réussite) = 0,096",
+        "P(trois réussites) = 0,216"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "0,6³ = 0,216 ; 0,4³ = 0,064 ; 1 − 0,064 = 0,936. Deux réussites : 3 × 0,6² × 0,4 = 0,432 ; une réussite : 3 × 0,6 × 0,4² = 0,288.",
+      "source": "maths-spe-1re:ch11:banque:132"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour trois épreuves de Bernoulli indépendantes de même paramètre, les chemins SSE et ESS ont la même probabilité.",
+      "bonne_reponse": true,
+      "difficulte": 1,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Les deux valent p²(1 − p) : la probabilité d'un chemin ne dépend que de son nombre de succès.",
+      "source": "maths-spe-1re:ch11:banque:133"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si l'on répète deux fois une épreuve de Bernoulli de paramètre 0,5, la probabilité d'obtenir exactement un succès vaut 0,25.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Deux chemins (SE et ES) de probabilité 0,25 chacun : 0,5.",
+      "source": "maths-spe-1re:ch11:banque:134"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Pour quatre épreuves de Bernoulli indépendantes de paramètre 0,5, obtenir exactement deux succès est plus probable que d'obtenir exactement k succès pour tout autre k.",
+      "bonne_reponse": true,
+      "difficulte": 3,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Les probabilités sont 1/16, 4/16, 6/16, 4/16 et 1/16 pour k = 0 à 4 : le maximum est atteint pour k = 2.",
+      "source": "maths-spe-1re:ch11:banque:135"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On lance quatre fois une pièce équilibrée. Donner, sous forme décimale, la probabilité d'obtenir exactement trois piles.",
+      "reponses_acceptees": [
+        "0,25",
+        "0.25",
+        "1/4",
+        "4/16"
+      ],
+      "difficulte": 2,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "4 chemins à trois piles (PPPF, PPFP, PFPP, FPPP), chacun de probabilité 1/16 : 4/16 = 0,25.",
+      "source": "maths-spe-1re:ch11:banque:136"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On répète trois fois, de façon indépendante, une épreuve de Bernoulli de paramètre 0,2. Donner, sous forme décimale, la probabilité d'obtenir au moins un succès.",
+      "reponses_acceptees": [
+        "0,488",
+        "0.488",
+        "61/125"
+      ],
+      "difficulte": 3,
+      "notion": "Épreuves de Bernoulli répétées",
+      "explication": "Aucun succès : 0,8³ = 0,512. Au moins un succès : 1 − 0,512 = 0,488.",
+      "source": "maths-spe-1re:ch11:banque:137"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour estimer l'aire sous la courbe de y = x² entre 0 et 1, on tire un point M(x ; y) au hasard dans le carré unité. On le compte lorsque :",
+      "propositions": [
+        "y ⩾ x²",
+        "x² + y² ⩽ 1",
+        "y ⩽ x²",
+        "x ⩽ y²"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 1,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "La région est sous la courbe : l'ordonnée du point est inférieure ou égale à x².",
+      "source": "maths-spe-1re:ch11:banque:138"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Quand le nombre de points tirés devient grand, de quelle valeur se rapproche la fréquence des points situés sous la parabole y = x² dans le carré unité ?",
+      "propositions": [
+        "1/3",
+        "1/2",
+        "π/4",
+        "2/3"
+      ],
+      "bonnes_reponses": [
+        0
+      ],
+      "difficulte": 1,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "Cette fréquence approche l'aire sous la parabole, qui vaut 1/3 (résultat démontré en Terminale).",
+      "source": "maths-spe-1re:ch11:banque:139"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Pour estimer π, on tire des points M(x ; y) au hasard dans le carré unité. Quelle condition indique que M est dans le quart de disque de centre O et de rayon 1 ?",
+      "propositions": [
+        "y ⩽ x²",
+        "x² + y² ⩽ 1",
+        "x + y ⩽ 1",
+        "x² + y² ⩽ π"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 1,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "OM ⩽ 1 équivaut à OM² = x² + y² ⩽ 1.",
+      "source": "maths-spe-1re:ch11:banque:140"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Sur 10000 points tirés au hasard dans le carré unité, 7850 vérifient x² + y² ⩽ 1. Quelle estimation de π en déduit-on ?",
+      "propositions": [
+        "1,57",
+        "0,785",
+        "2,355",
+        "3,14"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "La fréquence 0,785 approche π/4 : on la multiplie par 4, ce qui donne 3,14.",
+      "source": "maths-spe-1re:ch11:banque:141"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "En Python, après from random import random, que renvoie l'appel random() ?",
+      "propositions": [
+        "toujours le même nombre, fixé par le module",
+        "un nombre décimal au hasard dans [0 ; 1[",
+        "un nombre entier au hasard entre 0 et 100",
+        "un entier égal à 0 ou à 1, au hasard"
+      ],
+      "bonnes_reponses": [
+        1
+      ],
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "random() renvoie un nombre (flottant) pseudo-aléatoire de l'intervalle [0 ; 1[, différent à chaque appel.",
+      "source": "maths-spe-1re:ch11:banque:142"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "Que faut-il faire pour rendre plus précise, en général, une estimation par la méthode de Monte-Carlo ?",
+      "propositions": [
+        "garder la plus grande valeur de plusieurs exécutions",
+        "diviser la fréquence obtenue par n",
+        "augmenter le nombre n de points tirés",
+        "multiplier la fréquence obtenue par 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ],
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "L'écart entre fréquence et probabilité diminue, en général, quand n augmente (de l'ordre de 1/√n).",
+      "source": "maths-spe-1re:ch11:banque:143"
+    },
+    {
+      "type": "qcm_unique",
+      "enonce": "L'écart entre la fréquence et la probabilité est le plus souvent de l'ordre de 1/√n. Par combien faut-il multiplier n pour passer d'un écart de l'ordre de 0,01 à un écart de l'ordre de 0,001 ?",
+      "propositions": [
+        "1000",
+        "10",
+        "2",
+        "100"
+      ],
+      "bonnes_reponses": [
+        3
+      ],
+      "difficulte": 3,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "1/√n = 0,01 pour n = 10000 et 1/√n = 0,001 pour n = 1000000 : n est multiplié par 100 pour gagner une décimale.",
+      "source": "maths-spe-1re:ch11:banque:144"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "La fonction Python aire_parabole(n) tire n points (x ; y) avec x = random() et y = random(), compte dans k ceux pour lesquels y <= x**2, puis renvoie k / n. Coche toutes les réponses exactes.",
+      "propositions": [
+        "la valeur renvoyée vaut exactement 1/3 dès que n ⩾ 1000",
+        "la valeur renvoyée est une fréquence comprise entre 0 et 1",
+        "chaque point est tiré dans le carré [0 ; 1] × [0 ; 1]",
+        "deux exécutions avec le même n renvoient toujours le même résultat",
+        "k compte les points situés sous la parabole"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        4
+      ],
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "La fonction renvoie une fréquence, qui varie d'une exécution à l'autre et n'est qu'une estimation de 1/3.",
+      "source": "maths-spe-1re:ch11:banque:145"
+    },
+    {
+      "type": "qcm_multiple",
+      "enonce": "On tire n points au hasard dans le carré unité et l'on note f la fréquence de ceux qui vérifient x² + y² ⩽ 1. Coche toutes les réponses exactes.",
+      "propositions": [
+        "la probabilité qu'un point tiré soit dans le quart de disque vaut π/4",
+        "f approche π/4 quand n est grand",
+        "f approche 1/4 quand n est grand",
+        "f approche π quand n est grand",
+        "4f approche π quand n est grand"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        4
+      ],
+      "difficulte": 3,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "Le quart de disque a pour aire π/4 ≈ 0,785 : c'est la probabilité cherchée, que f approche ; 4f approche donc π.",
+      "source": "maths-spe-1re:ch11:banque:146"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "La méthode de Monte-Carlo fournit la valeur exacte de l'aire cherchée.",
+      "bonne_reponse": false,
+      "difficulte": 1,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "Elle fournit une estimation, qui change d'une simulation à l'autre et dont la précision dépend du nombre de points.",
+      "source": "maths-spe-1re:ch11:banque:147"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Si un point est tiré uniformément dans le carré unité, la probabilité qu'il tombe dans une région de ce carré est égale à l'aire de cette région.",
+      "bonne_reponse": true,
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "C'est le principe de la méthode : le carré unité a pour aire 1.",
+      "source": "maths-spe-1re:ch11:banque:148"
+    },
+    {
+      "type": "vrai_faux",
+      "enonce": "Avec 1000 points tirés dans le carré unité, on en a trouvé 331 sous la parabole y = x² : cela prouve que l'aire sous la parabole vaut 0,331.",
+      "bonne_reponse": false,
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "0,331 est seulement une estimation de l'aire, qui vaut en réalité 1/3.",
+      "source": "maths-spe-1re:ch11:banque:149"
+    },
+    {
+      "type": "reponse_courte",
+      "enonce": "On tire 2000 points au hasard dans le carré unité ; 1572 vérifient x² + y² ⩽ 1. Donner l'estimation de π obtenue en multipliant la fréquence par 4 (valeur décimale exacte).",
+      "reponses_acceptees": [
+        "3,144",
+        "3.144"
+      ],
+      "difficulte": 2,
+      "notion": "Méthode de Monte-Carlo",
+      "explication": "Fréquence : 1572/2000 = 0,786 ; estimation : 4 × 0,786 = 3,144.",
+      "source": "maths-spe-1re:ch11:banque:150"
+    }
+  ]
+}
