@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { bonnesReponsesAffichees } from './aide-db';
-import { cocherEtAttendreSauvegarde, emailDeTest, inscrireEleve, repondreJuste } from './aide-parcours';
+import { emailDeTest, inscrireEleve, repondreJuste, saisirEtAttendreSauvegarde } from './aide-parcours';
 
 test('un élève réussit le quiz d’un chapitre et le voit sur son tableau de bord', async ({ page }) => {
   test.setTimeout(120_000);
@@ -27,8 +27,10 @@ test('les réponses sont conservées après un rechargement', async ({ page }) =
   await inscrireEleve(page, emailDeTest('reprise'));
   await page.goto('/cours/bph-1re-st2s/ch2');
   await page.getByRole('button', { name: 'Lancer le quiz' }).click();
-  await expect(page).toHaveURL(/\/tentative\//);
-  await cocherEtAttendreSauvegarde(page, 0);
+  await expect(page).toHaveURL(/\/tentative\/[0-9a-f-]{36}$/);
+  // La première question peut être à réponse courte : on saisit sa bonne réponse, quel que soit son type.
+  const [premiere] = await bonnesReponsesAffichees(page.url().split('/').pop()!);
+  await saisirEtAttendreSauvegarde(page, premiere);
   await page.reload();
   await expect(page.locator('.lecteur-position').filter({ hasText: /^Question 2\D+15$/ })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Question 1, répondue' })).toBeVisible();
