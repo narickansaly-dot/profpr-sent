@@ -1,0 +1,2276 @@
+{
+  "chapitre": 4,
+  "notions": [
+    "Constructions élémentaires",
+    "Boucles for et while",
+    "Fonctions et return",
+    "Variables locales et globales",
+    "Spécification et docstring",
+    "Assertions",
+    "Jeux de tests et erreurs",
+    "Bibliothèques",
+    "Diversité des langages",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch4:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Laquelle de ces constructions n'est pas une construction élémentaire de la programmation impérative ?",
+      "difficulte": 1,
+      "explication": "Les constructions élémentaires sont la séquence, l'affectation, la conditionnelle, les boucles et l'appel de fonction ; la compilation est une étape de traduction.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "L'affectation",
+        "La compilation",
+        "La boucle bornée",
+        "La conditionnelle"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Que fait l'instruction x = 3 en Python ?",
+      "difficulte": 1,
+      "explication": "= affecte ; == compare.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "Elle crée une fonction nommée x",
+        "Elle affiche la valeur 3",
+        "Elle affecte la valeur 3 à la variable x",
+        "Elle teste si x est égal à 3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:003",
+      "type": "qcm_unique",
+      "enonce": "En Python, qu'est-ce qui délimite un bloc d'instructions ?",
+      "difficulte": 1,
+      "explication": "Le bloc suit le signe : et se repère à son indentation (quatre espaces).",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "L'indentation",
+        "Les accolades",
+        "Les mots begin et end",
+        "Les points-virgules"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Quel mot-clé introduit une instruction conditionnelle en Python ?",
+      "difficulte": 1,
+      "explication": "if condition: puis le bloc indenté.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "for",
+        "def",
+        "while",
+        "if"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Quelles valeurs prend i dans for i in range(4) ?",
+      "difficulte": 1,
+      "explication": "range(n) va de 0 à n − 1.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "4",
+        "1, 2, 3, 4",
+        "0, 1, 2, 3",
+        "0, 1, 2, 3, 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Quel type de boucle utilise-t-on quand on ne connaît pas à l'avance le nombre de répétitions ?",
+      "difficulte": 1,
+      "explication": "while répète tant qu'une condition est vraie.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "Une boucle non bornée (while)",
+        "Une boucle bornée (for … in range)",
+        "Une conditionnelle (if)",
+        "Un appel de fonction"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on une boucle while dont la condition reste toujours vraie ?",
+      "difficulte": 1,
+      "explication": "Elle ne s'arrête jamais.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "Une boucle récursive",
+        "Une boucle bornée",
+        "Une boucle imbriquée",
+        "Une boucle infinie"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quel mot-clé permet de définir une fonction en Python ?",
+      "difficulte": 1,
+      "explication": "def nom(paramètres): puis le corps indenté.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "function",
+        "def",
+        "fun",
+        "return"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quel est le rôle de l'instruction return dans une fonction ?",
+      "difficulte": 1,
+      "explication": "return renvoie une valeur ; print affiche.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "Terminer la fonction et renvoyer une valeur au programme appelant",
+        "Définir un paramètre de la fonction",
+        "Afficher une valeur à l'écran",
+        "Recommencer la fonction depuis le début"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:010",
+      "type": "qcm_unique",
+      "enonce": "On définit def carre(x): return x * x. Que vaut carre(5) ?",
+      "difficulte": 1,
+      "explication": "5 × 5 = 25.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "None",
+        "10",
+        "5",
+        "25"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Dans def aire(longueur, largeur):, comment appelle-t-on longueur et largeur ?",
+      "difficulte": 1,
+      "explication": "Les paramètres reçoivent les arguments lors de l'appel.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "Les assertions",
+        "Les variables globales",
+        "Les paramètres de la fonction",
+        "Les valeurs de retour"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Une variable affectée à l'intérieur d'une fonction est dite :",
+      "difficulte": 1,
+      "explication": "Elle n'existe que pendant l'exécution de la fonction.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "globale",
+        "locale",
+        "booléenne",
+        "constante"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on une condition que doivent vérifier les arguments d'une fonction pour qu'elle fonctionne correctement ?",
+      "difficulte": 1,
+      "explication": "Exemple : « n est un entier positif ».",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Un invariant",
+        "Une précondition",
+        "Une postcondition",
+        "Une docstring"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on ce qu'une fonction garantit sur son résultat quand les préconditions sont respectées ?",
+      "difficulte": 1,
+      "explication": "Exemple : « le résultat est compris entre 0 et n ».",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Un paramètre",
+        "Un argument",
+        "Une précondition",
+        "Une postcondition"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Où écrit-on la documentation d'une fonction Python ?",
+      "difficulte": 1,
+      "explication": "C'est la docstring, affichée par help.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Dans un commentaire placé après la dernière ligne",
+        "Dans un fichier séparé obligatoirement",
+        "Dans une chaîne entre triples guillemets placée juste après la ligne def",
+        "Dans la valeur renvoyée par return"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il quand la condition d'une instruction assert est fausse ?",
+      "difficulte": 1,
+      "explication": "assert arrête l'exécution si la condition est fausse.",
+      "notion": "Assertions",
+      "propositions": [
+        "Le programme s'arrête avec une erreur AssertionError",
+        "La condition est corrigée automatiquement",
+        "La fonction renvoie False",
+        "Le programme continue sans rien signaler"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Une assertion est vérifiée (sa condition vaut True). Quelle est la suite de l'exécution ?",
+      "difficulte": 1,
+      "explication": "Une assertion vérifiée est silencieuse.",
+      "notion": "Assertions",
+      "propositions": [
+        "Le programme s'arrête",
+        "Rien : le programme continue",
+        "La fonction renvoie la condition",
+        "Python affiche True"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:018",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un jeu de tests ?",
+      "difficulte": 1,
+      "explication": "On compare le résultat obtenu au résultat attendu.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "Un programme qui corrige les erreurs tout seul",
+        "Un jeu vidéo programmé en Python",
+        "Un ensemble d'appels dont on connaît le résultat attendu",
+        "La liste des variables d'un programme"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on couramment une erreur dans un programme ?",
+      "difficulte": 1,
+      "explication": "En anglais bug.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "Un module",
+        "Un paramètre",
+        "Un octet",
+        "Un bogue"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Quelle erreur Python déclenche l'expression 1 / 0 ?",
+      "difficulte": 1,
+      "explication": "La division par zéro est impossible.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "ZeroDivisionError",
+        "NameError",
+        "SyntaxError",
+        "IndexError"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quelle instruction permet d'utiliser la fonction sqrt du module math en écrivant math.sqrt ?",
+      "difficulte": 1,
+      "explication": "On écrit ensuite math.sqrt(16).",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "include math",
+        "using math",
+        "load math",
+        "import math"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie math.sqrt(16) ?",
+      "difficulte": 1,
+      "explication": "sqrt renvoie un flottant.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "256",
+        "4",
+        "4.0",
+        "8.0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Comment afficher la documentation d'une fonction en Python ?",
+      "difficulte": 1,
+      "explication": "help affiche la docstring.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "Avec help, par exemple help(math.sqrt)",
+        "Avec return help",
+        "Avec print(math)",
+        "Avec import doc"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Lequel de ces langages n'est pas un langage de programmation ?",
+      "difficulte": 1,
+      "explication": "HTML décrit la structure d'une page Web.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "JavaScript",
+        "HTML",
+        "C",
+        "Python"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Quel langage est un langage de requêtes sur des bases de données ?",
+      "difficulte": 1,
+      "explication": "SQL interroge les bases de données ; on l'étudie en terminale.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "SQL",
+        "C",
+        "Python",
+        "Prolog"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Dans le langage C, qu'est-ce qui délimite les blocs d'instructions ?",
+      "difficulte": 1,
+      "explication": "C et JavaScript utilisent { et }.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "Les guillemets",
+        "L'indentation seule",
+        "Les crochets",
+        "Les accolades"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Qui a écrit au XIXe siècle un programme pour la machine analytique de Charles Babbage ?",
+      "difficulte": 1,
+      "explication": "Ada Lovelace (1843).",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Guido van Rossum",
+        "Ada Lovelace",
+        "Alan Turing",
+        "Grace Hopper"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Qui a créé le langage Python ?",
+      "difficulte": 1,
+      "explication": "Python est publié en 1991.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "John Backus",
+        "Dennis Ritchie",
+        "Guido van Rossum",
+        "Tim Berners-Lee"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Dans une boucle bornée, l'appel range(1, 4) fournit quels entiers ?",
+      "difficulte": 1,
+      "explication": "La borne de fin est exclue.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "1, 2, 3, 4",
+        "0, 1, 2, 3",
+        "1, 2, 3",
+        "1, 4"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie une fonction Python qui se termine sans instruction return ?",
+      "difficulte": 1,
+      "explication": "None est la valeur spéciale qui signifie « rien ».",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "Une chaîne vide",
+        "None",
+        "0",
+        "False"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:031",
+      "type": "qcm_unique",
+      "enonce": "On exécute total = 0 puis for i in range(1, 6): total = total + i. Que vaut total ?",
+      "difficulte": 2,
+      "explication": "1 + 2 + 3 + 4 + 5 = 15.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "10",
+        "21",
+        "5",
+        "15"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:032",
+      "type": "qcm_unique",
+      "enonce": "On exécute k = 1 puis while k < 100: k = k * 2. Que vaut k à la fin ?",
+      "difficulte": 2,
+      "explication": "k prend 2, 4, …, 64, 128 ; 128 n'est pas inférieur à 100.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "128",
+        "100",
+        "256",
+        "64"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Combien de fois le corps de la boucle for i in range(2, 10, 3) est-il exécuté ?",
+      "difficulte": 2,
+      "explication": "i prend 2, 5, 8.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "4",
+        "2",
+        "3",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:034",
+      "type": "qcm_unique",
+      "enonce": "On exécute n = 10 puis while n > 0: n = n - 3. Que vaut n à la fin ?",
+      "difficulte": 2,
+      "explication": "n prend 7, 4, 1, −2 ; −2 n'est pas strictement positif.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "0",
+        "-3",
+        "1",
+        "-2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi la boucle i = 0 ; while i < 10 : print(i) ne s'arrête-t-elle jamais ?",
+      "difficulte": 2,
+      "explication": "i reste à 0, donc i < 10 reste vrai.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "La condition i < 10 est fausse dès le départ",
+        "La variable i n'est jamais modifiée dans la boucle",
+        "print ne peut pas être utilisé dans une boucle",
+        "La boucle while ne s'applique qu'aux flottants"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:036",
+      "type": "qcm_unique",
+      "enonce": "On exécute a = 3 ; b = 5 ; a = b ; b = a. Que valent a et b ?",
+      "difficulte": 2,
+      "explication": "a = b donne 5 ; b = a redonne 5 : la valeur 3 est perdue.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "a vaut 5 et b vaut 5",
+        "a vaut 3 et b vaut 3",
+        "a vaut 3 et b vaut 5",
+        "a vaut 5 et b vaut 3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:037",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = 7, puis if x > 5: x = x - 5, puis else: x = x + 5. Que vaut x ?",
+      "difficulte": 2,
+      "explication": "7 > 5 : on exécute x = 7 − 5.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "12",
+        "2",
+        "-2",
+        "7"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Que vaut n après n = 15 ; n = n // 4 ; n = n % 2 ?",
+      "difficulte": 2,
+      "explication": "15 // 4 = 3, puis 3 % 2 = 1.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "1",
+        "3.75",
+        "0",
+        "3"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:039",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(x): return 2 * x + 1. Que vaut f(f(1)) ?",
+      "difficulte": 2,
+      "explication": "f(1) = 3, puis f(3) = 7.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "5",
+        "3",
+        "9",
+        "7"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la différence entre print(x) et return x dans une fonction ?",
+      "difficulte": 2,
+      "explication": "Seul return permet de réutiliser le résultat dans un calcul.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "return ne peut renvoyer que des nombres",
+        "print renvoie x, return l'affiche",
+        "print affiche x à l'écran, return renvoie x au programme qui a appelé la fonction",
+        "Il n'y a aucune différence"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:041",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(x): print(x * 2). Que vaut y après y = f(3) ?",
+      "difficulte": 2,
+      "explication": "f affiche 6 mais ne renvoie rien : y vaut None.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "3",
+        "6",
+        "None",
+        "'6'"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:042",
+      "type": "qcm_unique",
+      "enonce": "On définit def division(a, b): return a // b, a % b. Que renvoie division(17, 5) ?",
+      "difficulte": 2,
+      "explication": "Le quotient entier est 3 et le reste 2 : la fonction renvoie le p-uplet (3, 2).",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "3.4",
+        "(2, 3)",
+        "3",
+        "(3, 2)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:043",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(n): if n > 0: return 'positif' puis return 'négatif ou nul' (au même niveau que le if). Que renvoie f(0) ?",
+      "difficulte": 2,
+      "explication": "0 > 0 est faux : on atteint le second return.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "'négatif ou nul'",
+        "None",
+        "0",
+        "'positif'"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:044",
+      "type": "qcm_unique",
+      "enonce": "On exécute x = 10, on définit def f(): x = 5 ; return x, puis on affiche f() et x. Qu'obtient-on ?",
+      "difficulte": 2,
+      "explication": "Le x de f est local : il ne modifie pas le x global.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "5 5",
+        "5 10",
+        "10 5",
+        "10 10"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi vaut-il mieux passer des valeurs en paramètres plutôt qu'utiliser des variables globales dans une fonction ?",
+      "difficulte": 2,
+      "explication": "Une fonction qui dépend seulement de ses paramètres se teste et se réutilise facilement.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "Les paramètres rendent le programme plus rapide dans tous les cas",
+        "Une fonction ne peut pas lire une variable globale",
+        "Les variables globales sont interdites en Python",
+        "La fonction est plus facile à tester et à réutiliser"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Quelle précondition convient pour une fonction qui calcule la moyenne d'une liste de nombres ?",
+      "difficulte": 2,
+      "explication": "Sans cette condition, on diviserait par zéro.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "La liste n'est pas vide",
+        "La liste contient exactement dix nombres",
+        "Le résultat est un flottant",
+        "La moyenne est positive"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Dans def moyenne(notes: list) -> float:, que signifie -> float ?",
+      "difficulte": 2,
+      "explication": "C'est une annotation du prototype ; Python ne la vérifie pas.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "notes doit être un flottant",
+        "La fonction est annoncée comme renvoyant un flottant",
+        "La fonction affiche un flottant",
+        "Python convertit automatiquement les notes en flottants"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Que fait help(moyenne) quand moyenne a une docstring ?",
+      "difficulte": 2,
+      "explication": "La docstring sert de documentation.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Elle exécute la fonction sur un exemple",
+        "Elle corrige les erreurs de la fonction",
+        "Elle affiche le prototype et la docstring de la fonction",
+        "Elle supprime la fonction"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Quelle assertion vérifie la précondition « n est un entier positif ou nul » ?",
+      "difficulte": 2,
+      "explication": "L'assertion énonce la condition qui doit être vraie.",
+      "notion": "Assertions",
+      "propositions": [
+        "assert n >= 0",
+        "assert n > 0 or n < 0",
+        "assert n < 0",
+        "assert n == 0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Que provoque assert len(t) > 0, \"liste vide\" avec t = [] ?",
+      "difficulte": 2,
+      "explication": "La condition est fausse : arrêt avec le message.",
+      "notion": "Assertions",
+      "propositions": [
+        "Une IndexError",
+        "Un affichage de liste vide sans arrêt",
+        "Le renvoi de False",
+        "Une AssertionError avec le message liste vide"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi un jeu de tests réussi ne garantit-il pas qu'un programme est correct ?",
+      "difficulte": 2,
+      "explication": "Seule une preuve garantit la correction pour toutes les entrées.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "Parce que les tests sont toujours faux",
+        "Parce que Python ignore les assertions",
+        "Il ne vérifie que les cas essayés, pas tous les cas possibles",
+        "Parce qu'un test réussi ralentit le programme"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Pour tester une fonction maximum(t) qui renvoie le plus grand élément d'une liste non vide, quel test est le plus utile en plus de maximum([3, 8, 1]) == 8 ?",
+      "difficulte": 2,
+      "explication": "Un cas limite avec des négatifs détecte une initialisation fautive à 0.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "maximum([1, 8, 3]) == 8",
+        "maximum([-4, -2, -7]) == -2",
+        "maximum([3, 8, 1]) == 8, répété une seconde fois",
+        "maximum([4, 9, 2]) == 9"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Quelle erreur Python provoque l'expression \"3\" + 1 ?",
+      "difficulte": 2,
+      "explication": "On n'additionne pas une chaîne et un entier.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "TypeError",
+        "NameError",
+        "ValueError",
+        "ZeroDivisionError"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Quelle erreur Python provoque t[5] quand t contient 3 éléments ?",
+      "difficulte": 2,
+      "explication": "Les indices valides vont de 0 à 2.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "SyntaxError",
+        "TypeError",
+        "IndexError",
+        "KeyError"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Après from random import randint, quelles valeurs peut renvoyer randint(1, 6) ?",
+      "difficulte": 2,
+      "explication": "randint(a, b) inclut ses deux bornes.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "Un entier de 0 à 6",
+        "Un entier de 1 à 6, bornes incluses",
+        "Un entier de 1 à 5",
+        "Un flottant entre 1 et 6"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Après import math as m, comment écrit-on le nombre pi ?",
+      "difficulte": 2,
+      "explication": "Le module est renommé m.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "math.pi",
+        "pi",
+        "m(pi)",
+        "m.pi"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Quelle différence entre C et Python est exacte ?",
+      "difficulte": 2,
+      "explication": "En C on écrit int s = 0 ; en Python s = 0.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "Seul C possède des fonctions",
+        "C impose de déclarer le type des variables, pas Python",
+        "Python impose de déclarer le type des variables, pas C",
+        "Seul Python possède des boucles"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Quel style de programmation consiste à écrire des réactions à des événements, comme un clic ?",
+      "difficulte": 2,
+      "explication": "C'est le cas de JavaScript dans une page Web.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "La programmation fonctionnelle",
+        "La programmation logique",
+        "La programmation événementielle",
+        "La programmation compilée"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Que signifie qu'un langage comme C est compilé ?",
+      "difficulte": 2,
+      "explication": "Python est, lui, interprété.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "Le programme est traduit en langage machine avant d'être exécuté",
+        "Le programme ne peut tourner que sur un serveur Web",
+        "Le programme ne contient pas de fonctions",
+        "Le programme est exécuté ligne par ligne par un interpréteur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Quel langage, créé en 1972 à Marseille par Alain Colmerauer, est un langage de programmation logique ?",
+      "difficulte": 2,
+      "explication": "Prolog travaille sur des faits et des règles.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Fortran",
+        "Lisp",
+        "Java",
+        "Prolog"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:061",
+      "type": "qcm_unique",
+      "enonce": "On exécute s = 0 puis for i in range(10): if i % 3 == 0: s = s + i. Que vaut s ?",
+      "difficulte": 3,
+      "explication": "i vaut 0, 3, 6, 9 : 0 + 3 + 6 + 9 = 18.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "45",
+        "18",
+        "12",
+        "9"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:062",
+      "type": "qcm_unique",
+      "enonce": "On exécute c = 0 ; n = 1000, puis while n > 1: n = n // 2 ; c = c + 1. Que vaut c ?",
+      "difficulte": 3,
+      "explication": "n prend 500, 250, 125, 62, 31, 15, 7, 3, 1 : neuf divisions.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "10",
+        "500",
+        "9",
+        "8"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Combien de fois print est-il exécuté par for i in range(3): for j in range(4): print(i, j) ?",
+      "difficulte": 3,
+      "explication": "3 × 4 = 12 passages dans la boucle intérieure.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "12",
+        "3",
+        "7",
+        "4"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:064",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(t): t.append(0). Que vaut L après L = [1, 2] puis f(L) ?",
+      "difficulte": 3,
+      "explication": "La liste est modifiée en place : f reçoit la même liste que L.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "None",
+        "[0]",
+        "[1, 2]",
+        "[1, 2, 0]"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:065",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(n): for i in range(n): if i * i > n: return i, puis return -1 après la boucle. Que renvoie f(10) ?",
+      "difficulte": 3,
+      "explication": "4 × 4 = 16 > 10 est le premier cas ; return arrête la boucle et la fonction.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "10",
+        "4",
+        "3",
+        "-1"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:066",
+      "type": "qcm_unique",
+      "enonce": "On exécute c = 0, on définit def ajoute(): c = c + 1, puis on appelle ajoute(). Que se passe-t-il ?",
+      "difficulte": 3,
+      "explication": "L'affectation rend c locale dans ajoute, mais sa valeur est lue avant d'être affectée.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "c vaut 0 et rien ne se passe",
+        "c vaut 1",
+        "Une erreur (UnboundLocalError) : c est locale à ajoute et lue avant d'avoir reçu une valeur",
+        "Une erreur SyntaxError"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Une fonction racine_entiere(n) renvoie le plus grand entier r tel que r * r <= n. Quelle postcondition est correcte ?",
+      "difficulte": 3,
+      "explication": "r est le plus grand : (r + 1)² dépasse n. n >= 0 est une précondition.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "r * r <= n < (r + 1) * (r + 1)",
+        "n >= 0",
+        "r <= n // 2",
+        "r * r == n"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:068",
+      "type": "qcm_unique",
+      "enonce": "On écrit def inverse(x): assert x != 0, \"x nul\" ; return 1 / x. Que se passe-t-il avec inverse(0) ?",
+      "difficulte": 3,
+      "explication": "L'assertion est vérifiée avant la division.",
+      "notion": "Assertions",
+      "propositions": [
+        "La fonction renvoie None",
+        "ZeroDivisionError",
+        "La fonction renvoie 0",
+        "AssertionError: x nul"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Une fonction est_pair(n) est écrite return n % 2 == 1. Lequel de ces tests est lui-même correct (il énonce le bon résultat attendu) et révèle l'erreur ?",
+      "difficulte": 3,
+      "explication": "est_pair(4) doit valoir True ; la fonction renvoie False, le test échoue et montre l'erreur. Les trois autres tests énoncent un résultat faux.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "assert est_pair(4) == False",
+        "assert est_pair(3) == True",
+        "assert est_pair(4) == True",
+        "assert est_pair(5) == True"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:070",
+      "type": "qcm_unique",
+      "enonce": "On écrit maximum avec m = 0 au lieu de m = t[0]. Lequel de ces tests réussit alors qu'il ne devrait pas suffire à valider la fonction ?",
+      "difficulte": 3,
+      "explication": "Avec des positifs, l'erreur ne se voit pas : seuls les tests avec des négatifs la révèlent.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "assert maximum([-4, -2, -7]) == -2",
+        "assert maximum([-5, -9]) == -5",
+        "assert maximum([-1]) == -1",
+        "assert maximum([3, 8, 1]) == 8"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:071",
+      "type": "qcm_unique",
+      "enonce": "En C, que fait la boucle for (int i = 1; i <= n; i++) ?",
+      "difficulte": 3,
+      "explication": "i commence à 1 et la boucle continue tant que i <= n.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "Elle fait prendre à i les valeurs de 1 à n − 1",
+        "Elle fait prendre à i les valeurs de 1 à n",
+        "Elle fait prendre à i les valeurs de 0 à n − 1",
+        "Elle répète la boucle à l'infini"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Quelle boucle Python équivaut à la boucle C for (int i = 0; i < 10; i = i + 2) ?",
+      "difficulte": 3,
+      "explication": "i prend 0, 2, 4, 6, 8.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "for i in range(0, 10, 2):",
+        "for i in range(10):",
+        "for i in range(2, 10):",
+        "for i in range(0, 11, 2):"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:073",
+      "type": "qcm_unique",
+      "enonce": "On exécute from math import sqrt puis on écrit math.sqrt(9). Que se passe-t-il ?",
+      "difficulte": 3,
+      "explication": "from math import sqrt importe seulement sqrt, pas le nom math.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "On obtient 3.0",
+        "Une erreur NameError, car le nom math n'est pas défini",
+        "On obtient 3",
+        "On obtient 81"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Que produit l'affectation multiple a, b = b, a quand a vaut 3 et b vaut 5 ?",
+      "difficulte": 3,
+      "explication": "L'affectation multiple échange les deux valeurs.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "a vaut 5 et b vaut 3",
+        "a vaut 3 et b vaut 3",
+        "a vaut 5 et b vaut 5",
+        "a vaut 3 et b vaut 5"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Quel premier langage de haut niveau largement utilisé est créé chez IBM en 1957 ?",
+      "difficulte": 3,
+      "explication": "Fortran (FORmula TRANslator), de John Backus.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "HTML",
+        "Python",
+        "C",
+        "Fortran"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces constructions, lesquelles sont des constructions élémentaires des langages de programmation ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La mise en page n'est pas une construction d'un langage de programmation.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "La mise en page",
+        "L'affectation",
+        "La boucle non bornée",
+        "L'appel de fonction"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces boucles, lesquelles sont des boucles bornées ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Une boucle for parcourt un nombre d'éléments connu à l'avance.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "while True:",
+        "for lettre in \"NSI\":",
+        "for i in range(10):",
+        "while x > 0:"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Que sait-on des fonctions en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Une fonction renvoie souvent une valeur avec return.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "Une fonction ne peut pas renvoyer de valeur",
+        "Une fonction doit toujours afficher son résultat",
+        "On peut appeler une fonction plusieurs fois",
+        "Une fonction peut avoir plusieurs paramètres"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces éléments, lesquels font partie de la spécification d'une fonction ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La spécification dit ce que fait la fonction, pas comment.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Les préconditions",
+        "Le nom des variables locales",
+        "La couleur de l'éditeur",
+        "Les postconditions"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Quel est le comportement de l'instruction assert ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "assert condition, message.",
+      "notion": "Assertions",
+      "propositions": [
+        "Elle arrête le programme si la condition est fausse",
+        "Elle corrige les valeurs fausses",
+        "Elle s'exécute seulement à la fin du programme",
+        "Elle peut afficher un message d'erreur"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces erreurs, lesquelles sont des erreurs de Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "LengthError n'existe pas en Python.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "IndexError",
+        "SyntaxError",
+        "NameError",
+        "LengthError"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces noms, lesquels sont des modules de la bibliothèque standard de Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "math, random, csv, time… font partie de la bibliothèque standard.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "random",
+        "python",
+        "math",
+        "calculatrice"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces langages, lesquels sont des langages de programmation ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "HTML et CSS décrivent une page Web.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "CSS",
+        "HTML",
+        "C",
+        "Python"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces styles de programmation, lesquels existent ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On parle aussi de styles logique et événementiel.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "Fonctionnel",
+        "Objet",
+        "Alphabétique",
+        "Impératif"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Portée des variables : quelles phrases sont justes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les variables locales sont indépendantes des globales.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "Une variable locale n'existe que pendant l'exécution de la fonction",
+        "Une variable locale modifie la variable globale de même nom",
+        "Une variable définie hors de toute fonction est globale",
+        "Une fonction ne peut avoir aucune variable locale"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations langage et date de création, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "C date de 1972 et JavaScript de 1995.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "C, 2010",
+        "Fortran, 1957",
+        "Python, 1991",
+        "JavaScript, 1957"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces appels, lesquels produisent exactement les valeurs 0, 1, 2 ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "La borne de fin est exclue.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "range(0, 3)",
+        "range(1, 3)",
+        "range(0, 2)",
+        "range(3)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "On exécute k = 0 puis while k * k < 20: k = k + 1. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "k passe de 0 à 5 ; 5 × 5 = 25 n'est pas inférieur à 20.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "À la fin, k vaut 4",
+        "La boucle ne s'arrête jamais",
+        "À la fin, k vaut 5",
+        "Le corps de la boucle est exécuté 5 fois"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "On définit def f(a, b=2): return a ** b. Parmi ces appels, lesquels renvoient 9 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "f(3) utilise b = 2 : 3² = 9 ; f(2, 3) = 8 ; f(9, 1) + 1 = 10.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "f(3)",
+        "f(3, 2)",
+        "f(2, 3)",
+        "f(9, 1) + 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Pour une fonction indice(t, x) qui renvoie l'indice de la première occurrence de x dans t, ou -1 si x n'y est pas, lesquelles de ces phrases sont des postconditions ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les postconditions portent sur le résultat ; « t est une liste » est une précondition.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "x est un élément de type quelconque",
+        "t est une liste",
+        "Si le résultat i est différent de -1, alors t[i] == x",
+        "Si le résultat vaut -1, alors x n'est pas dans t"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces assertions, lesquelles échouent (déclenchent une AssertionError) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Seules les conditions fausses déclenchent une erreur.",
+      "notion": "Assertions",
+      "propositions": [
+        "assert 2 + 2 == 5",
+        "assert 'a' in 'NSI' or True",
+        "assert 3 > 1",
+        "assert len([]) > 0"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces tests de la fonction valeur_absolue(x), lesquels testent des cas particuliers utiles (zéro, valeurs négatives) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "0 et les négatifs sont les cas qui risquent de révéler une erreur.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "valeur_absolue(0) == 0",
+        "valeur_absolue(-3) == 3",
+        "valeur_absolue(5) == 5, répété dix fois",
+        "valeur_absolue(5) == 5 suivi de valeur_absolue(6) == 6"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les tests, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les tests montrent la présence d'erreurs, pas leur absence.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "Un programme qui passe tous ses tests est forcément correct",
+        "Plus les tests sont variés, plus on a de chances de trouver les erreurs",
+        "Il suffit de tester un seul cas",
+        "Un test qui échoue révèle une erreur dans le programme ou dans le test"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces façons d'importer, lesquelles permettent d'écrire ensuite sqrt(2) sans préfixe ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Avec import math, il faut écrire math.sqrt.",
+      "notion": "Bibliothèques",
+      "propositions": [
+        "from math import *",
+        "from math import sqrt",
+        "import math",
+        "import math as m"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces différences entre Python et C, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Python utilise l'indentation et ne déclare pas les types.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "C termine les instructions par un point-virgule",
+        "C délimite les blocs par des accolades",
+        "Python déclare obligatoirement le type des variables",
+        "C n'a pas de boucle for"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "On exécute x = 4 puis if x > 5: y = 1 / elif x > 3: y = 2 / else: y = 3. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "x > 5 est faux, x > 3 est vrai : y = 2 et le else est ignoré.",
+      "notion": "Constructions élémentaires",
+      "propositions": [
+        "La condition x > 5 est évaluée",
+        "y vaut 1",
+        "y vaut 2",
+        "y vaut 3"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "On définit def f(n): return n * 2. Parmi ces expressions, lesquelles valent 12 ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "f(3) = 6, f(6) = 12 ; f(12) = 24.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "f(f(3))",
+        "f(6)",
+        "f(12)",
+        "f(6) * 2"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "On exécute n = 1, on définit def g(n): n = n + 10 ; return n, puis r = g(n). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le paramètre n de g est local : la variable globale n n'est pas modifiée.",
+      "notion": "Variables locales et globales",
+      "propositions": [
+        "r vaut 1",
+        "n vaut encore 1 après l'appel",
+        "n vaut 11 après l'appel",
+        "r vaut 11"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces faits, lesquels concernent Grace Hopper ou son équipe ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Un papillon coincé dans un relais du Mark II a été noté comme « premier bug ».",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Le travail sur le calculateur Harvard Mark II",
+        "La création de Python",
+        "La popularisation du mot « bug » en 1947",
+        "L'invention du Web"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "On exécute r = 1 puis for i in range(1, 5): r = r * i. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "1 × 1 × 2 × 3 × 4 = 24 ; 4 tours.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "r vaut 24",
+        "i prend la valeur 4 au dernier tour",
+        "r vaut 120",
+        "La boucle s'exécute 5 fois"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "On définit def f(x): if x > 0: return 1 puis elif x < 0: return -1 (sans autre instruction). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Pour x = 0, aucune branche ne renvoie : la fonction renvoie None.",
+      "notion": "Fonctions et return",
+      "propositions": [
+        "f(-2) vaut None",
+        "f(0) vaut None",
+        "f(5) vaut 1",
+        "f(0) vaut 0"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Une fonction rang(t, x) a pour précondition « t est trié dans l'ordre croissant ». Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Respecter les préconditions est la responsabilité de l'appelant ; une assertion permet de le contrôler.",
+      "notion": "Spécification et docstring",
+      "propositions": [
+        "Une précondition est vérifiée automatiquement par Python",
+        "Si on l'appelle avec une liste non triée, son résultat n'est pas garanti",
+        "On peut vérifier cette précondition avec une assertion",
+        "La fonction doit trier t avant de travailler"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "La fonction def somme(n): s = 0 ; for i in range(n): s = s + i ; return s doit renvoyer 1 + 2 + … + n. Parmi ces tests, lesquels échouent ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "range(n) s'arrête à n − 1 : somme(3) vaut 3 et somme(1) vaut 0. L'erreur est dans la borne.",
+      "notion": "Jeux de tests et erreurs",
+      "propositions": [
+        "assert somme(0) >= 0",
+        "assert somme(1) == 1",
+        "assert somme(0) == 0",
+        "assert somme(3) == 6"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces langages, lesquels sont des langages formalisés qui ne permettent pas d'écrire n'importe quel algorithme ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "HTML décrit la structure et CSS la mise en forme ; JavaScript et C sont des langages de programmation.",
+      "notion": "Diversité des langages",
+      "propositions": [
+        "C",
+        "CSS",
+        "JavaScript",
+        "HTML"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces boucles, lesquelles s'arrêtent à coup sûr ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "10 − 3k ne vaut jamais 0 ; en ajoutant 1, n reste positif.",
+      "notion": "Boucles for et while",
+      "propositions": [
+        "n = 10 puis while n != 0: n = n - 3",
+        "n = 10 puis while n > 0: n = n - 1",
+        "n = 10 puis while n > 0: n = n + 1",
+        "n = 10 puis while n != 0: n = n - 2"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:106",
+      "type": "vrai_faux",
+      "enonce": "En Python, l'indentation fait partie de la syntaxe du programme.",
+      "difficulte": 1,
+      "explication": "Elle délimite les blocs.",
+      "notion": "Constructions élémentaires",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:107",
+      "type": "vrai_faux",
+      "enonce": "La boucle for i in range(5) s'exécute cinq fois, la première avec i = 0.",
+      "difficulte": 1,
+      "explication": "range(5) va de 0 à 4.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Une fonction Python sans instruction return renvoie None.",
+      "difficulte": 1,
+      "explication": "None signifie l'absence de valeur.",
+      "notion": "Fonctions et return",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:109",
+      "type": "vrai_faux",
+      "enonce": "Le succès d'un jeu de tests ne garantit pas qu'un programme est correct.",
+      "difficulte": 1,
+      "explication": "Les tests ne couvrent pas tous les cas.",
+      "notion": "Jeux de tests et erreurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:110",
+      "type": "vrai_faux",
+      "enonce": "HTML est un langage de description et non un langage de programmation.",
+      "difficulte": 1,
+      "explication": "Il décrit la structure d'une page.",
+      "notion": "Diversité des langages",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Python a été publié en 1991 par Guido van Rossum.",
+      "difficulte": 1,
+      "explication": "C'est la date de sa première version publique.",
+      "notion": "Repères historiques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Si def f(x): return x + 1, alors f(f(2)) vaut 4.",
+      "difficulte": 2,
+      "explication": "f(2) = 3 puis f(3) = 4.",
+      "notion": "Fonctions et return",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Une variable affectée dans une fonction ne modifie pas une variable globale de même nom.",
+      "difficulte": 2,
+      "explication": "Elle est locale à la fonction.",
+      "notion": "Variables locales et globales",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:114",
+      "type": "vrai_faux",
+      "enonce": "assert len(t) > 0 déclenche une AssertionError quand t est une liste vide.",
+      "difficulte": 2,
+      "explication": "La condition est fausse.",
+      "notion": "Assertions",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Après import math, on écrit math.sqrt(2) pour calculer la racine carrée de 2.",
+      "difficulte": 2,
+      "explication": "Le préfixe math. est nécessaire.",
+      "notion": "Bibliothèques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:116",
+      "type": "vrai_faux",
+      "enonce": "En C, il faut déclarer le type d'une variable avant de l'utiliser.",
+      "difficulte": 2,
+      "explication": "Par exemple int s = 0;.",
+      "notion": "Diversité des langages",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Après k = 1 puis while k < 100: k = k * 2, k vaut 128.",
+      "difficulte": 2,
+      "explication": "64 < 100 donne 128, puis la condition devient fausse.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Après s = 0 puis for i in range(10): if i % 3 == 0: s = s + i, s vaut 18.",
+      "difficulte": 3,
+      "explication": "0 + 3 + 6 + 9 = 18.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Si def f(t): t.append(0), alors après L = [1] puis f(L), L vaut [1, 0].",
+      "difficulte": 3,
+      "explication": "La liste passée en argument est modifiée en place.",
+      "notion": "Fonctions et return",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Une fonction maximum qui commence par m = 0 peut passer le test maximum([3, 8, 1]) == 8 tout en étant fausse.",
+      "difficulte": 3,
+      "explication": "L'erreur n'apparaît qu'avec des nombres tous négatifs.",
+      "notion": "Jeux de tests et erreurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch4:banque:121",
+      "type": "vrai_faux",
+      "enonce": "for i in range(1, 4) fait prendre à i les valeurs 1, 2, 3 et 4.",
+      "difficulte": 1,
+      "explication": "La borne de fin est exclue : 1, 2, 3.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:122",
+      "type": "vrai_faux",
+      "enonce": "En Python, x == 3 affecte la valeur 3 à x.",
+      "difficulte": 1,
+      "explication": "== compare ; = affecte.",
+      "notion": "Constructions élémentaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:123",
+      "type": "vrai_faux",
+      "enonce": "print et return ont exactement le même effet dans une fonction.",
+      "difficulte": 1,
+      "explication": "print affiche, return renvoie une valeur réutilisable.",
+      "notion": "Fonctions et return",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Une assertion dont la condition est vraie arrête le programme.",
+      "difficulte": 1,
+      "explication": "Elle est silencieuse.",
+      "notion": "Assertions",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:125",
+      "type": "vrai_faux",
+      "enonce": "SQL est un langage de programmation généraliste comme Python.",
+      "difficulte": 1,
+      "explication": "C'est un langage de requêtes sur des bases de données.",
+      "notion": "Diversité des langages",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Une postcondition est une condition sur les arguments d'une fonction.",
+      "difficulte": 1,
+      "explication": "C'est une précondition ; la postcondition porte sur le résultat.",
+      "notion": "Spécification et docstring",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Si un programme passe tous ses tests, il est forcément correct.",
+      "difficulte": 2,
+      "explication": "Les tests ne vérifient que les cas essayés.",
+      "notion": "Jeux de tests et erreurs",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Si def f(x): print(x * 2), alors y = f(3) donne à y la valeur 6.",
+      "difficulte": 2,
+      "explication": "f affiche 6 mais renvoie None.",
+      "notion": "Fonctions et return",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Après from math import sqrt, on peut écrire math.pi.",
+      "difficulte": 2,
+      "explication": "Seul le nom sqrt est importé.",
+      "notion": "Bibliothèques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Après n = 10 puis while n > 0: n = n - 3, n vaut 0.",
+      "difficulte": 2,
+      "explication": "n prend 7, 4, 1, −2.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Une fonction ne peut jamais lire la valeur d'une variable globale.",
+      "difficulte": 2,
+      "explication": "Elle peut la lire ; c'est l'affectation qui crée une variable locale.",
+      "notion": "Variables locales et globales",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Dans tous les langages, les blocs sont délimités par l'indentation.",
+      "difficulte": 2,
+      "explication": "C et JavaScript utilisent des accolades.",
+      "notion": "Diversité des langages",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:133",
+      "type": "vrai_faux",
+      "enonce": "La boucle n = 10 puis while n != 0: n = n - 3 s'arrête après quatre tours.",
+      "difficulte": 3,
+      "explication": "n prend 7, 4, 1, −2, −5… et ne vaut jamais 0 : la boucle est infinie.",
+      "notion": "Boucles for et while",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Après a = 3 ; b = 5 ; a = b ; b = a, a vaut 5 et b vaut 3.",
+      "difficulte": 3,
+      "explication": "Les deux valent 5 ; pour échanger, il faut a, b = b, a.",
+      "notion": "Constructions élémentaires",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Après from math import sqrt, l'appel math.sqrt(9) renvoie 3.0.",
+      "difficulte": 3,
+      "explication": "Le nom math n'est pas défini : NameError.",
+      "notion": "Bibliothèques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch4:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Quel mot-clé Python permet de renvoyer une valeur à la fin d'une fonction ?",
+      "difficulte": 1,
+      "explication": "return termine la fonction.",
+      "notion": "Fonctions et return",
+      "reponses_acceptees": [
+        "return"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Combien de fois le corps de la boucle for i in range(7) est-il exécuté ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "i prend les valeurs 0 à 6.",
+      "notion": "Boucles for et while",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quel mot-clé Python permet d'écrire une assertion ?",
+      "difficulte": 1,
+      "explication": "assert condition, message.",
+      "notion": "Assertions",
+      "reponses_acceptees": [
+        "assert"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quel nom d'erreur Python obtient-on en divisant par zéro ?",
+      "difficulte": 1,
+      "explication": "1 / 0 provoque ZeroDivisionError.",
+      "notion": "Jeux de tests et erreurs",
+      "reponses_acceptees": [
+        "ZeroDivisionError"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Quelle valeur renvoie une fonction Python qui ne contient pas de return ?",
+      "difficulte": 1,
+      "explication": "None représente l'absence de valeur.",
+      "notion": "Fonctions et return",
+      "reponses_acceptees": [
+        "None"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le prénom de Lovelace, qui a écrit un programme pour la machine analytique de Babbage ?",
+      "difficulte": 1,
+      "explication": "Ada Lovelace (1815-1852).",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "Ada",
+        "Augusta Ada"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Que vaut s après s = 0 puis for i in range(1, 5): s = s + i * i ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "1 + 4 + 9 + 16 = 30.",
+      "notion": "Boucles for et while",
+      "reponses_acceptees": [
+        "30"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:143",
+      "type": "reponse_courte",
+      "enonce": "On définit def f(x): return 3 * x - 1. Que vaut f(f(2)) ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "f(2) = 5 puis f(5) = 14.",
+      "notion": "Fonctions et return",
+      "reponses_acceptees": [
+        "14"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Que vaut n après n = 50 puis while n % 7 != 0: n = n + 1 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "56 est le premier multiple de 7 à partir de 50.",
+      "notion": "Boucles for et while",
+      "reponses_acceptees": [
+        "56"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Quelle fonction du module random renvoie un entier au hasard entre deux bornes incluses ?",
+      "difficulte": 2,
+      "explication": "randint(1, 6) simule un dé.",
+      "notion": "Bibliothèques",
+      "reponses_acceptees": [
+        "randint",
+        "random.randint",
+        "randint()"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on la chaîne entre triples guillemets qui documente une fonction Python ?",
+      "difficulte": 2,
+      "explication": "help l'affiche.",
+      "notion": "Spécification et docstring",
+      "reponses_acceptees": [
+        "docstring",
+        "une docstring",
+        "chaîne de documentation",
+        "doc string"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel nom d'erreur Python obtient-on avec t[3] quand t = [1, 2, 3] ?",
+      "difficulte": 2,
+      "explication": "Les indices valides vont de 0 à 2.",
+      "notion": "Jeux de tests et erreurs",
+      "reponses_acceptees": [
+        "IndexError"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Que vaut c après c = 0 ; n = 1000, puis while n > 1: n = n // 2 ; c = c + 1 ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "500, 250, 125, 62, 31, 15, 7, 3, 1.",
+      "notion": "Boucles for et while",
+      "reponses_acceptees": [
+        "9"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Combien de fois print est-il appelé par for i in range(4): for j in range(i): print(i, j) ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "0 + 1 + 2 + 3 = 6.",
+      "notion": "Boucles for et while",
+      "reponses_acceptees": [
+        "6"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch4:banque:150",
+      "type": "reponse_courte",
+      "enonce": "On définit def f(n): s = 0 ; while n > 0: s = s + n % 10 ; n = n // 10 ; puis return s après la boucle. Que vaut f(987) ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "La boucle additionne les chiffres : 7 + 8 + 9 = 24.",
+      "notion": "Fonctions et return",
+      "reponses_acceptees": [
+        "24"
+      ]
+    }
+  ]
+}

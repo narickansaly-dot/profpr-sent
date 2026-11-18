@@ -1,0 +1,2280 @@
+{
+  "chapitre": 3,
+  "notions": [
+    "Valeurs booléennes",
+    "Opérateurs not, and, or",
+    "Ou exclusif",
+    "Tables de vérité",
+    "Lois et De Morgan",
+    "Évaluation séquentielle",
+    "Portes et circuits",
+    "Additionneurs",
+    "Booléens en Python",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch3:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Combien de valeurs un booléen peut-il prendre ?",
+      "difficulte": 1,
+      "explication": "Un booléen vaut vrai ou faux.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "2",
+        "10",
+        "3",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Comment s'écrivent les deux valeurs booléennes en Python ?",
+      "difficulte": 1,
+      "explication": "En Python, les valeurs du type bool s'écrivent avec une majuscule : True et False.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "1b et 0b",
+        "True et False",
+        "true et false",
+        "Vrai et Faux"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Que vaut l'expression Python 3 < 5 ?",
+      "difficulte": 1,
+      "explication": "Une comparaison renvoie un booléen ; 3 est bien inférieur à 5.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "3",
+        "5",
+        "True",
+        "False"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Que vaut True and False ?",
+      "difficulte": 1,
+      "explication": "and n'est vrai que si les deux opérandes sont vrais.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "True",
+        "1",
+        "None",
+        "False"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:005",
+      "type": "qcm_unique",
+      "enonce": "Que vaut True or False ?",
+      "difficulte": 1,
+      "explication": "or est vrai dès qu'un opérande est vrai.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "True",
+        "None",
+        "0",
+        "False"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Que vaut not True ?",
+      "difficulte": 1,
+      "explication": "not inverse la valeur.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "0.5",
+        "True",
+        "-1",
+        "False"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Quand l'expression a and b est-elle vraie ?",
+      "difficulte": 1,
+      "explication": "C'est la conjonction : il faut que les deux soient vrais.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "Quand a et b sont tous les deux faux",
+        "Quand exactement un des deux est vrai",
+        "Quand a et b sont tous les deux vrais",
+        "Quand au moins un des deux est vrai"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quand l'expression a or b est-elle fausse ?",
+      "difficulte": 1,
+      "explication": "Le ou inclusif n'est faux que si aucun opérande n'est vrai.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "Quand a et b sont tous les deux vrais",
+        "Quand a et b sont tous les deux faux",
+        "Jamais",
+        "Quand a est faux et b est vrai"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 1 or 1 pour l'opérateur booléen or (ou inclusif) ?",
+      "difficulte": 1,
+      "explication": "Le ou de l'informatique est inclusif : il est vrai quand les deux sont vrais.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "1",
+        "0",
+        "2",
+        "11"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Quand a xor b est-il vrai ?",
+      "difficulte": 1,
+      "explication": "Le ou exclusif est vrai si a et b sont différents.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "Quand les deux sont vrais",
+        "Quand exactement un des deux est vrai",
+        "Quand au moins un des deux est vrai",
+        "Quand les deux sont faux"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 1 xor 1 ?",
+      "difficulte": 1,
+      "explication": "Les deux entrées sont égales : le ou exclusif vaut 0.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "2",
+        "1",
+        "0",
+        "10"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Une expression booléenne dépend de deux variables. En combien de cas faut-il la calculer pour dresser sa table ?",
+      "difficulte": 1,
+      "explication": "2² = 4 combinaisons : 00, 01, 10, 11.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "3",
+        "2",
+        "8",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:013",
+      "type": "qcm_unique",
+      "enonce": "On dresse la table de vérité de (a and b) or c. Combien de lignes écrit-on ?",
+      "difficulte": 1,
+      "explication": "2³ = 8 combinaisons.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "6",
+        "3",
+        "8",
+        "9"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'une table de vérité ?",
+      "difficulte": 1,
+      "explication": "Elle décrit complètement une fonction booléenne.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "Un tableau qui convertit les nombres binaires en décimal",
+        "Un tableau qui donne la valeur d'une expression pour chaque combinaison des entrées",
+        "La liste des erreurs détectées dans un programme",
+        "La liste des variables utilisées par un programme"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Que vaut not (not a), pour un booléen a ?",
+      "difficulte": 1,
+      "explication": "La double négation redonne la valeur de départ.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "a",
+        "False",
+        "not a",
+        "True"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Que vaut a and False, pour un booléen a quelconque ?",
+      "difficulte": 1,
+      "explication": "False est absorbant pour and.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "not a",
+        "True",
+        "a",
+        "False"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Que vaut a or True, pour un booléen a quelconque ?",
+      "difficulte": 1,
+      "explication": "True est absorbant pour or.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "a",
+        "False",
+        "not a",
+        "True"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:018",
+      "type": "qcm_unique",
+      "enonce": "En Python, dans a and b, quand l'opérande b n'est-il pas évalué ?",
+      "difficulte": 1,
+      "explication": "Si a est faux, le résultat est faux quel que soit b : Python n'évalue pas b.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Quand a est vrai",
+        "Quand b est faux",
+        "Quand a est faux",
+        "Jamais : b est toujours évalué"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Lors de l'évaluation de a or b, dans quel cas Python se dispense-t-il de calculer b ?",
+      "difficulte": 1,
+      "explication": "Si a est vrai, le résultat est vrai : b n'est pas évalué.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Quand b est vrai",
+        "Quand a est vrai",
+        "Quand a est faux",
+        "Toujours"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on un composant électronique qui réalise un opérateur booléen ?",
+      "difficulte": 1,
+      "explication": "Les portes logiques (NOT, AND, OR, XOR…) sont faites de transistors.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "Une porte logique",
+        "Un capteur",
+        "Un octet",
+        "Un registre"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Quelle porte logique a une seule entrée ?",
+      "difficulte": 1,
+      "explication": "La négation porte sur une seule valeur.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "La porte ET (AND)",
+        "La porte OU (OR)",
+        "La porte OU exclusif (XOR)",
+        "La porte NON (NOT)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:022",
+      "type": "qcm_unique",
+      "enonce": "Quand on additionne les deux bits 1 et 1, quels sont le bit de somme et la retenue ?",
+      "difficulte": 1,
+      "explication": "1 + 1 = 10₂ : on pose 0 et on retient 1.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "Somme 1, retenue 0",
+        "Somme 1, retenue 1",
+        "Somme 0, retenue 1",
+        "Somme 0, retenue 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Quel est le type de True en Python ?",
+      "difficulte": 1,
+      "explication": "True et False sont les deux valeurs du type bool.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "int",
+        "bool",
+        "float",
+        "str"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 2 == 3 en Python ?",
+      "difficulte": 1,
+      "explication": "== compare ; 2 et 3 sont différents.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "False",
+        "Une erreur",
+        "2",
+        "True"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Quel opérateur Python teste si deux valeurs sont différentes ?",
+      "difficulte": 1,
+      "explication": "!= renvoie True si les valeurs sont différentes.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "~=",
+        "!=",
+        "=/=",
+        "<>"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Qui a créé au XIXe siècle une algèbre de la logique, à l'origine du mot « booléen » ?",
+      "difficulte": 1,
+      "explication": "George Boole publie Les lois de la pensée en 1854.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Alan Turing",
+        "John von Neumann",
+        "Blaise Pascal",
+        "George Boole"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Quel composant, inventé en 1947, sert à construire les portes logiques des processeurs ?",
+      "difficulte": 1,
+      "explication": "Le transistor est inventé aux laboratoires Bell en 1947.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "La carte perforée",
+        "Le disque dur",
+        "Le transistor",
+        "Le relais mécanique"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Combien de bits faut-il au minimum pour stocker une valeur booléenne ?",
+      "difficulte": 1,
+      "explication": "Deux valeurs possibles : un seul bit suffit.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "1",
+        "0",
+        "8",
+        "2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quel symbole mathématique note la conjonction « et » ?",
+      "difficulte": 1,
+      "explication": "∧ pour et, ∨ pour ou, ¬ pour non, ⊕ pour ou exclusif.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "⊕",
+        "∨",
+        "∧",
+        "¬"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Comment peut-on écrire a xor b en Python, pour deux booléens a et b ?",
+      "difficulte": 1,
+      "explication": "Le ou exclusif est vrai quand a et b sont différents ; on peut aussi écrire a ^ b.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "a and b",
+        "a or b",
+        "a == b",
+        "a != b"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Que vaut (3 > 2) and (1 > 4) ?",
+      "difficulte": 2,
+      "explication": "3 > 2 est vrai mais 1 > 4 est faux : la conjonction est fausse.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "4",
+        "False",
+        "3",
+        "True"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Que vaut not (5 == 5) or 2 < 1 ?",
+      "difficulte": 2,
+      "explication": "not (5 == 5) est faux et 2 < 1 est faux : faux ou faux donne faux.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "False",
+        "5",
+        "True",
+        "Une erreur"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:033",
+      "type": "qcm_unique",
+      "enonce": "En Python, comment se lit l'expression a or b and c ?",
+      "difficulte": 2,
+      "explication": "and est prioritaire sur or.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "a and (b or c)",
+        "(a or b) and c",
+        "a or (b and c)",
+        "(a or b) or c"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:034",
+      "type": "qcm_unique",
+      "enonce": "En Python, comment se lit l'expression not a and b ?",
+      "difficulte": 2,
+      "explication": "not est prioritaire sur and.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "not (a and b)",
+        "(not a) and b",
+        "a and (not b)",
+        "not (a or b)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:035",
+      "type": "qcm_unique",
+      "enonce": "En tenant compte des priorités, quel est le résultat de True or False and False ?",
+      "difficulte": 2,
+      "explication": "On calcule d'abord False and False = False, puis True or False = True.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "False",
+        "Une erreur",
+        "None",
+        "True"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:036",
+      "type": "qcm_unique",
+      "enonce": "L'opérateur ^ appliqué à deux booléens égaux à True donne :",
+      "difficulte": 2,
+      "explication": "^ est le ou exclusif : deux valeurs égales donnent False.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "False",
+        "2",
+        "0b11",
+        "True"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Dans le langage courant, la phrase « fromage ou dessert » d'un menu correspond plutôt à quel opérateur ?",
+      "difficulte": 2,
+      "explication": "On ne peut pas avoir les deux : un seul des deux est vrai.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "Le ou inclusif (or)",
+        "Le ou exclusif (xor)",
+        "La négation (not)",
+        "Le et (and)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Pour quelles valeurs de (a, b) l'expression a and not b est-elle vraie ?",
+      "difficulte": 2,
+      "explication": "Il faut a vrai et b faux.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "a = 0 et b = 1",
+        "a = 1 et b = 1",
+        "a = 0 et b = 0",
+        "a = 1 et b = 0"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Combien de lignes de la table de vérité de a or b donnent 1 ?",
+      "difficulte": 2,
+      "explication": "Seule la ligne a = 0, b = 0 donne 0.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "3",
+        "4",
+        "2",
+        "1"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Dans combien de cas la conjonction a and b and c est-elle vraie ?",
+      "difficulte": 2,
+      "explication": "Seule la ligne où les trois valent 1.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "8",
+        "7",
+        "1",
+        "3"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Combien de lignes de la table de vérité de (a and b) or not c donnent 1 ?",
+      "difficulte": 2,
+      "explication": "not c est vrai sur 4 lignes ; on ajoute la ligne a = b = c = 1 : 5 lignes.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Comment réécrire la négation d'une conjonction, not (a and b), sans parenthèses autour du and ?",
+      "difficulte": 2,
+      "explication": "Le contraire de « a et b » est « non a ou non b ».",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "not a and b",
+        "(not a) or (not b)",
+        "(not a) and (not b)",
+        "a or b"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:043",
+      "type": "qcm_unique",
+      "enonce": "D'après les lois de De Morgan, à quoi est égal not (a or b) ?",
+      "difficulte": 2,
+      "explication": "Le contraire de « a ou b » est « ni a ni b ».",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "(not a) and (not b)",
+        "a and b",
+        "(not a) or (not b)",
+        "not a or b"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Quelle condition est le contraire de age >= 12 and age <= 18 ?",
+      "difficulte": 2,
+      "explication": "De Morgan : on nie chaque comparaison et on remplace and par or.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "age > 12 and age < 18",
+        "age < 12 and age > 18",
+        "age <= 12 or age >= 18",
+        "age < 12 or age > 18"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quel est le contraire de la condition x > 0 or y > 0 ?",
+      "difficulte": 2,
+      "explication": "not (A or B) = not A and not B ; le contraire de x > 0 est x <= 0.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "x <= 0 or y <= 0",
+        "x < 0 and y < 0",
+        "x <= 0 and y <= 0",
+        "x > 0 and y > 0"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:046",
+      "type": "qcm_unique",
+      "enonce": "À quoi est égale l'expression a and (b or c) ?",
+      "difficulte": 2,
+      "explication": "and se distribue sur or, comme la multiplication sur l'addition.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "a or (b and c)",
+        "(a and b) or (a and c)",
+        "(a and b) and (a and c)",
+        "(a or b) and (a or c)"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il quand on exécute len(t) > 0 and t[0] > 0 avec t = [] ?",
+      "difficulte": 2,
+      "explication": "len(t) > 0 est faux : t[0] n'est pas évalué.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "L'expression vaut False, sans erreur",
+        "L'expression vaut None",
+        "Python déclenche une IndexError",
+        "L'expression vaut True"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:048",
+      "type": "qcm_unique",
+      "enonce": "La liste t est vide. Quel est l'effet de t[0] > 0 and len(t) > 0, où l'accès à t[0] est écrit en premier ?",
+      "difficulte": 2,
+      "explication": "t[0] est évalué en premier et la liste est vide.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "L'expression vaut True",
+        "L'expression vaut 0",
+        "L'expression vaut False, sans erreur",
+        "Python déclenche une IndexError"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Avec x = 0, que donne l'expression x != 0 and 10 / x > 1 ?",
+      "difficulte": 2,
+      "explication": "x != 0 est faux : la division n'est pas évaluée.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Une ZeroDivisionError",
+        "10",
+        "False, sans erreur",
+        "True"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi dit-on que and et or sont « séquentiels » en Python ?",
+      "difficulte": 2,
+      "explication": "On parle aussi d'évaluation paresseuse.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Ils évaluent les opérandes de gauche à droite et s'arrêtent dès que le résultat est connu",
+        "Ils ne fonctionnent que dans les boucles",
+        "Ils trient les opérandes avant de les évaluer",
+        "Ils évaluent toujours les deux opérandes en même temps"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un circuit combinatoire ?",
+      "difficulte": 2,
+      "explication": "Il réalise une fonction booléenne décrite par une table de vérité.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "Un circuit qui compte le temps",
+        "Un circuit dont les sorties ne dépendent que des valeurs actuelles des entrées",
+        "Un circuit qui mémorise les valeurs précédentes",
+        "Un circuit qui convertit le courant alternatif"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Quelle porte est dite universelle parce qu'elle permet de construire toutes les autres ?",
+      "difficulte": 2,
+      "explication": "Avec des NAND seules, on construit NOT, AND, OR…",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "NOT (non)",
+        "XOR (ou exclusif)",
+        "OR (ou)",
+        "NAND (non-et)"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Quelle fonction réalise une porte NAND dont les deux entrées sont reliées au même signal a ?",
+      "difficulte": 2,
+      "explication": "a NAND a = not (a and a) = not a.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "not a",
+        "a and a",
+        "True",
+        "a"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Dans un demi-additionneur, quelle porte donne le bit de somme ?",
+      "difficulte": 2,
+      "explication": "S = a xor b.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "OR",
+        "NOT",
+        "XOR",
+        "AND"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Dans un demi-additionneur, quelle porte donne la retenue ?",
+      "difficulte": 2,
+      "explication": "La retenue vaut 1 seulement si a et b valent 1 : R = a and b.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "XOR",
+        "NAND",
+        "OR",
+        "AND"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Combien d'entrées a un additionneur complet ?",
+      "difficulte": 2,
+      "explication": "Les deux bits à additionner et la retenue du rang précédent.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "4",
+        "3",
+        "1",
+        "2"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que vaut True + True en Python ?",
+      "difficulte": 2,
+      "explication": "Dans un calcul, True vaut 1 et False vaut 0.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "1",
+        "Une erreur",
+        "True",
+        "2"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Que vaut bool(0) en Python ?",
+      "difficulte": 2,
+      "explication": "0 est converti en False.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "False",
+        "True",
+        "None",
+        "0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Par quelle instruction plus simple peut-on remplacer if n % 2 == 0: return True else: return False ?",
+      "difficulte": 2,
+      "explication": "La comparaison est déjà un booléen.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "return True or False",
+        "return n == 2",
+        "return n % 2 == 0",
+        "return n % 2"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Qu'a montré Claude Shannon en 1938 ?",
+      "difficulte": 2,
+      "explication": "Son mémoire relie logique booléenne et circuits.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Que les nombres flottants sont approchés",
+        "Que des circuits électriques à relais peuvent réaliser l'algèbre de Boole",
+        "Que le transistor remplace la lampe",
+        "Que tout algorithme peut être exécuté par une machine universelle"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Un circuit a cinq entrées binaires. Combien de combinaisons d'entrées faut-il tester pour décrire entièrement sa sortie ?",
+      "difficulte": 3,
+      "explication": "2⁵ = 32.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "32",
+        "25",
+        "16",
+        "10"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Pour quelle combinaison (a, b, c) l'expression (a or b) and not c est-elle fausse ?",
+      "difficulte": 3,
+      "explication": "c = 1 rend not c faux, donc l'expression est fausse.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "a = 0, b = 1, c = 0",
+        "a = 1, b = 0, c = 0",
+        "a = 1, b = 1, c = 0",
+        "a = 1, b = 0, c = 1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression a la même table de vérité que a xor b ?",
+      "difficulte": 3,
+      "explication": "Vrai si a vrai et b faux, ou a faux et b vrai.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "(a or b) and (a and b)",
+        "not a and not b",
+        "(a and not b) or (not a and b)",
+        "(a and b) or (not a and not b)"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression est équivalente à not (a and not b) ?",
+      "difficulte": 3,
+      "explication": "De Morgan : not a or not (not b) = not a or b.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "(not a) and b",
+        "(not a) or b",
+        "not a or not b",
+        "a or not b"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Quelle expression est toujours vraie, quelles que soient les valeurs de a et b ?",
+      "difficulte": 3,
+      "explication": "Une valeur ou son contraire : l'un des deux est vrai.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "a and not a",
+        "a and b",
+        "a or not a",
+        "a xor a"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Que vaut l'expression Python 0 or 'NSI' ?",
+      "difficulte": 3,
+      "explication": "or renvoie le premier opérande s'il est « vrai », sinon le second : 0 est faux, on obtient 'NSI'.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "0",
+        "False",
+        "True",
+        "'NSI'"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:067",
+      "type": "qcm_unique",
+      "enonce": "On définit def f(): print('appel') ; return True. Qu'affiche l'évaluation de False and f() ?",
+      "difficulte": 3,
+      "explication": "False and … est faux sans évaluer le second opérande.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Rien : f n'est pas appelée",
+        "appel puis False",
+        "appel",
+        "True"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Avec d = {} (un dictionnaire vide), que donne 'x' in d and d['x'] > 0 ?",
+      "difficulte": 3,
+      "explication": "'x' in d est faux : d['x'] n'est pas évalué.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "True",
+        "False, sans erreur",
+        "None",
+        "Une KeyError"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:069",
+      "type": "qcm_unique",
+      "enonce": "Dans un additionneur complet, avec a = 1, b = 1 et une retenue entrante r = 1, quels sont la somme et la retenue sortante ?",
+      "difficulte": 3,
+      "explication": "1 + 1 + 1 = 11₂.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "Somme 1, retenue 1",
+        "Somme 0, retenue 1",
+        "Somme 1, retenue 0",
+        "Somme 0, retenue 0"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:070",
+      "type": "qcm_unique",
+      "enonce": "On additionne deux nombres de 8 bits en plaçant un additionneur (demi ou complet) par rang. Combien d'additionneurs faut-il ?",
+      "difficulte": 3,
+      "explication": "Un additionneur par rang (le rang 0 peut être un demi-additionneur) ; la dernière retenue sortante donne le 9e bit du résultat.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "16",
+        "4",
+        "9",
+        "8"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Dans un additionneur complet, quelle expression donne le bit de somme ?",
+      "difficulte": 3,
+      "explication": "La somme d'un rang vaut 1 si un nombre impair d'entrées vaut 1.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "a or b or r",
+        "a and b and r",
+        "a xor b xor r",
+        "(a and b) or r"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Avec quelles portes NAND obtient-on a and b ?",
+      "difficulte": 3,
+      "explication": "not (not (a and b)) = a and b : la seconde NAND joue le rôle de NOT.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "C'est impossible avec des NAND",
+        "Une NAND entre a et b, suivie d'une NAND dont les deux entrées sont la sortie de la première",
+        "Deux NAND en parallèle sur a et sur b",
+        "Une seule NAND entre a et b"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Combien de lignes affiche une triple boucle for a in (False, True): for b in (False, True): for c in (False, True): print(a, b, c) ?",
+      "difficulte": 3,
+      "explication": "2 × 2 × 2 = 8 combinaisons.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "8",
+        "6",
+        "3",
+        "9"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Que vaut 5 > 3 > 1 en Python ?",
+      "difficulte": 3,
+      "explication": "Python enchaîne les comparaisons : 5 > 3 and 3 > 1.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "1",
+        "True",
+        "Une erreur",
+        "False"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:075",
+      "type": "qcm_unique",
+      "enonce": "Que vaut a xor b xor b, pour des booléens a et b quelconques ?",
+      "difficulte": 3,
+      "explication": "b xor b vaut 0 et a xor 0 vaut a : c'est le principe du chiffrement par ou exclusif.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "False",
+        "not a",
+        "a",
+        "b"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Quelles expressions logiques simples sont vraies ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "True or False et not False sont vrais.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "not True",
+        "True and False",
+        "True or False",
+        "not False"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles renvoient un booléen ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Les comparaisons renvoient True ou False.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "3 + 5",
+        "'NSI'",
+        "3 < 5",
+        "2 == 2"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces opérateurs, lesquels sont des opérateurs booléens de Python ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "plus n'est pas un mot-clé de Python.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "and",
+        "plus",
+        "not",
+        "or"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Coche les couples d'entrées pour lesquels le ou inclusif donne 1. Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le ou inclusif vaut 1 dès qu'une entrée vaut 1.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "(0, 1)",
+        "(0, 0)",
+        "(1, 1)",
+        "(1, 0)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Le ou exclusif renvoie 1 pour certains couples (a, b) seulement. Lesquels ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Le ou exclusif vaut 1 quand les entrées sont différentes.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "(0, 1)",
+        "(0, 0)",
+        "(1, 0)",
+        "(1, 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces portes logiques, lesquelles ont deux entrées ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "NOT n'a qu'une entrée.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "AND",
+        "NOT",
+        "XOR",
+        "Une porte à zéro entrée"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Éléments neutres : quelles égalités sont valables quel que soit a ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "True est neutre pour and, False est neutre pour or.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "a or True = a",
+        "a or False = a",
+        "a and False = a",
+        "a and True = a"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Ordre d'évaluation des opérandes de and et de or : que sait-on ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Évaluation de gauche à droite, qui s'arrête dès que le résultat est connu.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "Dans a or b, b n'est pas évalué si a est vrai",
+        "Dans a or b, a n'est évalué qu'après b",
+        "Dans a and b, b n'est pas évalué si a est faux",
+        "Dans a and b, b est toujours évalué"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces valeurs, lesquelles sont converties en False par la fonction bool ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "0 et la chaîne vide sont faux ; 'False' est une chaîne non vide, donc vraie.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "0",
+        "1",
+        "''",
+        "'False'"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Quel est le rôle du demi-additionneur ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "C'est l'additionneur complet qui reçoit une retenue entrante.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "Il additionne deux bits",
+        "Il tient compte d'une retenue entrante",
+        "Il produit une somme et une retenue",
+        "Il additionne deux octets d'un coup"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces personnes, lesquelles ont contribué à la logique booléenne ou à son usage en électronique ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Tim Berners-Lee a inventé le Web.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Tim Berners-Lee",
+        "Augustus De Morgan",
+        "Claude Shannon",
+        "George Boole"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces notations, lesquelles désignent une négation ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "∧ désigne le et, ∨ le ou.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "not a",
+        "a ∧ b",
+        "¬a",
+        "a ∨ b"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "L'implication not a or b est vraie dans plusieurs cas. Lesquels ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Elle ne vaut 0 que si not a et b sont faux, c'est-à-dire a = 1 et b = 0.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "(1, 0)",
+        "(1, 1)",
+        "(0, 1)",
+        "(0, 0)"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Comparaisons combinées : lesquelles donnent vrai ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "2 < 3 et 3 < 4 sont vrais ; 2 > 3 est faux, donc sa négation est vraie.",
+      "notion": "Opérateurs not, and, or",
+      "propositions": [
+        "not (2 > 3)",
+        "not (1 == 1)",
+        "(2 > 3) or (4 < 3)",
+        "(2 < 3) and (3 < 4)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Ni a ni b : quelles écritures traduisent cette idée ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "C'est une loi de De Morgan (not est prioritaire sur and).",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "(not a) or (not b)",
+        "not a and not b",
+        "(not a) and (not b)",
+        "not a or b"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces conditions, lesquelles sont le contraire de note >= 10 and absent == False ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "De Morgan : not A or not B, avec not (absent == False) équivalent à absent == True.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "note < 10 or absent == True",
+        "note < 10 and absent == True",
+        "note <= 10 or absent == False",
+        "not (note >= 10) or absent"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles ne provoquent jamais d'erreur, quelle que soit la liste t ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Le test de longueur doit venir en premier pour protéger t[0].",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "t[0] == 1 and len(t) > 0",
+        "t[0] == 1 or len(t) == 0",
+        "len(t) == 0 or t[0] == 1",
+        "len(t) > 0 and t[0] == 1"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles ont la même valeur que a xor b ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Vrai si au moins un est vrai mais pas les deux.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "a != b",
+        "(a or b) and not (a and b)",
+        "a and b",
+        "a == b"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les portes logiques, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les portes manipulent des signaux binaires ; NAND est universelle.",
+      "notion": "Portes et circuits",
+      "propositions": [
+        "On peut fabriquer toutes les portes avec des NAND",
+        "Elles sont réalisées avec des transistors",
+        "Une porte AND a une seule entrée",
+        "Elles ne fonctionnent qu'avec des nombres décimaux"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur l'additionneur complet, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "La retenue sortante vaut (a and b) or (r and (a xor b)).",
+      "notion": "Additionneurs",
+      "propositions": [
+        "Il reçoit une retenue entrante",
+        "Sa somme vaut a xor b xor r",
+        "Sa retenue sortante vaut toujours a and b",
+        "Il n'a que deux entrées"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Ou exclusif et conversions : quelles expressions renvoient True ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "True ^ True vaut False et bool(0) vaut False.",
+      "notion": "Booléens en Python",
+      "propositions": [
+        "True ^ True",
+        "bool('NSI')",
+        "bool(0)",
+        "True ^ False"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:097",
+      "type": "qcm_multiple",
+      "enonce": "Avec trois entrées, quels triplets rendent vraie l'expression a and (b or c) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Il faut a = 1 et au moins un de b, c égal à 1.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "(1, 1, 0)",
+        "(1, 1, 1)",
+        "(0, 1, 1)",
+        "(1, 0, 1)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations, lesquelles sont exactes en Python ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "True + True vaut 2 et False * 5 vaut 0.",
+      "notion": "Valeurs booléennes",
+      "propositions": [
+        "False vaut 0 dans un calcul",
+        "False * 5 vaut 5",
+        "True vaut 1 dans un calcul",
+        "True + True vaut True"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Boole publie en 1854 ; le transistor est inventé en 1947.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "1947 : invention du transistor",
+        "1854 : Les lois de la pensée de George Boole",
+        "1854 : invention du transistor",
+        "1947 : Les lois de la pensée de George Boole"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "On définit def g(): print('g') ; return False. Parmi ces expressions, lesquelles affichent g quand on les évalue ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "g est appelée seulement quand le premier opérande ne suffit pas à conclure.",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "False and g()",
+        "True and g()",
+        "False or g()",
+        "True or g()"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles sont équivalentes à not (a and not b) ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "De Morgan puis double négation.",
+      "notion": "Lois et De Morgan",
+      "propositions": [
+        "not a or b",
+        "(not a) or (not (not b))",
+        "not a and b",
+        "a or not b"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions, lesquelles sont vraies pour toutes les valeurs de a et b ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Une expression ou son contraire est toujours vraie.",
+      "notion": "Tables de vérité",
+      "propositions": [
+        "a or not a",
+        "a xor b",
+        "a and not a",
+        "(a and b) or not (a and b)"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "On additionne 1011 et 0110 avec des additionneurs complets. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "1011 + 0110 = 10001 (11 + 6 = 17). Rang 0 : 1 + 0 = 1 ; rang 1 : 1 + 1 = 10.",
+      "notion": "Additionneurs",
+      "propositions": [
+        "Le rang 0 (bit de poids faible) produit une somme 1 et une retenue 0",
+        "Le résultat final est 1101",
+        "Le rang 1 produit une somme 0 et une retenue 1",
+        "Le rang 0 produit une retenue 1"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces expressions Python, lesquelles valent 'NSI' ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "or renvoie le premier opérande vrai ; and renvoie le premier opérande faux (ici 0).",
+      "notion": "Évaluation séquentielle",
+      "propositions": [
+        "0 and 'NSI'",
+        "'NSI' and 0",
+        "'NSI' or 0",
+        "0 or 'NSI'"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces égalités, lesquelles sont vraies pour tous les booléens a et b ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "a xor True = not a ; a xor b diffère de a or b quand a = b = 1.",
+      "notion": "Ou exclusif",
+      "propositions": [
+        "a xor True = a",
+        "a xor False = a",
+        "a xor a = False",
+        "a xor b = a or b"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:106",
+      "type": "vrai_faux",
+      "enonce": "L'expression True and True vaut True.",
+      "difficulte": 1,
+      "explication": "Les deux opérandes sont vrais.",
+      "notion": "Opérateurs not, and, or",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Avec trois variables booléennes a, b et c, on peut former huit combinaisons de valeurs.",
+      "difficulte": 1,
+      "explication": "2³ = 8.",
+      "notion": "Tables de vérité",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:108",
+      "type": "vrai_faux",
+      "enonce": "0 xor 1 vaut 1.",
+      "difficulte": 1,
+      "explication": "Les entrées sont différentes.",
+      "notion": "Ou exclusif",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:109",
+      "type": "vrai_faux",
+      "enonce": "En Python, une comparaison comme 4 > 2 renvoie une valeur de type bool.",
+      "difficulte": 1,
+      "explication": "Elle renvoie True.",
+      "notion": "Valeurs booléennes",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:110",
+      "type": "vrai_faux",
+      "enonce": "Les portes logiques des processeurs actuels sont faites de transistors.",
+      "difficulte": 1,
+      "explication": "Depuis l'invention du transistor (1947).",
+      "notion": "Portes et circuits",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:111",
+      "type": "vrai_faux",
+      "enonce": "George Boole a publié Les lois de la pensée en 1854.",
+      "difficulte": 1,
+      "explication": "C'est l'ouvrage fondateur de l'algèbre de Boole.",
+      "notion": "Repères historiques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Dire « il est faux que a ou b » revient à dire « ni a, ni b ».",
+      "difficulte": 2,
+      "explication": "C'est une loi de De Morgan.",
+      "notion": "Lois et De Morgan",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:113",
+      "type": "vrai_faux",
+      "enonce": "En Python, l'expression x != 0 and 10 / x > 1 ne provoque pas d'erreur quand x vaut 0.",
+      "difficulte": 2,
+      "explication": "La division n'est pas évaluée.",
+      "notion": "Évaluation séquentielle",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Dans un demi-additionneur, la somme est donnée par a xor b.",
+      "difficulte": 2,
+      "explication": "S vaut 1 quand un seul des bits vaut 1.",
+      "notion": "Additionneurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:115",
+      "type": "vrai_faux",
+      "enonce": "En Python, True or False and False vaut True.",
+      "difficulte": 2,
+      "explication": "and est prioritaire : True or False.",
+      "notion": "Opérateurs not, and, or",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:116",
+      "type": "vrai_faux",
+      "enonce": "En Python, True + True vaut 2.",
+      "difficulte": 2,
+      "explication": "True vaut 1 dans un calcul.",
+      "notion": "Booléens en Python",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:117",
+      "type": "vrai_faux",
+      "enonce": "Avec uniquement des portes NAND, on peut construire une porte NOT.",
+      "difficulte": 2,
+      "explication": "a NAND a = not a.",
+      "notion": "Portes et circuits",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:118",
+      "type": "vrai_faux",
+      "enonce": "L'expression (a and b) or not c est vraie sur 5 des 8 lignes de sa table de vérité.",
+      "difficulte": 3,
+      "explication": "not c donne 4 lignes, plus a = b = c = 1.",
+      "notion": "Tables de vérité",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:119",
+      "type": "vrai_faux",
+      "enonce": "En Python, 0 or 'NSI' vaut 'NSI'.",
+      "difficulte": 3,
+      "explication": "or renvoie le premier opérande vrai, sinon le dernier.",
+      "notion": "Évaluation séquentielle",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Un additionneur complet qui reçoit a = 1, b = 0 et r = 1 produit une somme 0 et une retenue 1.",
+      "difficulte": 3,
+      "explication": "1 + 0 + 1 = 10₂.",
+      "notion": "Additionneurs",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch3:banque:121",
+      "type": "vrai_faux",
+      "enonce": "L'expression True and False vaut True.",
+      "difficulte": 1,
+      "explication": "Il faut que les deux soient vrais.",
+      "notion": "Opérateurs not, and, or",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Le ou de l'informatique (or) est faux quand ses deux opérandes sont vrais.",
+      "difficulte": 1,
+      "explication": "or est inclusif : True or True vaut True.",
+      "notion": "Opérateurs not, and, or",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:123",
+      "type": "vrai_faux",
+      "enonce": "En Python, les valeurs booléennes s'écrivent true et false.",
+      "difficulte": 1,
+      "explication": "Elles s'écrivent True et False, avec une majuscule.",
+      "notion": "Valeurs booléennes",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:124",
+      "type": "vrai_faux",
+      "enonce": "Pour deux variables booléennes, il n'existe que deux combinaisons de valeurs.",
+      "difficulte": 1,
+      "explication": "2² = 4 lignes.",
+      "notion": "Tables de vérité",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:125",
+      "type": "vrai_faux",
+      "enonce": "1 xor 1 vaut 1.",
+      "difficulte": 1,
+      "explication": "Les entrées sont égales : 1 xor 1 vaut 0.",
+      "notion": "Ou exclusif",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Une porte AND n'a qu'une seule entrée.",
+      "difficulte": 1,
+      "explication": "Elle a deux entrées ; c'est la porte NOT qui n'en a qu'une.",
+      "notion": "Portes et circuits",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:127",
+      "type": "vrai_faux",
+      "enonce": "not (a and b) est équivalent à (not a) and (not b).",
+      "difficulte": 2,
+      "explication": "C'est (not a) or (not b).",
+      "notion": "Lois et De Morgan",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:128",
+      "type": "vrai_faux",
+      "enonce": "En Python, dans a and b, l'opérande b est toujours évalué.",
+      "difficulte": 2,
+      "explication": "b n'est pas évalué si a est faux.",
+      "notion": "Évaluation séquentielle",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:129",
+      "type": "vrai_faux",
+      "enonce": "En Python, a or b and c se lit (a or b) and c.",
+      "difficulte": 2,
+      "explication": "and est prioritaire : a or (b and c).",
+      "notion": "Opérateurs not, and, or",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Dans un demi-additionneur, la retenue est donnée par a or b.",
+      "difficulte": 2,
+      "explication": "Elle est donnée par a and b.",
+      "notion": "Additionneurs",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:131",
+      "type": "vrai_faux",
+      "enonce": "En Python, bool('False') vaut False.",
+      "difficulte": 2,
+      "explication": "'False' est une chaîne non vide : bool('False') vaut True.",
+      "notion": "Booléens en Python",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Le contraire de x > 0 and y > 0 est x <= 0 and y <= 0.",
+      "difficulte": 2,
+      "explication": "De Morgan : x <= 0 or y <= 0.",
+      "notion": "Lois et De Morgan",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:133",
+      "type": "vrai_faux",
+      "enonce": "En Python, t[0] > 0 and len(t) > 0 vaut False sans erreur quand t est une liste vide.",
+      "difficulte": 3,
+      "explication": "t[0] est évalué en premier : IndexError.",
+      "notion": "Évaluation séquentielle",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:134",
+      "type": "vrai_faux",
+      "enonce": "L'expression (a or b) and not c est vraie pour a = 1, b = 1 et c = 1.",
+      "difficulte": 3,
+      "explication": "not c est faux, donc l'expression est fausse.",
+      "notion": "Tables de vérité",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:135",
+      "type": "vrai_faux",
+      "enonce": "Un additionneur complet n'a besoin que de deux entrées.",
+      "difficulte": 3,
+      "explication": "Il en a trois : a, b et la retenue entrante.",
+      "notion": "Additionneurs",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch3:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Une fonction booléenne a quatre entrées. Combien de combinaisons d'entrées existe-t-il ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "2⁴ = 16.",
+      "notion": "Tables de vérité",
+      "reponses_acceptees": [
+        "16"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quel mot-clé Python désigne la négation booléenne ?",
+      "difficulte": 1,
+      "explication": "not inverse un booléen.",
+      "notion": "Opérateurs not, and, or",
+      "reponses_acceptees": [
+        "not"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Que vaut 1 xor 0 ? Réponds par 0 ou 1.",
+      "difficulte": 1,
+      "explication": "Les entrées sont différentes.",
+      "notion": "Ou exclusif",
+      "reponses_acceptees": [
+        "1"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quelle valeur booléenne Python renvoie l'expression 7 == 7 ?",
+      "difficulte": 1,
+      "explication": "7 est égal à 7.",
+      "notion": "Valeurs booléennes",
+      "reponses_acceptees": [
+        "True",
+        "vrai"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Comment s'appelle la porte logique qui réalise la négation (en anglais, trois lettres) ?",
+      "difficulte": 1,
+      "explication": "NOT a une seule entrée.",
+      "notion": "Portes et circuits",
+      "reponses_acceptees": [
+        "NOT",
+        "porte NOT"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quel est le nom de famille du mathématicien qui a donné son nom aux booléens ?",
+      "difficulte": 1,
+      "explication": "George Boole (1815-1864).",
+      "notion": "Repères historiques",
+      "reponses_acceptees": [
+        "Boole",
+        "George Boole"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Pour combien de triplets (a, b, c) l'expression a and (b or c) est-elle vraie ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "a = 1 et (b, c) parmi (0, 1), (1, 0), (1, 1).",
+      "notion": "Tables de vérité",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Que vaut True + False + True en Python ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "1 + 0 + 1 = 2.",
+      "notion": "Booléens en Python",
+      "reponses_acceptees": [
+        "2"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Complète la loi de De Morgan : not (a and b) = (not a) ... (not b). Écris l'opérateur manquant.",
+      "difficulte": 2,
+      "explication": "Le contraire de « et » fait apparaître « ou ».",
+      "notion": "Lois et De Morgan",
+      "reponses_acceptees": [
+        "or",
+        "ou",
+        "∨"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Dans un demi-additionneur, quelle porte (en anglais) produit la retenue ?",
+      "difficulte": 2,
+      "explication": "R = a and b.",
+      "notion": "Additionneurs",
+      "reponses_acceptees": [
+        "AND",
+        "porte AND",
+        "ET"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Avec x = 0, que vaut x == 0 or 1 / x > 2 en Python ? Réponds par True ou False.",
+      "difficulte": 2,
+      "explication": "x == 0 est vrai : la division n'est pas évaluée.",
+      "notion": "Évaluation séquentielle",
+      "reponses_acceptees": [
+        "True"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Quel symbole est l'opérateur Python du ou exclusif entre deux booléens ou entiers ?",
+      "difficulte": 2,
+      "explication": "True ^ False vaut True.",
+      "notion": "Ou exclusif",
+      "reponses_acceptees": [
+        "^"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Combien de lignes de la table de vérité de a xor b xor c valent 1 ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "Il faut un nombre impair de 1 : 001, 010, 100, 111.",
+      "notion": "Tables de vérité",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:149",
+      "type": "reponse_courte",
+      "enonce": "En binaire, que donne l'addition 1011 + 0110 ? Réponds sans espace.",
+      "difficulte": 3,
+      "explication": "11 + 6 = 17 = 10001₂.",
+      "notion": "Additionneurs",
+      "reponses_acceptees": [
+        "10001",
+        "0b10001"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch3:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Que vaut 'NSI' and 0 en Python ? Réponds par la valeur affichée.",
+      "difficulte": 3,
+      "explication": "and renvoie le premier opérande faux, ou le dernier s'ils sont tous vrais : ici 0.",
+      "notion": "Évaluation séquentielle",
+      "reponses_acceptees": [
+        "0"
+      ]
+    }
+  ]
+}

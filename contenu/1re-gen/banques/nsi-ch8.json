@@ -1,0 +1,2272 @@
+{
+  "chapitre": 8,
+  "notions": [
+    "Problèmes d'optimisation",
+    "Méthode gloutonne",
+    "Rendu de monnaie",
+    "Systèmes canoniques",
+    "Problème du sac à dos",
+    "Distances",
+    "Algorithme des k plus proches voisins",
+    "Choix de k et limites",
+    "Apprentissage automatique",
+    "Repères historiques"
+  ],
+  "questions": [
+    {
+      "source": "nsi-1re:ch8:banque:001",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un problème d'optimisation ?",
+      "difficulte": 1,
+      "explication": "Par exemple, rendre la monnaie avec le moins de pièces.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "Un problème qui n'a qu'une seule solution possible",
+        "Un problème de syntaxe dans un programme",
+        "Un problème où l'on cherche une solution qui minimise ou maximise une quantité",
+        "Un problème qu'on ne peut résoudre qu'avec un ordinateur très puissant et beaucoup de mémoire"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:002",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on la méthode qui essaie toutes les solutions possibles d'un problème ?",
+      "difficulte": 1,
+      "explication": "Elle trouve l'optimum mais devient vite trop longue.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "La force brute",
+        "La méthode gloutonne",
+        "Le vote majoritaire",
+        "La dichotomie"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:003",
+      "type": "qcm_unique",
+      "enonce": "Qu'est-ce qu'un algorithme glouton ?",
+      "difficulte": 1,
+      "explication": "Il construit la solution pas à pas sans revenir en arrière.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Un algorithme qui essaie toutes les combinaisons possibles",
+        "Un algorithme qui fait à chaque étape le choix qui semble le meilleur sur le moment",
+        "Un algorithme qui trie les données par ordre alphabétique",
+        "Un algorithme qui utilise beaucoup de mémoire"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:004",
+      "type": "qcm_unique",
+      "enonce": "Un algorithme glouton revient-il sur ses choix précédents ?",
+      "difficulte": 1,
+      "explication": "C'est ce qui le rend rapide, mais parfois non optimal.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Oui, seulement à la fin",
+        "Seulement si le résultat est faux",
+        "Oui, à chaque étape",
+        "Non, jamais"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:005",
+      "type": "qcm_unique",
+      "enonce": "La méthode gloutonne garantit-elle d'obtenir l'optimum global ?",
+      "difficulte": 1,
+      "explication": "Il donne parfois l'optimum (euro), parfois non (sac à dos).",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Oui, s'il est écrit en Python",
+        "Non, pas toujours",
+        "Oui, toujours",
+        "Non, jamais"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:006",
+      "type": "qcm_unique",
+      "enonce": "Dans le rendu de monnaie glouton, quelle pièce choisit-on à chaque étape ?",
+      "difficulte": 1,
+      "explication": "On rend d'abord les grosses pièces.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "La pièce la plus fréquente dans la caisse, pour ne pas manquer de petite monnaie",
+        "Une pièce choisie au hasard",
+        "La plus grande pièce qui ne dépasse pas la somme restante",
+        "La plus petite pièce disponible"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:007",
+      "type": "qcm_unique",
+      "enonce": "Quel est le but du problème du rendu de monnaie étudié dans le cours ?",
+      "difficulte": 1,
+      "explication": "On minimise le nombre de pièces et billets.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "Calculer le prix d'un achat",
+        "Rendre une somme avec le plus de pièces possible",
+        "Rendre une somme avec uniquement des pièces de 1 €, pour que le client puisse vérifier",
+        "Rendre une somme avec le moins de pièces et de billets possible"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:008",
+      "type": "qcm_unique",
+      "enonce": "Quel est le premier billet rendu par l'algorithme glouton pour 87 € avec les euros ?",
+      "difficulte": 1,
+      "explication": "100 € dépasse 87 € ; 50 € est la plus grande valeur possible.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "50 €",
+        "20 €",
+        "5 €",
+        "100 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:009",
+      "type": "qcm_unique",
+      "enonce": "Quelle liste renvoie le rendu glouton de 8 € avec les euros ?",
+      "difficulte": 1,
+      "explication": "5, puis 2, puis 1.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "[5, 1, 1, 1]",
+        "[8]",
+        "[2, 2, 2, 2]",
+        "[5, 2, 1]"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:010",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on un système de pièces pour lequel l'algorithme glouton donne toujours le nombre minimal de pièces ?",
+      "difficulte": 1,
+      "explication": "L'euro est un système canonique.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "Un système binaire",
+        "Un système canonique",
+        "Un système décimal",
+        "Un système glouton"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:011",
+      "type": "qcm_unique",
+      "enonce": "Avec les pièces et billets en euros, le rendu glouton est-il toujours optimal ?",
+      "difficulte": 1,
+      "explication": "Le glouton y donne toujours le nombre minimal de pièces.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "Non",
+        "Seulement pour les billets",
+        "Oui",
+        "Seulement pour les sommes inférieures à 10 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:012",
+      "type": "qcm_unique",
+      "enonce": "Dans le problème du sac à dos, que cherche-t-on à maximiser ?",
+      "difficulte": 1,
+      "explication": "Sans dépasser la capacité du sac.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "La valeur totale des objets emportés",
+        "La taille du sac",
+        "Le nombre d'objets emportés",
+        "La masse totale des objets emportés dans le sac"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:013",
+      "type": "qcm_unique",
+      "enonce": "Dans le problème du sac à dos, quelle contrainte doit-on respecter ?",
+      "difficulte": 1,
+      "explication": "La capacité est la masse maximale supportée.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Il faut prendre au moins un objet de chaque sorte",
+        "Il faut prendre tous les objets",
+        "La valeur totale doit être paire",
+        "La masse totale ne doit pas dépasser la capacité du sac"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:014",
+      "type": "qcm_unique",
+      "enonce": "Dans la version du sac à dos étudiée, peut-on emporter une partie d'un objet ?",
+      "difficulte": 1,
+      "explication": "C'est le sac à dos « en tout ou rien ».",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Oui, mais seulement le dernier objet",
+        "Non, chaque objet est pris entièrement ou laissé",
+        "Oui, si l'objet est léger",
+        "Oui, on peut couper les objets"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:015",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la distance euclidienne entre les points (0, 0) et (3, 4) ?",
+      "difficulte": 1,
+      "explication": "√(3² + 4²) = √25 = 5.",
+      "notion": "Distances",
+      "propositions": [
+        "1",
+        "7",
+        "5",
+        "12"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:016",
+      "type": "qcm_unique",
+      "enonce": "Quelle formule donne la distance euclidienne entre (x₁, y₁) et (x₂, y₂) ?",
+      "difficulte": 1,
+      "explication": "C'est le théorème de Pythagore.",
+      "notion": "Distances",
+      "propositions": [
+        "√((x₂ − x₁)² + (y₂ − y₁)²)",
+        "√(x₂ − x₁) + √(y₂ − y₁)",
+        "(x₂ − x₁) + (y₂ − y₁)",
+        "(x₂ − x₁) × (y₂ − y₁)"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:017",
+      "type": "qcm_unique",
+      "enonce": "Que prédit l'algorithme des k plus proches voisins pour un nouvel élément ?",
+      "difficulte": 1,
+      "explication": "C'est un algorithme de classification.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "La moyenne de ses caractéristiques",
+        "Le nombre de voisins qu'il possède",
+        "Sa distance à l'origine",
+        "Sa classe, d'après la classe majoritaire de ses k plus proches voisins"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:018",
+      "type": "qcm_unique",
+      "enonce": "De quoi a besoin l'algorithme des k plus proches voisins pour fonctionner ?",
+      "difficulte": 1,
+      "explication": "Les données doivent être étiquetées.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "D'un système de pièces canonique",
+        "De données dont on connaît déjà la classe",
+        "D'un tableau de données trié par ordre alphabétique des classes",
+        "D'une connexion à internet"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:019",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la première étape de l'algorithme des k plus proches voisins ?",
+      "difficulte": 1,
+      "explication": "Puis on garde les k plus proches et on vote.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Calculer la distance du nouvel élément à chaque donnée",
+        "Trier les classes par ordre alphabétique puis choisir la première de la liste",
+        "Supprimer les données les plus proches",
+        "Choisir la classe au hasard"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:020",
+      "type": "qcm_unique",
+      "enonce": "Comment décide-t-on de la classe prédite parmi les k voisins ?",
+      "difficulte": 1,
+      "explication": "La classe la plus représentée l'emporte.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "En prenant la classe la plus rare",
+        "En prenant la classe du voisin le plus éloigné",
+        "Par un vote majoritaire",
+        "En tirant une classe au hasard"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:021",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi choisit-on souvent un k impair quand il y a deux classes ?",
+      "difficulte": 1,
+      "explication": "Avec deux classes et k impair, une classe a forcément la majorité.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Pour que l'algorithme soit plus rapide",
+        "Parce que les distances sont impaires",
+        "Parce que k pair provoque une erreur",
+        "Pour éviter les égalités de votes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:022",
+      "type": "qcm_unique",
+      "enonce": "À quelle famille d'algorithmes appartient l'algorithme des k plus proches voisins ?",
+      "difficulte": 1,
+      "explication": "Il s'appuie sur des exemples pour décider.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "L'apprentissage automatique",
+        "Les algorithmes de tri",
+        "Les algorithmes de chiffrement",
+        "Les algorithmes de compression"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:023",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi parle-t-on d'apprentissage supervisé pour les k plus proches voisins ?",
+      "difficulte": 1,
+      "explication": "Les classes connues guident la prédiction.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "Parce que l'algorithme est écrit en Python",
+        "Parce que l'algorithme demande l'avis de l'utilisateur",
+        "Parce que les exemples utilisés sont étiquetés par leur classe",
+        "Parce qu'un professeur surveille l'exécution"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:024",
+      "type": "qcm_unique",
+      "enonce": "Quel jeu de données de fleurs, publié par Ronald Fisher en 1936, sert souvent à apprendre la classification ?",
+      "difficulte": 1,
+      "explication": "150 iris de trois espèces, décrits par leurs sépales et leurs pétales.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Le jeu des orchidées",
+        "Le jeu des iris",
+        "Le jeu des roses",
+        "Le jeu des tulipes"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:025",
+      "type": "qcm_unique",
+      "enonce": "Comment appelle-t-on le meilleur choix possible à une étape donnée, sans regarder la suite ?",
+      "difficulte": 1,
+      "explication": "Le glouton enchaîne des optimums locaux.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Un invariant",
+        "Un optimum global",
+        "Un variant",
+        "Un optimum local"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:026",
+      "type": "qcm_unique",
+      "enonce": "Quel critère glouton du cours trie les objets par ordre décroissant de valeur divisée par la masse ?",
+      "difficulte": 1,
+      "explication": "On prend d'abord les objets qui « valent le plus par kilogramme ».",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "La valeur seule",
+        "La masse seule",
+        "Le rapport valeur/masse",
+        "L'ordre alphabétique"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:027",
+      "type": "qcm_unique",
+      "enonce": "Avec 30 objets, combien de façons existe-t-il de choisir ceux qu'on emporte (en comptant le choix de n'en prendre aucun) ?",
+      "difficulte": 1,
+      "explication": "Chaque objet est pris ou non : 2 × 2 × … × 2, soit 2³⁰.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "2³⁰",
+        "30",
+        "60",
+        "30²"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:028",
+      "type": "qcm_unique",
+      "enonce": "Que se passe-t-il quand k = 1 ?",
+      "difficulte": 1,
+      "explication": "Une donnée erronée peut alors fausser la prédiction.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "On ne calcule aucune distance",
+        "La prédiction dépend d'un seul voisin, le plus proche",
+        "La prédiction est toujours la classe la plus nombreuse",
+        "L'algorithme ne fonctionne pas"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:029",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la distance de Manhattan entre (1, 2) et (4, 6) ?",
+      "difficulte": 1,
+      "explication": "|4 − 1| + |6 − 2| = 3 + 4 = 7.",
+      "notion": "Distances",
+      "propositions": [
+        "7",
+        "5",
+        "25",
+        "12"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:030",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction knn du cours, que contient le dictionnaire votes ?",
+      "difficulte": 1,
+      "explication": "On compte les voisins par classe.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "La liste de toutes les données",
+        "Les coordonnées du nouvel élément et sa distance au plus proche voisin",
+        "Le nombre de voisins de chaque classe",
+        "Les distances de chaque voisin"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:031",
+      "type": "qcm_unique",
+      "enonce": "Combien de pièces et billets rend l'algorithme glouton pour 63 € avec les euros ?",
+      "difficulte": 2,
+      "explication": "50 + 10 + 2 + 1.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "5",
+        "6",
+        "3",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:032",
+      "type": "qcm_unique",
+      "enonce": "Quelle liste renvoie la fonction rendu_monnaie du cours pour 38 € avec les euros ?",
+      "difficulte": 2,
+      "explication": "20 (reste 18), 10 (8), 5 (3), 2 (1), 1 (0).",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "[10, 10, 10, 5, 2, 1]",
+        "[20, 10, 5, 2, 1]",
+        "[20, 10, 5, 3]",
+        "[20, 10, 2, 2, 2, 2]"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:033",
+      "type": "qcm_unique",
+      "enonce": "Combien de billets de 20 € rend l'algorithme glouton pour 99 € avec les euros ?",
+      "difficulte": 2,
+      "explication": "50, puis 20 et 20 (reste 9), puis 5, 2, 2.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "1",
+        "2",
+        "4",
+        "0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:034",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction rendu_monnaie du cours, pourquoi les pièces doivent-elles être triées dans l'ordre décroissant ?",
+      "difficulte": 2,
+      "explication": "La stratégie gloutonne prend la plus grande pièce possible.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "Pour éviter une boucle infinie",
+        "Pour que Python accepte la liste",
+        "Pour essayer d'abord les plus grandes pièces",
+        "Pour rendre le plus de pièces possible et vider la caisse plus vite"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:035",
+      "type": "qcm_unique",
+      "enonce": "Avec des pièces de 1, 3 et 4, combien de pièces le glouton rend-il pour une somme de 6 ?",
+      "difficulte": 2,
+      "explication": "4 + 1 + 1, alors que 3 + 3 n'en demande que 2.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "6",
+        "1",
+        "2",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:036",
+      "type": "qcm_unique",
+      "enonce": "Avec des pièces de 1, 3 et 4, quelle est la solution optimale pour rendre 6 ?",
+      "difficulte": 2,
+      "explication": "Deux pièces seulement ; il n'y a pas de pièce de 2.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "3 + 3",
+        "1 + 1 + 1 + 1 + 1 + 1",
+        "4 + 1 + 1",
+        "4 + 2"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:037",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi le système de pièces 1, 3, 4 n'est-il pas canonique ?",
+      "difficulte": 2,
+      "explication": "Pour 6, le glouton rend 3 pièces au lieu de 2.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "Parce qu'il ne contient pas de pièce de 2",
+        "Parce qu'il ne permet pas de rendre toutes les sommes",
+        "Pour certaines sommes, le glouton ne donne pas le nombre minimal de pièces",
+        "Parce qu'il contient un nombre pair de pièces"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:038",
+      "type": "qcm_unique",
+      "enonce": "Avec seulement des pièces de 5 et de 2, que fait l'algorithme glouton pour rendre 6 ?",
+      "difficulte": 2,
+      "explication": "Il ne revient pas sur son choix de 5, alors que 2 + 2 + 2 convient.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "Il prend 5 puis ne peut pas rendre le 1 restant",
+        "Il rend 5 + 1",
+        "Il rend 2 + 2 + 2",
+        "Il rend 2 + 2 + 2 après avoir essayé 5"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:039",
+      "type": "qcm_unique",
+      "enonce": "Dans l'ancien système britannique (pièces de 1, 3, 6, 12, 24 et 30), combien de pièces le glouton rend-il pour 48 ?",
+      "difficulte": 2,
+      "explication": "30 + 12 + 6, alors que 24 + 24 suffit.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "4",
+        "2",
+        "1",
+        "3"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:040",
+      "type": "qcm_unique",
+      "enonce": "Pour un sac de 10 kg et les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €), quel objet le glouton par rapport valeur/masse prend-il en premier ?",
+      "difficulte": 2,
+      "explication": "A a le meilleur rapport : 30 / 6 = 5.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "C",
+        "A",
+        "B",
+        "D"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:041",
+      "type": "qcm_unique",
+      "enonce": "Avec les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €) et un sac de 10 kg, quelle valeur obtient le glouton par rapport valeur/masse ?",
+      "difficulte": 2,
+      "explication": "A puis B (9 kg) ; D et C ne rentrent plus : 30 + 14.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "39 €",
+        "46 €",
+        "44 €",
+        "69 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:042",
+      "type": "qcm_unique",
+      "enonce": "Avec les mêmes objets A, B, C, D et un sac de 10 kg, quelle est la meilleure valeur possible ?",
+      "difficulte": 2,
+      "explication": "A + C pèse exactement 10 kg et vaut 46 €.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "69 €, avec tous les objets",
+        "39 €, avec B, C et D",
+        "44 €, avec A et B",
+        "46 €, avec A et C"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:043",
+      "type": "qcm_unique",
+      "enonce": "Avec les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €) et un sac de 10 kg, quels objets choisit un glouton qui prend d'abord les plus légers ?",
+      "difficulte": 2,
+      "explication": "D (2 kg), B (5 kg), C (9 kg) ; A ne rentre plus.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "D, B et C, pour 39 €",
+        "A et C, pour 46 €",
+        "A et B, pour 44 €",
+        "D et A, pour 39 €"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:044",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi n'essaie-t-on pas toujours toutes les combinaisons d'objets pour le sac à dos ?",
+      "difficulte": 2,
+      "explication": "Avec n objets, il y a 2ⁿ combinaisons.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Parce que le sac ne peut contenir qu'un objet",
+        "Leur nombre double à chaque objet ajouté et devient vite gigantesque",
+        "Parce que la force brute donne un mauvais résultat",
+        "Parce que Python ne sait pas faire de combinaisons"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:045",
+      "type": "qcm_unique",
+      "enonce": "Quelle phrase décrit le mieux la limite d'un algorithme glouton ?",
+      "difficulte": 2,
+      "explication": "L'optimum local ne mène pas toujours à l'optimum global.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Un bon choix immédiat peut empêcher de meilleurs choix plus tard",
+        "Il est toujours plus lent que la force brute, qui teste pourtant toutes les solutions",
+        "Il ne fonctionne qu'avec des nombres entiers",
+        "Il ne peut pas être programmé en Python"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:046",
+      "type": "qcm_unique",
+      "enonce": "Par le théorème de Pythagore, quel écart sépare les points (1, 2) et (4, 6) ?",
+      "difficulte": 2,
+      "explication": "√(3² + 4²) = 5.",
+      "notion": "Distances",
+      "propositions": [
+        "7",
+        "3",
+        "5",
+        "25"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:047",
+      "type": "qcm_unique",
+      "enonce": "Que renvoie distance((2, 1), (2, 5)) avec la fonction distance du cours ?",
+      "difficulte": 2,
+      "explication": "√(0² + 4²) = 4 ; sqrt renvoie un flottant.",
+      "notion": "Distances",
+      "propositions": [
+        "16",
+        "4.0",
+        "0",
+        "2.0"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:048",
+      "type": "qcm_unique",
+      "enonce": "Les 5 plus proches voisins d'un point sont de classes A, B, A, A, B. Quelle classe l'algorithme prédit-il pour k = 5 ?",
+      "difficulte": 2,
+      "explication": "3 votes pour A contre 2 pour B.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "A et B à égalité",
+        "On ne peut pas savoir",
+        "B",
+        "A"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:049",
+      "type": "qcm_unique",
+      "enonce": "Les voisins d'un point, du plus proche au plus éloigné, sont de classes B, A, A, B, B. Quelle classe est prédite pour k = 3 ?",
+      "difficulte": 2,
+      "explication": "Les 3 plus proches : B, A, A ; A a 2 votes.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "A",
+        "B",
+        "A et B",
+        "Aucune"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:050",
+      "type": "qcm_unique",
+      "enonce": "Pour k = 1, seul le plus proche voisin vote. Si les voisins, du plus proche au plus éloigné, sont de classes B, A, A, B, B, quelle classe est prédite ?",
+      "difficulte": 2,
+      "explication": "Seul le plus proche compte.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "A",
+        "Celle qui a le plus de données",
+        "B",
+        "Aucune"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:051",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction knn du cours, à quoi sert l'instruction sorted(donnees, key=lambda d: distance(d[0], nouveau)) ?",
+      "difficulte": 2,
+      "explication": "On garde ensuite les k premières.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "À ranger les données par classe",
+        "À supprimer les données éloignées",
+        "À calculer la moyenne des distances",
+        "À ranger les données de la plus proche à la plus éloignée du nouvel élément"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:052",
+      "type": "qcm_unique",
+      "enonce": "Dans la fonction knn du cours, que désigne tries[:k] ?",
+      "difficulte": 2,
+      "explication": "C'est une tranche : les indices 0 à k − 1.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "La liste sans ses k premiers éléments",
+        "Les k premiers éléments de la liste triée",
+        "Les éléments à partir de l'indice k",
+        "L'élément d'indice k"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:053",
+      "type": "qcm_unique",
+      "enonce": "Que prédit l'algorithme si k est égal au nombre total de données ?",
+      "difficulte": 2,
+      "explication": "Tous les éléments votent, quelle que soit leur distance.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Toujours la classe la plus nombreuse dans les données",
+        "Une classe au hasard",
+        "Rien, l'algorithme échoue",
+        "Toujours la classe du plus proche voisin, quelle que soit la valeur de k"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:054",
+      "type": "qcm_unique",
+      "enonce": "Une caractéristique est mesurée en millimètres (valeurs de 0 à 5000) et une autre en mètres (de 0 à 2). Quel problème cela pose-t-il ?",
+      "difficulte": 2,
+      "explication": "On normalise les données pour les rendre comparables.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Python refuse de calculer la distance",
+        "La première écrase la seconde dans le calcul de la distance",
+        "Il faut alors choisir k = 1",
+        "La distance devient négative"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:055",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi l'algorithme des k plus proches voisins peut-il être lent sur de très grandes données ?",
+      "difficulte": 2,
+      "explication": "Le coût d'une prédiction grandit avec le nombre de données.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Parce qu'il recommence l'apprentissage à chaque fois en effaçant les données",
+        "Parce qu'il essaie toutes les valeurs de k",
+        "Pour chaque prédiction, il calcule la distance à toutes les données puis trie",
+        "Parce que la distance euclidienne est impossible à calculer"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:056",
+      "type": "qcm_unique",
+      "enonce": "Comment évalue-t-on la qualité de l'algorithme des k plus proches voisins sur un jeu de données ?",
+      "difficulte": 2,
+      "explication": "Les données de test ont une classe connue, qu'on compare à la prédiction.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "On calcule la moyenne des distances",
+        "On vérifie que k est impair",
+        "On compte le nombre de classes",
+        "On prédit la classe de données de test mises de côté et on compte les prédictions justes"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:057",
+      "type": "qcm_unique",
+      "enonce": "Que peut produire un jeu de données d'apprentissage dans lequel une catégorie est très peu représentée ?",
+      "difficulte": 2,
+      "explication": "La qualité des prédictions dépend de la représentativité des données.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "Des prédictions biaisées pour cette catégorie",
+        "Une erreur de syntaxe",
+        "Des prédictions toujours justes",
+        "Un algorithme plus rapide et plus juste pour toutes les catégories"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:058",
+      "type": "qcm_unique",
+      "enonce": "Qui a décrit en 1951 la méthode des plus proches voisins ?",
+      "difficulte": 2,
+      "explication": "Elle a ensuite été étudiée par Cover et Hart (1967).",
+      "notion": "Repères historiques",
+      "propositions": [
+        "George Boole",
+        "Evelyn Fix et Joseph Hodges",
+        "Ronald Fisher, l'auteur du jeu de données des iris",
+        "Alan Turing"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:059",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi la force brute est-elle rarement utilisée pour les grands problèmes d'optimisation ?",
+      "difficulte": 2,
+      "explication": "Elle est exacte mais trop lente.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "Elle ne peut pas être programmée",
+        "Elle demande un système canonique",
+        "Le nombre de solutions à examiner devient beaucoup trop grand",
+        "Elle ne trouve jamais la meilleure solution"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:060",
+      "type": "qcm_unique",
+      "enonce": "Avec des pièces de 1, 5, 10 et 12, combien de pièces le glouton rend-il pour 15 ?",
+      "difficulte": 3,
+      "explication": "12 + 1 + 1 + 1, alors que 10 + 5 suffit : ce système n'est pas canonique.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "15",
+        "3",
+        "2",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:061",
+      "type": "qcm_unique",
+      "enonce": "Avec des pièces de 1, 4 et 6, quelle somme montre que le glouton n'est pas optimal ?",
+      "difficulte": 3,
+      "explication": "Le glouton donne 3 pièces pour 8, l'optimum 2.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "8, rendu 6 + 1 + 1 au lieu de 4 + 4",
+        "10, rendu 6 + 4",
+        "5, rendu 4 + 1",
+        "7, rendu 6 + 1"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:062",
+      "type": "qcm_unique",
+      "enonce": "Avec des pièces de 1, 4 et 6, combien de pièces le glouton rend-il pour 9 ?",
+      "difficulte": 3,
+      "explication": "6 + 1 + 1 + 1 (4 pièces), alors que 4 + 4 + 1 n'en demande que 3.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "3",
+        "2",
+        "9",
+        "4"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:063",
+      "type": "qcm_unique",
+      "enonce": "Combien de passages dans la boucle while fait rendu_monnaie(99, euros) au total ?",
+      "difficulte": 3,
+      "explication": "Une pièce ou un billet rendu par passage : 50, 20, 20, 5, 2, 2.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "9",
+        "6",
+        "5",
+        "99"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:064",
+      "type": "qcm_unique",
+      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle valeur obtient le glouton par rapport valeur/masse ?",
+      "difficulte": 3,
+      "explication": "Rapports : X 2, Y 1,75, Z ≈ 1,67. On prend X (5 kg) ; Y (9 kg) et Z (8 kg) ne rentrent plus.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "12 €",
+        "15 €",
+        "10 €",
+        "17 €"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:065",
+      "type": "qcm_unique",
+      "enonce": "Sac de capacité 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle est la valeur optimale ?",
+      "difficulte": 3,
+      "explication": "Y + Z pèse 7 kg et vaut 12 €.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "10 €, avec X",
+        "12 €, avec Y et Z",
+        "22 €, avec les trois objets",
+        "15 €, avec X et Z"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:066",
+      "type": "qcm_unique",
+      "enonce": "Pour le sac à dos, que garantit le glouton par rapport valeur/masse ?",
+      "difficulte": 3,
+      "explication": "Il est rapide mais pas optimal en général.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Une solution de valeur au moins égale à la moitié du total des objets",
+        "La meilleure solution dans tous les cas",
+        "Une solution qui remplit toujours exactement le sac",
+        "Une solution qui respecte la capacité, mais pas forcément la meilleure"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:067",
+      "type": "qcm_unique",
+      "enonce": "Quelle est la distance euclidienne entre (−1, 2) et (2, −2) ?",
+      "difficulte": 3,
+      "explication": "√(3² + (−4)²) = √25 = 5.",
+      "notion": "Distances",
+      "propositions": [
+        "1",
+        "√7",
+        "5",
+        "7"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:068",
+      "type": "qcm_unique",
+      "enonce": "Données : P1 (1, 1) classe A, P2 (2, 1) classe A, P3 (5, 4) classe B, P4 (6, 5) classe B, P5 (4, 4) classe B. Quelle classe est prédite pour (3, 2) avec k = 3 ?",
+      "difficulte": 3,
+      "explication": "Distances : P2 ≈ 1,41, P1 ≈ 2,24, P5 ≈ 2,24, P3 ≈ 2,83. Les trois plus proches comptent deux A (P2, P1) et un B (P5).",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "A",
+        "Égalité",
+        "Aucune",
+        "B"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:069",
+      "type": "qcm_unique",
+      "enonce": "On reprend les cinq points P1 à P5 (deux de classe A, trois de classe B) et on fait voter tous les points (k = 5) pour (3, 2). Quelle classe l'emporte ?",
+      "difficulte": 3,
+      "explication": "Tous les points votent : 3 B contre 2 A.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "A",
+        "Égalité",
+        "B",
+        "Aucune"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:070",
+      "type": "qcm_unique",
+      "enonce": "Avec deux classes et k = 4, deux voisins sont A et deux sont B. Que renvoie la fonction knn du cours ?",
+      "difficulte": 3,
+      "explication": "Le test > strict garde la première classe en cas d'égalité ; les classes entrent dans votes dans l'ordre des voisins.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Une erreur",
+        "La classe rencontrée en premier dans le dictionnaire votes, ici celle du voisin le plus proche",
+        "Toujours A, par ordre alphabétique",
+        "None"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:071",
+      "type": "qcm_unique",
+      "enonce": "Que risque-t-on avec k = 1 si une donnée d'apprentissage est mal étiquetée ?",
+      "difficulte": 3,
+      "explication": "Avec un seul voisin, une erreur n'est compensée par aucun vote.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Tous les nouveaux éléments proches d'elle reçoivent la mauvaise classe",
+        "La distance devient négative",
+        "Rien, car k = 1 corrige les erreurs",
+        "L'algorithme ne s'arrête plus"
+      ],
+      "bonnes_reponses": [
+        0
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:072",
+      "type": "qcm_unique",
+      "enonce": "Avec 20 objets, combien de combinaisons la force brute doit-elle examiner pour le sac à dos (en comptant le sac vide) ?",
+      "difficulte": 3,
+      "explication": "2²⁰ = 1048576.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "40",
+        "400",
+        "20",
+        "1048576"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:073",
+      "type": "qcm_unique",
+      "enonce": "Dans quel cas un algorithme glouton peut-il ne trouver aucune solution alors qu'il en existe une ?",
+      "difficulte": 3,
+      "explication": "Il prend 5 et reste bloqué avec 1, alors que 2 + 2 + 2 convient.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Remplir un sac assez grand pour tous les objets",
+        "Rendre 87 € avec les euros",
+        "Rendre 6 avec seulement des pièces de 5 et de 2",
+        "Rendre 6 avec des pièces de 1, 2 et 5"
+      ],
+      "bonnes_reponses": [
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:074",
+      "type": "qcm_unique",
+      "enonce": "Pourquoi dit-on que l'algorithme des k plus proches voisins n'applique pas une règle écrite par un humain ?",
+      "difficulte": 3,
+      "explication": "C'est le principe de l'apprentissage automatique.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "Parce qu'il n'utilise aucune donnée",
+        "Sa décision vient des exemples étiquetés et non d'une règle fixée à l'avance",
+        "Parce qu'il est écrit par un autre programme",
+        "Parce qu'il choisit sa réponse au hasard"
+      ],
+      "bonnes_reponses": [
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:075",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les algorithmes gloutons, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ils sont rapides mais pas toujours optimaux.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Ils ne reviennent pas sur leurs choix",
+        "Ils donnent toujours la meilleure solution",
+        "Ils essaient toutes les solutions",
+        "Ils font à chaque étape le choix qui semble le meilleur"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:076",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces listes, lesquelles sont des rendus possibles de 7 € avec les euros, quelle que soit la méthode ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "5 + 1 = 6 et il n'existe pas de pièce de 7 €.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "[2, 2, 2, 1]",
+        "[5, 1]",
+        "[7]",
+        "[5, 2]"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:077",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces systèmes de pièces, lesquels ne sont pas canoniques ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Pour 6 (1, 3, 4) et 8 (1, 4, 6), le glouton n'est pas optimal.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "1, 2, 5, 10",
+        "1, 4, 6",
+        "1, 3, 4",
+        "Le système de l'euro"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:078",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces critères, lesquels peuvent servir à un algorithme glouton pour le sac à dos ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Plusieurs critères gloutons existent, aucun n'est toujours optimal.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Prendre d'abord les objets de plus grande valeur",
+        "Prendre les objets dans un ordre aléatoire sans tester la capacité",
+        "Prendre d'abord les objets de meilleur rapport valeur/masse",
+        "Prendre tous les objets"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:079",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces distances entre (0, 0) et (3, 4), lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "√(9 + 16) = 5 et 3 + 4 = 7.",
+      "notion": "Distances",
+      "propositions": [
+        "Distance euclidienne : 7",
+        "Distance de Manhattan : 7",
+        "Distance de Manhattan : 5",
+        "Distance euclidienne : 5"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:080",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces étapes, lesquelles font partie de l'algorithme des k plus proches voisins ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ce sont les trois étapes de l'algorithme.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Choisir la classe majoritaire parmi eux",
+        "Calculer les distances aux données connues",
+        "Trier les classes par ordre alphabétique",
+        "Garder les k éléments les plus proches"
+      ],
+      "bonnes_reponses": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:081",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur l'algorithme des k plus proches voisins, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Ses prédictions dépendent des données.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "Ses prédictions sont toujours justes",
+        "Il utilise des données étiquetées",
+        "Il n'a besoin d'aucune donnée",
+        "C'est un algorithme d'apprentissage automatique"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:082",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces valeurs de k, lesquelles évitent toute égalité de votes quand il y a deux classes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Avec un nombre impair de voisins, une classe a la majorité.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:083",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces problèmes, lesquels sont des problèmes d'optimisation ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "On minimise ou on maximise une quantité.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "Remplir un sac pour emporter la plus grande valeur",
+        "Calculer 2 + 2",
+        "Rendre la monnaie avec le moins de pièces",
+        "Afficher un message à l'écran"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:084",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces associations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Cover et Hart étudient la méthode en 1967.",
+      "notion": "Repères historiques",
+      "propositions": [
+        "Fix et Hodges, jeu des iris, 1936",
+        "Fix et Hodges, plus proches voisins, 1951",
+        "Ronald Fisher, plus proches voisins, 1990",
+        "Ronald Fisher, jeu des iris, 1936"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:085",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le rendu de 87 € par l'algorithme glouton avec les euros, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "50, 20, 10, 5, 2.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "Il rend un billet de 100 €",
+        "Il rend 5 pièces et billets en tout",
+        "Il rend deux billets de 20 €",
+        "Il rend un billet de 50 €"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:086",
+      "type": "qcm_multiple",
+      "enonce": "Quelles sont les règles du problème du sac à dos étudié ? Coche toutes les réponses exactes.",
+      "difficulte": 1,
+      "explication": "Chaque objet est pris entièrement ou laissé.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "On peut couper un objet en deux",
+        "On cherche à maximiser la masse totale",
+        "On ne doit pas dépasser la capacité du sac",
+        "On cherche à maximiser la valeur totale"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:087",
+      "type": "qcm_multiple",
+      "enonce": "Avec des pièces de 1, 3 et 4, parmi ces sommes, lesquelles sont rendues de façon optimale par le glouton ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Pour 6, 3 + 3 suffit (2 pièces). Pour 9, aucune solution n'a moins de 3 pièces : 4 + 4 + 1 est optimal, comme 3 + 3 + 3.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "6, rendu 4 + 1 + 1",
+        "9, rendu 4 + 4 + 1",
+        "5, rendu 4 + 1",
+        "8, rendu 4 + 4"
+      ],
+      "bonnes_reponses": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:088",
+      "type": "qcm_multiple",
+      "enonce": "Les voisins d'un point, du plus proche au plus éloigné, sont de classes A, B, B, A, A, A. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "k = 3 : A, B, B (B majoritaire) ; k = 5 : 3 A contre 2 B.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Avec k = 3, la classe prédite est A",
+        "Avec k = 5, la classe prédite est B",
+        "Avec k = 1, la classe prédite est A",
+        "Avec k = 3, la classe prédite est B"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:089",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le choix de k, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "On essaie plusieurs valeurs de k sur des données de test.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Le meilleur k vaut toujours 1",
+        "Un k trop grand fait voter des éléments éloignés",
+        "Un k trop petit rend la prédiction sensible aux données erronées",
+        "k doit être égal au nombre de classes"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:090",
+      "type": "qcm_multiple",
+      "enonce": "Avec les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €) et un sac de 10 kg, parmi ces choix, lesquels respectent la capacité ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "A + B + D = 11 kg et A + C + D = 12 kg dépassent 10 kg.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "A, B et D",
+        "A, C et D",
+        "B, C et D",
+        "A et C"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:091",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces couples de points, lesquels sont à une distance euclidienne de 5 l'un de l'autre ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "(5, 5) est à √50 ; (2, 7) est à √26 de (1, 2).",
+      "notion": "Distances",
+      "propositions": [
+        "(0, 0) et (3, 4)",
+        "(1, 1) et (4, 5)",
+        "(1, 2) et (2, 7)",
+        "(0, 0) et (5, 5)"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:092",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces précautions, lesquelles améliorent la fiabilité des k plus proches voisins ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les données de test servent à évaluer l'algorithme.",
+      "notion": "Apprentissage automatique",
+      "propositions": [
+        "Rendre les caractéristiques comparables (normalisation)",
+        "Prendre toujours k = 1",
+        "Supprimer les données de test",
+        "Utiliser des données représentatives"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:093",
+      "type": "qcm_multiple",
+      "enonce": "Avec les euros, parmi ces sommes, lesquelles l'algorithme glouton rend-il avec exactement 3 pièces ou billets ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "8 = 5 + 2 + 1 ; 17 = 10 + 5 + 2 ; 4 = 2 + 2 ; 63 = 50 + 10 + 2 + 1.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "4 €",
+        "8 €",
+        "63 €",
+        "17 €"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:094",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations, lesquelles montrent qu'un glouton peut échouer ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Les deux derniers ne sont pas des échecs.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Avec les euros, il rend 87 € avec 5 pièces et billets",
+        "Il est plus rapide que la force brute",
+        "Avec des pièces de 1, 3, 4, il rend 6 avec 3 pièces au lieu de 2",
+        "Pour le sac à dos, il peut obtenir 44 € quand 46 € est possible"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:095",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la fonction knn du cours, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "sorted renvoie une nouvelle liste ; la fonction renvoie une classe.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Elle modifie la liste donnees",
+        "Elle renvoie la distance du plus proche voisin",
+        "Elle trie les données selon leur distance au nouvel élément",
+        "Elle compte les votes avec un dictionnaire"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:096",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur la force brute, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "Elle examine toutes les possibilités.",
+      "notion": "Problèmes d'optimisation",
+      "propositions": [
+        "Elle devient très lente quand le nombre de possibilités augmente",
+        "Elle ne fonctionne que pour le rendu de monnaie",
+        "Elle est toujours plus rapide qu'un glouton",
+        "Elle trouve toujours la meilleure solution"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:097",
+      "type": "qcm_unique",
+      "enonce": "Quel est le dernier élément de la liste renvoyée par rendu_monnaie(38, euros) ?",
+      "difficulte": 2,
+      "explication": "20, 10, 5, 2, puis 1.",
+      "notion": "Rendu de monnaie",
+      "propositions": [
+        "2",
+        "5",
+        "3",
+        "1"
+      ],
+      "bonnes_reponses": [
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:098",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces points, lesquels sont à une distance euclidienne inférieure à 3 du point (0, 0) ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "√5 ≈ 2,24 et √8 ≈ 2,83 ; (3, 1) est à √10 ≈ 3,16 et (0, 4) à 4.",
+      "notion": "Distances",
+      "propositions": [
+        "(3, 1)",
+        "(0, 4)",
+        "(1, 2)",
+        "(2, 2)"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:099",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur les données d'apprentissage et de test, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 2,
+      "explication": "On met de côté les données de test pour mesurer la qualité des prédictions.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Les données de test ont une classe connue",
+        "Il faut avoir exactement autant de données de test que d'apprentissage",
+        "Les données de test servent aussi de voisins pendant l'évaluation",
+        "On compare les prédictions sur les données de test à leur vraie classe"
+      ],
+      "bonnes_reponses": [
+        0,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:100",
+      "type": "qcm_multiple",
+      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "X seul (10 €) pour le glouton ; Y + Z (12 €) est optimal ; X + Z pèse 8 kg.",
+      "notion": "Problème du sac à dos",
+      "propositions": [
+        "Le glouton par rapport valeur/masse obtient 12 €",
+        "La valeur optimale est 15 €",
+        "Le glouton par rapport valeur/masse obtient 10 €",
+        "La valeur optimale est 12 €"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:101",
+      "type": "qcm_multiple",
+      "enonce": "Données P1 (1, 1) A, P2 (2, 1) A, P3 (5, 4) B, P4 (6, 5) B, P5 (4, 4) B ; nouveau point (3, 2). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "P2 est à √2 ; avec k = 5, 3 B contre 2 A.",
+      "notion": "Algorithme des k plus proches voisins",
+      "propositions": [
+        "Le plus proche voisin est P2",
+        "Le plus proche voisin est P5",
+        "Avec k = 1, la classe prédite est A",
+        "Avec k = 5, la classe prédite est A"
+      ],
+      "bonnes_reponses": [
+        0,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:102",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations sur le rendu de monnaie glouton, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Pour 8 avec 1, 4, 6 : 6 + 1 + 1 au lieu de 4 + 4.",
+      "notion": "Systèmes canoniques",
+      "propositions": [
+        "Avec les pièces 1, 4, 6, il rend 8 de façon optimale",
+        "Avec les pièces 1, 5, 10, 12, il rend 15 avec 4 pièces au lieu de 2",
+        "Avec les pièces 1, 4, 6, il rend 9 avec 4 pièces au lieu de 3",
+        "Avec les euros, il n'est pas toujours optimal"
+      ],
+      "bonnes_reponses": [
+        1,
+        2
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:103",
+      "type": "qcm_multiple",
+      "enonce": "Une donnée mal étiquetée se trouve parmi des données correctes. Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Un vote isolé pèse moins quand k grandit.",
+      "notion": "Choix de k et limites",
+      "propositions": [
+        "Elle n'a aucun effet quelle que soit la valeur de k",
+        "Avec k = 5, elle décide toujours de la prédiction",
+        "Avec k = 1, elle peut fausser les prédictions de ses voisins",
+        "Avec k = 5, elle est souvent compensée par les autres votes"
+      ],
+      "bonnes_reponses": [
+        2,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:104",
+      "type": "qcm_multiple",
+      "enonce": "On compare les points (0, 0), (2, 2) et (3, 0). Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "Euclidienne : √8 ≈ 2,83 < 3 ; Manhattan : 4 > 3.",
+      "notion": "Distances",
+      "propositions": [
+        "Avec la distance euclidienne, (2, 2) est plus proche de (0, 0) que (3, 0)",
+        "Avec la distance de Manhattan, (3, 0) est plus proche de (0, 0) que (2, 2)",
+        "Avec la distance de Manhattan, (2, 2) est à 2 de (0, 0)",
+        "Les deux distances donnent toujours le même plus proche voisin"
+      ],
+      "bonnes_reponses": [
+        0,
+        1
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:105",
+      "type": "qcm_multiple",
+      "enonce": "Parmi ces affirmations, lesquelles sont exactes ? Coche toutes les réponses exactes.",
+      "difficulte": 3,
+      "explication": "D'autres méthodes viendront en terminale.",
+      "notion": "Méthode gloutonne",
+      "propositions": [
+        "Le glouton est la seule méthode d'optimisation au programme de NSI",
+        "Un glouton enchaîne des optimums locaux",
+        "Un optimum local est toujours un optimum global",
+        "Pour le système de l'euro, le glouton donne l'optimum global"
+      ],
+      "bonnes_reponses": [
+        1,
+        3
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:106",
+      "type": "vrai_faux",
+      "enonce": "Un algorithme glouton fait à chaque étape le choix qui semble le meilleur sur le moment.",
+      "difficulte": 1,
+      "explication": "C'est un choix localement optimal.",
+      "notion": "Méthode gloutonne",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:107",
+      "type": "vrai_faux",
+      "enonce": "Le système de l'euro est canonique.",
+      "difficulte": 1,
+      "explication": "Le glouton y rend toujours le nombre minimal de pièces.",
+      "notion": "Systèmes canoniques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:108",
+      "type": "vrai_faux",
+      "enonce": "Le point (3, 4) est à 5 unités de l'origine, au sens de la distance euclidienne.",
+      "difficulte": 1,
+      "explication": "√(9 + 16) = 5.",
+      "notion": "Distances",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:109",
+      "type": "vrai_faux",
+      "enonce": "L'algorithme des k plus proches voisins prédit la classe majoritaire parmi les k voisins les plus proches.",
+      "difficulte": 1,
+      "explication": "C'est un vote majoritaire.",
+      "notion": "Algorithme des k plus proches voisins",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:110",
+      "type": "vrai_faux",
+      "enonce": "L'algorithme des k plus proches voisins est un algorithme d'apprentissage supervisé.",
+      "difficulte": 1,
+      "explication": "Il utilise des exemples étiquetés.",
+      "notion": "Apprentissage automatique",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:111",
+      "type": "vrai_faux",
+      "enonce": "Dans le problème du sac à dos, on cherche à maximiser la valeur totale sans dépasser la capacité.",
+      "difficulte": 1,
+      "explication": "C'est un problème d'optimisation sous contrainte.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:112",
+      "type": "vrai_faux",
+      "enonce": "Avec des pièces de 1, 3 et 4, le glouton rend 6 avec 3 pièces alors que 2 suffisent.",
+      "difficulte": 2,
+      "explication": "4 + 1 + 1 contre 3 + 3.",
+      "notion": "Systèmes canoniques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:113",
+      "type": "vrai_faux",
+      "enonce": "Le glouton par rapport valeur/masse ne trouve pas toujours la meilleure solution du sac à dos.",
+      "difficulte": 2,
+      "explication": "Exemple du cours : 44 € au lieu de 46 €.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:114",
+      "type": "vrai_faux",
+      "enonce": "Si les 3 plus proches voisins d'un point sont de classes B, A, A, la classe prédite avec k = 3 est A.",
+      "difficulte": 2,
+      "explication": "2 votes contre 1.",
+      "notion": "Algorithme des k plus proches voisins",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:115",
+      "type": "vrai_faux",
+      "enonce": "Si k est égal au nombre de données et qu'une classe y est strictement la plus nombreuse, l'algorithme prédit toujours cette classe.",
+      "difficulte": 2,
+      "explication": "Toutes les données votent.",
+      "notion": "Choix de k et limites",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:116",
+      "type": "vrai_faux",
+      "enonce": "Le rendu glouton de 63 € avec les euros utilise 4 pièces et billets.",
+      "difficulte": 2,
+      "explication": "50 + 10 + 2 + 1.",
+      "notion": "Rendu de monnaie",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:117",
+      "type": "vrai_faux",
+      "enonce": "La distance de Manhattan entre (1, 2) et (4, 6) vaut 7.",
+      "difficulte": 2,
+      "explication": "3 + 4 = 7.",
+      "notion": "Distances",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:118",
+      "type": "vrai_faux",
+      "enonce": "Avec des pièces de 1, 5, 10 et 12, le glouton rend 15 avec 4 pièces.",
+      "difficulte": 3,
+      "explication": "12 + 1 + 1 + 1, alors que 10 + 5 suffit.",
+      "notion": "Systèmes canoniques",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:119",
+      "type": "vrai_faux",
+      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €), la valeur optimale est 12 €.",
+      "difficulte": 3,
+      "explication": "Y + Z.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:120",
+      "type": "vrai_faux",
+      "enonce": "Pour le point (3, 2) et les données P1 (1, 1) A, P2 (2, 1) A, P3 (5, 4) B, P4 (6, 5) B, P5 (4, 4) B, la classe prédite avec k = 3 est A.",
+      "difficulte": 3,
+      "explication": "Les trois plus proches sont P2, P1 et P5 : deux A, un B.",
+      "notion": "Algorithme des k plus proches voisins",
+      "bonne_reponse": true
+    },
+    {
+      "source": "nsi-1re:ch8:banque:121",
+      "type": "vrai_faux",
+      "enonce": "Un algorithme glouton donne toujours la meilleure solution.",
+      "difficulte": 1,
+      "explication": "Pas toujours : exemple des pièces 1, 3, 4.",
+      "notion": "Méthode gloutonne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:122",
+      "type": "vrai_faux",
+      "enonce": "Un algorithme glouton revient sur ses choix quand il se trompe.",
+      "difficulte": 1,
+      "explication": "Il ne revient jamais en arrière.",
+      "notion": "Méthode gloutonne",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:123",
+      "type": "vrai_faux",
+      "enonce": "Dans le problème du sac à dos étudié, on peut emporter une partie d'un objet.",
+      "difficulte": 1,
+      "explication": "Chaque objet est pris entièrement ou laissé.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:124",
+      "type": "vrai_faux",
+      "enonce": "L'algorithme des k plus proches voisins n'a besoin d'aucune donnée connue.",
+      "difficulte": 1,
+      "explication": "Il a besoin de données étiquetées.",
+      "notion": "Algorithme des k plus proches voisins",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:125",
+      "type": "vrai_faux",
+      "enonce": "La distance euclidienne entre (0, 0) et (3, 4) vaut 7.",
+      "difficulte": 1,
+      "explication": "7 est la distance de Manhattan ; la distance euclidienne vaut 5.",
+      "notion": "Distances",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:126",
+      "type": "vrai_faux",
+      "enonce": "Dans le rendu glouton, on rend à chaque étape la plus petite pièce disponible.",
+      "difficulte": 1,
+      "explication": "On rend la plus grande pièce qui ne dépasse pas la somme restante.",
+      "notion": "Rendu de monnaie",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:127",
+      "type": "vrai_faux",
+      "enonce": "Avec des pièces de 1, 3 et 4, le glouton est toujours optimal.",
+      "difficulte": 2,
+      "explication": "Pour 6, il rend 4 + 1 + 1 au lieu de 3 + 3.",
+      "notion": "Systèmes canoniques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:128",
+      "type": "vrai_faux",
+      "enonce": "Pour les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €) et un sac de 10 kg, le glouton par rapport valeur/masse trouve la valeur optimale.",
+      "difficulte": 2,
+      "explication": "Il obtient 44 € alors que A + C vaut 46 €.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:129",
+      "type": "vrai_faux",
+      "enonce": "Avec deux classes, un k pair évite toujours les égalités de votes.",
+      "difficulte": 2,
+      "explication": "C'est un k impair qui les évite.",
+      "notion": "Choix de k et limites",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:130",
+      "type": "vrai_faux",
+      "enonce": "Si les voisins d'un point, du plus proche au plus éloigné, sont de classes B, A, A, la classe prédite avec k = 1 est A.",
+      "difficulte": 2,
+      "explication": "Avec k = 1, seul le plus proche (B) compte.",
+      "notion": "Algorithme des k plus proches voisins",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:131",
+      "type": "vrai_faux",
+      "enonce": "Les prédictions de l'algorithme des k plus proches voisins ne dépendent pas de la qualité des données.",
+      "difficulte": 2,
+      "explication": "Des données biaisées donnent des prédictions biaisées.",
+      "notion": "Apprentissage automatique",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:132",
+      "type": "vrai_faux",
+      "enonce": "Le rendu glouton de 99 € avec les euros utilise un seul billet de 20 €.",
+      "difficulte": 2,
+      "explication": "Il en utilise deux : 50 + 20 + 20 + 5 + 2 + 2.",
+      "notion": "Rendu de monnaie",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:133",
+      "type": "vrai_faux",
+      "enonce": "Avec un sac de 7 kg et les objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €), le glouton par rapport valeur/masse obtient 12 €.",
+      "difficulte": 3,
+      "explication": "Il prend X (rapport 2) puis ne peut plus rien ajouter : 10 €.",
+      "notion": "Problème du sac à dos",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:134",
+      "type": "vrai_faux",
+      "enonce": "Avec les pièces 1, 4 et 6, le glouton rend 8 de façon optimale.",
+      "difficulte": 3,
+      "explication": "Il rend 6 + 1 + 1 (3 pièces) au lieu de 4 + 4.",
+      "notion": "Systèmes canoniques",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:135",
+      "type": "vrai_faux",
+      "enonce": "La distance euclidienne et la distance de Manhattan désignent toujours le même plus proche voisin.",
+      "difficulte": 3,
+      "explication": "Pour (0, 0), (2, 2) est plus proche en euclidien, (3, 0) en Manhattan.",
+      "notion": "Distances",
+      "bonne_reponse": false
+    },
+    {
+      "source": "nsi-1re:ch8:banque:136",
+      "type": "reponse_courte",
+      "enonce": "Un client doit recevoir 87 €. Combien de pièces et billets le caissier glouton lui donne-t-il ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "50, 20, 10, 5, 2.",
+      "notion": "Rendu de monnaie",
+      "reponses_acceptees": [
+        "5"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:137",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la distance euclidienne entre (0, 0) et (6, 8) ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "√(36 + 64) = 10.",
+      "notion": "Distances",
+      "reponses_acceptees": [
+        "10"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:138",
+      "type": "reponse_courte",
+      "enonce": "Quel adjectif désigne un algorithme qui fait à chaque étape le meilleur choix immédiat ?",
+      "difficulte": 1,
+      "explication": "On parle d'algorithme glouton.",
+      "notion": "Méthode gloutonne",
+      "reponses_acceptees": [
+        "glouton",
+        "gloutons",
+        "gloutonne"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:139",
+      "type": "reponse_courte",
+      "enonce": "Quel adjectif désigne un système de pièces pour lequel le glouton est toujours optimal ?",
+      "difficulte": 1,
+      "explication": "L'euro est canonique.",
+      "notion": "Systèmes canoniques",
+      "reponses_acceptees": [
+        "canonique"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:140",
+      "type": "reponse_courte",
+      "enonce": "Les 3 plus proches voisins d'un point sont de classes chat, chien, chat. Quelle classe est prédite avec k = 3 ?",
+      "difficulte": 1,
+      "explication": "2 votes contre 1.",
+      "notion": "Algorithme des k plus proches voisins",
+      "reponses_acceptees": [
+        "chat"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:141",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la distance de Manhattan entre (0, 0) et (2, 5) ? Réponds par un nombre.",
+      "difficulte": 1,
+      "explication": "2 + 5 = 7.",
+      "notion": "Distances",
+      "reponses_acceptees": [
+        "7"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:142",
+      "type": "reponse_courte",
+      "enonce": "Combien de pièces et billets rend l'algorithme glouton pour 126 € avec les euros ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "100, 20, 5, 1.",
+      "notion": "Rendu de monnaie",
+      "reponses_acceptees": [
+        "4"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:143",
+      "type": "reponse_courte",
+      "enonce": "Avec des pièces de 1, 3 et 4, combien de pièces le glouton rend-il pour 6 ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "4 + 1 + 1.",
+      "notion": "Systèmes canoniques",
+      "reponses_acceptees": [
+        "3"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:144",
+      "type": "reponse_courte",
+      "enonce": "Avec les objets A (6 kg, 30 €), B (3 kg, 14 €), C (4 kg, 16 €), D (2 kg, 9 €) et un sac de 10 kg, quelle est la valeur optimale en euros ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "A + C.",
+      "notion": "Problème du sac à dos",
+      "reponses_acceptees": [
+        "46"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:145",
+      "type": "reponse_courte",
+      "enonce": "Les voisins d'un point, du plus proche au plus éloigné, sont de classes A, B, B, A, A. Quelle classe est prédite avec k = 3 ? Réponds par une lettre.",
+      "difficulte": 2,
+      "explication": "A, B, B : B majoritaire.",
+      "notion": "Algorithme des k plus proches voisins",
+      "reponses_acceptees": [
+        "B"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:146",
+      "type": "reponse_courte",
+      "enonce": "Quelle est la distance euclidienne entre (1, 1) et (4, 5) ? Réponds par un nombre.",
+      "difficulte": 2,
+      "explication": "√(9 + 16) = 5.",
+      "notion": "Distances",
+      "reponses_acceptees": [
+        "5"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:147",
+      "type": "reponse_courte",
+      "enonce": "Comment appelle-t-on l'apprentissage automatique à partir d'exemples dont on connaît la classe ?",
+      "difficulte": 2,
+      "explication": "Les exemples sont étiquetés.",
+      "notion": "Apprentissage automatique",
+      "reponses_acceptees": [
+        "supervisé",
+        "apprentissage supervisé"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:148",
+      "type": "reponse_courte",
+      "enonce": "Sac de 7 kg ; objets X (5 kg, 10 €), Y (4 kg, 7 €), Z (3 kg, 5 €). Quelle valeur, en euros, obtient le glouton par rapport valeur/masse ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "Il prend X et ne peut plus ajouter ni Z ni Y.",
+      "notion": "Problème du sac à dos",
+      "reponses_acceptees": [
+        "10"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:149",
+      "type": "reponse_courte",
+      "enonce": "Combien de combinaisons d'objets (sac vide compris) faut-il examiner par force brute avec 10 objets ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "2¹⁰ = 1024.",
+      "notion": "Problèmes d'optimisation",
+      "reponses_acceptees": [
+        "1024"
+      ]
+    },
+    {
+      "source": "nsi-1re:ch8:banque:150",
+      "type": "reponse_courte",
+      "enonce": "Avec des pièces de 1, 4 et 6, quel est le nombre minimal de pièces pour rendre 9 ? Réponds par un nombre.",
+      "difficulte": 3,
+      "explication": "4 + 4 + 1 (le glouton en rend 4 : 6 + 1 + 1 + 1).",
+      "notion": "Systèmes canoniques",
+      "reponses_acceptees": [
+        "3"
+      ]
+    }
+  ]
+}
